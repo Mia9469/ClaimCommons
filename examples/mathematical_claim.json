@@ -1,0 +1,50 @@
+{
+  "schema_version": "0.1",
+  "title": "A bounded mathematical identity under explicit assumptions",
+  "claim": {
+    "statement": "For every real x, the square (x-1)^2 is non-negative.",
+    "type": "mathematical",
+    "strength": "theorem",
+    "scope": ["Real numbers"],
+    "conditions": ["Standard ordered-field axioms"],
+    "independent_unit": "formal proposition and proof",
+    "generality_axes": []
+  },
+  "background": [
+    {"statement": "The square of a real number is non-negative."}
+  ],
+  "evidence": [
+    {
+      "id": "P1",
+      "summary": "Direct proof from the order properties of the real numbers.",
+      "design": "Let y=x-1. Since y is real, y^2 is non-negative.",
+      "sample": "All real x.",
+      "independent_units": "One formal proof covering the quantified domain.",
+      "analysis": "Algebraic substitution and ordered-field property.",
+      "result": "(x-1)^2 >= 0 for all real x.",
+      "uncertainty": "Not applicable; assumptions are explicit.",
+      "supports": ["primary_claim"],
+      "artifacts": [
+        {"kind": "proof", "uri": "inline:P1", "description": "Proof written in the design and analysis fields"}
+      ]
+    }
+  ],
+  "non_claims": ["The record does not make a statement over arbitrary complex-number orderings."],
+  "falsification": {
+    "would_count_against": ["A valid counterexample in the stated real-number domain."],
+    "not_tested": ["Alternative axiom systems without an ordered-field structure"]
+  },
+  "alternatives": [],
+  "interpretation": {
+    "possible_significance": "This record exists only to demonstrate the theorem evidence contract.",
+    "label": "not_part_of_validated_claim"
+  },
+  "relations": [],
+  "provenance": {
+    "contributors": [{"name": "Claim Commons demo", "roles": ["example"]}],
+    "created_at": "2026-08-01T00:00:00Z",
+    "license": "CC0-1.0",
+    "record_version": "0.1.0",
+    "source_context": "Schema demonstration"
+  }
+}

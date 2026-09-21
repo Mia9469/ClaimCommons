@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://claimcommons.org/schema/literature-corpus-v1.json",
+  "title": "Claim Commons Literature Fibre Atlas",
+  "type": "object",
+  "required": ["schema_version", "corpus", "groups", "areas", "fibres", "relations", "records", "candidate_claims", "bridge_candidates", "retrieval_queries"],
+  "properties": {
+    "schema_version": {"const": "1.1.0"},
+    "corpus": {
+      "type": "object",
+      "required": ["id", "date_from", "as_of_date", "source", "record_count", "candidate_claim_count", "bridge_candidate_count", "target_unique_papers", "extraction_notice", "gap_notice"],
+      "properties": {
+        "record_count": {"type": "integer", "minimum": 1},
+        "candidate_claim_count": {"type": "integer", "minimum": 0},
+        "bridge_candidate_count": {"type": "integer", "minimum": 0},
+        "abstract_coverage": {"type": "number", "minimum": 0, "maximum": 1}
+      }
+    },
+    "areas": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "required": ["id", "order", "label_zh", "label_en", "record_kind", "gap_question", "completion_requirement"]
+      }
+    },
+    "fibres": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "group", "label_zh", "label_en", "question", "paper_ids", "candidate_claim_ids", "bridge_candidate_ids", "segments"],
+        "properties": {
+          "segments": {
+            "type": "array",
+            "minItems": 8,
+            "maxItems": 8,
+            "items": {
+              "type": "object",
+              "required": ["area_id", "state", "candidate_claim_ids", "bridge_candidate_ids", "paper_ids", "gap_reason"],
+              "properties": {
+                "state": {"enum": ["no_candidate", "review_pending", "confirmed_insufficient", "complete", "contested"]},
+                "candidate_claim_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+                "bridge_candidate_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+                "paper_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true}
+              }
+            }
+          }
+        }
+      }
+    },
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "openalex_id", "title", "authors", "publication_date", "url", "fibre_memberships", "candidate_claim_ids", "bridge_candidate_ids"]
+      }
+    },
+    "candidate_claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "paper_id", "statement", "source_span", "review_status", "claim_ready", "confirmed", "completion_status", "area_assignment", "generation", "evidence_contract", "full_text_review_required"],
+        "properties": {
+          "review_status": {"const": "unreviewed"},
+          "claim_ready": {"const": false},
+          "confirmed": {"const": false},
+          "completion_status": {"const": "not_complete"},
+          "area_assignment": {
+            "type": "object",
+            "required": ["area_id", "status"],
+            "properties": {
+              "area_id": {"enum": ["area-experiment", "area-theory", "area-algorithm", "area-agent"]},
+              "status": {"const": "suggested"}
+            }
+          },
+          "full_text_review_required": {"const": true}
+        }
+      }
+    },
+    "bridge_candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "paper_id", "fibre_memberships", "area_id", "source_claim_ids", "target_claim_ids", "endpoint_status", "mapping_statement", "source_span", "assumptions", "discriminator", "status", "review_status", "confirmed", "completion_status", "confidence", "full_text_review_required"],
+        "properties": {
+          "area_id": {"enum": ["area-experiment-theory", "area-theory-algorithm", "area-algorithm-agent", "area-agent-experiment"]},
+          "source_claim_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+          "target_claim_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+          "endpoint_status": {"enum": ["unresolved", "source_only", "target_only", "both_present"]},
+          "mapping_statement": {"type": "string", "minLength": 1},
+          "source_span": {
+            "type": "object",
+            "required": ["section", "text", "access_level"],
+            "properties": {
+              "section": {"const": "abstract"},
+              "text": {"type": "string", "minLength": 1},
+              "access_level": {"const": "bibliographic_metadata"}
+            }
+          },
+          "assumptions": {"type": "array", "items": {"type": "string"}},
+          "discriminator": {"type": ["string", "null"]},
+          "status": {"const": "candidate"},
+          "review_status": {"const": "unreviewed"},
+          "confirmed": {"const": false},
+          "completion_status": {"const": "not_complete"},
+          "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+          "full_text_review_required": {"const": true}
+        }
+      }
+    },
+    "relations": {"type": "array"},
+    "retrieval_queries": {"type": "array"}
+  }
+}

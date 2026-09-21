@@ -1,0 +1,54 @@
+schema_version: "0.1"
+title: "A descriptive title without significance language"
+claim:
+  statement: "One bounded statement that can be judged true, false, or unresolved."
+  type: "empirical_observation"
+  strength: "existence"
+  scope:
+    - "System, dataset, model, population, or condition covered"
+  conditions: []
+  independent_unit: "e.g. animal, session, input batch, simulation seed, theorem"
+  generality_axes: []
+background:
+  - statement: "Only the prior fact needed to understand the claim"
+    citation: "optional citation or URL"
+evidence:
+  - id: "E1"
+    summary: "What this evidence item contributes"
+    design: "Design and comparison"
+    sample: "Sample size and inclusion"
+    independent_units: "Which units support inference"
+    analysis: "Analysis or proof method"
+    result: "Observed result"
+    uncertainty: "SEM, CI, sensitivity, censoring, proof assumptions, or not applicable"
+    supports: ["primary_claim"]
+    artifacts:
+      - kind: "report"
+        uri: "https://example.org/artifact"
+        description: "Inspectable artifact"
+non_claims:
+  - "A nearby conclusion that this record does not establish"
+falsification:
+  would_count_against:
+    - "A concrete result that would weaken or contradict the claim"
+  not_tested:
+    - "An adjacent system or condition not covered"
+alternatives:
+  - explanation: "A serious alternative explanation"
+    status: "open"
+    evidence: "Why it remains open or how it was tested"
+interpretation:
+  possible_significance: "Optional broader interpretation"
+  label: "not_part_of_validated_claim"
+relations: []
+  # Optional relation fields:
+  # target_record_version:
+  #   1
+provenance:
+  contributors:
+    - name: "Contributor name"
+      roles: ["conceptualization", "analysis", "writing"]
+  created_at: "2026-08-01T00:00:00Z"
+  license: "CC-BY-4.0"
+  record_version: "0.1.0"
+  source_context: "Optional project, manuscript, or laboratory context"

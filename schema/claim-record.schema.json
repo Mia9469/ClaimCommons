@@ -1,0 +1,201 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://claimcommons.example/schema/claim-record-0.1.json",
+  "title": "Claim Commons Claim Record v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "title",
+    "claim",
+    "background",
+    "evidence",
+    "non_claims",
+    "falsification",
+    "alternatives",
+    "provenance"
+  ],
+  "properties": {
+    "schema_version": {"const": "0.1"},
+    "title": {"type": "string", "minLength": 5, "maxLength": 160},
+    "claim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["statement", "type", "strength", "scope", "independent_unit"],
+      "properties": {
+        "statement": {"type": "string", "minLength": 20, "maxLength": 500},
+        "type": {
+          "enum": [
+            "empirical_observation",
+            "comparative",
+            "causal",
+            "mechanistic",
+            "mathematical",
+            "computational_existence",
+            "generalisation",
+            "methodological",
+            "replication",
+            "null_or_negative",
+            "other"
+          ]
+        },
+        "strength": {
+          "enum": ["existence", "directional", "quantitative", "causal", "mechanistic", "general", "theorem"]
+        },
+        "scope": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "minLength": 2, "maxLength": 300}
+        },
+        "conditions": {
+          "type": "array",
+          "default": [],
+          "items": {"type": "string", "maxLength": 300}
+        },
+        "independent_unit": {"type": "string", "minLength": 2, "maxLength": 300},
+        "generality_axes": {
+          "type": "array",
+          "default": [],
+          "items": {"type": "string", "maxLength": 200}
+        }
+      }
+    },
+    "background": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["statement"],
+        "properties": {
+          "statement": {"type": "string", "minLength": 3, "maxLength": 500},
+          "citation": {"type": "string", "maxLength": 500},
+          "claim_id": {"type": "string", "maxLength": 100}
+        }
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "summary", "design", "sample", "independent_units", "analysis", "result", "uncertainty", "artifacts"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,31}$"},
+          "summary": {"type": "string", "minLength": 10, "maxLength": 500},
+          "design": {"type": "string", "minLength": 5, "maxLength": 2000},
+          "sample": {"type": "string", "minLength": 2, "maxLength": 1000},
+          "independent_units": {"type": "string", "minLength": 2, "maxLength": 1000},
+          "analysis": {"type": "string", "minLength": 2, "maxLength": 2000},
+          "result": {"type": "string", "minLength": 5, "maxLength": 2000},
+          "uncertainty": {"type": "string", "minLength": 2, "maxLength": 1000},
+          "supports": {
+            "type": "array",
+            "default": ["primary_claim"],
+            "items": {"type": "string", "maxLength": 100}
+          },
+          "artifacts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["kind", "uri"],
+              "properties": {
+                "kind": {"enum": ["data", "code", "workflow", "proof", "report", "figure", "preregistration", "other"]},
+                "uri": {"type": "string", "minLength": 3, "maxLength": 1000},
+                "checksum": {"type": "string", "maxLength": 300},
+                "description": {"type": "string", "maxLength": 500}
+              }
+            }
+          }
+        }
+      }
+    },
+    "non_claims": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 3, "maxLength": 500}
+    },
+    "falsification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["would_count_against", "not_tested"],
+      "properties": {
+        "would_count_against": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "minLength": 3, "maxLength": 500}
+        },
+        "not_tested": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 3, "maxLength": 500}
+        }
+      }
+    },
+    "alternatives": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["explanation", "status"],
+        "properties": {
+          "explanation": {"type": "string", "minLength": 3, "maxLength": 1000},
+          "status": {"enum": ["open", "partly_addressed", "addressed"]},
+          "evidence": {"type": "string", "maxLength": 1000}
+        }
+      }
+    },
+    "interpretation": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "possible_significance": {"type": "string", "maxLength": 3000},
+        "label": {"const": "not_part_of_validated_claim"}
+      }
+    },
+    "relations": {
+      "type": "array",
+      "default": [],
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["predicate", "target"],
+        "properties": {
+          "predicate": {"enum": ["supports", "contradicts", "replicates", "narrows", "generalises", "depends_on", "supersedes"]},
+          "target": {"type": "string", "minLength": 1, "maxLength": 500},
+          "note": {"type": "string", "maxLength": 1000},
+          "target_record_version": {"type": "integer", "minimum": 1}
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["contributors", "created_at", "license", "record_version"],
+      "properties": {
+        "contributors": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["name", "roles"],
+            "properties": {
+              "name": {"type": "string", "minLength": 1, "maxLength": 200},
+              "orcid": {"type": "string", "maxLength": 50},
+              "roles": {
+                "type": "array",
+                "minItems": 1,
+                "items": {"type": "string", "minLength": 2, "maxLength": 100}
+              }
+            }
+          }
+        },
+        "created_at": {"type": "string", "format": "date-time"},
+        "license": {"type": "string", "minLength": 2, "maxLength": 100},
+        "record_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+        "source_context": {"type": "string", "maxLength": 1000}
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://claimcommons.org/schema/paper-dossier-0.1.json",
+  "title": "Claim Commons Paper Dossier v0.1",
+  "type": "object",
+  "required": ["schema_version", "papers"],
+  "properties": {
+    "schema_version": {"const": "0.1.0"},
+    "review_notice": {"type": "string"},
+    "papers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "year", "title", "topic", "claim", "evidence", "scope", "non_claim", "status"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "year": {"type": "integer", "minimum": 1900, "maximum": 2100},
+          "title": {"type": "string", "minLength": 8},
+          "doi": {"type": "string"},
+          "topic": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "claim": {"type": "string", "minLength": 30},
+          "evidence": {"type": "string", "minLength": 15},
+          "scope": {"type": "string", "minLength": 10},
+          "non_claim": {"type": "string", "minLength": 10},
+          "status": {"enum": ["machine_candidate", "needs_curator_review", "source_reported", "author_confirmed"]},
+          "source_spans": {"type": "array", "items": {"type": "object"}}
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

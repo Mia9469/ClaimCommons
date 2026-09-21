@@ -1,0 +1,32 @@
+name: Verify one paper dossier
+description: Check one candidate claim against the full published paper
+title: "Verify: "
+labels: [curation, good-first-issue]
+body:
+  - type: input
+    id: record
+    attributes:
+      label: Paper dossier ID or title
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Exact source passage
+      description: Give the section/page and a short passage. Do not upload a copyrighted PDF.
+    validations:
+      required: true
+  - type: textarea
+    id: assessment
+    attributes:
+      label: What should change?
+      description: Check the claim, evidence, scope and non-claim separately.
+    validations:
+      required: true
+  - type: dropdown
+    id: outcome
+    attributes:
+      label: Proposed outcome
+      options: [supports_as_scoped, supports_after_clarification, evidence_gap, contradicted, cannot_assess]
+    validations:
+      required: true

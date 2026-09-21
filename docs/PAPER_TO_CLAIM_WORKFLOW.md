@@ -1,47 +1,41 @@
-# Paper → Claim workflow v0.1
+# Paper → Claims → Questions workflow v0.2
 
-Claim Commons does not ask a language model to decide what is true. It creates an auditable route from a published source to a bounded, reviewable viewpoint.
+Claim Commons does not summarize each paper into one sentence. A paper is a source container; each paper can contribute one or more complete **Claim–Evidence–Conclusion** units.
 
-## The five gates
+## 1. Source gate
+Record the DOI, version, bibliographic identity and exact source location. Do not upload copyrighted PDFs. A generated sentence without a traceable source remains a candidate.
 
-1. **Archive the source.** Identify a paper by file hash and validated DOI. Keep the PDF outside the public repository unless its licence permits redistribution.
-2. **Extract source spans.** Preserve the abstract or result passage, its section and location. A generated sentence without a source span cannot enter the public dossier.
-3. **Create candidates.** Machine extraction may propose a claim, topic and relation. Every such item is labelled `machine_candidate`.
-4. **Curate the evidence contract.** A human checks the statement, evidence design, scope and explicit non-claim against the full paper. Passing this gate produces `source_reported`, not “true” or “reproduced”.
-5. **Review or reproduce.** Independent readers can challenge the wording, inspect the source, add a structured review, or attach a replication/contradiction record.
+## 2. Contribution enumeration
+Read the paper as a whole and list every major, independently inspectable contribution. Do not force the paper into one headline claim, and do not claim exhaustive coverage until a curator has checked all result sections, figures and appendices.
 
-## Standard record
+## 3. Complete claim contract
+Every public claim needs:
 
-Each Paper Dossier contains:
+- **Claim:** one bounded scientific proposition;
+- **Evidence:** method, data, theory, or their combination, including the actual independent unit;
+- **Positive conclusion:** what the evidence supports;
+- **Boundary:** conditions, population, model, task or scale where it applies;
+- **Negative conclusion:** failed result or inference that cannot be made;
+- **Unresolved:** remaining alternative explanation or unanswered question;
+- **Provenance and verification state.**
 
-- bibliographic identity and source hash;
-- one bounded candidate viewpoint;
-- what evidence the paper reports;
-- the conditions under which the statement is scoped;
-- one explicit non-claim;
-- source spans and extraction provenance;
-- a review state that cannot be silently upgraded.
+Missing fields are not silently invented. An explicit “not reported” is better than a plausible completion.
 
-The machine-readable contract is [`schema/paper-dossier.schema.json`](../schema/paper-dossier.schema.json). Human decisions live in [`curation/published-papers.json`](../curation/published-papers.json), separately from generated source spans.
+## 4. Verification states
+`machine_candidate` is an extraction candidate. `source_reported` means a curator checked that the record faithfully represents the source. It does not mean the claim is true, independently replicated, or author-endorsed.
 
-## Rebuild a local collection
+## 5. Two-level organization
+Claims receive one or more of seven broad directions for navigation. They may also join a specific **claim family** defined by a scientific question. Broad directions must stay coarse. Families may be narrower, but membership only means the claims are useful to compare.
 
-```bash
-python scripts/extract_paper_dossiers.py /path/to/pdfs \
-  --curation curation/published-papers.json \
-  --output app/static/data/published-paper-dossiers.json
-```
+## 6. Cross-paper relations
+A shared keyword, direction or claim family is not a scientific relation. Add `supports`, `replicates`, `contradicts`, `narrows`, `extends` or `depends_on` only after checking both sources, independence of evidence, compatible operational definitions and scope. Multiple claims from one paper never count as independent replication.
 
-The command requires Poppler's `pdftotext`. It does not upload PDFs, call an external model, or alter the originals.
+## 7. Public views
+The same records must be reachable in three ways:
 
-## Contribution protocol
+1. **Direction view:** discover a broad area and inspect its concrete claims.
+2. **Paper view:** see every currently extracted claim from one paper.
+3. **Question view:** ask whether a proposition has evidence, what type, where it holds, and what failed.
 
-Open a GitHub issue or pull request for exactly one of these tasks:
-
-- **Verify a paper:** compare one dossier with its full text and cite the source passage.
-- **Narrow a claim:** identify wording that exceeds the evidence and propose a bounded replacement.
-- **Add a boundary:** document an untested condition, alternative explanation or failed generalisation.
-- **Connect records:** propose a typed relation and explain why it is `supports`, `contradicts`, `replicates`, `narrows`, `generalises`, or `depends_on`.
-- **Improve the pipeline:** make extraction more traceable without turning heuristics into a truth score.
-
-Every scientific edit must preserve provenance. Popularity, novelty and rhetorical importance are never validation states.
+## 8. Contribution unit
+A pull request should change one auditable decision: add or verify one claim, correct one evidence contract, add one boundary, define one question family, or verify one relation. Popularity, novelty and rhetorical importance are never verification states.

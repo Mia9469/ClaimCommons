@@ -1,0 +1,1891 @@
+{
+  "schema_version": "0.2.0",
+  "notice": "Each paper may contribute multiple Claim–Evidence–Conclusion units. Family membership is a navigation aid; it is not evidence of replication.",
+  "directions": [
+    {
+      "id": "representation-coding",
+      "label_zh": "表征与编码",
+      "description": "神经活动如何表示变量、结构与信息。"
+    },
+    {
+      "id": "dynamics-networks",
+      "label_zh": "动力学与网络",
+      "description": "网络结构、状态与时间演化如何共同产生功能。"
+    },
+    {
+      "id": "learning-memory",
+      "label_zh": "学习、记忆与可塑性",
+      "description": "经验与局部规则如何改变存储、访问和适应。"
+    },
+    {
+      "id": "cellular-metabolism",
+      "label_zh": "细胞、代谢与生物机制",
+      "description": "细胞过程、能量和生物物理约束如何塑造活动。"
+    },
+    {
+      "id": "behavior-cognition",
+      "label_zh": "行为、认知与脑区功能",
+      "description": "群体活动如何关联行为、认知变量和脑区组织。"
+    },
+    {
+      "id": "methods-causal",
+      "label_zh": "测量、干预与因果方法",
+      "description": "如何观察、扰动并识别神经系统中的关系。"
+    },
+    {
+      "id": "theory-ai",
+      "label_zh": "理论、复杂系统与人工智能",
+      "description": "数学原则、算法和物理实现如何刻画计算。"
+    }
+  ],
+  "papers": [
+    {
+      "id": "roxin-2011-firing-rates",
+      "year": 2011,
+      "title": "On the Distribution of Firing Rates in Networks of Cortical Neurons",
+      "doi": "10.1523/JNEUROSCI.1677-11.2011",
+      "status": "source_reported",
+      "direction_ids": [
+        "dynamics-networks"
+      ],
+      "claims": [
+        {
+          "id": "roxin-2011-firing-rates-c1",
+          "statement": "In the analysed fluctuation-driven network models, an expansive single-neuron input-output nonlinearity can transform approximately symmetric input distributions into long-tailed firing-rate distributions.",
+          "evidence": {
+            "type": "mathematical_and_simulation",
+            "description": "Analytical and numerical analyses of leaky integrate-and-fire and conductance-based network models."
+          },
+          "conclusion": {
+            "positive": "In the analysed fluctuation-driven network models, an expansive single-neuron input-output nonlinearity can transform approximately symmetric input distributions into long-tailed firing-rate distributions.",
+            "boundary": "Randomly connected cortical network models in the parameter regimes analysed in the paper.",
+            "negative": "This does not establish that the same mechanism uniquely explains every empirical cortical firing-rate distribution.",
+            "unresolved": "Not resolved by this source alone."
+          },
+          "keywords": [],
+          "verification": "source_reported"
+        }
+      ]
+    },
+    {
+      "id": "zang-2018-climbing-fibres",
+      "year": 2018,
+      "title": "Voltage- and Branch-Specific Climbing Fiber Responses in Purkinje Cells",
+      "doi": "10.1016/j.celrep.2018.07.011",
+      "status": "source_reported",
+      "direction_ids": [
+        "cellular-metabolism"
+      ],
+      "claims": [
+        {
+          "id": "zang-2018-climbing-fibres-c1",
+          "statement": "In the analysed Purkinje-cell models, climbing-fibre responses and their energetic cost depend on dendritic voltage and branch identity.",
+          "evidence": {
+            "type": "computational_model",
+            "description": "Compartmental modelling of climbing-fibre input, potassium-current availability, calcium influx and energy consumption."
+          },
+          "conclusion": {
+            "positive": "In the analysed Purkinje-cell models, climbing-fibre responses and their energetic cost depend on dendritic voltage and branch identity.",
+            "boundary": "Purkinje-cell dendritic responses under the model and stimulation conditions studied.",
+            "negative": "Somatic complex-spike duration alone is not treated as a complete readout of dendritic climbing-fibre bursting.",
+            "unresolved": "Not resolved by this source alone."
+          },
+          "keywords": [],
+          "verification": "source_reported"
+        },
+        {
+          "id": "zang-2018-climbing-fibres-c2",
+          "statement": "Somatic complex-spike duration does not reliably report the number of climbing-fibre spikes represented in Purkinje-cell dendrites.",
+          "evidence": {
+            "type": "computational_model",
+            "description": "Compartmental simulations comparing somatic complex spikes with branch-specific dendritic responses."
+          },
+          "conclusion": {
+            "positive": "Dendritic climbing-fibre processing is branch-specific and cannot be reduced to one somatic duration measure.",
+            "boundary": "Established in the detailed Purkinje-cell model and stimulation protocols analysed.",
+            "negative": "A simple monotonic mapping from somatic complex-spike duration to dendritic climbing-fibre bursting was not supported.",
+            "unresolved": "The extent to which the same dissociation holds across in-vivo states remains open."
+          },
+          "keywords": [
+            "Purkinje cell",
+            "dendrite",
+            "complex spike"
+          ],
+          "verification": "source_reported"
+        }
+      ]
+    },
+    {
+      "id": "robinson-2020-place-cells",
+      "year": 2020,
+      "title": "Targeted Activation of Hippocampal Place Cells Drives Memory-Guided Spatial Behavior",
+      "doi": "10.1016/j.cell.2020.09.061",
+      "status": "source_reported",
+      "direction_ids": [
+        "methods-causal"
+      ],
+      "claims": [
+        {
+          "id": "robinson-2020-place-cells-c1",
+          "statement": "Targeted activation of small hippocampal place-cell ensembles biased mice toward the spatial behaviour associated with those cells.",
+          "evidence": {
+            "type": "causal_experiment",
+            "description": "All-optical two-photon imaging and targeted optogenetic stimulation during virtual-reality navigation."
+          },
+          "conclusion": {
+            "positive": "Targeted activation of small hippocampal place-cell ensembles biased mice toward the spatial behaviour associated with those cells.",
+            "boundary": "The place-cell ensembles, behavioural task and mouse preparation tested in the study.",
+            "negative": "The result does not imply that place cells alone are sufficient for all forms of spatial memory.",
+            "unresolved": "Not resolved by this source alone."
+          },
+          "keywords": [],
+          "verification": "source_reported"
+        },
+        {
+          "id": "robinson-2020-place-cells-c2",
+          "statement": "Targeted place-cell stimulation can disrupt the endogenous place code and trigger remapping in the tested environment.",
+          "evidence": {
+            "type": "causal_experiment",
+            "description": "Simultaneous two-photon calcium imaging and targeted stimulation of identified place-cell ensembles."
+          },
+          "conclusion": {
+            "positive": "Artificial activation altered both behaviour and the ongoing hippocampal representation.",
+            "boundary": "Observed for selected ensembles in the virtual-reality task.",
+            "negative": "The stimulated code did not simply add to an otherwise unchanged endogenous map.",
+            "unresolved": "How long the induced remapping persists outside the tested sessions is unresolved."
+          },
+          "keywords": [
+            "place cells",
+            "remapping",
+            "optogenetics"
+          ],
+          "verification": "source_reported"
+        }
+      ]
+    },
+    {
+      "id": "chettih-2020-perturbome",
+      "year": 2020,
+      "title": "The Neuronal Perturbome in Mouse Visual Cortex",
+      "doi": "10.1073/pnas.2004568117",
+      "status": "needs_curator_review",
+      "direction_ids": [
+        "methods-causal"
+      ],
+      "claims": [
+        {
+          "id": "chettih-2020-perturbome-c1",
+          "statement": "Single-cell perturbations in mouse visual cortex produce heterogeneous local influence patterns that cannot be inferred from activity correlations alone.",
+          "evidence": {
+            "type": "causal_experiment",
+            "description": "Targeted neuronal perturbation combined with population recording in visual cortex."
+          },
+          "conclusion": {
+            "positive": "Single-cell perturbations in mouse visual cortex produce heterogeneous local influence patterns that cannot be inferred from activity correlations alone.",
+            "boundary": "Local cortical effects measured in the experimental preparation and visual conditions used by the study.",
+            "negative": "The measured perturbation map is not a complete anatomical connectome or a universal causal circuit model.",
+            "unresolved": "Not resolved by this source alone."
+          },
+          "keywords": [],
+          "verification": "needs_curator_review"
+        }
+      ]
+    },
+    {
+      "id": "chintaluri-2023-metabolic-spiking",
+      "year": 2023,
+      "title": "Metabolically Regulated Spiking Could Serve Neuronal Energy Homeostasis and Protect from Reactive Oxygen Species",
+      "doi": "10.1073/pnas.2306525120",
+      "status": "source_reported",
+      "direction_ids": [
+        "cellular-metabolism"
+      ],
+      "claims": [
+        {
+          "id": "chintaluri-2023-metabolic-spiking-c1",
+          "statement": "The proposed models show that self-initiated spiking can act as an energy-release mechanism that stabilizes mitochondrial metabolic variables and limits reactive oxygen species under low demand.",
+          "evidence": {
+            "type": "computational_model",
+            "description": "Models coupling ATP, ADP and reactive oxygen species to firing, including a ROS-modulated ion-channel model and cortical avalanche simulations."
+          },
+          "conclusion": {
+            "positive": "The proposed models show that self-initiated spiking can act as an energy-release mechanism that stabilizes mitochondrial metabolic variables and limits reactive oxygen species under low demand.",
+            "boundary": "A computational existence result under the metabolic assumptions and parameter regimes analysed.",
+            "negative": "The paper does not demonstrate in vivo that metabolic homeostasis is the unique cause of spontaneous neuronal activity.",
+            "unresolved": "Not resolved by this source alone."
+          },
+          "keywords": [],
+          "verification": "source_reported"
+        },
+        {
+          "id": "chintaluri-2023-metabolic-spiking-c2",
+          "statement": "Metabolic feedback can sustain avalanche-like network dynamics indefinitely in the cortical models tested.",
+          "evidence": {
+            "type": "computational_model",
+            "description": "Network simulations coupling activity-dependent energetic variables to neuronal excitability."
+          },
+          "conclusion": {
+            "positive": "The feedback model generated sustained avalanche dynamics without requiring externally imposed critical tuning.",
+            "boundary": "A computational existence result under the selected metabolic dynamics and network parameters.",
+            "negative": "The simulations do not establish that metabolic feedback is necessary for empirical neuronal avalanches.",
+            "unresolved": "Direct experimental discrimination from competing homeostatic mechanisms remains open."
+          },
+          "keywords": [
+            "avalanche",
+            "metabolism",
+            "homeostasis"
+          ],
+          "verification": "source_reported"
+        }
+      ]
+    },
+    {
+      "id": "shiu-2024-drosophila-model",
+      "year": 2024,
+      "title": "A Drosophila Computational Brain Model Reveals Sensorimotor Processing",
+      "doi": "10.1038/s41586-024-07763-9",
+      "status": "source_reported",
+      "direction_ids": [
+        "dynamics-networks"
+      ],
+      "claims": [
+        {
+          "id": "shiu-2024-drosophila-model-c1",
+          "statement": "A whole-brain leaky integrate-and-fire model built from Drosophila connectivity and neurotransmitter identity generated experimentally testable predictions for feeding and grooming circuits.",
+          "evidence": {
+            "type": "model_plus_experiment",
+            "description": "Connectome-constrained simulation followed by optogenetic and behavioural validation of selected predictions."
+          },
+          "conclusion": {
+            "positive": "A whole-brain leaky integrate-and-fire model built from Drosophila connectivity and neurotransmitter identity generated experimentally testable predictions for feeding and grooming circuits.",
+            "boundary": "Adult Drosophila sensorimotor circuits and the model assumptions tested in the paper.",
+            "negative": "Connectivity and transmitter identity are not claimed to explain every neural computation or behavioural context.",
+            "unresolved": "Not resolved by this source alone."
+          },
+          "keywords": [],
+          "verification": "source_reported"
+        },
+        {
+          "id": "shiu-2024-drosophila-model-c2",
+          "statement": "Connectome-constrained activation of feeding-region neurons predicted neurons capable of eliciting motor-neuron firing and feeding behaviour.",
+          "evidence": {
+            "type": "model_plus_experiment",
+            "description": "Whole-brain simulation followed by targeted optogenetic and behavioural tests."
+          },
+          "conclusion": {
+            "positive": "Selected model predictions were validated by perturbing the predicted neurons.",
+            "boundary": "Validated for specific adult-fly feeding circuits and perturbations.",
+            "negative": "Not every prediction of the whole-brain model was experimentally tested.",
+            "unresolved": "Predictive accuracy across untested states and neuromodulatory conditions remains unknown."
+          },
+          "keywords": [
+            "connectome",
+            "feeding",
+            "validation"
+          ],
+          "verification": "source_reported"
+        },
+        {
+          "id": "shiu-2024-drosophila-model-c3",
+          "statement": "The same connectome-constrained model predicted a compact antennal-grooming circuit from mechanosensory input.",
+          "evidence": {
+            "type": "model_plus_experiment",
+            "description": "Computational activation of mechanosensory subtypes compared with known and measured grooming-circuit responses."
+          },
+          "conclusion": {
+            "positive": "The model recovered a small set of neurons associated with antennal grooming responses.",
+            "boundary": "Specific to the mechanosensory pathways and connectome used.",
+            "negative": "The result does not establish complete behavioural prediction from connectivity alone.",
+            "unresolved": "Generalization to other sensorimotor transformations requires further tests."
+          },
+          "keywords": [
+            "connectome",
+            "grooming",
+            "sensorimotor"
+          ],
+          "verification": "source_reported"
+        }
+      ]
+    },
+    {
+      "id": "zhang-2024-causal-emergence",
+      "year": 2024,
+      "title": "Emergence and Effective Information in Data-Driven Dynamical Systems",
+      "doi": "10.1093/nsr/nwae279",
+      "status": "source_reported",
+      "direction_ids": [
+        "theory-ai"
+      ],
+      "claims": [
+        {
+          "id": "zhang-2024-causal-emergence-c1",
+          "statement": "Maximizing effective information can learn coarse-grained latent dynamics with stronger estimated causal effects and improved out-of-environment generalization in the tested systems.",
+          "evidence": {
+            "type": "computational_experiment",
+            "description": "Machine-learning framework evaluated on simulated systems, real data and an fMRI coarse-graining example."
+          },
+          "conclusion": {
+            "positive": "Maximizing effective information can learn coarse-grained latent dynamics with stronger estimated causal effects and improved out-of-environment generalization in the tested systems.",
+            "boundary": "The causal-emergence objective, models and datasets analysed by the study.",
+            "negative": "A learned macro-state is not automatically a uniquely correct ontology of the underlying system.",
+            "unresolved": "Not resolved by this source alone."
+          },
+          "keywords": [],
+          "verification": "source_reported"
+        }
+      ]
+    },
+    {
+      "id": "podlaski-2025-context-memory",
+      "year": 2025,
+      "title": "High Capacity and Dynamic Accessibility in Associative Memory Networks with Context-Dependent Neuronal and Synaptic Gating",
+      "doi": "10.1103/PhysRevX.15.011057",
+      "status": "source_reported",
+      "direction_ids": [
+        "learning-memory"
+      ],
+      "claims": [
+        {
+          "id": "podlaski-2025-context-memory-c1",
+          "statement": "In context-modular associative-memory networks, neuronal or synaptic gating can reduce cross-context interference and trade memory accessibility against storage capacity.",
+          "evidence": {
+            "type": "mathematical_and_simulation",
+            "description": "Analytical and numerical study of random gating and context-specific synaptic refinement."
+          },
+          "conclusion": {
+            "positive": "In context-modular associative-memory networks, neuronal or synaptic gating can reduce cross-context interference and trade memory accessibility against storage capacity.",
+            "boundary": "The associative-memory model classes and gating protocols introduced in the paper.",
+            "negative": "The framework is not direct evidence that biological memory uses the same gating implementation.",
+            "unresolved": "Not resolved by this source alone."
+          },
+          "keywords": [],
+          "verification": "source_reported"
+        },
+        {
+          "id": "podlaski-2025-context-memory-c2",
+          "statement": "Context-specific synaptic refinement can increase associative-memory capacity beyond random contextual gating in the analysed networks.",
+          "evidence": {
+            "type": "mathematical_and_simulation",
+            "description": "Analytical capacity calculations and numerical comparisons of random gating with synaptic refinement."
+          },
+          "conclusion": {
+            "positive": "Removing context-destabilizing synapses improved capacity and control of memory stability.",
+            "boundary": "Derived for the context-modular associative-memory models studied.",
+            "negative": "Random gating was not uniformly optimal across the analysed regimes.",
+            "unresolved": "A biologically local process that implements the refinement rule remains to be established."
+          },
+          "keywords": [
+            "associative memory",
+            "gating",
+            "capacity"
+          ],
+          "verification": "source_reported"
+        }
+      ]
+    },
+    {
+      "id": "makkeh-2025-infomorphic-learning",
+      "year": 2025,
+      "title": "A General Framework for Interpretable Neural Learning Based on Local Information-Theoretic Goal Functions",
+      "doi": "10.1073/pnas.2408125122",
+      "status": "source_reported",
+      "direction_ids": [
+        "learning-memory"
+      ],
+      "claims": [
+        {
+          "id": "makkeh-2025-infomorphic-learning-c1",
+          "statement": "Parameterized local goals derived from partial information decomposition can train infomorphic networks on supervised, unsupervised and memory tasks while retaining an interpretable local objective.",
+          "evidence": {
+            "type": "theory_plus_computation",
+            "description": "Derivation of a local learning rule and computational demonstrations across several learning paradigms."
+          },
+          "conclusion": {
+            "positive": "Parameterized local goals derived from partial information decomposition can train infomorphic networks on supervised, unsupervised and memory tasks while retaining an interpretable local objective.",
+            "boundary": "The neuron model, PID parameterization, architectures and tasks evaluated in the paper.",
+            "negative": "Task performance does not by itself establish that the learning rule is biologically implemented.",
+            "unresolved": "Not resolved by this source alone."
+          },
+          "keywords": [],
+          "verification": "source_reported"
+        }
+      ]
+    },
+    {
+      "id": "liu-2025-all-optical",
+      "year": 2025,
+      "title": "Linking Functional Activity and Connectivity of Neuronal Circuits via Fast Cross-Layer All-Optical Physiology",
+      "doi": "10.1016/j.celrep.2025.116646",
+      "status": "source_reported",
+      "direction_ids": [
+        "methods-causal"
+      ],
+      "claims": [
+        {
+          "id": "liu-2025-all-optical-c1",
+          "statement": "The CLAOP system can combine fast cross-layer two-photon recording with targeted optogenetic manipulation to map functional activity-connectivity relations across cortical layers.",
+          "evidence": {
+            "type": "method_plus_experiment",
+            "description": "Instrument validation and all-optical measurements in visual, somatosensory and hippocampal circuits."
+          },
+          "conclusion": {
+            "positive": "The CLAOP system can combine fast cross-layer two-photon recording with targeted optogenetic manipulation to map functional activity-connectivity relations across cortical layers.",
+            "boundary": "The optical preparation, spatial-temporal resolution and circuit examples tested.",
+            "negative": "Functional influence measured by the system is not identical to a complete anatomical connectivity map.",
+            "unresolved": "Not resolved by this source alone."
+          },
+          "keywords": [],
+          "verification": "source_reported"
+        }
+      ]
+    },
+    {
+      "id": "ibl-2025-brain-wide-map",
+      "year": 2025,
+      "title": "A Brain-Wide Map of Neural Activity during Complex Behaviour",
+      "doi": "10.1038/s41586-025-09235-0",
+      "status": "source_reported",
+      "direction_ids": [
+        "behavior-cognition"
+      ],
+      "claims": [
+        {
+          "id": "ibl-2025-brain-wide-map-c1",
+          "statement": "Across a standardized decision task, sensory, choice, movement and prior-related signals were distributed across many brain regions with distinct spatial and temporal profiles.",
+          "evidence": {
+            "type": "large_scale_observation",
+            "description": "621,733 neurons recorded with 699 Neuropixels probes across 139 mice and 12 laboratories."
+          },
+          "conclusion": {
+            "positive": "Across a standardized decision task, sensory, choice, movement and prior-related signals were distributed across many brain regions with distinct spatial and temporal profiles.",
+            "boundary": "The standardized mouse decision-making task, recorded areas and analyses reported by the International Brain Laboratory.",
+            "negative": "Widespread encoding does not establish that every recorded region is causally necessary for each variable.",
+            "unresolved": "Not resolved by this source alone."
+          },
+          "keywords": [],
+          "verification": "source_reported"
+        },
+        {
+          "id": "ibl-2025-brain-wide-map-c2",
+          "statement": "Visual-stimulus representations were initially concentrated in classical visual areas and later accompanied by ramp-like activity in distributed midbrain and hindbrain regions.",
+          "evidence": {
+            "type": "large_scale_observation",
+            "description": "Standardized Neuropixels recordings across 279 brain areas during the same decision task."
+          },
+          "conclusion": {
+            "positive": "Different task variables showed distinct temporal and anatomical distributions across the brain.",
+            "boundary": "Descriptive encoding analyses in the standardized task and recorded regions.",
+            "negative": "Distributed encoding alone does not identify causal necessity.",
+            "unresolved": "Which distributed signals causally drive choice remains unresolved by these recordings."
+          },
+          "keywords": [
+            "brain-wide",
+            "visual stimulus",
+            "choice"
+          ],
+          "verification": "source_reported"
+        }
+      ]
+    },
+    {
+      "id": "ding-2025-snn-robustness",
+      "year": 2025,
+      "title": "Neuromorphic Computing Paradigms Enhance Robustness through Spiking Neural Networks",
+      "doi": "10.1038/s41467-025-65197-x",
+      "status": "source_reported",
+      "direction_ids": [
+        "theory-ai"
+      ],
+      "claims": [
+        {
+          "id": "ding-2025-snn-robustness-c1",
+          "statement": "In the evaluated CIFAR-10 adversarial setting, temporal encoding, early-exit decoding and specialized training improved spiking-network robustness relative to the matched artificial-network baselines.",
+          "evidence": {
+            "type": "computational_experiment",
+            "description": "Adversarial robustness experiments and ablations on temporal processing and encoding strategies."
+          },
+          "conclusion": {
+            "positive": "In the evaluated CIFAR-10 adversarial setting, temporal encoding, early-exit decoding and specialized training improved spiking-network robustness relative to the matched artificial-network baselines.",
+            "boundary": "The datasets, attacks, architectures, training methods and energy estimates used in the study.",
+            "negative": "The reported advantage is not a universal robustness guarantee for all spiking networks or attacks.",
+            "unresolved": "Not resolved by this source alone."
+          },
+          "keywords": [],
+          "verification": "source_reported"
+        },
+        {
+          "id": "ding-2025-snn-robustness-c2",
+          "statement": "Prioritizing task-relevant spikes early and terminating decoding before later perturbations improved adversarial robustness in the tested spiking networks.",
+          "evidence": {
+            "type": "computational_experiment",
+            "description": "Controlled encoding and early-exit ablations under adversarial perturbations on CIFAR-10."
+          },
+          "conclusion": {
+            "positive": "Temporal placement of information contributed independently to robustness.",
+            "boundary": "Evaluated for the attacks, encoders, architectures and stopping rules reported.",
+            "negative": "Spiking alone was not sufficient; specialized encoding and training choices mattered.",
+            "unresolved": "Robustness under unseen physical perturbations and broader datasets remains open."
+          },
+          "keywords": [
+            "spiking network",
+            "adversarial robustness",
+            "early exit"
+          ],
+          "verification": "source_reported"
+        }
+      ]
+    },
+    {
+      "id": "suzuki-2025-symmetry-breaking",
+      "year": 2025,
+      "title": "Deconstructing Dynamics of Symmetry Breaking",
+      "doi": "10.1073/pnas.2522833122",
+      "status": "needs_curator_review",
+      "direction_ids": [
+        "theory-ai"
+      ],
+      "claims": [
+        {
+          "id": "suzuki-2025-symmetry-breaking-c1",
+          "statement": "Analytical solutions of order-parameter dynamics in the studied Landau-Ginzburg settings explain why the temporal freeze-out construction reproduces Kibble-Zurek scaling.",
+          "evidence": {
+            "type": "mathematical_theory",
+            "description": "Analytical treatment of temporal and spatial order-parameter evolution with proposed experimentally accessible observables."
+          },
+          "conclusion": {
+            "positive": "Analytical solutions of order-parameter dynamics in the studied Landau-Ginzburg settings explain why the temporal freeze-out construction reproduces Kibble-Zurek scaling.",
+            "boundary": "The phase-transition models and approximations analysed in the paper.",
+            "negative": "The derivation does not make every real symmetry-breaking system equivalent to the analysed models.",
+            "unresolved": "Not resolved by this source alone."
+          },
+          "keywords": [],
+          "verification": "needs_curator_review"
+        }
+      ]
+    },
+    {
+      "id": "wang-2026-artificial-manifolds",
+      "year": 2026,
+      "title": "Artificial Neural Manifolds",
+      "doi": "10.1038/s41467-026-75979-6",
+      "status": "source_reported",
+      "direction_ids": [
+        "theory-ai"
+      ],
+      "claims": [
+        {
+          "id": "wang-2026-artificial-manifolds-c1",
+          "statement": "A Mott-memristor architecture can construct a low-dimensional artificial neural manifold for small-sample prediction, with a memory factor improving robustness in the tested tasks.",
+          "evidence": {
+            "type": "hardware_plus_computation",
+            "description": "Device circuits, delay-embedding formulation and demonstrations on incomplete-image perception and seizure prediction."
+          },
+          "conclusion": {
+            "positive": "A Mott-memristor architecture can construct a low-dimensional artificial neural manifold for small-sample prediction, with a memory factor improving robustness in the tested tasks.",
+            "boundary": "The hardware architecture, spatiotemporal information equation and benchmark tasks reported.",
+            "negative": "Similarity to biological tuning curves does not establish biological equivalence.",
+            "unresolved": "Not resolved by this source alone."
+          },
+          "keywords": [],
+          "verification": "source_reported"
+        },
+        {
+          "id": "wang-2026-artificial-manifolds-c2",
+          "statement": "Adding a memory factor to the spatiotemporal-information equation improved prediction accuracy and robustness in the evaluated manifold tasks.",
+          "evidence": {
+            "type": "hardware_and_computational_experiment",
+            "description": "Memristor-circuit demonstrations and prediction tests with and without the memory factor."
+          },
+          "conclusion": {
+            "positive": "History information improved incomplete-image perception and seizure-prediction performance in the reported tests.",
+            "boundary": "The implemented Mott-memristor architecture and selected datasets.",
+            "negative": "A static manifold equation without the memory factor was less robust in the reported comparisons.",
+            "unresolved": "Scalability and device-to-device variability at larger hardware scales remain open."
+          },
+          "keywords": [
+            "memristor",
+            "neural manifold",
+            "memory"
+          ],
+          "verification": "source_reported"
+        }
+      ]
+    },
+    {
+      "id": "fakhar-2026-cortical-reliability",
+      "year": 2026,
+      "title": "Human Cortical Networks Trade Communication Efficiency for Computational Reliability",
+      "doi": "10.1126/sciadv.aef2894",
+      "status": "source_reported",
+      "direction_ids": [
+        "dynamics-networks"
+      ],
+      "claims": [
+        {
+          "id": "fakhar-2026-cortical-reliability-c1",
+          "statement": "In the study's generative and reservoir-computing analyses, human cortical topology sacrifices wiring and communication efficiency for greater robustness of computation to targeted disruption.",
+          "evidence": {
+            "type": "network_model",
+            "description": "Game-theoretic network growth, reservoir-computing comparison and virtual lesion analyses."
+          },
+          "conclusion": {
+            "positive": "In the study's generative and reservoir-computing analyses, human cortical topology sacrifices wiring and communication efficiency for greater robustness of computation to targeted disruption.",
+            "boundary": "Human structural-network data and the propagation, optimization and lesion models used.",
+            "negative": "The result does not imply that communication efficiency is irrelevant or that the model uniquely explains cortical topology.",
+            "unresolved": "Not resolved by this source alone."
+          },
+          "keywords": [],
+          "verification": "source_reported"
+        },
+        {
+          "id": "fakhar-2026-cortical-reliability-c2",
+          "statement": "Networks optimized for communication efficiency concentrated traffic through a spatially clustered hub oligarchy and were more fragile to targeted lesions than human cortical networks.",
+          "evidence": {
+            "type": "network_model_and_lesion",
+            "description": "Generative network comparison and virtual targeted-lesion experiments."
+          },
+          "conclusion": {
+            "positive": "Distributed rich-club organization improved reliability at a cost in wiring and communication efficiency.",
+            "boundary": "Based on the network communication, reservoir and lesion models used.",
+            "negative": "Maximum communication efficiency did not maximize computational reliability.",
+            "unresolved": "Whether the same trade-off governs developmental wiring mechanisms remains open."
+          },
+          "keywords": [
+            "rich club",
+            "lesion",
+            "reliability"
+          ],
+          "verification": "source_reported"
+        }
+      ]
+    },
+    {
+      "id": "shain-2026-language-network",
+      "year": 2026,
+      "title": "A Language Network in the Individualized Functional Connectomes of 1199 Human Brains Doing Arbitrary Tasks",
+      "doi": "10.1038/s41467-026-75745-8",
+      "status": "source_reported",
+      "direction_ids": [
+        "behavior-cognition"
+      ],
+      "claims": [
+        {
+          "id": "shain-2026-language-network-c1",
+          "statement": "Individualized functional connectomes from arbitrary-task fMRI recovered a predominantly left-lateralized frontotemporal network that was stable within people and selective for language.",
+          "evidence": {
+            "type": "human_neuroimaging",
+            "description": "1,957 fMRI sessions from 1,199 people analysed with individualized functional connectomics."
+          },
+          "conclusion": {
+            "positive": "Individualized functional connectomes from arbitrary-task fMRI recovered a predominantly left-lateralized frontotemporal network that was stable within people and selective for language.",
+            "boundary": "The datasets, preprocessing, parcellations and language-localization tests reported.",
+            "negative": "Functional-connectivity recovery does not uniquely specify the causal computations of language.",
+            "unresolved": "Not resolved by this source alone."
+          },
+          "keywords": [],
+          "verification": "source_reported"
+        },
+        {
+          "id": "shain-2026-language-network-c2",
+          "statement": "Individualized functional-connectome language networks were more stable within individuals than between individuals across the analysed sessions.",
+          "evidence": {
+            "type": "human_neuroimaging",
+            "description": "Within- and between-person comparison across 1,957 fMRI sessions from 1,199 brains."
+          },
+          "conclusion": {
+            "positive": "The recovered network preserved person-specific topography despite heterogeneous task data.",
+            "boundary": "Functional-connectivity estimates and datasets included in the study.",
+            "negative": "A single group-average topography did not capture all individual variation.",
+            "unresolved": "The developmental origins and causal consequences of the individual differences remain unresolved."
+          },
+          "keywords": [
+            "language network",
+            "individual variability",
+            "functional connectivity"
+          ],
+          "verification": "source_reported"
+        }
+      ]
+    },
+    {
+      "id": "vander-molen-2026-organoid-sequences",
+      "year": 2026,
+      "title": "Preconfigured Neuronal Firing Sequences in Human Brain Organoids",
+      "doi": "10.1038/s41593-025-02111-0",
+      "status": "source_reported",
+      "direction_ids": [
+        "dynamics-networks"
+      ],
+      "claims": [
+        {
+          "id": "vander-molen-2026-organoid-sequences-c1",
+          "statement": "Structured spontaneous firing sequences appeared in human and mouse brain organoids and neonatal mouse cortical slices, but not in dissociated primary cortical cultures.",
+          "evidence": {
+            "type": "comparative_experiment",
+            "description": "Cross-preparation recordings and sequence analyses in organoids, ex vivo cortex and dissociated cultures."
+          },
+          "conclusion": {
+            "positive": "Structured spontaneous firing sequences appeared in human and mouse brain organoids and neonatal mouse cortical slices, but not in dissociated primary cortical cultures.",
+            "boundary": "The developmental stages, preparations and sequence metrics tested.",
+            "negative": "The observations do not show that all mature sequence structure is independent of experience.",
+            "unresolved": "Not resolved by this source alone."
+          },
+          "keywords": [],
+          "verification": "source_reported"
+        },
+        {
+          "id": "vander-molen-2026-organoid-sequences-c2",
+          "statement": "Structured spontaneous sequences were absent from the dissociated primary cortical cultures used as a comparison.",
+          "evidence": {
+            "type": "comparative_experiment",
+            "description": "Matched sequence analyses across organoids, neonatal cortical slices and dissociated cultures."
+          },
+          "conclusion": {
+            "positive": "Sequence structure depended on preparation-level circuit organization rather than neuronal activity alone.",
+            "boundary": "Limited to the preparations, ages and detection methods tested.",
+            "negative": "Dissociated cultures did not reproduce the structured sequences observed in organoids and slices.",
+            "unresolved": "Which architectural features are necessary for sequence formation remains unresolved."
+          },
+          "keywords": [
+            "organoid",
+            "sequence",
+            "dissociated culture"
+          ],
+          "verification": "source_reported"
+        }
+      ]
+    },
+    {
+      "id": "lynn-2026-input-output",
+      "year": 2026,
+      "title": "Simple Input-Output Dependencies Explain Neuronal Activity",
+      "doi": "10.1038/s41567-026-03306-3",
+      "status": "source_reported",
+      "direction_ids": [
+        "representation-coding"
+      ],
+      "claims": [
+        {
+          "id": "lynn-2026-input-output-c1",
+          "statement": "Across the neuronal datasets studied, models containing direct input-output dependencies without explicit input interactions explained most measured activity variability and predicted higher-order dependencies.",
+          "evidence": {
+            "type": "statistical_model",
+            "description": "Quantitative model comparison across multiple brain regions and species, with inferred connectivity analyses."
+          },
+          "conclusion": {
+            "positive": "Across the neuronal datasets studied, models containing direct input-output dependencies without explicit input interactions explained most measured activity variability and predicted higher-order dependencies.",
+            "boundary": "The binary activity representations, datasets and dependency models analysed.",
+            "negative": "Good predictive performance does not establish that biophysical input interactions are absent.",
+            "unresolved": "Not resolved by this source alone."
+          },
+          "keywords": [],
+          "verification": "source_reported"
+        },
+        {
+          "id": "lynn-2026-input-output-c2",
+          "statement": "Models containing only direct input-output dependencies predicted higher-order activity dependencies without explicitly fitting input interactions.",
+          "evidence": {
+            "type": "statistical_model",
+            "description": "Out-of-sample comparison of minimal dependency models with measured multi-neuron activity statistics."
+          },
+          "conclusion": {
+            "positive": "Complex population dependencies can emerge from combinations of simple direct dependencies in the tested datasets.",
+            "boundary": "Binary representations and neuronal datasets analysed in the paper.",
+            "negative": "Explicit interaction terms were not required to explain most measured variability in these analyses.",
+            "unresolved": "Biophysical interactions may still matter outside the measured statistics and timescales."
+          },
+          "keywords": [
+            "input-output",
+            "higher-order dependency",
+            "logistic neuron"
+          ],
+          "verification": "source_reported"
+        }
+      ]
+    },
+    {
+      "id": "jing-2026-network-predictability",
+      "year": 2026,
+      "title": "Predictability of Complex Networks",
+      "doi": "10.1073/pnas.2529917123",
+      "status": "needs_curator_review",
+      "direction_ids": [
+        "dynamics-networks"
+      ],
+      "claims": [
+        {
+          "id": "jing-2026-network-predictability-c1",
+          "statement": "Mapping link prediction to a spin-glass model yields a predictability index and decomposes global link predictability into local contributions in the analysed network ensembles.",
+          "evidence": {
+            "type": "mathematical_theory",
+            "description": "Cavity-method derivations, exact results for canonical models and analyses of real networks."
+          },
+          "conclusion": {
+            "positive": "Mapping link prediction to a spin-glass model yields a predictability index and decomposes global link predictability into local contributions in the analysed network ensembles.",
+            "boundary": "The link-prediction formulation, random division protocol and network models considered.",
+            "negative": "The predictability index is not a guarantee that every practical algorithm reaches the bound.",
+            "unresolved": "Not resolved by this source alone."
+          },
+          "keywords": [],
+          "verification": "needs_curator_review"
+        }
+      ]
+    },
+    {
+      "id": "zuckerman-2026-population-geometry",
+      "year": 2026,
+      "title": "Population Geometry Reveals Shared Latent Structure",
+      "doi": "10.1038/s41593-025-02183-y",
+      "status": "needs_curator_review",
+      "direction_ids": [
+        "representation-coding"
+      ],
+      "claims": [
+        {
+          "id": "zuckerman-2026-population-geometry-c1",
+          "statement": "The study links specific population-geometry statistics to task-efficient representation of shared latent structure across the tested settings.",
+          "evidence": {
+            "type": "observation_plus_computation",
+            "description": "Population-geometry analyses and computational comparisons reported in the paper."
+          },
+          "conclusion": {
+            "positive": "The study links specific population-geometry statistics to task-efficient representation of shared latent structure across the tested settings.",
+            "boundary": "The neural datasets, latent variables and target computations evaluated.",
+            "negative": "Geometric similarity does not by itself establish a unique neural mechanism.",
+            "unresolved": "Not resolved by this source alone."
+          },
+          "keywords": [],
+          "verification": "needs_curator_review"
+        }
+      ]
+    },
+    {
+      "id": "bla-2026-emotional-geometry",
+      "year": 2026,
+      "title": "Emotional-State Geometry in the Basolateral Amygdala",
+      "doi": "10.1038/s41593-026-02315-y",
+      "status": "needs_curator_review",
+      "direction_ids": [
+        "representation-coding"
+      ],
+      "claims": [
+        {
+          "id": "bla-2026-emotional-geometry-c1",
+          "statement": "Basolateral-amygdala population activity in the tested threat paradigm contained a geometry that supported specialized readout of emotional state across behavioural conditions.",
+          "evidence": {
+            "type": "observation_plus_perturbation",
+            "description": "Population recordings, behavioural measurements, decoding and perturbation analyses in mice."
+          },
+          "conclusion": {
+            "positive": "Basolateral-amygdala population activity in the tested threat paradigm contained a geometry that supported specialized readout of emotional state across behavioural conditions.",
+            "boundary": "The virtual-burrow assay, aversive conditions and recorded basolateral-amygdala populations.",
+            "negative": "The geometry is not asserted to be a complete or universal representation of emotion.",
+            "unresolved": "Not resolved by this source alone."
+          },
+          "keywords": [],
+          "verification": "needs_curator_review"
+        }
+      ]
+    },
+    {
+      "id": "ai-society-2026-machine-organism-language",
+      "year": 2026,
+      "title": "Machine, Organism and Language: An Epistemology of AI Models",
+      "doi": "10.1007/s00146-026-03094-7",
+      "status": "source_reported",
+      "direction_ids": [
+        "theory-ai"
+      ],
+      "claims": [
+        {
+          "id": "ai-society-2026-machine-organism-language-c1",
+          "statement": "The essay argues that contemporary AI is best understood through the historical recombination of machine, organism and language paradigms, and as an automation of relational structures embedded in social cooperation.",
+          "evidence": {
+            "type": "conceptual_analysis",
+            "description": "Comparative historical and philosophical analysis drawing on epistemology, political economy and histories of computation."
+          },
+          "conclusion": {
+            "positive": "The essay argues that contemporary AI is best understood through the historical recombination of machine, organism and language paradigms, and as an automation of relational structures embedded in social cooperation.",
+            "boundary": "A conceptual argument rather than an empirical or causal neuroscience claim.",
+            "negative": "The essay does not experimentally test a computational mechanism or biological model.",
+            "unresolved": "Not resolved by this source alone."
+          },
+          "keywords": [],
+          "verification": "source_reported"
+        }
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "roxin-2011-firing-rates-c1",
+      "statement": "In the analysed fluctuation-driven network models, an expansive single-neuron input-output nonlinearity can transform approximately symmetric input distributions into long-tailed firing-rate distributions.",
+      "evidence": {
+        "type": "mathematical_and_simulation",
+        "description": "Analytical and numerical analyses of leaky integrate-and-fire and conductance-based network models."
+      },
+      "conclusion": {
+        "positive": "In the analysed fluctuation-driven network models, an expansive single-neuron input-output nonlinearity can transform approximately symmetric input distributions into long-tailed firing-rate distributions.",
+        "boundary": "Randomly connected cortical network models in the parameter regimes analysed in the paper.",
+        "negative": "This does not establish that the same mechanism uniquely explains every empirical cortical firing-rate distribution.",
+        "unresolved": "Not resolved by this source alone."
+      },
+      "keywords": [],
+      "verification": "source_reported",
+      "paper_id": "roxin-2011-firing-rates",
+      "paper_title": "On the Distribution of Firing Rates in Networks of Cortical Neurons",
+      "year": 2011,
+      "direction_ids": [
+        "dynamics-networks"
+      ]
+    },
+    {
+      "id": "zang-2018-climbing-fibres-c1",
+      "statement": "In the analysed Purkinje-cell models, climbing-fibre responses and their energetic cost depend on dendritic voltage and branch identity.",
+      "evidence": {
+        "type": "computational_model",
+        "description": "Compartmental modelling of climbing-fibre input, potassium-current availability, calcium influx and energy consumption."
+      },
+      "conclusion": {
+        "positive": "In the analysed Purkinje-cell models, climbing-fibre responses and their energetic cost depend on dendritic voltage and branch identity.",
+        "boundary": "Purkinje-cell dendritic responses under the model and stimulation conditions studied.",
+        "negative": "Somatic complex-spike duration alone is not treated as a complete readout of dendritic climbing-fibre bursting.",
+        "unresolved": "Not resolved by this source alone."
+      },
+      "keywords": [],
+      "verification": "source_reported",
+      "paper_id": "zang-2018-climbing-fibres",
+      "paper_title": "Voltage- and Branch-Specific Climbing Fiber Responses in Purkinje Cells",
+      "year": 2018,
+      "direction_ids": [
+        "cellular-metabolism"
+      ]
+    },
+    {
+      "id": "zang-2018-climbing-fibres-c2",
+      "statement": "Somatic complex-spike duration does not reliably report the number of climbing-fibre spikes represented in Purkinje-cell dendrites.",
+      "evidence": {
+        "type": "computational_model",
+        "description": "Compartmental simulations comparing somatic complex spikes with branch-specific dendritic responses."
+      },
+      "conclusion": {
+        "positive": "Dendritic climbing-fibre processing is branch-specific and cannot be reduced to one somatic duration measure.",
+        "boundary": "Established in the detailed Purkinje-cell model and stimulation protocols analysed.",
+        "negative": "A simple monotonic mapping from somatic complex-spike duration to dendritic climbing-fibre bursting was not supported.",
+        "unresolved": "The extent to which the same dissociation holds across in-vivo states remains open."
+      },
+      "keywords": [
+        "Purkinje cell",
+        "dendrite",
+        "complex spike"
+      ],
+      "verification": "source_reported",
+      "paper_id": "zang-2018-climbing-fibres",
+      "paper_title": "Voltage- and Branch-Specific Climbing Fiber Responses in Purkinje Cells",
+      "year": 2018,
+      "direction_ids": [
+        "cellular-metabolism"
+      ]
+    },
+    {
+      "id": "robinson-2020-place-cells-c1",
+      "statement": "Targeted activation of small hippocampal place-cell ensembles biased mice toward the spatial behaviour associated with those cells.",
+      "evidence": {
+        "type": "causal_experiment",
+        "description": "All-optical two-photon imaging and targeted optogenetic stimulation during virtual-reality navigation."
+      },
+      "conclusion": {
+        "positive": "Targeted activation of small hippocampal place-cell ensembles biased mice toward the spatial behaviour associated with those cells.",
+        "boundary": "The place-cell ensembles, behavioural task and mouse preparation tested in the study.",
+        "negative": "The result does not imply that place cells alone are sufficient for all forms of spatial memory.",
+        "unresolved": "Not resolved by this source alone."
+      },
+      "keywords": [],
+      "verification": "source_reported",
+      "paper_id": "robinson-2020-place-cells",
+      "paper_title": "Targeted Activation of Hippocampal Place Cells Drives Memory-Guided Spatial Behavior",
+      "year": 2020,
+      "direction_ids": [
+        "methods-causal"
+      ]
+    },
+    {
+      "id": "robinson-2020-place-cells-c2",
+      "statement": "Targeted place-cell stimulation can disrupt the endogenous place code and trigger remapping in the tested environment.",
+      "evidence": {
+        "type": "causal_experiment",
+        "description": "Simultaneous two-photon calcium imaging and targeted stimulation of identified place-cell ensembles."
+      },
+      "conclusion": {
+        "positive": "Artificial activation altered both behaviour and the ongoing hippocampal representation.",
+        "boundary": "Observed for selected ensembles in the virtual-reality task.",
+        "negative": "The stimulated code did not simply add to an otherwise unchanged endogenous map.",
+        "unresolved": "How long the induced remapping persists outside the tested sessions is unresolved."
+      },
+      "keywords": [
+        "place cells",
+        "remapping",
+        "optogenetics"
+      ],
+      "verification": "source_reported",
+      "paper_id": "robinson-2020-place-cells",
+      "paper_title": "Targeted Activation of Hippocampal Place Cells Drives Memory-Guided Spatial Behavior",
+      "year": 2020,
+      "direction_ids": [
+        "methods-causal"
+      ]
+    },
+    {
+      "id": "chettih-2020-perturbome-c1",
+      "statement": "Single-cell perturbations in mouse visual cortex produce heterogeneous local influence patterns that cannot be inferred from activity correlations alone.",
+      "evidence": {
+        "type": "causal_experiment",
+        "description": "Targeted neuronal perturbation combined with population recording in visual cortex."
+      },
+      "conclusion": {
+        "positive": "Single-cell perturbations in mouse visual cortex produce heterogeneous local influence patterns that cannot be inferred from activity correlations alone.",
+        "boundary": "Local cortical effects measured in the experimental preparation and visual conditions used by the study.",
+        "negative": "The measured perturbation map is not a complete anatomical connectome or a universal causal circuit model.",
+        "unresolved": "Not resolved by this source alone."
+      },
+      "keywords": [],
+      "verification": "needs_curator_review",
+      "paper_id": "chettih-2020-perturbome",
+      "paper_title": "The Neuronal Perturbome in Mouse Visual Cortex",
+      "year": 2020,
+      "direction_ids": [
+        "methods-causal"
+      ]
+    },
+    {
+      "id": "chintaluri-2023-metabolic-spiking-c1",
+      "statement": "The proposed models show that self-initiated spiking can act as an energy-release mechanism that stabilizes mitochondrial metabolic variables and limits reactive oxygen species under low demand.",
+      "evidence": {
+        "type": "computational_model",
+        "description": "Models coupling ATP, ADP and reactive oxygen species to firing, including a ROS-modulated ion-channel model and cortical avalanche simulations."
+      },
+      "conclusion": {
+        "positive": "The proposed models show that self-initiated spiking can act as an energy-release mechanism that stabilizes mitochondrial metabolic variables and limits reactive oxygen species under low demand.",
+        "boundary": "A computational existence result under the metabolic assumptions and parameter regimes analysed.",
+        "negative": "The paper does not demonstrate in vivo that metabolic homeostasis is the unique cause of spontaneous neuronal activity.",
+        "unresolved": "Not resolved by this source alone."
+      },
+      "keywords": [],
+      "verification": "source_reported",
+      "paper_id": "chintaluri-2023-metabolic-spiking",
+      "paper_title": "Metabolically Regulated Spiking Could Serve Neuronal Energy Homeostasis and Protect from Reactive Oxygen Species",
+      "year": 2023,
+      "direction_ids": [
+        "cellular-metabolism"
+      ]
+    },
+    {
+      "id": "chintaluri-2023-metabolic-spiking-c2",
+      "statement": "Metabolic feedback can sustain avalanche-like network dynamics indefinitely in the cortical models tested.",
+      "evidence": {
+        "type": "computational_model",
+        "description": "Network simulations coupling activity-dependent energetic variables to neuronal excitability."
+      },
+      "conclusion": {
+        "positive": "The feedback model generated sustained avalanche dynamics without requiring externally imposed critical tuning.",
+        "boundary": "A computational existence result under the selected metabolic dynamics and network parameters.",
+        "negative": "The simulations do not establish that metabolic feedback is necessary for empirical neuronal avalanches.",
+        "unresolved": "Direct experimental discrimination from competing homeostatic mechanisms remains open."
+      },
+      "keywords": [
+        "avalanche",
+        "metabolism",
+        "homeostasis"
+      ],
+      "verification": "source_reported",
+      "paper_id": "chintaluri-2023-metabolic-spiking",
+      "paper_title": "Metabolically Regulated Spiking Could Serve Neuronal Energy Homeostasis and Protect from Reactive Oxygen Species",
+      "year": 2023,
+      "direction_ids": [
+        "cellular-metabolism"
+      ]
+    },
+    {
+      "id": "shiu-2024-drosophila-model-c1",
+      "statement": "A whole-brain leaky integrate-and-fire model built from Drosophila connectivity and neurotransmitter identity generated experimentally testable predictions for feeding and grooming circuits.",
+      "evidence": {
+        "type": "model_plus_experiment",
+        "description": "Connectome-constrained simulation followed by optogenetic and behavioural validation of selected predictions."
+      },
+      "conclusion": {
+        "positive": "A whole-brain leaky integrate-and-fire model built from Drosophila connectivity and neurotransmitter identity generated experimentally testable predictions for feeding and grooming circuits.",
+        "boundary": "Adult Drosophila sensorimotor circuits and the model assumptions tested in the paper.",
+        "negative": "Connectivity and transmitter identity are not claimed to explain every neural computation or behavioural context.",
+        "unresolved": "Not resolved by this source alone."
+      },
+      "keywords": [],
+      "verification": "source_reported",
+      "paper_id": "shiu-2024-drosophila-model",
+      "paper_title": "A Drosophila Computational Brain Model Reveals Sensorimotor Processing",
+      "year": 2024,
+      "direction_ids": [
+        "dynamics-networks"
+      ]
+    },
+    {
+      "id": "shiu-2024-drosophila-model-c2",
+      "statement": "Connectome-constrained activation of feeding-region neurons predicted neurons capable of eliciting motor-neuron firing and feeding behaviour.",
+      "evidence": {
+        "type": "model_plus_experiment",
+        "description": "Whole-brain simulation followed by targeted optogenetic and behavioural tests."
+      },
+      "conclusion": {
+        "positive": "Selected model predictions were validated by perturbing the predicted neurons.",
+        "boundary": "Validated for specific adult-fly feeding circuits and perturbations.",
+        "negative": "Not every prediction of the whole-brain model was experimentally tested.",
+        "unresolved": "Predictive accuracy across untested states and neuromodulatory conditions remains unknown."
+      },
+      "keywords": [
+        "connectome",
+        "feeding",
+        "validation"
+      ],
+      "verification": "source_reported",
+      "paper_id": "shiu-2024-drosophila-model",
+      "paper_title": "A Drosophila Computational Brain Model Reveals Sensorimotor Processing",
+      "year": 2024,
+      "direction_ids": [
+        "dynamics-networks"
+      ]
+    },
+    {
+      "id": "shiu-2024-drosophila-model-c3",
+      "statement": "The same connectome-constrained model predicted a compact antennal-grooming circuit from mechanosensory input.",
+      "evidence": {
+        "type": "model_plus_experiment",
+        "description": "Computational activation of mechanosensory subtypes compared with known and measured grooming-circuit responses."
+      },
+      "conclusion": {
+        "positive": "The model recovered a small set of neurons associated with antennal grooming responses.",
+        "boundary": "Specific to the mechanosensory pathways and connectome used.",
+        "negative": "The result does not establish complete behavioural prediction from connectivity alone.",
+        "unresolved": "Generalization to other sensorimotor transformations requires further tests."
+      },
+      "keywords": [
+        "connectome",
+        "grooming",
+        "sensorimotor"
+      ],
+      "verification": "source_reported",
+      "paper_id": "shiu-2024-drosophila-model",
+      "paper_title": "A Drosophila Computational Brain Model Reveals Sensorimotor Processing",
+      "year": 2024,
+      "direction_ids": [
+        "dynamics-networks"
+      ]
+    },
+    {
+      "id": "zhang-2024-causal-emergence-c1",
+      "statement": "Maximizing effective information can learn coarse-grained latent dynamics with stronger estimated causal effects and improved out-of-environment generalization in the tested systems.",
+      "evidence": {
+        "type": "computational_experiment",
+        "description": "Machine-learning framework evaluated on simulated systems, real data and an fMRI coarse-graining example."
+      },
+      "conclusion": {
+        "positive": "Maximizing effective information can learn coarse-grained latent dynamics with stronger estimated causal effects and improved out-of-environment generalization in the tested systems.",
+        "boundary": "The causal-emergence objective, models and datasets analysed by the study.",
+        "negative": "A learned macro-state is not automatically a uniquely correct ontology of the underlying system.",
+        "unresolved": "Not resolved by this source alone."
+      },
+      "keywords": [],
+      "verification": "source_reported",
+      "paper_id": "zhang-2024-causal-emergence",
+      "paper_title": "Emergence and Effective Information in Data-Driven Dynamical Systems",
+      "year": 2024,
+      "direction_ids": [
+        "theory-ai"
+      ]
+    },
+    {
+      "id": "podlaski-2025-context-memory-c1",
+      "statement": "In context-modular associative-memory networks, neuronal or synaptic gating can reduce cross-context interference and trade memory accessibility against storage capacity.",
+      "evidence": {
+        "type": "mathematical_and_simulation",
+        "description": "Analytical and numerical study of random gating and context-specific synaptic refinement."
+      },
+      "conclusion": {
+        "positive": "In context-modular associative-memory networks, neuronal or synaptic gating can reduce cross-context interference and trade memory accessibility against storage capacity.",
+        "boundary": "The associative-memory model classes and gating protocols introduced in the paper.",
+        "negative": "The framework is not direct evidence that biological memory uses the same gating implementation.",
+        "unresolved": "Not resolved by this source alone."
+      },
+      "keywords": [],
+      "verification": "source_reported",
+      "paper_id": "podlaski-2025-context-memory",
+      "paper_title": "High Capacity and Dynamic Accessibility in Associative Memory Networks with Context-Dependent Neuronal and Synaptic Gating",
+      "year": 2025,
+      "direction_ids": [
+        "learning-memory"
+      ]
+    },
+    {
+      "id": "podlaski-2025-context-memory-c2",
+      "statement": "Context-specific synaptic refinement can increase associative-memory capacity beyond random contextual gating in the analysed networks.",
+      "evidence": {
+        "type": "mathematical_and_simulation",
+        "description": "Analytical capacity calculations and numerical comparisons of random gating with synaptic refinement."
+      },
+      "conclusion": {
+        "positive": "Removing context-destabilizing synapses improved capacity and control of memory stability.",
+        "boundary": "Derived for the context-modular associative-memory models studied.",
+        "negative": "Random gating was not uniformly optimal across the analysed regimes.",
+        "unresolved": "A biologically local process that implements the refinement rule remains to be established."
+      },
+      "keywords": [
+        "associative memory",
+        "gating",
+        "capacity"
+      ],
+      "verification": "source_reported",
+      "paper_id": "podlaski-2025-context-memory",
+      "paper_title": "High Capacity and Dynamic Accessibility in Associative Memory Networks with Context-Dependent Neuronal and Synaptic Gating",
+      "year": 2025,
+      "direction_ids": [
+        "learning-memory"
+      ]
+    },
+    {
+      "id": "makkeh-2025-infomorphic-learning-c1",
+      "statement": "Parameterized local goals derived from partial information decomposition can train infomorphic networks on supervised, unsupervised and memory tasks while retaining an interpretable local objective.",
+      "evidence": {
+        "type": "theory_plus_computation",
+        "description": "Derivation of a local learning rule and computational demonstrations across several learning paradigms."
+      },
+      "conclusion": {
+        "positive": "Parameterized local goals derived from partial information decomposition can train infomorphic networks on supervised, unsupervised and memory tasks while retaining an interpretable local objective.",
+        "boundary": "The neuron model, PID parameterization, architectures and tasks evaluated in the paper.",
+        "negative": "Task performance does not by itself establish that the learning rule is biologically implemented.",
+        "unresolved": "Not resolved by this source alone."
+      },
+      "keywords": [],
+      "verification": "source_reported",
+      "paper_id": "makkeh-2025-infomorphic-learning",
+      "paper_title": "A General Framework for Interpretable Neural Learning Based on Local Information-Theoretic Goal Functions",
+      "year": 2025,
+      "direction_ids": [
+        "learning-memory"
+      ]
+    },
+    {
+      "id": "liu-2025-all-optical-c1",
+      "statement": "The CLAOP system can combine fast cross-layer two-photon recording with targeted optogenetic manipulation to map functional activity-connectivity relations across cortical layers.",
+      "evidence": {
+        "type": "method_plus_experiment",
+        "description": "Instrument validation and all-optical measurements in visual, somatosensory and hippocampal circuits."
+      },
+      "conclusion": {
+        "positive": "The CLAOP system can combine fast cross-layer two-photon recording with targeted optogenetic manipulation to map functional activity-connectivity relations across cortical layers.",
+        "boundary": "The optical preparation, spatial-temporal resolution and circuit examples tested.",
+        "negative": "Functional influence measured by the system is not identical to a complete anatomical connectivity map.",
+        "unresolved": "Not resolved by this source alone."
+      },
+      "keywords": [],
+      "verification": "source_reported",
+      "paper_id": "liu-2025-all-optical",
+      "paper_title": "Linking Functional Activity and Connectivity of Neuronal Circuits via Fast Cross-Layer All-Optical Physiology",
+      "year": 2025,
+      "direction_ids": [
+        "methods-causal"
+      ]
+    },
+    {
+      "id": "ibl-2025-brain-wide-map-c1",
+      "statement": "Across a standardized decision task, sensory, choice, movement and prior-related signals were distributed across many brain regions with distinct spatial and temporal profiles.",
+      "evidence": {
+        "type": "large_scale_observation",
+        "description": "621,733 neurons recorded with 699 Neuropixels probes across 139 mice and 12 laboratories."
+      },
+      "conclusion": {
+        "positive": "Across a standardized decision task, sensory, choice, movement and prior-related signals were distributed across many brain regions with distinct spatial and temporal profiles.",
+        "boundary": "The standardized mouse decision-making task, recorded areas and analyses reported by the International Brain Laboratory.",
+        "negative": "Widespread encoding does not establish that every recorded region is causally necessary for each variable.",
+        "unresolved": "Not resolved by this source alone."
+      },
+      "keywords": [],
+      "verification": "source_reported",
+      "paper_id": "ibl-2025-brain-wide-map",
+      "paper_title": "A Brain-Wide Map of Neural Activity during Complex Behaviour",
+      "year": 2025,
+      "direction_ids": [
+        "behavior-cognition"
+      ]
+    },
+    {
+      "id": "ibl-2025-brain-wide-map-c2",
+      "statement": "Visual-stimulus representations were initially concentrated in classical visual areas and later accompanied by ramp-like activity in distributed midbrain and hindbrain regions.",
+      "evidence": {
+        "type": "large_scale_observation",
+        "description": "Standardized Neuropixels recordings across 279 brain areas during the same decision task."
+      },
+      "conclusion": {
+        "positive": "Different task variables showed distinct temporal and anatomical distributions across the brain.",
+        "boundary": "Descriptive encoding analyses in the standardized task and recorded regions.",
+        "negative": "Distributed encoding alone does not identify causal necessity.",
+        "unresolved": "Which distributed signals causally drive choice remains unresolved by these recordings."
+      },
+      "keywords": [
+        "brain-wide",
+        "visual stimulus",
+        "choice"
+      ],
+      "verification": "source_reported",
+      "paper_id": "ibl-2025-brain-wide-map",
+      "paper_title": "A Brain-Wide Map of Neural Activity during Complex Behaviour",
+      "year": 2025,
+      "direction_ids": [
+        "behavior-cognition"
+      ]
+    },
+    {
+      "id": "ding-2025-snn-robustness-c1",
+      "statement": "In the evaluated CIFAR-10 adversarial setting, temporal encoding, early-exit decoding and specialized training improved spiking-network robustness relative to the matched artificial-network baselines.",
+      "evidence": {
+        "type": "computational_experiment",
+        "description": "Adversarial robustness experiments and ablations on temporal processing and encoding strategies."
+      },
+      "conclusion": {
+        "positive": "In the evaluated CIFAR-10 adversarial setting, temporal encoding, early-exit decoding and specialized training improved spiking-network robustness relative to the matched artificial-network baselines.",
+        "boundary": "The datasets, attacks, architectures, training methods and energy estimates used in the study.",
+        "negative": "The reported advantage is not a universal robustness guarantee for all spiking networks or attacks.",
+        "unresolved": "Not resolved by this source alone."
+      },
+      "keywords": [],
+      "verification": "source_reported",
+      "paper_id": "ding-2025-snn-robustness",
+      "paper_title": "Neuromorphic Computing Paradigms Enhance Robustness through Spiking Neural Networks",
+      "year": 2025,
+      "direction_ids": [
+        "theory-ai"
+      ]
+    },
+    {
+      "id": "ding-2025-snn-robustness-c2",
+      "statement": "Prioritizing task-relevant spikes early and terminating decoding before later perturbations improved adversarial robustness in the tested spiking networks.",
+      "evidence": {
+        "type": "computational_experiment",
+        "description": "Controlled encoding and early-exit ablations under adversarial perturbations on CIFAR-10."
+      },
+      "conclusion": {
+        "positive": "Temporal placement of information contributed independently to robustness.",
+        "boundary": "Evaluated for the attacks, encoders, architectures and stopping rules reported.",
+        "negative": "Spiking alone was not sufficient; specialized encoding and training choices mattered.",
+        "unresolved": "Robustness under unseen physical perturbations and broader datasets remains open."
+      },
+      "keywords": [
+        "spiking network",
+        "adversarial robustness",
+        "early exit"
+      ],
+      "verification": "source_reported",
+      "paper_id": "ding-2025-snn-robustness",
+      "paper_title": "Neuromorphic Computing Paradigms Enhance Robustness through Spiking Neural Networks",
+      "year": 2025,
+      "direction_ids": [
+        "theory-ai"
+      ]
+    },
+    {
+      "id": "suzuki-2025-symmetry-breaking-c1",
+      "statement": "Analytical solutions of order-parameter dynamics in the studied Landau-Ginzburg settings explain why the temporal freeze-out construction reproduces Kibble-Zurek scaling.",
+      "evidence": {
+        "type": "mathematical_theory",
+        "description": "Analytical treatment of temporal and spatial order-parameter evolution with proposed experimentally accessible observables."
+      },
+      "conclusion": {
+        "positive": "Analytical solutions of order-parameter dynamics in the studied Landau-Ginzburg settings explain why the temporal freeze-out construction reproduces Kibble-Zurek scaling.",
+        "boundary": "The phase-transition models and approximations analysed in the paper.",
+        "negative": "The derivation does not make every real symmetry-breaking system equivalent to the analysed models.",
+        "unresolved": "Not resolved by this source alone."
+      },
+      "keywords": [],
+      "verification": "needs_curator_review",
+      "paper_id": "suzuki-2025-symmetry-breaking",
+      "paper_title": "Deconstructing Dynamics of Symmetry Breaking",
+      "year": 2025,
+      "direction_ids": [
+        "theory-ai"
+      ]
+    },
+    {
+      "id": "wang-2026-artificial-manifolds-c1",
+      "statement": "A Mott-memristor architecture can construct a low-dimensional artificial neural manifold for small-sample prediction, with a memory factor improving robustness in the tested tasks.",
+      "evidence": {
+        "type": "hardware_plus_computation",
+        "description": "Device circuits, delay-embedding formulation and demonstrations on incomplete-image perception and seizure prediction."
+      },
+      "conclusion": {
+        "positive": "A Mott-memristor architecture can construct a low-dimensional artificial neural manifold for small-sample prediction, with a memory factor improving robustness in the tested tasks.",
+        "boundary": "The hardware architecture, spatiotemporal information equation and benchmark tasks reported.",
+        "negative": "Similarity to biological tuning curves does not establish biological equivalence.",
+        "unresolved": "Not resolved by this source alone."
+      },
+      "keywords": [],
+      "verification": "source_reported",
+      "paper_id": "wang-2026-artificial-manifolds",
+      "paper_title": "Artificial Neural Manifolds",
+      "year": 2026,
+      "direction_ids": [
+        "theory-ai"
+      ]
+    },
+    {
+      "id": "wang-2026-artificial-manifolds-c2",
+      "statement": "Adding a memory factor to the spatiotemporal-information equation improved prediction accuracy and robustness in the evaluated manifold tasks.",
+      "evidence": {
+        "type": "hardware_and_computational_experiment",
+        "description": "Memristor-circuit demonstrations and prediction tests with and without the memory factor."
+      },
+      "conclusion": {
+        "positive": "History information improved incomplete-image perception and seizure-prediction performance in the reported tests.",
+        "boundary": "The implemented Mott-memristor architecture and selected datasets.",
+        "negative": "A static manifold equation without the memory factor was less robust in the reported comparisons.",
+        "unresolved": "Scalability and device-to-device variability at larger hardware scales remain open."
+      },
+      "keywords": [
+        "memristor",
+        "neural manifold",
+        "memory"
+      ],
+      "verification": "source_reported",
+      "paper_id": "wang-2026-artificial-manifolds",
+      "paper_title": "Artificial Neural Manifolds",
+      "year": 2026,
+      "direction_ids": [
+        "theory-ai"
+      ]
+    },
+    {
+      "id": "fakhar-2026-cortical-reliability-c1",
+      "statement": "In the study's generative and reservoir-computing analyses, human cortical topology sacrifices wiring and communication efficiency for greater robustness of computation to targeted disruption.",
+      "evidence": {
+        "type": "network_model",
+        "description": "Game-theoretic network growth, reservoir-computing comparison and virtual lesion analyses."
+      },
+      "conclusion": {
+        "positive": "In the study's generative and reservoir-computing analyses, human cortical topology sacrifices wiring and communication efficiency for greater robustness of computation to targeted disruption.",
+        "boundary": "Human structural-network data and the propagation, optimization and lesion models used.",
+        "negative": "The result does not imply that communication efficiency is irrelevant or that the model uniquely explains cortical topology.",
+        "unresolved": "Not resolved by this source alone."
+      },
+      "keywords": [],
+      "verification": "source_reported",
+      "paper_id": "fakhar-2026-cortical-reliability",
+      "paper_title": "Human Cortical Networks Trade Communication Efficiency for Computational Reliability",
+      "year": 2026,
+      "direction_ids": [
+        "dynamics-networks"
+      ]
+    },
+    {
+      "id": "fakhar-2026-cortical-reliability-c2",
+      "statement": "Networks optimized for communication efficiency concentrated traffic through a spatially clustered hub oligarchy and were more fragile to targeted lesions than human cortical networks.",
+      "evidence": {
+        "type": "network_model_and_lesion",
+        "description": "Generative network comparison and virtual targeted-lesion experiments."
+      },
+      "conclusion": {
+        "positive": "Distributed rich-club organization improved reliability at a cost in wiring and communication efficiency.",
+        "boundary": "Based on the network communication, reservoir and lesion models used.",
+        "negative": "Maximum communication efficiency did not maximize computational reliability.",
+        "unresolved": "Whether the same trade-off governs developmental wiring mechanisms remains open."
+      },
+      "keywords": [
+        "rich club",
+        "lesion",
+        "reliability"
+      ],
+      "verification": "source_reported",
+      "paper_id": "fakhar-2026-cortical-reliability",
+      "paper_title": "Human Cortical Networks Trade Communication Efficiency for Computational Reliability",
+      "year": 2026,
+      "direction_ids": [
+        "dynamics-networks"
+      ]
+    },
+    {
+      "id": "shain-2026-language-network-c1",
+      "statement": "Individualized functional connectomes from arbitrary-task fMRI recovered a predominantly left-lateralized frontotemporal network that was stable within people and selective for language.",
+      "evidence": {
+        "type": "human_neuroimaging",
+        "description": "1,957 fMRI sessions from 1,199 people analysed with individualized functional connectomics."
+      },
+      "conclusion": {
+        "positive": "Individualized functional connectomes from arbitrary-task fMRI recovered a predominantly left-lateralized frontotemporal network that was stable within people and selective for language.",
+        "boundary": "The datasets, preprocessing, parcellations and language-localization tests reported.",
+        "negative": "Functional-connectivity recovery does not uniquely specify the causal computations of language.",
+        "unresolved": "Not resolved by this source alone."
+      },
+      "keywords": [],
+      "verification": "source_reported",
+      "paper_id": "shain-2026-language-network",
+      "paper_title": "A Language Network in the Individualized Functional Connectomes of 1199 Human Brains Doing Arbitrary Tasks",
+      "year": 2026,
+      "direction_ids": [
+        "behavior-cognition"
+      ]
+    },
+    {
+      "id": "shain-2026-language-network-c2",
+      "statement": "Individualized functional-connectome language networks were more stable within individuals than between individuals across the analysed sessions.",
+      "evidence": {
+        "type": "human_neuroimaging",
+        "description": "Within- and between-person comparison across 1,957 fMRI sessions from 1,199 brains."
+      },
+      "conclusion": {
+        "positive": "The recovered network preserved person-specific topography despite heterogeneous task data.",
+        "boundary": "Functional-connectivity estimates and datasets included in the study.",
+        "negative": "A single group-average topography did not capture all individual variation.",
+        "unresolved": "The developmental origins and causal consequences of the individual differences remain unresolved."
+      },
+      "keywords": [
+        "language network",
+        "individual variability",
+        "functional connectivity"
+      ],
+      "verification": "source_reported",
+      "paper_id": "shain-2026-language-network",
+      "paper_title": "A Language Network in the Individualized Functional Connectomes of 1199 Human Brains Doing Arbitrary Tasks",
+      "year": 2026,
+      "direction_ids": [
+        "behavior-cognition"
+      ]
+    },
+    {
+      "id": "vander-molen-2026-organoid-sequences-c1",
+      "statement": "Structured spontaneous firing sequences appeared in human and mouse brain organoids and neonatal mouse cortical slices, but not in dissociated primary cortical cultures.",
+      "evidence": {
+        "type": "comparative_experiment",
+        "description": "Cross-preparation recordings and sequence analyses in organoids, ex vivo cortex and dissociated cultures."
+      },
+      "conclusion": {
+        "positive": "Structured spontaneous firing sequences appeared in human and mouse brain organoids and neonatal mouse cortical slices, but not in dissociated primary cortical cultures.",
+        "boundary": "The developmental stages, preparations and sequence metrics tested.",
+        "negative": "The observations do not show that all mature sequence structure is independent of experience.",
+        "unresolved": "Not resolved by this source alone."
+      },
+      "keywords": [],
+      "verification": "source_reported",
+      "paper_id": "vander-molen-2026-organoid-sequences",
+      "paper_title": "Preconfigured Neuronal Firing Sequences in Human Brain Organoids",
+      "year": 2026,
+      "direction_ids": [
+        "dynamics-networks"
+      ]
+    },
+    {
+      "id": "vander-molen-2026-organoid-sequences-c2",
+      "statement": "Structured spontaneous sequences were absent from the dissociated primary cortical cultures used as a comparison.",
+      "evidence": {
+        "type": "comparative_experiment",
+        "description": "Matched sequence analyses across organoids, neonatal cortical slices and dissociated cultures."
+      },
+      "conclusion": {
+        "positive": "Sequence structure depended on preparation-level circuit organization rather than neuronal activity alone.",
+        "boundary": "Limited to the preparations, ages and detection methods tested.",
+        "negative": "Dissociated cultures did not reproduce the structured sequences observed in organoids and slices.",
+        "unresolved": "Which architectural features are necessary for sequence formation remains unresolved."
+      },
+      "keywords": [
+        "organoid",
+        "sequence",
+        "dissociated culture"
+      ],
+      "verification": "source_reported",
+      "paper_id": "vander-molen-2026-organoid-sequences",
+      "paper_title": "Preconfigured Neuronal Firing Sequences in Human Brain Organoids",
+      "year": 2026,
+      "direction_ids": [
+        "dynamics-networks"
+      ]
+    },
+    {
+      "id": "lynn-2026-input-output-c1",
+      "statement": "Across the neuronal datasets studied, models containing direct input-output dependencies without explicit input interactions explained most measured activity variability and predicted higher-order dependencies.",
+      "evidence": {
+        "type": "statistical_model",
+        "description": "Quantitative model comparison across multiple brain regions and species, with inferred connectivity analyses."
+      },
+      "conclusion": {
+        "positive": "Across the neuronal datasets studied, models containing direct input-output dependencies without explicit input interactions explained most measured activity variability and predicted higher-order dependencies.",
+        "boundary": "The binary activity representations, datasets and dependency models analysed.",
+        "negative": "Good predictive performance does not establish that biophysical input interactions are absent.",
+        "unresolved": "Not resolved by this source alone."
+      },
+      "keywords": [],
+      "verification": "source_reported",
+      "paper_id": "lynn-2026-input-output",
+      "paper_title": "Simple Input-Output Dependencies Explain Neuronal Activity",
+      "year": 2026,
+      "direction_ids": [
+        "representation-coding"
+      ]
+    },
+    {
+      "id": "lynn-2026-input-output-c2",
+      "statement": "Models containing only direct input-output dependencies predicted higher-order activity dependencies without explicitly fitting input interactions.",
+      "evidence": {
+        "type": "statistical_model",
+        "description": "Out-of-sample comparison of minimal dependency models with measured multi-neuron activity statistics."
+      },
+      "conclusion": {
+        "positive": "Complex population dependencies can emerge from combinations of simple direct dependencies in the tested datasets.",
+        "boundary": "Binary representations and neuronal datasets analysed in the paper.",
+        "negative": "Explicit interaction terms were not required to explain most measured variability in these analyses.",
+        "unresolved": "Biophysical interactions may still matter outside the measured statistics and timescales."
+      },
+      "keywords": [
+        "input-output",
+        "higher-order dependency",
+        "logistic neuron"
+      ],
+      "verification": "source_reported",
+      "paper_id": "lynn-2026-input-output",
+      "paper_title": "Simple Input-Output Dependencies Explain Neuronal Activity",
+      "year": 2026,
+      "direction_ids": [
+        "representation-coding"
+      ]
+    },
+    {
+      "id": "jing-2026-network-predictability-c1",
+      "statement": "Mapping link prediction to a spin-glass model yields a predictability index and decomposes global link predictability into local contributions in the analysed network ensembles.",
+      "evidence": {
+        "type": "mathematical_theory",
+        "description": "Cavity-method derivations, exact results for canonical models and analyses of real networks."
+      },
+      "conclusion": {
+        "positive": "Mapping link prediction to a spin-glass model yields a predictability index and decomposes global link predictability into local contributions in the analysed network ensembles.",
+        "boundary": "The link-prediction formulation, random division protocol and network models considered.",
+        "negative": "The predictability index is not a guarantee that every practical algorithm reaches the bound.",
+        "unresolved": "Not resolved by this source alone."
+      },
+      "keywords": [],
+      "verification": "needs_curator_review",
+      "paper_id": "jing-2026-network-predictability",
+      "paper_title": "Predictability of Complex Networks",
+      "year": 2026,
+      "direction_ids": [
+        "dynamics-networks"
+      ]
+    },
+    {
+      "id": "zuckerman-2026-population-geometry-c1",
+      "statement": "The study links specific population-geometry statistics to task-efficient representation of shared latent structure across the tested settings.",
+      "evidence": {
+        "type": "observation_plus_computation",
+        "description": "Population-geometry analyses and computational comparisons reported in the paper."
+      },
+      "conclusion": {
+        "positive": "The study links specific population-geometry statistics to task-efficient representation of shared latent structure across the tested settings.",
+        "boundary": "The neural datasets, latent variables and target computations evaluated.",
+        "negative": "Geometric similarity does not by itself establish a unique neural mechanism.",
+        "unresolved": "Not resolved by this source alone."
+      },
+      "keywords": [],
+      "verification": "needs_curator_review",
+      "paper_id": "zuckerman-2026-population-geometry",
+      "paper_title": "Population Geometry Reveals Shared Latent Structure",
+      "year": 2026,
+      "direction_ids": [
+        "representation-coding"
+      ]
+    },
+    {
+      "id": "bla-2026-emotional-geometry-c1",
+      "statement": "Basolateral-amygdala population activity in the tested threat paradigm contained a geometry that supported specialized readout of emotional state across behavioural conditions.",
+      "evidence": {
+        "type": "observation_plus_perturbation",
+        "description": "Population recordings, behavioural measurements, decoding and perturbation analyses in mice."
+      },
+      "conclusion": {
+        "positive": "Basolateral-amygdala population activity in the tested threat paradigm contained a geometry that supported specialized readout of emotional state across behavioural conditions.",
+        "boundary": "The virtual-burrow assay, aversive conditions and recorded basolateral-amygdala populations.",
+        "negative": "The geometry is not asserted to be a complete or universal representation of emotion.",
+        "unresolved": "Not resolved by this source alone."
+      },
+      "keywords": [],
+      "verification": "needs_curator_review",
+      "paper_id": "bla-2026-emotional-geometry",
+      "paper_title": "Emotional-State Geometry in the Basolateral Amygdala",
+      "year": 2026,
+      "direction_ids": [
+        "representation-coding"
+      ]
+    },
+    {
+      "id": "ai-society-2026-machine-organism-language-c1",
+      "statement": "The essay argues that contemporary AI is best understood through the historical recombination of machine, organism and language paradigms, and as an automation of relational structures embedded in social cooperation.",
+      "evidence": {
+        "type": "conceptual_analysis",
+        "description": "Comparative historical and philosophical analysis drawing on epistemology, political economy and histories of computation."
+      },
+      "conclusion": {
+        "positive": "The essay argues that contemporary AI is best understood through the historical recombination of machine, organism and language paradigms, and as an automation of relational structures embedded in social cooperation.",
+        "boundary": "A conceptual argument rather than an empirical or causal neuroscience claim.",
+        "negative": "The essay does not experimentally test a computational mechanism or biological model.",
+        "unresolved": "Not resolved by this source alone."
+      },
+      "keywords": [],
+      "verification": "source_reported",
+      "paper_id": "ai-society-2026-machine-organism-language",
+      "paper_title": "Machine, Organism and Language: An Epistemology of AI Models",
+      "year": 2026,
+      "direction_ids": [
+        "theory-ai"
+      ]
+    }
+  ],
+  "claim_families": [
+    {
+      "id": "energy-shapes-neural-activity",
+      "question": "Can energetic or metabolic constraints shape neuronal activity patterns?",
+      "direction_id": "cellular-metabolism",
+      "members": [
+        {
+          "claim_id": "zang-2018-climbing-fibres-c1",
+          "alignment": "direct"
+        },
+        {
+          "claim_id": "chintaluri-2023-metabolic-spiking-c1",
+          "alignment": "direct"
+        },
+        {
+          "claim_id": "chintaluri-2023-metabolic-spiking-c2",
+          "alignment": "adjacent"
+        }
+      ]
+    },
+    {
+      "id": "perturbation-reveals-causal-function",
+      "question": "Can targeted neural perturbation reveal causal circuit or behavioural function?",
+      "direction_id": "methods-causal",
+      "members": [
+        {
+          "claim_id": "robinson-2020-place-cells-c1",
+          "alignment": "direct"
+        },
+        {
+          "claim_id": "robinson-2020-place-cells-c2",
+          "alignment": "direct"
+        },
+        {
+          "claim_id": "chettih-2020-perturbome-c1",
+          "alignment": "direct"
+        },
+        {
+          "claim_id": "liu-2025-all-optical-c1",
+          "alignment": "method"
+        }
+      ]
+    },
+    {
+      "id": "geometry-supports-computation",
+      "question": "Do low-dimensional population geometries support representation or prediction?",
+      "direction_id": "representation-coding",
+      "members": [
+        {
+          "claim_id": "zuckerman-2026-population-geometry-c1",
+          "alignment": "direct"
+        },
+        {
+          "claim_id": "bla-2026-emotional-geometry-c1",
+          "alignment": "direct"
+        },
+        {
+          "claim_id": "wang-2026-artificial-manifolds-c1",
+          "alignment": "adjacent"
+        },
+        {
+          "claim_id": "wang-2026-artificial-manifolds-c2",
+          "alignment": "adjacent"
+        }
+      ]
+    },
+    {
+      "id": "structure-predicts-function",
+      "question": "How far can structural constraints predict neural or network function?",
+      "direction_id": "dynamics-networks",
+      "members": [
+        {
+          "claim_id": "shiu-2024-drosophila-model-c1",
+          "alignment": "direct"
+        },
+        {
+          "claim_id": "shiu-2024-drosophila-model-c2",
+          "alignment": "direct"
+        },
+        {
+          "claim_id": "shiu-2024-drosophila-model-c3",
+          "alignment": "direct"
+        },
+        {
+          "claim_id": "fakhar-2026-cortical-reliability-c1",
+          "alignment": "adjacent"
+        },
+        {
+          "claim_id": "jing-2026-network-predictability-c1",
+          "alignment": "adjacent"
+        }
+      ]
+    },
+    {
+      "id": "context-controls-memory",
+      "question": "Can contextual gating change memory accessibility, stability or capacity?",
+      "direction_id": "learning-memory",
+      "members": [
+        {
+          "claim_id": "podlaski-2025-context-memory-c1",
+          "alignment": "direct"
+        },
+        {
+          "claim_id": "podlaski-2025-context-memory-c2",
+          "alignment": "direct"
+        }
+      ]
+    },
+    {
+      "id": "simple-rules-complex-computation",
+      "question": "Can simple local dependencies or objectives generate complex network computation?",
+      "direction_id": "theory-ai",
+      "members": [
+        {
+          "claim_id": "makkeh-2025-infomorphic-learning-c1",
+          "alignment": "direct"
+        },
+        {
+          "claim_id": "lynn-2026-input-output-c1",
+          "alignment": "direct"
+        },
+        {
+          "claim_id": "lynn-2026-input-output-c2",
+          "alignment": "direct"
+        },
+        {
+          "claim_id": "zhang-2024-causal-emergence-c1",
+          "alignment": "adjacent"
+        }
+      ]
+    },
+    {
+      "id": "preconfigured-sequences",
+      "question": "Can structured neural sequences emerge before experience-dependent learning?",
+      "direction_id": "dynamics-networks",
+      "members": [
+        {
+          "claim_id": "vander-molen-2026-organoid-sequences-c1",
+          "alignment": "direct"
+        },
+        {
+          "claim_id": "vander-molen-2026-organoid-sequences-c2",
+          "alignment": "boundary"
+        }
+      ]
+    }
+  ],
+  "relations": []
+}

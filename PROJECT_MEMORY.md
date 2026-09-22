@@ -12,7 +12,7 @@ Claim Commons treats papers as source containers and Claim–Evidence–Conclusi
 - Workflow, JSON Schema, GitHub contribution templates and Xiaohongshu launch post are included.
 - Public homepage footer includes privacy-preserving total/today page-view counters with a graceful unavailable state; these are anonymous visits, not unique visitors.
 - Public homepage includes a bilingual Chinese/English guestbook backed by one GitHub issue through Utterances; it explicitly invites ideas, corrections and criticism.
-- v0.3 adds a separate bilingual expanded-literature explorer for 519 metadata records. Legally archived open PDFs are converted into page-linked, explicitly unreviewed full-text candidates; curated claims remain a separate validated layer.
+- v0.3 integrates 519 metadata records, page-linked unreviewed full-text candidates, and human-curated claims in one bilingual Claim Library. Record-status filters preserve evidence levels; only curated claims enter verified question relations and logic views.
 
 ## Key paths
 - `claim-commons-mvp/curation/published-papers.json`

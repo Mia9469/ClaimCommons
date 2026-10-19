@@ -24,6 +24,8 @@ Local desktop and actual 390 × 844 browser viewport, Chinese/English navigation
 4. Refreshed cache versions on both primary pages and existing report shells, including repeat builds.
 5. Localized Markdown report headings and retained coverage/provenance. Made report correction URLs compatible with file URLs.
 
+6. Scoped nested definition-card padding so full-page section spacing cannot squeeze the result column.
+
 ## Boundaries
 
 Real provider compatibility, CORS, billing, model quality, independent scientific verification and author claims remain untested. Existing source records were not semantically backfilled or promoted. The release publishes the already prepared local library outputs; it does not run extraction or change the archive database.

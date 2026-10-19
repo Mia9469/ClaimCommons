@@ -1,7 +1,7 @@
 /* Add shared navigation without rewriting report claims or scientific metadata. */
 import fs from 'node:fs/promises';
 import path from 'node:path';
-const version = '20261020-1';
+const version = '20261020-2';
 const escape = value => String(value ?? '').replace(/[&<>"']/g,ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
 export async function enhanceReports(root, expanded) {
   const byPaper = new Map();

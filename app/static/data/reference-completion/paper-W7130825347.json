@@ -1,0 +1,959 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "technical_report",
+  "paper": {
+    "title": "Catalyst N1: A 131K-Neuron Open Neuromorphic Processor with Programmable Synaptic Plasticity and FPGA Validation",
+    "authors": [
+      "Henry Arthur Shulayev Barnes"
+    ],
+    "doi": "10.5281/zenodo.18727094",
+    "publication_year": 2026,
+    "venue": "Open MIND",
+    "url": "https://doi.org/10.5281/zenodo.18727094"
+  },
+  "source": {
+    "filename": "paper-W7130825347--Catalyst-N1-A-131K-Neuron-Open-Neuromorphic-Processor-with-Programmable-Synaptic-Plasticity-and.pdf",
+    "sha256": "2c17dc2b910ba23fb48066ed4b194de1a98efb909d0f8eaa12e1b528c55a0f84",
+    "source_url": "https://zenodo.org/records/18727094/files/Catalyst%20N1.pdf",
+    "pdf_page_count": 13
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "results_sections_seen": [
+      "Architecture/CUBA/compartments/traces/CSR/microcode",
+      "Routing/RISC-V/multichip",
+      "SDK/backend/compiler",
+      "FPGA/platform/resources",
+      "RTL/simulator reports",
+      "MNIST",
+      "SHD",
+      "Limitations/open-release; all figures/tables/refs"
+    ],
+    "missing_material": [
+      "图像像素、RTL/SDK/实验部署日志未读取或复跑",
+      "主文无实际FPGA SHD分数、任务级power、独立seed统计或完整资源说明",
+      "128core/Arty/multichip未实际全规模物理验证；release/licensing待定"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "所有供应页文字（含方法/附录/图表文字和参考文献）已完整评估，未采样代替全文。",
+      "逐条第二审计以已读源比较真实单位、条件、统计与推断范围；不等于实验复现。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "Catalyst N1提出128core×1024 CUBA-LIF神经元、每core131072 CSR synapse及24bit状态的设计容量，但物理FPGA只实现所报告16core，不能把131K神经元作为全规模实物验证。",
+      "role": "result",
+      "source_pages": [
+        1
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "16register/15opcode/256slot微码引擎设计可通过pre/post traces、eligibility及global reward配置STDP、three-factor和homeostatic规则，免改RTL；这不是这些规则已在任务上由FPGA学习成功的证明。",
+      "role": "result",
+      "source_pages": [
+        4
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "设计支持四compartment树及ADD/ABS MAX/OR/PASS、0–63step延迟、8bit graded spikes和sparse/dense/population-coded连接，为模型表达提供选项。",
+      "role": "result",
+      "source_pages": [
+        2
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "架构有barrier mesh和async XY NoC选择及三RV32IMF supervisory cores；14bit chip地址支持寻址16384chips，但物理多芯片还未演示。",
+      "role": "result",
+      "source_pages": [
+        5
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "AWS F2 VU47P的所报16core post-route配置运行62.5MHz，host250MHz CDC，吞吐约8690timesteps/s；这是特定时步工作负载，不是已知每synaptic-op或完整任务吞吐。",
+      "role": "result",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "作者报告25 RTL testbenches的98场景及168 SDK测试均通过，并以CPU simulator为waveform/weight-update oracle；这覆盖所选场景而非完整正确性证明或独立复现。",
+      "role": "result",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "MNIST competitive GPU模型在1000测试图像报告dot-product44.9%、50step SNN33.4%，显示该小型演示有限解码能力与明显读出差别。",
+      "role": "result",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "SHD的离线PyTorch700→768→20 recurrent模型报告best浮点85.9%、16bit量化85.4%，差.5个百分点；没有给出实物FPGA上的相同分类分数。",
+      "role": "result",
+      "source_pages": [
+        10
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "SHD文中把学习β≈.924映为hardware decay_v3785，但前文v_next=v−v·δ/4096+u+b的参数是衰减量，此映射按所写公式不保持同一保留因子。",
+      "role": "interpretation",
+      "source_pages": [
+        10
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "作者称GPU稀疏matmul比cycle-accurate Python快100–1000倍，custom microcode却退回CPU解释；速度数字不能普遍代表完整训练/硬件或位精确等价。",
+      "role": "result",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "稿件明确SDK默认32768pool与RTL131072不一致，Arty4core/multichip未实物验证，公开release及许可尚考虑中，不能按题名认定目前已有完整可公开复现栈。",
+      "role": "result",
+      "source_pages": [
+        11
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "本稿没有测得/提取可比较FPGA功耗，且未fabricate ASIC；50–200mW或ASIC10–20倍改善只是技术外推，不是本项目实测节能优势。",
+      "role": "result",
+      "source_pages": [
+        11
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "Loihi1全feature parity/Loihi2 territory和其他架构比较",
+      "role": "interpretation",
+      "source_pages": [
+        8,
+        9,
+        10
+      ],
+      "decision": "include",
+      "reason": "qualitative feature表非等效实物测试、许可或能效；128core是simulation设计规模"
+    },
+    {
+      "summary": "大型DVS/RL/SNN语言/ASIC、多chip未来验证",
+      "role": "hypothesis",
+      "source_pages": [
+        12
+      ],
+      "decision": "include",
+      "reason": "未完成，SHD不测试onchip学习或multichip"
+    },
+    {
+      "summary": "元数据Zenodo DOI/OpenMINDvenue",
+      "role": "other",
+      "source_pages": [
+        1
+      ],
+      "decision": "defer",
+      "reason": "DOI/venue在供文未打印，保持indexed来源，未确认正式review/publication版本"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "Catalyst N1提出128core×1024 CUBA-LIF神经元、每core131072 CSR synapse及24bit状态的设计容量，但物理FPGA只实现所报告16core，不能把131K神经元作为全规模实物验证。",
+      "claim_type": "computational",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "参数化数字RTL架构",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "架构/物理配置",
+          "sample_size_as_reported": "设计131072neurons，物理16core=16384；128core只仿真",
+          "uncertainty": "无128core硬件实测",
+          "assumptions": [
+            "容量参数不等已实现连接/同时活跃全功能；每core约1.2MB、全128约150MB限制BRAM。"
+          ],
+          "source_locator": {
+            "pdf_page": 1,
+            "section": "Architecture; Limitations Core count",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "Catalyst N1提出128core×1024 CUBA-LIF神经元、每core131072 CSR synapse及24bit状态的设计容量，但物理FPGA只实现所报告16core，不能把131K神经元作为全规模实物验证。",
+        "boundary": "容量参数不等已实现连接/同时活跃全功能；每core约1.2MB、全128约150MB限制BRAM。",
+        "negative_result": null,
+        "non_inference": "作者自报RTL/tests不是本次独立复核；架构特性不等商业ASIC功能/功耗等效，模拟分类不验证生物或真实全规模在线学习。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "架构设计容量和物理实现范围",
+        "任务分数与正确整数映射",
+        "软件测试/吞吐与能耗/学习验证区分"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，Catalyst N1提出128core×1024 CUBA-LIF神经元、每core131072 CSR synapse及24bit状态的设计容量，但物理FPGA只实现所报告16core，不能把131K神经元作为全规模实物验证。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "16register/15opcode/256slot微码引擎设计可通过pre/post traces、eligibility及global reward配置STDP、three-factor和homeostatic规则，免改RTL；这不是这些规则已在任务上由FPGA学习成功的证明。",
+      "claim_type": "computational",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "自定义微码与活动entry扫描",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "学习引擎设计及模拟fixtures",
+          "sample_size_as_reported": null,
+          "uncertainty": "作者报告RTL包括STDP/three-factor/custom程序，但无任务级reward成功率",
+          "assumptions": [
+            "最坏131K×程序长度cycles，idle skip不等整个系统零功耗；host/RISC供global reward，不能当自治生物奖励。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "Learning Engine; Eq5; RTL report",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "16register/15opcode/256slot微码引擎设计可通过pre/post traces、eligibility及global reward配置STDP、three-factor和homeostatic规则，免改RTL；这不是这些规则已在任务上由FPGA学习成功的证明。",
+        "boundary": "最坏131K×程序长度cycles，idle skip不等整个系统零功耗；host/RISC供global reward，不能当自治生物奖励。",
+        "negative_result": null,
+        "non_inference": "作者自报RTL/tests不是本次独立复核；架构特性不等商业ASIC功能/功耗等效，模拟分类不验证生物或真实全规模在线学习。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "架构设计容量和物理实现范围",
+        "任务分数与正确整数映射",
+        "软件测试/吞吐与能耗/学习验证区分"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，16register/15opcode/256slot微码引擎设计可通过pre/post traces、eligibility及global reward配置STDP、three-factor和homeostatic规则，免改RTL；这不是这些规则已在任务上由FPGA学习成功的证明。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "设计支持四compartment树及ADD/ABS MAX/OR/PASS、0–63step延迟、8bit graded spikes和sparse/dense/population-coded连接，为模型表达提供选项。",
+      "claim_type": "computational",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "数字fixed-point/LFSR/CSR与树式join设计",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "feature配置及仿真",
+          "sample_size_as_reported": null,
+          "uncertainty": "各功能样例场景报告，不是完整组合空间测试",
+          "assumptions": [
+            "全功能并用的吞吐/资源/精度未给；LFSR噪声不等独立生物噪声或已经提高RL探索。"
+          ],
+          "source_locator": {
+            "pdf_page": 2,
+            "section": "Sections2.2–2.3; Figure4",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "设计支持四compartment树及ADD/ABS MAX/OR/PASS、0–63step延迟、8bit graded spikes和sparse/dense/population-coded连接，为模型表达提供选项。",
+        "boundary": "全功能并用的吞吐/资源/精度未给；LFSR噪声不等独立生物噪声或已经提高RL探索。",
+        "negative_result": null,
+        "non_inference": "作者自报RTL/tests不是本次独立复核；架构特性不等商业ASIC功能/功耗等效，模拟分类不验证生物或真实全规模在线学习。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "架构设计容量和物理实现范围",
+        "任务分数与正确整数映射",
+        "软件测试/吞吐与能耗/学习验证区分"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，设计支持四compartment树及ADD/ABS MAX/OR/PASS、0–63step延迟、8bit graded spikes和sparse/dense/population-coded连接，为模型表达提供选项。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "架构有barrier mesh和async XY NoC选择及三RV32IMF supervisory cores；14bit chip地址支持寻址16384chips，但物理多芯片还未演示。",
+      "claim_type": "computational",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "路径/同步与管理协议设计",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "设计/多chip simulation",
+          "sample_size_as_reported": null,
+          "uncertainty": "multichip verified作者自报为simulation",
+          "assumptions": [
+            "寻址量不等实际可扩展规模或任意负载无阻塞；route slots8local/4global和FIFO限制须保留。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "Sections2.5–2.7",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "架构有barrier mesh和async XY NoC选择及三RV32IMF supervisory cores；14bit chip地址支持寻址16384chips，但物理多芯片还未演示。",
+        "boundary": "寻址量不等实际可扩展规模或任意负载无阻塞；route slots8local/4global和FIFO限制须保留。",
+        "negative_result": null,
+        "non_inference": "作者自报RTL/tests不是本次独立复核；架构特性不等商业ASIC功能/功耗等效，模拟分类不验证生物或真实全规模在线学习。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "架构设计容量和物理实现范围",
+        "任务分数与正确整数映射",
+        "软件测试/吞吐与能耗/学习验证区分"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，架构有barrier mesh和async XY NoC选择及三RV32IMF supervisory cores；14bit chip地址支持寻址16384chips，但物理多芯片还未演示。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "AWS F2 VU47P的所报16core post-route配置运行62.5MHz，host250MHz CDC，吞吐约8690timesteps/s；这是特定时步工作负载，不是已知每synaptic-op或完整任务吞吐。",
+      "claim_type": "computational",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "具体FPGA综合/作者部署报告",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "一个报告FPGA配置",
+          "sample_size_as_reported": "16core；独立板/部署重复n未给",
+          "uncertainty": "WNS+.003ns；BRAM36 712、BRAM18 575、URAM16、DSP98",
+          "assumptions": [
+            "表资源合计约5.1MB存储与16×1.2MB约19.2MB设计预算不一致，实际pool/配置未明确；不由clockrate推出神经生物实时/能效等价。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "Table1; FPGA Implementation",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "AWS F2 VU47P的所报16core post-route配置运行62.5MHz，host250MHz CDC，吞吐约8690timesteps/s；这是特定时步工作负载，不是已知每synaptic-op或完整任务吞吐。",
+        "boundary": "表资源合计约5.1MB存储与16×1.2MB约19.2MB设计预算不一致，实际pool/配置未明确；不由clockrate推出神经生物实时/能效等价。",
+        "negative_result": null,
+        "non_inference": "作者自报RTL/tests不是本次独立复核；架构特性不等商业ASIC功能/功耗等效，模拟分类不验证生物或真实全规模在线学习。",
+        "unresolved": "物理配置实际synapse容量和存储优化/参数需澄清。",
+        "unresolved_attribution": "源文或本次审计"
+      },
+      "broad_directions": [
+        "架构设计容量和物理实现范围",
+        "任务分数与正确整数映射",
+        "软件测试/吞吐与能耗/学习验证区分"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，AWS F2 VU47P的所报16core post-route配置运行62.5MHz，host250MHz CDC，吞吐约8690timesteps/s；这是特定时步工作负载，不是已知每synaptic-op或完整任务吞吐。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "作者报告25 RTL testbenches的98场景及168 SDK测试均通过，并以CPU simulator为waveform/weight-update oracle；这覆盖所选场景而非完整正确性证明或独立复现。",
+      "claim_type": "methodological",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "作者自报simulation场景和共享CPU reference",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "fixtures/test cases（非统计实验n）",
+          "sample_size_as_reported": "25bench/98scenario；168SDK case",
+          "uncertainty": "自报zero failures；本次未运行/读取软件测试",
+          "assumptions": [
+            "oracle由同一开发流程不等独立硬件行为验证；GPUfloat权重长期更新可与CPU差±1LSB，不代表所有program/累积情况一致。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Sections5.1–5.2",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者报告25 RTL testbenches的98场景及168 SDK测试均通过，并以CPU simulator为waveform/weight-update oracle；这覆盖所选场景而非完整正确性证明或独立复现。",
+        "boundary": "oracle由同一开发流程不等独立硬件行为验证；GPUfloat权重长期更新可与CPU差±1LSB，不代表所有program/累积情况一致。",
+        "negative_result": null,
+        "non_inference": "作者自报RTL/tests不是本次独立复核；架构特性不等商业ASIC功能/功耗等效，模拟分类不验证生物或真实全规模在线学习。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "架构设计容量和物理实现范围",
+        "任务分数与正确整数映射",
+        "软件测试/吞吐与能耗/学习验证区分"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，作者报告25 RTL testbenches的98场景及168 SDK测试均通过，并以CPU simulator为waveform/weight-update oracle；这覆盖所选场景而非完整正确性证明或独立复现。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "MNIST competitive GPU模型在1000测试图像报告dot-product44.9%、50step SNN33.4%，显示该小型演示有限解码能力与明显读出差别。",
+      "claim_type": "computational",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "784input→39excitatory+39inhibitory，10000训练图1epoch，prototype初始化与EMA归一",
+          "design": null,
+          "comparator": null,
+          "measure": "accuracy",
+          "unit_of_analysis": "模拟任务图像/一次所述训练",
+          "sample_size_as_reported": "10000train、1000test；39excitatory不是样本n，seed重复未给",
+          "uncertainty": "无CI/独立seed检验；GPU约432images/s",
+          "assumptions": [
+            "用GPU的规则不自动证明on-chip微码学习；不能称高精度或全部硬件feature使用；SDK32Kpool限制39而非RTL131K。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "Section5.4",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "MNIST competitive GPU模型在1000测试图像报告dot-product44.9%、50step SNN33.4%，显示该小型演示有限解码能力与明显读出差别。",
+        "boundary": "用GPU的规则不自动证明on-chip微码学习；不能称高精度或全部硬件feature使用；SDK32Kpool限制39而非RTL131K。",
+        "negative_result": "SNN读出低于dot-product。",
+        "non_inference": "作者自报RTL/tests不是本次独立复核；架构特性不等商业ASIC功能/功耗等效，模拟分类不验证生物或真实全规模在线学习。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "架构设计容量和物理实现范围",
+        "任务分数与正确整数映射",
+        "软件测试/吞吐与能耗/学习验证区分"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，MNIST competitive GPU模型在1000测试图像报告dot-product44.9%、50step SNN33.4%，显示该小型演示有限解码能力与明显读出差别。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "SHD的离线PyTorch700→768→20 recurrent模型报告best浮点85.9%、16bit量化85.4%，差.5个百分点；没有给出实物FPGA上的相同分类分数。",
+      "claim_type": "computational",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "BPTT/AdamW300epochs、4ms bins/250step、非spike readout",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "一次所述训练与同数据的quantized模型",
+          "sample_size_as_reported": "10420datasetrecordings，20classes；train/test独立n与seed数未给",
+          "uncertainty": "best accuracy；training约90min RTX3080Ti，无CI",
+          "assumptions": [
+            "结论/摘要把量化写85.9但表为85.4；quantized PyTorch与fixedpoint CUBA/FPGA不同，完整integer模拟分数未单列。"
+          ],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "Table4; Section5.5",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "SHD的离线PyTorch700→768→20 recurrent模型报告best浮点85.9%、16bit量化85.4%，差.5个百分点；没有给出实物FPGA上的相同分类分数。",
+        "boundary": "结论/摘要把量化写85.9但表为85.4；quantized PyTorch与fixedpoint CUBA/FPGA不同，完整integer模拟分数未单列。",
+        "negative_result": null,
+        "non_inference": "作者自报RTL/tests不是本次独立复核；架构特性不等商业ASIC功能/功耗等效，模拟分类不验证生物或真实全规模在线学习。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "架构设计容量和物理实现范围",
+        "任务分数与正确整数映射",
+        "软件测试/吞吐与能耗/学习验证区分"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，SHD的离线PyTorch700→768→20 recurrent模型报告best浮点85.9%、16bit量化85.4%，差.5个百分点；没有给出实物FPGA上的相同分类分数。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "SHD文中把学习β≈.924映为hardware decay_v3785，但前文v_next=v−v·δ/4096+u+b的参数是衰减量，此映射按所写公式不保持同一保留因子。",
+      "claim_type": "methodological",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "源文公式及部署参数比较",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "PyTorch/CUBA模型映射",
+          "sample_size_as_reported": null,
+          "uncertainty": "β .924、declaredδ3785，非任务重复n",
+          "assumptions": [
+            "若δ确为Eq2衰减比例，应约(1−β)4096而非β4096；还需u动态/(1−β)输入缩放、每神经元β与平均β处理；代码/像素/硬件验证未检查。"
+          ],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "Equations1–2; SHD mapping/Table4",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "SHD文中把学习β≈.924映为hardware decay_v3785，但前文v_next=v−v·δ/4096+u+b的参数是衰减量，此映射按所写公式不保持同一保留因子。",
+        "boundary": "若δ确为Eq2衰减比例，应约(1−β)4096而非β4096；还需u动态/(1−β)输入缩放、每神经元β与平均β处理；代码/像素/硬件验证未检查。",
+        "negative_result": null,
+        "non_inference": "作者自报RTL/tests不是本次独立复核；架构特性不等商业ASIC功能/功耗等效，模拟分类不验证生物或真实全规模在线学习。",
+        "unresolved": "整数映射与硬件分类有效性待源码/部署数据澄清。",
+        "unresolved_attribution": "源文或本次审计"
+      },
+      "broad_directions": [
+        "架构设计容量和物理实现范围",
+        "任务分数与正确整数映射",
+        "软件测试/吞吐与能耗/学习验证区分"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，SHD文中把学习β≈.924映为hardware decay_v3785，但前文v_next=v−v·δ/4096+u+b的参数是衰减量，此映射按所写公式不保持同一保留因子。是否成立？"
+      ],
+      "shared_evidence_with": [
+        "C8"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "作者称GPU稀疏matmul比cycle-accurate Python快100–1000倍，custom microcode却退回CPU解释；速度数字不能普遍代表完整训练/硬件或位精确等价。",
+      "claim_type": "computational",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "denseint state/sparsefloat CSR矢量化",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "不同simulator backend",
+          "sample_size_as_reported": null,
+          "uncertainty": "没有各network/size/设备的配对timing表",
+          "assumptions": [
+            "cycle精准与矢量化比较不同粒度，CPUfallback/float误差范围依workload；不作普适1000倍端到端性能。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "GPU Simulator; SDK",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者称GPU稀疏matmul比cycle-accurate Python快100–1000倍，custom microcode却退回CPU解释；速度数字不能普遍代表完整训练/硬件或位精确等价。",
+        "boundary": "cycle精准与矢量化比较不同粒度，CPUfallback/float误差范围依workload；不作普适1000倍端到端性能。",
+        "negative_result": null,
+        "non_inference": "作者自报RTL/tests不是本次独立复核；架构特性不等商业ASIC功能/功耗等效，模拟分类不验证生物或真实全规模在线学习。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "架构设计容量和物理实现范围",
+        "任务分数与正确整数映射",
+        "软件测试/吞吐与能耗/学习验证区分"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，作者称GPU稀疏matmul比cycle-accurate Python快100–1000倍，custom microcode却退回CPU解释；速度数字不能普遍代表完整训练/硬件或位精确等价。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "稿件明确SDK默认32768pool与RTL131072不一致，Arty4core/multichip未实物验证，公开release及许可尚考虑中，不能按题名认定目前已有完整可公开复现栈。",
+      "claim_type": "methodological",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "实现/发布范围的作者限制说明",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "SDK/硬件配置",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "未查看当前外部发布，限稿内status；参数可手动覆盖不是默认部署无问题；不改共享代码或运行测试。"
+          ],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "Limitations; Conclusion PDF12",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "稿件明确SDK默认32768pool与RTL131072不一致，Arty4core/multichip未实物验证，公开release及许可尚考虑中，不能按题名认定目前已有完整可公开复现栈。",
+        "boundary": "未查看当前外部发布，限稿内status；参数可手动覆盖不是默认部署无问题；不改共享代码或运行测试。",
+        "negative_result": null,
+        "non_inference": "作者自报RTL/tests不是本次独立复核；架构特性不等商业ASIC功能/功耗等效，模拟分类不验证生物或真实全规模在线学习。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "架构设计容量和物理实现范围",
+        "任务分数与正确整数映射",
+        "软件测试/吞吐与能耗/学习验证区分"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，稿件明确SDK默认32768pool与RTL131072不一致，Arty4core/multichip未实物验证，公开release及许可尚考虑中，不能按题名认定目前已有完整可公开复现栈。是否成立？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C5"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "本稿没有测得/提取可比较FPGA功耗，且未fabricate ASIC；50–200mW或ASIC10–20倍改善只是技术外推，不是本项目实测节能优势。",
+      "claim_type": "computational",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "架构技术对比与功耗展望",
+          "design": null,
+          "comparator": null,
+          "measure": "功耗证据",
+          "unit_of_analysis": "FPGA/假想ASIC",
+          "sample_size_as_reported": null,
+          "uncertainty": "无电源测量或Vivado estimate结果",
+          "assumptions": [
+            "不从event sparse/idle skip或Loihi feature parity推出能效优越；没有功耗matched workload comparison。"
+          ],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "Discussion Power measurement/FPGA versus ASIC",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "本稿没有测得/提取可比较FPGA功耗，且未fabricate ASIC；50–200mW或ASIC10–20倍改善只是技术外推，不是本项目实测节能优势。",
+        "boundary": "不从event sparse/idle skip或Loihi feature parity推出能效优越；没有功耗matched workload comparison。",
+        "negative_result": "尚无可比较的power测量/提取。",
+        "non_inference": "作者自报RTL/tests不是本次独立复核；架构特性不等商业ASIC功能/功耗等效，模拟分类不验证生物或真实全规模在线学习。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "架构设计容量和物理实现范围",
+        "任务分数与正确整数映射",
+        "软件测试/吞吐与能耗/学习验证区分"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，本稿没有测得/提取可比较FPGA功耗，且未fabricate ASIC；50–200mW或ASIC10–20倍改善只是技术外推，不是本项目实测节能优势。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "13页技术稿全文含全部Table1–4/图注/References已评估。128core/131K神经元是设计且RTL仿真范围；物理FPGA16core吞吐及作者场景测试只是部分验证。MNIST有限GPU示范，SHD85.9float/85.4quantized且decay映射不一致，无hardware accuracy；pool默认、资源容量、release与power限制保留，未独立运行任何测试/外部硬件。",
+  "shared_evidence": [
+    {
+      "claim_id": "C9",
+      "with": [
+        "C8"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "with": [
+        "C1",
+        "C5"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": "C1",
+        "issue": "131K neuron设计与16K FPGA物理验证不同",
+        "suggested_correction": "区分设计/仿真/实物",
+        "pdf_page": 11,
+        "resolved": true
+      },
+      {
+        "claim_id": "C5",
+        "issue": "postroute BRAM/URAM约5.1MB与16×1.2MB预算约19.2MB不一致",
+        "suggested_correction": "物理pool/feature参数及存储优化待澄清",
+        "pdf_page": 7,
+        "resolved": false
+      },
+      {
+        "claim_id": "C8",
+        "issue": "SHD best85.9float与85.4quantized，摘要/结论错误统称85.9",
+        "suggested_correction": "采用Table4，明确无FPGA分类分数",
+        "pdf_page": 10,
+        "resolved": true
+      },
+      {
+        "claim_id": "C9",
+        "issue": "β映射与Eq2衰减量相反，平均beta还不同于768learned constants",
+        "suggested_correction": "硬件部署结论不强认证",
+        "pdf_page": 10,
+        "resolved": false
+      },
+      {
+        "claim_id": "C6",
+        "issue": "98fixtures/168tests是作者开发自报非本次独立验证",
+        "suggested_correction": "只记录范围，未跑代码测试",
+        "pdf_page": 8,
+        "resolved": true
+      },
+      {
+        "claim_id": "C10",
+        "issue": "100–1000×主要matmul且custom ruleCPUfallback，位精细程度不同",
+        "suggested_correction": "避免全任务/端到端速度保证",
+        "pdf_page": 6,
+        "resolved": true
+      },
+      {
+        "claim_id": "C11",
+        "issue": "open design但public release/license TBD",
+        "suggested_correction": "限定稿内status，不假称现已开源",
+        "pdf_page": 12,
+        "resolved": true
+      },
+      {
+        "claim_id": "C12",
+        "issue": "缺实测功耗/ASIC；mW只是预估",
+        "suggested_correction": "不宣称能效优越",
+        "pdf_page": 11,
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T12:19:47.195819Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "2c17dc2b910ba23fb48066ed4b194de1a98efb909d0f8eaa12e1b528c55a0f84",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

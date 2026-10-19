@@ -1,0 +1,107 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>A Cyclic Adaptation-Generalization Framework with Uncertainty-Guided Self-Paced Learning for Long-Term Brain-Machine Interfaces</title><style>body{max-width:940px;margin:40px auto;padding:0 24px;background:#fffdf7;color:#12372f;font:16px/1.8 Georgia,serif}h1{font-size:26px;line-height:1.4}h2{font-size:20px;line-height:1.5}h3{font-size:16px}article{padding:26px 0;border-top:1px solid #bec4b8}small{color:#68766e}dl{display:grid;grid-template-columns:120px 1fr;gap:8px 20px}dt{font-weight:bold}dd{margin:0}li{padding:8px 0}p,dd{overflow-wrap:anywhere}.note{background:#eef2e2;padding:14px;border-left:3px solid #738968}summary{cursor:pointer}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.7 monospace}@media(max-width:600px){body{margin:24px auto;padding:0 18px}dl{grid-template-columns:1fr;gap:3px}dd{margin-bottom:12px}}@media print{body{margin:0;background:white}details{display:block}}</style><link rel="stylesheet" href="../../commons-v02.css?v=20261020-1"><link rel="stylesheet" href="../../examples.css?v=20260928-2"><link rel="stylesheet" href="../../site.css?v=20261020-1"><script defer src="../../site.js?v=20261020-1"></script><script defer src="../../report-ui.js?v=20261020-1"></script></head><body class="portal-page report-page" data-cc-report-shell="1" data-page="library" data-site-prefix="../../" data-library-paper="paper-W7171748432" data-report-language="zh" data-claim-records="{&quot;C1&quot;:&quot;structured-paper-W7171748432-1&quot;,&quot;C2&quot;:&quot;structured-paper-W7171748432-2&quot;,&quot;C3&quot;:&quot;structured-paper-W7171748432-3&quot;,&quot;C4&quot;:&quot;structured-paper-W7171748432-4&quot;,&quot;C5&quot;:&quot;structured-paper-W7171748432-5&quot;,&quot;C6&quot;:&quot;structured-paper-W7171748432-6&quot;,&quot;C7&quot;:&quot;structured-paper-W7171748432-7&quot;,&quot;C8&quot;:&quot;structured-paper-W7171748432-8&quot;,&quot;C9&quot;:&quot;structured-paper-W7171748432-9&quot;,&quot;C10&quot;:&quot;structured-paper-W7171748432-10&quot;,&quot;C11&quot;:&quot;structured-paper-W7171748432-11&quot;}"><header></header><main id="report-content"><div id="report-tools"></div><small>CLAIM COMMONS / 阅读报告</small><h1>A Cyclic Adaptation-Generalization Framework with Uncertainty-Guided Self-Paced Learning for Long-Term Brain-Machine Interfaces</h1><p class="note">AI 文本提取候选，尚待人工核对。图像像素未读取；PDF 页码指文件中的页序。</p><p>UnSPC多数NHP会话较好，但M3不胜半监督，C1消融不支持所有强断言。人类offline数据指标未标；保留target-aware/uncertainty启发式/无前瞻安全或闭环部署证据。</p><a href="https://arxiv.org/pdf/2607.24031" rel="noreferrer">查看所读原文版本 ↗</a><details><summary>贡献清单与处理决定</summary><ul><li><b>UnSPC结合source监督RPD、target无标签uncertainty筛选和循环DA/DG以回归行为信号。</b><br>include · 可独立判断的贡献及边界</li><li><b>RPD用随机channelmask、feature–label距离一致及teacher/student预测一致，提供source噪声稳健初始化。</b><br>include · 可独立判断的贡献及边界</li><li><b>UnSPL按MCdropout与mask/teacher差异的标准化组合排序，渐增选择比例并以ranksoftweight训练。</b><br>include · 可独立判断的贡献及边界</li><li><b>CycAG交替用MMD+weightedtargetclean和maskedtargetconsistency学习，循环内部共用source保留与pseudo-label。</b><br>include · 可独立判断的贡献及边界</li><li><b>NHP多数targetsession的UnSPC CC/R²高于表列静态与DA/DG，C1R²由59.24（百分标度）到78.40，C2到78.77。</b><br>include · 可独立判断的贡献及边界</li><li><b>最长Mihili target M3中UnSPC CC68.61、R²46.99低于SeSA71.57/54.24；多数但非全部结果超过该半监督基线。</b><br>include · 可独立判断的贡献及边界</li><li><b>在C0→C1单对消融中，RPD提高R²59.24→73.04，完整UnSPC78.40；去RSS/RSW/Cyc步骤均比完整较低。</b><br>include · 可独立判断的贡献及边界</li><li><b>非循环组合C1R²77.69与full78.40差较小，去CycDA或DG分别76.36/77.01，显示该特定配对内循环有数值增益。</b><br>include · 可独立判断的贡献及边界</li><li><b>C1参数扫描中α影响较大，η/ϕ变化较小；default并非各参数每指标精确最优。</b><br>include · 可独立判断的贡献及边界</li><li><b>FALCON人类虚拟arm数据的三targetdate中，UnSPC表列performance14.58/14.17/13.91，均高于static/UAN/WDGRL。</b><br>include · 可独立判断的贡献及边界</li><li><b>作者提出该循环伪标签方案可支持longterm BMI与人机robotcontrol，但前瞻、实时预算及失败检测仍需新评估。</b><br>include · 可独立判断的贡献及边界</li><li><b>Fig3 feature/trajectory接近ideal为定性单pair，不是所有targeterror或newbiologicalreplication。</b><br>boundary · 没有pixels独立验证</li><li><b>preprocessing/数据randomsplit/zscore及全target使用说明不足，不假定streaming或无未来信息。</b><br>unresolved · 无运行期dataaccess评估</li><li><b>全部37references已读；offlinePDF未打开，按供给archivedpage-text处理。</b><br>exclude · 背景临床prosthesis文献非本篇独立人体控制</li></ul></details><article><small>C1 / 解释 · longitudinal_neural_decoding</small><h2>UnSPC结合source监督RPD、target无标签uncertainty筛选和循环DA/DG以回归行为信号。</h2><h3>Evidence</h3><p>MLPteacher/student及伪标签学习</p><dl><dt>设计 / 对照</dt><dd>labelday0+unlabeldayk；3layerMLPdropout.25；static/sourceonly/DA/DG</dd><dt>独立单位与 n</dt><dd>动物/人及会话/训练seed分层；时间bin非独立人；3NHP Chewie/Mihili/Jango，各4session（source0、target1/2/3约1日/1月/3月）；5trainingseeds；trial/bin数量未给</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 3 · Fig1–2</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>UnSPC结合source监督RPD、target无标签uncertainty筛选和循环DA/DG以回归行为信号。</dd><dt>适用边界</dt><dd>属于target-awareUDA，CycDG内部也用targetpseudo-label，不是严格只source的DG。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>无真实电极drift机制或新在体闭环治效验证。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>伪标签适配与稳健表征能否维持长期神经解码且避免错误累积？</li></ul></article><article><small>C2 / 解释 · longitudinal_neural_decoding</small><h2>RPD用随机channelmask、feature–label距离一致及teacher/student预测一致，提供source噪声稳健初始化。</h2><h3>Evidence</h3><p>监督+mask损失设计</p><dl><dt>设计 / 对照</dt><dd>50msbin/100msGaussian/signalzscore；plain source decoder</dd><dt>独立单位与 n</dt><dd>动物/人及会话/训练seed分层；时间bin非独立人；3NHP Chewie/Mihili/Jango，各4session（source0、target1/2/3约1日/1月/3月）；5trainingseeds；trial/bin数量未给</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 4 · Eq2–7</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>RPD用随机channelmask、feature–label距离一致及teacher/student预测一致，提供source噪声稳健初始化。</dd><dt>适用边界</dt><dd>模拟mask不是所有实际electrode新增/丢失；feature几何constraint不等neuralmanifold全保持。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>未报告 / 不适用</dd><dt>未解决</dt><dd>Eq1所谓EMA实际系数为累积算术平均；maskc、MC数量和轮次未主文给。</dd></dl><h3>相关问题</h3><ul><li>伪标签适配与稳健表征能否维持长期神经解码且避免错误累积？</li></ul></article><article><small>C3 / 解释 · longitudinal_neural_decoding</small><h2>UnSPL按MCdropout与mask/teacher差异的标准化组合排序，渐增选择比例并以ranksoftweight训练。</h2><h3>Evidence</h3><p>可靠样本heuristic</p><dl><dt>设计 / 对照</dt><dd>qthresholdquantile/rankexp、目标pseudo-label由teacher给；直接全target伪标签</dd><dt>独立单位与 n</dt><dd>动物/人及会话/训练seed分层；时间bin非独立人；3NHP Chewie/Mihili/Jango，各4session（source0、target1/2/3约1日/1月/3月）；5trainingseeds；trial/bin数量未给</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 5 · Eq8–14</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>UnSPL按MCdropout与mask/teacher差异的标准化组合排序，渐增选择比例并以ranksoftweight训练。</dd><dt>适用边界</dt><dd>低uncertainty不保证伪标签正确，BN和rank是相对数值，非校准概率/预测区间。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不证明防止所有confirmationbias或finegrain生物subdomain已识别。</dd><dt>未解决</dt><dd>γ0+w∆γ没有显式cap≤1/stop，总迭代不详；coefficientβ也用于loss，区分符号未充分。</dd></dl><h3>相关问题</h3><ul><li>伪标签适配与稳健表征能否维持长期神经解码且避免错误累积？</li></ul></article><article><small>C4 / 解释 · longitudinal_neural_decoding</small><h2>CycAG交替用MMD+weightedtargetclean和maskedtargetconsistency学习，循环内部共用source保留与pseudo-label。</h2><h3>Evidence</h3><p>交替损失设计</p><dl><dt>设计 / 对照</dt><dd>sourceα在Jango.1，另外1；beta.1 eta.2 phi.5；非循环/单步骤</dd><dt>独立单位与 n</dt><dd>动物/人及会话/训练seed分层；时间bin非独立人；3NHP Chewie/Mihili/Jango，各4session（source0、target1/2/3约1日/1月/3月）；5trainingseeds；trial/bin数量未给</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 5 · Eq15–20</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>CycAG交替用MMD+weightedtargetclean和maskedtargetconsistency学习，循环内部共用source保留与pseudo-label。</dd><dt>适用边界</dt><dd>没有收敛/纯DG或整体calibration保证；可以过拟合完整目标会话。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不等实时causalstreaming从future数据隔离。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>伪标签适配与稳健表征能否维持长期神经解码且避免错误累积？</li></ul></article><article><small>C5 / 直接结果 · longitudinal_neural_decoding</small><h2>NHP多数targetsession的UnSPC CC/R²高于表列静态与DA/DG，C1R²由59.24（百分标度）到78.40，C2到78.77。</h2><h3>Evidence</h3><p>多sessionoffline回归对照</p><dl><dt>设计 / 对照</dt><dd>source首session；各target无labels训练；static/LFDA/UAN/WDGRL/DA-DCF/SeSA</dd><dt>独立单位与 n</dt><dd>动物/人及会话/训练seed分层；时间bin非独立人；3NHP Chewie/Mihili/Jango，各4session（source0、target1/2/3约1日/1月/3月）；5trainingseeds；trial/bin数量未给</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 6 · TableI</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>NHP多数targetsession的UnSPC CC/R²高于表列静态与DA/DG，C1R²由59.24（百分标度）到78.40，C2到78.77。</dd><dt>适用边界</dt><dd>报告5run均值无SD/CI及formalp；不能写统计显著或所有session最优。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>现有行为/神经数据重分析不是新动物学习/控制试验。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>伪标签适配与稳健表征能否维持长期神经解码且避免错误累积？</li></ul></article><article><small>C6 / 直接结果 · longitudinal_neural_decoding</small><h2>最长Mihili target M3中UnSPC CC68.61、R²46.99低于SeSA71.57/54.24；多数但非全部结果超过该半监督基线。</h2><h3>Evidence</h3><p>long-span对比</p><dl><dt>设计 / 对照</dt><dd>SeSA可用少量targetlabels，信息预算不同；UnSPC vsSeSA</dd><dt>独立单位与 n</dt><dd>动物/人及会话/训练seed分层；时间bin非独立人；3NHP Chewie/Mihili/Jango，各4session（source0、target1/2/3约1日/1月/3月）；5trainingseeds；trial/bin数量未给</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 6 · TableI</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>最长Mihili target M3中UnSPC CC68.61、R²46.99低于SeSA71.57/54.24；多数但非全部结果超过该半监督基线。</dd><dt>适用边界</dt><dd>半监督对照非同标签预算；此例也约束abstract全部SOTA胜出。</dd><dt>实际负结果</dt><dd>M3未达到最高结果，长期退化未完全避免。</dd><dt>不能推出</dt><dd>不能称任何严重drift均可靠恢复。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>伪标签适配与稳健表征能否维持长期神经解码且避免错误累积？</li></ul></article><article><small>C7 / 直接结果 · longitudinal_neural_decoding</small><h2>在C0→C1单对消融中，RPD提高R²59.24→73.04，完整UnSPC78.40；去RSS/RSW/Cyc步骤均比完整较低。</h2><h3>Evidence</h3><p>组件损失消融</p><dl><dt>设计 / 对照</dt><dd>单动物单sessionpair；same5seeds；RPD、w/oRSS/RSW/CycDA/CycDG/noncyclic</dd><dt>独立单位与 n</dt><dd>动物/人及会话/训练seed分层；时间bin非独立人；C0–C1一对；5训练runs</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 7 · TableII</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>在C0→C1单对消融中，RPD提高R²59.24→73.04，完整UnSPC78.40；去RSS/RSW/Cyc步骤均比完整较低。</dd><dt>适用边界</dt><dd>组件效果不是全部动物/跨度独立确认，未给pairedp。</dd><dt>实际负结果</dt><dd>无UnSPL R²73.30、MSE.02688，比完整差但R²仍略高于RPD73.04，正文称更低不符。</dd><dt>不能推出</dt><dd>未报告 / 不适用</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>伪标签适配与稳健表征能否维持长期神经解码且避免错误累积？</li></ul></article><article><small>C8 / 直接结果 · longitudinal_neural_decoding</small><h2>非循环组合C1R²77.69与full78.40差较小，去CycDA或DG分别76.36/77.01，显示该特定配对内循环有数值增益。</h2><h3>Evidence</h3><p>循环步骤对照</p><dl><dt>设计 / 对照</dt><dd>w/oCyc表意为不cyclingjointstrategy；full/wosteps</dd><dt>独立单位与 n</dt><dd>动物/人及会话/训练seed分层；时间bin非独立人；单C0–C1，5seeds</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 7 · TableII</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>非循环组合C1R²77.69与full78.40差较小，去CycDA或DG分别76.36/77.01，显示该特定配对内循环有数值增益。</dd><dt>适用边界</dt><dd>差不足1百分标度点未统计确认；不是理论最优或固定numbercycles普适。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能从该单pair认定DA/DG因果协同已唯一识别。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>伪标签适配与稳健表征能否维持长期神经解码且避免错误累积？</li></ul></article><article><small>C9 / 直接结果 · longitudinal_neural_decoding</small><h2>C1参数扫描中α影响较大，η/ϕ变化较小；default并非各参数每指标精确最优。</h2><h3>Evidence</h3><p>oneparameter扫描</p><dl><dt>设计 / 对照</dt><dd>α.1/ .5/1/2，β.05/.1/.2/.5等；defaultcontrols</dd><dt>独立单位与 n</dt><dd>动物/人及会话/训练seed分层；时间bin非独立人；同C1pair，其他datasets未完整扫描</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 7 · TableIII</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>C1参数扫描中α影响较大，η/ϕ变化较小；default并非各参数每指标精确最优。</dd><dt>适用边界</dt><dd>是局部范围鲁棒，不是无调参泛化；α还dataset-specific。</dd><dt>实际负结果</dt><dd>α.1R²73.0较default78.4低；ϕ1得78.5略高default.5。</dd><dt>不能推出</dt><dd>未报告 / 不适用</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>伪标签适配与稳健表征能否维持长期神经解码且避免错误累积？</li></ul></article><article><small>C10 / 直接结果 · longitudinal_neural_decoding</small><h2>FALCON人类虚拟arm数据的三targetdate中，UnSPC表列performance14.58/14.17/13.91，均高于static/UAN/WDGRL。</h2><h3>Evidence</h3><p>existinghumanoffline数据对比</p><dl><dt>设计 / 对照</dt><dd>source01-01；target01-08/01-20/02-09；静态与UDA</dd><dt>独立单位与 n</dt><dd>动物/人及会话/训练seed分层；时间bin非独立人；参与者总n/样本/split/metric单位未主文标</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 7 · TableIV</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>FALCON人类虚拟arm数据的三targetdate中，UnSPC表列performance14.58/14.17/13.91，均高于static/UAN/WDGRL。</dd><dt>适用边界</dt><dd>不能猜这些为准确率/CC/R²；数值较低且未知定义，应用限offlinevirtualtask。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>没有真实闭环机器人、临床连续使用或多年耐久。</dd><dt>未解决</dt><dd>TableIVmetriclabel、统计n/SD及具体录制日期信息缺。</dd></dl><h3>相关问题</h3><ul><li>伪标签适配与稳健表征能否维持长期神经解码且避免错误累积？</li></ul></article><article><small>C11 / 假说 / 预测 · longitudinal_neural_decoding</small><h2>作者提出该循环伪标签方案可支持longterm BMI与人机robotcontrol，但前瞻、实时预算及失败检测仍需新评估。</h2><h3>Evidence</h3><p>转化假说</p><dl><dt>设计 / 对照</dt><dd>未来newsubjects/streaming/cache/uncertaintycalibration；当前offlinewholeTrefining</dd><dt>独立单位与 n</dt><dd>动物/人及会话/训练seed分层；时间bin非独立人；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 7 · Conclusion/future</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>作者提出的可检验假说。</dd><dt>适用边界</dt><dd>暂未给适配秒数/内存成本、pseudo-labelcorrectness、calibratedrejection或prospective控制结果。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不视为stablelong-termcontrol、安全或神经drift全机制解决。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>伪标签适配与稳健表征能否维持长期神经解码且避免错误累积？</li></ul></article><details><summary>核对记录与来源信息</summary><pre>{
+  &quot;coverage&quot;: {
+    &quot;pdf_pages_read&quot;: [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    &quot;results_sections_seen&quot;: [
+      &quot;RPD/sourceconsistency&quot;,
+      &quot;UnSPL/uncertainty/rank&quot;,
+      &quot;CycAG/DA-DG&quot;,
+      &quot;NHP9targetsession&quot;,
+      &quot;C1ablation&quot;,
+      &quot;C1sensitivity&quot;,
+      &quot;FALCONhumancomparison&quot;
+    ],
+    &quot;missing_material&quot;: [
+      &quot;图像像素未读取&quot;,
+      &quot;humanmetric/n、fullsplit/MC/cycles及statuncertainty未给&quot;
+    ],
+    &quot;text_pass_complete&quot;: true,
+    &quot;notes&quot;: &quot;arXiv2607.24031v1；8页全部3图4表37参考读完；离线缓存来源，未重开PDF。&quot;,
+    &quot;reading_mode&quot;: &quot;text_only&quot;,
+    &quot;figure_images_read&quot;: false,
+    &quot;scientific_verification&quot;: false,
+    &quot;source_pdf_offline&quot;: true,
+    &quot;archived_page_text_used&quot;: true
+  },
+  &quot;audit&quot;: {
+    &quot;source_match_checks&quot;: [],
+    &quot;model_findings&quot;: [
+      {
+        &quot;claim_id&quot;: &quot;C6&quot;,
+        &quot;issue&quot;: &quot;M3低于SeSA，allSOTA/generalsetting优越需限定。&quot;,
+        &quot;pdf_page&quot;: 6,
+        &quot;suggested_correction&quot;: &quot;保留negative&quot;,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C7&quot;,
+        &quot;issue&quot;: &quot;w/oUnSPL73.30高于RPD73.04，不符正文说lower/severe；无统计CI。&quot;,
+        &quot;pdf_page&quot;: 7,
+        &quot;suggested_correction&quot;: null,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C10&quot;,
+        &quot;issue&quot;: &quot;TableIV未给metriclabel、有效人n及sample，不能赋予准确率。&quot;,
+        &quot;pdf_page&quot;: 7,
+        &quot;suggested_correction&quot;: null,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C3&quot;,
+        &quot;issue&quot;: &quot;selection比例无cap/stop，MC/mask/iteration参数未给；rankunc不能保证pseudo-label正确。&quot;,
+        &quot;pdf_page&quot;: 5,
+        &quot;suggested_correction&quot;: null,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C2&quot;,
+        &quot;issue&quot;: &quot;Eq1为累积平均系数，不是固定decayEMA；数据method名与公式不一致。&quot;,
+        &quot;pdf_page&quot;: 4,
+        &quot;suggested_correction&quot;: null,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C4&quot;,
+        &quot;issue&quot;: &quot;CycDG用targetpseudo-label，实为target-aware策略而非严格源DG；wholeT离线不等在线。&quot;,
+        &quot;pdf_page&quot;: 5,
+        &quot;suggested_correction&quot;: null,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;正式比较5seed只报均值无formalp/CI，不能source承诺significantoutperformance作统计结果。&quot;,
+        &quot;pdf_page&quot;: 6,
+        &quot;suggested_correction&quot;: null,
+        &quot;resolved&quot;: false
+      }
+    ],
+    &quot;needs_human_review&quot;: true
+  },
+  &quot;source&quot;: {
+    &quot;filename&quot;: &quot;paper-W7171748432--A-Cyclic-Adaptation-Generalization-Framework-with-Uncertainty-Guided-Self-Paced-Learning-for-Lo.pdf&quot;,
+    &quot;sha256&quot;: &quot;88e27d7d754654659d44b48f7ca415716c1701afb3f963d5426a0b78cac2338d&quot;,
+    &quot;source_url&quot;: &quot;https://arxiv.org/pdf/2607.24031&quot;,
+    &quot;pdf_page_count&quot;: 8
+  },
+  &quot;provenance&quot;: {
+    &quot;created_at&quot;: &quot;2026-10-07T12:55:44.436624Z&quot;,
+    &quot;workflow&quot;: &quot;claim-commons-pdf-v1&quot;,
+    &quot;prompt_version&quot;: &quot;claim-commons-chatgpt-pdf-2026-10-07.1&quot;,
+    &quot;backend&quot;: &quot;authorized_parallel_GPT&quot;,
+    &quot;model&quot;: &quot;inherited_account_GPT&quot;,
+    &quot;provider_api_key_used&quot;: false,
+    &quot;source_sha256&quot;: &quot;88e27d7d754654659d44b48f7ca415716c1701afb3f963d5426a0b78cac2338d&quot;,
+    &quot;source_audit_complete&quot;: true,
+    &quot;review_status&quot;: &quot;candidate&quot;,
+    &quot;database_updated&quot;: false
+  }
+}</pre></details></main><footer></footer></body></html>

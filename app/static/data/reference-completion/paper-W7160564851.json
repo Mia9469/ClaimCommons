@@ -1,0 +1,1791 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "preprint",
+  "paper": {
+    "title": "Partially Observed Structural Causal Models",
+    "authors": [
+      "Turan Orujlu",
+      "Jordan Matelsky",
+      "Martin V. Butz",
+      "Charley M. Wu",
+      "Konrad P. Kording"
+    ],
+    "doi": null,
+    "publication_year": 2026,
+    "venue": "arXiv (Cornell University)",
+    "url": "https://arxiv.org/pdf/2605.03268"
+  },
+  "source": {
+    "filename": "paper-W7160564851--Partially-Observed-Structural-Causal-Models.pdf",
+    "sha256": "e31c76459f4819fb0a04d1b954b4731203be15594292ea08aa87590b6cc36a37",
+    "source_url": "https://arxiv.org/pdf/2605.03268",
+    "pdf_page_count": 27
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27
+    ],
+    "results_sections_seen": [
+      "POSCM/measurement;Remarks2.3–2.4",
+      "Message augmentation/gauge;Intervention hierarchy/IISC",
+      "Prop5.2/Lemma5.3/Theorem5.4",
+      "Retina Experiments1–3;Tables1–5/Fig3",
+      "Related work/References",
+      "Supplement B KAS proof",
+      "C Dyadic/realized-instance results",
+      "D readout/coverage/positivity/proofs;Tables6–8",
+      "E SERGIO Experiments1–3;Tables9–14"
+    ],
+    "missing_material": [
+      "图像像素未读取",
+      "外部simulator代码与原始运行数据未附/未执行"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "完整读取27页arXiv2605.03268v2（15Jul2026）含supplement13–27。",
+      "全部proof假设、观测接口、simulation unit、数值negative与未测试目标逐条复核；原始BIO实验不存在，本文是形式化及模拟。",
+      "图像像素与外部code未读取；不运行论文或软件tests。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "作者定义 POSCM 为按外生顺序交错生成 context 与 incoming edges，再分配机制并生成 values 的扩展模型，将图形成纳入内生随机过程。",
+      "role": "result",
+      "source_pages": [
+        2
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "在作者的结构语义中，将 adjacency 与已分配机制固定为退化分布可恢复相应 SCM；随机机制的population mixture不等于某一固定实例。",
+      "role": "result",
+      "source_pages": [
+        3
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "固定维度、edge-gated dyadic messages 允许单独替换一个传输通道而保持source value和其他机制；不存在的edge使相应message干预为no-op。",
+      "role": "result",
+      "source_pages": [
+        4
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "β-node 干预在形成前可改变下游context、结构和机制，V-node干预在形成后保持Phase-I量不变；edge-message干预处于全node改变与任意机制替换之间。",
+      "role": "result",
+      "source_pages": [
+        5
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "作者以 regime-indexed outgoing-edge conditional measure 的改变定义 IISC，允许非独立edge，要求在同一相关conditioning support比较。",
+      "role": "result",
+      "source_pages": [
+        5
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "Appendix B 给出可测 f 且有限 p-th moment、1≤p<∞ 时的 Lp(μ) 近似稠密性：可在足够大compact cube上用 KAS 表示近似，并使分布加权误差任意小。",
+      "role": "result",
+      "source_pages": [
+        14
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "潜在β且无β-level interventions时，重参数化β并同步变换结构/传播/分配模块可保持固定观测模型下所有所述V-level interventional distributions。",
+      "role": "result",
+      "source_pages": [
+        20
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "作者的二节点 Bernoulli 反例使 latent-edge 模型在node干预下均产生0.35/0.65输出概率，却在同一edge-message replacement下分别产生0.25/0.75与0.10/0.90。",
+      "role": "result",
+      "source_pages": [
+        21
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "Theorem5.4 在额外readout、joint β/V controls与positivity下，识别可达支持上的结构生成测度、context propagation和value Markov kernels；无需edge-message或paired-world replay。",
+      "role": "result",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "Theorem C.3 用足够丰富的constant message clamps与injective slot response，在可读出/可达条件下匹配baseline来识别dyadic message值；理想化同噪声replay是另一条更强访问路线。",
+      "role": "result",
+      "source_pages": [
+        17
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "Proposition C.4 在固定实例可stationary重复probe、fresh iid噪声、joint potential-parent clamps和controlled edge-faithfulness下，给出大样本恢复该实例adjacency的充分条件。",
+      "role": "result",
+      "source_pages": [
+        18
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "人口kernels不能确定某个随机draw；同实例重复probe可识别响应kernel，但 stochastic Γ 的结构函数与value noise分离仍需额外机制类别或noise假设。",
+      "role": "result",
+      "source_pages": [
+        24
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "作者把有限离散strata的估计成本写为约 deff/(nρ) 加readout/probe误差的量级指南，并明确其不是新identification theorem。",
+      "role": "interpretation",
+      "source_pages": [
+        19
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "作者提出丰富nonconstant β-edge replacement可能部分代替β-node访问，而constant clamps不锚定连续context坐标；root contexts的访问更困难。",
+      "role": "hypothesis",
+      "source_pages": [
+        17
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "virtual retina ON/OFF标签与对应synaptic rules交换后，所测β-hidden观测/PR voltage-clamp firing distributions差异小且KS未拒绝相等。",
+      "role": "result",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "virtual retina 将40% PR→BC通道置零并补偿剩余conductance时，node-clamp平均MMD=.0444，conductance replacement平均MMD=.1312，暴露内部组成差异。",
+      "role": "result",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "retina formation前扫eccentricity proxy改变cell composition/密度，报告cell counts289–350，展示context-associated结构变化。",
+      "role": "result",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "bulk bipolar voltage sweep 产生 BC→RGC pathway sigmoidal response，作者将affine-tanh拟合视为路径级指南而非single-synapse参数恢复。",
+      "role": "result",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "SERGIO regulator label-blind swap 示例中，blind pooled clamps未被KS区分，而named TF0 clamps可强烈区分，显示可用接口决定此对称性是否可破。",
+      "role": "result",
+      "source_pages": [
+        25
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "SERGIO count/affinity analogue 的10×.12与6×.20组合具有相同aggregate strength；node-clamp平均MMD=.0157而per-site replacement平均为1.2808。",
+      "role": "result",
+      "source_pages": [
+        26
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "合成accessibility生成edge概率的logistic estimator在五个held-out β上恢复结构kernel，报告MAE=.0054和R²=.99963。",
+      "role": "result",
+      "source_pages": [
+        26
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "SERGIO parent clamp 后经response axis shifting/rescaling的Hill形状比较报告R²=.99987，作者明确仅作shape sanity check而非参数估计器。",
+      "role": "result",
+      "source_pages": [
+        26
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "扩展循环/时间展开、前形成β的科学解释、固定图/其他因果框架相关工作均已评估。",
+      "role": "interpretation",
+      "source_pages": [
+        1,
+        3,
+        4,
+        6,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        24
+      ],
+      "decision": "exclude",
+      "reason": "背景/未来方向已纳条件，不新增实验或已完成动态模型；相关文献不是自动cross-paper验证。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "作者定义 POSCM 为按外生顺序交错生成 context 与 incoming edges，再分配机制并生成 values 的扩展模型，将图形成纳入内生随机过程。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "有序生成形式化",
+          "design": "作者定义 POSCM 为按外生顺序交错生成 context 与 incoming edges，再分配机制并生成 values 的扩展模型，将图形成纳入内生随机过程。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "数学模型/扩展DAG",
+          "sample_size_as_reported": null,
+          "uncertainty": "纯形式结果无样本量；模拟未给该处完整不确定性。",
+          "assumptions": [
+            "τ固定且外生；本轮edges在Phase-II values之前生成，非瞬时反馈或任意循环因果语义。"
+          ],
+          "source_locator": {
+            "pdf_page": 2,
+            "section": "Definition2.1;Fig1",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者定义 POSCM 为按外生顺序交错生成 context 与 incoming edges，再分配机制并生成 values 的扩展模型，将图形成纳入内生随机过程。",
+        "boundary": "τ固定且外生；本轮edges在Phase-II values之前生成，非瞬时反馈或任意循环因果语义。",
+        "negative_result": null,
+        "non_inference": "细胞型/网络随发育相互依赖的例子不等于本框架已验证所有生物反馈。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "time-unrolling或equilibrium扩展怎样保留可操作干预？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "在作者的结构语义中，将 adjacency 与已分配机制固定为退化分布可恢复相应 SCM；随机机制的population mixture不等于某一固定实例。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "退化特例与结构模块分析",
+          "design": "在作者的结构语义中，将 adjacency 与已分配机制固定为退化分布可恢复相应 SCM；随机机制的population mixture不等于某一固定实例。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "模型族",
+          "sample_size_as_reported": null,
+          "uncertainty": "纯形式结果无样本量；模拟未给该处完整不确定性。",
+          "assumptions": [
+            "是模型语义特例，观测分布一致不足以唯一确定原结构函数；外生噪声仍可存在。"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "Remark2.3",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在作者的结构语义中，将 adjacency 与已分配机制固定为退化分布可恢复相应 SCM；随机机制的population mixture不等于某一固定实例。",
+        "boundary": "是模型语义特例，观测分布一致不足以唯一确定原结构函数；外生噪声仍可存在。",
+        "negative_result": null,
+        "non_inference": "数学/模拟结果不是生物或临床验证；同一推导、模拟配置及其派生指标不构成独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "同分布SCM表示与POSCM结构语义如何区分？"
+      ],
+      "shared_evidence_with": [
+        "C1"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "固定维度、edge-gated dyadic messages 允许单独替换一个传输通道而保持source value和其他机制；不存在的edge使相应message干预为no-op。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "固定message槽形式化",
+          "design": "固定维度、edge-gated dyadic messages 允许单独替换一个传输通道而保持source value和其他机制；不存在的edge使相应message干预为no-op。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "数学dyad与mechanism",
+          "sample_size_as_reported": null,
+          "uncertainty": "纯形式结果无样本量；模拟未给该处完整不确定性。",
+          "assumptions": [
+            "需要预先指定或物理锚定消息参数化；不唯一KAS表示会造成gauge，不自动对应唯一真实突触机制。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "Definition3.1;4.2 p5",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "固定维度、edge-gated dyadic messages 允许单独替换一个传输通道而保持source value和其他机制；不存在的edge使相应message干预为no-op。",
+        "boundary": "需要预先指定或物理锚定消息参数化；不唯一KAS表示会造成gauge，不自动对应唯一真实突触机制。",
+        "negative_result": null,
+        "non_inference": "数学/模拟结果不是生物或临床验证；同一推导、模拟配置及其派生指标不构成独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "实验可操作通道如何锚定内部message坐标？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "β-node 干预在形成前可改变下游context、结构和机制，V-node干预在形成后保持Phase-I量不变；edge-message干预处于全node改变与任意机制替换之间。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "干预语义与distributive-law反例",
+          "design": "β-node 干预在形成前可改变下游context、结构和机制，V-node干预在形成后保持Phase-I量不变；edge-message干预处于全node改变与任意机制替换之间。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "模型/受限观察接口",
+          "sample_size_as_reported": null,
+          "uncertainty": "纯形式结果无样本量；模拟未给该处完整不确定性。",
+          "assumptions": [
+            "toy example只观测W且不能操控隐藏算术节点；edge强于node结论相对该接口，β干预不是把成年细胞瞬时变成另一类型。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "4.1;Table8 p24",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "β-node 干预在形成前可改变下游context、结构和机制，V-node干预在形成后保持Phase-I量不变；edge-message干预处于全node改变与任意机制替换之间。",
+        "boundary": "toy example只观测W且不能操控隐藏算术节点；edge强于node结论相对该接口，β干预不是把成年细胞瞬时变成另一类型。",
+        "negative_result": null,
+        "non_inference": "数学/模拟结果不是生物或临床验证；同一推导、模拟配置及其派生指标不构成独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "哪些实际操控能近似形成前context而不同时破坏其他模块？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C3"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "作者以 regime-indexed outgoing-edge conditional measure 的改变定义 IISC，允许非独立edge，要求在同一相关conditioning support比较。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "结构变化的条件测度定义",
+          "design": "作者以 regime-indexed outgoing-edge conditional measure 的改变定义 IISC，允许非独立edge，要求在同一相关conditioning support比较。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "source条件下edge vector分布",
+          "sample_size_as_reported": null,
+          "uncertainty": "纯形式结果无样本量；模拟未给该处完整不确定性。",
+          "assumptions": [
+            "不能把context组成或边缘图分布改变自动视为固定context下生成kernel变化；需要明确supervisor变量和支持。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "Definitions4.3–4.4",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者以 regime-indexed outgoing-edge conditional measure 的改变定义 IISC，允许非独立edge，要求在同一相关conditioning support比较。",
+        "boundary": "不能把context组成或边缘图分布改变自动视为固定context下生成kernel变化；需要明确supervisor变量和支持。",
+        "negative_result": null,
+        "non_inference": "数学/模拟结果不是生物或临床验证；同一推导、模拟配置及其派生指标不构成独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "同context的结构形成机制改变如何与context mixture改变区分？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "Appendix B 给出可测 f 且有限 p-th moment、1≤p<∞ 时的 Lp(μ) 近似稠密性：可在足够大compact cube上用 KAS 表示近似，并使分布加权误差任意小。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "域/值截断、Lusin–Tietze、KAS与Minkowski",
+          "design": "Appendix B 给出可测 f 且有限 p-th moment、1≤p<∞ 时的 Lp(μ) 近似稠密性：可在足够大compact cube上用 KAS 表示近似，并使分布加权误差任意小。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "数学函数与概率分布",
+          "sample_size_as_reported": null,
+          "uncertainty": "纯形式结果无样本量；模拟未给该处完整不确定性。",
+          "assumptions": [
+            "要求E|f(X)|^p<∞；是compact内表示/全域Lp近似，不是全域精确、uniform或p=∞定理，更不是可识别性。"
+          ],
+          "source_locator": {
+            "pdf_page": 14,
+            "section": "LemmaB.1;proof pp14–16",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "Appendix B 给出可测 f 且有限 p-th moment、1≤p<∞ 时的 Lp(μ) 近似稠密性：可在足够大compact cube上用 KAS 表示近似，并使分布加权误差任意小。",
+        "boundary": "要求E|f(X)|^p<∞；是compact内表示/全域Lp近似，不是全域精确、uniform或p=∞定理，更不是可识别性。",
+        "negative_result": null,
+        "non_inference": "数学/模拟结果不是生物或临床验证；同一推导、模拟配置及其派生指标不构成独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "近似误差在未观察到的intervention support上会否放大？"
+      ],
+      "shared_evidence_with": [
+        "C3"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "潜在β且无β-level interventions时，重参数化β并同步变换结构/传播/分配模块可保持固定观测模型下所有所述V-level interventional distributions。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "diffeomorphism/label-permutation等价构造",
+          "design": "潜在β且无β-level interventions时，重参数化β并同步变换结构/传播/分配模块可保持固定观测模型下所有所述V-level interventional distributions。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "数学模型对",
+          "sample_size_as_reported": null,
+          "uncertainty": "纯形式结果无样本量；模拟未给该处完整不确定性。",
+          "assumptions": [
+            "O固定且Oβ不输出，A/V读出不依赖β；构造证明原生context坐标不唯一，不能仅据该gauge例子证明所有gauge-invariant kernels都不可识别。"
+          ],
+          "source_locator": {
+            "pdf_page": 20,
+            "section": "Proposition5.2;D.1",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "潜在β且无β-level interventions时，重参数化β并同步变换结构/传播/分配模块可保持固定观测模型下所有所述V-level interventional distributions。",
+        "boundary": "O固定且Oβ不输出，A/V读出不依赖β；构造证明原生context坐标不唯一，不能仅据该gauge例子证明所有gauge-invariant kernels都不可识别。",
+        "negative_result": null,
+        "non_inference": "数学/模拟结果不是生物或临床验证；同一推导、模拟配置及其派生指标不构成独立复制。",
+        "unresolved": "正文not identifiable beyond reparameterization措辞与仅给gauge反例的证明范围需保持区别。",
+        "unresolved_attribution": "综述作者的限制、开放问题或源文审计"
+      },
+      "broad_directions": [
+        "methods-causal",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "去掉纯gauge后还存在哪些实质不可辨等价类？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "作者的二节点 Bernoulli 反例使 latent-edge 模型在node干预下均产生0.35/0.65输出概率，却在同一edge-message replacement下分别产生0.25/0.75与0.10/0.90。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "显式精确反例",
+          "design": "作者的二节点 Bernoulli 反例使 latent-edge 模型在node干预下均产生0.35/0.65输出概率，却在同一edge-message replacement下分别产生0.25/0.75与0.10/0.90。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "数学概率模型对",
+          "sample_size_as_reported": null,
+          "uncertainty": "纯形式结果无样本量；模拟未给该处完整不确定性。",
+          "assumptions": [
+            "contexts退化、A未观测、node输入二值；是nonparametric反例而非所有参数受限模型都不可能恢复。"
+          ],
+          "source_locator": {
+            "pdf_page": 21,
+            "section": "Lemma5.3;D.2 pp20–21",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者的二节点 Bernoulli 反例使 latent-edge 模型在node干预下均产生0.35/0.65输出概率，却在同一edge-message replacement下分别产生0.25/0.75与0.10/0.90。",
+        "boundary": "contexts退化、A未观测、node输入二值；是nonparametric反例而非所有参数受限模型都不可能恢复。",
+        "negative_result": null,
+        "non_inference": "这里比较interventional distributions，不自动识别同一真人/细胞的跨世界counterfactual coupling。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "哪些物理结构/观测约束能打破这种边密度–通道强度混淆？"
+      ],
+      "shared_evidence_with": [
+        "C3"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "Theorem5.4 在额外readout、joint β/V controls与positivity下，识别可达支持上的结构生成测度、context propagation和value Markov kernels；无需edge-message或paired-world replay。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "由可观测interventional distributions解码目标kernels",
+          "design": "Theorem5.4 在额外readout、joint β/V controls与positivity下，识别可达支持上的结构生成测度、context propagation和value Markov kernels；无需edge-message或paired-world replay。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "独立采样实例的population conditional distributions",
+          "sample_size_as_reported": null,
+          "uncertainty": "纯形式结果无样本量；模拟未给该处完整不确定性。",
+          "assumptions": [
+            "τ/O固定；结构可由同实例stationary iid重复probe读出，β/V可解码；联合干预覆盖且条件strata可达、edge概率0<P<1。仅识别induced kernels，不是Γ的完整函数分布或所有结构函数。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "Theorem5.4;D.1–D.7 pp18–19;D.3 pp21–22",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "Theorem5.4 在额外readout、joint β/V controls与positivity下，识别可达支持上的结构生成测度、context propagation和value Markov kernels；无需edge-message或paired-world replay。",
+        "boundary": "τ/O固定；结构可由同实例stationary iid重复probe读出，β/V可解码；联合干预覆盖且条件strata可达、edge概率0<P<1。仅识别induced kernels，不是Γ的完整函数分布或所有结构函数。",
+        "negative_result": null,
+        "non_inference": "不能从passive V-only、未校准readout或单一固定网络自动恢复这些population kernels。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "减弱readout或有限覆盖后哪些kernel部分还能识别？"
+      ],
+      "shared_evidence_with": [
+        "C7",
+        "C8"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "Theorem C.3 用足够丰富的constant message clamps与injective slot response，在可读出/可达条件下匹配baseline来识别dyadic message值；理想化同噪声replay是另一条更强访问路线。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "baseline–clamp唯一匹配与noise-fixed replay证明草图",
+          "design": "Theorem C.3 用足够丰富的constant message clamps与injective slot response，在可读出/可达条件下匹配baseline来识别dyadic message值；理想化同噪声replay是另一条更强访问路线。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "数学dyadic channels及interventional response kernels",
+          "sample_size_as_reported": null,
+          "uncertainty": "纯形式结果无样本量；模拟未给该处完整不确定性。",
+          "assumptions": [
+            "结构/β/V读出、positivity、非退化可区分通道；A/B固定其他parents，C固定全部外生draw并需pointwise injectivity。up to gauge且通常不分离Fi与Ui。"
+          ],
+          "source_locator": {
+            "pdf_page": 17,
+            "section": "C.1–C.3;D.4 pp22–23",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "Theorem C.3 用足够丰富的constant message clamps与injective slot response，在可读出/可达条件下匹配baseline来识别dyadic message值；理想化同噪声replay是另一条更强访问路线。",
+        "boundary": "结构/β/V读出、positivity、非退化可区分通道；A/B固定其他parents，C固定全部外生draw并需pointwise injectivity。up to gauge且通常不分离Fi与Ui。",
+        "negative_result": null,
+        "non_inference": "数学/模拟结果不是生物或临床验证；同一推导、模拟配置及其派生指标不构成独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "实际有噪声实验能否近似这些channel richness/injectivity条件？"
+      ],
+      "shared_evidence_with": [
+        "C3",
+        "C9"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "Proposition C.4 在固定实例可stationary重复probe、fresh iid噪声、joint potential-parent clamps和controlled edge-faithfulness下，给出大样本恢复该实例adjacency的充分条件。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "受控两样本可区分性论证",
+          "design": "Proposition C.4 在固定实例可stationary重复probe、fresh iid噪声、joint potential-parent clamps和controlled edge-faithfulness下，给出大样本恢复该实例adjacency的充分条件。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "同一固定实例的重复probe；不是独立population instances",
+          "sample_size_as_reported": null,
+          "uncertainty": "纯形式结果无样本量；模拟未给该处完整不确定性。",
+          "assumptions": [
+            "每个真edge必须在某可达clamp下改变分布；有限样本保证另依标准testing条件，没有本文通用probe数。"
+          ],
+          "source_locator": {
+            "pdf_page": 18,
+            "section": "C.4(i);D.5 p24",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "Proposition C.4 在固定实例可stationary重复probe、fresh iid噪声、joint potential-parent clamps和controlled edge-faithfulness下，给出大样本恢复该实例adjacency的充分条件。",
+        "boundary": "每个真edge必须在某可达clamp下改变分布；有限样本保证另依标准testing条件，没有本文通用probe数。",
+        "negative_result": null,
+        "non_inference": "数学/模拟结果不是生物或临床验证；同一推导、模拟配置及其派生指标不构成独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "极小效应、冗余和隐藏state drift怎样限制边恢复？"
+      ],
+      "shared_evidence_with": [
+        "C9"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "人口kernels不能确定某个随机draw；同实例重复probe可识别响应kernel，但 stochastic Γ 的结构函数与value noise分离仍需额外机制类别或noise假设。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "population/instance与函数–噪声等价分析",
+          "design": "人口kernels不能确定某个随机draw；同实例重复probe可识别响应kernel，但 stochastic Γ 的结构函数与value noise分离仍需额外机制类别或noise假设。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "数学population/实例响应",
+          "sample_size_as_reported": null,
+          "uncertainty": "纯形式结果无样本量；模拟未给该处完整不确定性。",
+          "assumptions": [
+            "deterministic Γ仅在已知/已识别该规则及context/parents时指定f；函数层恢复可需noise-free/known additive/monotone quantile/parametric限制。"
+          ],
+          "source_locator": {
+            "pdf_page": 24,
+            "section": "C.4(ii–iii);D.5",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "人口kernels不能确定某个随机draw；同实例重复probe可识别响应kernel，但 stochastic Γ 的结构函数与value noise分离仍需额外机制类别或noise假设。",
+        "boundary": "deterministic Γ仅在已知/已识别该规则及context/parents时指定f；函数层恢复可需noise-free/known additive/monotone quantile/parametric限制。",
+        "negative_result": null,
+        "non_inference": "数学/模拟结果不是生物或临床验证；同一推导、模拟配置及其派生指标不构成独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "哪些结构函数问题具有超出response kernel的可检验意义？"
+      ],
+      "shared_evidence_with": [
+        "C9",
+        "C11",
+        "C10"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C13",
+      "statement": "作者把有限离散strata的估计成本写为约 deff/(nρ) 加readout/probe误差的量级指南，并明确其不是新identification theorem。",
+      "claim_type": "interpretation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "标准plug-in scaling讨论",
+          "design": "作者把有限离散strata的估计成本写为约 deff/(nρ) 加readout/probe误差的量级指南，并明确其不是新identification theorem。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "effective intervention budget及reachable strata",
+          "sample_size_as_reported": null,
+          "uncertainty": "纯形式结果无样本量；模拟未给该处完整不确定性。",
+          "assumptions": [
+            "有限或smoothed discrete strata、ρ最小支持概率；不是一般continuous非参数收敛界或实际实验样本要求。"
+          ],
+          "source_locator": {
+            "pdf_page": 19,
+            "section": "Finite-strata scaling;Table7",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者把有限离散strata的估计成本写为约 deff/(nρ) 加readout/probe误差的量级指南，并明确其不是新identification theorem。",
+        "boundary": "有限或smoothed discrete strata、ρ最小支持概率；不是一般continuous非参数收敛界或实际实验样本要求。",
+        "negative_result": null,
+        "non_inference": "数学/模拟结果不是生物或临床验证；同一推导、模拟配置及其派生指标不构成独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "罕见parent-set strata怎样决定可操作intervention budget？"
+      ],
+      "shared_evidence_with": [
+        "C9"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C14",
+      "statement": "作者提出丰富nonconstant β-edge replacement可能部分代替β-node访问，而constant clamps不锚定连续context坐标；root contexts的访问更困难。",
+      "claim_type": "hypothesis",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "重参数对称性分析与未解决minimality讨论",
+          "design": "作者提出丰富nonconstant β-edge replacement可能部分代替β-node访问，而constant clamps不锚定连续context坐标；root contexts的访问更困难。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "待形式化干预族",
+          "sample_size_as_reported": null,
+          "uncertainty": "纯形式结果无样本量；模拟未给该处完整不确定性。",
+          "assumptions": [
+            "该restricted regime的minimality characterization明确留待未来，不是已证最小必要干预集合。"
+          ],
+          "source_locator": {
+            "pdf_page": 17,
+            "section": "Intermediate regime C.1",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者提出丰富nonconstant β-edge replacement可能部分代替β-node访问，而constant clamps不锚定连续context坐标；root contexts的访问更困难。",
+        "boundary": "该restricted regime的minimality characterization明确留待未来，不是已证最小必要干预集合。",
+        "negative_result": null,
+        "non_inference": "数学/模拟结果不是生物或临床验证；同一推导、模拟配置及其派生指标不构成独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "何种β-edge族足以在无β-node条件下打破各gauge？"
+      ],
+      "shared_evidence_with": [
+        "C7",
+        "C10"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C15",
+      "statement": "virtual retina ON/OFF标签与对应synaptic rules交换后，所测β-hidden观测/PR voltage-clamp firing distributions差异小且KS未拒绝相等。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "NEURON virtual human retina模型对照",
+          "design": "virtual retina ON/OFF标签与对应synaptic rules交换后，所测β-hidden观测/PR voltage-clamp firing distributions差异小且KS未拒绝相等。",
+          "comparator": "M/M′ observational及单PR −60/−50/−40/−30mV clamps",
+          "measure": null,
+          "unit_of_analysis": "独立随机patch seeds；其中细胞不是动物或独立seed",
+          "sample_size_as_reported": "B=2 seeds；每seed10 worlds；200ms epoch，dt=.1ms，30×30µm patch",
+          "uncertainty": "KS D=.0225–.0294，p=.964–.999；跨细胞测试不增加seed独立性。",
+          "assumptions": [
+            "标签swap构造而非真实doβ；非显著性只与构造对称一致，不证明统计等价或真实retina机制。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Exp1;Table3",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "virtual retina ON/OFF标签与对应synaptic rules交换后，所测β-hidden观测/PR voltage-clamp firing distributions差异小且KS未拒绝相等。",
+        "boundary": "标签swap构造而非真实doβ；非显著性只与构造对称一致，不证明统计等价或真实retina机制。",
+        "negative_result": "β-hidden接口下未检测到所述交换导致的firing distribution差异。",
+        "non_inference": "数学/模拟结果不是生物或临床验证；同一推导、模拟配置及其派生指标不构成独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "固定类型坐标或named target访问能否分离这些模型？"
+      ],
+      "shared_evidence_with": [
+        "C7"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C16",
+      "statement": "virtual retina 将40% PR→BC通道置零并补偿剩余conductance时，node-clamp平均MMD=.0444，conductance replacement平均MMD=.1312，暴露内部组成差异。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "合成density/conductance校准对及RBF-MMD",
+          "design": "virtual retina 将40% PR→BC通道置零并补偿剩余conductance时，node-clamp平均MMD=.0444，conductance replacement平均MMD=.1312，暴露内部组成差异。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "B=2独立随机patches及其BC细胞",
+          "sample_size_as_reported": "B=2 seeds；p′=.6p,g′=g/.6",
+          "uncertainty": "纯形式结果无样本量；模拟未给该处完整不确定性。",
+          "assumptions": [
+            "pg匹配只在线性近似精确；nonlinear node-MMD非零。未报告permutation/bootstrap null执行结果；all active synapses替换不是单一dyad实验。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "Exp2;Table4",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "virtual retina 将40% PR→BC通道置零并补偿剩余conductance时，node-clamp平均MMD=.0444，conductance replacement平均MMD=.1312，暴露内部组成差异。",
+        "boundary": "pg匹配只在线性近似精确；nonlinear node-MMD非零。未报告permutation/bootstrap null执行结果；all active synapses替换不是单一dyad实验。",
+        "negative_result": null,
+        "non_inference": "约3倍MMD不等统计显著检验或生物因果验证；不能说两node模型严格实验等价。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "加入检测功效与真正单edge扰动后能否量化混淆？"
+      ],
+      "shared_evidence_with": [
+        "C8"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C17",
+      "statement": "retina formation前扫eccentricity proxy改变cell composition/密度，报告cell counts289–350，展示context-associated结构变化。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "global context proxy sweep in NEURON",
+          "design": "retina formation前扫eccentricity proxy改变cell composition/密度，报告cell counts289–350，展示context-associated结构变化。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "模拟patch/细胞总数",
+          "sample_size_as_reported": "六eccentricities−1.2至−3.5mm；289/306/330/347/350/346 cells不是独立样本n",
+          "uncertainty": "纯形式结果无样本量；模拟未给该处完整不确定性。",
+          "assumptions": [
+            "eccentricity是全局proxy，不是读出/操控单βi且固定全部其他条件；尚未恢复全部α、ϕ和Γ。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "Exp3 PhaseI;Table5",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "retina formation前扫eccentricity proxy改变cell composition/密度，报告cell counts289–350，展示context-associated结构变化。",
+        "boundary": "eccentricity是全局proxy，不是读出/操控单βi且固定全部其他条件；尚未恢复全部α、ϕ和Γ。",
+        "negative_result": null,
+        "non_inference": "数学/模拟结果不是生物或临床验证；同一推导、模拟配置及其派生指标不构成独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "单context可控与全局proxy的识别资源差距有多大？"
+      ],
+      "shared_evidence_with": [
+        "C9"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C18",
+      "statement": "bulk bipolar voltage sweep 产生 BC→RGC pathway sigmoidal response，作者将affine-tanh拟合视为路径级指南而非single-synapse参数恢复。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "全部BIPupper同时SEClamp及稳态RGC ∆V测量",
+          "design": "bulk bipolar voltage sweep 产生 BC→RGC pathway sigmoidal response，作者将affine-tanh拟合视为路径级指南而非single-synapse参数恢复。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "模拟patch及RGC群体；SD不是独立动物CI",
+          "sample_size_as_reported": "2 seeds共享配置；六clamps−70至−20mV",
+          "uncertainty": "Table14均值约−.284/−.287/−.296/−.095/+.412/+.460mV与所列SD；中点约−37mV、宽约5.3mV仅guide。",
+          "assumptions": [
+            "路径级聚合及有限clamp，不识别独立突触tanh或全Γ function；无新人体/生物retina实验。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "Fig3;Exp3;Table14 p27",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "bulk bipolar voltage sweep 产生 BC→RGC pathway sigmoidal response，作者将affine-tanh拟合视为路径级指南而非single-synapse参数恢复。",
+        "boundary": "路径级聚合及有限clamp，不识别独立突触tanh或全Γ function；无新人体/生物retina实验。",
+        "negative_result": null,
+        "non_inference": "单突触参数未被该分析恢复，但这是目标范围限制，不记录为已测试失败。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "更细通道扰动能否把路径函数分解为真实可识别dyads？"
+      ],
+      "shared_evidence_with": [
+        "C17",
+        "C9"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C19",
+      "statement": "SERGIO regulator label-blind swap 示例中，blind pooled clamps未被KS区分，而named TF0 clamps可强烈区分，显示可用接口决定此对称性是否可破。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "SERGIO deterministic dynamics＋matched measurement noise",
+          "design": "SERGIO regulator label-blind swap 示例中，blind pooled clamps未被KS区分，而named TF0 clamps可强烈区分，显示可用接口决定此对称性是否可破。",
+          "comparator": "exchangeable activator/repressor swap；β-blind等概率选择TF0/TF1 vsnamedTF0",
+          "measure": null,
+          "unit_of_analysis": "模拟expression samples/conditions，不是生物单细胞重复",
+          "sample_size_as_reported": "blind每model800 samples；obs/named每model400",
+          "uncertainty": "blind p=.830–.999；named D=.923–1及极小p，详细Table10；未推独立生物样本。",
+          "assumptions": [
+            "named节点名称本身是额外anchored接口；KS未拒绝不是等价性证明。"
+          ],
+          "source_locator": {
+            "pdf_page": 25,
+            "section": "GRN Exp1;Table10",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "SERGIO regulator label-blind swap 示例中，blind pooled clamps未被KS区分，而named TF0 clamps可强烈区分，显示可用接口决定此对称性是否可破。",
+        "boundary": "named节点名称本身是额外anchored接口；KS未拒绝不是等价性证明。",
+        "negative_result": "blind条件未检测区别，named控制则区别明显。",
+        "non_inference": "数学/模拟结果不是生物或临床验证；同一推导、模拟配置及其派生指标不构成独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "部分标签/带误差decoder如何改变恢复？"
+      ],
+      "shared_evidence_with": [
+        "C7",
+        "C15"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C20",
+      "statement": "SERGIO count/affinity analogue 的10×.12与6×.20组合具有相同aggregate strength；node-clamp平均MMD=.0157而per-site replacement平均为1.2808。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "SERGIO stochastic dynamics＋合成effective strength对照",
+          "design": "SERGIO count/affinity analogue 的10×.12与6×.20组合具有相同aggregate strength；node-clamp平均MMD=.0157而per-site replacement平均为1.2808。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "模型expression samples/conditions",
+          "sample_size_as_reported": "base400模拟cells/condition；独立population seeds数未报告",
+          "uncertainty": "纯形式结果无样本量；模拟未给该处完整不确定性。",
+          "assumptions": [
+            "SERGIO每regulator-target只有一条interaction，site count编码为effective strength而非literal duplicate regulatory edges；残余node差异非零。"
+          ],
+          "source_locator": {
+            "pdf_page": 26,
+            "section": "GRN Exp2;Table11",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "SERGIO count/affinity analogue 的10×.12与6×.20组合具有相同aggregate strength；node-clamp平均MMD=.0157而per-site replacement平均为1.2808。",
+        "boundary": "SERGIO每regulator-target只有一条interaction，site count编码为effective strength而非literal duplicate regulatory edges；残余node差异非零。",
+        "negative_result": null,
+        "non_inference": "81.5比例为MMD描述，不是显著性或原生SERGIO结构恢复证明；不同模拟器不是生物replication。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "真实具有随机edge的网络能否保持该confounding图案？"
+      ],
+      "shared_evidence_with": [
+        "C8",
+        "C16"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C21",
+      "statement": "合成accessibility生成edge概率的logistic estimator在五个held-out β上恢复结构kernel，报告MAE=.0054和R²=.99963。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "binary edge sampling与已设logistic family拟合",
+          "design": "合成accessibility生成edge概率的logistic estimator在五个held-out β上恢复结构kernel，报告MAE=.0054和R²=.99963。",
+          "comparator": "ground truth sigmoid7.5(β−.48)；fit sigmoid(7.73β−3.70)",
+          "measure": null,
+          "unit_of_analysis": "模拟binary edge draws和accessibility条件",
+          "sample_size_as_reported": "七training β每点400 binary samples；五held-out β，独立生物n无",
+          "uncertainty": "纯形式结果无样本量；模拟未给该处完整不确定性。",
+          "assumptions": [
+            "已知访问/参数化生成器的受控恢复，不是无标签真实GRN从passive expression discovery；不是SERGIO自动发现全部edge。"
+          ],
+          "source_locator": {
+            "pdf_page": 26,
+            "section": "GRN Exp3a;Table12",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "合成accessibility生成edge概率的logistic estimator在五个held-out β上恢复结构kernel，报告MAE=.0054和R²=.99963。",
+        "boundary": "已知访问/参数化生成器的受控恢复，不是无标签真实GRN从passive expression discovery；不是SERGIO自动发现全部edge。",
+        "negative_result": null,
+        "non_inference": "数学/模拟结果不是生物或临床验证；同一推导、模拟配置及其派生指标不构成独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "misspecified结构family和noisy β时仍能校准吗？"
+      ],
+      "shared_evidence_with": [
+        "C9",
+        "C17"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C22",
+      "statement": "SERGIO parent clamp 后经response axis shifting/rescaling的Hill形状比较报告R²=.99987，作者明确仅作shape sanity check而非参数估计器。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "六parent clamps和normalized shape comparison",
+          "design": "SERGIO parent clamp 后经response axis shifting/rescaling的Hill形状比较报告R²=.99987，作者明确仅作shape sanity check而非参数估计器。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "模拟expression response curve",
+          "sample_size_as_reported": "v=.05,.2,.4,.7,1,1.4；共享SERGIO配置",
+          "uncertainty": "纯形式结果无样本量；模拟未给该处完整不确定性。",
+          "assumptions": [
+            "归一化去除了轴尺度/偏移，不能用高R²声称已识别binding strength、threshold或全部Γ。"
+          ],
+          "source_locator": {
+            "pdf_page": 26,
+            "section": "GRN Exp3 mechanism check",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "SERGIO parent clamp 后经response axis shifting/rescaling的Hill形状比较报告R²=.99987，作者明确仅作shape sanity check而非参数估计器。",
+        "boundary": "归一化去除了轴尺度/偏移，不能用高R²声称已识别binding strength、threshold或全部Γ。",
+        "negative_result": null,
+        "non_inference": "数学/模拟结果不是生物或临床验证；同一推导、模拟配置及其派生指标不构成独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "未归一化读出与noise模型校准后哪些机制参数可识别？"
+      ],
+      "shared_evidence_with": [
+        "C21",
+        "C20"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "该v2预印本把context驱动图形成与values机制置于有序生成模型，并定义message-level干预。证明提供gauge/latent-edge障碍与强访问条件下可达Markov kernel识别，细message和单实例另需更强条件。NEURON两seed和SERGIO受控模拟仅说明这些模式，KS非显著不等价证明、count/affinity代理和归一化shape不等真实生物或全机制恢复。",
+  "shared_evidence": [
+    {
+      "claim_id": "C2",
+      "with": [
+        "C1"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C1",
+        "C3"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C3"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C3"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C7",
+        "C8"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "with": [
+        "C3",
+        "C9"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "with": [
+        "C9"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "with": [
+        "C9",
+        "C11",
+        "C10"
+      ]
+    },
+    {
+      "claim_id": "C13",
+      "with": [
+        "C9"
+      ]
+    },
+    {
+      "claim_id": "C14",
+      "with": [
+        "C7",
+        "C10"
+      ]
+    },
+    {
+      "claim_id": "C15",
+      "with": [
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C16",
+      "with": [
+        "C8"
+      ]
+    },
+    {
+      "claim_id": "C17",
+      "with": [
+        "C9"
+      ]
+    },
+    {
+      "claim_id": "C18",
+      "with": [
+        "C17",
+        "C9"
+      ]
+    },
+    {
+      "claim_id": "C19",
+      "with": [
+        "C7",
+        "C15"
+      ]
+    },
+    {
+      "claim_id": "C20",
+      "with": [
+        "C8",
+        "C16"
+      ]
+    },
+    {
+      "claim_id": "C21",
+      "with": [
+        "C9",
+        "C17"
+      ]
+    },
+    {
+      "claim_id": "C22",
+      "with": [
+        "C21",
+        "C20"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": "C7",
+        "pdf_page": 20,
+        "issue": "重参数化反例只证明原生coordinate不唯一，正文beyond reparameterization表述可能被读成modulo gauge仍不识别。",
+        "suggested_correction": "按实际证明范围表述，保留更强非识别性未证明的疑问。",
+        "resolved": false
+      },
+      {
+        "claim_id": "C9",
+        "pdf_page": 19,
+        "issue": "定理需要可逆/可识别readouts及结构probe假设，不能裸模型推出。",
+        "suggested_correction": "整组假设与可达支持保留，Γ仅induced kernel。",
+        "resolved": true
+      },
+      {
+        "claim_id": "C9",
+        "pdf_page": 22,
+        "issue": "证明将do条件核称equivalently observational conditional；外生噪声若允许相关，该等同还需独立/无隐混杂限定。",
+        "suggested_correction": "抽取目标保留interventional kernel，不额外声称任意噪声下观察条件等同。",
+        "resolved": false
+      },
+      {
+        "claim_id": "C12",
+        "pdf_page": 24,
+        "issue": "deterministicΓ由已知β/A得f的陈述仍需该Γ规则已知/已识别，函数–噪声分离强于kernel。",
+        "suggested_correction": "保留条件与同实例/人口目标差别。",
+        "resolved": true
+      },
+      {
+        "claim_id": "C15",
+        "pdf_page": 8,
+        "issue": "高KS p值及跨细胞检验不能证明精确等价或提高B=2独立seed数。",
+        "suggested_correction": "仅报告未拒绝和构造对称；真实生物n无。",
+        "resolved": true
+      },
+      {
+        "claim_id": "C16",
+        "pdf_page": 9,
+        "issue": "pg校准在线性仅精确，node-MMD非零；尚无bootstrap/permutation显著性。",
+        "suggested_correction": "近似confounding示例不冒充exact equivalence证明。",
+        "resolved": true
+      },
+      {
+        "claim_id": "C17",
+        "pdf_page": 9,
+        "issue": "global eccentricity proxy不是单β的精确干预或全kernel恢复。",
+        "suggested_correction": "只记录组成改变示例。",
+        "resolved": true
+      },
+      {
+        "claim_id": "C20",
+        "pdf_page": 26,
+        "issue": "SERGIO site multiplicity通过effective strength实现，不是literal stochastic edge删除。",
+        "suggested_correction": "保留count/affinity analogue身份，不能记作结构发现。",
+        "resolved": true
+      },
+      {
+        "claim_id": "C21",
+        "pdf_page": 26,
+        "issue": "held-out logistic恢复使用已知synthetic binary samples，不是passive noisy-expression recovery。",
+        "suggested_correction": "参数化范围和访问接口保留。",
+        "resolved": true
+      },
+      {
+        "claim_id": "C22",
+        "pdf_page": 26,
+        "issue": "归一化shape高R²不能识别单机制参数。",
+        "suggested_correction": "遵循作者sanity-check限定，非失败/非验证。",
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T12:25:51.909657Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "e31c76459f4819fb0a04d1b954b4731203be15594292ea08aa87590b6cc36a37",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

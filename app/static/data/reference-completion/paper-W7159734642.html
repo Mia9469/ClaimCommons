@@ -1,0 +1,146 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>NeuroPlastic: A Plasticity-Modulated Optimizer for Biologically Inspired Learning Dynamics</title><style>body{max-width:940px;margin:40px auto;padding:0 24px;background:#fffdf7;color:#12372f;font:16px/1.8 Georgia,serif}h1{font-size:26px;line-height:1.4}h2{font-size:20px;line-height:1.5}h3{font-size:16px}article{padding:26px 0;border-top:1px solid #bec4b8}small{color:#68766e}dl{display:grid;grid-template-columns:120px 1fr;gap:8px 20px}dt{font-weight:bold}dd{margin:0}li{padding:8px 0}p,dd{overflow-wrap:anywhere}.note{background:#eef2e2;padding:14px;border-left:3px solid #738968}summary{cursor:pointer}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.7 monospace}@media(max-width:600px){body{margin:24px auto;padding:0 18px}dl{grid-template-columns:1fr;gap:3px}dd{margin-bottom:12px}}@media print{body{margin:0;background:white}details{display:block}}</style><link rel="stylesheet" href="../../commons-v02.css?v=20261020-1"><link rel="stylesheet" href="../../examples.css?v=20260928-2"><link rel="stylesheet" href="../../site.css?v=20261020-1"><script defer src="../../site.js?v=20261020-1"></script><script defer src="../../report-ui.js?v=20261020-1"></script></head><body class="portal-page report-page" data-cc-report-shell="1" data-page="library" data-site-prefix="../../" data-library-paper="paper-W7159734642" data-report-language="zh" data-claim-records="{&quot;C1&quot;:&quot;structured-paper-W7159734642-1&quot;,&quot;C2&quot;:&quot;structured-paper-W7159734642-2&quot;,&quot;C3&quot;:&quot;structured-paper-W7159734642-3&quot;,&quot;C4&quot;:&quot;structured-paper-W7159734642-4&quot;,&quot;C5&quot;:&quot;structured-paper-W7159734642-5&quot;,&quot;C6&quot;:&quot;structured-paper-W7159734642-6&quot;,&quot;C7&quot;:&quot;structured-paper-W7159734642-7&quot;,&quot;C8&quot;:&quot;structured-paper-W7159734642-8&quot;,&quot;C9&quot;:&quot;structured-paper-W7159734642-9&quot;,&quot;C10&quot;:&quot;structured-paper-W7159734642-10&quot;,&quot;C11&quot;:&quot;structured-paper-W7159734642-11&quot;,&quot;C12&quot;:&quot;structured-paper-W7159734642-12&quot;,&quot;C13&quot;:&quot;structured-paper-W7159734642-13&quot;,&quot;C14&quot;:&quot;structured-paper-W7159734642-14&quot;,&quot;C15&quot;:&quot;structured-paper-W7159734642-15&quot;}"><header></header><main id="report-content"><div id="report-tools"></div><small>CLAIM COMMONS / 阅读报告</small><h1>NeuroPlastic: A Plasticity-Modulated Optimizer for Biologically Inspired Learning Dynamics</h1><p class="note">AI 文本提取候选，尚待人工核对。图像像素未读取；PDF 页码指文件中的页序。</p><p>这篇16页arXiv:2604.26297v1、2026年4月29日预印本提出NeuroPlastic：由同一梯度派生的normalized magnitude、activity EMA和raw moment memory统计共同调制更新，再经norm clipping和RMS gain稳定化。它是生物启发优化器，不是生物实验；gradient-only仍保留gradient modulation。三个seed、10 epochs的轻量基准中，MNIST最终准确率约+0.001、Fashion-MNIST约+0.006，并有较低training loss；Fashion-MNIST四个数据比例的最终精度收益约+0.004至+0.006，低数据趋势不严格单调。CIFAR-10 ResNet-18、50 epochs的标准基线比较不胜过well-tuned SGD/Adam/AdamW，且学习率敏感；固定MNIST配置的附录迁移更报告full最终比gradient-only低约0.001。全部附录均纳入：Fashion-MNIST状态诊断显示alpha、effective update轨迹变化而raw gradient尺度相似，但不识别因果机制；移除归一化或稳定化可引发不稳定；residual/hybrid变体通常较差，controller-style的best test accuracy接近SGD。共15条候选，方法、实际负结果、诊断、解释和未来假设分别保留。低数据loss的训练/测试标签冲突，以及触边饱和的精确设置/频率，已作为明确问题延后，不猜测。只评估文本和图注，没有图像、代码或补充日志；所有记录为human_checked:false的AI候选，无跨论文关系。</p><a href="https://arxiv.org/pdf/2604.26297" rel="noreferrer">查看所读原文版本 ↗</a><details><summary>贡献清单与处理决定</summary><ul><li><b>梯度幅度、梯度活动EMA及原始Adam式moment构成的归一化plasticity modulation</b><br>include · 可独立评估的方法构造；gradient-only保留梯度调制，不等于SGD或alpha=1。</li><li><b>norm clipping与RMS bounded gain的homeostatic stabilization</b><br>include · 独立的更新稳定化构造；不宣称有数学收敛证明。</li><li><b>MNIST最终准确率和训练loss改善</b><br>include · 三个seeds对照，约+0.001绝对准确率，未报告精确方差或P。</li><li><b>Fashion-MNIST最终及best准确率、训练loss改善</b><br>include · 三个共享seeds对照，约+0.006平均最终准确率。</li><li><b>Fashion-MNIST四个数据比例下的准确率收益及非单调性</b><br>include · 0.1、0.25、0.5、1.0比例，收益约+0.004至+0.006；不编造逐比例数值。</li><li><b>低数据实验loss下降的训练/测试归属</b><br>defer · issue_id=paper-W7159734642:low-data-loss-label；正文称training loss而图注称final test loss，无法从提供文本确定所绘loss归属。</li><li><b>CIFAR-10 ResNet-18与SGD、Adam、AdamW的学习率敏感比较</b><br>include · 稳定但不超越调优标准优化器；较大学习率可接近，保留实际限制。</li><li><b>固定MNIST配置转移CIFAR-10时落后gradient-only约0.001</b><br>include · 附录E独立可评估的实际负向比较，不被competitive摘要掩盖。</li><li><b>Fashion-MNIST plasticity coefficient更高、更稳定</b><br>include · Figure 6A文字诊断；不从图中推算数值。</li><li><b>有效update norm早期更大、后期衰减更平滑</b><br>include · Figure 6B独立读出，与其他诊断共享三seed证据。</li><li><b>raw gradient norm相似</b><br>include · Figure 6C实际比较，不能据相似措辞推断严格等效。</li><li><b>性能收益源于有效更新变换而非较大raw gradient的解释</b><br>include · 诊断与性能相关联，但没有独立识别每个模块的因果贡献。</li><li><b>移除normalization或stabilization可导致较大学习率下不稳定</b><br>include · 保留作者报告的负向观察，同时明示缺少移除项逐实验参数和发生率。</li><li><b>residual/hybrid变体通常逊于标准优化器</b><br>include · Figure 7的best test accuracy读出，不当作final accuracy。</li><li><b>controller-style变体的best test accuracy接近SGD</b><br>include · 与默认关闭的learning-rate controller区别，不声称默认NeuroPlastic胜出。</li><li><b>自适应权重、plasticity schedules或范围控制的未来假设</b><br>include · 作为固定人工结构的改进假设，不当作已验证提升。</li><li><b>部分设置plasticity coefficient触边饱和的精确条件和频率</b><br>defer · issue_id=paper-W7159734642:boundary-saturation-settings；只给部分设置的诊断提示，没有设置、比例或数值，不能生成精确饱和结果。</li><li><b>生物多因子塑性、外部优化器文献及代码开放</b><br>exclude · 背景、复现资源与贡献上下文，不构成本篇生物验证或外部论文的新结果。</li></ul></details><article><small>C1 / 直接结果 · optimizer_construction</small><h2>NeuroPlastic在梯度方向上构造逐参数调制alpha：将归一化梯度幅度、梯度绝对值EMA和由非bias-corrected一/二阶moment计算的memory-like比值加权并裁剪，再以alpha乘原始梯度；三个信号均由梯度派生，gradient-only消融仅去掉activity/memory项而保留梯度归一化调制，并不是普通SGD。</h2><h3>Evidence</h3><p>公式定义及实现配置</p><dl><dt>设计 / 对照</dt><dd>activity为|g|的EMA，memory为归一化|m|/(sqrt(v)+epsilon)，full alpha是三项加权；gradient-only alpha为clip(normalized |g|)。；保留gradient modulation的gradient-only消融</dd><dt>独立单位与 n</dt><dd>优化器算法，不是独立生物信号或实验样本；未报告 / 不适用</dd><dt>不确定性</dt><dd>无通用收敛界或计算开销定量基准</dd><dt>原文位置</dt><dd>PDF 5 · Figure 1</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>给出可嵌入标准梯度训练流程的多统计调制构造。</dd><dt>适用边界</dt><dd>activity/memory是梯度统计，不是实测神经活动、记忆或额外独立信息源。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不证明生物多因子机制，也不把gradient-only比较误写为对SGD的优越性。</dd><dt>未解决</dt><dd>各派生统计单独贡献和实际时间/显存成本。</dd></dl><h3>相关问题</h3><ul><li>从同一梯度构造的多种归一化统计能否改进参数更新？</li></ul></article><article><small>C2 / 直接结果 · stabilizer_construction</small><h2>NeuroPlastic的homeostatic stabilization先在modulated update范数超过阈值tau时重缩放，再依据RMS与目标值之差计算并裁剪乘法gain；默认tau=1.0、target RMS=0.02、rho=0.01、gain范围0.5–1.5，这是一种有界更新调节设计，而不是任意学习率下收敛的证明。</h2><h3>Evidence</h3><p>norm clipping及RMS gain公式</p><dl><dt>设计 / 对照</dt><dd>u先按tau/(norm+epsilon)裁剪，再乘gamma_stab；默认各参数组target RMS缩放均为1.0。；未稳定化的modulated update</dd><dt>独立单位与 n</dt><dd>算子定义与默认超参数；未报告 / 不适用</dd><dt>不确定性</dt><dd>没有稳定性定理或最优参数范围</dd><dt>原文位置</dt><dd>PDF 6 · 3.5–3.6；Appendix A.3见第13页</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>设计norm与RMS联合调节机制。</dd><dt>适用边界</dt><dd>经验稳定性只在所报告配置检验，算法本身不是保证。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>homeostatic命名不构成生物稳态验证，也不证明全部学习率稳定。</dd><dt>未解决</dt><dd>理论稳定条件和更大架构上的尺度适配。</dd></dl><h3>相关问题</h3><ul><li>norm clipping与RMS bounded gain如何调节plasticity-modulated update的幅度？</li></ul></article><article><small>C3 / 直接结果 · controlled_optimizer_comparison</small><h2>在MNIST的相同架构和训练流程、学习率1e-3、batch size 128、10 epochs及alpha界0.9–1.1下，三个训练seeds的full NeuroPlastic相对保留梯度调制的gradient-only消融报告约+0.001绝对最终test accuracy，并有较低training loss；提升较小，不能据此认定胜过标准Adam或SGD。</h2><h3>Evidence</h3><p>MNIST同设置消融比较</p><dl><dt>设计 / 对照</dt><dd>三个seeds；共享架构及训练流程，full加入activity/memory贡献，ablation保留gradient modulation。；gradient-only NeuroPlastic消融，非普通SGD</dd><dt>独立单位与 n</dt><dd>独立seed的模型训练运行，按共享seed比较；3 training seeds；数据样本数和具体网络结构未在供给文字中列出</dd><dt>不确定性</dt><dd>Figure 2阴影为跨运行SD；未给数值SD、CI或P</dd><dt>原文位置</dt><dd>PDF 7 · Figure 2A</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>三个seed中报告小幅一致的最终精度与训练loss改善。</dd><dt>适用边界</dt><dd>轻量基准和有限seed范围。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>一致方向不等于统计显著、普遍优化器优越或生物验证。</dd><dt>未解决</dt><dd>更多独立运行、架构和任务上的收益。</dd></dl><h3>相关问题</h3><ul><li>多统计调制是否在MNIST上超过匹配的gradient-only更新？</li></ul></article><article><small>C4 / 直接结果 · controlled_optimizer_comparison</small><h2>在Fashion-MNIST的同架构训练、学习率1e-3、batch size 128、10 epochs及alpha界0.9–1.1下，full NeuroPlastic相对gradient-only消融在三个共享seeds上均提高final和best test accuracy，平均最终准确率约增加0.006绝对值，并取得更低training loss。</h2><h3>Evidence</h3><p>Fashion-MNIST匹配消融实验</p><dl><dt>设计 / 对照</dt><dd>相同架构和训练流程，三个共享seeds对照full与移除activity/memory但保留gradient modulation的配置。；gradient-only消融</dd><dt>独立单位与 n</dt><dd>seed训练运行；epoch和best checkpoint不是独立重复；3 shared training seeds</dd><dt>不确定性</dt><dd>Figure 2B跨运行SD阴影；未给数值SD、P或CI</dd><dt>原文位置</dt><dd>PDF 7 · Figure 2B</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>文述三个seeds中最终及best精度方向一致，幅度比MNIST报告更大。</dd><dt>适用边界</dt><dd>只比较两个具体轻量任务，不能单由任务差别推出难度的一般规律。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不证明在噪声梯度或所有高难任务必然更好。</dd><dt>未解决</dt><dd>更丰富任务与独立调参预算下的增益。</dd></dl><h3>相关问题</h3><ul><li>Fashion-MNIST上的full modulation能否改善最终和best分类精度？</li></ul></article><article><small>C5 / 直接结果 · data_regime_comparison</small><h2>在Fashion-MNIST分别保留0.1、0.25、0.5和1.0训练数据比例且测试集不变的实验中，full NeuroPlastic相对gradient-only消融在全部四种比例下提高最终test accuracy，文述绝对收益约0.004–0.006；低数据时优势倾向稍大，但不是严格单调。</h2><h3>Evidence</h3><p>控制训练数据比例的消融比较</p><dl><dt>设计 / 对照</dt><dd>四种训练比例，测试集保持不变；在各实验设置内使用相同架构及训练流程。；每一相同数据比例下的gradient-only消融</dd><dt>独立单位与 n</dt><dd>各数据比例内的seed训练运行；数据比例是条件，不是重复单位；附录B–C报告每实验3 independent seeds；四种比例；未给逐比例详细结果表</dd><dt>不确定性</dt><dd>Figure 3阴影为跨运行SD；无逐比例数值SD、CI或P</dd><dt>原文位置</dt><dd>PDF 8 · Figure 3A</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>在四个所测比例下均报告准确率收益。</dd><dt>适用边界</dt><dd>不能把非单调趋势表述为数据越少收益必然越大。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>数据减少不等于实验直接操纵梯度噪声，更不证明对所有弱信号学习有效。</dd><dt>未解决</dt><dd>逐比例收益、重复误差及loss具体归属。</dd></dl><h3>相关问题</h3><ul><li>减少训练数据时，plasticity modulation的准确率优势如何变化？</li></ul></article><article><small>C6 / 直接结果 · transfer_and_baseline_comparison</small><h2>在CIFAR-10 ResNet-18、batch size 128、50 epochs、三个seeds且测试学习率1e-3、1e-2及5e-2的比较中，沿用MNIST调制配置的NeuroPlastic训练稳定，并在较大学习率5e-2时变得接近标准优化器，但不超过调优SGD、Adam和AdamW的最终性能，且对学习率缩放明显敏感。</h2><h3>Evidence</h3><p>CIFAR-10标准优化器与学习率比较</p><dl><dt>设计 / 对照</dt><dd>ResNet-18，50 epochs，batch128，3 seeds；MNIST-tuned配置不重新调制参数，但显式比较三种学习率。；SGD、Adam、AdamW及不同NeuroPlastic学习率</dd><dt>独立单位与 n</dt><dd>每配置的seed训练运行；学习率和优化器为比较条件；3 random seeds；学习率{1e-3,1e-2,5e-2}</dd><dt>不确定性</dt><dd>无精确性能差、显著性或非劣性界；不能从图像获取</dd><dt>原文位置</dt><dd>PDF 9 · Figure 4A–D</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>在所测迁移配置中能够稳定训练，较大学习率可接近标准方法。</dd><dt>适用边界</dt><dd>配置依赖和调参不对称限制普遍排名结论。</dd><dt>实际负结果</dt><dd>最终性能不胜过调优标准优化器；存在明显学习率敏感性。</dd><dt>不能推出</dt><dd>competitive不等于优于或统计等效，不证明任意任务可无损替换。</dd><dt>未解决</dt><dd>同等调参预算与更大数据集下能否竞争。</dd></dl><h3>相关问题</h3><ul><li>MNIST调制配置迁移到CIFAR-10 ResNet-18时能否匹配标准优化器，且多敏感于学习率？</li></ul></article><article><small>C7 / 直接结果 · negative_transfer_result</small><h2>附录E将固定MNIST-tuned配置转移到CIFAR-10时，gradient-only消融的最终accuracy比full NeuroPlastic平均高约0.001绝对值；full有时达到相当或稍高的中间accuracy，但优势未持续到收敛，两种配置均呈稳定训练。</h2><h3>Evidence</h3><p>固定配置的CIFAR-10额外迁移比较</p><dl><dt>设计 / 对照</dt><dd>不额外retuning的MNIST配置；Figure 5比较test accuracy及test loss轨迹。；gradient-only消融对full NeuroPlastic</dd><dt>独立单位与 n</dt><dd>独立seed训练运行，同一训练曲线的不同epoch不是复制；附录C统一报告每实验3 independent seeds，Figure 5阴影为跨运行SD</dd><dt>不确定性</dt><dd>无精确SD、CI、P或等效性检验</dd><dt>原文位置</dt><dd>PDF 14 · Figure 5A–B</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>固定配置在迁移任务仍可稳定训练。</dd><dt>适用边界</dt><dd>只说明该固定配置而非最佳调参能力。</dd><dt>实际负结果</dt><dd>full最终准确率落后gradient-only约0.001，未复现轻量任务上的最终优势。</dd><dt>不能推出</dt><dd>小差距不是统计非劣性，也不能把偶发中间best当作最终优势。</dd><dt>未解决</dt><dd>重新调参、独立架构与数据规模是否改变负迁移。</dd></dl><h3>相关问题</h3><ul><li>固定MNIST配置的plasticity收益是否延续到CIFAR-10最终性能？</li></ul></article><article><small>C8 / 直接结果 · optimizer_state_diagnostic</small><h2>在Fashion-MNIST的三个seed优化器诊断中，full NeuroPlastic相对gradient-only消融维持更高且更稳定的平均plasticity coefficient；这描述调制统计轨迹而非直接证明该轨迹使分类性能改善。</h2><h3>Evidence</h3><p>训练过程alpha统计诊断</p><dl><dt>设计 / 对照</dt><dd>full与gradient-only的mean plasticity coefficient随训练变化。；gradient-only消融</dd><dt>独立单位与 n</dt><dd>seed训练运行；每参数alpha和epoch统计不是独立重复；3 random seeds，Figure 6阴影为±1 SD</dd><dt>不确定性</dt><dd>无具体系数均值或SD表</dd><dt>原文位置</dt><dd>PDF 15 · Figure 6A</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>full调制改变alpha轨迹。</dd><dt>适用边界</dt><dd>定性曲线描述，不推算像素或饱和比例。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>更高alpha不等于更多独立学习信息或已识别的性能原因。</dd><dt>未解决</dt><dd>alpha分布、触边及对性能的独立贡献。</dd></dl><h3>相关问题</h3><ul><li>full modulation如何改变Fashion-MNIST训练中的plasticity coefficient轨迹？</li></ul></article><article><small>C9 / 直接结果 · effective_update_diagnostic</small><h2>同一Fashion-MNIST诊断显示，full NeuroPlastic相对gradient-only消融的effective update norm在训练早期略大、后期衰减更平滑；这一更新轨迹差异来自三个seed的诊断，不是新的独立性能复制。</h2><h3>Evidence</h3><p>effective update norm过程诊断</p><dl><dt>设计 / 对照</dt><dd>比较full与gradient-only训练随epoch的有效更新范数。；gradient-only消融</dd><dt>独立单位与 n</dt><dd>seed训练运行；epoch及参数范数为重复测量；3 random seeds；Figure 6为±1 SD</dd><dt>不确定性</dt><dd>未给范数大小、差异CI或检验</dd><dt>原文位置</dt><dd>PDF 15 · Figure 6B</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>full modulation改变实际施加更新的时间轨迹。</dd><dt>适用边界</dt><dd>限于Fashion-MNIST报告诊断。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能由轨迹平滑直接推出更好泛化或严格稳定性。</dd><dt>未解决</dt><dd>强制匹配更新范数后准确率收益是否仍在。</dd></dl><h3>相关问题</h3><ul><li>plasticity modulation是否改变早期与后期effective update norm？</li></ul></article><article><small>C10 / 直接结果 · raw_gradient_diagnostic</small><h2>在同一Fashion-MNIST优化器诊断中，full NeuroPlastic和gradient-only消融的raw gradient norm保持相似，尽管effective update norm轨迹不同；因此文述改善并未伴随明显更大的原始梯度尺度，但相似描述不是统计等效性证明。</h2><h3>Evidence</h3><p>raw gradient norm过程比较</p><dl><dt>设计 / 对照</dt><dd>Figure 6C比较两配置原始梯度范数，联合Figure 6B的有效更新读出。；gradient-only消融</dd><dt>独立单位与 n</dt><dd>seed训练运行中的梯度范数重复测量；3 random seeds；阴影±1 SD</dd><dt>不确定性</dt><dd>未报告等效性界、精确差异或P</dd><dt>原文位置</dt><dd>PDF 15 · Figure 6C</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>诊断将raw gradient尺度与effective update变化区分。</dd><dt>适用边界</dt><dd>没有量化等效检验。</dd><dt>实际负结果</dt><dd>未报告full存在明显更大的raw gradient尺度。</dd><dt>不能推出</dt><dd>不能推断原始梯度信息量、方向或噪声分布完全不变。</dd><dt>未解决</dt><dd>梯度方向、噪声与高阶统计是否变化。</dd></dl><h3>相关问题</h3><ul><li>更新调制的性能变化是否伴随raw gradient尺度变化？</li></ul></article><article><small>C11 / 解释 · optimization_mechanism_interpretation</small><h2>作者将Fashion-MNIST精度提升与更高稳定的alpha、不同effective update norm及相似raw gradient norm联合解释为更新如何被调制和稳定化更重要，而非单纯放大原始梯度；这些相关诊断没有独立证明activity、memory或稳定化哪一项造成收益。</h2><h3>Evidence</h3><p>性能结果与训练状态诊断的联合解释</p><dl><dt>设计 / 对照</dt><dd>4.1及Appendix F联结Fashion-MNIST表现和Figure 6三个过程指标。；full NeuroPlastic与gradient-only消融</dd><dt>独立单位与 n</dt><dd>Fashion-MNIST实验系列及其诊断；不是独立因果干预；主结果与Figure 6各报告3 seeds；不可相加为6个独立复制</dd><dt>不确定性</dt><dd>没有模块逐一匹配消融或因果识别分析</dd><dt>原文位置</dt><dd>PDF 15 · Figure 6A–C；Figure 2B</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>支持把NeuroPlastic视为梯度更新上的二级调制层的解释。</dd><dt>适用边界</dt><dd>机制支持主要为训练过程关联诊断。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不证明神经塑性机制，也不排除只是有效步长变化产生效果。</dd><dt>未解决</dt><dd>匹配有效更新范数或单独移除各统计后收益是否保留。</dd></dl><h3>相关问题</h3><ul><li>NeuroPlastic收益来自信息组成、有效更新尺度，还是稳定化过程？</li></ul></article><article><small>C12 / 直接结果 · destabilizing_ablation_observation</small><h2>附录F报告，移除normalization或stabilization可在较大学习率下导致plasticity coefficient过度增长和exploding updates，从而出现训练不稳定；该观察支持保留有界调制，但来源未给出移除实验的逐项学习率、失败率或精确重复数。</h2><h3>Evidence</h3><p>移除normalization/stabilization的文字诊断</p><dl><dt>设计 / 对照</dt><dd>附录F在Fashion-MNIST诊断讨论中描述较大学习率下的移除观察，未提供单独结果表。；保留normalization与stabilization的NeuroPlastic</dd><dt>独立单位与 n</dt><dd>移除配置的训练运行；具体观察次数不明；附录C整体协议为3 seeds；本段未列移除实验各条件的独立重复数</dd><dt>不确定性</dt><dd>失败率、阈值和效应量未报告</dd><dt>原文位置</dt><dd>PDF 15 · Appendix F</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>提供有界调制与稳定化的重要性线索。</dd><dt>适用边界</dt><dd>这是条件不充分详述的定性观察。</dd><dt>实际负结果</dt><dd>部分移除设置出现系数过度增长与exploding updates。</dd><dt>不能推出</dt><dd>不能据此声明每次移除必失败或定量证明任一模块的必要性。</dd><dt>未解决</dt><dd>哪项移除、哪一学习率和多少独立运行发生不稳定。</dd></dl><h3>相关问题</h3><ul><li>哪些归一化或稳定化移除条件使plasticity-modulated训练出现exploding updates？</li></ul></article><article><small>C13 / 直接结果 · negative_formulation_comparison</small><h2>在附录G的CIFAR-10 ResNet-18设计空间探索中，以训练期间best test accuracy衡量时，naive residual-style或hybrid modulation变体通常逊于标准优化器；因此直接加入plasticity信号不是普遍有效的改进。</h2><h3>Evidence</h3><p>plasticity变体与标准优化器比较</p><dl><dt>设计 / 对照</dt><dd>探索residual-style、hybrid及controller-style变体，Figure 7标示相对SGD的best test accuracy差。；SGD及文述标准优化器</dd><dt>独立单位与 n</dt><dd>每optimizer/formulation配置的训练运行；附录C整体称每实验3 independent seeds；附录G未分项重列各变体重复数</dd><dt>不确定性</dt><dd>图注不提供精确差值或变体方差，像素未提供</dd><dt>原文位置</dt><dd>PDF 16 · Figure 7</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>显示plasticity调制效用对具体整合形式敏感。</dd><dt>适用边界</dt><dd>变体完整设置和文字数值表缺失。</dd><dt>实际负结果</dt><dd>naive residual/hybrid变体通常低于标准优化器。</dd><dt>不能推出</dt><dd>不能推断所有残差或混合方法必定无效，也不能将best比较写成最终性能比较。</dd><dt>未解决</dt><dd>同等调参预算下哪些形式仍有益。</dd></dl><h3>相关问题</h3><ul><li>把plasticity作为残差或hybrid更新是否比标准SGD更有效？</li></ul></article><article><small>C14 / 直接结果 · controller_formulation_comparison</small><h2>在同一CIFAR-10 ResNet-18变体探索中，将plasticity解释为effective learning-rate controller、而非additive update的形式，其best test accuracy接近well-tuned SGD；这只是某一变体的读出，不表示默认关闭controller的NeuroPlastic已超过SGD。</h2><h3>Evidence</h3><p>controller-style变体设计空间比较</p><dl><dt>设计 / 对照</dt><dd>以learning-rate modulation替代直接additive update的plasticity整合形式。；well-tuned SGD及naive residual/hybrid变体</dd><dt>独立单位与 n</dt><dd>formulation配置下的seed训练运行，和C13共享设计空间实验；附录C统一3 independent seeds；附录G未给controller分项重复表</dd><dt>不确定性</dt><dd>无精确差、CI或等效性检验</dd><dt>原文位置</dt><dd>PDF 16 · Figure 7</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>一种controller式整合可达到接近SGD的best读出。</dd><dt>适用边界</dt><dd>没有统计等效证据或完整变体参数。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>接近不等于超越、非劣性或跨任务一般有效。</dd><dt>未解决</dt><dd>controller优势能否在最终读出及其他任务保持。</dd></dl><h3>相关问题</h3><ul><li>plasticity作为learning-rate controller是否优于直接additive更新整合？</li></ul></article><article><small>C15 / 假说 / 预测 · adaptive_modulation_hypothesis</small><h2>针对固定人工加权结构和部分设置中的plasticity coefficient触边提示，作者提出未来可学习或自适应调制权重、schedule及范围控制，以改进NeuroPlastic的适配；这些改进没有在本文验证。</h2><h3>Evidence</h3><p>局限和未来方向的文字论述</p><dl><dt>设计 / 对照</dt><dd>从固定结构、手选超参数及boundary saturation诊断提示引出自适应权重和范围控制。；当前固定权重和固定modulation结构</dd><dt>独立单位与 n</dt><dd>研究假设；没有自适应权重/schedule实验；未报告 / 不适用</dd><dt>不确定性</dt><dd>触边具体条件和改进效应未量化</dd><dt>原文位置</dt><dd>PDF 9 · 5. Conclusions, Limitations, and Future Work；续见第10页</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>提出与固定结构限制相对应的可检验改进方向。</dd><dt>适用边界</dt><dd>目前仅轻量图像任务及固定手动配置；触边细节缺失。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不表述为adaptive方案已解决饱和、扩展到大模型或取得额外精度。</dd><dt>未解决</dt><dd>哪种自适应权重或范围控制能在公平预算下改善性能与稳定性。</dd></dl><h3>相关问题</h3><ul><li>自适应plasticity weighting与range control能否改善固定结构的性能及触边问题？</li></ul></article><details><summary>核对记录与来源信息</summary><pre>{
+  &quot;coverage&quot;: {
+    &quot;pdf_pages_read&quot;: [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16
+    ],
+    &quot;results_sections_seen&quot;: [
+      &quot;3. Methods；Equations (1)–(22)；Figure 1&quot;,
+      &quot;4.1 MNIST and Fashion-MNIST；Figure 2&quot;,
+      &quot;4.2 Low-Data Regime Analysis；Figure 3&quot;,
+      &quot;4.3 Comparison with Standard Optimizer Baselines；Figure 4&quot;,
+      &quot;5. Conclusions, Limitations, and Future Work&quot;,
+      &quot;Appendix A Optimizer Hyperparameters；B Training Hyperparameters；C Reproducibility；D Compute Resources&quot;,
+      &quot;Appendix E Additional Transfer Validation；Figure 5&quot;,
+      &quot;Appendix F Analysis of Plasticity-Modulated Optimization Behavior；Figure 6&quot;,
+      &quot;Appendix G Design Space Exploration；Figure 7&quot;
+    ],
+    &quot;missing_material&quot;: [
+      &quot;图像像素未提供&quot;,
+      &quot;代码仓库内容、逐seed结果表及原始训练日志未提供&quot;
+    ],
+    &quot;text_pass_complete&quot;: true,
+    &quot;notes&quot;: [
+      &quot;全部16页正文、公式文本、7幅图图注、参考文献及附录A–G均已评估。&quot;,
+      &quot;源文为arXiv:2604.26297v1 [cs.LG] 29 Apr 2026。标题、作者次序及2026年与索引一致；索引Jiayi Wang (294312)中的括号为索引消歧标识，源文为Jiayi Wang，输出作者采用源文并在此保留差异。&quot;,
+      &quot;activity-like和memory-like均由梯度统计计算，不是测得的生物活动或独立外部学习信号。&quot;,
+      &quot;附录A的实现默认系数界为0.2–2.0；附录B轻量基准实验明确采用0.9–1.1，不能混用默认值和实验值。&quot;,
+      &quot;附录C称每实验三个独立seeds并报告mean/SD；seed训练运行是重复单位，不把batch、epoch、参数坐标或数据图像数量当作独立重复。&quot;,
+      &quot;低数据段正文称training loss而Figure 3图注称final test loss，不能确定两者是同一测量；准确率结果可提取，loss归属单独延后。&quot;,
+      &quot;第二轮在保留全文上下文中逐项审计主结果、实际负结果、诊断、变体和假设；不从图像读数，不访问代码或外部论文。&quot;
+    ],
+    &quot;reading_mode&quot;: &quot;text_only&quot;,
+    &quot;figure_images_read&quot;: false,
+    &quot;scientific_verification&quot;: false,
+    &quot;source_pdf_offline&quot;: false,
+    &quot;archived_page_text_used&quot;: false
+  },
+  &quot;audit&quot;: {
+    &quot;source_match_checks&quot;: [],
+    &quot;model_findings&quot;: [
+      {
+        &quot;claim_id&quot;: &quot;C1&quot;,
+        &quot;issue&quot;: &quot;多信号和activity/memory命名可能误导为独立外部或生物学习信号。&quot;,
+        &quot;suggested_correction&quot;: &quot;依据3.2明确三个量全由梯度派生，不推断生物验证或额外独立信息源。&quot;,
+        &quot;pdf_page&quot;: 4,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C1&quot;,
+        &quot;issue&quot;: &quot;gradient-only不是alpha=1，默认alpha界与轻量实验界不同。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留clip(normalized |g|)的消融定义；默认0.2–2.0与实验0.9–1.1分别记录。&quot;,
+        &quot;pdf_page&quot;: 5,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C2&quot;,
+        &quot;issue&quot;: &quot;norm clipping之后的gain可达1.5，不能声明最终update norm必小于tau或所有学习率稳定。&quot;,
+        &quot;suggested_correction&quot;: &quot;按两步算子描述，理论收敛和最终硬界不作外推。&quot;,
+        &quot;pdf_page&quot;: 6,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C5&quot;,
+        &quot;issue&quot;: &quot;paper-W7159734642:low-data-loss-label：4.2正文称training loss，Figure 3B图注称final test loss。&quot;,
+        &quot;suggested_correction&quot;: &quot;仅提取无歧义的accuracy结果；loss训练/测试归属延后，需图或日志及人工核对。&quot;,
+        &quot;pdf_page&quot;: 8,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C7&quot;,
+        &quot;issue&quot;: &quot;摘要stable/competitive可能掩盖附录E full最终不胜过gradient-only的约0.001差。&quot;,
+        &quot;suggested_correction&quot;: &quot;附录E实际负迁移独立记录；与主文标准优化器比较不混合。&quot;,
+        &quot;pdf_page&quot;: 14,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C11&quot;,
+        &quot;issue&quot;: &quot;raw gradient相似和effective update不同只是诊断关联，不唯一识别性能机制。&quot;,
+        &quot;suggested_correction&quot;: &quot;诊断用result，机制用interpretation；各模块归因保留未决。&quot;,
+        &quot;pdf_page&quot;: 15,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C12&quot;,
+        &quot;issue&quot;: &quot;移除normalization/stabilization的文字观察缺少具体学习率、发生率及分项n。&quot;,
+        &quot;suggested_correction&quot;: &quot;限定为可导致不稳定的定性报告，保留缺失项，不猜数据。&quot;,
+        &quot;pdf_page&quot;: 15,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C14&quot;,
+        &quot;issue&quot;: &quot;Figure 7是best test accuracy且controller属于探索变体，不能冒充默认主方法最终性能。&quot;,
+        &quot;suggested_correction&quot;: &quot;变体、默认关闭配置及best读出明确区分，接近SGD不当作统计等效。&quot;,
+        &quot;pdf_page&quot;: 16,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C15&quot;,
+        &quot;issue&quot;: &quot;paper-W7159734642:boundary-saturation-settings：部分设置的boundary saturation只有提示，无具体实验条件和发生比例。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留未来范围控制动机，精确饱和结果延后，需原始诊断和人工核对。&quot;,
+        &quot;pdf_page&quot;: 10,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;索引作者Jiayi Wang (294312)与源文Jiayi Wang文字不同，括号为索引消歧。&quot;,
+        &quot;suggested_correction&quot;: &quot;输出作者采用清晰源文Jiayi Wang并在coverage保留索引差异；不判作不同论文。&quot;,
+        &quot;pdf_page&quot;: 1,
+        &quot;resolved&quot;: true
+      }
+    ],
+    &quot;needs_human_review&quot;: true
+  },
+  &quot;source&quot;: {
+    &quot;filename&quot;: &quot;paper-W7159734642--NeuroPlastic-A-Plasticity-Modulated-Optimizer-for-Biologically-Inspired-Learning-Dynamics.pdf&quot;,
+    &quot;sha256&quot;: &quot;968da1df2494d2c53900af760fa36432ac6fbb8f47da60c058ee5917886d25a9&quot;,
+    &quot;source_url&quot;: &quot;https://arxiv.org/pdf/2604.26297&quot;,
+    &quot;pdf_page_count&quot;: 16
+  },
+  &quot;provenance&quot;: {
+    &quot;created_at&quot;: &quot;2026-10-07T13:33:35.445053Z&quot;,
+    &quot;workflow&quot;: &quot;claim-commons-pdf-v1&quot;,
+    &quot;prompt_version&quot;: &quot;claim-commons-chatgpt-pdf-2026-10-07.1&quot;,
+    &quot;backend&quot;: &quot;authorized_parallel_GPT&quot;,
+    &quot;model&quot;: &quot;inherited_account_GPT&quot;,
+    &quot;provider_api_key_used&quot;: false,
+    &quot;source_sha256&quot;: &quot;968da1df2494d2c53900af760fa36432ac6fbb8f47da60c058ee5917886d25a9&quot;,
+    &quot;source_audit_complete&quot;: true,
+    &quot;review_status&quot;: &quot;candidate&quot;,
+    &quot;database_updated&quot;: false
+  }
+}</pre></details></main><footer></footer></body></html>

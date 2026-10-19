@@ -1,0 +1,118 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>A neuromodulable current-mode silicon neuron for robust and adaptive neuromorphic systems</title><style>body{max-width:940px;margin:40px auto;padding:0 24px;background:#fffdf7;color:#12372f;font:16px/1.8 Georgia,serif}h1{font-size:26px;line-height:1.4}h2{font-size:20px;line-height:1.5}h3{font-size:16px}article{padding:26px 0;border-top:1px solid #bec4b8}small{color:#68766e}dl{display:grid;grid-template-columns:120px 1fr;gap:8px 20px}dt{font-weight:bold}dd{margin:0}li{padding:8px 0}p,dd{overflow-wrap:anywhere}.note{background:#eef2e2;padding:14px;border-left:3px solid #738968}summary{cursor:pointer}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.7 monospace}@media(max-width:600px){body{margin:24px auto;padding:0 18px}dl{grid-template-columns:1fr;gap:3px}dd{margin-bottom:12px}}@media print{body{margin:0;background:white}details{display:block}}</style><link rel="stylesheet" href="../../commons-v02.css?v=20261020-1"><link rel="stylesheet" href="../../examples.css?v=20260928-2"><link rel="stylesheet" href="../../site.css?v=20261020-1"><script defer src="../../site.js?v=20261020-1"></script><script defer src="../../report-ui.js?v=20261020-1"></script></head><body class="portal-page report-page" data-cc-report-shell="1" data-page="library" data-site-prefix="../../" data-library-paper="paper-W4416958771" data-report-language="zh" data-claim-records="{&quot;C1&quot;:&quot;structured-paper-W4416958771-1&quot;,&quot;C2&quot;:&quot;structured-paper-W4416958771-2&quot;,&quot;C3&quot;:&quot;structured-paper-W4416958771-3&quot;,&quot;C4&quot;:&quot;structured-paper-W4416958771-4&quot;,&quot;C5&quot;:&quot;structured-paper-W4416958771-5&quot;,&quot;C6&quot;:&quot;structured-paper-W4416958771-6&quot;,&quot;C7&quot;:&quot;structured-paper-W4416958771-7&quot;,&quot;C8&quot;:&quot;structured-paper-W4416958771-8&quot;,&quot;C9&quot;:&quot;structured-paper-W4416958771-9&quot;,&quot;C10&quot;:&quot;structured-paper-W4416958771-10&quot;,&quot;C11&quot;:&quot;structured-paper-W4416958771-11&quot;,&quot;C12&quot;:&quot;structured-paper-W4416958771-12&quot;,&quot;C13&quot;:&quot;structured-paper-W4416958771-13&quot;,&quot;C14&quot;:&quot;structured-paper-W4416958771-14&quot;,&quot;C15&quot;:&quot;structured-paper-W4416958771-15&quot;}"><header></header><main id="report-content"><div id="report-tools"></div><small>CLAIM COMMONS / 阅读报告</small><h1>A neuromodulable current-mode silicon neuron for robust and adaptive neuromorphic systems</h1><p class="note">AI 文本提取候选，尚待人工核对。图像像素未读取；PDF 页码指文件中的页序。</p><p>修订预印本给出可调电流模式混合反馈神经元，180 nm原型实测支持输入调节、单偏置发放模式切换及5–45 °C定性模式保持。能耗和改进失配均为修订设计仿真，nA下100%活动不等于100%bursting保留。附录sigmoid证明有需人工核查的推理/符号问题。</p><a href="https://arxiv.org/pdf/2512.01133" rel="noreferrer">查看所读原文版本 ↗</a><details><summary>贡献清单与处理决定</summary><ul><li><b>电流模式混合反馈架构、失活和原型</b><br>include · 设计、模拟消融和原型实现分开。</li><li><b>稳态调参、sigmoid论证及电流缩放</b><br>include · 条件性理论分析，保留证明疑点。</li><li><b>输入响应、单偏置调节及瞬态burst</b><br>include · 芯片定性结果，不冒充完整任务性能。</li><li><b>能耗与失配优化</b><br>include · 未在修订实物验证；模式保留与活动产率分开。</li><li><b>温区模式稳定与测试期无漂移</b><br>include · 频率/形态变化和未知测试范围明确。</li><li><b>面积成本与后续网络/闭环调节</b><br>include · 保留已报告布局成本，后续网络实现不作为已完成。</li><li><b>全面网络鲁棒性、自动闭环补偿和实测能耗</b><br>defer · 明确下一芯片/未来实验内容。</li><li><b>优于所有生物/人工模型、引文生物现象与跨论文效率比较</b><br>exclude · 不是本研究独立新测量，比较边界不同。</li></ul></details><article><small>C1 / 直接结果 · circuit_architecture</small><h2>本文提出电流模式混合反馈神经元，以三个DPI滤波状态实现快、慢、超慢时间尺度，两个sigmoid提供快/慢正反馈，慢和超慢负反馈保持线性；180 nm原型包含16个神经元，共用外部产生的12个偏置电压。</h2><h3>Evidence</h3><p>电路架构和原型实现</p><dl><dt>设计 / 对照</dt><dd>X-FAB 180 nm、外部12-bit DAC、复用读出；先前电压模式混合反馈</dd><dt>独立单位与 n</dt><dd>芯片设计；16神经元；一测试芯片</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 10 · Figures 2,4,5,8,9; full schematic page 18</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>实现可调连续时间混合反馈。</dd><dt>适用边界</dt><dd>原型未优化失配且逐一选择电流输出。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不等于已集成网络、学习系统或完整AER通信。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>少量电流模式模块如何构成可调神经元？</li></ul></article><article><small>C2 / 直接结果 · simulation_result</small><h2>本文模型用慢电流削减快正反馈增益、超慢电流削减慢正反馈增益；所示有/无失活比较仿真中，加入失活缩短脉冲和burst持续时间，但未直接报告失活单独造成的实测节能量。</h2><h3>Evidence</h3><p>模型仿真消融</p><dl><dt>设计 / 对照</dt><dd>IGf=IGf,0−Is；IGs=IGs,0−Iu；不含失活的同模型</dd><dt>独立单位与 n</dt><dd>模型条件；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 5 · Figure 3</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>模拟中缩短发放事件。</dd><dt>适用边界</dt><dd>只展示轨迹，未提供效应统计或功率消融。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能将设计动机当作单独实测节能机制。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>正反馈失活如何改变事件持续时间？</li></ul></article><article><small>C3 / 直接结果 · theoretical_analysis</small><h2>在τf≪τs≪τu、滤波增益均为1且忽略失活的近稳态分析下，本文用快/慢/超慢输出–输入曲线的斜率和双稳区相对位置选择tonic spiking或bursting；慢阈值先于快阈值时模型可以产生bursting。</h2><h3>Evidence</h3><p>分层近稳态推导</p><dl><dt>设计 / 对照</dt><dd>时间尺度分离、Gf=Gs=Gu=1、忽略失活；不同正反馈参数</dd><dt>独立单位与 n</dt><dd>简化动力系统；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 8 · Figure 7 on page 9</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>给出DC特征驱动的调参方法。</dd><dt>适用边界</dt><dd>依赖上述近似；不是任意参数的全局稳定性定理。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能从曲线局部斜率推断完整网络的全局鲁棒性。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>稳态曲线如何预测发放模式？</li></ul></article><article><small>C4 / 直接结果 · theoretical_result_as_reported</small><h2>本文附录C在亚阈值MOS模型、忽略沟道长度调制且Q6饱和等假设下，主张电流sigmoid具有单值且递增输入–输出；但所供证明以两边均递增推出唯一解，且Vin与Iin的文字单调关系与式15相反，故该理论保证仍需人工核查。</h2><h3>Evidence</h3><p>器件方程和隐式解论证</p><dl><dt>设计 / 对照</dt><dd>式7–20；饱和及亚阈值近似；不同输入电流</dd><dt>独立单位与 n</dt><dd>电路静态方程；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 20 · Figure 5 on page 7</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>作者给出sigmoid形状与可调阈值/范围/饱和的分析。</dd><dt>适用边界</dt><dd>证明文本存在推论不足和符号方向疑点。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>未完成独立数学验证，不把主张升为已证正确。</dd><dt>未解决</dt><dd>隐式方程唯一性与单调方向的严谨推导。</dd></dl><h3>相关问题</h3><ul><li>附录方程是否充分保证sigmoid单值单调？</li></ul></article><article><small>C5 / 直接结果 · theoretical_scaling</small><h2>本文电流模式模型预测：在亚阈值且所有偏置电流统一缩放时，反馈相对阈值和定性发放模式保持；时间尺度会改变，且正文称快sigmoid基准约7 µA以上进入中等反型后偏离缩放预测。</h2><h3>Evidence</h3><p>电流缩放与近稳态结构分析</p><dl><dt>设计 / 对照</dt><dd>统一缩放、保持弱反型；不同电流尺度</dd><dt>独立单位与 n</dt><dd>模型与器件工作区；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 8 · Current-scale invariance；2.3</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>提供电流尺度调节的条件性依据。</dd><dt>适用边界</dt><dd>7 µA为所用180 nm技术的正文范围描述，未给完整扫描。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不是绝对频率/功耗不变，也不能跨工艺无条件推广。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>电流统一缩放保持哪些动力学特征？</li></ul></article><article><small>C6 / 直接结果 · measured_silicon_result</small><h2>本文180 nm原型的测量中，增加外加电流使tonic spiking或bursting活动频率增加；在bursting配置下较大输入会令burst重叠并转为快spiking。</h2><h3>Evidence</h3><p>芯片电流响应测量</p><dl><dt>设计 / 对照</dt><dd>室温、1.8 V、不同神经元偏置；递增输入电流</dd><dt>独立单位与 n</dt><dd>单神经元轨迹；16单元原型；本图具体独立重复数未报</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 11 · Figure 10</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>测得输入依赖发放和模式变化。</dd><dt>适用边界</dt><dd>作者说明不同神经元需特定偏置，定量同偏置失配未实测。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能推断所有单元同参数一致或生物输入机制被证明。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>输入强度怎样改变原型发放？</li></ul></article><article><small>C7 / 直接结果 · measured_silicon_result</small><h2>本文在输入电流固定时仅增加慢正反馈增益偏置IGs,0，使实物神经元从tonic spiking平滑转向tonic bursting，burst内脉冲数随偏置增加，展示单偏置调节发放模式。</h2><h3>Evidence</h3><p>单偏置扫描测量</p><dl><dt>设计 / 对照</dt><dd>输入不变、慢正反馈增益增加；不同IGs,0</dd><dt>独立单位与 n</dt><dd>原型神经元轨迹；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 12 · Figure 11</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>单偏置可调节spiking/bursting。</dd><dt>适用边界</dt><dd>仅示例和定性多次试验，未给统计重复数。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不证明神经递质机制相同或完成闭环自动适应。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>慢正反馈偏置能否独立调节发放模式？</li></ul></article><article><small>C8 / 直接结果 · measured_silicon_result</small><h2>本文图1对同一步进电流展示实物神经元在不同单偏置条件下分别产生慢tonic spiking或一次瞬态burst；作者将其分别解释为频率编码与变化唤醒，但没有测量任务级编码效益。</h2><h3>Evidence</h3><p>相同输入、偏置切换的芯片记录</p><dl><dt>设计 / 对照</dt><dd>相同输入阶跃；两种偏置</dd><dt>独立单位与 n</dt><dd>神经元轨迹；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 2 · Figure 1</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>同输入可出现不同时间响应。</dd><dt>适用边界</dt><dd>生物记录为引用Sherman；原型亚阈值整合更快。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能当作生物机制证明或任务性能增益。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>同输入下调节能否切换持续与瞬态响应？</li></ul></article><article><small>C9 / 直接结果 · simulated_power</small><h2>本文失配优化后的修订电路SPICE仿真、1.8 V条件下，静息功率约3 nW；tonic spiking为217 pJ/spike（23 Hz）、101 pJ/spike（50 Hz）、41 pJ/spike（160 Hz），3-spike/burst且18 bursts/s时约90 pJ/spike。</h2><h3>Evidence</h3><p>SPICE能耗估计</p><dl><dt>设计 / 对照</dt><dd>修订尺寸/布局，排除偏置、数字控制和输出；不同模式和频率</dd><dt>独立单位与 n</dt><dd>仿真工作条件；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 12 · 3.2.3</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>模型估计神经元核心低功率运行。</dd><dt>适用边界</dt><dd>明确无法在共享原型上验证能耗；217超过摘要40–200范围。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能称硅片实测或系统级能耗，也不与每MAC直接比较。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>模式和频率怎样改变仿真每脉冲能耗？</li></ul></article><article><small>C10 / 直接结果 · mismatch_simulation</small><h2>本文优化设计的200点foundry Monte Carlo中，pA偏置的tonic firing产率约75–80%；名义spiking配置出现模式混合且频率CV约36%，名义bursting下bursting频率CV31%、转为spiking的频率CV38%。</h2><h3>Evidence</h3><p>foundry失配Monte Carlo</p><dl><dt>设计 / 对照</dt><dd>修订设计、固定输入、Table 3 pA偏置；理想名义模式</dd><dt>独立单位与 n</dt><dd>仿真失配实例；200点/参数条件</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 13 · Figure 12</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>低电流运行存在显著失配敏感性。</dd><dt>适用边界</dt><dd>不是原型200个实测神经元；发放产率不等于目标模式产率。</dd><dt>实际负结果</dt><dd>约20–25%实例不tonic firing，且活动实例可进入非目标模式。</dd><dt>不能推出</dt><dd>不能将定性原型行为当作同偏置全阵列可靠性。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>超低电流下失配怎样影响模式和频率？</li></ul></article><article><small>C11 / 直接结果 · mismatch_simulation</small><h2>本文将优化设计偏置电流统一提高1000倍到nA并调整输入以匹配频率后，200点Monte Carlo的名义spiking配置全部tonic firing且保持spiking，频率离散约11%，优于pA配置。</h2><h3>Evidence</h3><p>Monte Carlo电流尺度比较</p><dl><dt>设计 / 对照</dt><dd>1000倍偏置、输入重新调整；pA配置</dd><dt>独立单位与 n</dt><dd>仿真实例；200点/条件</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 13 · Figure 12</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>nA条件改善所述spiking鲁棒性。</dd><dt>适用边界</dt><dd>输入也调整；功率会增大。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不是已制造修订芯片的100%良率。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>提高偏置能否改善spiking失配鲁棒性？</li></ul></article><article><small>C12 / 直接结果 · mismatch_simulation</small><h2>本文nA偏置优化设计的名义bursting Monte Carlo中，200点均tonic firing，但约23%转为慢spiking；保留bursting者频率离散约11%，spiking者约9%（排除3个离群点），所以100%活动产率不是100%bursting保留。</h2><h3>Evidence</h3><p>模式分组失配分析</p><dl><dt>设计 / 对照</dt><dd>1000倍偏置和频率匹配输入；pA名义bursting</dd><dt>独立单位与 n</dt><dd>仿真实例；200点；spiking离散排除3离群点</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 13 · Figure 12</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>电流缩放改善活动与频率稳定性但仍有模式失败。</dd><dt>适用边界</dt><dd>图12分组47 spiking/153 bursting；正文约23%。</dd><dt>实际负结果</dt><dd>约23%未保持bursting。</dd><dt>不能推出</dt><dd>不能宣称bursting目标模式产率100%。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>活动产率和目标bursting保留率是否一致？</li></ul></article><article><small>C13 / 直接结果 · measured_temperature_result</small><h2>本文在偏置电压保持不变的5–45 °C气候箱实验中，两代表神经元分别保持spiking或bursting模式，而频率约从0.5 Hz升至25 Hz；burst内脉冲数从低温四个降至高温两个，说明定性模式稳定但频率与burst形态并非温度不变。</h2><h3>Evidence</h3><p>气候箱温变测量</p><dl><dt>设计 / 对照</dt><dd>监测DAC与温度稳定、固定偏置电压；5–45 °C</dd><dt>独立单位与 n</dt><dd>原型神经元温度轨迹；两个代表神经元；试验次数未报</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 14 · Figure 13</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>温区内保留定性可激发模式。</dd><dt>适用边界</dt><dd>仅两代表单元；热循环数和漂移观察时长未报。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能称频率不变、工业全温区可靠或已验证长期寿命。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>温度改变时哪些发放性质保持？</li></ul></article><article><small>C14 / 直接结果 · measured_stability_report</small><h2>本文在反复升降温和不同偏置/试验中报告未观察到退化或漂移，但未给循环次数、观察时长和定量漂移限；该证据仅支持所观察测试期间的定性重复性。</h2><h3>Evidence</h3><p>重复热循环的正文报告</p><dl><dt>设计 / 对照</dt><dd>多次试验与偏置条件；同测试期间前后</dd><dt>独立单位与 n</dt><dd>原型测试周期；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 14 · 3.3</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>测试期间未报告漂移。</dd><dt>适用边界</dt><dd>时长和重复数量未知。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能当作长期稳定性或耐久寿命定量保证。</dd><dt>未解决</dt><dd>重复次数和长期观察范围。</dd></dl><h3>相关问题</h3><ul><li>所报告温度重复性覆盖多久、多少循环？</li></ul></article><article><small>C15 / 直接结果 · layout_design_result</small><h2>本文报告神经元布局面积约3800 µm²，主要由快/慢/超慢DPI电容占用；附录修订设计的电容为0.5/2/8 pF，反映生物相关时间尺度与集成密度的面积取舍，缩容和先进节点仅列为后续方案。</h2><h3>Evidence</h3><p>电路尺寸表和面积讨论</p><dl><dt>设计 / 对照</dt><dd>失配优化修订布局；更紧凑但复杂的候选积分技术</dd><dt>独立单位与 n</dt><dd>设计布局；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 18 · Table 2; Figure 14</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>给出时间尺度的硬件面积成本。</dd><dt>适用边界</dt><dd>Table 2不是原型全部3 µm×300 nm尺寸；不能混用。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能据工艺缩放推断面积同比下降或方案已实测。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>多时间尺度电容给集成密度带来何种成本？</li></ul></article><details><summary>核对记录与来源信息</summary><pre>{
+  &quot;coverage&quot;: {
+    &quot;results_sections_seen&quot;: [
+      &quot;2.1 Model&quot;,
+      &quot;2.2 Circuit blocks and current scaling&quot;,
+      &quot;2.3 Theory/tuning&quot;,
+      &quot;3.1 Setup&quot;,
+      &quot;3.2.1–3.2.4 Measurements/power/mismatch&quot;,
+      &quot;3.3 Temperature&quot;,
+      &quot;4 Discussion&quot;,
+      &quot;5 Conclusions&quot;,
+      &quot;Appendices A–C; Tables 1–3; Figures 1–14; References&quot;
+    ],
+    &quot;missing_material&quot;: [
+      &quot;全部图像像素未提供。&quot;,
+      &quot;未给模型/仿真实现、原型热循环次数及观察时长；数据可用声明仅指文章内容。&quot;,
+      &quot;期刊正式发表版本未在本次来源中。&quot;
+    ],
+    &quot;text_pass_complete&quot;: true,
+    &quot;notes&quot;: [
+      &quot;23页来源为2026-04-08修订预印本，初稿2025-11-30；导入元数据为2026期刊记录，不替换来源版本。&quot;,
+      &quot;已完整评估附录A尺寸、B偏置与C证明。&quot;,
+      &quot;摘要/结论能耗措辞宽于3.2.3，严格标记SPICE估计及修订设计。&quot;,
+      &quot;附录C有唯一性推论不足和式15单调方向疑点，未做独立证明或科学复现。&quot;
+    ],
+    &quot;pdf_pages_read&quot;: [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+    ],
+    &quot;reading_mode&quot;: &quot;text_only&quot;,
+    &quot;figure_images_read&quot;: false,
+    &quot;scientific_verification&quot;: false
+  },
+  &quot;audit&quot;: {
+    &quot;source_match_checks&quot;: [
+      {
+        &quot;check&quot;: &quot;identity/version/coverage&quot;,
+        &quot;status&quot;: &quot;completed&quot;,
+        &quot;details&quot;: &quot;23页含全部附录；来源是修订预印本而导入身份指期刊。&quot;
+      },
+      {
+        &quot;check&quot;: &quot;second_source_check&quot;,
+        &quot;status&quot;: &quot;completed&quot;,
+        &quot;details&quot;: &quot;逐项核对实测/修订仿真、能耗排除项、200点与活动/模式产率、温度范围和附录C论证。&quot;
+      }
+    ],
+    &quot;model_findings&quot;: [
+      {
+        &quot;claim_id&quot;: &quot;C9&quot;,
+        &quot;issue&quot;: &quot;摘要及结论能耗措辞可能被误读为实测，3.2.3明确不可实测验证。&quot;,
+        &quot;pdf_page&quot;: 12,
+        &quot;resolved&quot;: true,
+        &quot;suggested_correction&quot;: &quot;仅记录仿真核心能耗。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C12&quot;,
+        &quot;issue&quot;: &quot;100% firing yield不等于100%bursting模式保留。&quot;,
+        &quot;pdf_page&quot;: 13,
+        &quot;resolved&quot;: true,
+        &quot;suggested_correction&quot;: &quot;约23%模式变化列实际负结果。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C4&quot;,
+        &quot;issue&quot;: &quot;附录由两边递增推唯一解不充分；式15给Vin随Iin减小，文字却称增加。&quot;,
+        &quot;pdf_page&quot;: 20,
+        &quot;resolved&quot;: false,
+        &quot;suggested_correction&quot;: &quot;人工重推隐式关系，不能仅依赖此证明。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C14&quot;,
+        &quot;issue&quot;: &quot;长期稳定性没有给热循环数或时长。&quot;,
+        &quot;pdf_page&quot;: 14,
+        &quot;resolved&quot;: false,
+        &quot;suggested_correction&quot;: &quot;请求测试范围。&quot;
+      }
+    ],
+    &quot;needs_human_review&quot;: true
+  },
+  &quot;source&quot;: {
+    &quot;filename&quot;: &quot;paper-W4416958771.pdf&quot;,
+    &quot;sha256&quot;: &quot;a4637e6b9d33baf17f61c82bf406638f86cb2279773d9d5fdfba37fba5247be9&quot;,
+    &quot;source_url&quot;: &quot;https://arxiv.org/pdf/2512.01133&quot;,
+    &quot;pdf_page_count&quot;: 23
+  },
+  &quot;provenance&quot;: {
+    &quot;created_at&quot;: &quot;2026-10-07T07:00:01.848Z&quot;,
+    &quot;workflow&quot;: &quot;claim-commons-pdf-v1&quot;,
+    &quot;prompt_version&quot;: &quot;claim-commons-chatgpt-pdf-2026-10-07.1&quot;,
+    &quot;backend&quot;: &quot;authorized_parallel_GPT&quot;,
+    &quot;model&quot;: &quot;inherited_GPT&quot;,
+    &quot;provider_api_key_used&quot;: false,
+    &quot;source_sha256&quot;: &quot;a4637e6b9d33baf17f61c82bf406638f86cb2279773d9d5fdfba37fba5247be9&quot;,
+    &quot;source_audit_complete&quot;: true,
+    &quot;review_status&quot;: &quot;candidate&quot;,
+    &quot;database_updated&quot;: false
+  }
+}</pre></details></main><footer></footer></body></html>

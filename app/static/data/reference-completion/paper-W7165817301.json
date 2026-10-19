@@ -1,0 +1,1224 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "Soliton-like Waves in a Two-Dimensional Recurrent Spiking Neural Network with Weighted Spike-Timing-Dependent Plasticity",
+    "authors": [
+      "Christophe Meessen"
+    ],
+    "doi": null,
+    "publication_year": 2026,
+    "venue": "arXiv (Cornell University)",
+    "url": "https://arxiv.org/pdf/2606.21432"
+  },
+  "source": {
+    "filename": "paper-W7165817301--Soliton-like-Waves-in-a-Two-Dimensional-Recurrent-Spiking-Neural-Network-with-Weighted-Spike-Ti.pdf",
+    "sha256": "b9ea03cad3ac471c17c4109e7ff8bfa30889a9bee48d0ab6251f2177a9b5cbf2",
+    "source_url": "https://arxiv.org/pdf/2606.21432",
+    "pdf_page_count": 21
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21
+    ],
+    "results_sections_seen": [
+      "Materials and Methods 2.1–2.5; Table 1",
+      "Results 3.1–3.8; Figures 1–11",
+      "Discussion; Limitations; Conclusion"
+    ],
+    "missing_material": [
+      "图像像素与 Supplementary Movie 1 未读取",
+      "实现代码、重复运行记录及原始活动矩阵未供应"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "全部 21 页归档文字及每张图的图注已评估；arXiv:2606.21432v1，19 Jun 2026。源 PDF 离线，未重开或等待 iCloud，使用供应归档文字及校验信息。",
+      "第二审计依据已读方程、方法、结果及讨论核对条件，保留公式与阈值参数冲突；不把大量神经元/步数当独立实验。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": true,
+    "archived_page_text_used": true
+  },
+  "contribution_inventory": [
+    {
+      "summary": "模型结合输入按兴奋权重和归一化、加权 STDP、适应阈值及一步不应期，在 200×100 E/I 配对网格上模拟局部刺激。",
+      "role": "result",
+      "source_pages": [
+        3
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "作者提出用二叉树各分支的兴奋权重比例局部衰减，计算归一化输入；这是计算构造，不是已测得的树突机制。",
+      "role": "interpretation",
+      "source_pages": [
+        4
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "重复局部刺激的示例中出现向外传播的环形波包；刺激在 t=270 停止后，内环消失而外层波继续传播。",
+      "role": "result",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "在神经元 (150,50) 的三条向 (153,50) 突触上，10,000 步追踪报告 5,000 步前收敛到约 0.359、21.95、10.35。",
+      "role": "result",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "所示权重剖面存在方向和距离差异，近端 E→E 权重较低、远端前后不对称，被作者解释为传播方向的塑性痕迹。",
+      "role": "interpretation",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "两源同频同相时波在中线碰撞消失；一源静默后另侧波仍在既有边界停止，显示该配置中的边界记忆现象。",
+      "role": "result",
+      "source_pages": [
+        10
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "同频但右源延迟 3 步时，碰撞边界向右移，左源静默后仍在偏移边界停止。",
+      "role": "result",
+      "source_pages": [
+        10
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "将初始抑制权重从 10 改为 0.5 时，网络出现全局同步/扩张活动而没有局限的 soliton-like 波包。",
+      "role": "result",
+      "source_pages": [
+        11
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "左源周期 7、右源周期 6 时边界缓慢左移且记录结束仍未稳定；右源周期 5 时更快侵占，但左侧仍有小协同区。",
+      "role": "result",
+      "source_pages": [
+        13
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "固定 rEE=9 扫描 rEI 时，表面覆盖时间随半径增大而增加；rEI=10 仍形成窄波，rEI=11 在 10,000 步内未覆盖全表面。",
+      "role": "result",
+      "source_pages": [
+        14
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "固定 rEE=9 扫描 rIE 时，小半径 ≤3 出现后继 fibrillation；rIE=9 未形成波，而参考 rIE=5 的覆盖约为 151 步。",
+      "role": "result",
+      "source_pages": [
+        14
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "Figure 10 的配置比较显示 θinit 从 0.15 降为 0.10 加速波出现，而 θmax 在 0.10 与 0.50 之间变化对出现速度影响很小。",
+      "role": "result",
+      "source_pages": [
+        16
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "两源实验中较高 θmax=0.50 的边界侵蚀较慢，较低 θmax=0.10 时活跃源较快侵入；两种情况仍发生碰撞湮灭而非穿越。",
+      "role": "result",
+      "source_pages": [
+        17
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "作者将 WSTDP 平衡和 τmax≥Tstim 解释为波维持与权重收敛的必要条件，但本篇没有关闭塑性的直接对照或一般收敛证明。",
+      "role": "hypothesis",
+      "source_pages": [
+        18
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "方向剖面与可侵蚀边界被作者提出为局部塑性实现空间记忆的最小模型，异步传播、burst-capable 神经元及真实突触输入的泛化尚未测试。",
+      "role": "interpretation",
+      "source_pages": [
+        19
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "方法学习规则和固定点",
+      "role": "interpretation",
+      "source_pages": [
+        4,
+        5,
+        18
+      ],
+      "decision": "include",
+      "reason": "保留数学符号/边界未决，不接受无条件收敛"
+    },
+    {
+      "summary": "抑制、半径、阈值与频率的失效/边界对照",
+      "role": "result",
+      "source_pages": [
+        11,
+        12,
+        13,
+        14,
+        16,
+        17
+      ],
+      "decision": "include",
+      "reason": "完整覆盖真实负结果与尚未稳定，不把未测泛化当失败"
+    },
+    {
+      "summary": "异步、burst、自然输入和生物验证",
+      "role": "hypothesis",
+      "source_pages": [
+        19,
+        20
+      ],
+      "decision": "defer",
+      "reason": "仅未来研究；Supplementary Movie 1 未供应"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "模型结合输入按兴奋权重和归一化、加权 STDP、适应阈值及一步不应期，在 200×100 E/I 配对网格上模拟局部刺激。",
+      "claim_type": "computational",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "二维离散同步 E/I 脉冲网络的计算模拟与视觉近似参数扫描",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "20,000 E 与 20,000 I 的同一模型网格",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "硬边界、同步更新、每步重置、E→E 自连接、无 I→I；参考半径 9/5/5，初始 E/I 权重 0.5/10。"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "Methods 2.1–2.3; implementation page 6",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "模型结合输入按兴奋权重和归一化、加权 STDP、适应阈值及一步不应期，在 200×100 E/I 配对网格上模拟局部刺激。",
+        "boundary": "硬边界、同步更新、每步重置、E→E 自连接、无 I→I；参考半径 9/5/5，初始 E/I 权重 0.5/10。",
+        "negative_result": null,
+        "non_inference": "模型波包与生物 cortical traveling waves 的相似不是生物验证、癫痫机制或一般孤子定理；共同模拟的快照、时序和权重不构成独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "塑性网络的传播与碰撞",
+        "方向记忆和边界重写",
+        "离散模型的公式一致性及异步泛化"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，模型结合输入按兴奋权重和归一化、加权 STDP、适应阈值及一步不应期，在 200×100 E/I 配对网格上模拟局部刺激。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "作者提出用二叉树各分支的兴奋权重比例局部衰减，计算归一化输入；这是计算构造，不是已测得的树突机制。",
+      "claim_type": "computational",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "二维离散同步 E/I 脉冲网络的计算模拟与视觉近似参数扫描",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "分支归一化算法",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "需定义各子树输入及非零兴奋权重和；有抑制时电位可为负，不能宣称绝对值始终 ≤1。作者也承认与生物求和不同。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "Biological plausibility of normalization",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者提出用二叉树各分支的兴奋权重比例局部衰减，计算归一化输入；这是计算构造，不是已测得的树突机制。",
+        "boundary": "需定义各子树输入及非零兴奋权重和；有抑制时电位可为负，不能宣称绝对值始终 ≤1。作者也承认与生物求和不同。",
+        "negative_result": null,
+        "non_inference": "模型波包与生物 cortical traveling waves 的相似不是生物验证、癫痫机制或一般孤子定理；共同模拟的快照、时序和权重不构成独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "塑性网络的传播与碰撞",
+        "方向记忆和边界重写",
+        "离散模型的公式一致性及异步泛化"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，作者提出用二叉树各分支的兴奋权重比例局部衰减，计算归一化输入；这是计算构造，不是已测得的树突机制。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "重复局部刺激的示例中出现向外传播的环形波包；刺激在 t=270 停止后，内环消失而外层波继续传播。",
+      "claim_type": "computational",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "二维离散同步 E/I 脉冲网络的计算模拟与视觉近似参数扫描",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "单源参考模拟",
+          "sample_size_as_reported": "图注为单次模拟；总 300 步",
+          "uncertainty": "稳定形状和恒速为图文定性描述，没有速度拟合或不确定区间。",
+          "assumptions": [
+            "外层短期自维持不证明无限期稳定、任意扰动鲁棒或数学可积孤子。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "Figure 1; Results 3.1",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "重复局部刺激的示例中出现向外传播的环形波包；刺激在 t=270 停止后，内环消失而外层波继续传播。",
+        "boundary": "外层短期自维持不证明无限期稳定、任意扰动鲁棒或数学可积孤子。",
+        "negative_result": "内层环依赖重复驱动，停止后消失。",
+        "non_inference": "模型波包与生物 cortical traveling waves 的相似不是生物验证、癫痫机制或一般孤子定理；共同模拟的快照、时序和权重不构成独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "塑性网络的传播与碰撞",
+        "方向记忆和边界重写",
+        "离散模型的公式一致性及异步泛化"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，重复局部刺激的示例中出现向外传播的环形波包；刺激在 t=270 停止后，内环消失而外层波继续传播。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "在神经元 (150,50) 的三条向 (153,50) 突触上，10,000 步追踪报告 5,000 步前收敛到约 0.359、21.95、10.35。",
+      "claim_type": "computational",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "二维离散同步 E/I 脉冲网络的计算模拟与视觉近似参数扫描",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "同一代表神经元的 E→E/E→I/I→E 三条突触",
+          "sample_size_as_reported": "3 条共同网络内代表突触",
+          "uncertainty": "无跨模拟重复或拟合区间。",
+          "assumptions": [
+            "不是 3 个独立实验；E→E 从 0.5 降到 0.359，为 LTD，不能将所有前向连接概括为 LTP。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Figure 2; Results 3.2",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在神经元 (150,50) 的三条向 (153,50) 突触上，10,000 步追踪报告 5,000 步前收敛到约 0.359、21.95、10.35。",
+        "boundary": "不是 3 个独立实验；E→E 从 0.5 降到 0.359，为 LTD，不能将所有前向连接概括为 LTP。",
+        "negative_result": null,
+        "non_inference": "模型波包与生物 cortical traveling waves 的相似不是生物验证、癫痫机制或一般孤子定理；共同模拟的快照、时序和权重不构成独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "塑性网络的传播与碰撞",
+        "方向记忆和边界重写",
+        "离散模型的公式一致性及异步泛化"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，在神经元 (150,50) 的三条向 (153,50) 突触上，10,000 步追踪报告 5,000 步前收敛到约 0.359、21.95、10.35。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "所示权重剖面存在方向和距离差异，近端 E→E 权重较低、远端前后不对称，被作者解释为传播方向的塑性痕迹。",
+      "claim_type": "computational",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "二维离散同步 E/I 脉冲网络的计算模拟与视觉近似参数扫描",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "单神经元沿 y=50 的相对位置剖面",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "剖面关联支持方向偏置描述；未对所有位置和反向强驱动做穷尽稳定性测试。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "Figure 3; Results 3.2",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所示权重剖面存在方向和距离差异，近端 E→E 权重较低、远端前后不对称，被作者解释为传播方向的塑性痕迹。",
+        "boundary": "剖面关联支持方向偏置描述；未对所有位置和反向强驱动做穷尽稳定性测试。",
+        "negative_result": null,
+        "non_inference": "模型波包与生物 cortical traveling waves 的相似不是生物验证、癫痫机制或一般孤子定理；共同模拟的快照、时序和权重不构成独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "塑性网络的传播与碰撞",
+        "方向记忆和边界重写",
+        "离散模型的公式一致性及异步泛化"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，所示权重剖面存在方向和距离差异，近端 E→E 权重较低、远端前后不对称，被作者解释为传播方向的塑性痕迹。是否成立？"
+      ],
+      "shared_evidence_with": [
+        "C4"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "两源同频同相时波在中线碰撞消失；一源静默后另侧波仍在既有边界停止，显示该配置中的边界记忆现象。",
+      "claim_type": "computational",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "二维离散同步 E/I 脉冲网络的计算模拟与视觉近似参数扫描",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "两个源同一网络的配对刺激",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "不是两次独立复制；边界被后续低阈值/强驱动实验显示可侵蚀，非永久或不可逆。"
+          ],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "Figure 5; Results 3.4",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "两源同频同相时波在中线碰撞消失；一源静默后另侧波仍在既有边界停止，显示该配置中的边界记忆现象。",
+        "boundary": "不是两次独立复制；边界被后续低阈值/强驱动实验显示可侵蚀，非永久或不可逆。",
+        "negative_result": null,
+        "non_inference": "模型波包与生物 cortical traveling waves 的相似不是生物验证、癫痫机制或一般孤子定理；共同模拟的快照、时序和权重不构成独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "塑性网络的传播与碰撞",
+        "方向记忆和边界重写",
+        "离散模型的公式一致性及异步泛化"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，两源同频同相时波在中线碰撞消失；一源静默后另侧波仍在既有边界停止，显示该配置中的边界记忆现象。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "同频但右源延迟 3 步时，碰撞边界向右移，左源静默后仍在偏移边界停止。",
+      "claim_type": "computational",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "二维离散同步 E/I 脉冲网络的计算模拟与视觉近似参数扫描",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "改变源相位的示例配置",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "Tstim=7；只支持所给相位条件的定性位置编码，未建立普适相位—位置映射。"
+          ],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "Figure 6; phase offset",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "同频但右源延迟 3 步时，碰撞边界向右移，左源静默后仍在偏移边界停止。",
+        "boundary": "Tstim=7；只支持所给相位条件的定性位置编码，未建立普适相位—位置映射。",
+        "negative_result": null,
+        "non_inference": "模型波包与生物 cortical traveling waves 的相似不是生物验证、癫痫机制或一般孤子定理；共同模拟的快照、时序和权重不构成独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "塑性网络的传播与碰撞",
+        "方向记忆和边界重写",
+        "离散模型的公式一致性及异步泛化"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，同频但右源延迟 3 步时，碰撞边界向右移，左源静默后仍在偏移边界停止。是否成立？"
+      ],
+      "shared_evidence_with": [
+        "C6"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "将初始抑制权重从 10 改为 0.5 时，网络出现全局同步/扩张活动而没有局限的 soliton-like 波包。",
+      "claim_type": "computational",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "二维离散同步 E/I 脉冲网络的计算模拟与视觉近似参数扫描",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "初始 I 权重对照配置",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "其余参考配置下的一种比较；不证明 10 是唯一必要值，也不是生物癫痫验证。"
+          ],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "Figure 7; Results 3.5",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "将初始抑制权重从 10 改为 0.5 时，网络出现全局同步/扩张活动而没有局限的 soliton-like 波包。",
+        "boundary": "其余参考配置下的一种比较；不证明 10 是唯一必要值，也不是生物癫痫验证。",
+        "negative_result": "弱抑制对照没有形成该局限波包。",
+        "non_inference": "模型波包与生物 cortical traveling waves 的相似不是生物验证、癫痫机制或一般孤子定理；共同模拟的快照、时序和权重不构成独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "塑性网络的传播与碰撞",
+        "方向记忆和边界重写",
+        "离散模型的公式一致性及异步泛化"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，将初始抑制权重从 10 改为 0.5 时，网络出现全局同步/扩张活动而没有局限的 soliton-like 波包。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "左源周期 7、右源周期 6 时边界缓慢左移且记录结束仍未稳定；右源周期 5 时更快侵占，但左侧仍有小协同区。",
+      "claim_type": "computational",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "二维离散同步 E/I 脉冲网络的计算模拟与视觉近似参数扫描",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "两种不同周期的网络示例",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "视觉描述；没有频率阈值估计或最终无限时限的完全吞并证据。"
+          ],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "Figure 8; Results 3.6",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "左源周期 7、右源周期 6 时边界缓慢左移且记录结束仍未稳定；右源周期 5 时更快侵占，但左侧仍有小协同区。",
+        "boundary": "视觉描述；没有频率阈值估计或最终无限时限的完全吞并证据。",
+        "negative_result": "小频差边界在记录窗口内没有稳定。",
+        "non_inference": "模型波包与生物 cortical traveling waves 的相似不是生物验证、癫痫机制或一般孤子定理；共同模拟的快照、时序和权重不构成独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "塑性网络的传播与碰撞",
+        "方向记忆和边界重写",
+        "离散模型的公式一致性及异步泛化"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，左源周期 7、右源周期 6 时边界缓慢左移且记录结束仍未稳定；右源周期 5 时更快侵占，但左侧仍有小协同区。是否成立？"
+      ],
+      "shared_evidence_with": [
+        "C6",
+        "C7"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "固定 rEE=9 扫描 rEI 时，表面覆盖时间随半径增大而增加；rEI=10 仍形成窄波，rEI=11 在 10,000 步内未覆盖全表面。",
+      "claim_type": "computational",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "二维离散同步 E/I 脉冲网络的计算模拟与视觉近似参数扫描",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "单独改变 E→I 半径的配置",
+          "sample_size_as_reported": null,
+          "uncertainty": "全部测量为视觉近似；rEI=1–2 约 75 步，9 约 695 步，10 约 2500 步。",
+          "assumptions": [
+            "rEI 可超过 rEE 仍有波，不能把所有抑制半径更小视为严格必要条件。"
+          ],
+          "source_locator": {
+            "pdf_page": 14,
+            "section": "Figure 9; Results 3.7",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "固定 rEE=9 扫描 rEI 时，表面覆盖时间随半径增大而增加；rEI=10 仍形成窄波，rEI=11 在 10,000 步内未覆盖全表面。",
+        "boundary": "rEI 可超过 rEE 仍有波，不能把所有抑制半径更小视为严格必要条件。",
+        "negative_result": "rEI=11 在观测窗内未完成表面覆盖。",
+        "non_inference": "模型波包与生物 cortical traveling waves 的相似不是生物验证、癫痫机制或一般孤子定理；共同模拟的快照、时序和权重不构成独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "塑性网络的传播与碰撞",
+        "方向记忆和边界重写",
+        "离散模型的公式一致性及异步泛化"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，固定 rEE=9 扫描 rEI 时，表面覆盖时间随半径增大而增加；rEI=10 仍形成窄波，rEI=11 在 10,000 步内未覆盖全表面。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "固定 rEE=9 扫描 rIE 时，小半径 ≤3 出现后继 fibrillation；rIE=9 未形成波，而参考 rIE=5 的覆盖约为 151 步。",
+      "claim_type": "computational",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "二维离散同步 E/I 脉冲网络的计算模拟与视觉近似参数扫描",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "单独改变 I→E 半径的配置",
+          "sample_size_as_reported": null,
+          "uncertainty": "rIE=1–2 约 56 步，8 约 820 步；均视觉近似。",
+          "assumptions": [
+            "在给定权重、阈值和刺激下，不是所有空间 E/I 网络的结构定理。"
+          ],
+          "source_locator": {
+            "pdf_page": 14,
+            "section": "Figure 9; Results 3.7",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "固定 rEE=9 扫描 rIE 时，小半径 ≤3 出现后继 fibrillation；rIE=9 未形成波，而参考 rIE=5 的覆盖约为 151 步。",
+        "boundary": "在给定权重、阈值和刺激下，不是所有空间 E/I 网络的结构定理。",
+        "negative_result": "rIE=9 无波；rIE≤3 的初始波后出现非局限次级振荡。",
+        "non_inference": "模型波包与生物 cortical traveling waves 的相似不是生物验证、癫痫机制或一般孤子定理；共同模拟的快照、时序和权重不构成独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "塑性网络的传播与碰撞",
+        "方向记忆和边界重写",
+        "离散模型的公式一致性及异步泛化"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，固定 rEE=9 扫描 rIE 时，小半径 ≤3 出现后继 fibrillation；rIE=9 未形成波，而参考 rIE=5 的覆盖约为 151 步。是否成立？"
+      ],
+      "shared_evidence_with": [
+        "C10"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "Figure 10 的配置比较显示 θinit 从 0.15 降为 0.10 加速波出现，而 θmax 在 0.10 与 0.50 之间变化对出现速度影响很小。",
+      "claim_type": "computational",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "二维离散同步 E/I 脉冲网络的计算模拟与视觉近似参数扫描",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "四种阈值配置",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "图中 θmin=0.05，与方法 0.10/0.60 边界冲突；定性很小不是统计无效证明。"
+          ],
+          "source_locator": {
+            "pdf_page": 16,
+            "section": "Figure 10; Results 3.8",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "Figure 10 的配置比较显示 θinit 从 0.15 降为 0.10 加速波出现，而 θmax 在 0.10 与 0.50 之间变化对出现速度影响很小。",
+        "boundary": "图中 θmin=0.05，与方法 0.10/0.60 边界冲突；定性很小不是统计无效证明。",
+        "negative_result": "所示 θmax 对出现速度未显示明显影响。",
+        "non_inference": "模型波包与生物 cortical traveling waves 的相似不是生物验证、癫痫机制或一般孤子定理；共同模拟的快照、时序和权重不构成独立复制。",
+        "unresolved": "实现究竟采用哪一套阈值参数需要确认。",
+        "unresolved_attribution": "源文或本次审计"
+      },
+      "broad_directions": [
+        "塑性网络的传播与碰撞",
+        "方向记忆和边界重写",
+        "离散模型的公式一致性及异步泛化"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，Figure 10 的配置比较显示 θinit 从 0.15 降为 0.10 加速波出现，而 θmax 在 0.10 与 0.50 之间变化对出现速度影响很小。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C13",
+      "statement": "两源实验中较高 θmax=0.50 的边界侵蚀较慢，较低 θmax=0.10 时活跃源较快侵入；两种情况仍发生碰撞湮灭而非穿越。",
+      "claim_type": "computational",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "二维离散同步 E/I 脉冲网络的计算模拟与视觉近似参数扫描",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "阈值上界的双源比较",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "边界是半持久而非永久；阈值均值的公式/参数存在冲突，不以源称算术均值作为已证明稳态。"
+          ],
+          "source_locator": {
+            "pdf_page": 17,
+            "section": "Figure 11; Results 3.8",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "两源实验中较高 θmax=0.50 的边界侵蚀较慢，较低 θmax=0.10 时活跃源较快侵入；两种情况仍发生碰撞湮灭而非穿越。",
+        "boundary": "边界是半持久而非永久；阈值均值的公式/参数存在冲突，不以源称算术均值作为已证明稳态。",
+        "negative_result": null,
+        "non_inference": "模型波包与生物 cortical traveling waves 的相似不是生物验证、癫痫机制或一般孤子定理；共同模拟的快照、时序和权重不构成独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "塑性网络的传播与碰撞",
+        "方向记忆和边界重写",
+        "离散模型的公式一致性及异步泛化"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，两源实验中较高 θmax=0.50 的边界侵蚀较慢，较低 θmax=0.10 时活跃源较快侵入；两种情况仍发生碰撞湮灭而非穿越。是否成立？"
+      ],
+      "shared_evidence_with": [
+        "C6",
+        "C7",
+        "C12"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C14",
+      "statement": "作者将 WSTDP 平衡和 τmax≥Tstim 解释为波维持与权重收敛的必要条件，但本篇没有关闭塑性的直接对照或一般收敛证明。",
+      "claim_type": "computational",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "二维离散同步 E/I 脉冲网络的计算模拟与视觉近似参数扫描",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "作者的机制解释",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "规则符号、核末端和固定点表达存在内部不一致；随机输入下的收敛是预期，非实测。"
+          ],
+          "source_locator": {
+            "pdf_page": 18,
+            "section": "Discussion: causal role of WSTDP; Methods equations 4–7",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者将 WSTDP 平衡和 τmax≥Tstim 解释为波维持与权重收敛的必要条件，但本篇没有关闭塑性的直接对照或一般收敛证明。",
+        "boundary": "规则符号、核末端和固定点表达存在内部不一致；随机输入下的收敛是预期，非实测。",
+        "negative_result": null,
+        "non_inference": "模型波包与生物 cortical traveling waves 的相似不是生物验证、癫痫机制或一般孤子定理；共同模拟的快照、时序和权重不构成独立复制。",
+        "unresolved": "因果必要性、式 7 和真实实现的对应未解决。",
+        "unresolved_attribution": "源文或本次审计"
+      },
+      "broad_directions": [
+        "塑性网络的传播与碰撞",
+        "方向记忆和边界重写",
+        "离散模型的公式一致性及异步泛化"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，作者将 WSTDP 平衡和 τmax≥Tstim 解释为波维持与权重收敛的必要条件，但本篇没有关闭塑性的直接对照或一般收敛证明。是否成立？"
+      ],
+      "shared_evidence_with": [
+        "C3",
+        "C4",
+        "C5"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C15",
+      "statement": "方向剖面与可侵蚀边界被作者提出为局部塑性实现空间记忆的最小模型，异步传播、burst-capable 神经元及真实突触输入的泛化尚未测试。",
+      "claim_type": "computational",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "二维离散同步 E/I 脉冲网络的计算模拟与视觉近似参数扫描",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "计算现象的功能外推",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "没有记忆任务性能、自然输入或生物回路干预；不能说仅靠局部塑性排除了几何、不应期、阈值与刺激的作用。"
+          ],
+          "source_locator": {
+            "pdf_page": 19,
+            "section": "Discussion: spatial memory, Limitations, Perspectives",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "方向剖面与可侵蚀边界被作者提出为局部塑性实现空间记忆的最小模型，异步传播、burst-capable 神经元及真实突触输入的泛化尚未测试。",
+        "boundary": "没有记忆任务性能、自然输入或生物回路干预；不能说仅靠局部塑性排除了几何、不应期、阈值与刺激的作用。",
+        "negative_result": null,
+        "non_inference": "模型波包与生物 cortical traveling waves 的相似不是生物验证、癫痫机制或一般孤子定理；共同模拟的快照、时序和权重不构成独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "塑性网络的传播与碰撞",
+        "方向记忆和边界重写",
+        "离散模型的公式一致性及异步泛化"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，方向剖面与可侵蚀边界被作者提出为局部塑性实现空间记忆的最小模型，异步传播、burst-capable 神经元及真实突触输入的泛化尚未测试。是否成立？"
+      ],
+      "shared_evidence_with": [
+        "C3",
+        "C5",
+        "C6",
+        "C7",
+        "C9",
+        "C13"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "供给的 21 页全文及图 1–11 说明已完整阅读，使用离线源的归档文本。计算模型展示环形波、自维持外层、碰撞及相位/频率相关边界，也有弱抑制、半径和阈值的实际失效/侵蚀条件。第二审计保留真实配置范围、视觉近似和未给重复 n；方法阈值、WSTDP 核/固定点存在内部冲突，必要性及生物/严格孤子解释不能由这些演示确立。",
+  "shared_evidence": [
+    {
+      "claim_id": "C5",
+      "with": [
+        "C4"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C6",
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "with": [
+        "C10"
+      ]
+    },
+    {
+      "claim_id": "C13",
+      "with": [
+        "C6",
+        "C7",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C14",
+      "with": [
+        "C3",
+        "C4",
+        "C5"
+      ]
+    },
+    {
+      "claim_id": "C15",
+      "with": [
+        "C3",
+        "C5",
+        "C6",
+        "C7",
+        "C9",
+        "C13"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": null,
+        "issue": "方法 θmin=0.10、θmax=0.60、均值 0.35，结果图 4/3.8 则用 0.05、0.50、0.275。",
+        "suggested_correction": "按每个图的显式条件记录并保留实现参数冲突，不强行统一。",
+        "pdf_page": 4,
+        "resolved": false
+      },
+      {
+        "claim_id": "C13",
+        "issue": "式 3 的稳态不是任意活动下的算术中点；变化还受 spike rate 和 a>amin 门控。",
+        "suggested_correction": "不把 0.275 当已推导一般稳态；公式和图的关系待作者澄清。",
+        "pdf_page": 4,
+        "resolved": false
+      },
+      {
+        "claim_id": "C14",
+        "issue": "式 6 指数 i/(τmax−1) 且 i 到 τmax，不能同时得到宣称 f(τmax)=ηϵ。",
+        "suggested_correction": "保留核端点/索引不一致，不自行改共享代码或推断实际实现。",
+        "pdf_page": 5,
+        "resolved": false
+      },
+      {
+        "claim_id": "C14",
+        "issue": "式 5 写 f(aLTD−bLTD w)，积分平衡与式 7 的负 aLTD F− 分子及正下界解释不一致。",
+        "suggested_correction": "固定点与有界性仅作为作者解释，未当严格定理；真实 LTD 符号待确认。",
+        "pdf_page": 5,
+        "resolved": false
+      },
+      {
+        "claim_id": "C5",
+        "issue": "所有前向突触 LTP 的概括与 +3 E→E 降至 0.359 不符。",
+        "suggested_correction": "保留距离/类型分化，避免统一前向强化断言。",
+        "pdf_page": 8,
+        "resolved": true
+      },
+      {
+        "claim_id": "C10",
+        "issue": "摘要/讨论笼统要求 E 半径大于抑制，但 rEI=10>9 仍形成波。",
+        "suggested_correction": "严格区分 E→I 和 I→E 扫描，条件不是统一几何必要定理。",
+        "pdf_page": 14,
+        "resolved": true
+      },
+      {
+        "claim_id": "C14",
+        "issue": "causally necessary 没有 WSTDP-off 或独立剥离阈值/不应期对照。",
+        "suggested_correction": "降为作者假说；无对照不是实际负结果。",
+        "pdf_page": 18,
+        "resolved": true
+      },
+      {
+        "claim_id": "C3",
+        "issue": "恒速、稳定形状与 robustness 未给数量化或统计重复。",
+        "suggested_correction": "保持定性 soliton-like，不等同严格孤子或普适稳定性。",
+        "pdf_page": 18,
+        "resolved": true
+      },
+      {
+        "claim_id": "C2",
+        "issue": "局部树突算法及 no I→I 的生物合理性被表述为既定生物结构。",
+        "suggested_correction": "仅保留模型/计算构造，生物实现与必要性尚未验证。",
+        "pdf_page": 3,
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T12:37:51.291708Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "b9ea03cad3ac471c17c4109e7ff8bfa30889a9bee48d0ab6251f2177a9b5cbf2",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

@@ -1,0 +1,559 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "Artificial Bio-Inspired Tactile Receptive Fields for Edge Orientation Classification",
+    "authors": [
+      "Ali Dabbous",
+      "Michele Mastella",
+      "Aishwarya Natarajan",
+      "Elisabetta Chicca",
+      "Maurizio Valle",
+      "C. Barolozzi."
+    ],
+    "doi": "10.1109/iscas51556.2021.9401749",
+    "publication_year": 2021,
+    "venue": "IEEE International Symposium on Circuits and Systems proceedings",
+    "url": "https://doi.org/10.1109/iscas51556.2021.9401749"
+  },
+  "source": {
+    "filename": "paper-W3158731822.pdf",
+    "sha256": "7e54104bdded08b24ac6aa7c193878629c2db0c496723c1242b05757893205a7",
+    "source_url": "https://zenodo.org/records/7648529/files/Edge_Orientation_paper_v1.pdf",
+    "pdf_page_count": 5
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "results_sections_seen": [
+      "III-A. Fixed Connectivity",
+      "III-B. Unsupervised Learning of Edge Orientation",
+      "IV. Receptive Field Structure",
+      "Figures 1–5 captions",
+      "V. Conclusion"
+    ],
+    "missing_material": [
+      "图像像素及可读取的曲线数值",
+      "原始触觉记录、仿真代码及逐试次数据"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "标题、作者及研究内容与所给会议论文身份一致；元数据中的 C. Barolozzi 对应正文的 Chiara Bartolozzi，姓氏拼写存在差异。",
+      "所给页面未提供明确版本标记，无法核实是否为最终出版版本。",
+      "全部五页均已评估，包括参考文献；未提供附录或补充材料。",
+      "实际人工皮肤信号采集与 Brian2 网络仿真应区分；本文未报告神经形态硬件实现。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "构建触觉编码、重叠感受野和方向解码组成的三层 LIF 网络。",
+      "role": "方法贡献",
+      "source_pages": [
+        2
+      ],
+      "decision": "include",
+      "reason": "作为固定连接和学习结果的架构条件纳入。"
+    },
+    {
+      "summary": "手工连接网络对八个受测方向形成各自对应的输出放电率峰值。",
+      "role": "结果",
+      "source_pages": [
+        2,
+        3
+      ],
+      "decision": "include",
+      "reason": "正文和图2直接报告方向响应。"
+    },
+    {
+      "summary": "全局抑制 WTA 提高固定连接网络的方向选择性。",
+      "role": "结果",
+      "source_pages": [
+        3
+      ],
+      "decision": "include",
+      "reason": "有无 WTA 的比较可与方向编码能力分别评估。"
+    },
+    {
+      "summary": "SDSP 学习形成稳定连接，并在包含相同八类方向的不同数据集上产生方向选择响应。",
+      "role": "结果",
+      "source_pages": [
+        3
+      ],
+      "decision": "include",
+      "reason": "报告训练呈现次数、权重演变及学习后测试。"
+    },
+    {
+      "summary": "通过互信息评估三种感受野拓扑在减少每个感受野连接 taxel 数时的方向编码。",
+      "role": "分析方法与结果展示",
+      "source_pages": [
+        4
+      ],
+      "decision": "defer",
+      "reason": "图5A提供指标及均值、标准差说明，但文字不足以确定密度效应、拓扑排序或阈值。"
+    },
+    {
+      "summary": "相同模拟条形刺激长度下，完全随机拓扑似乎具有更好的方向敏锐度。",
+      "role": "结果",
+      "source_pages": [
+        4
+      ],
+      "decision": "include",
+      "reason": "正文明确给出带有限定的拓扑比较。"
+    },
+    {
+      "summary": "模拟条形刺激缩短时，方向判别能力退化。",
+      "role": "结果",
+      "source_pages": [
+        4
+      ],
+      "decision": "include",
+      "reason": "刺激长度效应可独立评估，与拓扑比较共享仿真证据。"
+    },
+    {
+      "summary": "未来减少人工皮肤连接与 taxel 数量，并实现紧凑低功耗局部预处理。",
+      "role": "应用展望",
+      "source_pages": [
+        1,
+        2,
+        4
+      ],
+      "decision": "exclude",
+      "reason": "未提供硬件实现、功耗、延迟或系统级传感器缩减验证。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "在 iCub 人工皮肤记录的条形接触信号驱动下，采用手工设计重叠感受野和固定连接的三层 LIF 仿真网络，对八个受测方向分别产生对应输出神经元的最大放电率响应。",
+      "claim_type": "方向编码",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "人工皮肤压力记录驱动 Brian2 LIF 网络仿真",
+          "design": "13 cm × 9 mm 条形物接触11 cm × 7.5 cm皮肤；24个编码神经元、5个感受野神经元和8个方向输出神经元；为每个方向手工选择三个传感器并构造对应的三感受野共同活动。",
+          "comparator": "八个受测方向及各输出神经元的方向响应",
+          "measure": "输出神经元平均放电率和方向响应峰值",
+          "unit_of_analysis": "方向条件下的输出神经元响应",
+          "sample_size_as_reported": "皮肤160个 taxel；网络层分别为24、5、8个神经元；八个方向；接触重复次数未报告。",
+          "uncertainty": "未报告数值效应大小、置信区间或显著性检验。",
+          "assumptions": [
+            "感受野及解码连接按预设活动组合手工设计。",
+            "以放电率峰值表征选择性，未报告逐试次分类准确率。"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "III-A. Fixed Connectivity",
+            "figure": "Figure 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "手工连接架构在受测输入下形成八类方向选择响应。",
+        "boundary": "每个方向预先选择三个传感器并设计连接；实际方向端点列表存在歧义。",
+        "negative_result": null,
+        "non_inference": "不能推断任意位置、接触力或连续方向的分类准确率，也不能认定时间巧合机制已获独立因果验证。",
+        "unresolved": "位置、接触力和噪声变化下的方向选择性是否保持？",
+        "unresolved_attribution": "根据未测试的适用范围提出，非作者报告的失败。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "手工设计的重叠触觉感受野共同活动能否支持八类边缘方向解码？"
+      ],
+      "shared_evidence_with": [
+        "C2"
+      ],
+      "review_notes": [
+        "八个方向、0°至180°及22.5°间隔的表述有端点计数歧义，不补定角度列表。",
+        "正文称第一层有24个神经元，图1图注称其提供160个输入；保留该矛盾，不混同 taxel 与神经元。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "在手工设计感受野和固定连接的八方向 LIF 解码网络中，与无 WTA 条件相比，加入全局抑制神经元实现的 WTA 竞争提高了输出神经元的方向选择性。",
+      "claim_type": "竞争条件比较",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "固定连接网络有无全局抑制 WTA 的仿真比较",
+          "design": "第三层8个方向神经元向全局抑制神经元提供兴奋输入，并接受其抑制反馈；输入为人工皮肤记录的八类方向刺激。",
+          "comparator": "有 WTA 与无 WTA",
+          "measure": "各输出神经元的平均放电率方向曲线",
+          "unit_of_analysis": "方向和竞争条件下的输出神经元响应",
+          "sample_size_as_reported": "八个受测方向、8个输出神经元；独立重复次数未报告。",
+          "uncertainty": "提供曲线比较，未报告选择性指标数值或统计检验。",
+          "assumptions": [
+            "比较使用手工设计感受野和固定层间连接。"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "III-A. Fixed Connectivity",
+            "figure": "Figure 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "WTA 在该设置下增强方向选择性。",
+        "boundary": "证据为受测方向的平均放电率曲线比较。",
+        "negative_result": null,
+        "non_inference": "不能推断分类准确率、反应速度或功耗获得定量改善。",
+        "unresolved": "WTA 对逐试次分类误差的改善幅度是多少？",
+        "unresolved_attribution": "根据未报告的性能量提出。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "全局抑制竞争如何影响触觉方向选择性？"
+      ],
+      "shared_evidence_with": [
+        "C1"
+      ],
+      "review_notes": [
+        "图2图注与正文对 WTA 曲线颜色的描述不同；仅保留条件比较。",
+        "与C1共享图2及固定连接实验，不能视为独立重复。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "在5个感受野神经元与8个方向输出神经元全连接的 LIF 网络中，随机顺序呈现八种方向各35次进行 SDSP 无监督训练后，权重趋于稳定；提取学得权重并测试包含相同八类方向的不同数据集时，每类方向对应一个具有特异最大放电率的输出神经元。",
+      "claim_type": "无监督学习可行性",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Spike Driven Synaptic Plasticity 训练及学习后仿真测试",
+          "design": "层间权重从均匀随机分布初始化；每类方向由第二层三个神经元的活动编码；训练后提取权重测试不同数据集。",
+          "comparator": "训练期间权重演变及学习后八类方向响应；未报告无学习基线。",
+          "measure": "突触权重轨迹、输出脉冲栅格、各方向平均放电率及标准差",
+          "unit_of_analysis": "突触权重轨迹及方向条件下的输出神经元响应",
+          "sample_size_as_reported": "八类方向各35次训练呈现，共280次；5至8神经元全连接；测试数据集数量、测试样本量及独立训练次数未报告。",
+          "uncertainty": "图4提供标准差阴影，但数值及重复单位未说明。",
+          "assumptions": [
+            "方向输入由预设的三个感受野神经元活动组合表示。",
+            "测试数据集包含训练使用的相同八类方向。"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "III-B. Unsupervised Learning of Edge Orientation",
+            "figure": "Figures 3–4",
+            "equation": "Equations 1–2",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "该设置中的局部 SDSP 可形成支持八类方向选择响应的连接。",
+        "boundary": "测试限于相同方向类别；数据划分和独立训练重复情况不明。",
+        "negative_result": null,
+        "non_inference": "不能推断连接最优、对初始化普遍稳健或泛化到未训练方向。",
+        "unresolved": "不同初始化及独立触觉采集条件下的学习成功率和分类误差是多少？",
+        "unresolved_attribution": "根据未报告的验证信息提出。"
+      },
+      "broad_directions": [
+        "learning-memory",
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "局部 SDSP 能否从触觉感受野活动中学习方向选择连接？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "训练呈现次数不是独立实验重复数。",
+        "方程2印出的钙变量项为正 C/τC；保留源文，不擅自修正或据此声称实现正确。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "在模拟条形接触的均匀分区、完全随机分配和随机相邻子簇三种感受野拓扑中，作者报告相同刺激长度下完全随机分配似乎具有更好的方向敏锐度；该比较基于感受野层二值空间码互信息换算的角指标。",
+      "claim_type": "感受野拓扑比较",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "模拟刺激与空间码互信息分析",
+          "design": "比较三种拓扑；36种方向、5°步长；条形刺激长度1至11 cm、1 cm步长。",
+          "comparator": "固定刺激长度下，完全随机分配与均匀分区及随机相邻子簇比较",
+          "measure": "互信息 MI 及角指标180°/2^MI；图5B提供均值和标准差。",
+          "unit_of_analysis": "拓扑、方向和长度配置下的模拟试次及空间码响应",
+          "sample_size_as_reported": "36种方向、11个长度；每配置150 trials；独立随机种子及拓扑实例数未报告。",
+          "uncertainty": "正文采用有限定的比较措辞；未提供可读取的数值差异、置信区间或显著性检验。",
+          "assumptions": [
+            "每个刺激时间窗内，放电率高于最活跃神经元放电率一半者记为1，否则为0。",
+            "2^MI作为有效可区分方向数量的代理，用于换算角指标。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "IV. Receptive Field Structure",
+            "figure": "Figure 5B–C",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "受测仿真提示完全随机拓扑具有较好的信息编码方向敏锐度。",
+        "boundary": "依据感受野层空间码及互信息代理指标，具体效应大小无法恢复。",
+        "negative_result": null,
+        "non_inference": "5°采样步长不能直接视为已验证的最小可辨角，也未证明三层分类器或硬件达到5°分辨能力。",
+        "unresolved": "拓扑优势对随机实例和二值化阈值是否稳健，效应大小是多少？",
+        "unresolved_attribution": "根据代理指标和缺失统计信息提出。"
+      },
+      "broad_directions": [
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "触觉感受野敏感点的空间分布如何影响边缘方向编码信息？"
+      ],
+      "shared_evidence_with": [
+        "C5"
+      ],
+      "review_notes": [
+        "第2页概述声称可区分低至5°的角度，但详细结果文字及图注不足以定位达到该值的具体配置。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "在均匀分区、完全随机分配和随机相邻子簇感受野的人工皮肤仿真中，条形刺激在1至11 cm受测范围内缩短时，基于感受野层空间码互信息评估的方向判别能力退化。",
+      "claim_type": "刺激长度依赖",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "改变模拟条形刺激长度并计算空间码互信息",
+          "design": "三种感受野拓扑；36种方向、5°步长；条形长度1至11 cm、1 cm步长。",
+          "comparator": "不同条形刺激长度",
+          "measure": "180°/2^MI定义的角指标随长度的变化",
+          "unit_of_analysis": "拓扑和刺激配置下的模拟响应分布",
+          "sample_size_as_reported": "每配置150 trials；独立拓扑实例及随机种子数未报告。",
+          "uncertainty": "图5B提供均值和标准差说明，正文仅报告定性退化趋势。",
+          "assumptions": [
+            "空间码采用最活跃神经元放电率一半的相对阈值。",
+            "互信息换算的角指标用于表征方向编码能力。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "IV. Receptive Field Structure",
+            "figure": "Figure 5B",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "方向编码表现依赖刺激长度。",
+        "boundary": "仅有受测范围内的定性趋势，未确定失败长度或误差阈值。",
+        "negative_result": "刺激缩短时方向判别能力退化。",
+        "non_inference": "不能推断所有短边缘均不可辨认，也不能认定该趋势已在实际硬件上验证。",
+        "unresolved": "满足指定方向分辨要求所需的最短刺激长度是多少？",
+        "unresolved_attribution": "根据未提供的定量性能阈值提出。"
+      },
+      "broad_directions": [
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "边缘长度减少如何限制触觉方向编码能力？"
+      ],
+      "shared_evidence_with": [
+        "C4"
+      ],
+      "review_notes": [
+        "与C4共享图5B及仿真设计，不构成独立复制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "已重新评估全部五页文本及图注。支持五项有限命题：固定连接网络的八方向选择响应、WTA增强选择性、SDSP学习形成方向选择连接、完全随机拓扑的定性编码优势，以及刺激缩短后的性能退化。前两项共享图2，后两项共享图5B。密度扫描无法从所给文字提取明确性能结论。方向端点、输入计数及钙变量方程仍有源文歧义；独立重复和测试样本量未充分报告。本文未验证低功耗硬件、功耗或延迟。",
+  "shared_evidence": [
+    {
+      "claim_id": "C1",
+      "with": [
+        "C2"
+      ]
+    },
+    {
+      "claim_id": "C2",
+      "with": [
+        "C1"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C5"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C4"
+      ]
+    }
+  ],
+  "audit": {
+    "initial_source_match_checks": [],
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": "C1",
+        "issue": "草稿将固定连接方向编码和 WTA 条件效应合为一项，二者可分别评估。",
+        "suggested_correction": "拆为C1和C2，并保留共享图2证据关系。",
+        "pdf_page": 3,
+        "resolved": true
+      },
+      {
+        "claim_id": "C1",
+        "issue": "八方向、0°至180°及22.5°间隔的表述存在端点计数歧义。",
+        "suggested_correction": "提取时保留八个受测方向；源文的实际角度列表仍待核实。",
+        "pdf_page": 2,
+        "resolved": false
+      },
+      {
+        "claim_id": "C1",
+        "issue": "图1图注称第一层提供160个输入，正文称第一层仅有24个神经元、皮肤有160个 taxel。",
+        "suggested_correction": "采用正文明确区分的计数并记录图注矛盾；实际实现需代码或原始配置核实。",
+        "pdf_page": 2,
+        "resolved": false
+      },
+      {
+        "claim_id": "C3",
+        "issue": "图4标准差的重复单位、测试样本量和独立训练次数未报告。",
+        "suggested_correction": "保留未知，不把280次训练呈现、神经元或突触计为独立实验重复。",
+        "pdf_page": 3,
+        "resolved": true
+      },
+      {
+        "claim_id": "C3",
+        "issue": "方程2的钙变量项印为正 C/τC，文本不足以判定是否为排版错误或实际实现。",
+        "suggested_correction": "记录源文形式，不自行修正；实现正确性需代码核实。",
+        "pdf_page": 3,
+        "resolved": false
+      },
+      {
+        "claim_id": "C4",
+        "issue": "互信息换算的角指标不等于直接验证的最小可辨角阈值。",
+        "suggested_correction": "明确指标定义，不将5°输入步长写为实测分类分辨率。",
+        "pdf_page": 4,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "图5A展示密度扫描，但提供的文字无法确定具体密度效应或拓扑排序。",
+        "suggested_correction": "保留该分析的贡献库存，不生成未经文本支持的性能命题。",
+        "pdf_page": 4,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "草稿包含请求模式以外的 source_check 和 review 字段，并声称未实际进行的匹配检查。",
+        "suggested_correction": "删除额外字段，仅报告本次对所给文本的核查。",
+        "pdf_page": null,
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T05:17:55.659639Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "signed_in_chatgpt_codex",
+    "authentication": "existing_ChatGPT_login",
+    "provider_api_key_used": false,
+    "model": "account_default_GPT",
+    "source_sha256": "7e54104bdded08b24ac6aa7c193878629c2db0c496723c1242b05757893205a7",
+    "requests": [
+      {
+        "phase": "extraction",
+        "seconds": 100.66,
+        "usage": {
+          "input_tokens": 19789,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 4376,
+          "reasoning_output_tokens": 49
+        },
+        "backend": "signed_in_chatgpt_codex",
+        "tools_used": false
+      },
+      {
+        "phase": "source_audit",
+        "seconds": 89.53,
+        "usage": {
+          "input_tokens": 24014,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 5137,
+          "reasoning_output_tokens": 52
+        },
+        "backend": "signed_in_chatgpt_codex",
+        "tools_used": false
+      }
+    ],
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

@@ -1,0 +1,1190 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "'Backpropagation and the brain' realized in cortical error neuron microcircuits",
+    "authors": [
+      "Kevin Max",
+      "Ismael Jaras",
+      "Arno Granier",
+      "Katharina A. Wilmes",
+      "Mihai A. Petrovici"
+    ],
+    "doi": "10.1371/journal.pcbi.1014164",
+    "publication_year": 2026,
+    "venue": "PLoS Computational Biology",
+    "url": "https://doi.org/10.1371/journal.pcbi.1014164"
+  },
+  "source": {
+    "filename": "paper-W4412970320--Backpropagation-and-the-brain-realized-in-cortical-error-neuron-microcircuits.pdf",
+    "sha256": "43a1919540652153e7ca07884b34bc811fe001eb40be1e67250d4cc58a33dff4",
+    "source_url": "https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1014164&type=printable",
+    "pdf_page_count": 34
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34
+    ],
+    "results_sections_seen": [
+      "Model formulation",
+      "Cartpole",
+      "Delayed match to sample",
+      "Yin-Yang",
+      "Multi-area teacher-student",
+      "Generative MNIST",
+      "Variability and ablation",
+      "Predictions",
+      "Idealized BP and derivative approximation",
+      "Methods and parameter tables"
+    ],
+    "missing_material": [
+      "S1 Text未提供",
+      "图像像素未读取"
+    ],
+    "text_pass_complete": true,
+    "notes": "34页正文、参数表、图注及全部参考文献均评估；不是生物实验。",
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "作者构造了区域内相互连接的表征与误差速率神经元群体，以加性表征整合、乘性误差整合和突触局部电压差更新实现连续监督学习。",
+      "role": "result",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "在严格层级、精确局部映射、转置反馈、近瞬时前瞻动力学和弱误差扰动等联合条件下，模型更新可对应反向传播。",
+      "role": "result",
+      "source_pages": [
+        23
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "小幅快速噪声、高通滤波、整流及时间平均可在慢变化表征和单调光滑激活条件下近似提取局部激活导数；作者用单对神经元示范此机制。",
+      "role": "result",
+      "source_pages": [
+        25
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "在模仿 LQR 输入输出的监督任务中，理想和加入非线性/局部映射噪声的模型均能控制非线性倒立摆，并呈现接近 LQR 的失败惩罚表现。",
+      "role": "result",
+      "source_pages": [
+        11
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "具有膜状态记忆的六神经元模型能学习延迟匹配二元刺激任务，并在所示评估中接近以 BPTT 训练的匹配循环网络。",
+      "role": "result",
+      "source_pages": [
+        11
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "在 Yin–Yang 三分类任务中，显式误差模型的所示表现接近 ANN 反向传播及 Sacramento 模型的 PAL 结果。",
+      "role": "result",
+      "source_pages": [
+        12
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "在所设多区域教师–学生回归任务中，显式误差模型跨任务复杂度保持接近 ANN 的表现，而所比较树突误差和层级预测编码实现在较深任务中表现较差。",
+      "role": "result",
+      "source_pages": [
+        12
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "强误差扰动时更新方向可偏离 BP，但所示模型仍能学习；作者报告表现与更新夹角并非一致关联。",
+      "role": "result",
+      "source_pages": [
+        14
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "在每类仅一个 MNIST 原型的确定性生成任务中，增加神经元群体通常改善重建，表征与误差单元数量不等仍可学习，足够表征单元条件下增加表征单元比单纯增加误差单元更有利。",
+      "role": "result",
+      "source_pages": [
+        14
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "在表征与误差单元各1000的原型生成设置中，禁用潜变量到 V2 的前馈权重学习使损失由 ANN 对照约9.2±0.1升至约40.3±0.4，显示该学习通路对所设任务的重要性。",
+      "role": "result",
+      "source_pages": [
+        14
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "在原型生成模型中，表征单元对所设激活斜率和偏移变异较耐受，而误差单元的小幅激活变异可破坏学习；很大的表征变异也会使学习失败。",
+      "role": "result",
+      "source_pages": [
+        15
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "在三区域原型生成模型中，切断 V2→V1 表征连接后，已有 V4→V1 跳连经继续训练可承担重建，严格层级对照不能恢复。",
+      "role": "result",
+      "source_pages": [
+        15
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "作者预测浅层误差群体与深层表征群体具有不同信息整合和噪声敏感性，并预测表征饱和时误差输出及学习中的树突教学失配减少。",
+      "role": "hypothesis",
+      "source_pages": [
+        18
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "主仿真用每时间步全局转置拷贝加初始化噪声设置反馈权重；PAL 的纯局部学习未在主要实验完整实现。",
+      "role": "interpretation",
+      "source_pages": [
+        9,
+        24
+      ],
+      "decision": "boundary",
+      "reason": "不能用局部学习口号掩盖反馈实现"
+    },
+    {
+      "summary": "生物背景、已有实验及第30至34页参考文献不作为本文独立生物证据。",
+      "role": "review_synthesis",
+      "source_pages": [
+        17,
+        19,
+        30,
+        31,
+        32,
+        33,
+        34
+      ],
+      "decision": "exclude",
+      "reason": "引用不是新实验"
+    },
+    {
+      "summary": "S1 Text 及图像像素未供应；正文对补充对照的报告保留来源限制。",
+      "role": "interpretation",
+      "source_pages": [
+        28
+      ],
+      "decision": "unresolved",
+      "reason": "不伪造补充结果"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "作者构造了区域内相互连接的表征与误差速率神经元群体，以加性表征整合、乘性误差整合和突触局部电压差更新实现连续监督学习。",
+      "claim_type": "model_architecture",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "多区室速率模型",
+          "design": "显式表征/误差群体；可跨区跳连",
+          "comparator": "无生物实验对照",
+          "measure": "连续局部更新",
+          "unit_of_analysis": "模型架构",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "Model formulation",
+            "figure": "Fig 1",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者构造了区域内相互连接的表征与误差速率神经元群体，以加性表征整合、乘性误差整合和突触局部电压差更新实现连续监督学习。",
+        "boundary": "属于计算架构；层对应关系、区室机制和学习信号的真实神经实现未在本文测量。",
+        "negative_result": null,
+        "non_inference": "不能据任务学习成功认定皮层已使用该架构。",
+        "unresolved": "误差输出可为负且权重不遵守 Dale's law；脉冲实现未完成。",
+        "unresolved_attribution": "来源局限及提取者来源复核"
+      },
+      "broad_directions": [
+        "learning-plasticity",
+        "computational-models"
+      ],
+      "scientific_questions": [
+        "显式误差神经元模型在什么条件下实现学习？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C3",
+        "C13"
+      ],
+      "review_notes": [
+        "已对供给34页逐条第二来源审计；区分模拟种子、训练点与神经元数，保留共享证据、有限任务及实现边界。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "在严格层级、精确局部映射、转置反馈、近瞬时前瞻动力学和弱误差扰动等联合条件下，模型更新可对应反向传播。",
+      "claim_type": "theoretical_relation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "解析推导",
+          "design": "弱误差极限的稳态更新",
+          "comparator": "反向传播梯度",
+          "measure": "更新对应关系",
+          "unit_of_analysis": "数学推导",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "严格层级连接",
+            "区域内映射为恒等",
+            "反馈为相应前馈映射的转置",
+            "前瞻时间常数匹配膜时间常数",
+            "误差扰动趋近零"
+          ],
+          "source_locator": {
+            "pdf_page": 23,
+            "section": "Idealized backpropagation equivalence",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在严格层级、精确局部映射、转置反馈、近瞬时前瞻动力学和弱误差扰动等联合条件下，模型更新可对应反向传播。",
+        "boundary": "联合条件不可拆开泛化；有限扰动改变表征状态。",
+        "negative_result": null,
+        "non_inference": "不是任意循环网络、任意反馈或全局收敛定理。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "learning-plasticity",
+        "computational-models"
+      ],
+      "scientific_questions": [
+        "显式误差神经元模型在什么条件下实现学习？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C3",
+        "C13"
+      ],
+      "review_notes": [
+        "已对供给34页逐条第二来源审计；区分模拟种子、训练点与神经元数，保留共享证据、有限任务及实现边界。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "小幅快速噪声、高通滤波、整流及时间平均可在慢变化表征和单调光滑激活条件下近似提取局部激活导数；作者用单对神经元示范此机制。",
+      "claim_type": "approximation_demonstration",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "泰勒近似和单对神经元模拟",
+          "design": "快噪声与慢状态分离",
+          "comparator": "显式激活导数",
+          "measure": "重标定后的导数估计",
+          "unit_of_analysis": "一个表征/误差神经元对",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "噪声足够小",
+            "快慢时间尺度分离",
+            "局部激活导数非负",
+            "曲线经展示性重标定"
+          ],
+          "source_locator": {
+            "pdf_page": 25,
+            "section": "Local derivative computation",
+            "figure": "Fig 8",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "小幅快速噪声、高通滤波、整流及时间平均可在慢变化表征和单调光滑激活条件下近似提取局部激活导数；作者用单对神经元示范此机制。",
+        "boundary": "整流统计对一般有符号导数给出幅值而非符号；不能仅凭光滑性泛化。",
+        "negative_result": null,
+        "non_inference": "单对数值示范不等于全网络生物实现。",
+        "unresolved": "主任务是否实际以该噪声估计替代显式导数，来源未清楚交代。",
+        "unresolved_attribution": "来源局限及提取者来源复核"
+      },
+      "broad_directions": [
+        "learning-plasticity",
+        "computational-models"
+      ],
+      "scientific_questions": [
+        "显式误差神经元模型在什么条件下实现学习？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C13"
+      ],
+      "review_notes": [
+        "已对供给34页逐条第二来源审计；区分模拟种子、训练点与神经元数，保留共享证据、有限任务及实现边界。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "在模仿 LQR 输入输出的监督任务中，理想和加入非线性/局部映射噪声的模型均能控制非线性倒立摆，并呈现接近 LQR 的失败惩罚表现。",
+      "claim_type": "model_experiment",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "监督模仿与控制仿真",
+          "design": "每轮500个训练状态；20秒控制评估",
+          "comparator": "LQR；理想与现实化模型",
+          "measure": "倒杆惩罚记录",
+          "unit_of_analysis": "独立随机种子",
+          "sample_size_as_reported": "10个独立随机种子",
+          "uncertainty": "中位数及四分位",
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "Cartpole",
+            "figure": "Fig 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在模仿 LQR 输入输出的监督任务中，理想和加入非线性/局部映射噪声的模型均能控制非线性倒立摆，并呈现接近 LQR 的失败惩罚表现。",
+        "boundary": "四维状态到一维控制；不是从奖励独立学出的强化学习。",
+        "negative_result": null,
+        "non_inference": "不是动物运动控制验证。",
+        "unresolved": "图注称失败次数，方法称倒杆时间步；两种统计单位不应混同。",
+        "unresolved_attribution": "来源局限及提取者来源复核"
+      },
+      "broad_directions": [
+        "learning-plasticity",
+        "computational-models"
+      ],
+      "scientific_questions": [
+        "显式误差神经元模型在什么条件下实现学习？"
+      ],
+      "shared_evidence_with": [
+        "C5",
+        "C6",
+        "C7",
+        "C8"
+      ],
+      "review_notes": [
+        "已对供给34页逐条第二来源审计；区分模拟种子、训练点与神经元数，保留共享证据、有限任务及实现边界。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "具有膜状态记忆的六神经元模型能学习延迟匹配二元刺激任务，并在所示评估中接近以 BPTT 训练的匹配循环网络。",
+      "claim_type": "model_experiment",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "延迟匹配仿真",
+          "design": "两个隐藏及一个输出表征单元，各配误差单元；每分割50对刺激",
+          "comparator": "自循环分层 RNN/BPTT",
+          "measure": "末时间步分类准确率",
+          "unit_of_analysis": "独立随机种子",
+          "sample_size_as_reported": "10个随机种子",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "Delayed match to sample",
+            "figure": "Fig 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "具有膜状态记忆的六神经元模型能学习延迟匹配二元刺激任务，并在所示评估中接近以 BPTT 训练的匹配循环网络。",
+        "boundary": "只评估所设延迟范围及小网络；记忆时间常数必须满足任务条件。",
+        "negative_result": null,
+        "non_inference": "不证明一般长期记忆或生物循环网络学习。",
+        "unresolved": "正文220 ms、时间步及表中电容/电导换算存在不一致，且回顾性参数符号疑误。",
+        "unresolved_attribution": "来源局限及提取者来源复核"
+      },
+      "broad_directions": [
+        "learning-plasticity",
+        "computational-models"
+      ],
+      "scientific_questions": [
+        "显式误差神经元模型在什么条件下实现学习？"
+      ],
+      "shared_evidence_with": [
+        "C4",
+        "C6",
+        "C7",
+        "C8"
+      ],
+      "review_notes": [
+        "已对供给34页逐条第二来源审计；区分模拟种子、训练点与神经元数，保留共享证据、有限任务及实现边界。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "在 Yin–Yang 三分类任务中，显式误差模型的所示表现接近 ANN 反向传播及 Sacramento 模型的 PAL 结果。",
+      "claim_type": "model_experiment",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "非线性分类仿真",
+          "design": "30隐藏表征单元及3输出单元",
+          "comparator": "ANN/BP；既有 Sacramento/PAL 结果",
+          "measure": "分类错误",
+          "unit_of_analysis": "独立随机种子",
+          "sample_size_as_reported": "10个随机种子",
+          "uncertainty": "标准差",
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "Yin-Yang",
+            "figure": "Fig 3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在 Yin–Yang 三分类任务中，显式误差模型的所示表现接近 ANN 反向传播及 Sacramento 模型的 PAL 结果。",
+        "boundary": "比较只适用于本任务和给定实现；Sacramento 数值来自既有工作。",
+        "negative_result": null,
+        "non_inference": "不是独立重复的生物或 PAL 全网络实验。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "learning-plasticity",
+        "computational-models"
+      ],
+      "scientific_questions": [
+        "显式误差神经元模型在什么条件下实现学习？"
+      ],
+      "shared_evidence_with": [
+        "C4",
+        "C5",
+        "C7",
+        "C8"
+      ],
+      "review_notes": [
+        "已对供给34页逐条第二来源审计；区分模拟种子、训练点与神经元数，保留共享证据、有限任务及实现边界。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "在所设多区域教师–学生回归任务中，显式误差模型跨任务复杂度保持接近 ANN 的表现，而所比较树突误差和层级预测编码实现在较深任务中表现较差。",
+      "claim_type": "model_experiment",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "合成教师网络回归",
+          "design": "复杂度1至5；每分割100点；1000轮",
+          "comparator": "ANN/BP；树突误差及 hPC 实现",
+          "measure": "均方误差",
+          "unit_of_analysis": "独立随机种子",
+          "sample_size_as_reported": "10个随机种子",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "Multi-area teacher-student",
+            "figure": "Fig 4",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在所设多区域教师–学生回归任务中，显式误差模型跨任务复杂度保持接近 ANN 的表现，而所比较树突误差和层级预测编码实现在较深任务中表现较差。",
+        "boundary": "限定教师架构、实现和超参数，不能推出所有预测编码理论不可扩展。",
+        "negative_result": "复杂度5任务没有任何比较模型完全解决；仅训练 ANN 最后三区也得到约(1.2±0.1)×10^-2的误差。",
+        "non_inference": "因此不能认定全部五区都获得有效训练或已解决大脑规模信用分配。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "learning-plasticity",
+        "computational-models"
+      ],
+      "scientific_questions": [
+        "显式误差神经元模型在什么条件下实现学习？"
+      ],
+      "shared_evidence_with": [
+        "C4",
+        "C5",
+        "C6",
+        "C8"
+      ],
+      "review_notes": [
+        "已对供给34页逐条第二来源审计；区分模拟种子、训练点与神经元数，保留共享证据、有限任务及实现边界。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "强误差扰动时更新方向可偏离 BP，但所示模型仍能学习；作者报告表现与更新夹角并非一致关联。",
+      "claim_type": "model_experiment",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "更新夹角及任务表现比较",
+          "design": "有限误差扰动",
+          "comparator": "精确 BP 更新",
+          "measure": "夹角与任务损失",
+          "unit_of_analysis": "独立随机种子",
+          "sample_size_as_reported": "10个随机种子",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 14,
+            "section": "Gradient alignment",
+            "figure": "Fig 4",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "强误差扰动时更新方向可偏离 BP，但所示模型仍能学习；作者报告表现与更新夹角并非一致关联。",
+        "boundary": "正文及补充材料描述的模型结果；完整 S1 Text 未包含于供给页。",
+        "negative_result": null,
+        "non_inference": "任务成功不意味着逐步梯度完全一致，也不保证任意非梯度方向有效。",
+        "unresolved": "补充图的数值细节不能从供给文本独立复核。",
+        "unresolved_attribution": "来源局限及提取者来源复核"
+      },
+      "broad_directions": [
+        "learning-plasticity",
+        "computational-models"
+      ],
+      "scientific_questions": [
+        "显式误差神经元模型在什么条件下实现学习？"
+      ],
+      "shared_evidence_with": [
+        "C4",
+        "C5",
+        "C6",
+        "C7"
+      ],
+      "review_notes": [
+        "已对供给34页逐条第二来源审计；区分模拟种子、训练点与神经元数，保留共享证据、有限任务及实现边界。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "在每类仅一个 MNIST 原型的确定性生成任务中，增加神经元群体通常改善重建，表征与误差单元数量不等仍可学习，足够表征单元条件下增加表征单元比单纯增加误差单元更有利。",
+      "claim_type": "model_experiment",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "原型图像生成",
+          "design": "10张图像；训练、验证、测试为同一集合；V1各784单元",
+          "comparator": "不同 V2 表征/误差群体大小",
+          "measure": "原型重建损失",
+          "unit_of_analysis": "独立随机种子",
+          "sample_size_as_reported": "10个随机种子",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 14,
+            "section": "Generative MNIST",
+            "figure": "Fig 5",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在每类仅一个 MNIST 原型的确定性生成任务中，增加神经元群体通常改善重建，表征与误差单元数量不等仍可学习，足够表征单元条件下增加表征单元比单纯增加误差单元更有利。",
+        "boundary": "是固定类别到固定图像的重建，不是独立测试集生成泛化。",
+        "negative_result": null,
+        "non_inference": "神经元数不是独立样本数，不能称新图像泛化。",
+        "unresolved": "正文 nR>nE 时剩余单元计数写作 nE−nR，符号与条件相反。",
+        "unresolved_attribution": "来源局限及提取者来源复核"
+      },
+      "broad_directions": [
+        "learning-plasticity",
+        "computational-models"
+      ],
+      "scientific_questions": [
+        "显式误差神经元模型在什么条件下实现学习？"
+      ],
+      "shared_evidence_with": [
+        "C10",
+        "C11",
+        "C12"
+      ],
+      "review_notes": [
+        "已对供给34页逐条第二来源审计；区分模拟种子、训练点与神经元数，保留共享证据、有限任务及实现边界。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "在表征与误差单元各1000的原型生成设置中，禁用潜变量到 V2 的前馈权重学习使损失由 ANN 对照约9.2±0.1升至约40.3±0.4，显示该学习通路对所设任务的重要性。",
+      "claim_type": "model_experiment",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "权重学习禁用控制",
+          "design": "同一10原型任务",
+          "comparator": "ANN及禁用潜变量前馈学习的模型",
+          "measure": "重建损失",
+          "unit_of_analysis": "独立随机种子",
+          "sample_size_as_reported": "10个随机种子",
+          "uncertainty": "报告均值及离散度9.2±0.1、40.3±0.4",
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 14,
+            "section": "Generative learning ablation",
+            "figure": "Fig 5",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在表征与误差单元各1000的原型生成设置中，禁用潜变量到 V2 的前馈权重学习使损失由 ANN 对照约9.2±0.1升至约40.3±0.4，显示该学习通路对所设任务的重要性。",
+        "boundary": "数值为特定模型配置和相同图像集合；不外推到生物必要性。",
+        "negative_result": "禁用学习不能维持基准性能。",
+        "non_inference": "不是直接去除真实皮层通路的因果实验。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "learning-plasticity",
+        "computational-models"
+      ],
+      "scientific_questions": [
+        "显式误差神经元模型在什么条件下实现学习？"
+      ],
+      "shared_evidence_with": [
+        "C9",
+        "C11",
+        "C12"
+      ],
+      "review_notes": [
+        "已对供给34页逐条第二来源审计；区分模拟种子、训练点与神经元数，保留共享证据、有限任务及实现边界。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "在原型生成模型中，表征单元对所设激活斜率和偏移变异较耐受，而误差单元的小幅激活变异可破坏学习；很大的表征变异也会使学习失败。",
+      "claim_type": "model_experiment",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "激活异质性扰动",
+          "design": "表征斜率N(1,σ)、偏移N(0,σ)，扫描变异强度",
+          "comparator": "表征与误差群体扰动",
+          "measure": "生成损失",
+          "unit_of_analysis": "独立随机种子",
+          "sample_size_as_reported": "10个随机种子",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 15,
+            "section": "Activation variability",
+            "figure": "Fig 6a",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在原型生成模型中，表征单元对所设激活斜率和偏移变异较耐受，而误差单元的小幅激活变异可破坏学习；很大的表征变异也会使学习失败。",
+        "boundary": "耐受范围只对所设分布和网络成立；表征约σ≤0.3条件表现较好。",
+        "negative_result": "误差激活扰动及较大表征异质性存在实际失败。",
+        "non_inference": "不是所有生物异质性都被容忍；错误符号编码仍未解决。",
+        "unresolved": "偏移是主要失败来源的细分分析指向未提供的 S1 图。",
+        "unresolved_attribution": "来源局限及提取者来源复核"
+      },
+      "broad_directions": [
+        "learning-plasticity",
+        "computational-models"
+      ],
+      "scientific_questions": [
+        "显式误差神经元模型在什么条件下实现学习？"
+      ],
+      "shared_evidence_with": [
+        "C9",
+        "C10",
+        "C12"
+      ],
+      "review_notes": [
+        "已对供给34页逐条第二来源审计；区分模拟种子、训练点与神经元数，保留共享证据、有限任务及实现边界。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "在三区域原型生成模型中，切断 V2→V1 表征连接后，已有 V4→V1 跳连经继续训练可承担重建，严格层级对照不能恢复。",
+      "claim_type": "model_experiment",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "模型连边消融及继续训练",
+          "design": "表征规模784、500、500；禁止新增区间连边",
+          "comparator": "含跳连与严格层级网络",
+          "measure": "消融后重建损失恢复",
+          "unit_of_analysis": "独立随机种子",
+          "sample_size_as_reported": "10个随机种子",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 15,
+            "section": "Connection ablation",
+            "figure": "Fig 6b",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在三区域原型生成模型中，切断 V2→V1 表征连接后，已有 V4→V1 跳连经继续训练可承担重建，严格层级对照不能恢复。",
+        "boundary": "只是现有模型连边的重训恢复；没有真实组织损伤或行为康复。",
+        "negative_result": "严格层级模型在此消融后不能恢复。",
+        "non_inference": "不说明任意跳连皆足够、立即恢复或生物损伤机制已证实。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "learning-plasticity",
+        "computational-models"
+      ],
+      "scientific_questions": [
+        "显式误差神经元模型在什么条件下实现学习？"
+      ],
+      "shared_evidence_with": [
+        "C9",
+        "C10",
+        "C11"
+      ],
+      "review_notes": [
+        "已对供给34页逐条第二来源审计；区分模拟种子、训练点与神经元数，保留共享证据、有限任务及实现边界。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C13",
+      "statement": "作者预测浅层误差群体与深层表征群体具有不同信息整合和噪声敏感性，并预测表征饱和时误差输出及学习中的树突教学失配减少。",
+      "claim_type": "biological_prediction",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "由模型提出可检验预测",
+          "design": "候选 L2/3 与 L5 映射",
+          "comparator": "未在本文直接实验",
+          "measure": "候选层特异信号与扰动效应",
+          "unit_of_analysis": "模型预测",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 18,
+            "section": "Experimental predictions",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者提出的可检验假说。",
+        "boundary": "层对应和乘性机制为作者假说；既有文献一致性不构成新的独立验证。",
+        "negative_result": null,
+        "non_inference": "不能称已发现皮层中真实误差神经元或证实唯一机制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "learning-plasticity",
+        "computational-models"
+      ],
+      "scientific_questions": [
+        "显式误差神经元模型在什么条件下实现学习？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "review_notes": [
+        "已对供给34页逐条第二来源审计；区分模拟种子、训练点与神经元数，保留共享证据、有限任务及实现边界。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "显式误差神经元架构在受限监督仿真中学习并有可检验皮层预测。精确BP对应需联合理想条件；主实验的带噪转置反馈、原型复用、最难任务失败和生物实现缺口均保留。",
+  "shared_evidence": [
+    {
+      "claim_id": "C1",
+      "with": [
+        "C2",
+        "C3",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C2",
+      "with": [
+        "C1",
+        "C3",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C1",
+        "C2",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C5",
+        "C6",
+        "C7",
+        "C8"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C4",
+        "C6",
+        "C7",
+        "C8"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C4",
+        "C5",
+        "C7",
+        "C8"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C4",
+        "C5",
+        "C6",
+        "C8"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C4",
+        "C5",
+        "C6",
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C10",
+        "C11",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "with": [
+        "C9",
+        "C11",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "with": [
+        "C9",
+        "C10",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "with": [
+        "C9",
+        "C10",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C13",
+      "with": [
+        "C1",
+        "C2",
+        "C3"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": null,
+        "issue": "主要实验反馈由带噪转置权重赋值而非完整 PAL 学习，因此完全局部实现仍未解决。",
+        "pdf_page": 24,
+        "suggested_correction": null,
+        "resolved": false
+      },
+      {
+        "claim_id": "C5",
+        "issue": "延迟任务的时间常数、时间步及参数符号不一致。",
+        "pdf_page": 26,
+        "suggested_correction": null,
+        "resolved": false
+      },
+      {
+        "claim_id": "C9",
+        "issue": "训练、验证、测试图像完全相同，已把结果限定为原型重建。",
+        "pdf_page": 27,
+        "suggested_correction": "不写独立泛化",
+        "resolved": true
+      },
+      {
+        "claim_id": "C9",
+        "issue": "nR>nE 的剩余单元数量符号相反，未自行修订源文。",
+        "pdf_page": 14,
+        "suggested_correction": null,
+        "resolved": false
+      },
+      {
+        "claim_id": "C3",
+        "issue": "整流估计一般给导数幅值；单调条件及主任务实际实现不够明确。",
+        "pdf_page": 25,
+        "suggested_correction": null,
+        "resolved": false
+      },
+      {
+        "claim_id": "C7",
+        "issue": "最难任务任何模型均未完全解出，且最后三区对照相当；已限制深层有效训练结论。",
+        "pdf_page": 12,
+        "suggested_correction": "保留实际负结果",
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "signed errors、Dale's law、脉冲实现和真实树突机制仍未解决。",
+        "pdf_page": 20,
+        "suggested_correction": null,
+        "resolved": false
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T11:34:44.563762Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "43a1919540652153e7ca07884b34bc811fe001eb40be1e67250d4cc58a33dff4",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

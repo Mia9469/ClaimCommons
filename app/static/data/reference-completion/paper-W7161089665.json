@@ -1,0 +1,1495 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "preprint",
+  "paper": {
+    "title": "A Quantum Inspired Variational Kernel and Explainable AI Framework for Cross Region Solar and Wind Energy Forecasting",
+    "authors": [
+      "Pavan Manjunath",
+      "Thomas Prüfer"
+    ],
+    "doi": null,
+    "publication_year": 2026,
+    "venue": "arXiv (Cornell University)",
+    "url": "https://arxiv.org/pdf/2605.09032"
+  },
+  "source": {
+    "filename": "paper-W7161089665--A-Quantum-Inspired-Variational-Kernel-and-Explainable-AI-Framework-for-Cross-Region-Solar-and-W.pdf",
+    "sha256": "41b35409c17cfe13857c77f5868a47d618e22195a036b6e62352618278ef83c2",
+    "source_url": "https://arxiv.org/pdf/2605.09032",
+    "pdf_page_count": 13
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "results_sections_seen": [
+      "3. Proposed framework; Fig. 1",
+      "4.1-4.4. Mathematical formulation; Eq1-Eq7",
+      "5.1-5.2. Methodology; Table 2",
+      "6.1. Cross-region capacity factors; Fig. 2",
+      "6.2. In-domain forecasting; Fig. 3/Table 3",
+      "6.3. Quantum-inspired kernel separability; Fig. 4",
+      "6.4. Cross-region transfer; Table 4",
+      "6.5. Variational quantum circuit; Fig. 5",
+      "6.6. Explainable-AI interpretation",
+      "7. Discussion; 8. Limitations; 9. Conclusion; 10. Future work"
+    ],
+    "missing_material": [
+      "文中Data and code availability称simulation pipeline为supplementary archive或向作者索取，但该代码/数据包没有供给，未读取或运行。",
+      "仅13页正文/表格/图注；没有附录正文和图像像素，所有图只据文字说明。",
+      "没有每个区域对的数据表、天气分类标签/样本数或完整模型参数，不能据摘要补足。"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "逐页评估PDF文件页1-13，含完整文献综述/Table1、方法Eq1-7、Table2、全部6个结果小节、全部Fig1-5/Table3-4、讨论、限制、未来、利益声明、availability和参考文献。",
+      "实际题名含Quantum-Inspired、Explainable-AI、Cross-Region连字符；索引无连字符。文字主题及两作者对应，不属于不同论文，但保留精确题名差异。",
+      "首页为Pavan Manjunath与Thomas Prüfer（带Dr称谓）；索引第二作者Thomas Prufer。输出依明确作者栏恢复ü、去称谓，并保留索引拼写差异；页眉et al.不是可据此扩增作者的姓名列表。",
+      "赋值记录为2026/arXiv2605.09032 preprint；供给正文没有可确认的版本后缀、发布日期或DOI。保留索引年/URL，未声称确认v1或正式出版版。",
+      "第二次source audit在保留全文中逐项核对结果、表值、量纲、窗口、模型标签、qubit/参数/区域对与实际独立n；数据为时间相关序列，不当成独立重复。",
+      "仅当前源；Table1绝对first/no published study声明未被外部检索验证，不生成跨论文关系。",
+      "所有quote=null。没有独立运行补充代码，也没有真实量子/生物或电网控制验证。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "四阶段公开数据/经典预测/AR残差核修正/post-hoc生成解释的架构",
+      "role": "result",
+      "source_pages": [
+        5,
+        6,
+        7,
+        11,
+        12
+      ],
+      "decision": "include",
+      "reason": "C1；限定实际proposed配置ARIMA+VQK并披露数据/补充包未供给。"
+    },
+    {
+      "summary": "fidelity kernel、经典surrogate、ridge方程与名义6-qubit/3-layer电路",
+      "role": "result",
+      "source_pages": [
+        5,
+        6,
+        9,
+        10,
+        11
+      ],
+      "decision": "include",
+      "reason": "C2；公式定义不等于物理量子硬件验证，不声称近似误差界或速度定理。"
+    },
+    {
+      "summary": "permutation-based attribution公式",
+      "role": "hypothesis",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "C10；无特征分数/等价证明，不遗漏方法部分提案。"
+    },
+    {
+      "summary": "三地区一周capacity-factor的定性差异",
+      "role": "result",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "C14；只保留正文描述，不能从一周推出季节性统计结论。"
+    },
+    {
+      "summary": "Region C十四天点误差和MAE-based CRPS surrogate",
+      "role": "result",
+      "source_pages": [
+        7,
+        8
+      ],
+      "decision": "include",
+      "reason": "C3；和代表性一周图、跨区域汇总分开，保留未优于强基线。"
+    },
+    {
+      "summary": "curtailment proxy decision regret",
+      "role": "result",
+      "source_pages": [
+        7,
+        8
+      ],
+      "decision": "include",
+      "reason": "C4；独立于点误差判断，不伪装成真实运行收益。"
+    },
+    {
+      "summary": "每步inference latency",
+      "role": "result",
+      "source_pages": [
+        7,
+        8
+      ],
+      "decision": "include",
+      "reason": "C5；对照值完整，但硬件/重复缺失。"
+    },
+    {
+      "summary": "weather-regime kernel-PCA首成分Fisher ratio7.18 vs0.46",
+      "role": "result",
+      "source_pages": [
+        8,
+        9
+      ],
+      "decision": "include",
+      "reason": "C6；不升格分类准确率或物理量子优势。"
+    },
+    {
+      "summary": "九有序区域对zero-shot排名及同表in-domain值",
+      "role": "result",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "C7；平均pair不是独立实验，所提模型非最优。"
+    },
+    {
+      "summary": "fine-tune列与zero-shot对比，LSTM三列相同",
+      "role": "result",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "C8；微调方案未给，保留原值不猜原因。"
+    },
+    {
+      "summary": "生成式解释示例",
+      "role": "result",
+      "source_pages": [
+        10
+      ],
+      "decision": "include",
+      "reason": "C9；展示不等于faithfulness或用户研究。"
+    },
+    {
+      "summary": "职责分离改善审计/安全的解释",
+      "role": "interpretation",
+      "source_pages": [
+        10,
+        11
+      ],
+      "decision": "include",
+      "reason": "C11；无实际审计/安全对照。"
+    },
+    {
+      "summary": "strong ridge使修正保守的讨论解释",
+      "role": "interpretation",
+      "source_pages": [
+        10
+      ],
+      "decision": "include",
+      "reason": "C12；无λ及消融，不能因果归因。"
+    },
+    {
+      "summary": "真实量子噪声可能侵蚀分离比的未来假设",
+      "role": "hypothesis",
+      "source_pages": [
+        11
+      ],
+      "decision": "include",
+      "reason": "C13；未发生的噪声实验不是实际负结果。"
+    },
+    {
+      "summary": "probabilistic quantile decoder、扩大区域、RAG handbook、decision-focused kernel训练的未来扩展",
+      "role": "future_direction",
+      "source_pages": [
+        11
+      ],
+      "decision": "exclude",
+      "reason": "只列待实施功能/评估扩展，没有新结果或已检验比较；有关检索问题保留在现有候选unresolved中，不造效果。"
+    },
+    {
+      "summary": "Table1文献比较、absolute first/no published study新颖性声明",
+      "role": "background",
+      "source_pages": [
+        2,
+        3,
+        4,
+        5,
+        12,
+        13
+      ],
+      "decision": "exclude",
+      "reason": "不是本文独立实验证据，且源没有足够检索方法支持绝对文献覆盖断言。"
+    },
+    {
+      "summary": "代码可重现与官方公共数据声明",
+      "role": "availability_statement",
+      "source_pages": [
+        11,
+        12
+      ],
+      "decision": "exclude",
+      "reason": "属于可用性承诺，未供给补充包，不认定完成独立复现。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "该预印本提出并报告一个四阶段预测框架：公开 API 数据采集，AR(24)/XGBoost/两层 LSTM 的经典基线，quantum-inspired kernel 对 AR(24) residual 的修正，以及只读取 benchmark 数值的 generative-AI 解释层。实验覆盖 Iberian solar、North-Sea wind 与 mixed Texas，所提配置实际为 ARIMA + VQK，而非给全部经典模型加同一修正头。",
+      "claim_type": "forecasting_pipeline_design",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "四阶段架构的文字图注与方法定义",
+          "design": "数据、预测、残差修正与解释分离",
+          "comparator": null,
+          "measure": "模块责任与接口",
+          "unit_of_analysis": "计算框架设计；无独立系统部署验证",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "3. Proposed framework",
+            "figure": "Fig. 1",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "AR基线残差修正及公共数据源列表",
+          "design": "六个公开数据来源，三个区域",
+          "comparator": "经典残差与修正后预测",
+          "measure": "ARIMA residual + kernel ridge correction；公开数据类别",
+          "unit_of_analysis": "框架和来源类型，不是六次独立实验",
+          "sample_size_as_reported": "报告3个区域、6个数据来源；记录数/独立训练运行数未报告",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "4.3. Quantum-inspired variational kernel; 5.1. Datasets and pre-processing",
+            "figure": "Table 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "训练/验证/测试协议说明",
+          "design": "按时间顺序训练验证、滚动单步测试",
+          "comparator": "persistence、ARIMA、XGBoost、LSTM与ARIMA+VQK",
+          "measure": "one-step-ahead forecasting",
+          "unit_of_analysis": "时序输入/预测；无实际用户或电网控制实验",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "5.2. Experimental design",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "设计上明确区分预测与post-hoc文字解释，并给出AR残差核修正的评估配置。",
+        "boundary": "Table2列ENTSO-E、NREL NSRDB、NOAA ISD、Open Power System Data、ARPA-E PERFORM和Global Wind Atlas；各区域文件、日期区间和预处理映射未详列。",
+        "negative_result": null,
+        "non_inference": "不推断实现了电网调度/控制、解释层生成预测、所有基线都被VQK增强或公共代码已被独立复现。",
+        "unresolved": "仍需补充精确数据子集、预处理、训练参数及未供给的代码包。",
+        "unresolved_attribution": "本文未解决或未提供相应材料。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "如何将区域能源预测、经典残差修正与生成式解释分成可独立评估的模块？"
+      ],
+      "shared_evidence_with": [
+        "C9",
+        "C10",
+        "C11",
+        "C14"
+      ],
+      "review_notes": [
+        "源将基线称ARIMA，但Eq2实际上写出p=24的线性AR回归；不臆测差分和MA结构。",
+        "公开来源声明并不证明数据/代码已经被我们获取或重建。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "作者将 residual correction 定义为 fidelity-style kernel 上的 kernel ridge regression，但实际实验使用经典硬件可计算的闭式 surrogate K(x,x')≈exp(-||x-x'||²/2)cos²(π<x,x'>/2)，而不是执行物理量子电路。Fig 5 给出的名义 ansatz 为6 qubits、3 layers、36 trainable parameters；这些设计数目不是独立实验样本数。",
+      "claim_type": "classical_kernel_method",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Eq3-6定义特征映射、fidelity kernel、闭式近似及ridge残差修正",
+          "design": "基线ε=y-ŷ_ARIMA；系数采用(K+λI)^(-1)ε",
+          "comparator": "名义fidelity kernel与经典闭式surrogate",
+          "measure": "核值、残差修正公式；文中称核值计算O(n²d)但未给证明",
+          "unit_of_analysis": "输入向量/核矩阵的计算定义；无量子器件样本",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "闭式表达对名义电路的近似误差、核性质及适用条件未给。",
+            "λ值、角度优化协议和维度映射未详述。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "4.3. Quantum-inspired variational kernel",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "ansatz的文字描述",
+          "design": "每层RY/RZ rotations，nearest-neighbour CNOT chain",
+          "comparator": null,
+          "measure": "6 qubits × 3 layers；报告36个可训练参数",
+          "unit_of_analysis": "名义电路结构，而非物理量子芯片或训练重复",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "6.5. Variational quantum circuit",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "电路图文字图注",
+          "design": null,
+          "comparator": null,
+          "measure": "6 qubits、3 repeated layers、36 trainable parameters",
+          "unit_of_analysis": "同一设计图，不是独立电路实测",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "6.5. Variational quantum circuit",
+            "figure": "Fig. 5",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "实际计算实现的范围声明",
+          "design": "使用closed-form classical surrogate",
+          "comparator": "未执行真实带噪量子硬件",
+          "measure": "硬件噪声未进入当前实验",
+          "unit_of_analysis": "实现边界说明",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "8. Limitations and threats to validity",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "保留该文的经典核残差方法及名义电路规格。",
+        "boundary": "Eq3只显式写RY angle encoding，而6.5/Fig5还写RZ与36参数；闭式近似没有推导或误差控制。",
+        "negative_result": null,
+        "non_inference": "不认定量子速度优势、物理entanglement的因果收益、核近似等于该电路精确计算或已有完整复杂度定理。",
+        "unresolved": "名义电路与surrogate的对应、实际参数训练及核近似误差仍不清楚。",
+        "unresolved_attribution": "本文未解决或未提供相应材料。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "quantum-inspired闭式核是否忠实于名义variational电路，且怎样影响残差回归？"
+      ],
+      "shared_evidence_with": [
+        "C6",
+        "C13"
+      ],
+      "review_notes": [
+        "将设计中的qubit/参数数目、实际经典计算和独立重复严格分开。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "在2025年 mixed Texas Region C 的十四天滚动单步测试中，ARIMA+VQK 的 NRMSE=0.0988，略高于 AR(24)=0.0954 和 XGBoost=0.0951，低于 LSTM=0.1221 及 persistence=0.2981；表头 CRPS 实际按方法定义为 MAE-based surrogate，所提模型值0.0538也高于AR=0.0514与XGBoost=0.0525。该表不显示核修正优于最强经典预测基线。",
+      "claim_type": "in_domain_forecast_error",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "作者报告的公开数据时序 benchmark；未独立复现",
+          "design": "2018-2023训练、2024验证；2025年Region C mixed Texas十四天测试；每个时间点只用过去真实值滚动1-step-ahead预测",
+          "comparator": "persistence、ARIMA(AR24)、XGBoost、LSTM(2 layers)、ARIMA+VQK",
+          "measure": "NRMSE依次0.2981/0.0954/0.0951/0.1221/0.0988；MAE-based CRPS surrogate依次0.1693/0.0514/0.0525/0.0663/0.0538",
+          "unit_of_analysis": "同一Region C测试时序上的预测时点/汇总指标；相邻时点不当作独立实验重复，实际时间点和训练重复数未报告",
+          "sample_size_as_reported": "报告14天窗口；未报告完整时间点数或独立训练种子",
+          "uncertainty": null,
+          "assumptions": [
+            "只用过去真实值逐步预测，不是无真实更新的长期自由运行。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "6.2. In-domain forecasting",
+            "figure": "Table 3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "作者报告的公开数据时序 benchmark；未独立复现",
+          "design": "指标和预测协议定义",
+          "comparator": "五种预测配置",
+          "measure": "normalised RMSE与MAE-based CRPS surrogate",
+          "unit_of_analysis": "指标定义与测试协议；非新增数据",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "5.2. Experimental design",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所提配置在该窗口优于persistence/LSTM，点误差接近AR/XGBoost。",
+        "boundary": "这是一个区域十四天的汇总；Fig3仅代表性一周。没有误差条、显著性/等效性检验或概率分布输出。",
+        "negative_result": "报告数值未优于AR/XGBoost；没有明显的headline forecast accuracy收益。",
+        "non_inference": "不将接近误差称作统计等价或严格不伤害，不把CRPS surrogate当作真正概率预测CRPS；不推广到全部区域。",
+        "unresolved": "不同时间窗、重复训练和概率指标上的稳定性待检验。",
+        "unresolved_attribution": "本文未解决或未提供相应材料。"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "AR residual核修正在时序严格隔离的能源单步预测中是否改善点误差？"
+      ],
+      "shared_evidence_with": [
+        "C4",
+        "C5",
+        "C9",
+        "C12"
+      ],
+      "review_notes": [
+        "作者的within one percentage point按此表可限定为归一化误差的绝对间隔，不是相对百分比改善。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "在同一 Region C 十四天测试、curtailment-minimisation 代价系数 a=2、b=1 的作者定义任务上，ARIMA+VQK 的 decision regret=0.0814 USD/MWh，高于 ARIMA=0.0787 与 XGBoost=0.0793，低于 LSTM=0.0991 和 persistence=0.2587；因此这一决策代理评价没有显示所提模型优于最强经典对照。",
+      "claim_type": "decision_proxy_regret",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "作者报告的公开数据时序 benchmark；未独立复现",
+          "design": "使用curtailment-minimisation任务且a=2、b=1",
+          "comparator": "五预测配置",
+          "measure": "decision regret 的实验定义",
+          "unit_of_analysis": "从同一测试时序形成的决策代理；非真实市场/控制系统",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "5.2. Experimental design",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "作者报告的公开数据时序 benchmark；未独立复现",
+          "design": "2018-2023训练、2024验证；2025年Region C mixed Texas十四天测试；每个时间点只用过去真实值滚动1-step-ahead预测；使用上述决策代价",
+          "comparator": "persistence、ARIMA、XGBoost、LSTM、ARIMA+VQK",
+          "measure": "regret[USD/MWh]依次0.2587/0.0787/0.0793/0.0991/0.0814",
+          "unit_of_analysis": "同一Region C测试时序上的预测时点/汇总指标；相邻时点不当作独立实验重复，实际时间点和训练重复数未报告",
+          "sample_size_as_reported": "14天窗口；实际决策数、事件数或独立运行数未报告",
+          "uncertainty": null,
+          "assumptions": [
+            "代价完整公式与归一化细节未提供；只保留源报告单位。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "6.2. In-domain forecasting",
+            "figure": "Table 3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "该代理任务中所提模型优于persistence/LSTM。",
+        "boundary": "仅固定a/b的一项代理指标；本文明确未涵盖storage、market dispatch和real-time control。",
+        "negative_result": "regret未低于ARIMA/XGBoost。",
+        "non_inference": "不推断真实电网节省、因果经济效益、安全控制收益或核回归已经采用decision-focused训练目标。",
+        "unresolved": "其他成本参数与真实运行约束下收益未评估。",
+        "unresolved_attribution": "本文未解决或未提供相应材料。"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "预测误差相近时，非对称curtailment代价是否改变残差修正模型的决策价值？"
+      ],
+      "shared_evidence_with": [
+        "C3",
+        "C5"
+      ],
+      "review_notes": [
+        "decision-focused训练是Future work，不是当前已经实现的优化目标。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "Table 3 报告 Region C 单步 inference latency：ARIMA+VQK 为0.048 ms，比 ARIMA 0.035 ms 和 persistence 0.003 ms 慢，但低于 LSTM 0.318 ms 与 XGBoost 5.831 ms；闭式核修正相对AR增加了计算开销，不能据此声称物理量子加速。",
+      "claim_type": "inference_latency_comparison",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "作者报告的公开数据时序 benchmark；未独立复现",
+          "design": "2018-2023训练、2024验证；2025年Region C mixed Texas十四天测试；每个时间点只用过去真实值滚动1-step-ahead预测",
+          "comparator": "persistence、ARIMA、XGBoost、LSTM、ARIMA+VQK",
+          "measure": "Inference[ms]依次0.003/0.035/5.831/0.318/0.048",
+          "unit_of_analysis": "每步模型推理的报告计时；统计聚合方式、计时次数和独立设备数未报告",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "硬件、软件环境、batch size及计时方法未说明。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "6.2. In-domain forecasting",
+            "figure": "Table 3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所提配置在报告环境中低于LSTM/XGBoost的推理时间。",
+        "boundary": "没有给硬件、计时分布或端到端数据/解释延迟；不把该值推广为实时部署保证。",
+        "negative_result": "相对ARIMA与persistence的推理延迟更高。",
+        "non_inference": "不推断量子速度优势、不同硬件可复现的绝对时间或整条四阶段流水线总延迟。",
+        "unresolved": "需匹配计算环境和重复计时核实开销。",
+        "unresolved_attribution": "本文未解决或未提供相应材料。"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "闭式核残差头的每步计算开销与预测收益如何权衡？"
+      ],
+      "shared_evidence_with": [
+        "C3",
+        "C4"
+      ],
+      "review_notes": [
+        "参数数目和On²d说法不替代计时独立重复。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "在 calm-versus-stormy weather-regime 子任务中，作者报告 quantum-inspired 经典surrogate核的 kernel-PCA 首主成分 Fisher discriminant ratio 为7.18，而调优RBF核为0.46，约十五倍；这是嵌入可分离性指标的差异，不是分类准确率、能源预测误差或物理量子优势。",
+      "claim_type": "weather_regime_separability",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "作者报告的公开数据时序 benchmark；未独立复现",
+          "design": "比较两种核的kernel-PCA embedding，并在leading principal component计算Fisher discriminant ratio",
+          "comparator": "tuned classical RBF与quantum-inspired kernel",
+          "measure": "Fisher discriminant ratio 0.46 vs7.18",
+          "unit_of_analysis": "天气类别中输入样本的嵌入/首成分；实际样本数、类别平衡、独立天气事件和运行重复数未报告",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "calm/stormy标签阈值、调参协议和此子任务的训练/测试划分未提供。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "6.3. Quantum-inspired kernel separability",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "作者报告的公开数据时序 benchmark；未独立复现",
+          "design": "同一embedding图的文字图注",
+          "comparator": "RBF左、quantum-inspired右",
+          "measure": "首成分Fisher ratio 0.46 vs7.18",
+          "unit_of_analysis": "同一比较，不是独立复现",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "6.3. Quantum-inspired kernel separability",
+            "figure": "Fig. 4",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "文本直接给出较大的首成分分离比差异，这是作者定位的主要结果。",
+        "boundary": "没有分类测试集准确率、样本数、Fisher公式、误差范围或重复评估；当前核为经典surrogate。",
+        "negative_result": null,
+        "non_inference": "不把分离比等同于预测精度、泛化分类能力或机制识别，也不把其称为已独立复现的量子优势。",
+        "unresolved": "该差异在留出天气事件、其他核/调参及真实噪声电路上是否保持未解决。",
+        "unresolved_attribution": "本文未解决或未提供相应材料。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "quantum-inspired核的weather-regime首成分分离比优势是否能转化为留出事件上的分类或预测收益？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C9",
+        "C13"
+      ],
+      "review_notes": [
+        "仅保留源中的约十五倍说法和两原值；不构造统计显著性。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "Table 4 的九个有序 source-target 区域对汇总中，zero-shot NRMSE 以 LSTM 0.1164 最低；ARIMA+VQK 为0.1683，高于ARIMA 0.1570、低于XGBoost 0.1918。同表in-domain列中所提模型0.1404也高于ARIMA 0.0936、XGBoost 0.0965和LSTM 0.1164，因此不能把Region C单表中的接近基线结论推广为跨区域最优。",
+      "claim_type": "cross_region_zero_shot_performance",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "作者报告的公开数据时序 benchmark；未独立复现",
+          "design": "2018-2023训练、2024验证，跨区域一周测试；汇总九个有序区域对",
+          "comparator": "ARIMA、XGBoost、LSTM、ARIMA+VQK",
+          "measure": "Zero-shot NRMSE依次0.1570/0.1918/0.1164/0.1683；In-domain依次0.0936/0.0965/0.1164/0.1404",
+          "unit_of_analysis": "区域对条件的汇总均值；多个pair共享三个区域，不视为独立复制",
+          "sample_size_as_reported": "原文报告9个有序(source,target)对、3个区域；未给各对观测数/独立训练次数",
+          "uncertainty": null,
+          "assumptions": [
+            "没有列出九个pair或说明是否含同一区域配对；不把9当作纯跨域独立重复。",
+            "Table4与Table3窗口/汇总范围不同，不能直接混为同一指标样本。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "6.4. Cross-region transfer",
+            "figure": "Table 4",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所提配置zero-shot优于该表XGBoost，但并非最优。",
+        "boundary": "只有九个pair的聚合值，无逐pair分布、不确定性或具体转移数据。",
+        "negative_result": "zero-shot不及LSTM/ARIMA；同表in-domain列所提配置在四模型中误差最高。",
+        "non_inference": "不推断统计显著排序、气候机制导致差异、区域普遍泛化或每个pair都符合均值排名。",
+        "unresolved": "具体pair组成、区域依赖和测试窗口怎样影响排名未报告。",
+        "unresolved_attribution": "本文未解决或未提供相应材料。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "能源预测模型在不同气候区域之间zero-shot迁移时，残差核是否保留优势？"
+      ],
+      "shared_evidence_with": [
+        "C8",
+        "C9",
+        "C14"
+      ],
+      "review_notes": [
+        "正文near-best概括需限制到对应表；Table4不给出全局一百分点以内的优势。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "同一跨区域Table 4中，fine-tune后ARIMA+VQK的NRMSE从zero-shot 0.1683变为0.1612，ARIMA从0.1570变为0.1500，XGBoost从0.1918变为0.1787；LSTM在in-domain、zero-shot与fine-tune三列均为0.1164。所提模型报告的微调值仍不及ARIMA或LSTM，且本文没有说明微调数据量与参数更新协议。",
+      "claim_type": "cross_region_fine_tuning_report",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "作者报告的公开数据时序 benchmark；未独立复现",
+          "design": "比较同一九有序区域对汇总的zero-shot与fine-tune列",
+          "comparator": "同模型不同适应条件及四模型间比较",
+          "measure": "Fine-tune NRMSE ARIMA0.1500/XGBoost0.1787/LSTM0.1164/Proposed0.1612；zero-shot值见C7",
+          "unit_of_analysis": "共享区域对上的适应条件汇总，不是新增独立样本或随机试验",
+          "sample_size_as_reported": "原文9个有序区域对；微调训练集大小、运行种子和独立重复未报告",
+          "uncertainty": null,
+          "assumptions": [
+            "微调使用的数据、时间隔离与更新参数未说明，不能因果归因于特定微调机制。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "6.4. Cross-region transfer",
+            "figure": "Table 4",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "报告的微调列对所提模型、ARIMA和XGBoost均有较低NRMSE。",
+        "boundary": "缺少微调细节和不确定性；LSTM三列相同需保留来源原值。",
+        "negative_result": "所提模型微调后仍不及ARIMA/LSTM；LSTM没有报告数值变化。",
+        "non_inference": "不推断微调无效/有效的统计检验、所有pair均获益或域适应机制被识别。",
+        "unresolved": "需要逐pair和微调方案核实提升幅度、稳定性及LSTM三列相同的原因。",
+        "unresolved_attribution": "本文未解决或未提供相应材料。"
+      },
+      "broad_directions": [
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "有限目标域数据微调是否能稳定改善跨气候能源预测，而非仅改变汇总均值？"
+      ],
+      "shared_evidence_with": [
+        "C7"
+      ],
+      "review_notes": [
+        "不把相同的四位小数改成零误差、零域偏移或源转录错误。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "解释层展示了一段由已测benchmark数值生成的自然语言示例，区分经典预测基线表现与7.18对0.46的weather-regime分离比，并明确不声称物理量子优势。它展示的是post-hoc数值转述，不是已验证的解释准确性、特征因果归因或操作员决策收益。",
+      "claim_type": "posthoc_explanation_example",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "给出自动生成的解释段落示例",
+          "design": "stage4读benchmark/transfer数值，输出结构化文字",
+          "comparator": null,
+          "measure": "数值转述、结果范围和不声称physical quantum advantage",
+          "unit_of_analysis": "一段示例文本；没有独立用户、解释质量评分或对照研究",
+          "sample_size_as_reported": "文中展示1段示例，非独立科学验证重复",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "6.6. Explainable-AI interpretation",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "来源展示预测/解释分离后生成一段引用实际指标的文字。",
+        "boundary": "没有生成模型、prompt、重复数、事实性评分、用户评估或审计成功率。",
+        "negative_result": null,
+        "non_inference": "不将生成式解释本身当成新科学证据，不推断减少幻觉、可靠特征归因或安全部署。",
+        "unresolved": "输出事实性、鲁棒性及是否帮助实际操作员需要独立评估。",
+        "unresolved_attribution": "本文未解决或未提供相应材料。"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "只读取测量指标的生成式解释层如何评估事实一致性和结果边界表达？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C3",
+        "C6",
+        "C7",
+        "C11"
+      ],
+      "review_notes": [
+        "示例中ARIMA整体最强是源的总结口径，不能覆盖Table3中XGBoost NRMSE略低的事实。",
+        "没有在我们的工作流中调用任何外部生成模型。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "Eq7 提出用多次permutation某特征后预测与原预测的L1变化、再除以目标标准差σ_y并对R次置换平均，作为model-agnostic Shapley-value surrogate。本文没有报告R的具体值、任何特征分数或与真实Shapley attribution的等价验证。",
+      "claim_type": "permutation_attribution_proposal",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "permutation-based feature attribution公式提案",
+          "design": "对单个feature j置换并比较预测，L1/σ_y标准化后平均",
+          "comparator": "原预测与置换预测",
+          "measure": "I_j=(1/R)Σ||ŷ(x_perm)-ŷ(x)||_1/σ_y",
+          "unit_of_analysis": "特征/置换的算法定义，非独立实验对象",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "R只有符号没有数值；相关特征处理、σ_y计算范围及多步聚合方式未给。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "4.4. Explainable-AI interpretation layer",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "给出一个基于预测变化的特征敏感性代理定义。",
+        "boundary": "没有实测attribution结果或理论等价证明。",
+        "negative_result": null,
+        "non_inference": "不声称得到精确SHAP、因果feature作用、解释faithfulness或生物机制。",
+        "unresolved": "该代理和Shapley attribution在特征依赖下的关系及其解释效度未验证。",
+        "unresolved_attribution": "本文未解决或未提供相应材料。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "标准化permutation预测敏感性何时可作为可靠的特征归因代理？"
+      ],
+      "shared_evidence_with": [
+        "C1"
+      ],
+      "review_notes": [
+        "与6.6生成文本示例分开；不给未经来源报告的feature排名。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "作者认为将预测参数与生成式解释层分离，使操作员可以对照底层数值文件审计解释，比同一模型同时生成数值与文字更易审计；但所谓 operationally safer 是该架构的解释性预期，本文没有monolithic model对照、操作员研究或安全测试。",
+      "claim_type": "architectural_auditability_interpretation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "由职责分离推论可审计性",
+          "design": "解释层仅读数值，操作员可与底层文件核对",
+          "comparator": "概念上的monolithic foundation model",
+          "measure": "预期可审计性",
+          "unit_of_analysis": "架构论证及一段输出示例；无实际审计者样本",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "7. Discussion",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "安全部署的文字推论",
+          "design": null,
+          "comparator": "monolithic foundation model",
+          "measure": "称更可审计、更安全；未给安全readout",
+          "unit_of_analysis": "同一设计解释",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "9. Conclusion",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "给出职责分离可支持数值对照审计的设计解释。",
+        "boundary": "没有直接比较审计性能、错误率、误操作或安全事件。",
+        "negative_result": null,
+        "non_inference": "不把可审计性意图当成已观察的安全因果收益或优于所有monolithic模型的实证结论。",
+        "unresolved": "需要解释事实错误率、人工审计效率和安全关键任务评估。",
+        "unresolved_attribution": "本文未解决或未提供相应材料。"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "预测和解释模块解耦能否实际提高人工审计效率与错误发现能力？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C9"
+      ],
+      "review_notes": [
+        "安全性和解释性预期不与forecast benchmark合并成结果。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "作者把所提模型在Region C中接近经典基线但无大幅预测提升，解释为residual head只修正基线遗漏且strong ridge regularisation使修正保守；由于未报告λ值、修正幅度或正则化消融，这一解释不是已识别的收益/退化机制。",
+      "claim_type": "regularization_interpretation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "对有限预测收益的架构/正则化解释",
+          "design": "AR residual correction + ridge regularisation",
+          "comparator": "概念上无保守限制的修正器；未实际评估该对照",
+          "measure": "保守修正的推论",
+          "unit_of_analysis": "与Table3共用性能结果，没有机制专属实验",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "7. Discussion",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "作者报告的公开数据时序 benchmark；未独立复现",
+          "design": "2018-2023训练、2024验证；2025年Region C mixed Texas十四天测试；每个时间点只用过去真实值滚动1-step-ahead预测",
+          "comparator": "ARIMA与ARIMA+VQK",
+          "measure": "NRMSE0.0954 vs0.0988；未给residual分解",
+          "unit_of_analysis": "同一Region C测试时序上的预测时点/汇总指标；相邻时点不当作独立实验重复，实际时间点和训练重复数未报告",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "6.2. In-domain forecasting",
+            "figure": "Table 3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提供作者对近似基线表现的正则化解释。",
+        "boundary": "没有λ扫描、未正则化对照、bias/variance或误差分解。",
+        "negative_result": null,
+        "non_inference": "不认定ridge导致保守性或Fisher分离比改善导致预测收益；不推断因果或机制识别。",
+        "unresolved": "正则化强度与模型误差/开销关系还需消融。",
+        "unresolved_attribution": "本文未解决或未提供相应材料。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "残差核的ridge强度怎样改变基线误差修正、保守性与泛化？"
+      ],
+      "shared_evidence_with": [
+        "C3"
+      ],
+      "review_notes": [
+        "将作者解释从实际预测结果中拆出，不填造λ或因果效应。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C13",
+      "statement": "作者预期真实 superconducting hardware 的 depolarising 与 read-out noise 会侵蚀当前经典surrogate核的weather-regime separability，并建议未来用NISQ电路量化Fisher ratio变化；本文没有实际带噪量子实验，因此这是一项待检验的噪声影响假设。",
+      "claim_type": "quantum_noise_future_hypothesis",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "范围限制和下一步噪声实验建议",
+          "design": "将Eq5 classical surrogate替换为真实NISQ circuit",
+          "comparator": "当前经典surrogate与拟议带噪真实电路",
+          "measure": "拟测depolarising/read-out noise对Fisher discriminant ratio的影响",
+          "unit_of_analysis": "未执行实验提案；实际量子设备和独立重复未报告",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "8. Limitations and threats to validity; 10. Future work",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "明确提出当前可分离性结果向带噪硬件迁移的研究风险与检验问题。",
+        "boundary": "没有噪声强度、器件、Fisher下降值或实验设计参数。",
+        "negative_result": null,
+        "non_inference": "不把预期下降写成已观察负结果，不认定理想电路就复现经典surrogate收益。",
+        "unresolved": "名义电路与surrogate对应及硬件噪声后的分离比仍待测。",
+        "unresolved_attribution": "本文未解决或未提供相应材料。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "真实量子电路的depolarising/read-out noise如何改变weather-regime Fisher ratio？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C6"
+      ],
+      "review_notes": [
+        "未来量子硬件验证和当前经典计算结果分开。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C14",
+      "statement": "对Fig 2所示三个区域的一周harmonised capacity-factor时序，正文将Iberian solar描述为强日内周期、North-Sea wind描述为多日持续的synoptic变化、mixed Texas描述为兼有两类特征；这仅是当前样本的定性时序概述，不是对区域季节性或独立天气机制的统计验证。",
+      "claim_type": "regional_trace_description",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "作者报告的公开数据时序 benchmark；未独立复现",
+          "design": "每区域选一周harmonised trace作定性展示",
+          "comparator": "Iberian solar、North-Sea wind与mixed Texas",
+          "measure": "日内模式、多日autocorrelation/persistence及混合特征；无数值统计",
+          "unit_of_analysis": "三个区域的一周时序；不是独立气候实验或事件复现",
+          "sample_size_as_reported": "报告3个区域各一周；实际观测/独立天气事件数未报告",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "6.1. Cross-region capacity factors",
+            "figure": "Fig. 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "保留正文对区域时序差异的描述性结果。",
+        "boundary": "只读正文与caption，不读曲线像素；正文提及seasonal modulation但没有跨季节量化结果。",
+        "negative_result": null,
+        "non_inference": "不推断长期季节验证、地域机制因果识别或代表全部气候区域。",
+        "unresolved": "所选周是否代表长期区域分布及其对迁移排名的关系尚未分析。",
+        "unresolved_attribution": "本文未解决或未提供相应材料。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "不同区域的日内周期和多日持续性如何影响能源预测与域迁移？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C7"
+      ],
+      "review_notes": [
+        "Fig2含post-pipeline distribution面板，但caption没有定量结论，不从未提供像素推测分布形状。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "完整阅读13页预印本供给文字，保存14条候选，覆盖四阶段架构、经典surrogate残差核及名义量子电路、三个区域样本特征、Region C预测误差/决策regret/延迟、天气kernel-PCA可分离性、zero-shot与fine-tune迁移、解释示例、特征归因提案、审计与ridge机制解释及真实量子噪声假设。主要数值证据是Fisher ratio7.18 vs0.46，而非预测精度普遍提高：Table3 ARIMA+VQK略差于AR/XGBoost强基线，Table4所提模型也非最优。CRPS是MAE-based surrogate；9有序区域对不是9次独立复制；qubit/参数数目不是n。第二次来源审计保留Eq3/电路规格与surrogate关系未证、Discussion概括和Table4不一致、LSTM三列相同及样本/代码缺失。未读取图像或补充archive、未独立复现、未验证物理量子优势或实际电网安全。",
+  "shared_evidence": [
+    {
+      "claim_id": "C1",
+      "with": [
+        "C9",
+        "C10",
+        "C11",
+        "C14"
+      ]
+    },
+    {
+      "claim_id": "C2",
+      "with": [
+        "C6",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C4",
+        "C5",
+        "C9",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C3",
+        "C5"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C3",
+        "C4"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C2",
+        "C9",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C8",
+        "C9",
+        "C14"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C1",
+        "C3",
+        "C6",
+        "C7",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "with": [
+        "C1"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "with": [
+        "C1",
+        "C9"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "with": [
+        "C3"
+      ]
+    },
+    {
+      "claim_id": "C13",
+      "with": [
+        "C2",
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C14",
+      "with": [
+        "C1",
+        "C7"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": null,
+        "issue": "源题名连字符与索引不同，第二作者Prüfer与Prufer拼写不同，正文不含明确预印本版本/发布日期。",
+        "suggested_correction": "保留精确source title与索引title差异；作者按首页明确拼写恢复；年份/URL为索引信息，不猜版本。",
+        "pdf_page": 1,
+        "resolved": true
+      },
+      {
+        "claim_id": "C2",
+        "issue": "Eq3显式只有RY angle encoding，而6.5/Fig5加入RZ并称36参数；Eq5闭式surrogate与名义电路对应没有推导。",
+        "suggested_correction": "候选保持两层来源描述，明确实际经典surrogate；对应关系需作者/人工核查，不强行宣称一致。",
+        "pdf_page": 6,
+        "resolved": false
+      },
+      {
+        "claim_id": "C3",
+        "issue": "表头CRPS在方法中明说是MAE-based surrogate，不是已报告概率预测CRPS。",
+        "suggested_correction": "已在候选和evidence标明代理，未给分布预测或概率校准结论。",
+        "pdf_page": 7,
+        "resolved": true
+      },
+      {
+        "claim_id": "C3",
+        "issue": "正文does no harm/within one percentage point不等于等效性检验；Table3所提误差和regret略差于最强对照。",
+        "suggested_correction": "保留实际数值和未优于强基线的负向比较，不据此宣称无损或显著性。",
+        "pdf_page": 8,
+        "resolved": true
+      },
+      {
+        "claim_id": "C7",
+        "issue": "Discussion/Conclusion的近最强经典基线概括不能覆盖Table4：其in-domain Proposed0.1404 vs ARIMA0.0936，且zero-shot/fine-tune非最优。",
+        "suggested_correction": "已把Table3和Table4分开，保留来源概括与跨区域数据不吻合，需人工核对汇总定义。",
+        "pdf_page": 10,
+        "resolved": false
+      },
+      {
+        "claim_id": "C8",
+        "issue": "Table4的LSTM三列均0.1164，九pair未列明，fine-tune协议未给。",
+        "suggested_correction": "保持原值；不猜转录错误或零域损失，独立n和微调因果效果留空/限定。",
+        "pdf_page": 9,
+        "resolved": false
+      },
+      {
+        "claim_id": "C6",
+        "issue": "Fisher ratio不是分类accuracy，source称large/reproducible但没有样本数、不确定性或重复评估。",
+        "suggested_correction": "已只记录首成分指标及其对照，科学验证/独立复现不成立。",
+        "pdf_page": 8,
+        "resolved": true
+      },
+      {
+        "claim_id": "C10",
+        "issue": "permutation surrogate没有归因结果或与精确Shapley的证明。",
+        "suggested_correction": "归因方法作为提案，和已展示解释段落分开；不写feature排名或causal attribution。",
+        "pdf_page": 6,
+        "resolved": true
+      },
+      {
+        "claim_id": "C11",
+        "issue": "operationally safer和审计优势来自架构推论，无用户/安全实验。",
+        "suggested_correction": "单列interpretation；不当成安全效果result。",
+        "pdf_page": 11,
+        "resolved": true
+      },
+      {
+        "claim_id": "C12",
+        "issue": "strong ridge regularisation没有报告λ值或正则化消融。",
+        "suggested_correction": "机制解释和性能结果分开，共享证据但不推断因果。",
+        "pdf_page": 10,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "补充simulation archive/原始benchmark文件未供给，无法核验实际数据子集、运行设置和完整再现性。",
+        "suggested_correction": "本次只完成全部供给文字审计；补充代码和外部数据科学验证留给人工，不改共享脚本。",
+        "pdf_page": 12,
+        "resolved": false
+      },
+      {
+        "claim_id": null,
+        "issue": "Source title differs in wording from indexed title: A Quantum-Inspired Variational Kernel and Explainable-AI Framework for Cross-Region Solar and Wind Energy Forecasting",
+        "suggested_correction": "Retain actual supplied-version identity; curator to reconcile metadata.",
+        "pdf_page": 1,
+        "resolved": false
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T13:23:44.120568Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "41b35409c17cfe13857c77f5868a47d618e22195a036b6e62352618278ef83c2",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

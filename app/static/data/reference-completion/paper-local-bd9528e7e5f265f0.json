@@ -1,0 +1,1113 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "Neural population geometry and optimal coding of tasks with shared latent structure",
+    "authors": [
+      "Albert J. Wakhloo",
+      "Will Slatton",
+      "SueYeon Chung"
+    ],
+    "doi": "10.1038/s41593-025-02183-y",
+    "publication_year": 2026,
+    "venue": "Nature Neuroscience",
+    "url": "https://doi.org/10.1038/s41593-025-02183-y"
+  },
+  "source": {
+    "filename": "2026-Nature-Neuroscience-Population-Geometry-Shared-Latent-Structure.pdf",
+    "sha256": "7dd280dc1bbd63115b7ad648841d7fdf0df687f46feed42f0eecf977852bc5c9",
+    "source_url": null,
+    "pdf_page_count": 18
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "results_sections_seen": [
+      "Results: geometric measures",
+      "MLP tests",
+      "DeepLabCut pose analysis",
+      "Macaque V4/IT",
+      "Optimal codes",
+      "Rat PFC/CA1",
+      "Discussion",
+      "Methods",
+      "References",
+      "Reporting summary"
+    ],
+    "missing_material": [
+      "图像像素未阅；全部图注文字已阅。",
+      "Supplementary Information、Figures 1–12和Tables 1–2未供应；完整谱假设与证明缺失。"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "全部18页包括Methods与reporting summary完整阅读。",
+      "页1在线发表日期为占位文字；©2026，接收2025-11-18，不虚构正式发表日。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "四项误差分解和协方差约束最优代码",
+      "role": "result",
+      "source_pages": [
+        2,
+        3,
+        4,
+        7,
+        12,
+        13
+      ],
+      "decision": "include",
+      "reason": "保留共同Gaussian/高维/任务分布条件，不拆成无条件结论。"
+    },
+    {
+      "summary": "随机/训练MLP、姿态网络与跨层几何权衡",
+      "role": "result",
+      "source_pages": [
+        4,
+        5,
+        13
+      ],
+      "decision": "include",
+      "reason": "网络、投影和图像不是生物独立样本；纳入理论偏差边界。"
+    },
+    {
+      "summary": "猕猴与大鼠既有数据、GLM及显著/不显著趋势",
+      "role": "result",
+      "source_pages": [
+        6,
+        8,
+        9,
+        14,
+        15
+      ],
+      "decision": "include",
+      "reason": "按动物/类别/子集区分单位，并保留SSF阴性。"
+    },
+    {
+      "summary": "补充SVC、理论证明、替代分组鲁棒性",
+      "role": "interpretation",
+      "source_pages": [
+        9,
+        12,
+        13,
+        17
+      ],
+      "decision": "defer",
+      "reason": "仅正文概述，未供应补充细节；不宣称已阅读完整证明或独立复现。"
+    },
+    {
+      "summary": "书目、数据来源、排除和报告摘要",
+      "role": "interpretation",
+      "source_pages": [
+        10,
+        11,
+        15,
+        16,
+        17,
+        18
+      ],
+      "decision": "include",
+      "reason": "确认无新增动物实验和完整供应页覆盖。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "在联合零均值 Gaussian 神经活动/潜变量、随机任务法向量及共同高维与谱条件下，监督 Hebbian 线性读出的任务平均泛化误差可由相关、维数、SSF 和 SNF 四个几何统计量表示。",
+      "claim_type": "conditional_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Gaussian-equivalence 近似与高维推导",
+          "design": "规定潜变量随机二分类任务，监督Hebbian线性读出",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "数学模型中的样本、潜变量与神经响应向量",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": null,
+            "figure": null,
+            "equation": "(3)–(9)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在联合零均值 Gaussian 神经活动/潜变量、随机任务法向量及共同高维与谱条件下，监督 Hebbian 线性读出的任务平均泛化误差可由相关、维数、SSF 和 SNF 四个几何统计量表示。",
+        "boundary": "需共同分布、随机线性潜空间划分、训练/测试设置及协方差谱条件；完整证明和谱条件位于未提供的 Supplementary Information。",
+        "negative_result": null,
+        "non_inference": "不是任意神经分布、非线性解码器或分布外测试的无条件定理。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "潜变量任务的采样与训练规模怎样约束可读出的表征几何？",
+        "如何区分理论最优、经验读出与实际神经学习机制？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "该误差分解中相关和维数的贡献随训练样本增多衰减，而 SSF/SNF 对固定表示造成的误差项不随样本数衰减。",
+      "claim_type": "conditional_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "几何统计、条件理论及既有数据再分析",
+          "design": "规定潜变量随机二分类任务，监督Hebbian线性读出",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": null,
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": null,
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "该误差分解中相关和维数的贡献随训练样本增多衰减，而 SSF/SNF 对固定表示造成的误差项不随样本数衰减。",
+        "boundary": "其他几何项固定且模型假设成立；不可忽略协方差可实现性约束。",
+        "negative_result": null,
+        "non_inference": "所谓不可约误差仅针对固定表示和指定读出，不是脑或全部算法的不可约限度。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "潜变量任务的采样与训练规模怎样约束可读出的表征几何？",
+        "如何区分理论最优、经验读出与实际神经学习机制？"
+      ],
+      "shared_evidence_with": [
+        "C1"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "SSF 奖励独立潜变量编码方向的分离与平衡，SNF 则奖励潜变量无关变异与编码方向的分离；单独提高某一量不能代表总体表征质量。",
+      "claim_type": "geometric_definition_and_consequence",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "几何统计、条件理论及既有数据再分析",
+          "design": "规定潜变量随机二分类任务，监督Hebbian线性读出",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": null,
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": null,
+            "figure": "Fig. 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "SSF 奖励独立潜变量编码方向的分离与平衡，SNF 则奖励潜变量无关变异与编码方向的分离；单独提高某一量不能代表总体表征质量。",
+        "boundary": "noise 是相对于已测潜变量的条件变异，可能包含未测信号。",
+        "negative_result": null,
+        "non_inference": "统计上的 noise 不是生物学无用活动，正交性不是独立机制证明。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "潜变量任务的采样与训练规模怎样约束可读出的表征几何？",
+        "如何区分理论最优、经验读出与实际神经学习机制？"
+      ],
+      "shared_evidence_with": [
+        "C1"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "随机与多任务训练 MLP 中理论读出误差较好跟踪实测误差；训练网络的线性/ReLU阶段通过维数、相关与分解度的不同权衡改善后层表现。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Gaussian 潜变量、随机教师 MLP 与训练 MLP 的层间读出",
+          "design": "规定潜变量随机二分类任务，监督Hebbian线性读出",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "模拟网络、任务与数据划分",
+          "sample_size_as_reported": "d=40；5×10^5训练潜变量，500训练任务；评估1000新潜变量/300新任务，300训练与700测试点",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": null,
+            "figure": "Fig. 3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "随机与多任务训练 MLP 中理论读出误差较好跟踪实测误差；训练网络的线性/ReLU阶段通过维数、相关与分解度的不同权衡改善后层表现。",
+        "boundary": "同一网络各层与任务不独立；单 epoch 训练与该生成分布限定结论。",
+        "negative_result": null,
+        "non_inference": "人工网络测试不等同于动物神经机制验证。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "潜变量任务的采样与训练规模怎样约束可读出的表征几何？",
+        "如何区分理论最优、经验读出与实际神经学习机制？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "DeepLabCut 姿态网络随层深增加维数与 SSF/SNF，并以降低神经—潜变量相关为代价改善任务平均读出误差。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "ResNet50 姿态网络内部表征分析",
+          "design": "规定潜变量随机二分类任务，监督Hebbian线性读出",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "同一成人鼠图像帧及网络层；20投影非动物重复",
+          "sample_size_as_reported": "成人鼠N=1；12标记/24坐标；完整标记259帧；33内部层，各20随机投影到n=100；p=150读出样本",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": null,
+            "figure": "Fig. 4",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "DeepLabCut 姿态网络随层深增加维数与 SSF/SNF，并以降低神经—潜变量相关为代价改善任务平均读出误差。",
+        "boundary": "原姿态网络训练542帧70/30划分；此多任务分析未另报告独立动物。",
+        "negative_result": null,
+        "non_inference": "层间几何变化不是动物学习轨迹。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "潜变量任务的采样与训练规模怎样约束可读出的表征几何？",
+        "如何区分理论最优、经验读出与实际神经学习机制？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "姿态数据上四项几何公式的绝对误差预测存在偏差，但理论值与经验值的线性关系解释了几乎全部层间变化，报告 R²=0.988。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "几何统计、条件理论及既有数据再分析",
+          "design": "规定潜变量随机二分类任务，监督Hebbian线性读出",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "网络表征/投影",
+          "sample_size_as_reported": "同一259帧、33表征和20投影",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": null,
+            "figure": "Fig. 4g",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "姿态数据上四项几何公式的绝对误差预测存在偏差，但理论值与经验值的线性关系解释了几乎全部层间变化，报告 R²=0.988。",
+        "boundary": "相关拟合良好不等于理论数值严格相等；潜变量明显非 Gaussian。",
+        "negative_result": "理论预测并非定量精确，有系统偏差。",
+        "non_inference": "不能由高R²宣称Gaussian近似在所有真实数据精确成立。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "潜变量任务的采样与训练规模怎样约束可读出的表征几何？",
+        "如何区分理论最优、经验读出与实际神经学习机制？"
+      ],
+      "shared_evidence_with": [
+        "C5"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "猕猴 V4/IT 既有记录中，理论较好预测随机潜变量任务的 Hebbian 读出误差，并观察到沿视觉通路读出改善。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "既有 V4/IT 记录再分析与像素对照",
+          "design": "规定潜变量随机二分类任务，监督Hebbian线性读出",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "动物和记录点；统计比较以8对象类别为配对单位",
+          "sample_size_as_reported": "2只猴；88 V4、168 IT记录点；64对象8类别、每类320例；6潜变量；每类300任务、15划分",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": null,
+            "figure": "Fig. 5",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "猕猴 V4/IT 既有记录中，理论较好预测随机潜变量任务的 Hebbian 读出误差，并观察到沿视觉通路读出改善。",
+        "boundary": "任务在每一对象类别内定义；8类别t检验/FDR不等于8只猴。",
+        "negative_result": null,
+        "non_inference": "再分析不是新猴实验；解码不证明下游实际采用该规则。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "潜变量任务的采样与训练规模怎样约束可读出的表征几何？",
+        "如何区分理论最优、经验读出与实际神经学习机制？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "在该视觉数据中 V4 维数低于像素和 IT，像素到皮层的相关增大，IT 的 SNF 明显增加，提示无关变异与潜变量编码方向更分离。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "几何项配对比较",
+          "design": "规定潜变量随机二分类任务，监督Hebbian线性读出",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "类别内几何估计，动物来源2只",
+          "sample_size_as_reported": "8对象类别双侧配对t检验，报告P<0.01并进行FDR；2只猴",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": null,
+            "figure": "Fig. 5e–h",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在该视觉数据中 V4 维数低于像素和 IT，像素到皮层的相关增大，IT 的 SNF 明显增加，提示无关变异与潜变量编码方向更分离。",
+        "boundary": "多记录点采样与区域记录质量可能影响维数和SNF；不能估计整个脑区总体。",
+        "negative_result": null,
+        "non_inference": "SNF上升不证明实际噪声被特定回路消除。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "潜变量任务的采样与训练规模怎样约束可读出的表征几何？",
+        "如何区分理论最优、经验读出与实际神经学习机制？"
+      ],
+      "shared_evidence_with": [
+        "C7"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "对固定潜变量协方差和样本数，在联合协方差必须半正定的可实现代码优化中，最优代码把潜变量主成分映射到神经主成分，并以独立方向实现 disentangling。",
+      "claim_type": "conditional_theoretical_optimum",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "受半正定约束的协方差优化",
+          "design": "规定潜变量随机二分类任务，监督Hebbian线性读出",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "允许的数学代码集合",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": null,
+            "figure": null,
+            "equation": "(10)–(11)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "对固定潜变量协方差和样本数，在联合协方差必须半正定的可实现代码优化中，最优代码把潜变量主成分映射到神经主成分，并以独立方向实现 disentangling。",
+        "boundary": "随机均匀任务划分、给定潜变量谱、规定读出目标；最优解无编码方向噪声或噪声正交。",
+        "negative_result": null,
+        "non_inference": "不是任何任务权重、噪声约束或神经实现下的无条件全局最优。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "潜变量任务的采样与训练规模怎样约束可读出的表征几何？",
+        "如何区分理论最优、经验读出与实际神经学习机制？"
+      ],
+      "shared_evidence_with": [
+        "C1"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "该最优代码在少样本时压缩低方差潜变量方向，样本增多后展平谱并增加任务相关维数，同时降低总体单元—潜变量相关。",
+      "claim_type": "conditional_theoretical_prediction",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "几何统计、条件理论及既有数据再分析",
+          "design": "规定潜变量随机二分类任务，监督Hebbian线性读出",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": null,
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": null,
+            "figure": "Fig. 6",
+            "equation": "(2)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "该最优代码在少样本时压缩低方差潜变量方向，样本增多后展平谱并增加任务相关维数，同时降低总体单元—潜变量相关。",
+        "boundary": "低方差在本随机任务分布下较少携带标签信息；改变任务重要性需重标度潜变量。",
+        "negative_result": null,
+        "non_inference": "不能把真实环境低方差变量普遍视为不重要，或把学习早期直接等同于最优少样本代码。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "潜变量任务的采样与训练规模怎样约束可读出的表征几何？",
+        "如何区分理论最优、经验读出与实际神经学习机制？"
+      ],
+      "shared_evidence_with": [
+        "C9"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "8只大鼠连续交替 W-maze 学习中，位置/速度随机任务的读出误差和行为误差在早期共同下降，并在约第4会话后趋于平台。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "既有8会话PFC/CA1记录再分析",
+          "design": "规定潜变量随机二分类任务，监督Hebbian线性读出",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "大鼠为生物学独立单位，500子集非独立动物",
+          "sample_size_as_reported": "8只鼠；每会话约20分钟；每子集19 PFC或24 CA1单位、500时间点，其中p=300；平均500子集",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": null,
+            "figure": "Fig. 7d–f",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "8只大鼠连续交替 W-maze 学习中，位置/速度随机任务的读出误差和行为误差在早期共同下降，并在约第4会话后趋于平台。",
+        "boundary": "位置/速度4潜变量是替代读出任务，不等于真实交替决策的完整潜在状态。",
+        "negative_result": null,
+        "non_inference": "行为与读出相关不能证明几何变化导致学习。",
+        "unresolved": "CA1读出—行为R²正文0.48、图注0.49。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "潜变量任务的采样与训练规模怎样约束可读出的表征几何？",
+        "如何区分理论最优、经验读出与实际神经学习机制？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "大鼠数据的总维数早期下降，但 GLM 估计的导航相关子空间维数上升；后期总维数上升、相关下降，与最优代码的趋势部分一致。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "几何再分析与Poisson GLM",
+          "design": "规定潜变量随机二分类任务，监督Hebbian线性读出",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "大鼠及其多会话；子空间为拟合模型估计",
+          "sample_size_as_reported": "8只鼠；GLM交叉验证平均D² PFC0.29、CA10.25；低于常数模型的单元回退为null",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": null,
+            "figure": "Fig. 7g–k",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "大鼠数据的总维数早期下降，但 GLM 估计的导航相关子空间维数上升；后期总维数上升、相关下降，与最优代码的趋势部分一致。",
+        "boundary": "速度≥4cm/s、平均放电≥0.1Hz；z评分与正则化改变所估代码；GLM未解释全部变异。",
+        "negative_result": null,
+        "non_inference": "趋势一致不证明动物实现该数学最优或早期下降唯一来自无用噪声。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "潜变量任务的采样与训练规模怎样约束可读出的表征几何？",
+        "如何区分理论最优、经验读出与实际神经学习机制？"
+      ],
+      "shared_evidence_with": [
+        "C10",
+        "C11"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C13",
+      "statement": "混合效应二次回归支持总维数、相关及 SNF 的非单调学习变化，但两脑区 SSF 均未出现显著非单调证据，报告P>0.05。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "动物随机截距的混合效应回归",
+          "design": "规定潜变量随机二分类任务，监督Hebbian线性读出",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "鼠和重复会话，不是重采样数",
+          "sample_size_as_reported": "8只鼠×8会话；上述线性/二次项P<10^-5；SSF非单调P>0.05",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": null,
+            "figure": "Fig. 7",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "混合效应二次回归支持总维数、相关及 SNF 的非单调学习变化，但两脑区 SSF 均未出现显著非单调证据，报告P>0.05。",
+        "boundary": "SSF无显著二次趋势不等于证明其严格线性或不变化。",
+        "negative_result": "两区域均未发现SSF非单调趋势的证据。",
+        "non_inference": "统计不显著不能作等效性结论。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "潜变量任务的采样与训练规模怎样约束可读出的表征几何？",
+        "如何区分理论最优、经验读出与实际神经学习机制？"
+      ],
+      "shared_evidence_with": [
+        "C11",
+        "C12"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C14",
+      "statement": "随访的线性混合模型支持两区域 SSF 和任务相关维数随学习单调增加，分别报告P<10^-3和P<10^-5。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "后续混合效应线性回归",
+          "design": "规定潜变量随机二分类任务，监督Hebbian线性读出",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "鼠及会话",
+          "sample_size_as_reported": "8只鼠重复8会话",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": null,
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "随访的线性混合模型支持两区域 SSF 和任务相关维数随学习单调增加，分别报告P<10^-3和P<10^-5。",
+        "boundary": "任务相关维数的二次模型在PFC拟合较差；属于同一数据后续模型分析。",
+        "negative_result": null,
+        "non_inference": "不构成第二套动物样本的独立复现。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "潜变量任务的采样与训练规模怎样约束可读出的表征几何？",
+        "如何区分理论最优、经验读出与实际神经学习机制？"
+      ],
+      "shared_evidence_with": [
+        "C12",
+        "C13"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C15",
+      "statement": "作者报告多数据分析中 Hebbian 与 SVC 误差强相关，提示几何量可能描述其他线性读出；非线性解码、任务分布限制和分布偏移仍是开放问题。",
+      "claim_type": "interpretation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "正文对补充SVC分析的概括",
+          "design": "规定潜变量随机二分类任务，监督Hebbian线性读出",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "同一批任务和数据的替代读出",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": null,
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者报告多数据分析中 Hebbian 与 SVC 误差强相关，提示几何量可能描述其他线性读出；非线性解码、任务分布限制和分布偏移仍是开放问题。",
+        "boundary": "完整SVC比较数据和补充证明未供应；相关而非普遍等价。",
+        "negative_result": null,
+        "non_inference": "未证明对任意线性训练法、更不用说非线性解码器保持同一最优代码。",
+        "unresolved": "Supplementary Fig.3及完整理论条件无法直接复核。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "潜变量任务的采样与训练规模怎样约束可读出的表征几何？",
+        "如何区分理论最优、经验读出与实际神经学习机制？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "完整18页的条件理论与再分析论文，提取15项候选。四个几何量仅在指定读出、任务分布与高维/Gaussian条件下组织泛化；最优协方差具有少样本压缩、后期展平的策略。人工网络、2只猴与8只鼠的再分析提供有限经验检验，包含姿态理论偏差、SSF非单调不显著及重采样非独立的明确边界，缺失补充证明不被冒充已读。",
+  "shared_evidence": [
+    {
+      "claim_id": "C2",
+      "with": [
+        "C1"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C1"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C5"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C1"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "with": [
+        "C9"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "with": [
+        "C10",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C13",
+      "with": [
+        "C11",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C14",
+      "with": [
+        "C12",
+        "C13"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": "C1",
+        "issue": "高维谱条件及Gaussian-equivalence证明仅指向缺失的Supplementary Information。",
+        "suggested_correction": "限制为正文所列条件结果，并保留未核验的精确谱条件。",
+        "pdf_page": 12,
+        "resolved": false
+      },
+      {
+        "claim_id": "C6",
+        "issue": "姿态数据R²=.988与理论精确性不是同一命题，正文明确有偏。",
+        "suggested_correction": "同时记录绝对预测偏差，避免把相关拟合当定量定理。",
+        "pdf_page": 5,
+        "resolved": true
+      },
+      {
+        "claim_id": "C11",
+        "issue": "CA1行为—读出R²图注.49、正文.48。",
+        "suggested_correction": "保留差异，不擅自选择或更正。",
+        "pdf_page": 8,
+        "resolved": false
+      },
+      {
+        "claim_id": "C7",
+        "issue": "8类别配对检验与2只猴是不同单位；500鼠子集和20投影不是新增独立重复。",
+        "suggested_correction": "每项证据明确真实动物数及技术重采样。",
+        "pdf_page": 15,
+        "resolved": true
+      },
+      {
+        "claim_id": "C12",
+        "issue": "GLM任务子空间为模型估计，未解释全部放电变异；几何一致性不证明生物最优。",
+        "suggested_correction": "分开数学预测、数据趋势与机制解释。",
+        "pdf_page": 14,
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T11:45:02.262627Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "7dd280dc1bbd63115b7ad648841d7fdf0df687f46feed42f0eecf977852bc5c9",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

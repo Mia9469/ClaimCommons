@@ -1,0 +1,904 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "preprint",
+  "paper": {
+    "title": "Event-Frame Fusion for Inter-Frame Segmentation via Event-Guided Motion",
+    "authors": [
+      "Dalia Hareb",
+      "Jean Martinet",
+      "Benoît Miramond",
+      "Elisabetta Chicca"
+    ],
+    "doi": "10.48550/arxiv.2609.22500",
+    "publication_year": 2026,
+    "venue": "arXiv (Cornell University)",
+    "url": "https://doi.org/10.48550/arxiv.2609.22500"
+  },
+  "source": {
+    "filename": "paper-W7213995973.pdf",
+    "sha256": "c6845a65d81cc8aa6b4fc360fb47e769bd437363166dd9c8006dab3d7e85a32b",
+    "source_url": "https://arxiv.org/pdf/2609.22500",
+    "pdf_page_count": 20
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "results_sections_seen": [
+      "4.1 Evaluation on DSEC-Semantic",
+      "4.2 Evaluation on DDD17",
+      "4.3 Runtime and computational cost",
+      "Supplementary Material 1 Method description",
+      "Supplementary Material 2 Energy measurement",
+      "Supplementary Material 3 Ablation study - Why not optical flow?",
+      "Figures 1–6；Tables 1–10"
+    ],
+    "missing_material": [
+      "图像像素未提供",
+      "两个链接视频的内容未提供",
+      "代码、原始预测及逐样本测量数据未提供"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "实际文档为arXiv:2609.22500v1，首页日期为18 Sep 2026，与所给身份一致。",
+      "全部正文、参考文献、补充材料和图表文字均已评估；图示判断仅依据文字与图注。",
+      "未报告独立训练重复数、随机种子、置信区间或统计检验。",
+      "正文使用训练与验证划分，补充材料部分使用test set名称；未确认它们是否指不同划分。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "冻结帧分割网络，以事件驱动二维位移递归传播分割logits，仅用已有帧端点标签训练运动网络。",
+      "role": "method",
+      "source_pages": [
+        4,
+        5,
+        6,
+        7,
+        16,
+        17
+      ],
+      "decision": "include",
+      "reason": "算法、监督目标和双线性反向warping有明确描述。"
+    },
+    {
+      "summary": "DSEC-Semantic上的事件窗口、端点分割精度与事件密度比较。",
+      "role": "result",
+      "source_pages": [
+        7,
+        8
+      ],
+      "decision": "include",
+      "reason": "表1给出完整频率对照。"
+    },
+    {
+      "summary": "DDD17上的事件窗口、端点分割精度与事件密度比较。",
+      "role": "result",
+      "source_pages": [
+        10,
+        11
+      ],
+      "decision": "include",
+      "reason": "表4给出另一数据集的完整对照。"
+    },
+    {
+      "summary": "两个数据集上跳过帧刷新后的长时传播表现。",
+      "role": "result",
+      "source_pages": [
+        7,
+        9,
+        11
+      ],
+      "decision": "include",
+      "reason": "表2与表5报告不同的退化模式，保留联合比较。"
+    },
+    {
+      "summary": "与表列既有方法的参数量、MIoU及输出频率比较。",
+      "role": "result",
+      "source_pages": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "decision": "include",
+      "reason": "支持描述性权衡；DSEC存在参数量更小的表列模型。"
+    },
+    {
+      "summary": "GPU与CPU分模块运行时间及200Hz实时运行主张。",
+      "role": "result",
+      "source_pages": [
+        11,
+        12
+      ],
+      "decision": "include",
+      "reason": "模块时间明确，但端到端计时仍有歧义。"
+    },
+    {
+      "summary": "基于操作数和45nm CMOS成本的网络运算能耗估计。",
+      "role": "result",
+      "source_pages": [
+        12,
+        13,
+        18
+      ],
+      "decision": "include",
+      "reason": "公式和表值可定位，属于解析估计。"
+    },
+    {
+      "summary": "任务特定运动与IDNet在光流误差、传播分割精度及运行时间上的比较。",
+      "role": "result",
+      "source_pages": [
+        18,
+        19,
+        20
+      ],
+      "decision": "include",
+      "reason": "训练折子集和所称测试集是不同评价设置，分别保留。"
+    },
+    {
+      "summary": "运动箭头、分割示例及架构图的文字说明。",
+      "role": "qualitative_result",
+      "source_pages": [
+        4,
+        8,
+        9,
+        16,
+        17,
+        19
+      ],
+      "decision": "exclude",
+      "reason": "架构图注纳入方法证据；缺少像素，视觉效果不另立验证性命题。"
+    },
+    {
+      "summary": "事件稀疏性与DDD17伪标签不一致导致性能下降的解释。",
+      "role": "interpretation",
+      "source_pages": [
+        8,
+        11
+      ],
+      "decision": "defer",
+      "reason": "缺少密度操纵和标注质量消融，作为未验证归因保留。"
+    },
+    {
+      "summary": "真实模糊或过曝补偿、稀疏warping、动态事件窗口及神经形态部署。",
+      "role": "hypothesis",
+      "source_pages": [
+        9,
+        11,
+        12,
+        13
+      ],
+      "decision": "defer",
+      "reason": "跳帧不直接测试图像退化，其余方案未实施。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "该框架用0.84M参数的SegSNet分割输入帧，再用约42K参数的SegMoSNet从短窗口事件预测二维位移，经双线性反向warping递归传播分割logits；冻结SegSNet后，以后一帧标签监督最终传播结果，无需新增中间时刻标签。",
+      "claim_type": "methodological",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "双网络架构、递归传播与端点监督",
+          "design": "SegSNet采用CE与Dice损失；冻结后训练SegMoSNet，跨T步反向传播；实验采用T=5、Δt=10ms。",
+          "comparator": null,
+          "measure": "参数量、训练目标与传播规则",
+          "unit_of_analysis": "相邻帧之间的事件序列及逐像素分割logits",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "帧、事件和标签时空对齐",
+            "最终传播时刻与后一帧标签时刻一致"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "3.2 Method description",
+            "figure": "Algorithm 1（第5页）；Figures 3–5（第16–17页）",
+            "equation": "1；2–3（第16–17页）",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提供仅用已有帧标签训练事件驱动帧间传播的方法。",
+        "boundary": "学习到的是服务分割的位移，不自动等同于物理光流。",
+        "negative_result": null,
+        "non_inference": "端点监督不保证每个中间时刻准确，也未证明能恢复新出现目标或遮挡信息。",
+        "unresolved": "中间时刻误差及遮挡、新目标处理能力。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "仅用帧端点标签能否训练事件驱动的高频分割传播？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第16页混用logits与argmax后的类别掩码，正文算法描述支持传播连续logits。",
+        "第7页称最近邻上采样，第17页图4图注称双线性上采样；此矛盾不影响已明确的双线性warping定义。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "在DSEC-Semantic上，20Hz SegSNet帧分割MIoU为56.28%；采用10、5、2ms事件窗口生成100、200、500Hz传播预测时，带标签帧端点MIoU分别为56.12%、55.76%、53.35%，事件直方图平均非零比例分别为8.88%、5.41%、2.67%。",
+      "claim_type": "benchmark_performance",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "改变推理事件窗口，评价最终传播端点",
+          "design": "训练窗口10ms；推理窗口10、5、2ms；每50ms以帧分割刷新。",
+          "comparator": "20Hz SegSNet，MIoU 56.28%",
+          "measure": "MIoU；事件直方图非零比例",
+          "unit_of_analysis": "带标签帧端点的像素分割；各事件窗口直方图",
+          "sample_size_as_reported": "8066训练样本；2803验证样本",
+          "uncertainty": null,
+          "assumptions": [
+            "不同频率采用同一端点评价定义"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "4.1 Evaluation on DSEC-Semantic",
+            "figure": "Table 1",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "100与200Hz端点MIoU分别仅比帧基线低0.16和0.52个百分点。",
+        "boundary": "输出频率不等同于实测持续运行吞吐量。",
+        "negative_result": "500Hz端点MIoU下降2.93个百分点。",
+        "non_inference": "没有直接评价无标签中间时刻的准确率。",
+        "unresolved": "事件密度是否独立决定性能下降。",
+        "unresolved_attribution": "作者提出事件不足解释，未进行因果消融。"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "缩短事件窗口如何影响DSEC上的端点分割精度？"
+      ],
+      "shared_evidence_with": [
+        "C4",
+        "C5",
+        "C9"
+      ],
+      "review_notes": [
+        "第8页将2ms密度近似为2%，采用表1的2.67%。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "在使用六类伪标签的DDD17上，20Hz SegSNet帧分割MIoU为67.05%；100、200、500Hz事件运动传播的带标签帧端点MIoU分别为66.75%、65.08%、59.88%，事件直方图非零比例分别为1.97%、1.07%、0.4%。",
+      "claim_type": "benchmark_performance",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "比较不同事件窗口下的端点分割",
+          "design": "同步灰度帧与事件；输入裁剪为200×346；推理窗口10、5、2ms。",
+          "comparator": "20Hz SegSNet，MIoU 67.05%",
+          "measure": "MIoU；事件直方图非零比例",
+          "unit_of_analysis": "伪标签帧端点的像素分割；事件窗口直方图",
+          "sample_size_as_reported": "15950训练图像；3890验证图像",
+          "uncertainty": null,
+          "assumptions": [
+            "六类伪标签作为评价参考"
+          ],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "4.2 Evaluation on DDD17",
+            "figure": "Table 4",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "100Hz端点MIoU比帧基线低0.30个百分点。",
+        "boundary": "评价参考为伪标签，200Hz下降1.97个百分点。",
+        "negative_result": "500Hz下降7.17个百分点。",
+        "non_inference": "不支持500Hz在两个数据集上均保持近基线精度。",
+        "unresolved": "自适应窗口能否改善短窗口表现。",
+        "unresolved_attribution": "事件不足解释未经独立操纵验证。"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "DDD17上的短事件窗口如何影响传播精度？"
+      ],
+      "shared_evidence_with": [
+        "C4",
+        "C5"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "以10ms事件窗口继续传播并跳过0、1、2、3次帧刷新，在50、100、150、200ms终点评价时，DSEC-Semantic的MIoU为56.12%、56.71%、55.19%、54.79%，DDD17为66.75%、62.98%、61.38%、59.77%；200ms结果分别较不跳帧低1.33和6.98个百分点。",
+      "claim_type": "robustness_evaluation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "跳过帧刷新，延长递归传播",
+          "design": "100Hz事件传播；在距初始参考帧50、100、150、200ms处评价。",
+          "comparator": "不跳帧的100Hz传播",
+          "measure": "端点MIoU",
+          "unit_of_analysis": "各传播终点的带标签帧像素分割",
+          "sample_size_as_reported": "数据集验证样本数为DSEC 2803、DDD17 3890；各跳帧条件实际样本数未报告",
+          "uncertainty": null,
+          "assumptions": [
+            "终点标签可作为长时传播参考"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "4.1；4.2（第11页）",
+            "figure": "Table 2；Table 5（第11页）",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "DSEC上200ms传播的端点MIoU接近不跳帧结果。",
+        "boundary": "DSEC跳一次刷新提高0.59个百分点，DDD17呈不同退化模式。",
+        "negative_result": "DDD17随跳帧次数增加单调下降。",
+        "non_inference": "跳帧实验不能直接证明对真实模糊或过曝的补偿。",
+        "unresolved": "传播误差与标签时间不一致各自贡献多少。",
+        "unresolved_attribution": "作者将DDD17退化归因于标注质量，未进行相应消融。"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "缺少帧刷新时，事件驱动分割传播能维持多长时间？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C3"
+      ],
+      "review_notes": [
+        "不跳帧基准复用频率实验结果，不构成独立重复。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "表列比较中，0.88M参数的事件–帧SNN以200Hz输出，在DSEC与DDD17上的MIoU分别为55.76%和65.08%，高于其余方法的20Hz输出频率；其参数量在DDD17表中最小，在DSEC表中高于0.33M的SegSNNet，且两数据集均未取得最高MIoU。",
+      "claim_type": "comparative_benchmark",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "汇总本方法与既有方法的报告指标",
+          "design": "比较不同输入模态、架构及训练方案。",
+          "comparator": "DSEC：SegSNNet 0.33M、52.52%；CMESS E 57.49%、E+F 59.53%；SpikeEDN E+F 58.32%。DDD17：Ev-SegSNet E+F 68.36%；SpikeEDN E+F 72.57%。",
+          "measure": "MIoU、参数量、输出FPS",
+          "unit_of_analysis": "方法在数据集上的汇总指标",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "表列指标采用可比较的评价定义"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "State-of-the-art comparison",
+            "figure": "Table 3；Table 6（第12页）",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "支持较小模型与较高输出频率的描述性权衡。",
+        "boundary": "既有方法的输入、训练和时间聚合方式不同，未统一重训。",
+        "negative_result": "两数据集均非最高MIoU，DSEC亦非最小参数量。",
+        "non_inference": "不能证明全局最优权衡或普遍优越性。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "事件–帧分割的参数量、端点精度与输出频率如何权衡？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C3"
+      ],
+      "review_notes": [
+        "本方法指标复用频率实验；DSEC的CMESS纯事件模型也超过本方法MIoU。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "表7报告的平均单模块推理时间在GPU上为SegSNet 8.18ms、SegMoSNet 1.18ms、warping 4.68ms，在CPU上分别为34.22ms、13.96ms、31.93ms；运动网络调用比帧分割调用更快，但这些模块计时不足以确认完整传播流水线持续满足200Hz期限。",
+      "claim_type": "runtime_evaluation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "GPU与CPU模块平均推理计时",
+          "design": "分别报告三个模块；正文称事件采集与推理并行。",
+          "comparator": "SegSNet与SegMoSNet；GPU与CPU",
+          "measure": "ms/模块推理调用",
+          "unit_of_analysis": "单模块推理调用",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "各模块计时口径可比较"
+          ],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "4.3 Runtime and computational cost",
+            "figure": "Table 7",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "GPU帧分割耗时小于50ms，运动网络单次耗时小于5ms。",
+        "boundary": "计时重复次数、CPU型号和完整流水线时延未报告；训练使用RTX A5000，不据此认定计时硬件。",
+        "negative_result": "表7将CPU标记为不满足所述实时设置。",
+        "non_inference": "若GPU运动估计与warping串行，总耗时5.86ms，不能仅凭表7确认5ms期限。",
+        "unresolved": "4.68ms是否包含运动估计，以及跨批次并行的具体调度。",
+        "unresolved_attribution": "正文实时性叙述与分模块表值存在计时解释缺口。"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "事件运动估计与warping流水线能否持续满足200Hz期限？"
+      ],
+      "shared_evidence_with": [
+        "C9"
+      ],
+      "review_notes": [
+        "作者主张GPU实时上限为200Hz；此主张缺少清晰端到端测量。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "按发放率加权ACC计数、输入层MAC计数和45nm CMOS单操作成本估算，SegSNet与SegMoSNet各运行一次的总网络运算能耗在DSEC为1.87mJ、DDD17为0.45mJ，低于相应表列基线；这些数值是解析估计，并非完整高频传播系统的硬件实测能耗。",
+      "claim_type": "computational_energy_estimate",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "操作数乘单操作能耗",
+          "design": "T=1；ACC为0.9pJ、MAC为4.6pJ；使用所称测试集平均发放率。",
+          "comparator": "DSEC：ESS 215.51mJ、SpikeEDN 32.40mJ；DDD17：表列基线6.79–136.76mJ",
+          "measure": "网络操作数及估算mJ",
+          "unit_of_analysis": "两个网络各一次推理的运算能耗之和",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "45nm CMOS单操作成本用于近似网络运算能耗",
+            "发放率加权操作数代表对应网络计算",
+            "总量为两个网络各一次推理之和"
+          ],
+          "source_locator": {
+            "pdf_page": 18,
+            "section": "Supplementary Material 2 Energy measurement",
+            "figure": "Tables 8–9（第12–13页）",
+            "equation": "4–7",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在所用成本模型下，估计能耗低于表列基线。",
+        "boundary": "不包含内存访问及完整系统成本；高频传播会多次调用运动网络。",
+        "negative_result": null,
+        "non_inference": "不能推断GPU实际能耗、每秒系统能耗或神经形态部署收益。",
+        "unresolved": "完整系统硬件实测能耗。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "网络操作数估计与完整事件–帧系统实测能耗有多大差距？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "采用表值，不沿用摘要低于1.87mJ或引言低于1.5mJ的概括。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "在同时具有分割和光流参考的DSEC训练折子集上，将十个10ms位移预测直接相加以评价100ms光流时，SegMoSNet的EPE为12.87像素，高于IDNet的11.79像素；但其100ms端点分割MIoU为74.66%，文字报告高于IDNet，说明该设置下较低光流误差未对应较高传播分割精度。",
+      "claim_type": "task_specific_motion_comparison",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "同一传播框架比较任务运动与IDNet光流",
+          "design": "两者每10ms预测并传播；预测相加至100ms评价EPE；每两帧评价分割。",
+          "comparator": "IDNet：EPE 11.79像素；其MIoU具体值未在所供文字中给出",
+          "measure": "100ms EPE；端点MIoU",
+          "unit_of_analysis": "具备两类参考标注的帧对及其像素",
+          "sample_size_as_reported": "zurich_city_01_a、02_a、05_a、06_a、07_a、08_a六个训练折；帧对数未报告",
+          "uncertainty": null,
+          "assumptions": [
+            "逐窗口位移直接相加可用于该100ms评价",
+            "两个预测器使用可比较的10ms设置"
+          ],
+          "source_locator": {
+            "pdf_page": 19,
+            "section": "Supplementary Material 3 Ablation study",
+            "figure": "Figure 6",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所测比较支持分割传播目标与光流EPE目标可以分离。",
+        "boundary": "结果来自训练折子集，未确立为独立测试集验证；六个折不是六次独立实验重复。",
+        "negative_result": "SegMoSNet的光流EPE比IDNet高1.08像素。",
+        "non_inference": "不证明光流普遍不适合传播，也不证明预测位移具有真实物理对应关系。",
+        "unresolved": "采用沿空间轨迹组合位移时的比较结果。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "优化分割传播的位移是否必须同时优化光流EPE？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "正文称运动未定量评价，补充材料实际报告此EPE比较；保留两处范围差别。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "在补充材料所称DSEC测试集上，SegMoSNet传播的100与200Hz端点MIoU分别为56.12%和55.76%，以IDNet替代后分别为55.11%和54.13%；预测器单次GPU/CPU推理时间分别为SegMoSNet 1.18/13.96ms、IDNet 122/1350ms。",
+      "claim_type": "ablation_comparison",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "以IDNet替换运动预测器",
+          "design": "比较100与200Hz传播及预测器平均推理时间。",
+          "comparator": "约1.4M参数IDNet，对比约42K参数SegMoSNet",
+          "measure": "端点MIoU；ms/预测器调用",
+          "unit_of_analysis": "带标签端点的像素分割；预测器推理调用",
+          "sample_size_as_reported": "表10未报告测试样本数或计时次数",
+          "uncertainty": null,
+          "assumptions": [
+            "IDNet短窗口适配设置可用于此替换比较"
+          ],
+          "source_locator": {
+            "pdf_page": 20,
+            "section": "Supplementary Material 3 Ablation study",
+            "figure": "Table 10",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所测替换设置中，SegMoSNet端点MIoU更高且预测器推理更快。",
+        "boundary": "优势仅限于所测IDNet设置；计时不包含完整传播流水线。",
+        "negative_result": "IDNet在100与200Hz下分别低1.01和1.63个百分点。",
+        "non_inference": "不能推广至所有光流模型，也不能将预测器加速比当作整体系统加速比。",
+        "unresolved": "IDNet从原100ms任务适配至10/5ms输入的训练与状态设置。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "任务运动预测器相较IDNet替代器如何改变传播精度与推理成本？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C6"
+      ],
+      "review_notes": [
+        "表10的100Hz括号差值0.16不符合绝对值，应为1.01个百分点。",
+        "GPU时间比约103.39，CPU约96.70；CPU不超过两个数量级。",
+        "本方法精度和时间复用主实验数字，不视为独立重复。",
+        "与C8属于同一消融主题，但评价划分和时间条件不同，不认定共享同一批样本。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "已再次评估全部20页及补充材料。该v1预印本提出事件驱动位移递归传播帧分割的方法，并报告两数据集的端点MIoU、跳帧表现、模块时间、解析能耗估计和IDNet替换比较。修正了DSEC最小参数量及比较对象遗漏，补全跳帧基准的共享证据，移除未确立的跨设置共享关系。无标签中间时刻精度、真实模糊或过曝补偿和完整系统能耗未直接验证；200Hz端到端计时、上采样实现及测试/验证划分关系仍待澄清。",
+  "shared_evidence": [
+    {
+      "claim_id": "C2",
+      "with": [
+        "C4",
+        "C5",
+        "C9"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C4",
+        "C5"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C2",
+        "C3"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C2",
+        "C3"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C9"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C2",
+        "C6"
+      ]
+    }
+  ],
+  "audit": {
+    "initial_source_match_checks": [],
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": "C5",
+        "issue": "草稿称参数量低于其余所有表列模型，但DSEC表3的SegSNNet为0.33M，低于本方法0.88M。",
+        "suggested_correction": "限定为DDD17表中最小；明确DSEC存在更小模型。",
+        "pdf_page": 9,
+        "resolved": true
+      },
+      {
+        "claim_id": "C5",
+        "issue": "草稿遗漏DSEC的CMESS纯事件模型57.49%也高于本方法55.76%。",
+        "suggested_correction": "在比较证据中补全该对照，保留非最高MIoU结论。",
+        "pdf_page": 9,
+        "resolved": true
+      },
+      {
+        "claim_id": "C2",
+        "issue": "端点MIoU不能直接验证全部中间时刻的分割准确率。",
+        "suggested_correction": "所有高频精度结论限定为带标签帧端点评价。",
+        "pdf_page": 6,
+        "resolved": true
+      },
+      {
+        "claim_id": "C4",
+        "issue": "跳帧结果被用于推断真实模糊或过曝补偿。",
+        "suggested_correction": "保留缺少帧刷新时的传播结果，将真实图像退化补偿列为未测试。",
+        "pdf_page": 9,
+        "resolved": true
+      },
+      {
+        "claim_id": "C6",
+        "issue": "GPU运动估计与warping表值相加为5.86ms，正文仍主张持续200Hz，完整计时口径不清。",
+        "suggested_correction": "保留模块测量，将端到端实时性列为待澄清。",
+        "pdf_page": 12,
+        "resolved": false
+      },
+      {
+        "claim_id": "C7",
+        "issue": "摘要和引言能耗概括与DSEC表值不一致，且解析估计被称为功耗测量。",
+        "suggested_correction": "使用1.87mJ与0.45mJ表值，明确是网络运算能耗估计。",
+        "pdf_page": 18,
+        "resolved": true
+      },
+      {
+        "claim_id": "C8",
+        "issue": "正文称运动未定量评价，但补充材料报告训练折子集上的EPE。",
+        "suggested_correction": "补全该结果并明确其评价范围，不能当作主实验独立测试验证。",
+        "pdf_page": 19,
+        "resolved": true
+      },
+      {
+        "claim_id": "C9",
+        "issue": "表10的100Hz差值0.16与56.12−55.11不一致。",
+        "suggested_correction": "采用绝对值计算的1.01个百分点。",
+        "pdf_page": 20,
+        "resolved": true
+      },
+      {
+        "claim_id": "C9",
+        "issue": "正文称GPU和CPU均快超过两个数量级，但CPU比值为约96.70。",
+        "suggested_correction": "保留原始时间，不沿用CPU超过两个数量级的表述。",
+        "pdf_page": 20,
+        "resolved": true
+      },
+      {
+        "claim_id": "C1",
+        "issue": "运动网络上采样在第7页为最近邻，第17页图4图注为双线性。",
+        "suggested_correction": "记录实现矛盾，与明确的双线性warping区分。",
+        "pdf_page": 17,
+        "resolved": false
+      },
+      {
+        "claim_id": "C9",
+        "issue": "补充材料使用测试集名称，正文描述验证集，未说明两者关系。",
+        "suggested_correction": "保留原文名称，不能依据相同数字认定独立划分或重复验证。",
+        "pdf_page": 20,
+        "resolved": false
+      },
+      {
+        "claim_id": "C8",
+        "issue": "草稿将C8与C9互列共享证据，但两者评价范围不同，未确认共用样本。",
+        "suggested_correction": "移除该共享证据关系；保留C2与C9、C6与C9的明确复用数字，以及跳帧基准复用关系。",
+        "pdf_page": 19,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "草稿包含请求schema之外的source_check和review字段。",
+        "suggested_correction": "删除这些字段，相关审查说明置于review_notes和audit_findings。",
+        "pdf_page": null,
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T05:46:17.881473Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "signed_in_chatgpt_codex",
+    "authentication": "existing_ChatGPT_login",
+    "provider_api_key_used": false,
+    "model": "account_default_GPT",
+    "source_sha256": "c6845a65d81cc8aa6b4fc360fb47e769bd437363166dd9c8006dab3d7e85a32b",
+    "requests": [
+      {
+        "phase": "extraction",
+        "seconds": 161.1,
+        "usage": {
+          "input_tokens": 26219,
+          "cached_input_tokens": 4608,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 7427,
+          "reasoning_output_tokens": 22
+        },
+        "backend": "signed_in_chatgpt_codex",
+        "tools_used": false
+      },
+      {
+        "phase": "source_audit",
+        "seconds": 149.8,
+        "usage": {
+          "input_tokens": 33510,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 7916,
+          "reasoning_output_tokens": 33
+        },
+        "backend": "signed_in_chatgpt_codex",
+        "tools_used": false
+      }
+    ],
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

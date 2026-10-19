@@ -1,0 +1,1285 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "preprint",
+  "paper": {
+    "title": "MapPFN: Learning Causal Perturbation Maps in Context",
+    "authors": [
+      "Marvin Sextro",
+      "Weronika Kłos",
+      "Gabriel Dernbach"
+    ],
+    "doi": null,
+    "publication_year": 2026,
+    "venue": "arXiv (Cornell University)",
+    "url": "https://arxiv.org/pdf/2601.21092"
+  },
+  "source": {
+    "filename": "paper-W7126281490--MapPFN-Learning-Causal-Perturbation-Maps-in-Context.pdf",
+    "sha256": "c71daabc5f20c4f7004190c13a264ab2cc5e120e0b7012ff65ade5fab1f3df49",
+    "source_url": "https://arxiv.org/pdf/2601.21092",
+    "pdf_page_count": 23
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+    ],
+    "results_sections_seen": [
+      "Problem/PPD",
+      "SCM/GRN assumptions",
+      "MMDiT/CFM",
+      "Main Tables1–4",
+      "Counterfactual/context",
+      "TTA",
+      "Limitations/References",
+      "AppendixA architecture/ODE",
+      "B graphs/noise",
+      "C screens/preprocessing",
+      "D splits/metrics/tuning",
+      "E context/cell/prior coverage"
+    ],
+    "missing_material": [
+      "图像像素未阅；Figs1–6及Tables1–7可用文字全阅。",
+      "原细胞数据/标记gene train-only选择与培养/供体元数据未供。"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "arXiv:2601.21092v3，2026-05-07；23页全读含完整A–E。",
+      "无需provider inference；生物benchmark是归档模型评价非新wet-lab机制验证。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "conditional model、all-observed/prior、GRN去环/硬KO与生成ODE",
+      "role": "result",
+      "source_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        16,
+        17,
+        18
+      ],
+      "decision": "include",
+      "reason": "可识别假设不拆成普遍保证，amortized与single-forward分开。"
+    },
+    {
+      "summary": "linearSCM三seed、两screen十重采样和重要失败/指标反例",
+      "role": "result",
+      "source_pages": [
+        6,
+        7,
+        8,
+        19,
+        20,
+        21
+      ],
+      "decision": "include",
+      "reason": "保留leukemia过冲/identity、fine不全最佳与random-W2反例。"
+    },
+    {
+      "summary": "context/paired controls、K/cell扩展和100geneTTA",
+      "role": "result",
+      "source_pages": [
+        7,
+        8,
+        9,
+        22,
+        23
+      ],
+      "decision": "include",
+      "reason": "新增数据/模拟counterfactual、边际/联合与seed独立性区分。"
+    },
+    {
+      "summary": "DEG指标、marker selection及knockout-only参照",
+      "role": "result",
+      "source_pages": [
+        19,
+        21
+      ],
+      "decision": "defer",
+      "reason": "marker是否仅train选择和target-only baseline结果未充分给出；不补造优势。"
+    },
+    {
+      "summary": "prior coverage和更广干预/维度",
+      "role": "hypothesis",
+      "source_pages": [
+        9,
+        22,
+        23
+      ],
+      "decision": "include",
+      "reason": "边际图非机制支持，soft/drug等未验证。"
+    },
+    {
+      "summary": "完整书目和基线/预算",
+      "role": "interpretation",
+      "source_pages": [
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        20,
+        21,
+        22
+      ],
+      "decision": "include",
+      "reason": "不同tuning/时间预算，source-grounded但非全公平独立机制复现。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "MapPFN以观测细胞分布和同背景多个已测干预分布为context，近似未见query干预的后验预测；解释依潜在因果族、全变量可观测和真实机制在先验支持等假设。",
+      "claim_type": "conditional_method_formulation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "latent SCM posterior-predictive framing",
+          "design": "线性SCM/GRN预训练、condition留出、消融和真实screens适配",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "因果模型/分布",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": null,
+            "figure": null,
+            "equation": "(1)–(2)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "MapPFN以观测细胞分布和同背景多个已测干预分布为context，近似未见query干预的后验预测；解释依潜在因果族、全变量可观测和真实机制在先验支持等假设。",
+        "boundary": "足够干预才可能缩小等价类，K4/8不保证全图可识别；真实50基因并非全部分子变量。",
+        "negative_result": null,
+        "non_inference": "预测不是已识别真实GRN、反事实个体效应或唯一生物机制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal",
+        "cellular-metabolism"
+      ],
+      "scientific_questions": [
+        "干预context和先验怎样改善未见query的分布预测而不等同机制鉴定？",
+        "先验错配、边际指标、细胞相关和子集TTA怎样限制真实生物泛化？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "模型使用约25M参数、无细胞位置编码的MMDiT和conditional flow matching；推理通过Dopri5积分ODE，不是literal单次网络forward完成全部生成。",
+      "claim_type": "method_description",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "set conditioning、flow matching、CFG",
+          "design": "线性SCM/GRN预训练、condition留出、消融和真实screens适配",
+          "comparator": null,
+          "measure": "8层、256dim、4heads；SCM50k/GRN400k预训练步，EMA；default CFG2",
+          "unit_of_analysis": "模型tokens/优化步/ODE调用",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 17,
+            "section": null,
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "模型使用约25M参数、无细胞位置编码的MMDiT和conditional flow matching；推理通过Dopri5积分ODE，不是literal单次网络forward完成全部生成。",
+        "boundary": "cell集合置换与gene身份/特征维数不是同种不变性；amortized不等于无需积分。",
+        "negative_result": null,
+        "non_inference": "未证明全尺度一次forward、精确Bayes后验或不依先验。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal",
+        "cellular-metabolism"
+      ],
+      "scientific_questions": [
+        "干预context和先验怎样改善未见query的分布预测而不等同机制鉴定？",
+        "先验错配、边际指标、细胞相关和子集TTA怎样限制真实生物泛化？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "生物先验在6000个50基因GRN上用SERGIO稳态/10x技术噪声模拟硬KO；原图采样后去环并强制master regulators，故实际先验不含完整循环调控。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "GRN生成、Hill CLE与technical noise",
+          "design": "线性SCM/GRN预训练、condition留出、消融和真实screens适配",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "合成网络和模拟细胞，非6000生物实验",
+          "sample_size_as_reported": "6000synthetic GRNs、50genes、每condition200cells、contextK8",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 18,
+            "section": null,
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "生物先验在6000个50基因GRN上用SERGIO稳态/10x技术噪声模拟硬KO；原图采样后去环并强制master regulators，故实际先验不含完整循环调控。",
+        "boundary": "拓扑/生化参数范围限定，RNA技术噪声逼真不代表真实机制被验证。",
+        "negative_result": null,
+        "non_inference": "不能按“真实GRN有cycles”说明已建模循环或soft/drug/multigene干预。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal",
+        "cellular-metabolism"
+      ],
+      "scientific_questions": [
+        "干预context和先验怎样改善未见query的分布预测而不等同机制鉴定？",
+        "先验错配、边际指标、细胞相关和子集TTA怎样限制真实生物泛化？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "MR量化预测相对观测分布移动的距离与真实效应距离之比，MR1仅表示幅度匹配，不能说明方向或预测分布正确。",
+      "claim_type": "metric_scope",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "distance-based magnitude ratio",
+          "design": "线性SCM/GRN预训练、condition留出、消融和真实screens适配",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "分布距离",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": null,
+            "figure": null,
+            "equation": "(4)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "MR量化预测相对观测分布移动的距离与真实效应距离之比，MR1仅表示幅度匹配，不能说明方向或预测分布正确。",
+        "boundary": "W2实用度量为entropy正则/Sinkhorn(ϵ=.1)，距离尺度/零效应分母需限定。",
+        "negative_result": null,
+        "non_inference": "MR近1不是因果机制或生物效应方向的验证。",
+        "unresolved": "附录root-first W2及debias定义/实际实现需确认，不假设全部metric axioms。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal",
+        "cellular-metabolism"
+      ],
+      "scientific_questions": [
+        "干预context和先验怎样改善未见query的分布预测而不等同机制鉴定？",
+        "先验错配、边际指标、细胞相关和子集TTA怎样限制真实生物泛化？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "已知线性SCM benchmark中MapPFN报告MR .99、PDS .01及较好MMD/均值误差，CondOT/MFM的MR .09/.12提示接近identity预测。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "共同线性DAG prior下的模型比较",
+          "design": "线性SCM/GRN预训练、condition留出、消融和真实screens适配",
+          "comparator": null,
+          "measure": "W2 13.69±.05(与MFM13.73±.16相近)、MMD4.28e−3、RMSE.14",
+          "unit_of_analysis": "合成机制/模型seed，非生物重复",
+          "sample_size_as_reported": "20nodes、ER p.5；1000DAG、20000condition、每500vectors；3random seeds",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": null,
+            "figure": "Table 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "已知线性SCM benchmark中MapPFN报告MR .99、PDS .01及较好MMD/均值误差，CondOT/MFM的MR .09/.12提示接近identity预测。",
+        "boundary": "同先验受控任务；condition-level split不同于全部mechanism/DAG独立外部验证。",
+        "negative_result": null,
+        "non_inference": "不是细胞生物GRN或drug作用验证。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal",
+        "cellular-metabolism"
+      ],
+      "scientific_questions": [
+        "干预context和先验怎样改善未见query的分布预测而不等同机制鉴定？",
+        "先验错配、边际指标、细胞相关和子集TTA怎样限制真实生物泛化？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "真实benchmark按context-treatment条件分割，目标IFNγ melanoma背景一半干预留测、一半作为训练/context；THP-1 leukemia只有一个生物背景。",
+      "claim_type": "evaluation_design",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "condition级留出及目标context适配",
+          "design": "线性SCM/GRN预训练、condition留出、消融和真实screens适配",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "细胞/条件/背景；ten resampling非十独立生物屏幕",
+          "sample_size_as_reported": "melanoma约218k cells/248targets/3所称contexts；leukemia约20k cells/26targets；各选50genes、每condition200cells",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 19,
+            "section": null,
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "真实benchmark按context-treatment条件分割，目标IFNγ melanoma背景一半干预留测、一半作为训练/context；THP-1 leukemia只有一个生物背景。",
+        "boundary": "“zero-shot”是模型权重不学真实数据，但推理读取真实干预context；finetune/baselines见目标背景其他条件。",
+        "negative_result": null,
+        "non_inference": "不能称完全无目标背景证据或未知cell-type零数据外推。",
+        "unresolved": "melanoma三cell lines与三处理contexts表述口径不清；marker selection未明确train-only。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal",
+        "cellular-metabolism"
+      ],
+      "scientific_questions": [
+        "干预context和先验怎样改善未见query的分布预测而不等同机制鉴定？",
+        "先验错配、边际指标、细胞相关和子集TTA怎样限制真实生物泛化？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "melanoma零权重微调MapPFN的DEG AUPRC .34与CondOT .34/STATE .33相近、MR1，但W2/MMD/RMSE并非全部基线最好。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "真实数据与synthetic-pretrained模型比较",
+          "design": "线性SCM/GRN预训练、condition留出、消融和真实screens适配",
+          "comparator": null,
+          "measure": "Map pre W2 22.75、MMD10.07e−3、RMSE.13、PDS.17、MR1、AUPRC.34",
+          "unit_of_analysis": "同真实screen的重采样",
+          "sample_size_as_reported": "10 resampling seeds，每condition200cells",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": null,
+            "figure": "Table 3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "melanoma零权重微调MapPFN的DEG AUPRC .34与CondOT .34/STATE .33相近、MR1，但W2/MMD/RMSE并非全部基线最好。",
+        "boundary": "AUPRC为所选50基因的阈值DEG，未评价机制图或效应方向全准确。",
+        "negative_result": "W2高于CPA15.57，MMD高于CondOT7.11e−3等。",
+        "non_inference": "不能把“on-par DEG”扩大为所有指标均最佳。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal",
+        "cellular-metabolism"
+      ],
+      "scientific_questions": [
+        "干预context和先验怎样改善未见query的分布预测而不等同机制鉴定？",
+        "先验错配、边际指标、细胞相关和子集TTA怎样限制真实生物泛化？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "leukemia零微调MapPFN出现明显效应过冲：MR2.56、W2 44.42、RMSE.78，AUPRC .16也低于identity .18。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "跨真实数据分布的预训练模型比较",
+          "design": "线性SCM/GRN预训练、condition留出、消融和真实screens适配",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "query conditions/细胞重采样",
+          "sample_size_as_reported": "同leukemia单screen；10resampling",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": null,
+            "figure": "Table 3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "leukemia零微调MapPFN出现明显效应过冲：MR2.56、W2 44.42、RMSE.78，AUPRC .16也低于identity .18。",
+        "boundary": "作者归因26targets+24marker的不同prior形状，尚非单独因果实验解释。",
+        "negative_result": "该场景零微调分布预测明显较差，DEG未超过identity。",
+        "non_inference": "不能宣称synthetic prior普遍覆盖真实干预或所有零样本均有效。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal",
+        "cellular-metabolism"
+      ],
+      "scientific_questions": [
+        "干预context和先验怎样改善未见query的分布预测而不等同机制鉴定？",
+        "先验错配、边际指标、细胞相关和子集TTA怎样限制真实生物泛化？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "微调显著改善预训练leukemia的分布/DEG均值，并在两数据集获得较低PDS和较高AUPRC，但并非表中全部预测指标最佳。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "3000步真实数据微调与pretrained比较",
+          "design": "线性SCM/GRN预训练、condition留出、消融和真实screens适配",
+          "comparator": null,
+          "measure": "melanomaPDS.03/AUPRC.38；leukemiaPDS.42/AUPRC.18、W2 16.32、MR.91",
+          "unit_of_analysis": "同条件分割",
+          "sample_size_as_reported": "两screens，10resampling；不是10训练重复",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": null,
+            "figure": "Table 3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "微调显著改善预训练leukemia的分布/DEG均值，并在两数据集获得较低PDS和较高AUPRC，但并非表中全部预测指标最佳。",
+        "boundary": "leukemia AUPRC与identity.18相同均值；melanoma MMD7.84高于CondOT7.11、RMSE.10高于STATE.08。",
+        "negative_result": "论文“all metrics except leukemia W2最佳”不受全部表格支持。",
+        "non_inference": "均值改善不证明差异显著或机制恢复。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal",
+        "cellular-metabolism"
+      ],
+      "scientific_questions": [
+        "干预context和先验怎样改善未见query的分布预测而不等同机制鉴定？",
+        "先验错配、边际指标、细胞相关和子集TTA怎样限制真实生物泛化？"
+      ],
+      "shared_evidence_with": [
+        "C7",
+        "C8"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "随机初始化MapPFN在多数指标劣于预训练后微调，但两数据集W2均值反而更低，说明预训练收益依评价指标。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "相同架构random-init/pretrain控制",
+          "design": "线性SCM/GRN预训练、condition留出、消融和真实screens适配",
+          "comparator": null,
+          "measure": "melanoma W2random21.23 vsfine21.38；leukemia14.95 vs16.32",
+          "unit_of_analysis": "模型版本与同screen条件",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": null,
+            "figure": "Table 3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "随机初始化MapPFN在多数指标劣于预训练后微调，但两数据集W2均值反而更低，说明预训练收益依评价指标。",
+        "boundary": "生物先验/训练预算改变，表仅重采样SD，未独立统计效应检验。",
+        "negative_result": "W2不是普遍预训练获益指标。",
+        "non_inference": "不能称预训练无例外增强所有指标。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal",
+        "cellular-metabolism"
+      ],
+      "scientific_questions": [
+        "干预context和先验怎样改善未见query的分布预测而不等同机制鉴定？",
+        "先验错配、边际指标、细胞相关和子集TTA怎样限制真实生物泛化？"
+      ],
+      "shared_evidence_with": [
+        "C9"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "在melanoma预训练模型中去掉interventional context使W2/MMD/RMSE/PDS与DEG恢复变差，支持这些已测干预输入在当前任务的预测价值。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "同架构context→∅消融",
+          "design": "线性SCM/GRN预训练、condition留出、消融和真实screens适配",
+          "comparator": null,
+          "measure": "AUPRC.34→.13、MR1→1.10；W2 22.75→23.78",
+          "unit_of_analysis": "同screen与模型配置，10resampling",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": null,
+            "figure": "Table 4",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在melanoma预训练模型中去掉interventional context使W2/MMD/RMSE/PDS与DEG恢复变差，支持这些已测干预输入在当前任务的预测价值。",
+        "boundary": "context提供额外真实interventional数据而非仅架构差异。",
+        "negative_result": null,
+        "non_inference": "不证明模型显式恢复真实图或K8足以唯一识别机制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal",
+        "cellular-metabolism"
+      ],
+      "scientific_questions": [
+        "干预context和先验怎样改善未见query的分布预测而不等同机制鉴定？",
+        "先验错配、边际指标、细胞相关和子集TTA怎样限制真实生物泛化？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C6",
+        "C7"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "以SERGIO跨处理保持随机seed的paired prior相较unpaired，验证方差相关约.8对.6且真实melanoma多指标较好。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "synthetic paired/noise-seed prior对照",
+          "design": "线性SCM/GRN预训练、condition留出、消融和真实screens适配",
+          "comparator": null,
+          "measure": "paired约50k步到.8；unpaired400k步约.6；AUPRC.34vs.21",
+          "unit_of_analysis": "合成随机模拟和同screen预测",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": null,
+            "figure": "Fig. 2/Table4",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "以SERGIO跨处理保持随机seed的paired prior相较unpaired，验证方差相关约.8对.6且真实melanoma多指标较好。",
+        "boundary": "保持随机seed的模拟耦合不等于测得同一个真实细胞的反事实；原始noise alignment/causal机制另需验证。",
+        "negative_result": null,
+        "non_inference": "不是counterfactual individual truth或新生物实验。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal",
+        "cellular-metabolism"
+      ],
+      "scientific_questions": [
+        "干预context和先验怎样改善未见query的分布预测而不等同机制鉴定？",
+        "先验错配、边际指标、细胞相关和子集TTA怎样限制真实生物泛化？"
+      ],
+      "shared_evidence_with": [
+        "C3",
+        "C7"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C13",
+      "statement": "测试时增加context干预数在所测K0–9范围改善melanoma距离，约K4后边际收益减弱。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "context-size扫描",
+          "design": "线性SCM/GRN预训练、condition留出、消融和真实screens适配",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "干预context子集/技术seed",
+          "sample_size_as_reported": "Fig5a三seeds；50genes模型",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 23,
+            "section": null,
+            "figure": "Fig. 5a",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "测试时增加context干预数在所测K0–9范围改善melanoma距离，约K4后边际收益减弱。",
+        "boundary": "每新增干预也增加信息量；无无限K或所有背景保证。",
+        "negative_result": null,
+        "non_inference": "曲线改善不能单独证明因果图完全identifiable。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal",
+        "cellular-metabolism"
+      ],
+      "scientific_questions": [
+        "干预context和先验怎样改善未见query的分布预测而不等同机制鉴定？",
+        "先验错配、边际指标、细胞相关和子集TTA怎样限制真实生物泛化？"
+      ],
+      "shared_evidence_with": [
+        "C11"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C14",
+      "statement": "增加每context条件细胞数到训练200以上、所测100–400范围，改善距离且没有在200处平台。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "cell-set size扫描",
+          "design": "线性SCM/GRN预训练、condition留出、消融和真实screens适配",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "同screen的相关细胞样本和技术重采样",
+          "sample_size_as_reported": "10resampling seeds；训练200 cells/condition",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 23,
+            "section": null,
+            "figure": "Fig. 5b",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "增加每context条件细胞数到训练200以上、所测100–400范围，改善距离且没有在200处平台。",
+        "boundary": "细胞不是独立供体或培养批次，结果限于该任务和范围。",
+        "negative_result": null,
+        "non_inference": "不证明无需新增生物背景即可无限泛化。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal",
+        "cellular-metabolism"
+      ],
+      "scientific_questions": [
+        "干预context和先验怎样改善未见query的分布预测而不等同机制鉴定？",
+        "先验错配、边际指标、细胞相关和子集TTA怎样限制真实生物泛化？"
+      ],
+      "shared_evidence_with": [
+        "C6",
+        "C13"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C15",
+      "statement": "100基因TTA通过最多10个随机重叠50基因子集的逐基因样本汇总改善DEG AUPRC/稳定性，但只检验边际基因排名而非100基因完整联合分布。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "feature-subset TTA",
+          "design": "线性SCM/GRN预训练、condition留出、消融和真实screens适配",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "相依子集及逐基因预测",
+          "sample_size_as_reported": "100genes、50genes/subset、最多10subsets；10resampling",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": null,
+            "figure": "Fig. 3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "100基因TTA通过最多10个随机重叠50基因子集的逐基因样本汇总改善DEG AUPRC/稳定性，但只检验边际基因排名而非100基因完整联合分布。",
+        "boundary": "不同子集生成的细胞不可自动配为统一全基因细胞；未报告联合协方差或全GRN。",
+        "negative_result": null,
+        "non_inference": "不证明任意维度gene sets无损或真实机制全覆盖。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal",
+        "cellular-metabolism"
+      ],
+      "scientific_questions": [
+        "干预context和先验怎样改善未见query的分布预测而不等同机制鉴定？",
+        "先验错配、边际指标、细胞相关和子集TTA怎样限制真实生物泛化？"
+      ],
+      "shared_evidence_with": [
+        "C7"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C16",
+      "statement": "表达和fold-change的边际先验覆盖图被作者用来解释melanoma较吻合和leukemia双峰差异，但边际相似不确保真实GRN在先验支持。",
+      "claim_type": "interpretation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "prior/data边际分布可视化",
+          "design": "线性SCM/GRN预训练、condition留出、消融和真实screens适配",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "gene values/分布，不是独立regulatory机制",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 23,
+            "section": null,
+            "figure": "Fig. 6",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "表达和fold-change的边际先验覆盖图被作者用来解释melanoma较吻合和leukemia双峰差异，但边际相似不确保真实GRN在先验支持。",
+        "boundary": "logFC按1–99percentile裁剪可视化；没有全因果结构/隐藏状态验证。",
+        "negative_result": null,
+        "non_inference": "不能把图覆盖当真实机制/全生物适用性验证。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal",
+        "cellular-metabolism"
+      ],
+      "scientific_questions": [
+        "干预context和先验怎样改善未见query的分布预测而不等同机制鉴定？",
+        "先验错配、边际指标、细胞相关和子集TTA怎样限制真实生物泛化？"
+      ],
+      "shared_evidence_with": [
+        "C3",
+        "C8"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C17",
+      "statement": "soft CRISPRi、组合/药物/化学扰动及更高维系统是未完成扩展；当前hard-KO先验和两screens不能证明这些用途。",
+      "claim_type": "hypothesis",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "prior/任务范围与未来路线",
+          "design": "线性SCM/GRN预训练、condition留出、消融和真实screens适配",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "未来干预/模型",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": null,
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "soft CRISPRi、组合/药物/化学扰动及更高维系统是未完成扩展；当前hard-KO先验和两screens不能证明这些用途。",
+        "boundary": "CRISPR knockout与部分抑制的干预机制不同；临床安全、真实新实验和图识别未测。",
+        "negative_result": null,
+        "non_inference": "不能自动把预测分布用作经验证的治疗选择。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal",
+        "cellular-metabolism"
+      ],
+      "scientific_questions": [
+        "干预context和先验怎样改善未见query的分布预测而不等同机制鉴定？",
+        "先验错配、边际指标、细胞相关和子集TTA怎样限制真实生物泛化？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "23页arXiv v3主文/全部附录完整审阅，17候选。已知SCM与hard-KO acyclic SERGIO、真实两个screens condition适配、context/paired控制和TTA分别归属。保留leukemia零样本MR2.56失配、微调非全指标最佳、random-init W2例外及identity DEG边界。零样本是权重层面仍有真实context，MR不判方向，TTA仅边际100gene；missing marker选择/背景口径与metric实现待人工复核。",
+  "shared_evidence": [
+    {
+      "claim_id": "C9",
+      "with": [
+        "C7",
+        "C8"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "with": [
+        "C9"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "with": [
+        "C1",
+        "C6",
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "with": [
+        "C3",
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C13",
+      "with": [
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C14",
+      "with": [
+        "C6",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C15",
+      "with": [
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C16",
+      "with": [
+        "C3",
+        "C8"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": "C9",
+        "issue": "fine-tuned all metrics best措辞与melanoma MMD/RMSE/W2其他baseline更低及leukemiaAUPRC=identity不符。",
+        "suggested_correction": "分指标限定优势，实际负结果完整保留。",
+        "pdf_page": 8,
+        "resolved": true
+      },
+      {
+        "claim_id": "C6",
+        "issue": "zero-shot读取真实interventions；train含目标context半数perturbations，不是目标背景完全未见。",
+        "suggested_correction": "权重训练与ICL adaptation/condition留出分开。",
+        "pdf_page": 20,
+        "resolved": true
+      },
+      {
+        "claim_id": "C3",
+        "issue": "先验生成讨论cycles但SERGIO去环并强制MR，50真实基因也非全部变量。",
+        "suggested_correction": "明确acyclic/hard-KO与hidden机制边界。",
+        "pdf_page": 18,
+        "resolved": true
+      },
+      {
+        "claim_id": "C2",
+        "issue": "正文single step/forward与A.4 Dopri5 ODE生成不同。",
+        "suggested_correction": "只称amortized模型，无需每任务训练但仍积分。",
+        "pdf_page": 17,
+        "resolved": true
+      },
+      {
+        "claim_id": "C15",
+        "issue": "TTA逐gene pool不生成已验证的统一100gene联合细胞分布。",
+        "suggested_correction": "扩展结论仅DEG边际恢复。",
+        "pdf_page": 8,
+        "resolved": true
+      },
+      {
+        "claim_id": "C6",
+        "issue": "gene marker selection用各perturbation vscontrol DE，未说明train-only；三melanoma cell line/处理背景口径不明。",
+        "suggested_correction": "不直接判定泄漏，但保留可复现及背景独立性缺口。",
+        "pdf_page": 19,
+        "resolved": false
+      },
+      {
+        "claim_id": "C4",
+        "issue": "root-first entropy W2和debias式与valid distance claim的条件/实际实现不明；MR只径向幅度。",
+        "suggested_correction": "保留实际指标定义，不把MR1作正确方向或metric保证。",
+        "pdf_page": 20,
+        "resolved": false
+      },
+      {
+        "claim_id": null,
+        "issue": "DEG AUPRC使用Wilcoxon/BH与|log2FC|>.2、−log10p>2；known-target-only baseline提及但未报告。十重采样非十生物/训练重复。",
+        "suggested_correction": "明确技术单位，不声称证明下游因果机制恢复。",
+        "pdf_page": 21,
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T12:46:41.115530Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "c71daabc5f20c4f7004190c13a264ab2cc5e120e0b7012ff65ade5fab1f3df49",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

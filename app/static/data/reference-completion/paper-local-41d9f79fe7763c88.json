@@ -1,0 +1,1059 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "Finding emergence in data by maximizing effective information",
+    "authors": [
+      "Mingzhe Yang",
+      "Zhipeng Wang",
+      "Kaiwei Liu",
+      "Yingqi Rong",
+      "Bing Yuan",
+      "Jiang Zhang"
+    ],
+    "doi": "10.1093/nsr/nwae279",
+    "publication_year": 2024,
+    "venue": null,
+    "url": "https://doi.org/10.1093/nsr/nwae279/7732052"
+  },
+  "source": {
+    "filename": "2024-National-Science-Review-Emergence-Effective-Information.pdf",
+    "sha256": "2e5c18509015d98fcbabe4676db7969ee2bcd5f066121bb570a7858091e51e97",
+    "source_url": null,
+    "pdf_page_count": 16
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16
+    ],
+    "results_sections_seen": [
+      "Problem definition Eq1–3",
+      "NIS+ forward/reverse/coarse-graining",
+      "SIR experiments",
+      "Boids/noise/IG",
+      "AOMIC fMRI movie/rest",
+      "Concluding limitations",
+      "Methods reweighting Eq7–8/data",
+      "Figures1–5; References"
+    ],
+    "missing_material": [
+      "所有完整SupportInformation（理论证明sections2.2/4.2，模拟细节及Game of Life等）未供应",
+      "图像像素/原始代码/数据未读取"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "供应16页ORIGINAL UNEDITED MANUSCRIPT全读，包含所有正文Methods、公式和图注/引用；无像素或缺失SI读取。",
+      "索引题名为文件占位名；索引DOI串是出版社下载路径（额外article-id7732052），与源下载路径一致，可绑定同一作品而不是别篇；实际题名/作者及DOI规范部分从源文记录。",
+      "逐条第二审计比较了已读源中的预测、EI、单位/误差条和因果外推；未运行源码/测试。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "NIS+在微状态预测约束下，联合学习q维粗粒化、反粗粒化及正反macro动力，以uniform输入下的EI差ΔJ定义所研究的causal emergence。",
+      "role": "result",
+      "source_pages": [
+        4
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "实现用KDE估计macro状态密度并按p_tilde/p重加权，配合反向动力误差及微预测误差作为训练目标，以近似拟合uniform输入的目标。",
+      "role": "result",
+      "source_pages": [
+        13
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "构造SIR宏态复制加观测Gaussian噪声形成4维micro数据时，NIS/NIS+在所测10步预测优于约参数匹配的NN/VAE变体，NIS+在限定初始条件外区域表现更好。",
+      "role": "result",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "同一SIR实验中，NIS+的维度平均EI随训练提高较快，而仅预测的NIS也自然增加EI；EI提升不必完全归因新增显式目标。",
+      "role": "result",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "SIR噪声扫描的ΔJ与Ψ在低噪声处给出不同正/非正结果，但Ψ仅为充分条件；较高噪声使预测超过规范阈值后，ΔJ不能可靠用于判断无CE。",
+      "role": "result",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "16个Boids被预先赋成两种转向轨迹时，NIS+选择q8并可预测50步群体走势，模型IG的空间贡献按两个已定义群分开。",
+      "role": "result",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "Boids更大初始位置范围测试中，两模型误差随半径增大，NIS+在所测半径比NIS误差小；这支持有限初始条件外推而非任意环境鲁棒。",
+      "role": "result",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "Boids中增加外部观测噪声在预测误差合格范围内提高ΔJ，而增加内在随机转向降低ΔJ；超出误差阈值后不作可靠CE判断。",
+      "role": "result",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "AOMIC ID1000采用830受试者的100parcel BOLD（800训练/30测试），q1在所估ΔJ上最大，而q27的多步预测误差增长较慢却ΔJ为负，显示两读出并非同一优劣标准。",
+      "role": "result",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "q1编码IG主要归因于视觉parcel；作者提出其可能是电影刺激下的synergistic core，但明确还需信息分解验证。",
+      "role": "interpretation",
+      "source_pages": [
+        11
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "50名PIOP2静息BOLD的NIS/NIS+模型ΔJ在q7达到峰，而电影条件q1峰不同；不能仅以恰等Schaefer七网络就确认真实功能子系统数。",
+      "role": "result",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "作者将训练与误差约束充分、动力近Markov和网络可解释性列为NIS+可靠CE判断的限制，训练不足或非Markov时可能误判，应结合其他指标而不唯一区分真涌现。",
+      "role": "interpretation",
+      "source_pages": [
+        12
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "Theorem2.1/完整优化等价和交换性理论",
+      "role": "hypothesis",
+      "source_pages": [
+        5,
+        13
+      ],
+      "decision": "defer",
+      "reason": "主文仅指向未供应SI2.2/4.2，假设/证明无法全文审计；不能称全局优化等价已证"
+    },
+    {
+      "summary": "Game of Life实验和全体simulation OOD概括",
+      "role": "result",
+      "source_pages": [
+        11,
+        12
+      ],
+      "decision": "defer",
+      "reason": "全部结果在未供应SI7；主文概括不代替全文/数字"
+    },
+    {
+      "summary": "气候ElNiño、交通/流体/生物应用及客观涌现",
+      "role": "hypothesis",
+      "source_pages": [
+        12
+      ],
+      "decision": "exclude",
+      "reason": "应用与哲学展望非本篇独立实证或普适因果结论"
+    },
+    {
+      "summary": "8stateMarkov概念例Jmacro1/Jmicro.55",
+      "role": "review_synthesis",
+      "source_pages": [
+        2
+      ],
+      "decision": "include",
+      "reason": "来自定义示例，非数据拟合或真实机制复制"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "NIS+在微状态预测约束下，联合学习q维粗粒化、反粗粒化及正反macro动力，以uniform输入下的EI差ΔJ定义所研究的causal emergence。",
+      "claim_type": "methodological",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "模型内I(Y_t;Y_hat_next|uniform intervention)和不同q比较",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "学习表示及拟合Markov模型",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "q是超参，EI依赖状态空间/坐标/分布和噪声约定；强Markov假设不适合任意记忆过程；不是观察数据自动唯一因果发现。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "Equations1–3; Figure2",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "NIS+在微状态预测约束下，联合学习q维粗粒化、反粗粒化及正反macro动力，以uniform输入下的EI差ΔJ定义所研究的causal emergence。",
+        "boundary": "q是超参，EI依赖状态空间/坐标/分布和噪声约定；强Markov假设不适合任意记忆过程；不是观察数据自动唯一因果发现。",
+        "negative_result": null,
+        "non_inference": "定义在拟合动力模型上的uniform干预/EI不等真实生物干预；预测、IG或低维编码不证明唯一/必要机制、完整脑状态或独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "有效信息与粗粒化定义",
+        "模拟外推/噪声边界",
+        "观察性fMRI和模型因果区分"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，NIS+在微状态预测约束下，联合学习q维粗粒化、反粗粒化及正反macro动力，以uniform输入下的EI差ΔJ定义所研究的causal emergence。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "实现用KDE估计macro状态密度并按p_tilde/p重加权，配合反向动力误差及微预测误差作为训练目标，以近似拟合uniform输入的目标。",
+      "claim_type": "computational",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "逆概率权重及联合loss",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "观察样本与估计density",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "需支持重叠、有限权重、准确density及干预条件保持机制；有限λ惩罚不自动等价约束全局最优；完整证明SI未供。"
+          ],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "Methods Eq7–8",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "实现用KDE估计macro状态密度并按p_tilde/p重加权，配合反向动力误差及微预测误差作为训练目标，以近似拟合uniform输入的目标。",
+        "boundary": "需支持重叠、有限权重、准确density及干预条件保持机制；有限λ惩罚不自动等价约束全局最优；完整证明SI未供。",
+        "negative_result": null,
+        "non_inference": "定义在拟合动力模型上的uniform干预/EI不等真实生物干预；预测、IG或低维编码不证明唯一/必要机制、完整脑状态或独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "有效信息与粗粒化定义",
+        "模拟外推/噪声边界",
+        "观察性fMRI和模型因果区分"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，实现用KDE估计macro状态密度并按p_tilde/p重加权，配合反向动力误差及微预测误差作为训练目标，以近似拟合uniform输入的目标。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "构造SIR宏态复制加观测Gaussian噪声形成4维micro数据时，NIS/NIS+在所测10步预测优于约参数匹配的NN/VAE变体，NIS+在限定初始条件外区域表现更好。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "β1/γ.5的2自由度SIR，4维复制加噪；partial/full初态训练",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "人工轨迹/模型训练重复",
+          "sample_size_as_reported": "5重复；原轨迹样本n未在主文给",
+          "uncertainty": "图误差为5重复测试误差SD，未给具体全数值/显著p",
+          "assumptions": [
+            "SIR是数值系统非感染人群验证；NN+/VAE+也含重加权/反向控制，不能从有限架构比较证明invertible网络普遍必要。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "Figure3a–d,f; SIR Results",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "构造SIR宏态复制加观测Gaussian噪声形成4维micro数据时，NIS/NIS+在所测10步预测优于约参数匹配的NN/VAE变体，NIS+在限定初始条件外区域表现更好。",
+        "boundary": "SIR是数值系统非感染人群验证；NN+/VAE+也含重加权/反向控制，不能从有限架构比较证明invertible网络普遍必要。",
+        "negative_result": null,
+        "non_inference": "定义在拟合动力模型上的uniform干预/EI不等真实生物干预；预测、IG或低维编码不证明唯一/必要机制、完整脑状态或独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "有效信息与粗粒化定义",
+        "模拟外推/噪声边界",
+        "观察性fMRI和模型因果区分"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，构造SIR宏态复制加观测Gaussian噪声形成4维micro数据时，NIS/NIS+在所测10步预测优于约参数匹配的NN/VAE变体，NIS+在限定初始条件外区域表现更好。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "同一SIR实验中，NIS+的维度平均EI随训练提高较快，而仅预测的NIS也自然增加EI；EI提升不必完全归因新增显式目标。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "模型训练轨迹的EI估计比较",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "共享模型/数据的训练轨迹",
+          "sample_size_as_reported": "Figure3 5重复",
+          "uncertainty": "趋势无具体增幅/p；不是完整proof最大化全局最优",
+          "assumptions": [
+            "objective与估计EI共享训练条件；不要把训练指标上升当独立模型因果验证。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "Figure3b; SIR EI results",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "同一SIR实验中，NIS+的维度平均EI随训练提高较快，而仅预测的NIS也自然增加EI；EI提升不必完全归因新增显式目标。",
+        "boundary": "objective与估计EI共享训练条件；不要把训练指标上升当独立模型因果验证。",
+        "negative_result": null,
+        "non_inference": "定义在拟合动力模型上的uniform干预/EI不等真实生物干预；预测、IG或低维编码不证明唯一/必要机制、完整脑状态或独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "有效信息与粗粒化定义",
+        "模拟外推/噪声边界",
+        "观察性fMRI和模型因果区分"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，同一SIR实验中，NIS+的维度平均EI随训练提高较快，而仅预测的NIS也自然增加EI；EI提升不必完全归因新增显式目标。是否成立？"
+      ],
+      "shared_evidence_with": [
+        "C3"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "SIR噪声扫描的ΔJ与Ψ在低噪声处给出不同正/非正结果，但Ψ仅为充分条件；较高噪声使预测超过规范阈值后，ΔJ不能可靠用于判断无CE。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "观察噪声与模型EI/Ψ扫描",
+          "design": null,
+          "comparator": null,
+          "measure": "ΔJ、Ψ与预测约束",
+          "unit_of_analysis": "人工模拟的模型估计",
+          "sample_size_as_reported": null,
+          "uncertainty": "normalized MAE阈值.3；约σ>1e−2开始不满足；Ψ负不判无CE",
+          "assumptions": [
+            "CE指标由不同定义给出、macro先来自NIS+；声称σ>10无CE作者自己称不可靠，不能当实际生物阴性。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "Figure3e; SIR noise limits",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "SIR噪声扫描的ΔJ与Ψ在低噪声处给出不同正/非正结果，但Ψ仅为充分条件；较高噪声使预测超过规范阈值后，ΔJ不能可靠用于判断无CE。",
+        "boundary": "CE指标由不同定义给出、macro先来自NIS+；声称σ>10无CE作者自己称不可靠，不能当实际生物阴性。",
+        "negative_result": "高噪声情况下没有有效CE判定，不是证实不存在CE。",
+        "non_inference": "定义在拟合动力模型上的uniform干预/EI不等真实生物干预；预测、IG或低维编码不证明唯一/必要机制、完整脑状态或独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "有效信息与粗粒化定义",
+        "模拟外推/噪声边界",
+        "观察性fMRI和模型因果区分"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，SIR噪声扫描的ΔJ与Ψ在低噪声处给出不同正/非正结果，但Ψ仅为充分条件；较高噪声使预测超过规范阈值后，ΔJ不能可靠用于判断无CE。是否成立？"
+      ],
+      "shared_evidence_with": [
+        "C3",
+        "C4"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "16个Boids被预先赋成两种转向轨迹时，NIS+选择q8并可预测50步群体走势，模型IG的空间贡献按两个已定义群分开。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "64维位置/速度micro状态，q8模型和IG",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "人工agent群/轨迹",
+          "sample_size_as_reported": "16agents不是16动物或独立网络；独立模拟重复n未给",
+          "uncertainty": "未给具体全误差/CI；尤其早期预测较好",
+          "assumptions": [
+            "群分离是生成规则预设，不是自主发现所有真实鸟群；IG忽略速度/增强max的解释不证明因果代表鸟或唯一8维动力。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Figure4a,c–e; Boids Results",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "16个Boids被预先赋成两种转向轨迹时，NIS+选择q8并可预测50步群体走势，模型IG的空间贡献按两个已定义群分开。",
+        "boundary": "群分离是生成规则预设，不是自主发现所有真实鸟群；IG忽略速度/增强max的解释不证明因果代表鸟或唯一8维动力。",
+        "negative_result": null,
+        "non_inference": "定义在拟合动力模型上的uniform干预/EI不等真实生物干预；预测、IG或低维编码不证明唯一/必要机制、完整脑状态或独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "有效信息与粗粒化定义",
+        "模拟外推/噪声边界",
+        "观察性fMRI和模型因果区分"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，16个Boids被预先赋成两种转向轨迹时，NIS+选择q8并可预测50步群体走势，模型IG的空间贡献按两个已定义群分开。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "Boids更大初始位置范围测试中，两模型误差随半径增大，NIS+在所测半径比NIS误差小；这支持有限初始条件外推而非任意环境鲁棒。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "训练小圆/测试大圆的初态分布偏移",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "人工轨迹/模型训练",
+          "sample_size_as_reported": null,
+          "uncertainty": "主文无精确数值/重复n/p",
+          "assumptions": [
+            "动力规则仍相同，不能泛化到新物理规则、真实鸟群或因果机制已唯一识别。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Figure4b",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "Boids更大初始位置范围测试中，两模型误差随半径增大，NIS+在所测半径比NIS误差小；这支持有限初始条件外推而非任意环境鲁棒。",
+        "boundary": "动力规则仍相同，不能泛化到新物理规则、真实鸟群或因果机制已唯一识别。",
+        "negative_result": null,
+        "non_inference": "定义在拟合动力模型上的uniform干预/EI不等真实生物干预；预测、IG或低维编码不证明唯一/必要机制、完整脑状态或独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "有效信息与粗粒化定义",
+        "模拟外推/噪声边界",
+        "观察性fMRI和模型因果区分"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，Boids更大初始位置范围测试中，两模型误差随半径增大，NIS+在所测半径比NIS误差小；这支持有限初始条件外推而非任意环境鲁棒。是否成立？"
+      ],
+      "shared_evidence_with": [
+        "C6"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "Boids中增加外部观测噪声在预测误差合格范围内提高ΔJ，而增加内在随机转向降低ΔJ；超出误差阈值后不作可靠CE判断。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "观察噪声δmax与随机转向α分别扫描",
+          "design": null,
+          "comparator": null,
+          "measure": "ΔJ与MAE",
+          "unit_of_analysis": "人工agent动态",
+          "sample_size_as_reported": "16agents；独立repeat n主文未给",
+          "uncertainty": "MAE .3约束；δmax<.1所述有效范围，α>.6剔除",
+          "assumptions": [
+            "不能普遍声称外部噪声都产生/提高真实因果或内在噪声不可粗粒化；仅本模型、定义与合格条件。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "Figure4f–g",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "Boids中增加外部观测噪声在预测误差合格范围内提高ΔJ，而增加内在随机转向降低ΔJ；超出误差阈值后不作可靠CE判断。",
+        "boundary": "不能普遍声称外部噪声都产生/提高真实因果或内在噪声不可粗粒化；仅本模型、定义与合格条件。",
+        "negative_result": "高噪声扫描越界不产生可靠CE结论。",
+        "non_inference": "定义在拟合动力模型上的uniform干预/EI不等真实生物干预；预测、IG或低维编码不证明唯一/必要机制、完整脑状态或独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "有效信息与粗粒化定义",
+        "模拟外推/噪声边界",
+        "观察性fMRI和模型因果区分"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，Boids中增加外部观测噪声在预测误差合格范围内提高ΔJ，而增加内在随机转向降低ΔJ；超出误差阈值后不作可靠CE判断。是否成立？"
+      ],
+      "shared_evidence_with": [
+        "C6",
+        "C7"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "AOMIC ID1000采用830受试者的100parcel BOLD（800训练/30测试），q1在所估ΔJ上最大，而q27的多步预测误差增长较慢却ΔJ为负，显示两读出并非同一优劣标准。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Schaefer100parcel、跨subject train/test和q扫描",
+          "design": null,
+          "comparator": null,
+          "measure": "预测MAE与模型ΔJ",
+          "unit_of_analysis": "人受试者与嵌套BOLD时点",
+          "sample_size_as_reported": "830使用（Methods原 collection881）；800train/30test",
+          "uncertainty": "Figure5b平均10重复但error SD来自训练末10CE值，不是10独立run CI",
+          "assumptions": [
+            "q27较好测试预测+负ΔJ不证明过拟合；图像获取TR2.2s，模型仍Markov近似；无法确认每项subject选择/完整preprocess。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "fMRI Results; Figure5a–b; Methods5.2",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "AOMIC ID1000采用830受试者的100parcel BOLD（800训练/30测试），q1在所估ΔJ上最大，而q27的多步预测误差增长较慢却ΔJ为负，显示两读出并非同一优劣标准。",
+        "boundary": "q27较好测试预测+负ΔJ不证明过拟合；图像获取TR2.2s，模型仍Markov近似；无法确认每项subject选择/完整preprocess。",
+        "negative_result": "q27模型ΔJ负但预测较好，不判生物无涌现。",
+        "non_inference": "定义在拟合动力模型上的uniform干预/EI不等真实生物干预；预测、IG或低维编码不证明唯一/必要机制、完整脑状态或独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "有效信息与粗粒化定义",
+        "模拟外推/噪声边界",
+        "观察性fMRI和模型因果区分"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，AOMIC ID1000采用830受试者的100parcel BOLD（800训练/30测试），q1在所估ΔJ上最大，而q27的多步预测误差增长较慢却ΔJ为负，显示两读出并非同一优劣标准。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "q1编码IG主要归因于视觉parcel；作者提出其可能是电影刺激下的synergistic core，但明确还需信息分解验证。",
+      "claim_type": "mechanistic",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "absolute normalized IG对已学encoder的归因",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "同fMRI受试者/时点",
+          "sample_size_as_reported": "830原使用群；图error SEM汇总subject/time，嵌套性未展开",
+          "uncertainty": "没有必要性干预、源特异因果测量或PID新检验",
+          "assumptions": [
+            "一个标量能保留目标任务/模型读出不等完整脑活动可由单标量物理决定；共同影片驱动和血流/预处理可能参与。"
+          ],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "Figure5c–d; fMRI IG discussion",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "q1编码IG主要归因于视觉parcel；作者提出其可能是电影刺激下的synergistic core，但明确还需信息分解验证。",
+        "boundary": "一个标量能保留目标任务/模型读出不等完整脑活动可由单标量物理决定；共同影片驱动和血流/预处理可能参与。",
+        "negative_result": null,
+        "non_inference": "定义在拟合动力模型上的uniform干预/EI不等真实生物干预；预测、IG或低维编码不证明唯一/必要机制、完整脑状态或独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "有效信息与粗粒化定义",
+        "模拟外推/噪声边界",
+        "观察性fMRI和模型因果区分"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，q1编码IG主要归因于视觉parcel；作者提出其可能是电影刺激下的synergistic core，但明确还需信息分解验证。是否成立？"
+      ],
+      "shared_evidence_with": [
+        "C9"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "50名PIOP2静息BOLD的NIS/NIS+模型ΔJ在q7达到峰，而电影条件q1峰不同；不能仅以恰等Schaefer七网络就确认真实功能子系统数。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "另一collection/状态/参数的模型指标比较",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "不同受试者与TR2s BOLD",
+          "sample_size_as_reported": "50静息受试者；不是同830人的配对状态切换",
+          "uncertainty": "图bars为10重复，误差类型同上；无直接组间效应p",
+          "assumptions": [
+            "不同采集/人群/TR/可用时点，非随机同人刺激因果对照；完整静息/preprocess敏感性仅SI指引。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "Figure5b; Methods5.2",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "50名PIOP2静息BOLD的NIS/NIS+模型ΔJ在q7达到峰，而电影条件q1峰不同；不能仅以恰等Schaefer七网络就确认真实功能子系统数。",
+        "boundary": "不同采集/人群/TR/可用时点，非随机同人刺激因果对照；完整静息/preprocess敏感性仅SI指引。",
+        "negative_result": null,
+        "non_inference": "定义在拟合动力模型上的uniform干预/EI不等真实生物干预；预测、IG或低维编码不证明唯一/必要机制、完整脑状态或独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "有效信息与粗粒化定义",
+        "模拟外推/噪声边界",
+        "观察性fMRI和模型因果区分"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，50名PIOP2静息BOLD的NIS/NIS+模型ΔJ在q7达到峰，而电影条件q1峰不同；不能仅以恰等Schaefer七网络就确认真实功能子系统数。是否成立？"
+      ],
+      "shared_evidence_with": [
+        "C9"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "作者将训练与误差约束充分、动力近Markov和网络可解释性列为NIS+可靠CE判断的限制，训练不足或非Markov时可能误判，应结合其他指标而不唯一区分真涌现。",
+      "claim_type": "methodological",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "作者适用条件与方法比较",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "模型评估方案",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "inverse网络组成不使q<p整体映射双射，不能无条件确保演化/粗粒化严格交换；数据密度不代表真实do机制可识别。"
+          ],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "Concluding Remarks limitations",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者将训练与误差约束充分、动力近Markov和网络可解释性列为NIS+可靠CE判断的限制，训练不足或非Markov时可能误判，应结合其他指标而不唯一区分真涌现。",
+        "boundary": "inverse网络组成不使q<p整体映射双射，不能无条件确保演化/粗粒化严格交换；数据密度不代表真实do机制可识别。",
+        "negative_result": null,
+        "non_inference": "定义在拟合动力模型上的uniform干预/EI不等真实生物干预；预测、IG或低维编码不证明唯一/必要机制、完整脑状态或独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "有效信息与粗粒化定义",
+        "模拟外推/噪声边界",
+        "观察性fMRI和模型因果区分"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，作者将训练与误差约束充分、动力近Markov和网络可解释性列为NIS+可靠CE判断的限制，训练不足或非Markov时可能误判，应结合其他指标而不唯一区分真涌现。是否成立？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "供应2024NSR ORIGINAL UNEDITED稿16页全读，实际title/六作者及download DOI路径可识别同作品，未改共享元数据。NIS+模型EI/预测方案在SIR/Boids及观察性fMRI有有限条件结果，也有预测/CE标准分歧、噪声违约和Ψ阴性不确定。完整SI理论/GameofLife缺失；uniform重加权非真实脑干预、q1/IG非完整脑状态或协同机制证明，全部审计问题保留。",
+  "shared_evidence": [
+    {
+      "claim_id": "C4",
+      "with": [
+        "C3"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C3",
+        "C4"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C6",
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "with": [
+        "C9"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "with": [
+        "C9"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": null,
+        "issue": "indexed filename title/无作者，DOI附出版社article-id",
+        "suggested_correction": "源download路径能对同作品；补实际title/6authors及规范DOI，不强把占位名当真实题名",
+        "pdf_page": 1,
+        "resolved": true
+      },
+      {
+        "claim_id": "C1",
+        "issue": "反粗粒化函数方向主文写R^p→R^q应与生成micro方向不一致；q<p不能整体inverse",
+        "suggested_correction": "仅称模型encoder/decoder及近似，不据此严格交换性",
+        "pdf_page": 3,
+        "resolved": false
+      },
+      {
+        "claim_id": "C1",
+        "issue": "constant宏态可最大EI的文字与通常MI constant=0不符",
+        "suggested_correction": "避免复述该退化例为已证最大值，SI公式需澄清",
+        "pdf_page": 4,
+        "resolved": false
+      },
+      {
+        "claim_id": "C2",
+        "issue": "Eq8是modified/original，随后文字称original/modified；训练目标的等价全proof未供",
+        "suggested_correction": "以方程记录实现意图，证明/权重说明待解",
+        "pdf_page": 13,
+        "resolved": false
+      },
+      {
+        "claim_id": "C3",
+        "issue": "有限架构胜负不证invertible网络必要性或真实epidemiology",
+        "suggested_correction": "限定数值SIR任务",
+        "pdf_page": 7,
+        "resolved": true
+      },
+      {
+        "claim_id": "C5",
+        "issue": "Ψ负仅不能证明CE，高噪声违约导致NIS+无CE判断不可靠",
+        "suggested_correction": "保留可靠性阈值而非实际阴性",
+        "pdf_page": 7,
+        "resolved": true
+      },
+      {
+        "claim_id": "C9",
+        "issue": "q27较好test预测却称overfit，无独立泛化证据支持归因",
+        "suggested_correction": "只报告模型读出冲突",
+        "pdf_page": 9,
+        "resolved": true
+      },
+      {
+        "claim_id": "C10",
+        "issue": "IG视觉贡献不是PID协同核或真实脑因果；q1不是全部脑真实1维",
+        "suggested_correction": "保持候选解释和未进行验证",
+        "pdf_page": 11,
+        "resolved": true
+      },
+      {
+        "claim_id": "C11",
+        "issue": "movie与rest异样本/TR/采集，q7不是已证网络数",
+        "suggested_correction": "限定模型比较",
+        "pdf_page": 13,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "Figure5 10重复平均但error SD是末10训练值，不能当独立runCI",
+        "suggested_correction": "明确统计单位/时间相关",
+        "pdf_page": 11,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "真实do、均匀干预/支持及因果识别条件未充分给",
+        "suggested_correction": "模型内目标不当人体干预机制",
+        "pdf_page": 4,
+        "resolved": false
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T12:02:33.628415Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "2e5c18509015d98fcbabe4676db7969ee2bcd5f066121bb570a7858091e51e97",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

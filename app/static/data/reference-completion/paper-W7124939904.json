@@ -1,0 +1,1162 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "Autonomous navigation in unstructured outdoor environments using semantic segmentation guided reinforcement learning",
+    "authors": [
+      "Ahmed Tibermacine",
+      "Imad Eddine Tibermacine",
+      "Djouher Akrour",
+      "Abdelaziz Rabehi",
+      "Mustapha Habib"
+    ],
+    "doi": "10.1038/s41598-026-36022-2",
+    "publication_year": 2026,
+    "venue": "Scientific Reports",
+    "url": "https://doi.org/10.1038/s41598-026-36022-2"
+  },
+  "source": {
+    "filename": "paper-W7124939904--Autonomous-navigation-in-unstructured-outdoor-environments-using-semantic-segmentation-guided-r.pdf",
+    "sha256": "db72cd973c5847c58d5670e3a32e73c6d414f5ca3543bd7c781c6dcb97365387",
+    "source_url": "https://www.nature.com/articles/s41598-026-36022-2.pdf?error=cookies_not_supported&code=c438afb6-b254-4885-bd1e-5804cb94c70d",
+    "pdf_page_count": 20
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "results_sections_seen": [
+      "Architecture",
+      "Mask R-CNN/SAC/Pure Pursuit",
+      "Maps and robot configuration",
+      "Dataset and rewards",
+      "Metric definitions",
+      "Segmentation",
+      "Navigation Table1",
+      "Ablation Table2",
+      "Training curve",
+      "Baseline Tables3–4",
+      "Failure/limitations",
+      "Conclusion/Data availability/References"
+    ],
+    "missing_material": [
+      "图像像素未阅；全部图1–6图注和表1–4已阅。",
+      "数据/代码/仿真配置与逐episode计数未提供。"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "全部供应归档页面文字完整阅读；第二轮逐项源核对完成。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "三模块、reward、传感器与可选控制融合",
+      "role": "result",
+      "source_pages": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "decision": "include",
+      "reason": "方法描述不作形式安全保证，传感器依赖保留。"
+    },
+    {
+      "summary": "数据、分割及90episode总体结果",
+      "role": "result",
+      "source_pages": [
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "decision": "include",
+      "reason": "帧、路径、episode与地图独立性分开，实际失败不删。"
+    },
+    {
+      "summary": "三个模块替换、六基线和分地图反例",
+      "role": "result",
+      "source_pages": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "decision": "include",
+      "reason": "限制公平性与分母并保留Map-B非最高。"
+    },
+    {
+      "summary": "学习平台与阴影/探索/遮挡实际退化",
+      "role": "result",
+      "source_pages": [
+        13,
+        14,
+        16,
+        17
+      ],
+      "decision": "include",
+      "reason": "曲线不是收敛证明；定性实际阴性与未测试条件区分。"
+    },
+    {
+      "summary": "完整野外、纯RGB和嵌入式实时已验证的概括",
+      "role": "interpretation",
+      "source_pages": [
+        2,
+        7,
+        15,
+        17,
+        18
+      ],
+      "decision": "defer",
+      "reason": "无实地测试/实时基准，proximity/LiDAR输入与vision-only冲突。"
+    },
+    {
+      "summary": "跨环境、记忆、融合、多机器人与长期路线",
+      "role": "hypothesis",
+      "source_pages": [
+        17,
+        18
+      ],
+      "decision": "include",
+      "reason": "未来而非现有验证。"
+    },
+    {
+      "summary": "参考文献、作者声明与数据可用性",
+      "role": "interpretation",
+      "source_pages": [
+        18,
+        19,
+        20
+      ],
+      "decision": "include",
+      "reason": "来源审计识别引用和作者归属歧义。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "该导航框架以Mask R-CNN的二值路径掩模经形态处理/骨架/样条得到中心线，再向SAC状态和Pure Pursuit控制器提供几何信息。",
+      "claim_type": "method_description",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "ResNet50-FPN分割、中心线几何和连续控制",
+          "design": "三程序化森林地图与模块/基线比较；实际野外部署未验证",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "RGB图像及机器人仿真状态",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": null,
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "该导航框架以Mask R-CNN的二值路径掩模经形态处理/骨架/样条得到中心线，再向SAC状态和Pure Pursuit控制器提供几何信息。",
+        "boundary": "状态同时含pose、偏航和距离传感器；像素到地面坐标映射/实际定位误差未完整交代。",
+        "negative_result": null,
+        "non_inference": "不是仅靠未经标定单目像素即可获得真实米制路径或纯RGB闭环。",
+        "unresolved": "图像/地面坐标转换及传感器依赖待澄清。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "语义感知与连续学习/几何控制组合的效果是否超越公平模块替代？",
+        "怎样消除传感器、仿真、相关帧和测试分母限制后再支持野外泛化？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "SAC的手调奖励将路径内行进、前进、终点完成与碰撞/偏离惩罚结合；可同Pure Pursuit速度命令凸组合。",
+      "claim_type": "method_description",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "熵正则SAC和可选混合控制",
+          "design": "三程序化森林地图与模块/基线比较；实际野外部署未验证",
+          "comparator": null,
+          "measure": "w1..w5=1,.5,5,1,.75；λ∈[0,1]",
+          "unit_of_analysis": "控制状态、奖励与动作",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": null,
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "SAC的手调奖励将路径内行进、前进、终点完成与碰撞/偏离惩罚结合；可同Pure Pursuit速度命令凸组合。",
+        "boundary": "未给评估所用λ或动态调整规则；手调奖励与训练环境限定结果。",
+        "negative_result": null,
+        "non_inference": "奖励设计不能作为安全保证、最优策略证明或成功率提升的唯一机制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "语义感知与连续学习/几何控制组合的效果是否超越公平模块替代？",
+        "怎样消除传感器、仿真、相关帧和测试分母限制后再支持野外泛化？"
+      ],
+      "shared_evidence_with": [
+        "C1"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "感知数据作者报告23983标记帧，训练/验证/测试为20072/2334/1577，并称按路径路段避免重叠。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "扩展既有森林视频数据与路段划分",
+          "design": "三程序化森林地图与模块/基线比较；实际野外部署未验证",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "相关视频帧和路径路段，不是23983独立环境",
+          "sample_size_as_reported": "8小时三相机视频、7km路径；23983帧",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": null,
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "感知数据作者报告23983标记帧，训练/验证/测试为20072/2334/1577，并称按路径路段避免重叠。",
+        "boundary": "采集视点约1.7m，而机器人机身高.3m；只写路径presence/difficulty标注，像素mask生成细节未交代。",
+        "negative_result": null,
+        "non_inference": "数据路段隔离不证明新地理区域或机器人视点泛化。",
+        "unresolved": "mask标注与原数据扩展、独立路段数量待确认。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "语义感知与连续学习/几何控制组合的效果是否超越公平模块替代？",
+        "怎样消除传感器、仿真、相关帧和测试分母限制后再支持野外泛化？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "留出感知测试中作者报告IoU.872、DSC.889、F1.891、像素准确率91.2%，但没有给图像级不确定性或完整指标聚合口径。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "预测mask与人工真值比较",
+          "design": "三程序化森林地图与模块/基线比较；实际野外部署未验证",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "图像/像素，来源同视频路段",
+          "sample_size_as_reported": "数据描述测试1577帧，实际指标子集未另报告",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": null,
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "留出感知测试中作者报告IoU.872、DSC.889、F1.891、像素准确率91.2%，但没有给图像级不确定性或完整指标聚合口径。",
+        "boundary": "DSC和F1的定义在同一二值聚合下等价；轻微数值差异可能由聚合规则造成但本文未说明。",
+        "negative_result": null,
+        "non_inference": "像素准确性不自动确保动力学可通行、路径意图正确或导航安全。",
+        "unresolved": "IoU/DSC/F1不同聚合及mask标注口径不明。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "语义感知与连续学习/几何控制组合的效果是否超越公平模块替代？",
+        "怎样消除传感器、仿真、相关帧和测试分母限制后再支持野外泛化？"
+      ],
+      "shared_evidence_with": [
+        "C3"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "三张程序化森林仿真地图各30次随机起终点测试中，全系统报告平均成功率86.7%，Map-A/B/C分别90.0/86.7/83.3%。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "仿真路径跟随目标完成",
+          "design": "三程序化森林地图与模块/基线比较；实际野外部署未验证",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "仿真episode，不是独立真实森林或训练seed",
+          "sample_size_as_reported": "30每地图，总90导航episode；地图为3个设计环境",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": null,
+            "figure": "Table 1",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "三张程序化森林仿真地图各30次随机起终点测试中，全系统报告平均成功率86.7%，Map-A/B/C分别90.0/86.7/83.3%。",
+        "boundary": "成功定义为到达目标无碰撞；未报告训练独立seed、置信区间或新地图生成分布。",
+        "negative_result": null,
+        "non_inference": "86.7%不是野外试验成功率或统计安全保证。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "语义感知与连续学习/几何控制组合的效果是否超越公平模块替代？",
+        "怎样消除传感器、仿真、相关帧和测试分母限制后再支持野外泛化？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "相同仿真中报告成功episode到达时间21.3秒、全轨迹平均横向偏离.31米和每episode碰撞.2次；系统仍存在失败和碰撞。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "时长、几何偏差和碰撞计数",
+          "design": "三程序化森林地图与模块/基线比较；实际野外部署未验证",
+          "comparator": null,
+          "measure": "21.3±1.1s；.31±.03m；.2±.1碰撞",
+          "unit_of_analysis": "episode/时间点；表格标准差似跨地图汇总而非独立样本CI",
+          "sample_size_as_reported": "同90episode；时间只统计成功episode",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": null,
+            "figure": "Table 1",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "相同仿真中报告成功episode到达时间21.3秒、全轨迹平均横向偏离.31米和每episode碰撞.2次；系统仍存在失败和碰撞。",
+        "boundary": "时间只对成功样本，偏离相对预测中心线不等于真实地形可通行边界。",
+        "negative_result": "并非无碰撞运行，成功率低于100%。",
+        "non_inference": "不能据此证明全部目标效率或真实森林低风险。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "语义感知与连续学习/几何控制组合的效果是否超越公平模块替代？",
+        "怎样消除传感器、仿真、相关帧和测试分母限制后再支持野外泛化？"
+      ],
+      "shared_evidence_with": [
+        "C5"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "以反应规则替换SAC时，报告成功率降至71.1%、碰撞升至.6/episode，而分割IoU保持.87。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "SAC→规则控制的消融",
+          "design": "三程序化森林地图与模块/基线比较；实际野外部署未验证",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "同仿真系统配置",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": null,
+            "figure": "Table 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "以反应规则替换SAC时，报告成功率降至71.1%、碰撞升至.6/episode，而分割IoU保持.87。",
+        "boundary": "规则能力、训练预算和随机episode配对未充分说明；无统计检验。",
+        "negative_result": null,
+        "non_inference": "说明特定替代方案性能较差，不证明SAC算法普遍必要。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "语义感知与连续学习/几何控制组合的效果是否超越公平模块替代？",
+        "怎样消除传感器、仿真、相关帧和测试分母限制后再支持野外泛化？"
+      ],
+      "shared_evidence_with": [
+        "C5",
+        "C6"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "以颜色阈值替换Mask R-CNN时，IoU降至.48、成功率63.4%、碰撞1.1/episode，是该表最差替换。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "感知模块替换消融",
+          "design": "三程序化森林地图与模块/基线比较；实际野外部署未验证",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "仿真系统配置与分割",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": null,
+            "figure": "Table 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "以颜色阈值替换Mask R-CNN时，IoU降至.48、成功率63.4%、碰撞1.1/episode，是该表最差替换。",
+        "boundary": "强/弱感知方案同时改变模型容量和训练，不能隔离架构唯一作用。",
+        "negative_result": null,
+        "non_inference": "不证明Mask R-CNN优于所有其他语义分割方法。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "语义感知与连续学习/几何控制组合的效果是否超越公平模块替代？",
+        "怎样消除传感器、仿真、相关帧和测试分母限制后再支持野外泛化？"
+      ],
+      "shared_evidence_with": [
+        "C4",
+        "C5",
+        "C6"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "以简单pose-to-velocity方案替换Pure Pursuit时，成功率74.5%、碰撞.5/episode，分割IoU仍为.87。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "几何控制器替换",
+          "design": "三程序化森林地图与模块/基线比较；实际野外部署未验证",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "同仿真配置",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": null,
+            "figure": "Table 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "以简单pose-to-velocity方案替换Pure Pursuit时，成功率74.5%、碰撞.5/episode，分割IoU仍为.87。",
+        "boundary": "替代控制器设计不等同所有无Pure-Pursuit控制；融合λ与不确定性缺失。",
+        "negative_result": null,
+        "non_inference": "不能将特定替换退化称为Pure Pursuit不可替代的必要性证明。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "语义感知与连续学习/几何控制组合的效果是否超越公平模块替代？",
+        "怎样消除传感器、仿真、相关帧和测试分母限制后再支持野外泛化？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C5",
+        "C6"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "作者报告同三图测试下本方法在汇总成功率、时间、偏离和碰撞均值上优于所选6个基线。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "选定视觉/激光/融合方法的仿真重实现比较",
+          "design": "三程序化森林地图与模块/基线比较；实际野外部署未验证",
+          "comparator": null,
+          "measure": "本方法86.7%、21.3s、.31m、.2碰撞；最接近总体成功基线82.8%",
+          "unit_of_analysis": "方法与仿真episode",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 15,
+            "section": null,
+            "figure": "Tables 3–4",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者报告同三图测试下本方法在汇总成功率、时间、偏离和碰撞均值上优于所选6个基线。",
+        "boundary": "基线传感器、适配、调参/训练预算和episode分母不充分；本方法传感器被称vision-only却含proximity反馈。",
+        "negative_result": null,
+        "non_inference": "不是全部当前方法的普遍SOTA或相同传感器条件的严格优势证明。",
+        "unresolved": "公平传感器/训练比较和若干百分率的实际分母未明。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "语义感知与连续学习/几何控制组合的效果是否超越公平模块替代？",
+        "怎样消除传感器、仿真、相关帧和测试分母限制后再支持野外泛化？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "Map-B 上视觉+LiDAR基线53的成功率88.3%高于本方法86.7%，因此汇总优势不能写成每地图都最好。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "分地图基线比较",
+          "design": "三程序化森林地图与模块/基线比较；实际野外部署未验证",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "Map-B仿真episode",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 15,
+            "section": null,
+            "figure": "Table 3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "Map-B 上视觉+LiDAR基线53的成功率88.3%高于本方法86.7%，因此汇总优势不能写成每地图都最好。",
+        "boundary": "分母和统计不明确，不宣称差异显著。",
+        "negative_result": "本方法在几何复杂Map-B不是最高成功率。",
+        "non_inference": "不证明LiDAR在所有地图必需，或视觉在所有环境可替代几何传感。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "语义感知与连续学习/几何控制组合的效果是否超越公平模块替代？",
+        "怎样消除传感器、仿真、相关帧和测试分母限制后再支持野外泛化？"
+      ],
+      "shared_evidence_with": [
+        "C10"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "约150000交互步的训练曲线在后期趋于平台，作者以移动平均斜率/方差经验准则描述收敛，讨论称约120000步后稳定。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "单训练过程episodic reward与移动平均",
+          "design": "三程序化森林地图与模块/基线比较；实际野外部署未验证",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "交互步/episode，不是独立训练重复",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 14,
+            "section": null,
+            "figure": "Fig. 6",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "约150000交互步的训练曲线在后期趋于平台，作者以移动平均斜率/方差经验准则描述收敛，讨论称约120000步后稳定。",
+        "boundary": "K、ε、σ²具体值和seed重复未报告；正文承认中期下降。",
+        "negative_result": null,
+        "non_inference": "曲线平台不证明策略近全局最优或SAC数学收敛定理。",
+        "unresolved": "经验收敛阈值缺失。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "语义感知与连续学习/几何控制组合的效果是否超越公平模块替代？",
+        "怎样消除传感器、仿真、相关帧和测试分母限制后再支持野外泛化？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C13",
+      "statement": "作者观察强阴影、眩光和低角度照明可造成路径mask碎裂/误检并诱发导航错误；训练数据并未充分覆盖这些条件。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "实验讨论中的定性失败观察",
+          "design": "三程序化森林地图与模块/基线比较；实际野外部署未验证",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "未单独计数的仿真事件",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 16,
+            "section": null,
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者观察强阴影、眩光和低角度照明可造成路径mask碎裂/误检并诱发导航错误；训练数据并未充分覆盖这些条件。",
+        "boundary": "未给光照分层n、失败率或错误条；不是全条件定量鲁棒性测试。",
+        "negative_result": "极端光照下存在实际感知和导航失败。",
+        "non_inference": "不能用总体IoU否定这些失败。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "语义感知与连续学习/几何控制组合的效果是否超越公平模块替代？",
+        "怎样消除传感器、仿真、相关帧和测试分母限制后再支持野外泛化？"
+      ],
+      "shared_evidence_with": [
+        "C4",
+        "C5"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C14",
+      "statement": "在路口与歧义环境中，SAC有时过度探索而选择假路或增加时间；在多帧持续遮挡下，无显式记忆的策略出现犹豫和不规则动作。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "定性失败和策略局限",
+          "design": "三程序化森林地图与模块/基线比较；实际野外部署未验证",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "未单独报告数量的事件",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 17,
+            "section": null,
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在路口与歧义环境中，SAC有时过度探索而选择假路或增加时间；在多帧持续遮挡下，无显式记忆的策略出现犹豫和不规则动作。",
+        "boundary": "作者提出熵退火/动作持久和序列记忆作为改进，未进行对应控制验证。",
+        "negative_result": "过度探索及持续遮挡时存在实际性能退化。",
+        "non_inference": "不证明熵或无记忆是所有失败的唯一原因。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "语义感知与连续学习/几何控制组合的效果是否超越公平模块替代？",
+        "怎样消除传感器、仿真、相关帧和测试分母限制后再支持野外泛化？"
+      ],
+      "shared_evidence_with": [
+        "C12",
+        "C13"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C15",
+      "statement": "雪地、泥地、移动动物等分布外条件、真实森林sim-to-real、多机器人和长期适应仍是未测试或未来扩展，而非本研究完成的野外能力。",
+      "claim_type": "hypothesis",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "感知/控制联合仿真评估",
+          "design": "三程序化森林地图与模块/基线比较；实际野外部署未验证",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "未来环境/部署验证",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 18,
+            "section": null,
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "雪地、泥地、移动动物等分布外条件、真实森林sim-to-real、多机器人和长期适应仍是未测试或未来扩展，而非本研究完成的野外能力。",
+        "boundary": "实体机器人照片和硬件配置不是野外导航试验；嵌入式实时性的延迟/FPS/功耗没有基准。",
+        "negative_result": null,
+        "non_inference": "未测试不能当实际阴性失败，也不能当已证明泛化。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "语义感知与连续学习/几何控制组合的效果是否超越公平模块替代？",
+        "怎样消除传感器、仿真、相关帧和测试分母限制后再支持野外泛化？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "完整20页供应文本，提取15项候选。证据为分割资料与三张设计地图90次仿真，不是野外或纯RGB已验证部署。三模块替代控制和Map-B非最佳保留；光照、探索与连续遮挡的实际负面观察同雪/泥/动态动物的未测试边界区分。传感器、成功率分母、mask标注、经验收敛和作者/可用性差异未被擅自修复。",
+  "shared_evidence": [
+    {
+      "claim_id": "C2",
+      "with": [
+        "C1"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C3"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C5"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C5",
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C4",
+        "C5",
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C2",
+        "C5",
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "with": [
+        "C10"
+      ]
+    },
+    {
+      "claim_id": "C13",
+      "with": [
+        "C4",
+        "C5"
+      ]
+    },
+    {
+      "claim_id": "C14",
+      "with": [
+        "C12",
+        "C13"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": "C10",
+        "issue": "方法有pose、proximity，硬件含2D LiDAR，奖励及失败恢复依赖距离输入，但对比称vision-only。",
+        "suggested_correction": "保留传感器依赖未解，不当严格纯RGB结果。",
+        "pdf_page": 15,
+        "resolved": false
+      },
+      {
+        "claim_id": "C10",
+        "issue": "每图30episode时，85.0/68.3/88.3等成功率不能直接来自单30次二项分母；消融63.4/74.5也未给重复/分母说明。",
+        "suggested_correction": "不补猜额外次数，待逐episode/多次平均数据。",
+        "pdf_page": 15,
+        "resolved": false
+      },
+      {
+        "claim_id": "C11",
+        "issue": "Map-B基线88.3高于本方法86.7，限制全部环境胜出概括。",
+        "suggested_correction": "明确总体与每环境排名不同。",
+        "pdf_page": 15,
+        "resolved": true
+      },
+      {
+        "claim_id": "C12",
+        "issue": "曲线经验平台被称near-optimal，阈值和重复缺失且承认中期下降。",
+        "suggested_correction": "仅记录经验学习趋势，不作定理/唯一机制。",
+        "pdf_page": 14,
+        "resolved": true
+      },
+      {
+        "claim_id": "C4",
+        "issue": "数据仅说明presence/difficulty标注而非mask流程；IoU/DSC/F1聚合和轻微等价指标差异未解释。",
+        "suggested_correction": "原数保留、不数学修补或补造标注。",
+        "pdf_page": 10,
+        "resolved": false
+      },
+      {
+        "claim_id": "C15",
+        "issue": "实体硬件/real-world措辞没有相应野外试验或嵌入式性能基准。",
+        "suggested_correction": "仿真证据与未来部署分开。",
+        "pdf_page": 17,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "作者贡献出现未在题页列出的Takele Ferede Agajie；数据可用性同时称request/public；Table3图注说有平均列但表无该列。",
+        "suggested_correction": "保留身份/可用性/表注差异，勿无依据改作者列表。",
+        "pdf_page": 19,
+        "resolved": false
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T11:56:46.384663Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "db72cd973c5847c58d5670e3a32e73c6d414f5ca3543bd7c781c6dcb97365387",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

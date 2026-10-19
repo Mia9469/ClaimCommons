@@ -1,0 +1,112 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GeoID-PINN: Identifiability-Aware Regional Epidemic Inference with Geographic Coupling</title><style>body{max-width:940px;margin:40px auto;padding:0 24px;background:#fffdf7;color:#12372f;font:16px/1.8 Georgia,serif}h1{font-size:26px;line-height:1.4}h2{font-size:20px;line-height:1.5}h3{font-size:16px}article{padding:26px 0;border-top:1px solid #bec4b8}small{color:#68766e}dl{display:grid;grid-template-columns:120px 1fr;gap:8px 20px}dt{font-weight:bold}dd{margin:0}li{padding:8px 0}p,dd{overflow-wrap:anywhere}.note{background:#eef2e2;padding:14px;border-left:3px solid #738968}summary{cursor:pointer}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.7 monospace}@media(max-width:600px){body{margin:24px auto;padding:0 18px}dl{grid-template-columns:1fr;gap:3px}dd{margin-bottom:12px}}@media print{body{margin:0;background:white}details{display:block}}</style><link rel="stylesheet" href="../../commons-v02.css?v=20261020-1"><link rel="stylesheet" href="../../examples.css?v=20260928-2"><link rel="stylesheet" href="../../site.css?v=20261020-1"><script defer src="../../site.js?v=20261020-1"></script><script defer src="../../report-ui.js?v=20261020-1"></script></head><body class="portal-page report-page" data-cc-report-shell="1" data-page="library" data-site-prefix="../../" data-library-paper="paper-W7197054144" data-report-language="zh" data-claim-records="{&quot;C1&quot;:&quot;structured-paper-W7197054144-1&quot;,&quot;C2&quot;:&quot;structured-paper-W7197054144-2&quot;,&quot;C3&quot;:&quot;structured-paper-W7197054144-3&quot;,&quot;C4&quot;:&quot;structured-paper-W7197054144-4&quot;,&quot;C5&quot;:&quot;structured-paper-W7197054144-5&quot;,&quot;C6&quot;:&quot;structured-paper-W7197054144-6&quot;,&quot;C7&quot;:&quot;structured-paper-W7197054144-7&quot;,&quot;C8&quot;:&quot;structured-paper-W7197054144-8&quot;,&quot;C9&quot;:&quot;structured-paper-W7197054144-9&quot;,&quot;C10&quot;:&quot;structured-paper-W7197054144-10&quot;,&quot;C11&quot;:&quot;structured-paper-W7197054144-11&quot;}"><header></header><main id="report-content"><div id="report-tools"></div><small>CLAIM COMMONS / 阅读报告</small><h1>GeoID-PINN: Identifiability-Aware Regional Epidemic Inference with Geographic Coupling</h1><p class="note">AI 文本提取候选，尚待人工核对。图像像素未读取；PDF 页码指文件中的页序。</p><p>地理约束可改善回顾点误差，但拟合好不识别真实来源网络。保留错误先验/报告通道失败、NB概率拟合优势、oracle输入、9月负收益及重复不足；不提供临床或政策效能。</p><a href="https://arxiv.org/pdf/2608.02633" rel="noreferrer">查看所读原文版本 ↗</a><details><summary>贡献清单与处理决定</summary><ul><li><b>GeoID-PINN把非负且行和为1的来源组成C放入SIRD感染压力，约束四状态非负及人口守恒，并对C施加空间先验正则。</b><br>include · 可独立判断的贡献及边界</li><li><b>当各区域患病率曲线相关时，保持行和及加权患病率近不变的C扰动可产生近相同感染压力，因此好轨迹不能单独识别边。</b><br>include · 可独立判断的贡献及边界</li><li><b>四区90日单种子已知真值实验中，兼容距离先验的C误差约0.094–0.099，小于不正则0.159及强错先验0.577，而轨迹损失相近。</b><br>include · 可独立判断的贡献及边界</li><li><b>固定兼容先验后，噪声和周稀疏观测保持约0.098–0.099的C误差；报告偏差及cases-only proxy却使数据拟合损失剧增而物理损失仍小。</b><br>include · 可独立判断的贡献及边界</li><li><b>64县回顾性Forecast-Trained Geo-PINN比NB-AR降低MSE32957→11468、MAE70.60→57.73，但NLL更高5.346 vs5.158。</b><br>include · 可独立判断的贡献及边界</li><li><b>最终64县系统比Local-Only MSE和MAE更低，但同时改变跨县组成与外部输入，不能将全部收益归地理。</b><br>include · 可独立判断的贡献及边界</li><li><b>15个高病例县的匹配地理消融中，仅把identity改为邻接组成，使MSE31999→29808、MAE113.26→109.80、NLL6.469→6.464。</b><br>include · 可独立判断的贡献及边界</li><li><b>12先验比较中，邻接先验的点误差最好，数据推断lead–lag先验NLL略低，但FDR后其他先验与其NLL无显著差异。</b><br>include · 可独立判断的贡献及边界</li><li><b>分起点的地理收益并不一致：9月3日起点平均相对MSE增益为-11.49%，其余约+2.55%至+3.61%，且每窗同时改善比例也不同。</b><br>include · 可独立判断的贡献及边界</li><li><b>图3选出的6个县窗显示神经预测轨迹，但窗口专门挑选主模型表现好的实例，不能作为无偏总体比较。</b><br>include · 可独立判断的贡献及边界</li><li><b>作者提出分别报告观测拟合、四状态物理一致性、已知真值/多起点边稳定性及可实时输入条件，以限制模型解释。</b><br>include · 可独立判断的贡献及边界</li><li><b>masked-origin neural输出直接预测未来状态，非递归SIRD rollout；C0可用初始化与惩罚是不同条件。</b><br>boundary · 不把去正则当去初始化</li><li><b>候选commuting/mobility输入在图1示意不等于所有输入在实际系统已观察；模型未拟合人口迁移Eq3。</b><br>boundary · 明确拟合范围</li><li><b>22参考及附录C α偏差完整评估，α稳定仅相对参数扫描而不是无偏真值恢复。</b><br>include · 保留known truth及误差</li></ul></details><article><small>C1 / 解释 · epidemic_inverse_model</small><h2>GeoID-PINN把非负且行和为1的来源组成C放入SIRD感染压力，约束四状态非负及人口守恒，并对C施加空间先验正则。</h2><h3>Evidence</h3><p>PINN参数化</p><dl><dt>设计 / 对照</dt><dd>C行=recipient、列=source；softmax状态及固定reporting；普通PINN/不同先验</dd><dt>独立单位与 n</dt><dd>模型；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 2 · Eq1–5/Fig1</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>GeoID-PINN把非负且行和为1的来源组成C放入SIRD感染压力，约束四状态非负及人口守恒，并对C施加空间先验正则。</dd><dt>适用边界</dt><dd>C是源流行率的权重组成，不是人口流动量或真实因果边；softmax不自动保证连续ODE完全满足。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>没有一般逆问题唯一识别保证。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>常规监测数据能否识别区域感染来源，怎样区分预测收益与网络恢复？</li></ul></article><article><small>C2 / 直接结果 · epidemic_inverse_model</small><h2>当各区域患病率曲线相关时，保持行和及加权患病率近不变的C扰动可产生近相同感染压力，因此好轨迹不能单独识别边。</h2><h3>Evidence</h3><p>模型依赖关系分析</p><dl><dt>设计 / 对照</dt><dd>联合受reporting、delay、removal和initial seeding影响；不同来源组成</dd><dt>独立单位与 n</dt><dd>模型可辨识性；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 2 · 2.2 Identifiability risk</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>当各区域患病率曲线相关时，保持行和及加权患病率近不变的C扰动可产生近相同感染压力，因此好轨迹不能单独识别边。</dd><dt>适用边界</dt><dd>是结构/实践风险说明，不是完整任意设置不可辨识定理；曲线独立和外部信息可改变风险。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>行归一化和freeze–unfreeze都不能自行消除歧义。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>常规监测数据能否识别区域感染来源，怎样区分预测收益与网络恢复？</li></ul></article><article><small>C3 / 直接结果 · epidemic_inverse_model</small><h2>四区90日单种子已知真值实验中，兼容距离先验的C误差约0.094–0.099，小于不正则0.159及强错先验0.577，而轨迹损失相近。</h2><h3>Evidence</h3><p>已知真值先验扫描</p><dl><dt>设计 / 对照</dt><dd>固定α*=.42及C*；no prior仍用距离初始化；弱/中距离、过对角/混合、anti-distance</dd><dt>独立单位与 n</dt><dd>合成运行/县–预测起点–时间窗；4合成区、90日；每grid一个seed</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 6 · Table3</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>四区90日单种子已知真值实验中，兼容距离先验的C误差约0.094–0.099，小于不正则0.159及强错先验0.577，而轨迹损失相近。</dd><dt>适用边界</dt><dd>误差依先验及选择设置；α^约.462–.468仍较真值偏高，不等于精确恢复。</dd><dt>实际负结果</dt><dd>错先验C恢复失败却损失仍约.00322–.00396。</dd><dt>不能推出</dt><dd>四区域仿真不证明大规模真网络恢复。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>常规监测数据能否识别区域感染来源，怎样区分预测收益与网络恢复？</li></ul></article><article><small>C4 / 直接结果 · epidemic_inverse_model</small><h2>固定兼容先验后，噪声和周稀疏观测保持约0.098–0.099的C误差；报告偏差及cases-only proxy却使数据拟合损失剧增而物理损失仍小。</h2><h3>Evidence</h3><p>观测通道错设控制</p><dl><dt>设计 / 对照</dt><dd>报告因子固定，不联合估计；clean/noisy/sparse vsbiased/proxy</dd><dt>独立单位与 n</dt><dd>合成运行/县–预测起点–时间窗；每设置一个合成seed</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 6 · Table4/Fig2</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>固定兼容先验后，噪声和周稀疏观测保持约0.098–0.099的C误差；报告偏差及cases-only proxy却使数据拟合损失剧增而物理损失仍小。</dd><dt>适用边界</dt><dd>偏差组C靠近先验不是成功识别；噪声分布及多起点不确定度未供应。</dd><dt>实际负结果</dt><dd>reporting bias损失.74570、physics.00055；cases-only.98395/physics.00239，α^约.537/.545。</dd><dt>不能推出</dt><dd>低ODE残差不验证观察模型或边。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>常规监测数据能否识别区域感染来源，怎样区分预测收益与网络恢复？</li></ul></article><article><small>C5 / 直接结果 · epidemic_inverse_model</small><h2>64县回顾性Forecast-Trained Geo-PINN比NB-AR降低MSE32957→11468、MAE70.60→57.73，但NLL更高5.346 vs5.158。</h2><h3>Evidence</h3><p>县级历史预测比较</p><dl><dt>设计 / 对照</dt><dd>约44周；4个起点各6周；神经规格3seeds；test期外部压力已观测；NB负二项自回归</dd><dt>独立单位与 n</dt><dd>合成运行/县–预测起点–时间窗；64县2020同一监测源；4origin/3seeds，不是独立外部验证</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 6 · Table5</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>64县回顾性Forecast-Trained Geo-PINN比NB-AR降低MSE32957→11468、MAE70.60→57.73，但NLL更高5.346 vs5.158。</dd><dt>适用边界</dt><dd>点预测65.2%/18.2%改善与分布适配变差并存；Geo固定θNB2且非NLL训练。</dd><dt>实际负结果</dt><dd>NB-AR NLL较低，不能称全面优越。</dd><dt>不能推出</dt><dd>不是实时/前瞻可部署预测；没有个人感染推断。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>常规监测数据能否识别区域感染来源，怎样区分预测收益与网络恢复？</li></ul></article><article><small>C6 / 直接结果 · epidemic_inverse_model</small><h2>最终64县系统比Local-Only MSE和MAE更低，但同时改变跨县组成与外部输入，不能将全部收益归地理。</h2><h3>Evidence</h3><p>系统规格累积比较</p><dl><dt>设计 / 对照</dt><dd>local去掉coupling及external channel；masked-origin等同时变化；Local-Only 25297/81.77/5.671</dd><dt>独立单位与 n</dt><dd>合成运行/县–预测起点–时间窗；同64县4起点3seeds</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 7 · Table5</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>最终64县系统比Local-Only MSE和MAE更低，但同时改变跨县组成与外部输入，不能将全部收益归地理。</dd><dt>适用边界</dt><dd>中间规格不是单因素消融；Closed-System的MSE27568反高于local25297。</dd><dt>实际负结果</dt><dd>仅加闭系统地理未呈全面改善；累积规格结果不证明每组件有效。</dd><dt>不能推出</dt><dd>不能把54.7% MSE收益都视为coupling因果贡献。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>常规监测数据能否识别区域感染来源，怎样区分预测收益与网络恢复？</li></ul></article><article><small>C7 / 直接结果 · epidemic_inverse_model</small><h2>15个高病例县的匹配地理消融中，仅把identity改为邻接组成，使MSE31999→29808、MAE113.26→109.80、NLL6.469→6.464。</h2><h3>Evidence</h3><p>其他输入/训练相同的coupling消融</p><dl><dt>设计 / 对照</dt><dd>同回顾性oracle输入条件；No County-Network vsNeighbor-Network</dd><dt>独立单位与 n</dt><dd>合成运行/县–预测起点–时间窗；15县subset；同源4origin/3seeds</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 8 · Table6A</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>15个高病例县的匹配地理消融中，仅把identity改为邻接组成，使MSE31999→29808、MAE113.26→109.80、NLL6.469→6.464。</dd><dt>适用边界</dt><dd>相对MSE改善6.85%、MAE约3.1%，仅当前subset和输入条件。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不是独立外部泛化或边恢复。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>常规监测数据能否识别区域感染来源，怎样区分预测收益与网络恢复？</li></ul></article><article><small>C8 / 直接结果 · epidemic_inverse_model</small><h2>12先验比较中，邻接先验的点误差最好，数据推断lead–lag先验NLL略低，但FDR后其他先验与其NLL无显著差异。</h2><h3>Evidence</h3><p>先验敏感性分析</p><dl><dt>设计 / 对照</dt><dd>固定15县比较；邻接/距离/LODES/PWCCF/打乱/placebo/无正则；12来源先验</dd><dt>独立单位与 n</dt><dd>合成运行/县–预测起点–时间窗；15同源县；重复单位仍嵌套</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 8 · Table6B</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>12先验比较中，邻接先验的点误差最好，数据推断lead–lag先验NLL略低，但FDR后其他先验与其NLL无显著差异。</dd><dt>适用边界</dt><dd>near-equivalent先验支持结构正则而非唯一网络；NLL不显著不是等效证明。</dd><dt>实际负结果</dt><dd>placebo及无正则更差，无正则MSE39721/NLL6.549；所有FDR NLL对比未显著。</dd><dt>不能推出</dt><dd>未报告 / 不适用</dd><dt>未解决</dt><dd>检验独立单位与详细p/方差、LODESrelease/access preprocessing不完整。</dd></dl><h3>相关问题</h3><ul><li>常规监测数据能否识别区域感染来源，怎样区分预测收益与网络恢复？</li></ul></article><article><small>C9 / 直接结果 · epidemic_inverse_model</small><h2>分起点的地理收益并不一致：9月3日起点平均相对MSE增益为-11.49%，其余约+2.55%至+3.61%，且每窗同时改善比例也不同。</h2><h3>Evidence</h3><p>事后描述性分层</p><dl><dt>设计 / 对照</dt><dd>相同15县；4origin政策类别仅描述；Neighbor vsidentity</dd><dt>独立单位与 n</dt><dd>合成运行/县–预测起点–时间窗；每起点15个县窗</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 10 · Table7</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>分起点的地理收益并不一致：9月3日起点平均相对MSE增益为-11.49%，其余约+2.55%至+3.61%，且每窗同时改善比例也不同。</dd><dt>适用边界</dt><dd>政策标签不是因果暴露；平均相对县窗增益与总体加权MSE比例不是同统计。</dd><dt>实际负结果</dt><dd>9月点误差变差，只有6/15县窗双指标改善；origin NLL未提供。</dd><dt>不能推出</dt><dd>不能据政策类别认定限制政策造成地理收益。</dd><dt>未解决</dt><dd>top30%排名参考集待作者核实。</dd></dl><h3>相关问题</h3><ul><li>常规监测数据能否识别区域感染来源，怎样区分预测收益与网络恢复？</li></ul></article><article><small>C10 / 解释 · epidemic_inverse_model</small><h2>图3选出的6个县窗显示神经预测轨迹，但窗口专门挑选主模型表现好的实例，不能作为无偏总体比较。</h2><h3>Evidence</h3><p>条件性轨迹展示</p><dl><dt>设计 / 对照</dt><dd>shading为3seeds跨度，不是分布预测区间；三模型示例</dd><dt>独立单位与 n</dt><dd>合成运行/县–预测起点–时间窗；6个选定county-origin窗口</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 8 · Fig3</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>图3选出的6个县窗显示神经预测轨迹，但窗口专门挑选主模型表现好的实例，不能作为无偏总体比较。</dd><dt>适用边界</dt><dd>与总体表及不利起点结合读取；有限seed shading不是校准置信区间。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不是独立复现或所有县都改善。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>常规监测数据能否识别区域感染来源，怎样区分预测收益与网络恢复？</li></ul></article><article><small>C11 / 假说 / 预测 · epidemic_inverse_model</small><h2>作者提出分别报告观测拟合、四状态物理一致性、已知真值/多起点边稳定性及可实时输入条件，以限制模型解释。</h2><h3>Evidence</h3><p>证据分级与后续验证</p><dl><dt>设计 / 对照</dt><dd>未来multistart、edge profiles、外部输入预测及独立地区；当前有限诊断</dd><dt>独立单位与 n</dt><dd>方法学议程；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 11 · Table8</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>作者提出的可检验假说。</dd><dt>适用边界</dt><dd>多起点/edgewise profiles尚未完成，不能把identifiability-aware名称当已可辨识结论。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>没有公共卫生策略或个人风险指导。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>常规监测数据能否识别区域感染来源，怎样区分预测收益与网络恢复？</li></ul></article><details><summary>核对记录与来源信息</summary><pre>{
+  &quot;coverage&quot;: {
+    &quot;pdf_pages_read&quot;: [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    &quot;results_sections_seen&quot;: [
+      &quot;Regional model/identifiability&quot;,
+      &quot;Constrained PINN/loss/prior&quot;,
+      &quot;Four-region prior grid&quot;,
+      &quot;Observation stress&quot;,
+      &quot;64-county progression&quot;,
+      &quot;15-county geography&quot;,
+      &quot;12prior robustness&quot;,
+      &quot;AppendixA–E&quot;
+    ],
+    &quot;missing_material&quot;: [
+      &quot;图像像素未读取&quot;,
+      &quot;multistart/edgewise profiles未完成&quot;,
+      &quot;完整LODES及预测记录细节未提供&quot;
+    ],
+    &quot;text_pass_complete&quot;: true,
+    &quot;notes&quot;: &quot;arXiv2608.02633v1/epiDAMIK2026；全11页8表3图注及5附录评估。&quot;,
+    &quot;reading_mode&quot;: &quot;text_only&quot;,
+    &quot;figure_images_read&quot;: false,
+    &quot;scientific_verification&quot;: false,
+    &quot;source_pdf_offline&quot;: true,
+    &quot;archived_page_text_used&quot;: true
+  },
+  &quot;audit&quot;: {
+    &quot;source_match_checks&quot;: [],
+    &quot;model_findings&quot;: [
+      {
+        &quot;claim_id&quot;: &quot;C5&quot;,
+        &quot;issue&quot;: &quot;测试期external input为已观测oracle；不能称实时forecast。&quot;,
+        &quot;pdf_page&quot;: 9,
+        &quot;suggested_correction&quot;: &quot;按来源保留回顾性&quot;,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C3&quot;,
+        &quot;issue&quot;: &quot;单seed且α真值.42估计约.463；稳定不等精确识别。&quot;,
+        &quot;pdf_page&quot;: 10,
+        &quot;suggested_correction&quot;: null,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C8&quot;,
+        &quot;issue&quot;: &quot;LODES版本/访问日期及FDR对比细节缺失，近等性能不意味着相同因果边。&quot;,
+        &quot;pdf_page&quot;: 4,
+        &quot;suggested_correction&quot;: null,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C9&quot;,
+        &quot;issue&quot;: &quot;top30%排名集待作者核查、NLL无供给、政策标签不因果。&quot;,
+        &quot;pdf_page&quot;: 10,
+        &quot;suggested_correction&quot;: null,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C6&quot;,
+        &quot;issue&quot;: &quot;64县比较bundled changes不能识别纯地理贡献。&quot;,
+        &quot;pdf_page&quot;: 7,
+        &quot;suggested_correction&quot;: &quot;用15县匹配消融限定收益&quot;,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;softmax保证非负守恒但不保证S递减/D递增；finite-grid physics需与真正动力学满足区分。&quot;,
+        &quot;pdf_page&quot;: 3,
+        &quot;suggested_correction&quot;: null,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;数据写到Dec31，Nov26六周窗口含跨年图标，完整horizon处理未明确；不猜记录数。&quot;,
+        &quot;pdf_page&quot;: 8,
+        &quot;suggested_correction&quot;: null,
+        &quot;resolved&quot;: false
+      }
+    ],
+    &quot;needs_human_review&quot;: true
+  },
+  &quot;source&quot;: {
+    &quot;filename&quot;: &quot;paper-W7197054144--GeoID-PINN-Identifiability-Aware-Regional-Epidemic-Inference-with-Geographic-Coupling.pdf&quot;,
+    &quot;sha256&quot;: &quot;60632ad1928ba44dd8e7e8a35989cdb2e4a60d18e0242d38d3d828a33684f6a2&quot;,
+    &quot;source_url&quot;: &quot;https://arxiv.org/pdf/2608.02633&quot;,
+    &quot;pdf_page_count&quot;: 11
+  },
+  &quot;provenance&quot;: {
+    &quot;created_at&quot;: &quot;2026-10-07T12:04:12.691297Z&quot;,
+    &quot;workflow&quot;: &quot;claim-commons-pdf-v1&quot;,
+    &quot;prompt_version&quot;: &quot;claim-commons-chatgpt-pdf-2026-10-07.1&quot;,
+    &quot;backend&quot;: &quot;authorized_parallel_GPT&quot;,
+    &quot;model&quot;: &quot;inherited_account_GPT&quot;,
+    &quot;provider_api_key_used&quot;: false,
+    &quot;source_sha256&quot;: &quot;60632ad1928ba44dd8e7e8a35989cdb2e4a60d18e0242d38d3d828a33684f6a2&quot;,
+    &quot;source_audit_complete&quot;: true,
+    &quot;review_status&quot;: &quot;candidate&quot;,
+    &quot;database_updated&quot;: false
+  }
+}</pre></details></main><footer></footer></body></html>

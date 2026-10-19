@@ -1,0 +1,865 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "preprint",
+  "paper": {
+    "title": "A recipe for creating ideal hybrid memristive-CMOS neuromorphic processing systems",
+    "authors": [
+      "Elisabetta Chicca",
+      "Giacomo Indiveri"
+    ],
+    "doi": "10.1063/1.5142089",
+    "publication_year": 2020,
+    "venue": "Applied Physics Letters",
+    "url": "https://doi.org/10.1063/1.5142089"
+  },
+  "source": {
+    "filename": "paper-W3013121589.pdf",
+    "sha256": "67cd88d0ed3b2ad48780a6d94c5e640a1acab6cef8ee7d4b00ae77b0e66136e8",
+    "source_url": "https://arxiv.org/pdf/1912.05637",
+    "pdf_page_count": 6
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "results_sections_seen": [
+      "Fig. 1",
+      "a. Lay out the ingredients in parallel on the worktop.",
+      "b. Take your time.",
+      "c. Don’t worry about density.",
+      "d. Play it by ear: variability and randomness.",
+      "e. Don’t (hard) limit your devices.",
+      "器件规格与持续学习设计段落",
+      "应用定位与结论"
+    ],
+    "missing_material": [],
+    "text_pass_complete": true,
+    "notes": [
+      "供稿为arXiv:1912.05637v1，上传标记为2019年12月11日，稿件日期为2019年12月13日。",
+      "供稿标题使用computing，身份元数据使用processing；作者与主题一致，但标题并非逐字一致。",
+      "内容为综述性设计论述，没有正式Results章节，也未报告本稿独立实验、仿真或新定理。",
+      "已评估正文、唯一图注、致谢及参考文献；未提供图像像素，引用文献全文未提供。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "Fig. 1综合器件与CMOS配比、空间资源及时间动力学的应用匹配要求。",
+      "role": "review_synthesis",
+      "source_pages": [
+        1
+      ],
+      "decision": "include",
+      "reason": "作为后续具体设计命题的总框架保留，不另立重复命题。"
+    },
+    {
+      "summary": "采用物理并行、分布式且存储计算共置的神经元和突触电路。",
+      "role": "review_synthesis",
+      "source_pages": [
+        2
+      ],
+      "decision": "include",
+      "reason": "可独立判断的架构建议，包含能耗理由及面积代价。"
+    },
+    {
+      "summary": "真实时间运行，并联合利用忆阻器易失性与CMOS匹配输入及可塑性时间尺度。",
+      "role": "review_synthesis",
+      "source_pages": [
+        2
+      ],
+      "decision": "include",
+      "reason": "独立的时间动力学设计要求。"
+    },
+    {
+      "summary": "为复杂学习动力学接受额外控制电路，而非优先追求最高突触密度。",
+      "role": "review_synthesis",
+      "source_pages": [
+        2,
+        3
+      ],
+      "decision": "include",
+      "reason": "明确的密度与功能取舍。"
+    },
+    {
+      "summary": "利用器件间异质性形成网络所需的参数分布。",
+      "role": "review_synthesis",
+      "source_pages": [
+        3
+      ],
+      "decision": "include",
+      "reason": "可与随机切换的学习用途分别判断。"
+    },
+    {
+      "summary": "利用概率性切换支持随机学习，并结合稳态调节或内在可塑性。",
+      "role": "review_synthesis",
+      "source_pages": [
+        3
+      ],
+      "decision": "include",
+      "reason": "独立的学习机制综合，包含二值器件适用潜力。"
+    },
+    {
+      "summary": "依据受限突触理论，在增强与减弱不平衡时设计软边界更新。",
+      "role": "review_synthesis",
+      "source_pages": [
+        3,
+        4
+      ],
+      "decision": "include",
+      "reason": "保留所引用模型范围与联合条件。"
+    },
+    {
+      "summary": "按在线更新、记忆巩固及快慢可塑性配置互补器件。",
+      "role": "review_synthesis",
+      "source_pages": [
+        3,
+        4
+      ],
+      "decision": "include",
+      "reason": "完整保留不同操作频率对应的器件规格对照。"
+    },
+    {
+      "summary": "设计前需要真实、忠实的器件模型以确定CMOS与忆阻器特性。",
+      "role": "review_synthesis",
+      "source_pages": [
+        3
+      ],
+      "decision": "include",
+      "reason": "原草稿仅附带提及；这是可独立评估的设计方法要求。"
+    },
+    {
+      "summary": "作为高精度处理器的事件监测前端，或在适配的边缘闭环任务中承担完整处理。",
+      "role": "review_synthesis",
+      "source_pages": [
+        4
+      ],
+      "decision": "include",
+      "reason": "两种系统角色组成有条件的应用定位比较。"
+    },
+    {
+      "summary": "参考文献中的既有器件、电路、网络与理论成果。",
+      "role": "background",
+      "source_pages": [
+        4,
+        5,
+        6
+      ],
+      "decision": "exclude",
+      "reason": "不是本稿原始结果；不能据参考条目补造实验细节。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "本文建议混合memristive-CMOS神经形态系统采用物理并行、分布式的神经元与突触电路，使网络状态存储与计算共置，以减少存储器与时间复用处理单元之间持续搬运数据的能耗；这一架构需承担较大的硅面积开销。",
+      "claim_type": "架构设计综合",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "架构文献的定性综合",
+          "design": "对照分布式有状态电路与存储计算分离的时间复用处理架构。",
+          "comparator": "传统von Neumann架构",
+          "measure": "数据搬运、能耗及硅面积；无本稿定量测试",
+          "unit_of_analysis": "系统架构",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "物理独立的神经元和突触实例本地保存网络状态。"
+          ],
+          "source_locator": {
+            "pdf_page": 2,
+            "section": "a. Lay out the ingredients in parallel on the worktop.",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提出通过存储计算共置减少数据搬运的架构路径。",
+        "boundary": "面积问题需由工艺进步、3D集成及纳米器件共集成缓解。",
+        "negative_result": null,
+        "non_inference": "未测得特定任务上的节能幅度或鲁棒性增益。",
+        "unresolved": "面积、通信和功耗的系统取舍未量化。",
+        "unresolved_attribution": "本稿未测试。"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "分布式存储计算共置如何改变边缘神经处理系统的能耗与面积？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "Fig. 1为总体设计示意，不能作为性能证据。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "对于处理语音、手势等自然信号的真实时间神经形态系统，本文建议使神经处理与学习动力学匹配输入的毫秒至分钟或更长时间尺度，并联合利用可调易失性忆阻器与CMOS电路实现从毫秒到小时以上的多尺度可塑性。",
+      "claim_type": "时间动力学设计综合",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "自然信号动力学与既有器件研究的定性综合",
+          "design": "论述真实时间运行、可调易失性及混合电路的联合设计。",
+          "comparator": "模拟时间运行的处理系统及纯CMOS长时间常数电路",
+          "measure": "输入时间常数匹配与可塑性时间范围；无本稿系统测试",
+          "unit_of_analysis": "处理电路与器件动力学",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "应用需要连续处理真实世界信号。",
+            "选用器件的易失性能够调节。"
+          ],
+          "source_locator": {
+            "pdf_page": 2,
+            "section": "b. Take your time.",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提出利用物理动力学实现输入与可塑性时间尺度匹配。",
+        "boundary": "输入动力学范围与内部可塑性范围不是同一个指标。",
+        "negative_result": null,
+        "non_inference": "未证明此策略在所有任务上最优，亦未测量识别、带宽或功耗增益。",
+        "unresolved": "集成后所需时间常数的可控性和稳定性仍需验证。",
+        "unresolved_attribution": "本稿未测试。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "忆阻器易失性与CMOS动力学如何共同匹配自然输入及多尺度可塑性？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "与C7主题相关，但主要来源段落不同；不据此建立共享证据关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "本文主张，在需要时间尺度匹配或持续学习等复杂动力学的混合memristive-CMOS系统中，应允许每个突触配置多个晶体管及一个或多个忆阻器，以控制变异、随机切换和线性或非线性状态依赖更新，而不把最高交叉阵列密度作为首要目标。",
+      "claim_type": "器件与电路协同设计综合",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "混合突触电路文献综合",
+          "design": "对照高密度单器件路线与含额外控制电路的混合突触路线。",
+          "comparator": "优先追求高密度且依赖单器件实现复杂学习动力学的方案",
+          "measure": "学习动力学及控制功能；无本稿量化比较",
+          "unit_of_analysis": "突触电路设计",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "任务需要复杂学习动力学。",
+            "技术局限判断对应所供2019年版本。"
+          ],
+          "source_locator": {
+            "pdf_page": 2,
+            "section": "c. Don’t worry about density.",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "既有控制电路功能的综述",
+          "design": "总结多晶体管与忆阻器组合的控制用途。",
+          "comparator": null,
+          "measure": "变异调节、随机切换控制及状态依赖权重更新",
+          "unit_of_analysis": "突触电路",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "c. Don’t worry about density.续段",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提出密度与可控学习功能的设计取舍。",
+        "boundary": "高密度路线的局限是作者在所供版本中的判断。",
+        "negative_result": null,
+        "non_inference": "未建立混合突触的普遍性能优势。",
+        "unresolved": "额外电路的面积和功耗成本未与功能收益统一比较。",
+        "unresolved_attribution": "本稿未量化。"
+      },
+      "broad_directions": [
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "复杂持续学习所需控制功能应如何与突触密度权衡？"
+      ],
+      "shared_evidence_with": [
+        "C4",
+        "C5"
+      ],
+      "review_notes": [
+        "与C4共享引用11、42所讨论的控制电路依据；与C5共享引用43、44的随机学习控制依据，均非独立复现。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "本文提出，性质不均一的忆阻器可为ensemble learning、reservoir computing及liquid state machines提供比仅依赖晶体管失配更丰富的参数分布，并可利用混合电路调控分布形状与参数，以探索其时空处理能力。",
+      "claim_type": "异质性利用综合",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "计算框架与电路文献的定性综合",
+          "design": "将忆阻器异质性引入利用晶体管失配的网络架构。",
+          "comparator": "依赖晶体管失配形成参数分布的实现",
+          "measure": "参数分布及潜在计算能力；无本稿任务效果",
+          "unit_of_analysis": "器件参数分布与网络架构",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "网络能够利用异质性。",
+            "参数分布可由电路适当调控。"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "d. Play it by ear: variability and randomness.",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "将器件异质性视为潜在计算资源。",
+        "boundary": "收益依赖网络结构和参数分布。",
+        "negative_result": null,
+        "non_inference": "未证明更多变异必然提高性能。",
+        "unresolved": "适合具体任务的分布形状尚未确定。",
+        "unresolved_attribution": "本稿未测试。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "哪些忆阻器异质性分布有利于reservoir或liquid state网络的时空处理？"
+      ],
+      "shared_evidence_with": [
+        "C3"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "本文综合既有研究提出，丝状忆阻器由丝状形成过程产生的概率性切换可用于随机学习；与homeostasis或intrinsic plasticity等调节机制结合时，该路线对仅具二值状态的器件也具有应用潜力。",
+      "claim_type": "随机学习机制综合",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "随机切换、随机学习及调节性可塑性文献综合",
+          "design": "联系丝状形成的随机性、随机学习与调节机制。",
+          "comparator": null,
+          "measure": "学习、记忆容量、分类及变异敏感性；无本稿数值",
+          "unit_of_analysis": "器件切换过程与学习网络",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "切换概率能够用于或受控于学习机制。",
+            "网络配置适当的调节机制。"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "d. Play it by ear: variability and randomness.",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提出随机切换与调节性可塑性结合的学习路线。",
+        "boundary": "丝状形成的随机机制不能推广到所有忆阻器。",
+        "negative_result": null,
+        "non_inference": "未证明二值器件与多级器件在任意任务上等效。",
+        "unresolved": "切换概率、调节机制及任务性能的联合设计仍需验证。",
+        "unresolved_attribution": "本稿未测试。"
+      },
+      "broad_directions": [
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "受稳态或内在可塑性调节的随机切换能否支持二值忆阻器学习？"
+      ],
+      "shared_evidence_with": [
+        "C3"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "本文援引Fusi与Abbott的受限突触分析指出，在其考察的模型中，当增强与减弱不平衡时，软边界实现最长记忆寿命；据此建议混合memristive-CMOS突触采用接近边界时逐渐减小的状态依赖更新。",
+      "claim_type": "理论指导的设计综合",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "既有受限突触理论与器件软边界研究的综合",
+          "design": "保留硬或软边界及增强减弱平衡或不平衡的模型分类。",
+          "comparator": "所引用模型范围内增强与减弱不平衡的硬边界更新",
+          "measure": "记忆寿命；无本稿推导或计算",
+          "unit_of_analysis": "受限突触学习模型",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "突触权重有界。",
+            "增强与减弱不平衡。",
+            "结论限定于Fusi与Abbott考察的模型。",
+            "软边界更新随权重接近边界而减小。"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "e. Don’t (hard) limit your devices.",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "软边界实现路径的设计综合",
+          "design": "列举单器件电导工程、混合电路及多二值器件概率控制三种路线。",
+          "comparator": null,
+          "measure": "权重更新传递函数的状态依赖性",
+          "unit_of_analysis": "器件或复合突触电路",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "实现机制能够产生所需状态依赖更新。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "软边界实现段落",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "将有条件的记忆寿命结论转化为突触更新设计建议。",
+        "boundary": "物理硬限制仍存在；软边界描述更新动力学。",
+        "negative_result": null,
+        "non_inference": "未提出新定理，亦未验证所有硬件都无法精确平衡增强与减弱。",
+        "unresolved": "具体硬件中的记忆寿命、容量及功耗收益仍需评估。",
+        "unresolved_attribution": "本稿援引理论并提出实现建议。"
+      },
+      "broad_directions": [
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "在增强与减弱不平衡的受限混合突触中，软边界如何影响记忆寿命？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "引用理论的完整推导未提供；与C3、C5的功能联系不构成独立共享证据。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "本文建议将频繁在线更新与低频记忆巩固分配给互补忆阻器：在线更新采用小幅渐变电导、很小电流和匹配更新频率的保持时间；巩固采用高开关比、长保持时间的非易失器件，可接受较大切换电流及少量稳定状态；另用不同保持时间的易失器件支持快慢可塑性。",
+      "claim_type": "器件规格与记忆分工综合",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "持续学习需求驱动的定性规格推导",
+          "design": "对照在线更新与学习停止或输入长期暂停后的巩固。",
+          "comparator": "频繁在线权重更新与低频记忆巩固",
+          "measure": "在线电流示例小于1 µA；保持时间示例毫秒至秒或分钟",
+          "unit_of_analysis": "器件类别及系统功能",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "在线更新起到刷新作用。",
+            "巩固频率低于在线更新。"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "持续学习与器件规格段落",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "巩固与多尺度可塑性的设计综合",
+          "design": "补充低频巩固规格，并配置快慢可塑性。",
+          "comparator": "在线更新器件与巩固器件",
+          "measure": "巩固可用二值稳定状态；易失器件保持时间示例毫秒至小时",
+          "unit_of_analysis": "器件类别与学习电路",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "系统需要长期稳定运行和多时间尺度学习。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "巩固续段与快慢可塑性段落",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提出按操作频率和记忆功能分配器件特性的方案。",
+        "boundary": "电流与时间范围均为设计示例，非实测规格。",
+        "negative_result": null,
+        "non_inference": "未报告同时满足全部规格的集成系统。",
+        "unresolved": "耐久性、保持时间、电流及巩固策略的联合可行性未验证。",
+        "unresolved_attribution": "本稿提出规格。"
+      },
+      "broad_directions": [
+        "learning-memory",
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "如何按在线更新、记忆巩固及快慢可塑性配置互补忆阻器？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "本文将混合memristive-CMOS系统定位为两类有条件的应用方案：在数据密集的高精度识别中，作为持续学习的低功耗、低精度事件监测前端，检测兴趣事件后激活传统处理器；在适配的IoT、边缘计算及感知行动任务中，则可能承担完整处理功能。",
+      "claim_type": "应用定位综合",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "应用场景与系统角色的概念分析",
+          "design": "区分高精度数据密集处理与连续时间边缘闭环任务。",
+          "comparator": "传统von Neumann处理系统",
+          "measure": "尺寸、能耗、延迟、适应性及连续时间闭环学习；无实测值",
+          "unit_of_analysis": "应用系统与处理流程",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "前端允许较低精度并能触发高精度后端。",
+            "完整处理方案匹配具体任务及器件电路动力学。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "应用定位与结论",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提出互补前端与完整边缘处理两种系统角色。",
+        "boundary": "完整处理能力是面向适配任务的展望。",
+        "negative_result": null,
+        "non_inference": "未证明普遍替代传统计算，亦未展示完整自主闭环系统。",
+        "unresolved": "事件漏检、误激活、后端负载及总能耗的取舍未量化。",
+        "unresolved_attribution": "本稿未开展应用基准测试。"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "持续学习事件前端在何种条件下能降低高精度后端的总能耗？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "本文提出，在制造混合memristive-CMOS神经处理系统前，应使用真实、忠实的器件模型，在设计阶段共同确定CMOS与忆阻器特性，并评估其对可塑性与神经信息处理功能的适配。",
+      "claim_type": "建模与协同设计方法建议",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "系统设计流程的概念论述",
+          "design": "将器件建模置于最终硬件制造之前。",
+          "comparator": null,
+          "measure": "器件模型忠实性与功能适配；无量化标准",
+          "unit_of_analysis": "器件模型及系统设计流程",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "模型能反映设计所需器件特性。"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "互补器件清单与设计前建模段落",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "明确器件建模在联合设计流程中的先决作用。",
+        "boundary": "本文没有提供新器件模型或模型验证程序。",
+        "negative_result": null,
+        "non_inference": "不能推断任一现有模型已满足该要求。",
+        "unresolved": "模型应覆盖哪些特性及达到何种误差标准未规定。",
+        "unresolved_attribution": "本稿未具体化。"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "混合神经处理系统协同设计需要器件模型准确覆盖哪些动态特性？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "已复核全部6页，包括图注、致谢与参考文献。供稿是2019年arXiv v1的综述性设计论述，未报告新实验、仿真或定理。保留并校正8项设计综合，新增设计前器件建模要求；区分输入与可塑性时间尺度，补全跨页证据，收紧共享证据链接。器件规格和应用收益均按建议或展望处理。",
+  "shared_evidence": [
+    {
+      "claim_id": "C3",
+      "with": [
+        "C4",
+        "C5"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C3"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C3"
+      ]
+    }
+  ],
+  "audit": {
+    "initial_source_match_checks": [],
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": null,
+        "issue": "出版元数据为2020年文章，实际供稿是2019年arXiv v1，且标题措辞不同。",
+        "suggested_correction": "保留preprint类型及供稿标题，在覆盖说明中记录版本和标题差异。",
+        "pdf_page": 1,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "设计综合与引用成果不能作为本稿原始实验或独立复现。",
+        "suggested_correction": "全部命题使用review_synthesis；不补造样本数或实验不确定性。",
+        "pdf_page": 3,
+        "resolved": true
+      },
+      {
+        "claim_id": "C2",
+        "issue": "自然输入时间尺度与内部可塑性时间尺度需要区分。",
+        "suggested_correction": "分别记录毫秒至分钟以上的输入范围及毫秒至小时以上的可塑性范围。",
+        "pdf_page": 2,
+        "resolved": true
+      },
+      {
+        "claim_id": "C6",
+        "issue": "软边界优势依赖增强减弱不平衡及所引用模型范围；实现建议的第4页证据未单列。",
+        "suggested_correction": "保留联合条件，并补充第4页状态依赖更新实现路线。",
+        "pdf_page": 4,
+        "resolved": true
+      },
+      {
+        "claim_id": "C7",
+        "issue": "电流与保持时间为建议示例；在线更新与巩固的完整比较跨页。",
+        "suggested_correction": "明确示例性质，补列第4页巩固电流、稳定状态及多尺度可塑性依据。",
+        "pdf_page": 4,
+        "resolved": true
+      },
+      {
+        "claim_id": "C9",
+        "issue": "草稿未将设计前忠实器件建模要求作为独立贡献提取。",
+        "suggested_correction": "新增方法建议命题，明确没有新模型或验证结果。",
+        "pdf_page": 3,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "部分共享证据链接仅体现主题或功能关联。",
+        "suggested_correction": "保留C3与C4、C5共享的明确引用依据，移除其他仅由主题关联建立的链接。",
+        "pdf_page": 3,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "草稿包含请求schema之外的source_check与review字段。",
+        "suggested_correction": "删除额外字段，并以来源定位和审计说明记录复核结果。",
+        "pdf_page": null,
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T05:37:47.452590Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "signed_in_chatgpt_codex",
+    "authentication": "existing_ChatGPT_login",
+    "provider_api_key_used": false,
+    "model": "account_default_GPT",
+    "source_sha256": "67cd88d0ed3b2ad48780a6d94c5e640a1acab6cef8ee7d4b00ae77b0e66136e8",
+    "requests": [
+      {
+        "phase": "extraction",
+        "seconds": 122.34,
+        "usage": {
+          "input_tokens": 23743,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 5999,
+          "reasoning_output_tokens": 18
+        },
+        "backend": "signed_in_chatgpt_codex",
+        "tools_used": false
+      },
+      {
+        "phase": "source_audit",
+        "seconds": 125.68,
+        "usage": {
+          "input_tokens": 29652,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 7150,
+          "reasoning_output_tokens": 80
+        },
+        "backend": "signed_in_chatgpt_codex",
+        "tools_used": false
+      }
+    ],
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

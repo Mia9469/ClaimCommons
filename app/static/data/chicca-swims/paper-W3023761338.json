@@ -1,0 +1,730 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "Event-Based Eccentric Motion Detection Exploiting Time Difference Encoding",
+    "authors": [
+      "Giulia Veronica D'Angelo",
+      "Ella Janotte",
+      "Thorben Schoepe",
+      "James J. O’Keeffe",
+      "Moritz B. Milde",
+      "Elisabetta Chicca",
+      "Chiara Bartolozzi"
+    ],
+    "doi": "10.3389/fnins.2020.00451",
+    "publication_year": 2020,
+    "venue": "Frontiers in Neuroscience",
+    "url": "https://doi.org/10.3389/fnins.2020.00451"
+  },
+  "source": {
+    "filename": "paper-W3023761338.pdf",
+    "sha256": "9370bb994c5502cad68adc326251755a78fab17fc66542dd60197827e0b84a95",
+    "source_url": "https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2020.00451/pdf",
+    "pdf_page_count": 14
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "results_sections_seen": [
+      "3. RESULTS：四个基本方向的选择性与响应时序",
+      "3. RESULTS：均匀与偏心降采样的速度响应比较",
+      "3. RESULTS：不同偏心位置的单元速度调谐",
+      "3. RESULTS：空间响应分布、偏心位置统计与响应质心",
+      "3. RESULTS：条形长度效应",
+      "3. RESULTS：四种对角运动响应",
+      "Figures 1–12的全部图注",
+      "4. DISCUSSION"
+    ],
+    "missing_material": [
+      "所引用补充材料中的真实世界ATIS实验及结果",
+      "图像像素",
+      "链接仓库中的代码与数据"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "供给文本为2020年正式发表版本；标题、DOI和作者身份与元数据一致，作者名字存在缩写差异。",
+      "全部14页供给文本均已评估，包括参考文献；未供给附录。",
+      "图形证据仅依据正文与图注。",
+      "模型神经元数量是网络规模，不是独立重复数；未报告仿真种子或独立重复次数。",
+      "第5页明确列出9个用于栅格图分析的速度；不能据此认定所有速度曲线仅包含这9个点。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "将平方环状偏心LIF事件滤波层与既有sEMD/TDE连接，在SpiNNaker上运行运动检测层。",
+      "role": "method",
+      "source_pages": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "decision": "include",
+      "reason": "新增贡献是偏心滤波与既有运动编码器的集成；两种滤波层的执行位置不同。"
+    },
+    {
+      "summary": "偏心降采样保留四个基本方向的选择性；0.3 px/ms条形刺激的水平和垂直示例首次响应延迟约40 ms。",
+      "role": "result",
+      "source_pages": [
+        6,
+        7
+      ],
+      "decision": "include",
+      "reason": "方向响应和首次响应时序可分别评估，后者限制即时检测的表述。"
+    },
+    {
+      "summary": "相比4×4均匀降采样，偏心模型在所测速度下具有较低的归一化平均输出发放率，并保留偏好与反偏好方向响应差异。",
+      "role": "result",
+      "source_pages": [
+        7,
+        8,
+        10,
+        11
+      ],
+      "decision": "include",
+      "reason": "具有明确基线；平均单元活动不能直接替代全网络功耗或总事件数。"
+    },
+    {
+      "summary": "速度调谐依赖偏心位置；最大响应区域及响应质心随速度总体外移，中速质心存在平台。",
+      "role": "result",
+      "source_pages": [
+        8,
+        9,
+        10
+      ],
+      "decision": "include",
+      "reason": "单元调谐、空间映射与质心分析支持位置依赖速度表征，并给出读出的边界。"
+    },
+    {
+      "summary": "空间响应具有平方环内差异、右边缘衰减及中央与外围交界处的局部低响应。",
+      "role": "result",
+      "source_pages": [
+        9,
+        10
+      ],
+      "decision": "include",
+      "reason": "属于空间速度结果的可核查边界，保留在相应记录中；连接几何解释未经过独立消融。"
+    },
+    {
+      "summary": "固定速度下，更长的居中条形提高群体平均发放率，但增量递减。",
+      "role": "result",
+      "source_pages": [
+        10,
+        11
+      ],
+      "decision": "include",
+      "reason": "刺激长度效应具有独立比较条件。"
+    },
+    {
+      "summary": "四种对角运动分别激活对应的两个基本方向群体。",
+      "role": "result",
+      "source_pages": [
+        10,
+        12
+      ],
+      "decision": "include",
+      "reason": "具有独立的二维运动刺激及群体读出。"
+    },
+    {
+      "summary": "真实世界刺激具有相同定性行为，并对噪声与输入事件率变化稳健。",
+      "role": "generality",
+      "source_pages": [
+        4,
+        12,
+        13
+      ],
+      "decision": "defer",
+      "reason": "正文仅概述，具体证据位于未供给补充材料；早期工作的自然场景验证也不能替代本研究证据。"
+    },
+    {
+      "summary": "偏心模型改善实际功耗、整体计算效率及下游总事件量。",
+      "role": "interpretation",
+      "source_pages": [
+        8,
+        10,
+        11,
+        12
+      ],
+      "decision": "exclude",
+      "reason": "提供的是归一化发放率比较，没有直接报告功耗、运行时间、全网络总事件数或总计算成本。"
+    },
+    {
+      "summary": "外围快速响应可驱动机器人注意与眼跳；极坐标实现可改善离散化和方向解码。",
+      "role": "hypothesis",
+      "source_pages": [
+        12
+      ],
+      "decision": "exclude",
+      "reason": "属于未测试应用与实现预测，不能作为已经验证的结果。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "本研究实现了偏心事件滤波与既有sEMD/TDE的集成：160×160像素视野的平方环状感受野从外围10×10像素缩小至中央1像素，通过按感受野面积归一化的LIF积分产生事件，再由SpiNNaker上的四个基本方向sEMD群体处理局部运动。",
+      "claim_type": "method",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "架构定义、LIF滤波与SpiNNaker网络实现",
+          "design": "偏心滤波在本地执行，输出事件时间经SpikeSourceArray输入SpiNNaker；均匀滤波层直接在SpiNNaker上模拟。",
+          "comparator": "非重叠4×4像素感受野的均匀降采样架构",
+          "measure": "感受野几何、积分规则、连接与网络规模",
+          "unit_of_analysis": "模型感受野、滤波单元及方向选择性sEMD单元",
+          "sample_size_as_reported": "偏心滤波层8836个LIF单元，每方向8836个sEMD单元；均匀滤波层1600个LIF单元，每方向1600个sEMD单元；使用SpiNNaker 5板。",
+          "uncertainty": null,
+          "assumptions": [
+            "采用笛卡尔平方环近似，相邻环的感受野存在重叠。",
+            "偏心滤波时间常数为1000 ms，阈值为1，归一化因子为感受野面积的60%。",
+            "两种架构采用相同sEMD神经元及突触参数。",
+            "促进突触输入延迟1 ms，以避免同时输入造成垂直于运动方向的响应。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "2.4. Experimental Setup；几何与积分定义见第3–4页",
+            "figure": "Figures 1–3",
+            "equation": "Equations 1–3",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提供了可运行的空间变分辨率事件滤波与方向检测架构。",
+        "boundary": "偏心滤波并非在SpiNNaker上执行；sEMD/TDE本身来自既有工作。",
+        "negative_result": null,
+        "non_inference": "架构实现不证明生物视网膜机制、机器人任务成功或系统整体实时性能。",
+        "unresolved": "其他感受野几何与滤波参数对性能及成本的影响。",
+        "unresolved_attribution": "提取者指出的未评估条件。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "空间变分辨率事件滤波如何与时间差运动编码器集成？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "新增方法贡献是集成架构，不能把所引用TDE原理计为本研究的新发现。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "在160×160像素视野中，以0.3 px/ms沿四个基本方向移动的模拟条形，使偏心降采样sEMD的对应偏好方向群体产生相近的高发放响应，反偏好方向响应相对可忽略，支持该配置保留基本方向选择性。",
+      "claim_type": "simulation_direction_selectivity",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "模拟条形刺激与方向群体发放分析",
+          "design": "分别呈现左至右、右至左、上至下及下至上运动，速度固定为0.3 px/ms。",
+          "comparator": "偏好与反偏好方向群体；四个方向各自的偏好响应",
+          "measure": "瞬时平均发放率、方差与发放栅格",
+          "unit_of_analysis": "方向群体及其模型神经元",
+          "sample_size_as_reported": "4个方向刺激条件；4个方向群体，每群体8836个sEMD单元；独立重复数未报告。",
+          "uncertainty": "Figure 4显示方差，但未给出数值或独立重复间变异；未报告显著性检验。",
+          "assumptions": [
+            "使用论文固定网络参数及1 ms促进输入延迟。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "3. RESULTS；方向比较始于第6页",
+            "figure": "Figure 4",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "四个基本方向在所测理想条形条件下均有对应偏好响应。",
+        "boundary": "比较限于0.3 px/ms；相对可忽略不等于严格为零。",
+        "negative_result": null,
+        "non_inference": "不能推断任意场景的方向准确率或统计显著性。",
+        "unresolved": "复杂纹理、多物体及自运动条件下的方向识别表现。",
+        "unresolved_attribution": "提取者提出的未测试条件。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "偏心降采样能否保留sEMD的四个基本运动方向选择性？"
+      ],
+      "shared_evidence_with": [
+        "C7"
+      ],
+      "review_notes": [
+        "正文使用显著性措辞，但未提供统计检验。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "对0.01–1.0 px/ms左至右移动的模拟条形，相比每方向1600个单元的4×4均匀降采样模型，每方向8836个单元的偏心模型在各所测速度下具有较低的归一化平均输出发放率，并保留偏好与反偏好方向约一个数量级的响应差异；偏心群体响应在约0.6 px/ms之后下降，均匀模型则继续上升。",
+      "claim_type": "comparative_simulation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "相同刺激与sEMD参数下的两种滤波架构比较",
+          "design": "扫描0.01–1.0 px/ms左至右条形运动，比较四个方向群体。",
+          "comparator": "4×4均匀降采样与平方环状偏心降采样",
+          "measure": "群体平均发放率；第10页说明响应按神经元总数归一化",
+          "unit_of_analysis": "模型方向群体的归一化输出活动",
+          "sample_size_as_reported": "均匀模型每方向1600个单元，偏心模型每方向8836个单元；全部速度曲线的点数及独立重复数未报告。",
+          "uncertainty": "未报告比较效应的置信区间或显著性检验。",
+          "assumptions": [
+            "两种模型的sEMD神经元及突触参数相同，滤波架构及单元数不同。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "3. RESULTS；归一化比较见第10页",
+            "figure": "Figures 5, 10",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "偏心模型降低所测条件下的平均单元输出活动，并保留方向响应差异。",
+        "boundary": "仅与选定4×4基线比较；网络单元数及滤波执行位置不同。",
+        "negative_result": "偏心群体平均发放率在高速区下降，不能提供全速度范围的单调读出。",
+        "non_inference": "较低归一化发放率不直接证明较低全网络总事件数、实际功耗或总计算成本。",
+        "unresolved": "计入滤波、更多单元及通信开销后的总成本。",
+        "unresolved_attribution": "提取者针对作者效率解释指出的证据缺口。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "偏心降采样如何改变运动检测的平均输出活动与方向区分？"
+      ],
+      "shared_evidence_with": [
+        "C4"
+      ],
+      "review_notes": [
+        "不能将归一化发放率视为全网络总活动。",
+        "第5页列出的9个速度用于栅格图分析，未明确等同于全部比较曲线的采样点。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "偏心降采样sEMD对左至右模拟条形的速度调谐依赖感受野位置：中央选定单元在速度超过0.7 px/ms时失去响应，距中心39像素的单元约在0.9 px/ms开始明显下降，70像素外围单元到1.0 px/ms仍持续上升；群体最大响应区域及响应质心随速度总体外移，但质心在0.06–0.6 px/ms存在平台。",
+      "claim_type": "simulation_spatial_speed_coding",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "单元调谐曲线、空间发放率映射、偏心分组统计与响应质心分析",
+          "design": "扫描0.01–1.0 px/ms左至右条形运动；空间映射重点比较0.03、0.3及1.0 px/ms。",
+          "comparator": "中央水平线上距中心0、39、70像素的选定单元；不同速度下的空间响应",
+          "measure": "单元平均发放率、偏心分组均值与方差、响应质心距中心的距离",
+          "unit_of_analysis": "选定模型单元、同偏心位置的单元集合及条件内空间响应分布",
+          "sample_size_as_reported": "3个选定位置的单元；方向群体8836个单元；各偏心分组数量及独立重复数未报告。",
+          "uncertainty": "Figure 8显示模型单元间响应方差；未报告质心置信区间或独立重复间变异。",
+          "assumptions": [
+            "采用固定时间常数、平方环状感受野及1 ms促进输入延迟。",
+            "分析左至右方向的水平连接；同一平方环上不同位置的连接几何不同。"
+          ],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "3. RESULTS；单元及空间分析见第8–9页",
+            "figure": "Figures 6–9",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "不同位置覆盖不同速度响应范围，空间活动分布可提供速度信息。",
+        "boundary": "质心低速时由0移至27像素，中速形成平台，高速最终到约49像素。空间响应还存在环内差异、右边缘衰减及29像素附近的局部低响应；位置与速度并非全范围一一对应。",
+        "negative_result": "中央选定单元对超过0.7 px/ms的刺激响应为零；质心在中速区间不能区分全部速度。",
+        "non_inference": "未测量速度解码误差；未以定量解码比较证明相对均匀模型的可解码速度范围扩展。连接几何、积分与延迟的机制解释未通过独立消融分离。",
+        "unresolved": "如何联合空间响应与发放率解决平台区间的速度歧义，以及几何离散化的影响。",
+        "unresolved_attribution": "速度解码问题由提取者指出；作者在讨论中提出离散化影响及极坐标改进预测。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "感受野大小及连接位置如何形成空间依赖的运动速度调谐？"
+      ],
+      "shared_evidence_with": [
+        "C3"
+      ],
+      "review_notes": [
+        "Figures 6–9是同一模型和刺激体系的不同分析，不是独立复现。",
+        "第9页报告三个空间映射条件的群体平均发放率为0.26、33.44及38.76 Hz；这三个点的递增不否定完整速度扫描的高速下降。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "对以0.3 px/ms从左至右移动、在视野中垂直居中的模拟条形，将长度从10增加至50、100及160像素，会提高偏心sEMD左至右群体的平均发放率，但发放率增量随长度增加而减小。",
+      "claim_type": "simulation_stimulus_extent_effect",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "固定速度和位置下改变条形长度",
+          "design": "比较10、50、100及160像素长的居中条形，速度为0.3 px/ms。",
+          "comparator": "四个条形长度条件",
+          "measure": "左至右方向群体平均发放率",
+          "unit_of_analysis": "各刺激条件的方向群体响应",
+          "sample_size_as_reported": "4个长度条件；群体8836个sEMD单元；独立重复数未报告。",
+          "uncertainty": "未报告数值效应量、置信区间或统计检验。",
+          "assumptions": [
+            "条形位置与速度固定，增加长度会覆盖更多外围区域。"
+          ],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "3. RESULTS",
+            "figure": "Figure 11，第11页",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "刺激空间长度影响群体平均发放率，所测增长呈递减增量。",
+        "boundary": "仅测试一个速度、一个方向及居中条形。",
+        "negative_result": null,
+        "non_inference": "群体发放率不能视为仅编码速度；外围感受野需要更多事件的解释未被独立消融验证。",
+        "unresolved": "条形长度、位置与速度对群体读出的交互作用。",
+        "unresolved_attribution": "提取者提出的未测试问题。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "运动刺激的空间长度如何改变偏心运动检测群体的平均发放率？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "在0.3 px/ms、条形长度覆盖整个视野的四种模拟对角运动中，偏心sEMD在与运动水平和垂直分量对应的两个基本方向群体产生相近响应，其余两个群体响应接近零，支持以群体组合响应区分这四种对角运动。",
+      "claim_type": "simulation_two_dimensional_direction_coding",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "四种对角运动的方向群体响应分析",
+          "design": "分别呈现左上至右下、右上至左下、左下至右上及右下至左上条形运动，速度0.3 px/ms，长度覆盖整个视野。",
+          "comparator": "各刺激对应的两个方向群体与其余两个方向群体",
+          "measure": "四个方向群体平均发放率",
+          "unit_of_analysis": "各对角刺激条件下的方向群体响应",
+          "sample_size_as_reported": "4种对角运动条件；4个方向群体，每群体8836个单元；独立重复数未报告。",
+          "uncertainty": "未报告解码准确率、误差分布或置信区间。",
+          "assumptions": [
+            "联合水平与垂直基本方向群体活动解释对角方向。"
+          ],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "Figure 12 caption；结果正文见第10页",
+            "figure": "Figure 12",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "四种对角运动具有对应的两群体组合响应。",
+        "boundary": "仅测试指定速度及覆盖整个视野的条形。",
+        "negative_result": null,
+        "non_inference": "未验证连续任意角度的方向精度或一般二维光流重建。",
+        "unresolved": "其他角度、速度与局部物体条件下的方向解码表现。",
+        "unresolved_attribution": "提取者提出的未测试条件。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "四个基本方向群体的联合活动能否区分四种对角运动？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "在偏心降采样sEMD对0.3 px/ms水平和垂直模拟条形运动的示例中，首次输出响应延迟约40 ms；作者将其解释为条形需要先穿过外围10×10像素感受野并到达与触发输入相连的感受野。",
+      "claim_type": "simulation_response_latency",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "刺激开始后的发放栅格时序分析",
+          "design": "分析左至右及上至下条形运动的响应，速度0.3 px/ms。",
+          "comparator": null,
+          "measure": "首次输出响应相对于刺激开始的延迟",
+          "unit_of_analysis": "两个示例方向群体的输出时序",
+          "sample_size_as_reported": "2个栅格示例；每方向群体8836个sEMD单元；独立重复数未报告。",
+          "uncertainty": "未报告延迟分布、置信区间或重复间变异。",
+          "assumptions": [
+            "外围最大感受野为10×10像素。",
+            "作者给出约30 ms的外围感受野穿越时间；该解释未通过独立消融验证。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "3. RESULTS",
+            "figure": "Figures 4B,C",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "正文提供了指定刺激条件下首次输出响应的时间尺度。",
+        "boundary": "约40 ms来自0.3 px/ms的两个示例，不是所有速度或真实场景的延迟估计。",
+        "negative_result": null,
+        "non_inference": "不能据此支持讨论中外围快速刺激的即时或极低延迟响应，也不能将其当作硬件处理延迟。",
+        "unresolved": "高速进入视野刺激的响应延迟及实际系统端到端延迟。",
+        "unresolved_attribution": "提取者指出的未量化性能。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "外围感受野中的刺激穿越时间如何限制运动检测首次输出的延迟？"
+      ],
+      "shared_evidence_with": [
+        "C2"
+      ],
+      "review_notes": [
+        "与C2共享Figure 4刺激和数据；方向选择性与首次响应时序可分别评估。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "已重新核对正式发表版本全部14页文本和所有图注。保留偏心滤波集成、基本方向选择性、归一化活动比较、位置依赖速度调谐、长度效应及对角组合响应，并补充约40 ms首次响应延迟。修正共享证据标记与速度采样数表述，保留空间不均匀及质心平台等边界。实际功耗、定量速度解码、机器人注意应用及真实世界稳健性缺乏供给材料中的充分验证；补充材料未读取。",
+  "shared_evidence": [
+    {
+      "claim_id": "C2",
+      "with": [
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C4"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C3"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C2"
+      ]
+    }
+  ],
+  "audit": {
+    "initial_source_match_checks": [],
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": "C1",
+        "issue": "两种滤波架构的执行位置不同，不能把完整偏心管线描述为全部运行于SpiNNaker。",
+        "suggested_correction": "明确偏心滤波在本地执行，sEMD层在SpiNNaker运行。",
+        "pdf_page": 6,
+        "resolved": true
+      },
+      {
+        "claim_id": "C2",
+        "issue": "正文使用显著性措辞，但未报告对应统计检验。",
+        "suggested_correction": "仅保留较高偏好响应及相对可忽略的反偏好响应。",
+        "pdf_page": 6,
+        "resolved": true
+      },
+      {
+        "claim_id": "C3",
+        "issue": "较低归一化平均发放率被作者解释为功耗与计算效率提升，但网络规模更大且未测量总成本。",
+        "suggested_correction": "保留平均活动比较，将实际功耗与总成本列为未验证。",
+        "pdf_page": 10,
+        "resolved": true
+      },
+      {
+        "claim_id": "C3",
+        "issue": "第5页列出的9个速度只明确用于栅格图分析，不能作为所有速度扫描的完整样本数。",
+        "suggested_correction": "记录9个栅格分析速度这一覆盖信息，全部曲线采样点数仍记为未报告。",
+        "pdf_page": 5,
+        "resolved": true
+      },
+      {
+        "claim_id": "C4",
+        "issue": "质心平台、中央高速失响应与空间不均匀性限制唯一速度映射；草稿未完整保留空间响应边界。",
+        "suggested_correction": "保留平台与失响应，并补充环内差异、右边缘衰减及交界局部低响应；不把机制解释视为消融证据。",
+        "pdf_page": 10,
+        "resolved": true
+      },
+      {
+        "claim_id": "C7",
+        "issue": "草稿遗漏正文明确报告的约40 ms首次响应延迟。",
+        "suggested_correction": "新增独立时序结果，与C2保留共享Figure 4证据；限定刺激条件并区分刺激穿越与硬件处理延迟。",
+        "pdf_page": 7,
+        "resolved": true
+      },
+      {
+        "claim_id": "C2",
+        "issue": "草稿将C2与C3直接列为共享证据，但二者分别依据方向选择性实验与速度比较，未明确共享同一数据。",
+        "suggested_correction": "移除该直接共享标记；保留明确共享Figure 4的C2与C7，以及速度表征体系中的C3与C4。",
+        "pdf_page": 8,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "真实世界泛化和噪声稳健性依赖未供给补充材料，无法核查具体条件与分析单位。",
+        "suggested_correction": "暂缓提取独立验证结果，保持缺失材料记录。",
+        "pdf_page": 12,
+        "resolved": false
+      },
+      {
+        "claim_id": null,
+        "issue": "机器人注意、眼跳及极坐标改进是应用或实现预测，没有供给验证结果。",
+        "suggested_correction": "从已验证贡献中排除，并保留其预测性质。",
+        "pdf_page": 12,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "草稿包含source_check及review等所请求schema之外的字段，且未执行独立文本匹配工具。",
+        "suggested_correction": "删除额外字段，仅报告基于供给文本的人工式源文核对。",
+        "pdf_page": null,
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T06:43:27.496907Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "signed_in_chatgpt_codex",
+    "authentication": "existing_ChatGPT_login",
+    "provider_api_key_used": false,
+    "model": "account_default_GPT",
+    "source_sha256": "9370bb994c5502cad68adc326251755a78fab17fc66542dd60197827e0b84a95",
+    "requests": [
+      {
+        "phase": "extraction",
+        "seconds": 147.94,
+        "usage": {
+          "input_tokens": 29105,
+          "cached_input_tokens": 12032,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 5670,
+          "reasoning_output_tokens": 28
+        },
+        "backend": "signed_in_chatgpt_codex",
+        "tools_used": false
+      },
+      {
+        "phase": "source_audit",
+        "seconds": 181.55,
+        "usage": {
+          "input_tokens": 34672,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 7117,
+          "reasoning_output_tokens": 64
+        },
+        "backend": "signed_in_chatgpt_codex",
+        "tools_used": false
+      }
+    ],
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

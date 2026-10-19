@@ -1,0 +1,1386 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "Topology Matters: A Cautionary Case Study of Graph SSL on Neuro-Inspired Benchmarks",
+    "authors": [
+      "May Kristine Jonson Carlon",
+      "Su Myat Noe",
+      "Haojiong Wang",
+      "Yasuo Kuniyoshi"
+    ],
+    "doi": null,
+    "publication_year": 2026,
+    "venue": "arXiv (Cornell University)",
+    "url": "https://arxiv.org/pdf/2602.03217"
+  },
+  "source": {
+    "filename": "paper-W7127739909--Topology-Matters-A-Cautionary-Case-Study-of-Graph-SSL-on-Neuro-Inspired-Benchmarks.pdf",
+    "sha256": "084779c265e09bf6aa0b6197e81542dfafd9cece4636123ce313d0e8fe6432eb",
+    "source_url": "https://arxiv.org/pdf/2602.03217",
+    "pdf_page_count": 9
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "results_sections_seen": [
+      "Method / Architecture and SSL objective",
+      "Experimental Setup / Synthetic Benchmark and four stages",
+      "Hyperparameter Selection and training dynamics",
+      "Single-Graph Downstream Tasks",
+      "Transfer Learning Across Graphs",
+      "Ablation Study",
+      "Discussion, limitations and conclusion"
+    ],
+    "missing_material": [
+      "Fig.1–5原始像素及代码未读取；原始图/逐次训练记录未提供；真实连接组实验未进行"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "完整读取缓存PDF顺序1–9页，含全部公式、方法、结果、图注、Table 1、讨论及参考文献；arXiv:2602.03217v1，3 Feb 2026。",
+      "逐条第二来源审计区分合成图、单图内相关单位、2000次bootstrap及训练重复；保持真实负结果，不扩大为生物证据或整个范式证明。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "该框架以共享GraphSAGE骨干和节点、边、图三级投影头学习表示；显式边表示拼接两端隐藏状态与多通道边属性，而骨干消息聚合本身不使用边属性。",
+      "role": "result",
+      "source_pages": [
+        2,
+        3
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "生成的500个合成图报告平均聚类系数0.259±0.032、平均最短路径1.87±0.025，并具社区、模拟采集站点偏移和SC/FC边通道，作为受控连接组样式基准。",
+      "role": "result",
+      "source_pages": [
+        3
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "24组超参数中，hidden=64、depth=2、embedding=64、边分布权重2.5获得最高复合验证分数2.19；作者观察提高边分布权重可改善子图回归而略损节点可分性。",
+      "role": "result",
+      "source_pages": [
+        5
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "所选模型的训练曲线显示总损失趋于平台、约90轮达到最佳验证损失，预测损失趋向更负、MMD较早稳定且正则项持续非零，梯度范数平滑下降。",
+      "role": "result",
+      "source_pages": [
+        5
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "t-SNE图中边表示按SC权重分位呈结构化分布，节点表示有部分标签分离，说明可视化并非完全无结构；但这些图没有证明高维表示保留全部拓扑信息。",
+      "role": "interpretation",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "链接预测中冻结边表示加逻辑回归的AUC为0.727，低于Jaccard的0.845，作者报告差值95%CI为[-0.123,-0.112]、p<0.001；它仍高于原始特征余弦的0.686。",
+      "role": "result",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "节点分类中SSL表示的F1为0.767，低于原始特征逻辑回归0.794和监督GraphSAGE；对最佳基线报告p<0.01、差值95%CI[-0.145,-0.023]。",
+      "role": "result",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "子图回归中冻结边表示加Ridge得到R²=-0.174，低于原始特征均值池化Ridge的0.189及WL-Hash的0.177；对最佳基线报告p<0.01、差值95%CI[-0.686,-0.125]。",
+      "role": "result",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "跨图社区数分类报告SSL冻结表示准确率47.2%，低于经典特征基线53%，高于作者列出的五类20%机会水平。",
+      "role": "result",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "节点分类消融中，去除边分布损失后F1为0.801、去除协方差项为0.795，均高于完整模型0.767，提示多任务正则在该设置可能损害节点任务。",
+      "role": "interpretation",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "链接预测消融中移除DropEdge使AUC由0.727提高至0.752，移除预测器达到0.787，但仍低于Jaccard的0.845。",
+      "role": "result",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "子图回归消融中移除DropEdge使R²由-0.174升至0.074，去除边头达到0.180，但仍略低于原始特征Ridge的0.189。",
+      "role": "result",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "作者将DropEdge消融的改善和最佳基线差距解释为该框架的不变性目标与拓扑驱动任务失配；证据支持这一设置中的失败分析，但未唯一排除架构、任务构造或优化因素。",
+      "role": "interpretation",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "作者提出以社区、motif、modularity或聚类系数保持为预训练目标，并在真实HCP/UK Biobank连接组中检验，作为修复拓扑不变性失配的未来方向。",
+      "role": "hypothesis",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "其他图SSL、脑网络与预训练方法的引文是背景，并非本研究对这些方法的比较实验。",
+      "role": "review_synthesis",
+      "source_pages": [
+        1,
+        2,
+        8,
+        9
+      ],
+      "decision": "exclude",
+      "reason": "未实际评估引述SSL基线"
+    },
+    {
+      "summary": "小世界图类似脑网络只是基准设计动机，不是证明真实连接组生态有效性。",
+      "role": "interpretation",
+      "source_pages": [
+        3,
+        8
+      ],
+      "decision": "exclude",
+      "reason": "已在基准候选中记录边界"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "该框架以共享GraphSAGE骨干和节点、边、图三级投影头学习表示；显式边表示拼接两端隐藏状态与多通道边属性，而骨干消息聚合本身不使用边属性。",
+      "claim_type": "graph_self_supervised_learning",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "合成多模态图上的自监督预训练与冻结表示探测",
+          "design": "单一参考图调参；标签探针训练与测试分离；四阶段评估",
+          "comparator": "显式边投影与仅用节点特征/拓扑的消息传递",
+          "measure": "共享骨干及三级表示设计",
+          "unit_of_analysis": "合成图或同图内节点/边/子图；bootstrap重采样不是独立训练重复",
+          "sample_size_as_reported": "架构定义；无独立实验样本",
+          "uncertainty": "单图任务报告2000次配对bootstrap；不是2000个独立图或生物样本",
+          "assumptions": [
+            "任务标签由生成图的特征与拓扑构造；节点、边和重叠子图可能相关"
+          ],
+          "source_locator": {
+            "pdf_page": 2,
+            "section": "Method / Architecture",
+            "figure": "Equations 4–9",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "合成多模态图上的自监督预训练与冻结表示探测",
+          "design": "单一参考图调参；标签探针训练与测试分离；四阶段评估",
+          "comparator": "三级预测损失、边分布匹配和防塌缩正则",
+          "measure": "边头、SimSiam、MMD及方差/协方差约束",
+          "unit_of_analysis": "合成图或同图内节点/边/子图；bootstrap重采样不是独立训练重复",
+          "sample_size_as_reported": "架构定义；MMD每视图最多4096条边",
+          "uncertainty": "单图任务报告2000次配对bootstrap；不是2000个独立图或生物样本",
+          "assumptions": [
+            "任务标签由生成图的特征与拓扑构造；节点、边和重叠子图可能相关"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "Architecture / SSL Objective",
+            "figure": "Equations 10–17",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "该框架以共享GraphSAGE骨干和节点、边、图三级投影头学习表示；显式边表示拼接两端隐藏状态与多通道边属性，而骨干消息聚合本身不使用边属性。",
+        "boundary": "边属性只在最终边投影进入，不是所有尺度均通过消息传递融合模态；训练与评估图读出权重公式不同。",
+        "negative_result": null,
+        "non_inference": "不是实测脑功能层级或神经生物学验证。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "connectome-representation-learning",
+        "topology-aware-ssl"
+      ],
+      "scientific_questions": [
+        "哪些保留拓扑的预训练目标能在独立合成图和真实连接组上改善多尺度任务，而非只改善增强视图一致性？"
+      ],
+      "shared_evidence_with": [
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C10",
+        "C11",
+        "C12",
+        "C13"
+      ],
+      "review_notes": [
+        "第二次逐条来源审计完成；保留实际分析单位、任务条件及统计边界，不由不显著推出等效或唯一机制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "生成的500个合成图报告平均聚类系数0.259±0.032、平均最短路径1.87±0.025，并具社区、模拟采集站点偏移和SC/FC边通道，作为受控连接组样式基准。",
+      "claim_type": "graph_self_supervised_learning",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "合成多模态图上的自监督预训练与冻结表示探测",
+          "design": "单一参考图调参；标签探针训练与测试分离；四阶段评估",
+          "comparator": "作者描述的随机图等价对照，数值未列出",
+          "measure": "聚类系数、路径长度及生成设置",
+          "unit_of_analysis": "合成图或同图内节点/边/子图；bootstrap重采样不是独立训练重复",
+          "sample_size_as_reported": "500个生成图；每图700至900节点、6至10社区",
+          "uncertainty": "单图任务报告2000次配对bootstrap；不是2000个独立图或生物样本",
+          "assumptions": [
+            "任务标签由生成图的特征与拓扑构造；节点、边和重叠子图可能相关"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "Experimental Setup / Synthetic Benchmark",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "生成的500个合成图报告平均聚类系数0.259±0.032、平均最短路径1.87±0.025，并具社区、模拟采集站点偏移和SC/FC边通道，作为受控连接组样式基准。",
+        "boundary": "SC随机缺失25%，FC由社区驱动AR(1)序列的相关生成；非真实MRI或生物连接组。",
+        "negative_result": null,
+        "non_inference": "高聚类和短路径本身不验证所有真实连接组性质或排除所有生成器偏差。",
+        "unresolved": "随机对照的具体数值、±含义及小世界归一化未充分报告。",
+        "unresolved_attribution": "来源局限及提取者来源复核"
+      },
+      "broad_directions": [
+        "connectome-representation-learning",
+        "topology-aware-ssl"
+      ],
+      "scientific_questions": [
+        "哪些保留拓扑的预训练目标能在独立合成图和真实连接组上改善多尺度任务，而非只改善增强视图一致性？"
+      ],
+      "shared_evidence_with": [
+        "C9"
+      ],
+      "review_notes": [
+        "第二次逐条来源审计完成；保留实际分析单位、任务条件及统计边界，不由不显著推出等效或唯一机制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "24组超参数中，hidden=64、depth=2、embedding=64、边分布权重2.5获得最高复合验证分数2.19；作者观察提高边分布权重可改善子图回归而略损节点可分性。",
+      "claim_type": "graph_self_supervised_learning",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "合成多模态图上的自监督预训练与冻结表示探测",
+          "design": "单一参考图调参；标签探针训练与测试分离；四阶段评估",
+          "comparator": "hidden、层数、维度及边损失权重网格",
+          "measure": "复合验证分数与节点F1/回归R²权衡",
+          "unit_of_analysis": "合成图或同图内节点/边/子图；bootstrap重采样不是独立训练重复",
+          "sample_size_as_reported": "24种配置；同一参考图的验证划分",
+          "uncertainty": "单图任务报告2000次配对bootstrap；不是2000个独立图或生物样本",
+          "assumptions": [
+            "任务标签由生成图的特征与拓扑构造；节点、边和重叠子图可能相关"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "Results / Hyperparameter Selection",
+            "figure": "Fig.1",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "24组超参数中，hidden=64、depth=2、embedding=64、边分布权重2.5获得最高复合验证分数2.19；作者观察提高边分布权重可改善子图回归而略损节点可分性。",
+        "boundary": "选择基于验证指标，不是多个独立图上确认的普遍最优；测试不用于选择是作者描述。",
+        "negative_result": null,
+        "non_inference": "描述性权衡不是经统计检验的通用单调关系。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "connectome-representation-learning",
+        "topology-aware-ssl"
+      ],
+      "scientific_questions": [
+        "哪些保留拓扑的预训练目标能在独立合成图和真实连接组上改善多尺度任务，而非只改善增强视图一致性？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C10",
+        "C11",
+        "C12",
+        "C13"
+      ],
+      "review_notes": [
+        "第二次逐条来源审计完成；保留实际分析单位、任务条件及统计边界，不由不显著推出等效或唯一机制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "所选模型的训练曲线显示总损失趋于平台、约90轮达到最佳验证损失，预测损失趋向更负、MMD较早稳定且正则项持续非零，梯度范数平滑下降。",
+      "claim_type": "graph_self_supervised_learning",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "合成多模态图上的自监督预训练与冻结表示探测",
+          "design": "单一参考图调参；标签探针训练与测试分离；四阶段评估",
+          "comparator": "训练过程各损失项",
+          "measure": "EMA平滑的训练损失、正则项和梯度轨迹",
+          "unit_of_analysis": "合成图或同图内节点/边/子图；bootstrap重采样不是独立训练重复",
+          "sample_size_as_reported": "示例训练轨迹；独立训练重复未报告",
+          "uncertainty": "单图任务报告2000次配对bootstrap；不是2000个独立图或生物样本",
+          "assumptions": [
+            "任务标签由生成图的特征与拓扑构造；节点、边和重叠子图可能相关"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "Results / Hyperparameter Selection",
+            "figure": "Fig.2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所选模型的训练曲线显示总损失趋于平台、约90轮达到最佳验证损失，预测损失趋向更负、MMD较早稳定且正则项持续非零，梯度范数平滑下降。",
+        "boundary": "曲线为指数移动平均展示，最多400轮、每轮1步，采用早停。",
+        "negative_result": null,
+        "non_inference": "平滑下降不证明无梯度消失、收敛到全局最优或所有表示绝不塌缩。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "connectome-representation-learning",
+        "topology-aware-ssl"
+      ],
+      "scientific_questions": [
+        "哪些保留拓扑的预训练目标能在独立合成图和真实连接组上改善多尺度任务，而非只改善增强视图一致性？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C3",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C10",
+        "C11",
+        "C12",
+        "C13"
+      ],
+      "review_notes": [
+        "第二次逐条来源审计完成；保留实际分析单位、任务条件及统计边界，不由不显著推出等效或唯一机制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "t-SNE图中边表示按SC权重分位呈结构化分布，节点表示有部分标签分离，说明可视化并非完全无结构；但这些图没有证明高维表示保留全部拓扑信息。",
+      "claim_type": "graph_self_supervised_learning",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "合成多模态图上的自监督预训练与冻结表示探测",
+          "design": "单一参考图调参；标签探针训练与测试分离；四阶段评估",
+          "comparator": "边权分位与节点类别着色",
+          "measure": "二维t-SNE与权重/类别着色",
+          "unit_of_analysis": "合成图或同图内节点/边/子图；bootstrap重采样不是独立训练重复",
+          "sample_size_as_reported": "同一合成图的表示；无独立生物样本",
+          "uncertainty": "单图任务报告2000次配对bootstrap；不是2000个独立图或生物样本",
+          "assumptions": [
+            "任务标签由生成图的特征与拓扑构造；节点、边和重叠子图可能相关"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "Results / Embedding visualization",
+            "figure": "Fig.3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "t-SNE图中边表示按SC权重分位呈结构化分布，节点表示有部分标签分离，说明可视化并非完全无结构；但这些图没有证明高维表示保留全部拓扑信息。",
+        "boundary": "可视化为描述性证据，未报告量化聚类检验。",
+        "negative_result": null,
+        "non_inference": "不能把t-SNE分离写为脑组织机制或充分的防塌缩证明。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "connectome-representation-learning",
+        "topology-aware-ssl"
+      ],
+      "scientific_questions": [
+        "哪些保留拓扑的预训练目标能在独立合成图和真实连接组上改善多尺度任务，而非只改善增强视图一致性？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C3",
+        "C4",
+        "C6",
+        "C7",
+        "C8",
+        "C10",
+        "C11",
+        "C12",
+        "C13"
+      ],
+      "review_notes": [
+        "第二次逐条来源审计完成；保留实际分析单位、任务条件及统计边界，不由不显著推出等效或唯一机制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "链接预测中冻结边表示加逻辑回归的AUC为0.727，低于Jaccard的0.845，作者报告差值95%CI为[-0.123,-0.112]、p<0.001；它仍高于原始特征余弦的0.686。",
+      "claim_type": "graph_self_supervised_learning",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "合成多模态图上的自监督预训练与冻结表示探测",
+          "design": "单一参考图调参；标签探针训练与测试分离；四阶段评估",
+          "comparator": "冻结SSL表示与原始特征、拓扑启发式及监督GraphSAGE基线",
+          "measure": "留出正边与等量非边的AUC和配对bootstrap差值",
+          "unit_of_analysis": "合成图或同图内节点/边/子图；bootstrap重采样不是独立训练重复",
+          "sample_size_as_reported": "单一合成参考图的节点/边/子图测试划分；训练随机种子数未报告",
+          "uncertainty": "单图任务报告2000次配对bootstrap；不是2000个独立图或生物样本",
+          "assumptions": [
+            "任务标签由生成图的特征与拓扑构造；节点、边和重叠子图可能相关"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "Single-Graph Downstream Tasks / Link prediction",
+            "figure": "Table 1",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "链接预测中冻结边表示加逻辑回归的AUC为0.727，低于Jaccard的0.845，作者报告差值95%CI为[-0.123,-0.112]、p<0.001；它仍高于原始特征余弦的0.686。",
+        "boundary": "每图15%正边留出，负边排除观测正边；置信区间针对本任务重采样而不是跨图重复。",
+        "negative_result": "该SSL边表示未胜过最佳拓扑基线或监督SAGE的0.802。",
+        "non_inference": "不是所有经典方法均优于SSL，也不证明其完全没有拓扑信息。",
+        "unresolved": "骨干计算时是否从消息传递图中严格移除了待预测边，文中实现细节不充分；bootstrap的相关边处理未明确。",
+        "unresolved_attribution": "来源局限及提取者来源复核"
+      },
+      "broad_directions": [
+        "connectome-representation-learning",
+        "topology-aware-ssl"
+      ],
+      "scientific_questions": [
+        "哪些保留拓扑的预训练目标能在独立合成图和真实连接组上改善多尺度任务，而非只改善增强视图一致性？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C3",
+        "C4",
+        "C5",
+        "C7",
+        "C8",
+        "C10",
+        "C11",
+        "C12",
+        "C13"
+      ],
+      "review_notes": [
+        "第二次逐条来源审计完成；保留实际分析单位、任务条件及统计边界，不由不显著推出等效或唯一机制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "节点分类中SSL表示的F1为0.767，低于原始特征逻辑回归0.794和监督GraphSAGE；对最佳基线报告p<0.01、差值95%CI[-0.145,-0.023]。",
+      "claim_type": "graph_self_supervised_learning",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "合成多模态图上的自监督预训练与冻结表示探测",
+          "design": "单一参考图调参；标签探针训练与测试分离；四阶段评估",
+          "comparator": "冻结SSL表示与原始特征、拓扑启发式及监督GraphSAGE基线",
+          "measure": "三分类F1及最佳基线对照",
+          "unit_of_analysis": "合成图或同图内节点/边/子图；bootstrap重采样不是独立训练重复",
+          "sample_size_as_reported": "单一合成参考图的节点/边/子图测试划分；训练随机种子数未报告",
+          "uncertainty": "单图任务报告2000次配对bootstrap；不是2000个独立图或生物样本",
+          "assumptions": [
+            "任务标签由生成图的特征与拓扑构造；节点、边和重叠子图可能相关"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "Single-Graph Downstream Tasks / Node classification",
+            "figure": "Table 1",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "节点分类中SSL表示的F1为0.767，低于原始特征逻辑回归0.794和监督GraphSAGE；对最佳基线报告p<0.01、差值95%CI[-0.145,-0.023]。",
+        "boundary": "节点标签联合PageRank与特征分数经分位离散，标签探针为128隐藏单元MLP；不是纯无监督预测标签。",
+        "negative_result": "未比原始特征提供更高的描述性F1。",
+        "non_inference": "没有给出与原始特征LR差异的独立显著性结论，监督模型也不是严格理论上界。",
+        "unresolved": "Table 1的监督GraphSAGE F1为0.848，正文为0.840；两值均保留为来源不一致。",
+        "unresolved_attribution": "来源局限及提取者来源复核"
+      },
+      "broad_directions": [
+        "connectome-representation-learning",
+        "topology-aware-ssl"
+      ],
+      "scientific_questions": [
+        "哪些保留拓扑的预训练目标能在独立合成图和真实连接组上改善多尺度任务，而非只改善增强视图一致性？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C8",
+        "C10",
+        "C11",
+        "C12",
+        "C13"
+      ],
+      "review_notes": [
+        "第二次逐条来源审计完成；保留实际分析单位、任务条件及统计边界，不由不显著推出等效或唯一机制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "子图回归中冻结边表示加Ridge得到R²=-0.174，低于原始特征均值池化Ridge的0.189及WL-Hash的0.177；对最佳基线报告p<0.01、差值95%CI[-0.686,-0.125]。",
+      "claim_type": "graph_self_supervised_learning",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "合成多模态图上的自监督预训练与冻结表示探测",
+          "design": "单一参考图调参；标签探针训练与测试分离；四阶段评估",
+          "comparator": "SSL边表示Ridge、原始特征Ridge与WL-Hash",
+          "measure": "以密度与conductance构造目标的子图R²",
+          "unit_of_analysis": "合成图或同图内节点/边/子图；bootstrap重采样不是独立训练重复",
+          "sample_size_as_reported": "单一图抽取200个随机子图，再按70/15/15划分；bootstrap2000次",
+          "uncertainty": "单图任务报告2000次配对bootstrap；不是2000个独立图或生物样本",
+          "assumptions": [
+            "任务标签由生成图的特征与拓扑构造；节点、边和重叠子图可能相关"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "Single-Graph Downstream Tasks / Subgraph regression",
+            "figure": "Table 1",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "子图回归中冻结边表示加Ridge得到R²=-0.174，低于原始特征均值池化Ridge的0.189及WL-Hash的0.177；对最佳基线报告p<0.01、差值95%CI[-0.686,-0.125]。",
+        "boundary": "负R²指该留出任务比常数均值参考更差；子图可能共享节点与边。",
+        "negative_result": "完整模型在该回归任务未获得正R²。",
+        "non_inference": "不能从单一负R²断言所有结构信息完全丢失。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "connectome-representation-learning",
+        "topology-aware-ssl"
+      ],
+      "scientific_questions": [
+        "哪些保留拓扑的预训练目标能在独立合成图和真实连接组上改善多尺度任务，而非只改善增强视图一致性？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C10",
+        "C11",
+        "C12",
+        "C13"
+      ],
+      "review_notes": [
+        "第二次逐条来源审计完成；保留实际分析单位、任务条件及统计边界，不由不显著推出等效或唯一机制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "跨图社区数分类报告SSL冻结表示准确率47.2%，低于经典特征基线53%，高于作者列出的五类20%机会水平。",
+      "claim_type": "graph_self_supervised_learning",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "合成多模态图上的自监督预训练与冻结表示探测",
+          "design": "单一参考图调参；标签探针训练与测试分离；四阶段评估",
+          "comparator": "冻结图表示与聚合原始特征基线",
+          "measure": "6至10社区数分类准确率",
+          "unit_of_analysis": "合成图或同图内节点/边/子图；bootstrap重采样不是独立训练重复",
+          "sample_size_as_reported": "500个合成图；80/20划分；重复汇总次数未报告",
+          "uncertainty": "单图任务报告2000次配对bootstrap；不是2000个独立图或生物样本",
+          "assumptions": [
+            "任务标签由生成图的特征与拓扑构造；节点、边和重叠子图可能相关"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "Transfer Learning Across Graphs",
+            "figure": "Fig.4（见PDF第7页）",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "跨图社区数分类报告SSL冻结表示准确率47.2%，低于经典特征基线53%，高于作者列出的五类20%机会水平。",
+        "boundary": "不同规模和社区数的合成图之间迁移，不是跨真实站点或真实脑数据迁移。",
+        "negative_result": "没有超过该任务特征基线。",
+        "non_inference": "未提供置信区间或显著性，不能声称显著高于机会或显著低于基线。",
+        "unresolved": "方法段描述构造hand-crafted Xgraph而结果称冻结zG，探针输入来源不清；若恰为100个单次测试图，47.2%无法唯一映射整数正确数，不能猜测平均轮数。",
+        "unresolved_attribution": "来源局限及提取者来源复核"
+      },
+      "broad_directions": [
+        "connectome-representation-learning",
+        "topology-aware-ssl"
+      ],
+      "scientific_questions": [
+        "哪些保留拓扑的预训练目标能在独立合成图和真实连接组上改善多尺度任务，而非只改善增强视图一致性？"
+      ],
+      "shared_evidence_with": [
+        "C2"
+      ],
+      "review_notes": [
+        "第二次逐条来源审计完成；保留实际分析单位、任务条件及统计边界，不由不显著推出等效或唯一机制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "节点分类消融中，去除边分布损失后F1为0.801、去除协方差项为0.795，均高于完整模型0.767，提示多任务正则在该设置可能损害节点任务。",
+      "claim_type": "graph_self_supervised_learning",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "合成多模态图上的自监督预训练与冻结表示探测",
+          "design": "单一参考图调参；标签探针训练与测试分离；四阶段评估",
+          "comparator": "FULL vs去边分布匹配/协方差",
+          "measure": "NO_EDGESET与NO_COV的节点F1",
+          "unit_of_analysis": "合成图或同图内节点/边/子图；bootstrap重采样不是独立训练重复",
+          "sample_size_as_reported": "九个组件变体；同一单图划分；种子数未报告",
+          "uncertainty": "单图任务报告2000次配对bootstrap；不是2000个独立图或生物样本",
+          "assumptions": [
+            "任务标签由生成图的特征与拓扑构造；节点、边和重叠子图可能相关"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "Ablation Study",
+            "figure": "Fig.5",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "节点分类消融中，去除边分布损失后F1为0.801、去除协方差项为0.795，均高于完整模型0.767，提示多任务正则在该设置可能损害节点任务。",
+        "boundary": "消融使用已选超参数且没有重复训练区间；差异为描述性。",
+        "negative_result": "完整的多尺度目标不是节点任务的最佳组件组合。",
+        "non_inference": "不能声称所有边学习或协方差正则本质有害。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "connectome-representation-learning",
+        "topology-aware-ssl"
+      ],
+      "scientific_questions": [
+        "哪些保留拓扑的预训练目标能在独立合成图和真实连接组上改善多尺度任务，而非只改善增强视图一致性？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C11",
+        "C12",
+        "C13"
+      ],
+      "review_notes": [
+        "第二次逐条来源审计完成；保留实际分析单位、任务条件及统计边界，不由不显著推出等效或唯一机制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "链接预测消融中移除DropEdge使AUC由0.727提高至0.752，移除预测器达到0.787，但仍低于Jaccard的0.845。",
+      "claim_type": "graph_self_supervised_learning",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "合成多模态图上的自监督预训练与冻结表示探测",
+          "design": "单一参考图调参；标签探针训练与测试分离；四阶段评估",
+          "comparator": "FULL、NO_DROPEDGE和NO_PREDICTORS",
+          "measure": "链接AUC组件消融",
+          "unit_of_analysis": "合成图或同图内节点/边/子图；bootstrap重采样不是独立训练重复",
+          "sample_size_as_reported": "九个组件变体；单图；未报告变体差异显著性",
+          "uncertainty": "单图任务报告2000次配对bootstrap；不是2000个独立图或生物样本",
+          "assumptions": [
+            "任务标签由生成图的特征与拓扑构造；节点、边和重叠子图可能相关"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "Ablation Study",
+            "figure": "Fig.5",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "链接预测消融中移除DropEdge使AUC由0.727提高至0.752，移除预测器达到0.787，但仍低于Jaccard的0.845。",
+        "boundary": "随机保留85%边的增强被移除是局部受控比较，并非所有拓扑增强测试。",
+        "negative_result": "最佳报告的链接消融也未追平Jaccard。",
+        "non_inference": "不证明其他SSL范式或适当重调参数后必然失败。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "connectome-representation-learning",
+        "topology-aware-ssl"
+      ],
+      "scientific_questions": [
+        "哪些保留拓扑的预训练目标能在独立合成图和真实连接组上改善多尺度任务，而非只改善增强视图一致性？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C10",
+        "C12",
+        "C13"
+      ],
+      "review_notes": [
+        "第二次逐条来源审计完成；保留实际分析单位、任务条件及统计边界，不由不显著推出等效或唯一机制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "子图回归消融中移除DropEdge使R²由-0.174升至0.074，去除边头达到0.180，但仍略低于原始特征Ridge的0.189。",
+      "claim_type": "graph_self_supervised_learning",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "合成多模态图上的自监督预训练与冻结表示探测",
+          "design": "单一参考图调参；标签探针训练与测试分离；四阶段评估",
+          "comparator": "FULL、NO_DROPEDGE和NO_EDGE_HEAD",
+          "measure": "子图R²组件消融",
+          "unit_of_analysis": "合成图或同图内节点/边/子图；bootstrap重采样不是独立训练重复",
+          "sample_size_as_reported": "九个组件变体；同一200子图划分",
+          "uncertainty": "单图任务报告2000次配对bootstrap；不是2000个独立图或生物样本",
+          "assumptions": [
+            "任务标签由生成图的特征与拓扑构造；节点、边和重叠子图可能相关"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "Ablation Study",
+            "figure": "Fig.5",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "子图回归消融中移除DropEdge使R²由-0.174升至0.074，去除边头达到0.180，但仍略低于原始特征Ridge的0.189。",
+        "boundary": "不同任务的最佳变体不同；不能由正R²称已达到基线优势。",
+        "negative_result": "完整模型为负R²；最佳报告消融未超过对应最佳经典基线。",
+        "non_inference": null,
+        "unresolved": "NO_EDGE_HEAD条件如何替代原本用于回归的边表示，文中未详细说明。",
+        "unresolved_attribution": "来源局限及提取者来源复核"
+      },
+      "broad_directions": [
+        "connectome-representation-learning",
+        "topology-aware-ssl"
+      ],
+      "scientific_questions": [
+        "哪些保留拓扑的预训练目标能在独立合成图和真实连接组上改善多尺度任务，而非只改善增强视图一致性？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C10",
+        "C11",
+        "C13"
+      ],
+      "review_notes": [
+        "第二次逐条来源审计完成；保留实际分析单位、任务条件及统计边界，不由不显著推出等效或唯一机制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C13",
+      "statement": "作者将DropEdge消融的改善和最佳基线差距解释为该框架的不变性目标与拓扑驱动任务失配；证据支持这一设置中的失败分析，但未唯一排除架构、任务构造或优化因素。",
+      "claim_type": "graph_self_supervised_learning",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "合成多模态图上的自监督预训练与冻结表示探测",
+          "design": "单一参考图调参；标签探针训练与测试分离；四阶段评估",
+          "comparator": "完整模型与拓扑启发式、组件消融",
+          "measure": "将对照及组件消融联系到目标失配的解释",
+          "unit_of_analysis": "合成图或同图内节点/边/子图；bootstrap重采样不是独立训练重复",
+          "sample_size_as_reported": "同一合成基准中的一个SSL框架；未测试GraphCL/BGRL/GraphMAE",
+          "uncertainty": "单图任务报告2000次配对bootstrap；不是2000个独立图或生物样本",
+          "assumptions": [
+            "任务标签由生成图的特征与拓扑构造；节点、边和重叠子图可能相关"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Discussion / Failure and Ablation Analysis",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者将DropEdge消融的改善和最佳基线差距解释为该框架的不变性目标与拓扑驱动任务失配；证据支持这一设置中的失败分析，但未唯一排除架构、任务构造或优化因素。",
+        "boundary": "比较未包括现代SSL基线，真实连接组、复杂重叠社区和rich-club均未验证。",
+        "negative_result": null,
+        "non_inference": "不能写成整个图SSL范式或真实脑连接组必然失败的定理，也不能把生成图称生物model organism实验。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "connectome-representation-learning",
+        "topology-aware-ssl"
+      ],
+      "scientific_questions": [
+        "哪些保留拓扑的预训练目标能在独立合成图和真实连接组上改善多尺度任务，而非只改善增强视图一致性？"
+      ],
+      "shared_evidence_with": [
+        "C9",
+        "C14"
+      ],
+      "review_notes": [
+        "第二次逐条来源审计完成；保留实际分析单位、任务条件及统计边界，不由不显著推出等效或唯一机制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C14",
+      "statement": "作者提出以社区、motif、modularity或聚类系数保持为预训练目标，并在真实HCP/UK Biobank连接组中检验，作为修复拓扑不变性失配的未来方向。",
+      "claim_type": "graph_self_supervised_learning",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "合成多模态图上的自监督预训练与冻结表示探测",
+          "design": "单一参考图调参；标签探针训练与测试分离；四阶段评估",
+          "comparator": "现有不变性目标与尚未实现的拓扑保持目标",
+          "measure": "拓扑感知预训练和真实数据验证建议",
+          "unit_of_analysis": "合成图或同图内节点/边/子图；bootstrap重采样不是独立训练重复",
+          "sample_size_as_reported": "无新增实验",
+          "uncertainty": "单图任务报告2000次配对bootstrap；不是2000个独立图或生物样本",
+          "assumptions": [
+            "任务标签由生成图的特征与拓扑构造；节点、边和重叠子图可能相关"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Limitations and Future Directions / Conclusion",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者提出的可检验假说。",
+        "boundary": "这些替代目标未在本文训练评估。",
+        "negative_result": null,
+        "non_inference": "不是已经证明有效的新算法或真实连接组成果。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "connectome-representation-learning",
+        "topology-aware-ssl"
+      ],
+      "scientific_questions": [
+        "哪些保留拓扑的预训练目标能在独立合成图和真实连接组上改善多尺度任务，而非只改善增强视图一致性？"
+      ],
+      "shared_evidence_with": [
+        "C9",
+        "C13"
+      ],
+      "review_notes": [
+        "第二次逐条来源审计完成；保留实际分析单位、任务条件及统计边界，不由不显著推出等效或唯一机制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "14条候选覆盖层级边表示架构、生成基准、调参与训练曲线、表示可视化、三个明确失败任务、跨图迁移和全部重要消融。结果支持当前框架的局部目标失配解释，保留表文冲突、迁移输入和边移除实现疑点；真实脑及其他SSL方法仍未验证。",
+  "shared_evidence": [
+    {
+      "claim_id": "C1",
+      "with": [
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C10",
+        "C11",
+        "C12",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C2",
+      "with": [
+        "C9"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C1",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C10",
+        "C11",
+        "C12",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C1",
+        "C3",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C10",
+        "C11",
+        "C12",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C1",
+        "C3",
+        "C4",
+        "C6",
+        "C7",
+        "C8",
+        "C10",
+        "C11",
+        "C12",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C1",
+        "C3",
+        "C4",
+        "C5",
+        "C7",
+        "C8",
+        "C10",
+        "C11",
+        "C12",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C1",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C8",
+        "C10",
+        "C11",
+        "C12",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C1",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C10",
+        "C11",
+        "C12",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C2"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "with": [
+        "C1",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C11",
+        "C12",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "with": [
+        "C1",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C10",
+        "C12",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "with": [
+        "C1",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C10",
+        "C11",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C13",
+      "with": [
+        "C9",
+        "C14"
+      ]
+    },
+    {
+      "claim_id": "C14",
+      "with": [
+        "C9",
+        "C13"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": "C7",
+        "issue": "监督GraphSAGE的F1表格0.848与正文0.840不一致。",
+        "pdf_page": 6,
+        "suggested_correction": "不合并或擅自选择更正。",
+        "resolved": false
+      },
+      {
+        "claim_id": "C9",
+        "issue": "迁移方法段Xgraph与结果段zG表述不一致，47.2%的单次样本数解释未提供。",
+        "pdf_page": 4,
+        "suggested_correction": "保留输入与汇总方式不确定性。",
+        "resolved": false
+      },
+      {
+        "claim_id": "C6",
+        "issue": "链接探针骨干(X,E)中的目标边移除细节不充分，无法审计是否有target-link inclusion。",
+        "pdf_page": 4,
+        "suggested_correction": "记录未解决，不指控已证实泄漏。",
+        "resolved": false
+      },
+      {
+        "claim_id": "C12",
+        "issue": "无边头回归的替代表征实现未描述。",
+        "pdf_page": 7,
+        "suggested_correction": "保留消融数字及实现不确定性。",
+        "resolved": false
+      },
+      {
+        "claim_id": "C13",
+        "issue": "未测试现代SSL或真实连接组；广泛失败判断超出直接证据。",
+        "pdf_page": 8,
+        "suggested_correction": "结论限定当前框架和生成任务。",
+        "resolved": true
+      },
+      {
+        "claim_id": "C6",
+        "issue": "2000是bootstrap重采样数，不是独立图/训练/受试者n。",
+        "pdf_page": 4,
+        "suggested_correction": "已按实际单位注明。",
+        "resolved": true
+      },
+      {
+        "claim_id": "C8",
+        "issue": "负R²是指定任务的实际失败，不等同于完全无拓扑信息。",
+        "pdf_page": 6,
+        "suggested_correction": "保留失败而避免全称无信息论断。",
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T13:03:49.924088Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "084779c265e09bf6aa0b6197e81542dfafd9cece4636123ce313d0e8fe6432eb",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

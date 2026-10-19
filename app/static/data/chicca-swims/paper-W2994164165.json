@@ -1,0 +1,488 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "Neuromorphic Sensory Integration for Combining Sound Source Localization and Collision Avoidance",
+    "authors": [
+      "Thorben Schoepe",
+      "Daniel Gutiérrez-Galán",
+      "Juan Pedro Dominguez-Morales",
+      "Angel F. Jimenez-Fernandez",
+      "Alejandro Linares-Barranco",
+      "Elisabetta Chicca"
+    ],
+    "doi": "10.1109/biocas.2019.8919202",
+    "publication_year": 2019,
+    "venue": "IEEE Biomedical Circuits and Systems Conference (BioCAS)",
+    "url": "https://doi.org/10.1109/biocas.2019.8919202"
+  },
+  "source": {
+    "filename": "paper-W2994164165.pdf",
+    "sha256": "42aee71e0e2b63d35ea63dce3a42affeab5e0c851ad5e761548560b048a21cc1",
+    "source_url": "https://idus.us.es/server/api/core/bitstreams/6d959d72-28eb-4c62-817c-e01412f69e15/content",
+    "pdf_page_count": 4
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "results_sections_seen": [
+      "III-A. Optical Flow Encoder Network",
+      "III-B. Sound Source Direction Network",
+      "III-C. Sensory Integration Network",
+      "IV-A. Sound Source Tracking",
+      "IV-B. Sound Source Tracking and Obstacle Avoidance",
+      "V. Conclusions",
+      "Figures 1–3 captions"
+    ],
+    "missing_material": [
+      "Figures 1–3 的图像像素及图中数值",
+      "原始事件数据、完整网络参数和独立重复实验记录"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "所供四页文本为带有2019 IEEE版权信息的会议研究论文，题名、作者和年份与元数据一致；未见其他版本标记。",
+      "已评估全部所供正文、图注、致谢和参考文献；没有提供附录或补充材料正文。",
+      "两项测试均为开环；视觉事件由执行预定平移运动的机器人采集，未展示网络输出控制机器人运动。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "实现事件驱动听视觉整合架构，以视觉方位抑制、听觉侧向兴奋及硬 winner-take-all 选择航向。",
+      "role": "result",
+      "source_pages": [
+        1,
+        2,
+        3
+      ],
+      "decision": "include",
+      "reason": "整体系统及整合连接规则是方法贡献；既有传感器、sEMD和Jeffress原理不单列为本文新结果。"
+    },
+    {
+      "summary": "单通道500 Hz合成声源扫描中，期望与输出航向的Pearson相关系数为0.89。",
+      "role": "result",
+      "source_pages": [
+        3,
+        4
+      ],
+      "decision": "include",
+      "reason": "刺激条件、读出及定量结果明确。"
+    },
+    {
+      "summary": "固定中央声源时，加入障碍场景视觉回放使输出向障碍另一侧偏转，最后区段恢复接近中央。",
+      "role": "result",
+      "source_pages": [
+        3,
+        4
+      ],
+      "decision": "include",
+      "reason": "保留有无光流及不同障碍位置的完整比较。"
+    },
+    {
+      "summary": "中央障碍区段出现较高航向标准差和左右输出切换。",
+      "role": "result",
+      "source_pages": [
+        3,
+        4
+      ],
+      "decision": "include",
+      "reason": "输出稳定性限制可与侧向障碍响应分别判断，但共享同次测试。"
+    },
+    {
+      "summary": "系统能无碰撞到达声源并找到最短路径。",
+      "role": "interpretation",
+      "source_pages": [
+        1,
+        3,
+        4
+      ],
+      "decision": "exclude",
+      "reason": "没有网络控制的闭环轨迹、碰撞率、到达率或路径长度测量。"
+    },
+    {
+      "summary": "闭环首次侧向输出触发转向后可消除中央障碍引起的左右波动。",
+      "role": "hypothesis",
+      "source_pages": [
+        4
+      ],
+      "decision": "defer",
+      "reason": "属于作者提出的未验证解释，保留为未解决问题。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "本文实现的事件驱动听视觉整合系统以eDVS光流编码输出抑制对应航向的决策神经元，将NAS的FPGA Jeffress定位输出经SpiNNaker上的听觉winner-take-all网络传至侧向传播群，再由决策层硬winner-take-all选择航向；该连接设计优先排除具有光流输入的方位，并使听觉兴奋向邻近方位传播。",
+      "claim_type": "system_method",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "硬件实现和脉冲网络连接描述",
+          "design": "64通道双耳NAS和eDVS连接四节点、72 ARM核SpiNNaker；Jeffress coincidence detection在FPGA上实现，光流编码、听觉输出竞争及感觉整合在SpiNNaker上实现。",
+          "comparator": null,
+          "measure": "硬件分工、对应方位抑制、侧向兴奋和航向输出连接规则",
+          "unit_of_analysis": "所报告系统及其神经元群连接",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "视觉、听觉及决策方位采用固定对应映射。",
+            "光流输出强抑制对应决策神经元。",
+            "侧向连接较弱，兴奋随传播距离减弱。",
+            "决策层采用硬winner-take-all，决策脉冲同时抑制并重置侧向传播群。"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "III-C；硬件与前级网络见第2页",
+            "figure": "Figures 1–2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "实现了用于开环听视觉航向选择的系统及整合规则。",
+        "boundary": "最近零光流方位的选择依赖固定方位映射、抑制和侧向传播设计；未报告自适应对齐测试。",
+        "negative_result": null,
+        "non_inference": "架构描述不能证明各连接的独立因果贡献、生物机制一致性或实际导航安全性。",
+        "unresolved": "该固定映射架构在闭环运动中的稳定性和适用范围尚未验证。",
+        "unresolved_attribution": "闭环验证为作者提出的后续工作；固定映射适用范围由证据边界识别。"
+      },
+      "broad_directions": [
+        "methods-causal",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "视觉方位抑制与听觉侧向兴奋如何共同产生趋向声源的航向选择？"
+      ],
+      "shared_evidence_with": [
+        "C3",
+        "C4"
+      ],
+      "review_notes": [
+        "共享的是解释多模态输出的架构描述，不是独立机制验证。",
+        "通道数、处理器核数和神经元数均不能作为独立实验重复数。",
+        "FPGA定位模块与SpiNNaker后续网络的计算分工已区分。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "在仅听觉输入的开环测试中，将接收位置距离为2 m的合成500 Hz声源从左向右作180度方位扫描，并使用中心频率接近500 Hz的一个NAS通道时，网络输出航向神经元编号跟随声源扫描；期望与输出航向的Pearson相关系数为0.89。",
+      "claim_type": "quantitative_performance",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "合成立体声音频输入与航向相关分析",
+          "design": "使用Python和Room Impulse Responses generator合成声源扫描音频，输入NAS并读取感觉整合网络输出。",
+          "comparator": "合成声源对应的期望航向",
+          "measure": "期望与输出航向的Pearson r = 0.89",
+          "unit_of_analysis": "扫描过程中配对的期望与输出航向观测；具体采样方式未报告",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "输出神经元编号对应声源方位。",
+            "使用一个中心频率接近500 Hz的NAS通道。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "IV-A；刺激设计及扫描范围见第3页",
+            "figure": "Figure 3a",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所测合成扫描条件下，输出航向与期望航向具有正相关。",
+        "boundary": "结果限于所测频率、距离、扫描范围、单通道和开环合成音频。",
+        "negative_result": null,
+        "non_inference": "r = 0.89不能解释为89%的定位准确率，也不能确定角度误差或导航成功率。",
+        "unresolved": "真实声源、其他频率、噪声及多声源条件下的性能未测试。",
+        "unresolved_attribution": "由刺激和测量范围识别的未测试问题。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "单通道双耳事件输入的航向输出能否跟随合成声源的方位扫描？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "正文写作89%，摘要明确为0.89；按Pearson相关系数记录。",
+        "配对观测数、独立重复次数和相关系数置信区间均未报告。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "在固定中央合成声源的开环测试中，仅听觉输入时输出航向均值接近中央；加入机器人以约0.8 m/s纯平移采集的障碍场景eDVS事件回放后，右侧障碍区段输出向左偏，左侧障碍区段输出向右偏，最后区段恢复接近中央并与无光流输出相近。",
+      "claim_type": "comparative_multisensory_response",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "固定声源条件下比较有无视觉事件回放的航向响应",
+          "design": "中央合成声源输入NAS，并向光流编码网络回放中央、右侧及左侧障碍场景记录；将输出分为五个时间区段，计算航向均值和标准差。",
+          "comparator": "同一中央声源条件下无光流输入的输出，以及静止和最后区段",
+          "measure": "航向神经元编号时序及分区均值、标准差；所供文本没有具体数值",
+          "unit_of_analysis": "场景记录中的航向输出和时间区段",
+          "sample_size_as_reported": "五个分析时间区段；独立记录和实验重复次数未报告",
+          "uncertainty": null,
+          "assumptions": [
+            "声源方位固定在中央。",
+            "视觉记录来自纯平移运动。",
+            "视觉事件按固定映射输入光流编码和感觉整合网络。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "IV-B；采集条件见第3页图注",
+            "figure": "Figures 3b–e",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "障碍场景视觉回放改变了趋向中央声源的输出航向，侧向偏转方向与所述障碍位置一致。",
+        "boundary": "证据限于固定声源、预录视觉输入和所述场景；作者将输出解释为选择最接近声源的零光流方位。",
+        "negative_result": null,
+        "non_inference": "未证明机器人实际避碰、到达声源或沿最短路径行驶，也未验证零光流方向普遍安全。",
+        "unresolved": "闭环轨迹的碰撞率、到达率及路径长度表现尚未验证。",
+        "unresolved_attribution": "作者明确计划闭环机器人验证；具体导航指标属于证据边界所识别的问题。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "固定声源条件下，障碍场景光流是否使事件驱动网络选择障碍另一侧的航向？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C4"
+      ],
+      "review_notes": [
+        "五个区段不是五次独立重复；未报告效应量、置信区间或统计检验。",
+        "正文的显著偏转措辞不作为统计显著性证据。",
+        "图注说明障碍至少高于地面40 cm，采集机器人可从下方通过；该采集过程不能视为网络控制的避障成功。",
+        "最后区段没有明确报告光流量，故仅记录航向恢复，不将其定量描述为低光流。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "在中央声源与中央障碍视觉回放共同输入的开环第二时间区段，网络航向输出在障碍两侧反复切换，航向标准差被报告为很高，未形成持续稳定的单侧输出。",
+      "claim_type": "conditional_performance_limitation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "中央障碍区段航向时序及标准差分析",
+          "design": "分析与C3共享的多模态测试第二时间区段，声源和障碍均位于中央。",
+          "comparator": null,
+          "measure": "左右输出切换及较高航向标准差；具体数值未报告",
+          "unit_of_analysis": "同一视觉回放第二时间区段内的航向输出",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "测试为开环，网络输出不反馈改变机器人运动或视觉输入。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "IV-B",
+            "figure": "Figures 3c,e, region 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "识别了所测中央障碍区段的输出稳定性限制。",
+        "boundary": "该现象只在所报告的中央障碍开环区段得到描述。",
+        "negative_result": "该区段输出反复左右切换，没有持续稳定的单侧选择。",
+        "non_inference": "不能据此断定闭环必然碰撞，也不能证明实际转向必然消除切换。",
+        "unresolved": "首次侧向输出触发实际转向后，运动反馈能否稳定航向？",
+        "unresolved_attribution": "作者将波动归因于缺少唯一最近零光流方向，并预测闭环转向可改变障碍相对位置；两者未通过独立机制测试验证。"
+      },
+      "broad_directions": [
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "中央障碍引起的左右航向切换能否通过闭环运动反馈稳定下来？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C3"
+      ],
+      "review_notes": [
+        "与C3共享同次测试，是不同条件读出，不构成独立复现。",
+        "未报告标准差数值、独立重复或统计检验。",
+        "将对称方位解释移出实测假设，保留为作者机制解释。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "已重新评估全部四页文本、图注和参考文献。本文贡献是事件驱动听视觉整合架构及两项开环测试：单通道500 Hz合成声源扫描的航向相关系数为0.89；障碍场景视觉回放使航向向侧向障碍的另一侧偏转，中央障碍区段则出现左右切换。未提供图像像素、独立重复次数及指标不确定性。实际闭环避碰、声源到达、最短路径和反馈稳定化均未验证。",
+  "shared_evidence": [
+    {
+      "claim_id": "C1",
+      "with": [
+        "C3",
+        "C4"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C1",
+        "C4"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C1",
+        "C3"
+      ]
+    }
+  ],
+  "audit": {
+    "initial_source_match_checks": [],
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": "C1",
+        "issue": "草稿容易将整合架构的解释视为已验证机制，且未完整写出听觉前级竞争与决策重置连接。",
+        "suggested_correction": "补全实现分工与连接规则，明确没有独立机制消融。",
+        "pdf_page": 3,
+        "resolved": true
+      },
+      {
+        "claim_id": "C2",
+        "issue": "正文以89%书写Pearson相关系数，容易误读为定位准确率。",
+        "suggested_correction": "依据摘要及指标含义记录为r = 0.89。",
+        "pdf_page": 4,
+        "resolved": true
+      },
+      {
+        "claim_id": "C3",
+        "issue": "草稿将最后区段描述为低光流，但正文没有明确报告该区段的光流量。",
+        "suggested_correction": "仅保留航向恢复中央及与无光流输出相近的描述。",
+        "pdf_page": 4,
+        "resolved": true
+      },
+      {
+        "claim_id": "C3",
+        "issue": "摘要和结论将开环航向选择外推为无碰撞及最短路径导航。",
+        "suggested_correction": "保留航向响应，将实际避碰、到达和路径最优性列为未证实推论。",
+        "pdf_page": 4,
+        "resolved": true
+      },
+      {
+        "claim_id": "C3",
+        "issue": "显著偏转措辞没有统计检验支持，五个时间区段也不是独立实验重复。",
+        "suggested_correction": "记录偏转方向和实际分析单位，不赋予统计显著性或重复数。",
+        "pdf_page": 4,
+        "resolved": true
+      },
+      {
+        "claim_id": "C4",
+        "issue": "中央障碍波动的原因及闭环解决方案是作者解释，不能作为经验证的机制或结果。",
+        "suggested_correction": "保留实测切换，将原因解释及闭环稳定化归入未验证问题。",
+        "pdf_page": 4,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "草稿包含请求模式之外的source_check和review字段，并以不确定性字段填写未报告事项。",
+        "suggested_correction": "删除额外字段；未报告的不确定性置为null，缺失信息移至review_notes或覆盖限制。",
+        "pdf_page": null,
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T05:05:14.192518Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "signed_in_chatgpt_codex",
+    "authentication": "existing_ChatGPT_login",
+    "provider_api_key_used": false,
+    "model": "account_default_GPT",
+    "source_sha256": "42aee71e0e2b63d35ea63dce3a42affeab5e0c851ad5e761548560b048a21cc1",
+    "requests": [
+      {
+        "phase": "extraction",
+        "seconds": 88.43,
+        "usage": {
+          "input_tokens": 18906,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 4168,
+          "reasoning_output_tokens": 42
+        },
+        "backend": "signed_in_chatgpt_codex",
+        "tools_used": false
+      },
+      {
+        "phase": "source_audit",
+        "seconds": 93.32,
+        "usage": {
+          "input_tokens": 22942,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 4411,
+          "reasoning_output_tokens": 42
+        },
+        "backend": "signed_in_chatgpt_codex",
+        "tools_used": false
+      }
+    ],
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

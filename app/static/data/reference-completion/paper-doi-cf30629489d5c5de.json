@@ -1,0 +1,1842 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "Predictive remapping and allocentric coding as consequences of energy efficiency in recurrent neural network models of active vision",
+    "authors": [
+      "Thomas Nortmann",
+      "Philip Sulewski",
+      "Tim C. Kietzmann"
+    ],
+    "doi": "10.1016/j.patter.2025.101422",
+    "publication_year": 2026,
+    "venue": "Patterns 7, 101422",
+    "url": "https://doi.org/10.1016/j.patter.2025.101422"
+  },
+  "source": {
+    "filename": "Noetmann et al. 2026.pdf",
+    "sha256": "890830c83f34c76b7cb21a27bfe7d7481f01a316cb06eeceaa022a0ccd50bfde",
+    "source_url": null,
+    "pdf_page_count": 12
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "results_sections_seen": [
+      "PDF 页 4–5：Inhibitory predictive remapping emerges as a consequence of energy efficiency；Figure 2A–D。",
+      "PDF 页 5：Allocentric coding emerges from energy efficiency by integrating over sequences of egocentric efference copies。",
+      "PDF 页 6–7：Allocentric reference frame units operate as prediction units；Figure 3A–G 及聚类文字。",
+      "PDF 页 3：Figure 1 全部图注与模型/损失设计；PDF 页 4、6：Figures 2/3 全部所供图注。",
+      "PDF 页 7–8：Discussion 的解释、局限和 Neuroscientific implications 预测。",
+      "PDF 页 8–10：全部 Methods，包括 Dataset and task design、Model design、Control models、Alternative architectures、Training regime、Analysis、Targeted in silico lesioning experiments、Allocentric unit clustering analysis。",
+      "PDF 页 1–2：高光、正式身份、摘要/引言；PDF 页 10–12：资源、声明、补充信息指针、日期与完整参考文献。"
+    ],
+    "missing_material": [
+      "Figure S1/S2 和在线 Supplemental information 内容未在这 12 页中提供；只读正文对它们的描述。",
+      "所有 figure pixels、外部代码/数据仓库与未提供补充文件均未读取；无附录正文供给。"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "完整顺序读取 12 个 PDF 页的全部所供文本，分成约 18000 字符输出，无摘要捷径；PDF 页序从高光页开始，正文印刷页码比 PDF 页序少 1。",
+      "完成第二轮 source-based 审计：在已保留的完整来源上下文中逐项核对命题、数值、对照、单位、边界、实际负向结果与未解问题；没有重新打开 PDF。",
+      "indexed title 原为 Noetmann et al. 2026，source 为 Thomas Nortmann / Philip Sulewski / Tim C. Kietzmann；DOI 10.1016/j.patter.2025.101422 精确一致。identity_consistent 表示同一 DOI 文档身份，不代表索引拼写完全一致。以直接供给原文的全题名与作者丰富输出，并保留索引差异。",
+      "供给版本是 Patterns 7, 101422 的正式期刊文章，期号日期 January 9, 2026；PDF 页 11 明示 Published: November 20, 2025。输出 publication_year=2026 表示期号年份，并保留在线发表 2025-11-20，不能视为两个版本或两篇独立论文。",
+      "loss 比较通常取各注视首时步；训练损失覆盖每注视全部时步。方法 N=2051×7=14357；反馈正文 n=86142 与 2051×7×6 相符。嵌套观测不等于独立场景/训练。",
+      "解码输入为归一化隐藏活动；模型所用图像是训练未见的场景，但解码器拟合/测试拆分未明确，不据此编造交叉验证。",
+      "全文没有独立训练种子/重复数，也没有生物样本、行为稳定性测量或真实代谢测量。",
+      "Figures 1A/2D/3E 选择满足像素 SD>0.25 的测试图像中最低损失的一张，Figure 3B 用同图/路径；示例不代表无偏性能分布。",
+      "所有 source_locator.quote=null；全文候选直接英语引文总词数为 0，保留必要 source-language 术语/标题。",
+      "仅保留本文内 shared_evidence_with；不建立跨论文 support/contradiction/replication 关系。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "静态/位置偏置抑制基线比较",
+      "role": "result",
+      "source_pages": [
+        4,
+        5
+      ],
+      "decision": "include",
+      "reason": "纳入 C1；限定于所供正文/图注并保留对照、观测单位和解释层次。"
+    },
+    {
+      "summary": "上一 crop 重复预测的排除",
+      "role": "result",
+      "source_pages": [
+        5
+      ],
+      "decision": "include",
+      "reason": "纳入 C2；限定于所供正文/图注并保留对照、观测单位和解释层次。"
+    },
+    {
+      "summary": "正确 efference-copy 配对与打乱比较",
+      "role": "result",
+      "source_pages": [
+        5
+      ],
+      "decision": "include",
+      "reason": "纳入 C3；限定于所供正文/图注并保留对照、观测单位和解释层次。"
+    },
+    {
+      "summary": "无 efference-copy 的训练控制",
+      "role": "result",
+      "source_pages": [
+        5,
+        9
+      ],
+      "decision": "include",
+      "reason": "纳入 C4；限定于所供正文/图注并保留对照、观测单位和解释层次。"
+    },
+    {
+      "summary": "缩小 crop 的视觉重叠边界",
+      "role": "result",
+      "source_pages": [
+        5,
+        9
+      ],
+      "decision": "include",
+      "reason": "纳入 C5；限定于所供正文/图注并保留对照、观测单位和解释层次。"
+    },
+    {
+      "summary": "近期空间位置历史与损失关系",
+      "role": "result",
+      "source_pages": [
+        5,
+        10
+      ],
+      "decision": "include",
+      "reason": "纳入 C6；限定于所供正文/图注并保留对照、观测单位和解释层次。"
+    },
+    {
+      "summary": "内部反馈总体抑制与文字描述的空间结构",
+      "role": "result",
+      "source_pages": [
+        4,
+        5
+      ],
+      "decision": "include",
+      "reason": "纳入 C7；限定于所供正文/图注并保留对照、观测单位和解释层次。"
+    },
+    {
+      "summary": "相对坐标输入到 image-centered 坐标的线性可读出性",
+      "role": "result",
+      "source_pages": [
+        5,
+        6,
+        10
+      ],
+      "decision": "include",
+      "reason": "纳入 C8；限定于所供正文/图注并保留对照、观测单位和解释层次。"
+    },
+    {
+      "summary": "高位置读出权重单元的损失消融效应",
+      "role": "result",
+      "source_pages": [
+        6,
+        10
+      ],
+      "decision": "include",
+      "reason": "纳入 C9；限定于所供正文/图注并保留对照、观测单位和解释层次。"
+    },
+    {
+      "summary": "消融后的当前/未来抑制模板相似性变化",
+      "role": "result",
+      "source_pages": [
+        6,
+        7,
+        10
+      ],
+      "decision": "include",
+      "reason": "纳入 C10；限定于所供正文/图注并保留对照、观测单位和解释层次。"
+    },
+    {
+      "summary": "被选择位置单元的较高活动",
+      "role": "result",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "纳入 C11；限定于所供正文/图注并保留对照、观测单位和解释层次。"
+    },
+    {
+      "summary": "正文报告的七簇空间选择性",
+      "role": "result",
+      "source_pages": [
+        7,
+        10
+      ],
+      "decision": "include",
+      "reason": "纳入 C12；限定于所供正文/图注并保留对照、观测单位和解释层次。"
+    },
+    {
+      "summary": "正文报告的时步/深度架构稳健性",
+      "role": "result",
+      "source_pages": [
+        5,
+        9
+      ],
+      "decision": "include",
+      "reason": "纳入 C13；限定于所供正文/图注并保留对照、观测单位和解释层次。"
+    },
+    {
+      "summary": "分类/时间对比替代目标的能耗表现",
+      "role": "result",
+      "source_pages": [
+        5,
+        9,
+        10
+      ],
+      "decision": "include",
+      "reason": "纳入 C14；限定于所供正文/图注并保留对照、观测单位和解释层次。"
+    },
+    {
+      "summary": "替代目标未形成成功的坐标线性读出",
+      "role": "result",
+      "source_pages": [
+        5,
+        9,
+        10
+      ],
+      "decision": "include",
+      "reason": "纳入 C15；限定于所供正文/图注并保留对照、观测单位和解释层次。"
+    },
+    {
+      "summary": "粗粒度抑制与 attention pointer 概念的有限相容性",
+      "role": "interpretation",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "纳入 C16；限定于所供正文/图注并保留对照、观测单位和解释层次。"
+    },
+    {
+      "summary": "少量生物位置编码单元的选择性干预预测",
+      "role": "hypothesis",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "纳入 C17；限定于所供正文/图注并保留对照、观测单位和解释层次。"
+    },
+    {
+      "summary": "导航相关脑区损伤与视觉稳定的共享机制预测",
+      "role": "hypothesis",
+      "source_pages": [
+        7,
+        8
+      ],
+      "decision": "include",
+      "reason": "纳入 C18；限定于所供正文/图注并保留对照、观测单位和解释层次。"
+    },
+    {
+      "summary": "固定视觉输入、preactivation 目标、BPTT、数据生成与 RNN 架构的联合方法条件",
+      "role": "method_context",
+      "source_pages": [
+        3,
+        8,
+        9,
+        10
+      ],
+      "decision": "include",
+      "reason": "作为每个相关命题的联合假设与证据设计保留；被引能耗代理理论不另作为本研究的新定理。"
+    },
+    {
+      "summary": "图 1–3 示意/图像/轨迹案例",
+      "role": "illustrative_evidence",
+      "source_pages": [
+        3,
+        4,
+        6,
+        10
+      ],
+      "decision": "include",
+      "reason": "只依据图注和正文；图示采用符合像素对比阈值的最低损失测试图像，作为说明而非无偏代表样本或独立重复。"
+    },
+    {
+      "summary": "未供给的补充图 S1/S2 细节、曲线数值和完整补充信息",
+      "role": "unavailable_source_material",
+      "source_pages": [
+        5,
+        7,
+        9,
+        10,
+        11
+      ],
+      "decision": "defer",
+      "reason": "仅正文所述架构/目标/聚类结果可纳入；无法审读未供给的补充图、像素或补充统计，不访问外部链接。"
+    },
+    {
+      "summary": "更大主动视觉/工作记忆框架、明确 grid-coding、retina-like 采样、更生物合理学习规则与分布式信息转移",
+      "role": "future_work",
+      "source_pages": [
+        8
+      ],
+      "decision": "exclude",
+      "reason": "是未来扩展方向，未实施；保留在边界/未解问题，不生成已证实科学结果。"
+    },
+    {
+      "summary": "高光页、摘要及被引背景/参考文献",
+      "role": "background",
+      "source_pages": [
+        1,
+        2,
+        3,
+        7,
+        11,
+        12
+      ],
+      "decision": "exclude",
+      "reason": "完整评估但不重复抽取摘要主张，不将背景文献当成本研究新实验或建立跨论文证据链接。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "在固定兴奋性输入、提供相对眼跳坐标并仅最小化平均绝对 preactivation 的主动视觉 RNN 中，未见场景上的注视起始时步损失低于平均亮度、训练集平均 crop，以及当前位置对应的训练集平均图像 crop 三种抑制基线（各 p<0.001）。",
+      "claim_type": "computational_control_comparison",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "与三种非场景特异预测基线比较 L1 preactivation",
+          "design": "计算模拟；固定兴奋性视觉输入的全连接层级 RNN，两个隐藏层各 2048 单元，ReLU、bottom-up/lateral/top-down 连接；每序列 7 次注视，每次 6 个模型时步，后 3 个时步输入下一眼跳的相对坐标。训练损失为所有单元、全部时步的平均绝对 preactivation。",
+          "comparator": "训练集平均亮度；所有训练 crop 的平均 crop；当前位置的训练集平均图像 crop",
+          "measure": "每次新注视首时步的平均绝对 preactivation",
+          "unit_of_analysis": "主要损失比较的观测单位为测试场景内的注视；同一场景的 7 次注视不是独立场景，亦不是独立训练重复。",
+          "sample_size_as_reported": "训练 48236 个场景、测试 2051 个未见场景；损失评估 N=2051×7=14357 次注视。每图生成 10 条序列，但不据此扩增报告的测试 N；独立训练种子/重复数未报告。",
+          "uncertainty": "正文报告 p<0.001；方法称对测试注视损失做 independent t tests，图 2B 误差条为注视间 99% CI，未给出可可靠转录的数值区间；不能将其视为跨种子不确定性或按场景分层后的推断。",
+          "assumptions": [
+            "MS-COCO 灰度场景 256×256、默认 crop 128×128，DeepGaze III 生成 human-like 注视序列；不是真实受试者眼动实验。",
+            "每条序列从场景中心开始；固定视觉 input drive 不可学习消除，能耗仅以 mean absolute preactivation 代理。",
+            "模型用 BPTT/Adam 学习；模型能耗读出与细胞代谢测量、实际视觉稳定行为不同。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "RESULTS — Inhibitory predictive remapping emerges as a consequence of energy efficiency",
+            "figure": "Figure 2A–B",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "结果段补足位置特异平均图像基线比较",
+          "design": "计算模拟；固定兴奋性视觉输入的全连接层级 RNN，两个隐藏层各 2048 单元，ReLU、bottom-up/lateral/top-down 连接；每序列 7 次注视，每次 6 个模型时步，后 3 个时步输入下一眼跳的相对坐标。训练损失为所有单元、全部时步的平均绝对 preactivation。",
+          "comparator": "相同位置的数据集平均图像抑制",
+          "measure": "RNN 损失显著较低",
+          "unit_of_analysis": "主要损失比较的观测单位为测试场景内的注视；同一场景的 7 次注视不是独立场景，亦不是独立训练重复。",
+          "sample_size_as_reported": "训练 48236 个场景、测试 2051 个未见场景；损失评估 N=2051×7=14357 次注视。每图生成 10 条序列，但不据此扩增报告的测试 N；独立训练种子/重复数未报告。",
+          "uncertainty": "正文报告 p<0.001；方法称对测试注视损失做 independent t tests，图 2B 误差条为注视间 99% CI，未给出可可靠转录的数值区间；不能将其视为跨种子不确定性或按场景分层后的推断。",
+          "assumptions": [
+            "MS-COCO 灰度场景 256×256、默认 crop 128×128，DeepGaze III 生成 human-like 注视序列；不是真实受试者眼动实验。",
+            "每条序列从场景中心开始；固定视觉 input drive 不可学习消除，能耗仅以 mean absolute preactivation 代理。",
+            "模型用 BPTT/Adam 学习；模型能耗读出与细胞代谢测量、实际视觉稳定行为不同。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "RESULTS — Inhibitory predictive remapping emerges as a consequence of energy efficiency",
+            "figure": "Figure 2B",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "本模型学到优于这些静态或位置偏置基线的场景特异抑制。",
+        "boundary": "结论联合依赖固定输入、递归网络、所供 efference copies 和特定训练/数据设置；不只依赖抽象的节能原则。",
+        "negative_result": null,
+        "non_inference": "没有直接测量真实代谢消耗、受试者视觉稳定或证明生物脑采用相同学习规则。",
+        "unresolved": "效应的跨种子稳定性、场景相关性对统计显著性的影响未给出。",
+        "unresolved_attribution": "超出生物学解释源于讨论而不是本对照的直接证据。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "representation-coding",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "在自然场景主动视觉模型中，能耗代理优化是否优于通用或位置特异的抑制模板？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7"
+      ],
+      "review_notes": [
+        "完整输入与训练设置见 PDF 页 8–10；不把被引文献的理论推导当成本研究的新定理。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "在同一未见场景注视测试中，能耗优化 RNN 的首时步损失低于直接使用上一次注视 crop 作为抑制模板的控制（p<0.001），因此其优势不只是重复上一视觉输入。",
+      "claim_type": "computational_control_comparison",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "上一 crop 重复预测控制",
+          "design": "计算模拟；固定兴奋性视觉输入的全连接层级 RNN，两个隐藏层各 2048 单元，ReLU、bottom-up/lateral/top-down 连接；每序列 7 次注视，每次 6 个模型时步，后 3 个时步输入下一眼跳的相对坐标。训练损失为所有单元、全部时步的平均绝对 preactivation。",
+          "comparator": "以最后一次 fixation crop 为抑制模板",
+          "measure": "新注视首时步能耗代理损失",
+          "unit_of_analysis": "主要损失比较的观测单位为测试场景内的注视；同一场景的 7 次注视不是独立场景，亦不是独立训练重复。",
+          "sample_size_as_reported": "训练 48236 个场景、测试 2051 个未见场景；损失评估 N=2051×7=14357 次注视。每图生成 10 条序列，但不据此扩增报告的测试 N；独立训练种子/重复数未报告。",
+          "uncertainty": "正文报告 p<0.001；方法称对测试注视损失做 independent t tests，图 2B 误差条为注视间 99% CI，未给出可可靠转录的数值区间；不能将其视为跨种子不确定性或按场景分层后的推断。",
+          "assumptions": [
+            "MS-COCO 灰度场景 256×256、默认 crop 128×128，DeepGaze III 生成 human-like 注视序列；不是真实受试者眼动实验。",
+            "每条序列从场景中心开始；固定视觉 input drive 不可学习消除，能耗仅以 mean absolute preactivation 代理。",
+            "模型用 BPTT/Adam 学习；模型能耗读出与细胞代谢测量、实际视觉稳定行为不同。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "RESULTS — Inhibitory predictive remapping emerges as a consequence of energy efficiency",
+            "figure": "Figure 2A–B",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "模型能适应相对于上一注视变化的视觉输入。",
+        "boundary": "这是对一种重复策略的排除，不单独识别空间计算的完整算法。",
+        "negative_result": null,
+        "non_inference": "不能仅从该比较认定发现了真实神经预测重映射机制。",
+        "unresolved": "需要坐标干预和模型内部分析才能约束具体计算；其他预测策略未穷尽。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "模型是否仅用上一注视图像充当下一输入的抑制模板？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C3",
+        "C4",
+        "C5"
+      ],
+      "review_notes": [
+        "与 C1/C3/C4/C5 使用同一 Figure 2 测试体系，不是独立重复实验。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "在训练好的能耗优化 RNN 中，保持视觉 crop 序列不变、打乱注视坐标序列并重算相对眼跳坐标后，模型损失高于使用正确坐标—视觉配对时（p<0.001）；预测效果依赖准确的 efference-copy 空间耦合。",
+      "claim_type": "in_silico_input_perturbation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "测试时坐标—视觉配对破坏",
+          "design": "计算模拟；固定兴奋性视觉输入的全连接层级 RNN，两个隐藏层各 2048 单元，ReLU、bottom-up/lateral/top-down 连接；每序列 7 次注视，每次 6 个模型时步，后 3 个时步输入下一眼跳的相对坐标。训练损失为所有单元、全部时步的平均绝对 preactivation。",
+          "comparator": "原始 crop 序列搭配打乱后重算的相对坐标，与原始正确配对比较",
+          "measure": "新注视首时步 L1 preactivation",
+          "unit_of_analysis": "主要损失比较的观测单位为测试场景内的注视；同一场景的 7 次注视不是独立场景，亦不是独立训练重复。",
+          "sample_size_as_reported": "训练 48236 个场景、测试 2051 个未见场景；损失评估 N=2051×7=14357 次注视。每图生成 10 条序列，但不据此扩增报告的测试 N；独立训练种子/重复数未报告。",
+          "uncertainty": "正文报告 p<0.001；方法称对测试注视损失做 independent t tests，图 2B 误差条为注视间 99% CI，未给出可可靠转录的数值区间；不能将其视为跨种子不确定性或按场景分层后的推断。",
+          "assumptions": [
+            "MS-COCO 灰度场景 256×256、默认 crop 128×128，DeepGaze III 生成 human-like 注视序列；不是真实受试者眼动实验。",
+            "每条序列从场景中心开始；固定视觉 input drive 不可学习消除，能耗仅以 mean absolute preactivation 代理。",
+            "模型用 BPTT/Adam 学习；模型能耗读出与细胞代谢测量、实际视觉稳定行为不同。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "RESULTS — Inhibitory predictive remapping emerges as a consequence of energy efficiency",
+            "figure": "Figure 2A–B",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在这个已训练模型中，正确的眼跳坐标能改善抑制预测。",
+        "boundary": "打乱坐标是模型输入干预，不能分离分布外输入效应与每种可能的内部表征机制。",
+        "negative_result": null,
+        "non_inference": "不是动物 efference-copy 通路的因果干预，也没有独立行为或代谢验证。",
+        "unresolved": "除坐标打乱外的分布匹配控制和跨种子效应未报告。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "预测抑制是否需要 efference copies 与实际视觉转移准确配对？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C4",
+        "C5",
+        "C8",
+        "C9",
+        "C10"
+      ],
+      "review_notes": [
+        "严格区分测试时输入打乱与重新训练的 no-efference-copy 模型。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "在相同 RNN 架构中，去除输入的 efference copies 后重新训练得到的控制模型，其测试损失高于同时接受视觉 crop 和相对眼跳坐标的能耗优化模型（p<0.001）。",
+      "claim_type": "training_input_ablation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "训练输入通道消融",
+          "design": "计算模拟；固定兴奋性视觉输入的全连接层级 RNN，两个隐藏层各 2048 单元，ReLU、bottom-up/lateral/top-down 连接；每序列 7 次注视，每次 6 个模型时步，后 3 个时步输入下一眼跳的相对坐标。训练损失为所有单元、全部时步的平均绝对 preactivation。",
+          "comparator": "相同架构但不拼接相对眼跳坐标、只输入视觉 crop 的模型",
+          "measure": "新注视首时步能耗代理损失",
+          "unit_of_analysis": "主要损失比较的观测单位为测试场景内的注视；同一场景的 7 次注视不是独立场景，亦不是独立训练重复。",
+          "sample_size_as_reported": "训练 48236 个场景、测试 2051 个未见场景；损失评估 N=2051×7=14357 次注视。每图生成 10 条序列，但不据此扩增报告的测试 N；独立训练种子/重复数未报告。",
+          "uncertainty": "正文报告 p<0.001；方法称对测试注视损失做 independent t tests，图 2B 误差条为注视间 99% CI，未给出可可靠转录的数值区间；不能将其视为跨种子不确定性或按场景分层后的推断。",
+          "assumptions": [
+            "MS-COCO 灰度场景 256×256、默认 crop 128×128，DeepGaze III 生成 human-like 注视序列；不是真实受试者眼动实验。",
+            "每条序列从场景中心开始；固定视觉 input drive 不可学习消除，能耗仅以 mean absolute preactivation 代理。",
+            "模型用 BPTT/Adam 学习；模型能耗读出与细胞代谢测量、实际视觉稳定行为不同。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "RESULTS — Inhibitory predictive remapping emerges as a consequence of energy efficiency",
+            "figure": "Figure 2A–B",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在所测试架构和训练条件下，提供相对眼跳坐标有助于实现较好的空间预测。",
+        "boundary": "no-efference-copy 模型改变了训练可用信息；不能与同一模型的急性神经损伤等同。",
+        "negative_result": null,
+        "non_inference": "不证明所有可能的无坐标模型都无法重映射，也不证明生物视觉必须采用此编码。",
+        "unresolved": "替代架构能否从视觉信息推断眼动，以及各模型训练重复数未报告。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "去除训练时的相对眼跳输入会怎样影响能耗优化模型的预测表现？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C5",
+        "C9"
+      ],
+      "review_notes": [
+        "方法 PDF 页 9 说明其视觉输入/架构保持，坐标不再拼接。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "将训练 crop 从 128×128 缩小到 85×85、视觉场面积约减少 56% 后，能耗优化 RNN 的损失虽高于默认 crop 模型，仍优于正文所比较的其他基线控制（各 p<0.001）；作者据此认为预测优势不只依赖默认 crop 之间的视觉重叠。",
+      "claim_type": "visual_field_boundary_control",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "缩小视觉场的重新训练控制",
+          "design": "计算模拟；固定兴奋性视觉输入的全连接层级 RNN，两个隐藏层各 2048 单元，ReLU、bottom-up/lateral/top-down 连接；每序列 7 次注视，每次 6 个模型时步，后 3 个时步输入下一眼跳的相对坐标。训练损失为所有单元、全部时步的平均绝对 preactivation。；此控制的视觉 crop 改为 85×85。",
+          "comparator": "默认 128×128 crop 模型及非缩小 crop 的其他基线",
+          "measure": "新注视首时步的能耗代理损失",
+          "unit_of_analysis": "主要损失比较的观测单位为测试场景内的注视；同一场景的 7 次注视不是独立场景，亦不是独立训练重复。",
+          "sample_size_as_reported": "训练 48236 个场景、测试 2051 个未见场景；损失评估 N=2051×7=14357 次注视。每图生成 10 条序列，但不据此扩增报告的测试 N；独立训练种子/重复数未报告。",
+          "uncertainty": "正文称缩小 crop 模型的损失较默认模型大，但仍胜过其他控制（all p<0.001）；默认与缩小模型差异的单独精确统计量未列出。",
+          "assumptions": [
+            "MS-COCO 灰度场景 256×256、默认 crop 128×128，DeepGaze III 生成 human-like 注视序列；不是真实受试者眼动实验。",
+            "每条序列从场景中心开始；固定视觉 input drive 不可学习消除，能耗仅以 mean absolute preactivation 代理。",
+            "模型用 BPTT/Adam 学习；模型能耗读出与细胞代谢测量、实际视觉稳定行为不同。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "RESULTS — Inhibitory predictive remapping emerges as a consequence of energy efficiency",
+            "figure": "Figure 2A–B",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "预测优势在较小视觉场条件下仍存在。",
+        "boundary": "缩小 crop 不等于已消除全部相邻 crop 重叠，也不是 retina-like 外周采样。",
+        "negative_result": null,
+        "non_inference": "不能宣称完全无视觉重叠时仍有效，或已模拟真实中心凹放大与外周分辨率。",
+        "unresolved": "严格零重叠条件、跨视野尺度规律和真实视网膜采样仍待研究。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "能耗优化的预测优势是否只来自相邻注视 crop 的视觉重叠？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ],
+      "review_notes": [
+        "将正文的面积减少与方法报告的像素尺寸同时保留，不把 56% 当作边长减少。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "在能耗优化 RNN 的测试注视序列中，当前位置接近前一次或前两次注视位置时，标准化损失较低；此前位置较远时损失较高，而三次或更早注视与较大空间距离结合时这一效应减弱，表明模型具有有限的近期空间记忆特征。",
+      "claim_type": "observational_model_memory_effect",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "按此前注视距离与注视间隔分箱分析",
+          "design": "计算模拟；固定兴奋性视觉输入的全连接层级 RNN，两个隐藏层各 2048 单元，ReLU、bottom-up/lateral/top-down 连接；每序列 7 次注视，每次 6 个模型时步，后 3 个时步输入下一眼跳的相对坐标。训练损失为所有单元、全部时步的平均绝对 preactivation。",
+          "comparator": "较近/中等/较远的此前注视位置；不同的注视间隔",
+          "measure": "测试集注视损失 Z score 的分箱均值",
+          "unit_of_analysis": "测试场景内的注视及其先前注视配对；同一注视或场景可参与多次配对，不是独立记忆实验。",
+          "sample_size_as_reported": "测试 2051 场景、每序列 7 注视；具体每个距离/间隔箱的样本数未报告。",
+          "uncertainty": "正文和图注未报告此分箱效应的 p 值、数值效应量或各箱 CI。",
+          "assumptions": [
+            "MS-COCO 灰度场景 256×256、默认 crop 128×128，DeepGaze III 生成 human-like 注视序列；不是真实受试者眼动实验。",
+            "每条序列从场景中心开始；固定视觉 input drive 不可学习消除，能耗仅以 mean absolute preactivation 代理。",
+            "模型用 BPTT/Adam 学习；模型能耗读出与细胞代谢测量、实际视觉稳定行为不同。",
+            "方法用 pairwise fixation distances 的 33.3/66.7 分位点划分距离；结果的时间距离指注视间隔，方法措辞 time steps 存在歧义。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "RESULTS — Inhibitory predictive remapping emerges as a consequence of energy efficiency",
+            "figure": "Figure 2C",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "模型利用了至少前两次注视附近的空间信息，呈现短程历史依赖。",
+        "boundary": "这是损失与历史空间位置的关联；长距离/较长历史效应的减弱不等于所有更早信息都被彻底遗忘。",
+        "negative_result": null,
+        "non_inference": "不证明建立了完整空间记忆系统、长期记忆或人类工作记忆容量。",
+        "unresolved": "分箱样本量、统计显著性、时间术语歧义及更长序列能力未解决。",
+        "unresolved_attribution": "正文以有限空间记忆解释此关联，未提供独立记忆读出或选择性记忆干预。"
+      },
+      "broad_directions": [
+        "learning-memory",
+        "dynamics-networks",
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "近期注视的空间距离与时间间隔如何影响模型的抑制预测损失？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C7",
+        "C8"
+      ],
+      "review_notes": [
+        "PDF 页 10 给出分箱方法；不将方法的 3 time steps 强行改写成 3 个 RNN 更新时步。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "能耗优化 RNN 对第一层的内部反馈在测试集上总体为抑制性，正文报告均值 −0.39、99% CI [−0.78, −0.09]、n=86142；正文/图注描述其预测图案平滑而具有眼跳目标相关的空间特异性。",
+      "claim_type": "model_feedback_characterization",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "第一层反馈均值与图案的文字描述",
+          "design": "计算模拟；固定兴奋性视觉输入的全连接层级 RNN，两个隐藏层各 2048 单元，ReLU、bottom-up/lateral/top-down 连接；每序列 7 次注视，每次 6 个模型时步，后 3 个时步输入下一眼跳的相对坐标。训练损失为所有单元、全部时步的平均绝对 preactivation。",
+          "comparator": "零反馈作为抑制性方向参照；理想抑制为实际 crop 的负值",
+          "measure": "对每一注视/时步的第一层像素单元反馈取均值，再报告测试集汇总",
+          "unit_of_analysis": "每个场景内注视/模型时步的平均反馈；各均值先跨 128×128 第一层像素单元聚合，非独立神经元或动物。",
+          "sample_size_as_reported": "正文 n=86142；与 2051 场景×7 注视×6 时步一致，故为重复的注视—时步观测而非 86142 个独立场景或训练。",
+          "uncertainty": "按正文保留均值 −0.39 与 99% CI [−0.78, −0.09]；未另行估算区间或核验图像像素。",
+          "assumptions": [
+            "MS-COCO 灰度场景 256×256、默认 crop 128×128，DeepGaze III 生成 human-like 注视序列；不是真实受试者眼动实验。",
+            "每条序列从场景中心开始；固定视觉 input drive 不可学习消除，能耗仅以 mean absolute preactivation 代理。",
+            "模型用 BPTT/Adam 学习；模型能耗读出与细胞代谢测量、实际视觉稳定行为不同。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "RESULTS — Inhibitory predictive remapping emerges as a consequence of energy efficiency",
+            "figure": "Figure 2D",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "保持兴奋性输入时，已训练模型产生总体抑制性的内部驱动；其精确时空对齐另由 C10 的量化检验评估。",
+        "boundary": "空间图案的平滑与目标特异性来自原文/图注文字，未读取 Figure 2D 像素；正文 n 的独立性受到场景、注视和时步嵌套限制。",
+        "negative_result": null,
+        "non_inference": "该数值不是生物神经元的电流、放电率或真实代谢消耗，不能自动归为皮层 top-down 机制。",
+        "unresolved": "未报告反馈方向/空间特异性的跨独立训练分布或真实生理验证。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "固定视觉输入下，能耗优化网络的内部反馈是何种极性与空间结构？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C6",
+        "C9",
+        "C10",
+        "C16"
+      ],
+      "review_notes": [
+        "原文文本的方向箭头转录符号依照明确的 inhibitory 语境规范为负号；不修改来源文件。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "在每条序列从图像中心开始、只提供相对眼跳位移的能耗优化 RNN 中，归一化隐藏层活动的线性读出可恢复图像中心坐标系的 fixation 位置（x：R²=0.91；y：R²=0.93），且高权重读出集中于少数隐藏单元。",
+      "claim_type": "linear_decoding_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "隐藏层坐标线性诊断读出",
+          "design": "计算模拟；固定兴奋性视觉输入的全连接层级 RNN，两个隐藏层各 2048 单元，ReLU、bottom-up/lateral/top-down 连接；每序列 7 次注视，每次 6 个模型时步，后 3 个时步输入下一眼跳的相对坐标。训练损失为所有单元、全部时步的平均绝对 preactivation。",
+          "comparator": "真实图像中心 fixation x/y 坐标与隐藏层线性预测",
+          "measure": "x/y 坐标的 R²；回归权重分布",
+          "unit_of_analysis": "场景内注视/模型时步的归一化隐藏活动；两个隐藏层拼接用于线性回归。",
+          "sample_size_as_reported": "模型有 4096 隐藏单元；报告结果基于 2051 个未见场景。解码拟合/评估的具体样本数及二者拆分未单列，不能把模型测试场景直接等同于解码器独立测试样本。",
+          "uncertainty": "报告 x R²=0.91、y R²=0.93；没有提供解码 R² 的 CI、跨种子方差或明确交叉验证信息。",
+          "assumptions": [
+            "MS-COCO 灰度场景 256×256、默认 crop 128×128，DeepGaze III 生成 human-like 注视序列；不是真实受试者眼动实验。",
+            "每条序列从场景中心开始；固定视觉 input drive 不可学习消除，能耗仅以 mean absolute preactivation 代理。",
+            "模型用 BPTT/Adam 学习；模型能耗读出与细胞代谢测量、实际视觉稳定行为不同。",
+            "allocentric 在本研究仅指 image-centered；每条序列中心起点提供共同锚点。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "RESULTS — Allocentric coding emerges from energy efficiency by integrating over sequences of egocentric efference copies",
+            "figure": "Figure 3A–C",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "模型活动中存在可线性读取的图像中心位置表征。",
+        "boundary": "不等同于任意世界坐标、起点平移不变性或跨场景导航地图；中心起点、读出拟合方案和少数高 beta 单元共同约束解释。",
+        "negative_result": null,
+        "non_inference": "可解码性本身不是被网络用于计算的充分证据，也未证明 grid cells、place cells 或生物导航系统。",
+        "unresolved": "解码器训练/测试分离、位置代码的漂移与起点泛化未明确检验。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "只接受相对眼跳坐标的网络是否形成可读出的图像中心位置代码？"
+      ],
+      "shared_evidence_with": [
+        "C3",
+        "C6",
+        "C9",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C15",
+        "C17",
+        "C18"
+      ],
+      "review_notes": [
+        "方法 PDF 页 10 说明归一化两隐藏层活动及全时步读出；轨迹示例不是独立验证。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "在已训练的能耗优化 RNN 内，将坐标解码回归权重最大的 22/4096 个隐藏单元运行时置零，增加了能耗代理损失（p<0.001），其损失不再显著优于无 efference-copy 控制（p>0.999）；随机置零相同数量单元则未见明显损失变化。",
+      "claim_type": "targeted_model_lesion",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "坐标读出高权重单元的运行时定向置零",
+          "design": "计算模拟；固定兴奋性视觉输入的全连接层级 RNN，两个隐藏层各 2048 单元，ReLU、bottom-up/lateral/top-down 连接；每序列 7 次注视，每次 6 个模型时步，后 3 个时步输入下一眼跳的相对坐标。训练损失为所有单元、全部时步的平均绝对 preactivation。",
+          "comparator": "完整模型；随机置零同为 22 个单元；无 efference-copy 训练控制",
+          "measure": "测试注视能耗代理损失",
+          "unit_of_analysis": "主要损失比较的观测单位为测试场景内的注视；同一场景的 7 次注视不是独立场景，亦不是独立训练重复。",
+          "sample_size_as_reported": "训练 48236 个场景、测试 2051 个未见场景；损失评估 N=2051×7=14357 次注视。每图生成 10 条序列，但不据此扩增报告的测试 N；独立训练种子/重复数未报告。；定向干预 22/4096 隐藏单元，同数量随机干预的抽样重复数未报告。",
+          "uncertainty": "定向干预增加损失 p<0.001；与无 efference-copy 控制比较 p>0.999；随机干预仅称无明显改变，未报告专门精确 p 值；图 3D 为注视间 99% CI。",
+          "assumptions": [
+            "MS-COCO 灰度场景 256×256、默认 crop 128×128，DeepGaze III 生成 human-like 注视序列；不是真实受试者眼动实验。",
+            "每条序列从场景中心开始；固定视觉 input drive 不可学习消除，能耗仅以 mean absolute preactivation 代理。",
+            "模型用 BPTT/Adam 学习；模型能耗读出与细胞代谢测量、实际视觉稳定行为不同。",
+            "按坐标诊断回归系数选择干预单元；置零所有运行时活动，不只消除位置维度。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "RESULTS — Allocentric reference frame units operate as prediction units",
+            "figure": "Figure 3C–D",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "该组高坐标读出权重单元在此网络中对低损失表现具有重要功能作用。",
+        "boundary": "正文/图注称约 0.5%，方法称 0.05%，但共同明确 22 个单元；保留分子/分母，不强行统一原文百分比。",
+        "negative_result": "随机置零未见明显损失改变；定向消融模型与无 efference-copy 控制未检测出优势（p>0.999），不是等效性证明。",
+        "non_inference": "仅是模型内部干预，不能证明生物脑存在同样细胞群或它们只编码位置而不参与其他运算。",
+        "unresolved": "高活动等选择差异是否也能解释干预效应，及匹配活动强度控制、跨种子稳健性未解决。",
+        "unresolved_attribution": "模型内依赖可被支持，生物机制归因仍未验证。"
+      },
+      "broad_directions": [
+        "methods-causal",
+        "representation-coding",
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "高位置解码权重的少量单元是否参与网络的能耗优化预测计算？"
+      ],
+      "shared_evidence_with": [
+        "C4",
+        "C7",
+        "C8",
+        "C10",
+        "C11",
+        "C12",
+        "C17"
+      ],
+      "review_notes": [
+        "22/4096≈0.537% 为透明算术核对，不是新样本统计；保留原文 0.5%/0.05% 矛盾。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "比较内部驱动与理想抑制的时空相似矩阵时，完整 RNN 更符合未来输入抑制模板（平均 r=0.46），而定向置零位置编码单元后更符合当前 crop 抑制模板（r=0.58），残留的未来模板对应仅 r=0.05；三个相关均报告 p<0.001。",
+      "claim_type": "model_computation_after_lesion",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "完整与定向消融模型的假设相似矩阵比较",
+          "design": "计算模拟；固定兴奋性视觉输入的全连接层级 RNN，两个隐藏层各 2048 单元，ReLU、bottom-up/lateral/top-down 连接；每序列 7 次注视，每次 6 个模型时步，后 3 个时步输入下一眼跳的相对坐标。训练损失为所有单元、全部时步的平均绝对 preactivation。",
+          "comparator": "完整/消融网络的观测相似矩阵对照未来输入和当前 crop 两个假设矩阵",
+          "measure": "跨场景平均的相似矩阵相关",
+          "unit_of_analysis": "每个未见场景的整条注视序列形成一张内部驱动—理想抑制相似矩阵；统计在场景级相关上进行，而非逐像素独立重复。",
+          "sample_size_as_reported": "2051 个测试场景，方法明确每条件计算 2051 张相似矩阵；模型内消融 22/4096 个单元。",
+          "uncertainty": "完整模型对未来模板 r=0.46；消融模型对当前模板 r=0.58；消融模型对未来模板 r=0.05，均 p<0.001。方法为对零相关的 one-sample t test，不是每个模型差异的直接检验。",
+          "assumptions": [
+            "MS-COCO 灰度场景 256×256、默认 crop 128×128，DeepGaze III 生成 human-like 注视序列；不是真实受试者眼动实验。",
+            "每条序列从场景中心开始；固定视觉 input drive 不可学习消除，能耗仅以 mean absolute preactivation 代理。",
+            "模型用 BPTT/Adam 学习；模型能耗读出与细胞代谢测量、实际视觉稳定行为不同。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "RESULTS — Allocentric reference frame units operate as prediction units",
+            "figure": "Figure 3F–G",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "当前模板与未来模板相关的续页报告",
+          "design": "计算模拟；固定兴奋性视觉输入的全连接层级 RNN，两个隐藏层各 2048 单元，ReLU、bottom-up/lateral/top-down 连接；每序列 7 次注视，每次 6 个模型时步，后 3 个时步输入下一眼跳的相对坐标。训练损失为所有单元、全部时步的平均绝对 preactivation。",
+          "comparator": "定向消融网络的当前/未来模板对应",
+          "measure": "当前 r=0.58、未来 r=0.05",
+          "unit_of_analysis": "测试场景级假设矩阵相关。",
+          "sample_size_as_reported": "2051 张场景级矩阵；相同模型和测试图像，不构成另一套独立实验。",
+          "uncertainty": "两种模板对应各 p<0.001；没有提供模型间相关差异的独立 p 值。",
+          "assumptions": [
+            "MS-COCO 灰度场景 256×256、默认 crop 128×128，DeepGaze III 生成 human-like 注视序列；不是真实受试者眼动实验。",
+            "每条序列从场景中心开始；固定视觉 input drive 不可学习消除，能耗仅以 mean absolute preactivation 代理。",
+            "模型用 BPTT/Adam 学习；模型能耗读出与细胞代谢测量、实际视觉稳定行为不同。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "RESULTS — Allocentric reference frame units operate as prediction units",
+            "figure": "Figure 3G",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "消融后计算模式由偏向未来输入的抑制转为更接近当前输入模板，与预测定位受损相符。",
+        "boundary": "r=0.05 仍非零且显著，不能表述为预测完全消失；两模板相关的不同不是所有替代机制的排除。",
+        "negative_result": null,
+        "non_inference": "没有证明真实神经 circuit 的空间转移机制，且相关模式不等同于精细图像重建准确率。",
+        "unresolved": "相似矩阵相关变化的跨模型差异检验及跨种子区间未报告。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "representation-coding",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "消融位置代码后，抑制反馈由未来输入预测转为当前输入重复了吗？"
+      ],
+      "shared_evidence_with": [
+        "C3",
+        "C7",
+        "C8",
+        "C9",
+        "C11",
+        "C16",
+        "C17"
+      ],
+      "review_notes": [
+        "与 C9 共享同一次模型消融，但读出为预测内容而非总体损失；不能计作独立复制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "被选作消融的高 allocentric 坐标读出权重单元，在测试集上的活动高于平均隐藏单元（正文 p<0.001）；能耗代理优化并未使所有隐藏活动一律最小化。",
+      "claim_type": "selected_unit_activity_comparison",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "被选择位置编码单元与平均隐藏活动比较",
+          "design": "计算模拟；固定兴奋性视觉输入的全连接层级 RNN，两个隐藏层各 2048 单元，ReLU、bottom-up/lateral/top-down 连接；每序列 7 次注视，每次 6 个模型时步，后 3 个时步输入下一眼跳的相对坐标。训练损失为所有单元、全部时步的平均绝对 preactivation。",
+          "comparator": "22 个用于消融的高坐标回归权重单元与平均隐藏单元",
+          "measure": "测试集模型单元活动",
+          "unit_of_analysis": "隐藏单元及其场景/时步活动；该比较的独立统计单位与聚合方式正文未单列。",
+          "sample_size_as_reported": "22 个被选单元来自 4096 个隐藏单元；测试数据来自 2051 场景。具体检验 n、训练重复数未报告。",
+          "uncertainty": "仅报告 p<0.001，无活动效应量、CI 或该比较专门统计方法。",
+          "assumptions": [
+            "MS-COCO 灰度场景 256×256、默认 crop 128×128，DeepGaze III 生成 human-like 注视序列；不是真实受试者眼动实验。",
+            "每条序列从场景中心开始；固定视觉 input drive 不可学习消除，能耗仅以 mean absolute preactivation 代理。",
+            "模型用 BPTT/Adam 学习；模型能耗读出与细胞代谢测量、实际视觉稳定行为不同。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "RESULTS — Allocentric reference frame units operate as prediction units",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "部分位置相关单元保留较高活动，与简单的全局活动关闭不同。",
+        "boundary": "高活动是相关性观察；能否在其他条件替代其功能需额外干预。",
+        "negative_result": null,
+        "non_inference": "不能认定是生物持续放电细胞，或单凭较高活动证明其因果必要性。",
+        "unresolved": "按活动强度匹配而非随机选择的消融控制未报告。",
+        "unresolved_attribution": "作者将较高活动结合消融解释为节能计算的功能投资，因果依据是 C9/C10 而非活动差异本身。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "节能网络是否允许少数位置相关单元以较高活动维持预测计算？"
+      ],
+      "shared_evidence_with": [
+        "C8",
+        "C9",
+        "C10",
+        "C12",
+        "C17"
+      ],
+      "review_notes": [
+        "未把单元总数当作检验的有效独立样本数。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "正文报告对所选 allocentric 编码单元的活动聚类得到 7 类：最大类有 15 个单元，其余类各 1–3 个；调谐描述覆盖上、下、左、右及中心/外围等场景区域，提示位置单元的空间选择性异质。",
+      "claim_type": "reported_spatial_clustering",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "正文报告的活动聚类及空间调谐",
+          "design": "计算模拟；固定兴奋性视觉输入的全连接层级 RNN，两个隐藏层各 2048 单元，ReLU、bottom-up/lateral/top-down 连接；每序列 7 次注视，每次 6 个模型时步，后 3 个时步输入下一眼跳的相对坐标。训练损失为所有单元、全部时步的平均绝对 preactivation。",
+          "comparator": "不同活动簇的区域调谐；无独立神经类型或实验群体比较",
+          "measure": "活动轮廓的 7 类聚类与区域选择性",
+          "unit_of_analysis": "同一模型内选定的 allocentric 编码单元；可视化坐标是重复模型观察而非独立生物细胞样本。",
+          "sample_size_as_reported": "所选 22 个单元；最大簇 n=15、其他簇各 n=1–3；方法说明空间调谐可视化抽取 4000 个坐标。",
+          "uncertainty": "通过 silhouette score 最大化选择 k=7；未给出分数、稳定性区间或跨种子重复。",
+          "assumptions": [
+            "MS-COCO 灰度场景 256×256、默认 crop 128×128，DeepGaze III 生成 human-like 注视序列；不是真实受试者眼动实验。",
+            "每条序列从场景中心开始；固定视觉 input drive 不可学习消除，能耗仅以 mean absolute preactivation 代理。",
+            "模型用 BPTT/Adam 学习；模型能耗读出与细胞代谢测量、实际视觉稳定行为不同。",
+            "方法使用标准化活动、前 10 个 PCA 成分及 k-means；正文把 PCA 写作 principal-coordinate analysis，保留该术语歧义。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "RESULTS — Allocentric reference frame units operate as prediction units",
+            "figure": "Figure S2（仅正文提及，补充图未提供）",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "正文报告的是单一模型内部空间调谐的异质组织。",
+        "boundary": "S2 图像/数据未供给，因此只提取正文说明，不能独立查看各簇分布或确认互补覆盖完整性。",
+        "negative_result": null,
+        "non_inference": "不证明发现了 7 种生物细胞类型、grid cells 或真实脑区功能分工。",
+        "unresolved": "聚类稳定性、选择单元方法的影响和补充图细节尚未审读。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "模型内位置相关单元是否具有不同区域的空间选择性？"
+      ],
+      "shared_evidence_with": [
+        "C8",
+        "C9",
+        "C11"
+      ],
+      "review_notes": [
+        "不补造其他各簇的确切 n，也不把 4000 个坐标当作独立重复。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C13",
+      "statement": "正文报告能耗优化的预测表现与 allocentric 坐标读出在所测架构变化中保留，包括每注视 4 或 8 时步、单隐藏层 4096 单元或三隐藏层各 1024 单元；该有限稳健性报告不能替代未供给 Figure S1 的定量核验。",
+      "claim_type": "reported_architecture_boundary",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "正文报告的架构稳健性结果",
+          "design": "四种 RNN 变体保持能耗损失、crop/相对坐标输入与其他训练设置；efference copy 在各次注视一半时步后注入。",
+          "comparator": "默认两隐藏层各 2048 单元、每注视 6 时步与四种架构变体",
+          "measure": "能耗代理表现、图像中心坐标解码",
+          "unit_of_analysis": "各架构模型及其测试场景/注视；列出配置不等于独立随机训练重复。",
+          "sample_size_as_reported": "四种变体，加默认配置；场景测试框架为 2051 图像。每配置独立训练种子数、各读出的确切 n 未报告。",
+          "uncertainty": "正文称结果稳健并保留坐标读出；S1 无所供数值、效应量、CI 或比较 p 值。",
+          "assumptions": [
+            "MS-COCO 灰度场景 256×256、默认 crop 128×128，DeepGaze III 生成 human-like 注视序列；不是真实受试者眼动实验。",
+            "每条序列从场景中心开始；固定视觉 input drive 不可学习消除，能耗仅以 mean absolute preactivation 代理。",
+            "模型用 BPTT/Adam 学习；模型能耗读出与细胞代谢测量、实际视觉稳定行为不同。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "RESULTS — Inhibitory predictive remapping / Allocentric coding",
+            "figure": "Figure S1A–B（仅正文提及）",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "架构变体的联合设计条件",
+          "design": "1 层为 4096 单元，3 层为每层 1024 单元；默认 2 层为每层 2048。仍有固定视觉输入及相对眼跳坐标。",
+          "comparator": "4/8 时步、1/3 隐藏层相对于默认设置",
+          "measure": "变体设计参数",
+          "unit_of_analysis": "模型配置说明，而非额外结果重复。",
+          "sample_size_as_reported": "列出四种变体，训练重复数未给出。",
+          "uncertainty": "方法设计不提供 S1 结果统计。",
+          "assumptions": [
+            "MS-COCO 灰度场景 256×256、默认 crop 128×128，DeepGaze III 生成 human-like 注视序列；不是真实受试者眼动实验。",
+            "每条序列从场景中心开始；固定视觉 input drive 不可学习消除，能耗仅以 mean absolute preactivation 代理。",
+            "模型用 BPTT/Adam 学习；模型能耗读出与细胞代谢测量、实际视觉稳定行为不同。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "METHODS — Model design / Alternative architectures",
+            "figure": "Figure S1（未提供）",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "这些计算现象不是正文所列默认深度/时步参数的唯一报告案例。",
+        "boundary": "仅限正文列出的变体；三层总单元数不同，不能宣称严格参数量匹配；S1 未阅读。",
+        "negative_result": null,
+        "non_inference": "不支持任意架构、任意学习规则或生物网络上的普遍成立。",
+        "unresolved": "变体效应的数值大小、跨种子稳定性和补充图细节未提供。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "representation-coding",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "模型预测和位置代码是否依赖特定隐藏层深度或注视处理时长？"
+      ],
+      "shared_evidence_with": [
+        "C8",
+        "C14",
+        "C15"
+      ],
+      "review_notes": [
+        "默认与变体共享数据、目标和分析框架，不算独立研究复制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C14",
+      "statement": "使用相同基础 RNN 分别训练 MS-COCO 多标签物体分类和 InfoNCE 时间对比目标，正文报告两者的能耗代理表现均不如直接最小化 preactivation 的模型；一般视觉分类或时间稳定性目标在这些设置下不能替代能耗目标。",
+      "claim_type": "reported_training_objective_comparison",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "替代训练目标的能耗比较",
+          "design": "同基础两隐藏层 RNN。分类有 91 sigmoid 输出，读取最后注视最后时步，训练 150 epochs（因开始过拟合）；InfoNCE τ=0.1，正对相隔 2 个模型时步、可在注视内或跨注视，负对为其他场景的 8 个 crop，训练 150 epochs。",
+          "comparator": "preactivation 能耗目标；BCELoss 物体分类；InfoNCE 时间对比",
+          "measure": "相同评价协议下的 L1 preactivation",
+          "unit_of_analysis": "按训练目标得到的模型及其测试场景/注视；模型种子重复不是正文的评估单位。",
+          "sample_size_as_reported": "训练 48236 个场景、测试 2051 个未见场景；损失评估 N=2051×7=14357 次注视。每图生成 10 条序列，但不据此扩增报告的测试 N；独立训练种子/重复数未报告。；91 是分类类别数，8 是每次负采样数量，不是独立实验 n。",
+          "uncertainty": "正文只报告两目标较不节能；未供给 S1 数值、效应量、CI 或精确比较 p 值。",
+          "assumptions": [
+            "MS-COCO 灰度场景 256×256、默认 crop 128×128，DeepGaze III 生成 human-like 注视序列；不是真实受试者眼动实验。",
+            "每条序列从场景中心开始；固定视觉 input drive 不可学习消除，能耗仅以 mean absolute preactivation 代理。",
+            "模型用 BPTT/Adam 学习；模型能耗读出与细胞代谢测量、实际视觉稳定行为不同。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "RESULTS — Inhibitory predictive remapping emerges as a consequence of energy efficiency",
+            "figure": "Figure S1（仅正文提及）",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所测替代目标未达到能耗目标的低损失表现。",
+        "boundary": "架构、训练时长、附加分类头及具体对比采样都限定结论；分类因过拟合在 150 epochs 报告，未等同训练收敛程度或性能约束。",
+        "negative_result": null,
+        "non_inference": "不能认定监督学习或对比学习一般不节能，或该目标必为生物系统实际目标。",
+        "unresolved": "多目标训练、其他超参数与性能匹配比较未测试；S1 未提供。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "物体分类或时间对比目标是否也能产生同等低的能耗代理损失？"
+      ],
+      "shared_evidence_with": [
+        "C13",
+        "C15"
+      ],
+      "review_notes": [
+        "方法 PDF 页 9–10 明确正对间隔为模型时步；不改写成相隔两次眼跳。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C15",
+      "statement": "在正文所报告的 MS-COCO 多标签分类与 InfoNCE 时间对比训练条件中，模型未形成可成功读出的 allocentric fixation 坐标代码，而能耗目标模型表现出高坐标 R²；这是所用配置和线性读出下的实际负向结果。",
+      "claim_type": "reported_absent_coordinate_decoding",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "替代目标下的线性坐标读出比较",
+          "design": "替代训练方案同 C14；使用相同能耗与位置解码评估协议，但具体解码拟合/测试分离未说明。",
+          "comparator": "能耗优化 RNN 与分类/时间对比训练 RNN",
+          "measure": "线性解码图像中心 fixation 坐标是否形成",
+          "unit_of_analysis": "各训练目标模型的隐藏活动与线性坐标读出；不能用同一测试注视替代独立训练重复。",
+          "sample_size_as_reported": "模型测试 2051 未见场景；每目标的解码 n、训练种子数未报告。",
+          "uncertainty": "正文称未形成/缺少 allocentric coordinate decoding；未供给 S1 的 R²、零效应检验或 CI，不能编造为 R²=0。",
+          "assumptions": [
+            "MS-COCO 灰度场景 256×256、默认 crop 128×128，DeepGaze III 生成 human-like 注视序列；不是真实受试者眼动实验。",
+            "每条序列从场景中心开始；固定视觉 input drive 不可学习消除，能耗仅以 mean absolute preactivation 代理。",
+            "模型用 BPTT/Adam 学习；模型能耗读出与细胞代谢测量、实际视觉稳定行为不同。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "RESULTS — Allocentric coding emerges from energy efficiency by integrating over sequences of egocentric efference copies",
+            "figure": "Figure S1B（仅正文提及）",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "可读的位置代码在所测替代目标中未出现，呈现对学习目标的依赖。",
+        "boundary": "负向结果限定于所用数据、训练与线性读出；不能排除非线性或低可读的位置相关信息。",
+        "negative_result": "正文报告分类/时间对比模型未形成成功的 allocentric 坐标解码；确切残余解码程度未给出。",
+        "non_inference": "不证明网络绝无空间信息，也不排除其他监督/对比方法产生该代码。",
+        "unresolved": "S1 定量结果、其他解码器与目标组合尚待核验。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "改变学习目标后，图像中心位置代码是否仍可被线性读出？"
+      ],
+      "shared_evidence_with": [
+        "C8",
+        "C13",
+        "C14"
+      ],
+      "review_notes": [
+        "与 C14 是同一目标对照的不同读出，保留共享证据而不合并成重复验证。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C16",
+      "statement": "作者把模型中平滑、粗粒度的目标相关抑制解释为与 spatial pointer 式重映射部分相容，但指出其抑制极性不同于常见的兴奋性注意指针；因此该模型不能被直接视为已经实现精细视觉特征转移或注意指针的生物机制。",
+      "claim_type": "model_to_theory_interpretation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "预测信号性质与 pointer 理论的讨论",
+          "design": "对本模型内部反馈的解释，不是新注意任务、生理实验或与 pointer 模型的定量对照。",
+          "comparator": "粗粒度目标相关抑制与作者所述 attention-based spatial markers 的概念比较",
+          "measure": "空间图案平滑性/抑制极性的文字归纳",
+          "unit_of_analysis": "模型预测图案的讨论层次；无独立受试者或动物单位。",
+          "sample_size_as_reported": "无生物/注意实验 n；采用同一模型与其测试输出。",
+          "uncertainty": "没有提供平滑度统计或对 pointer 理论的定量拟合。",
+          "assumptions": [
+            "MS-COCO 灰度场景 256×256、默认 crop 128×128，DeepGaze III 生成 human-like 注视序列；不是真实受试者眼动实验。",
+            "每条序列从场景中心开始；固定视觉 input drive 不可学习消除，能耗仅以 mean absolute preactivation 代理。",
+            "模型用 BPTT/Adam 学习；模型能耗读出与细胞代谢测量、实际视觉稳定行为不同。",
+            "全连接简单 RNN 缺乏真实多层 retinotopic 组织；作者将其列为图案平滑的可能原因，而不是已识别原因。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "DISCUSSION — Nature of predictive signals and biological plausibility",
+            "figure": "Figures 2D and 3E（仅文字描述）",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "该模型给出粗粒度空间定位与节能抑制之间的一个可能解释。",
+        "boundary": "概念相容性有限，信号极性不同；不能将讨论中的可能架构解释升级为机制结果。",
+        "negative_result": null,
+        "non_inference": "不证明注意机制、retinotopic 特征转移或 perceptual binding 已经在模型/生物体中获验证。",
+        "unresolved": "注意指针与抑制如何交互、结构改变能否改善特征精度尚未测试。",
+        "unresolved_attribution": "平滑抑制的架构原因属于作者推测，未经结构匹配实验识别。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "粗粒度抑制预测与空间注意指针理论在哪些方面相容或不同？"
+      ],
+      "shared_evidence_with": [
+        "C7",
+        "C10"
+      ],
+      "review_notes": [
+        "role 为 interpretation，不把被引注意理论当作本研究独立实验或添加跨论文关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C17",
+      "statement": "作者提出待检验的生物学预测：少量负责 allocentric 空间编码的神经元受到选择性干预时，应对跨眼跳视觉稳定/预测重映射产生较大的损害，而基础视觉处理相对保留；本研究只提供模型消融依据，未实施动物或人类验证。",
+      "claim_type": "prospective_biological_prediction",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "由模型内定向消融外推的神经科学预测",
+          "design": "前瞻性经验预测；本论文没有真实神经元选择性操作或视觉行为实验。",
+          "comparator": "未来选择性干预 allocentric 细胞与基础视觉处理保留的比较；不是已完成的对照",
+          "measure": "预测中的视觉稳定/重映射选择性损害",
+          "unit_of_analysis": "未来生物神经元/个体的单位尚未实现；依据来自单一计算模型的 22 单元干预。",
+          "sample_size_as_reported": "生物实验 n 不适用/未提供；模型依据为 22/4096 隐藏单元及 2051 测试场景，非生物样本。",
+          "uncertainty": "无生物效应量、p 值或 CI；模型消融统计不能作为预测已验证的统计。",
+          "assumptions": [
+            "生物系统确有可对应的 allocentric 编码群体，且模型内位置代码的功能依赖可外推；此假设未验证。",
+            "真正的选择性干预需控制其他功能、活动强度与基本视觉能力。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "DISCUSSION — Outlook and future research / Neuroscientific implications",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "形成一个可设计未来实验检验的选择性干预预测。",
+        "boundary": "模型仅比较损失/预测内容，没有测量基础视觉能力是否保留。",
+        "negative_result": null,
+        "non_inference": "不可以宣称少量真实细胞已被因果识别，或基础视觉处理确实不受损。",
+        "unresolved": "神经群体定位、行为操作化、选择性与真实能耗指标都待实验。",
+        "unresolved_attribution": "从模型到生物的机制归因尚未建立。"
+      },
+      "broad_directions": [
+        "methods-causal",
+        "representation-coding",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "选择性干预生物 allocentric 编码是否损害重映射而保留基础视觉处理？"
+      ],
+      "shared_evidence_with": [
+        "C8",
+        "C9",
+        "C10",
+        "C11"
+      ],
+      "review_notes": [
+        "合并前瞻段第 1/3 点的相关选择性干预预测，保留联合条件，避免与模型结果混写。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C18",
+      "statement": "作者假设空间导航与视觉稳定可能共享坐标变换机制，并预测 hippocampal–entorhinal–retrosplenial 损伤者会出现跨多次眼跳维持视觉稳定的特异困难；本论文没有损伤患者、导航任务或相关脑区活动实验。",
+      "claim_type": "prospective_cross_system_prediction",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "视觉—导航共享机制的讨论与患者预测",
+          "design": "从模型图像中心坐标表征作概念外推，不是患者研究或同时测量导航/视觉的实验。",
+          "comparator": "未来有/无相关脑区损伤者及其视觉稳定与基础视觉能力；本论文未实际比较",
+          "measure": "假定损伤后的跨眼跳视觉稳定困难",
+          "unit_of_analysis": "预测目标是未来患者/个体；本研究无此单位。",
+          "sample_size_as_reported": "无患者/动物 n；模型测试场景不能替代生物样本数。",
+          "uncertainty": "没有该生物预测的效应量、p 值或 CI。",
+          "assumptions": [
+            "图像中心表征与生物空间坐标转换有功能对应，且导航相关脑区参与视觉稳定；均未由此模型直接定位。",
+            "特异困难需排除一般注意、眼动、记忆或视觉损伤的混杂。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "DISCUSSION — Outlook and future research / Neuroscientific implications",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提出可检验的跨系统共享机制假说。",
+        "boundary": "仅属于讨论/未来预测，模型未实现海马、内嗅或压后皮层的分区，也没有 grid-coding 结果。",
+        "negative_result": null,
+        "non_inference": "不证明已有患者证据、共享生物 circuitry 或损伤的因果机制。",
+        "unresolved": "共享区域/算法、特异行为指标和干预混杂尚待解决。",
+        "unresolved_attribution": "脑区归属与生物共享机制未由论文自身模型识别。"
+      },
+      "broad_directions": [
+        "behavior-cognition",
+        "representation-coding",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "导航相关系统损伤是否特异破坏多次眼跳间的视觉稳定？"
+      ],
+      "shared_evidence_with": [
+        "C8",
+        "C17"
+      ],
+      "review_notes": [
+        "仅索引本论文提出的预测，不给讨论所引文献建立支持、矛盾或复制链接。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "本供给版本是 Nortmann、Sulewski 与 Kietzmann 的正式 Patterns 7, 101422 文章（期号 2026-01-09；正文另记在线发表 2025-11-20），索引短题名 Noetmann 存在拼写差异但 DOI 一致。全部 12 个 PDF 页的文本、正文图注、方法与参考文献均已读取并经保留上下文中的第二轮原文审计。论文在固定兴奋性视觉输入、DeepGaze III 自然场景注视序列、相对眼跳坐标和 BPTT 学习等联合条件下，以平均绝对 preactivation 作为能耗代理优化 RNN。模型优于静态、上一 crop、打乱坐标及缺坐标等控制，缩小 crop 后优势仍有保留，且存在有限近期空间历史效应。图像中心 fixation 坐标可从隐藏层读出（x/y R²=0.91/0.93）；定向置零 22/4096 个高坐标回归权重单元后损失增加、反馈由未来模板偏向当前 crop。随机同数量置零未见明显损失变化，不代表严格零效应。少量位置相关单元较活跃，正文报告空间聚类、架构稳健性和替代训练目标较差表现，但 S1/S2 未供给，仅能审计正文描述。候选分开保存结果、解释及生物学预测，均非人工确认或独立科学复现。主要限制包括能耗为代理、没有真实代谢/行为/神经实验、缺独立训练种子数、注视/时步的嵌套统计单位、解码拟合/评估拆分未明和消融百分比内部矛盾。Figures 1A/2D/3E 为最低损失场景的选择示例，不视为无偏或独立证据。未来关于少量生物空间编码细胞、视觉—导航共享系统及选择性损害的预测尚未验证。",
+  "shared_evidence": [
+    {
+      "claim_id": "C1",
+      "with": [
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C2",
+      "with": [
+        "C1",
+        "C3",
+        "C4",
+        "C5"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C1",
+        "C2",
+        "C4",
+        "C5",
+        "C8",
+        "C9",
+        "C10"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C5",
+        "C9"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C1",
+        "C7",
+        "C8"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C1",
+        "C6",
+        "C9",
+        "C10",
+        "C16"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C3",
+        "C6",
+        "C9",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C15",
+        "C17",
+        "C18"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C4",
+        "C7",
+        "C8",
+        "C10",
+        "C11",
+        "C12",
+        "C17"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "with": [
+        "C3",
+        "C7",
+        "C8",
+        "C9",
+        "C11",
+        "C16",
+        "C17"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "with": [
+        "C8",
+        "C9",
+        "C10",
+        "C12",
+        "C17"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "with": [
+        "C8",
+        "C9",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C13",
+      "with": [
+        "C8",
+        "C14",
+        "C15"
+      ]
+    },
+    {
+      "claim_id": "C14",
+      "with": [
+        "C13",
+        "C15"
+      ]
+    },
+    {
+      "claim_id": "C15",
+      "with": [
+        "C8",
+        "C13",
+        "C14"
+      ]
+    },
+    {
+      "claim_id": "C16",
+      "with": [
+        "C7",
+        "C10"
+      ]
+    },
+    {
+      "claim_id": "C17",
+      "with": [
+        "C8",
+        "C9",
+        "C10",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C18",
+      "with": [
+        "C8",
+        "C17"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": null,
+        "issue": "索引短题名 Noetmann et al. 2026 与原文 Nortmann 拼写不同；DOI 相同且原文题名/作者明确。",
+        "suggested_correction": "输出元数据使用所供原文全题名和 Thomas Nortmann、Philip Sulewski、Tim C. Kietzmann，coverage 保留原索引字段差异；不修改索引或清单。",
+        "pdf_page": 2,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "正式期号 2026 与正文 Published: November 20, 2025 同时存在，不能静默抹去日期差异。",
+        "suggested_correction": "publication_year 使用期号 2026，保留在线 2025-11-20、accepted 2025-10-20 的来源日期说明；未替换为后续版本。",
+        "pdf_page": 11,
+        "resolved": true
+      },
+      {
+        "claim_id": "C9",
+        "issue": "结果/图注写 0.5%，Methods 写 0.05%，二者都写 22 个被选单元，默认隐藏层总数为 4096。",
+        "suggested_correction": "命题保留 22/4096，并公开百分比矛盾；不能强制宣称原文两处一致，须由作者或人工原图/代码复核。",
+        "pdf_page": 10,
+        "resolved": false
+      },
+      {
+        "claim_id": "C7",
+        "issue": "PDF 文字将负号/乘号转录为箭头；反馈值在明确 inhibitory 语境为负，原文 n=86142 的标签又容易被误作独立 crop 样本。",
+        "suggested_correction": "只在审计稿规范明显转录的负号（−0.39；[−0.78,−0.09]）；保留报告 n 并说明其与场景×注视×时步相符，不修改来源文本。",
+        "pdf_page": 5,
+        "resolved": true
+      },
+      {
+        "claim_id": "C6",
+        "issue": "图注/结果的 temporal distance 指 fixation steps；方法写 no more than 3 time steps apart，术语存在歧义。",
+        "suggested_correction": "命题按结果写前一次/前两次注视和更远历史，不把它们当作 3 个 RNN 更新时步；保留方法歧义待人工核对。",
+        "pdf_page": 10,
+        "resolved": false
+      },
+      {
+        "claim_id": "C8",
+        "issue": "模型在未见场景测试不自动保证坐标解码器在独立数据上评估；本文未交代诊断回归拟合/测试拆分。",
+        "suggested_correction": "保留 R² 原值，但不添加交叉验证或无泄漏证明；在 evidence/conclusion 明示解码数据拆分未报告。",
+        "pdf_page": 10,
+        "resolved": false
+      },
+      {
+        "claim_id": null,
+        "issue": "方法称 loss 比较做 independent t tests，但观测包含同场景的多次注视，正文没有跨种子结果或场景分层推断。",
+        "suggested_correction": "各候选准确记录报告检验和原 p 值；明确 14357 次注视不是同数独立场景/网络复制，不能替作者校正或重新估计显著性。",
+        "pdf_page": 10,
+        "resolved": false
+      },
+      {
+        "claim_id": "C10",
+        "issue": "Figure 3G 的 p 值是场景级模板相关对零的 one-sample t test，不直接检验所有 intact-versus-lesioned 差异；消融后的未来模板 r=0.05 仍显著。",
+        "suggested_correction": "仅报告对应 r/p；不把残留预测称为完全消失，不制造模型差异 p 值。",
+        "pdf_page": 10,
+        "resolved": true
+      },
+      {
+        "claim_id": "C9",
+        "issue": "p>0.999 的 no-efference-copy 比较与随机干预的 no notable change 容易误写成严格等效或零效应。",
+        "suggested_correction": "实际负向结论写未检测出优势/未见明显改变；无等效界限、不补造随机干预精确 p 值。",
+        "pdf_page": 6,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "Figure S1/S2 内容未供给，正文报告的架构/替代目标/聚类结果不等于完整补充材料已审读。",
+        "suggested_correction": "C12–C15 保留正文报告并注明未供给图/数值；未供给材料的实质核验延后，整篇所供文本提取不延后。",
+        "pdf_page": 11,
+        "resolved": false
+      },
+      {
+        "claim_id": "C12",
+        "issue": "方法将 PCA 称作 principal-coordinate analysis，无法仅凭此正文确定具体降维实现。",
+        "suggested_correction": "保留 PCA 前 10 个成分和 k-means 的原文描述，不静默替换为已核验的另一术语。",
+        "pdf_page": 10,
+        "resolved": false
+      },
+      {
+        "claim_id": null,
+        "issue": "图示挑选为满足对比度阈值的最低损失场景，轨迹示例共享同图同路径。",
+        "suggested_correction": "把示例限为说明，不当作独立重复或总体代表性证据；总体结果依据测试集比较。",
+        "pdf_page": 10,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "生物节能、视觉稳定、导航脑区、注意 pointer 和 grid-coding 容易从讨论外推成实验结果。",
+        "suggested_correction": "C16 单列 interpretation；C17/C18 单列 hypothesis；实际实验记录仅称模型内代理能耗/解码/干预，不补造患者或生物机制验证。",
+        "pdf_page": 8,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "第二轮贡献审计核对到全部结果小节、所供 Figures 1–3 图注、方法、声明/日期与参考文献，识别共享数据和未供补充范围。",
+        "suggested_correction": "保留 18 个不同可评估命题而非固定配额；共享证据显式记录，摘要背景与未来扩展不冒充新结果。",
+        "pdf_page": null,
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T15:08:00.190389Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "890830c83f34c76b7cb21a27bfe7d7481f01a316cb06eeceaa022a0ccd50bfde",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

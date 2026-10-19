@@ -1,0 +1,147 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>A scalable event-driven spatiotemporal feature extraction circuit</title><style>body{max-width:940px;margin:40px auto;padding:0 24px;background:#fffdf7;color:#12372f;font:16px/1.8 Georgia,serif}h1{font-size:26px;line-height:1.4}h2{font-size:20px;line-height:1.5}h3{font-size:16px}article{padding:26px 0;border-top:1px solid #bec4b8}small{color:#68766e}dl{display:grid;grid-template-columns:120px 1fr;gap:8px 20px}dt{font-weight:bold}dd{margin:0}li{padding:8px 0}p,dd{overflow-wrap:anywhere}.note{background:#eef2e2;padding:14px;border-left:3px solid #738968}summary{cursor:pointer}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.7 monospace}@media(max-width:600px){body{margin:24px auto;padding:0 18px}dl{grid-template-columns:1fr;gap:3px}dd{margin-bottom:12px}}@media print{body{margin:0;background:white}details{display:block}}</style><link rel="stylesheet" href="../../commons-v02.css?v=20261020-1"><link rel="stylesheet" href="../../examples.css?v=20260928-2"><link rel="stylesheet" href="../../site.css?v=20261020-1"><script defer src="../../site.js?v=20261020-1"></script><script defer src="../../report-ui.js?v=20261020-1"></script></head><body class="portal-page report-page" data-cc-report-shell="1" data-page="library" data-site-prefix="../../" data-library-paper="paper-W4406604509" data-report-language="zh" data-claim-records="{&quot;C1&quot;:&quot;structured-paper-W4406604509-1&quot;,&quot;C2&quot;:&quot;structured-paper-W4406604509-2&quot;,&quot;C3&quot;:&quot;structured-paper-W4406604509-3&quot;,&quot;C4&quot;:&quot;structured-paper-W4406604509-4&quot;,&quot;C5&quot;:&quot;structured-paper-W4406604509-5&quot;}"><header></header><main id="report-content"><div id="report-tools"></div><small>CLAIM COMMONS / 阅读报告</small><h1>A scalable event-driven spatiotemporal feature extraction circuit</h1><p class="note">AI 文本提取候选，尚待人工核对。图像像素未读取；PDF 页码指文件中的页序。</p><p>已重新评估所供四页 arXiv v2 全文、全部图注及参考文献。保留五条可独立判断的命题：双 DPI TDE 的 CMOS 实现、12 ms 输入条件下的硅功能验证、失配仿真中电荷变异系数平均降低 61%、合成上移纹理下的方向偏好，以及正交方向响应的作者解释。修正了拓扑证据定位，明确 2000 为模拟实例、100 为单物理电路的顺序配置。线性积分性能、物理阵列扩展、真实传感器泛化及系统能效尚无对应验证；没有可单列的实际阴性结果。</p><a href="https://arxiv.org/pdf/2501.10155" rel="noreferrer">查看所读原文版本 ↗</a><details><summary>贡献清单与处理决定</summary><ul><li><b>提出 FAC 和 TRG 均采用 DPI 的改进 TDE，并报告 CMOS 实现及尺寸。</b><br>include · 拓扑、工艺和尺寸有直接文字支持；线性积分属于设计依据，未单独测量。</li><li><b>硅测量展示相隔 12 ms 的 FAC/TRG 事件引起触发模块响应及神经元放电。</b><br>include · 图3和结果节明确给出输入条件及电压读出。</li><li><b>失配 Monte Carlo 比较中，新版输出电荷变异系数跨输入时差平均降低 61%。</b><br>include · 报告比较对象、模拟实例数、读出和改善幅度。</li><li><b>合成上移纹理任务中，四方向配置的放电占比呈现向上偏好，并保留正交方向响应。</b><br>include · 正文及图7图注支持描述性方向比较；没有重复实验或统计检验。</li><li><b>作者以事件时序抖动解释正交方向激活，并以全视野汇总解释左右响应近似相等。</b><br>include · 可与任务效应分别判断，但缺少抖动对照。</li><li><b>多事件线性积分性能。</b><br>defer · 双 DPI 的设计目的有说明，但没有多事件线性度、事件率范围或饱和测量。</li><li><b>高密度物理阵列、低功耗及高度并行实时处理能力。</b><br>exclude · 未测试多 TDE 物理阵列，未报告功耗、吞吐量或延迟基准。</li></ul></details><article><small>C1 / 直接结果 · 电路设计与实现</small><h2>作者在 XFAB 180 nm CMOS 的 cognigr1 芯片上实现改进 TDE：相较 Milde et al., 2018 的 FAC 单放电支路与 TRG DPI 结构，新设计在 FAC 和 TRG 两个模块均采用 DPI；包含 guard rings 的 TDE 尺寸为 19 µm×56 µm。</h2><h3>Evidence</h3><p>CMOS 实现描述及布局尺寸报告</p><dl><dt>设计 / 对照</dt><dd>报告 cognigr1 的制造工艺及 TDE 结构尺寸。；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>片上 TDE 结构；芯片包含一个 TDE 电路；物理芯片数量未报告。</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 1 · Fig. 1</dd></dl><p>电路原理图及拓扑比较</p><dl><dt>设计 / 对照</dt><dd>比较新版双 DPI 结构与旧版 FAC 单放电支路、TRG DPI 结构。；Milde et al., 2018 TDE</dd><dt>独立单位与 n</dt><dd>TDE 电路设计；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 2 · Fig. 2</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>给出双 DPI TDE 的具体 CMOS 实现。</dd><dt>适用边界</dt><dd>尺寸对应所报告的单个 TDE 结构。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>拓扑不能单独证明多事件积分线性度、阵列性能或系统能效。</dd><dt>未解决</dt><dd>多事件输入下的线性范围和饱和条件未报告。</dd></dl><h3>相关问题</h3><ul><li>FAC 与 TRG 双 DPI 结构如何改变 TDE 的事件积分能力？</li></ul></article><article><small>C2 / 直接结果 · 硬件功能验证</small><h2>在 cognigr1 的单个 TDE 上，FAC 事件后相隔 12 ms 输入 TRG 事件，硅测量显示 VTRG 响应及 LIF 神经元膜电位 Vmem 的放电响应，支持该输入条件下的事件到放电功能链路。</h2><h3>Evidence</h3><p>硅电路电压测量</p><dl><dt>设计 / 对照</dt><dd>片上 DAC 提供偏置，微控制器输入事件，示波器记录响应；图3展示相隔 12 ms 的 FAC/TRG 输入。；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>单个物理 TDE 及其神经元电路；展示一组 12 ms 时差输入波形；独立芯片数及重复次数未报告。</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 2 · Fig. 3</dd></dl><p>测量结果与电路功能说明</p><dl><dt>设计 / 对照</dt><dd>将 VTRG 响应解释为产生 EPSC，并由神经元积分产生放电。；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>同一 TDE 的输入输出链路；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 3 · Fig. 3</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>该输入条件下观察到触发模块响应和神经元放电。</dd><dt>适用边界</dt><dd>所展示的具体硅波形对应 12 ms 输入时差。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能由单组波形确认完整时差范围的指数编码精度、反向输入选择性或多芯片一致性。</dd><dt>未解决</dt><dd>硅上输入时差到放电数及 ISI 的完整标定关系未报告。</dd></dl><h3>相关问题</h3><ul><li>输入事件时差如何映射到硅 TDE 的放电数和 ISI？</li></ul></article><article><small>C3 / 直接结果 · 比较仿真</small><h2>在 Cadence Spectre 对新版和 Milde et al., 2018 TDE 各 2000 个电路实例进行的器件失配 Monte Carlo 仿真中，新版输出突触电荷的变异系数在所测试输入时差 Δt 上平均降低 61%，支持其在这些仿真条件下具有较低的相对电荷变异。</h2><h3>Evidence</h3><p>器件失配 Monte Carlo 仿真</p><dl><dt>设计 / 对照</dt><dd>在一系列 Δt 下采样晶体管物理变异，积分 ITDE 得到电荷；图5按各 Δt 的平均电荷归一化，图6报告均值和标准差。；Milde et al., 2018 TDE 电路</dd><dt>独立单位与 n</dt><dd>模拟电路实例；两种电路各 2000 个实例；图5说明给定 Δt 的电荷来自 2000 个模拟实例。</dd><dt>不确定性</dt><dd>图6误差条为 Monte Carlo 标准差；61% 改善的置信区间未报告。</dd><dt>原文位置</dt><dd>PDF 3 · Figs. 5–6</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>新版在所报告失配仿真中表现出更低的输出电荷变异系数。</dd><dt>适用边界</dt><dd>图5示例 Δt 为 5、26、68 和 100 ms；结论限于测试的模型和输入条件。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能据此确认实际多芯片一致性、物理阵列任务性能或其他扰动下的鲁棒性。</dd><dt>未解决</dt><dd>物理 TDE 阵列中的失配对任务性能的影响尚未验证。</dd></dl><h3>相关问题</h3><ul><li>双 DPI TDE 是否降低器件失配导致的输出电荷相对变异？</li><li>电荷变异降低能否改善物理 TDE 阵列的任务性能？</li></ul></article><article><small>C4 / 直接结果 · 方向选择性任务</small><h2>对于加入时序抖动的合成上移纹理事件流，将随机分布于视野、等比例配置为四个基本方向的 100 个 TDE 配置在同一物理电路上顺序运行后，向上配置的放电占总活动比例最高，左右配置的响应高于向下配置，左右总体响应大致相等。</h2><h3>Evidence</h3><p>合成事件视觉输入的顺序硬件回放</p><dl><dt>设计 / 对照</dt><dd>每个配置接收两个特定像素的 FAC/TRG 事件；100 个配置随机分布于视野，四方向等比例；单个 TDE 顺序处理各配置的输入。；向上、向下、向左和向右配置的响应</dd><dt>独立单位与 n</dt><dd>同一物理 TDE 上顺序运行的像素对配置，按方向汇总放电；100 个配置，四方向等比例；芯片只有一个 TDE；独立刺激或任务重复数未报告。</dd><dt>不确定性</dt><dd>未报告误差条、置信区间或统计检验。</dd><dt>原文位置</dt><dd>PDF 2 · II.C. Optical flow task</dd></dl><p>方向活动比较</p><dl><dt>设计 / 对照</dt><dd>比较合成上移纹理条件下四方向的总活动比例。；四个方向配置</dd><dt>独立单位与 n</dt><dd>方向汇总放电；同一组 100 个配置</dd><dt>不确定性</dt><dd>正文未提供统计显著性检验。</dd><dt>原文位置</dt><dd>PDF 3 · Fig. 4</dd></dl><p>放电栅格及活动比例汇总</p><dl><dt>设计 / 对照</dt><dd>将事件数据持续期间各方向的放电数除以总网络放电数。；四个方向配置</dd><dt>独立单位与 n</dt><dd>配置的放电事件及方向汇总；同一组 100 个配置</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 4 · Fig. 7</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>该合成上移刺激下的顺序硬件响应表现出方向偏好。</dd><dt>适用边界</dt><dd>仅测试所报告的合成纹理；100 个配置共享一个物理 TDE。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>未证明 100 个物理电路的并行阵列性能、真实相机泛化、速度估计精度或统计显著性。</dd><dt>未解决</dt><dd>其他运动方向、速度、纹理和真实传感器输入下的性能未报告。</dd></dl><h3>相关问题</h3><ul><li>两像素 TDE 配置能否通过方向间放电比例辨别事件视觉输入的运动方向？</li></ul></article><article><small>C5 / 解释 · 任务响应机制解释</small><h2>作者将合成上移纹理任务中左右 TDE 的较高响应解释为：沿移动边缘排列的像素事件因时序抖动产生很小的 FAC/TRG 输入时差，激活垂直于运动方向的 TDE；全视野汇总使左右方向总体响应趋于相近。</h2><h3>Evidence</h3><p>结合 TDE 时差编码机制解释任务响应</p><dl><dt>设计 / 对照</dt><dd>合成数据加入模拟 AER 异步性的时序抖动；依据正交方向响应提出解释，未报告无抖动对照。；概念上的理想同时像素事件；无实测对照</dd><dt>独立单位与 n</dt><dd>合成像素事件时序及方向汇总响应；与 C4 共用 100 个配置的顺序硬件任务。</dd><dt>不确定性</dt><dd>未报告抖动参数、机制效应大小或对照不确定性。</dd><dt>原文位置</dt><dd>PDF 3 · III.C. Optical flow task</dd></dl><p>正交响应及全视野汇总解释</p><dl><dt>设计 / 对照</dt><dd>从边缘像素微小时差推导正交配置激活，并解释左右总体响应近似相等。；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>方向汇总响应；与 C4 相同的任务。</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 4 · Fig. 7</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>提出与 TDE 时差编码机制相容的正交方向响应解释。</dd><dt>适用边界</dt><dd>解释针对同一个合成上移纹理任务。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>缺少去除或改变抖动的对照，不能确立抖动的独立因果贡献或全视野汇总的必要性。</dd><dt>未解决</dt><dd>正交方向响应如何随抖动幅度、边缘结构和采样布局变化？</dd></dl><h3>相关问题</h3><ul><li>事件时序抖动是否导致 TDE 对运动正交方向的响应？</li><li>全视野采样如何影响左右方向总体响应的对称性？</li></ul></article><details><summary>核对记录与来源信息</summary><pre>{
+  &quot;coverage&quot;: {
+    &quot;pdf_pages_read&quot;: [
+      1,
+      2,
+      3,
+      4
+    ],
+    &quot;results_sections_seen&quot;: [
+      &quot;III.A. Circuit measurements&quot;,
+      &quot;III.B. Monte Carlo analysis&quot;,
+      &quot;III.C. Optical flow task&quot;,
+      &quot;IV. Conclusion&quot;,
+      &quot;Figures 1–7 captions&quot;
+    ],
+    &quot;missing_material&quot;: [
+      &quot;未提供图像像素；仅能评估所供文字和图注。&quot;
+    ],
+    &quot;text_pass_complete&quot;: true,
+    &quot;notes&quot;: [
+      &quot;实际版本为 arXiv:2501.10155v2，日期为 2025 年 2 月 3 日；标题、作者和预印本身份与元数据一致。&quot;,
+      &quot;已重新评估全部四页的方法、结果、结论、图注和参考文献；未提供附录。&quot;,
+      &quot;100 个任务配置在同一个物理 TDE 上顺序运行。&quot;,
+      &quot;全文评估不代表独立复现或科学真实性确认。&quot;
+    ],
+    &quot;reading_mode&quot;: &quot;text_only&quot;,
+    &quot;figure_images_read&quot;: false,
+    &quot;scientific_verification&quot;: false
+  },
+  &quot;audit&quot;: {
+    &quot;initial_source_match_checks&quot;: [],
+    &quot;source_match_checks&quot;: [],
+    &quot;model_findings&quot;: [
+      {
+        &quot;claim_id&quot;: &quot;C1&quot;,
+        &quot;issue&quot;: &quot;草稿第一条证据将双 DPI 拓扑比较定位于第1页图1；实际拓扑比较位于第2页图2。&quot;,
+        &quot;suggested_correction&quot;: &quot;分别以第1页图1支持工艺和尺寸，以第2页图2支持拓扑比较。&quot;,
+        &quot;pdf_page&quot;: 2,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C1&quot;,
+        &quot;issue&quot;: &quot;双 DPI 的线性积分主张没有专门多事件线性度测量。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留拓扑与实现结果，将实测线性性能列为待验证贡献。&quot;,
+        &quot;pdf_page&quot;: 2,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C2&quot;,
+        &quot;issue&quot;: &quot;单组 12 ms 波形不足以确立完整时差编码关系。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留该输入条件下的功能验证，明确完整标定尚未报告。&quot;,
+        &quot;pdf_page&quot;: 2,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C3&quot;,
+        &quot;issue&quot;: &quot;失配改善来自模拟实例，且不同 Δt 是否使用独立实例集合未说明。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留每种电路 2000 个模拟实例的原始报告，不推算总独立样本数或物理芯片数。&quot;,
+        &quot;pdf_page&quot;: 3,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C4&quot;,
+        &quot;issue&quot;: &quot;100 个单元实际为单电路顺序配置；正文偏好措辞没有统计检验支持。&quot;,
+        &quot;suggested_correction&quot;: &quot;使用描述性方向比较，明确物理电路数及未报告重复。&quot;,
+        &quot;pdf_page&quot;: 2,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C4&quot;,
+        &quot;issue&quot;: &quot;null direction 是方向标签，不能解释为零响应或统计阴性结果。&quot;,
+        &quot;suggested_correction&quot;: &quot;仅记录向下响应低于左右响应，不填入实际阴性结果。&quot;,
+        &quot;pdf_page&quot;: 3,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C5&quot;,
+        &quot;issue&quot;: &quot;抖动及全视野汇总解释缺少机制对照。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留解释角色及与 C4 的共享证据，限制因果推断。&quot;,
+        &quot;pdf_page&quot;: 4,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;高密度、低功耗及并行实时应用外推缺少系统测量。&quot;,
+        &quot;suggested_correction&quot;: &quot;不提取为已验证性能结果。&quot;,
+        &quot;pdf_page&quot;: 4,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;草稿包含请求 schema 之外的 source_check 和 review 字段，并暗示进行了文本匹配检查。&quot;,
+        &quot;suggested_correction&quot;: &quot;删除额外字段，仅保留依据本次所供文本完成的证据定位和审查说明。&quot;,
+        &quot;pdf_page&quot;: null,
+        &quot;resolved&quot;: true
+      }
+    ],
+    &quot;needs_human_review&quot;: true
+  },
+  &quot;source&quot;: {
+    &quot;filename&quot;: &quot;paper-W4406604509.pdf&quot;,
+    &quot;sha256&quot;: &quot;d7c18b941ed676aca82000ef044ae00404f83e5bc1e74187e6b447c67bce10c0&quot;,
+    &quot;source_url&quot;: &quot;https://arxiv.org/pdf/2501.10155&quot;,
+    &quot;pdf_page_count&quot;: 4
+  },
+  &quot;provenance&quot;: {
+    &quot;created_at&quot;: &quot;2026-10-07T05:15:13.380063Z&quot;,
+    &quot;workflow&quot;: &quot;claim-commons-pdf-v1&quot;,
+    &quot;prompt_version&quot;: &quot;claim-commons-chatgpt-pdf-2026-10-07.1&quot;,
+    &quot;backend&quot;: &quot;signed_in_chatgpt_codex&quot;,
+    &quot;authentication&quot;: &quot;existing_ChatGPT_login&quot;,
+    &quot;provider_api_key_used&quot;: false,
+    &quot;model&quot;: &quot;account_default_GPT&quot;,
+    &quot;source_sha256&quot;: &quot;d7c18b941ed676aca82000ef044ae00404f83e5bc1e74187e6b447c67bce10c0&quot;,
+    &quot;requests&quot;: [
+      {
+        &quot;phase&quot;: &quot;extraction&quot;,
+        &quot;seconds&quot;: 107.32,
+        &quot;usage&quot;: {
+          &quot;input_tokens&quot;: 18810,
+          &quot;cached_input_tokens&quot;: 12032,
+          &quot;cache_write_input_tokens&quot;: 0,
+          &quot;output_tokens&quot;: 4696,
+          &quot;reasoning_output_tokens&quot;: 0
+        },
+        &quot;backend&quot;: &quot;signed_in_chatgpt_codex&quot;,
+        &quot;tools_used&quot;: false
+      },
+      {
+        &quot;phase&quot;: &quot;source_audit&quot;,
+        &quot;seconds&quot;: 106.06,
+        &quot;usage&quot;: {
+          &quot;input_tokens&quot;: 23421,
+          &quot;cached_input_tokens&quot;: 0,
+          &quot;cache_write_input_tokens&quot;: 0,
+          &quot;output_tokens&quot;: 5789,
+          &quot;reasoning_output_tokens&quot;: 23
+        },
+        &quot;backend&quot;: &quot;signed_in_chatgpt_codex&quot;,
+        &quot;tools_used&quot;: false
+      }
+    ],
+    &quot;source_audit_complete&quot;: true,
+    &quot;review_status&quot;: &quot;candidate&quot;,
+    &quot;database_updated&quot;: false
+  }
+}</pre></details></main><footer></footer></body></html>

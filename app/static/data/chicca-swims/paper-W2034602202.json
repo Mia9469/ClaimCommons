@@ -1,0 +1,1502 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "review",
+  "paper": {
+    "title": "Neuromorphic Electronic Circuits for Building Autonomous Cognitive Systems",
+    "authors": [
+      "Elisabetta Chicca",
+      "Fabio Stefanini",
+      "Chiara Bartolozzi",
+      "Giacomo Indiveri"
+    ],
+    "doi": "10.1109/jproc.2014.2313954",
+    "publication_year": 2014,
+    "venue": "Proceedings of the IEEE",
+    "url": "https://doi.org/10.1109/jproc.2014.2313954"
+  },
+  "source": {
+    "filename": "paper-W2034602202.pdf",
+    "sha256": "f241a23becbfb059a5219ffc0f17902090cbfc1736a490a18a7f22723f602c25",
+    "source_url": "https://arxiv.org/pdf/1403.6428",
+    "pdf_page_count": 19
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "results_sections_seen": [
+      "II. Neural dynamics in analog VLSI",
+      "III. Silicon neurons",
+      "IV. Silicon synapses",
+      "V. Synaptic plasticity",
+      "VI. From circuits to networks",
+      "VII.A–C. Experimental results",
+      "VIII. Discussion",
+      "IX. Conclusions",
+      "References and author biographies"
+    ],
+    "missing_material": [
+      "所有图像像素；只提供文字与图注。",
+      "被引用的原始实验、模型、完整FSM/上下文任务数据未作为附件提供。"
+    ],
+    "text_pass_complete": true,
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "notes": [
+      "源文件为arXiv:1403.6428v1，2014-03-25，页眉保留出版占位符；元数据DOI指向出版记录，不等同此版排版。",
+      "全部19页含图1–12图注、表I、方程、参考文献与传记已读；两栏文本有交错但不补读图像数值。",
+      "全部条目标记review_synthesis；实测、理论、架构仍由claim_type和证据方法区分。"
+    ]
+  },
+  "contribution_inventory": [
+    {
+      "summary": "DPI解析动力学、三类滤波拓扑和神经元结构",
+      "role": "review_synthesis",
+      "source_pages": [
+        2,
+        3,
+        4
+      ],
+      "decision": "include",
+      "reason": "作为综述/教程命题，不主张新颖性。"
+    },
+    {
+      "summary": "DPI突触的非线性促进、模块化电压依赖及稳态缩放",
+      "role": "review_synthesis",
+      "source_pages": [
+        5
+      ],
+      "decision": "include",
+      "reason": "区分模型推导、设计和引用的既有表征。"
+    },
+    {
+      "summary": "双稳态随机可塑性与膜电位/活动阈值门控",
+      "role": "review_synthesis",
+      "source_pages": [
+        6,
+        7
+      ],
+      "decision": "include",
+      "reason": "保留可独立评估的权重状态和停止学习规则。"
+    },
+    {
+      "summary": "AER扩展约束及pyNCS软硬件接口",
+      "role": "review_synthesis",
+      "source_pages": [
+        8,
+        9,
+        10
+      ],
+      "decision": "include",
+      "reason": "归为架构综合，不算本篇新吞吐测量。"
+    },
+    {
+      "summary": "短时抑制与簇发硅演示",
+      "role": "review_synthesis",
+      "source_pages": [
+        10
+      ],
+      "decision": "include",
+      "reason": "两类不同测量结果分别记录，图8保留既有工作归属。"
+    },
+    {
+      "summary": "随机LTD、图案存储与训练中LTP下降",
+      "role": "review_synthesis",
+      "source_pages": [
+        11,
+        12
+      ],
+      "decision": "include",
+      "reason": "每个独立读出保留，阵列与训练共享证据。"
+    },
+    {
+      "summary": "sWTA选择性放大、持续活动与状态切换",
+      "role": "review_synthesis",
+      "source_pages": [
+        12,
+        13
+      ],
+      "decision": "include",
+      "reason": "有限硬件演示，不提升为完整认知。"
+    },
+    {
+      "summary": "系统级失配/温漂鲁棒性和记忆容量的一般优势",
+      "role": "interpretation",
+      "source_pages": [
+        6,
+        13,
+        14
+      ],
+      "decision": "defer",
+      "reason": "主要引用外部理论与实验，没有本篇匹配比较、容量或漂移统计。"
+    },
+    {
+      "summary": "完整FSM、上下文任务选择及自主认知",
+      "role": "interpretation",
+      "source_pages": [
+        13,
+        14,
+        15
+      ],
+      "decision": "defer",
+      "reason": "完整任务结果来自引用文献；本篇只展示部分构件。"
+    },
+    {
+      "summary": "生物皮层原语、先前网络理论、Mead访谈与参考文献",
+      "role": "background",
+      "source_pages": [
+        1,
+        8,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "decision": "exclude",
+      "reason": "引用与历史背景不是本篇新增实验结果。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "在晶体管参数相同、亚阈值饱和工作的模型中，DPI 的非线性电流方程在 Iin 远大于 Iτ 且 Iout 远大于 Ith 时近似为一阶低通滤波器；其时间常数为 C·UT/(κ·Iτ)，增益由 Ith/Iτ 决定。",
+      "claim_type": "reviewed_theoretical_result",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "跨导线性原理的电路推导",
+          "design": "从非线性式(4)在大输入、大输出极限推得式(5)。",
+          "comparator": null,
+          "measure": "输出电流的一阶动力学、时间常数和增益",
+          "unit_of_analysis": "理想化DPI电路方程",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "晶体管参数相同并在亚阈值饱和区工作。",
+            "近似要求两个电流尺度条件成立。"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "II. Neural dynamics in analog VLSI",
+            "figure": "Figure 1; Table I",
+            "equation": "Equations 1–5",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "给出DPI实现慢速神经动力学的条件性解析依据。",
+        "boundary": "瞬态初期或小信号区不满足线性近似。",
+        "negative_result": null,
+        "non_inference": "不能把线性极限当作所有偏置条件下的精确响应。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "DPI在什么工作区间可近似为生物时间尺度的一阶滤波器？"
+      ],
+      "shared_evidence_with": [
+        "C4"
+      ],
+      "review_notes": [
+        "这是教程推导，不是新器件测量或生物电生理结果。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "text_only",
+          "not_scientifically_verified"
+        ]
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "在本文比较的标准 CMOS 电流型滤波实现中，LPF 虽用较少元件却需要隔离阱，Tau-Cell 需要匹配 Iτ 与 −2Iτ；DPI 可用互补形式实现正负电流，并额外提供独立增益控制 Ith。",
+      "claim_type": "reviewed_circuit_comparison",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "电路拓扑与版图约束比较",
+          "design": "比较DPI、LPF、Tau-Cell的器件连接及偏置需求。",
+          "comparator": "LPF和Tau-Cell",
+          "measure": "隔离阱、互补实现、电流匹配及控制参数",
+          "unit_of_analysis": "三种电路拓扑",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "II. Neural dynamics in analog VLSI",
+            "figure": "Figure 1; Table I",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "指出DPI的实现与配置优势。",
+        "boundary": "没有匹配工艺下的面积或功耗测量对照。",
+        "negative_result": null,
+        "non_inference": "元件少不等于版图小，也不能推断DPI在所有工艺均最优。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "滤波器拓扑如何受标准CMOS隔离阱和电流匹配约束？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "text_only",
+          "not_scientifically_verified"
+        ]
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "本文综述的自适应广义 I&F 硅神经元将 DPI 泄漏积分、正反馈发放、复位/不应期和慢适应电流组合，可通过偏置调节神经时间常数、不应期与适应动力学，同时以异步请求/应答输出事件。",
+      "claim_type": "reviewed_neuron_architecture",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "电路模块说明与动力学分析",
+          "design": "将积分、发放、复位及适应模块映射到广义I&F变量。",
+          "comparator": null,
+          "measure": "神经元状态方程和可调功能",
+          "unit_of_analysis": "硅神经元模块",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "大输入极限的简化式忽略适应电流时需另行限定。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "III. Silicon neurons",
+            "figure": "Figure 2",
+            "equation": "Equations 6–8",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提供可重配置混合模拟/数字神经元构件。",
+        "boundary": "结构与模型综述，原始电路引自[59]；本篇没有跨芯片统计或功耗表。",
+        "negative_result": null,
+        "non_inference": "不意味着完整复现所有离子通道或任意真实神经元。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "哪些模拟模块能共同实现可配置的自适应发放动力学？"
+      ],
+      "shared_evidence_with": [
+        "C11"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "text_only",
+          "not_scientifically_verified"
+        ]
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "在本文给出的 DPI 突触模型中，当刺激开始时 Isyn 远小于 Ith，输出增长呈非线性促进；随着 Isyn 增大并进入远大于 Ith 的区间，响应转为近似线性一阶低通。",
+      "claim_type": "reviewed_theoretical_result",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "分区间近似分析",
+          "design": "依据DPI方程推导刺激初期的非线性输出增长。",
+          "comparator": "Isyn远小于与远大于Ith的两个区间",
+          "measure": "突触电流随脉冲增长的动力学",
+          "unit_of_analysis": "同一DPI突触模型",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "刺激初期偏置使Ith显著大于Isyn。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "IV.A. Short term depression and short-term facilitation",
+            "figure": "Figure 3",
+            "equation": "Equations 9–10",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "单一DPI拓扑可在相应偏置下表达短时促进。",
+        "boundary": "本节是模型机制分析，未提供独立促进参数扫描的实测统计。",
+        "negative_result": null,
+        "non_inference": "不能将该模型响应等同于所有生物短时促进机制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "DPI非线性工作区如何产生短时促进并转入线性响应？"
+      ],
+      "shared_evidence_with": [
+        "C1"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "text_only",
+          "not_scientifically_verified"
+        ]
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "本文综述的完整 DPI 兴奋性突触在积分模块之外加入短时抑制模块、NMDA 型电压门控模块与电导型电压依赖模块，从而在同一突触结构中配置这些不同功能。",
+      "claim_type": "reviewed_synapse_architecture",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "功能模块与电路接口综述",
+          "design": "MS1–3、MN1–2、MG1–2分别承担抑制、NMDA门控、电导依赖功能。",
+          "comparator": null,
+          "measure": "各模块的状态依赖与输出接口",
+          "unit_of_analysis": "突触电路拓扑",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "IV. Silicon synapses; IV.B. NMDA voltage gating and conductance behavior",
+            "figure": "Figure 3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "保留突触动态与电压依赖的设计分解。",
+        "boundary": "门控与电导响应的详细表征引用[41]，不在本篇重新展开。",
+        "negative_result": null,
+        "non_inference": "不是本文新发现的生物NMDA作用，也不是本篇独立器件复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "怎样在一个硅突触中分离时间动态与膜电压依赖功能？"
+      ],
+      "shared_evidence_with": [
+        "C10"
+      ],
+      "review_notes": [
+        "本篇主要提供图3及正文，早期表征原始数据未随本文提供。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "text_only",
+          "not_scientifically_verified"
+        ]
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "利用 DPI 突触的独立 Vw 与 Vthr 控制，局部学习可改变单个突触权重，同时共享 Vthr 可缩放同一神经元的输入突触效能；本文将其综合为兼容学习与稳态突触缩放的设计。",
+      "claim_type": "reviewed_homeostatic_architecture",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "共享增益控制设计综述",
+          "design": "局部Vw改变与神经元级Vthr缩放分离。",
+          "comparator": "只改变单个突触权重",
+          "measure": "局部权重与全局缩放的可分离控制",
+          "unit_of_analysis": "同一神经元的输入突触组",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "IV.C. Homeostatic plasticity: synaptic scaling",
+            "figure": "Figure 3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "两类可塑性控制可在该架构中分工。",
+        "boundary": "功能演示归于引用[75]；本篇无新增温漂或稳态误差量化。",
+        "negative_result": null,
+        "non_inference": "不能据此断言已消除器件失配、温度漂移或所有输入漂移。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "learning-memory",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "局部学习与神经元级稳态缩放如何共存？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "text_only",
+          "not_scientifically_verified"
+        ]
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "本文综述的双稳态学习突触把突触前脉冲触发的增减权重与慢速双稳态刷新叠加；权重跨越阈值后被推向另一稳定状态，而输入脉冲的随机性提供随机状态转移来源。",
+      "claim_type": "reviewed_plasticity_architecture",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "权重更新与双稳态刷新机制分析",
+          "design": "比较权重阈值两侧的刷新方向，并由突触前事件触发增减。",
+          "comparator": null,
+          "measure": "权重电压、阈值跨越及两稳定状态",
+          "unit_of_analysis": "双稳态突触模型与电路",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "采用具随机时序的输入脉冲。",
+            "EPSC与内部权重电压的关系为指数型，并非严格线性。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "V. Synaptic plasticity: spike-based learning circuits",
+            "figure": "Figure 4a",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "输入统计可驱动有限状态突触的随机学习。",
+        "boundary": "理论容量和palimpsest优势源自[77–84]；小规模时指数映射可能影响学习。",
+        "negative_result": null,
+        "non_inference": "本文没有新测得长期记忆容量或证明任意网络无灾难性遗忘。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "有限状态硅突触如何利用输入随机性实现权重状态转换？"
+      ],
+      "shared_evidence_with": [
+        "C12",
+        "C13"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "text_only",
+          "not_scientifically_verified"
+        ]
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "本文综述的脉冲学习控制以突触后膜电位和活动积分 VCa 决定权重增减：膜电位高于阈值且 Vthk1<VCa<Vthk3 时允许增加，膜电位低于阈值且 Vthk1<VCa<Vthk2 时允许减少，其余条件关闭更新。",
+      "claim_type": "reviewed_learning_rule",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "资格门控电路和规则说明",
+          "design": "每个输入事件受共享VUP/VDN与膜电位、VCa阈值共同门控。",
+          "comparator": null,
+          "measure": "允许LTP/LTD或停止更新的条件",
+          "unit_of_analysis": "一个神经元及其输入突触的规则",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "VCa是硅电路活动积分变量，不是真实钙浓度的直接测量。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "V. Synaptic plasticity: spike-based learning circuits",
+            "figure": "Figure 4b",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "停止学习可由活动区间阈值在电路层表达。",
+        "boundary": "优于过拟合的泛化结论引用[24,25]，本篇未给独立泛化数据。",
+        "negative_result": null,
+        "non_inference": "不把后述LTP下降归为已单独隔离的因果消融效应。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "learning-memory",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "膜电位与活动积分的共同门控怎样限定权重更新？"
+      ],
+      "shared_evidence_with": [
+        "C14"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "text_only",
+          "not_scientifically_verified"
+        ]
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "本文综述认为，AER 用快速异步总线复用稀疏、低发放率神经元的事件，可支持可重配置跨芯片连接；通信冲突引入排队延迟，系统规模仍受路由存储与带宽限制，毫秒实时动力学对这类延迟的容忍高于加速时间模型。",
+      "claim_type": "reviewed_communication_tradeoff",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "事件路由与时间尺度约束综述",
+          "design": "比较实时与加速神经动力学下非缩放的通信延迟。",
+          "comparator": "加速时间模型",
+          "measure": "事件吞吐、排队延迟与神经时间尺度",
+          "unit_of_analysis": "AER通信架构",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "论述以稀疏、近生物发放率活动为适用条件。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "VI.B. Distributed multi-chip networks",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "解释实时神经动力学与异步通信的兼容性及扩展边界。",
+        "boundary": "60M事件/秒与1ms容差下4K同时事件等示例均来自引用工作。",
+        "negative_result": null,
+        "non_inference": "不当作本篇新通信基准，也不能推断任意同步拥塞下无事件延迟。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "神经动力学的时间尺度如何约束多芯片事件通信扩展？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "text_only",
+          "not_scientifically_verified"
+        ]
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "在本文汇总的硅神经元演示中，以 50 Hz 规则脉冲驱动兴奋性 DPI 突触时，较强 Vstd 短时抑制设置降低有效突触输入，直至净输入小于泄漏电流，使膜电位随刺激下降而非上升。",
+      "claim_type": "reviewed_measured_silicon_result",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "膜电位实测与短时抑制偏置扫描",
+          "design": "固定50Hz输入，改变Vstd并展示无STD参照。",
+          "comparator": "无或弱短时抑制设置",
+          "measure": "膜电位轨迹、有效输入相对泄漏的变化",
+          "unit_of_analysis": "单个硅神经元/突触演示轨迹",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "本文没有报告独立芯片或重复试验数量。"
+          ],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "VII.A. Synaptic and neural dynamics",
+            "figure": "Figure 7",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "较强STD设置改变输入累积方向。",
+        "boundary": "仅所示50Hz及偏置条件；具体幅度不能从缺失像素另行估计。",
+        "negative_result": null,
+        "non_inference": "不能推断普遍频率响应或抑制强度的定量剂量关系。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "短时突触抑制在持续脉冲刺激下怎样改变硅神经元膜电位？"
+      ],
+      "shared_evidence_with": [
+        "C5"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "text_only",
+          "not_scientifically_verified"
+        ]
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "在本文汇总的阶跃电流硅神经元演示中，Vlkahp=0.05 V、Vthrahp=0.14 V、Vahp=2.85 V 的适应设置产生簇发；作者将其解释为增强适应负反馈后的振铃。",
+      "claim_type": "reviewed_measured_silicon_result",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "恒定电流输入下的膜电位测量",
+          "design": "启用适应模块并采用正文列出的偏置。",
+          "comparator": null,
+          "measure": "簇发膜电位响应",
+          "unit_of_analysis": "一个硅神经元响应示例",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "振铃机制由该电路模型解释。"
+          ],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "VII.A. Synaptic and neural dynamics",
+            "figure": "Figure 8",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所示偏置下出现簇发响应。",
+        "boundary": "图8改编自[49]，不是独立于该原始工作的一次复制；未报告效应统计。",
+        "negative_result": null,
+        "non_inference": "不能推断完整簇发参数相图或真实神经元的机制唯一性。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "适应反馈的偏置如何在硅神经元中支持簇发？"
+      ],
+      "shared_evidence_with": [
+        "C3"
+      ],
+      "review_notes": [
+        "硅实测与模型解释区分；图像像素不可核查。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "text_only",
+          "not_scientifically_verified"
+        ]
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "在本文汇总的随机学习演示中，突触后平均发放 30 Hz、突触前 60 Hz 泊松输入持续 400 ms 的条件下，所示权重经历正负更新后越过双稳态阈值并巩固为 LTD 状态。",
+      "claim_type": "reviewed_measured_silicon_result",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "双稳态突触权重与脉冲时序测量",
+          "design": "非塑性输入驱动突触后活动，60Hz输入刺激被观测学习突触。",
+          "comparator": null,
+          "measure": "权重阈值跨越及LTD巩固",
+          "unit_of_analysis": "一个突触权重时间轨迹",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "输入采用泊松时序；权重刷新持续存在。"
+          ],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "VII.B. Spike-based learning",
+            "figure": "Figure 9",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "展示输入随机性下的长期状态转移。",
+        "boundary": "图9改编自[85]；未报告状态转移概率的独立重复估计。",
+        "negative_result": null,
+        "non_inference": "单条LTD轨迹不证明普遍噪声鲁棒性或长期记忆容量。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "随机输入何时能推动双稳态突触跨越长期更新阈值？"
+      ],
+      "shared_evidence_with": [
+        "C7"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "text_only",
+          "not_scientifically_verified"
+        ]
+      }
+    },
+    {
+      "id": "C13",
+      "statement": "在本文汇总的硬件学习演示中，一个神经元的 28×124=3472 个初始低态突触接受 INI 图案的重复泊松输入，白/黑像素分别编码为 55/5 Hz，教师信号使突触后约 40 Hz 发放，图案逐步存入权重矩阵。",
+      "claim_type": "reviewed_measured_silicon_result",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "重复图案训练的硬件权重矩阵读出",
+          "design": "教师驱动与高低速像素脉冲同时呈现。",
+          "comparator": "训练前全低态突触矩阵",
+          "measure": "图案对应的权重高态分布",
+          "unit_of_analysis": "一个神经元输入矩阵及重复呈现序列",
+          "sample_size_as_reported": "3472个突触（28×124）；不是3472次独立试验",
+          "uncertainty": null,
+          "assumptions": [
+            "泊松输入随机性使每次只有部分突触转换。"
+          ],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "VII.B. Spike-based learning",
+            "figure": "Figure 10b",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "单个图案在该突触阵列中逐渐形成权重表征。",
+        "boundary": "重复次数、检索准确率和多图案容量未给出。",
+        "negative_result": null,
+        "non_inference": "不能推断已完成通用图像分类、独立测试泛化或多记忆存储容量验证。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "learning-memory",
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "低分辨率随机突触如何逐步存储脉冲编码图案？"
+      ],
+      "shared_evidence_with": [
+        "C7",
+        "C14"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "text_only",
+          "not_scientifically_verified"
+        ]
+      }
+    },
+    {
+      "id": "C14",
+      "statement": "在上述 3472 突触 INI 图案训练序列中，随图案进入权重矩阵和突触后发放提高，LTP 发生的归一化频率下降；本文将该趋势归于 VCa 门控的停止学习机制，并给出指数拟合展示。",
+      "claim_type": "reviewed_measured_silicon_result",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "同一训练过程中的LTP计数归一化",
+          "design": "追踪重复图案训练过程中的长期增强事件。",
+          "comparator": "训练序列早期与后期",
+          "measure": "归一化LTP发生频率及指数拟合",
+          "unit_of_analysis": "与C13相同训练序列",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "机制归因来自学习规则，未做关闭stop-learning的独立消融。"
+          ],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "VII.B. Spike-based learning",
+            "figure": "Figure 10c",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "学习事件随同一图案训练进展而减少。",
+        "boundary": "同一训练证据的不同读出；没有拟合参数或不确定性。",
+        "negative_result": null,
+        "non_inference": "不证明停止学习单独导致泛化改善。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "已存图案的持续呈现如何影响后续长期增强事件率？"
+      ],
+      "shared_evidence_with": [
+        "C8",
+        "C13"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "text_only",
+          "not_scientifically_verified"
+        ]
+      }
+    },
+    {
+      "id": "C15",
+      "statement": "在本文汇总的 128 神经元 sWTA 硬件网络中，邻近兴奋连接和 4 个全局抑制神经元使中心约为单元 20 与 60 的两个输入区竞争；180 与 240 Hz 泊松输入交换强度后，较强输入区均获放大，较弱区被抑制。",
+      "claim_type": "reviewed_measured_silicon_result",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "交换输入位置的选择性放大演示",
+          "design": "先校准以减轻失配，再比较两个区域的180/240Hz输入。",
+          "comparator": "交换两个区域的输入强度",
+          "measure": "各区域发放率与500ms后稳态活动分布",
+          "unit_of_analysis": "一个网络的两种输入配置",
+          "sample_size_as_reported": "128神经元，其中124–127为4个抑制单元；独立网络重复数未报告",
+          "uncertainty": null,
+          "assumptions": [
+            "局部连接包含第一、第二近邻兴奋连接。",
+            "已使用事件式失配补偿。"
+          ],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "VII.C. sWTA networks of I&F neurons",
+            "figure": "Figure 11",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "展示输入强度驱动的选择性放大与抑制。",
+        "boundary": "图11改编自[136]；交换结果仅说明该演示下的部分失配补偿。",
+        "negative_result": null,
+        "non_inference": "不能推断所有位置、任意输入或未经校准时的相同不变性。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "局部兴奋与全局抑制如何在硅网络中选择较强输入？"
+      ],
+      "shared_evidence_with": [
+        "C16"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "text_only",
+          "not_scientifically_verified"
+        ]
+      }
+    },
+    {
+      "id": "C16",
+      "statement": "在本文的 sWTA 状态保持演示中，200 Hz 泊松输入分别短暂刺激两个神经元群各 500 ms：先激活群在输入撤除后持续发放，第二群被刺激后抑制第一群并在撤除输入后保持自身活动。",
+      "claim_type": "reviewed_measured_silicon_result",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "顺序瞬态输入与持续群体活动测量",
+          "design": "先刺激下方群500ms，间隔后刺激上方群500ms。",
+          "comparator": "输入撤除前后及第二群刺激前后",
+          "measure": "持续发放与群体状态切换",
+          "unit_of_analysis": "同一sWTA网络的一个顺序刺激轨迹",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "依赖局部回返兴奋与全局竞争；该实验故意不做失配补偿。"
+          ],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "VII.C. sWTA networks of I&F neurons",
+            "figure": "Figure 12",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "展示可用于状态保持的持续活动与输入驱动切换。",
+        "boundary": "本篇演示状态保持元素，完整FSM及上下文任务引用其他工作；持续时间限于所示轨迹。",
+        "negative_result": null,
+        "non_inference": "不能据此证明完整认知、自主任务控制、无限记忆或所有神经元持续活动。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "回返硅网络能否在瞬态刺激后保持并切换群体状态？"
+      ],
+      "shared_evidence_with": [
+        "C15"
+      ],
+      "review_notes": [
+        "未把被引用的完整有限状态机与上下文任务当作本篇新实验。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "text_only",
+          "not_scientifically_verified"
+        ]
+      }
+    },
+    {
+      "id": "C17",
+      "statement": "本文介绍的 pyNCS 软件框架用硬件规格抽象、可重配置 API 与高层脚本，将神经元/突触层网络描述映射到硬件配置、事件路由和在线活动监视，作为多芯片神经形态系统的软硬件接口。",
+      "claim_type": "reviewed_software_architecture",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "软件接口与资源管理架构描述",
+          "design": "连接抽象网络元素和实际硬件资源。",
+          "comparator": null,
+          "measure": "可配置接口与控制/监视能力",
+          "unit_of_analysis": "pyNCS框架",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "VI.C. A SW/HW echo-system",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "保留系统部署所需的软件层构件。",
+        "boundary": "正文为架构描述，无软件效率或兼容性的独立基准。",
+        "negative_result": null,
+        "non_inference": "不能推断对所有硬件的即插即用兼容或实时性能保证。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "如何把抽象脉冲网络描述与异步硬件资源连接？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "text_only",
+          "not_scientifically_verified"
+        ]
+      }
+    }
+  ],
+  "reading_summary": "完整评估19页文字后，保留17项候选综述综合命题：条件性DPI解析结果、电路与学习规则、异步通信/软件接口，以及短时抑制、簇发、随机权重转移、图案存储、LTP下降和sWTA竞争/状态保持演示。数据来自多年多个器件和既有工作，不能合并为独立重复；未读取图像，也未核验科学真实性或复现。完整自主认知、容量提升和一般鲁棒性缺乏本篇可独立评估的新增证据。",
+  "shared_evidence": [
+    {
+      "claim_id": "C1",
+      "with": [
+        "C4"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C1"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C10"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C12",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C14"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "with": [
+        "C5"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "with": [
+        "C3"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "with": [
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C13",
+      "with": [
+        "C7",
+        "C14"
+      ]
+    },
+    {
+      "claim_id": "C14",
+      "with": [
+        "C8",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C15",
+      "with": [
+        "C16"
+      ]
+    },
+    {
+      "claim_id": "C16",
+      "with": [
+        "C15"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [
+      {
+        "claim_id": "C1",
+        "pdf_page": 3,
+        "section": "II. Neural dynamics in analog VLSI",
+        "figure": "Figure 1; Table I",
+        "equation": "Equations 1–5",
+        "page_exists": true,
+        "quote": null,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "scope": "第二遍仅核对所供文本与图注；不含图像核查或科学复现。"
+      },
+      {
+        "claim_id": "C2",
+        "pdf_page": 3,
+        "section": "II. Neural dynamics in analog VLSI",
+        "figure": "Figure 1; Table I",
+        "equation": null,
+        "page_exists": true,
+        "quote": null,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "scope": "第二遍仅核对所供文本与图注；不含图像核查或科学复现。"
+      },
+      {
+        "claim_id": "C3",
+        "pdf_page": 4,
+        "section": "III. Silicon neurons",
+        "figure": "Figure 2",
+        "equation": "Equations 6–8",
+        "page_exists": true,
+        "quote": null,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "scope": "第二遍仅核对所供文本与图注；不含图像核查或科学复现。"
+      },
+      {
+        "claim_id": "C4",
+        "pdf_page": 5,
+        "section": "IV.A. Short term depression and short-term facilitation",
+        "figure": "Figure 3",
+        "equation": "Equations 9–10",
+        "page_exists": true,
+        "quote": null,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "scope": "第二遍仅核对所供文本与图注；不含图像核查或科学复现。"
+      },
+      {
+        "claim_id": "C5",
+        "pdf_page": 5,
+        "section": "IV. Silicon synapses; IV.B. NMDA voltage gating and conductance behavior",
+        "figure": "Figure 3",
+        "equation": null,
+        "page_exists": true,
+        "quote": null,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "scope": "第二遍仅核对所供文本与图注；不含图像核查或科学复现。"
+      },
+      {
+        "claim_id": "C6",
+        "pdf_page": 5,
+        "section": "IV.C. Homeostatic plasticity: synaptic scaling",
+        "figure": "Figure 3",
+        "equation": null,
+        "page_exists": true,
+        "quote": null,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "scope": "第二遍仅核对所供文本与图注；不含图像核查或科学复现。"
+      },
+      {
+        "claim_id": "C7",
+        "pdf_page": 6,
+        "section": "V. Synaptic plasticity: spike-based learning circuits",
+        "figure": "Figure 4a",
+        "equation": null,
+        "page_exists": true,
+        "quote": null,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "scope": "第二遍仅核对所供文本与图注；不含图像核查或科学复现。"
+      },
+      {
+        "claim_id": "C8",
+        "pdf_page": 7,
+        "section": "V. Synaptic plasticity: spike-based learning circuits",
+        "figure": "Figure 4b",
+        "equation": null,
+        "page_exists": true,
+        "quote": null,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "scope": "第二遍仅核对所供文本与图注；不含图像核查或科学复现。"
+      },
+      {
+        "claim_id": "C9",
+        "pdf_page": 9,
+        "section": "VI.B. Distributed multi-chip networks",
+        "figure": null,
+        "equation": null,
+        "page_exists": true,
+        "quote": null,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "scope": "第二遍仅核对所供文本与图注；不含图像核查或科学复现。"
+      },
+      {
+        "claim_id": "C10",
+        "pdf_page": 10,
+        "section": "VII.A. Synaptic and neural dynamics",
+        "figure": "Figure 7",
+        "equation": null,
+        "page_exists": true,
+        "quote": null,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "scope": "第二遍仅核对所供文本与图注；不含图像核查或科学复现。"
+      },
+      {
+        "claim_id": "C11",
+        "pdf_page": 10,
+        "section": "VII.A. Synaptic and neural dynamics",
+        "figure": "Figure 8",
+        "equation": null,
+        "page_exists": true,
+        "quote": null,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "scope": "第二遍仅核对所供文本与图注；不含图像核查或科学复现。"
+      },
+      {
+        "claim_id": "C12",
+        "pdf_page": 11,
+        "section": "VII.B. Spike-based learning",
+        "figure": "Figure 9",
+        "equation": null,
+        "page_exists": true,
+        "quote": null,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "scope": "第二遍仅核对所供文本与图注；不含图像核查或科学复现。"
+      },
+      {
+        "claim_id": "C13",
+        "pdf_page": 11,
+        "section": "VII.B. Spike-based learning",
+        "figure": "Figure 10b",
+        "equation": null,
+        "page_exists": true,
+        "quote": null,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "scope": "第二遍仅核对所供文本与图注；不含图像核查或科学复现。"
+      },
+      {
+        "claim_id": "C14",
+        "pdf_page": 12,
+        "section": "VII.B. Spike-based learning",
+        "figure": "Figure 10c",
+        "equation": null,
+        "page_exists": true,
+        "quote": null,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "scope": "第二遍仅核对所供文本与图注；不含图像核查或科学复现。"
+      },
+      {
+        "claim_id": "C15",
+        "pdf_page": 12,
+        "section": "VII.C. sWTA networks of I&F neurons",
+        "figure": "Figure 11",
+        "equation": null,
+        "page_exists": true,
+        "quote": null,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "scope": "第二遍仅核对所供文本与图注；不含图像核查或科学复现。"
+      },
+      {
+        "claim_id": "C16",
+        "pdf_page": 13,
+        "section": "VII.C. sWTA networks of I&F neurons",
+        "figure": "Figure 12",
+        "equation": null,
+        "page_exists": true,
+        "quote": null,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "scope": "第二遍仅核对所供文本与图注；不含图像核查或科学复现。"
+      },
+      {
+        "claim_id": "C17",
+        "pdf_page": 10,
+        "section": "VI.C. A SW/HW echo-system",
+        "figure": null,
+        "equation": null,
+        "page_exists": true,
+        "quote": null,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "scope": "第二遍仅核对所供文本与图注；不含图像核查或科学复现。"
+      }
+    ],
+    "model_findings": [
+      {
+        "claim_id": null,
+        "issue": "源为arXiv v1而非最终出版版；综述及改编图不能当作新增独立结果。",
+        "pdf_page": 1,
+        "resolved": true,
+        "suggested_correction": "版本注明且所有条目保留review_synthesis角色。"
+      },
+      {
+        "claim_id": "C14",
+        "issue": "LTP下降与stop-learning的关系没有独立关闭门控消融。",
+        "pdf_page": 11,
+        "resolved": true,
+        "suggested_correction": "保留观察与作者归因，避免单独因果证明。"
+      },
+      {
+        "claim_id": null,
+        "issue": "缺失图像、独立芯片/试验重复数及多个既有结果的原始数据。",
+        "pdf_page": 10,
+        "resolved": false,
+        "suggested_correction": "人工可进一步核查原始论文和图像。"
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T06:50:48.909Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "f241a23becbfb059a5219ffc0f17902090cbfc1736a490a18a7f22723f602c25",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

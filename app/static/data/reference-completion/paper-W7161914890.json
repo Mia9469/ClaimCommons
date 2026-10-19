@@ -1,0 +1,1032 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "preprint",
+  "paper": {
+    "title": "Spiker-LL: An Energy-Efficient FPGA Accelerator Enabling Adaptive Local Learning in Spiking Neural Networks",
+    "authors": [
+      "Alessio Caviglia",
+      "Filippo Marostica",
+      "Alessandro Savino",
+      "Stefano Di Carlo"
+    ],
+    "doi": null,
+    "publication_year": 2026,
+    "venue": "arXiv (Cornell University)",
+    "url": "https://arxiv.org/pdf/2605.18003"
+  },
+  "source": {
+    "filename": "paper-W7161914890--Spiker-LL-An-Energy-Efficient-FPGA-Accelerator-Enabling-Adaptive-Local-Learning-in-Spiking-Neur.pdf",
+    "sha256": "736eab0964cc84568781404511959ecbf605cd1a2233cda0b804e44f1c8618b0",
+    "source_url": "https://arxiv.org/pdf/2605.18003",
+    "pdf_page_count": 6
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "results_sections_seen": [
+      "LocalSTSFarchitecture/DFA/gating",
+      "Trace/softwareRTLmodel",
+      "3datasetsbenchmark",
+      "8bittradeoff",
+      "Learningoverhead",
+      "Epoch/CPUtime",
+      "Priorworktable",
+      "Deployment"
+    ],
+    "missing_material": [
+      "训练split/n/seeds及完整规则参数未给",
+      "图像像素未读取",
+      "board功率实测/长期adaptation未提供"
+    ],
+    "text_pass_complete": true,
+    "notes": "arXiv2605.18003v1，完整6页2图3表24参考评估，toolpower估计与source-reportedRTL分层。",
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "Spiker-LL在Spiker+乘法器freeLIF推断通路增加局部weightupdater、可写BRAM和控制状态，支持sup​​ervisedSTSF样在线更新。",
+      "role": "interpretation",
+      "source_pages": [
+        2
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "hidden更新用同timesteppre/postcoincidence、极稀疏DFA与即时量化常量加减，无需STDP历史迹缓冲。",
+      "role": "interpretation",
+      "source_pages": [
+        3
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "研究报告snnTorch量化/饱和/gating模型与RTL信号trace相符，K=5timestepgating在所调任务表现较好。",
+      "role": "result",
+      "source_pages": [
+        4
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "Poisson10timestep、16bit/8fraction的benchmark报告MNIST92%、F-MNIST81%、DIGITS93%accuracy，分别用784–200–10、784–300–10、64–60–10。",
+      "role": "result",
+      "source_pages": [
+        5
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "16bit三配置的Vivado推断latency约.121/.133/.0077ms，vector-lesspower估计509/690/277mW，energy/image约.0616/.0918/.00213mJ。",
+      "role": "result",
+      "source_pages": [
+        5
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "MNIST8bit配置相对16bit将accuracy92→90%、power509→326mW、energy约.061→.039mJ，并减少LUT/BRAM。",
+      "role": "result",
+      "source_pages": [
+        5
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "MNIST加学习相对inference-only保持90MHz、DSP0，但LUT约10916→13337，BRAM36约35→91，power481→509mW，latency.104→.121ms。",
+      "role": "result",
+      "source_pages": [
+        5
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "来源epoch时间MNIST7.26vsCPU22s、F-MNIST7.98vs23s、DIGITS.01vs.282s，体现所设专用pipeline可加速训练。",
+      "role": "result",
+      "source_pages": [
+        5
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "跨论文表中本设计latency/每synapse成本较好，但有参考更高accuracy或更低绝对power/energy；比较异构条件不能确定全局优劣。",
+      "role": "interpretation",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "外部arbiter可换reward/heuristic信号及runtime改学习配置是接口能力，label-free闭环/continuousadaptation为未来实验。",
+      "role": "hypothesis",
+      "source_pages": [
+        4
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "outputrule/hiddenrule不同，hidden需cooccurrence而outputpre+error，DFA从一output路由不能泛化全准确梯度。",
+      "role": "interpretation",
+      "source_pages": [
+        3,
+        4
+      ],
+      "decision": "boundary",
+      "reason": "不拆joint假设成独立guarantee"
+    },
+    {
+      "summary": "摘要<5kLUT与TableII DIGITS5059不完全符，TableI/III MNISTLUT略差配置需区分。",
+      "role": "result",
+      "source_pages": [
+        1,
+        5
+      ],
+      "decision": "unresolved",
+      "reason": "保留实际表数不统一修订"
+    },
+    {
+      "summary": "refs和completecodeURL为材料入口，不在本任务运行硬件/softwaretests。",
+      "role": "review_synthesis",
+      "source_pages": [
+        6
+      ],
+      "decision": "exclude",
+      "reason": "没有新生物实验"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "Spiker-LL在Spiker+乘法器freeLIF推断通路增加局部weightupdater、可写BRAM和控制状态，支持sup​​ervisedSTSF样在线更新。",
+      "claim_type": "fpga_local_learning",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "RTL设计/硬件算法集成",
+          "design": "spikeencodingoffchip，neuron并行、inputchannel顺序",
+          "comparator": "Spiker+ inference-only",
+          "measure": "实现与资源",
+          "unit_of_analysis": "FPGA配置/软件–RTL设计及benchmark；独立run次数未给",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 2,
+            "section": "Architecture",
+            "figure": "Fig1",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "Spiker-LL在Spiker+乘法器freeLIF推断通路增加局部weightupdater、可写BRAM和控制状态，支持sup​​ervisedSTSF样在线更新。",
+        "boundary": "设计/RTLsimulation和Vivado报告，不是独立在体/芯片生物实验。",
+        "negative_result": null,
+        "non_inference": "不自动覆盖全输入编码/闭环部署系统能耗。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "neuromorphic-hardware",
+        "learning-algorithms",
+        "computational-efficiency"
+      ],
+      "scientific_questions": [
+        "局部更新硬件在固定量化/编码条件下的训练能力及开销是多少？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10"
+      ],
+      "review_notes": [
+        "全6页2图3表24参考二次来源审计；工具功率非实测，推断/训练及core/offchip边界分开；BRAM开销、量化性能损失、跨论文较差项保留。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "hidden更新用同timesteppre/postcoincidence、极稀疏DFA与即时量化常量加减，无需STDP历史迹缓冲。",
+      "claim_type": "fpga_local_learning",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "binarycooccurrence/ternaryerror逻辑",
+          "design": "每hidden仅一个非零feedbackoutput，16fixedpoint",
+          "comparator": "完整STDP/BPTT",
+          "measure": "局部规则及state需求",
+          "unit_of_analysis": "FPGA配置/软件–RTL设计及benchmark；独立run次数未给",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "Local learning",
+            "figure": "Eq2–11",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "hidden更新用同timesteppre/postcoincidence、极稀疏DFA与即时量化常量加减，无需STDP历史迹缓冲。",
+        "boundary": "是硬件适配简化而非精确STDP/e-prop/完整时序梯度；longrangecredit有限。",
+        "negative_result": null,
+        "non_inference": "无一般gradient/收敛保证或生物localplasticity验证。",
+        "unresolved": "δ=actual−desired而Eq12正ηδpre未写descent负号；实际adderupdate方向需澄清。",
+        "unresolved_attribution": "来源局限及提取者来源复核"
+      },
+      "broad_directions": [
+        "neuromorphic-hardware",
+        "learning-algorithms",
+        "computational-efficiency"
+      ],
+      "scientific_questions": [
+        "局部更新硬件在固定量化/编码条件下的训练能力及开销是多少？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10"
+      ],
+      "review_notes": [
+        "全6页2图3表24参考二次来源审计；工具功率非实测，推断/训练及core/offchip边界分开；BRAM开销、量化性能损失、跨论文较差项保留。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "研究报告snnTorch量化/饱和/gating模型与RTL信号trace相符，K=5timestepgating在所调任务表现较好。",
+      "claim_type": "fpga_local_learning",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "source-reportedtrace比较和runtimecounter",
+          "design": "每K步允许update，不积历史梯度",
+          "comparator": "不同K/模型RTL",
+          "measure": "一致性/选参",
+          "unit_of_analysis": "FPGA配置/软件–RTL设计及benchmark；独立run次数未给",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "Software–RTL/gating",
+            "figure": "Fig2/Eq13",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "研究报告snnTorch量化/饱和/gating模型与RTL信号trace相符，K=5timestepgating在所调任务表现较好。",
+        "boundary": "没有所供逐trace/完整K曲线，不能称所有参数验证或最优K普适。",
+        "negative_result": null,
+        "non_inference": "当前没有真实连续域漂移或无标签rewardadaptation实验。",
+        "unresolved": "具体trainseeds/split/epoch数及gating选择程序在主文未完整。",
+        "unresolved_attribution": "来源局限及提取者来源复核"
+      },
+      "broad_directions": [
+        "neuromorphic-hardware",
+        "learning-algorithms",
+        "computational-efficiency"
+      ],
+      "scientific_questions": [
+        "局部更新硬件在固定量化/编码条件下的训练能力及开销是多少？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10"
+      ],
+      "review_notes": [
+        "全6页2图3表24参考二次来源审计；工具功率非实测，推断/训练及core/offchip边界分开；BRAM开销、量化性能损失、跨论文较差项保留。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "Poisson10timestep、16bit/8fraction的benchmark报告MNIST92%、F-MNIST81%、DIGITS93%accuracy，分别用784–200–10、784–300–10、64–60–10。",
+      "claim_type": "fpga_local_learning",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "source-reportedfromscratchsupervised训练",
+          "design": "各dataset调learningrate/β，K5",
+          "comparator": "不同datasets/configurations",
+          "measure": "accuracy",
+          "unit_of_analysis": "FPGA配置/软件–RTL设计及benchmark；独立run次数未给",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "Benchmark accuracy",
+            "figure": "TableII",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "Poisson10timestep、16bit/8fraction的benchmark报告MNIST92%、F-MNIST81%、DIGITS93%accuracy，分别用784–200–10、784–300–10、64–60–10。",
+        "boundary": "模型/数据设定不同，不把93%作为所有任务准确率或SOTA。",
+        "negative_result": null,
+        "non_inference": "无外部临床/实际长期adaptation/泛化统计。",
+        "unresolved": "test样本数、split及独立seeds/误差条未给。",
+        "unresolved_attribution": "来源局限及提取者来源复核"
+      },
+      "broad_directions": [
+        "neuromorphic-hardware",
+        "learning-algorithms",
+        "computational-efficiency"
+      ],
+      "scientific_questions": [
+        "局部更新硬件在固定量化/编码条件下的训练能力及开销是多少？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10"
+      ],
+      "review_notes": [
+        "全6页2图3表24参考二次来源审计；工具功率非实测，推断/训练及core/offchip边界分开；BRAM开销、量化性能损失、跨论文较差项保留。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "16bit三配置的Vivado推断latency约.121/.133/.0077ms，vector-lesspower估计509/690/277mW，energy/image约.0616/.0918/.00213mJ。",
+      "claim_type": "fpga_local_learning",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "综合flow及vector-less功率估计",
+          "design": "90/83/125MHz；onchipcore边界",
+          "comparator": "三个networkconfigs",
+          "measure": "latency/power×time",
+          "unit_of_analysis": "FPGA配置/软件–RTL设计及benchmark；独立run次数未给",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "Inference costs",
+            "figure": "TableII",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "16bit三配置的Vivado推断latency约.121/.133/.0077ms，vector-lesspower估计509/690/277mW，energy/image约.0616/.0918/.00213mJ。",
+        "boundary": "intrinsic估值，不是带offchip编码、主机通信及全board实测。",
+        "negative_result": null,
+        "non_inference": "不能称trainingenergy/sample相同或动态工作负载总energy。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "neuromorphic-hardware",
+        "learning-algorithms",
+        "computational-efficiency"
+      ],
+      "scientific_questions": [
+        "局部更新硬件在固定量化/编码条件下的训练能力及开销是多少？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10"
+      ],
+      "review_notes": [
+        "全6页2图3表24参考二次来源审计；工具功率非实测，推断/训练及core/offchip边界分开；BRAM开销、量化性能损失、跨论文较差项保留。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "MNIST8bit配置相对16bit将accuracy92→90%、power509→326mW、energy约.061→.039mJ，并减少LUT/BRAM。",
+      "claim_type": "fpga_local_learning",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "两位宽配置比較",
+          "design": "同784–200–10、90MHz、.12ms",
+          "comparator": "16vs8bit",
+          "measure": "accuracy/resource/energyest",
+          "unit_of_analysis": "FPGA配置/软件–RTL设计及benchmark；独立run次数未给",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "Precision tradeoff",
+            "figure": "TableI",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "MNIST8bit配置相对16bit将accuracy92→90%、power509→326mW、energy约.061→.039mJ，并减少LUT/BRAM。",
+        "boundary": "位宽/quantization改变，功率为工具估计；未知独立准确率CI。",
+        "negative_result": "准确率下降2个百分点；低能耗不免费。",
+        "non_inference": null,
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "neuromorphic-hardware",
+        "learning-algorithms",
+        "computational-efficiency"
+      ],
+      "scientific_questions": [
+        "局部更新硬件在固定量化/编码条件下的训练能力及开销是多少？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C7",
+        "C8",
+        "C9",
+        "C10"
+      ],
+      "review_notes": [
+        "全6页2图3表24参考二次来源审计；工具功率非实测，推断/训练及core/offchip边界分开；BRAM开销、量化性能损失、跨论文较差项保留。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "MNIST加学习相对inference-only保持90MHz、DSP0，但LUT约10916→13337，BRAM36约35→91，power481→509mW，latency.104→.121ms。",
+      "claim_type": "fpga_local_learning",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "同baselineflow比较",
+          "design": "K5共用通路、ROM改单/双portRAM",
+          "comparator": "Spiker inference-only",
+          "measure": "硬件资源和corelatency",
+          "unit_of_analysis": "FPGA配置/软件–RTL设计及benchmark；独立run次数未给",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "Learning overhead",
+            "figure": "TableIII",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "MNIST加学习相对inference-only保持90MHz、DSP0，但LUT约10916→13337，BRAM36约35→91，power481→509mW，latency.104→.121ms。",
+        "boundary": "LUT约+22%/power<6%，BRAM增加>2倍，不应把全部memory overhead称minimal。",
+        "negative_result": "learning新增明显BRAM及约16%latency开销；每步updateworstcycle可翻倍。",
+        "non_inference": "不是原BPTT精度保持或无额外成本。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "neuromorphic-hardware",
+        "learning-algorithms",
+        "computational-efficiency"
+      ],
+      "scientific_questions": [
+        "局部更新硬件在固定量化/编码条件下的训练能力及开销是多少？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C8",
+        "C9",
+        "C10"
+      ],
+      "review_notes": [
+        "全6页2图3表24参考二次来源审计；工具功率非实测，推断/训练及core/offchip边界分开；BRAM开销、量化性能损失、跨论文较差项保留。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "来源epoch时间MNIST7.26vsCPU22s、F-MNIST7.98vs23s、DIGITS.01vs.282s，体现所设专用pipeline可加速训练。",
+      "claim_type": "fpga_local_learning",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "source-reportedaccelerator/CPU比较",
+          "design": "CPU Ryzen7 5700U；samebenchmark",
+          "comparator": "accelerator vsCPU",
+          "measure": "seconds/epoch",
+          "unit_of_analysis": "FPGA配置/软件–RTL设计及benchmark；独立run次数未给",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "Epoch time",
+            "figure": "TableII",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "来源epoch时间MNIST7.26vsCPU22s、F-MNIST7.98vs23s、DIGITS.01vs.282s，体现所设专用pipeline可加速训练。",
+        "boundary": "具体batch/data-transfer、CPU优化程度及计时重复未标，不能当通用speedup。",
+        "negative_result": null,
+        "non_inference": "没测全部epoch的真实boardenergy或同等完整系统预算。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "neuromorphic-hardware",
+        "learning-algorithms",
+        "computational-efficiency"
+      ],
+      "scientific_questions": [
+        "局部更新硬件在固定量化/编码条件下的训练能力及开销是多少？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C9",
+        "C10"
+      ],
+      "review_notes": [
+        "全6页2图3表24参考二次来源审计；工具功率非实测，推断/训练及core/offchip边界分开；BRAM开销、量化性能损失、跨论文较差项保留。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "跨论文表中本设计latency/每synapse成本较好，但有参考更高accuracy或更低绝对power/energy；比较异构条件不能确定全局优劣。",
+      "claim_type": "fpga_local_learning",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "文献工具估值汇总",
+          "design": "不同FPGA/网络/dataset/bitwidth/learningrule",
+          "comparator": "MorphBungeeTiny等",
+          "measure": "accuracy/资源/latency/energy",
+          "unit_of_analysis": "FPGA配置/软件–RTL设计及benchmark；独立run次数未给",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "Prior comparisons",
+            "figure": "TableI",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "跨论文表中本设计latency/每synapse成本较好，但有参考更高accuracy或更低绝对power/energy；比较异构条件不能确定全局优劣。",
+        "boundary": "Tiny示例power139mW和energy.05mJ比16bitSpiker低，虽latency较大。",
+        "negative_result": "不是所有baselineaccuracy/绝对energy被超过。",
+        "non_inference": "per-synnormalization非统一workload真实公平comparison。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "neuromorphic-hardware",
+        "learning-algorithms",
+        "computational-efficiency"
+      ],
+      "scientific_questions": [
+        "局部更新硬件在固定量化/编码条件下的训练能力及开销是多少？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C10"
+      ],
+      "review_notes": [
+        "全6页2图3表24参考二次来源审计；工具功率非实测，推断/训练及core/offchip边界分开；BRAM开销、量化性能损失、跨论文较差项保留。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "外部arbiter可换reward/heuristic信号及runtime改学习配置是接口能力，label-free闭环/continuousadaptation为未来实验。",
+      "claim_type": "fpga_local_learning",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "设计扩展议程",
+          "design": "当前实验fromscratchsupervised，future-richmodels/stability",
+          "comparator": "未试真实sensorfeedback",
+          "measure": "fieldadaptivity",
+          "unit_of_analysis": "FPGA配置/软件–RTL设计及benchmark；独立run次数未给",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "Deployment/future",
+            "figure": "Fig2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者提出的可检验假说。",
+        "boundary": "支持接口不等已验证奖励学习或no-label性能；现工作任务均staticimage。",
+        "negative_result": null,
+        "non_inference": "没有longrange依赖、无标签学习或quantization/gating收敛证明。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "neuromorphic-hardware",
+        "learning-algorithms",
+        "computational-efficiency"
+      ],
+      "scientific_questions": [
+        "局部更新硬件在固定量化/编码条件下的训练能力及开销是多少？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9"
+      ],
+      "review_notes": [
+        "全6页2图3表24参考二次来源审计；工具功率非实测，推断/训练及core/offchip边界分开；BRAM开销、量化性能损失、跨论文较差项保留。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "Spiker-LL给可写权重的DSP-freeSTSF样硬件，三图像任务92/81/93%，核心推断低估能耗。保留BRAM与时延新增、量化精度损失、更新符号及无长期/无标签适应实证。",
+  "shared_evidence": [
+    {
+      "claim_id": "C1",
+      "with": [
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10"
+      ]
+    },
+    {
+      "claim_id": "C2",
+      "with": [
+        "C1",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C1",
+        "C2",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C7",
+        "C8",
+        "C9",
+        "C10"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C8",
+        "C9",
+        "C10"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C9",
+        "C10"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C10"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": "C2",
+        "issue": "δactual−desired加正ηoutputupdate存在方向疑问；规则Eq需实际代码/控制符号说明。",
+        "pdf_page": 3,
+        "suggested_correction": null,
+        "resolved": false
+      },
+      {
+        "claim_id": "C5",
+        "issue": "功率vector-lessstatic估计，paper不能直接视dynamicboardenergy测量。",
+        "pdf_page": 5,
+        "suggested_correction": "限定estimate边界",
+        "resolved": true
+      },
+      {
+        "claim_id": "C7",
+        "issue": "BRAM35→91增加显著，不能只用power<6%说memory几乎无overhead。",
+        "pdf_page": 5,
+        "suggested_correction": null,
+        "resolved": false
+      },
+      {
+        "claim_id": "C4",
+        "issue": "accuracy无n/split/seed/trainingepochs、不说明统计不确定度。",
+        "pdf_page": 5,
+        "suggested_correction": null,
+        "resolved": false
+      },
+      {
+        "claim_id": "C10",
+        "issue": "onlinereward/无需supervision为envisionedinterface，当前只fromscratchsupervised。",
+        "pdf_page": 6,
+        "suggested_correction": null,
+        "resolved": false
+      },
+      {
+        "claim_id": null,
+        "issue": "DIGITS5059LUT不小于5000；表资源轻微异值、localruleupdate方向需保留未解决。",
+        "pdf_page": 5,
+        "suggested_correction": null,
+        "resolved": false
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T12:51:12.037147Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "736eab0964cc84568781404511959ecbf605cd1a2233cda0b804e44f1c8618b0",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

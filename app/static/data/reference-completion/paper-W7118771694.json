@@ -1,0 +1,2121 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "Biologically-constrained spiking neural network for neuromodulation in locomotor recovery after spinal cord injury",
+    "authors": [
+      "R Chia",
+      "Chin-Teng Lin"
+    ],
+    "doi": "10.1371/journal.pcbi.1013866",
+    "publication_year": 2026,
+    "venue": "PLoS Computational Biology",
+    "url": "https://doi.org/10.1371/journal.pcbi.1013866"
+  },
+  "source": {
+    "filename": "paper-W7118771694--Biologically-constrained-spiking-neural-network-for-neuromodulation-in-locomotor-recovery-after.pdf",
+    "sha256": "65e79bb63f60c4c8a783bd5391aad27a8a969d6a64f54c5594e8e165f4c22592",
+    "source_url": "https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1013866&type=printable",
+    "pdf_page_count": 29
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29
+    ],
+    "results_sections_seen": [
+      "Methods与Tables 1-5及Fig 1完整提供文字",
+      "Results：层级Bayesian LMM收敛与种子等效性（Fig 2）",
+      "Results：静态反射招募、GABA光刺激EPSP与动态爆发基准（Fig 3）",
+      "Results：SCI连接增多及ES幅度/频率扫描（Fig 4）",
+      "Results：相位放电分布、差异与TOST（Fig 5；Table 6）",
+      "Results：SCI中的5-HT/ES与BWS调制（Figs 6-7）",
+      "Results：逐步及跨步AUC、Fano指标（Fig 8；Tables 7-8）",
+      "Discussion与Conclusions",
+      "Supporting information全部提供条目描述（第21-22页）；不存在补充文件本体",
+      "References完整提供列表（第22-29页）"
+    ],
+    "missing_material": [
+      "Figs 1-8及补充图的像素未提供/未读；只读文本与图注。",
+      "S1-S6 Figs、S1-S5 Tables、S1-S2 Algorithms仅有正文引用及第21-22页条目描述，附件本体未提供/未读。",
+      "未获取或运行代码、外部原始数据和引用文献；不进行独立复现。"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "页码为原PDF文件次序1-29；第6、11、15、18页虽主要是图注也已完整评估。",
+      "身份匹配2026年1月6日发表于PLoS Computational Biology 22(1):e1013866的研究文章，作者Raymond Chia与Chin-Teng Lin；保留分配记录的书目信息。",
+      "仅评估所供逐页文字。未打开PDF，未检查图像，未把补充材料条目当作附件已经读完。",
+      "32种子、8步及169个MN是模拟单位/模型规模；Fig 3的static n=7、dynamic n=9单位未明确。",
+      "相位检验用种子聚合步数据；跨步检验保留种子内依赖；无脉冲步使Table 7部分Fano计数下降，未猜测缺失有效n。",
+      "所有主张为AI候选，source audit不是科学验证或人工审校。",
+      "逐记录引用原文quote均为null，总直接英文引文0词；定位依真实页码与图表/章节。",
+      "共享证据仅标注同源仿真及其衍生指标，不建立支持、反驳或独立复现关系。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "显式GABA突触前增益、感觉驱动同侧TA网络及SCI/BWS/5-HT/ES代理。",
+      "role": "result",
+      "source_pages": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "decision": "include",
+      "reason": "C1：独立的方法贡献；参数代理和简化边界明确。"
+    },
+    {
+      "summary": "层级LMM收敛与随机种子等效性。",
+      "role": "result",
+      "source_pages": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "decision": "include",
+      "reason": "C2：只认种子层数值稳健性，不认条件全部等效。"
+    },
+    {
+      "summary": "静态刺激强度依赖的反射招募和中/晚期响应。",
+      "role": "result",
+      "source_pages": [
+        12,
+        13
+      ],
+      "decision": "include",
+      "reason": "C3：保留定性校准及未标定EMG/几何限制。"
+    },
+    {
+      "summary": "模拟GABA光刺激的EPSP抑制。",
+      "role": "result",
+      "source_pages": [
+        9,
+        12,
+        13
+      ],
+      "decision": "include",
+      "reason": "C4：方向可提取，两个范围冲突不强行统一。"
+    },
+    {
+      "summary": "Baseline动态爆发率与时长的生理范围一致性。",
+      "role": "result",
+      "source_pages": [
+        12,
+        13
+      ],
+      "decision": "include",
+      "reason": "C5：范围匹配而非新动物/行为验证。"
+    },
+    {
+      "summary": "SCI连接增多对MN输出的强抑制及源群发放不变。",
+      "role": "result",
+      "source_pages": [
+        12,
+        13,
+        14,
+        16
+      ],
+      "decision": "include",
+      "reason": "C6：保留Table 6相位定量与连接/gamma语义疑点。"
+    },
+    {
+      "summary": "高幅度/高频非特异ES的非单调边界。",
+      "role": "result",
+      "source_pages": [
+        12,
+        14
+      ],
+      "decision": "include",
+      "reason": "C7：实际模拟负面结果，不当作临床阈值。"
+    },
+    {
+      "summary": "无BWS的5-HT代理促通但不足以恢复Baseline。",
+      "role": "result",
+      "source_pages": [
+        14,
+        16
+      ],
+      "decision": "include",
+      "reason": "C8：定量来自相位表，V2a p值来源及口径受限。"
+    },
+    {
+      "summary": "无BWS时ES抵消5-HT促通并压低MN输出。",
+      "role": "result",
+      "source_pages": [
+        14,
+        16,
+        20,
+        21
+      ],
+      "decision": "include",
+      "reason": "C9：按Results方向记录并保留Conclusions的相反措辞。"
+    },
+    {
+      "summary": "BWS传入设置降低站立GABA并增强TA。",
+      "role": "result",
+      "source_pages": [
+        5,
+        14,
+        17
+      ],
+      "decision": "include",
+      "reason": "C10：方向可读；BWS单用完整率未供，不代用联合数值。"
+    },
+    {
+      "summary": "BWS5-HT的TA相位输出过冲。",
+      "role": "result",
+      "source_pages": [
+        14,
+        16,
+        17
+      ],
+      "decision": "include",
+      "reason": "C11：独立于接近Baseline的BWSES结果。"
+    },
+    {
+      "summary": "BWSES相位平均输出接近Baseline及有限TOST报告。",
+      "role": "result",
+      "source_pages": [
+        13,
+        15,
+        16
+      ],
+      "decision": "include",
+      "reason": "C12：不显著与等效分开；正文/图注冲突留下。"
+    },
+    {
+      "summary": "与Baseline最高的BWSES时程相关仍很弱。",
+      "role": "result",
+      "source_pages": [
+        13,
+        21
+      ],
+      "decision": "include",
+      "reason": "C13：最高r=0.11不解读为强时间波形恢复。"
+    },
+    {
+      "summary": "ES减弱BWS5-HT过冲并改变相位分配。",
+      "role": "result",
+      "source_pages": [
+        13,
+        15,
+        16,
+        17
+      ],
+      "decision": "include",
+      "reason": "C14：相位差等效结论不可靠，保留数值而不裁决。"
+    },
+    {
+      "summary": "BWS含ES条件中附加5-HT不提供额外GABA调制。",
+      "role": "result",
+      "source_pages": [
+        8,
+        17
+      ],
+      "decision": "include",
+      "reason": "C15：群体特异性及代理靶点限制同时保留。"
+    },
+    {
+      "summary": "跨步AUC无显著差异与逐步显著差异并存。",
+      "role": "result",
+      "source_pages": [
+        17,
+        18,
+        19
+      ],
+      "decision": "include",
+      "reason": "C16：统计层级不同，不能互相替代。"
+    },
+    {
+      "summary": "活跃爆发/跨步变异未随平均率恢复。",
+      "role": "result",
+      "source_pages": [
+        17,
+        18,
+        19,
+        20
+      ],
+      "decision": "include",
+      "reason": "C17：保留Table 8实值及Fano/CV定义疑问。"
+    },
+    {
+      "summary": "感觉输入与ES共同调节动态兴奋/抑制平衡的解释。",
+      "role": "interpretation",
+      "source_pages": [
+        19,
+        20,
+        21
+      ],
+      "decision": "include",
+      "reason": "C18：同源模型解释，不是独立因果验证。"
+    },
+    {
+      "summary": "单细胞F-I调谐、S1 Table相关/MAE及S2/S3 Fig脉冲例子。",
+      "role": "result",
+      "source_pages": [
+        6,
+        7,
+        21
+      ],
+      "decision": "defer",
+      "reason": "已纳入C1方法约束；补充本体、误差值和曲线未供，不增加未经可核对的独立性能主张。"
+    },
+    {
+      "summary": "逐条件完整TOST、GABA/V2a描述统计与LMM后验概率。",
+      "role": "result",
+      "source_pages": [
+        13,
+        15,
+        21,
+        22
+      ],
+      "decision": "defer",
+      "reason": "仅正文摘要与附件条目；S2-S5 Tables本体未供，不能补造数值或裁定冲突。"
+    },
+    {
+      "summary": "训练诱发可塑性、晚潜伏多突触补偿、痉挛控制及通路特异实验。",
+      "role": "hypothesis",
+      "source_pages": [
+        19,
+        20,
+        21
+      ],
+      "decision": "defer",
+      "reason": "均为解释/未来扩展，当前网络未实现长期可塑性或这些实验证据。"
+    },
+    {
+      "summary": "临床SCI、疼痛/痉挛与既有神经调制疗效的引用。",
+      "role": "review_synthesis",
+      "source_pages": [
+        2,
+        3,
+        19,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "decision": "exclude",
+      "reason": "背景/参考文献不是本研究新生物学结果；不扩展成原始疗效主张。"
+    },
+    {
+      "summary": "基金、致谢、作者分工、代码位置与开放获取声明。",
+      "role": "other",
+      "source_pages": [
+        1,
+        2,
+        4,
+        22
+      ],
+      "decision": "exclude",
+      "reason": "非独立科学贡献；代码仅作为来源声明，不执行或读取。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "本文构建了由TA/GM肌肉Ia、II传入驱动的同侧踝屈肌脉冲网络，在TA运动神经元的兴奋输入上显式加入GABA突触前乘性增益，并用连接数、传入EMG增益及漏电导变化分别模拟SCI、BWS和5-HT调制。",
+      "claim_type": "computational_method",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Brian2中LIF、AdEx与电导突触的网络实现",
+          "design": "50 μs步长、Euler积分；站立期占步态65%；GABA释放因子依局部无量纲浓度和20 ms时间常数变化。",
+          "comparator": "Baseline、SCI及SCI下BWS输入条件；可加入非相位选择性ES与5-HT代理。",
+          "measure": "模拟神经元脉冲、群体放电率（Hz）及合成EMG；5-HT使MN/V2a漏电导在非BWS条件下降40%、BWS条件下降15%。",
+          "unit_of_analysis": "单侧TA反射回路及其中的模拟细胞/突触。",
+          "sample_size_as_reported": "Table 3列MN=169，IaIN、GABA、V2a各列N=196；Table 2列传入轴突参数N=60；这些是模型规模。",
+          "uncertainty": "若干细胞参数为假定或调谐值；BWS仅改变输入方程中的EMG项；药物不是受体/离子通道的完整模型。",
+          "assumptions": [
+            "解剖与电生理约束来自既有文献，并非本研究新测量。",
+            "不能把不同条件下40%与15%的漏电导变化视为完全相同的5-HT剂量。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Spiking neural network; Synapses",
+            "figure": "Fig 1; Tables 3-5",
+            "equation": "Eqs 5-7",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "肌梭/肌骨模型输入及损伤条件设定",
+          "design": "既有肌梭输入采样为200 Hz，按EMG包络项调整TA/GM传入；八个步态周期。",
+          "comparator": "原始Baseline输入对BWS输入；Baseline GABA连接对SCI连接。",
+          "measure": "K_GM=-0.6、K_TA=-0.122；方法第4页将SCI连接写为1.6倍。",
+          "unit_of_analysis": "传入信号时间序列与确定性连接规则。",
+          "sample_size_as_reported": "整体方案为32个随机种子、每种子8步；不是32只动物或8个独立生物学重复。",
+          "uncertainty": "正文也写增加160%；BWS的支持比例与有效负重措辞不统一，不能据此推定实际机械支持量。",
+          "assumptions": [
+            "没有真实身体负重动力学或电极几何。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "Afferent signal inputs; Spiking neural network",
+            "figure": "Tables 1-2",
+            "equation": "Eqs 1-3",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提供可显式比较感觉输入、突触前抑制与神经调制交互的计算框架。",
+        "boundary": "限于固定拓扑、参数调谐和既有传入输入驱动的同侧啮齿类踝屈肌反射回路模拟。",
+        "negative_result": null,
+        "non_inference": "不能据此认定新动物实验、患者疗效、真实步行恢复或独立生物学机制验证。",
+        "unresolved": "SCI增幅和BWS负重比例的准确语义需核对；本模型没有实现长期可塑性。",
+        "unresolved_attribution": "来源中的参数描述及未提供的补充连接图。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "如何在感觉驱动的脊髓SNN中联合表示突触前抑制、损伤与神经调制？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "方法贡献不等于完整脊髓网络或治疗验证。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "对32个随机种子各8步的TA群体平均放电率，作者报告层级B样条LMM稳定收敛、种子截距偏差落入ROPE，并据此支持所测种子范围内的输出等效性；这一结论不是不同治疗条件彼此等效。",
+      "claim_type": "numerical_robustness",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Bayesian层级LMM、NUTS与种子层ROPE评估",
+          "design": "条件内嵌套种子截距及时间轨迹，按种子和步计算均值；截距ROPE为5 Hz，动态阈值为max(5,0.05×拟合峰值)，后验概率门槛0.9。",
+          "comparator": "同一条件内不同随机种子。",
+          "measure": "R-hat≤1.01、BFMI>0.9；正文称种子偏差处于ROPE。",
+          "unit_of_analysis": "嵌套于条件的模拟种子与重复步态，而非独立动物。",
+          "sample_size_as_reported": "32种子×8步；Fig 2C/D为了显示只画每条件8个种子，不是总n=8。",
+          "uncertainty": "近零放电率的指数行为被LMM低估；逐条件后验概率、完整收敛表S2和等效表S3未提供。",
+          "assumptions": [
+            "基于步均值的等效不自动保证逐毫秒脉冲时序一致。"
+          ],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "Bayesian modelling for seed equivalence; Results",
+            "figure": "Fig 2",
+            "equation": "Eqs 8-9",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "正文对种子等效结果的报告",
+          "design": "种子层截距与偏差检查。",
+          "comparator": "不同种子。",
+          "measure": "作者报告聚合后的模型收敛与种子等效。",
+          "unit_of_analysis": "模拟种子层均值。",
+          "sample_size_as_reported": "全分析32种子；显示子集8种子。",
+          "uncertainty": "正文最后使用跨条件等效措辞，按方法将本贡献保守限定为种子稳健性。",
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "Results",
+            "figure": "Fig 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "支持已测试随机初值下的数值稳健性。",
+        "boundary": "仅评估既定模型与32个种子；完整补充概率未读。",
+        "negative_result": "LMM在近零放电区存在已报告的拟合不足。",
+        "non_inference": "不能把随机种子稳健性当作生物学重复，或把它当作所有治疗条件效果相同。",
+        "unresolved": "完整逐条件ROPE概率与逐脉冲时序稳健性尚不能从提供材料核对。",
+        "unresolved_attribution": "S2/S3 Tables未提供。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "模型的步平均输出是否对随机连接和噪声初值稳健？"
+      ],
+      "shared_evidence_with": [
+        "C6",
+        "C8",
+        "C11",
+        "C12",
+        "C14"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "静态脊髓反射招募模拟中，增强刺激强度逐步招募传出纤维并压低中、晚期诱发响应；作者报告相对形状与潜伏期类似既有数据，但合成EMG没有生理幅度标定。",
+      "claim_type": "model_calibration",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "既有招募数据驱动的静态诱发电位模拟",
+          "design": "0.5 ms脉冲、1 s间隔；正文刺激范围20-600 μA，图注写0-600 μA；ER/MR/LR定义为1/4/7 ms。",
+          "comparator": "同一模型的不同刺激强度；与既有动物及计算结果作定性比较。",
+          "measure": "传出纤维招募、中/晚期响应相对幅度与潜伏期。",
+          "unit_of_analysis": "模拟招募曲线和合成诱发电位。",
+          "sample_size_as_reported": "Fig 3注明静态n=7，但未明确这7的独立分析单位；不能改写成7只动物。",
+          "uncertainty": "模型无空间距离或电极几何，刺激阈值由已有招募数据映射到神经元索引；缺少绝对幅度标度。",
+          "assumptions": [
+            "既有招募资料本身作为模型输入/约束，匹配不等于独立预测验证。"
+          ],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "Results",
+            "figure": "Fig 3A",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "Fig 3静态验证图注",
+          "design": "不同强度脉冲产生MEP。",
+          "comparator": "低与高刺激强度。",
+          "measure": "作者描述与既有资料的定性匹配。",
+          "unit_of_analysis": "模型MEP响应。",
+          "sample_size_as_reported": "static n=7（单位未说明）。",
+          "uncertainty": "仅有图注，无图像像素可核对具体曲线。",
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "Results",
+            "figure": "Fig 3A",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "模型复现了强度依赖招募及中/晚期响应减弱的定性模式。",
+        "boundary": "这是静态、既有数据约束下的计算基准。",
+        "negative_result": null,
+        "non_inference": "不能据此认定新动物实验、患者疗效、真实步行恢复或独立生物学机制验证。",
+        "unresolved": "n=7的具体单位、刺激电流与神经输入电压的映射及绝对EMG尺度未能核对。",
+        "unresolved_attribution": "正文/图注及未给出的完整输入数据。"
+      },
+      "broad_directions": [
+        "methods-causal",
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "模型能否复现刺激强度依赖的反射招募与诱发响应？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "模拟GABA中间神经元的光刺激降低了TA运动神经元的诱发EPSP峰值，作者称刺激/对照峰值比落在既有实验范围内；正文与图注给出的范围不同，不能提取唯一精确抑制比例。",
+      "claim_type": "model_perturbation_calibration",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "模拟GABA光刺激后的EPSP对照",
+          "design": "GABA接受15个1 ms、50 Hz脉冲及45 ms延迟，随后给予1.1倍阈值的传入刺激。",
+          "comparator": "有GABA刺激与无GABA刺激。",
+          "measure": "EPSP刺激/对照峰值比；正文范围0.5-0.8，Fig 3B范围0.4-0.9。",
+          "unit_of_analysis": "模拟TA运动神经元EPSP及种子特异轨迹。",
+          "sample_size_as_reported": "Fig 3静态n=7；B面板显示种子轨迹，但n=7是否专指该面板未明确。",
+          "uncertainty": "两个范围均小于1，但不能据文字还原每种子比值或精确总体均值。",
+          "assumptions": [
+            "这是重现既有实验协议的模型扰动，并非新实施的光遗传实验。"
+          ],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "Results",
+            "figure": "Fig 3B",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "正文EPSP验证描述",
+          "design": "按既有TA记录协议检查突触前抑制。",
+          "comparator": "刺激与控制。",
+          "measure": "正文称0.5<EPSP_stim/EPSP_control<0.8。",
+          "unit_of_analysis": "模拟EPSP。",
+          "sample_size_as_reported": "完整独立重复数未另列。",
+          "uncertainty": "该范围与相邻页图注不一致。",
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "Results",
+            "figure": "Fig 3B",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "支持模型中的GABA增益可抑制诱发兴奋输入。",
+        "boundary": "仅是给定协议下的计算基准。",
+        "negative_result": null,
+        "non_inference": "不能据此认定真实SCI动物的抑制幅度或独立因果机制已被验证。",
+        "unresolved": "实际峰值比范围及静态n的定义有待澄清。",
+        "unresolved_attribution": "正文第12页与Fig 3B第13页的范围差异。"
+      },
+      "broad_directions": [
+        "methods-causal",
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "加入GABA突触前抑制后，模型能否复现EPSP抑制？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "Baseline动态模拟中，经4 ms窗口处理的TA运动神经元爆发率和爆发时长落在作者引用的啮齿类实验区间100-500 Hz和0.5-0.9 s内，提供生理范围一致性而非新行为验证。",
+      "claim_type": "model_calibration",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "既有运动传入输入下的动态爆发检验",
+          "design": "对TA运动神经元发放以4 ms窗口处理，并与既有运动单位/EMG文献范围比较。",
+          "comparator": "模型Baseline与引用的既有实验范围。",
+          "measure": "爆发放电率100-500 Hz；爆发时长0.5-0.9 s。",
+          "unit_of_analysis": "模拟爆发事件及其时长/率。",
+          "sample_size_as_reported": "Fig 3注明dynamic n=9，未明确n的具体单位；整体步态方案另为32种子×8步。",
+          "uncertainty": "文本只给通过的范围，不给所有个体测量值或误差；不能由此重建分布。",
+          "assumptions": [
+            "爆发率与Table 6相位平均率不是同一种读出。"
+          ],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "Results",
+            "figure": "Fig 3C",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "动态验证图注",
+          "design": "检验Baseline爆发率及周期。",
+          "comparator": "模型与引用范围。",
+          "measure": "图注称落在实验范围内。",
+          "unit_of_analysis": "模拟动态爆发。",
+          "sample_size_as_reported": "dynamic n=9（分析单位未说明）。",
+          "uncertainty": "没有图像像素或独立生物学实验。",
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "Results",
+            "figure": "Fig 3C",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所选模型可产生处于已发表生理范围内的爆发活动。",
+        "boundary": "范围匹配未证明完整步态、运动学或网络机制正确。",
+        "negative_result": null,
+        "non_inference": "不能据此认定新动物实验、患者疗效、真实步行恢复或独立生物学机制验证。",
+        "unresolved": "dynamic n=9的单位及完整爆发分布未报告于所供文本。",
+        "unresolved_attribution": "Fig 3及引用资料不含在本源中的原始数据。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "感觉驱动SNN能否产生生理范围内的屈肌爆发？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "在本模型的SCI连接增多设置中，GABA与V2a群体放电率相对Baseline未改变，但TA运动神经元相位平均率从站立46.69、摆动76.96 Hz降至0.91、1.57 Hz，表明增加突触前抑制连接足以在该模型中强烈压低屈肌输出。",
+      "claim_type": "simulation_effect",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Baseline与增加GABA连接的SCI模拟",
+          "design": "固定其他相关输入设置，增加GABA到TA的连接；跨种子聚合并去除超过3 SD的离群值。",
+          "comparator": "Baseline对SCI。",
+          "measure": "Table 6站立均值±SD：46.69±19.89对0.91±1.24 Hz；摆动76.96±19.75对1.57±1.91 Hz；正文报告总体均值降低约50倍、CV增约3.8倍。",
+          "unit_of_analysis": "TA模拟群体的种子聚合相位率/重复步数据。",
+          "sample_size_as_reported": "方法报告每条件32个随机种子、每种子8步；Fig 5A称种子平均后为8个步数据点，离群值剔除后的各组有效n未列出。",
+          "uncertainty": "连接增幅1.6倍/增加160%措辞不一致；正文对GABA释放因子gamma的增减方向与Eq 7不一致。",
+          "assumptions": [
+            "SCI被构造为连接数增加的抑制优势状态，不代表所有真实SCI改变。"
+          ],
+          "source_locator": {
+            "pdf_page": 16,
+            "section": "Results",
+            "figure": "Table 6; Figs 4-6",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "网络群体反应的正文比较",
+          "design": "GABA和V2a群体活动与TA输出比较。",
+          "comparator": "Baseline与SCI。",
+          "measure": "GABA、V2a率不变，但更多连接带来更频繁抑制。",
+          "unit_of_analysis": "不同模拟细胞群。",
+          "sample_size_as_reported": "整体方案为32个随机种子、每种子8步；不是32只动物或8个独立生物学重复。",
+          "uncertainty": "完整GABA/V2a描述统计在未供S5 Table。",
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 14,
+            "section": "Results",
+            "figure": "Fig 4B; Fig 6",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "增加连接而非增加GABA源群发放，能在模型内显著削弱MN输出。",
+        "boundary": "限于固定拓扑、参数调谐和既有传入输入驱动的同侧啮齿类踝屈肌反射回路模拟。",
+        "negative_result": null,
+        "non_inference": "不能推出真实SCI必然由同一种连接变化导致，也不能将确定性设定当作实测损伤。",
+        "unresolved": "增幅、gamma命名与可推广损伤类型需澄清。",
+        "unresolved_attribution": "方法及结果措辞不一致；未供S1 Fig/S5 Table。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "突触前抑制连接增多是否能在源群发放不变时抑制屈肌运动输出？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C8",
+        "C9",
+        "C10",
+        "C12",
+        "C13",
+        "C16",
+        "C17",
+        "C18"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "非相位、非肌肉选择性的传入ES并非越强越能驱动屈肌：Baseline扫参中，刺激幅度大于20 mV或频率大于60 Hz时TA运动神经元活动反而受到抑制。",
+      "claim_type": "simulation_parameter_boundary",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "ES幅度和频率扫描",
+          "design": "幅度5/10/20/30/40/50 mV、固定40 Hz；频率20/40/60/80/100 Hz、固定10 mV；Poisson刺激施于全部屈/伸肌传入。",
+          "comparator": "同一Baseline网络在不同刺激幅度/频率下。",
+          "measure": "TA群体发放衰减；GABA与V2a发放随刺激频率缩放；高频下TA的种子间变异更明显。",
+          "unit_of_analysis": "模拟细胞群的步态放电时程。",
+          "sample_size_as_reported": "方法总体32种子、8步；扫参图阴影为种子SD，扫参的独立重复数未另列。",
+          "uncertainty": "文本没有逐刺激点效应量或置信区间；mV是模型输入幅度，不是可直接换算的临床电流。",
+          "assumptions": [
+            "该结果仅针对当前非特异传入刺激、拓扑及参数。"
+          ],
+          "source_locator": {
+            "pdf_page": 14,
+            "section": "Results",
+            "figure": "Fig 4C-D",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "扫描结果描述",
+          "design": "检验ES超过上述幅度/频率后的输出。",
+          "comparator": "较低与较高ES。",
+          "measure": ">20 mV或>60 Hz的MN衰减。",
+          "unit_of_analysis": "模拟TA放电。",
+          "sample_size_as_reported": "整体方案为32个随机种子、每种子8步；不是32只动物或8个独立生物学重复。",
+          "uncertainty": "没有测试所有刺激位置、相位策略或更细阈值。",
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "Results",
+            "figure": "Fig 4C-D",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "刺激存在模型特定的非单调输出边界。",
+        "boundary": "不能外推为患者剂量阈值、最佳参数或所有ES协议规律。",
+        "negative_result": "较高幅度/频率未带来更强TA输出，反而抑制。",
+        "non_inference": "不能据此认定新动物实验、患者疗效、真实步行恢复或独立生物学机制验证。",
+        "unresolved": "更精细阈值及选择性刺激下是否保持此现象未测试。",
+        "unresolved_attribution": "本文有限的扫参范围。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "非特异传入刺激何时由促动变为抑制屈肌输出？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "无BWS的SCI模拟中，以MN/V2a漏电导降低40%代理5-HT可提高V2a活动及TA相位平均率，但TA站立/摆动均值3.81/6.26 Hz仍远低于Baseline的46.69/76.96 Hz，未恢复基线输出。",
+      "claim_type": "simulation_treatment_effect",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "SCI与SCI+5-HT的漏电导代理比较",
+          "design": "MN和V2a漏电导降低40%，其他SCI结构保留。",
+          "comparator": "SCI、SCI5-HT与Baseline。",
+          "measure": "TA站立均值±SD从0.91±1.24变为3.81±3.57 Hz；摆动从1.57±1.91变为6.26±4.81 Hz。",
+          "unit_of_analysis": "种子聚合的TA相位率。",
+          "sample_size_as_reported": "方法报告每条件32个随机种子、每种子8步；Fig 5A称种子平均后为8个步数据点，离群值剔除后的各组有效n未列出。",
+          "uncertainty": "正文另写MN约1.4倍，不能与Table 6相位值混为相同口径。",
+          "assumptions": [
+            "单参数漏电导变化不是完整药理作用或实际给药剂量。"
+          ],
+          "source_locator": {
+            "pdf_page": 16,
+            "section": "Results",
+            "figure": "Table 6; Fig 6",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "正文报告V2a与MN响应",
+          "design": "5-HT代理下V2a发放升高。",
+          "comparator": "SCI与SCI5-HT。",
+          "measure": "V2a差异p<0.0001；TA未回到Baseline。",
+          "unit_of_analysis": "模拟V2a群体与TA群体。",
+          "sample_size_as_reported": "整体方案为32个随机种子、每种子8步；不是32只动物或8个独立生物学重复。",
+          "uncertainty": "精确V2a均值和该p值有效n在未供补充材料中。",
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 14,
+            "section": "Results",
+            "figure": "Fig 6; S6 Fig description",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "5-HT代理可提高该抑制优势网络的兴奋性。",
+        "boundary": "限于固定拓扑、参数调谐和既有传入输入驱动的同侧啮齿类踝屈肌反射回路模拟。",
+        "negative_result": "5-HT单独未恢复TA基线活动。",
+        "non_inference": "不能据此认定新动物实验、患者疗效、真实步行恢复或独立生物学机制验证。",
+        "unresolved": "正文1.4倍与相位表的汇总口径、完整V2a效应量未能澄清。",
+        "unresolved_attribution": "正文第14页、Table 6及未供S5 Table。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "增加MN与V2a兴奋性是否足以克服SCI模型的突触前抑制？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C6",
+        "C9",
+        "C13",
+        "C18"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "无BWS的SCI模拟中，再给5-HT条件加入非特异ES会抵消其TA促通作用，并将MN兴奋输出压至SCI条件以下，同时伴随GABA活动增加；该结果与结论段称网络过度兴奋的表述冲突。",
+      "claim_type": "simulation_treatment_interaction",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "SCI、SCI5-HT与SCI5-HT+ES群体比较",
+          "design": "5-HT代理与40 Hz、10 mV、0.2 ms传入Poisson ES联合；无BWS。",
+          "comparator": "联合条件对SCI及5-HT单用。",
+          "measure": "正文报告促通消失、MN输出低于SCI，GABA活动增加；未给联合条件的确切率。",
+          "unit_of_analysis": "模拟MN、V2a及GABA群体。",
+          "sample_size_as_reported": "整体方案为32个随机种子、每种子8步；不是32只动物或8个独立生物学重复。",
+          "uncertainty": "Table 6没有SCI5-HT+ES行；依正文及Fig 6图注记录方向，不虚构幅度。",
+          "assumptions": [
+            "GABA增加与MN下降并行，不是另行完成选择性通路阻断后的因果证明。"
+          ],
+          "source_locator": {
+            "pdf_page": 14,
+            "section": "Results",
+            "figure": "Fig 6",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "三条件的Fig 6说明",
+          "design": "示例步按32种子平均并显示SD。",
+          "comparator": "SCI、SCI5-HT、SCI5-HT+ES。",
+          "measure": "MN/V2a/GABA率与群体脉冲。",
+          "unit_of_analysis": "模拟示例步及种子。",
+          "sample_size_as_reported": "图注明32种子；整体8步。",
+          "uncertainty": "仅文字/图注，未读取曲线像素。",
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 16,
+            "section": "Results",
+            "figure": "Fig 6",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "支持无BWS时两种调制并非简单相加的模型交互。",
+        "boundary": "限于固定拓扑、参数调谐和既有传入输入驱动的同侧啮齿类踝屈肌反射回路模拟。",
+        "negative_result": "加入ES未增强5-HT对TA的促通，而是进一步削弱MN输出。",
+        "non_inference": "不能认定临床联合给药/刺激必然有害，或据此确认GABA唯一中介。",
+        "unresolved": "结论第20-21页称过度兴奋，与结果第14页的MN低输出冲突，需作者或人工核对。",
+        "unresolved_attribution": "论文内部结果与结论的方向不一致。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "在抑制优势且无BWS的网络中，ES与5-HT为何可能相互抵消？"
+      ],
+      "shared_evidence_with": [
+        "C6",
+        "C8",
+        "C18"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "在SCI模拟中，按BWS方式减弱传入EMG项后，站立期GABA中间神经元活动下降、TA运动神经元输出增强；作者报告BWS下整体屈肌活动可高于Baseline，但未提供BWS单用的完整相位数值表。",
+      "claim_type": "simulation_sensory_input_effect",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "SCI输入与BWS传入输入比较",
+          "design": "传入EMG项设置K_GM=-0.6、K_TA=-0.122，保留SCI的GABA连接结构。",
+          "comparator": "SCI无BWS与BWS输入下活动。",
+          "measure": "GABA站立期发放减少；TA整体发放增强并可超过Baseline。",
+          "unit_of_analysis": "模拟传入、GABA与TA群体时程。",
+          "sample_size_as_reported": "整体方案为32个随机种子、每种子8步；不是32只动物或8个独立生物学重复。",
+          "uncertainty": "Table 6没有BWS单用行；不能把BWS5-HT或BWSES的数值当作BWS单用。",
+          "assumptions": [
+            "输入包络缩放不是机械身体卸载的完整模拟。"
+          ],
+          "source_locator": {
+            "pdf_page": 17,
+            "section": "Results",
+            "figure": "Fig 7",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "BWS活动的正文描述",
+          "design": "比较SCI与BWS条件。",
+          "comparator": "BWS对SCI及Baseline。",
+          "measure": "作者报告整体屈肌平均活动高于Baseline。",
+          "unit_of_analysis": "模拟TA群体。",
+          "sample_size_as_reported": "整体方案为32个随机种子、每种子8步；不是32只动物或8个独立生物学重复。",
+          "uncertainty": "BWS单用精确率与分相位有效n未在提供正文列出。",
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 14,
+            "section": "Results",
+            "figure": "Fig 7",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "支持感觉输入减弱可在该模型中伴随抑制下降和MN再激活。",
+        "boundary": "限于固定拓扑、参数调谐和既有传入输入驱动的同侧啮齿类踝屈肌反射回路模拟。",
+        "negative_result": null,
+        "non_inference": "不能由并行变化断言GABA是唯一中介、真实卸载疗效已验证或可塑性已经发生。",
+        "unresolved": "BWS单用完整定量结果与负重比例的准确含义未解决。",
+        "unresolved_attribution": "正文及未供补充表；BWS定义存在措辞歧义。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "改变负重相关感觉输入能否在SCI模型中减少站立期抑制？"
+      ],
+      "shared_evidence_with": [
+        "C6",
+        "C11",
+        "C12",
+        "C14",
+        "C15",
+        "C18"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "BWS输入下单用5-HT代理时，TA相位平均发放达到站立218.41、摆动267.45 Hz，显著超出Baseline相应46.69、76.96 Hz的水平；增强输出不等于恢复基线模式。",
+      "claim_type": "simulation_treatment_effect",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "BWS5-HT与Baseline相位率比较",
+          "design": "BWS传入输入加MN/V2a漏电导降低15%，无ES。",
+          "comparator": "BWS5-HT对Baseline及其他BWS调制条件。",
+          "measure": "站立218.41±44.93 Hz、摆动267.45±30.13 Hz；Baseline为46.69±19.89、76.96±19.75 Hz。",
+          "unit_of_analysis": "TA种子聚合相位率及步数据。",
+          "sample_size_as_reported": "方法报告每条件32个随机种子、每种子8步；Fig 5A称种子平均后为8个步数据点，离群值剔除后的各组有效n未列出。",
+          "uncertainty": "不能用40%漏电导的无BWS条件做仅改变BWS这一因素的纯对照。",
+          "assumptions": [
+            "这些是群体相位率，不是临床痉挛或肌张力的直接读出。"
+          ],
+          "source_locator": {
+            "pdf_page": 16,
+            "section": "Results",
+            "figure": "Table 6",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "BWS调制结果描述",
+          "design": "加入5-HT进一步增强BWS下活动。",
+          "comparator": "BWS与BWS5-HT；BWSES与BWS5-HT。",
+          "measure": "作者描述5-HT放大屈肌活动。",
+          "unit_of_analysis": "模拟TA时程。",
+          "sample_size_as_reported": "整体方案为32个随机种子、每种子8步；不是32只动物或8个独立生物学重复。",
+          "uncertainty": "BWS单用效应量未列。",
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 17,
+            "section": "Results",
+            "figure": "Fig 7",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "BWS下5-HT代理可产生高于Baseline的MN活动。",
+        "boundary": "BWS和5-HT均为预设代理，且5-HT参数随BWS条件改变。",
+        "negative_result": "更高放电并未回到Baseline相位幅度。",
+        "non_inference": "不能把该放电过冲诊断成动物或患者痉挛。",
+        "unresolved": "相同5-HT参数下BWS交互及实际肌张力后果未测试。",
+        "unresolved_attribution": "模型设计和未实现的力学/药理细节。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "behavior-cognition",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "BWS与5-HT的组合是否会使屈肌输出超过基线而非正常化？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C10",
+        "C12",
+        "C13",
+        "C14",
+        "C15"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "SCI模型的BWS+ES、不加5-HT条件使TA站立/摆动平均率达到59.08/73.90 Hz，接近Baseline的46.69/76.96 Hz；正文报告站立期TOST等效及摆动期差异不显著，但完整相位统计存在图注冲突。",
+      "claim_type": "simulation_treatment_effect",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "BWSES与Baseline相位比较及TOST",
+          "design": "非特异ES结合BWS传入；种子平均并按3 SD规则去离群值；方法设实用等效界限±15 Hz。",
+          "comparator": "BWSES对Baseline。",
+          "measure": "站立59.08±26.91对46.69±19.89 Hz；摆动73.90±32.01对76.96±19.75 Hz。",
+          "unit_of_analysis": "种子聚合的TA相位率和重复步样本。",
+          "sample_size_as_reported": "方法报告每条件32个随机种子、每种子8步；Fig 5A称种子平均后为8个步数据点，离群值剔除后的各组有效n未列出。",
+          "uncertainty": "第13页正文只明确站立期TOST等效、摆动期差异不显著；第15页图注称两相位TOST均等效。",
+          "assumptions": [
+            "不显著不自动证明等效或完整波形恢复。"
+          ],
+          "source_locator": {
+            "pdf_page": 16,
+            "section": "Results",
+            "figure": "Table 6",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "相位差异与等效性的正文/图注报告",
+          "design": "TOST及相位分布比较。",
+          "comparator": "Baseline与BWSES。",
+          "measure": "正文站立TOST等效；摆动差异不显著；图注另称两相位等效。",
+          "unit_of_analysis": "相位率汇总。",
+          "sample_size_as_reported": "Fig 5A注明种子聚合后8个步数据点。",
+          "uncertainty": "非正态数据所用检验、log变换与±15 Hz界限的对接也未能由缺失S4 Table核对。",
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "Results",
+            "figure": "Fig 5; S4 Table description",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在该设置中BWS+ES使相位平均幅度接近Baseline。",
+        "boundary": "限于固定拓扑、参数调谐和既有传入输入驱动的同侧啮齿类踝屈肌反射回路模拟。",
+        "negative_result": null,
+        "non_inference": "不能以未显著差异代替等效；不能认定全部时程、脉冲变异或实际步行已恢复。",
+        "unresolved": "摆动TOST结论及具体统计口径待核对。",
+        "unresolved_attribution": "第13页正文与第15页Fig 5图注、未供S4 Table。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "behavior-cognition",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "BWS结合非特异ES能否恢复SCI模型的基线相位平均屈肌输出？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C6",
+        "C10",
+        "C11",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C13",
+      "statement": "种子平均后的连续放电时程比较中，BWSES虽是与Baseline Pearson相关最高的处理条件，相关仍仅r=0.11（p<0.0001）；因此相位均值接近并不代表完整时间波形高度恢复。",
+      "claim_type": "simulation_temporal_similarity",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "条件间Pearson相关",
+          "design": "先对种子平均，再将步态时程拼接成单一数组。",
+          "comparator": "Baseline对所有模拟处理条件。",
+          "measure": "与BWSES的最高相关r=0.11，p<0.0001。",
+          "unit_of_analysis": "拼接的种子平均时间采样点，而非独立种子或动物。",
+          "sample_size_as_reported": "32种子先被平均；整体8步；用于相关的时间采样点n未报告。",
+          "uncertainty": "重复步内的时序依赖和显著p值不等于大效应或独立重复。",
+          "assumptions": [
+            "不能把先平均的32种子再当作Pearson检验的32个独立样本。"
+          ],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "Results",
+            "figure": "S4 Fig description",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "提供的S4 Fig条目说明",
+          "design": "步时程拼接并跨种子平均。",
+          "comparator": "所有条件两两比较。",
+          "measure": "条目称相关均显著p<0.0001。",
+          "unit_of_analysis": "拼接时程。",
+          "sample_size_as_reported": "时间点有效n未给出。",
+          "uncertainty": "只读了补充图条目说明，未读取S4 Fig本体或完整相关矩阵。",
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 21,
+            "section": "Supporting information",
+            "figure": "S4 Fig description",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "BWSES在该时程指标上相对最接近Baseline，但绝对相关很弱。",
+        "boundary": "只针对种子平均的Pearson时程相关。",
+        "negative_result": null,
+        "non_inference": "不能把统计显著、最高相关或相位均值接近解释为强波形恢复。",
+        "unresolved": "时序自相关处理、完整相关矩阵及有效样本量未知。",
+        "unresolved_attribution": "正文及未提供的S4 Fig。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "相位均值恢复时，屈肌放电的完整时间波形是否也接近Baseline？"
+      ],
+      "shared_evidence_with": [
+        "C6",
+        "C8",
+        "C11",
+        "C12",
+        "C14",
+        "C16",
+        "C17"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C14",
+      "statement": "在BWS+5-HT条件加入ES后，TA站立/摆动均值由218.41/267.45降为81.81/103.13 Hz，减弱5-HT相关过冲但仍高于BWSES；相位差均值靠近Baseline不能解决来源内部的等效性矛盾。",
+      "claim_type": "simulation_treatment_interaction",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "BWS5-HT与BWS5-HT+ES的相位输出比较",
+          "design": "两者均采用BWS输入及15%漏电导降低，差别为加入ES。",
+          "comparator": "BWS5-HT+ES对BWS5-HT、BWSES与Baseline。",
+          "measure": "加入ES后站立81.81±32.67、摆动103.13±38.64 Hz；相位差-22.85±59.04 Hz，Baseline -29.88±26.49 Hz。",
+          "unit_of_analysis": "TA种子聚合相位率及站立减摆动均值。",
+          "sample_size_as_reported": "方法报告每条件32个随机种子、每种子8步；Fig 5A称种子平均后为8个步数据点，离群值剔除后的各组有效n未列出。",
+          "uncertainty": "正文称Baseline与BWS5-HT+ES相位差不显著且TOST类似；Fig 5图注称所有相位差TOST均非等效。",
+          "assumptions": [
+            "相位差数值接近不是统计等效，更非该组合的临床优越性。"
+          ],
+          "source_locator": {
+            "pdf_page": 16,
+            "section": "Results",
+            "figure": "Table 6",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "联合条件的动态结果描述",
+          "design": "ES重新加入BWS5-HT设置。",
+          "comparator": "BWS联合与单一调制。",
+          "measure": "正文描述ES调整站立/摆动活动分配；BWS5-HT+ES与BWSES的跨步AUC差异不显著。",
+          "unit_of_analysis": "模拟TA相位与跨步读出。",
+          "sample_size_as_reported": "整体方案为32个随机种子、每种子8步；不是32只动物或8个独立生物学重复。",
+          "uncertainty": "不同统计读出不能互相替代；联合治疗最优性未测试。",
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 17,
+            "section": "Results",
+            "figure": "Figs 7-8",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "ES可在模型内压低BWS+5-HT过高输出并改变相位分配。",
+        "boundary": "限于固定拓扑、参数调谐和既有传入输入驱动的同侧啮齿类踝屈肌反射回路模拟。",
+        "negative_result": null,
+        "non_inference": "不能据均值接近或不显著认定相位差等效、完全恢复或联合治疗最优。",
+        "unresolved": "Baseline与联合条件的相位差等效性相互矛盾。",
+        "unresolved_attribution": "第13页正文与第15页Fig 5图注；S4 Table未提供。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "ES能否调节BWS与5-HT下过高的TA活动及相位分配？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C15",
+        "C16",
+        "C18"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C15",
+      "statement": "BWS条件下加入ES会使已降低的GABA群体活动向Baseline回升，而在BWSES上再加5-HT没有报告额外GABA调制；两种含ES的BWS条件仍可产生不同MN输出。",
+      "claim_type": "simulation_population_specificity",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "BWS条件下GABA、MN群体比较",
+          "design": "比较BWS、BWSES及BWS5-HT+ES；5-HT代理直接作用于MN/V2a，不直接改GABA漏电导。",
+          "comparator": "BWSES与BWS5-HT+ES，并参照BWS及Baseline。",
+          "measure": "正文称ES使GABA向Baseline回升、两含ES的BWS条件GABA相当；Table 6显示MN相位率不同。",
+          "unit_of_analysis": "模拟GABA与MN群体。",
+          "sample_size_as_reported": "整体方案为32个随机种子、每种子8步；不是32只动物或8个独立生物学重复。",
+          "uncertainty": "正文用相当/等效措辞，但无提供的数值、区间或正式GABA等效检验结果。",
+          "assumptions": [
+            "不能把缺少GABA变化解读成所有真实5-HT受体均无作用。"
+          ],
+          "source_locator": {
+            "pdf_page": 17,
+            "section": "Results",
+            "figure": "Fig 7; S5 Fig description",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在实现中，GABA和MN对附加5-HT的响应具有群体特异性。",
+        "boundary": "5-HT代理靶点本身预设为MN/V2a；正式GABA等效性未核对。",
+        "negative_result": "加入5-HT没有报告额外GABA调制。",
+        "non_inference": "不能证明生物体中5-HT对GABA无作用或GABA活动相同足以保证MN相同。",
+        "unresolved": "GABA效应量与等效检验细节缺失。",
+        "unresolved_attribution": "S5 Fig/Table本体未提供。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "相似的GABA群体活动是否能伴随不同的屈肌运动神经元输出？"
+      ],
+      "shared_evidence_with": [
+        "C10",
+        "C11",
+        "C12",
+        "C14",
+        "C18"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C16",
+      "statement": "跨步积分活动比较未检出Baseline与BWSES、或BWSES与BWS5-HT+ES的AUC差异；但正文称Baseline与BWSES逐步AUC比较中62.5%显著不同，说明聚合后的无显著差异不能抹去逐步差别。",
+      "claim_type": "simulation_interstep_output",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "同种子内跨步差分及条件间检验",
+          "design": "Fig 8先降采样10倍；各种子内保留跨步依赖，条件间比较AUC。",
+          "comparator": "Baseline对BWSES；BWSES对BWS5-HT+ES。",
+          "measure": "跨步AUC均值±SD：Baseline 4.08±2.04、BWSES 4.53±3.21、BWS5-HT+ES 6.13±3.82；两指定比较未检出显著差异。",
+          "unit_of_analysis": "每种子内计算的依赖跨步读出。",
+          "sample_size_as_reported": "Fig 8D明确dependent sample size=32；Table 7各条件AUC Count=32；每种子8步。",
+          "uncertainty": "Table 7没有AUC物理单位或跨步差分完整公式；无显著差异不等于等效。",
+          "assumptions": [
+            "不能将多个相邻步当作新增独立种子。"
+          ],
+          "source_locator": {
+            "pdf_page": 19,
+            "section": "Results",
+            "figure": "Table 7; Fig 8D",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "逐步AUC与Fano比较的正文报告",
+          "design": "逐步数据经种子聚合后比较。",
+          "comparator": "Baseline与BWSES。",
+          "measure": "正文报告62.5%逐步AUC、25%逐步Fano测量差异显著；Fig 8D报告聚合跨步AUC不显著。",
+          "unit_of_analysis": "8步序列中的步级指标及种子内跨步指标，层级不同。",
+          "sample_size_as_reported": "总体8步、32种子；逐项有效n与剔除数未详列。",
+          "uncertainty": "原文所称relative t-test的具体配对实现及逐步p值未供；不以百分比推算新n。",
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 17,
+            "section": "Results",
+            "figure": "Fig 8C-D",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所报告的跨步AUC聚合比较未显示指定组间差异。",
+        "boundary": "聚合与逐步分析不是同一个统计层级；单位未给出。",
+        "negative_result": "两个指定跨步AUC比较均未检出显著差异。",
+        "non_inference": "不能据此证明总输出等效、每一步相同或治疗效果相同。",
+        "unresolved": "AUC单位、逐步检验细节与多个时间尺度结果的对应关系需复核。",
+        "unresolved_attribution": "Fig 8、Table 7及不完整统计描述。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "接近基线的平均输出能否同时保留不同的逐步积分活动？"
+      ],
+      "shared_evidence_with": [
+        "C6",
+        "C12",
+        "C13",
+        "C14",
+        "C17",
+        "C18"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C17",
+      "statement": "尽管BWSES的相位平均输出接近Baseline，活跃爆发期作者标注为Fano factor的变异指标由0.66±0.06升为1.46±0.22（32种子，p<0.0001），跨步该指标也显著不同；脉冲变异性并未同步恢复。",
+      "claim_type": "simulation_spike_variability",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "活跃爆发期Fano指标比较",
+          "design": "对群体放电及脉冲变异进行跨种子汇总。",
+          "comparator": "Baseline对BWSES。",
+          "measure": "Table 8均值±SD：0.66±0.06对1.46±0.22，p<0.0001。",
+          "unit_of_analysis": "活跃爆发期模拟变异指标，跨随机种子汇总。",
+          "sample_size_as_reported": "Table 8明确n=32 seeds。",
+          "uncertainty": "正文把Fano factor与coefficient of variation混称；未给可核对的指标公式，保留作者标签而不假定标准定义。",
+          "assumptions": [
+            "同源脉冲列衍生的均值、AUC、变异不是独立复现。"
+          ],
+          "source_locator": {
+            "pdf_page": 19,
+            "section": "Results",
+            "figure": "Table 8",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "Fig 8跨步变异分析",
+          "design": "每种子内计算跨步指标，条件间比较。",
+          "comparator": "Baseline与BWSES。",
+          "measure": "图注明跨步Fano差异显著；正文描述放电率在爆发期较相似、Fano在静息期较相似。",
+          "unit_of_analysis": "种子内依赖跨步读出。",
+          "sample_size_as_reported": "两比较组Table 7 Fano Count均32；SCI Count=9、SCI5-HT=26，因无脉冲步被排除，不能统一使用32。",
+          "uncertainty": "Table 7的Count含义与无脉冲剔除映射未详述；其他组不能按完整32估计有效n。",
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 18,
+            "section": "Results",
+            "figure": "Fig 8B-D",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "恢复相位平均率不同时恢复该文所量化的爆发/跨步变异。",
+        "boundary": "指标定义和统计汇总口径受所供文本限制。",
+        "negative_result": "BWSES与Baseline仍存在显著变异差异。",
+        "non_inference": "不能把该变异增加直接解释为功能改善、临床恢复或独立重复验证。",
+        "unresolved": "标准Fano定义、实际变异来源及其运动功能后果尚未解决。",
+        "unresolved_attribution": "术语混用、未给公式及讨论第20页明确提出的功能问题。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "behavior-cognition",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "屈肌平均输出恢复后，爆发及跨步脉冲变异是否仍与Baseline不同？"
+      ],
+      "shared_evidence_with": [
+        "C6",
+        "C12",
+        "C13",
+        "C16",
+        "C18"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C18",
+      "statement": "这组模拟支持一种条件性机制解释：在预设抑制优势的屈肌回路中，BWS感觉输入减弱站立期抑制，而ES同时募集兴奋和抑制通路，二者的动态平衡比单纯提高兴奋性更能解释接近Baseline的相位输出。",
+      "claim_type": "mechanistic_interpretation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "已提取条件比较的综合解释",
+          "design": "联合比较损伤连接、5-HT单用、无BWS联合、BWS输入及BWS+ES结果。",
+          "comparator": "Baseline、SCI及各模拟调制条件。",
+          "measure": "TA相位率、GABA/V2a时程、AUC及残留变异的方向性组合。",
+          "unit_of_analysis": "同一模型同源条件数据的综合，不是新增独立实验。",
+          "sample_size_as_reported": "整体方案为32个随机种子、每种子8步；不是32只动物或8个独立生物学重复。",
+          "uncertainty": "未做通路特异消融、因果中介分解、完整神经肌骨闭环或长期学习；药理参数随BWS条件改变。",
+          "assumptions": [
+            "机制解释仅在预设拓扑与抑制优势SCI构造下成立。",
+            "长期突触可塑性、晚潜伏多突触恢复及痉挛控制只是未来扩展。"
+          ],
+          "source_locator": {
+            "pdf_page": 19,
+            "section": "Discussion",
+            "figure": "Figs 6-8; Tables 6-8",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "限制及未来验证说明",
+          "design": "作者建议在BWS神经调制下做电生理或遗传消融，并扩展可塑性。",
+          "comparator": "尚未实施的生物学检验。",
+          "measure": "模型推断的可验证性与适用边界。",
+          "unit_of_analysis": "未来研究问题，不提供新样本。",
+          "sample_size_as_reported": null,
+          "uncertainty": "仅提出未来验证，未报告独立生物学结果。",
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 20,
+            "section": "Discussion; Conclusions",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "生成关于感觉输入与兴奋/抑制共同塑造屈肌输出的可检验机制解释。",
+        "boundary": "属于解释而非已被独立验证的生物学因果结论。",
+        "negative_result": null,
+        "non_inference": "不能推出GABA唯一必要中介、长期神经可塑性已发生、完整行走恢复或临床方案最优。",
+        "unresolved": "需通路特异实验验证、同参数药理对照及更完整双侧/力学模型；变异增加的功能意义未知。",
+        "unresolved_attribution": "作者提出的未来实验与模型简化；结论段另有方向冲突。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal",
+        "behavior-cognition",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "BWS感觉输入与ES的兴奋/抑制共同募集如何解释模型的相位输出恢复？"
+      ],
+      "shared_evidence_with": [
+        "C6",
+        "C8",
+        "C9",
+        "C10",
+        "C12",
+        "C14",
+        "C15",
+        "C16",
+        "C17"
+      ],
+      "review_notes": [
+        "与其依赖的结果共用证据，不作为独立验证或复制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "这是一篇2026年发表的计算研究，构建感觉驱动的同侧TA踝屈肌SNN，显式模拟GABA突触前抑制及Ia/V2a通路。已评估全部29页提供文字、全部主文图注和Tables 1-8，以及补充条目与参考文献；未打开PDF、未读图像像素、未读补充附件本体。\n\n18条候选涵盖方法、随机种子稳健性、静态招募/GABA-EPSP/动态爆发校准、SCI与刺激边界、5-HT/BWS/ES的独立与联合效果，以及AUC和脉冲变异。32个随机种子各8步是模拟重复，MN=169是网络规模；Fig 3的n=7/n=9单位不明。相位分析先跨种子平均；跨步分析保留种子内依赖；无脉冲步使部分Fano Count低于32，不猜测有效n。\n\n核心结果是预设GABA连接增多强烈抑制TA；5-HT单用不足以恢复Baseline，无BWS联合ES可抵消其促通。BWS+ES的相位均值接近Baseline，但最高时间相关也仅r=0.11，活跃爆发变异指标仍从0.66升为1.46，因此不能称完整动态或真实行走恢复。BWS+5-HT过冲可被ES减弱。\n\n来源保留多处不确定性：SCI增幅及gamma方向、BWS负重定义、EPSP范围、非正态检验/TOST及相位差结论、1.4倍促通口径、Fano与CV混称，以及无BWS联合条件在结果与结论中的方向冲突。5-HT参数随BWS改变，限制单因素机制归因；模型未实现长期可塑性，未做新动物/临床验证。全部记录为未经人工审校的AI候选，共享证据不建立独立支持/反驳/复制关系。",
+  "shared_evidence": [
+    {
+      "claim_id": "C2",
+      "with": [
+        "C6",
+        "C8",
+        "C11",
+        "C12",
+        "C14"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C2",
+        "C8",
+        "C9",
+        "C10",
+        "C12",
+        "C13",
+        "C16",
+        "C17",
+        "C18"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C2",
+        "C6",
+        "C9",
+        "C13",
+        "C18"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C6",
+        "C8",
+        "C18"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "with": [
+        "C6",
+        "C11",
+        "C12",
+        "C14",
+        "C15",
+        "C18"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "with": [
+        "C2",
+        "C10",
+        "C12",
+        "C13",
+        "C14",
+        "C15"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "with": [
+        "C2",
+        "C6",
+        "C10",
+        "C11",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18"
+      ]
+    },
+    {
+      "claim_id": "C13",
+      "with": [
+        "C6",
+        "C8",
+        "C11",
+        "C12",
+        "C14",
+        "C16",
+        "C17"
+      ]
+    },
+    {
+      "claim_id": "C14",
+      "with": [
+        "C2",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C15",
+        "C16",
+        "C18"
+      ]
+    },
+    {
+      "claim_id": "C15",
+      "with": [
+        "C10",
+        "C11",
+        "C12",
+        "C14",
+        "C18"
+      ]
+    },
+    {
+      "claim_id": "C16",
+      "with": [
+        "C6",
+        "C12",
+        "C13",
+        "C14",
+        "C17",
+        "C18"
+      ]
+    },
+    {
+      "claim_id": "C17",
+      "with": [
+        "C6",
+        "C12",
+        "C13",
+        "C16",
+        "C18"
+      ]
+    },
+    {
+      "claim_id": "C18",
+      "with": [
+        "C6",
+        "C8",
+        "C9",
+        "C10",
+        "C12",
+        "C14",
+        "C15",
+        "C16",
+        "C17"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": null,
+        "issue": "来源全文第1-29页已覆盖，身份匹配；图像像素与实际补充附件未供。",
+        "suggested_correction": "完整文本覆盖与缺失材料已分别记录，未宣称读过附件或图像。",
+        "pdf_page": 21,
+        "resolved": true
+      },
+      {
+        "claim_id": "C6",
+        "issue": "第4页写SCI连接增加为1.6倍，第8/12页写增加160%；无法确认是总量160%还是增量160%。",
+        "suggested_correction": "保留增多方向和明确表值，不统一成未经核对的2.6倍或精确新连接数；需作者/代码核对。",
+        "pdf_page": 8,
+        "resolved": false
+      },
+      {
+        "claim_id": "C6",
+        "issue": "Eq 7的gamma是随GABA浓度下降的兴奋释放因子，但第12/14页把更强抑制描述为gamma增加。",
+        "suggested_correction": "用突触前抑制增强及MN实测模拟率描述方向，不声称Eq 7释放因子数值增大。",
+        "pdf_page": 12,
+        "resolved": false
+      },
+      {
+        "claim_id": "C4",
+        "issue": "EPSP比值实验范围正文为0.5-0.8、Fig 3B图注为0.4-0.9，模型实际均值未列。",
+        "suggested_correction": "只认抑制方向，分别保留两个范围并请求核对，不猜测唯一比值。",
+        "pdf_page": 13,
+        "resolved": false
+      },
+      {
+        "claim_id": "C12",
+        "issue": "第13页仅明确Baseline-BWSES站立TOST等效，第15页Fig 5D图注称站立和摆动均等效。",
+        "suggested_correction": "站立期按来源报告限定表述；摆动期不显著与图注等效报告分列，待S4 Table核对。",
+        "pdf_page": 15,
+        "resolved": false
+      },
+      {
+        "claim_id": "C14",
+        "issue": "第13页正文称Baseline-BWS5-HT+ES相位差不显著且TOST反映相同模式；Fig 5D称所有相位差TOST均有实用差异。",
+        "suggested_correction": "保留Table 6描述统计，不作确定相位差等效结论。",
+        "pdf_page": 15,
+        "resolved": false
+      },
+      {
+        "claim_id": "C12",
+        "issue": "方法第4页非正态数据用Wilcoxon；Fig 5图注明非正态却称paired t-tests，并把TOST描述为log变换数据，和±15 Hz界限的关系未解释。",
+        "suggested_correction": "不给未供的精确p值、不宣称重新算过显著性；具体检验与等效界限须人工核对。",
+        "pdf_page": 15,
+        "resolved": false
+      },
+      {
+        "claim_id": "C9",
+        "issue": "第14页Results称无BWS的5-HT+ES进一步减少MN兴奋，结论第20-21页却称同一组合导致网络过度兴奋。",
+        "suggested_correction": "以结果部分的MN方向记录，保留结论冲突；不把网络过度兴奋作为确定MN结果。",
+        "pdf_page": 21,
+        "resolved": false
+      },
+      {
+        "claim_id": "C17",
+        "issue": "正文将Fano factor与coefficient of variation混称，提供文本未给可核对公式。",
+        "suggested_correction": "保留作者Fano标签和Table 8原值，不把其推定为标准方差/均值或标准CV。",
+        "pdf_page": 17,
+        "resolved": false
+      },
+      {
+        "claim_id": "C1",
+        "issue": "BWS正文同时出现60%有效负重与60% BWS措辞，且方程只缩放EMG项，而非整体Ia/II率。",
+        "suggested_correction": "记录K_GM=-0.6、K_TA=-0.122及输入代理，避免将其当作所有传入率固定降低60%/12.2%或真实机械卸载比例。",
+        "pdf_page": 5,
+        "resolved": false
+      },
+      {
+        "claim_id": "C8",
+        "issue": "正文MN促通约1.4倍与Table 6的SCI/SCI5-HT相位均值不属可确认的统一口径，未供S5 Table无法厘清。",
+        "suggested_correction": "相位数值取Table 6；不以1.4倍代替相位效果或自行构造总均值。",
+        "pdf_page": 14,
+        "resolved": false
+      },
+      {
+        "claim_id": null,
+        "issue": "Fig 3的static n=7、dynamic n=9未明确独立分析单位，不能替换为整个方案的32种子或生物学样本。",
+        "suggested_correction": "对应校准记录原样报n并注明单位未说明。",
+        "pdf_page": 13,
+        "resolved": false
+      },
+      {
+        "claim_id": "C17",
+        "issue": "Table 7 Fano Count在SCI为9、SCI5-HT为26，其余为32；无脉冲步剔除的种子/步映射未说明。",
+        "suggested_correction": "保留各组Count与缺失规则，不给所有指标统一n=32；Baseline-BWSES Table 8明确32种子。",
+        "pdf_page": 19,
+        "resolved": false
+      },
+      {
+        "claim_id": "C16",
+        "issue": "Table 7及Fig 8缺少AUC物理单位和完整跨步差分公式；正文逐步显著比例与总体跨步不显著属不同层级。",
+        "suggested_correction": "用作者指标与原值，单位记未报告，保留层级和依赖结构，不转换成Hz·s或等效。",
+        "pdf_page": 19,
+        "resolved": false
+      },
+      {
+        "claim_id": "C11",
+        "issue": "5-HT漏电导改变在无BWS为40%、BWS为15%，因此BWS+5-HT对无BWS+5-HT不是纯BWS单因素对照。",
+        "suggested_correction": "已在C1/C8/C11/C18限制解释，不把差异唯一归因于BWS。",
+        "pdf_page": 8,
+        "resolved": true
+      },
+      {
+        "claim_id": "C3",
+        "issue": "静态招募使用μA，动态ES使用输入mV；没有电极几何/距离与生理EMG幅度标定。",
+        "suggested_correction": "分别记录协议单位，不跨协议或向临床刺激剂量换算。",
+        "pdf_page": 12,
+        "resolved": true
+      },
+      {
+        "claim_id": "C18",
+        "issue": "Discussion使用塑性适应的解释，但第20页将引入neuroplastic dynamics明确列为未来扩展。",
+        "suggested_correction": "未提取长期学习/结构可塑性已发生的结果；只保留条件性网络平衡解释与未来验证问题。",
+        "pdf_page": 20,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "同源32种子、8步的多个相位/时程/AUC/变异指标不是独立生物学验证或复制。",
+        "suggested_correction": "按共享证据关联，全部保留candidate/human_checked:false，relations为空。",
+        "pdf_page": 18,
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T17:20:20.586365Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "65e79bb63f60c4c8a783bd5391aad27a8a969d6a64f54c5594e8e165f4c22592",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

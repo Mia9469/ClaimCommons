@@ -1,0 +1,1798 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "Transcriptome-informed metabolic modeling reveals astrocyte-specific vulnerabilities in mild cognitive impairment and Alzheimer’s disease progression",
+    "authors": [
+      "Andrea Angarita-Rodríguez",
+      "Viviana Vargas-López",
+      "Andres Pinzón",
+      "Adrián Sandoval-Hernandez",
+      "Kai Kang",
+      "Leping Li"
+    ],
+    "doi": "10.3389/fbinf.2026.1816121",
+    "publication_year": 2026,
+    "venue": "Frontiers in Bioinformatics",
+    "url": "https://doi.org/10.3389/fbinf.2026.1816121"
+  },
+  "source": {
+    "filename": "paper-W7163137584--Transcriptome-informed-metabolic-modeling-reveals-astrocyte-specific-vulnerabilities-in-mild-co.pdf",
+    "sha256": "7d65fb52fce69096eac949b16dec59950da431bc2deb1904f159a026ec51f675",
+    "source_url": "https://www.frontiersin.org/journals/bioinformatics/articles/10.3389/fbinf.2026.1816121/pdf",
+    "pdf_page_count": 23
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+    ],
+    "results_sections_seen": [
+      "1 Introduction",
+      "2.1–2.7 selection/DE/correlation/CDSeq/pseudobulk/GEM/FBA/FVA/flux comparison",
+      "3.1–3.5 bulk and inferred profiles/external validation/model/selected isotope comparison",
+      "4.1–4.11 stage/VEGFA/astrocyte/pseudobulk/metabolic/FVA/lipid/one-carbon/limitations",
+      "5Conclusion",
+      "Figures1–5 and Tables1–5",
+      "Correction note/availability/declarations/References"
+    ],
+    "missing_material": [
+      "所有figure pixels",
+      "Supplement TablesS1–S6及Supplement FiguresS1–S3未提供",
+      "独立correction DOI10.3389/fbinf.2026.1953979详情未附",
+      "GEO/rawmodel/code与external原experiment未读取"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "23页全部文字一次评估；版本header CORRECTED11Aug2026。",
+      "FBA/FVA预测与^13C分数/细胞原实验分开；不把模型回归当生物验证。",
+      "同stage只有1代表性CDSeqprofile；真实donor n缺失不补猜，第二次审计保留。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "该研究以bulk CA1 GSE28146经CDSeq推断astrocyte-associated profile并构建Control/early-MCI/advanced-MCI/AD四GEM；它是公共数据与constraint模型分析，不是直接分离测量这些患者astrocytes。",
+      "role": "result",
+      "source_pages": [
+        4
+      ],
+      "decision": "include",
+      "reason": "独立分析/constraint-model输出或明确作者假说，保留真实units。"
+    },
+    {
+      "summary": "作者比较CA1与blood GSE63060并选择前者，报告PCA PC1约60%、PC1+2约68.8%以及较好分组；脑区域relevance也参与选择。",
+      "role": "result",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "独立分析/constraint-model输出或明确作者假说，保留真实units。"
+    },
+    {
+      "summary": "bulk DE/enrichment报告early MCI偏RTK/VEGFA–VEGFR2、membrane/axon，advanced偏synaptic/vesicle，AD偏vesicle/endocytosis/MAPK/stress；是stage-associated gene-set pattern而非生化机制必然次序。",
+      "role": "result",
+      "source_pages": [
+        10
+      ],
+      "decision": "include",
+      "reason": "独立分析/constraint-model输出或明确作者假说，保留真实units。"
+    },
+    {
+      "summary": "CDSeq选6latent components；astrocyte-like者以GFAP/AQP4/ALDH1L1和external signatures识别，并多initialization回收；其余为neuronal/oligo/microglia/endothelial/mixed glial近似。",
+      "role": "result",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "独立分析/constraint-model输出或明确作者假说，保留真实units。"
+    },
+    {
+      "summary": "推断astrocyte-like组profile随stage从homeostatic/synaptic/energy/redox转向stress、cytoskeleton及inflammation-related程序，AD的neurotransmitter/redox基因程序较低。",
+      "role": "result",
+      "source_pages": [
+        12
+      ],
+      "decision": "include",
+      "reason": "独立分析/constraint-model输出或明确作者假说，保留真实units。"
+    },
+    {
+      "summary": "外部snRNA-seq pseudobulk比较报告gene-level moderate agreement与stress/proteostasis等pathway recurrence，但没有完整pathway overlap；stage/brain-region及平台差异限制一一对应。",
+      "role": "result",
+      "source_pages": [
+        12
+      ],
+      "decision": "include",
+      "reason": "独立分析/constraint-model输出或明确作者假说，保留真实units。"
+    },
+    {
+      "summary": "四expression-constrained GEM各含6520metabolites/10586reactions，以GPR OR=max/AND=min及TPM-like activity阈值控制bounds；无gene反应保留，inactive者zero、active capacity按relative expression缩放。",
+      "role": "result",
+      "source_pages": [
+        12
+      ],
+      "decision": "include",
+      "reason": "独立分析/constraint-model输出或明确作者假说，保留真实units。"
+    },
+    {
+      "summary": "Table2 biomass-derived maintenance proxy由Control.3304到early.3211、advanced.2718再AD.3037；并列外部invitro growth.32不构成stage-specific真实maintenance验证。",
+      "role": "result",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "独立分析/constraint-model输出或明确作者假说，保留真实units。"
+    },
+    {
+      "summary": "作者把AD proxy部分回升解释为reactive-like reconfiguration/compensation而非功能恢复，亦承认objective/constraints、表达变化或flux redistribution可给替代解释。",
+      "role": "interpretation",
+      "source_pages": [
+        17
+      ],
+      "decision": "include",
+      "reason": "独立分析/constraint-model输出或明确作者假说，保留真实units。"
+    },
+    {
+      "summary": "FVA在未固定max-biomass的可行空间中报告glutamate/glutathione、glycolysis/pyruvate、cholesterol及one-carbon等allowable ranges变窄，early MCI已出现部分限制。",
+      "role": "result",
+      "source_pages": [
+        12
+      ],
+      "decision": "include",
+      "reason": "独立分析/constraint-model输出或明确作者假说，保留真实units。"
+    },
+    {
+      "summary": "所列FBA解glutaminase为5.03/.77/.63/.72，部分NAD/NADP-dependent glutamate dehydrogenase出现符号变化，提示这些constraint下可行glutamate/redox routing不同。",
+      "role": "result",
+      "source_pages": [
+        13
+      ],
+      "decision": "include",
+      "reason": "独立分析/constraint-model输出或明确作者假说，保留真实units。"
+    },
+    {
+      "summary": "所列glutathione oxidoreductaseflux2.76/.73/.63/−.29，gamma-glutamyltranspeptidase1.61/.77/.63/.72，显示model redox相关分配非严格单调或统一zero。",
+      "role": "result",
+      "source_pages": [
+        13
+      ],
+      "decision": "include",
+      "reason": "独立分析/constraint-model输出或明确作者假说，保留真实units。"
+    },
+    {
+      "summary": "ENO/PGM、triose-phosphate isomerase及lactate相关解出现缩小/方向改变；例如ENO−9.80→.78/.64/.72，PGM9.80→−.78/−.64/−.72。",
+      "role": "result",
+      "source_pages": [
+        11
+      ],
+      "decision": "include",
+      "reason": "独立分析/constraint-model输出或明确作者假说，保留真实units。"
+    },
+    {
+      "summary": "one-carbon/folate MTHFR所列Control3.85、三个disease模型0；MTHFD与其他folate反应亦重分配，提供未来methylation/NADPH假说但不是已测一碳代谢缺陷。",
+      "role": "result",
+      "source_pages": [
+        13
+      ],
+      "decision": "include",
+      "reason": "独立分析/constraint-model输出或明确作者假说，保留真实units。"
+    },
+    {
+      "summary": "cholesterol相关模型反应改变，例如24-dehydrocholesterol reductase9.85→0/.004/.72，FVA也较受限；这些不等于已测pathological lipid accumulation或APOE/ABCA1因果机制。",
+      "role": "result",
+      "source_pages": [
+        13
+      ],
+      "decision": "include",
+      "reason": "独立分析/constraint-model输出或明确作者假说，保留真实units。"
+    },
+    {
+      "summary": "Table5将early-MCI-like模型与published APOE4 iPSC astrocyte ^13C/bioenergetic observations作qualitative比较：glutamate/redox三项为Partial，succinate-related为Yes，不是全GEM定量验证。",
+      "role": "result",
+      "source_pages": [
+        14
+      ],
+      "decision": "include",
+      "reason": "独立分析/constraint-model输出或明确作者假说，保留真实units。"
+    },
+    {
+      "summary": "VEGFA–VEGFR2持续enrichment被作者解释为早期adaptive、晚期可能maladaptive neurovascular response，并提出therapeutic exploration；没有本研究vascular/drug因果实验。",
+      "role": "hypothesis",
+      "source_pages": [
+        15
+      ],
+      "decision": "include",
+      "reason": "独立分析/constraint-model输出或明确作者假说，保留真实units。"
+    },
+    {
+      "summary": "Table3 r1666 early value189,733.00与control−2.12及其他stage8.34/−1.39，作者解释amino-acid compensation。",
+      "role": "unresolved_model_result",
+      "source_pages": [
+        11,
+        17
+      ],
+      "decision": "defer",
+      "reason": "极端尺度与bounds/转录约束/单位未清晰核定，不能转实际运输量或补猜转录错误。"
+    },
+    {
+      "summary": "GFAP/VIM/STAT3/APOE等reactive axes的biological causality、药物与neuronal outcomes。",
+      "role": "hypothesis_or_background",
+      "source_pages": [
+        11,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "decision": "defer",
+      "reason": "Table3结合外部背景，未直接在本实验测蛋白/通路或干预。"
+    },
+    {
+      "summary": "Correction note及全部参考文献。",
+      "role": "version_and_bibliography",
+      "source_pages": [
+        1,
+        20,
+        21,
+        22,
+        23
+      ],
+      "decision": "include",
+      "reason": "已评估校正提示；未提供校正正文，不制造correction结果或原实验支持关系。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "该研究以bulk CA1 GSE28146经CDSeq推断astrocyte-associated profile并构建Control/early-MCI/advanced-MCI/AD四GEM；它是公共数据与constraint模型分析，不是直接分离测量这些患者astrocytes。",
+      "claim_type": "transcriptomic_analysis",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Pipeline; Figure1",
+          "design": "bulk microarray/references/deconvolution或external pseudobulk",
+          "comparator": "Control、early/advanced-MCI、AD或selected external genotype/pathway数据",
+          "measure": "该研究以bulk CA1 GSE28146经CDSeq推断astrocyte-associated profile并构建Control/early-MCI/advanced-MCI/AD四GEM；它是公共数据与constraint模型分析，不是直接分离测量这些患者astrocytes。",
+          "unit_of_analysis": "原bulk donors或inferred condition-level profile；不混同cells/algorithm initializations",
+          "sample_size_as_reported": "bulk个体数仅未提供SupplementS1；4conditions各1representative profile",
+          "uncertainty": "未给该命题独立donor/seed分布；FBA/FVA无统计显著性，rawdeterministic范围非CI",
+          "assumptions": [
+            "cross-sectional stages不是同patient纵向进展。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "Pipeline; Figure1",
+            "figure": "Pipeline; Figure1",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "该研究以bulk CA1 GSE28146经CDSeq推断astrocyte-associated profile并构建Control/early-MCI/advanced-MCI/AD四GEM；它是公共数据与constraint模型分析，不是直接分离测量这些患者astrocytes。",
+        "boundary": "cross-sectional stages不是同patient纵向进展。",
+        "negative_result": null,
+        "non_inference": "cross-sectional stages不是同patient纵向进展。",
+        "unresolved": "真实cell/flux/蛋白酶、donor-level uncertainty、外部source归属及causal/metabolomic validation未解决。",
+        "unresolved_attribution": "作者limitation和来源审计。"
+      },
+      "broad_directions": [
+        "cellular-metabolism",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "bulk-derived astrocyte-like转录程序如何约束MCI/AD代谢假说而不混同实测通量？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6"
+      ],
+      "review_notes": [
+        "模型实验与真正生物代谢validation分开；expression/flux range不是实际酶活/浓度/necessity。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "作者比较CA1与blood GSE63060并选择前者，报告PCA PC1约60%、PC1+2约68.8%以及较好分组；脑区域relevance也参与选择。",
+      "claim_type": "transcriptomic_analysis",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "2.1; Fig2A",
+          "design": "bulk microarray/references/deconvolution或external pseudobulk",
+          "comparator": "Control、early/advanced-MCI、AD或selected external genotype/pathway数据",
+          "measure": "作者比较CA1与blood GSE63060并选择前者，报告PCA PC1约60%、PC1+2约68.8%以及较好分组；脑区域relevance也参与选择。",
+          "unit_of_analysis": "原bulk donors或inferred condition-level profile；不混同cells/algorithm initializations",
+          "sample_size_as_reported": "两个公共datasets；LDA/LOOCV具体accuracy/n主文未给",
+          "uncertainty": "未给该命题独立donor/seed分布；FBA/FVA无统计显著性，rawdeterministic范围非CI",
+          "assumptions": [
+            "按labels评估/选择同source，不等于独立诊断classifier或客观普适数据优越性。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "2.1; Fig2A",
+            "figure": "2.1; Fig2A",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者比较CA1与blood GSE63060并选择前者，报告PCA PC1约60%、PC1+2约68.8%以及较好分组；脑区域relevance也参与选择。",
+        "boundary": "按labels评估/选择同source，不等于独立诊断classifier或客观普适数据优越性。",
+        "negative_result": null,
+        "non_inference": "按labels评估/选择同source，不等于独立诊断classifier或客观普适数据优越性。",
+        "unresolved": "真实cell/flux/蛋白酶、donor-level uncertainty、外部source归属及causal/metabolomic validation未解决。",
+        "unresolved_attribution": "作者limitation和来源审计。"
+      },
+      "broad_directions": [
+        "cellular-metabolism",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "bulk-derived astrocyte-like转录程序如何约束MCI/AD代谢假说而不混同实测通量？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C3",
+        "C4",
+        "C5",
+        "C6"
+      ],
+      "review_notes": [
+        "模型实验与真正生物代谢validation分开；expression/flux range不是实际酶活/浓度/necessity。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "bulk DE/enrichment报告early MCI偏RTK/VEGFA–VEGFR2、membrane/axon，advanced偏synaptic/vesicle，AD偏vesicle/endocytosis/MAPK/stress；是stage-associated gene-set pattern而非生化机制必然次序。",
+      "claim_type": "transcriptomic_analysis",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "2.2;3.1; Fig2",
+          "design": "bulk microarray/references/deconvolution或external pseudobulk",
+          "comparator": "Control、early/advanced-MCI、AD或selected external genotype/pathway数据",
+          "measure": "bulk DE/enrichment报告early MCI偏RTK/VEGFA–VEGFR2、membrane/axon，advanced偏synaptic/vesicle，AD偏vesicle/endocytosis/MAPK/stress；是stage-associated gene-set pattern而非生化机制必然次序。",
+          "unit_of_analysis": "原bulk donors或inferred condition-level profile；不混同cells/algorithm initializations",
+          "sample_size_as_reported": "GSE28146各subject数量未给；BH FDR<.05",
+          "uncertainty": "gene-level two-sided t-test/BH FDR，实际threshold source不一致",
+          "assumptions": [
+            "Fig1 log2FC>1.5与Methods |FC|>1.5(log2>.585)冲突；不得把enrichment强度当protein activity。"
+          ],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "2.2;3.1; Fig2",
+            "figure": "2.2;3.1; Fig2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "bulk DE/enrichment报告early MCI偏RTK/VEGFA–VEGFR2、membrane/axon，advanced偏synaptic/vesicle，AD偏vesicle/endocytosis/MAPK/stress；是stage-associated gene-set pattern而非生化机制必然次序。",
+        "boundary": "Fig1 log2FC>1.5与Methods |FC|>1.5(log2>.585)冲突；不得把enrichment强度当protein activity。",
+        "negative_result": null,
+        "non_inference": "Fig1 log2FC>1.5与Methods |FC|>1.5(log2>.585)冲突；不得把enrichment强度当protein activity。",
+        "unresolved": "真实cell/flux/蛋白酶、donor-level uncertainty、外部source归属及causal/metabolomic validation未解决。",
+        "unresolved_attribution": "作者limitation和来源审计。"
+      },
+      "broad_directions": [
+        "cellular-metabolism",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "bulk-derived astrocyte-like转录程序如何约束MCI/AD代谢假说而不混同实测通量？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C4",
+        "C5",
+        "C6"
+      ],
+      "review_notes": [
+        "模型实验与真正生物代谢validation分开；expression/flux range不是实际酶活/浓度/necessity。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "CDSeq选6latent components；astrocyte-like者以GFAP/AQP4/ALDH1L1和external signatures识别，并多initialization回收；其余为neuronal/oligo/microglia/endothelial/mixed glial近似。",
+      "claim_type": "transcriptomic_analysis",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "2.4;3.2",
+          "design": "bulk microarray/references/deconvolution或external pseudobulk",
+          "comparator": "Control、early/advanced-MCI、AD或selected external genotype/pathway数据",
+          "measure": "CDSeq选6latent components；astrocyte-like者以GFAP/AQP4/ALDH1L1和external signatures识别，并多initialization回收；其余为neuronal/oligo/microglia/endothelial/mixed glial近似。",
+          "unit_of_analysis": "原bulk donors或inferred condition-level profile；不混同cells/algorithm initializations",
+          "sample_size_as_reported": "6components；initialization repeat数未报",
+          "uncertainty": "未给该命题独立donor/seed分布；FBA/FVA无统计显著性，rawdeterministic范围非CI",
+          "assumptions": [
+            "microarray inverse为pseudo-count、K/model separability假设；稳定component非exact cell measurement。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "2.4;3.2",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "CDSeq选6latent components；astrocyte-like者以GFAP/AQP4/ALDH1L1和external signatures识别，并多initialization回收；其余为neuronal/oligo/microglia/endothelial/mixed glial近似。",
+        "boundary": "microarray inverse为pseudo-count、K/model separability假设；稳定component非exact cell measurement。",
+        "negative_result": null,
+        "non_inference": "microarray inverse为pseudo-count、K/model separability假设；稳定component非exact cell measurement。",
+        "unresolved": "真实cell/flux/蛋白酶、donor-level uncertainty、外部source归属及causal/metabolomic validation未解决。",
+        "unresolved_attribution": "作者limitation和来源审计。"
+      },
+      "broad_directions": [
+        "cellular-metabolism",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "bulk-derived astrocyte-like转录程序如何约束MCI/AD代谢假说而不混同实测通量？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C5",
+        "C6"
+      ],
+      "review_notes": [
+        "模型实验与真正生物代谢validation分开；expression/flux range不是实际酶活/浓度/necessity。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "推断astrocyte-like组profile随stage从homeostatic/synaptic/energy/redox转向stress、cytoskeleton及inflammation-related程序，AD的neurotransmitter/redox基因程序较低。",
+      "claim_type": "transcriptomic_analysis",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "3.2; Fig3",
+          "design": "bulk microarray/references/deconvolution或external pseudobulk",
+          "comparator": "Control、early/advanced-MCI、AD或selected external genotype/pathway数据",
+          "measure": "推断astrocyte-like组profile随stage从homeostatic/synaptic/energy/redox转向stress、cytoskeleton及inflammation-related程序，AD的neurotransmitter/redox基因程序较低。",
+          "unit_of_analysis": "原bulk donors或inferred condition-level profile；不混同cells/algorithm initializations",
+          "sample_size_as_reported": "每condition单representative profile，不是donor-wise deconvolution replicates",
+          "uncertainty": "未给该命题独立donor/seed分布；FBA/FVA无统计显著性，rawdeterministic范围非CI",
+          "assumptions": [
+            "bulk DE统计不能未经说明转成astrocyte-specific donor-level显著性；cell overlap/状态混合保留。"
+          ],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "3.2; Fig3",
+            "figure": "3.2; Fig3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "推断astrocyte-like组profile随stage从homeostatic/synaptic/energy/redox转向stress、cytoskeleton及inflammation-related程序，AD的neurotransmitter/redox基因程序较低。",
+        "boundary": "bulk DE统计不能未经说明转成astrocyte-specific donor-level显著性；cell overlap/状态混合保留。",
+        "negative_result": null,
+        "non_inference": "bulk DE统计不能未经说明转成astrocyte-specific donor-level显著性；cell overlap/状态混合保留。",
+        "unresolved": "真实cell/flux/蛋白酶、donor-level uncertainty、外部source归属及causal/metabolomic validation未解决。",
+        "unresolved_attribution": "作者limitation和来源审计。"
+      },
+      "broad_directions": [
+        "cellular-metabolism",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "bulk-derived astrocyte-like转录程序如何约束MCI/AD代谢假说而不混同实测通量？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C6"
+      ],
+      "review_notes": [
+        "模型实验与真正生物代谢validation分开；expression/flux range不是实际酶活/浓度/necessity。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "外部snRNA-seq pseudobulk比较报告gene-level moderate agreement与stress/proteostasis等pathway recurrence，但没有完整pathway overlap；stage/brain-region及平台差异限制一一对应。",
+      "claim_type": "transcriptomic_analysis",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "2.5;3.3; SupplementS2主文摘要",
+          "design": "bulk microarray/references/deconvolution或external pseudobulk",
+          "comparator": "Control、early/advanced-MCI、AD或selected external genotype/pathway数据",
+          "measure": "外部snRNA-seq pseudobulk比较报告gene-level moderate agreement与stress/proteostasis等pathway recurrence，但没有完整pathway overlap；stage/brain-region及平台差异限制一一对应。",
+          "unit_of_analysis": "原bulk donors或inferred condition-level profile；不混同cells/algorithm initializations",
+          "sample_size_as_reported": "外部donor-aware pseudobulk，donor/cell n未给",
+          "uncertainty": "未给该命题独立donor/seed分布；FBA/FVA无统计显著性，rawdeterministic范围非CI",
+          "assumptions": [
+            "来源名称在Gabitto2024与Serrano-Pozo2024间不一致；只保留作者报告partial一致，不称独立复现。"
+          ],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "2.5;3.3; SupplementS2主文摘要",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "外部snRNA-seq pseudobulk比较报告gene-level moderate agreement与stress/proteostasis等pathway recurrence，但没有完整pathway overlap；stage/brain-region及平台差异限制一一对应。",
+        "boundary": "来源名称在Gabitto2024与Serrano-Pozo2024间不一致；只保留作者报告partial一致，不称独立复现。",
+        "negative_result": "外部validation未观察完整pathway overlap，gene agreement仅moderate。",
+        "non_inference": "来源名称在Gabitto2024与Serrano-Pozo2024间不一致；只保留作者报告partial一致，不称独立复现。",
+        "unresolved": "真实cell/flux/蛋白酶、donor-level uncertainty、外部source归属及causal/metabolomic validation未解决。",
+        "unresolved_attribution": "作者limitation和来源审计。"
+      },
+      "broad_directions": [
+        "cellular-metabolism",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "bulk-derived astrocyte-like转录程序如何约束MCI/AD代谢假说而不混同实测通量？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5"
+      ],
+      "review_notes": [
+        "模型实验与真正生物代谢validation分开；expression/flux range不是实际酶活/浓度/necessity。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "四expression-constrained GEM各含6520metabolites/10586reactions，以GPR OR=max/AND=min及TPM-like activity阈值控制bounds；无gene反应保留，inactive者zero、active capacity按relative expression缩放。",
+      "claim_type": "constraint_model_result_or_interpretation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "2.6;3.4",
+          "design": "steady-state expression-scaled human astrocyte GEM、biomass proxy及FBA/FVA，或据其推论",
+          "comparator": "Control、early/advanced-MCI、AD或selected external genotype/pathway数据",
+          "measure": "四expression-constrained GEM各含6520metabolites/10586reactions，以GPR OR=max/AND=min及TPM-like activity阈值控制bounds；无gene反应保留，inactive者zero、active capacity按relative expression缩放。",
+          "unit_of_analysis": "context-specific deterministic model与reaction；非biological validation",
+          "sample_size_as_reported": "4deterministic models，不是10586实验单位",
+          "uncertainty": "未给该命题独立donor/seed分布；FBA/FVA无统计显著性，rawdeterministic范围非CI",
+          "assumptions": [
+            "steady-state mass balance与mRNA∝capacity假设；pseudo-TPM非absolute transcripts/flux calibration。"
+          ],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "2.6;3.4",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "四expression-constrained GEM各含6520metabolites/10586reactions，以GPR OR=max/AND=min及TPM-like activity阈值控制bounds；无gene反应保留，inactive者zero、active capacity按relative expression缩放。",
+        "boundary": "steady-state mass balance与mRNA∝capacity假设；pseudo-TPM非absolute transcripts/flux calibration。",
+        "negative_result": null,
+        "non_inference": "steady-state mass balance与mRNA∝capacity假设；pseudo-TPM非absolute transcripts/flux calibration。",
+        "unresolved": "真实cell/flux/蛋白酶、donor-level uncertainty、外部source归属及causal/metabolomic validation未解决。",
+        "unresolved_attribution": "作者limitation和来源审计。"
+      },
+      "broad_directions": [
+        "cellular-metabolism",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "bulk-derived astrocyte-like转录程序如何约束MCI/AD代谢假说而不混同实测通量？"
+      ],
+      "shared_evidence_with": [
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17"
+      ],
+      "review_notes": [
+        "模型实验与真正生物代谢validation分开；expression/flux range不是实际酶活/浓度/necessity。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "Table2 biomass-derived maintenance proxy由Control.3304到early.3211、advanced.2718再AD.3037；并列外部invitro growth.32不构成stage-specific真实maintenance验证。",
+      "claim_type": "constraint_model_result_or_interpretation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Table2;2.7",
+          "design": "steady-state expression-scaled human astrocyte GEM、biomass proxy及FBA/FVA，或据其推论",
+          "comparator": "Control、early/advanced-MCI、AD或selected external genotype/pathway数据",
+          "measure": "Table2 biomass-derived maintenance proxy由Control.3304到early.3211、advanced.2718再AD.3037；并列外部invitro growth.32不构成stage-specific真实maintenance验证。",
+          "unit_of_analysis": "context-specific deterministic model与reaction；非biological validation",
+          "sample_size_as_reported": "4model objective values；无生物replicate分布",
+          "uncertainty": "未给该命题独立donor/seed分布；FBA/FVA无统计显著性，rawdeterministic范围非CI",
+          "assumptions": [
+            "不是proliferation、存活或脑内代谢速率实测；units仅source model convention。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "Table2;2.7",
+            "figure": "Table2;2.7",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "Table2 biomass-derived maintenance proxy由Control.3304到early.3211、advanced.2718再AD.3037；并列外部invitro growth.32不构成stage-specific真实maintenance验证。",
+        "boundary": "不是proliferation、存活或脑内代谢速率实测；units仅source model convention。",
+        "negative_result": null,
+        "non_inference": "不是proliferation、存活或脑内代谢速率实测；units仅source model convention。",
+        "unresolved": "真实cell/flux/蛋白酶、donor-level uncertainty、外部source归属及causal/metabolomic validation未解决。",
+        "unresolved_attribution": "作者limitation和来源审计。"
+      },
+      "broad_directions": [
+        "cellular-metabolism",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "bulk-derived astrocyte-like转录程序如何约束MCI/AD代谢假说而不混同实测通量？"
+      ],
+      "shared_evidence_with": [
+        "C7",
+        "C9",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17"
+      ],
+      "review_notes": [
+        "模型实验与真正生物代谢validation分开；expression/flux range不是实际酶活/浓度/necessity。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "作者把AD proxy部分回升解释为reactive-like reconfiguration/compensation而非功能恢复，亦承认objective/constraints、表达变化或flux redistribution可给替代解释。",
+      "claim_type": "constraint_model_result_or_interpretation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "4.6; Conclusion",
+          "design": "steady-state expression-scaled human astrocyte GEM、biomass proxy及FBA/FVA，或据其推论",
+          "comparator": "Control、early/advanced-MCI、AD或selected external genotype/pathway数据",
+          "measure": "作者把AD proxy部分回升解释为reactive-like reconfiguration/compensation而非功能恢复，亦承认objective/constraints、表达变化或flux redistribution可给替代解释。",
+          "unit_of_analysis": "context-specific deterministic model与reaction；非biological validation",
+          "sample_size_as_reported": "共享4model结果，无额外reactivity assay",
+          "uncertainty": "未给该命题独立donor/seed分布；FBA/FVA无统计显著性，rawdeterministic范围非CI",
+          "assumptions": [
+            "GFAP/VIM/STAT3并未显式代谢建模，不能唯一证明reactive-state变化或恢复机制。"
+          ],
+          "source_locator": {
+            "pdf_page": 17,
+            "section": "4.6; Conclusion",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者把AD proxy部分回升解释为reactive-like reconfiguration/compensation而非功能恢复，亦承认objective/constraints、表达变化或flux redistribution可给替代解释。",
+        "boundary": "GFAP/VIM/STAT3并未显式代谢建模，不能唯一证明reactive-state变化或恢复机制。",
+        "negative_result": null,
+        "non_inference": "GFAP/VIM/STAT3并未显式代谢建模，不能唯一证明reactive-state变化或恢复机制。",
+        "unresolved": "真实cell/flux/蛋白酶、donor-level uncertainty、外部source归属及causal/metabolomic validation未解决。",
+        "unresolved_attribution": "作者limitation和来源审计。"
+      },
+      "broad_directions": [
+        "cellular-metabolism",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "bulk-derived astrocyte-like转录程序如何约束MCI/AD代谢假说而不混同实测通量？"
+      ],
+      "shared_evidence_with": [
+        "C7",
+        "C8",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17"
+      ],
+      "review_notes": [
+        "模型实验与真正生物代谢validation分开；expression/flux range不是实际酶活/浓度/necessity。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "FVA在未固定max-biomass的可行空间中报告glutamate/glutathione、glycolysis/pyruvate、cholesterol及one-carbon等allowable ranges变窄，early MCI已出现部分限制。",
+      "claim_type": "constraint_model_result_or_interpretation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "3.4; Fig4B;4.7",
+          "design": "steady-state expression-scaled human astrocyte GEM、biomass proxy及FBA/FVA，或据其推论",
+          "comparator": "Control、early/advanced-MCI、AD或selected external genotype/pathway数据",
+          "measure": "FVA在未固定max-biomass的可行空间中报告glutamate/glutathione、glycolysis/pyruvate、cholesterol及one-carbon等allowable ranges变窄，early MCI已出现部分限制。",
+          "unit_of_analysis": "context-specific deterministic model与reaction；非biological validation",
+          "sample_size_as_reported": "4condition feasible flux polytopes",
+          "uncertainty": "未给该命题独立donor/seed分布；FBA/FVA无统计显著性，rawdeterministic范围非CI",
+          "assumptions": [
+            "FVA范围不是CI/生物分布，约束变化本身可缩空间；不能断言in-vivo rigidity因果先于神经损伤。"
+          ],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "3.4; Fig4B;4.7",
+            "figure": "3.4; Fig4B;4.7",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "FVA在未固定max-biomass的可行空间中报告glutamate/glutathione、glycolysis/pyruvate、cholesterol及one-carbon等allowable ranges变窄，early MCI已出现部分限制。",
+        "boundary": "FVA范围不是CI/生物分布，约束变化本身可缩空间；不能断言in-vivo rigidity因果先于神经损伤。",
+        "negative_result": null,
+        "non_inference": "FVA范围不是CI/生物分布，约束变化本身可缩空间；不能断言in-vivo rigidity因果先于神经损伤。",
+        "unresolved": "真实cell/flux/蛋白酶、donor-level uncertainty、外部source归属及causal/metabolomic validation未解决。",
+        "unresolved_attribution": "作者limitation和来源审计。"
+      },
+      "broad_directions": [
+        "cellular-metabolism",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "bulk-derived astrocyte-like转录程序如何约束MCI/AD代谢假说而不混同实测通量？"
+      ],
+      "shared_evidence_with": [
+        "C7",
+        "C8",
+        "C9",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17"
+      ],
+      "review_notes": [
+        "模型实验与真正生物代谢validation分开；expression/flux range不是实际酶活/浓度/necessity。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "所列FBA解glutaminase为5.03/.77/.63/.72，部分NAD/NADP-dependent glutamate dehydrogenase出现符号变化，提示这些constraint下可行glutamate/redox routing不同。",
+      "claim_type": "constraint_model_result_or_interpretation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Table4",
+          "design": "steady-state expression-scaled human astrocyte GEM、biomass proxy及FBA/FVA，或据其推论",
+          "comparator": "Control、early/advanced-MCI、AD或selected external genotype/pathway数据",
+          "measure": "所列FBA解glutaminase为5.03/.77/.63/.72，部分NAD/NADP-dependent glutamate dehydrogenase出现符号变化，提示这些constraint下可行glutamate/redox routing不同。",
+          "unit_of_analysis": "context-specific deterministic model与reaction；非biological validation",
+          "sample_size_as_reported": "4model selected solutions；多reaction共享GEM",
+          "uncertainty": "未给该命题独立donor/seed分布；FBA/FVA无统计显著性，rawdeterministic范围非CI",
+          "assumptions": [
+            "sign依reaction约定且可能有alternative optima，非细胞glutamate浓度、必要循环能力或真实activity。"
+          ],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "Table4",
+            "figure": "Table4",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所列FBA解glutaminase为5.03/.77/.63/.72，部分NAD/NADP-dependent glutamate dehydrogenase出现符号变化，提示这些constraint下可行glutamate/redox routing不同。",
+        "boundary": "sign依reaction约定且可能有alternative optima，非细胞glutamate浓度、必要循环能力或真实activity。",
+        "negative_result": null,
+        "non_inference": "sign依reaction约定且可能有alternative optima，非细胞glutamate浓度、必要循环能力或真实activity。",
+        "unresolved": "真实cell/flux/蛋白酶、donor-level uncertainty、外部source归属及causal/metabolomic validation未解决。",
+        "unresolved_attribution": "作者limitation和来源审计。"
+      },
+      "broad_directions": [
+        "cellular-metabolism",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "bulk-derived astrocyte-like转录程序如何约束MCI/AD代谢假说而不混同实测通量？"
+      ],
+      "shared_evidence_with": [
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17"
+      ],
+      "review_notes": [
+        "模型实验与真正生物代谢validation分开；expression/flux range不是实际酶活/浓度/necessity。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "所列glutathione oxidoreductaseflux2.76/.73/.63/−.29，gamma-glutamyltranspeptidase1.61/.77/.63/.72，显示model redox相关分配非严格单调或统一zero。",
+      "claim_type": "constraint_model_result_or_interpretation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Table4 redox",
+          "design": "steady-state expression-scaled human astrocyte GEM、biomass proxy及FBA/FVA，或据其推论",
+          "comparator": "Control、early/advanced-MCI、AD或selected external genotype/pathway数据",
+          "measure": "所列glutathione oxidoreductaseflux2.76/.73/.63/−.29，gamma-glutamyltranspeptidase1.61/.77/.63/.72，显示model redox相关分配非严格单调或统一zero。",
+          "unit_of_analysis": "context-specific deterministic model与reaction；非biological validation",
+          "sample_size_as_reported": "4selected model solutions",
+          "uncertainty": "未给该命题独立donor/seed分布；FBA/FVA无统计显著性，rawdeterministic范围非CI",
+          "assumptions": [
+            "不据此声称GSH pool depleted、enzymatic rates或ROS因果性；不是独立redox assay。"
+          ],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "Table4 redox",
+            "figure": "Table4 redox",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所列glutathione oxidoreductaseflux2.76/.73/.63/−.29，gamma-glutamyltranspeptidase1.61/.77/.63/.72，显示model redox相关分配非严格单调或统一zero。",
+        "boundary": "不据此声称GSH pool depleted、enzymatic rates或ROS因果性；不是独立redox assay。",
+        "negative_result": null,
+        "non_inference": "不据此声称GSH pool depleted、enzymatic rates或ROS因果性；不是独立redox assay。",
+        "unresolved": "真实cell/flux/蛋白酶、donor-level uncertainty、外部source归属及causal/metabolomic validation未解决。",
+        "unresolved_attribution": "作者limitation和来源审计。"
+      },
+      "broad_directions": [
+        "cellular-metabolism",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "bulk-derived astrocyte-like转录程序如何约束MCI/AD代谢假说而不混同实测通量？"
+      ],
+      "shared_evidence_with": [
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17"
+      ],
+      "review_notes": [
+        "模型实验与真正生物代谢validation分开；expression/flux range不是实际酶活/浓度/necessity。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C13",
+      "statement": "ENO/PGM、triose-phosphate isomerase及lactate相关解出现缩小/方向改变；例如ENO−9.80→.78/.64/.72，PGM9.80→−.78/−.64/−.72。",
+      "claim_type": "constraint_model_result_or_interpretation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Tables3–4",
+          "design": "steady-state expression-scaled human astrocyte GEM、biomass proxy及FBA/FVA，或据其推论",
+          "comparator": "Control、early/advanced-MCI、AD或selected external genotype/pathway数据",
+          "measure": "ENO/PGM、triose-phosphate isomerase及lactate相关解出现缩小/方向改变；例如ENO−9.80→.78/.64/.72，PGM9.80→−.78/−.64/−.72。",
+          "unit_of_analysis": "context-specific deterministic model与reaction；非biological validation",
+          "sample_size_as_reported": "selected model reactions，4conditions",
+          "uncertainty": "未给该命题独立donor/seed分布；FBA/FVA无统计显著性，rawdeterministic范围非CI",
+          "assumptions": [
+            "改变是相对constraints的routing，不能全局称glycolysis关闭或neuron energy不足已验证。"
+          ],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "Tables3–4",
+            "figure": "Tables3–4",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "ENO/PGM、triose-phosphate isomerase及lactate相关解出现缩小/方向改变；例如ENO−9.80→.78/.64/.72，PGM9.80→−.78/−.64/−.72。",
+        "boundary": "改变是相对constraints的routing，不能全局称glycolysis关闭或neuron energy不足已验证。",
+        "negative_result": null,
+        "non_inference": "改变是相对constraints的routing，不能全局称glycolysis关闭或neuron energy不足已验证。",
+        "unresolved": "真实cell/flux/蛋白酶、donor-level uncertainty、外部source归属及causal/metabolomic validation未解决。",
+        "unresolved_attribution": "作者limitation和来源审计。"
+      },
+      "broad_directions": [
+        "cellular-metabolism",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "bulk-derived astrocyte-like转录程序如何约束MCI/AD代谢假说而不混同实测通量？"
+      ],
+      "shared_evidence_with": [
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12",
+        "C14",
+        "C15",
+        "C16",
+        "C17"
+      ],
+      "review_notes": [
+        "模型实验与真正生物代谢validation分开；expression/flux range不是实际酶活/浓度/necessity。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C14",
+      "statement": "one-carbon/folate MTHFR所列Control3.85、三个disease模型0；MTHFD与其他folate反应亦重分配，提供未来methylation/NADPH假说但不是已测一碳代谢缺陷。",
+      "claim_type": "constraint_model_result_or_interpretation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Table4;4.10",
+          "design": "steady-state expression-scaled human astrocyte GEM、biomass proxy及FBA/FVA，或据其推论",
+          "comparator": "Control、early/advanced-MCI、AD或selected external genotype/pathway数据",
+          "measure": "one-carbon/folate MTHFR所列Control3.85、三个disease模型0；MTHFD与其他folate反应亦重分配，提供未来methylation/NADPH假说但不是已测一碳代谢缺陷。",
+          "unit_of_analysis": "context-specific deterministic model与reaction；非biological validation",
+          "sample_size_as_reported": "4FBA solutions",
+          "uncertainty": "未给该命题独立donor/seed分布；FBA/FVA无统计显著性，rawdeterministic范围非CI",
+          "assumptions": [
+            "单个optimal flux0未证明所有feasible flux0；不直接测DNA methylation或NADPH。"
+          ],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "Table4;4.10",
+            "figure": "Table4;4.10",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "one-carbon/folate MTHFR所列Control3.85、三个disease模型0；MTHFD与其他folate反应亦重分配，提供未来methylation/NADPH假说但不是已测一碳代谢缺陷。",
+        "boundary": "单个optimal flux0未证明所有feasible flux0；不直接测DNA methylation或NADPH。",
+        "negative_result": "所列MTHFR selected FBA解为0，仅model output不是生物阴性。",
+        "non_inference": "单个optimal flux0未证明所有feasible flux0；不直接测DNA methylation或NADPH。",
+        "unresolved": "真实cell/flux/蛋白酶、donor-level uncertainty、外部source归属及causal/metabolomic validation未解决。",
+        "unresolved_attribution": "作者limitation和来源审计。"
+      },
+      "broad_directions": [
+        "cellular-metabolism",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "bulk-derived astrocyte-like转录程序如何约束MCI/AD代谢假说而不混同实测通量？"
+      ],
+      "shared_evidence_with": [
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C15",
+        "C16",
+        "C17"
+      ],
+      "review_notes": [
+        "模型实验与真正生物代谢validation分开；expression/flux range不是实际酶活/浓度/necessity。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C15",
+      "statement": "cholesterol相关模型反应改变，例如24-dehydrocholesterol reductase9.85→0/.004/.72，FVA也较受限；这些不等于已测pathological lipid accumulation或APOE/ABCA1因果机制。",
+      "claim_type": "constraint_model_result_or_interpretation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Table4;4.9",
+          "design": "steady-state expression-scaled human astrocyte GEM、biomass proxy及FBA/FVA，或据其推论",
+          "comparator": "Control、early/advanced-MCI、AD或selected external genotype/pathway数据",
+          "measure": "cholesterol相关模型反应改变，例如24-dehydrocholesterol reductase9.85→0/.004/.72，FVA也较受限；这些不等于已测pathological lipid accumulation或APOE/ABCA1因果机制。",
+          "unit_of_analysis": "context-specific deterministic model与reaction；非biological validation",
+          "sample_size_as_reported": "4model solutions及FVA",
+          "uncertainty": "未给该命题独立donor/seed分布；FBA/FVA无统计显著性，rawdeterministic范围非CI",
+          "assumptions": [
+            "reaction flux变化非intracellular cholesterol quantity/transport实测，受GPR/bounds/objective限制。"
+          ],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "Table4;4.9",
+            "figure": "Table4;4.9",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "cholesterol相关模型反应改变，例如24-dehydrocholesterol reductase9.85→0/.004/.72，FVA也较受限；这些不等于已测pathological lipid accumulation或APOE/ABCA1因果机制。",
+        "boundary": "reaction flux变化非intracellular cholesterol quantity/transport实测，受GPR/bounds/objective限制。",
+        "negative_result": null,
+        "non_inference": "reaction flux变化非intracellular cholesterol quantity/transport实测，受GPR/bounds/objective限制。",
+        "unresolved": "真实cell/flux/蛋白酶、donor-level uncertainty、外部source归属及causal/metabolomic validation未解决。",
+        "unresolved_attribution": "作者limitation和来源审计。"
+      },
+      "broad_directions": [
+        "cellular-metabolism",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "bulk-derived astrocyte-like转录程序如何约束MCI/AD代谢假说而不混同实测通量？"
+      ],
+      "shared_evidence_with": [
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C16",
+        "C17"
+      ],
+      "review_notes": [
+        "模型实验与真正生物代谢validation分开；expression/flux range不是实际酶活/浓度/necessity。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C16",
+      "statement": "Table5将early-MCI-like模型与published APOE4 iPSC astrocyte ^13C/bioenergetic observations作qualitative比较：glutamate/redox三项为Partial，succinate-related为Yes，不是全GEM定量验证。",
+      "claim_type": "constraint_model_result_or_interpretation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "3.5; Table5;4.10",
+          "design": "steady-state expression-scaled human astrocyte GEM、biomass proxy及FBA/FVA，或据其推论",
+          "comparator": "Control、early/advanced-MCI、AD或selected external genotype/pathway数据",
+          "measure": "Table5将early-MCI-like模型与published APOE4 iPSC astrocyte ^13C/bioenergetic observations作qualitative比较：glutamate/redox三项为Partial，succinate-related为Yes，不是全GEM定量验证。",
+          "unit_of_analysis": "context-specific deterministic model与reaction；非biological validation",
+          "sample_size_as_reported": "4selected reaction/pathway correspondences；外部experiment n此文未给",
+          "uncertainty": "未给该命题独立donor/seed分布；FBA/FVA无统计显著性，rawdeterministic范围非CI",
+          "assumptions": [
+            "clinical stage与genotype不是同轴；glutaminaseflux↓与glutamate isotope labeling↑不可当同量方向复制，存在选择bias。"
+          ],
+          "source_locator": {
+            "pdf_page": 14,
+            "section": "3.5; Table5;4.10",
+            "figure": "3.5; Table5;4.10",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "Table5将early-MCI-like模型与published APOE4 iPSC astrocyte ^13C/bioenergetic observations作qualitative比较：glutamate/redox三项为Partial，succinate-related为Yes，不是全GEM定量验证。",
+        "boundary": "clinical stage与genotype不是同轴；glutaminaseflux↓与glutamate isotope labeling↑不可当同量方向复制，存在选择bias。",
+        "negative_result": null,
+        "non_inference": "clinical stage与genotype不是同轴；glutaminaseflux↓与glutamate isotope labeling↑不可当同量方向复制，存在选择bias。",
+        "unresolved": "真实cell/flux/蛋白酶、donor-level uncertainty、外部source归属及causal/metabolomic validation未解决。",
+        "unresolved_attribution": "作者limitation和来源审计。"
+      },
+      "broad_directions": [
+        "cellular-metabolism",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "bulk-derived astrocyte-like转录程序如何约束MCI/AD代谢假说而不混同实测通量？"
+      ],
+      "shared_evidence_with": [
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C17"
+      ],
+      "review_notes": [
+        "模型实验与真正生物代谢validation分开；expression/flux range不是实际酶活/浓度/necessity。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C17",
+      "statement": "VEGFA–VEGFR2持续enrichment被作者解释为早期adaptive、晚期可能maladaptive neurovascular response，并提出therapeutic exploration；没有本研究vascular/drug因果实验。",
+      "claim_type": "transcriptomic_analysis",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "4.3",
+          "design": "steady-state expression-scaled human astrocyte GEM、biomass proxy及FBA/FVA，或据其推论",
+          "comparator": "Control、early/advanced-MCI、AD或selected external genotype/pathway数据",
+          "measure": "VEGFA–VEGFR2持续enrichment被作者解释为早期adaptive、晚期可能maladaptive neurovascular response，并提出therapeutic exploration；没有本研究vascular/drug因果实验。",
+          "unit_of_analysis": "context-specific deterministic model与reaction；非biological validation",
+          "sample_size_as_reported": "gene-set association和引用背景",
+          "uncertainty": "未给该命题独立donor/seed分布；FBA/FVA无统计显著性，rawdeterministic范围非CI",
+          "assumptions": [
+            "不能由enrichment推VEGFA必要性、药物有效性或stage-specific疗效。"
+          ],
+          "source_locator": {
+            "pdf_page": 15,
+            "section": "4.3",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "VEGFA–VEGFR2持续enrichment被作者解释为早期adaptive、晚期可能maladaptive neurovascular response，并提出therapeutic exploration；没有本研究vascular/drug因果实验。",
+        "boundary": "不能由enrichment推VEGFA必要性、药物有效性或stage-specific疗效。",
+        "negative_result": null,
+        "non_inference": "不能由enrichment推VEGFA必要性、药物有效性或stage-specific疗效。",
+        "unresolved": "真实cell/flux/蛋白酶、donor-level uncertainty、外部source归属及causal/metabolomic validation未解决。",
+        "unresolved_attribution": "作者limitation和来源审计。"
+      },
+      "broad_directions": [
+        "cellular-metabolism",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "bulk-derived astrocyte-like转录程序如何约束MCI/AD代谢假说而不混同实测通量？"
+      ],
+      "shared_evidence_with": [
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16"
+      ],
+      "review_notes": [
+        "模型实验与真正生物代谢validation分开；expression/flux range不是实际酶活/浓度/necessity。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "完整23页校正后原研究，17条候选限定bulk/transcriptome关联与4个astrocyte-like expression-constrained GEM。维护proxy下降并AD部分回升，FVA和selected reaction变化提供redox/循环/糖脂/一碳候选假说，非体内通量或浓度。外部snRNA/pseudobulk与APOE ^13C比较仅partial功能一致、非新experiment/global验证；每stage单profile无donor级astrocyte统计。DE阈值、external source、extreme r1666、physical units及correction细节均未解决。",
+  "shared_evidence": [
+    {
+      "claim_id": "C1",
+      "with": [
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C2",
+      "with": [
+        "C1",
+        "C3",
+        "C4",
+        "C5",
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C1",
+        "C2",
+        "C4",
+        "C5",
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C5",
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C7",
+        "C9",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C7",
+        "C8",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "with": [
+        "C7",
+        "C8",
+        "C9",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "with": [
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "with": [
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17"
+      ]
+    },
+    {
+      "claim_id": "C13",
+      "with": [
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12",
+        "C14",
+        "C15",
+        "C16",
+        "C17"
+      ]
+    },
+    {
+      "claim_id": "C14",
+      "with": [
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C15",
+        "C16",
+        "C17"
+      ]
+    },
+    {
+      "claim_id": "C15",
+      "with": [
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C16",
+        "C17"
+      ]
+    },
+    {
+      "claim_id": "C16",
+      "with": [
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C17"
+      ]
+    },
+    {
+      "claim_id": "C17",
+      "with": [
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": "C1",
+        "issue": "二次来源审计核对profile/模型单位、threshold、符号、外部comparison量与真实测量；共享pipeline不是独立replication。",
+        "suggested_correction": "保留现有model-supported/association限定，未报告n/statistics不猜。",
+        "pdf_page": 4,
+        "resolved": true
+      },
+      {
+        "claim_id": "C2",
+        "issue": "二次来源审计核对profile/模型单位、threshold、符号、外部comparison量与真实测量；共享pipeline不是独立replication。",
+        "suggested_correction": "保留现有model-supported/association限定，未报告n/statistics不猜。",
+        "pdf_page": 6,
+        "resolved": true
+      },
+      {
+        "claim_id": "C3",
+        "issue": "二次来源审计核对profile/模型单位、threshold、符号、外部comparison量与真实测量；共享pipeline不是独立replication。",
+        "suggested_correction": "保留现有model-supported/association限定，未报告n/statistics不猜。",
+        "pdf_page": 10,
+        "resolved": true
+      },
+      {
+        "claim_id": "C4",
+        "issue": "二次来源审计核对profile/模型单位、threshold、符号、外部comparison量与真实测量；共享pipeline不是独立replication。",
+        "suggested_correction": "保留现有model-supported/association限定，未报告n/statistics不猜。",
+        "pdf_page": 7,
+        "resolved": true
+      },
+      {
+        "claim_id": "C5",
+        "issue": "二次来源审计核对profile/模型单位、threshold、符号、外部comparison量与真实测量；共享pipeline不是独立replication。",
+        "suggested_correction": "保留现有model-supported/association限定，未报告n/statistics不猜。",
+        "pdf_page": 12,
+        "resolved": true
+      },
+      {
+        "claim_id": "C6",
+        "issue": "二次来源审计核对profile/模型单位、threshold、符号、外部comparison量与真实测量；共享pipeline不是独立replication。",
+        "suggested_correction": "保留现有model-supported/association限定，未报告n/statistics不猜。",
+        "pdf_page": 12,
+        "resolved": true
+      },
+      {
+        "claim_id": "C7",
+        "issue": "二次来源审计核对profile/模型单位、threshold、符号、外部comparison量与真实测量；共享pipeline不是独立replication。",
+        "suggested_correction": "保留现有model-supported/association限定，未报告n/statistics不猜。",
+        "pdf_page": 12,
+        "resolved": true
+      },
+      {
+        "claim_id": "C8",
+        "issue": "二次来源审计核对profile/模型单位、threshold、符号、外部comparison量与真实测量；共享pipeline不是独立replication。",
+        "suggested_correction": "保留现有model-supported/association限定，未报告n/statistics不猜。",
+        "pdf_page": 9,
+        "resolved": true
+      },
+      {
+        "claim_id": "C9",
+        "issue": "二次来源审计核对profile/模型单位、threshold、符号、外部comparison量与真实测量；共享pipeline不是独立replication。",
+        "suggested_correction": "保留现有model-supported/association限定，未报告n/statistics不猜。",
+        "pdf_page": 17,
+        "resolved": true
+      },
+      {
+        "claim_id": "C10",
+        "issue": "二次来源审计核对profile/模型单位、threshold、符号、外部comparison量与真实测量；共享pipeline不是独立replication。",
+        "suggested_correction": "保留现有model-supported/association限定，未报告n/statistics不猜。",
+        "pdf_page": 12,
+        "resolved": true
+      },
+      {
+        "claim_id": "C11",
+        "issue": "二次来源审计核对profile/模型单位、threshold、符号、外部comparison量与真实测量；共享pipeline不是独立replication。",
+        "suggested_correction": "保留现有model-supported/association限定，未报告n/statistics不猜。",
+        "pdf_page": 13,
+        "resolved": true
+      },
+      {
+        "claim_id": "C12",
+        "issue": "二次来源审计核对profile/模型单位、threshold、符号、外部comparison量与真实测量；共享pipeline不是独立replication。",
+        "suggested_correction": "保留现有model-supported/association限定，未报告n/statistics不猜。",
+        "pdf_page": 13,
+        "resolved": true
+      },
+      {
+        "claim_id": "C13",
+        "issue": "二次来源审计核对profile/模型单位、threshold、符号、外部comparison量与真实测量；共享pipeline不是独立replication。",
+        "suggested_correction": "保留现有model-supported/association限定，未报告n/statistics不猜。",
+        "pdf_page": 11,
+        "resolved": true
+      },
+      {
+        "claim_id": "C14",
+        "issue": "二次来源审计核对profile/模型单位、threshold、符号、外部comparison量与真实测量；共享pipeline不是独立replication。",
+        "suggested_correction": "保留现有model-supported/association限定，未报告n/statistics不猜。",
+        "pdf_page": 13,
+        "resolved": true
+      },
+      {
+        "claim_id": "C15",
+        "issue": "二次来源审计核对profile/模型单位、threshold、符号、外部comparison量与真实测量；共享pipeline不是独立replication。",
+        "suggested_correction": "保留现有model-supported/association限定，未报告n/statistics不猜。",
+        "pdf_page": 13,
+        "resolved": true
+      },
+      {
+        "claim_id": "C16",
+        "issue": "二次来源审计核对profile/模型单位、threshold、符号、外部comparison量与真实测量；共享pipeline不是独立replication。",
+        "suggested_correction": "保留现有model-supported/association限定，未报告n/statistics不猜。",
+        "pdf_page": 14,
+        "resolved": true
+      },
+      {
+        "claim_id": "C17",
+        "issue": "二次来源审计核对profile/模型单位、threshold、符号、外部comparison量与真实测量；共享pipeline不是独立replication。",
+        "suggested_correction": "保留现有model-supported/association限定，未报告n/statistics不猜。",
+        "pdf_page": 15,
+        "resolved": true
+      },
+      {
+        "claim_id": "C3",
+        "issue": "Figure1称log2FC>1.5，Methods称absolute FC>1.5即log2>.585；figure/正文各引用labels混乱。",
+        "suggested_correction": "不确定实际DE threshold，保持结果趋势并延期precision。",
+        "pdf_page": 5,
+        "resolved": false
+      },
+      {
+        "claim_id": "C6",
+        "issue": "external EC astrocyte validation方法指Gabitto2024，结果/讨论指Serrano-Pozo2024，参考文献为不同paper。",
+        "suggested_correction": "保留source ambiguity，不发明sourceID或认定独立匹配。",
+        "pdf_page": 7,
+        "resolved": false
+      },
+      {
+        "claim_id": "C5",
+        "issue": "stage-specific CDSeq为joint samples单profile，不是各donor分离；bulk DE统计与推断profile DE混用的具体程序未完全解释。",
+        "suggested_correction": "不能称astrocyte-specific donor-level显著效应；算法稳定性不替代采样误差。",
+        "pdf_page": 10,
+        "resolved": false
+      },
+      {
+        "claim_id": "C7",
+        "issue": "microarray pseudo-TPM为relative proxies，表达capacity缩放与absolute physical flux calibration未给全部exchange/bounds细节。",
+        "suggested_correction": "仅报告source模型单位/relative solutions，不作真实mM metabolite或enzyme measurements。",
+        "pdf_page": 9,
+        "resolved": false
+      },
+      {
+        "claim_id": "C16",
+        "issue": "APOE4-like由clinical incipient模型proxy；4selected模块Partial/Yes及signed百分比与绝对flux含义不同。",
+        "suggested_correction": "仅qualitative功能一致性，不能genotype/clinical-stage等同或labeling视为reaction flux。",
+        "pdf_page": 14,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "首面CORRECTED11Aug2026及正文correction DOI提示，实际correction内容未供；sourcegene/background含Dedic2018 CRH引用用于astrocyte mitochondrial。",
+        "suggested_correction": "保持校正版本透明，外部错配背景不作新mechanism evidence。",
+        "pdf_page": 20,
+        "resolved": false
+      },
+      {
+        "claim_id": null,
+        "issue": "极端r1666值及0flux是否所有feasible状态都阻断、FVA全bounds/referenceobjective等需原模型核对。",
+        "suggested_correction": "不猜修正或把chosen solution/interval当causal biological inhibition。",
+        "pdf_page": 11,
+        "resolved": false
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T11:26:41.053184Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "7d65fb52fce69096eac949b16dec59950da431bc2deb1904f159a026ec51f675",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

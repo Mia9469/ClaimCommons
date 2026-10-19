@@ -1,0 +1,998 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "preprint",
+  "paper": {
+    "title": "Dendritic In-Context Learning in a Single-Layer Spiking Neural Network",
+    "authors": [
+      "Juwei Shen",
+      "Yujie Wu",
+      "Changwen Chen"
+    ],
+    "doi": null,
+    "publication_year": 2026,
+    "venue": "arXiv (Cornell University)",
+    "url": "https://arxiv.org/pdf/2607.02283"
+  },
+  "source": {
+    "filename": "paper-W7167380658--Dendritic-In-Context-Learning-in-a-Single-Layer-Spiking-Neural-Network.pdf",
+    "sha256": "9baf212a94cec102b8200f4f4a6077f7fd69f57fa922e4c29a187c7571ad0701",
+    "source_url": "https://arxiv.org/pdf/2607.02283",
+    "pdf_page_count": 26
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26
+    ],
+    "results_sections_seen": [
+      "Architecture and training Eq1",
+      "Proposition1/AppendixB",
+      "Tables1–3/results",
+      "AppendicesA–P; Tables4–13; Figures1–8",
+      "Limitations; all references"
+    ],
+    "missing_material": [
+      "图像像素和公开代码/原始结果JSON未读取",
+      "能耗无实测；若干正文/表/图与理论缺口未获澄清"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "所有供应页文字（含方法/附录/图表文字和参考文献）已完整评估，未采样代替全文。",
+      "逐条第二审计以已读源比较真实单位、条件、统计与推断范围；不等于实验复现。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "DendriCL将带标签上下文误差驱动的leaky LMS形式显式嵌入不随躯体脉冲重置的apical状态；查询时门控误差，全部权重在推断期固定。",
+      "role": "result",
+      "source_pages": [
+        4
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "在WA=I、α=1、独立标准高斯输入和加性标签噪声的简化apical模型中，附录给出的均方误差递推具有γ<2/(d+2)时的收缩项和非零噪声底。",
+      "role": "result",
+      "source_pages": [
+        13
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "低维合成线性回归中DendriCL的所选检查点分数高于所列本地SNN重实现，连续DendriCNN略高于脉冲模型，而成功训练的Transformer/Spikformer在低d可更高。",
+      "role": "result",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "50k预算下DendriCL在d30/40/50的R²分别约.807/.787/.649且种子SD较小；本地Transformer在d30有失败、部分成功和高分三类，而d40/50所列运行近常数预测水平。",
+      "role": "result",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "冻结模型apical状态的ridge探针能较好预测同上下文的reference LMS状态，d20末位R²=.931±.001，对真实w为.837±.003，支持状态编码与所指定算法相关。",
+      "role": "result",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "上下文扫描的报告分数随k从5至40上升，但k40统计排除一个未收敛种子，且该扫描正文标d20、附录图7标d10，定量缩放范围待确认。",
+      "role": "result",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "固定任务d20的apical宽度扫描中64–384配置可学习，而512/768分数接近低基线；冻结apical更新γ=0可恢复部分分数，提示该实现的更新路径参与失稳。",
+      "role": "result",
+      "source_pages": [
+        17
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "脉冲计数表在d20报告DendriCL16980、PureLIF29753、Spikformer88350脉冲/forward；按每脉冲.9pJ投影分别约15.3/26.8/79.5nJ。",
+      "role": "result",
+      "source_pages": [
+        18
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "冻结权重的DendriCL在改变任务w标准差时以训练先验附近表现较好，大幅缩小或放大先验均降低分数，显示OOD收益有限且非其相对Transformer优势的证据。",
+      "role": "result",
+      "source_pages": [
+        17
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "两层DendriCL在二分类与非线性两层ReLU回归的所报分数分别约.805和.568，与Spikformer相近或略低，优势没有普遍扩展到非线性任务。",
+      "role": "result",
+      "source_pages": [
+        22
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "L1与L2区室模型在d20比较未见增加深度的描述性收益，L1报告训练墙钟更短，但只适用于该模型族与所测配置。",
+      "role": "result",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "作者提出生物皮层可用apical状态实现在线LMS的ICL，明确这是Tier3计算假说；解剖区室与plateau证据不验证具体α/γ、任务参数电压编码或标签误差更新。",
+      "role": "hypothesis",
+      "source_pages": [
+        12
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "Bayes ridge比较与归一化差距",
+      "role": "result",
+      "source_pages": [
+        16
+      ],
+      "decision": "defer",
+      "reason": "Table6称期待绝对上限但Transformer均值超过其估值；比较噪声/metric/评估数据绑定未清楚，d10/15预算与Table5矛盾"
+    },
+    {
+      "summary": "学习α/γ随任务维度变化",
+      "role": "result",
+      "source_pages": [
+        20
+      ],
+      "decision": "include",
+      "reason": "Table11为模型参数，不生物测量；纳入LMS解释范围"
+    },
+    {
+      "summary": "kernel、多分支、非线性读出与跨架构apical增强",
+      "role": "hypothesis",
+      "source_pages": [
+        15,
+        23
+      ],
+      "decision": "include",
+      "reason": "未来假说，不能称已Bayes最优或通用逼近验证"
+    },
+    {
+      "summary": "全部基线矩阵、seed原值和图注",
+      "role": "result",
+      "source_pages": [
+        14,
+        15,
+        21,
+        22,
+        24,
+        25,
+        26
+      ],
+      "decision": "include",
+      "reason": "所有supplied pages评估，未运行代码；重复表/图共享而非独立复制"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "DendriCL将带标签上下文误差驱动的leaky LMS形式显式嵌入不随躯体脉冲重置的apical状态；查询时门控误差，全部权重在推断期固定。",
+      "claim_type": "computational",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "384维状态、basal/apical/soma及FF1–LIF–FF2后处理/读出",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "模型状态及学习参数",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "“单层”指主要区室层，非无额外计算深度；矩阵、全局标签误差及高维apical状态是设计，不等实测单树突电压。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "Section3.1 Eq1; AppendixO",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "DendriCL将带标签上下文误差驱动的leaky LMS形式显式嵌入不随躯体脉冲重置的apical状态；查询时门控误差，全部权重在推断期固定。",
+        "boundary": "“单层”指主要区室层，非无额外计算深度；矩阵、全局标签误差及高维apical状态是设计，不等实测单树突电压。",
+        "negative_result": null,
+        "non_inference": "合成任务不验证生物皮层算法、真实语言/视觉ICL或所有SNN/Transformer的能力；有限预算结果不能证明架构绝对不可能，探针可读出非唯一机制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "冻结权重的状态式ICL",
+        "在线LMS与树突计算假说",
+        "基线公平性及能耗核算"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，DendriCL将带标签上下文误差驱动的leaky LMS形式显式嵌入不随躯体脉冲重置的apical状态；查询时门控误差，全部权重在推断期固定。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "在WA=I、α=1、独立标准高斯输入和加性标签噪声的简化apical模型中，附录给出的均方误差递推具有γ<2/(d+2)时的收缩项和非零噪声底。",
+      "claim_type": "theoretical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Eerr_next=(1−2γ+γ²(d+2))Eerr+γ²σ²d",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "简化在线LMS递推",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "固定非零γ和σ时误差不降到零；正文γ<2/d过宽、一般WA/泄漏/完整读出不由此自动保证。"
+          ],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "AppendixB proof of Proposition1",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在WA=I、α=1、独立标准高斯输入和加性标签噪声的简化apical模型中，附录给出的均方误差递推具有γ<2/(d+2)时的收缩项和非零噪声底。",
+        "boundary": "固定非零γ和σ时误差不降到零；正文γ<2/d过宽、一般WA/泄漏/完整读出不由此自动保证。",
+        "negative_result": null,
+        "non_inference": "不把作者O(d/k)措辞当已证的无噪声底率。",
+        "unresolved": "附录最佳γ代入的σ²d/(d+1)与其前式不符；固定步长几何收缩到噪声底不证明一般O(d/k)主张。",
+        "unresolved_attribution": "源文或本次审计"
+      },
+      "broad_directions": [
+        "冻结权重的状态式ICL",
+        "在线LMS与树突计算假说",
+        "基线公平性及能耗核算"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，在WA=I、α=1、独立标准高斯输入和加性标签噪声的简化apical模型中，附录给出的均方误差递推具有γ<2/(d+2)时的收缩项和非零噪声底。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "低维合成线性回归中DendriCL的所选检查点分数高于所列本地SNN重实现，连续DendriCNN略高于脉冲模型，而成功训练的Transformer/Spikformer在低d可更高。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "10k/50k不同预算的模型比较",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "训练种子和1500评估任务/检查点",
+          "sample_size_as_reported": "通常3种子；d20的10k DendriCL5种子",
+          "uncertainty": "DendriCL d20 50k .820±.005，DendriCNN .833±.001；均值±SD",
+          "assumptions": [
+            "表5给50k .818±.005与表1略异；不是所有行同预算/同深度/同参数，基线均作者简化重实现，非官方模型能力上限。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "Table1; Table5; AppendixC baseline provenance",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "低维合成线性回归中DendriCL的所选检查点分数高于所列本地SNN重实现，连续DendriCNN略高于脉冲模型，而成功训练的Transformer/Spikformer在低d可更高。",
+        "boundary": "表5给50k .818±.005与表1略异；不是所有行同预算/同深度/同参数，基线均作者简化重实现，非官方模型能力上限。",
+        "negative_result": null,
+        "non_inference": "合成任务不验证生物皮层算法、真实语言/视觉ICL或所有SNN/Transformer的能力；有限预算结果不能证明架构绝对不可能，探针可读出非唯一机制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "冻结权重的状态式ICL",
+        "在线LMS与树突计算假说",
+        "基线公平性及能耗核算"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，低维合成线性回归中DendriCL的所选检查点分数高于所列本地SNN重实现，连续DendriCNN略高于脉冲模型，而成功训练的Transformer/Spikformer在低d可更高。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "50k预算下DendriCL在d30/40/50的R²分别约.807/.787/.649且种子SD较小；本地Transformer在d30有失败、部分成功和高分三类，而d40/50所列运行近常数预测水平。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "相同训练步数的任务维度及种子比较",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "有限训练运行",
+          "sample_size_as_reported": "DendriCL各3种子；Transformer d30 6，d40/50各3（共6运行）",
+          "uncertainty": "DendriCL SD .005/.005/.036；Transformer d30 .386±.479，2高分/1部分/3低分",
+          "assumptions": [
+            "Spikformer d30也低SD .010，非只有DendriCL稳定；所有表述限指定重实现/optimizer/预算，不能归为绝对架构瓶颈或推广50%失败率。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "Table2; Table12; Figure6",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "50k预算下DendriCL在d30/40/50的R²分别约.807/.787/.649且种子SD较小；本地Transformer在d30有失败、部分成功和高分三类，而d40/50所列运行近常数预测水平。",
+        "boundary": "Spikformer d30也低SD .010，非只有DendriCL稳定；所有表述限指定重实现/optimizer/预算，不能归为绝对架构瓶颈或推广50%失败率。",
+        "negative_result": null,
+        "non_inference": "合成任务不验证生物皮层算法、真实语言/视觉ICL或所有SNN/Transformer的能力；有限预算结果不能证明架构绝对不可能，探针可读出非唯一机制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "冻结权重的状态式ICL",
+        "在线LMS与树突计算假说",
+        "基线公平性及能耗核算"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，50k预算下DendriCL在d30/40/50的R²分别约.807/.787/.649且种子SD较小；本地Transformer在d30有失败、部分成功和高分三类，而d40/50所列运行近常数预测水平。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "冻结模型apical状态的ridge探针能较好预测同上下文的reference LMS状态，d20末位R²=.931±.001，对真实w为.837±.003，支持状态编码与所指定算法相关。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "每固定位置750任务训练/750测试ridge，正则.1",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "独立任务及训练种子",
+          "sample_size_as_reported": "1500held-out任务；3种子；Table10代表seed0",
+          "uncertainty": "各位点LMS约.867–.977（t0零初始化平凡分数不作证据）",
+          "assumptions": [
+            "结构本来强制误差更新，探针吻合不证明新发现算法、完整读出因果充分性或任意替代算法排除。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Section5.4; Figure3; AppendixI Table10",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "冻结模型apical状态的ridge探针能较好预测同上下文的reference LMS状态，d20末位R²=.931±.001，对真实w为.837±.003，支持状态编码与所指定算法相关。",
+        "boundary": "结构本来强制误差更新，探针吻合不证明新发现算法、完整读出因果充分性或任意替代算法排除。",
+        "negative_result": null,
+        "non_inference": "合成任务不验证生物皮层算法、真实语言/视觉ICL或所有SNN/Transformer的能力；有限预算结果不能证明架构绝对不可能，探针可读出非唯一机制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "冻结权重的状态式ICL",
+        "在线LMS与树突计算假说",
+        "基线公平性及能耗核算"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，冻结模型apical状态的ridge探针能较好预测同上下文的reference LMS状态，d20末位R²=.931±.001，对真实w为.837±.003，支持状态编码与所指定算法相关。是否成立？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "上下文扫描的报告分数随k从5至40上升，但k40统计排除一个未收敛种子，且该扫描正文标d20、附录图7标d10，定量缩放范围待确认。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "上下文长度扫描及经验a−b/k拟合",
+          "design": null,
+          "comparator": null,
+          "measure": "上下文扫描分数",
+          "unit_of_analysis": "被选择训练运行",
+          "sample_size_as_reported": "k40仅4/5成功种子；其他n按总协议未逐项给",
+          "uncertainty": "报告.355/.565/.807/.940；成功样本均值±SD",
+          "assumptions": [
+            "失败不隐藏于稳定结论；d20 k40与主canonicalk40≈.805不一致，不据此验证O(d/k)理论。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "Table3; Figure7 PDF25",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "上下文扫描的报告分数随k从5至40上升，但k40统计排除一个未收敛种子，且该扫描正文标d20、附录图7标d10，定量缩放范围待确认。",
+        "boundary": "失败不隐藏于稳定结论；d20 k40与主canonicalk40≈.805不一致，不据此验证O(d/k)理论。",
+        "negative_result": "一个长上下文种子失败被排除。",
+        "non_inference": "合成任务不验证生物皮层算法、真实语言/视觉ICL或所有SNN/Transformer的能力；有限预算结果不能证明架构绝对不可能，探针可读出非唯一机制。",
+        "unresolved": "扫描任务维度/预算及主表冲突未解。",
+        "unresolved_attribution": "源文或本次审计"
+      },
+      "broad_directions": [
+        "冻结权重的状态式ICL",
+        "在线LMS与树突计算假说",
+        "基线公平性及能耗核算"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，上下文扫描的报告分数随k从5至40上升，但k40统计排除一个未收敛种子，且该扫描正文标d20、附录图7标d10，定量缩放范围待确认。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "固定任务d20的apical宽度扫描中64–384配置可学习，而512/768分数接近低基线；冻结apical更新γ=0可恢复部分分数，提示该实现的更新路径参与失稳。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "宽度扫描与γ=0诊断",
+          "design": null,
+          "comparator": null,
+          "measure": "训练/eval分数",
+          "unit_of_analysis": "训练种子",
+          "sample_size_as_reported": "2种子/宽度；384默认5种子；γ=0诊断n未给",
+          "uncertainty": "64–192约.798–.801；512 .007±.002、768 .008±.001；γ0约.50",
+          "assumptions": [
+            "不能把失稳唯一归因γ稳定界：一般WA投影协方差不等单位高斯，任务d和dapical的稳定公式应用混淆。"
+          ],
+          "source_locator": {
+            "pdf_page": 17,
+            "section": "AppendixF Table7",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "固定任务d20的apical宽度扫描中64–384配置可学习，而512/768分数接近低基线；冻结apical更新γ=0可恢复部分分数，提示该实现的更新路径参与失稳。",
+        "boundary": "不能把失稳唯一归因γ稳定界：一般WA投影协方差不等单位高斯，任务d和dapical的稳定公式应用混淆。",
+        "negative_result": "512与768配置失败，不支持“DendriCL无任何失败”。",
+        "non_inference": "合成任务不验证生物皮层算法、真实语言/视觉ICL或所有SNN/Transformer的能力；有限预算结果不能证明架构绝对不可能，探针可读出非唯一机制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "冻结权重的状态式ICL",
+        "在线LMS与树突计算假说",
+        "基线公平性及能耗核算"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，固定任务d20的apical宽度扫描中64–384配置可学习，而512/768分数接近低基线；冻结apical更新γ=0可恢复部分分数，提示该实现的更新路径参与失稳。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "脉冲计数表在d20报告DendriCL16980、PureLIF29753、Spikformer88350脉冲/forward；按每脉冲.9pJ投影分别约15.3/26.8/79.5nJ。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "64任务代表batch的instrumentation与Loihi简化成本",
+          "design": null,
+          "comparator": null,
+          "measure": "脉冲数与简化投影能耗",
+          "unit_of_analysis": "计算forward计数，非独立硬件功耗实验",
+          "sample_size_as_reported": "代表batch64；正文另称1500任务，精确计数平均协议待解",
+          "uncertainty": null,
+          "assumptions": [
+            "d20 PureLIF仅约1.75倍而非4倍；d10约4.5倍。未计连续apical误差/matmul、通信/扇出/读出全部费用，不能作实测端到端能耗或普遍10倍优势。"
+          ],
+          "source_locator": {
+            "pdf_page": 18,
+            "section": "AppendixH Table9",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "脉冲计数表在d20报告DendriCL16980、PureLIF29753、Spikformer88350脉冲/forward；按每脉冲.9pJ投影分别约15.3/26.8/79.5nJ。",
+        "boundary": "d20 PureLIF仅约1.75倍而非4倍；d10约4.5倍。未计连续apical误差/matmul、通信/扇出/读出全部费用，不能作实测端到端能耗或普遍10倍优势。",
+        "negative_result": null,
+        "non_inference": "合成任务不验证生物皮层算法、真实语言/视觉ICL或所有SNN/Transformer的能力；有限预算结果不能证明架构绝对不可能，探针可读出非唯一机制。",
+        "unresolved": "soma85%稀疏说明与17000预算及正文4倍/六数量级文字不一致。",
+        "unresolved_attribution": "源文或本次审计"
+      },
+      "broad_directions": [
+        "冻结权重的状态式ICL",
+        "在线LMS与树突计算假说",
+        "基线公平性及能耗核算"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，脉冲计数表在d20报告DendriCL16980、PureLIF29753、Spikformer88350脉冲/forward；按每脉冲.9pJ投影分别约15.3/26.8/79.5nJ。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "冻结权重的DendriCL在改变任务w标准差时以训练先验附近表现较好，大幅缩小或放大先验均降低分数，显示OOD收益有限且非其相对Transformer优势的证据。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "wstd先验0.25–5扫描，输入/噪声不变",
+          "design": null,
+          "comparator": null,
+          "measure": "OOD R²",
+          "unit_of_analysis": "评估任务；训练种子n未给",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "d20从wstd1的.800到.25的.441、5的.169；未在本研究直接同协议评估Transformer OOD，也未实证调步长可恢复。"
+          ],
+          "source_locator": {
+            "pdf_page": 17,
+            "section": "AppendixG Table8",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "冻结权重的DendriCL在改变任务w标准差时以训练先验附近表现较好，大幅缩小或放大先验均降低分数，显示OOD收益有限且非其相对Transformer优势的证据。",
+        "boundary": "d20从wstd1的.800到.25的.441、5的.169；未在本研究直接同协议评估Transformer OOD，也未实证调步长可恢复。",
+        "negative_result": "大先验偏移显著描述性性能下降，无给定推断检验。",
+        "non_inference": "合成任务不验证生物皮层算法、真实语言/视觉ICL或所有SNN/Transformer的能力；有限预算结果不能证明架构绝对不可能，探针可读出非唯一机制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "冻结权重的状态式ICL",
+        "在线LMS与树突计算假说",
+        "基线公平性及能耗核算"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，冻结权重的DendriCL在改变任务w标准差时以训练先验附近表现较好，大幅缩小或放大先验均降低分数，显示OOD收益有限且非其相对Transformer优势的证据。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "两层DendriCL在二分类与非线性两层ReLU回归的所报分数分别约.805和.568，与Spikformer相近或略低，优势没有普遍扩展到非线性任务。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "额外合成任务比较",
+          "design": null,
+          "comparator": null,
+          "measure": "源文报告任务分数",
+          "unit_of_analysis": "训练运行和任务",
+          "sample_size_as_reported": "通常3种子；critical任务5种子协议与该行n未明确",
+          "uncertainty": "非线性回归.568±.015；分类.805±.007/ .008正文附录略异",
+          "assumptions": [
+            "二分类分数指标未清楚标明，不能自行称accuracy/R²；此处使用L2而非单层，不能为单层通用ICL背书。"
+          ],
+          "source_locator": {
+            "pdf_page": 22,
+            "section": "Section5.6; AppendixN",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "两层DendriCL在二分类与非线性两层ReLU回归的所报分数分别约.805和.568，与Spikformer相近或略低，优势没有普遍扩展到非线性任务。",
+        "boundary": "二分类分数指标未清楚标明，不能自行称accuracy/R²；此处使用L2而非单层，不能为单层通用ICL背书。",
+        "negative_result": "这些任务未显示DendriCL普遍胜过Spikformer。",
+        "non_inference": "合成任务不验证生物皮层算法、真实语言/视觉ICL或所有SNN/Transformer的能力；有限预算结果不能证明架构绝对不可能，探针可读出非唯一机制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "冻结权重的状态式ICL",
+        "在线LMS与树突计算假说",
+        "基线公平性及能耗核算"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，两层DendriCL在二分类与非线性两层ReLU回归的所报分数分别约.805和.568，与Spikformer相近或略低，优势没有普遍扩展到非线性任务。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "L1与L2区室模型在d20比较未见增加深度的描述性收益，L1报告训练墙钟更短，但只适用于该模型族与所测配置。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "深度消融",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "训练种子",
+          "sample_size_as_reported": "3种子主表",
+          "uncertainty": "L1 .820 vs L2 .793；报告约4倍wallclock，无置信区间",
+          "assumptions": [
+            "不证明任意架构/任务无需深度；参数预算及墙钟要区分计算操作，含post-LIF读出模块。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Section5.5; Tables1,13",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "L1与L2区室模型在d20比较未见增加深度的描述性收益，L1报告训练墙钟更短，但只适用于该模型族与所测配置。",
+        "boundary": "不证明任意架构/任务无需深度；参数预算及墙钟要区分计算操作，含post-LIF读出模块。",
+        "negative_result": null,
+        "non_inference": "合成任务不验证生物皮层算法、真实语言/视觉ICL或所有SNN/Transformer的能力；有限预算结果不能证明架构绝对不可能，探针可读出非唯一机制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "冻结权重的状态式ICL",
+        "在线LMS与树突计算假说",
+        "基线公平性及能耗核算"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，L1与L2区室模型在d20比较未见增加深度的描述性收益，L1报告训练墙钟更短，但只适用于该模型族与所测配置。是否成立？"
+      ],
+      "shared_evidence_with": [
+        "C3"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "作者提出生物皮层可用apical状态实现在线LMS的ICL，明确这是Tier3计算假说；解剖区室与plateau证据不验证具体α/γ、任务参数电压编码或标签误差更新。",
+      "claim_type": "mechanistic",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "生物形态文献类比及可检验预测",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "被引生物研究与本计算模型",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "无in-vivo膜电位或行为ICL新实验；具体α≈.997、γ≈.012来自BPTT；不把高维向量等同单个等势区室电压。"
+          ],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "AppendixA Three Tiers; Limitations",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者提出生物皮层可用apical状态实现在线LMS的ICL，明确这是Tier3计算假说；解剖区室与plateau证据不验证具体α/γ、任务参数电压编码或标签误差更新。",
+        "boundary": "无in-vivo膜电位或行为ICL新实验；具体α≈.997、γ≈.012来自BPTT；不把高维向量等同单个等势区室电压。",
+        "negative_result": null,
+        "non_inference": "合成任务不验证生物皮层算法、真实语言/视觉ICL或所有SNN/Transformer的能力；有限预算结果不能证明架构绝对不可能，探针可读出非唯一机制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "冻结权重的状态式ICL",
+        "在线LMS与树突计算假说",
+        "基线公平性及能耗核算"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，作者提出生物皮层可用apical状态实现在线LMS的ICL，明确这是Tier3计算假说；解剖区室与plateau证据不验证具体α/γ、任务参数电压编码或标签误差更新。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "arXiv2607.02283v1全文26页含A–P所有附录/矩阵/图注已读。DendriCL显式LMS形式的冻结权重状态适应，在所测合成线性任务有较高稳定分数；基线为简化重实现，非线性/OOD/宽度/种子失败限制保留。收敛率、噪声底、Bayes/context数据及能耗算术/费用范围有未解项；生物皮层实现未实证。",
+  "shared_evidence": [
+    {
+      "claim_id": "C5",
+      "with": [
+        "C1",
+        "C2"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "with": [
+        "C3"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": "C2",
+        "issue": "固定γ误差递推到噪声底不证明所述一般O(d/k)，正文2/d界与附录2/(d+2)不同",
+        "suggested_correction": "只抽正确条件化递推；普遍收敛保证延期",
+        "pdf_page": 13,
+        "resolved": false
+      },
+      {
+        "claim_id": "C2",
+        "issue": "optimalγ代入stationary公式分母d+1算术不符",
+        "suggested_correction": "保留公式级待修订，不套用其数值结论",
+        "pdf_page": 13,
+        "resolved": false
+      },
+      {
+        "claim_id": "C4",
+        "issue": "有限预算/简化baseline不证明绝对架构不可能；Spikformer d30也稳定",
+        "suggested_correction": "收窄到指定实现和均值/SD",
+        "pdf_page": 14,
+        "resolved": true
+      },
+      {
+        "claim_id": "C6",
+        "issue": "任务d20与Figure7 d10、canonicalk40主表冲突及成功种子排除",
+        "suggested_correction": "保留扫描为有争议报告，不宣称精确缩放定理验证",
+        "pdf_page": 25,
+        "resolved": false
+      },
+      {
+        "claim_id": "C7",
+        "issue": "宽度解释混用d/dapical；clampγ≤.2不保证2/(d+2)，softplus(0)初始化说明不符",
+        "suggested_correction": "失稳归因保留待解，不强称理论验证",
+        "pdf_page": 23,
+        "resolved": false
+      },
+      {
+        "claim_id": "C8",
+        "issue": "d20PureLIF/模型约1.75非4，90nJ/15nJ约6非六数量级；未计连续LMS成本",
+        "suggested_correction": "准确报告Table9、限制为简化投影",
+        "pdf_page": 18,
+        "resolved": true
+      },
+      {
+        "claim_id": "C8",
+        "issue": "17000总脉冲与soma最大15700、post1200、85%稀疏的说明不一致",
+        "suggested_correction": "真实计数/统计协议待解",
+        "pdf_page": 18,
+        "resolved": false
+      },
+      {
+        "claim_id": null,
+        "issue": "Table6Bayes值小于成功Transformer，budget/d-sweep/seedcaption多处矛盾",
+        "suggested_correction": "Bayes优势/超上限论证延期",
+        "pdf_page": 16,
+        "resolved": false
+      },
+      {
+        "claim_id": "C5",
+        "issue": "零初始化位置R²平凡及部分位点.867<声称.87",
+        "suggested_correction": "不当机制证明或完全精确等价",
+        "pdf_page": 19,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "分类score指标和L1/L2扩展范围不明",
+        "suggested_correction": "不自创accuracy标签或单层非线性充分性",
+        "pdf_page": 22,
+        "resolved": false
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T11:37:58.900452Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "9baf212a94cec102b8200f4f4a6077f7fd69f57fa922e4c29a187c7571ad0701",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

@@ -1,0 +1,925 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "An Event-Based Digital Time Difference Encoder Model Implementation for Neuromorphic Systems",
+    "authors": [
+      "Daniel Gutiérrez-Galán",
+      "Thorben Schoepe",
+      "Juan Pedro Dominguez-Morales",
+      "Angel F. Jimenez-Fernandez",
+      "Elisabetta Chicca",
+      "Alejandro Linares-Barranco"
+    ],
+    "doi": "10.1109/tnnls.2021.3108047",
+    "publication_year": 2021,
+    "venue": "IEEE Transactions on Neural Networks and Learning Systems",
+    "url": "https://doi.org/10.1109/tnnls.2021.3108047"
+  },
+  "source": {
+    "filename": "paper-W3096037209.pdf",
+    "sha256": "61da8f00dd587870cda3368b4ff3af2176e9fc4163c83da7c8bdba6617057ef6",
+    "source_url": "https://idus.us.es/server/api/core/bitstreams/2a43475e-f6d2-47be-8117-c0a201f43ef4/content",
+    "pdf_page_count": 15
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "results_sections_seen": [
+      "III.A–C Digital architecture",
+      "IV.A Simulation",
+      "IV.B FPGA",
+      "IV.C Real-time application",
+      "V Discussion；Figures 1–18；Tables I–III"
+    ],
+    "missing_material": [
+      "图像像素未提供；Tables I–III大量单元格未进入文本。",
+      "HDL代码未运行、原始测量数据未提供。"
+    ],
+    "text_pass_complete": true,
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "notes": [
+      "15页全文、图注、参考文献及作者介绍已读；原题与元数据一致。",
+      "第二次核对区分RTL、FPGA实测、资源综合估计、SAIF功耗及虚拟声学输入。",
+      "源页文本部分数学/表格可能丢失；不补未见数字。"
+    ]
+  },
+  "contribution_inventory": [
+    {
+      "summary": "本文提出以整数倒计时、加法、移位及整数到脉冲转换构成数字TDE，将先到的促进事件与后到的触发事件间隔转为输出脉冲串；外部可配置时钟分频器控制时间尺度，设计意图覆盖纳秒至秒，不需直接求解指数微分方程。",
+      "role": "result",
+      "source_pages": [
+        4
+      ],
+      "decision": "include",
+      "reason": "分开记录结构、仿真边界、测量与报告冲突。"
+    },
+    {
+      "summary": "在检测窗口100 µs、tau=0、weight/gain设为5、decay=1及饱和阈值256的12类RTL输入测试中，单独促进或触发、触发先到、同时到达和间隔超窗均无输出；在窗内促进先到触发时产生输出，间隔增加时总体脉冲数减少、ISI增加。",
+      "role": "result",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "分开记录结构、仿真边界、测量与报告冲突。"
+    },
+    {
+      "summary": "在本文RTL多事件测试中，连续促进输入累加gain，单个促进后多次触发累加EPSC并重新启动输出串；反复窗内事件对使内部值达到设定饱和阈值，从而限制最大响应，不能再由单一最近时差解释输出。",
+      "role": "result",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "分开记录结构、仿真边界、测量与报告冲突。"
+    },
+    {
+      "summary": "以14个不同正时差脉冲对、分别设置700 µs和70 ms窗口的两种数字TDE仿真中，尽管内部仅用线性操作，输出串内ISI仍呈非线性增加；接近窗口尾端时输出事件不足以呈现完整曲线。",
+      "role": "result",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "分开记录结构、仿真边界、测量与报告冲突。"
+    },
+    {
+      "summary": "在本文微秒与毫秒尺度时差扫描中，单TDE脉冲数调谐曲线整体近线性，但微秒配置在Δt=300 µs出现由整数到脉冲转换误差引起的局部峰；毫秒配置图中未能显著呈现该峰并不说明误差消失。",
+      "role": "result",
+      "source_pages": [
+        10
+      ],
+      "decision": "include",
+      "reason": "分开记录结构、仿真边界、测量与报告冲突。"
+    },
+    {
+      "summary": "在四个不同参数TDE的仿真人口中，共享tau=0及gain/EPSC饱和3000，合计输出数对时差呈可用指数拟合的响应：微秒扫描R²=0.87、RMSE=14.61，毫秒扫描R²=0.93、RMSE=42.24。",
+      "role": "result",
+      "source_pages": [
+        11
+      ],
+      "decision": "include",
+      "reason": "分开记录结构、仿真边界、测量与报告冲突。"
+    },
+    {
+      "summary": "在XC6SLX150T FPGA上以4单元人口、微秒tick、固定Δt=100 µs且每秒刺激一次，本文对TDE3的ISI比较行为、综合后和实现后仿真，以及示波器和AER记录，报告Pearson相关最低为0.99。",
+      "role": "result",
+      "source_pages": [
+        11
+      ],
+      "decision": "include",
+      "reason": "分开记录结构、仿真边界、测量与报告冲突。"
+    },
+    {
+      "summary": "本文数字TDE的正文讨论报告单元需要179个LUT及140个寄存器，但摘要记为122个slice registers；页文本未给表II/III的全部数值，因而资源计数及各FPGA最大并行单元数不能完全核实。",
+      "role": "result",
+      "source_pages": [
+        13
+      ],
+      "decision": "include",
+      "reason": "分开记录结构、仿真边界、测量与报告冲突。"
+    },
+    {
+      "summary": "对XC6SLX150T单TDE简单事件刺激，本文SAIF功耗估计小于1 mW（其中98%记为静态）；板级实测从复位激活的功耗到运行时功耗之差被报告约1.5 mW，因此小于1 mW不是该板级实测差值。",
+      "role": "result",
+      "source_pages": [
+        12
+      ],
+      "decision": "include",
+      "reason": "分开记录结构、仿真边界、测量与报告冲突。"
+    },
+    {
+      "summary": "在10×10×2 m虚拟房间的RIR音频、声源2 m处−90°/0°/+90°、500 Hz半秒周期信号驱动的实时FPGA测试中，64通道NAS的502.38 Hz通道向左右各4个TDE供事件，极侧音频主要激活对应人口，前方音频激活两侧，展示三种侧向位置区分。",
+      "role": "result",
+      "source_pages": [
+        13
+      ],
+      "decision": "include",
+      "reason": "分开记录结构、仿真边界、测量与报告冲突。"
+    },
+    {
+      "summary": "所有FPGA型号的精确资源上限及匹配神经元资源比较",
+      "role": "result",
+      "source_pages": [
+        11,
+        13
+      ],
+      "decision": "defer",
+      "reason": "表格数据缺失且寄存器口径不一致。"
+    },
+    {
+      "summary": "真实场景连续角度定位、Loihi或SpiNNaker后处理及全纳秒至秒性能",
+      "role": "hypothesis",
+      "source_pages": [
+        13,
+        14
+      ],
+      "decision": "defer",
+      "reason": "为预期应用，不是完成测试。"
+    },
+    {
+      "summary": "原模拟TDE、Jeffress和他文神经元结果",
+      "role": "review_synthesis",
+      "source_pages": [
+        2,
+        3,
+        14,
+        15
+      ],
+      "decision": "exclude",
+      "reason": "既有模型背景；本文新增的是数字实现及所示比较。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "本文提出以整数倒计时、加法、移位及整数到脉冲转换构成数字TDE，将先到的促进事件与后到的触发事件间隔转为输出脉冲串；外部可配置时钟分频器控制时间尺度，设计意图覆盖纳秒至秒，不需直接求解指数微分方程。",
+      "claim_type": "proposed_architecture",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "VHDL数字电路结构设计",
+          "design": "gain、EPSC、EU-SSG三块；全局时钟与参考tick两时钟域。",
+          "comparator": null,
+          "measure": "时间窗口与事件编码构造",
+          "unit_of_analysis": "所述模型或实验条件的一条轨迹或参数组合",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "III.A Gain-generator block",
+            "figure": "Figure 2",
+            "equation": "3–7",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "本文提出以整数倒计时、加法、移位及整数到脉冲转换构成数字TDE，将先到的促进事件与后到的触发事件间隔转为输出脉冲串；外部可配置时钟分频器控制时间尺度，设计意图覆盖纳秒至秒，不需直接求解指数微分方程。",
+        "boundary": "设计范围非全范围实测；默认16位，非全异步；EU-SSG无LIF不应期。",
+        "negative_result": null,
+        "non_inference": "不能把线性计时器当作生理指数电流或独立神经机制。",
+        "unresolved": "全时间范围、位宽溢出和时钟配置适用边界。",
+        "unresolved_attribution": "所供原文未解决或未报告。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "如何用整数电路实现可调尺度的事件间时差编码？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C3",
+        "C4",
+        "C5"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "在检测窗口100 µs、tau=0、weight/gain设为5、decay=1及饱和阈值256的12类RTL输入测试中，单独促进或触发、触发先到、同时到达和间隔超窗均无输出；在窗内促进先到触发时产生输出，间隔增加时总体脉冲数减少、ISI增加。",
+      "claim_type": "simulation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "12类输入组合RTL仿真",
+          "design": "参考tick为微秒；简单输入及后续多事件输入。",
+          "comparator": "正时间差、负时间差、零时间差与超窗",
+          "measure": "是否输出、脉冲数及ISI",
+          "unit_of_analysis": "所述模型或实验条件的一条轨迹或参数组合",
+          "sample_size_as_reported": "12种输入情形；不是12次随机重复。",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "IV.A Simulation",
+            "figure": "Figure 7A–H",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在检测窗口100 µs、tau=0、weight/gain设为5、decay=1及饱和阈值256的12类RTL输入测试中，单独促进或触发、触发先到、同时到达和间隔超窗均无输出；在窗内促进先到触发时产生输出，间隔增加时总体脉冲数减少、ISI增加。",
+        "boundary": "同时到达为零输出；总体趋势后文有量化误差局部例外。",
+        "negative_result": "触发先到、仅一输入、Δt=0和超窗口不产生输出。",
+        "non_inference": "不能推断任意连续输入都按孤立脉冲对映射。",
+        "unresolved": "更广时序和位宽设置下的完整边界。",
+        "unresolved_attribution": "所供原文未解决或未报告。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "数字TDE怎样区分顺序、零时差和超窗事件？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C3",
+        "C5"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "在本文RTL多事件测试中，连续促进输入累加gain，单个促进后多次触发累加EPSC并重新启动输出串；反复窗内事件对使内部值达到设定饱和阈值，从而限制最大响应，不能再由单一最近时差解释输出。",
+      "claim_type": "simulation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "多事件与饱和RTL输入测试",
+          "design": null,
+          "comparator": "孤立促进—触发对",
+          "measure": "gain、EPSC及输出串变化",
+          "unit_of_analysis": "所述模型或实验条件的一条轨迹或参数组合",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "IV.A Simulation",
+            "figure": "Figure 7I–L（PDF第8页）",
+            "equation": "3、6",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在本文RTL多事件测试中，连续促进输入累加gain，单个促进后多次触发累加EPSC并重新启动输出串；反复窗内事件对使内部值达到设定饱和阈值，从而限制最大响应，不能再由单一最近时差解释输出。",
+        "boundary": "有历史依赖与可配置饱和；限所示参数。",
+        "negative_result": "高重复输入导致内部值饱和。",
+        "non_inference": "不能由连续输入的脉冲数唯一反解某一时差。",
+        "unresolved": "具体输入统计下的饱和及误编码频率。",
+        "unresolved_attribution": "所供原文未解决或未报告。"
+      },
+      "broad_directions": [
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "重复事件如何改变TDE孤立时差映射？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "以14个不同正时差脉冲对、分别设置700 µs和70 ms窗口的两种数字TDE仿真中，尽管内部仅用线性操作，输出串内ISI仍呈非线性增加；接近窗口尾端时输出事件不足以呈现完整曲线。",
+      "claim_type": "simulation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "不同时间尺度的ISI序列仿真",
+          "design": "微秒配置tau0、weight4、decay2；毫秒配置tau0、weight0、decay3。",
+          "comparator": null,
+          "measure": "逐对ISI与输出串长度",
+          "unit_of_analysis": "所述模型或实验条件的一条轨迹或参数组合",
+          "sample_size_as_reported": "14种Δt；两个时间尺度配置。",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "IV.A Simulation",
+            "figure": "Figures 8–9",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "以14个不同正时差脉冲对、分别设置700 µs和70 ms窗口的两种数字TDE仿真中，尽管内部仅用线性操作，输出串内ISI仍呈非线性增加；接近窗口尾端时输出事件不足以呈现完整曲线。",
+        "boundary": "不是相同参数只改变时间尺度；最小Δt为20 ns而非零。",
+        "negative_result": "约550 µs/55 ms以上，脉冲太少无法显示完整ISI剖面。",
+        "non_inference": "不等于真实EPSC指数衰减或全范围精确可逆编码。",
+        "unresolved": "少事件条件下解码精度。",
+        "unresolved_attribution": "所供原文未解决或未报告。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "线性整数模块能否产生非线性ISI时序？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C5"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "在本文微秒与毫秒尺度时差扫描中，单TDE脉冲数调谐曲线整体近线性，但微秒配置在Δt=300 µs出现由整数到脉冲转换误差引起的局部峰；毫秒配置图中未能显著呈现该峰并不说明误差消失。",
+      "claim_type": "simulation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "时差—脉冲数扫描",
+          "design": null,
+          "comparator": "两种尺度的配置",
+          "measure": "调谐曲线及局部非单调峰",
+          "unit_of_analysis": "所述模型或实验条件的一条轨迹或参数组合",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "IV.A Simulation",
+            "figure": "Figures 10–11",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在本文微秒与毫秒尺度时差扫描中，单TDE脉冲数调谐曲线整体近线性，但微秒配置在Δt=300 µs出现由整数到脉冲转换误差引起的局部峰；毫秒配置图中未能显著呈现该峰并不说明误差消失。",
+        "boundary": "精度受脉冲生成误差及两时钟域共同影响。",
+        "negative_result": "微秒曲线有300 µs局部误差峰。",
+        "non_inference": "不能称全范围严格单调、无误差或毫秒配置消除了固有误差。",
+        "unresolved": "位宽、tick及脉冲生成误差对解码的影响。",
+        "unresolved_attribution": "所供原文未解决或未报告。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "数字量化误差会否破坏时差—脉冲数单调性？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C4",
+        "C6"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "在四个不同参数TDE的仿真人口中，共享tau=0及gain/EPSC饱和3000，合计输出数对时差呈可用指数拟合的响应：微秒扫描R²=0.87、RMSE=14.61，毫秒扫描R²=0.93、RMSE=42.24。",
+      "claim_type": "simulation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "异质参数人口的调谐扫描及指数拟合",
+          "design": "Δt20 ns–750 µs步20 µs；20 ns–75 ms步5 ms。",
+          "comparator": "单元近线性曲线与人口合计",
+          "measure": "人口输出脉冲数、拟合R²/RMSE",
+          "unit_of_analysis": "所述模型或实验条件的一条轨迹或参数组合",
+          "sample_size_as_reported": "4个TDE单位，非4个独立设备；重复数未给。",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "IV.A Simulation",
+            "figure": "Figures 12–13（PDF第10页）；Table I",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在四个不同参数TDE的仿真人口中，共享tau=0及gain/EPSC饱和3000，合计输出数对时差呈可用指数拟合的响应：微秒扫描R²=0.87、RMSE=14.61，毫秒扫描R²=0.93、RMSE=42.24。",
+        "boundary": "表I参数数字未进入页文本，图像未读；不同尺度RMSE不可直接排名。",
+        "negative_result": null,
+        "non_inference": "不能推断组合已提高声音分类准确率，或人口是真指数机制。",
+        "unresolved": "参数完整值、拟合CI与下游任务收益。",
+        "unresolved_attribution": "所供原文未解决或未报告。"
+      },
+      "broad_directions": [
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "异质TDE组合能否形成近指数的人口时差响应？"
+      ],
+      "shared_evidence_with": [
+        "C5",
+        "C7"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "在XC6SLX150T FPGA上以4单元人口、微秒tick、固定Δt=100 µs且每秒刺激一次，本文对TDE3的ISI比较行为、综合后和实现后仿真，以及示波器和AER记录，报告Pearson相关最低为0.99。",
+      "claim_type": "hardware_measurement",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "FPGA输出脉冲实测与各级仿真比较",
+          "design": "示波器直接测量及jAER收集；同一TDE3输出用于相关计算。",
+          "comparator": "行为仿真对另外四种测量/仿真来源",
+          "measure": "输出ISI的Pearson相关",
+          "unit_of_analysis": "所述模型或实验条件的一条轨迹或参数组合",
+          "sample_size_as_reported": "4单元人口；比较TDE3；独立刺激重复数未报告。",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "IV.B Field-Programmable Gate Array",
+            "figure": "Figures 14–16",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在XC6SLX150T FPGA上以4单元人口、微秒tick、固定Δt=100 µs且每秒刺激一次，本文对TDE3的ISI比较行为、综合后和实现后仿真，以及示波器和AER记录，报告Pearson相关最低为0.99。",
+        "boundary": "只有固定时差配置；相关系数非绝对时间误差。",
+        "negative_result": null,
+        "non_inference": "不能推断全时差范围都一致或多来源属于独立实现复现。",
+        "unresolved": "采样误差与各条件绝对偏差。",
+        "unresolved_attribution": "所供原文未解决或未报告。"
+      },
+      "broad_directions": [
+        "methods-causal",
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "数字TDE综合到FPGA后是否保持示例时序？"
+      ],
+      "shared_evidence_with": [
+        "C6"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "本文数字TDE的正文讨论报告单元需要179个LUT及140个寄存器，但摘要记为122个slice registers；页文本未给表II/III的全部数值，因而资源计数及各FPGA最大并行单元数不能完全核实。",
+      "claim_type": "reported_hardware_resource",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "综合资源报告的文本记录",
+          "design": null,
+          "comparator": "不同FPGA资源估计与文献高层比较",
+          "measure": "LUT和寄存器数",
+          "unit_of_analysis": "所述模型或实验条件的一条轨迹或参数组合",
+          "sample_size_as_reported": "单TDE综合；不是多芯片测量样本。",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "V Discussion and Conclusion",
+            "figure": "Tables II（PDF第11页）、III",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "本文数字TDE的正文讨论报告单元需要179个LUT及140个寄存器，但摘要记为122个slice registers；页文本未给表II/III的全部数值，因而资源计数及各FPGA最大并行单元数不能完全核实。",
+        "boundary": "计数可能不同设计/口径，但正文未解释，不能自行调和。",
+        "negative_result": null,
+        "non_inference": "不能据摘要约400单元宣称已部署400或实际比所有神经元设计更省资源。",
+        "unresolved": "122与140计数原因及表格全部数值。",
+        "unresolved_attribution": "摘要PDF第1页、正文第13页数值冲突；表格像素缺失。"
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "数字TDE的资源预算能被来源完整核实吗？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "对XC6SLX150T单TDE简单事件刺激，本文SAIF功耗估计小于1 mW（其中98%记为静态）；板级实测从复位激活的功耗到运行时功耗之差被报告约1.5 mW，因此小于1 mW不是该板级实测差值。",
+      "claim_type": "hardware_measurement_and_estimation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "SAIF估计及板级两个状态功耗测量",
+          "design": "程序相同；复位激活与解除后事件刺激比较。",
+          "comparator": "FPGA复位与运行状态；另有模拟TDE电路仿真，非匹配硬件对照",
+          "measure": "估计单元功耗及板级差值",
+          "unit_of_analysis": "同一硬件设置的两状态功耗；重复次数未知",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "IV.B Field-Programmable Gate Array",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "对XC6SLX150T单TDE简单事件刺激，本文SAIF功耗估计小于1 mW（其中98%记为静态）；板级实测从复位激活的功耗到运行时功耗之差被报告约1.5 mW，因此小于1 mW不是该板级实测差值。",
+        "boundary": "静态占比归于估计；板级差值非直接分离TDE所有动态开销，文本数值可能有提取缺位。",
+        "negative_result": null,
+        "non_inference": "不能将小于1 mW写成实测或宣称数字优于模拟能效。",
+        "unresolved": "板级记录的完整电压电流、重复误差和严格单元分离。",
+        "unresolved_attribution": "所供原文未解决或未报告。"
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "数字TDE功耗估计与板级实测差值有何区别？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "在10×10×2 m虚拟房间的RIR音频、声源2 m处−90°/0°/+90°、500 Hz半秒周期信号驱动的实时FPGA测试中，64通道NAS的502.38 Hz通道向左右各4个TDE供事件，极侧音频主要激活对应人口，前方音频激活两侧，展示三种侧向位置区分。",
+      "claim_type": "hardware_proof_of_concept",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "虚拟声学音频与实时FPGA事件处理",
+          "design": "电脑输入渲染音频；jAER记录；反向连接用于两侧时差。",
+          "comparator": "三个给定方位",
+          "measure": "左右人口输出活动",
+          "unit_of_analysis": "所述模型或实验条件的一条轨迹或参数组合",
+          "sample_size_as_reported": "3个位置；左右各4 TDE；重复数未报告。",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "IV.C Real-Time Neuromorphic Application",
+            "figure": "Figures 17–18",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在10×10×2 m虚拟房间的RIR音频、声源2 m处−90°/0°/+90°、500 Hz半秒周期信号驱动的实时FPGA测试中，64通道NAS的502.38 Hz通道向左右各4个TDE供事件，极侧音频主要激活对应人口，前方音频激活两侧，展示三种侧向位置区分。",
+        "boundary": "虚拟声源，不是实际房间测距；只有一个音调/通道；前方小不对称归因I2S顺序采样。",
+        "negative_result": null,
+        "non_inference": "不能推断连续角度定位精度、真实混响鲁棒性或相对Jeffress匹配优势。",
+        "unresolved": "物理声场、宽带声音、多源、误差统计与闭环控制。",
+        "unresolved_attribution": "所供原文未解决或未报告。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "TDE人口能否将渲染音频的左右时差转换为侧向信息？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "保留10项候选，涵盖整数TDE、基本无输出边界、多事件累加饱和、跨尺度ISI、量化峰、人口拟合、FPGA时序一致、资源冲突、功耗估计/测量和虚拟音频侧向化。单元曲线并非严格无误差单调；FPGA相关只测试指定时差；少于1 mW属估计，约1.5 mW为板级差值。122/140寄存器冲突及表格缺失未解决。",
+  "shared_evidence": [
+    {
+      "claim_id": "C1",
+      "with": [
+        "C2",
+        "C3",
+        "C4",
+        "C5"
+      ]
+    },
+    {
+      "claim_id": "C2",
+      "with": [
+        "C1",
+        "C3",
+        "C5"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C1",
+        "C2"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C1",
+        "C5"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C1",
+        "C2",
+        "C4",
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C5",
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C6"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [
+      {
+        "claim_id": "C1",
+        "pdf_page": 4,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "text_anchor_matched": true,
+        "semantic_scope_checked_by": "inherited_GPT"
+      },
+      {
+        "claim_id": "C2",
+        "pdf_page": 8,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "text_anchor_matched": true,
+        "semantic_scope_checked_by": "inherited_GPT"
+      },
+      {
+        "claim_id": "C3",
+        "pdf_page": 9,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "text_anchor_matched": true,
+        "semantic_scope_checked_by": "inherited_GPT"
+      },
+      {
+        "claim_id": "C4",
+        "pdf_page": 9,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "text_anchor_matched": true,
+        "semantic_scope_checked_by": "inherited_GPT"
+      },
+      {
+        "claim_id": "C5",
+        "pdf_page": 10,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "text_anchor_matched": true,
+        "semantic_scope_checked_by": "inherited_GPT"
+      },
+      {
+        "claim_id": "C6",
+        "pdf_page": 11,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "text_anchor_matched": true,
+        "semantic_scope_checked_by": "inherited_GPT"
+      },
+      {
+        "claim_id": "C7",
+        "pdf_page": 11,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "text_anchor_matched": true,
+        "semantic_scope_checked_by": "inherited_GPT"
+      },
+      {
+        "claim_id": "C8",
+        "pdf_page": 13,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "text_anchor_matched": true,
+        "semantic_scope_checked_by": "inherited_GPT"
+      },
+      {
+        "claim_id": "C9",
+        "pdf_page": 12,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "text_anchor_matched": true,
+        "semantic_scope_checked_by": "inherited_GPT"
+      },
+      {
+        "claim_id": "C10",
+        "pdf_page": 13,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "text_anchor_matched": true,
+        "semantic_scope_checked_by": "inherited_GPT"
+      }
+    ],
+    "model_findings": [
+      {
+        "claim_id": "C8",
+        "issue": "摘要122寄存器与正文140寄存器未解释。",
+        "suggested_correction": "保存冲突，人工读取完整综合报告/表II。",
+        "pdf_page": 13,
+        "resolved": false
+      },
+      {
+        "claim_id": "C9",
+        "issue": "摘要与结论只强调小于1 mW，正文另有约1.5 mW实测差值。",
+        "suggested_correction": "区分估计与实测，避免同一数值标签。",
+        "pdf_page": 12,
+        "resolved": true
+      },
+      {
+        "claim_id": "C10",
+        "issue": "证明概念音频来自虚拟RIR房间。",
+        "suggested_correction": "不写成真实房间定位验证。",
+        "pdf_page": 12,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "表I配置与表II/III精确资源数字没有完整文本可查。",
+        "suggested_correction": "缺失部分defer，需图像或表格原始数据。",
+        "pdf_page": 10,
+        "resolved": false
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T07:02:08.192Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "61da8f00dd587870cda3368b4ff3af2176e9fc4163c83da7c8bdba6617057ef6",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

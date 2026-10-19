@@ -1,0 +1,109 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Predictability of complex networks</title><style>body{max-width:940px;margin:40px auto;padding:0 24px;background:#fffdf7;color:#12372f;font:16px/1.8 Georgia,serif}h1{font-size:26px;line-height:1.4}h2{font-size:20px;line-height:1.5}h3{font-size:16px}article{padding:26px 0;border-top:1px solid #bec4b8}small{color:#68766e}dl{display:grid;grid-template-columns:120px 1fr;gap:8px 20px}dt{font-weight:bold}dd{margin:0}li{padding:8px 0}p,dd{overflow-wrap:anywhere}.note{background:#eef2e2;padding:14px;border-left:3px solid #738968}summary{cursor:pointer}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.7 monospace}@media(max-width:600px){body{margin:24px auto;padding:0 18px}dl{grid-template-columns:1fr;gap:3px}dd{margin-bottom:12px}}@media print{body{margin:0;background:white}details{display:block}}</style><link rel="stylesheet" href="../../commons-v02.css?v=20261020-1"><link rel="stylesheet" href="../../examples.css?v=20260928-2"><link rel="stylesheet" href="../../site.css?v=20261020-1"><script defer src="../../site.js?v=20261020-1"></script><script defer src="../../report-ui.js?v=20261020-1"></script></head><body class="portal-page report-page" data-cc-report-shell="1" data-page="library" data-site-prefix="../../" data-library-paper="paper-doi-335edd55e57b41a6" data-report-language="zh" data-claim-records="{&quot;C1&quot;:&quot;structured-paper-doi-335edd55e57b41a6-1&quot;,&quot;C2&quot;:&quot;structured-paper-doi-335edd55e57b41a6-2&quot;,&quot;C3&quot;:&quot;structured-paper-doi-335edd55e57b41a6-3&quot;,&quot;C4&quot;:&quot;structured-paper-doi-335edd55e57b41a6-4&quot;,&quot;C5&quot;:&quot;structured-paper-doi-335edd55e57b41a6-5&quot;,&quot;C6&quot;:&quot;structured-paper-doi-335edd55e57b41a6-6&quot;,&quot;C7&quot;:&quot;structured-paper-doi-335edd55e57b41a6-7&quot;,&quot;C8&quot;:&quot;structured-paper-doi-335edd55e57b41a6-8&quot;,&quot;C9&quot;:&quot;structured-paper-doi-335edd55e57b41a6-9&quot;,&quot;C10&quot;:&quot;structured-paper-doi-335edd55e57b41a6-10&quot;}"><header></header><main id="report-content"><div id="report-tools"></div><small>CLAIM COMMONS / 阅读报告</small><h1>Predictability of complex networks</h1><p class="note">AI 文本提取候选，尚待人工核对。图像像素未读取；PDF 页码指文件中的页序。</p><p>PNAS2026全文7页、所有公式/图注/参考已完整评估，SI未供应。提出spin能量及PI表述、局部评分采样和结构稀疏化；合成/真实图结果是算法相关计算证据。P归一/tie/局部独立free-energy、γ0上界和目标边条件化仍待完整证明，ER与无信息基线仅限定总体结构评分；不推生物机制或独立复制。</p><a href="https://doi.org/10.1073/pnas.2535161123" rel="noreferrer">查看所读原文版本 ↗</a><details><summary>贡献清单与处理决定</summary><ul><li><b>作者把原图的删边掩码表述为边自旋、把缺失与不存在边的评分比较映射为能量，提出在高温且删边比例约束下从平均能量求AUC型指标。</b><br>include · 保留该命题的证据条件与边界</li><li><b>若每个边对的评分只依赖一个有限邻域，且删边掩码采用同一局部分布，则平均该对的比较只需采样该邻域，邻域外边不会改变该局部评分。</b><br>include · 保留该命题的证据条件与边界</li><li><b>对于独立保留概率1−P的边掩码，给定节点对的每个原有共同邻居须两条边同时保留，得到共同邻居生成函数中x替换为1−(1−P)²+(1−P)²x。</b><br>include · 保留该命题的证据条件与边界</li><li><b>论文定义PI γ0为完整结构评分对存在/不存在边的排序统计，并明确γ与γ0依赖具体算法；它不是仅由邻接矩阵给出的算法无关能力界。</b><br>include · 保留该命题的证据条件与边界</li><li><b>正文指出网络级γ对删边率一般不具单调性；当可用拓扑全消失且所有候选评分并列时，采用半权处理ties才得到AUC随机基线0.5。</b><br>include · 保留该命题的证据条件与边界</li><li><b>ER独立同概率生成且无目标标签泄漏/辅助先验时，图结构对缺失与从未存在边没有总体区分信息，对这些评分的期望AUC为0.5；单次有限图评估无需精确等于0.5。</b><br>include · 保留该命题的证据条件与边界</li><li><b>合成图的所报告SDM比较显示，BA优先连接强度、WS重连和配置模型的度分布参数改变可预测性，说明该算法的评分区分与所选拓扑异质性/聚类相关。</b><br>include · 保留该命题的证据条件与边界</li><li><b>真实图衍生null模型中，按作者SDM结果，保持平均度、度序列到联合度模式的控制逐步更能保持可预测性，联合度控制对应其度依赖评分所用的信息。</b><br>include · 保留该命题的证据条件与边界</li><li><b>局部采样在所报告BA、WS和真实图实验中与全图随机分割AUC接近，支持在选定局部评分与图规模条件下用较小邻域估计比较。</b><br>include · 保留该命题的证据条件与边界</li><li><b>Figure2在P=.2与.8的SDM真实图比较中报告PI与实际预测指标有关联，但该关联不证明普适最大精度或跨其他算法/动态网络的校准。</b><br>include · 保留该命题的证据条件与边界</li><li><b>全局free energy精确分解为独立单边Fe</b><br>defer · 局部评分的邻域通常重叠，期望可线性求和不自动使partition function乘积化；高温极限/外场约束的完整SI证明缺失</li><li><b>动态、多关系、矩阵分解/ML非局部与算法无关界</b><br>include · 作者列未来研究，未在本研究实证/证明</li><li><b>应用于生物/社会/基础设施、数据量选择与生成历史</b><br>exclude · 应用启发而非本篇新生物验证/因果生成识别</li></ul></details><article><small>C1 / 假说 / 预测 · theoretical</small><h2>作者把原图的删边掩码表述为边自旋、把缺失与不存在边的评分比较映射为能量，提出在高温且删边比例约束下从平均能量求AUC型指标。</h2><h3>Evidence</h3><p>spin/Hamiltonian/高温表述</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>边掩码与评分模型；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 2 · Equations1–4; Figure1</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>作者把原图的删边掩码表述为边自旋、把缺失与不存在边的评分比较映射为能量，提出在高温且删边比例约束下从平均能量求AUC型指标。</dd><dt>适用边界</dt><dd>评分依赖同一剩余图；完整推导在未供应SI，AUC ties、P归一和βh随β缩放需要明确，不当作所有算法严格等价已证。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>图算法模拟或真实图重建不验证生物连接/临床机制；结构相关与局部评分成功不唯一识别生成历史或未来网络动力。</dd><dt>未解决</dt><dd>Eq4归一未显式P且Hamiltonian含外场；固定βh与导数约定及缺失边条件化未给完整解释。</dd></dl><h3>相关问题</h3><ul><li>在源文所述条件下，作者把原图的删边掩码表述为边自旋、把缺失与不存在边的评分比较映射为能量，提出在高温且删边比例约束下从平均能量求AUC型指标。是否成立？</li></ul></article><article><small>C2 / 直接结果 · theoretical</small><h2>若每个边对的评分只依赖一个有限邻域，且删边掩码采用同一局部分布，则平均该对的比较只需采样该邻域，邻域外边不会改变该局部评分。</h2><h3>Evidence</h3><p>局部评分依赖和期望比较</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>局部边邻域与随机掩码；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 3 · Local Sampling; Equation9</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>若每个边对的评分只依赖一个有限邻域，且删边掩码采用同一局部分布，则平均该对的比较只需采样该邻域，邻域外边不会改变该局部评分。</dd><dt>适用边界</dt><dd>仅CN/PA/SDM等有限邻域；邻域规模依赖度和方法，低平均度不保证所有枢纽邻域小；固定删边数量时需正确相关掩码而非无条件独立近似。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>图算法模拟或真实图重建不验证生物连接/临床机制；结构相关与局部评分成功不唯一识别生成历史或未来网络动力。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>在源文所述条件下，若每个边对的评分只依赖一个有限邻域，且删边掩码采用同一局部分布，则平均该对的比较只需采样该邻域，邻域外边不会改变该局部评分。是否成立？</li></ul></article><article><small>C3 / 直接结果 · theoretical</small><h2>对于独立保留概率1−P的边掩码，给定节点对的每个原有共同邻居须两条边同时保留，得到共同邻居生成函数中x替换为1−(1−P)²+(1−P)²x。</h2><h3>Evidence</h3><p>独立边稀疏化的生成函数变换</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>给定节点对的不同共同邻居/边；数学分布而非实验n</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 5 · Equations10–13</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>对于独立保留概率1−P的边掩码，给定节点对的每个原有共同邻居须两条边同时保留，得到共同邻居生成函数中x替换为1−(1−P)²+(1−P)²x。</dd><dt>适用边界</dt><dd>原共同邻居及保留模型已固定；多特征或不同节点对可共享边产生相关，不能把全部链接贡献视作独立样本。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>图算法模拟或真实图重建不验证生物连接/临床机制；结构相关与局部评分成功不唯一识别生成历史或未来网络动力。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>在源文所述条件下，对于独立保留概率1−P的边掩码，给定节点对的每个原有共同邻居须两条边同时保留，得到共同邻居生成函数中x替换为1−(1−P)²+(1−P)²x。是否成立？</li></ul></article><article><small>C4 / 直接结果 · methodological</small><h2>论文定义PI γ0为完整结构评分对存在/不存在边的排序统计，并明确γ与γ0依赖具体算法；它不是仅由邻接矩阵给出的算法无关能力界。</h2><h3>Evidence</h3><p>算法相关评分统计</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>原图边/非边对；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 5 · Equations15,17; Discussion p6</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>论文定义PI γ0为完整结构评分对存在/不存在边的排序统计，并明确γ与γ0依赖具体算法；它不是仅由邻接矩阵给出的算法无关能力界。</dd><dt>适用边界</dt><dd>声称随机删除p→0的极限需保留目标边移除条件；PA等评分可能包含目标边对原度的贡献，缺乏SI不能认定完整图PI就是无信息泄漏性能上限。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>图算法模拟或真实图重建不验证生物连接/临床机制；结构相关与局部评分成功不唯一识别生成历史或未来网络动力。</dd><dt>未解决</dt><dd>PI的普适/甚至全删边率上界未由本主文证明。</dd></dl><h3>相关问题</h3><ul><li>在源文所述条件下，论文定义PI γ0为完整结构评分对存在/不存在边的排序统计，并明确γ与γ0依赖具体算法；它不是仅由邻接矩阵给出的算法无关能力界。是否成立？</li></ul></article><article><small>C5 / 直接结果 · theoretical</small><h2>正文指出网络级γ对删边率一般不具单调性；当可用拓扑全消失且所有候选评分并列时，采用半权处理ties才得到AUC随机基线0.5。</h2><h3>Evidence</h3><p>平均评分比较和边界分析</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>给定局部拓扑评分；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 5 · Heaviside Step Function; Equations14–16</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>正文指出网络级γ对删边率一般不具单调性；当可用拓扑全消失且所有候选评分并列时，采用半权处理ties才得到AUC随机基线0.5。</dd><dt>适用边界</dt><dd>不使用外部特征/标签先验；h(0)未在主文定义，若零并列不计.5则不能直接得到.5；不能从信息越多通常更好推出γ0全局上界。</dd><dt>实际负结果</dt><dd>删边曲线并非一般单调递减。</dd><dt>不能推出</dt><dd>图算法模拟或真实图重建不验证生物连接/临床机制；结构相关与局部评分成功不唯一识别生成历史或未来网络动力。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>在源文所述条件下，正文指出网络级γ对删边率一般不具单调性；当可用拓扑全消失且所有候选评分并列时，采用半权处理ties才得到AUC随机基线0.5。是否成立？</li></ul></article><article><small>C6 / 直接结果 · theoretical</small><h2>ER独立同概率生成且无目标标签泄漏/辅助先验时，图结构对缺失与从未存在边没有总体区分信息，对这些评分的期望AUC为0.5；单次有限图评估无需精确等于0.5。</h2><h3>Evidence</h3><p>ER总体随机独立边的交换性/源文主张</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>图总体及有限图/样本；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 5 · Predictability in Synthetic Networks; Figure3C</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>ER独立同概率生成且无目标标签泄漏/辅助先验时，图结构对缺失与从未存在边没有总体区分信息，对这些评分的期望AUC为0.5；单次有限图评估无需精确等于0.5。</dd><dt>适用边界</dt><dd>限定结构评分及正确删边机制；原文“any network/any algorithm exactly .5”过宽，完整SI证明未读；不是外部有边信息算法的界。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>图算法模拟或真实图重建不验证生物连接/临床机制；结构相关与局部评分成功不唯一识别生成历史或未来网络动力。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>在源文所述条件下，ER独立同概率生成且无目标标签泄漏/辅助先验时，图结构对缺失与从未存在边没有总体区分信息，对这些评分的期望AUC为0.5；单次有限图评估无需精确等于0.5。是否成立？</li></ul></article><article><small>C7 / 直接结果 · empirical</small><h2>合成图的所报告SDM比较显示，BA优先连接强度、WS重连和配置模型的度分布参数改变可预测性，说明该算法的评分区分与所选拓扑异质性/聚类相关。</h2><h3>Evidence</h3><p>参数化生成图的SDM模拟</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>合成图实例与评分；具体重复n未在主文给；未报告 / 不适用</dd><dt>不确定性</dt><dd>无供应具体CI、每组n或检验p</dd><dt>原文位置</dt><dd>PDF 5 · Figure1G; Figure3A–C,G–I</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>合成图的所报告SDM比较显示，BA优先连接强度、WS重连和配置模型的度分布参数改变可预测性，说明该算法的评分区分与所选拓扑异质性/聚类相关。</dd><dt>适用边界</dt><dd>图形趋势非所有算法定理；幂律指数记号P(k)∼k^α与文字“较小指数更重尾”约定未明确，不自动建立唯一参数—效果律。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>图算法模拟或真实图重建不验证生物连接/临床机制；结构相关与局部评分成功不唯一识别生成历史或未来网络动力。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>在源文所述条件下，合成图的所报告SDM比较显示，BA优先连接强度、WS重连和配置模型的度分布参数改变可预测性，说明该算法的评分区分与所选拓扑异质性/聚类相关。是否成立？</li></ul></article><article><small>C8 / 直接结果 · empirical</small><h2>真实图衍生null模型中，按作者SDM结果，保持平均度、度序列到联合度模式的控制逐步更能保持可预测性，联合度控制对应其度依赖评分所用的信息。</h2><h3>Evidence</h3><p>不同程度度结构保留null模型</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>共享真实图与null重排实例；真实图数/重排重复数未在供应主文给</dd><dt>不确定性</dt><dd>图注没有具体显著性/CI</dd><dt>原文位置</dt><dd>PDF 5 · Figure3D–F; Discussion</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>真实图衍生null模型中，按作者SDM结果，保持平均度、度序列到联合度模式的控制逐步更能保持可预测性，联合度控制对应其度依赖评分所用的信息。</dd><dt>适用边界</dt><dd>不证明联合度是全部网络或非局部算法的充分生成统计，也不是独立真实图复制；具体数据/控制实现SI缺失。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>图算法模拟或真实图重建不验证生物连接/临床机制；结构相关与局部评分成功不唯一识别生成历史或未来网络动力。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>在源文所述条件下，真实图衍生null模型中，按作者SDM结果，保持平均度、度序列到联合度模式的控制逐步更能保持可预测性，联合度控制对应其度依赖评分所用的信息。是否成立？</li></ul></article><article><small>C9 / 直接结果 · empirical</small><h2>局部采样在所报告BA、WS和真实图实验中与全图随机分割AUC接近，支持在选定局部评分与图规模条件下用较小邻域估计比较。</h2><h3>Evidence</h3><p>九局部指标及local/full采样比较</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>图实例、重复删边与边对；未报告 / 不适用</dd><dt>不确定性</dt><dd>Figure2B阴影为个体能量的SD不是平均值CI；数值/运行时benchmark在未供应SI</dd><dt>原文位置</dt><dd>PDF 4 · Figure2A–D</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>局部采样在所报告BA、WS和真实图实验中与全图随机分割AUC接近，支持在选定局部评分与图规模条件下用较小邻域估计比较。</dd><dt>适用边界</dt><dd>单边对计算缩小不等完整全边对/全网络成本只O平均度；精确free-energy因子分解未由经验吻合证明。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>图算法模拟或真实图重建不验证生物连接/临床机制；结构相关与局部评分成功不唯一识别生成历史或未来网络动力。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>在源文所述条件下，局部采样在所报告BA、WS和真实图实验中与全图随机分割AUC接近，支持在选定局部评分与图规模条件下用较小邻域估计比较。是否成立？</li></ul></article><article><small>C10 / 直接结果 · empirical</small><h2>Figure2在P=.2与.8的SDM真实图比较中报告PI与实际预测指标有关联，但该关联不证明普适最大精度或跨其他算法/动态网络的校准。</h2><h3>Evidence</h3><p>原图PI与删边预测的跨图比较</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>同真实图/同算法；未报告 / 不适用</dd><dt>不确定性</dt><dd>主文近线性/强预测描述，无具体r、CI或样本数</dd><dt>原文位置</dt><dd>PDF 4 · Figure2E–F</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>Figure2在P=.2与.8的SDM真实图比较中报告PI与实际预测指标有关联，但该关联不证明普适最大精度或跨其他算法/动态网络的校准。</dd><dt>适用边界</dt><dd>高删边下仍有关联不等信息损失无影响；不能从横向关联推数据量需求或未来边预测已验证。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>图算法模拟或真实图重建不验证生物连接/临床机制；结构相关与局部评分成功不唯一识别生成历史或未来网络动力。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>在源文所述条件下，Figure2在P=.2与.8的SDM真实图比较中报告PI与实际预测指标有关联，但该关联不证明普适最大精度或跨其他算法/动态网络的校准。是否成立？</li></ul></article><details><summary>核对记录与来源信息</summary><pre>{
+  &quot;coverage&quot;: {
+    &quot;pdf_pages_read&quot;: [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    &quot;results_sections_seen&quot;: [
+      &quot;Spin Glass Model equations1–8&quot;,
+      &quot;Local Sampling equation9&quot;,
+      &quot;Structural Features equations10–13&quot;,
+      &quot;Heaviside/PI equations14–17&quot;,
+      &quot;Synthetic Networks/Null Models&quot;,
+      &quot;Discussion limitations&quot;,
+      &quot;Figures1–3; References&quot;
+    ],
+    &quot;missing_material&quot;: [
+      &quot;完整SI Appendix（数学证明、局部采样/真实网络清单、全部结果S5/S15–S23）未供应&quot;,
+      &quot;图像像素、原始代码/模拟数据未读取&quot;
+    ],
+    &quot;text_pass_complete&quot;: true,
+    &quot;notes&quot;: [
+      &quot;所有供应页文字（含方法/附录/图表文字和参考文献）已完整评估，未采样代替全文。&quot;,
+      &quot;逐条第二审计以已读源比较真实单位、条件、统计与推断范围；不等于实验复现。&quot;
+    ],
+    &quot;reading_mode&quot;: &quot;text_only&quot;,
+    &quot;figure_images_read&quot;: false,
+    &quot;scientific_verification&quot;: false,
+    &quot;source_pdf_offline&quot;: false,
+    &quot;archived_page_text_used&quot;: false
+  },
+  &quot;audit&quot;: {
+    &quot;source_match_checks&quot;: [],
+    &quot;model_findings&quot;: [
+      {
+        &quot;claim_id&quot;: &quot;C1&quot;,
+        &quot;issue&quot;: &quot;平均Hamiltonian/AUC关系的外场、P归一及tie约定主文不完整&quot;,
+        &quot;suggested_correction&quot;: &quot;保留为作者表述，不能自认严格证明&quot;,
+        &quot;pdf_page&quot;: 2,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;Eq5–8独立free-energy与重叠局部评分关系未展开&quot;,
+        &quot;suggested_correction&quot;: &quot;与单对期望局部化区别；精确分解延期&quot;,
+        &quot;pdf_page&quot;: 3,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C4&quot;,
+        &quot;issue&quot;: &quot;γ(P)不具一般单调性却γ0称最大上界；target-edge移除条件未明确&quot;,
+        &quot;suggested_correction&quot;: &quot;PI仅作算法相关统计，普适界待解&quot;,
+        &quot;pdf_page&quot;: 5,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C6&quot;,
+        &quot;issue&quot;: &quot;有限ER实现和任何外部信息算法并非普遍精确.5&quot;,
+        &quot;suggested_correction&quot;: &quot;限定总体期望与结构评分&quot;,
+        &quot;pdf_page&quot;: 5,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C9&quot;,
+        &quot;issue&quot;: &quot;局部单对效率不是全部网络O平均度/独立贡献&quot;,
+        &quot;suggested_correction&quot;: &quot;明确局部适用范围及共享掩码相关&quot;,
+        &quot;pdf_page&quot;: 6,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;SI完整证明、数据清单和统计不可见；参考17AI Ethics/22Leitch skills与所称cavity/LHN不符&quot;,
+        &quot;suggested_correction&quot;: &quot;保留来源绑定问题，不补猜引文或统计&quot;,
+        &quot;pdf_page&quot;: 7,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C7&quot;,
+        &quot;issue&quot;: &quot;配置幂律指数记号与趋势约定不明&quot;,
+        &quot;suggested_correction&quot;: &quot;不强写精确指数方向&quot;,
+        &quot;pdf_page&quot;: 6,
+        &quot;resolved&quot;: false
+      }
+    ],
+    &quot;needs_human_review&quot;: true
+  },
+  &quot;source&quot;: {
+    &quot;filename&quot;: &quot;2026-PNAS-Predictability-Complex-Networks.pdf&quot;,
+    &quot;sha256&quot;: &quot;74e845bc8eacabeef359b524df876a533c2d1af07188b3e403b683a419e81afc&quot;,
+    &quot;source_url&quot;: null,
+    &quot;pdf_page_count&quot;: 7
+  },
+  &quot;provenance&quot;: {
+    &quot;created_at&quot;: &quot;2026-10-07T11:45:13.334400Z&quot;,
+    &quot;workflow&quot;: &quot;claim-commons-pdf-v1&quot;,
+    &quot;prompt_version&quot;: &quot;claim-commons-chatgpt-pdf-2026-10-07.1&quot;,
+    &quot;backend&quot;: &quot;authorized_parallel_GPT&quot;,
+    &quot;model&quot;: &quot;inherited_account_GPT&quot;,
+    &quot;provider_api_key_used&quot;: false,
+    &quot;source_sha256&quot;: &quot;74e845bc8eacabeef359b524df876a533c2d1af07188b3e403b683a419e81afc&quot;,
+    &quot;source_audit_complete&quot;: true,
+    &quot;review_status&quot;: &quot;candidate&quot;,
+    &quot;database_updated&quot;: false
+  }
+}</pre></details></main><footer></footer></body></html>

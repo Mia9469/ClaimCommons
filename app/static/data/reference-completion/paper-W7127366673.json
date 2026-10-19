@@ -1,0 +1,1046 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "The role of connectivity for the degeneracy of the brain’s resting state dynamics",
+    "authors": [
+      "Kashyap Gudibanda",
+      "Jan Fousek",
+      "Spase Petkoski",
+      "Viktor Jirsa"
+    ],
+    "doi": "10.1007/s10827-025-00919-0",
+    "publication_year": 2026,
+    "venue": "Journal of Computational Neuroscience",
+    "url": "https://doi.org/10.1007/s10827-025-00919-0"
+  },
+  "source": {
+    "filename": "paper-W7127366673--The-role-of-connectivity-for-the-degeneracy-of-the-brain-s-resting-state-dynamics.pdf",
+    "sha256": "adca8e133576c62fa833dcb917a48482582a42a1b4c174681f4a59bd85d7ef98",
+    "source_url": "https://link.springer.com/content/pdf/10.1007/s10827-025-00919-0.pdf?error=cookies_not_supported&code=3d966950-aee9-4856-ad0b-f0df29860ba9",
+    "pdf_page_count": 21
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21
+    ],
+    "results_sections_seen": [
+      "Model and connectome",
+      "Laplacian",
+      "Fixed points/stability/composition",
+      "RSM",
+      "Local/global degeneracy",
+      "Effective-current interpretation",
+      "Three-noise simulations/BOLD transform",
+      "Limits/regional heterogeneity",
+      "Allreferences/declarations"
+    ],
+    "missing_material": [
+      "图像像素未阅；Fig1–12全部图注文字已阅。",
+      "源SC、模拟数据/代码和多受试者验证未供应；未报告独立noise seeds。"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "全部21页文字包括所有图注/书目完整阅读；DOI10.1007/s10827-025-00919-0，2026-02-03发表。",
+      "模型技术轨迹/固定点/初态非独立生物实验，理论/近似解释/模拟结果分开。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "84区单HCP同质模型、谱/固定点组织",
+      "role": "result",
+      "source_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "decision": "include",
+      "reason": "g0组合理论与50k样本数值筛选分开，不强推总体枚举。"
+    },
+    {
+      "summary": "η/J/Δ阈值、局部/全局梯度和有效输入",
+      "role": "result",
+      "source_pages": [
+        5,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "decision": "include",
+      "reason": "符号、尺度和冻结邻域近似保留，Δ无strength依赖边界纳入。"
+    },
+    {
+      "summary": "低/中/高noise、初态、switching与occupancy",
+      "role": "result",
+      "source_pages": [
+        5,
+        6,
+        15,
+        16,
+        17
+      ],
+      "decision": "include",
+      "reason": "仅模型内控制，不当实测BOLD拟合/独立生物验证。"
+    },
+    {
+      "summary": "2D真正不变流形、无一般性损失、局部稳定等同全网络及退化度尺度",
+      "role": "interpretation",
+      "source_pages": [
+        4,
+        6,
+        7,
+        8,
+        10,
+        13,
+        18
+      ],
+      "decision": "defer",
+      "reason": "正文强概括未给严格条件/证明；部分定义/谱描述相互不清。"
+    },
+    {
+      "summary": "异质性、多mode、疾病与转移概率路线",
+      "role": "hypothesis",
+      "source_pages": [
+        18
+      ],
+      "decision": "include",
+      "reason": "尚未在本文开展。"
+    },
+    {
+      "summary": "声明和完整参考",
+      "role": "interpretation",
+      "source_pages": [
+        19,
+        20,
+        21
+      ],
+      "decision": "include",
+      "reason": "无自动跨文献复现，数据声明与实际数值分析不同。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "模型以单个HCP-001的84区Desikan-Killiany连接组耦合同质Montbrió双稳态神经质量，Δ=1、J=15、η=−5；无耦合时每区up/down两稳定点可产生2^84组合。",
+      "claim_type": "conditional_model_property",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "QIF-derived mean-field与固定SC",
+          "design": "单SC固定点/阈值/噪声与初态对照；无新增人体干预",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "模型区域和固定点",
+          "sample_size_as_reported": "1个connectome/84nodes；不是84受试者",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": null,
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "模型以单个HCP-001的84区Desikan-Killiany连接组耦合同质Montbrió双稳态神经质量，Δ=1、J=15、η=−5；无耦合时每区up/down两稳定点可产生2^84组合。",
+        "boundary": "同质、全局突触线性r耦合；本实现省略轴突时延，选择双稳态参数。",
+        "negative_result": null,
+        "non_inference": "2^84是无耦合构造计数，不是实测人脑状态数或任意神经模型结论。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "固定拓扑如何约束参数阈值、稳定配置与噪声驱动探索？",
+        "二维投影和局部阈值何时能准确描述全网络，何时不能外推生物动态？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "对每个g用50000个初始条件数值寻根/稳定性筛选时，增强耦合减少所采得稳定配置，高up组成状态更容易失稳。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Newton-Raphson与Jacobian稳定性",
+          "design": "单SC固定点/阈值/噪声与初态对照；无新增人体干预",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "初始条件/模型固定点，非独立神经重复",
+          "sample_size_as_reported": "50000initial conditions每g；实际唯一固定点总数未报",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": null,
+            "figure": "Figs. 4–5",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "对每个g用50000个初始条件数值寻根/稳定性筛选时，增强耦合减少所采得稳定配置，高up组成状态更容易失稳。",
+        "boundary": "组成均匀抽样并在无耦合点附近取样，不是穷举2^84全部状态；收敛/去重细节有限。",
+        "negative_result": null,
+        "non_inference": "不能把抽样稳定比例当真实脑状态总体概率。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "固定拓扑如何约束参数阈值、稳定配置与噪声驱动探索？",
+        "二维投影和局部阈值何时能准确描述全网络，何时不能外推生物动态？"
+      ],
+      "shared_evidence_with": [
+        "C1"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "在声明的对称非负连接图下，归一化Laplacian具有实非负谱，所用低阶特征向量组织整体、半球及前后结构分区。",
+      "claim_type": "conditional_spectral_property",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "L=I−D^-1/2 W D^-1/2谱分解",
+          "design": "单SC固定点/阈值/噪声与初态对照；无新增人体干预",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "单个图的eigenmodes",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": null,
+            "figure": "Fig. 3",
+            "equation": "(2)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在声明的对称非负连接图下，归一化Laplacian具有实非负谱，所用低阶特征向量组织整体、半球及前后结构分区。",
+        "boundary": "W对称非负、连接/degree条件；e1 λ=.1016，e3 .1974等属于该SC，不是通用值。",
+        "negative_result": null,
+        "non_inference": "结构eigenmodes不是实测功能网络或普遍解剖组织证明。",
+        "unresolved": "Fig3称e0∝in-strength；按所写对称归一化式应涉及sqrt-degree，需确认实际算子/表述。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "固定拓扑如何约束参数阈值、稳定配置与噪声驱动探索？",
+        "二维投影和局部阈值何时能准确描述全网络，何时不能外推生物动态？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "RSM通过将固定点的v分量投到两个低阶Laplacian特征向量，呈现组成和半球配置的二维组织，是方便但非唯一的状态表征。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "线性谱投影可视化",
+          "design": "单SC固定点/阈值/噪声与初态对照；无新增人体干预",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "数值固定点的二维坐标",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": null,
+            "figure": "Fig. 4C–D",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "RSM通过将固定点的v分量投到两个低阶Laplacian特征向量，呈现组成和半球配置的二维组织，是方便但非唯一的状态表征。",
+        "boundary": "作者称少信息损失但未给重建误差或不变流形证明；有限点云不自动证明全轨迹仅有两维。",
+        "negative_result": null,
+        "non_inference": "不能宣称真实人脑静息态被严格二维流形完整表示。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "固定拓扑如何约束参数阈值、稳定配置与噪声驱动探索？",
+        "二维投影和局部阈值何时能准确描述全网络，何时不能外推生物动态？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C3"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "本文degeneracy操作性定义为逐区域单参数η/J/Δ扰动直到粗粒up/down翻转的阈值，再按最小或平均值汇总全局。",
+      "claim_type": "method_description",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "准静态参数步进+确定性积分",
+          "design": "单SC固定点/阈值/噪声与初态对照；无新增人体干预",
+          "comparator": null,
+          "measure": "η示例步.2；局部阈值/最低易损区/平均",
+          "unit_of_analysis": "区域参数阈值与同模型状态",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": null,
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "本文degeneracy操作性定义为逐区域单参数η/J/Δ扰动直到粗粒up/down翻转的阈值，再按最小或平均值汇总全局。",
+        "boundary": "一参数方向阈值不是全部等功能参数体积；符号用于标示up/down。",
+        "negative_result": null,
+        "non_inference": "不是生物连接冗余、全参数空间退化度或直接测得脑韧性。",
+        "unresolved": "Eq5用初值归一化且η初值−5，后Eq6等以δη直接相加，绝对/相对和符号尺度不清。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "固定拓扑如何约束参数阈值、稳定配置与噪声驱动探索？",
+        "二维投影和局部阈值何时能准确描述全网络，何时不能外推生物动态？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "所测工作点中，down状态平均degeneracy随in-strength下降，up状态η/J阈值通常上升，但up的Δ阈值低且近似不依in-strength。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "同一SC上的局部阈值分布",
+          "design": "单SC固定点/阈值/噪声与初态对照；无新增人体干预",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "84nodes×所采模型配置",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": null,
+            "figure": "Fig. 7",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所测工作点中，down状态平均degeneracy随in-strength下降，up状态η/J阈值通常上升，但up的Δ阈值低且近似不依in-strength。",
+        "boundary": "局部/全局状态相依，未报独立SC或置信区间。",
+        "negative_result": "up状态Δ参数未表现相同strength依赖。",
+        "non_inference": "不是所有生物参数均受相同拓扑规律。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "固定拓扑如何约束参数阈值、稳定配置与噪声驱动探索？",
+        "二维投影和局部阈值何时能准确描述全网络，何时不能外推生物动态？"
+      ],
+      "shared_evidence_with": [
+        "C5"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "低连接区域的up/down状态较能区分参数易损性，但较高连接的η阈值分布重叠，使仅凭局部状态预测响应更困难。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "阈值/strength条件分布",
+          "design": "单SC固定点/阈值/噪声与初态对照；无新增人体干预",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "模型区域和状态",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": null,
+            "figure": "Fig. 7D–F",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "低连接区域的up/down状态较能区分参数易损性，但较高连接的η阈值分布重叠，使仅凭局部状态预测响应更困难。",
+        "boundary": "J/Δ、η的尺度和局部态作用不同，不可互相替代。",
+        "negative_result": "局部up/down分类并非在所有连接范围都决定相同阈值。",
+        "non_inference": "不能给真实脑区刺激反应的唯一预测器。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "固定拓扑如何约束参数阈值、稳定配置与噪声驱动探索？",
+        "二维投影和局部阈值何时能准确描述全网络，何时不能外推生物动态？"
+      ],
+      "shared_evidence_with": [
+        "C6"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "最小和平均degeneracy映射沿组成轴呈结构化梯度，识别不同配置的最低易损区域及中间组成的阈值低谷。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "区域阈值的全局汇总与组成对照",
+          "design": "单SC固定点/阈值/噪声与初态对照；无新增人体干预",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "同固定点及其相关节点",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": null,
+            "figure": "Figs. 8–9",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "最小和平均degeneracy映射沿组成轴呈结构化梯度，识别不同配置的最低易损区域及中间组成的阈值低谷。",
+        "boundary": "最小阈值和带符号平均不同，符号抵消的零平均不等于所有区域无稳健性。",
+        "negative_result": null,
+        "non_inference": "图上的低谷不直接给真实逃逸概率或脑损伤恢复能力。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "固定拓扑如何约束参数阈值、稳定配置与噪声驱动探索？",
+        "二维投影和局部阈值何时能准确描述全网络，何时不能外推生物动态？"
+      ],
+      "shared_evidence_with": [
+        "C4",
+        "C5"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "作者把连接输入及参数扰动重写为局部有效电流，以相平面/吸引域解释down→up与up→down阈值差别；这是固定点及粗粒条件下的解释。",
+      "claim_type": "interpretation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "冻结其他区域输入的相平面重写",
+          "design": "单SC固定点/阈值/噪声与初态对照；无新增人体干预",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "神经质量模型",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": null,
+            "figure": "Fig. 10",
+            "equation": "(6)–(8)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者把连接输入及参数扰动重写为局部有效电流，以相平面/吸引域解释down→up与up→down阈值差别；这是固定点及粗粒条件下的解释。",
+        "boundary": "全网络扰动时其他节点会响应；局部2v稳定性说明不能替代含耦合的完整Jacobian。",
+        "negative_result": null,
+        "non_inference": "不证明区域异质性和连接组在全部动态/参数下严格等价。",
+        "unresolved": "局部稳定性与网络稳定性的近似范围和阈值尺度待澄清。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "固定拓扑如何约束参数阈值、稳定配置与噪声驱动探索？",
+        "二维投影和局部阈值何时能准确描述全网络，何时不能外推生物动态？"
+      ],
+      "shared_evidence_with": [
+        "C5",
+        "C8"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "低噪声模拟中多数区域保留初态、网络只探索初态邻域；高噪声增加切换并降低连接拓扑对局部活动的约束。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "stochastic Heun三噪声控制",
+          "design": "单SC固定点/阈值/噪声与初态对照；无新增人体干预",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "模型轨迹/时间点",
+          "sample_size_as_reported": "σv=2σr=.014/.037/.051；20分钟段；3类初始组成；独立seed重复n未报",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 15,
+            "section": null,
+            "figure": "Figs. 11–12",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "低噪声模拟中多数区域保留初态、网络只探索初态邻域；高噪声增加切换并降低连接拓扑对局部活动的约束。",
+        "boundary": "g=.55和给定参数；噪声幅度按动态范围缩放，不是实测生物噪声。",
+        "negative_result": "低噪声不产生广泛状态探索；高噪声也不保持细致拓扑预测。",
+        "non_inference": "不能推人脑越少/越多噪声越好。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "固定拓扑如何约束参数阈值、稳定配置与噪声驱动探索？",
+        "二维投影和局部阈值何时能准确描述全网络，何时不能外推生物动态？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "中间噪声下，低strength区域多处down、高strength多处up，中间strength的切换次数较高；它在所测三等级中产生更有结构的跨状态探索。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "同模型噪声/初态对照",
+          "design": "单SC固定点/阈值/噪声与初态对照；无新增人体干预",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "相关节点及轨迹",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 16,
+            "section": null,
+            "figure": "Fig. 11",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "中间噪声下，低strength区域多处down、高strength多处up，中间strength的切换次数较高；它在所测三等级中产生更有结构的跨状态探索。",
+        "boundary": "仅三噪声等级，无全面优化或功能任务得分；“optimal”限定探索指标。",
+        "negative_result": null,
+        "non_inference": "不证明真实脑最佳工作点或全噪声范围全局最优。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "固定拓扑如何约束参数阈值、稳定配置与噪声驱动探索？",
+        "二维投影和局部阈值何时能准确描述全网络，何时不能外推生物动态？"
+      ],
+      "shared_evidence_with": [
+        "C6",
+        "C10"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "高噪声轨迹趋向相同中间组成区、较少依赖初态；中间噪声则可在低/中组成间跳转并受不同degeneracy轮廓引导。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "三初始化×噪声RSM占用图",
+          "design": "单SC固定点/阈值/噪声与初态对照；无新增人体干预",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "模拟time-density，不是实际fMRI参与者",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 16,
+            "section": null,
+            "figure": "Fig. 12",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "高噪声轨迹趋向相同中间组成区、较少依赖初态；中间噪声则可在低/中组成间跳转并受不同degeneracy轮廓引导。",
+        "boundary": "占用度为所模拟时间窗口；未估计完整Markov转移矩阵或独立实测状态。",
+        "negative_result": null,
+        "non_inference": "数值一致不等于生物动态验证或对每个固定点占用概率的定理。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "固定拓扑如何约束参数阈值、稳定配置与噪声驱动探索？",
+        "二维投影和局部阈值何时能准确描述全网络，何时不能外推生物动态？"
+      ],
+      "shared_evidence_with": [
+        "C8",
+        "C10",
+        "C11"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C13",
+      "statement": "把框架推广到区域异质性、更多结构mode、病损/老化和退化度预测转移概率，是作者提出的未来扩展，而非本文已测试的人类病理。",
+      "claim_type": "hypothesis",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "结构/区域参数对应及转化推演",
+          "design": "单SC固定点/阈值/噪声与初态对照；无新增人体干预",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "未来模型/人类条件",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 18,
+            "section": null,
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "把框架推广到区域异质性、更多结构mode、病损/老化和退化度预测转移概率，是作者提出的未来扩展，而非本文已测试的人类病理。",
+        "boundary": "当前同质1connectome、up/down粗粒、省略delay；自然清醒脑动力不能仅凭此完整刻画。",
+        "negative_result": null,
+        "non_inference": "未验证真实卒中、TBI、AD或跨图谱/受试者普遍性。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "固定拓扑如何约束参数阈值、稳定配置与噪声驱动探索？",
+        "二维投影和局部阈值何时能准确描述全网络，何时不能外推生物动态？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "21页完整供源阅读后13项候选。同质84区双稳态模型在单HCP SC上显示连接/组成改变稳定配置、局部η/J/Δ阈值及噪声探索，中噪声仅为三条件内最具结构。2D RSM是投影表征而非已证真实不变人脑流形；冻结邻域、degeneracy尺度/符号、归一化谱零mode、读出采样和数据声明未解，不把数值模型或引用疾病背景当生物验证。",
+  "shared_evidence": [
+    {
+      "claim_id": "C2",
+      "with": [
+        "C1"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C2",
+        "C3"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C5"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C4",
+        "C5"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C5",
+        "C8"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "with": [
+        "C6",
+        "C10"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "with": [
+        "C8",
+        "C10",
+        "C11"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": "C3",
+        "issue": "归一化Laplacian式与e0∝in-strength图注不一致；按对称算子零mode应含sqrt-degree。",
+        "suggested_correction": "保留算子/描述待核对，不强用caption给精确strength关系。",
+        "pdf_page": 7,
+        "resolved": false
+      },
+      {
+        "claim_id": "C5",
+        "issue": "Eq5绝对差分/ηinit<0与正degeneracy、后式原参数加relative δη之间尺度和符号不清。",
+        "suggested_correction": "操作阈值为主，待具体实现确认绝对/相对尺度。",
+        "pdf_page": 10,
+        "resolved": false
+      },
+      {
+        "claim_id": "C9",
+        "issue": "固定点时local independence与局部2v稳定性不是一般全网络Jacobian结论；down node亦有本地实特征值分裂。",
+        "suggested_correction": "只作冻结邻域的近似解释，不能当网络稳定性的普遍定理。",
+        "pdf_page": 8,
+        "resolved": false
+      },
+      {
+        "claim_id": "C4",
+        "issue": "二维投影不唯一，未证明不变/无损流形或全部人脑低维性。",
+        "suggested_correction": "称方便状态表征，保持维度/粗粒限制。",
+        "pdf_page": 9,
+        "resolved": true
+      },
+      {
+        "claim_id": "C11",
+        "issue": "只测三noise等级，把中等“optimal”推成普遍工作点过强。",
+        "suggested_correction": "只保留所测探索意义上的优选。",
+        "pdf_page": 16,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "Methods低频2s分辨、Results BOLD .7s下采样不同链；Fig11称BOLD但正文也称time-averaged source，readout标度未完全明晰。",
+        "suggested_correction": "不猜实际采样流，保留source/BOLD阶段说明。",
+        "pdf_page": 15,
+        "resolved": false
+      },
+      {
+        "claim_id": null,
+        "issue": "Data Availability称无数据生成/分析，与SC和模拟分析不相符；未提供模拟/去重与种子。",
+        "suggested_correction": "保留来源可复核性限制，不因此否认正文模型实验。",
+        "pdf_page": 19,
+        "resolved": false
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T12:28:33.387883Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "adca8e133576c62fa833dcb917a48482582a42a1b4c174681f4a59bd85d7ef98",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

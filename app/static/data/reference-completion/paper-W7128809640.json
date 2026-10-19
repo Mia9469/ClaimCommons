@@ -1,0 +1,1568 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "other",
+  "paper": {
+    "title": "Advancing neuroengineering with Neuromorphic Twins",
+    "authors": [
+      "Michela Chiappalone",
+      "Timothée Levi"
+    ],
+    "doi": "10.1038/s41467-026-68923-1",
+    "publication_year": 2026,
+    "venue": "Nature Communications",
+    "url": "https://doi.org/10.1038/s41467-026-68923-1"
+  },
+  "source": {
+    "filename": "paper-W7128809640--Advancing-neuroengineering-with-Neuromorphic-Twins.pdf",
+    "sha256": "2c8a9e80256aab3091f749c1e0007000e126eb961af34c42354b25719289520d",
+    "source_url": "https://www.nature.com/articles/s41467-026-68923-1.pdf?error=cookies_not_supported&code=32c95bc0-c8ea-4e1a-b31a-0443358dc377",
+    "pdf_page_count": 19
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "results_sections_seen": [
+      "Introduction;Box1",
+      "Signal processing;Table1;Fig2",
+      "Biomimetic network;Tables2–3",
+      "Software tuning;Table4",
+      "Communication;Fig1",
+      "Applications;Figs3–4",
+      "Technical barriers and long-term personalization",
+      "Ethical issues",
+      "Table5 roadmap pp12–13;Translation",
+      "References pp14–19"
+    ],
+    "missing_material": [
+      "图像像素未读取",
+      "被引原始研究完整数据/全文与未附补充材料未提供"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "完整读取19页所有归档文字、4图/Box图图注及5表/参考文献。",
+      "源文为Perspective，记录为other；原型全部来自被引研究，不是本篇新实验。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "作者提出 Neuromorphic Twin 将实时双向生物耦合、硬件仿生神经网络和较慢的软件个体化调参整合为可随生物系统变化的架构。",
+      "role": "interpretation",
+      "source_pages": [
+        2
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "文中所讨论的 Virtual Brain Twins 主要支持离线个体化预测和规划，尚不同于持续实时双向交互的 Neuromorphic Twin 目标。",
+      "role": "review_synthesis",
+      "source_pages": [
+        2
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "作者认为仿生拓扑及神经元/突触动力学有助于自然交互，并优先考虑 conductance-based models 与生物相关塑性，而非仅优化任务性能。",
+      "role": "hypothesis",
+      "source_pages": [
+        3
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "综述汇集 SNN 对 spikes、burst、LFP、ECoG/EEG 事件的检测分类实例，支持事件驱动边缘处理的可行性。",
+      "role": "review_synthesis",
+      "source_pages": [
+        4
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "被引 FPGA STDP spike sorting 系统以检测、特征提取、聚类层处理多通道数据，文中报告 KR260 资源占用低于 6% LUT 和 15% URAM。",
+      "role": "review_synthesis",
+      "source_pages": [
+        4
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "文中区分单室与多室神经元仿真的忠实度–资源权衡：多室有助于表达树突计算和形态，但现有实时实现较少。",
+      "role": "review_synthesis",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "现有 neuromorphic 平台对模型复杂度和塑性支持不同，文中将 SpiNNaker、BrainScaleS、Neurogrid、BioemuS 和 DYNAP-SE2 作为不同实现实例。",
+      "role": "review_synthesis",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "软件层可用 PSO、ES/DE、Bayesian optimization 或 surrogate gradients 调整模型参数，作者强调参数维度、局部最优、训练成本和动态适配的权衡。",
+      "role": "interpretation",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "提出的三层架构将快速检测/仿真与分钟至小时等较慢调参分开，以降低闭环路径中的计算负担。",
+      "role": "interpretation",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "作者讨论模拟–数字混合、FPGA 和 ASIC 的效率/灵活性权衡，并引用 KR260 仿真部分约 3 W 的例子。",
+      "role": "review_synthesis",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "被引 somatosensory cortex 物理仿真以 DYNAP-SE2 的 4 个核心和 1024 个 AdEx 神经元实现层IV相关模型。",
+      "role": "review_synthesis",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "被引 rat premotor cortex 仿真比较 325 个硬件 SNN 配置，部分配置较接近所列放电间隔、放电率、burst 和相关性等 BNN 特征。",
+      "role": "review_synthesis",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "被引健康深麻醉大鼠实验使用硬件 SNN 生成开环刺激，报告体感和前运动区自发放电增加。",
+      "role": "review_synthesis",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "文中汇集 MEA 神经培养、脑片及模型神经假体的闭环耦合示例，为人工网络和生物网络通信提供前临床可行性线索。",
+      "role": "review_synthesis",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "Perspective 描述 connectoid 与 BioemuS 人工网络间以神经事件触发刺激的生物混合通信，作为 Neuromorphic Twin 的早期类器官线索。",
+      "role": "review_synthesis",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "文中将 DNA/酶反应网络、organic electrochemical neurons/synapses 与活神经网络计算列为拓展路线，而非已集成临床孪生。",
+      "role": "review_synthesis",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "作者指出扩展通道/电极数、自动特征提取、多层仿真和小型化仍限制长期植入 Neuromorphic Twin。",
+      "role": "interpretation",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "作者提出将电生理、MRI及行为输入结合，以较慢调参与实时刺激共同支持长期个体化，但持续共同演化仍待实证。",
+      "role": "hypothesis",
+      "source_pages": [
+        11
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "作者提出从早期原型、前临床、临床试验到广泛应用的四阶段路线图，附功耗、延迟、规模、可靠性和持续运行目标。",
+      "role": "hypothesis",
+      "source_pages": [
+        12
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "作者主张自适应双向脑接口需要持续知情同意、可解释决策、临床监督和用户控制，以应对部署后行为变化。",
+      "role": "interpretation",
+      "source_pages": [
+        14
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "脑疾病负担、现有BCI/海马假体/感觉假体及历史Digital Twin背景，和Conductor意识理论作为论证背景已评估。",
+      "role": "review_synthesis",
+      "source_pages": [
+        1,
+        2,
+        3,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "decision": "exclude",
+      "reason": "不构成本篇新实验，意识/临床愿景未证实，不自动生成跨论文支持。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "作者提出 Neuromorphic Twin 将实时双向生物耦合、硬件仿生神经网络和较慢的软件个体化调参整合为可随生物系统变化的架构。",
+      "claim_type": "interpretation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "叙述性综述：被引原始研究与模型的综合",
+          "design": "作者提出 Neuromorphic Twin 将实时双向生物耦合、硬件仿生神经网络和较慢的软件个体化调参整合为可随生物系统变化的架构。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "架构定义和被引原型",
+          "sample_size_as_reported": null,
+          "uncertainty": "本综述未给该条被引结果的完整样本及统计量。",
+          "assumptions": [
+            "这是Perspective的定义性架构，不是完整系统已在患者中长期共同演化的实验结果。"
+          ],
+          "source_locator": {
+            "pdf_page": 2,
+            "section": "Introduction;Architecture",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者提出 Neuromorphic Twin 将实时双向生物耦合、硬件仿生神经网络和较慢的软件个体化调参整合为可随生物系统变化的架构。",
+        "boundary": "这是Perspective的定义性架构，不是完整系统已在患者中长期共同演化的实验结果。",
+        "negative_result": null,
+        "non_inference": "不能把综述中被引结果计作本篇新独立实验或复现。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "什么操作标准足以区分真正闭环孪生与离线模型加刺激器？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "文中所讨论的 Virtual Brain Twins 主要支持离线个体化预测和规划，尚不同于持续实时双向交互的 Neuromorphic Twin 目标。",
+      "claim_type": "review_synthesis",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "叙述性综述：被引原始研究与模型的综合",
+          "design": "文中所讨论的 Virtual Brain Twins 主要支持离线个体化预测和规划，尚不同于持续实时双向交互的 Neuromorphic Twin 目标。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "被引研究中的动物/参与者、细胞、群体或模型；本综述不是新独立实验",
+          "sample_size_as_reported": null,
+          "uncertainty": "本综述未给该条被引结果的完整样本及统计量。",
+          "assumptions": [
+            "限定作者综述的实例和版本；不把此差别外推为所有Digital Twin一律无实时通信。"
+          ],
+          "source_locator": {
+            "pdf_page": 2,
+            "section": "Introduction",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "文中所讨论的 Virtual Brain Twins 主要支持离线个体化预测和规划，尚不同于持续实时双向交互的 Neuromorphic Twin 目标。",
+        "boundary": "限定作者综述的实例和版本；不把此差别外推为所有Digital Twin一律无实时通信。",
+        "negative_result": null,
+        "non_inference": "不能把综述中被引结果计作本篇新独立实验或复现。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "从离线预测转向闭环交互会引入哪些稳定性和可辨识性约束？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "作者认为仿生拓扑及神经元/突触动力学有助于自然交互，并优先考虑 conductance-based models 与生物相关塑性，而非仅优化任务性能。",
+      "claim_type": "hypothesis",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "叙述性综述：被引原始研究与模型的综合",
+          "design": "作者认为仿生拓扑及神经元/突触动力学有助于自然交互，并优先考虑 conductance-based models 与生物相关塑性，而非仅优化任务性能。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "被引研究中的动物/参与者、细胞、群体或模型；本综述不是新独立实验",
+          "sample_size_as_reported": null,
+          "uncertainty": "本综述未给该条被引结果的完整样本及统计量。",
+          "assumptions": [
+            "所需仿真忠实度仍是开放设计问题；更复杂模型或STDP标签不证明真实脑机制唯一或完整再现。"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "Box1;Table3 p7",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者认为仿生拓扑及神经元/突触动力学有助于自然交互，并优先考虑 conductance-based models 与生物相关塑性，而非仅优化任务性能。",
+        "boundary": "所需仿真忠实度仍是开放设计问题；更复杂模型或STDP标签不证明真实脑机制唯一或完整再现。",
+        "negative_result": null,
+        "non_inference": "不能把综述中被引结果计作本篇新独立实验或复现。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "哪些生物细节是闭环疗效必要条件，哪些可以简化？"
+      ],
+      "shared_evidence_with": [
+        "C1"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "综述汇集 SNN 对 spikes、burst、LFP、ECoG/EEG 事件的检测分类实例，支持事件驱动边缘处理的可行性。",
+      "claim_type": "review_synthesis",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "叙述性综述：被引原始研究与模型的综合",
+          "design": "综述汇集 SNN 对 spikes、burst、LFP、ECoG/EEG 事件的检测分类实例，支持事件驱动边缘处理的可行性。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "被引信号数据、算法及硬件系统；通道不是独立参与者",
+          "sample_size_as_reported": null,
+          "uncertainty": "本综述未给该条被引结果的完整样本及统计量。",
+          "assumptions": [
+            "各任务、平台和训练条件不同，不构成统一高密度实时全功能孪生验证。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "Hardware-based signal processing;Table1 p5",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "综述汇集 SNN 对 spikes、burst、LFP、ECoG/EEG 事件的检测分类实例，支持事件驱动边缘处理的可行性。",
+        "boundary": "各任务、平台和训练条件不同，不构成统一高密度实时全功能孪生验证。",
+        "negative_result": null,
+        "non_inference": "不能把综述中被引结果计作本篇新独立实验或复现。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "无监督提取能否在慢漂移及伪迹下维持准确和低延迟？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "被引 FPGA STDP spike sorting 系统以检测、特征提取、聚类层处理多通道数据，文中报告 KR260 资源占用低于 6% LUT 和 15% URAM。",
+      "claim_type": "review_synthesis",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "叙述性综述：被引原始研究与模型的综合",
+          "design": "被引 FPGA STDP spike sorting 系统以检测、特征提取、聚类层处理多通道数据，文中报告 KR260 资源占用低于 6% LUT 和 15% URAM。",
+          "comparator": null,
+          "measure": "LUT/URAM资源占用",
+          "unit_of_analysis": "被引FPGA实现和录音数据",
+          "sample_size_as_reported": null,
+          "uncertainty": "本综述未给该条被引结果的完整样本及统计量。",
+          "assumptions": [
+            "数值限定被引实现和资源定义；没有本文新基准或所有通道规模的保证。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "Spike sorting;Fig2 p6;ref67",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "被引 FPGA STDP spike sorting 系统以检测、特征提取、聚类层处理多通道数据，文中报告 KR260 资源占用低于 6% LUT 和 15% URAM。",
+        "boundary": "数值限定被引实现和资源定义；没有本文新基准或所有通道规模的保证。",
+        "negative_result": null,
+        "non_inference": "不能把综述中被引结果计作本篇新独立实验或复现。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "加入更多通道及非平稳单位后资源、准确性和功耗如何变化？"
+      ],
+      "shared_evidence_with": [
+        "C4"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "文中区分单室与多室神经元仿真的忠实度–资源权衡：多室有助于表达树突计算和形态，但现有实时实现较少。",
+      "claim_type": "review_synthesis",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "叙述性综述：被引原始研究与模型的综合",
+          "design": "文中区分单室与多室神经元仿真的忠实度–资源权衡：多室有助于表达树突计算和形态，但现有实时实现较少。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "被引研究中的动物/参与者、细胞、群体或模型；本综述不是新独立实验",
+          "sample_size_as_reported": null,
+          "uncertainty": "本综述未给该条被引结果的完整样本及统计量。",
+          "assumptions": [
+            "不是证明某模型对所有疾病充分；离子电流病理可能需要更具体参数和校准。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "Choice of models",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "文中区分单室与多室神经元仿真的忠实度–资源权衡：多室有助于表达树突计算和形态，但现有实时实现较少。",
+        "boundary": "不是证明某模型对所有疾病充分；离子电流病理可能需要更具体参数和校准。",
+        "negative_result": null,
+        "non_inference": "不能把综述中被引结果计作本篇新独立实验或复现。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "多室细节何时足以提高闭环控制而抵偿资源成本？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "现有 neuromorphic 平台对模型复杂度和塑性支持不同，文中将 SpiNNaker、BrainScaleS、Neurogrid、BioemuS 和 DYNAP-SE2 作为不同实现实例。",
+      "claim_type": "review_synthesis",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "叙述性综述：被引原始研究与模型的综合",
+          "design": "现有 neuromorphic 平台对模型复杂度和塑性支持不同，文中将 SpiNNaker、BrainScaleS、Neurogrid、BioemuS 和 DYNAP-SE2 作为不同实现实例。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "被引平台/模型配置",
+          "sample_size_as_reported": null,
+          "uncertainty": "本综述未给该条被引结果的完整样本及统计量。",
+          "assumptions": [
+            "硬件名称、神经元容量及效率不等于同一生物系统疗效；新材料突触仍有集成成熟度限制。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "Hardware implementation",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "现有 neuromorphic 平台对模型复杂度和塑性支持不同，文中将 SpiNNaker、BrainScaleS、Neurogrid、BioemuS 和 DYNAP-SE2 作为不同实现实例。",
+        "boundary": "硬件名称、神经元容量及效率不等于同一生物系统疗效；新材料突触仍有集成成熟度限制。",
+        "negative_result": null,
+        "non_inference": "不能把综述中被引结果计作本篇新独立实验或复现。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "哪种硬件在相同模型与端到端任务下最有利？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "软件层可用 PSO、ES/DE、Bayesian optimization 或 surrogate gradients 调整模型参数，作者强调参数维度、局部最优、训练成本和动态适配的权衡。",
+      "claim_type": "interpretation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "叙述性综述：被引原始研究与模型的综合",
+          "design": "软件层可用 PSO、ES/DE、Bayesian optimization 或 surrogate gradients 调整模型参数，作者强调参数维度、局部最优、训练成本和动态适配的权衡。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "被引研究中的动物/参与者、细胞、群体或模型；本综述不是新独立实验",
+          "sample_size_as_reported": null,
+          "uncertainty": "本综述未给该条被引结果的完整样本及统计量。",
+          "assumptions": [
+            "方法优劣为综述设计判断；没有在同一孪生任务中系统比较。统计匹配未解决参数非唯一性。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "Software automatic tuning;Table4 p8",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "软件层可用 PSO、ES/DE、Bayesian optimization 或 surrogate gradients 调整模型参数，作者强调参数维度、局部最优、训练成本和动态适配的权衡。",
+        "boundary": "方法优劣为综述设计判断；没有在同一孪生任务中系统比较。统计匹配未解决参数非唯一性。",
+        "negative_result": null,
+        "non_inference": "不能把综述中被引结果计作本篇新独立实验或复现。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "怎样量化拟合不确定性并避免不唯一参数触发不安全刺激？"
+      ],
+      "shared_evidence_with": [
+        "C3"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "提出的三层架构将快速检测/仿真与分钟至小时等较慢调参分开，以降低闭环路径中的计算负担。",
+      "claim_type": "interpretation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "叙述性综述：被引原始研究与模型的综合",
+          "design": "提出的三层架构将快速检测/仿真与分钟至小时等较慢调参分开，以降低闭环路径中的计算负担。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "被引研究中的动物/参与者、细胞、群体或模型；本综述不是新独立实验",
+          "sample_size_as_reported": null,
+          "uncertainty": "本综述未给该条被引结果的完整样本及统计量。",
+          "assumptions": [
+            "约1 ms检测、10 ms分类、100 µs仿真和通信值是代表设计/来源实例，不是本文已验收的完整孪生端到端延迟。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "Communication between interconnected layers;Fig1 p5",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提出的三层架构将快速检测/仿真与分钟至小时等较慢调参分开，以降低闭环路径中的计算负担。",
+        "boundary": "约1 ms检测、10 ms分类、100 µs仿真和通信值是代表设计/来源实例，不是本文已验收的完整孪生端到端延迟。",
+        "negative_result": null,
+        "non_inference": "不能把综述中被引结果计作本篇新独立实验或复现。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "慢调参在突发状态转换时是否足以维持安全闭环？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C4",
+        "C8"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "作者讨论模拟–数字混合、FPGA 和 ASIC 的效率/灵活性权衡，并引用 KR260 仿真部分约 3 W 的例子。",
+      "claim_type": "review_synthesis",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "叙述性综述：被引原始研究与模型的综合",
+          "design": "作者讨论模拟–数字混合、FPGA 和 ASIC 的效率/灵活性权衡，并引用 KR260 仿真部分约 3 W 的例子。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "被引KR260 FPGA仿真实现",
+          "sample_size_as_reported": null,
+          "uncertainty": "本综述未给该条被引结果的完整样本及统计量。",
+          "assumptions": [
+            "3W针对仿真硬件部分，不含整个植入系统；低于100mW等路线图数值为目标而非该实测。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Energy efficiency",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者讨论模拟–数字混合、FPGA 和 ASIC 的效率/灵活性权衡，并引用 KR260 仿真部分约 3 W 的例子。",
+        "boundary": "3W针对仿真硬件部分，不含整个植入系统；低于100mW等路线图数值为目标而非该实测。",
+        "negative_result": null,
+        "non_inference": "不能把综述中被引结果计作本篇新独立实验或复现。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "把采集、通信、调参与刺激全部纳入后真实能耗是多少？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "被引 somatosensory cortex 物理仿真以 DYNAP-SE2 的 4 个核心和 1024 个 AdEx 神经元实现层IV相关模型。",
+      "claim_type": "review_synthesis",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "叙述性综述：被引原始研究与模型的综合",
+          "design": "被引 somatosensory cortex 物理仿真以 DYNAP-SE2 的 4 个核心和 1024 个 AdEx 神经元实现层IV相关模型。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "被引芯片与层IV模型",
+          "sample_size_as_reported": "1024人工神经元/4核心，非生物重复数",
+          "uncertainty": "本综述未给该条被引结果的完整样本及统计量。",
+          "assumptions": [
+            "文中参考来源为Research Square v2预印本；1024是人工神经元数，不是动物样本量；模型平台不是临床修复验证。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Neuroengineering applications;Fig3A p10;ref48",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "被引 somatosensory cortex 物理仿真以 DYNAP-SE2 的 4 个核心和 1024 个 AdEx 神经元实现层IV相关模型。",
+        "boundary": "文中参考来源为Research Square v2预印本；1024是人工神经元数，不是动物样本量；模型平台不是临床修复验证。",
+        "negative_result": null,
+        "non_inference": "不能把综述中被引结果计作本篇新独立实验或复现。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "该拓扑的预测是否经未用于拟合的刺激响应验证？"
+      ],
+      "shared_evidence_with": [
+        "C7"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "被引 rat premotor cortex 仿真比较 325 个硬件 SNN 配置，部分配置较接近所列放电间隔、放电率、burst 和相关性等 BNN 特征。",
+      "claim_type": "review_synthesis",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "叙述性综述：被引原始研究与模型的综合",
+          "design": "被引 rat premotor cortex 仿真比较 325 个硬件 SNN 配置，部分配置较接近所列放电间隔、放电率、burst 和相关性等 BNN 特征。",
+          "comparator": null,
+          "measure": "ISI RMSE/MFR/MBR/Pearson相关/burstiness",
+          "unit_of_analysis": "SNN配置与作为参照的生物网络记录",
+          "sample_size_as_reported": "325 SNN configurations；生物动物n在本文未列",
+          "uncertainty": "本综述未给该条被引结果的完整样本及统计量。",
+          "assumptions": [
+            "325是配置数，1024是模拟HH神经元数；选择最匹配配置和代表性raster不构成独立生物重复或唯一机制识别。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Neuroengineering applications;Fig3B–D p10;ref122",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "被引 rat premotor cortex 仿真比较 325 个硬件 SNN 配置，部分配置较接近所列放电间隔、放电率、burst 和相关性等 BNN 特征。",
+        "boundary": "325是配置数，1024是模拟HH神经元数；选择最匹配配置和代表性raster不构成独立生物重复或唯一机制识别。",
+        "negative_result": null,
+        "non_inference": "不能把综述中被引结果计作本篇新独立实验或复现。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "在新刺激和不同动物中保持匹配的配置是否唯一？"
+      ],
+      "shared_evidence_with": [
+        "C7",
+        "C8"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C13",
+      "statement": "被引健康深麻醉大鼠实验使用硬件 SNN 生成开环刺激，报告体感和前运动区自发放电增加。",
+      "claim_type": "review_synthesis",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "叙述性综述：被引原始研究与模型的综合",
+          "design": "被引健康深麻醉大鼠实验使用硬件 SNN 生成开环刺激，报告体感和前运动区自发放电增加。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "被引健康深麻醉大鼠",
+          "sample_size_as_reported": null,
+          "uncertainty": "本综述未给该条被引结果的完整样本及统计量。",
+          "assumptions": [
+            "实际是开环、健康深麻醉动物，不是本篇实时闭环孪生或脑损伤行为恢复实验。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Neuroengineering applications;ref124",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "被引健康深麻醉大鼠实验使用硬件 SNN 生成开环刺激，报告体感和前运动区自发放电增加。",
+        "boundary": "实际是开环、健康深麻醉动物，不是本篇实时闭环孪生或脑损伤行为恢复实验。",
+        "negative_result": null,
+        "non_inference": "不能把综述中被引结果计作本篇新独立实验或复现。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "相同刺激在清醒损伤模型中能否改善功能且不引起异常活动？"
+      ],
+      "shared_evidence_with": [
+        "C12"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C14",
+      "statement": "文中汇集 MEA 神经培养、脑片及模型神经假体的闭环耦合示例，为人工网络和生物网络通信提供前临床可行性线索。",
+      "claim_type": "review_synthesis",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "叙述性综述：被引原始研究与模型的综合",
+          "design": "文中汇集 MEA 神经培养、脑片及模型神经假体的闭环耦合示例，为人工网络和生物网络通信提供前临床可行性线索。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "被引培养网络/脑片/动物模型，各来源不同",
+          "sample_size_as_reported": null,
+          "uncertainty": "本综述未给该条被引结果的完整样本及统计量。",
+          "assumptions": [
+            "许多实现仍限健康系统；信号通信或培养中损伤模型不等于患者神经功能替代。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Closed-loop examples;refs46,127,128",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "文中汇集 MEA 神经培养、脑片及模型神经假体的闭环耦合示例，为人工网络和生物网络通信提供前临床可行性线索。",
+        "boundary": "许多实现仍限健康系统；信号通信或培养中损伤模型不等于患者神经功能替代。",
+        "negative_result": null,
+        "non_inference": "不能把综述中被引结果计作本篇新独立实验或复现。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "完整反馈模型在长期漂移和病理重塑中是否可靠？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C15",
+      "statement": "Perspective 描述 connectoid 与 BioemuS 人工网络间以神经事件触发刺激的生物混合通信，作为 Neuromorphic Twin 的早期类器官线索。",
+      "claim_type": "review_synthesis",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "叙述性综述：被引原始研究与模型的综合",
+          "design": "Perspective 描述 connectoid 与 BioemuS 人工网络间以神经事件触发刺激的生物混合通信，作为 Neuromorphic Twin 的早期类器官线索。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "被引类器官连接体和SNN",
+          "sample_size_as_reported": null,
+          "uncertainty": "本综述未给该条被引结果的完整样本及统计量。",
+          "assumptions": [
+            "对象是人iPSC来源皮层类器官/人工模型，不等于人体临床验证、完整人脑或意识证明。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "Biohybrid intelligence;Fig4B p11;ref99",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "Perspective 描述 connectoid 与 BioemuS 人工网络间以神经事件触发刺激的生物混合通信，作为 Neuromorphic Twin 的早期类器官线索。",
+        "boundary": "对象是人iPSC来源皮层类器官/人工模型，不等于人体临床验证、完整人脑或意识证明。",
+        "negative_result": null,
+        "non_inference": "不能把综述中被引结果计作本篇新独立实验或复现。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "这种耦合怎样改变可测计算性能、学习和稳定性？"
+      ],
+      "shared_evidence_with": [
+        "C7",
+        "C14"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C16",
+      "statement": "文中将 DNA/酶反应网络、organic electrochemical neurons/synapses 与活神经网络计算列为拓展路线，而非已集成临床孪生。",
+      "claim_type": "review_synthesis",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "叙述性综述：被引原始研究与模型的综合",
+          "design": "文中将 DNA/酶反应网络、organic electrochemical neurons/synapses 与活神经网络计算列为拓展路线，而非已集成临床孪生。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "被引研究中的动物/参与者、细胞、群体或模型；本综述不是新独立实验",
+          "sample_size_as_reported": null,
+          "uncertainty": "本综述未给该条被引结果的完整样本及统计量。",
+          "assumptions": [
+            "非线性分类、离子脉冲和培养计算来自不同被引体系，不能拼接成统一生物验证或“新智能”已证明。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "Emerging research directions",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "文中将 DNA/酶反应网络、organic electrochemical neurons/synapses 与活神经网络计算列为拓展路线，而非已集成临床孪生。",
+        "boundary": "非线性分类、离子脉冲和培养计算来自不同被引体系，不能拼接成统一生物验证或“新智能”已证明。",
+        "negative_result": null,
+        "non_inference": "不能把综述中被引结果计作本篇新独立实验或复现。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "哪种材料体系能长期兼顾可塑性、接口稳定和可校准性？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C17",
+      "statement": "作者指出扩展通道/电极数、自动特征提取、多层仿真和小型化仍限制长期植入 Neuromorphic Twin。",
+      "claim_type": "interpretation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "叙述性综述：被引原始研究与模型的综合",
+          "design": "作者指出扩展通道/电极数、自动特征提取、多层仿真和小型化仍限制长期植入 Neuromorphic Twin。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "被引研究中的动物/参与者、细胞、群体或模型；本综述不是新独立实验",
+          "sample_size_as_reported": null,
+          "uncertainty": "本综述未给该条被引结果的完整样本及统计量。",
+          "assumptions": [
+            "硬件电极总数不等于同时可用独立神经单位；文中约300000描述与参考236880电极不完全对应。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "Technical barriers",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者指出扩展通道/电极数、自动特征提取、多层仿真和小型化仍限制长期植入 Neuromorphic Twin。",
+        "boundary": "硬件电极总数不等于同时可用独立神经单位；文中约300000描述与参考236880电极不完全对应。",
+        "negative_result": null,
+        "non_inference": "不能把综述中被引结果计作本篇新独立实验或复现。",
+        "unresolved": "高密度并行、在线适配及持续生物兼容尚需端到端验证。",
+        "unresolved_attribution": "综述作者的限制、开放问题或源文审计"
+      },
+      "broad_directions": [
+        "methods-causal",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "在实际采集带宽和单位漂移下能扩展到何种有效规模？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C18",
+      "statement": "作者提出将电生理、MRI及行为输入结合，以较慢调参与实时刺激共同支持长期个体化，但持续共同演化仍待实证。",
+      "claim_type": "hypothesis",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "叙述性综述：被引原始研究与模型的综合",
+          "design": "作者提出将电生理、MRI及行为输入结合，以较慢调参与实时刺激共同支持长期个体化，但持续共同演化仍待实证。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "被引研究中的动物/参与者、细胞、群体或模型；本综述不是新独立实验",
+          "sample_size_as_reported": null,
+          "uncertainty": "本综述未给该条被引结果的完整样本及统计量。",
+          "assumptions": [
+            "接入更多模态不自动提高可辨识性；现有长时植入病例无不良反应不足以保证所有自适应系统安全。"
+          ],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "Long-term personalization;Integration p10",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者提出将电生理、MRI及行为输入结合，以较慢调参与实时刺激共同支持长期个体化，但持续共同演化仍待实证。",
+        "boundary": "接入更多模态不自动提高可辨识性；现有长时植入病例无不良反应不足以保证所有自适应系统安全。",
+        "negative_result": null,
+        "non_inference": "不能把综述中被引结果计作本篇新独立实验或复现。",
+        "unresolved": "长期因果疗效、信号漂移、组织反应和安全适配尚未统一验证。",
+        "unresolved_attribution": "综述作者的限制、开放问题或源文审计"
+      },
+      "broad_directions": [
+        "methods-causal",
+        "behavior-cognition",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "哪种行为和影像指标能可靠触发调参而不形成自强化误差？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C9"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C19",
+      "statement": "作者提出从早期原型、前临床、临床试验到广泛应用的四阶段路线图，附功耗、延迟、规模、可靠性和持续运行目标。",
+      "claim_type": "hypothesis",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "叙述性综述：被引原始研究与模型的综合",
+          "design": "作者提出从早期原型、前临床、临床试验到广泛应用的四阶段路线图，附功耗、延迟、规模、可靠性和持续运行目标。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "发展路线/目标规格，不是实验单位",
+          "sample_size_as_reported": null,
+          "uncertainty": "本综述未给该条被引结果的完整样本及统计量。",
+          "assumptions": [
+            "1–3、3–5、5–10及10+年是预期规划；目标10³/10⁵神经元等不是本文新实测。虚拟患者不能算独立真人临床样本。"
+          ],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "Table5 pp12–13;Clinical translation p14",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者提出从早期原型、前临床、临床试验到广泛应用的四阶段路线图，附功耗、延迟、规模、可靠性和持续运行目标。",
+        "boundary": "1–3、3–5、5–10及10+年是预期规划；目标10³/10⁵神经元等不是本文新实测。虚拟患者不能算独立真人临床样本。",
+        "negative_result": null,
+        "non_inference": "不能把综述中被引结果计作本篇新独立实验或复现。",
+        "unresolved": "时间线和临床可达性依技术、安全及监管验证。",
+        "unresolved_attribution": "综述作者的限制、开放问题或源文审计"
+      },
+      "broad_directions": [
+        "methods-causal",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "每一阶段哪些可测失败标准和生物终点决定是否继续？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C17",
+        "C18"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C20",
+      "statement": "作者主张自适应双向脑接口需要持续知情同意、可解释决策、临床监督和用户控制，以应对部署后行为变化。",
+      "claim_type": "interpretation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "叙述性综述：被引原始研究与模型的综合",
+          "design": "作者主张自适应双向脑接口需要持续知情同意、可解释决策、临床监督和用户控制，以应对部署后行为变化。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "被引研究中的动物/参与者、细胞、群体或模型；本综述不是新独立实验",
+          "sample_size_as_reported": null,
+          "uncertainty": "本综述未给该条被引结果的完整样本及统计量。",
+          "assumptions": [
+            "这是规范性框架而非实测伦理干预效果；相似放电/仿生结构不能确证机器意识或主体性。"
+          ],
+          "source_locator": {
+            "pdf_page": 14,
+            "section": "Ethical issues;Table5",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者主张自适应双向脑接口需要持续知情同意、可解释决策、临床监督和用户控制，以应对部署后行为变化。",
+        "boundary": "这是规范性框架而非实测伦理干预效果；相似放电/仿生结构不能确证机器意识或主体性。",
+        "negative_result": null,
+        "non_inference": "不能把综述中被引结果计作本篇新独立实验或复现。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "如何向患者说明适配改变并允许安全回滚？"
+      ],
+      "shared_evidence_with": [
+        "C18",
+        "C19"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "Perspective提出Neuromorphic Twin的双向实时硬件与慢软件调参框架，综述事件检测、芯片网络、仿生刺激和培养/类器官通信，并给出技术与伦理路线。抽取明确区分作者设想、被引模型/原型结果和未来指标；没有将325配置计作生物重复，也未将健康开环刺激或类器官通信升格为临床修复。",
+  "shared_evidence": [
+    {
+      "claim_id": "C3",
+      "with": [
+        "C1"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C4"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C3"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C1",
+        "C4",
+        "C8"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "with": [
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "with": [
+        "C7",
+        "C8"
+      ]
+    },
+    {
+      "claim_id": "C13",
+      "with": [
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C15",
+      "with": [
+        "C7",
+        "C14"
+      ]
+    },
+    {
+      "claim_id": "C18",
+      "with": [
+        "C1",
+        "C9"
+      ]
+    },
+    {
+      "claim_id": "C19",
+      "with": [
+        "C1",
+        "C17",
+        "C18"
+      ]
+    },
+    {
+      "claim_id": "C20",
+      "with": [
+        "C18",
+        "C19"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": "C4",
+        "pdf_page": 2,
+        "issue": "正文将DL笼统判为不适合闭环，同时后文承认ANN学习/实现优势且软件允许ANN。",
+        "suggested_correction": "保留数据/算力/任务限制，不记录所有DL必然不可用。",
+        "resolved": true
+      },
+      {
+        "claim_id": "C3",
+        "pdf_page": 7,
+        "issue": "Table2 SNN噪声稳健/节能优势及Table3忠实度是概括判断，缺同任务全平台对照。",
+        "suggested_correction": "作为设计权衡，不是普遍性能定理。",
+        "resolved": true
+      },
+      {
+        "claim_id": "C12",
+        "pdf_page": 10,
+        "issue": "325配置/1024神经元可能误当生物n；选择匹配网络可能误当机制识别。",
+        "suggested_correction": "单位限定模型配置；不猜动物n或统计量。",
+        "resolved": true
+      },
+      {
+        "claim_id": "C13",
+        "pdf_page": 8,
+        "issue": "由健康麻醉开环放电增加外推神经功能修复过强。",
+        "suggested_correction": "区分开环与闭环、放电指标与行为疗效。",
+        "resolved": true
+      },
+      {
+        "claim_id": "C17",
+        "pdf_page": 9,
+        "issue": "约300000电极描述与引用236880数目不完全匹配。",
+        "suggested_correction": "不写作精确有效通道规模，保留源内差异。",
+        "resolved": false
+      },
+      {
+        "claim_id": "C19",
+        "pdf_page": 13,
+        "issue": "路线图目标和虚拟试验样本容易被记作达到性能或真实患者数；Table5称5–10年而正文约7–10年。",
+        "suggested_correction": "两者均规划范围，不强造确定日期或临床证据。",
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "pdf_page": 16,
+        "issue": "若干平台/工具引用与正文名称不匹配，如Loihi/TrueNorth旁引93为超级计算机文献，PyTorch旁引105为hxtorch。",
+        "suggested_correction": "保留引用定位问题，不把引用计作各产品能力直接验证。",
+        "resolved": false
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T12:00:19.040685Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "2c8a9e80256aab3091f749c1e0007000e126eb961af34c42354b25719289520d",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

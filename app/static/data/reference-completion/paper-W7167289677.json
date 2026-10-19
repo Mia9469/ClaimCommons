@@ -1,0 +1,1185 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "FLYNN: Robust Neural Network for Robot Navigation using Fly Brain Topology",
+    "authors": [
+      "Benquan Wang",
+      "Jingdao Chen"
+    ],
+    "doi": null,
+    "publication_year": 2026,
+    "venue": "arXiv (Cornell University)",
+    "url": "https://arxiv.org/pdf/2607.00025"
+  },
+  "source": {
+    "filename": "paper-W7167289677--FLYNN-Robust-Neural-Network-for-Robot-Navigation-using-Fly-Brain-Topology.pdf",
+    "sha256": "b612044d7ac3004a10e05bfbe1bc5ce8327577f20c2047531e30afaef13d9e2b",
+    "source_url": "https://arxiv.org/pdf/2607.00025",
+    "pdf_page_count": 8
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "results_sections_seen": [
+      "II.A–E methods",
+      "III.A OOD Generalization",
+      "III.B Vision loss tolerance and PCA/KDE",
+      "IV Conclusions"
+    ],
+    "missing_material": [
+      "原始图像像素及代码未读取；独立训练种子和逐回合原始数据未提供"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "完整读取缓存PDF顺序1–8页，含方法、Table I、Fig.1–8文字/图注、结论及参考文献；来源为arXiv:2607.00025v2，13 Jul 2026。",
+      "按同一来源完成逐条第二审计；所有quote为null，模拟结果不标为果蝇功能验证。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": true,
+    "archived_page_text_used": true
+  },
+  "contribution_inventory": [
+    {
+      "summary": "FLYNN将FAFB v783中不少于5个突触的连接构成固定稀疏掩码，形成139255个速率单元、5342445条可训练连接的循环网络，并通过DAgger学习模拟机器人导航。",
+      "role": "result",
+      "source_pages": [
+        2
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "在训练分布的棋盘纹理场景中，FLYNN成功率92.9%、SPL 0.83；三个基线成功率89.0%至91.6%、SPL 0.80至0.81，呈现相近的描述性导航表现。",
+      "role": "result",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "仅将纹理替换为真实图像时，FLYNN成功率42.1%、SPL 0.32，高于EfficientNet的17.2%/0.15、MobileNet的0%/0和SmallWorldNet的3.2%/0.02。",
+      "role": "result",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "真实纹理条件下FLYNN平均碰撞3.36次、成功回合1.53次，均高于其他模型；作者将此解释为保持多次尝试的碰撞恢复，而非避免碰撞更有效。",
+      "role": "interpretation",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "单眼输入时FLYNN的成功率为左眼77.4%、右眼69.6%；SmallWorldNet为46.3%和68.0%，EfficientNet为78.6%和46.6%，MobileNet为73.5%和58.3%，显示任务和模型相关的左右不对称。",
+      "role": "result",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "同时关闭两眼时FLYNN仍有44.3%成功率、SPL 0.37，高于EfficientNet的3.9%、MobileNet的16.5%及SmallWorldNet的2.6%。",
+      "role": "result",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "双眼关闭时FLYNN每回合碰撞4.54次、平均持续10.3秒；结合代表轨迹，作者观察其仍可通过后退和转向恢复，而其他模型常在碰撞后停滞。",
+      "role": "interpretation",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "作者报告未进行摄像头dropout训练的EfficientNet和MobileNet在视觉丢失测试中成功率为0%；表中CNN耐受性来自每批各20%的左、右或双眼关闭训练，而FLYNN和SmallWorldNet训练时没有该处理。",
+      "role": "result",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "与FLYNN共享规模、漏积分循环结构、感觉分区及小世界路径统计的SmallWorldNet在完全失去视觉时近乎失败，提示一般小世界结构不足以解释FLYNN在该任务中的全部优势。",
+      "role": "interpretation",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "PCA与KDE显示FLYNN在完整、单眼和双眼关闭条件下的内部状态分布较分离，而SmallWorldNet的分布较广且重叠。",
+      "role": "result",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "在解释89.1%方差的FLYNN前10主成分中，盲态到全视觉向量长度11.16，两个单眼增量之和长度11.11，余弦相似度0.9998；SmallWorldNet相应为22.88、30.01和0.9439。",
+      "role": "result",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "作者提出连接组模块化可能形成近似线性感觉融合的拓扑先验，从而缓和感觉损失；具体驱动性质仍待干预验证。",
+      "role": "hypothesis",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "作者指出L1/L2的手工时间滤波可能部分解释纹理OOD优势，而双眼关闭结果避开了视觉滤波这一解释，但仍保留非视觉目标与碰撞信号。",
+      "role": "interpretation",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "物理机器人、动力学变化和传感器噪声的验证仍是未来方向，不作为已完成结果。",
+      "role": "hypothesis",
+      "source_pages": [
+        7,
+        8
+      ],
+      "decision": "exclude",
+      "reason": "明确未测试"
+    },
+    {
+      "summary": "先前果蝇视觉、导航及连接组研究构成背景，不作为本研究独立复制。",
+      "role": "review_synthesis",
+      "source_pages": [
+        1,
+        2,
+        8
+      ],
+      "decision": "exclude",
+      "reason": "引文背景"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "FLYNN将FAFB v783中不少于5个突触的连接构成固定稀疏掩码，形成139255个速率单元、5342445条可训练连接的循环网络，并通过DAgger学习模拟机器人导航。",
+      "claim_type": "robot_navigation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "连接组约束RNN与基线的仿真导航评估",
+          "design": "DAgger训练后固定模型，在相同随机回合比较；非生物实验",
+          "comparator": "连接组掩码与参数学习",
+          "measure": "网络规模、漏积分更新及可训练掩码",
+          "unit_of_analysis": "仿真回合；单一雌性果蝇连接组是拓扑来源而非实验重复",
+          "sample_size_as_reported": "一个成年雌性Drosophila连接组；训练4轮、每轮500回合",
+          "uncertainty": "表中离散均值与部分标准差；未提供组间显著性或训练种子区间",
+          "assumptions": [
+            "基线共享目标相对角和碰撞输入；CNN基线另用摄像头dropout训练"
+          ],
+          "source_locator": {
+            "pdf_page": 2,
+            "section": "II.A Network construction",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "FLYNN将FAFB v783中不少于5个突触的连接构成固定稀疏掩码，形成139255个速率单元、5342445条可训练连接的循环网络，并通过DAgger学习模拟机器人导航。",
+        "boundary": "拓扑固定但连接强度、偏置和按细胞类共享的泄漏参数可训练；不是逐突触生物功能复现。",
+        "negative_result": null,
+        "non_inference": "未建模脉冲、神经递质类型、电突触、轴突长度；139255个单元不是139255个独立动物。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "connectomics",
+        "robust-embodied-ai"
+      ],
+      "scientific_questions": [
+        "连接组拓扑的哪些性质在控制感觉预处理、训练和残余信号后仍能提升导航鲁棒性？"
+      ],
+      "shared_evidence_with": [
+        "C13"
+      ],
+      "review_notes": [
+        "第二次逐条来源审计完成；保留实际分析单位、任务条件及统计边界，不由不显著推出等效或唯一机制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "在训练分布的棋盘纹理场景中，FLYNN成功率92.9%、SPL 0.83；三个基线成功率89.0%至91.6%、SPL 0.80至0.81，呈现相近的描述性导航表现。",
+      "claim_type": "robot_navigation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "连接组约束RNN与基线的仿真导航评估",
+          "design": "DAgger训练后固定模型，在相同随机回合比较；非生物实验",
+          "comparator": "FLYNN、EfficientNet-B0、MobileNet-v3-large及SmallWorldNet",
+          "measure": "600步内到达目标的成功率与SPL",
+          "unit_of_analysis": "仿真回合；单一雌性果蝇连接组是拓扑来源而非实验重复",
+          "sample_size_as_reported": "同一组300个随机MuJoCo测试回合；独立训练种子数未报告",
+          "uncertainty": "表中离散均值与部分标准差；未提供组间显著性或训练种子区间",
+          "assumptions": [
+            "基线共享目标相对角和碰撞输入；CNN基线另用摄像头dropout训练"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "III Results / Table I",
+            "figure": "Table I",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在训练分布的棋盘纹理场景中，FLYNN成功率92.9%、SPL 0.83；三个基线成功率89.0%至91.6%、SPL 0.80至0.81，呈现相近的描述性导航表现。",
+        "boundary": "14×14米、20个随机圆柱障碍；目标到达阈值0.8米，最多12秒。",
+        "negative_result": null,
+        "non_inference": "没有等效检验，也不能从相近均值证明性能等效。",
+        "unresolved": "各成功率小数无法直接唯一映射到n=300的整数成功数；重复训练或汇总方式未说明。",
+        "unresolved_attribution": "来源局限及提取者来源复核"
+      },
+      "broad_directions": [
+        "connectomics",
+        "robust-embodied-ai"
+      ],
+      "scientific_questions": [
+        "连接组拓扑的哪些性质在控制感觉预处理、训练和残余信号后仍能提升导航鲁棒性？"
+      ],
+      "shared_evidence_with": [
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9"
+      ],
+      "review_notes": [
+        "第二次逐条来源审计完成；保留实际分析单位、任务条件及统计边界，不由不显著推出等效或唯一机制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "仅将纹理替换为真实图像时，FLYNN成功率42.1%、SPL 0.32，高于EfficientNet的17.2%/0.15、MobileNet的0%/0和SmallWorldNet的3.2%/0.02。",
+      "claim_type": "robot_navigation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "连接组约束RNN与基线的仿真导航评估",
+          "design": "DAgger训练后固定模型，在相同随机回合比较；非生物实验",
+          "comparator": "FLYNN、EfficientNet-B0、MobileNet-v3-large及SmallWorldNet",
+          "measure": "真实纹理条件成功率及SPL",
+          "unit_of_analysis": "仿真回合；单一雌性果蝇连接组是拓扑来源而非实验重复",
+          "sample_size_as_reported": "同一组300个随机MuJoCo测试回合；独立训练种子数未报告",
+          "uncertainty": "表中离散均值与部分标准差；未提供组间显著性或训练种子区间",
+          "assumptions": [
+            "基线共享目标相对角和碰撞输入；CNN基线另用摄像头dropout训练"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "III.A OOD Generalization",
+            "figure": "Table I",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "仅将纹理替换为真实图像时，FLYNN成功率42.1%、SPL 0.32，高于EfficientNet的17.2%/0.15、MobileNet的0%/0和SmallWorldNet的3.2%/0.02。",
+        "boundary": "OOD只改变草地、蓝天和混凝土等外观；场地几何、障碍统计和任务结构未变。",
+        "negative_result": "FLYNN仍有多数回合未成功，且成功率远低于训练纹理的92.9%。",
+        "non_inference": "不能推广为动力学、传感器噪声或现实机器人鲁棒性。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "connectomics",
+        "robust-embodied-ai"
+      ],
+      "scientific_questions": [
+        "连接组拓扑的哪些性质在控制感觉预处理、训练和残余信号后仍能提升导航鲁棒性？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9"
+      ],
+      "review_notes": [
+        "第二次逐条来源审计完成；保留实际分析单位、任务条件及统计边界，不由不显著推出等效或唯一机制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "真实纹理条件下FLYNN平均碰撞3.36次、成功回合1.53次，均高于其他模型；作者将此解释为保持多次尝试的碰撞恢复，而非避免碰撞更有效。",
+      "claim_type": "robot_navigation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "连接组约束RNN与基线的仿真导航评估",
+          "design": "DAgger训练后固定模型，在相同随机回合比较；非生物实验",
+          "comparator": "FLYNN、EfficientNet-B0、MobileNet-v3-large及SmallWorldNet",
+          "measure": "总回合与成功回合碰撞次数及代表轨迹",
+          "unit_of_analysis": "仿真回合；单一雌性果蝇连接组是拓扑来源而非实验重复",
+          "sample_size_as_reported": "同一组300个随机MuJoCo测试回合；独立训练种子数未报告",
+          "uncertainty": "表中离散均值与部分标准差；未提供组间显著性或训练种子区间",
+          "assumptions": [
+            "基线共享目标相对角和碰撞输入；CNN基线另用摄像头dropout训练"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "III.A OOD Generalization",
+            "figure": "Table I",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "真实纹理条件下FLYNN平均碰撞3.36次、成功回合1.53次，均高于其他模型；作者将此解释为保持多次尝试的碰撞恢复，而非避免碰撞更有效。",
+        "boundary": "作者对轨迹的描述与碰撞统计相结合；低碰撞基线可因停车而不是安全性更好。",
+        "negative_result": null,
+        "non_inference": "不能把更高碰撞数独立解释为更安全或更优的避障。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "connectomics",
+        "robust-embodied-ai"
+      ],
+      "scientific_questions": [
+        "连接组拓扑的哪些性质在控制感觉预处理、训练和残余信号后仍能提升导航鲁棒性？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C3",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9"
+      ],
+      "review_notes": [
+        "第二次逐条来源审计完成；保留实际分析单位、任务条件及统计边界，不由不显著推出等效或唯一机制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "单眼输入时FLYNN的成功率为左眼77.4%、右眼69.6%；SmallWorldNet为46.3%和68.0%，EfficientNet为78.6%和46.6%，MobileNet为73.5%和58.3%，显示任务和模型相关的左右不对称。",
+      "claim_type": "robot_navigation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "连接组约束RNN与基线的仿真导航评估",
+          "design": "DAgger训练后固定模型，在相同随机回合比较；非生物实验",
+          "comparator": "FLYNN、EfficientNet-B0、MobileNet-v3-large及SmallWorldNet",
+          "measure": "单眼成功率与SPL",
+          "unit_of_analysis": "仿真回合；单一雌性果蝇连接组是拓扑来源而非实验重复",
+          "sample_size_as_reported": "同一组300个随机MuJoCo测试回合；独立训练种子数未报告",
+          "uncertainty": "表中离散均值与部分标准差；未提供组间显著性或训练种子区间",
+          "assumptions": [
+            "基线共享目标相对角和碰撞输入；CNN基线另用摄像头dropout训练"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "III.B Vision loss tolerance",
+            "figure": "Table I",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "单眼输入时FLYNN的成功率为左眼77.4%、右眼69.6%；SmallWorldNet为46.3%和68.0%，EfficientNet为78.6%和46.6%，MobileNet为73.5%和58.3%，显示任务和模型相关的左右不对称。",
+        "boundary": "此处left/right eye only表示保留该眼，而不是关闭该眼；各模型不是每个单眼条件下FLYNN都最优。",
+        "negative_result": "EfficientNet左眼条件的成功率和SPL高于FLYNN。",
+        "non_inference": "未检验左右差异的统计显著性或生物侧化机制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "connectomics",
+        "robust-embodied-ai"
+      ],
+      "scientific_questions": [
+        "连接组拓扑的哪些性质在控制感觉预处理、训练和残余信号后仍能提升导航鲁棒性？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C3",
+        "C4",
+        "C6",
+        "C7",
+        "C8",
+        "C9"
+      ],
+      "review_notes": [
+        "第二次逐条来源审计完成；保留实际分析单位、任务条件及统计边界，不由不显著推出等效或唯一机制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "同时关闭两眼时FLYNN仍有44.3%成功率、SPL 0.37，高于EfficientNet的3.9%、MobileNet的16.5%及SmallWorldNet的2.6%。",
+      "claim_type": "robot_navigation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "连接组约束RNN与基线的仿真导航评估",
+          "design": "DAgger训练后固定模型，在相同随机回合比较；非生物实验",
+          "comparator": "FLYNN、EfficientNet-B0、MobileNet-v3-large及SmallWorldNet",
+          "measure": "双眼关闭导航表现",
+          "unit_of_analysis": "仿真回合；单一雌性果蝇连接组是拓扑来源而非实验重复",
+          "sample_size_as_reported": "同一组300个随机MuJoCo测试回合；独立训练种子数未报告",
+          "uncertainty": "表中离散均值与部分标准差；未提供组间显著性或训练种子区间",
+          "assumptions": [
+            "基线共享目标相对角和碰撞输入；CNN基线另用摄像头dropout训练"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "III.B Vision loss tolerance",
+            "figure": "Table I; Fig.6",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "同时关闭两眼时FLYNN仍有44.3%成功率、SPL 0.37，高于EfficientNet的3.9%、MobileNet的16.5%及SmallWorldNet的2.6%。",
+        "boundary": "所有模型仍获得精确相对目标角度和碰撞信息；仅在棋盘纹理训练环境中关闭视觉。",
+        "negative_result": "FLYNN较完整视觉显著降至较低的描述性成功率，未保持大多数回合成功。",
+        "non_inference": "不是没有目标信息、没有感觉或真实盲视动物的导航验证。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "connectomics",
+        "robust-embodied-ai"
+      ],
+      "scientific_questions": [
+        "连接组拓扑的哪些性质在控制感觉预处理、训练和残余信号后仍能提升导航鲁棒性？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C7",
+        "C8",
+        "C9"
+      ],
+      "review_notes": [
+        "第二次逐条来源审计完成；保留实际分析单位、任务条件及统计边界，不由不显著推出等效或唯一机制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "双眼关闭时FLYNN每回合碰撞4.54次、平均持续10.3秒；结合代表轨迹，作者观察其仍可通过后退和转向恢复，而其他模型常在碰撞后停滞。",
+      "claim_type": "robot_navigation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "连接组约束RNN与基线的仿真导航评估",
+          "design": "DAgger训练后固定模型，在相同随机回合比较；非生物实验",
+          "comparator": "FLYNN、EfficientNet-B0、MobileNet-v3-large及SmallWorldNet",
+          "measure": "回合时长、碰撞及轨迹解释",
+          "unit_of_analysis": "仿真回合；单一雌性果蝇连接组是拓扑来源而非实验重复",
+          "sample_size_as_reported": "同一组300个随机MuJoCo测试回合；独立训练种子数未报告",
+          "uncertainty": "表中离散均值与部分标准差；未提供组间显著性或训练种子区间",
+          "assumptions": [
+            "基线共享目标相对角和碰撞输入；CNN基线另用摄像头dropout训练"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "III.B Vision loss tolerance",
+            "figure": "Table I; Fig.7",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "双眼关闭时FLYNN每回合碰撞4.54次、平均持续10.3秒；结合代表轨迹，作者观察其仍可通过后退和转向恢复，而其他模型常在碰撞后停滞。",
+        "boundary": "MobileNet仍有16.5%成功；成功回合SPL较高可能只代表无障碍直线路径的选择子集。",
+        "negative_result": null,
+        "non_inference": "成功回合高SPL不能抵消总体失败，不能从轨迹示例推断所有回合必然停滞。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "connectomics",
+        "robust-embodied-ai"
+      ],
+      "scientific_questions": [
+        "连接组拓扑的哪些性质在控制感觉预处理、训练和残余信号后仍能提升导航鲁棒性？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C8",
+        "C9"
+      ],
+      "review_notes": [
+        "第二次逐条来源审计完成；保留实际分析单位、任务条件及统计边界，不由不显著推出等效或唯一机制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "作者报告未进行摄像头dropout训练的EfficientNet和MobileNet在视觉丢失测试中成功率为0%；表中CNN耐受性来自每批各20%的左、右或双眼关闭训练，而FLYNN和SmallWorldNet训练时没有该处理。",
+      "claim_type": "robot_navigation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "连接组约束RNN与基线的仿真导航评估",
+          "design": "DAgger训练后固定模型，在相同随机回合比较；非生物实验",
+          "comparator": "CNN有/无dropout训练；FLYNN与SmallWorldNet无dropout",
+          "measure": "有无摄像头dropout的CNN负对照",
+          "unit_of_analysis": "仿真回合；单一雌性果蝇连接组是拓扑来源而非实验重复",
+          "sample_size_as_reported": "主要评估每条件300回合；未dropout对照逐条件表格和种子数未提供",
+          "uncertainty": "表中离散均值与部分标准差；未提供组间显著性或训练种子区间",
+          "assumptions": [
+            "基线共享目标相对角和碰撞输入；CNN基线另用摄像头dropout训练"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "III.B Vision loss tolerance",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者报告未进行摄像头dropout训练的EfficientNet和MobileNet在视觉丢失测试中成功率为0%；表中CNN耐受性来自每批各20%的左、右或双眼关闭训练，而FLYNN和SmallWorldNet训练时没有该处理。",
+        "boundary": "保留作者报告的负结果，不补出单眼/双眼分项统计。",
+        "negative_result": "无dropout的CNN未成功导航。",
+        "non_inference": "训练处理并非四模型完全相同，不能说性能比较排除了全部训练因素。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "connectomics",
+        "robust-embodied-ai"
+      ],
+      "scientific_questions": [
+        "连接组拓扑的哪些性质在控制感觉预处理、训练和残余信号后仍能提升导航鲁棒性？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C9"
+      ],
+      "review_notes": [
+        "第二次逐条来源审计完成；保留实际分析单位、任务条件及统计边界，不由不显著推出等效或唯一机制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "与FLYNN共享规模、漏积分循环结构、感觉分区及小世界路径统计的SmallWorldNet在完全失去视觉时近乎失败，提示一般小世界结构不足以解释FLYNN在该任务中的全部优势。",
+      "claim_type": "robot_navigation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "连接组约束RNN与基线的仿真导航评估",
+          "design": "DAgger训练后固定模型，在相同随机回合比较；非生物实验",
+          "comparator": "FLYNN、EfficientNet-B0、MobileNet-v3-large及SmallWorldNet",
+          "measure": "SmallWorldNet结构匹配对照的性能",
+          "unit_of_analysis": "仿真回合；单一雌性果蝇连接组是拓扑来源而非实验重复",
+          "sample_size_as_reported": "同一组300个随机MuJoCo测试回合；独立训练种子数未报告",
+          "uncertainty": "表中离散均值与部分标准差；未提供组间显著性或训练种子区间",
+          "assumptions": [
+            "基线共享目标相对角和碰撞输入；CNN基线另用摄像头dropout训练"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "III.B Vision loss tolerance",
+            "figure": "Table I",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "与FLYNN共享规模、漏积分循环结构、感觉分区及小世界路径统计的SmallWorldNet在完全失去视觉时近乎失败，提示一般小世界结构不足以解释FLYNN在该任务中的全部优势。",
+        "boundary": "一个合成拓扑基线；输入路由、方向性、边数和参数初始化细节主要指向未随文提供的代码。",
+        "negative_result": "SmallWorldNet双眼关闭成功率2.6%，真实纹理3.2%。",
+        "non_inference": "不能唯一识别某一果蝇回路或证明连接组拓扑是充分必要机制。",
+        "unresolved": "139255节点、平均度78的Watts–Strogatz图如何转换有向权重及精确匹配连接数未充分说明。",
+        "unresolved_attribution": "来源局限及提取者来源复核"
+      },
+      "broad_directions": [
+        "connectomics",
+        "robust-embodied-ai"
+      ],
+      "scientific_questions": [
+        "连接组拓扑的哪些性质在控制感觉预处理、训练和残余信号后仍能提升导航鲁棒性？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8"
+      ],
+      "review_notes": [
+        "第二次逐条来源审计完成；保留实际分析单位、任务条件及统计边界，不由不显著推出等效或唯一机制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "PCA与KDE显示FLYNN在完整、单眼和双眼关闭条件下的内部状态分布较分离，而SmallWorldNet的分布较广且重叠。",
+      "claim_type": "robot_navigation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "连接组约束RNN与基线的仿真导航评估",
+          "design": "DAgger训练后固定模型，在相同随机回合比较；非生物实验",
+          "comparator": "FLYNN、EfficientNet-B0、MobileNet-v3-large及SmallWorldNet",
+          "measure": "前两主成分空间的状态密度与聚类",
+          "unit_of_analysis": "仿真回合；单一雌性果蝇连接组是拓扑来源而非实验重复",
+          "sample_size_as_reported": "同一组300个随机MuJoCo测试回合；独立训练种子数未报告",
+          "uncertainty": "表中离散均值与部分标准差；未提供组间显著性或训练种子区间",
+          "assumptions": [
+            "基线共享目标相对角和碰撞输入；CNN基线另用摄像头dropout训练"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "III.B Internal-state analysis",
+            "figure": "Fig.8",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "PCA与KDE显示FLYNN在完整、单眼和双眼关闭条件下的内部状态分布较分离，而SmallWorldNet的分布较广且重叠。",
+        "boundary": "分析同一300个测试环境中的时间序列；时间点和主成分不是新的独立重复。",
+        "negative_result": null,
+        "non_inference": "未报告聚类稳定性的重复训练检验；KDE分离不是机制干预证据。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "connectomics",
+        "robust-embodied-ai"
+      ],
+      "scientific_questions": [
+        "连接组拓扑的哪些性质在控制感觉预处理、训练和残余信号后仍能提升导航鲁棒性？"
+      ],
+      "shared_evidence_with": [
+        "C11",
+        "C12"
+      ],
+      "review_notes": [
+        "第二次逐条来源审计完成；保留实际分析单位、任务条件及统计边界，不由不显著推出等效或唯一机制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "在解释89.1%方差的FLYNN前10主成分中，盲态到全视觉向量长度11.16，两个单眼增量之和长度11.11，余弦相似度0.9998；SmallWorldNet相应为22.88、30.01和0.9439。",
+      "claim_type": "robot_navigation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "连接组约束RNN与基线的仿真导航评估",
+          "design": "DAgger训练后固定模型，在相同随机回合比较；非生物实验",
+          "comparator": "FLYNN、EfficientNet-B0、MobileNet-v3-large及SmallWorldNet",
+          "measure": "KDE峰之间的向量叠加几何",
+          "unit_of_analysis": "仿真回合；单一雌性果蝇连接组是拓扑来源而非实验重复",
+          "sample_size_as_reported": "同一组300个随机MuJoCo测试回合；独立训练种子数未报告",
+          "uncertainty": "表中离散均值与部分标准差；未提供组间显著性或训练种子区间",
+          "assumptions": [
+            "基线共享目标相对角和碰撞输入；CNN基线另用摄像头dropout训练"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "III.B Internal-state analysis",
+            "figure": "Fig.8",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在解释89.1%方差的FLYNN前10主成分中，盲态到全视觉向量长度11.16，两个单眼增量之和长度11.11，余弦相似度0.9998；SmallWorldNet相应为22.88、30.01和0.9439。",
+        "boundary": "SmallWorldNet前10成分解释94.6%方差；比较为学习状态的投影几何而非突触因果。",
+        "negative_result": null,
+        "non_inference": "近似线性峰位关系不证明全部状态、全部感觉通道独立，也不证明神经系统真实采用此融合机制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "connectomics",
+        "robust-embodied-ai"
+      ],
+      "scientific_questions": [
+        "连接组拓扑的哪些性质在控制感觉预处理、训练和残余信号后仍能提升导航鲁棒性？"
+      ],
+      "shared_evidence_with": [
+        "C10",
+        "C12"
+      ],
+      "review_notes": [
+        "第二次逐条来源审计完成；保留实际分析单位、任务条件及统计边界，不由不显著推出等效或唯一机制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "作者提出连接组模块化可能形成近似线性感觉融合的拓扑先验，从而缓和感觉损失；具体驱动性质仍待干预验证。",
+      "claim_type": "robot_navigation",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "连接组约束RNN与基线的仿真导航评估",
+          "design": "DAgger训练后固定模型，在相同随机回合比较；非生物实验",
+          "comparator": "FLYNN、EfficientNet-B0、MobileNet-v3-large及SmallWorldNet",
+          "measure": "将几何现象联系到鲁棒性的作者假说",
+          "unit_of_analysis": "仿真回合；单一雌性果蝇连接组是拓扑来源而非实验重复",
+          "sample_size_as_reported": "同一组300个随机MuJoCo测试回合；独立训练种子数未报告",
+          "uncertainty": "表中离散均值与部分标准差；未提供组间显著性或训练种子区间",
+          "assumptions": [
+            "基线共享目标相对角和碰撞输入；CNN基线另用摄像头dropout训练"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "IV Conclusions",
+            "figure": "Fig.8",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者提出的可检验假说。",
+        "boundary": "几何分析是相关性观察，未扰动指定模块或回路。",
+        "negative_result": null,
+        "non_inference": "不能将假说写成已确立的鲁棒性因果机制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "connectomics",
+        "robust-embodied-ai"
+      ],
+      "scientific_questions": [
+        "连接组拓扑的哪些性质在控制感觉预处理、训练和残余信号后仍能提升导航鲁棒性？"
+      ],
+      "shared_evidence_with": [
+        "C10",
+        "C11"
+      ],
+      "review_notes": [
+        "第二次逐条来源审计完成；保留实际分析单位、任务条件及统计边界，不由不显著推出等效或唯一机制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C13",
+      "statement": "作者指出L1/L2的手工时间滤波可能部分解释纹理OOD优势，而双眼关闭结果避开了视觉滤波这一解释，但仍保留非视觉目标与碰撞信号。",
+      "claim_type": "robot_navigation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "连接组约束RNN与基线的仿真导航评估",
+          "design": "DAgger训练后固定模型，在相同随机回合比较；非生物实验",
+          "comparator": "FLYNN、EfficientNet-B0、MobileNet-v3-large及SmallWorldNet",
+          "measure": "视觉预处理混杂与双眼关闭对照",
+          "unit_of_analysis": "仿真回合；单一雌性果蝇连接组是拓扑来源而非实验重复",
+          "sample_size_as_reported": "同一组300个随机MuJoCo测试回合；独立训练种子数未报告",
+          "uncertainty": "表中离散均值与部分标准差；未提供组间显著性或训练种子区间",
+          "assumptions": [
+            "基线共享目标相对角和碰撞输入；CNN基线另用摄像头dropout训练"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "III.B Discussion before IV",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者指出L1/L2的手工时间滤波可能部分解释纹理OOD优势，而双眼关闭结果避开了视觉滤波这一解释，但仍保留非视觉目标与碰撞信号。",
+        "boundary": "因左侧光感受器连接不全，模型绕过光感受器并手工提供L1/L2边缘和L3亮度特征。",
+        "negative_result": null,
+        "non_inference": "双眼关闭只排除视觉预处理的直接作用，不排除输入映射或其他架构差异。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "connectomics",
+        "robust-embodied-ai"
+      ],
+      "scientific_questions": [
+        "连接组拓扑的哪些性质在控制感觉预处理、训练和残余信号后仍能提升导航鲁棒性？"
+      ],
+      "shared_evidence_with": [
+        "C1"
+      ],
+      "review_notes": [
+        "第二次逐条来源审计完成；保留实际分析单位、任务条件及统计边界，不由不显著推出等效或唯一机制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "连接组稀疏RNN可在模拟多感觉导航中学习，表现出纹理迁移和视觉损失优势；关键对照、仍保留的目标/碰撞输入、单眼例外、训练dropout差异及几何机制的不确定性均保留。13条候选共享同一仿真评估，不是多次生物复制。",
+  "shared_evidence": [
+    {
+      "claim_id": "C1",
+      "with": [
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C2",
+      "with": [
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C2",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C2",
+        "C3",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C2",
+        "C3",
+        "C4",
+        "C6",
+        "C7",
+        "C8",
+        "C9"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C7",
+        "C8",
+        "C9"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C8",
+        "C9"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C9"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "with": [
+        "C11",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "with": [
+        "C10",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "with": [
+        "C10",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C13",
+      "with": [
+        "C1"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": "C2",
+        "issue": "Table I声明n=300，但若干成功率小数不能直接转换整数成功数。",
+        "pdf_page": 6,
+        "suggested_correction": "原样保留百分比，不猜测重复训练或额外回合。",
+        "resolved": false
+      },
+      {
+        "claim_id": "C9",
+        "issue": "SmallWorldNet匹配声明不足以唯一隔离所有拓扑/路由差异；有向边转换未清楚报告。",
+        "pdf_page": 4,
+        "suggested_correction": "保留架构对照意义及未报告细节。",
+        "resolved": false
+      },
+      {
+        "claim_id": "C6",
+        "issue": "total blindness仍有目标角与碰撞线索，不能写为全感觉缺失。",
+        "pdf_page": 6,
+        "suggested_correction": "已显式限定仅关闭视觉。",
+        "resolved": true
+      },
+      {
+        "claim_id": "C12",
+        "issue": "模块化和线性感觉融合是几何相关性解释，不是因果机制证明。",
+        "pdf_page": 7,
+        "suggested_correction": "已标hypothesis。",
+        "resolved": true
+      },
+      {
+        "claim_id": "C3",
+        "issue": "摘要/结论的保持大多数导航能力表述需按Table I的42.1%/44.3%限定。",
+        "pdf_page": 6,
+        "suggested_correction": "保留实际下降和多数回合失败。",
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T13:00:24.529150Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "b612044d7ac3004a10e05bfbe1bc5ce8327577f20c2047531e30afaef13d9e2b",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

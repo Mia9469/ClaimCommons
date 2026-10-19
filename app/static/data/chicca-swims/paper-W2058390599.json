@@ -1,0 +1,610 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "other",
+  "paper": {
+    "title": "Synthesizing cognition in neuromorphic electronic systems",
+    "authors": [
+      "Emre Neftci",
+      "Jonathan Binas",
+      "Ueli Rutishauser",
+      "Elisabetta Chicca",
+      "Giacomo Indiveri",
+      "Rodney J. Douglas"
+    ],
+    "doi": "10.1073/pnas.1212083110",
+    "publication_year": 2013,
+    "venue": "Proceedings of the National Academy of Sciences",
+    "url": "https://doi.org/10.1073/pnas.1212083110"
+  },
+  "source": {
+    "filename": "paper-W2058390599.pdf",
+    "sha256": "a411e611f13427bc2b6991f39cf73ae8a326c2f0a6c7ffad003d0ed11eae7cd3",
+    "source_url": "https://s3.us-west-2.amazonaws.com/caltechauthors/86/53/f94f-2e69-4d52-807d-1ffcb0b25420/data?response-content-type=application%2Foctet-stream&response-content-disposition=attachment%3B%20filename%3Dpnas.201212083SI.pdf&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARCVIVNNAKP37N3MU%2F20261007%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261007T041559Z&X-Amz-Expires=60&X-Amz-SignedHeaders=host&X-Amz-Signature=c1a80d98e6f0b786a772f961aed6b0ed86d9ae3eb6fbd64d00c9cc6b3684433f",
+    "pdf_page_count": 4
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "results_sections_seen": [
+      "Dynamics of the Neural Soft State Machines",
+      "Nullcline Analysis for the Calculation of bmin",
+      "List of Parameters",
+      "Fig. S1–S5 captions",
+      "Table S1"
+    ],
+    "missing_material": [
+      "论文主文及主文 Fig. 4",
+      "图像像素",
+      "所引用文献的正文"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "提供文件是四页 Supporting Information，与元数据 DOI 一致；未提供论文主文，版本日期无法单独核实。",
+      "全部提供文本及参考文献均已评估；引用文献不作为本文件的新结果。",
+      "部分公式提取损坏；动力学方程与参数表对 ϕ1、ϕ2 的连接方向描述存在不一致。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "循环双状态 SSM 的振荡、输入持续时间及解析与模拟比较。",
+      "role": "result",
+      "source_pages": [
+        1,
+        3,
+        4
+      ],
+      "decision": "include",
+      "reason": "具有解析推导、参数及 LTU 与脉冲模拟比较；适用条件可明确界定。"
+    },
+    {
+      "summary": "通过零流线和固定点稳定性确定 pre–post 状态切换阈值。",
+      "role": "result",
+      "source_pages": [
+        1,
+        4
+      ],
+      "decision": "include",
+      "reason": "稳定性命题可读，阈值数值由参数表报告；损坏公式不能完整复核。"
+    },
+    {
+      "summary": "sWTA 对含噪输入的模式恢复及撤去刺激后的持续活动。",
+      "role": "result",
+      "source_pages": [
+        2,
+        4
+      ],
+      "decision": "include",
+      "reason": "提供具体模拟示例，但作者明确将其原理视为已知吸引子性质。"
+    },
+    {
+      "summary": "选中吸引子的活动调制与其他神经元受抑制共存。",
+      "role": "result",
+      "source_pages": [
+        2,
+        4
+      ],
+      "decision": "include",
+      "reason": "与模式恢复共享试次，但刺激条件和读出可独立判断。"
+    },
+    {
+      "summary": "模式识别示例中，当前状态预刺激的转移群体赢得竞争并驱动下一状态。",
+      "role": "interpretation",
+      "source_pages": [
+        3
+      ],
+      "decision": "include",
+      "reason": "图注给出单个试次的电路解释；主文缺失限制任务和因果评估。"
+    },
+    {
+      "summary": "随机 SSM 中 AER 路由事件与神经元放电监测，以及路由峰对应输入时刻。",
+      "role": "descriptive measurement",
+      "source_pages": [
+        4
+      ],
+      "decision": "include",
+      "reason": "图注支持有限的时间对应命题，不能支持吞吐量或效率结论。"
+    },
+    {
+      "summary": "校准参数、共享阈值、连接概率及硬件限制。",
+      "role": "methods and boundary",
+      "source_pages": [
+        2,
+        4
+      ],
+      "decision": "exclude",
+      "reason": "作为配置和适用边界保留；没有独立的优化或性能改善验证。"
+    },
+    {
+      "summary": "转移群体响应空间差异主要来自制造失配。",
+      "role": "interpretation",
+      "source_pages": [
+        3
+      ],
+      "decision": "defer",
+      "reason": "仅有作者归因，缺少隔离制造失配影响的对照。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "在 Table S1 参数、转移期间仅两个状态群体活跃的循环 SSM 中，持续输入使两个状态群体交替振荡；作者以半周期作为适宜的单次转移输入时长，在 τE = 50 ms 时估计为 305 ms，并报告解析振荡与 LTU、I&F 模拟吻合良好。",
+      "claim_type": "conditional theoretical prediction with simulation comparison",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "LTU 动力学解析及 LTU、I&F 模拟",
+          "design": "将循环网络简化为两个状态及其转移群体，分解活动的和与差，分析振荡分量。",
+          "comparator": "解析振荡与 LTU、I&F 模拟",
+          "measure": "状态群体活动、平均放电率及估计转移时长；放电率分箱 10 ms",
+          "unit_of_analysis": "循环双状态网络的模拟轨迹",
+          "sample_size_as_reported": "脉冲系统每个群体 150 个神经元；模拟重复次数未报告",
+          "uncertainty": "报告吻合良好，未给误差量或置信区间",
+          "assumptions": [
+            "转移期间仅两个状态群体活跃，其余状态静默",
+            "解析线性化假设纳入的所有单元始终活跃",
+            "采用 Table S1 参数且 τI < τE",
+            "差分系统具有振荡分量，半周期规则针对该循环配置",
+            "脉冲模拟连接概率乘以 16/150，以匹配硬件实验总体连接强度"
+          ],
+          "source_locator": {
+            "pdf_page": 1,
+            "section": "Dynamics of the Neural Soft State Machines",
+            "figure": "Fig. S2，PDF 第3页；Table S1，PDF 第4页",
+            "equation": "差分动力学与 ttrans",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "该简化循环配置可用振荡时间尺度指导输入持续时间。",
+        "boundary": "305 ms 是指定参数下的估计；模拟增大群体规模以降低活动波动。",
+        "negative_result": null,
+        "non_inference": "未证明 305 ms 是任意 SSM 或实际硬件的最优输入时长；文中输入过长或过短的风险没有量化失败率。",
+        "unresolved": "缺少跨参数、跨网络及重复模拟的误差评估；公式提取损坏妨碍完整复核。",
+        "unresolved_attribution": "方程与参数表对 ϕ1、ϕ2 的连接方向标注不一致。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "循环双状态神经状态机的振荡时间尺度如何约束单次状态转移的输入持续时间？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "解析和两类模拟属于同一配置的比较，不构成独立实验重复。",
+        "τE = 50 ms 用于本项分析；Fig. S1 另用 τexc = 80 ms。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "在作者分析的 pre–post 分段线性状态模型及参数条件下，增大施加到 post 的输入使 pre 活跃的稳定固定点与中间不稳定固定点合并并失稳，最终仅保留 post 活跃的稳定固定点；Table S1 报告最低切换输入 bmin = 29.21 Hz。",
+      "claim_type": "conditional fixed-point analysis",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "零流线与固定点稳定性分析",
+          "design": "考察施加到 post 的输入如何移动零流线并改变固定点结构。",
+          "comparator": "未达到与达到切换条件的固定点结构",
+          "measure": "固定点稳定性及最低切换输入",
+          "unit_of_analysis": "pre–post 二维动力系统",
+          "sample_size_as_reported": null,
+          "uncertainty": "未报告数值误差或经验阈值分布",
+          "assumptions": [
+            "使用文中 pre–post 方程及阈值非线性",
+            "抑制作用由有效耦合项表示",
+            "采用作者所分析的参数区域"
+          ],
+          "source_locator": {
+            "pdf_page": 1,
+            "section": "Nullcline Analysis for the Calculation of bmin",
+            "figure": "Fig. S4 与 Table S1，PDF 第4页",
+            "equation": "pre–post 动力学、零流线及 bmin",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "模型以固定点失稳解释输入触发的状态切换。",
+        "boundary": "29.21 Hz 是表列模型输入值；文中未完整说明其与未经突触加权的外部刺激频率的换算。",
+        "negative_result": null,
+        "non_inference": "不能将表列值视为独立测得的硬件阈值或普适阈值。",
+        "unresolved": "Λ 未明确界定，且正文和图注中的阈值表达式提取损坏，无法完整复核数值。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "施加到目标状态的输入如何改变吸引子的稳定性并触发状态切换？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "未将 Fig. S4 的固定点稳定性描述推广到所有参数区域。",
+        "保留可读的定性分析及表列值，未重建损坏的阈值公式。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "在 Fig. S1 的 I&F sWTA 模拟中，具有额外循环连接的神经元 24–40 群体放大 0–1.5 s 的含噪矩形输入并向连接所存模式恢复；撤去输入后，1.5–2 s 的活动持续存在，其形状仅由存储模式决定。",
+      "claim_type": "simulation demonstration",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "I&F 网络模拟",
+          "design": "采用状态保持 sWTA 参数，添加神经元 24–40 间的循环连接，施加含噪输入后撤去。",
+          "comparator": "刺激轮廓与网络活动；输入存在与撤去后的活动",
+          "measure": "脉冲栅格、平均放电率轮廓及持续活动",
+          "unit_of_analysis": "一个示例模拟试次中的神经元群体",
+          "sample_size_as_reported": "图注展示一个试次；目标神经元编号 24–40，网络总规模未报告",
+          "uncertainty": null,
+          "assumptions": [
+            "采用 Table S1 参数，另设 τexc = 80 ms、τinh = 50 ms",
+            "模式预先嵌入循环连接",
+            "绘图时刺激频率乘以输入突触权重 0.015 并减去 Texc"
+          ],
+          "source_locator": {
+            "pdf_page": 2,
+            "section": null,
+            "figure": "Fig. S1 A–B",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "示例展示模式恢复及撤去输入后的持续活动。",
+        "boundary": "这是指定连接模式的模拟；作者将相关吸引子性质明确归为已知性质。",
+        "negative_result": null,
+        "non_inference": "不能推断模式经学习获得、硬件恢复性能或定量噪声容限。",
+        "unresolved": "未报告噪声扫描、恢复误差或试次间变异。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "dynamics-networks",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "循环 sWTA 如何从含噪输入恢复连接所存模式并在输入撤去后维持活动？"
+      ],
+      "shared_evidence_with": [
+        "C4"
+      ],
+      "review_notes": [
+        "刺激存在时网络活动仍反映刺激轮廓，图注没有声称完全恢复存储模式。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "在 Fig. S1 同一 I&F sWTA 模拟中，向全部兴奋性神经元施加 2 Hz（2–3 s）及 4 Hz（3–4 s）振荡输入时，活动仅在已选中的神经元 24–40 吸引子群体中反映该信号，其余神经元受抑制，展示模式选择与活动调制共存。",
+      "claim_type": "simulation demonstration",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "I&F 网络模拟",
+          "design": "在已建立的吸引子状态中向全部兴奋性神经元施加两个频率的振荡刺激。",
+          "comparator": "活跃吸引子群体与其余神经元",
+          "measure": "群体活动对振荡输入的反映及活动选择性",
+          "unit_of_analysis": "与 C3 相同模拟试次中的后续时间区间",
+          "sample_size_as_reported": "一个展示试次、两个输入频率；重复次数未报告",
+          "uncertainty": null,
+          "assumptions": [
+            "使用与 C3 相同的网络和预设连接",
+            "目标吸引子在振荡输入前已活跃",
+            "τexc = 80 ms、τinh = 50 ms"
+          ],
+          "source_locator": {
+            "pdf_page": 2,
+            "section": null,
+            "figure": "Fig. S1",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "选中的模式保持选择性，同时其活动反映连续变化的输入。",
+        "boundary": "只展示两个频率及一个活跃模式；属于已知吸引子性质的实例。",
+        "negative_result": null,
+        "non_inference": "不能推断定量增益、完整频率响应或任意模式的泛化。",
+        "unresolved": "未报告跟踪误差、相位延迟或调制带宽。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "吸引子网络能否在维持离散模式选择的同时反映连续振荡输入？"
+      ],
+      "shared_evidence_with": [
+        "C3"
+      ],
+      "review_notes": [
+        "两个频率属于同一示例试次，不计为独立重复。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "在 Fig. S3 描述的模式识别试次中，selective attention chip（SAC）刺激对活跃神经元位置有响应的一组转移群体；图注解释，此前受到活跃状态刺激的群体赢得竞争并驱动向新状态的转移。",
+      "claim_type": "single-trial circuit mechanism interpretation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "转移 sWTA 脉冲栅格的图注描述",
+          "design": "展示主文 Fig. 4 同一试次中的转移群体活动，每个群体对应一个可能转移。",
+          "comparator": "受当前状态预刺激的候选群体与其他候选群体",
+          "measure": "转移群体脉冲活动及获胜群体驱动的状态转移",
+          "unit_of_analysis": "一个模式识别示例试次中的转移群体",
+          "sample_size_as_reported": "一个展示试次；群体数、神经元数及设备数未报告",
+          "uncertainty": null,
+          "assumptions": [
+            "转移群体与状态转移的映射按图注描述成立",
+            "完整任务和状态序列依赖未提供的主文"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": null,
+            "figure": "Fig. S3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "图注支持当前状态预刺激参与候选转移选择的实例解释。",
+        "boundary": "仅有一个试次的文字描述，主文及图像未提供。",
+        "negative_result": null,
+        "non_inference": "不能估计识别准确率、重复性或证明预刺激的因果必要性。",
+        "unresolved": "缺少任务定义、完整状态活动对照及预刺激消融。",
+        "unresolved_attribution": "作者将响应空间差异主要归因于制造失配，但未提供独立归因检验。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "当前状态的预刺激如何影响输入触发的候选状态转移竞争？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "图注所指状态图 Fig. S1 与本文件 Fig. S1 的信号恢复内容不一致，未据此重建状态图。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "在 Fig. S5 描述的 Ns = 5、Nq = 5 且无歧义转移的随机 SSM 示例中，作者测量路由与监测的 AER 事件；路由事件率峰出现的时刻对应输入提供的时刻。",
+      "claim_type": "descriptive communication measurement",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "AER 通信事件测量",
+          "design": "记录一个随机生成 SSM 的映射事件和监测事件。",
+          "comparator": "路由事件率峰的时刻与输入提供时刻",
+          "measure": "每秒映射的地址事件数及对应神经元放电的监测事件数",
+          "unit_of_analysis": "一个随机 SSM 示例的通信事件记录",
+          "sample_size_as_reported": "一个示例 SSM，Ns = 5、Nq = 5；设备数及独立重复次数未报告",
+          "uncertainty": null,
+          "assumptions": [
+            "示例没有歧义转移",
+            "映射事件表示 AER 路由流量，监测事件对应神经元放电"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": null,
+            "figure": "Fig. S5 A–B",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "该示例的路由活动峰与输入时刻对应。",
+        "boundary": "图注只支持定性时间对应；Ns、Nq 的定义未在提供文本中说明。",
+        "negative_result": null,
+        "non_inference": "不能推断峰值吞吐量、通信效率、能耗、扩展性或输入引起峰值的因果效应。",
+        "unresolved": "未提供可读数值、延迟、基线比较或重复间变异。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "随机神经状态机的 AER 路由活动如何随输入时刻变化？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "事件数是通信读出，不是独立实验样本数。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "第二遍核查覆盖全部四页补充材料及参考文献，保留五项有条件的解析、模拟和机制解释命题，并补入 AER 路由峰与输入时刻对应的描述性结果。模式恢复和活动调制共享同一模拟，不能计为重复验证。主文、图像像素及引用文献正文未提供；阈值公式损坏、耦合方向标注和状态图交叉引用问题限制复核，未据此推断整体任务性能或硬件普适性。",
+  "shared_evidence": [
+    {
+      "claim_id": "C3",
+      "with": [
+        "C4"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C3"
+      ]
+    }
+  ],
+  "audit": {
+    "initial_source_match_checks": [],
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": null,
+        "issue": "元数据为 article，但提供文件实际是 Supporting Information。",
+        "suggested_correction": "识别为关联论文的补充材料，仅声明覆盖提供的四页。",
+        "pdf_page": 1,
+        "resolved": true
+      },
+      {
+        "claim_id": "C1",
+        "issue": "动力学方程和 Table S1 对 ϕ1、ϕ2 的连接方向标注相反。",
+        "suggested_correction": "保留整体动力学命题，记录标注不一致，不擅自确定正确的方向映射。",
+        "pdf_page": 4,
+        "resolved": false
+      },
+      {
+        "claim_id": "C2",
+        "issue": "阈值公式提取损坏，Λ 未清楚定义，不能完整复核 29.21 Hz。",
+        "suggested_correction": "将 29.21 Hz 明确标为表列值，保留定性稳定性分析并说明复核限制。",
+        "pdf_page": 1,
+        "resolved": true
+      },
+      {
+        "claim_id": "C2",
+        "issue": "草稿对 bmin 与未经加权外部刺激频率的关系表述过于确定；表格没有像 bin 那样明确说明其加权定义。",
+        "suggested_correction": "改为换算未完整说明，避免断言具体加权方式。",
+        "pdf_page": 4,
+        "resolved": true
+      },
+      {
+        "claim_id": "C5",
+        "issue": "Fig. S3 指向状态图 Fig. S1，但所提供 Fig. S1 是信号恢复图。",
+        "suggested_correction": "记录未解决的交叉引用问题，不重建缺失状态图。",
+        "pdf_page": 3,
+        "resolved": false
+      },
+      {
+        "claim_id": "C6",
+        "issue": "草稿因缺少数值和性能比较而暂缓 Fig. S5，遗漏了图注明确报告的路由峰与输入时刻对应。",
+        "suggested_correction": "加入有限的描述性测量命题，明确不支持效率或吞吐量结论。",
+        "pdf_page": 4,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "硬件优化、更低连接概率及制造失配归因没有本文件中的验证对照。",
+        "suggested_correction": "保留为配置边界或未验证解释，不作为已证实的性能改善。",
+        "pdf_page": 2,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "草稿包含目标 schema 未定义的 source_check 和 review 字段。",
+        "suggested_correction": "删除额外字段，将必要核查说明保留在 review_notes 和 audit_findings。",
+        "pdf_page": null,
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T05:00:00.731350Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "signed_in_chatgpt_codex",
+    "authentication": "existing_ChatGPT_login",
+    "provider_api_key_used": false,
+    "model": "account_default_GPT",
+    "source_sha256": "a411e611f13427bc2b6991f39cf73ae8a326c2f0a6c7ffad003d0ed11eae7cd3",
+    "requests": [
+      {
+        "phase": "extraction",
+        "seconds": 91.27,
+        "usage": {
+          "input_tokens": 17408,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 4505,
+          "reasoning_output_tokens": 63
+        },
+        "backend": "signed_in_chatgpt_codex",
+        "tools_used": false
+      },
+      {
+        "phase": "source_audit",
+        "seconds": 108.3,
+        "usage": {
+          "input_tokens": 21754,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 5579,
+          "reasoning_output_tokens": 56
+        },
+        "backend": "signed_in_chatgpt_codex",
+        "tools_used": false
+      }
+    ],
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

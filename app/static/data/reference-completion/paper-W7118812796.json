@@ -1,0 +1,1279 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "Blurred magnitude homology of functional connectome for ASD diagnosis",
+    "authors": [
+      "Alexander Kachura",
+      "В. Л. Чернышев",
+      "Oleg Kachan",
+      "Egor Levchenko"
+    ],
+    "doi": "10.3389/fpsyt.2025.1677282",
+    "publication_year": 2026,
+    "venue": "Frontiers in Psychiatry",
+    "url": "https://doi.org/10.3389/fpsyt.2025.1677282"
+  },
+  "source": {
+    "filename": "paper-W7118812796--Blurred-magnitude-homology-of-functional-connectome-for-ASD-diagnosis.pdf",
+    "sha256": "4177c0d60c67b86794ee125339fa96d95731862d10221b2f2bb24ccea71beeb4",
+    "source_url": "https://public-pages-files-2025.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2025.1677282/pdf",
+    "pdf_page_count": 13
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "results_sections_seen": [
+      "ABIDE acquisition",
+      "Lag/quasimetric/BMH definitions",
+      "Example1",
+      "Joint/onlyBetti classifiers",
+      "Grid/model comparisons",
+      "Holm tests",
+      "Timing",
+      "Feature/group subnet analyses",
+      "Discussion"
+    ],
+    "missing_material": [
+      "图像像素未读取",
+      "nested独立测试/外部验证未给",
+      "数学系数字段等实现细节不全"
+    ],
+    "text_pass_complete": true,
+    "notes": "全13页6图4表41参考评估；2026出版、DOI含2025不冲突。",
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "作者用ROI时滞相关构造有向连接图，经最短路距离化后提取BMH Betti曲线，并与向量化connectome的另一MLP分支联合分类。",
+      "role": "interpretation",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "一时间步lagged PCC提供有向统计相似度，转化sqrt((1-r)/2)并作有向最短路径闭包可形成准度量式特征。",
+      "role": "interpretation",
+      "source_pages": [
+        3
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "BMH以总长≤ℓ的路径链替代精确长度，b0记录弱连通分量，b1记录允许短路径边界关系后的周期维度。",
+      "role": "interpretation",
+      "source_pages": [
+        4
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "ABIDE I内部评估中BMH-Net报告F1=.674±.022、accuracy=.622±.065、precision=.573±.061、sensitivity=.840±.085。",
+      "role": "result",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "与connectome-only MLP比较，联合BMH-Net在F1/accuracy/precision数值略好，但sensitivity更低。",
+      "role": "result",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "BMH-Net与ASD-DiagNet的F1经Holm比较p=.042，但accuracy/precision/recall差异未显著。",
+      "role": "result",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "纯BMH-MLP比纯DPH-MLP的F1/accuracy/precision更高，但sensitivity较低；两者均显著弱于连接图联合模型的表现。",
+      "role": "result",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "grid128/256/512存在指标权衡：128的F1最高、256的accuracy/precision最高、512的sensitivity最高。",
+      "role": "result",
+      "source_pages": [
+        11
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "同一笔记本CPU的10连接图计时中，128/256/512网格平均约31.664/62.245/126.165秒，体现拓扑计算随密度增加的开销。",
+      "role": "result",
+      "source_pages": [
+        10
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "梯度绝对值汇总的子网重要度报告VN约.346、DMN.340至CEREN.328，模型使用多个子网特征。",
+      "role": "result",
+      "source_pages": [
+        10
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "跨18 Betti曲线阈值的组间t检验经Holm后，来源报告BGN、DMN、FPN、SMN及VAN出现显著差异。",
+      "role": "result",
+      "source_pages": [
+        10
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "作者提出扩展BMH到其他神经精神问题并改进大图算法，但其他病种、临床预测和延缓认知衰退尚未研究。",
+      "role": "hypothesis",
+      "source_pages": [
+        11
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "原始BOLD均值/图特征部分baseline近全预测ASD（sensitivity≈1/precision≈.46），F1高不等良好诊断。",
+      "role": "result",
+      "source_pages": [
+        9
+      ],
+      "decision": "boundary",
+      "reason": "应同时看accuracy及precision"
+    },
+    {
+      "summary": "数学Example1与公式错误保留未解决，不自行修改shared code；是否影响NumPy实现未知。",
+      "role": "interpretation",
+      "source_pages": [
+        3,
+        4,
+        6
+      ],
+      "decision": "unresolved",
+      "reason": "不能据文字自动宣告实际代码错"
+    },
+    {
+      "summary": "数据来源/伦理及41参考均评估；引用8为PD、11为depression，与intro ASD例归属不完全一致。",
+      "role": "review_synthesis",
+      "source_pages": [
+        12,
+        13
+      ],
+      "decision": "exclude",
+      "reason": "非新独立实验"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "作者用ROI时滞相关构造有向连接图，经最短路距离化后提取BMH Betti曲线，并与向量化connectome的另一MLP分支联合分类。",
+      "claim_type": "topological_connectome_classification",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "两分支MLP及拓扑featurization",
+          "design": "AAL116；C-PAC bandpass/GSR；9subnet×b0/b1",
+          "comparator": "connectome-only与不同拓扑方法",
+          "measure": "ASD/TD概率",
+          "unit_of_analysis": "参与者/重复CV；ROI与阈值非独立样本",
+          "sample_size_as_reported": "ABIDE I 871人：403 ASD、468 TD；5fold×5seed，重复折非新患者",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "Pipeline/model",
+            "figure": "Fig1/Eq3–9",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者用ROI时滞相关构造有向连接图，经最短路距离化后提取BMH Betti曲线，并与向量化connectome的另一MLP分支联合分类。",
+        "boundary": "联合模型含完整连接图，不是纯拓扑诊断；只BMH分支按9子网分开。",
+        "negative_result": null,
+        "non_inference": "不存在本文新的临床诊断/发育或治疗试验。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "topological-data-analysis",
+        "connectome-networks",
+        "clinical-translational"
+      ],
+      "scientific_questions": [
+        "有向图BMH特征是否在独立泛化条件下增加ASD分类信息？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12"
+      ],
+      "review_notes": [
+        "全13页6图4表与41参考二次审计；保留纯BMH弱结果、recall反向、Holm不显著、选择/混杂及准度量数学条件，不把lag视因果。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "一时间步lagged PCC提供有向统计相似度，转化sqrt((1-r)/2)并作有向最短路径闭包可形成准度量式特征。",
+      "claim_type": "topological_connectome_classification",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "相关及Dijkstra距离",
+          "design": "最短采样delay=1",
+          "comparator": "原相关矩阵",
+          "measure": "有向距离",
+          "unit_of_analysis": "参与者/重复CV；ROI与阈值非独立样本",
+          "sample_size_as_reported": "ABIDE I 871人：403 ASD、468 TD；5fold×5seed，重复折非新患者",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "Connectivity and weights",
+            "figure": "Eq1–2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "一时间步lagged PCC提供有向统计相似度，转化sqrt((1-r)/2)并作有向最短路径闭包可形成准度量式特征。",
+        "boundary": "BOLD时滞不是神经传递延迟，最短路还可含间接路径；可退化零距离需处理。",
+        "negative_result": null,
+        "non_inference": "不能认定t1只反映直接连接或真实因果方向。",
+        "unresolved": "退化/完全相关、系数字段及各站TR差异未充分交代。",
+        "unresolved_attribution": "来源局限及提取者来源复核"
+      },
+      "broad_directions": [
+        "topological-data-analysis",
+        "connectome-networks",
+        "clinical-translational"
+      ],
+      "scientific_questions": [
+        "有向图BMH特征是否在独立泛化条件下增加ASD分类信息？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12"
+      ],
+      "review_notes": [
+        "全13页6图4表与41参考二次审计；保留纯BMH弱结果、recall反向、Holm不显著、选择/混杂及准度量数学条件，不把lag视因果。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "BMH以总长≤ℓ的路径链替代精确长度，b0记录弱连通分量，b1记录允许短路径边界关系后的周期维度。",
+      "claim_type": "topological_connectome_classification",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "链复形描述",
+          "design": "有向准度量；对b0[0,1]、b1[0,2]取网格",
+          "comparator": "directed flag persistent homology",
+          "measure": "Betti curves",
+          "unit_of_analysis": "参与者/重复CV；ROI与阈值非独立样本",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "Magnitude/BMH definition",
+            "figure": "Fig2–3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "BMH以总长≤ℓ的路径链替代精确长度，b0记录弱连通分量，b1记录允许短路径边界关系后的周期维度。",
+        "boundary": "只给定义/示例，不是证明保持全部方向信息或生物机制。",
+        "negative_result": null,
+        "non_inference": "同Betti不保证同图/完整识别；不能把同调维度当全部不同等价类数量。",
+        "unresolved": "三角不等式公式写错；示例∞缺边未作距离闭包、替换2-path端点及b0/b1标注有错误；系数字段/退化链处理未明确。",
+        "unresolved_attribution": "来源局限及提取者来源复核"
+      },
+      "broad_directions": [
+        "topological-data-analysis",
+        "connectome-networks",
+        "clinical-translational"
+      ],
+      "scientific_questions": [
+        "有向图BMH特征是否在独立泛化条件下增加ASD分类信息？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12"
+      ],
+      "review_notes": [
+        "全13页6图4表与41参考二次审计；保留纯BMH弱结果、recall反向、Holm不显著、选择/混杂及准度量数学条件，不把lag视因果。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "ABIDE I内部评估中BMH-Net报告F1=.674±.022、accuracy=.622±.065、precision=.573±.061、sensitivity=.840±.085。",
+      "claim_type": "topological_connectome_classification",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "grid search及重复CV",
+          "design": "validation按F1选threshold；871qualitychecked",
+          "comparator": "所列模型",
+          "measure": "四分类指标",
+          "unit_of_analysis": "参与者/重复CV；ROI与阈值非独立样本",
+          "sample_size_as_reported": "ABIDE I 871人：403 ASD、468 TD；5fold×5seed，重复折非新患者",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "Model comparison",
+            "figure": "Table1",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "ABIDE I内部评估中BMH-Net报告F1=.674±.022、accuracy=.622±.065、precision=.573±.061、sensitivity=.840±.085。",
+        "boundary": "仅单来源多站内部划分；无留站/外部/前瞻样本，临床准确率有限。",
+        "negative_result": null,
+        "non_inference": "不能称早期诊断已可用、不同站点人群泛化或延缓认知衰退。",
+        "unresolved": "超参数/网格/threshold选择与报告评分是否nested独立未交代。",
+        "unresolved_attribution": "来源局限及提取者来源复核"
+      },
+      "broad_directions": [
+        "topological-data-analysis",
+        "connectome-networks",
+        "clinical-translational"
+      ],
+      "scientific_questions": [
+        "有向图BMH特征是否在独立泛化条件下增加ASD分类信息？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12"
+      ],
+      "review_notes": [
+        "全13页6图4表与41参考二次审计；保留纯BMH弱结果、recall反向、Holm不显著、选择/混杂及准度量数学条件，不把lag视因果。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "与connectome-only MLP比较，联合BMH-Net在F1/accuracy/precision数值略好，但sensitivity更低。",
+      "claim_type": "topological_connectome_classification",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "同类MLP分支比较",
+          "design": "connectome-only F1.671±.021、acc.615±.062",
+          "comparator": "jointBMH",
+          "measure": "分类差",
+          "unit_of_analysis": "参与者/重复CV；ROI与阈值非独立样本",
+          "sample_size_as_reported": "ABIDE I 871人：403 ASD、468 TD；5fold×5seed，重复折非新患者",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "Feature addition control",
+            "figure": "Table1–2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "与connectome-only MLP比较，联合BMH-Net在F1/accuracy/precision数值略好，但sensitivity更低。",
+        "boundary": "特定架构下有限增益不能证明模型输入中新增信息：Betti本由同一矩阵计算。",
+        "negative_result": "sensitivity .840低于.845；多个弱基线更高敏感度但precision差。",
+        "non_inference": "更高performance不证明唯一topological病理或“matrix本身无此信息”。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "topological-data-analysis",
+        "connectome-networks",
+        "clinical-translational"
+      ],
+      "scientific_questions": [
+        "有向图BMH特征是否在独立泛化条件下增加ASD分类信息？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12"
+      ],
+      "review_notes": [
+        "全13页6图4表与41参考二次审计；保留纯BMH弱结果、recall反向、Holm不显著、选择/混杂及准度量数学条件，不把lag视因果。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "BMH-Net与ASD-DiagNet的F1经Holm比较p=.042，但accuracy/precision/recall差异未显著。",
+      "claim_type": "topological_connectome_classification",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "paired Wilcoxon+Holm",
+          "design": "同数据fold/seed重复",
+          "comparator": "ASD-DiagNet",
+          "measure": "指标差及p",
+          "unit_of_analysis": "参与者/重复CV；ROI与阈值非独立样本",
+          "sample_size_as_reported": "ABIDE I 871人：403 ASD、468 TD；5fold×5seed，重复折非新患者",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "Statistical comparison",
+            "figure": "Table2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "BMH-Net与ASD-DiagNet的F1经Holm比较p=.042，但accuracy/precision/recall差异未显著。",
+        "boundary": "多重校正有做，但CV folds和seeds共享受试者，配对观测独立性需明确。",
+        "negative_result": "accuracy p=.761、precision .751、recall .122，不能称所有指标均显著较优。",
+        "non_inference": null,
+        "unresolved": "统计配对单位与score subset未明确，极小p不能由5seed独立解释。",
+        "unresolved_attribution": "来源局限及提取者来源复核"
+      },
+      "broad_directions": [
+        "topological-data-analysis",
+        "connectome-networks",
+        "clinical-translational"
+      ],
+      "scientific_questions": [
+        "有向图BMH特征是否在独立泛化条件下增加ASD分类信息？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12"
+      ],
+      "review_notes": [
+        "全13页6图4表与41参考二次审计；保留纯BMH弱结果、recall反向、Holm不显著、选择/混杂及准度量数学条件，不把lag视因果。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "纯BMH-MLP比纯DPH-MLP的F1/accuracy/precision更高，但sensitivity较低；两者均显著弱于连接图联合模型的表现。",
+      "claim_type": "topological_connectome_classification",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "同MLP拓扑输入比较",
+          "design": "BMH .643/.513/.491/.947；DPH .635/.476/.470/.984",
+          "comparator": "pureBMH vspureDPH及joint",
+          "measure": "分类指标",
+          "unit_of_analysis": "参与者/重复CV；ROI与阈值非独立样本",
+          "sample_size_as_reported": "ABIDE I 871人：403 ASD、468 TD；5fold×5seed，重复折非新患者",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "Topology-only controls",
+            "figure": "Table1",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "纯BMH-MLP比纯DPH-MLP的F1/accuracy/precision更高，但sensitivity较低；两者均显著弱于连接图联合模型的表现。",
+        "boundary": "只有约.513的pureBMH accuracy不能单独支持临床用途；不同输入适配性能非数学方向保留量证明。",
+        "negative_result": "BMH纯特征recall下降，报告比较p=.008；没有全方位优势。",
+        "non_inference": null,
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "topological-data-analysis",
+        "connectome-networks",
+        "clinical-translational"
+      ],
+      "scientific_questions": [
+        "有向图BMH特征是否在独立泛化条件下增加ASD分类信息？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12"
+      ],
+      "review_notes": [
+        "全13页6图4表与41参考二次审计；保留纯BMH弱结果、recall反向、Holm不显著、选择/混杂及准度量数学条件，不把lag视因果。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "grid128/256/512存在指标权衡：128的F1最高、256的accuracy/precision最高、512的sensitivity最高。",
+      "claim_type": "topological_connectome_classification",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "不同阈值采样密度",
+          "design": "128 F1.676、256.674、512.670",
+          "comparator": "grid sizes",
+          "measure": "F1/accuracy/precision/sensitivity",
+          "unit_of_analysis": "参与者/重复CV；ROI与阈值非独立样本",
+          "sample_size_as_reported": "ABIDE I 871人：403 ASD、468 TD；5fold×5seed，重复折非新患者",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "Grid sensitivity",
+            "figure": "Table4",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "grid128/256/512存在指标权衡：128的F1最高、256的accuracy/precision最高、512的sensitivity最高。",
+        "boundary": "采样更密不持续增益；选256是折中而非所有指标最优。",
+        "negative_result": "512 accuracy .599低于256 .622，F1随grid增大下降。",
+        "non_inference": null,
+        "unresolved": "网格选择是否只用内层validation未说明。",
+        "unresolved_attribution": "来源局限及提取者来源复核"
+      },
+      "broad_directions": [
+        "topological-data-analysis",
+        "connectome-networks",
+        "clinical-translational"
+      ],
+      "scientific_questions": [
+        "有向图BMH特征是否在独立泛化条件下增加ASD分类信息？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C9",
+        "C10",
+        "C11",
+        "C12"
+      ],
+      "review_notes": [
+        "全13页6图4表与41参考二次审计；保留纯BMH弱结果、recall反向、Holm不显著、选择/混杂及准度量数学条件，不把lag视因果。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "同一笔记本CPU的10连接图计时中，128/256/512网格平均约31.664/62.245/126.165秒，体现拓扑计算随密度增加的开销。",
+      "claim_type": "topological_connectome_classification",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "实测软件时间",
+          "design": "Ryzen7 5700U、16GBRAM；9subnet而非整116图",
+          "comparator": "grid sizes",
+          "measure": "秒数",
+          "unit_of_analysis": "参与者/重复CV；ROI与阈值非独立样本",
+          "sample_size_as_reported": "10随机ABIDE connectomes；SD5.396/9.668/18.358秒",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "Computation timing",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "同一笔记本CPU的10连接图计时中，128/256/512网格平均约31.664/62.245/126.165秒，体现拓扑计算随密度增加的开销。",
+        "boundary": "只是所设硬件/实现/子网，不能外推大atlas总复杂度或实时扫描诊断。",
+        "negative_result": "完整更大脑图BMH矩阵可能难处理/不可行。",
+        "non_inference": null,
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "topological-data-analysis",
+        "connectome-networks",
+        "clinical-translational"
+      ],
+      "scientific_questions": [
+        "有向图BMH特征是否在独立泛化条件下增加ASD分类信息？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C10",
+        "C11",
+        "C12"
+      ],
+      "review_notes": [
+        "全13页6图4表与41参考二次审计；保留纯BMH弱结果、recall反向、Holm不显著、选择/混杂及准度量数学条件，不把lag视因果。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "梯度绝对值汇总的子网重要度报告VN约.346、DMN.340至CEREN.328，模型使用多个子网特征。",
+      "claim_type": "topological_connectome_classification",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "validation输出gradient归因",
+          "design": "每fold/seed求sum absolute gradients",
+          "comparator": "9subnets",
+          "measure": "模型敏感度",
+          "unit_of_analysis": "参与者/重复CV；ROI与阈值非独立样本",
+          "sample_size_as_reported": "ABIDE I 871人：403 ASD、468 TD；5fold×5seed，重复折非新患者",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "Subnetwork importance",
+            "figure": "Table3/Fig5",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "梯度绝对值汇总的子网重要度报告VN约.346、DMN.340至CEREN.328，模型使用多个子网特征。",
+        "boundary": "各均值接近且SD重叠；不是区域必要性或已证生物优先排序。",
+        "negative_result": null,
+        "non_inference": "特征归因与真实ASD机制/干预靶点不同。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "topological-data-analysis",
+        "connectome-networks",
+        "clinical-translational"
+      ],
+      "scientific_questions": [
+        "有向图BMH特征是否在独立泛化条件下增加ASD分类信息？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C11",
+        "C12"
+      ],
+      "review_notes": [
+        "全13页6图4表与41参考二次审计；保留纯BMH弱结果、recall反向、Holm不显著、选择/混杂及准度量数学条件，不把lag视因果。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "跨18 Betti曲线阈值的组间t检验经Holm后，来源报告BGN、DMN、FPN、SMN及VAN出现显著差异。",
+      "claim_type": "topological_connectome_classification",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "独立组比较+多重校正",
+          "design": "同871人多个threshold",
+          "comparator": "ASD vsTD",
+          "measure": "Betti均值差",
+          "unit_of_analysis": "参与者/重复CV；ROI与阈值非独立样本",
+          "sample_size_as_reported": "ABIDE I 871人：403 ASD、468 TD；5fold×5seed，重复折非新患者",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "Group topological differences",
+            "figure": "Fig6",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "跨18 Betti曲线阈值的组间t检验经Holm后，来源报告BGN、DMN、FPN、SMN及VAN出现显著差异。",
+        "boundary": "同数据群体关联，站点/年龄/性别/运动等混杂调整未充分报告。",
+        "negative_result": null,
+        "non_inference": "没有认知/症状关联或因果病理验证；既有文献一致性不是独立重复。",
+        "unresolved": "具体阈值/p/效应及其余子网未列出的范围不清。",
+        "unresolved_attribution": "来源局限及提取者来源复核"
+      },
+      "broad_directions": [
+        "topological-data-analysis",
+        "connectome-networks",
+        "clinical-translational"
+      ],
+      "scientific_questions": [
+        "有向图BMH特征是否在独立泛化条件下增加ASD分类信息？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C12"
+      ],
+      "review_notes": [
+        "全13页6图4表与41参考二次审计；保留纯BMH弱结果、recall反向、Holm不显著、选择/混杂及准度量数学条件，不把lag视因果。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "作者提出扩展BMH到其他神经精神问题并改进大图算法，但其他病种、临床预测和延缓认知衰退尚未研究。",
+      "claim_type": "topological_connectome_classification",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "推广假说",
+          "design": "未来ADHD等、优化simplicial-set结构",
+          "comparator": "未做新病种/治疗",
+          "measure": "可拓展性",
+          "unit_of_analysis": "参与者/重复CV；ROI与阈值非独立样本",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "Discussion/future",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者提出的可检验假说。",
+        "boundary": "ASD相关衰老背景不是证明分类器能改变长期发育或衰老。",
+        "negative_result": null,
+        "non_inference": "不能以本文分类结果支持治疗ASD或延后认知下降。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "topological-data-analysis",
+        "connectome-networks",
+        "clinical-translational"
+      ],
+      "scientific_questions": [
+        "有向图BMH特征是否在独立泛化条件下增加ASD分类信息？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11"
+      ],
+      "review_notes": [
+        "全13页6图4表与41参考二次审计；保留纯BMH弱结果、recall反向、Holm不显著、选择/混杂及准度量数学条件，不把lag视因果。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "ABIDE内部联合拓扑+矩阵分类略有增益但accuracy约.62，纯Betti更弱且敏感度有退步。保留数学文本错误、lag非因果、重复CV选择/混杂及无临床或衰老干预证据。",
+  "shared_evidence": [
+    {
+      "claim_id": "C1",
+      "with": [
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C2",
+      "with": [
+        "C1",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C1",
+        "C2",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C9",
+        "C10",
+        "C11",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C10",
+        "C11",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C11",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": "C2",
+        "issue": "t1 lag correlation不能辨认direct interactions、因果方向，且后续shortest path引入间接组合。",
+        "pdf_page": 3,
+        "suggested_correction": null,
+        "resolved": false
+      },
+      {
+        "claim_id": "C3",
+        "issue": "三角不等式误写d02≤d01+d02；MH1边界两段长度同为ℓ不正确，应总长度条件。",
+        "pdf_page": 4,
+        "suggested_correction": null,
+        "resolved": false
+      },
+      {
+        "claim_id": "C3",
+        "issue": "Example1把∞缺边称quasimetric可违三角不等式，2-path替换端点及b0标b1错植。",
+        "pdf_page": 6,
+        "suggested_correction": null,
+        "resolved": false
+      },
+      {
+        "claim_id": "C4",
+        "issue": "未见nested/留站或外部验证，CV调参及threshold统计有选择风险。",
+        "pdf_page": 8,
+        "suggested_correction": null,
+        "resolved": false
+      },
+      {
+        "claim_id": "C6",
+        "issue": "Holm做了但fold/seed独立单位未明；不显著不等效。",
+        "pdf_page": 9,
+        "suggested_correction": null,
+        "resolved": false
+      },
+      {
+        "claim_id": "C5",
+        "issue": "Betti是同矩阵的确定函数，性能增益不证明新增信息或矩阵不能包含该信息。",
+        "pdf_page": 11,
+        "suggested_correction": null,
+        "resolved": false
+      },
+      {
+        "claim_id": "C11",
+        "issue": "无年龄/站点/性别等混杂控制说明，拓扑组差不是ASD独有机制。",
+        "pdf_page": 10,
+        "suggested_correction": null,
+        "resolved": false
+      },
+      {
+        "claim_id": "C12",
+        "issue": "无认知长期/干预试验，延缓衰老宣称未支持。",
+        "pdf_page": 11,
+        "suggested_correction": null,
+        "resolved": false
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T12:19:42.347933Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "4177c0d60c67b86794ee125339fa96d95731862d10221b2f2bb24ccea71beeb4",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

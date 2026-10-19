@@ -1,0 +1,200 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Population-level neural rejuvenation dynamics in addiction: a computational framework for understanding developmental plasticity reactivation</title><style>body{max-width:940px;margin:40px auto;padding:0 24px;background:#fffdf7;color:#12372f;font:16px/1.8 Georgia,serif}h1{font-size:26px;line-height:1.4}h2{font-size:20px;line-height:1.5}h3{font-size:16px}article{padding:26px 0;border-top:1px solid #bec4b8}small{color:#68766e}dl{display:grid;grid-template-columns:120px 1fr;gap:8px 20px}dt{font-weight:bold}dd{margin:0}li{padding:8px 0}p,dd{overflow-wrap:anywhere}.note{background:#eef2e2;padding:14px;border-left:3px solid #738968}summary{cursor:pointer}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.7 monospace}@media(max-width:600px){body{margin:24px auto;padding:0 18px}dl{grid-template-columns:1fr;gap:3px}dd{margin-bottom:12px}}@media print{body{margin:0;background:white}details{display:block}}</style><link rel="stylesheet" href="../../commons-v02.css?v=20261020-1"><link rel="stylesheet" href="../../examples.css?v=20260928-2"><link rel="stylesheet" href="../../site.css?v=20261020-1"><script defer src="../../site.js?v=20261020-1"></script><script defer src="../../report-ui.js?v=20261020-1"></script></head><body class="portal-page report-page" data-cc-report-shell="1" data-page="library" data-site-prefix="../../" data-library-paper="paper-W7131122153" data-report-language="zh" data-claim-records="{&quot;C1&quot;:&quot;structured-paper-W7131122153-1&quot;,&quot;C2&quot;:&quot;structured-paper-W7131122153-2&quot;,&quot;C3&quot;:&quot;structured-paper-W7131122153-3&quot;,&quot;C4&quot;:&quot;structured-paper-W7131122153-4&quot;,&quot;C5&quot;:&quot;structured-paper-W7131122153-5&quot;,&quot;C6&quot;:&quot;structured-paper-W7131122153-6&quot;,&quot;C7&quot;:&quot;structured-paper-W7131122153-7&quot;,&quot;C8&quot;:&quot;structured-paper-W7131122153-8&quot;,&quot;C9&quot;:&quot;structured-paper-W7131122153-9&quot;,&quot;C10&quot;:&quot;structured-paper-W7131122153-10&quot;,&quot;C11&quot;:&quot;structured-paper-W7131122153-11&quot;,&quot;C12&quot;:&quot;structured-paper-W7131122153-12&quot;}"><header></header><main id="report-content"><div id="report-tools"></div><small>CLAIM COMMONS / 阅读报告</small><h1>Population-level neural rejuvenation dynamics in addiction: a computational framework for understanding developmental plasticity reactivation</h1><p class="note">AI 文本提取候选，尚待人工核对。图像像素未读取；PDF 页码指文件中的页序。</p><p>这是一篇2026年正式发表的原创计算建模论文，而非本文新动物实验或综述。供应13页全文、参数表和图1至4图注均已评估，未读取像素、代码仓库或外部补充材料。索引和源文的题名、作者、DOI、年份一致。
+
+核心贡献是把Adult与Juvenile既有受体状态切换，同Silent新生及Mature形成分离。既有池总数固定1000；新增Silent由暴露门控且受容量限制，D=0时成熟与修剪竞争，Mature没有另设消失项。方法报告五次间歇暴露、每次5时间单位、间隔30、1单位=2小时、总模拟500、Euler步长0.1。D=0含脉冲间隔，不只是最后暴露后的长撤药。
+
+作者报告Juvenile和Silent峰值约500和400，Mature终点约300，总数约1000至1400再至1300；这些是模型量而非独立实验n。GluN2B组成代理在暴露时上升、撤药时部分恢复。记忆代理使用暴露期塑性驱动和撤药期成熟通量驱动，并预设Mmax=30饱和；正文报告M从0至暴露阶段末约10后继续增长。塑性代理以初始N0归一化，Adult/Juvenile/Silent/Mature权重为1/2.5/0.5/3，报告暴露约2.0至2.5、撤药约1.8至2.0；高权重指potentiation efficacy，不是易修改性。
+
+方法给出15次额外参数模拟，即3个关键参数各5种变化，和4次额外初值模拟。作者报告有限正负50%参数范围及替代初值保留主要定性模式，对ka-&gt;j最敏感、kgenesis中等、kmaturation较低。底物受限解释单独标为interpretation，未当作机制识别。自然奖励比较同时令kgenesis从15降至0及ka-&gt;j从0.08降至0.008；作者报告其总数不变、记忆较弱，cocaine记忆增强约3倍并有较强incubation。该结果受联合参数预设约束，不是药物特异性的独立生物验证。
+
+阶段结构与受体序列、撤药主导CP-AMPAR募集，以及早撤药阻断成熟可能优于晚期干预，均标为hypothesis；没有新增干预实验、临床疗效或实际渴求测量。引用研究不当作本文证据，也不建立跨论文支持、矛盾或重复关系。
+
+第二次来源审计保留5项未解决问题：式10纯Adult初值给0而正文基线约20%，且摘要/结果/阶段快照百分比口径未统一；零初值与约18倍incubation分母未解释；式3末脉冲至225而正文用220作长撤药起点；四个替代初值的正负比例参照不明；成熟速率变化后成熟总量相同的解释缺少竞争修剪条件下的展示。精确比例、18倍和缺失配置不强行补值，其他近似轨迹仅为作者报告且未复算。全部记录仍为human_checked:false的候选，需人类核对和源代码/生物学验证。</p><a href="https://public-pages-files-2025.frontiersin.org/journals/computational-neuroscience/articles/10.3389/fncom.2026.1753417/pdf" rel="noreferrer">查看所读原文版本 ↗</a><details><summary>贡献清单与处理决定</summary><ul><li><b>区分既有突触受体切换与新生Silent突触，建立四态、总体不守恒且相位门控的方程框架。</b><br>include · C1；保存联合结构假设及Adult+Juvenile守恒，未视作生物学证明。</li><li><b>基准总体轨迹：Juvenile和Silent暴露时增加、撤药期恢复及竞争成熟/修剪，总数部分回落且Mature保留。</b><br>include · C2；约计数按正文保留，实际独立n不能由理论突触计数代替。</li><li><b>GluN2B组成代理上升、撤药期下降且未完全恢复。</b><br>include · C3；保留定性方向，明确组成指标的预设权重。</li><li><b>受体组成的确切基线、峰值、末阶段快照百分比。</b><br>defer · W7131122153-GluN2B-ratios；公式初值及不同正文百分比的时点/口径未协调。</li><li><b>分相位、通量驱动且有饱和的记忆代理增长，撤药期随Silent耗竭而减速。</b><br>include · C4；机制结构是模型输入，轨迹是模型输出，未与独立行为验证混同。</li><li><b>约18倍incubation相对基线增强。</b><br>defer · W7131122153-incubation-fold；零记忆基线不足以支持此相对倍数，独立指数定义未给出。</li><li><b>总体塑性加权代理在撤药期持续高于基线。</b><br>include · C5；固定N0归一化与启发式权重同时保留；Mature权重表示potentiation efficacy而非易修改性。</li><li><b>三关键参数正负50%扫描后总体转移、双相增长及incubation模式保留。</b><br>include · C6；15次额外参数情景不是独立重复，不是全因子或数学稳定性证明。</li><li><b>输出对ka-&gt;j、kgenesis、kmaturation的相对敏感性等级及平滑单调响应。</b><br>include · C7；文字排序没有敏感性系数和统计检验。</li><li><b>把kmaturation低敏感性解释为底物限制而非速率限制。</b><br>include · C8；与结果角色分开，保留竞争修剪、饱和及时间窗尚未辨识的边界。</li><li><b>改变成熟速率后最终相同数量的Silent会成熟。</b><br>defer · W7131122153-maturation-fate；与竞争修剪并存时缺乏展示，不能采纳为恒定成熟数结论。</li><li><b>四次替代初值模拟未改变主要定性模式。</b><br>include · C9；仅保留作者报告并标注初值配置歧义。</li><li><b>四个替代初值的实际Juvenile比例和状态向量。</b><br>defer · W7131122153-initial-states；负号参照及完整向量缺失，不自行修补。</li><li><b>自然奖励对照：同时取消生成和降低受体切换，数量不变、记忆和incubation减弱。</b><br>include · C10；联合参数差异保留，约38%和3倍仅为作者模拟报告。</li><li><b>跨baseline、exposure、早/晚withdrawal和recovery的结构与受体时序实验预测。</b><br>include · C11；阶段快照是模型预测，非新实验；有疑点比例不升级成定量验证。</li><li><b>早撤药阻断成熟通量可能优于晚期干预，并提出暴露期及晚期不同靶向策略。</b><br>include · C12；主要可判断比较是早晚干预；其他策略记于边界，不虚构疗效或干预试验。</li><li><b>五次脉冲的暴露结束和长撤药起点。</b><br>defer · W7131122153-protocol-boundary；公式末脉冲结束225与文字边界220不同。</li><li><b>引言和参考文献中的动物研究、分子机制与作者既往建模。</b><br>exclude · 作为作者动机和假设来源，不是本文原创新结果；不生成跨论文支持/矛盾/重复关系。</li><li><b>数据仓库说明、贡献、资金、利益冲突、生成式AI声明及出版说明。</b><br>exclude · 不是科学命题；声明的Zenodo代码和其他外部内容未访问、未评估。</li></ul></details><article><small>C1 / 直接结果 · theoretical_model_structure</small><h2>该四态确定性模型将既有突触的Adult与Juvenile受体切换和新生Silent突触明确分离：Adult与Juvenile之和保持初始1000，Silent只在D(t)=1时生成并受Kmax=500限制，而成熟与修剪只在D(t)=0时发生，因此总突触数的变化仅来自新生和修剪，而不来自受体切换或Silent转为Mature。</h2><h3>Evidence</h3><p>建立四态常微分方程并对总体计数求和</p><dl><dt>设计 / 对照</dt><dd>既有功能突触池与新增Silent/Mature池分开建模；固定总突触数或将Silent视为既有Juvenile的转换产物的建模方式；非实测模型优劣对照</dd><dt>独立单位与 n</dt><dd>模型状态变量及方程恒等关系；未报告 / 不适用</dd><dt>不确定性</dt><dd>是定义和方程结构，不是统计估计或生物学守恒定律</dd><dt>原文位置</dt><dd>PDF 3 · 2.1-2.4</dd></dl><p>Silent与Mature方程及相位门控</p><dl><dt>设计 / 对照</dt><dd>生成项为kgenesis*D*(1-Nsilent/Kmax)，成熟与修剪项乘1-D；暴露脉冲D=1与非暴露时段D=0</dd><dt>独立单位与 n</dt><dd>四态方程；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 4 · 1A-C</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>提供一个可追踪总体变化、区分受体切换与结构新增的数学框架。</dd><dt>适用边界</dt><dd>严格相位互斥是模型假设；作者将生物学相位解释为主导过程，而非绝对排他。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>没有证明真实神经组织只存在四种离散状态，或成熟在暴露时绝不发生。</dd><dt>未解决</dt><dd>门控强度、状态划分和新增突触容量尚需直接实验约束。</dd></dl><h3>相关问题</h3><ul><li>如何在保持既有功能突触池计数的同时建模新生Silent突触及其撤药命运？</li></ul></article><article><small>C2 / 直接结果 · simulation_population_dynamics</small><h2>在初始1000个Adult突触、五次间歇暴露及其后延长非暴露期的基准模拟中，作者报告Juvenile和新生Silent池在暴露时增加，峰值约500和400；总数由1000升至约1400，随后因修剪降至约1300，而约300个Mature突触保留，形成不同于单纯受体恢复的持续结构增加。</h2><h3>Evidence</h3><p>确定性总体动力学数值模拟</p><dl><dt>设计 / 对照</dt><dd>基准脉冲输入及延长非暴露期；全Adult的初始总体与暴露期、撤药期状态</dd><dt>独立单位与 n</dt><dd>四类突触的确定性总体状态轨迹；理论突触计数不是独立实验单位；基准确定性模拟；N0=1000是模型初始规模，不是动物、细胞、受试者或独立重复的样本量</dd><dt>不确定性</dt><dd>未报告统计置信区间、随机种子重复或原始数值输出；正文近似值未独立复算</dd><dt>原文位置</dt><dd>PDF 7 · 2B, 3F</dd></dl><p>分析Silent的生成、成熟和消失轨迹</p><dl><dt>设计 / 对照</dt><dd>D=0时Silent同时进入成熟和修剪通路；Silent池与累计Mature池的时间演化</dd><dt>独立单位与 n</dt><dd>四类突触的确定性总体状态轨迹；理论突触计数不是独立实验单位；基准确定性模拟；N0=1000是模型初始规模，不是动物、细胞、受试者或独立重复的样本量</dd><dt>不确定性</dt><dd>未报告统计置信区间、随机种子重复或原始数值输出；正文近似值未独立复算</dd><dt>原文位置</dt><dd>PDF 9 · 3A</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>作者报告的模拟展示了受体状态恢复与新增成熟突触持续存在可以并行。</dd><dt>适用边界</dt><dd>约数仅按正文记录，没有读图像或复算；N0及各池计数都是任意设定尺度的模型量。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能据此声称测得动物脑内新增400个突触，或完成了对突触密度增幅的生物学验证。</dd><dt>未解决</dt><dd>需要源代码和数值输出核对正文计数与带容量项、相位门控及竞争修剪的方程是否一致。</dd></dl><h3>相关问题</h3><ul><li>间歇暴露及撤药能否在模型中产生先扩张后部分回落、但新增成熟突触持续保留的总体轨迹？</li></ul></article><article><small>C3 / 直接结果 · simulation_receptor_composition</small><h2>作者报告，基准模拟的GluN2B组成代理指标在暴露时上升，在撤药时下降，但终点仍高于其所述基线；该定性变化来自四态占比及预设GluN2B权重，而不是对受体分子的直接测量。</h2><h3>Evidence</h3><p>按状态计数计算GluN2B组成代理</p><dl><dt>设计 / 对照</dt><dd>RGluN2B=(Njuvenile+0.8*Nsilent+0.3*Nmature)/Ntotal；同一轨迹的全Adult初值、暴露及撤药状态</dd><dt>独立单位与 n</dt><dd>确定性模型总体的组成比；基准确定性模拟；N0=1000是模型初始规模，不是动物、细胞、受试者或独立重复的样本量</dd><dt>不确定性</dt><dd>权重未经本文定量测量；公式与正文百分比有未解决的内部口径差异</dd><dt>原文位置</dt><dd>PDF 6 · 2.10</dd></dl><p>正文对组成时间轨迹的报告</p><dl><dt>设计 / 对照</dt><dd>暴露期间上升与非暴露期间恢复；暴露峰值和终点相对作者所述基线</dd><dt>独立单位与 n</dt><dd>四类突触的确定性总体状态轨迹；理论突触计数不是独立实验单位；基准确定性模拟；N0=1000是模型初始规模，不是动物、细胞、受试者或独立重复的样本量</dd><dt>不确定性</dt><dd>摘要、结果段和阶段快照未提供可统一的峰值百分比；不将百分比当作经核实定量结果</dd><dt>原文位置</dt><dd>PDF 8 · 2C</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>保留作者报告的组成偏向及不完全恢复的定性结果。</dd><dt>适用边界</dt><dd>未采纳统一的基线、峰值和终点百分比；纯Adult初值代入式10为0，与正文约20%的基线不一致。</dd><dt>实际负结果</dt><dd>作者报告模拟终点的GluN2B组成未完全恢复至其所述基线。</dd><dt>不能推出</dt><dd>不能确定真实受体数量、受体亚单位转运机制或临床恢复时间。</dd><dt>未解决</dt><dd>摘要约80%、3.2峰值约90%与3.8暴露末快照约35%的时点和指标口径需要核对。</dd></dl><h3>相关问题</h3><ul><li>模型中的受体组成偏向在撤药时是否完全逆转，其定义是否与报告的百分比一致？</li></ul></article><article><small>C4 / 直接结果 · simulation_memory_index</small><h2>在预设Mmax=30的饱和记忆代理模型中，D=1时M的增量由alpha*Ptotal驱动，D=0时由beta*kmaturation*Nsilent/N0驱动，二者都乘饱和因子；作者报告基准M由0增至暴露阶段末约10，随后在无药物时继续增长，并随Silent底物耗竭而减速。</h2><h3>Evidence</h3><p>构造分相位的记忆代理微分方程</p><dl><dt>设计 / 对照</dt><dd>暴露用塑性代理，非暴露用成熟通量；统一饱和因子1-M/Mmax；D=1与D=0两种更新规则</dd><dt>独立单位与 n</dt><dd>模型的无量纲记忆代理及其变化率；未报告 / 不适用</dd><dt>不确定性</dt><dd>alpha、beta和饱和值为指定参数，不是数据拟合估计</dd><dt>原文位置</dt><dd>PDF 5 · 2.9</dd></dl><p>数值轨迹及非暴露期增长率的正文描述</p><dl><dt>设计 / 对照</dt><dd>同一基准模拟的暴露和撤药阶段；M初值0、暴露阶段末约10及其后持续增长</dd><dt>独立单位与 n</dt><dd>四类突触的确定性总体状态轨迹；理论突触计数不是独立实验单位；基准确定性模拟；N0=1000是模型初始规模，不是动物、细胞、受试者或独立重复的样本量</dd><dt>不确定性</dt><dd>未报告统计置信区间、随机种子重复或原始数值输出；正文近似值未独立复算</dd><dt>原文位置</dt><dd>PDF 8 · 2D, 3B, 3E</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>在既定更新规则下可获得分相位增长、非暴露时继续增强和增长减速的代理轨迹。</dd><dt>适用边界</dt><dd>通量驱动和饱和机制是模型的明确输入结构，不是通过独立机制对照识别出来的规律。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>没有证明真实渴求、记忆或复发由CP-AMPAR募集因果决定；没有提供与动物行为量表的定量映射。</dd><dt>未解决</dt><dd>正文的约18倍incubation描述缺少与零初值相容的非零分母，因此不保留该倍数结论。</dd></dl><h3>相关问题</h3><ul><li>在非暴露期以Silent成熟通量而非Mature存量更新记忆代理，能否产生持续但减速的增长？</li></ul></article><article><small>C5 / 直接结果 · simulation_plasticity_index</small><h2>采用Adult、Juvenile、Silent、Mature权重1、2.5、0.5、3并以初始N0=1000归一化时，作者报告总体塑性代理Ptotal从基线1升至暴露期约2.0至2.5，撤药时仍约1.8至2.0；持续升高主要由保留的Mature池和其指定高权重贡献。</h2><h3>Evidence</h3><p>按突触状态计数计算加权总体塑性代理</p><dl><dt>设计 / 对照</dt><dd>用固定初始N0而非变化的Ntotal作归一化；全Adult初值与暴露、撤药状态</dd><dt>独立单位与 n</dt><dd>同一总体轨迹的加权代理读出；未报告 / 不适用</dd><dt>不确定性</dt><dd>权重是启发式值，不是实测效应量</dd><dt>原文位置</dt><dd>PDF 5 · 2.8</dd></dl><p>报告总体塑性代理的时间轨迹</p><dl><dt>设计 / 对照</dt><dd>基础参数轨迹；基线1与暴露、撤药代理值</dd><dt>独立单位与 n</dt><dd>四类突触的确定性总体状态轨迹；理论突触计数不是独立实验单位；基准确定性模拟；N0=1000是模型初始规模，不是动物、细胞、受试者或独立重复的样本量</dd><dt>不确定性</dt><dd>未报告统计置信区间、随机种子重复或原始数值输出；正文近似值未独立复算</dd><dt>原文位置</dt><dd>PDF 8 · 2E, 2F, 3D</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>在指定权重与初始规模归一化下，新增成熟池使加权代理在撤药时仍升高。</dd><dt>适用边界</dt><dd>新增总数和状态权重共同影响该量，不能把它等同于单突触易塑性或实测LTP容量。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>没有真实LTP实验、灭绝学习实验或复发风险测量；所谓vulnerability window是作者解释。</dd><dt>未解决</dt><dd>不同权重或按当前总数归一化会怎样，以及代理如何映射实测塑性，未检验。</dd></dl><h3>相关问题</h3><ul><li>在总体数也发生变化时，固定基线归一化和状态权重怎样塑造撤药期的塑性代理？</li></ul></article><article><small>C6 / 直接结果 · simulation_parameter_robustness</small><h2>作者报告，在分别改变ka-&gt;j、kgenesis和kmaturation至基准附近的正负50%范围、每参数5种变化所构成的15次额外确定性模拟中，协调的总体转移、双相记忆增强及incubation定性模式均保留，没有观察到这些模式消失或定性状态转变。</h2><h3>Evidence</h3><p>确定性参数敏感性扫描</p><dl><dt>设计 / 对照</dt><dd>5种变化乘3个参数，共15次额外模拟；基准参数与所测试的单参数变化情景</dd><dt>独立单位与 n</dt><dd>不同参数情景，不是随机重复或生物学样本；15次额外模拟；5 variations x 3 parameters</dd><dt>不确定性</dt><dd>未报告情景级原始数值、误差条或统计检验</dd><dt>原文位置</dt><dd>PDF 7 · 4A</dd></dl><p>报告敏感性扫描中的定性模式</p><dl><dt>设计 / 对照</dt><dd>ka-&gt;j、kgenesis、kmaturation各在正负50%范围变化；测试范围内不同参数情景</dd><dt>独立单位与 n</dt><dd>参数情景；方法段报告15次额外模拟，不应当作15个独立重复</dd><dt>不确定性</dt><dd>模式保留为正文定性报告，无定量稳定性界</dd><dt>原文位置</dt><dd>PDF 9 · 4A</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>所报告的有限参数扫描没有破坏主要定性轨迹。</dd><dt>适用边界</dt><dd>这是三个参数附近的数值鲁棒性报告，不是数学稳定性证明、模型可识别性分析或外部预测验证。</dd><dt>实际负结果</dt><dd>在所测试的正负50%范围内，作者未观察到协调或incubation模式丢失等定性状态改变。</dd><dt>不能推出</dt><dd>不能外推到所有参数、联合扰动、随机噪声或实际成瘾个体。</dd><dt>未解决</dt><dd>各参数的确切五个取值和情景级输出未列出；其他速率、权重、容量与记忆参数的稳健性未知。</dd></dl><h3>相关问题</h3><ul><li>主要定性模式对三个关键速率在有限邻域中的变化是否稳健？</li></ul></article><article><small>C7 / 直接结果 · simulation_parameter_sensitivity</small><h2>在相同的15次参数扫描中，作者定性报告输出对ka-&gt;j最敏感、对kgenesis中等敏感、对kmaturation相对不敏感，并报告定量输出随参数改变平滑、单调变化；该排序没有附带标准化敏感性系数或统计显著性。</h2><h3>Evidence</h3><p>比较三个参数的扫描响应</p><dl><dt>设计 / 对照</dt><dd>最终记忆强度、Juvenile峰值及Mature终点作为方法所列输出；ka-&gt;j、kgenesis、kmaturation变化产生的响应</dd><dt>独立单位与 n</dt><dd>与C6相同的参数情景集合；共15次额外模拟，非独立重复</dd><dt>不确定性</dt><dd>只有文字排序及图注；无法从文本确定每个读出的标准化响应大小</dd><dt>原文位置</dt><dd>PDF 10 · 4A</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>保留作者报告的局部参数响应排序。</dd><dt>适用边界</dt><dd>相对不敏感不等于效应为零或统计不显著，也不证明某参数不重要。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能据此给生物学靶点或治疗效果作因果重要性排序。</dd><dt>未解决</dt><dd>每个输出的定量响应和跨参数交互尚未提供。</dd></dl><h3>相关问题</h3><ul><li>在已测试的参数邻域中，哪些速率主要影响最终记忆及总体状态读出？</li></ul></article><article><small>C8 / 解释 · model_mechanism_interpretation</small><h2>作者将最终记忆代理对kmaturation的相对低敏感性解释为Silent底物总量受限而非成熟速率受限：生成量影响可进入成熟通量的底物，成熟速率主要影响时间进程；这是对所报敏感性结果的模型解释，并非被独立机制实验确认。</h2><h3>Evidence</h3><p>解释敏感性扫描中的低响应</p><dl><dt>设计 / 对照</dt><dd>将最终M的响应与Silent生成量和成熟时间联系起来；底物受限解释与速率受限解释；没有独立的竞争模型检验</dd><dt>独立单位与 n</dt><dd>同一参数扫描和既定记忆方程；所依赖扫描为15次额外模拟；没有新的机制实验n</dd><dt>不确定性</dt><dd>未报告可识别性检验、竞争模型拟合或成熟通量积分</dd><dt>原文位置</dt><dd>PDF 10 · 4A</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>底物供应可作为作者解释低敏感性的一种模型内思路。</dd><dt>适用边界</dt><dd>低敏感性可能同时受观测时窗、饱和和竞争修剪影响，本文没有分离这些因素。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不将相对低响应升级为真实神经系统已证明的底物限制机制。</dd><dt>未解决</dt><dd>作者所谓改变成熟速率后最终成熟数相同，尚未由提供的结果证明；式6、7保留了与修剪竞争的命运通路。</dd></dl><h3>相关问题</h3><ul><li>最终记忆对成熟速率的低敏感性是否真由底物限制导致，而非饱和或竞争修剪？</li></ul></article><article><small>C9 / 直接结果 · simulation_initial_condition_robustness</small><h2>作者报告，在四次附加初值模拟中改变基线Juvenile池占比后，协调的总体转移、双相记忆增强与incubation的定性模式仍保留；源文将变化写为正负10%及正负20%，但没有列出与全Adult基线相容的完整初始状态向量。</h2><h3>Evidence</h3><p>改变初始Juvenile占比的确定性模拟</p><dl><dt>设计 / 对照</dt><dd>基准为1000个Adult及其他三池为0；替代初值按源文正负10%至20%描述；全Adult初值与替代初值情景</dd><dt>独立单位与 n</dt><dd>不同初值配置的轨迹，不是独立重复；2.14报告4次额外初值模拟；具体四个向量未给出</dd><dt>不确定性</dt><dd>无情景级轨迹数据或定量误差；负号含义不明</dd><dt>原文位置</dt><dd>PDF 6 · 2.11</dd></dl><p>报告替代初值的定性结论</p><dl><dt>设计 / 对照</dt><dd>初值变化之外保持基准模型；全Adult基线与作者所述替代初值</dd><dt>独立单位与 n</dt><dd>初值情景；4次额外模拟，方法见2.14</dd><dt>不确定性</dt><dd>只有定性报告，确切初值配置尚待澄清</dd><dt>原文位置</dt><dd>PDF 10 · 3.6</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>保留作者关于四个初值情景未改变定性结论的报告。</dd><dt>适用边界</dt><dd>初值描述内部不充分，不能重建正负扰动，更不能确认负比例是有效状态。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不是对任意初值、发展阶段、动物基线差异或吸毒史的普适鲁棒性证明。</dd><dt>未解决</dt><dd>需要四个完整初始向量及正负号所参照的基准定义。</dd></dl><h3>相关问题</h3><ul><li>主要模型模式是否依赖全Adult的初值，以及作者测试了哪些有效的替代初值？</li></ul></article><article><small>C10 / 直接结果 · simulation_reward_comparison</small><h2>在相同初始总体和脉冲协议下，作者将cocaine条件的kgenesis=15、ka-&gt;j=0.08同时改为natural reward条件的0和0.008；报告前者总数增加约38%、记忆增强约为后者3倍且撤药incubation明显，而后者总数保持1000、记忆增强较弱、incubation减弱。</h2><h3>Evidence</h3><p>比较两种奖励标签下的指定参数情景</p><dl><dt>设计 / 对照</dt><dd>natural reward同时取消Silent生成并把受体切换速率降至cocaine的10%；cocaine: kgenesis=15、ka-&gt;j=0.08；natural reward: kgenesis=0、ka-&gt;j=0.008</dd><dt>独立单位与 n</dt><dd>两个确定性参数条件，不是动物奖励实验；两个条件；未报告各条件的独立重复或生物学样本量</dd><dt>不确定性</dt><dd>参数对照由作者设定，没有以本文数据估计组间参数差异</dd><dt>原文位置</dt><dd>PDF 7 · 2.12</dd></dl><p>报告两种情景的代理读出比较</p><dl><dt>设计 / 对照</dt><dd>同一模型、同一脉冲结构下的参数条件比较；natural reward与cocaine两个指定条件</dd><dt>独立单位与 n</dt><dd>确定性情景的总体和代理读出；没有额外独立重复n报告</dd><dt>不确定性</dt><dd>近似差异来自正文，未提供误差或可核对输出；3倍的确切时间点和指标计算方式未列明</dd><dt>原文位置</dt><dd>PDF 10 · 4C, 4D</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>这两个指定参数情景产生了不同总体扩张和记忆代理增强。</dd><dt>适用边界</dt><dd>natural reward的无新增Silent机制是输入假设；不是由模拟无偏发现的药物特异性。</dd><dt>实际负结果</dt><dd>作者报告natural reward参数条件下总突触数不变，保持1000。</dd><dt>不能推出</dt><dd>两个参数同时变化，不能独立归因于Silent生成；不能推断所有天然奖励均无incubation或结构塑性。</dd><dt>未解决</dt><dd>需要真实奖励范式的参数估计、分离两个参数的对照及代理与行为的映射。</dd></dl><h3>相关问题</h3><ul><li>当Silent生成被取消且受体切换同时减弱时，总体扩张和记忆代理会怎样改变？</li></ul></article><article><small>C11 / 假说 / 预测 · phase_specific_experimental_prediction</small><h2>作者将模型轨迹转为跨阶段的待检验生物学预测：重复cocaine暴露时总突触密度增加且GluN2B和Silent占比上升，早撤药时Silent与Mature合计池突出，随后Silent耗竭而Mature持续，受体组成仅部分恢复；CP-AMPAR募集应主要出现在撤药而非活跃暴露时。</h2><h3>Evidence</h3><p>从模型末阶段快照和相位规则提出实验预测</p><dl><dt>设计 / 对照</dt><dd>baseline、exposure、early withdrawal、late withdrawal、recovery的阶段比较；不同暴露/撤药阶段；不是本研究采样到的生物实验组</dd><dt>独立单位与 n</dt><dd>模型阶段快照；未来实验单位尚未指定；未报告 / 不适用</dd><dt>不确定性</dt><dd>未实施验证；阶段快照与动态峰值口径尚未协调</dd><dt>原文位置</dt><dd>PDF 11 · 3C</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>提出可用相同范式下分阶段结构及受体测量检验的时序假说。</dd><dt>适用边界</dt><dd>属于实验预测，不是本文的独立神经生物学实验结果；阶段数值不能替代个体样本。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>没有本文新获得的突触密度、CP-AMPAR募集或受体比例实验验证。</dd><dt>未解决</dt><dd>需规定各阶段取样时点及相应独立动物/细胞单位；本文的阶段比例存在口径疑问，未保留为已确认数值。</dd></dl><h3>相关问题</h3><ul><li>真实突触总体与受体募集是否遵循模型预言的暴露和撤药阶段次序？</li></ul></article><article><small>C12 / 假说 / 预测 · intervention_timing_prediction</small><h2>依据预设的通量驱动记忆规则，作者预测在早撤药、Silent底物及成熟通量较高时阻断CP-AMPAR募集，会比较晚干预更有效抑制incubation；文中没有报告实际干预实验或早晚干预效果的专门数值对照。</h2><h3>Evidence</h3><p>从成熟通量随底物消耗而降低的模型结构推演干预窗口</p><dl><dt>设计 / 对照</dt><dd>提出早撤药阻断成熟的策略；图4B是相位塑性而非治疗试验；早撤药阻断成熟与较晚干预的理论比较</dd><dt>独立单位与 n</dt><dd>理论相位与通量，不是已执行干预的实验单位；未报告 / 不适用</dd><dt>不确定性</dt><dd>没有干预效应量、统计不确定性、干预模拟设计或生物学n</dd><dt>原文位置</dt><dd>PDF 11 · 4B</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>给出早期成熟通量可能提供较高干预杠杆的待检验预测。</dd><dt>适用边界</dt><dd>尚未实际比较干预强度、持续时间、安全性或最终行为结局。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不是已验证的治疗推荐，也不证明晚期靶向Mature突触或灭绝训练无效。</dd><dt>未解决</dt><dd>需要早晚阶段等强干预、对照及行为/结构读出；作者提出的暴露期阻断受体切换或新生、晚期靶向CP-AMPAR/灭绝训练也未验证。</dd></dl><h3>相关问题</h3><ul><li>等强度抑制CP-AMPAR募集在早撤药是否比晚撤药更能限制后续incubation？</li></ul></article><details><summary>核对记录与来源信息</summary><pre>{
+  &quot;coverage&quot;: {
+    &quot;pdf_pages_read&quot;: [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    &quot;results_sections_seen&quot;: [
+      &quot;Highlights；1 Introduction&quot;,
+      &quot;2.1-2.14 Methods：概念、总数、脉冲、门控、时间尺度、参数、塑性与记忆代理、组成、敏感性、自然奖励、限制、实现&quot;,
+      &quot;Table 1完整参数及脚注&quot;,
+      &quot;3.1 Coordinated synaptic population transformation&quot;,
+      &quot;3.2 NMDA receptor composition shifts&quot;,
+      &quot;3.3 Progressive memory strengthening through biphasic mechanisms&quot;,
+      &quot;3.4 Enhanced plasticity capacity&quot;,
+      &quot;3.5 Silent synapse dynamics&quot;,
+      &quot;3.6 Parameter sensitivity and initial-condition robustness&quot;,
+      &quot;3.7 Natural reward comparison&quot;,
+      &quot;3.8 Experimental predictions across phases&quot;,
+      &quot;Figures 1-4全部供应图注及各分图文字说明&quot;,
+      &quot;4.1-4.5 Discussion；5 Conclusions&quot;,
+      &quot;Data availability；作者贡献；资金；利益冲突；生成式AI及出版声明；References&quot;
+    ],
+    &quot;missing_material&quot;: [
+      &quot;图1至4的像素未提供；仅阅读文本和图注&quot;,
+      &quot;Zenodo代码、逐情景原始输出及任何外部补充材料未提供且未访问&quot;
+    ],
+    &quot;text_pass_complete&quot;: true,
+    &quot;notes&quot;: [
+      &quot;全部13页供应文本按5个不超过18000字符的连续输出评估，包括跨输出断行、参考文献及图表脚注；未重新打开PDF。&quot;,
+      &quot;源文是2026年2月23日正式发表的Original Research；题名、Mehdi Borjkhani / Hadi Borjkhani / Morteza A. Sharif、DOI和2026年份与索引一致，没有发现身份或版本错配。&quot;,
+      &quot;供应页没有附录正文；不声称访问链接仓库或任何未提供补充资料。&quot;,
+      &quot;第二次来源审计在保留的全文上下文中对清单、全部候选、实际单位、联合假设、结果/解释/预测角色及5个未解决口径问题逐条复核，未重读离线PDF。&quot;,
+      &quot;所有source_locator.quote均为null；仅用真实1起算PDF页码、节、图与方程号。&quot;,
+      &quot;确定性模型与启发式代理没有新动物、细胞、受试者或独立随机重复数据；文本审计不等于数值复现、科学验证或人类审阅。&quot;,
+      &quot;所有共享项只表示同一论文内部方程、基准轨迹或参数扫描重复用于不同命题；不建立跨论文关系。&quot;
+    ],
+    &quot;reading_mode&quot;: &quot;text_only&quot;,
+    &quot;figure_images_read&quot;: false,
+    &quot;scientific_verification&quot;: false,
+    &quot;source_pdf_offline&quot;: false,
+    &quot;archived_page_text_used&quot;: false
+  },
+  &quot;audit&quot;: {
+    &quot;source_match_checks&quot;: [],
+    &quot;model_findings&quot;: [
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;第二次来源审计在保留的全部13页文本及所有图表标题/图注上下文中逐条完成；身份为2026年2月23日正式Original Research，题名、作者、DOI和年份与分配记录一致。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留正式发表版本身份；不替换为其他版本。&quot;,
+        &quot;pdf_page&quot;: 1,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C1&quot;,
+        &quot;issue&quot;: &quot;数学门控为绝对D/1-D，但2.13称生物学只代表主导过程；D=0还包含五次暴露之间的间隙。&quot;,
+        &quot;suggested_correction&quot;: &quot;严格门控限定为模型结构；不得将成熟全部放在最后一次暴露后，也不得声称生物学绝对互斥。&quot;,
+        &quot;pdf_page&quot;: 7,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C2&quot;,
+        &quot;issue&quot;: &quot;约500/400/300及1400/1300均为作者确定性模型计数；正文和表1的粗略参数推导不是本文新测得数据，也不足以独立核对数值轨迹。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留约数为作者报告，注明未复算及缺原始输出；不以1000或400作独立n。&quot;,
+        &quot;pdf_page&quot;: 7,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C3&quot;,
+        &quot;issue&quot;: &quot;W7131122153-GluN2B-ratios：全Adult初值使式10为0，而正文基线为约20%；摘要约80%、3.2峰值约90%、3.8暴露末快照约35%未统一时点及口径。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留定性组成代理变化并明确冲突；精确比例交人类核对源代码/输出，不臆造Adult权重或新分母。&quot;,
+        &quot;pdf_page&quot;: 6,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C4&quot;,
+        &quot;issue&quot;: &quot;W7131122153-incubation-fold：记忆初值0与相对基线约18倍增强无法按同一分母理解；独立incubation指数的非零基准未说明。&quot;,
+        &quot;suggested_correction&quot;: &quot;不提取18倍；保留M约0至10和其后增长的正文报告，等候指数定义澄清。&quot;,
+        &quot;pdf_page&quot;: 8,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C5&quot;,
+        &quot;issue&quot;: &quot;Mature权重3表示LTP表达放大，不能读成易塑性或metaplasticity；Ptotal按初始N0归一化，所以数量扩张也影响代理。&quot;,
+        &quot;suggested_correction&quot;: &quot;明确启发式权重及固定初始规模归一化，避免实测LTP/复发风险的推论。&quot;,
+        &quot;pdf_page&quot;: 5,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C6&quot;,
+        &quot;issue&quot;: &quot;15次扫描是5种变化乘3个参数，非15个独立随机重复，也未报告三参数全因子联合扫描。&quot;,
+        &quot;suggested_correction&quot;: &quot;实际分析单位记为参数情景，仅保留所测试范围的定性稳健性。&quot;,
+        &quot;pdf_page&quot;: 7,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C7&quot;,
+        &quot;issue&quot;: &quot;相对不敏感没有误差条、统计检验或标准化系数。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留作者定性敏感性排序，不当作零效应或统计不显著。&quot;,
+        &quot;pdf_page&quot;: 10,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C8&quot;,
+        &quot;issue&quot;: &quot;W7131122153-maturation-fate：作者称不同成熟速率最终相同数量成熟，但式6、7中存在竞争修剪，文本未展示相同最终成熟数或分离时间窗/饱和因素。&quot;,
+        &quot;suggested_correction&quot;: &quot;将底物受限仅标interpretation，不采纳恒定成熟总量；要求竞争命运和通量积分的直接核对。&quot;,
+        &quot;pdf_page&quot;: 10,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C9&quot;,
+        &quot;issue&quot;: &quot;W7131122153-initial-states：Juvenile初值0而替代初值描述为正负10%、20%，没有四个实际状态向量或负号参照。&quot;,
+        &quot;suggested_correction&quot;: &quot;仅记录四次模拟的作者定性报告，并保留配置未明；不将负占比默默改写成有效正占比。&quot;,
+        &quot;pdf_page&quot;: 6,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C10&quot;,
+        &quot;issue&quot;: &quot;natural reward条件同时改变生成率和受体切换率；无生成是输入假设，且作者承认某些天然奖励范式存在incubation样效应。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留两个联合参数差异和有限对照范围，不能独立归因或外推所有天然奖励。&quot;,
+        &quot;pdf_page&quot;: 7,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C11&quot;,
+        &quot;issue&quot;: &quot;3.8所谓experimental predictions和图3C是阶段模拟快照，不是新动物/细胞数据。&quot;,
+        &quot;suggested_correction&quot;: &quot;使用hypothesis角色；明确尚无生物学验证，阶段百分比待审。&quot;,
+        &quot;pdf_page&quot;: 11,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C12&quot;,
+        &quot;issue&quot;: &quot;干预时机来自4.2-4.4的推演，图4B仅为塑性跨相位，没有早晚干预试验或疗效数字。&quot;,
+        &quot;suggested_correction&quot;: &quot;使用hypothesis角色，不推断临床疗效、安全性或机制因果识别。&quot;,
+        &quot;pdf_page&quot;: 11,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;W7131122153-protocol-boundary：式3给末脉冲220至225，而2.6/3.1用220作为长撤药起点和暴露结束。&quot;,
+        &quot;suggested_correction&quot;: &quot;按D=1/D=0描述状态规则；保留原始脉冲参数，不强行统一精确阶段边界。&quot;,
+        &quot;pdf_page&quot;: 3,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;正文2.2称对方程3至6求和，但实际人口动力学为式4至7，式3是D(t)定义。&quot;,
+        &quot;suggested_correction&quot;: &quot;引用真实人口方程4至7及总量式2，不将交叉引用笔误解释为额外动力学项。&quot;,
+        &quot;pdf_page&quot;: 3,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;图像像素、外部代码与任何未提供补充材料不在证据范围；文献和仓库链接不代表已读取内容。&quot;,
+        &quot;suggested_correction&quot;: &quot;覆盖只声明所提供文本与图注；科学复现和独立验证保持false。&quot;,
+        &quot;pdf_page&quot;: 12,
+        &quot;resolved&quot;: true
+      }
+    ],
+    &quot;needs_human_review&quot;: true
+  },
+  &quot;source&quot;: {
+    &quot;filename&quot;: &quot;paper-W7131122153--Population-level-neural-rejuvenation-dynamics-in-addiction-a-computational-framework-for-unders.pdf&quot;,
+    &quot;sha256&quot;: &quot;885cd35f76f5cf5e7a02e9576a751e1919fe64dad84881e2b358b3eb64c9eff8&quot;,
+    &quot;source_url&quot;: &quot;https://public-pages-files-2025.frontiersin.org/journals/computational-neuroscience/articles/10.3389/fncom.2026.1753417/pdf&quot;,
+    &quot;pdf_page_count&quot;: 13
+  },
+  &quot;provenance&quot;: {
+    &quot;created_at&quot;: &quot;2026-10-07T14:52:53.363530Z&quot;,
+    &quot;workflow&quot;: &quot;claim-commons-pdf-v1&quot;,
+    &quot;prompt_version&quot;: &quot;claim-commons-chatgpt-pdf-2026-10-07.1&quot;,
+    &quot;backend&quot;: &quot;authorized_parallel_GPT&quot;,
+    &quot;model&quot;: &quot;inherited_account_GPT&quot;,
+    &quot;provider_api_key_used&quot;: false,
+    &quot;source_sha256&quot;: &quot;885cd35f76f5cf5e7a02e9576a751e1919fe64dad84881e2b358b3eb64c9eff8&quot;,
+    &quot;source_audit_complete&quot;: true,
+    &quot;review_status&quot;: &quot;candidate&quot;,
+    &quot;database_updated&quot;: false
+  }
+}</pre></details></main><footer></footer></body></html>

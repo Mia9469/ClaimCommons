@@ -1,0 +1,1234 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "preprint",
+  "paper": {
+    "title": "Scalable Learning in Structured Recurrent Spiking Neural Networks without Backpropagation",
+    "authors": [
+      "Bo Tang",
+      "Weiwei Xie"
+    ],
+    "doi": null,
+    "publication_year": 2026,
+    "venue": "arXiv (Cornell University)",
+    "url": "https://arxiv.org/pdf/2605.00402"
+  },
+  "source": {
+    "filename": "paper-W7160360113--Scalable-Learning-in-Structured-Recurrent-Spiking-Neural-Networks-without-Backpropagation.pdf",
+    "sha256": "e40da6a7b6da4566ffe43b42461d33d96b4e706ce09f65559ec82b88cf8c4d30",
+    "source_url": "https://arxiv.org/pdf/2605.00402",
+    "pdf_page_count": 7
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "results_sections_seen": [
+      "Abstract / I. Introduction / II. Background",
+      "III.A–H Proposed Architecture and Learning Framework (Fig. 1; equations 2–17; Algorithm 1)",
+      "IV.A–F Experimental Evaluation (Fig. 2; Tables I–III)",
+      "V. Conclusion / References"
+    ],
+    "missing_material": [
+      "未提供图像像素",
+      "未提供代码、原始run数据、补充资料或后续稿版本"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "完整评估7页所供文本、两幅图的图注/图中文字、三张表的全部数值、全部方程/Algorithm 1以及参考文献；无附录。",
+      "源身份为arXiv:2605.00402v1 [cs.NE]，1 May 2026；题名和Bo Tang、Weiwei Xie一致。仅提取该v1，不借用后续版本或期刊事实；DOI保持null。",
+      "第二次源内审计在保留全文上下文完成，逐条比对Eq.(5)–(17)、IV.C–E和Tables I–III：最佳97.12%配置与稀疏小模型分开，所有表值逐项保留。",
+      "中层521按IV.D原样保留，未猜测应为512；batch128、T100、30epochs、隐藏神经元和配置数均不是独立重复n。",
+      "Eq.(7)的margin幅度依赖activation差值，不能严格称误差只依赖relative ordering；Fig.1反馈注流label与正文不注流、Eq.(2)投射索引和IV.D密度设定的文字问题已记录。",
+      "实际负向结果为密度降低伴随准确率下降；过宽bandwidth失稳、因果机制和硬件能效均未得到本稿独立测量。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "固定图结构的局部递归、前馈和sparse readout架构",
+      "role": "result",
+      "source_pages": [
+        1,
+        2,
+        3
+      ],
+      "decision": "include",
+      "reason": "C1；拓扑与权重区分，readout与recurrent shortcut区分。"
+    },
+    {
+      "summary": "WTA监督、broadcast、低维modulatory门控、eligibility及readout local delta",
+      "role": "result",
+      "source_pages": [
+        4,
+        5
+      ],
+      "decision": "include",
+      "reason": "C2；保留联合机制和外部监督；不用错误的只依赖排序表述。"
+    },
+    {
+      "summary": "homeostatic threshold规则",
+      "role": "result",
+      "source_pages": [
+        3,
+        4,
+        5
+      ],
+      "decision": "include",
+      "reason": "C3；方法非稳定性保证。"
+    },
+    {
+      "summary": "event-driven计算和状态/权重/trace存储估算",
+      "role": "result",
+      "source_pages": [
+        5
+      ],
+      "decision": "include",
+      "reason": "C4；ρplastic不等于ρout，成本边界明确。"
+    },
+    {
+      "summary": "MNIST万人级网络约97.12% peak accuracy",
+      "role": "result",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "C5；最佳readout 1.0，限定v1/单任务。"
+    },
+    {
+      "summary": "不同readout密度的训练曲线与最终准确率",
+      "role": "result",
+      "source_pages": [
+        6,
+        7
+      ],
+      "decision": "include",
+      "reason": "C6；完整Table II、真实性能下降与未明确投射口径。"
+    },
+    {
+      "summary": "recurrent bandwidth消融",
+      "role": "result",
+      "source_pages": [
+        6,
+        7
+      ],
+      "decision": "include",
+      "reason": "C7；保留b=6/12/24各值，未声称已见过宽失稳。"
+    },
+    {
+      "summary": "recurrent shortcut消融",
+      "role": "result",
+      "source_pages": [
+        6,
+        7
+      ],
+      "decision": "include",
+      "reason": "C8；保留s=128/256/512各值，不捏造最优中等数量。"
+    },
+    {
+      "summary": "有限训练内稳定/无灾难发散的报告",
+      "role": "result",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "C9；无独立run统计或收敛定理。"
+    },
+    {
+      "summary": "非梯度方法文献准确率表",
+      "role": "review_synthesis",
+      "source_pages": [
+        6,
+        7
+      ],
+      "decision": "include",
+      "reason": "C10；e-prop是近似梯度仅参考，非同条件实验。"
+    },
+    {
+      "summary": "temporal mixing/path length及modulation稳定性的归因",
+      "role": "interpretation",
+      "source_pages": [
+        4,
+        5,
+        6
+      ],
+      "decision": "include",
+      "reason": "C11；共享消融证据而非因果机制识别。"
+    },
+    {
+      "summary": "Loihi/SpiNNaker/FPGA映射及能效可行性",
+      "role": "interpretation",
+      "source_pages": [
+        5,
+        7
+      ],
+      "decision": "include",
+      "reason": "C12；没有实际部署或能耗测量。"
+    },
+    {
+      "summary": "有限structural rewiring",
+      "role": "hypothesis",
+      "source_pages": [
+        3,
+        5
+      ],
+      "decision": "defer",
+      "reason": "P3-REWIRING-UNTESTED：可选扩展未给实验设置/消融，不能当作性能来源。"
+    },
+    {
+      "summary": "大bandwidth失稳和shortcut缩短路径/加速收敛",
+      "role": "interpretation",
+      "source_pages": [
+        6,
+        7
+      ],
+      "decision": "defer",
+      "reason": "P3-MECHANISM-NOT-MEASURED：未提供负向bandwidth数据、路径统计或shortcut收敛定量。"
+    },
+    {
+      "summary": "跨基准泛化、真实生物合理性及临床/器件验证",
+      "role": "interpretation",
+      "source_pages": [
+        1,
+        2,
+        5,
+        7
+      ],
+      "decision": "exclude",
+      "reason": "不在本稿提供证据内；没有另行读取来源。"
+    },
+    {
+      "summary": "背景LIF/STDP/broadcast工作及参考文献",
+      "role": "review_synthesis",
+      "source_pages": [
+        1,
+        2,
+        7
+      ],
+      "decision": "exclude",
+      "reason": "用于理解术语，不作为本篇新研究贡献，不建立跨论文关系。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "该arXiv v1提出多层structured recurrent SNN：层内局部稠密recurrent microcircuit与feedforward backbone相连，各层通过稀疏small-world long-range projections连接readout；连接拓扑基本固定但所选synaptic weights可学习，有限structural rewiring只是可选扩展。",
+      "claim_type": "architecture_proposal",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "架构说明与Fig.1文字",
+          "design": "K层recurrent microcircuits、前馈连接及直达readout投射",
+          "comparator": null,
+          "measure": "局部计算、全局投射和拓扑/权重分工",
+          "unit_of_analysis": "网络结构及连接图，不是实验重复",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "拓扑固定不等于权重固定",
+            "Eq.(2)的long-range项索引与其readout指向说明存在未澄清差异"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "III.A Network Architecture",
+            "figure": "Fig. 1",
+            "equation": "(2)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "给出局部递归与稀疏全局连接的网络组织方案。",
+        "boundary": "结构表述为提案；并非全部配置readout都稀疏，最高准确率使用1.0 readout密度。",
+        "negative_result": null,
+        "non_inference": "不能仅由图结构认定真实small-world统计量、硬件路由节能或长期记忆能力已测得。",
+        "unresolved": "Eq.(2)与long-range→readout文字关系不清；可选rewiring没有消融结果。",
+        "unresolved_attribution": "来自本源未报告的方法细节或作者讨论；未补造实验或调用外部版本。"
+      },
+      "broad_directions": [
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "固定连接拓扑下可学习权重怎样组织局部递归与直达readout通信？"
+      ],
+      "shared_evidence_with": [
+        "C5",
+        "C6",
+        "C11",
+        "C12"
+      ],
+      "review_notes": [
+        "long-range recurrent shortcuts和层到readout投射不是同一种稀疏参数。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "所提监督规则用spike-count readout的预测类与真实类构成两位置WTA error：误分类时m=max(0,γ+z_pred−z_y)，预测类δ=+m、真实类δ=−m，正确分类时δ为零；固定random broadcast反馈经低维modulatory population产生tanh门控，结合eligibility trace更新所选层权重，readout另用local delta rule，而不进行backpropagation或surrogate-gradient训练。",
+      "claim_type": "local_supervised_learning_rule",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "WTA、broadcast/modulatory、eligibility与readout更新公式",
+          "design": "e_ij以λ_e衰减并累积S_jS_i；Δw_ij=−ηe_ijL_i；modulatory states由固定投影驱动",
+          "comparator": "不计算softmax/显式全局loss梯度；并非无监督",
+          "measure": "δ、eligibility及门控权重更新",
+          "unit_of_analysis": "算法公式和更新变量",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "监督标签和readout error仍是全局任务信息",
+            "λ_e、λ_m∈(0,1)，固定随机反馈/投影，只有接收调制反馈的层可塑",
+            "误差信号支持位置由排序决定，但m的幅度依赖activation差值"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "III.C–E",
+            "figure": null,
+            "equation": "(6)–(15)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "Algorithm 1及训练流程文字",
+          "design": "forward模拟累积trace；之后计算readout count/teacher，更新readout与调制门控",
+          "comparator": null,
+          "measure": "分阶段mini-batch训练",
+          "unit_of_analysis": "算法步骤",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "III.F Training Procedure",
+            "figure": "Algorithm 1",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提供非BPTT/非surrogate-gradient的监督式局部更新流程。",
+        "boundary": "局部是synaptic update使用的信息范围，不表示没有全局监督或batch阶段。",
+        "negative_result": null,
+        "non_inference": "不推出精确梯度、全局loss下降、完全无同步训练或真正生物神经调质已被验证。",
+        "unresolved": "Fig.1 legend称feedback with current injection，但caption和III.D称不向膜电位注入反馈电流，存在文字冲突。",
+        "unresolved_attribution": "来自本源未报告的方法细节或作者讨论；未补造实验或调用外部版本。"
+      },
+      "broad_directions": [
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "WTA监督信息如何经固定反馈和低维调制门控形成局部eligibility更新？"
+      ],
+      "shared_evidence_with": [
+        "C5",
+        "C9",
+        "C11",
+        "C12"
+      ],
+      "review_notes": [
+        "修正作者only relative ordering表述：Eq.(7)的m依赖数值差值；未补造梯度。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "该网络使用homeostatic threshold adaptation：阈值按ηθ乘以平滑spike rate与target rate之差更新，使高于目标发放率时提高阈值、低于目标时降低阈值；这是控制活动的规则，不是已证明避免发散的稳定性定理。",
+      "claim_type": "homeostatic_rule_proposal",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "LIF及阈值更新方程",
+          "design": "V_th,i(t+1)=V_th,i(t)+ηθ(Sbar_i−S_target)",
+          "comparator": "固定阈值对照未给",
+          "measure": "相对target rate的阈值调节",
+          "unit_of_analysis": "单神经元状态更新规则",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "α∈(0,1)，spike由Heaviside阈值生成",
+            "平滑率、目标率及ηθ具体取值未报"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "III.B Neuron Dynamics",
+            "figure": null,
+            "equation": "(3)–(5)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "给出面向recurrent活动调节的负反馈形式。",
+        "boundary": "作者称其防止runaway/quiescence，但没有关闭homeostasis的匹配消融。",
+        "negative_result": null,
+        "non_inference": "不认定任意权重、输入或学习率下都稳定，或等同生物homeostasis机制。",
+        "unresolved": "homeostasis独立贡献与参数稳定边界未验证。",
+        "unresolved_attribution": "来自本源未报告的方法细节或作者讨论；未补造实验或调用外部版本。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "目标发放率阈值自适应对递归学习稳定性有何独立贡献？"
+      ],
+      "shared_evidence_with": [
+        "C9",
+        "C11"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "作者在假定event-driven执行、以平均每timestep spike数Sbar和平均out-degree d计账时，给出inference与eligibility/plasticity training均为O(T·Sbar·d)的复杂度估算，并列neuron state O(N)、synapse O(E)、plastic eligibility O(ρE)存储，其中ρ是plastic synapse比例而非readout density。",
+      "claim_type": "conditional_complexity_analysis",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "渐近复杂度估算",
+          "design": "T为模拟时长、N总神经元、E总synapse、ρ可塑连接比例",
+          "comparator": "不含同条件实现计时或严格BPTT复杂度对照",
+          "measure": "Cinfer/Ctrain=O(T Sbar d)；状态/权重/trace存储",
+          "unit_of_analysis": "计算操作与存储变量；非硬件测试",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "估算以作者所述event-driven访问与synaptic update为计账范围",
+            "trace衰减、全神经元状态维护及feedback matrix开销未完整分项",
+            "固定随机B的存储和broadcast计算未在所列内存项中显式说明"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "III.G Computational Complexity",
+            "figure": null,
+            "equation": "(16), (17)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "给出按spike活动和连通度组织的理论记账表达式。",
+        "boundary": "不是收敛/总体复杂度定理，未提供实现benchmark或完整操作成本证明。",
+        "negative_result": null,
+        "non_inference": "不推出与N无关、必然低于所有梯度算法、低能耗或任意batch反馈开销已包括。",
+        "unresolved": "额外反馈、time-driven状态与trace衰减成本如何计入总复杂度尚不清楚。",
+        "unresolved_attribution": "来自本源未报告的方法细节或作者讨论；未补造实验或调用外部版本。"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "包括反馈和trace维护后该算法的总计算与内存成本是否仍按spike事件缩放？"
+      ],
+      "shared_evidence_with": [
+        "C12"
+      ],
+      "review_notes": [
+        "ρE的ρ与ρout明确分开，不将隐藏状态规模当作样本n。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "在MNIST Poisson输入、100 timesteps、batch 128和30 epochs设置下，三层[4096,2048,4096] recurrent SNN的最佳报告配置以intermediate/final readout density均为1.0取得约97.12% peak test accuracy，使用WTA、fixed broadcast与modulatory eligibility学习而无backpropagation、surrogate gradient或BPTT。",
+      "claim_type": "reported_benchmark_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "MNIST分类模拟",
+          "design": "三层[4096,2048,4096]，C=10 readout；MNIST，Poisson spike编码，T=100 timesteps，batch=128，30 epochs；不用surrogate gradient、backpropagation或BPTT",
+          "comparator": "未提供同代码、同数据分割的梯度或标准网络对照",
+          "measure": "peak test accuracy≈97.12%",
+          "unit_of_analysis": "MNIST测试图像准确率汇总；独立训练run数未报",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "最佳结果对应ρout=1.0，不能称在5%readout下也取得97.12%",
+            "峰值不是独立种子均值或必然最终epoch成绩"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "IV.A–C Experimental Setup / Main Results",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "给出万人级隐藏神经元网络非反传学习的MNIST报告成绩。",
+        "boundary": "仅一个静态图像基准、Poisson编码和所报告配置；未报seed、测试图像n、区间或配对基线。",
+        "negative_result": null,
+        "non_inference": "不能推出跨数据集泛化、时间任务能力、生物合理性验证、硬件节能或全部非梯度算法SOTA。",
+        "unresolved": "peak选择方式及重复训练分布未报告。",
+        "unresolved_attribution": "来自本源未报告的方法细节或作者讨论；未补造实验或调用外部版本。"
+      },
+      "broad_directions": [
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "结构化深层recurrent SNN在不使用反传/梯度替代时能达到怎样的MNIST准确率？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C9",
+        "C10",
+        "C11"
+      ],
+      "review_notes": [
+        "网络神经元数、batch大小、epoch及连接配置不是独立训练重复n；源内未给seed/run数、测试图像数或误差条。",
+        "源文约97.12%配称test error below2.88%，本记录不把近似准确率升级成严格误差不等式。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "在MNIST的小网络readout-sparsity消融中，Table II列ρout=0.50/0.40/0.30/0.20/0.10/0.05时最终test accuracy约为93.4/93.0/92.3/91.6/91.3/90.1%；降低密度伴随性能逐步下降，但5%连接配置仍略高于90%，不能与大网络97.12%峰值混同。",
+      "claim_type": "readout_sparsity_ablation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "改变readout连接比例的消融及Table II",
+          "design": "IV.D写三层[1024,521,1024]；其余参数称固定；通用MNIST，Poisson spike编码，T=100 timesteps，batch=128，30 epochs；不用surrogate gradient、backpropagation或BPTT",
+          "comparator": "ρout=0.50约93.4%，与逐渐降低的密度配置比较",
+          "measure": "6个密度最终test accuracy：93.4,93.0,92.3,91.6,91.3,90.1%",
+          "unit_of_analysis": "网络配置下的测试准确率；6配置不是6独立重复",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "IV.D又称final readout density 0.5，哪些层的ρout被改变未完全解释",
+            "中层521按源原样保留，不自行改成512"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "IV.D Effect of Readout Sparsity",
+            "figure": "Table II",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "Figure 2 caption及正文曲线描述",
+          "design": "不同readout密度随epoch的test accuracy曲线",
+          "comparator": null,
+          "measure": "随训练epoch的定性趋势",
+          "unit_of_analysis": "同一密度消融的共享曲线，不是另一重复",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "IV.D Effect of Readout Sparsity",
+            "figure": "Fig. 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所报稀疏配置仍可学习，并保留约90%以上准确率。",
+        "boundary": "只限所列较小模型、MNIST及ρout范围；无误差或seed。",
+        "negative_result": "降低readout density时报告准确率从≈93.4%降至≈90.1%，并非稀疏化无损。",
+        "non_inference": "不能认定5%连接达到97.12%，不能把此配置变化等同固定网络上的5%通信/能耗实测。",
+        "unresolved": "密度变化作用于哪些投射及final density 0.5的说明存在不清之处。",
+        "unresolved_attribution": "来自本源未报告的方法细节或作者讨论；未补造实验或调用外部版本。"
+      },
+      "broad_directions": [
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "readout投射从50%降到5%时，该模型的准确率如何受影响？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C9",
+        "C11"
+      ],
+      "review_notes": [
+        "网络神经元数、batch大小、epoch及连接配置不是独立训练重复n；源内未给seed/run数、测试图像数或误差条。",
+        "真实负向趋势单列negative_result；未推测显著性。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "Table III的bandwidth消融报告b=6、12、24时MNIST test accuracy分别为92.3%、93.4%、94.02%；考察范围内增加局部recurrent bandwidth伴随准确率改善，表中没有出现过宽bandwidth导致失稳的实际数据。",
+      "claim_type": "recurrent_bandwidth_ablation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "改变局部recurrent bandwidth的Table III消融",
+          "design": "通用MNIST/Poisson/T=100/batch128/30epochs；该表未重申其余完整参数",
+          "comparator": "b=6与12、24",
+          "measure": "test accuracy：92.3、93.4、94.02%",
+          "unit_of_analysis": "三种网络结构配置，独立run/seed未报",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "只在b=6–24列出的范围内作比较",
+            "不能把IV.E关于excessively large bandwidth失稳的讨论当成表内观察"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "IV.E Bandwidth and Shortcut Ablations",
+            "figure": "Table III",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "报告的三个bandwidth配置准确率递增。",
+        "boundary": "无误差、训练重复、完整控制参数或稳定性指标。",
+        "negative_result": null,
+        "non_inference": "不推出任意增加bandwidth都改善性能，也不能声称已观察到超大bandwidth实际失稳或独立时间混合机制。",
+        "unresolved": "极端bandwidth的稳定边界未提供。",
+        "unresolved_attribution": "来自本源未报告的方法细节或作者讨论；未补造实验或调用外部版本。"
+      },
+      "broad_directions": [
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "局部递归bandwidth对准确率及稳定性的作用范围是什么？"
+      ],
+      "shared_evidence_with": [
+        "C8",
+        "C11"
+      ],
+      "review_notes": [
+        "网络神经元数、batch大小、epoch及连接配置不是独立训练重复n；源内未给seed/run数、测试图像数或误差条。",
+        "Table III两个子表复用93.4%基准；不是独立重复实验的确认。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "Table III的shortcut消融报告s=128、256、512时MNIST test accuracy分别为92.8%、93.4%、94.15%；所列范围内更多shortcut伴随更高准确率，但文本没有量化其path length、收敛速度或最优shortcut数量。",
+      "claim_type": "shortcut_ablation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "改变recurrent shortcut数的Table III消融",
+          "design": "通用MNIST设置；表中未完整交代所有固定参数",
+          "comparator": "s=128与256、512",
+          "measure": "test accuracy：92.8、93.4、94.15%",
+          "unit_of_analysis": "三种连接配置；shortcut数不是独立样本数",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "s是recurrent shortcut数，不等于ρout或readout非零权重数",
+            "没有shortcut=0或更大s结果"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "IV.E Bandwidth and Shortcut Ablations",
+            "figure": "Table III",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所列shortcut配置显示正向准确率趋势。",
+        "boundary": "仅三个参数点，无seed/误差、路径统计或按shortcut数的学习曲线。",
+        "negative_result": null,
+        "non_inference": "不确认moderate shortcut存在最优值，或path length下降导致收敛加快已被测得。",
+        "unresolved": "shortcut与bandwidth的交互、规模成本和作用机制未识别。",
+        "unresolved_attribution": "来自本源未报告的方法细节或作者讨论；未补造实验或调用外部版本。"
+      },
+      "broad_directions": [
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "recurrent shortcut数量怎样影响准确率，其路径和收敛机制是否可单独验证？"
+      ],
+      "shared_evidence_with": [
+        "C7",
+        "C11"
+      ],
+      "review_notes": [
+        "网络神经元数、batch大小、epoch及连接配置不是独立训练重复n；源内未给seed/run数、测试图像数或误差条。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "在文中所述30-epoch MNIST训练设置和所列配置中，作者报告学习稳定且没有catastrophic divergence；这是实验叙述与准确率曲线的有限观察，不构成对所有deep recurrent SNN训练的稳定性保证。",
+      "claim_type": "reported_training_stability",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "IV.C/D/F的训练叙述和Fig.2",
+          "design": "WTA/broadcast/modulatory learning及阈值homeostasis共同运行",
+          "comparator": "未给关闭modulation/homeostasis的对照",
+          "measure": "作者称无catastrophic divergence；不同readout密度的准确率随epoch变化",
+          "unit_of_analysis": "报告的训练过程；独立重复数及稳定性判据未报",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "最高准确率、大/小网络和密度消融不是独立稳定性复现",
+            "未测权重范数、活动分布或极端学习率下失稳"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "IV.C Main Results / IV.D / IV.F",
+            "figure": "Fig. 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者描述所测试训练过程未发生灾难性发散。",
+        "boundary": "只在有限30-epoch实验与现有曲线叙述中成立；没有正式稳定性判据。",
+        "negative_result": null,
+        "non_inference": "不能将未报告灾难性发散当作严格收敛定理、长期连续在线稳定或生物稳定机制识别。",
+        "unresolved": "稳定性定义、种子分布及调制/阈值机制各自贡献仍缺。",
+        "unresolved_attribution": "来自本源未报告的方法细节或作者讨论；未补造实验或调用外部版本。"
+      },
+      "broad_directions": [
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "非梯度局部recurrent训练的稳定性在多种子和参数范围内能否重现？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C3",
+        "C5",
+        "C6",
+        "C11"
+      ],
+      "review_notes": [
+        "网络神经元数、batch大小、epoch及连接配置不是独立训练重复n；源内未给seed/run数、测试图像数或误差条。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "Table I以文献汇总形式把本文约97%的MNIST结果与STDP约95%、reservoir 85–90%、reward-modulated STDP 88–90%、WTA-based 88–91%和e-prop 92–95%并列；该表明确e-prop近似gradient descent，仅作reference，不是严格非梯度对照。",
+      "claim_type": "literature_context_comparison",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "Table I文献结果汇总",
+          "design": "不同文献的近似准确率/深度/recurrence类别；没有统一重新训练",
+          "comparator": "STDP、reservoir、reward-modulated STDP、WTA-based及e-prop的表列范围",
+          "measure": "文献约值与本文≈97%",
+          "unit_of_analysis": "文献/方法汇总条目，不是匹配独立试验",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "原文献未作为本任务独立源读取",
+            "e-prop为近似梯度方法，表脚注已区别"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "IV.C Main Results",
+            "figure": "Table I",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者提供非反传学习方法的文献定位。",
+        "boundary": "没有共同网络规模、数据预处理、训练预算或误差；部分行仅类别而非完整方法配置。",
+        "negative_result": null,
+        "non_inference": "不能确认统一benchmark下显著优于所有方法或将e-prop归为严格非梯度算法；不建立跨论文支持/复制关系。",
+        "unresolved": "基线可比性、文献范围和SOTA筛选标准未充分说明。",
+        "unresolved_attribution": "来自本源未报告的方法细节或作者讨论；未补造实验或调用外部版本。"
+      },
+      "broad_directions": [
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "非梯度recurrent SNN成绩与现有方法在统一评价设置下是否具有可比优势？"
+      ],
+      "shared_evidence_with": [
+        "C5"
+      ],
+      "review_notes": [
+        "这是review_synthesis的上下文记录，与本文原创模拟结果分开。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "作者将消融中随bandwidth/shortcut增加的性能改善解释为更好的temporal mixing和更短effective path length，并将训练稳定解释为调制门控和homeostatic threshold共同作用；本文没有这些动力学量、路径量或模块关闭消融，因此解释尚非独立机制/因果识别。",
+      "claim_type": "architectural_mechanism_interpretation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "IV.E/F作者解释及III.B/F规则论述",
+          "design": "结构参数变动和整体学习系统；无逐组件因果干预",
+          "comparator": "无匹配关闭modulation/homeostasis或path-length控制",
+          "measure": "准确率趋势及作者稳定性描述",
+          "unit_of_analysis": "共享Table III、Fig.2和整体训练结果",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "提高参数数量同时可能改变容量、计算和动力学，不能分离唯一机制"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "IV.E Bandwidth and Shortcut Ablations / IV.F",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "阈值规则及训练流程的机制解释",
+          "design": null,
+          "comparator": null,
+          "measure": "作者对runaway抑制、学习/动力学分离的解释",
+          "unit_of_analysis": "算法说明",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "III.B / III.D–E",
+            "figure": null,
+            "equation": "(5), (10)–(14)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "形成局部递归、small-world与调制学习的协同设计解释。",
+        "boundary": "没有独立路径长度、temporal mixing、误差方向或homeostasis消融。",
+        "negative_result": null,
+        "non_inference": "不能据准确率趋势认定路径缩短是原因或生物neuromodulation得到证实。",
+        "unresolved": "结构/容量/算法的独立贡献与相互作用仍待匹配消融。",
+        "unresolved_attribution": "来自本源未报告的方法细节或作者讨论；未补造实验或调用外部版本。"
+      },
+      "broad_directions": [
+        "methods-causal",
+        "dynamics-networks",
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "连接结构和调制/阈值规则各自在何种控制条件下产生可识别机制作用？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9"
+      ],
+      "review_notes": [
+        "所有机制解释与原结果共享证据，不是额外重复。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "作者认为固定拓扑、局部eligibility state、event-driven computation和低维feedback适合Loihi、SpiNNaker及time-multiplexed FPGA映射；本稿没有硬件实现、测得energy/latency/routing cost，因此是hardware-feasibility推断而非硬件验证结果。",
+      "claim_type": "hardware_feasibility_interpretation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "III.H设计可行性讨论",
+          "design": "提出synapse近旁register/accumulator、固定routing和慢速可选rewiring",
+          "comparator": null,
+          "measure": "潜在存储/互连/事件执行映射",
+          "unit_of_analysis": "设计原则与硬件映射设想，非芯片/FPGA实验",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "依赖平台对局部状态、反馈投影和门控更新的支持",
+            "最佳MNIST配置readout density 1.0，与激进稀疏配置不能混同"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "III.H Hardware Feasibility",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提出可映射到神经形态与FPGA平台的设计理由。",
+        "boundary": "可行性未由部署、精度量化、吞吐/能耗或总routing实现检验。",
+        "negative_result": null,
+        "non_inference": "不能称已部署这些平台或实际比BPTT更节能、更低带宽、任意规模可扩展。",
+        "unresolved": "反馈矩阵资源、有限精度状态、同步阶段、通信及trace维护的硬件成本未量化。",
+        "unresolved_attribution": "来自本源未报告的方法细节或作者讨论；未补造实验或调用外部版本。"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "实现固定反馈和local trace的实际神经形态/FPGA资源与端到端能耗是多少？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C4"
+      ],
+      "review_notes": [
+        "硬件可行性与源内MNIST模拟实证分开。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "本源为arXiv:2605.00402v1，2026-05-01，完整7页文本含全部算法、公式、图注和Table I–III。提出固定图的局部稠密递归/稀疏readout架构、WTA监督加fixed broadcast/低维modulation与eligibility更新及homeostatic threshold；没有backpropagation、surrogate gradient或BPTT。MNIST Poisson模拟T=100、batch128、30epochs，大模型[4096,2048,4096]在readout density1.0时报告约97.12% peak accuracy。小模型readout消融从ρout0.50约93.4%降至0.05约90.1%，这是实际准确率下降；bandwidth6/12/24及shortcut128/256/512的表列准确率各有改善。没有独立seed/run数、测试图像n、误差条、路径统计、极宽bandwidth失稳数据或硬件部署。复杂度是有限计账估算，稳定性是有限训练观察，机制归因和Loihi/SpiNNaker/FPGA映射是interpretation，Table I为非匹配文献review_synthesis。WTA幅度依赖activation差值，不能照抄仅依赖排序；中层521、密度设定、反馈注流label、Eq.(2)索引和复杂度开销均保留疑点。未读取图像、代码、补充资料或后续稿；全部为human_checked:false候选，文本审计不是科学验证。",
+  "shared_evidence": [
+    {
+      "claim_id": "C1",
+      "with": [
+        "C5",
+        "C6",
+        "C11",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C2",
+      "with": [
+        "C5",
+        "C9",
+        "C11",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C9",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C1",
+        "C2",
+        "C9",
+        "C10",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C1",
+        "C9",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C8",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C7",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C2",
+        "C3",
+        "C5",
+        "C6",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "with": [
+        "C5"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "with": [
+        "C1",
+        "C2",
+        "C4"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": "C2",
+        "issue": "作者多处称WTA signal仅依赖relative ordering/不传precise magnitude，但Eq.(7) m依赖γ+z_pred−z_y。",
+        "suggested_correction": "本记录明确support/sign由预测/真实类别决定，而非零幅度依赖activation差值；不把它称精确梯度。",
+        "pdf_page": 4,
+        "resolved": true
+      },
+      {
+        "claim_id": "C5",
+        "issue": "最高97.12%对应intermediate与final readout density 1.0，不是5%readout配置。",
+        "suggested_correction": "主结果与Table II小模型稀疏消融已拆分，不能混合稀疏度与峰值。",
+        "pdf_page": 6,
+        "resolved": true
+      },
+      {
+        "claim_id": "C6",
+        "issue": "P3-READOUT-DENSITY：IV.D称final density 0.5，同时Figure 2/Table II改变readout density，未说明具体哪些投射变化。",
+        "suggested_correction": "保留表格ρout标签及final0.5说明，不假设所有层共享同一ρ。",
+        "pdf_page": 6,
+        "resolved": false
+      },
+      {
+        "claim_id": "C6",
+        "issue": "P3-SIZE-NOTATION：IV.D小模型中层写521，没有源内另一个一致尺寸可用来判定是否排版错误。",
+        "suggested_correction": "严格保留[1024,521,1024]，需作者/人工澄清，禁止猜测512。",
+        "pdf_page": 6,
+        "resolved": false
+      },
+      {
+        "claim_id": "C2",
+        "issue": "P3-FEEDBACK-FIGURE：Fig.1可提取legend称modulatory feedback with current injection，caption和III.D–H明确不把feedback注入膜电位。",
+        "suggested_correction": "算法描述按公式/正文保留门控plasticity，不注流说法附冲突警告，不能凭图像推断实现。",
+        "pdf_page": 3,
+        "resolved": false
+      },
+      {
+        "claim_id": "C1",
+        "issue": "P3-ARCHITECTURE-EQ2：Eq.(2)把wlr项列在层k neuron input且求和j∈Lk，文字却定义其投向readout。",
+        "suggested_correction": "提取文字架构同时注明索引不一致，不重写源方程或声称完整接线已清楚。",
+        "pdf_page": 3,
+        "resolved": false
+      },
+      {
+        "claim_id": "C4",
+        "issue": "P3-COMPLEXITY-ACCOUNTING：O(T Sbar d)/所列存储未显式逐项计固定反馈矩阵、广播、所有trace衰减和状态维护。",
+        "suggested_correction": "标明作者event-driven估算范围，不当作完整实现复杂度/能耗保证；需要完整计账说明。",
+        "pdf_page": 5,
+        "resolved": false
+      },
+      {
+        "claim_id": null,
+        "issue": "P3-REPEAT-COUNTS：正文未给独立seed/run数、MNIST实际测试图像数或误差条。",
+        "suggested_correction": "sample_size_as_reported/uncertainty置null；不从标准数据集常识补入n。",
+        "pdf_page": 6,
+        "resolved": false
+      },
+      {
+        "claim_id": "C7",
+        "issue": "P3-MECHANISM-NOT-MEASURED：IV.E讨论excessively large bandwidth失稳/shortcut改善path length与收敛速度，但Table III没有这些指标。",
+        "suggested_correction": "只保留所列准确率；未测机制为interpretation，失稳不放negative_result。",
+        "pdf_page": 6,
+        "resolved": false
+      },
+      {
+        "claim_id": "C10",
+        "issue": "Table I把e-prop列为参考且脚注注明approximate gradient descent。",
+        "suggested_correction": "已标记为文献综述上下文，不认定其严格非梯度，不生成统一基线SOTA结论。",
+        "pdf_page": 7,
+        "resolved": true
+      },
+      {
+        "claim_id": "C12",
+        "issue": "hardware feasibility讨论不包含Loihi/SpiNNaker/FPGA实测或部署。",
+        "suggested_correction": "降为interpretation，硬件资源/能耗/同步成本未解决。",
+        "pdf_page": 5,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "P3-REWIRING-UNTESTED：optional limited structural rewiring仅以可选方案出现，未给实验结果。",
+        "suggested_correction": "贡献清单defer，不将其计入主结果或消融收益。",
+        "pdf_page": 3,
+        "resolved": false
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T13:32:36.368963Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "e40da6a7b6da4566ffe43b42461d33d96b4e706ce09f65559ec82b88cf8c4d30",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

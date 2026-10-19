@@ -1,0 +1,832 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "preprint",
+  "paper": {
+    "title": "Learning Latent Dynamical Causal Processes for Single-Cell Perturbation Prediction",
+    "authors": [
+      "Wenkang Jiang",
+      "Yuhang Liu",
+      "Erdun Gao",
+      "Ehsan Abbasnejad",
+      "Lina Yao",
+      "Javen Qinfeng Shi"
+    ],
+    "doi": null,
+    "publication_year": 2026,
+    "venue": "arXiv (Cornell University)",
+    "url": "https://arxiv.org/pdf/2605.25581"
+  },
+  "source": {
+    "filename": "paper-W7162605444--Learning-Latent-Dynamical-Causal-Processes-for-Single-Cell-Perturbation-Prediction.pdf",
+    "sha256": "600f55ac3814ba3e2deec3c69ccf43ddeae2a8bcb18bff98a914dcddaa95b9c9",
+    "source_url": "https://arxiv.org/pdf/2605.25581",
+    "pdf_page_count": 15
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "results_sections_seen": [
+      "Section 3 latent dynamical model",
+      "Section 4 assumptions/Theorem4.1",
+      "Section 5 CITE-VAE",
+      "Section 6 experiments Tables1–2",
+      "Appendix A proof",
+      "Appendix B Algorithm1",
+      "Appendix C.1–C.5 Tables3–5"
+    ],
+    "missing_material": [
+      "图像像素、源码和原始benchmark输出未读取",
+      "未供应训练配置完整列表、OT/随机配对实际实现及数学缺口的修订证明"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "所有供应页文字（含方法/附录/图表文字和参考文献）已完整评估，未采样代替全文。",
+      "逐条第二审计以已读源比较真实单位、条件、统计与推断范围；不等于实验复现。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "论文提出将潜在状态拆为扰动不变与扰动响应两块的加性高斯一阶动力模型，用时间不变观测映射生成表达数据，扰动响应依赖全部限制为跨时间滞后。",
+      "role": "hypothesis",
+      "source_pages": [
+        3
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "作者在环境参数满秩、共享真实不变状态的零对齐损失、每响应坐标有切除父项的干预及全部真实转移分布匹配下，主张不变块可到线性变换、响应块可到缩放置换辨识；当前证明仍有未解决推理缺口。",
+      "role": "hypothesis",
+      "source_pages": [
+        4
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "CITE-VAE 实现把重建/时间KL、跨条件不变块对齐及响应动力的L1稀疏项联合优化，以伪配对快照而非真实单细胞轨迹学习。",
+      "role": "result",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "人工时间 Causal3DIdent 上，训练后非线性探针对响应、不变和整体潜变量的R²分别为.959、.998、.989，显示真值信息可解码。",
+      "role": "result",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "主hiPSC benchmark中，CITE-VAE在23单基因KO留一干预预测的ΔPearson均值高于所列基线，但全基因RMSE/MAE及DE排名指标并非全部最优。",
+      "role": "result",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "主数据集的ElasticNet和UCE等基线分别在某些转录重建或DE指标超过CITE-VAE，RENGE的AUPRC也更高；因此本表不支持CITE-VAE对所有基线和所有DE指标一致占优。",
+      "role": "result",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "hiPSC消融中，移除对齐、稀疏或两者降低ΔPearson和AUPRC均值、增大RMSE/MAE；但三种消融的AUROC均高于完整模型。",
+      "role": "result",
+      "source_pages": [
+        14
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "辅助E-MTAB-14065的五KO留一预测中，CITE-VAE报告较高R²和与LFADS几乎相同的最低RMSE均值，但MAE和DE排名指标不一致占优。",
+      "role": "result",
+      "source_pages": [
+        15
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "辅助数据集的CITE-VAE DE指标仍低于某些基线，例如AUPRC低于ElasticNet和RENGE，ΔPearson与SAMS-VAE/LFADS近似且并非最高。",
+      "role": "result",
+      "source_pages": [
+        15
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "主数据集训练干预的响应潜变量UMAP显示干预分离和跨四个时间点的位移，但该可视化本身不证明唯一通用动力算子或未见干预的因果机制。",
+      "role": "interpretation",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "ELBO最大化确保不丢失任何相关信息的文字主张",
+      "role": "hypothesis",
+      "source_pages": [
+        5
+      ],
+      "decision": "defer",
+      "reason": "变分近似及有限训练未给独立充分性证明"
+    },
+    {
+      "summary": "GO嵌入用于干预功能距离及OOD程度",
+      "role": "result",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "设计贡献；无完整距离分层结果可单独给出效应"
+    },
+    {
+      "summary": "synthetic-to-cell概念对应Table3",
+      "role": "hypothesis",
+      "source_pages": [
+        13
+      ],
+      "decision": "exclude",
+      "reason": "类比不是同一机制或独立生物验证"
+    },
+    {
+      "summary": "DE选择和指标公式",
+      "role": "result",
+      "source_pages": [
+        13,
+        14
+      ],
+      "decision": "include",
+      "reason": "C.3ΔPearson实际是cell-level，而正文/总述称pseudobulk；Eq56–58标签用测试真值作评价不是训练泄漏本身，但与训练内DE面板需区分"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "论文提出将潜在状态拆为扰动不变与扰动响应两块的加性高斯一阶动力模型，用时间不变观测映射生成表达数据，扰动响应依赖全部限制为跨时间滞后。",
+      "claim_type": "theoretical",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "生成模型设计",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "潜在状态与所设生成类",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "观测映射假定光滑可逆；独立创新、恒定干预标签及指定块结构是模型假设，不是生物发现。"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "Equations2–4; Figure1",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "论文提出将潜在状态拆为扰动不变与扰动响应两块的加性高斯一阶动力模型，用时间不变观测映射生成表达数据，扰动响应依赖全部限制为跨时间滞后。",
+        "boundary": "观测映射假定光滑可逆；独立创新、恒定干预标签及指定块结构是模型假设，不是生物发现。",
+        "negative_result": null,
+        "non_inference": "对已发表测序数据的预测评价不是新的生物机制验证；高预测或可解码性不证明唯一因果表示。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "单细胞快照动力预测",
+        "潜在因果表示可辨识性",
+        "预测与因果验证的证据边界"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，论文提出将潜在状态拆为扰动不变与扰动响应两块的加性高斯一阶动力模型，用时间不变观测映射生成表达数据，扰动响应依赖全部限制为跨时间滞后。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "作者在环境参数满秩、共享真实不变状态的零对齐损失、每响应坐标有切除父项的干预及全部真实转移分布匹配下，主张不变块可到线性变换、响应块可到缩放置换辨识；当前证明仍有未解决推理缺口。",
+      "claim_type": "theoretical",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "创新似然比与块识别证明",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "总体模型及假定转移分布",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "至少2dν个相对参考环境的满秩变化；不是只有快照边际相同即可；附录不变块高斯变换推理及Eq36/40方向有缺口。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "Assumptions4.1–4.3; Theorem4.1; AppendixA",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者在环境参数满秩、共享真实不变状态的零对齐损失、每响应坐标有切除父项的干预及全部真实转移分布匹配下，主张不变块可到线性变换、响应块可到缩放置换辨识；当前证明仍有未解决推理缺口。",
+        "boundary": "至少2dν个相对参考环境的满秩变化；不是只有快照边际相同即可；附录不变块高斯变换推理及Eq36/40方向有缺口。",
+        "negative_result": null,
+        "non_inference": "不将现有作者定理当已审计成立的保证。",
+        "unresolved": "AppendixA声称光滑高斯到高斯双射必仿射，在多维一般情形不成立；且未证明非线性变换后的创新必高斯/独立前态，现有结论需额外结构或证明。",
+        "unresolved_attribution": "源文或本次审计"
+      },
+      "broad_directions": [
+        "单细胞快照动力预测",
+        "潜在因果表示可辨识性",
+        "预测与因果验证的证据边界"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，作者在环境参数满秩、共享真实不变状态的零对齐损失、每响应坐标有切除父项的干预及全部真实转移分布匹配下，主张不变块可到线性变换、响应块可到缩放置换辨识；当前证明仍有未解决推理缺口。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "CITE-VAE 实现把重建/时间KL、跨条件不变块对齐及响应动力的L1稀疏项联合优化，以伪配对快照而非真实单细胞轨迹学习。",
+      "claim_type": "computational",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "VAE与严格下三角滞后矩阵",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "未配对表达快照",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "固定坐标顺序的下三角稀疏是额外限制；时间展开已无环，不代表真实生物网络本身无环；伪配对不保证真实转移条件分布。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "Sections5.1–5.4; Algorithm1; AppendixC.2",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "CITE-VAE 实现把重建/时间KL、跨条件不变块对齐及响应动力的L1稀疏项联合优化，以伪配对快照而非真实单细胞轨迹学习。",
+        "boundary": "固定坐标顺序的下三角稀疏是额外限制；时间展开已无环，不代表真实生物网络本身无环；伪配对不保证真实转移条件分布。",
+        "negative_result": null,
+        "non_inference": "对已发表测序数据的预测评价不是新的生物机制验证；高预测或可解码性不证明唯一因果表示。",
+        "unresolved": "正文/算法称OT配对，C.2明确称相邻快照独立随机配对；实际耦合方法未澄清。",
+        "unresolved_attribution": "源文或本次审计"
+      },
+      "broad_directions": [
+        "单细胞快照动力预测",
+        "潜在因果表示可辨识性",
+        "预测与因果验证的证据边界"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，CITE-VAE 实现把重建/时间KL、跨条件不变块对齐及响应动力的L1稀疏项联合优化，以伪配对快照而非真实单细胞轨迹学习。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "人工时间 Causal3DIdent 上，训练后非线性探针对响应、不变和整体潜变量的R²分别为.959、.998、.989，显示真值信息可解码。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "11变化自由度，人工Markov因子；训练split标准化，MLP探针留出评价",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "人工生成序列和探针测试样本",
+          "sample_size_as_reported": null,
+          "uncertainty": "Spearman分别.997、.988、.991；无种子误差或显著性检验",
+          "assumptions": [
+            "非线性解码高分不证明只能缩放置换/仿射，也不证定理所有条件已满足；图形轨迹不是生物因果验证。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "Table1; Figure4; AppendixC.1",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "人工时间 Causal3DIdent 上，训练后非线性探针对响应、不变和整体潜变量的R²分别为.959、.998、.989，显示真值信息可解码。",
+        "boundary": "非线性解码高分不证明只能缩放置换/仿射，也不证定理所有条件已满足；图形轨迹不是生物因果验证。",
+        "negative_result": null,
+        "non_inference": "对已发表测序数据的预测评价不是新的生物机制验证；高预测或可解码性不证明唯一因果表示。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "单细胞快照动力预测",
+        "潜在因果表示可辨识性",
+        "预测与因果验证的证据边界"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，人工时间 Causal3DIdent 上，训练后非线性探针对响应、不变和整体潜变量的R²分别为.959、.998、.989，显示真值信息可解码。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "主hiPSC benchmark中，CITE-VAE在23单基因KO留一干预预测的ΔPearson均值高于所列基线，但全基因RMSE/MAE及DE排名指标并非全部最优。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "LOO，训练内HVG/DE选择，伪批量及控制中心化评估",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "留出基因/时间条件及重复训练种子",
+          "sample_size_as_reported": "25,293细胞、1655control、23KO、4时间点；3随机种子",
+          "uncertainty": "ΔPearson .691±.007；RMSE .086±.054；MAE .033±.015；均值±SD",
+          "assumptions": [
+            "全基因命名与默认1000HVG面板范围待澄清；细胞数非独立生物重复；无统计显著性测试。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "Table2; Section6.2; AppendixC.2–C.3",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "主hiPSC benchmark中，CITE-VAE在23单基因KO留一干预预测的ΔPearson均值高于所列基线，但全基因RMSE/MAE及DE排名指标并非全部最优。",
+        "boundary": "全基因命名与默认1000HVG面板范围待澄清；细胞数非独立生物重复；无统计显著性测试。",
+        "negative_result": null,
+        "non_inference": "对已发表测序数据的预测评价不是新的生物机制验证；高预测或可解码性不证明唯一因果表示。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "单细胞快照动力预测",
+        "潜在因果表示可辨识性",
+        "预测与因果验证的证据边界"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，主hiPSC benchmark中，CITE-VAE在23单基因KO留一干预预测的ΔPearson均值高于所列基线，但全基因RMSE/MAE及DE排名指标并非全部最优。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "主数据集的ElasticNet和UCE等基线分别在某些转录重建或DE指标超过CITE-VAE，RENGE的AUPRC也更高；因此本表不支持CITE-VAE对所有基线和所有DE指标一致占优。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "同表描述性多指标审计",
+          "design": null,
+          "comparator": null,
+          "measure": "各指标的描述性均值",
+          "unit_of_analysis": "共享LOO benchmark的模型运行",
+          "sample_size_as_reported": "3种子",
+          "uncertainty": "CITE AUPRC .617±.061、ElasticNet .625±.055、RENGE .970±.056；CITE AUROC .931±.020，SAMS .941±.011；UCE RMSE .056±.024",
+          "assumptions": [
+            "表格的缺失/退化指标不能计入胜负；差异不是显著性或公平预算保证。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "Table2",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "主数据集的ElasticNet和UCE等基线分别在某些转录重建或DE指标超过CITE-VAE，RENGE的AUPRC也更高；因此本表不支持CITE-VAE对所有基线和所有DE指标一致占优。",
+        "boundary": "表格的缺失/退化指标不能计入胜负；差异不是显著性或公平预算保证。",
+        "negative_result": "作者文字中的泛化最优概括超出表格。",
+        "non_inference": "对已发表测序数据的预测评价不是新的生物机制验证；高预测或可解码性不证明唯一因果表示。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "单细胞快照动力预测",
+        "潜在因果表示可辨识性",
+        "预测与因果验证的证据边界"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，主数据集的ElasticNet和UCE等基线分别在某些转录重建或DE指标超过CITE-VAE，RENGE的AUPRC也更高；因此本表不支持CITE-VAE对所有基线和所有DE指标一致占优。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "hiPSC消融中，移除对齐、稀疏或两者降低ΔPearson和AUPRC均值、增大RMSE/MAE；但三种消融的AUROC均高于完整模型。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "固定架构/预处理/训练协议的三项消融",
+          "design": null,
+          "comparator": null,
+          "measure": "ΔPearson/AUPRC/重建误差/AUROC",
+          "unit_of_analysis": "共享数据集的训练种子",
+          "sample_size_as_reported": "3种子",
+          "uncertainty": "完整ΔPearson .691±.007 vs .389/.399/.385；完整AUROC .931 vs .938/.943/.940；SD见表",
+          "assumptions": [
+            "消融支持这些正则对某些预测读出有用，不证明可辨识性、非加性因果协同或所有指标最好。"
+          ],
+          "source_locator": {
+            "pdf_page": 14,
+            "section": "Table4; AppendixC.4",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "hiPSC消融中，移除对齐、稀疏或两者降低ΔPearson和AUPRC均值、增大RMSE/MAE；但三种消融的AUROC均高于完整模型。",
+        "boundary": "消融支持这些正则对某些预测读出有用，不证明可辨识性、非加性因果协同或所有指标最好。",
+        "negative_result": "完整模型的AUROC并非最好。",
+        "non_inference": "对已发表测序数据的预测评价不是新的生物机制验证；高预测或可解码性不证明唯一因果表示。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "单细胞快照动力预测",
+        "潜在因果表示可辨识性",
+        "预测与因果验证的证据边界"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，hiPSC消融中，移除对齐、稀疏或两者降低ΔPearson和AUPRC均值、增大RMSE/MAE；但三种消融的AUROC均高于完整模型。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "辅助E-MTAB-14065的五KO留一预测中，CITE-VAE报告较高R²和与LFADS几乎相同的最低RMSE均值，但MAE和DE排名指标不一致占优。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "exp7，D0/D2/D6/D12，SCR control；剔除少于20细胞的time×gene×clone层",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "基因留出条件与随机训练种子；41clones为嵌套源",
+          "sample_size_as_reported": "24,766细胞、41clones、5KO；3种子",
+          "uncertainty": "CITE RMSE .6346±.0014、LFADS .6347±.0023；R² .9852±.004；MAE .4712>LFADS .4644",
+          "assumptions": [
+            "极小RMSE均值差非显著优越；LOO基因为OOD，不是未见clone的验证；UCE/CellOT缺失重建分数。"
+          ],
+          "source_locator": {
+            "pdf_page": 15,
+            "section": "Table5; AppendixC.5",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "辅助E-MTAB-14065的五KO留一预测中，CITE-VAE报告较高R²和与LFADS几乎相同的最低RMSE均值，但MAE和DE排名指标不一致占优。",
+        "boundary": "极小RMSE均值差非显著优越；LOO基因为OOD，不是未见clone的验证；UCE/CellOT缺失重建分数。",
+        "negative_result": null,
+        "non_inference": "对已发表测序数据的预测评价不是新的生物机制验证；高预测或可解码性不证明唯一因果表示。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "单细胞快照动力预测",
+        "潜在因果表示可辨识性",
+        "预测与因果验证的证据边界"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，辅助E-MTAB-14065的五KO留一预测中，CITE-VAE报告较高R²和与LFADS几乎相同的最低RMSE均值，但MAE和DE排名指标不一致占优。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "辅助数据集的CITE-VAE DE指标仍低于某些基线，例如AUPRC低于ElasticNet和RENGE，ΔPearson与SAMS-VAE/LFADS近似且并非最高。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "多指标同表比较",
+          "design": null,
+          "comparator": null,
+          "measure": "控制中心化相关和DE排名",
+          "unit_of_analysis": "共享辅助benchmark条件",
+          "sample_size_as_reported": "3种子",
+          "uncertainty": "CITE AUPRC .3061±.0223、ElasticNet .3846±.0008、RENGE .9944±.0010；ΔPearson .7510±.0057 vs SAMS .7531±.0067",
+          "assumptions": [
+            "未做显著差异检验；排名分数高不自动意味着表达重建或机制更准确。"
+          ],
+          "source_locator": {
+            "pdf_page": 15,
+            "section": "Table5",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "辅助数据集的CITE-VAE DE指标仍低于某些基线，例如AUPRC低于ElasticNet和RENGE，ΔPearson与SAMS-VAE/LFADS近似且并非最高。",
+        "boundary": "未做显著差异检验；排名分数高不自动意味着表达重建或机制更准确。",
+        "negative_result": "不能声称辅助数据集所有DE指标最优。",
+        "non_inference": "对已发表测序数据的预测评价不是新的生物机制验证；高预测或可解码性不证明唯一因果表示。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "单细胞快照动力预测",
+        "潜在因果表示可辨识性",
+        "预测与因果验证的证据边界"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，辅助数据集的CITE-VAE DE指标仍低于某些基线，例如AUPRC低于ElasticNet和RENGE，ΔPearson与SAMS-VAE/LFADS近似且并非最高。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "主数据集训练干预的响应潜变量UMAP显示干预分离和跨四个时间点的位移，但该可视化本身不证明唯一通用动力算子或未见干预的因果机制。",
+      "claim_type": "computational",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "潜变量UMAP描述",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "22训练基因的嵌入",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "训练集结构可视化、无因果真值或独立干预机制验证。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "Figure5; Section6.2 qualitative results",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "主数据集训练干预的响应潜变量UMAP显示干预分离和跨四个时间点的位移，但该可视化本身不证明唯一通用动力算子或未见干预的因果机制。",
+        "boundary": "训练集结构可视化、无因果真值或独立干预机制验证。",
+        "negative_result": null,
+        "non_inference": "对已发表测序数据的预测评价不是新的生物机制验证；高预测或可解码性不证明唯一因果表示。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "单细胞快照动力预测",
+        "潜在因果表示可辨识性",
+        "预测与因果验证的证据边界"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，主数据集训练干预的响应潜变量UMAP显示干预分离和跨四个时间点的位移，但该可视化本身不证明唯一通用动力算子或未见干预的因果机制。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "全文15页预印本（arXiv2605.25581v1，2026-05-25）含全部理论证明和两数据集/消融。模型提出不变/响应动力表示，但可辨识性证明的高斯与创新步骤、真实转移与伪耦合、指标定义仍待解。预测优势仅限部分指标；基线和消融反例已同时保留，不生成新生物验证或跨论文复制关系。",
+  "shared_evidence": [],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": "C2",
+        "issue": "多维高斯到高斯光滑双射必仿射的步骤无一般有效性，且变换创新的高斯性/独立性未由其前提得出",
+        "suggested_correction": "理论保证保留为待证明作者主张，不作为成立定理",
+        "pdf_page": 11,
+        "resolved": false
+      },
+      {
+        "claim_id": "C2",
+        "issue": "Eq36/39与Eq40创新变换方向不一致",
+        "suggested_correction": "需澄清Aglob逆关系及从创新到状态的步骤",
+        "pdf_page": 12,
+        "resolved": false
+      },
+      {
+        "claim_id": "C2",
+        "issue": "真实条件转移分布匹配强于未配对快照分布吻合",
+        "suggested_correction": "不能将伪配对学习与定理条件等同",
+        "pdf_page": 4,
+        "resolved": true
+      },
+      {
+        "claim_id": "C3",
+        "issue": "OT与独立随机耦合说明冲突",
+        "suggested_correction": "保留实现待澄清",
+        "pdf_page": 13,
+        "resolved": false
+      },
+      {
+        "claim_id": "C4",
+        "issue": "非线性可解码性不是缩放置换的识别检验；Spearman并非任意多维可逆重参数化不变",
+        "suggested_correction": "收窄为探针可解码与几何证据",
+        "pdf_page": 7,
+        "resolved": true
+      },
+      {
+        "claim_id": "C5",
+        "issue": "默认1000HVG与全基因/全基因组字样范围不明，ΔPearson正文伪批量但公式cell-level",
+        "suggested_correction": "保留指标定义/范围待澄清",
+        "pdf_page": 13,
+        "resolved": false
+      },
+      {
+        "claim_id": "C6",
+        "issue": "表2不支持所有DE指标更优",
+        "suggested_correction": "保留基线反例及无显著性检验边界",
+        "pdf_page": 9,
+        "resolved": true
+      },
+      {
+        "claim_id": "C7",
+        "issue": "完整模型AUROC低于全部消融",
+        "suggested_correction": "纳入实际指标边界",
+        "pdf_page": 14,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "主文称两个fold-specific DE subsets，表与附录仅给top100协议且标签式来自真值效应",
+        "suggested_correction": "面板/DE定义需澄清，不直接认定测试泄漏",
+        "pdf_page": 14,
+        "resolved": false
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T11:18:49.005686Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "600f55ac3814ba3e2deec3c69ccf43ddeae2a8bcb18bff98a914dcddaa95b9c9",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

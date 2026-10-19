@@ -1,0 +1,1875 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "Pre-Training for Large-Scale Functional Connectome Fingerprinting Supports Generalization and Transfer Learning in Functional Neuroimaging",
+    "authors": [
+      "Mattson Ogg",
+      "Lindsey Kitchell"
+    ],
+    "doi": "10.1523/eneuro.0370-25.2026",
+    "publication_year": 2026,
+    "venue": "eNeuro",
+    "url": "https://doi.org/10.1523/eneuro.0370-25.2026"
+  },
+  "source": {
+    "filename": "paper-W7171691733--Pre-Training-for-Large-Scale-Functional-Connectome-Fingerprinting-Supports-Generalization-and-T.pdf",
+    "sha256": "499ff97c6c8e84bf2a8f147546c7f426418be11b8ab53832fe84aa4949adf7d1",
+    "source_url": "https://www.eneuro.org/content/eneuro/early/2026/07/28/ENEURO.0370-25.2026.full.pdf",
+    "pdf_page_count": 75
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75
+    ],
+    "results_sections_seen": [
+      "Methods: data/preprocessing; architecture/pretraining; input ablation; baselines; ID transfer; trait transfer; data partitions; RSA",
+      "Results: Pre-training; 100s duration; network/cumulative ablation; motion/smoothing/preprocessing controls; baseline methods",
+      "Results: 4 unseen-dataset frozen-gallery matching; linear-ID transfer; data-volume control; duration",
+      "Results: categorical/continuous traits; baseline benefits and negatives; RSA",
+      "Discussion; Conclusion; Code/Data Availability; full References",
+      "All supplied Figure1-9 captions pp64-66; pp67-75 watermark-only extracted text"
+    ],
+    "missing_material": [
+      "主图图像像素未读；PDF67-75页提取仅watermark",
+      "Table1全表没有可读source text，无法据图补完整下游n",
+      "外部Extended Data1/2及Figures1-1至9-1等未附",
+      "原始data/model/code未执行独立重现"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "75页全部provided文字分11个有界片段通读，含References和全部主图captions。",
+      "67-75页没有可读图内容，仅watermarks；Table1正文引用存在但未有可读全表，精确eligible下游n不猜。",
+      "多个holdout层级分别报告，overlap windows与repeated CV共享participants；model count不是biological独立实验。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "brain2vec以6个公开healthy fMRI corpus的匿名participant ID作监督预训练；best partial-correlation模型在已见participants的held-out day/session识别accuracy97.64%，跨HCP/NKI/MPI/OASIS性能明显不同。",
+      "role": "result",
+      "source_pages": [
+        24
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "所扫模型中shallow architecture一般优于4-layer，partial输入、大embedding或合适dropout可助识别；best partial为1024 hidden/no dropout，best standard为512/50% dropout，不能由这两best模型单独孤立输入算法的因果优势。",
+      "role": "result",
+      "source_pages": [
+        24
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "从相同预处理validation runs抽取first100 seconds时，best partial模型accuracy97.61%几乎维持97.64%全run表现；standard模型由93.29%降到88.87%。",
+      "role": "result",
+      "source_pages": [
+        26
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "input-network zeroing消融中best partial模型每次仅掉<1个百分点，DefaultB/ContA/SalVentAttnA/DorsAttnA最大；standard对DefaultA等消融最多掉约24.20个百分点。",
+      "role": "result",
+      "source_pages": [
+        27
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "按single-ablation影响顺序累计删除networks时，partial模型删4个后69.42%、5个后40.4%；standard删1个69.09%、2个46.09%，说明单网络鲁棒不等于整个输入可随意删去。",
+      "role": "result",
+      "source_pages": [
+        28
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "只用motion confound mean/SD及derivatives训练的fingerprint模型accuracy3.72%，虽高于chance但远低于原partial model，未能解释97%以上识别表现。",
+      "role": "result",
+      "source_pages": [
+        28
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "8mm spatial smoothing后partial模型validation accuracy97.89%，standard89.80%；partial变化实际虽小但统计显著，standard下降更明显，不能把两者都称无变化。",
+      "role": "result",
+      "source_pages": [
+        29
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "将整个训练corpus统一只回归HCP可用motion confounds后，作者报告预训练validation性能近似原方案，说明该特定confound-removal差异不是主要成绩来源。",
+      "role": "result",
+      "source_pages": [
+        11
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "同100-node输入下，within-dataset nearest-correlation baseline的validation总体partial54.96%、standard30.51%，而direct fully-connected partial baseline96.90%，显示原netmats已很强、不同baseline的规模适应性不同。",
+      "role": "result",
+      "source_pages": [
+        30
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "对4个预训练完全未用的dataset/participants，冻结embedding无需fine-tune即可通过另一run的gallery similarity匹配匿名ID：partial的LA5c96.51%、PIOP198.95%、PIOP299.66%、ds00359298.59%。",
+      "role": "result",
+      "source_pages": [
+        32
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "对4新dataset仅训练embedding上的linear ID readout、跨task-run验证后，partial平均96.86%、standard98.53%，分别优于raw-netmat fully-connected baseline39.94%和95.00%。",
+      "role": "result",
+      "source_pages": [
+        35
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "将LA5c/PIOP1/PIOP2配为每dataset最多200participants、4tasks，逐步增加每task的100s fine-tuning windows1到4后，识别表现与fine-tuning data量正相关，rs=.84。",
+      "role": "result",
+      "source_pages": [
+        34
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "new-ID readout测试只用100s输入时，partial平均96.86%→96.40%，standard98.53%→88.63%；二者仍优于对应baseline，但duration鲁棒性并不一致。",
+      "role": "result",
+      "source_pages": [
+        35
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "按participants留出、只训练linear trait readout时，partial模型40个categorical评估条件均高于chance但median accuracy68.88%；standard median66.97%，明显低于ID task。",
+      "role": "result",
+      "source_pages": [
+        37
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "continuous-trait prediction仅部分成立：partial在79/131、standard90/131回归条件超过严格chance标准；PIOP1/2通常r<.20且近半条件不显著，ds003592部分memory/executive变量r约.32-.45。",
+      "role": "result",
+      "source_pages": [
+        38
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "trait/behavior任务的overall预训练收益很小且依输入：partial embedding优于对应raw baseline，但standard-correlation embedding在classification和regression均显著差于其raw baseline。",
+      "role": "result",
+      "source_pages": [
+        39
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "LA5c four-class psychiatric classification只有31-39% accuracy，部分raw baseline最高约43%，尽管可超过25%chance，离可靠诊断还有明显距离。",
+      "role": "result",
+      "source_pages": [
+        44
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "RSA显示partial/standard embedding及raw inputs的表征距离只有weak-moderate一致(约rs=.289-.484)，说明监督变换改变了距离几何而非简单原样保留connectome。",
+      "role": "result",
+      "source_pages": [
+        40
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "ds003592 semi-partial RSA控制其余behavior variables后仍有age、Flanker、VPA/trailmaking等较小distance associations；部分memory/executive关联在控制age后保留。",
+      "role": "result",
+      "source_pages": [
+        41
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "MPI validation t-SNE/silhouette对participant ID的cluster score=.78，而gender=.01、agegroup=-.34，显示ID优化空间并未明显按这两个demographic labels聚簇。",
+      "role": "result",
+      "source_pages": [
+        25
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "作者认为fingerprint预训练主要优化individual discriminability，只部分覆盖phenotypic结构；site信息仍可解码，未来需要matched/longitudinal/跨scanner人群和更对齐的pretraining目标来检验clinical utility与privacy权衡。",
+      "role": "interpretation",
+      "source_pages": [
+        48
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "临床diagnostic部署、无gallery的真实身份识别、site-invariant或完全trait/sex-invariant神经表征、input ablation的生物必要性",
+      "role": "unsupported_inference_or_future_scope",
+      "source_pages": [
+        14,
+        19,
+        21,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49
+      ],
+      "decision": "defer",
+      "reason": "上述超出已测试模型条件；作者future方向或由预测/控制不能推出的生物/临床结论。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "brain2vec以6个公开healthy fMRI corpus的匿名participant ID作监督预训练；best partial-correlation模型在已见participants的held-out day/session识别accuracy97.64%，跨HCP/NKI/MPI/OASIS性能明显不同。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "100-node Schaefer netmats、MLP与跨day/session识别",
+          "design": "brain2vec以6个公开healthy fMRI corpus的匿名participant ID作监督预训练；best partial-correlation模型在已见participants的held-out day/session识别accuracy97.64%，跨HCP/NKI/MPI/OASIS性能明显不同。",
+          "comparator": "4 validation cohorts及4987-way chance",
+          "measure": "accuracy、macro metrics",
+          "unit_of_analysis": "participants及其repeated scans/overlapping windows；训练examples非独立people",
+          "sample_size_as_reported": "预训练4987 unique participants、21453 functional runs、167200 training examples；validation HCP1061 participants/10442 scans，NKI535/2608，MPI109/109，OASIS296/591。",
+          "uncertainty": "overall95%CI97.38-97.89%；HCP99.85%、NKI94.52%、MPI93.58%、OASIS73.27%。",
+          "assumptions": [
+            "验证people已在train出现；健康CDR0 pretraining、same anonymous ID非真实世界身份或clinical diagnosis。"
+          ],
+          "source_locator": {
+            "pdf_page": 24,
+            "section": "Pre-training",
+            "figure": "Fig.2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "brain2vec以6个公开healthy fMRI corpus的匿名participant ID作监督预训练；best partial-correlation模型在已见participants的held-out day/session识别accuracy97.64%，跨HCP/NKI/MPI/OASIS性能明显不同。",
+        "boundary": "验证people已在train出现；健康CDR0 pretraining、same anonymous ID非真实世界身份或clinical diagnosis。",
+        "negative_result": null,
+        "non_inference": "模型/数据集预测及input ablation不是生物因果验证；重复scans/windows/CV不当独立受试者复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "大规模ID监督能否支持跨session functional fingerprinting？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "所扫模型中shallow architecture一般优于4-layer，partial输入、大embedding或合适dropout可助识别；best partial为1024 hidden/no dropout，best standard为512/50% dropout，不能由这两best模型单独孤立输入算法的因果优势。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "architecture/input/size/dropout sweep",
+          "design": "所扫模型中shallow architecture一般优于4-layer，partial输入、大embedding或合适dropout可助识别；best partial为1024 hidden/no dropout，best standard为512/50% dropout，不能由这两best模型单独孤立输入算法的因果优势。",
+          "comparator": "depth、netmat类型、embedding size、dropout",
+          "measure": "heldout scan识别",
+          "unit_of_analysis": "同数据上的model配置，非50独立实验或cohorts",
+          "sample_size_as_reported": "正文50 configs，25个accuracy>90%；独立seed重复未列。",
+          "uncertainty": "best partial97.64%vsbest standard93.29%；各cohort并非partial均更好。",
+          "assumptions": [
+            "validation同时用于model selection；扫范围Methods/Results dropout列表不同，不能推出普适shallow优于deep。"
+          ],
+          "source_locator": {
+            "pdf_page": 24,
+            "section": "Pre-training hyperparameters",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所扫模型中shallow architecture一般优于4-layer，partial输入、大embedding或合适dropout可助识别；best partial为1024 hidden/no dropout，best standard为512/50% dropout，不能由这两best模型单独孤立输入算法的因果优势。",
+        "boundary": "validation同时用于model selection；扫范围Methods/Results dropout列表不同，不能推出普适shallow优于deep。",
+        "negative_result": null,
+        "non_inference": "模型/数据集预测及input ablation不是生物因果验证；重复scans/windows/CV不当独立受试者复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "哪些架构条件影响fingerprint预训练表现？"
+      ],
+      "shared_evidence_with": [
+        "C1"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "从相同预处理validation runs抽取first100 seconds时，best partial模型accuracy97.61%几乎维持97.64%全run表现；standard模型由93.29%降到88.87%。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "固定model、full vs first100s输入",
+          "design": "从相同预处理validation runs抽取first100 seconds时，best partial模型accuracy97.61%几乎维持97.64%全run表现；standard模型由93.29%降到88.87%。",
+          "comparator": "full5-15min vs100sec evaluation",
+          "measure": "identification accuracy",
+          "unit_of_analysis": "相同scan的duration条件",
+          "sample_size_as_reported": "同4 validation cohorts及repeated scans；未采集新100s-only cohort。",
+          "uncertainty": "partial100s95%CI97.35-97.86%；standard88.33-89.39%。",
+          "assumptions": [
+            "windows取自完整run预处理，不能保证只采100s时同样effective filtering/confound估计；仅给small delta而非equivalence test。"
+          ],
+          "source_locator": {
+            "pdf_page": 26,
+            "section": "Pre-training duration",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "从相同预处理validation runs抽取first100 seconds时，best partial模型accuracy97.61%几乎维持97.64%全run表现；standard模型由93.29%降到88.87%。",
+        "boundary": "windows取自完整run预处理，不能保证只采100s时同样effective filtering/confound估计；仅给small delta而非equivalence test。",
+        "negative_result": null,
+        "non_inference": "模型/数据集预测及input ablation不是生物因果验证；重复scans/windows/CV不当独立受试者复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "partial/standard fingerprint在短输入下是否同样稳健？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "input-network zeroing消融中best partial模型每次仅掉<1个百分点，DefaultB/ContA/SalVentAttnA/DorsAttnA最大；standard对DefaultA等消融最多掉约24.20个百分点。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "17 Yeo input blocks行列置零",
+          "design": "input-network zeroing消融中best partial模型每次仅掉<1个百分点，DefaultB/ContA/SalVentAttnA/DorsAttnA最大；standard对DefaultA等消融最多掉约24.20个百分点。",
+          "comparator": "unablated与individual-network ablation",
+          "measure": "accuracy delta",
+          "unit_of_analysis": "模型输入条件及paired scan outcomes",
+          "sample_size_as_reported": "同validation数据；17输入network blocks，非生物lesions。",
+          "uncertainty": "partial最大-.87points；standard DefaultA-24.20points；discordant paired binomial p<.05。",
+          "assumptions": [
+            "数学输入消融不证明brain network必要性；网络尺寸/zero分布变化与model依赖需区分。"
+          ],
+          "source_locator": {
+            "pdf_page": 27,
+            "section": "Ablation",
+            "figure": "Fig.4",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "input-network zeroing消融中best partial模型每次仅掉<1个百分点，DefaultB/ContA/SalVentAttnA/DorsAttnA最大；standard对DefaultA等消融最多掉约24.20个百分点。",
+        "boundary": "数学输入消融不证明brain network必要性；网络尺寸/zero分布变化与model依赖需区分。",
+        "negative_result": null,
+        "non_inference": "模型/数据集预测及input ablation不是生物因果验证；重复scans/windows/CV不当独立受试者复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "fingerprint模型依赖哪些connectivity inputs而非哪些脑区生物必需？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C5"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "按single-ablation影响顺序累计删除networks时，partial模型删4个后69.42%、5个后40.4%；standard删1个69.09%、2个46.09%，说明单网络鲁棒不等于整个输入可随意删去。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "累积input blocks置零",
+          "design": "按single-ablation影响顺序累计删除networks时，partial模型删4个后69.42%、5个后40.4%；standard删1个69.09%、2个46.09%，说明单网络鲁棒不等于整个输入可随意删去。",
+          "comparator": "partial/standard及删除数量",
+          "measure": "accuracy",
+          "unit_of_analysis": "同model递增缺失输入条件",
+          "sample_size_as_reported": "同预训练validation scans；无新生物样本。",
+          "uncertainty": "partial4blocks CI68.64-70.19%；5blocks39.58-41.23%；paired binomial p<.05。",
+          "assumptions": [
+            "次序由原validation影响选择，不是所有删除组合平均；不能当生物性损傷耐受实验。"
+          ],
+          "source_locator": {
+            "pdf_page": 28,
+            "section": "Cumulative ablation",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "按single-ablation影响顺序累计删除networks时，partial模型删4个后69.42%、5个后40.4%；standard删1个69.09%、2个46.09%，说明单网络鲁棒不等于整个输入可随意删去。",
+        "boundary": "次序由原validation影响选择，不是所有删除组合平均；不能当生物性损傷耐受实验。",
+        "negative_result": null,
+        "non_inference": "模型/数据集预测及input ablation不是生物因果验证；重复scans/windows/CV不当独立受试者复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "model的distributed输入依赖何时失去辨识能力？"
+      ],
+      "shared_evidence_with": [
+        "C4"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "只用motion confound mean/SD及derivatives训练的fingerprint模型accuracy3.72%，虽高于chance但远低于原partial model，未能解释97%以上识别表现。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "motion-only替代输入model",
+          "design": "只用motion confound mean/SD及derivatives训练的fingerprint模型accuracy3.72%，虽高于chance但远低于原partial model，未能解释97%以上识别表现。",
+          "comparator": "motion-only与functional netmats",
+          "measure": "ID accuracy",
+          "unit_of_analysis": "模型及paired scans",
+          "sample_size_as_reported": "同pretraining/validation partition；scan与participant仍重复。",
+          "uncertainty": "3.72% CI3.41-4.05%；vschance与原model比较p<.001。",
+          "assumptions": [
+            "motion仍有少量可识别信息，未排除所有未测artifact或结构/physiological confounds。"
+          ],
+          "source_locator": {
+            "pdf_page": 28,
+            "section": "Control experiments",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "只用motion confound mean/SD及derivatives训练的fingerprint模型accuracy3.72%，虽高于chance但远低于原partial model，未能解释97%以上识别表现。",
+        "boundary": "motion仍有少量可识别信息，未排除所有未测artifact或结构/physiological confounds。",
+        "negative_result": "所测motion-only输入未重现原识别性能。",
+        "non_inference": "模型/数据集预测及input ablation不是生物因果验证；重复scans/windows/CV不当独立受试者复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "所测movement artifacts能否单独解释fingerprint表现？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C7",
+        "C8"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "8mm spatial smoothing后partial模型validation accuracy97.89%，standard89.80%；partial变化实际虽小但统计显著，standard下降更明显，不能把两者都称无变化。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "spatial-filter preprocessing敏感性实验",
+          "design": "8mm spatial smoothing后partial模型validation accuracy97.89%，standard89.80%；partial变化实际虽小但统计显著，standard下降更明显，不能把两者都称无变化。",
+          "comparator": "8mm smoothing vs original",
+          "measure": "accuracy",
+          "unit_of_analysis": "paired scan outcomes/model variants",
+          "sample_size_as_reported": "同validation participants/scans。",
+          "uncertainty": "partialCI97.64-98.12%、paired p=.004；standardCI89.28-90.30%、p<.001。",
+          "assumptions": [
+            "控制降低anatomical-normalisation解释的充分性，不证明全部anatomy artifact被排除；effect大小与significance不同。"
+          ],
+          "source_locator": {
+            "pdf_page": 29,
+            "section": "Control experiments",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "8mm spatial smoothing后partial模型validation accuracy97.89%，standard89.80%；partial变化实际虽小但统计显著，standard下降更明显，不能把两者都称无变化。",
+        "boundary": "控制降低anatomical-normalisation解释的充分性，不证明全部anatomy artifact被排除；effect大小与significance不同。",
+        "negative_result": null,
+        "non_inference": "模型/数据集预测及input ablation不是生物因果验证；重复scans/windows/CV不当独立受试者复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "spatial smoothing是否改变fingerprint的模型表现？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C6"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "将整个训练corpus统一只回归HCP可用motion confounds后，作者报告预训练validation性能近似原方案，说明该特定confound-removal差异不是主要成绩来源。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "motion-only统一预处理敏感性对照",
+          "design": "将整个训练corpus统一只回归HCP可用motion confounds后，作者报告预训练validation性能近似原方案，说明该特定confound-removal差异不是主要成绩来源。",
+          "comparator": "原HCP/nonHCP回归差异与统一motion回归",
+          "measure": "validation performance",
+          "unit_of_analysis": "preprocessing/model条件",
+          "sample_size_as_reported": "同corpus；未给此control新独立n或完整metric。",
+          "uncertainty": "正文称nearly identical，没有报告统计等效性。",
+          "assumptions": [
+            "不得解释为所有noise-removal choices不重要；missing CSF/WM与其它pipeline/scanner差异仍可残留。"
+          ],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "Data and preprocessing",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "将整个训练corpus统一只回归HCP可用motion confounds后，作者报告预训练validation性能近似原方案，说明该特定confound-removal差异不是主要成绩来源。",
+        "boundary": "不得解释为所有noise-removal choices不重要；missing CSF/WM与其它pipeline/scanner差异仍可残留。",
+        "negative_result": null,
+        "non_inference": "模型/数据集预测及input ablation不是生物因果验证；重复scans/windows/CV不当独立受试者复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "corpus间CSF/WM回归差异是否驱动model识别？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C6"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "同100-node输入下，within-dataset nearest-correlation baseline的validation总体partial54.96%、standard30.51%，而direct fully-connected partial baseline96.90%，显示原netmats已很强、不同baseline的规模适应性不同。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "nearest-scan similarity及no-hidden linear classifier",
+          "design": "同100-node输入下，within-dataset nearest-correlation baseline的validation总体partial54.96%、standard30.51%，而direct fully-connected partial baseline96.90%，显示原netmats已很强、不同baseline的规模适应性不同。",
+          "comparator": "brain2vec、nearest correlation、direct fully-connected",
+          "measure": "accuracy及short-duration",
+          "unit_of_analysis": "models、paired scans；correlation baseline只在cohort内比较",
+          "sample_size_as_reported": "同4987-way training/4验证cohorts。",
+          "uncertainty": "partialFC95%CI96.60-97.19%；brain2vec优势小于相对correlation baseline；paired p<.001按正文。",
+          "assumptions": [
+            "nearest baselinecohort内限制略有利于baseline且与NNcross-corpus决策不同；不能据此说所有传统方法均弱。"
+          ],
+          "source_locator": {
+            "pdf_page": 30,
+            "section": "Comparison with baseline",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "同100-node输入下，within-dataset nearest-correlation baseline的validation总体partial54.96%、standard30.51%，而direct fully-connected partial baseline96.90%，显示原netmats已很强、不同baseline的规模适应性不同。",
+        "boundary": "nearest baselinecohort内限制略有利于baseline且与NNcross-corpus决策不同；不能据此说所有传统方法均弱。",
+        "negative_result": null,
+        "non_inference": "模型/数据集预测及input ablation不是生物因果验证；重复scans/windows/CV不当独立受试者复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "pretrained embedding相较原connectome与不同baselines增加什么？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C10",
+        "C11"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "对4个预训练完全未用的dataset/participants，冻结embedding无需fine-tune即可通过另一run的gallery similarity匹配匿名ID：partial的LA5c96.51%、PIOP198.95%、PIOP299.66%、ds00359298.59%。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "frozen features nearest-scan matching",
+          "design": "对4个预训练完全未用的dataset/participants，冻结embedding无需fine-tune即可通过另一run的gallery similarity匹配匿名ID：partial的LA5c96.51%、PIOP198.95%、PIOP299.66%、ds00359298.59%。",
+          "comparator": "embedding vs对应raw netmat similarity",
+          "measure": "closed-dataset ID match",
+          "unit_of_analysis": "新participants与gallery/probe重复runs",
+          "sample_size_as_reported": "4新datasets各正文至少200 participants、多functional runs；Table1全表未有可读page text，精确n不猜。",
+          "uncertainty": "全部Bonferroni binomial p<.001；paired embedding vs raw p<.001。",
+          "assumptions": [
+            "无需model更新仍需要同人gallery，非无登记真实身份/临床或open-set zero-shot识别；newdataset不是4次独立生物replication。"
+          ],
+          "source_locator": {
+            "pdf_page": 32,
+            "section": "Generalizing representations",
+            "figure": "Fig.5",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "对4个预训练完全未用的dataset/participants，冻结embedding无需fine-tune即可通过另一run的gallery similarity匹配匿名ID：partial的LA5c96.51%、PIOP198.95%、PIOP299.66%、ds00359298.59%。",
+        "boundary": "无需model更新仍需要同人gallery，非无登记真实身份/临床或open-set zero-shot识别；newdataset不是4次独立生物replication。",
+        "negative_result": null,
+        "non_inference": "模型/数据集预测及input ablation不是生物因果验证；重复scans/windows/CV不当独立受试者复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "冻结embedding能否匹配新dataset里同人的多run数据？"
+      ],
+      "shared_evidence_with": [
+        "C9",
+        "C11",
+        "C13"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "对4新dataset仅训练embedding上的linear ID readout、跨task-run验证后，partial平均96.86%、standard98.53%，分别优于raw-netmat fully-connected baseline39.94%和95.00%。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "frozen backbone与新closed-set ID readout",
+          "design": "对4新dataset仅训练embedding上的linear ID readout、跨task-run验证后，partial平均96.86%、standard98.53%，分别优于raw-netmat fully-connected baseline39.94%和95.00%。",
+          "comparator": "compact embeddings(1024/512)与4950维raw inputs",
+          "measure": "mean ID accuracy",
+          "unit_of_analysis": "同participants跨run，linear head训练时已见目标person",
+          "sample_size_as_reported": "4新dataset，多runs；19 heldout run条件/152方法比较；非19独立cohorts。",
+          "uncertainty": "paired p<.001；standard vs partial p=.003；ds003592较低。",
+          "assumptions": [
+            "不是heldout-person zero-shot；rawbaseline free parameters更多但优化/data条件仍限制比较，不证明neural mechanism。"
+          ],
+          "source_locator": {
+            "pdf_page": 35,
+            "section": "Identification transfer",
+            "figure": "Fig.5",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "对4新dataset仅训练embedding上的linear ID readout、跨task-run验证后，partial平均96.86%、standard98.53%，分别优于raw-netmat fully-connected baseline39.94%和95.00%。",
+        "boundary": "不是heldout-person zero-shot；rawbaseline free parameters更多但优化/data条件仍限制比较，不证明neural mechanism。",
+        "negative_result": null,
+        "non_inference": "模型/数据集预测及input ablation不是生物因果验证；重复scans/windows/CV不当独立受试者复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "linear adaptation是否让预训练representation识别新closed-set个体？"
+      ],
+      "shared_evidence_with": [
+        "C9",
+        "C10",
+        "C12",
+        "C13"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "将LA5c/PIOP1/PIOP2配为每dataset最多200participants、4tasks，逐步增加每task的100s fine-tuning windows1到4后，识别表现与fine-tuning data量正相关，rs=.84。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "fixed pretraining、控制dataset/task/participant规模的downstream data sweep",
+          "design": "将LA5c/PIOP1/PIOP2配为每dataset最多200participants、4tasks，逐步增加每task的100s fine-tuning windows1到4后，识别表现与fine-tuning data量正相关，rs=.84。",
+          "comparator": "不同fine-tuning窗口量",
+          "measure": "accuracy-volume Spearman",
+          "unit_of_analysis": "fine-tuning windows及model/task conditions，不是新增独立participant",
+          "sample_size_as_reported": "3datasets；每组max200 participants、4tasks；1-4 windows/task。",
+          "uncertainty": "rs=.84，p<.001。",
+          "assumptions": [
+            "正文误说larger pretraining data，但该实验改的是fine-tuning量；overlapping segments不是独立新fMRI样本。"
+          ],
+          "source_locator": {
+            "pdf_page": 34,
+            "section": "Identification data scaling",
+            "figure": "Fig.6",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "将LA5c/PIOP1/PIOP2配为每dataset最多200participants、4tasks，逐步增加每task的100s fine-tuning windows1到4后，识别表现与fine-tuning data量正相关，rs=.84。",
+        "boundary": "正文误说larger pretraining data，但该实验改的是fine-tuning量；overlapping segments不是独立新fMRI样本。",
+        "negative_result": null,
+        "non_inference": "模型/数据集预测及input ablation不是生物因果验证；重复scans/windows/CV不当独立受试者复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "downstream ID adaptation受fine-tuning数据量怎样影响？"
+      ],
+      "shared_evidence_with": [
+        "C11"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C13",
+      "statement": "new-ID readout测试只用100s输入时，partial平均96.86%→96.40%，standard98.53%→88.63%；二者仍优于对应baseline，但duration鲁棒性并不一致。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "固定readout及short/full probe comparison",
+          "design": "new-ID readout测试只用100s输入时，partial平均96.86%→96.40%，standard98.53%→88.63%；二者仍优于对应baseline，但duration鲁棒性并不一致。",
+          "comparator": "100s/full以及partial/standard/基线",
+          "measure": "ID accuracy",
+          "unit_of_analysis": "同scan不同窗口，不是新独立外测",
+          "sample_size_as_reported": "同4datasets和repeatedheldout scans。",
+          "uncertainty": "vs对应baselines paired Wilcoxon p<.001。",
+          "assumptions": [
+            "gallery/fine-tuning不都截到100s；完整run预处理后取窗不等于仅采100s端到端采集方案。"
+          ],
+          "source_locator": {
+            "pdf_page": 35,
+            "section": "Identification duration",
+            "figure": "Fig.5",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "new-ID readout测试只用100s输入时，partial平均96.86%→96.40%，standard98.53%→88.63%；二者仍优于对应baseline，但duration鲁棒性并不一致。",
+        "boundary": "gallery/fine-tuning不都截到100s；完整run预处理后取窗不等于仅采100s端到端采集方案。",
+        "negative_result": null,
+        "non_inference": "模型/数据集预测及input ablation不是生物因果验证；重复scans/windows/CV不当独立受试者复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "新dataset ID transfer的短输入稳健性是否依netmat类型？"
+      ],
+      "shared_evidence_with": [
+        "C3",
+        "C10",
+        "C11"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C14",
+      "statement": "按participants留出、只训练linear trait readout时，partial模型40个categorical评估条件均高于chance但median accuracy68.88%；standard median66.97%，明显低于ID task。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "10fold participant CV重抽10次，frozen embedding任务head",
+          "design": "按participants留出、只训练linear trait readout时，partial模型40个categorical评估条件均高于chance但median accuracy68.88%；standard median66.97%，明显低于ID task。",
+          "comparator": "chance50%或25%按任务",
+          "measure": "categorical accuracy",
+          "unit_of_analysis": "participants holdout、scan任务和重复CV estimates",
+          "sample_size_as_reported": "4heldout datasets；原文40分类variables/conditions；10CV runs共享sameparticipants，非40独立生物variables cohorts。",
+          "uncertainty": "FDR p<.05且要求全部10CV runs exceedchance；median如statement。",
+          "assumptions": [
+            "多scan/task条件不等于40独立traits；ID优化不保证临床/认知utility，同一cohort重复CV不提供10次独立复制。"
+          ],
+          "source_locator": {
+            "pdf_page": 37,
+            "section": "Generalizing embeddings to predict traits",
+            "figure": "Fig.7",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "按participants留出、只训练linear trait readout时，partial模型40个categorical评估条件均高于chance但median accuracy68.88%；standard median66.97%，明显低于ID task。",
+        "boundary": "多scan/task条件不等于40独立traits；ID优化不保证临床/认知utility，同一cohort重复CV不提供10次独立复制。",
+        "negative_result": null,
+        "non_inference": "模型/数据集预测及input ablation不是生物因果验证；重复scans/windows/CV不当独立受试者复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "ID预训练能多大程度迁移到categorical traits？"
+      ],
+      "shared_evidence_with": [
+        "C15",
+        "C16",
+        "C17"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C15",
+      "statement": "continuous-trait prediction仅部分成立：partial在79/131、standard90/131回归条件超过严格chance标准；PIOP1/2通常r<.20且近半条件不显著，ds003592部分memory/executive变量r约.32-.45。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "participant-CV regression readout",
+          "design": "continuous-trait prediction仅部分成立：partial在79/131、standard90/131回归条件超过严格chance标准；PIOP1/2通常r<.20且近半条件不显著，ds003592部分memory/executive变量r约.32-.45。",
+          "comparator": "prediction r=0及不同cohorts",
+          "measure": "out-of-sample prediction correlation",
+          "unit_of_analysis": "新participant预测及变量×in-scanner-task条件",
+          "sample_size_as_reported": "131 regression评估条件；同4datasets/10重复CV，distinct phenotype/complete-case n未提供可读全表。",
+          "uncertainty": "FDR p<.05并10CV-run条件；ds003592VPA r=.41、associative recall .45、symboldigits .32、trailmaking .41。",
+          "assumptions": [
+            "未显著是该预测设置负结果，不是traits没有brain signal；age可贡献这些cognition关联。"
+          ],
+          "source_locator": {
+            "pdf_page": 38,
+            "section": "Generalizing embeddings",
+            "figure": "Fig.8",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "continuous-trait prediction仅部分成立：partial在79/131、standard90/131回归条件超过严格chance标准；PIOP1/2通常r<.20且近半条件不显著，ds003592部分memory/executive变量r约.32-.45。",
+        "boundary": "未显著是该预测设置负结果，不是traits没有brain signal；age可贡献这些cognition关联。",
+        "negative_result": "许多回归条件未达到above-chance；PIOP近半连续条件不显著。",
+        "non_inference": "模型/数据集预测及input ablation不是生物因果验证；重复scans/windows/CV不当独立受试者复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "哪些continuous traits可以或无法从ID embedding有效预测？"
+      ],
+      "shared_evidence_with": [
+        "C14",
+        "C16",
+        "C19"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C16",
+      "statement": "trait/behavior任务的overall预训练收益很小且依输入：partial embedding优于对应raw baseline，但standard-correlation embedding在classification和regression均显著差于其raw baseline。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "同participant-CV/训练流程直接raw vs frozenfeature比较",
+          "design": "trait/behavior任务的overall预训练收益很小且依输入：partial embedding优于对应raw baseline，但standard-correlation embedding在classification和regression均显著差于其raw baseline。",
+          "comparator": "partial/standard pretraining与各raw fully-connected baseline",
+          "measure": "task performance differences",
+          "unit_of_analysis": "paired task/CV model outcomes",
+          "sample_size_as_reported": "同40分类/131回归条件和重复CV；不是新受试cohort。",
+          "uncertainty": "partial两类p<.001；standard两类p<.001且方向为较差；combinedclass p<.001、reg p=.008但small。",
+          "assumptions": [
+            "embedding压缩维度512/1024vs4950、优化与目标对齐不同；不能总称pretraining改善所有trait任务。"
+          ],
+          "source_locator": {
+            "pdf_page": 39,
+            "section": "Trait prediction baseline comparison",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "trait/behavior任务的overall预训练收益很小且依输入：partial embedding优于对应raw baseline，但standard-correlation embedding在classification和regression均显著差于其raw baseline。",
+        "boundary": "embedding压缩维度512/1024vs4950、优化与目标对齐不同；不能总称pretraining改善所有trait任务。",
+        "negative_result": "standard预训练在两种任务类型表现差于对应baseline。",
+        "non_inference": "模型/数据集预测及input ablation不是生物因果验证；重复scans/windows/CV不当独立受试者复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "fingerprint预训练是否给所有trait任务带来增益？"
+      ],
+      "shared_evidence_with": [
+        "C14",
+        "C15",
+        "C17"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C17",
+      "statement": "LA5c four-class psychiatric classification只有31-39% accuracy，部分raw baseline最高约43%，尽管可超过25%chance，离可靠诊断还有明显距离。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "trait-transfer诊断分类的源文汇总",
+          "design": "LA5c four-class psychiatric classification只有31-39% accuracy，部分raw baseline最高约43%，尽管可超过25%chance，离可靠诊断还有明显距离。",
+          "comparator": "chance与raw baseline",
+          "measure": "accuracy",
+          "unit_of_analysis": "participant-level CV分类，不是临床前瞻诊断试验",
+          "sample_size_as_reported": "LA5c预训练未见participants、4class标签；精确eligibleparticipant n未提供可读Table1。",
+          "uncertainty": "源文述abovechance但未给此处每model独立统计值。",
+          "assumptions": [
+            "训练healthy来源可有domain shift，但原因未单独验证；不能将ID99%换作诊断99%。"
+          ],
+          "source_locator": {
+            "pdf_page": 44,
+            "section": "Discussion",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "LA5c four-class psychiatric classification只有31-39% accuracy，部分raw baseline最高约43%，尽管可超过25%chance，离可靠诊断还有明显距离。",
+        "boundary": "训练healthy来源可有domain shift，但原因未单独验证；不能将ID99%换作诊断99%。",
+        "negative_result": "部分pretrained model诊断performance未优于baseline。",
+        "non_inference": "模型/数据集预测及input ablation不是生物因果验证；重复scans/windows/CV不当独立受试者复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "high fingerprint accuracy为何不等于psychiatric诊断utility？"
+      ],
+      "shared_evidence_with": [
+        "C14",
+        "C16"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C18",
+      "statement": "RSA显示partial/standard embedding及raw inputs的表征距离只有weak-moderate一致(约rs=.289-.484)，说明监督变换改变了距离几何而非简单原样保留connectome。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "frozen embedding与raw netmat的pairwise cosine-dissimilarity/Spearman",
+          "design": "RSA显示partial/standard embedding及raw inputs的表征距离只有weak-moderate一致(约rs=.289-.484)，说明监督变换改变了距离几何而非简单原样保留connectome。",
+          "comparator": "embedding与input及不同netmat spaces",
+          "measure": "representational geometry correlation",
+          "unit_of_analysis": "participants生成非独立pairwise distances",
+          "sample_size_as_reported": "ds003592 resting scans；complete-caseparticipant n未报可读全表。",
+          "uncertainty": "embedding互rs=.315、embedding/input .289/.484、raw互.346，p<.001原报。",
+          "assumptions": [
+            "几何不同不是新神经机制或更强clinical预测的充分证据；pairwise entries非独立n。"
+          ],
+          "source_locator": {
+            "pdf_page": 40,
+            "section": "Representational similarity analysis",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "RSA显示partial/standard embedding及raw inputs的表征距离只有weak-moderate一致(约rs=.289-.484)，说明监督变换改变了距离几何而非简单原样保留connectome。",
+        "boundary": "几何不同不是新神经机制或更强clinical预测的充分证据；pairwise entries非独立n。",
+        "negative_result": null,
+        "non_inference": "模型/数据集预测及input ablation不是生物因果验证；重复scans/windows/CV不当独立受试者复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "pretraining是否改变connectome表征几何？"
+      ],
+      "shared_evidence_with": [
+        "C19"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C19",
+      "statement": "ds003592 semi-partial RSA控制其余behavior variables后仍有age、Flanker、VPA/trailmaking等较小distance associations；部分memory/executive关联在控制age后保留。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "semi-partial Spearman、subject bootstrap1000与108tests校正",
+          "design": "ds003592 semi-partial RSA控制其余behavior variables后仍有age、Flanker、VPA/trailmaking等较小distance associations；部分memory/executive关联在控制age后保留。",
+          "comparator": "控制其它traits(含age)后的unique associations",
+          "measure": "semipartialdistance association",
+          "unit_of_analysis": "受试者及相关distance matrices；bootstrap单位subject",
+          "sample_size_as_reported": "27behavior matrices×2model/2raw空间=108 tests；complete-case participants精确n未知。",
+          "uncertainty": "示例age rs=.096 CI.031-.162、Flanker.098 CI.031-.168、VPA.101 CI.040-.158、trailmaking .120 CI.058-.174；Bonferroni且CI>0。",
+          "assumptions": [
+            "上述具体示例部分为raw netmats，不能全部冒充embedding效应；统计控制不证明因果或消除所有年龄/扫描偏差。"
+          ],
+          "source_locator": {
+            "pdf_page": 41,
+            "section": "Representational similarity analysis",
+            "figure": "Fig.9",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "ds003592 semi-partial RSA控制其余behavior variables后仍有age、Flanker、VPA/trailmaking等较小distance associations；部分memory/executive关联在控制age后保留。",
+        "boundary": "上述具体示例部分为raw netmats，不能全部冒充embedding效应；统计控制不证明因果或消除所有年龄/扫描偏差。",
+        "negative_result": null,
+        "non_inference": "模型/数据集预测及input ablation不是生物因果验证；重复scans/windows/CV不当独立受试者复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "哪些认知距离关联超出age共变而仍依表征空间？"
+      ],
+      "shared_evidence_with": [
+        "C15",
+        "C18"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C20",
+      "statement": "MPI validation t-SNE/silhouette对participant ID的cluster score=.78，而gender=.01、agegroup=-.34，显示ID优化空间并未明显按这两个demographic labels聚簇。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "t-SNE可视化及silhouette分析",
+          "design": "MPI validation t-SNE/silhouette对participant ID的cluster score=.78，而gender=.01、agegroup=-.34，显示ID优化空间并未明显按这两个demographic labels聚簇。",
+          "comparator": "按ID、gender、agegroups标签评价cluster",
+          "measure": "silhouette",
+          "unit_of_analysis": "subject/windows embeddings，不是独立clusters样本",
+          "sample_size_as_reported": "MPI109 participants；fullscan与100s windows共用subjects。",
+          "uncertainty": "没有将这些scores赋予来源未报p或CI。",
+          "assumptions": [
+            "不聚簇不等于不可解码gender/age或trait信息不存在；不检验formal sex-invariance。"
+          ],
+          "source_locator": {
+            "pdf_page": 25,
+            "section": "Pre-training embedding space",
+            "figure": "Fig.3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "MPI validation t-SNE/silhouette对participant ID的cluster score=.78，而gender=.01、agegroup=-.34，显示ID优化空间并未明显按这两个demographic labels聚簇。",
+        "boundary": "不聚簇不等于不可解码gender/age或trait信息不存在；不检验formal sex-invariance。",
+        "negative_result": "gender/agegroup没有观察到良好silhouette聚类。",
+        "non_inference": "模型/数据集预测及input ablation不是生物因果验证；重复scans/windows/CV不当独立受试者复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "IDembedding是否等同按demographic labels聚簇？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C14"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C21",
+      "statement": "作者认为fingerprint预训练主要优化individual discriminability，只部分覆盖phenotypic结构；site信息仍可解码，未来需要matched/longitudinal/跨scanner人群和更对齐的pretraining目标来检验clinical utility与privacy权衡。",
+      "claim_type": "interpretation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "identity、trait、site/RSA结果综合",
+          "design": "作者认为fingerprint预训练主要优化individual discriminability，只部分覆盖phenotypic结构；site信息仍可解码，未来需要matched/longitudinal/跨scanner人群和更对齐的pretraining目标来检验clinical utility与privacy权衡。",
+          "comparator": "ID与clinical/cognitive/age/site targets",
+          "measure": null,
+          "unit_of_analysis": "本研究模型与cohorts，未实施新临床或privacy干预",
+          "sample_size_as_reported": null,
+          "uncertainty": "ds003592site86.30%是可解码信息，不是site-invariant proof。",
+          "assumptions": [
+            "模型成绩不构成生物mechanism/neuronal必要性/安全诊断validation；旅行受试者、多scanner及adversarial privacy方案属于future work。"
+          ],
+          "source_locator": {
+            "pdf_page": 48,
+            "section": "Discussion; Conclusion",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者认为fingerprint预训练主要优化individual discriminability，只部分覆盖phenotypic结构；site信息仍可解码，未来需要matched/longitudinal/跨scanner人群和更对齐的pretraining目标来检验clinical utility与privacy权衡。",
+        "boundary": "模型成绩不构成生物mechanism/neuronal必要性/安全诊断validation；旅行受试者、多scanner及adversarial privacy方案属于future work。",
+        "negative_result": null,
+        "non_inference": "模型/数据集预测及input ablation不是生物因果验证；重复scans/windows/CV不当独立受试者复制。",
+        "unresolved": "artifact/site/age与真正trait信号分解和临床可用性待验证。",
+        "unresolved_attribution": "综述作者的限制、开放问题或源文审计"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "fingerprint pretraining的临床潜力及泛化/隐私边界是什么？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C6",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C19"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "accepted Early Release的75页全部归档文字已评估。brain2vec的closed-set ID/frozen-gallery泛化较强且partial模型对100s窗口稳健，但trait/behavior迁移有限、standard embedding低于rawbaseline、PI0P多数回归很弱、LA5c诊断仅31-39%。input ablation属于计算依赖，控motion/smoothing不等于无artifact，site与age表征仍需分离。Table1、图像像素和external extendeddata不在可读页文中；每项n/CI/conditions及source wording差异均保留候选范围。",
+  "shared_evidence": [
+    {
+      "claim_id": "C2",
+      "with": [
+        "C1"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C1",
+        "C2"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C1",
+        "C5"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C4"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C1",
+        "C7",
+        "C8"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C1",
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C1",
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C1",
+        "C10",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "with": [
+        "C9",
+        "C11",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "with": [
+        "C9",
+        "C10",
+        "C12",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "with": [
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C13",
+      "with": [
+        "C3",
+        "C10",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C14",
+      "with": [
+        "C15",
+        "C16",
+        "C17"
+      ]
+    },
+    {
+      "claim_id": "C15",
+      "with": [
+        "C14",
+        "C16",
+        "C19"
+      ]
+    },
+    {
+      "claim_id": "C16",
+      "with": [
+        "C14",
+        "C15",
+        "C17"
+      ]
+    },
+    {
+      "claim_id": "C17",
+      "with": [
+        "C14",
+        "C16"
+      ]
+    },
+    {
+      "claim_id": "C18",
+      "with": [
+        "C19"
+      ]
+    },
+    {
+      "claim_id": "C19",
+      "with": [
+        "C15",
+        "C18"
+      ]
+    },
+    {
+      "claim_id": "C20",
+      "with": [
+        "C1",
+        "C14"
+      ]
+    },
+    {
+      "claim_id": "C21",
+      "with": [
+        "C1",
+        "C6",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C19"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": null,
+        "pdf_page": 1,
+        "issue": "所供PDF是peer-reviewed accepted Early Release，尚未经composition/copyediting。",
+        "suggested_correction": "research_article并保持accepted-manuscript范围，不能默换final版。",
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "pdf_page": 67,
+        "issue": "67-75页只提取watermark，主图像素不可读；Table1全文未见可读page text。",
+        "suggested_correction": "每页文字已评估，但missing_material包含pixels/表格/extended data；n不由图猜。",
+        "resolved": true
+      },
+      {
+        "claim_id": "C1",
+        "pdf_page": 12,
+        "issue": "held-out pretraining scans对应已见persons，只有多个sessions的人才有validation。",
+        "suggested_correction": "明确session/day holdout，不称participant holdout或zero-shot。",
+        "resolved": true
+      },
+      {
+        "claim_id": "C2",
+        "pdf_page": 23,
+        "issue": "Methods dropout0/25/50%而Results另有10%；50configs不是必然完整factorial或独立seeds。",
+        "suggested_correction": "只述实际扫参结果/selected best，配置细节差异待核。",
+        "resolved": false
+      },
+      {
+        "claim_id": "C3",
+        "pdf_page": 11,
+        "issue": "100s窗口在full run预处理后才生成。",
+        "suggested_correction": "不把窗口评估等同仅采100s端到端研究设计，保持条件。",
+        "resolved": true
+      },
+      {
+        "claim_id": "C4",
+        "pdf_page": 14,
+        "issue": "input rows/columns置零与真实brain lesions不同，生物necessary/unique机制未测试。",
+        "suggested_correction": "theory-ai model dependence，非脑区因果必要性。",
+        "resolved": true
+      },
+      {
+        "claim_id": "C5",
+        "pdf_page": 65,
+        "issue": "Fig4 caption partial原baseline写97.61%(100s数)，正文cumulative以97.64%(fullrun)为base。",
+        "suggested_correction": "正文指标按原report保留，版本/caption差异待人工确认。",
+        "resolved": false
+      },
+      {
+        "claim_id": "C6",
+        "pdf_page": 28,
+        "issue": "motion-only3.72%依然abovechance，不能说motion无ID信息。",
+        "suggested_correction": "不利对照是未解释high-performance，不是零信息证明。",
+        "resolved": true
+      },
+      {
+        "claim_id": "C7",
+        "pdf_page": 29,
+        "issue": "partial smoothing变化p=.004，虽小但统计显著。",
+        "suggested_correction": "区分effect size与significance，不记为nonsignificant。",
+        "resolved": true
+      },
+      {
+        "claim_id": "C9",
+        "pdf_page": 30,
+        "issue": "fully-connected baseline paired检验句残留motion-confounds model措辞。",
+        "suggested_correction": "保留报告direction/accuracy，具体paired检验对象待核。",
+        "resolved": false
+      },
+      {
+        "claim_id": "C10",
+        "pdf_page": 21,
+        "issue": "无需fine-tune识别仍依同人gallery；不是未登记个体的真实身份推断。",
+        "suggested_correction": "label/registration范围明确。",
+        "resolved": true
+      },
+      {
+        "claim_id": "C11",
+        "pdf_page": 17,
+        "issue": "linearID readout的test personnes已在fine-tune出现，只hold任务runs。",
+        "suggested_correction": "不可混为trait任务的participant holdout。",
+        "resolved": true
+      },
+      {
+        "claim_id": "C12",
+        "pdf_page": 34,
+        "issue": "数据量sweep改fine-tuning windows，但正文称larger pretraining data。",
+        "suggested_correction": "抽取按实际操作修为fine-tuning量；原source wording差异记录。",
+        "resolved": true
+      },
+      {
+        "claim_id": "C14",
+        "pdf_page": 19,
+        "issue": "40class/131reg是多个scan/task评估条件；100fold/10runs同people重分，不是独立研究。",
+        "suggested_correction": "样本与重复CV/analysis条件分层，未知unique variables/n保持未给。",
+        "resolved": true
+      },
+      {
+        "claim_id": "C16",
+        "pdf_page": 39,
+        "issue": "combined统计提升隐藏standard model明显劣于raw baseline的方向。",
+        "suggested_correction": "保留输入特异negative，不单报overallpositive。",
+        "resolved": true
+      },
+      {
+        "claim_id": "C17",
+        "pdf_page": 44,
+        "issue": "31-39%diagnosis高于chance但远低于ID成绩且部分baseline更高。",
+        "suggested_correction": "不作clinical deployment或神经机制结论；domain shift只是作者解释。",
+        "resolved": true
+      },
+      {
+        "claim_id": "C19",
+        "pdf_page": 41,
+        "issue": "若干最大RSA数值为input connectivity，非必然embedding；pairwise matrices有dependence，作者用subject bootstrap双criterion。",
+        "suggested_correction": "精确归属空间、单位及校正，association不当causal。",
+        "resolved": true
+      },
+      {
+        "claim_id": "C20",
+        "pdf_page": 25,
+        "issue": "silhouette弱不等于gender/age不可预测，也非sex-heldout专门实验。",
+        "suggested_correction": "只记录聚簇结果，避免过强invariance主张。",
+        "resolved": true
+      },
+      {
+        "claim_id": "C21",
+        "pdf_page": 45,
+        "issue": "site可准确识别说明存在scanner/site相关features；控制实验不排全部shortcut。",
+        "suggested_correction": "保留泛化成绩与site/age偏差/clinical utility边界。",
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T11:21:19.906297Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "499ff97c6c8e84bf2a8f147546c7f426418be11b8ab53832fe84aa4949adf7d1",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

@@ -1,0 +1,109 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Neural population geometry and optimal coding of tasks with shared latent structure</title><style>body{max-width:940px;margin:40px auto;padding:0 24px;background:#fffdf7;color:#12372f;font:16px/1.8 Georgia,serif}h1{font-size:26px;line-height:1.4}h2{font-size:20px;line-height:1.5}h3{font-size:16px}article{padding:26px 0;border-top:1px solid #bec4b8}small{color:#68766e}dl{display:grid;grid-template-columns:120px 1fr;gap:8px 20px}dt{font-weight:bold}dd{margin:0}li{padding:8px 0}p,dd{overflow-wrap:anywhere}.note{background:#eef2e2;padding:14px;border-left:3px solid #738968}summary{cursor:pointer}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.7 monospace}@media(max-width:600px){body{margin:24px auto;padding:0 18px}dl{grid-template-columns:1fr;gap:3px}dd{margin-bottom:12px}}@media print{body{margin:0;background:white}details{display:block}}</style><link rel="stylesheet" href="../../commons-v02.css?v=20261020-1"><link rel="stylesheet" href="../../examples.css?v=20260928-2"><link rel="stylesheet" href="../../site.css?v=20261020-1"><script defer src="../../site.js?v=20261020-1"></script><script defer src="../../report-ui.js?v=20261020-1"></script></head><body class="portal-page report-page" data-cc-report-shell="1" data-page="library" data-site-prefix="../../" data-library-paper="paper-local-bd9528e7e5f265f0" data-report-language="zh" data-claim-records="{&quot;C1&quot;:&quot;structured-paper-local-bd9528e7e5f265f0-1&quot;,&quot;C2&quot;:&quot;structured-paper-local-bd9528e7e5f265f0-2&quot;,&quot;C3&quot;:&quot;structured-paper-local-bd9528e7e5f265f0-3&quot;,&quot;C4&quot;:&quot;structured-paper-local-bd9528e7e5f265f0-4&quot;,&quot;C5&quot;:&quot;structured-paper-local-bd9528e7e5f265f0-5&quot;,&quot;C6&quot;:&quot;structured-paper-local-bd9528e7e5f265f0-6&quot;,&quot;C7&quot;:&quot;structured-paper-local-bd9528e7e5f265f0-7&quot;,&quot;C8&quot;:&quot;structured-paper-local-bd9528e7e5f265f0-8&quot;,&quot;C9&quot;:&quot;structured-paper-local-bd9528e7e5f265f0-9&quot;,&quot;C10&quot;:&quot;structured-paper-local-bd9528e7e5f265f0-10&quot;,&quot;C11&quot;:&quot;structured-paper-local-bd9528e7e5f265f0-11&quot;,&quot;C12&quot;:&quot;structured-paper-local-bd9528e7e5f265f0-12&quot;,&quot;C13&quot;:&quot;structured-paper-local-bd9528e7e5f265f0-13&quot;,&quot;C14&quot;:&quot;structured-paper-local-bd9528e7e5f265f0-14&quot;,&quot;C15&quot;:&quot;structured-paper-local-bd9528e7e5f265f0-15&quot;}"><header></header><main id="report-content"><div id="report-tools"></div><small>CLAIM COMMONS / 阅读报告</small><h1>Neural population geometry and optimal coding of tasks with shared latent structure</h1><p class="note">AI 文本提取候选，尚待人工核对。图像像素未读取；PDF 页码指文件中的页序。</p><p>完整18页的条件理论与再分析论文，提取15项候选。四个几何量仅在指定读出、任务分布与高维/Gaussian条件下组织泛化；最优协方差具有少样本压缩、后期展平的策略。人工网络、2只猴与8只鼠的再分析提供有限经验检验，包含姿态理论偏差、SSF非单调不显著及重采样非独立的明确边界，缺失补充证明不被冒充已读。</p><a href="https://doi.org/10.1038/s41593-025-02183-y" rel="noreferrer">查看所读原文版本 ↗</a><details><summary>贡献清单与处理决定</summary><ul><li><b>四项误差分解和协方差约束最优代码</b><br>include · 保留共同Gaussian/高维/任务分布条件，不拆成无条件结论。</li><li><b>随机/训练MLP、姿态网络与跨层几何权衡</b><br>include · 网络、投影和图像不是生物独立样本；纳入理论偏差边界。</li><li><b>猕猴与大鼠既有数据、GLM及显著/不显著趋势</b><br>include · 按动物/类别/子集区分单位，并保留SSF阴性。</li><li><b>补充SVC、理论证明、替代分组鲁棒性</b><br>defer · 仅正文概述，未供应补充细节；不宣称已阅读完整证明或独立复现。</li><li><b>书目、数据来源、排除和报告摘要</b><br>include · 确认无新增动物实验和完整供应页覆盖。</li></ul></details><article><small>C1 / 直接结果 · conditional_theoretical_result</small><h2>在联合零均值 Gaussian 神经活动/潜变量、随机任务法向量及共同高维与谱条件下，监督 Hebbian 线性读出的任务平均泛化误差可由相关、维数、SSF 和 SNF 四个几何统计量表示。</h2><h3>Evidence</h3><p>Gaussian-equivalence 近似与高维推导</p><dl><dt>设计 / 对照</dt><dd>规定潜变量随机二分类任务，监督Hebbian线性读出；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>数学模型中的样本、潜变量与神经响应向量；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 12 · (3)–(9)</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>在联合零均值 Gaussian 神经活动/潜变量、随机任务法向量及共同高维与谱条件下，监督 Hebbian 线性读出的任务平均泛化误差可由相关、维数、SSF 和 SNF 四个几何统计量表示。</dd><dt>适用边界</dt><dd>需共同分布、随机线性潜空间划分、训练/测试设置及协方差谱条件；完整证明和谱条件位于未提供的 Supplementary Information。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不是任意神经分布、非线性解码器或分布外测试的无条件定理。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>潜变量任务的采样与训练规模怎样约束可读出的表征几何？</li><li>如何区分理论最优、经验读出与实际神经学习机制？</li></ul></article><article><small>C2 / 直接结果 · conditional_theoretical_result</small><h2>该误差分解中相关和维数的贡献随训练样本增多衰减，而 SSF/SNF 对固定表示造成的误差项不随样本数衰减。</h2><h3>Evidence</h3><p>几何统计、条件理论及既有数据再分析</p><dl><dt>设计 / 对照</dt><dd>规定潜变量随机二分类任务，监督Hebbian线性读出；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 4 · 未报告 / 不适用</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>该误差分解中相关和维数的贡献随训练样本增多衰减，而 SSF/SNF 对固定表示造成的误差项不随样本数衰减。</dd><dt>适用边界</dt><dd>其他几何项固定且模型假设成立；不可忽略协方差可实现性约束。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>所谓不可约误差仅针对固定表示和指定读出，不是脑或全部算法的不可约限度。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>潜变量任务的采样与训练规模怎样约束可读出的表征几何？</li><li>如何区分理论最优、经验读出与实际神经学习机制？</li></ul></article><article><small>C3 / 直接结果 · geometric_definition_and_consequence</small><h2>SSF 奖励独立潜变量编码方向的分离与平衡，SNF 则奖励潜变量无关变异与编码方向的分离；单独提高某一量不能代表总体表征质量。</h2><h3>Evidence</h3><p>几何统计、条件理论及既有数据再分析</p><dl><dt>设计 / 对照</dt><dd>规定潜变量随机二分类任务，监督Hebbian线性读出；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 3 · Fig. 2</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>SSF 奖励独立潜变量编码方向的分离与平衡，SNF 则奖励潜变量无关变异与编码方向的分离；单独提高某一量不能代表总体表征质量。</dd><dt>适用边界</dt><dd>noise 是相对于已测潜变量的条件变异，可能包含未测信号。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>统计上的 noise 不是生物学无用活动，正交性不是独立机制证明。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>潜变量任务的采样与训练规模怎样约束可读出的表征几何？</li><li>如何区分理论最优、经验读出与实际神经学习机制？</li></ul></article><article><small>C4 / 直接结果 · empirical_or_theoretical_result</small><h2>随机与多任务训练 MLP 中理论读出误差较好跟踪实测误差；训练网络的线性/ReLU阶段通过维数、相关与分解度的不同权衡改善后层表现。</h2><h3>Evidence</h3><p>Gaussian 潜变量、随机教师 MLP 与训练 MLP 的层间读出</p><dl><dt>设计 / 对照</dt><dd>规定潜变量随机二分类任务，监督Hebbian线性读出；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>模拟网络、任务与数据划分；d=40；5×10^5训练潜变量，500训练任务；评估1000新潜变量/300新任务，300训练与700测试点</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 4 · Fig. 3</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>随机与多任务训练 MLP 中理论读出误差较好跟踪实测误差；训练网络的线性/ReLU阶段通过维数、相关与分解度的不同权衡改善后层表现。</dd><dt>适用边界</dt><dd>同一网络各层与任务不独立；单 epoch 训练与该生成分布限定结论。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>人工网络测试不等同于动物神经机制验证。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>潜变量任务的采样与训练规模怎样约束可读出的表征几何？</li><li>如何区分理论最优、经验读出与实际神经学习机制？</li></ul></article><article><small>C5 / 直接结果 · empirical_or_theoretical_result</small><h2>DeepLabCut 姿态网络随层深增加维数与 SSF/SNF，并以降低神经—潜变量相关为代价改善任务平均读出误差。</h2><h3>Evidence</h3><p>ResNet50 姿态网络内部表征分析</p><dl><dt>设计 / 对照</dt><dd>规定潜变量随机二分类任务，监督Hebbian线性读出；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>同一成人鼠图像帧及网络层；20投影非动物重复；成人鼠N=1；12标记/24坐标；完整标记259帧；33内部层，各20随机投影到n=100；p=150读出样本</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 5 · Fig. 4</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>DeepLabCut 姿态网络随层深增加维数与 SSF/SNF，并以降低神经—潜变量相关为代价改善任务平均读出误差。</dd><dt>适用边界</dt><dd>原姿态网络训练542帧70/30划分；此多任务分析未另报告独立动物。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>层间几何变化不是动物学习轨迹。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>潜变量任务的采样与训练规模怎样约束可读出的表征几何？</li><li>如何区分理论最优、经验读出与实际神经学习机制？</li></ul></article><article><small>C6 / 直接结果 · empirical_or_theoretical_result</small><h2>姿态数据上四项几何公式的绝对误差预测存在偏差，但理论值与经验值的线性关系解释了几乎全部层间变化，报告 R²=0.988。</h2><h3>Evidence</h3><p>几何统计、条件理论及既有数据再分析</p><dl><dt>设计 / 对照</dt><dd>规定潜变量随机二分类任务，监督Hebbian线性读出；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>网络表征/投影；同一259帧、33表征和20投影</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 5 · Fig. 4g</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>姿态数据上四项几何公式的绝对误差预测存在偏差，但理论值与经验值的线性关系解释了几乎全部层间变化，报告 R²=0.988。</dd><dt>适用边界</dt><dd>相关拟合良好不等于理论数值严格相等；潜变量明显非 Gaussian。</dd><dt>实际负结果</dt><dd>理论预测并非定量精确，有系统偏差。</dd><dt>不能推出</dt><dd>不能由高R²宣称Gaussian近似在所有真实数据精确成立。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>潜变量任务的采样与训练规模怎样约束可读出的表征几何？</li><li>如何区分理论最优、经验读出与实际神经学习机制？</li></ul></article><article><small>C7 / 直接结果 · empirical_or_theoretical_result</small><h2>猕猴 V4/IT 既有记录中，理论较好预测随机潜变量任务的 Hebbian 读出误差，并观察到沿视觉通路读出改善。</h2><h3>Evidence</h3><p>既有 V4/IT 记录再分析与像素对照</p><dl><dt>设计 / 对照</dt><dd>规定潜变量随机二分类任务，监督Hebbian线性读出；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>动物和记录点；统计比较以8对象类别为配对单位；2只猴；88 V4、168 IT记录点；64对象8类别、每类320例；6潜变量；每类300任务、15划分</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 6 · Fig. 5</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>猕猴 V4/IT 既有记录中，理论较好预测随机潜变量任务的 Hebbian 读出误差，并观察到沿视觉通路读出改善。</dd><dt>适用边界</dt><dd>任务在每一对象类别内定义；8类别t检验/FDR不等于8只猴。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>再分析不是新猴实验；解码不证明下游实际采用该规则。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>潜变量任务的采样与训练规模怎样约束可读出的表征几何？</li><li>如何区分理论最优、经验读出与实际神经学习机制？</li></ul></article><article><small>C8 / 直接结果 · empirical_or_theoretical_result</small><h2>在该视觉数据中 V4 维数低于像素和 IT，像素到皮层的相关增大，IT 的 SNF 明显增加，提示无关变异与潜变量编码方向更分离。</h2><h3>Evidence</h3><p>几何项配对比较</p><dl><dt>设计 / 对照</dt><dd>规定潜变量随机二分类任务，监督Hebbian线性读出；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>类别内几何估计，动物来源2只；8对象类别双侧配对t检验，报告P&lt;0.01并进行FDR；2只猴</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 6 · Fig. 5e–h</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>在该视觉数据中 V4 维数低于像素和 IT，像素到皮层的相关增大，IT 的 SNF 明显增加，提示无关变异与潜变量编码方向更分离。</dd><dt>适用边界</dt><dd>多记录点采样与区域记录质量可能影响维数和SNF；不能估计整个脑区总体。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>SNF上升不证明实际噪声被特定回路消除。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>潜变量任务的采样与训练规模怎样约束可读出的表征几何？</li><li>如何区分理论最优、经验读出与实际神经学习机制？</li></ul></article><article><small>C9 / 直接结果 · conditional_theoretical_optimum</small><h2>对固定潜变量协方差和样本数，在联合协方差必须半正定的可实现代码优化中，最优代码把潜变量主成分映射到神经主成分，并以独立方向实现 disentangling。</h2><h3>Evidence</h3><p>受半正定约束的协方差优化</p><dl><dt>设计 / 对照</dt><dd>规定潜变量随机二分类任务，监督Hebbian线性读出；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>允许的数学代码集合；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 13 · (10)–(11)</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>对固定潜变量协方差和样本数，在联合协方差必须半正定的可实现代码优化中，最优代码把潜变量主成分映射到神经主成分，并以独立方向实现 disentangling。</dd><dt>适用边界</dt><dd>随机均匀任务划分、给定潜变量谱、规定读出目标；最优解无编码方向噪声或噪声正交。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不是任何任务权重、噪声约束或神经实现下的无条件全局最优。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>潜变量任务的采样与训练规模怎样约束可读出的表征几何？</li><li>如何区分理论最优、经验读出与实际神经学习机制？</li></ul></article><article><small>C10 / 直接结果 · conditional_theoretical_prediction</small><h2>该最优代码在少样本时压缩低方差潜变量方向，样本增多后展平谱并增加任务相关维数，同时降低总体单元—潜变量相关。</h2><h3>Evidence</h3><p>几何统计、条件理论及既有数据再分析</p><dl><dt>设计 / 对照</dt><dd>规定潜变量随机二分类任务，监督Hebbian线性读出；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 7 · Fig. 6</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>该最优代码在少样本时压缩低方差潜变量方向，样本增多后展平谱并增加任务相关维数，同时降低总体单元—潜变量相关。</dd><dt>适用边界</dt><dd>低方差在本随机任务分布下较少携带标签信息；改变任务重要性需重标度潜变量。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能把真实环境低方差变量普遍视为不重要，或把学习早期直接等同于最优少样本代码。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>潜变量任务的采样与训练规模怎样约束可读出的表征几何？</li><li>如何区分理论最优、经验读出与实际神经学习机制？</li></ul></article><article><small>C11 / 直接结果 · empirical_or_theoretical_result</small><h2>8只大鼠连续交替 W-maze 学习中，位置/速度随机任务的读出误差和行为误差在早期共同下降，并在约第4会话后趋于平台。</h2><h3>Evidence</h3><p>既有8会话PFC/CA1记录再分析</p><dl><dt>设计 / 对照</dt><dd>规定潜变量随机二分类任务，监督Hebbian线性读出；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>大鼠为生物学独立单位，500子集非独立动物；8只鼠；每会话约20分钟；每子集19 PFC或24 CA1单位、500时间点，其中p=300；平均500子集</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 8 · Fig. 7d–f</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>8只大鼠连续交替 W-maze 学习中，位置/速度随机任务的读出误差和行为误差在早期共同下降，并在约第4会话后趋于平台。</dd><dt>适用边界</dt><dd>位置/速度4潜变量是替代读出任务，不等于真实交替决策的完整潜在状态。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>行为与读出相关不能证明几何变化导致学习。</dd><dt>未解决</dt><dd>CA1读出—行为R²正文0.48、图注0.49。</dd></dl><h3>相关问题</h3><ul><li>潜变量任务的采样与训练规模怎样约束可读出的表征几何？</li><li>如何区分理论最优、经验读出与实际神经学习机制？</li></ul></article><article><small>C12 / 直接结果 · empirical_or_theoretical_result</small><h2>大鼠数据的总维数早期下降，但 GLM 估计的导航相关子空间维数上升；后期总维数上升、相关下降，与最优代码的趋势部分一致。</h2><h3>Evidence</h3><p>几何再分析与Poisson GLM</p><dl><dt>设计 / 对照</dt><dd>规定潜变量随机二分类任务，监督Hebbian线性读出；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>大鼠及其多会话；子空间为拟合模型估计；8只鼠；GLM交叉验证平均D² PFC0.29、CA10.25；低于常数模型的单元回退为null</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 8 · Fig. 7g–k</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>大鼠数据的总维数早期下降，但 GLM 估计的导航相关子空间维数上升；后期总维数上升、相关下降，与最优代码的趋势部分一致。</dd><dt>适用边界</dt><dd>速度≥4cm/s、平均放电≥0.1Hz；z评分与正则化改变所估代码；GLM未解释全部变异。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>趋势一致不证明动物实现该数学最优或早期下降唯一来自无用噪声。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>潜变量任务的采样与训练规模怎样约束可读出的表征几何？</li><li>如何区分理论最优、经验读出与实际神经学习机制？</li></ul></article><article><small>C13 / 直接结果 · empirical_or_theoretical_result</small><h2>混合效应二次回归支持总维数、相关及 SNF 的非单调学习变化，但两脑区 SSF 均未出现显著非单调证据，报告P&gt;0.05。</h2><h3>Evidence</h3><p>动物随机截距的混合效应回归</p><dl><dt>设计 / 对照</dt><dd>规定潜变量随机二分类任务，监督Hebbian线性读出；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>鼠和重复会话，不是重采样数；8只鼠×8会话；上述线性/二次项P&lt;10^-5；SSF非单调P&gt;0.05</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 8 · Fig. 7</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>混合效应二次回归支持总维数、相关及 SNF 的非单调学习变化，但两脑区 SSF 均未出现显著非单调证据，报告P&gt;0.05。</dd><dt>适用边界</dt><dd>SSF无显著二次趋势不等于证明其严格线性或不变化。</dd><dt>实际负结果</dt><dd>两区域均未发现SSF非单调趋势的证据。</dd><dt>不能推出</dt><dd>统计不显著不能作等效性结论。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>潜变量任务的采样与训练规模怎样约束可读出的表征几何？</li><li>如何区分理论最优、经验读出与实际神经学习机制？</li></ul></article><article><small>C14 / 直接结果 · empirical_or_theoretical_result</small><h2>随访的线性混合模型支持两区域 SSF 和任务相关维数随学习单调增加，分别报告P&lt;10^-3和P&lt;10^-5。</h2><h3>Evidence</h3><p>后续混合效应线性回归</p><dl><dt>设计 / 对照</dt><dd>规定潜变量随机二分类任务，监督Hebbian线性读出；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>鼠及会话；8只鼠重复8会话</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 9 · 未报告 / 不适用</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>随访的线性混合模型支持两区域 SSF 和任务相关维数随学习单调增加，分别报告P&lt;10^-3和P&lt;10^-5。</dd><dt>适用边界</dt><dd>任务相关维数的二次模型在PFC拟合较差；属于同一数据后续模型分析。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不构成第二套动物样本的独立复现。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>潜变量任务的采样与训练规模怎样约束可读出的表征几何？</li><li>如何区分理论最优、经验读出与实际神经学习机制？</li></ul></article><article><small>C15 / 解释 · interpretation</small><h2>作者报告多数据分析中 Hebbian 与 SVC 误差强相关，提示几何量可能描述其他线性读出；非线性解码、任务分布限制和分布偏移仍是开放问题。</h2><h3>Evidence</h3><p>正文对补充SVC分析的概括</p><dl><dt>设计 / 对照</dt><dd>规定潜变量随机二分类任务，监督Hebbian线性读出；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>同一批任务和数据的替代读出；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 9 · 未报告 / 不适用</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>作者报告多数据分析中 Hebbian 与 SVC 误差强相关，提示几何量可能描述其他线性读出；非线性解码、任务分布限制和分布偏移仍是开放问题。</dd><dt>适用边界</dt><dd>完整SVC比较数据和补充证明未供应；相关而非普遍等价。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>未证明对任意线性训练法、更不用说非线性解码器保持同一最优代码。</dd><dt>未解决</dt><dd>Supplementary Fig.3及完整理论条件无法直接复核。</dd></dl><h3>相关问题</h3><ul><li>潜变量任务的采样与训练规模怎样约束可读出的表征几何？</li><li>如何区分理论最优、经验读出与实际神经学习机制？</li></ul></article><details><summary>核对记录与来源信息</summary><pre>{
+  &quot;coverage&quot;: {
+    &quot;pdf_pages_read&quot;: [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    &quot;results_sections_seen&quot;: [
+      &quot;Results: geometric measures&quot;,
+      &quot;MLP tests&quot;,
+      &quot;DeepLabCut pose analysis&quot;,
+      &quot;Macaque V4/IT&quot;,
+      &quot;Optimal codes&quot;,
+      &quot;Rat PFC/CA1&quot;,
+      &quot;Discussion&quot;,
+      &quot;Methods&quot;,
+      &quot;References&quot;,
+      &quot;Reporting summary&quot;
+    ],
+    &quot;missing_material&quot;: [
+      &quot;图像像素未阅；全部图注文字已阅。&quot;,
+      &quot;Supplementary Information、Figures 1–12和Tables 1–2未供应；完整谱假设与证明缺失。&quot;
+    ],
+    &quot;text_pass_complete&quot;: true,
+    &quot;notes&quot;: [
+      &quot;全部18页包括Methods与reporting summary完整阅读。&quot;,
+      &quot;页1在线发表日期为占位文字；©2026，接收2025-11-18，不虚构正式发表日。&quot;
+    ],
+    &quot;reading_mode&quot;: &quot;text_only&quot;,
+    &quot;figure_images_read&quot;: false,
+    &quot;scientific_verification&quot;: false,
+    &quot;source_pdf_offline&quot;: false,
+    &quot;archived_page_text_used&quot;: false
+  },
+  &quot;audit&quot;: {
+    &quot;source_match_checks&quot;: [],
+    &quot;model_findings&quot;: [
+      {
+        &quot;claim_id&quot;: &quot;C1&quot;,
+        &quot;issue&quot;: &quot;高维谱条件及Gaussian-equivalence证明仅指向缺失的Supplementary Information。&quot;,
+        &quot;suggested_correction&quot;: &quot;限制为正文所列条件结果，并保留未核验的精确谱条件。&quot;,
+        &quot;pdf_page&quot;: 12,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C6&quot;,
+        &quot;issue&quot;: &quot;姿态数据R²=.988与理论精确性不是同一命题，正文明确有偏。&quot;,
+        &quot;suggested_correction&quot;: &quot;同时记录绝对预测偏差，避免把相关拟合当定量定理。&quot;,
+        &quot;pdf_page&quot;: 5,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C11&quot;,
+        &quot;issue&quot;: &quot;CA1行为—读出R²图注.49、正文.48。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留差异，不擅自选择或更正。&quot;,
+        &quot;pdf_page&quot;: 8,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C7&quot;,
+        &quot;issue&quot;: &quot;8类别配对检验与2只猴是不同单位；500鼠子集和20投影不是新增独立重复。&quot;,
+        &quot;suggested_correction&quot;: &quot;每项证据明确真实动物数及技术重采样。&quot;,
+        &quot;pdf_page&quot;: 15,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C12&quot;,
+        &quot;issue&quot;: &quot;GLM任务子空间为模型估计，未解释全部放电变异；几何一致性不证明生物最优。&quot;,
+        &quot;suggested_correction&quot;: &quot;分开数学预测、数据趋势与机制解释。&quot;,
+        &quot;pdf_page&quot;: 14,
+        &quot;resolved&quot;: true
+      }
+    ],
+    &quot;needs_human_review&quot;: true
+  },
+  &quot;source&quot;: {
+    &quot;filename&quot;: &quot;2026-Nature-Neuroscience-Population-Geometry-Shared-Latent-Structure.pdf&quot;,
+    &quot;sha256&quot;: &quot;7dd280dc1bbd63115b7ad648841d7fdf0df687f46feed42f0eecf977852bc5c9&quot;,
+    &quot;source_url&quot;: null,
+    &quot;pdf_page_count&quot;: 18
+  },
+  &quot;provenance&quot;: {
+    &quot;created_at&quot;: &quot;2026-10-07T11:45:02.262627Z&quot;,
+    &quot;workflow&quot;: &quot;claim-commons-pdf-v1&quot;,
+    &quot;prompt_version&quot;: &quot;claim-commons-chatgpt-pdf-2026-10-07.1&quot;,
+    &quot;backend&quot;: &quot;authorized_parallel_GPT&quot;,
+    &quot;model&quot;: &quot;inherited_account_GPT&quot;,
+    &quot;provider_api_key_used&quot;: false,
+    &quot;source_sha256&quot;: &quot;7dd280dc1bbd63115b7ad648841d7fdf0df687f46feed42f0eecf977852bc5c9&quot;,
+    &quot;source_audit_complete&quot;: true,
+    &quot;review_status&quot;: &quot;candidate&quot;,
+    &quot;database_updated&quot;: false
+  }
+}</pre></details></main><footer></footer></body></html>

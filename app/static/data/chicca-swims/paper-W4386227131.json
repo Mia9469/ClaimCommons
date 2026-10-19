@@ -1,0 +1,859 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "A Subthreshold Second-Order Integration Circuit for Versatile Synaptic Alpha Kernel and Trace Generation",
+    "authors": [
+      "Ole Richter",
+      "Hugh Greatorex",
+      "Benjamin Hucko",
+      "Madison Cotteret",
+      "Willian Soares Girão",
+      "Ella Janotte",
+      "Michele Mastella",
+      "Elisabetta Chicca"
+    ],
+    "doi": "10.1145/3589737.3606008",
+    "publication_year": 2023,
+    "venue": "International Conference on Neuromorphic Systems (ICONS)",
+    "url": "https://doi.org/10.1145/3589737.3606008"
+  },
+  "source": {
+    "filename": "paper-W4386227131.pdf",
+    "sha256": "90dc9bf6ea67266135b9b74b079b656ca3488295869ecd75ba0f8c3bbd105a2f",
+    "source_url": "https://www.db-thueringen.de/servlets/MCRFileNodeServlet/dbt_derivate_00068497/979-8-4007-0175-7_2023_33.pdf",
+    "pdf_page_count": 5
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "results_sections_seen": [
+      "2 METHODS",
+      "3 RESULTS AND DISCUSSION",
+      "4 CONCLUSION",
+      "Figures 1–6 captions"
+    ],
+    "missing_material": [
+      "图像像素未提供。",
+      "独立芯片数、实际测量电路数、测量重复数及时间采样数量未报告。",
+      "未提供失配、工艺变异或下游学习系统的直接验证。"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "文件为2023年ICONS正式会议论文的机构仓储版本，含1页仓储封面和4页论文；标题、作者和DOI与元数据一致。",
+      "全部所供正文、图注、结论及参考文献均已评估；没有供应附录或补充材料。",
+      "DPI和SoDPI数据来自ASIC测量，DDPI数据来自SPICE模拟。",
+      "40个SoDPI及520个突触分支是设计规模，不是独立实验重复数。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "串联两个DPI，并在联合线性工作条件下推导双指数响应和等时间常数alpha核。",
+      "role": "理论与电路方法",
+      "source_pages": [
+        3,
+        4
+      ],
+      "decision": "include",
+      "reason": "电路、解析表达式及条件均有明确来源。"
+    },
+    {
+      "summary": "实现180 nm CMOS SoDPI阵列，报告实际面积及紧凑型面积估计。",
+      "role": "硬件实现",
+      "source_pages": [
+        2,
+        3,
+        4
+      ],
+      "decision": "include",
+      "reason": "可区分已实现规模、实物面积和设计估计。"
+    },
+    {
+      "summary": "报告紧凑型及pMOS型SoDPI的动态总电流近似，解释附加电流镜的成本。",
+      "role": "设计分析",
+      "source_pages": [
+        3,
+        4
+      ],
+      "decision": "include",
+      "reason": "原稿遗漏此独立可评估的设计关系；没有实测功耗验证。"
+    },
+    {
+      "summary": "展示单脉冲时间常数扫描及30 Hz、100 Hz输入下的核形状，并与DPI实测及DDPI模拟比较。",
+      "role": "响应比较",
+      "source_pages": [
+        4,
+        5
+      ],
+      "decision": "include",
+      "reason": "响应条件、读出及比较类型明确。"
+    },
+    {
+      "summary": "识别孤立或稀疏输入下的线性近似失效和低电压放电非线性。",
+      "role": "工作边界结果",
+      "source_pages": [
+        4
+      ],
+      "decision": "include",
+      "reason": "可独立于机制解释评估。"
+    },
+    {
+      "summary": "将低电压放电非线性归因于放电晶体管退出饱和。",
+      "role": "机制解释",
+      "source_pages": [
+        4
+      ],
+      "decision": "include",
+      "reason": "保留为作者解释，未提供独立工作区测量。"
+    },
+    {
+      "summary": "通过共享滤波器实现条件性输入叠加并分摊每突触面积。",
+      "role": "架构推论",
+      "source_pages": [
+        3,
+        4
+      ],
+      "decision": "include",
+      "reason": "依赖联合线性条件；未直接验证叠加误差。"
+    },
+    {
+      "summary": "稳态频率扫描显示SoDPI输出时间波动较低。",
+      "role": "响应比较",
+      "source_pages": [
+        4,
+        5
+      ],
+      "decision": "include",
+      "reason": "图6给出时间信号百分位范围，不能解释为跨器件置信区间。"
+    },
+    {
+      "summary": "跨导线性设计可限制器件失配影响并降低工艺变异。",
+      "role": "原理性解释",
+      "source_pages": [
+        5
+      ],
+      "decision": "defer",
+      "reason": "未提供针对本电路的失配统计、工艺角扫描或直接比较。"
+    },
+    {
+      "summary": "较平滑的迹线可能改善学习、稳态调节和门控系统。",
+      "role": "应用假设",
+      "source_pages": [
+        5
+      ],
+      "decision": "include",
+      "reason": "可作为明确标注、尚未验证的应用假设。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "SoDPI将两个DPI串联为二阶电流低通滤波器；在两级晶体管均处于亚阈值饱和区、各级满足I_gain远小于I_out和I_tau远小于I_in的线性近似下，论文给出单脉冲后的双指数差响应，并在两级时间常数相等时得到与t·exp(−t/τ)成比例的alpha核。",
+      "claim_type": "analytical_circuit_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "跨导线性分析和微分方程求解",
+          "design": "第一阶DPI电流驱动第二阶DPI，以输入脉冲下降沿为时间零点。",
+          "comparator": null,
+          "measure": "输出电流I_out(t)",
+          "unit_of_analysis": "理想化两级DPI电路",
+          "sample_size_as_reported": null,
+          "uncertainty": "未报告近似误差界。",
+          "assumptions": [
+            "两级晶体管均满足V_ds远大于U_T。",
+            "各级均满足I_gain远小于I_out及I_tau远小于I_in。",
+            "第一阶输出采用指数衰减表达式。",
+            "式3未包含额外的第二级初始残余电流项，其形式对应第二级零初始输出。",
+            "alpha核极限要求τ_FO=τ_SO。"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "2 METHODS；线性条件续于第4页",
+            "figure": "Figures 2–3",
+            "equation": "1–4",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "建立了受联合工作条件约束的二阶核解析关系。",
+        "boundary": "解析电流核依赖线性近似及所用初始条件。",
+        "negative_result": null,
+        "non_inference": "不能推定全部电压和输入频率范围均严格线性。",
+        "unresolved": "实际响应与解析核的定量误差未报告。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "串联DPI在何种联合工作条件下产生alpha型电流核？"
+      ],
+      "shared_evidence_with": [
+        "C5"
+      ],
+      "review_notes": [
+        "解析读出为电流；实验图主要展示电容电压，二者不能直接等同。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "Cognigr1 ASIC在XFAB 180 nm CMOS工艺中实现了40个pMOS型SoDPI，共520个突触分支，每个电路配置1–32个分支；已实现单电路不含分支的面积为740 μm²，而紧凑型采用相同晶体管尺寸并以MIM或MOM替换MOS电容后达到275 μm²或更低是设计估计。",
+      "claim_type": "hardware_implementation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "ASIC实现和面积报告",
+          "design": "实物采用图3的pMOS型；面积优化采用图2紧凑型及替代电容。",
+          "comparator": "已实现pMOS型与紧凑型面积估计",
+          "measure": "实例数、分支数和不含分支的面积",
+          "unit_of_analysis": "芯片设计中的电路实例及突触分支",
+          "sample_size_as_reported": "设计含40个SoDPI和520个分支；独立芯片数及实际测量实例数未报告。",
+          "uncertainty": "优化面积未提供实物验证或误差。",
+          "assumptions": [
+            "优化面积要求采用紧凑型及MIM或MOM电容。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "2 METHODS",
+            "figure": "Figures 1–3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提供了180 nm工艺下的实现规模和面积。",
+        "boundary": "740 μm²不含突触分支；更小面积属于估计。",
+        "negative_result": null,
+        "non_inference": "设计实例数不能视为独立实验重复。",
+        "unresolved": "跨实例差异、良率和优化版实物表现未报告。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "180 nm CMOS SoDPI的阵列规模及面积开销是多少？"
+      ],
+      "shared_evidence_with": [
+        "C8"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "在所报告的单脉冲时间常数扫描和30 Hz、100 Hz脉冲列中，SoDPI的ASIC电压响应被描述为保留alpha型核；与DPI实测共同比较的DDPI模拟未能兼顾孤立脉冲与积分状态的核形状，且为获得积分行为所作的参数调整伴随较长起始延迟和低于20 Hz时缺乏响应。",
+      "claim_type": "comparative_response_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "ASIC电压测量与SPICE模拟",
+          "design": "图4扫描两级时间常数，图5使用30 Hz及100 Hz脉冲列，图6扫描输入频率；DDPI使用生产PDK、匹配尺寸和相似参数，并将第二个电流镜改为pMOS以正确工作。",
+          "comparator": "DPI的ASIC测量与DDPI的SPICE模拟",
+          "measure": "电压响应核形状、起始延迟及低频响应",
+          "unit_of_analysis": "指定输入及参数条件下的电路响应曲线",
+          "sample_size_as_reported": null,
+          "uncertainty": "未报告独立重复数、核拟合误差或统计检验；未供应图像像素。",
+          "assumptions": [
+            "核形状判断依据正文及图注。",
+            "DDPI结果限于所报告实现和模拟设置。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "3 RESULTS AND DISCUSSION",
+            "figure": "Figures 4–6",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所报告条件支持SoDPI在孤立输入和积分输入下保留核形状。",
+        "boundary": "比较混合实物测量和模拟，且实验读出为电压。",
+        "negative_result": "所报告DDPI模拟出现核形状不稳、起始延迟和低于20 Hz时缺乏响应。",
+        "non_inference": "不能由有限模拟证明全部DDPI参数区间均不存在合适核。",
+        "unresolved": "同类硬件比较及电流核定量拟合未提供。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "SoDPI与DDPI在孤立脉冲和持续积分输入下能否保持alpha型响应？"
+      ],
+      "shared_evidence_with": [
+        "C4",
+        "C6",
+        "C9"
+      ],
+      "review_notes": [
+        "第5页图注将DDPI局限表述为内在且覆盖所有参数区间，所供证据不足以建立这一普遍结论。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "所报告DPI及SoDPI孤立或稀疏事件响应不满足式3所需的线性假设；当事件间隔使电容不再积累前次输入时，放电电压曲线在约100 mV以下呈现非线性。",
+      "claim_type": "operating_boundary_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "单脉冲放电曲线测量与线性近似比较",
+          "design": "输入事件充分分离，使后续事件到达时不存在前次输入的电荷积累。",
+          "comparator": "式3的线性工作近似",
+          "measure": "电容放电电压曲线",
+          "unit_of_analysis": "电路放电曲线及其电压区间",
+          "sample_size_as_reported": null,
+          "uncertainty": "约100 mV为近似边界；无定量非线性误差。",
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "3 RESULTS AND DISCUSSION",
+            "figure": "Figure 4",
+            "equation": "3",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "识别了稀疏输入下解析近似的工作边界。",
+        "boundary": "保留alpha型外观不等于严格线性。",
+        "negative_result": "孤立及稀疏事件下线性假设不成立。",
+        "non_inference": "不能将约100 mV视为所有参数和器件的统一阈值。",
+        "unresolved": "该边界随参数、器件和温度的变化未报告。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "孤立及稀疏输入如何限制DPI与SoDPI的线性核近似？"
+      ],
+      "shared_evidence_with": [
+        "C3",
+        "C9"
+      ],
+      "review_notes": [
+        "将观测边界与晶体管机制解释分开记录。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "在两级DPI共同满足线性工作条件时，多个带独立权重的突触分支可共享SoDPI核电路并按叠加原理合并响应，从而分摊每突触的滤波面积；增加分支提高进入线性区概率的说法还取决于分支活动是否形成输入积累。",
+      "claim_type": "conditional_architecture_inference",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "共享架构和线性叠加分析",
+          "design": "各分支向共同第一阶DPI输入权重调制的电荷包，再经第二阶过滤。",
+          "comparator": "每突触独立配置滤波器",
+          "measure": "响应叠加及滤波面积分摊",
+          "unit_of_analysis": "共享滤波器与突触分支架构",
+          "sample_size_as_reported": null,
+          "uncertainty": "未报告叠加误差或进入线性区的概率。",
+          "assumptions": [
+            "两级满足饱和及电流大小关系的联合线性条件。",
+            "提高线性工作概率还要求输入活动形成持续积累。"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "2 METHODS；讨论续于第4页",
+            "figure": "Figure 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "共享架构支持条件性叠加和面积分摊。",
+        "boundary": "非线性工作状态不能直接使用线性叠加。",
+        "negative_result": null,
+        "non_inference": "分支数增加本身不能保证积累或线性工作。",
+        "unresolved": "不同分支活动模式下的叠加精度未验证。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "共享SoDPI在何种分支活动条件下准确叠加输入？"
+      ],
+      "shared_evidence_with": [
+        "C1"
+      ],
+      "review_notes": [
+        "分支架构的实物实现不能替代叠加精度验证。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "所报告稳态输入频率扫描中，SoDPI的ASIC输出电压时间波动低于比较的DPI实测和DDPI模拟，作者据此认为其可提供更平滑的平均输入频率表征；图6用稳态时间信号的2.5至97.5百分位描述波动。",
+      "claim_type": "steady_state_fluctuation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "稳态频率扫描与时间信号百分位分析",
+          "design": "比较DPI、DDPI和SoDPI随输入频率变化的稳态响应。",
+          "comparator": "DPI的ASIC测量与DDPI的SPICE模拟",
+          "measure": "稳态输出电压均值及2.5–97.5百分位范围",
+          "unit_of_analysis": "各输入频率下的稳态电压时间信号",
+          "sample_size_as_reported": null,
+          "uncertainty": "采样数量、时长和独立重复数未报告；百分位范围不是跨器件置信区间。",
+          "assumptions": [
+            "以时间波动评价平均频率表征的平滑程度。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "3 RESULTS AND DISCUSSION",
+            "figure": "Figure 6",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "支持所报告条件下SoDPI稳态输出较平滑。",
+        "boundary": "未提供数值效应量或直接频率估计误差。",
+        "negative_result": null,
+        "non_inference": "低电压波动不能直接证明频率估计无偏或学习性能改善。",
+        "unresolved": "不规则输入、参数变化和器件变异下的估计精度未报告。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "二阶滤波能否降低平均输入频率表征的稳态时间波动？"
+      ],
+      "shared_evidence_with": [
+        "C3",
+        "C7"
+      ],
+      "review_notes": [
+        "结论中的信号与波动比值措辞不用于建立独立比值结果。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "作者提出，SoDPI较平滑的平均频率迹线可能改善依赖平均活动的片上学习、稳态调节、钙迹线和门控系统的稳定性及更新精度；论文没有直接测试这些下游系统。",
+      "claim_type": "application_hypothesis",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "从滤波响应推断应用潜力",
+          "design": "根据稳态波动结果讨论下游学习及调节电路。",
+          "comparator": null,
+          "measure": "已报告滤波电压波动；下游稳定性和更新精度未测量",
+          "unit_of_analysis": "候选学习与调节系统",
+          "sample_size_as_reported": null,
+          "uncertainty": "没有直接应用实验。",
+          "assumptions": [
+            "迹线波动是下游误差的重要来源。",
+            "下游系统能够有效利用SoDPI输出。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "3 RESULTS AND DISCUSSION；4 CONCLUSION",
+            "figure": "Figure 6",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提出了可检验的下游应用假设。",
+        "boundary": "支持证据止于滤波器响应。",
+        "negative_result": null,
+        "non_inference": "不能声称已保证学习稳定性、一致性或突触更新精度。",
+        "unresolved": "接入学习规则后是否改善收敛和性能仍待验证。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "learning-memory",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "较平滑的平均频率迹线是否改善片上学习稳定性和突触更新精度？"
+      ],
+      "shared_evidence_with": [
+        "C6"
+      ],
+      "review_notes": [
+        "未将结论中的保证性语言当作实验结果。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "论文给出SoDPI动态总电流的参数相关近似：紧凑型为I_out+I_in+I_FO，增加电流镜的pMOS型为I_out+I_in+2·I_FO；pMOS型使两级时间常数及增益的调节方式一致，但增加面积和电流开销。",
+      "claim_type": "circuit_resource_estimate",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "电路结构与电流支路近似分析",
+          "design": "比较图2紧凑型和图3增加电流镜的pMOS型。",
+          "comparator": "紧凑型与pMOS型SoDPI",
+          "measure": "动态总电流近似及参数调节方式",
+          "unit_of_analysis": "两种SoDPI电路拓扑",
+          "sample_size_as_reported": null,
+          "uncertainty": "未报告总电流实测、近似误差或能耗数值。",
+          "assumptions": [
+            "近似采用正文所列主要电流项。",
+            "电流开销取决于具体偏置及输入条件。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "2 METHODS；拓扑比较见第3页图注",
+            "figure": "Figures 2–3",
+            "equation": "正文未编号的I_total近似式",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提供了两种拓扑的动态电流预算近似和调参便利性权衡。",
+        "boundary": "属于设计分析，非实测功耗比较。",
+        "negative_result": null,
+        "non_inference": "不能推定完整芯片功耗、单事件能耗或能效优势。",
+        "unresolved": "电流近似精度及实测资源代价未验证。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "SoDPI两种拓扑的动态电流开销和调参方式有何差异？"
+      ],
+      "shared_evidence_with": [
+        "C2"
+      ],
+      "review_notes": [
+        "补入原稿遗漏的电流预算；没有将其提升为功耗实测结果。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "作者将DPI及SoDPI约100 mV以下的放电非线性解释为生成I_tau的晶体管退出饱和区并进入欧姆区；这一解释没有独立的晶体管工作区测量。",
+      "claim_type": "circuit_mechanism_interpretation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "放电曲线与晶体管工作区解释",
+          "design": "解释孤立或稀疏输入后的低电压放电响应。",
+          "comparator": "解析推导所要求的饱和工作状态",
+          "measure": "电容电压放电曲线",
+          "unit_of_analysis": "放电电流晶体管及对应电路响应",
+          "sample_size_as_reported": null,
+          "uncertainty": "无独立工作区测量或机制排除实验。",
+          "assumptions": [
+            "低电压曲线非线性由放电晶体管工作区改变引起。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "3 RESULTS AND DISCUSSION",
+            "figure": "Figure 4",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提出了与电路工作条件相联系的非线性机制解释。",
+        "boundary": "机制证据来自作者对响应曲线的解释。",
+        "negative_result": null,
+        "non_inference": "不能认定该机制已被独立验证或是唯一原因。",
+        "unresolved": "晶体管实际工作区及其他非线性来源未独立测定。",
+        "unresolved_attribution": "退出饱和并进入欧姆区是作者的归因。"
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "放电晶体管工作区变化是否解释DPI和SoDPI的低电压非线性？"
+      ],
+      "shared_evidence_with": [
+        "C3",
+        "C4"
+      ],
+      "review_notes": [
+        "与C4共享曲线证据，不能视为独立机制验证。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "第二遍评估了全部5页文本及所有图注、结论和参考文献。论文身份与正式会议版本一致。保留条件性二阶核推导、180 nm硬件实现、响应比较、共享架构、稳态波动结果及应用假设；补入遗漏的动态电流预算，并拆分低电压工作边界和机制解释。所有比较明确区分ASIC测量与DDPI模拟；时间百分位及阵列数量均未当作独立重复。优化面积、机制归因和学习应用仍各有明确验证边界。",
+  "shared_evidence": [
+    {
+      "claim_id": "C1",
+      "with": [
+        "C5"
+      ]
+    },
+    {
+      "claim_id": "C2",
+      "with": [
+        "C8"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C4",
+        "C6",
+        "C9"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C3",
+        "C9"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C1"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C3",
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C2"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C3",
+        "C4"
+      ]
+    }
+  ],
+  "audit": {
+    "initial_source_match_checks": [],
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": "C8",
+        "issue": "原稿遗漏正文报告的两种拓扑动态总电流近似。",
+        "suggested_correction": "补入独立设计分析记录，保留参数相关性和缺乏功耗实测的限制。",
+        "pdf_page": 4,
+        "resolved": true
+      },
+      {
+        "claim_id": "C4",
+        "issue": "原稿将可观察的线性失效与尚未独立验证的晶体管机制合并为解释记录。",
+        "suggested_correction": "C4保留工作边界结果，C9单列机制解释并保留共享证据。",
+        "pdf_page": 4,
+        "resolved": true
+      },
+      {
+        "claim_id": "C3",
+        "issue": "DPI和SoDPI为ASIC测量，DDPI为经修改的SPICE模拟；图注的全参数区间断言超出所供模拟证据。",
+        "suggested_correction": "明确证据类型及修改，限制DDPI结论到所报告模拟条件。",
+        "pdf_page": 5,
+        "resolved": true
+      },
+      {
+        "claim_id": "C6",
+        "issue": "图6百分位表示稳态时间波动，不能视为跨器件统计不确定性。",
+        "suggested_correction": "分析单位设为各频率下的时间信号，独立重复数保持未报告。",
+        "pdf_page": 5,
+        "resolved": true
+      },
+      {
+        "claim_id": "C2",
+        "issue": "40个电路及520个分支是设计数量；275 μm²或更低属于优化估计。",
+        "suggested_correction": "区分设计规模、实际测量样本及未验证面积估计。",
+        "pdf_page": 4,
+        "resolved": true
+      },
+      {
+        "claim_id": "C7",
+        "issue": "论文结论提出学习稳定性和更新精度的保证性措辞，但没有下游实验。",
+        "suggested_correction": "保留为应用假设，并明确没有直接验证。",
+        "pdf_page": 5,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "失配和工艺变异优势仅有原理性论述，没有本电路的统计验证。",
+        "suggested_correction": "在贡献清单中暂缓作为独立验证结果。",
+        "pdf_page": 5,
+        "resolved": true
+      },
+      {
+        "claim_id": "C6",
+        "issue": "结论的信号与波动比值措辞与正文强调降低波动不一致。",
+        "suggested_correction": "仅提取有正文和图注支持的较低时间波动，不建立比值改善记录。",
+        "pdf_page": 5,
+        "resolved": true
+      },
+      {
+        "claim_id": "C1",
+        "issue": "式3没有第二级初始残余响应项，且线性条件跨第3–4页共同给出。",
+        "suggested_correction": "完整保留两级联合条件，并注明解析式的初始条件限制。",
+        "pdf_page": 3,
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T05:19:22.527646Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "signed_in_chatgpt_codex",
+    "authentication": "existing_ChatGPT_login",
+    "provider_api_key_used": false,
+    "model": "account_default_GPT",
+    "source_sha256": "90dc9bf6ea67266135b9b74b079b656ca3488295869ecd75ba0f8c3bbd105a2f",
+    "requests": [
+      {
+        "phase": "extraction",
+        "seconds": 112.14,
+        "usage": {
+          "input_tokens": 19882,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 5691,
+          "reasoning_output_tokens": 0
+        },
+        "backend": "signed_in_chatgpt_codex",
+        "tools_used": false
+      },
+      {
+        "phase": "source_audit",
+        "seconds": 136.98,
+        "usage": {
+          "input_tokens": 25506,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 7000,
+          "reasoning_output_tokens": 51
+        },
+        "backend": "signed_in_chatgpt_codex",
+        "tools_used": false
+      }
+    ],
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

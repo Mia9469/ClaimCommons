@@ -1,0 +1,161 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Why to Use the Phase in Time-Encoding Modulation and Its Effect on the Spectral Efficiency</title><style>body{max-width:940px;margin:40px auto;padding:0 24px;background:#fffdf7;color:#12372f;font:16px/1.8 Georgia,serif}h1{font-size:26px;line-height:1.4}h2{font-size:20px;line-height:1.5}h3{font-size:16px}article{padding:26px 0;border-top:1px solid #bec4b8}small{color:#68766e}dl{display:grid;grid-template-columns:120px 1fr;gap:8px 20px}dt{font-weight:bold}dd{margin:0}li{padding:8px 0}p,dd{overflow-wrap:anywhere}.note{background:#eef2e2;padding:14px;border-left:3px solid #738968}summary{cursor:pointer}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.7 monospace}@media(max-width:600px){body{margin:24px auto;padding:0 18px}dl{grid-template-columns:1fr;gap:3px}dd{margin-bottom:12px}}@media print{body{margin:0;background:white}details{display:block}}</style><link rel="stylesheet" href="../../commons-v02.css?v=20261020-1"><link rel="stylesheet" href="../../examples.css?v=20260928-2"><link rel="stylesheet" href="../../site.css?v=20261020-1"><script defer src="../../site.js?v=20261020-1"></script><script defer src="../../report-ui.js?v=20261020-1"></script></head><body class="portal-page report-page" data-cc-report-shell="1" data-page="library" data-site-prefix="../../" data-library-paper="paper-W4405974544" data-report-language="zh" data-claim-records="{&quot;C1&quot;:&quot;structured-paper-W4405974544-1&quot;,&quot;C2&quot;:&quot;structured-paper-W4405974544-2&quot;,&quot;C3&quot;:&quot;structured-paper-W4405974544-3&quot;,&quot;C4&quot;:&quot;structured-paper-W4405974544-4&quot;,&quot;C5&quot;:&quot;structured-paper-W4405974544-5&quot;,&quot;C6&quot;:&quot;structured-paper-W4405974544-6&quot;,&quot;C7&quot;:&quot;structured-paper-W4405974544-7&quot;,&quot;C8&quot;:&quot;structured-paper-W4405974544-8&quot;,&quot;C9&quot;:&quot;structured-paper-W4405974544-9&quot;}"><header></header><main id="report-content"><div id="report-tools"></div><small>CLAIM COMMONS / 阅读报告</small><h1>Why to Use the Phase in Time-Encoding Modulation and Its Effect on the Spectral Efficiency</h1><p class="note">AI 文本提取候选，尚待人工核对。图像像素未读取；PDF 页码指文件中的页序。</p><p>已复核全部7页供稿文字、图1–7图注和参考文献。保留四类序列的数学关系、辅助信道方法、功率谱及无FTN和FTN联合配置的能量与频谱效率结果，并补入任意符号脉冲常数谱和高d信息率饱和比较。结果受互信息率下界、有限序列估计、直流排除约定和不同ADC复杂度限制；本文没有独立重复统计、硬件总功耗或复杂值调制的对应验证。</p><a href="https://tud.qucosa.de/api/qucosa%3A105170/attachment/ATT-0/" rel="noreferrer">查看所读原文版本 ↗</a><details><summary>贡献清单与处理决定</summary><ul><li><b>比较四类最大熵受游程约束序列的熵率和游程分布。</b><br>include · 数学对应关系支持本文比较，但序列类型和最大熵构造来自既有工作。</li><li><b>以Markov源状态构造截断记忆辅助信道，计算互信息率下界。</b><br>include · 作者明确说明相对于既有符号状态表示的修改及其用途。</li><li><b>修改既有谱推导，得到单极受约束脉冲功率谱。</b><br>include · 本文明确将单极谱式归为对既有推导的修改。</li><li><b>任意符号脉冲具有仅零延迟非零的自相关和常数离散功率谱。</b><br>include · 正文给出可独立判断的解析结果，草稿未完整保留。</li><li><b>无FTN时比较互信息率下界、最小游程约束及接近最大信息率所需SNR。</b><br>include · 图3及正文包含排序、约束效应和高d条件下的饱和行为。</li><li><b>无FTN时比较带宽归一化频谱效率和最低每比特能量。</b><br>include · 图4的指标与信息率不同，需单独提取。</li><li><b>比较FTN因子、最小游程约束及量化阈值联动配置下的频谱效率。</b><br>include · 图5提供收益范围、无收益条件及排序切换。</li><li><b>比较FTN配置下的每比特能量和频谱效率。</b><br>include · 图6、7给出最高约4.1 dB收益及最低能量近似值。</li><li><b>将相位脉冲及ZXM解释为IoT和毫米波通信候选方案，并讨论复杂值ZXM。</b><br>defer · 本文没有硬件总功耗、部署或复杂值序列的对应验证。</li></ul></details><article><small>C1 / 直接结果 · analytical_sequence_comparison</small><h2>确定初始符号后，单极受游程约束脉冲、交替符号脉冲和ZXM序列存在双射，因此相同(d,k)约束下具有相同最大熵率和容量实现游程分布；允许脉冲符号独立且等概率取正负值，则最大熵率更高，容量实现游程分布也不同。</h2><h3>Evidence</h3><p>序列双射与单义Markov源最大熵构造</p><dl><dt>设计 / 对照</dt><dd>比较四类实值受游程约束序列。；单极脉冲、交替脉冲、ZXM及任意符号脉冲。</dd><dt>独立单位与 n</dt><dd>受约束随机序列及其生成Markov源。；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 4 · II-A</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>符号冗余不增加源最大熵率，独立符号信息增加源最大熵率。</dd><dt>适用边界</dt><dd>这里的容量指受约束源的最大熵率。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>源熵率排序不能推出量化带噪信道的信息率或频谱效率排序。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>符号冗余与独立符号信息如何影响受游程约束序列的最大熵率？</li></ul></article><article><small>C2 / 直接结果 · computational_method</small><h2>本文用生成序列的Markov源状态构造辅助信道，使缩短辅助滤波记忆后仍保留源状态中的约束记忆；结合有限噪声相关记忆和BCJR前向递推，该模型用于估计带限AWGN量化信道的互信息率下界。</h2><h3>Evidence</h3><p>有限状态辅助信道与BCJR前向和积递推</p><dl><dt>设计 / 对照</dt><dd>实际收发RRC滤波器各持续20T；辅助滤波持续2T，保留N=2个先前输出符号的噪声相关。；既有基于发射符号的辅助状态表示。</dd><dt>独立单位与 n</dt><dd>模拟输入输出序列及辅助Markov状态。；输入、输出序列长度n=5×10^5；独立重复数未报告。</dd><dt>不确定性</dt><dd>未报告有限长度估计误差或置信区间。</dd><dt>原文位置</dt><dd>PDF 5 · III-A; IV</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>源状态表示允许缩短滤波记忆，同时保留输入源的约束记忆。</dd><dt>适用边界</dt><dd>辅助模型的下界性质与有限序列数值估计的误差应分别理解。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>未量化计算加速量，也未证明数值估计等于真实互信息率。</dd><dt>未解决</dt><dd>辅助记忆截断使下界松弛多少？</dd></dl><h3>相关问题</h3><ul><li>如何保留受约束输入记忆并降低量化带限信道信息率估计的状态复杂度？</li></ul></article><article><small>C3 / 直接结果 · analytical_power_spectrum</small><h2>本文修改既有谱推导，得到最大熵单极(d,k)脉冲序列的连续功率谱项(1/L̄)(1−|G(ω)|²)/|1−G(ω)|²，以及ω=2πn处权重为2π/L̄²的离散谱线；计算滤波信号的95%功率包含带宽时，排除不承载信息的直流谱线。</h2><h3>Evidence</h3><p>修改既有受游程约束序列功率谱推导</p><dl><dt>设计 / 对照</dt><dd>离散序列谱乘以RRC发射滤波器功率响应，得到连续时间滤波信号谱。；既有交替脉冲谱推导。</dd><dt>独立单位与 n</dt><dd>最大熵随机序列的总体功率谱。；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 5 · III-B</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>给出单极脉冲带宽归一化比较的解析依据。</dd><dt>适用边界</dt><dd>95%功率包含带宽采用排除单极直流的约定，并非完整滤波器带宽。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>未验证实际直流抑制的实现代价或能耗。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>单极受约束脉冲的功率谱如何决定排除直流后的功率包含带宽？</li></ul></article><article><small>C4 / 直接结果 · numerical_information_rate_comparison</small><h2>在无FTN、k=∞、图3所比较的d=0、1、2、10配置中，交替脉冲的互信息率下界高于ZXM，例外为d=0且SNR&gt;0 dB；增大d降低交替脉冲和ZXM的信息率下界，但单极脉冲在低SNR下可从增大d中获益。</h2><h3>Evidence</h3><p>辅助信道互信息率下界模拟</p><dl><dt>设计 / 对照</dt><dd>MTx=1，k=∞；比较不同d及SNR。；单极脉冲、交替脉冲与ZXM。</dd><dt>独立单位与 n</dt><dd>序列类型、d和SNR配置下的模拟输入输出序列。；序列长度n=5×10^5；独立重复数未报告。</dd><dt>不确定性</dt><dd>未报告误差条或置信区间。</dd><dt>原文位置</dt><dd>PDF 6 · 3</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>交替符号冗余在多数所比较配置中对应较高信息率下界。</dd><dt>适用边界</dt><dd>结论限定于图3配置，并存在明确排序例外。</dd><dt>实际负结果</dt><dd>增大d没有提高所比较交替脉冲或ZXM的每符号信息率下界。</dd><dt>不能推出</dt><dd>下界排序不能证明真实互信息率排序；量化复杂度也不相同。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>无FTN时，符号冗余和最小游程约束如何改变量化AWGN信道的信息率？</li></ul></article><article><small>C5 / 直接结果 · numerical_bandwidth_energy_comparison</small><h2>在MTx=1、k=∞的比较中，交替和任意符号脉冲的最低Eb/N0约为0 dB，ZXM约为0.37 dB；除单极脉冲外，该最低值不随所比较d明显改变。高Eb/N0下，ZXM的频谱效率下界高于单极和交替脉冲，且其优势随d增大而扩大。</h2><h3>Evidence</h3><p>互信息率下界模拟与解析功率谱归一化</p><dl><dt>设计 / 对照</dt><dd>无FTN，比较不同最小游程约束。；四类最大熵序列。</dd><dt>独立单位与 n</dt><dd>各序列及d配置的模拟曲线。；序列长度n=5×10^5；独立重复数未报告。</dd><dt>不确定性</dt><dd>最低能量为正文近似值；未报告置信区间。</dd><dt>原文位置</dt><dd>PDF 6 · 4</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>较低每比特能量时相位脉冲有利，高能量时ZXM相对单极和交替脉冲具有更高带宽效率。</dd><dt>适用边界</dt><dd>单极脉冲增大d可降低最低Eb/N0；高能量排序不包含ZXM与任意符号脉冲的全面比较。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>Eb/N0不等于ADC、发射器或整机实测耗电量。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>带宽归一化如何改变时域编码序列的信息率排序和每比特能量权衡？</li></ul></article><article><small>C6 / 直接结果 · numerical_FTN_comparison</small><h2>在MTx=1、2、3且d=MTx−1、k=∞的联合配置比较中，交替脉冲和ZXM在所考察SNR范围内均获得FTN配置收益；单极脉冲仅在MTx=2且SNR≥15 dB时获益，提高到3无进一步收益。MTx=3的任意符号脉冲仅在SNR超过约23 dB后具有最高频谱效率下界，此前所考察范围内MTx=3的ZXM最高。</h2><h3>Evidence</h3><p>FTN辅助信道模拟及功率谱带宽归一化</p><dl><dt>设计 / 对照</dt><dd>MTx与d联动改变，最短游程不短于Nyquist间隔；脉冲量化阈值也随MTx改变。；四类序列的MTx=1、2、3配置。</dd><dt>独立单位与 n</dt><dd>序列类型、FTN因子、d及量化阈值联合配置的模拟曲线。；序列长度n=5×10^5；独立重复数未报告。</dd><dt>不确定性</dt><dd>15和23 dB为正文所报条件；未报告统计误差。</dd><dt>原文位置</dt><dd>PDF 6 · 5</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>交替脉冲和ZXM的FTN配置收益覆盖比任意符号脉冲更广的所测SNR范围。</dd><dt>适用边界</dt><dd>只比较三个FTN因子及所展示SNR范围。</dd><dt>实际负结果</dt><dd>单极脉冲提高MTx至3没有进一步收益；任意符号脉冲的最高源熵率未带来全范围最高频谱效率下界。</dd><dt>不能推出</dt><dd>不能将联合配置收益单独归因于FTN，也不能将下界排序视为容量排序。</dd><dt>未解决</dt><dd>不同序列的下界松弛是否影响约23 dB的排序切换？</dd></dl><h3>相关问题</h3><ul><li>FTN、游程约束和量化阈值的联合配置如何影响四类时域编码序列的频谱效率排序？</li></ul></article><article><small>C7 / 直接结果 · numerical_FTN_energy_comparison</small><h2>在MTx=1、2、3、d=MTx−1的能量比较中，交替脉冲结合FTN配置相对最低Eb/N0的单极方案获得最高约4.1 dB收益；FTN下交替和任意符号脉冲的最低Eb/N0均约−0.7 dB，后者具有更高频谱效率。ZXM最低约−0.4 dB，但在Eb/N0约1至6 dB时频谱效率高于任意符号脉冲。</h2><h3>Evidence</h3><p>将互信息率下界转换为频谱效率与每比特能量曲线</p><dl><dt>设计 / 对照</dt><dd>比较MTx=1、2、3及联动d约束，k=∞。；单极、交替、任意符号脉冲与ZXM。</dd><dt>独立单位与 n</dt><dd>各序列与联合配置的模拟曲线。；序列长度n=5×10^5；独立重复数未报告。</dd><dt>不确定性</dt><dd>4.1 dB为最高所报收益；最低能量及比较区间为近似值，无误差区间。</dd><dt>原文位置</dt><dd>PDF 7 · 6–7</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>相位冗余降低所需通信能量，独立符号信息可在相近最低能量下提高频谱效率。</dd><dt>适用边界</dt><dd>MTx=1且Eb/N0&gt;7.5 dB时单极脉冲可超过交替脉冲；4.1 dB不是固定增益。非单极序列中MTx=3给出最低所需Eb/N0。</dd><dt>实际负结果</dt><dd>单极脉冲在本文低每比特能量比较中没有从FTN配置获益。</dd><dt>不能推出</dt><dd>没有验证整机功耗、IoT部署性能或复杂值ZXM超过3 bit/s/Hz的表现。</dd><dt>未解决</dt><dd>增加量化阈值的接收功耗是否抵消通信能量收益？</dd></dl><h3>相关问题</h3><ul><li>FTN联合配置下，符号冗余和独立符号信息分别改善多少每比特能量与频谱效率？</li></ul></article><article><small>C8 / 直接结果 · analytical_power_spectrum</small><h2>对脉冲符号独立且等概率取正负值的受游程约束序列，本文给出自相关E[xj xj+Δ]=δ[Δ]/L̄，因此其离散功率谱为常数1/L̄，即使脉冲出现时刻受到游程约束。</h2><h3>Evidence</h3><p>任意符号脉冲自相关及其功率谱解析计算</p><dl><dt>设计 / 对照</dt><dd>受(d,k)约束的脉冲时刻与独立随机正负符号。；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>随机序列的总体二阶统计量。；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 5 · III-B</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>独立零均值符号使非零延迟自相关消失，离散谱为常数。</dd><dt>适用边界</dt><dd>发射滤波后的连续时间功率谱还包含RRC滤波响应。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>零非零延迟自相关不意味着整个受约束序列独立。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>独立随机脉冲符号如何改变受游程约束序列的二阶统计和功率谱？</li></ul></article><article><small>C9 / 直接结果 · numerical_information_rate_saturation</small><h2>在无FTN的图3比较中，d=10时单极和交替脉冲的互信息率下界在比ZXM更低的SNR达到各自最大信息率附近；正文指出ZXM约在10 dB才接近其最大信息率。</h2><h3>Evidence</h3><p>辅助信道互信息率下界模拟</p><dl><dt>设计 / 对照</dt><dd>MTx=1、k=∞，考察高最小游程约束d=10。；单极脉冲、交替脉冲与ZXM。</dd><dt>独立单位与 n</dt><dd>各序列类型的模拟信息率曲线。；序列长度n=5×10^5；独立重复数未报告。</dd><dt>不确定性</dt><dd>约10 dB为正文近似描述；未定义接近最大值的数值容差。</dd><dt>原文位置</dt><dd>PDF 6 · 3</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>高d配置下，脉冲序列更早接近各自信息率上限。</dd><dt>适用边界</dt><dd>比较的是接近各自上限的SNR，不是相同绝对信息率或相同频谱效率。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>作者的高幅度脉冲解释没有独立机制检验。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>高最小游程约束如何影响不同量化时域编码序列接近最大信息率所需的SNR？</li></ul></article><details><summary>核对记录与来源信息</summary><pre>{
+  &quot;coverage&quot;: {
+    &quot;pdf_pages_read&quot;: [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    &quot;results_sections_seen&quot;: [
+      &quot;II-A. Maxentropic Input Sequences&quot;,
+      &quot;II-B. Low-resolution A/D Conversion&quot;,
+      &quot;III-A. Lower Bound on the Mutual Information Rate&quot;,
+      &quot;III-B. 95% Power Containment Bandwidth&quot;,
+      &quot;IV. Numerical Results&quot;,
+      &quot;V. Conclusion&quot;,
+      &quot;Figures 1–7 captions&quot;
+    ],
+    &quot;missing_material&quot;: [
+      &quot;未提供图像像素。&quot;,
+      &quot;未报告独立模拟重复数、随机种子或估计误差。&quot;,
+      &quot;未明确标注所供稿件自身的版本。&quot;
+    ],
+    &quot;text_pass_complete&quot;: true,
+    &quot;notes&quot;: [
+      &quot;第1页没有正文；第7页参考文献已评估。&quot;,
+      &quot;标题、作者和DOI与元数据一致；供稿注明最终编辑版的出版出处，但不足以确认当前稿件就是最终编辑版。&quot;,
+      &quot;本文是实值通信信道的理论与模拟研究，没有硬件实验或所供附录。&quot;,
+      &quot;数值结果使用互信息率下界和95%功率包含带宽，不能直接替代精确容量比较。&quot;
+    ],
+    &quot;reading_mode&quot;: &quot;text_only&quot;,
+    &quot;figure_images_read&quot;: false,
+    &quot;scientific_verification&quot;: false
+  },
+  &quot;audit&quot;: {
+    &quot;initial_source_match_checks&quot;: [],
+    &quot;source_match_checks&quot;: [],
+    &quot;model_findings&quot;: [
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;供稿注明最终编辑版出版出处，但未明确当前稿件版本。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留当前版本不确定性，不补入后续版本事实。&quot;,
+        &quot;pdf_page&quot;: 2,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C2&quot;,
+        &quot;issue&quot;: &quot;草稿将完整滤波记忆的计算不可行判断放入实际负结果。&quot;,
+        &quot;suggested_correction&quot;: &quot;移至方法复杂度说明，negative_result设为null。&quot;,
+        &quot;pdf_page&quot;: 5,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C3&quot;,
+        &quot;issue&quot;: &quot;草稿未明确离散谱线权重；单极带宽另有排除直流的约定。&quot;,
+        &quot;suggested_correction&quot;: &quot;补充式18的谱线权重，并在数值比较中保留直流排除约定。&quot;,
+        &quot;pdf_page&quot;: 5,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C8&quot;,
+        &quot;issue&quot;: &quot;草稿遗漏任意符号脉冲的自相关和常数功率谱解析结果。&quot;,
+        &quot;suggested_correction&quot;: &quot;新增独立解析记录，并保留其与数值比较的共享证据关系。&quot;,
+        &quot;pdf_page&quot;: 5,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C9&quot;,
+        &quot;issue&quot;: &quot;草稿遗漏高d时不同序列接近各自最大信息率的SNR比较。&quot;,
+        &quot;suggested_correction&quot;: &quot;新增记录，明确各自上限及未定义接近容差的限制。&quot;,
+        &quot;pdf_page&quot;: 6,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C6&quot;,
+        &quot;issue&quot;: &quot;FTN因子、d和量化阈值同时改变。&quot;,
+        &quot;suggested_correction&quot;: &quot;明确为联合配置比较，不单独归因于FTN。&quot;,
+        &quot;pdf_page&quot;: 6,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;不同序列的ADC分辨率不同，接收复杂度不公平；没有硬件功耗数据。&quot;,
+        &quot;suggested_correction&quot;: &quot;能量结论限定为Eb/N0，不推断整机功耗优势。&quot;,
+        &quot;pdf_page&quot;: 4,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;复杂值ZXM超过3 bit/s/Hz及应用适用性没有本文对应实验。&quot;,
+        &quot;suggested_correction&quot;: &quot;应用解释暂缓，不能提取为原始验证结果。&quot;,
+        &quot;pdf_page&quot;: 7,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;有限序列估计误差、独立重复数和辅助模型松弛程度未报告。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留证据限制，不补造统计精度或重复验证。&quot;,
+        &quot;pdf_page&quot;: 5,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;草稿含请求schema未定义的source_check和review字段。&quot;,
+        &quot;suggested_correction&quot;: &quot;删除额外字段，仅保留请求schema。&quot;,
+        &quot;pdf_page&quot;: null,
+        &quot;resolved&quot;: true
+      }
+    ],
+    &quot;needs_human_review&quot;: true
+  },
+  &quot;source&quot;: {
+    &quot;filename&quot;: &quot;paper-W4405974544.pdf&quot;,
+    &quot;sha256&quot;: &quot;a105d766596250aa77d1533c2bdf55a8d624f9dfcea4277103bc41da5f5db1cf&quot;,
+    &quot;source_url&quot;: &quot;https://tud.qucosa.de/api/qucosa%3A105170/attachment/ATT-0/&quot;,
+    &quot;pdf_page_count&quot;: 7
+  },
+  &quot;provenance&quot;: {
+    &quot;created_at&quot;: &quot;2026-10-07T06:22:11.735295Z&quot;,
+    &quot;workflow&quot;: &quot;claim-commons-pdf-v1&quot;,
+    &quot;prompt_version&quot;: &quot;claim-commons-chatgpt-pdf-2026-10-07.1&quot;,
+    &quot;backend&quot;: &quot;signed_in_chatgpt_codex&quot;,
+    &quot;authentication&quot;: &quot;existing_ChatGPT_login&quot;,
+    &quot;provider_api_key_used&quot;: false,
+    &quot;model&quot;: &quot;account_default_GPT&quot;,
+    &quot;source_sha256&quot;: &quot;a105d766596250aa77d1533c2bdf55a8d624f9dfcea4277103bc41da5f5db1cf&quot;,
+    &quot;requests&quot;: [
+      {
+        &quot;phase&quot;: &quot;extraction&quot;,
+        &quot;seconds&quot;: 134.32,
+        &quot;usage&quot;: {
+          &quot;input_tokens&quot;: 23389,
+          &quot;cached_input_tokens&quot;: 0,
+          &quot;cache_write_input_tokens&quot;: 0,
+          &quot;output_tokens&quot;: 6321,
+          &quot;reasoning_output_tokens&quot;: 23
+        },
+        &quot;backend&quot;: &quot;signed_in_chatgpt_codex&quot;,
+        &quot;tools_used&quot;: false
+      },
+      {
+        &quot;phase&quot;: &quot;source_audit&quot;,
+        &quot;seconds&quot;: 127.69,
+        &quot;usage&quot;: {
+          &quot;input_tokens&quot;: 29736,
+          &quot;cached_input_tokens&quot;: 12032,
+          &quot;cache_write_input_tokens&quot;: 0,
+          &quot;output_tokens&quot;: 7762,
+          &quot;reasoning_output_tokens&quot;: 43
+        },
+        &quot;backend&quot;: &quot;signed_in_chatgpt_codex&quot;,
+        &quot;tools_used&quot;: false
+      }
+    ],
+    &quot;source_audit_complete&quot;: true,
+    &quot;review_status&quot;: &quot;candidate&quot;,
+    &quot;database_updated&quot;: false
+  }
+}</pre></details></main><footer></footer></body></html>

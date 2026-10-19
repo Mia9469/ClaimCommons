@@ -1,0 +1,140 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Reinterpreting Safety Thresholds as Neuron Spiking Thresholds</title><style>body{max-width:940px;margin:40px auto;padding:0 24px;background:#fffdf7;color:#12372f;font:16px/1.8 Georgia,serif}h1{font-size:26px;line-height:1.4}h2{font-size:20px;line-height:1.5}h3{font-size:16px}article{padding:26px 0;border-top:1px solid #bec4b8}small{color:#68766e}dl{display:grid;grid-template-columns:120px 1fr;gap:8px 20px}dt{font-weight:bold}dd{margin:0}li{padding:8px 0}p,dd{overflow-wrap:anywhere}.note{background:#eef2e2;padding:14px;border-left:3px solid #738968}summary{cursor:pointer}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.7 monospace}@media(max-width:600px){body{margin:24px auto;padding:0 18px}dl{grid-template-columns:1fr;gap:3px}dd{margin-bottom:12px}}@media print{body{margin:0;background:white}details{display:block}}</style><link rel="stylesheet" href="../../commons-v02.css?v=20261020-1"><link rel="stylesheet" href="../../examples.css?v=20260928-2"><link rel="stylesheet" href="../../site.css?v=20261020-1"><script defer src="../../site.js?v=20261020-1"></script><script defer src="../../report-ui.js?v=20261020-1"></script></head><body class="portal-page report-page" data-cc-report-shell="1" data-page="library" data-site-prefix="../../" data-library-paper="paper-W7163287286" data-report-language="zh" data-claim-records="{&quot;C1&quot;:&quot;structured-paper-W7163287286-1&quot;,&quot;C2&quot;:&quot;structured-paper-W7163287286-2&quot;,&quot;C3&quot;:&quot;structured-paper-W7163287286-3&quot;,&quot;C4&quot;:&quot;structured-paper-W7163287286-4&quot;,&quot;C5&quot;:&quot;structured-paper-W7163287286-5&quot;,&quot;C6&quot;:&quot;structured-paper-W7163287286-6&quot;,&quot;C7&quot;:&quot;structured-paper-W7163287286-7&quot;,&quot;C8&quot;:&quot;structured-paper-W7163287286-8&quot;,&quot;C9&quot;:&quot;structured-paper-W7163287286-9&quot;,&quot;C10&quot;:&quot;structured-paper-W7163287286-10&quot;,&quot;C11&quot;:&quot;structured-paper-W7163287286-11&quot;}"><header></header><main id="report-content"><div id="report-tools"></div><small>CLAIM COMMONS / 阅读报告</small><h1>Reinterpreting Safety Thresholds as Neuron Spiking Thresholds</h1><p class="note">AI 文本提取候选，尚待人工核对。图像像素未读取；PDF 页码指文件中的页序。</p><p>这份 arXiv v1 将1/TH、ITTC、DRAC的固定安全阈值转成可训练LIF阈值，用九名参与者在6-DOF受控跟车模拟中的记录逐人优化。监督来自正制动变化率的向过去指数包络，实际训练是MSE+BPTT而非STDP。详细Figure 4只展示一人六场景的定性对应及与静态阈值的不一致，同时明确存在无制动时额外脉冲和部分启动漏检。九人最佳模型的阈值略增且相近，decay显示ITTC记忆最长、DRAC最短；只保留文字趋势，图中范围为min/max而非CI。制动是主观安全反应代理，不是直接安全感或神经机制测量。验证划分、失败率和实际参数数值未报告，作者明示尚无泛化或真实道路验证。六页所有提供文本、方程、图注及参考文献已读，候选未经人工核验。</p><a href="https://arxiv.org/pdf/2605.30368" rel="noreferrer">查看所读原文版本 ↗</a><details><summary>贡献清单与处理决定</summary><ul><li><b>固定 SSM threshold 向 trainable LIF threshold 的重表述</b><br>include · 整体新方法；LIF背景不是本文发明，保持区别。</li><li><b>制动正变化率与向过去指数 target、MSE/BPTT</b><br>include · 独立方法贡献，明确不是 STDP；不把标签扩展当预警验证。</li><li><b>九人六场景受控驾驶数据与逐参与者优化</b><br>include · 保留数据/设计贡献；不推算有效54 episodes。</li><li><b>单参与者六场景定性制动时序对应</b><br>include · 详细证据只展示一人；不制造九人定量评估。</li><li><b>固定阈值与若干制动响应不一致</b><br>include · 保留实际比较对象与局部适用范围。</li><li><b>无制动时段额外 spiking</b><br>include · 真实负结果，单独保留误激活而非藏在正结论中。</li><li><b>部分 braking onset 漏检</b><br>include · 另一可独立判定失败模式，不推测事件比例。</li><li><b>三SSM learned threshold略增且跨参与者相近</b><br>include · 文字趋势；图注范围为min/max而非统计CI。</li><li><b>ITTC最长、DRAC最短与1/TH较短模型记忆</b><br>include · 文本可支持的排序；未读像素，不估数字。</li><li><b>1/TH持续非零解释其更短模型记忆</b><br>include · 与参数结果分开，未进行因果操控。</li><li><b>客观SSM与主观安全反应之间的生物启发桥接</b><br>include · 仅制动行为代理和作者解释，无独立安全感/神经验证。</li><li><b>参数具体数值、误报/漏报频率及独立泛化性能</b><br>defer · 文本和图注未报告所需数值；图像像素不在本任务范围。</li><li><b>标准LIF、SNN背景、related work及节能/高速优势</b><br>exclude · 背景不是本文新发现；没有本文硬件能耗或速度实验。</li><li><b>自然驾驶、多主体、额外SSM和跨人训练计划</b><br>exclude · 明确未来计划，不计已经完成的结果。</li><li><b>参考文献</b><br>exclude · 整页参考已评估；外部论文不作为本次研究验证或跨论文关系。</li></ul></details><article><small>C1 / 直接结果 · methodological_construction</small><h2>本文将固定交通 Surrogate Safety Measures 阈值重新表述为可训练 LIF spiking thresholds：将风险方向统一的 1/TH、ITTC 和 DRAC 送入三个输入神经元，再经无 bias、非负权重的两个全连接隐藏层及单输出 LIF 神经元，使可训练 threshold/decay 的时间积累参与制动响应拟合，而不只作瞬时阈值分类。</h2><h3>Evidence</h3><p>交通指标转换</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；常规 TH/TTC/DRAC 的安全阈值；风险增大方向统一的输入</dd><dt>独立单位与 n</dt><dd>同一次 car-following 时间序列的三个输入指标；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 3 · III.B Surrogate Safety Measures</dd></dl><p>LIF feed-forward 网络及 surrogate-gradient BPTT</p><dl><dt>设计 / 对照</dt><dd>threshold 初值为 1、1/1.5、3.3；所有神经元 threshold/decay 可训练；非负权重；H∈{8,16}；传统固定 SSM threshold 标记；本文未给同容量非脉冲模型消融</dd><dt>独立单位与 n</dt><dd>模型神经元是计算单元，不是生物神经元或独立参与者；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告架构/时间积累的定量独立贡献</dd><dt>原文位置</dt><dd>PDF 4 · Figure 1–2（示意说明在第2页）</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>提供用时间积累替代纯静态判断的 SSM 联合模型。</dd><dt>适用边界</dt><dd>算法构造及生物启发，不是对真实神经元放电的测量。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能认定该网络识别了人类安全感的生物机制，也不能宣称已证明比任意非脉冲时间模型更优。</dd><dt>未解决</dt><dd>需定量时间组件消融及非脉冲时间模型比较。</dd></dl><h3>相关问题</h3><ul><li>怎样用多指标 LIF 时间积分扩展固定交通安全阈值？</li></ul></article><article><small>C2 / 直接结果 · braking_event_target_construction</small><h2>本文以 brake pedal 的正向变化率为事件强度（超过 rthr 后乘 Afac），再将各事件向先前时间点按指数包络传播作为监督目标，通过全序列 MSE 和 surrogate-gradient BPTT 拟合输出脉冲；实际训练为监督梯度下降而不是 STDP 或 Hebbian learning。</h2><h3>Evidence</h3><p>正制动变化率、向过去指数包络和 MSE</p><dl><dt>设计 / 对照</dt><dd>rt=(bt-bt-1)/Delta t；mt=Afac rt（rt≥rthr）；yt=sum(k≥t) mk exp(-(k-t)/tau)；直接阈值化原始 brake 信号或前向 eligibility trace；本文没有提供这些目标的独立性能比较</dd><dt>独立单位与 n</dt><dd>参与者内事件与时间点；时间点不是独立样本；未报告 / 不适用</dd><dt>不确定性</dt><dd>rthr 的具体值和所有包络搜索范围未报告</dd><dt>原文位置</dt><dd>PDF 4 · IV.C Target and Loss Function</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>给出可训练的制动时序目标。</dd><dt>适用边界</dt><dd>标签是制动行为派生代理；向过去扩展标签不等于独立验证了提前预警。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能把训练规则称为 STDP，也不能从 spike 与此目标一致推断模型读取了神经状态或提前预测能力。</dd><dt>未解决</dt><dd>需要报告参数范围、噪声阈值和独立评估的 onset/lead-time 指标。</dd></dl><h3>相关问题</h3><ul><li>怎样把稀疏的制动启动事件转成 SNN 的时间监督信号？</li></ul></article><article><small>C3 / 直接结果 · controlled_behavior_dataset</small><h2>本文在 6-DOF 驾驶模拟平台构建受控 car-following 数据：前车减速度 -6、-3、-4.5 m/s² 与期望跟车距离 10、5 m 组成六场景，参与者可踩刹车介入；使用九名参与者记录逐人拟合，以尽量把干预归于受控交通风险变化，而非自然驾驶中的其他制动原因。</h2><h3>Evidence</h3><p>受控驾驶模拟记录</p><dl><dt>设计 / 对照</dt><dd>3D-CoAutoSim/CARLA/Unreal 与6-DOF motion platform；car-following 起始80 kph；前车在70 m窗口内开始减速；场景顺序随机化但所有参与者使用相同顺序；介入前自动控制，部分试次若不介入会碰撞；六种前车减速/跟车距离条件；不是随机化风险干预组对照的效应估计</dd><dt>独立单位与 n</dt><dd>参与者为人类观察单位；场景、制动事件和时间点重复嵌套于同一参与者，不作为独立人类样本；使用9名参与者的记录；设计6个场景，每场约40 s；未报告最终有效 episode 数、制动事件总数或独立训练种子数</dd><dt>不确定性</dt><dd>未报告人口学、有效 episode/事件数、各场景方差或实际碰撞率</dd><dt>原文位置</dt><dd>PDF 3 · Figure 3</dd></dl><p>逐人序列优化</p><dl><dt>设计 / 对照</dt><dd>每人 episodes zero-pad；H/learning-rate grid search；无标准 train/val/test benchmark；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>参与者为人类观察单位；场景、制动事件和时间点重复嵌套于同一参与者，不作为独立人类样本；使用9名参与者的记录；设计6个场景，每场约40 s；未报告最终有效 episode 数、制动事件总数或独立训练种子数</dd><dt>不确定性</dt><dd>源使用 validation loss 术语，但未说明独立验证划分</dd><dt>原文位置</dt><dd>PDF 4 · IV.A（续）及IV.B</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>提供用于制动响应模型拟合的受控多情景数据。</dd><dt>适用边界</dt><dd>源明确是 per-participant optimization，不是独立泛化基准；九人不足以支持总体泛化。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能从模拟记录推出道路事故率降低、自然驾驶泛化或九人以外人群的安全感特征。</dd><dt>未解决</dt><dd>独立 episode、事件数和验证划分未说明；真实道路验证为未来计划。</dd></dl><h3>相关问题</h3><ul><li>受控跟车情景能否提供适合拟合安全相关制动响应的数据？</li></ul></article><article><small>C4 / 直接结果 · qualitative_braking_alignment</small><h2>在 Figure 4 所示一名参与者的六个受控跟车场景中，训练后的 SNN 输出整体上与其制动行为的时序和结构相符，支持个体训练记录上的定性拟合能力，而非独立测试集上的预测性能。</h2><h3>Evidence</h3><p>逐参与者 SNN 拟合后的时序对照</p><dl><dt>设计 / 对照</dt><dd>一个参与者的六个场景；示例网络两个隐藏层各8 neurons，Afac=1.0、tau=2.0、learning rate=10^-2；模型按参与者已有 episodes 优化；同一参与者的 brake/envelope 与 learned spike sequence</dd><dt>独立单位与 n</dt><dd>参与者为人类观察单位；场景、制动事件和时间点重复嵌套于同一参与者，不作为独立人类样本；Figure 4 详细展示1名参与者的6场景；训练记录总计9名参与者；该例制动事件数未报告</dd><dt>不确定性</dt><dd>定性描述；没有 event precision/recall、timing error、lead time、效应量或统计检验；图像像素未读取</dd><dt>原文位置</dt><dd>PDF 4 · Figure 4A–F</dd></dl><p>完整六场景图注</p><dl><dt>设计 / 对照</dt><dd>一个参与者的六个场景；示例网络两个隐藏层各8 neurons，Afac=1.0、tau=2.0、learning rate=10^-2；模型按参与者已有 episodes 优化；SSM、brake、labels 和 spk</dd><dt>独立单位与 n</dt><dd>参与者为人类观察单位；场景、制动事件和时间点重复嵌套于同一参与者，不作为独立人类样本；Figure 4 详细展示1名参与者的6场景；训练记录总计9名参与者；该例制动事件数未报告</dd><dt>不确定性</dt><dd>定性描述；没有 event precision/recall、timing error、lead time、效应量或统计检验；图像像素未读取</dd><dt>原文位置</dt><dd>PDF 5 · Figure 4A–F</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>该个体示例显示输出时序可拟合制动响应。</dd><dt>适用边界</dt><dd>详细图仅一个参与者；原文结论对多参与者的概括未提供逐人定量结果。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能宣称九人都达到某准确率、所有制动均被检测或存在独立提前预测效果。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>逐参与者拟合的 SNN 能否在训练情景中重现制动时序？</li></ul></article><article><small>C5 / 直接结果 · static_threshold_comparator</small><h2>在该单参与者示例的 Figure 4B、C、E、F 中，原文报告固定 TH/ITTC/DRAC 阈值标记与实际制动响应存在不一致，而训练 SNN 捕获了若干不能仅由阈值越界直接解释的制动响应，显示纯静态阈值描述不足以覆盖这些已见响应。</h2><h3>Evidence</h3><p>定性比较 learned spiking 与固定 SSM unsafe 标记</p><dl><dt>设计 / 对照</dt><dd>一个参与者的六个场景；示例网络两个隐藏层各8 neurons，Afac=1.0、tau=2.0、learning rate=10^-2；模型按参与者已有 episodes 优化；TH/ITTC/DRAC threshold crossings 的灰色危险区与 SNN/制动行为</dd><dt>独立单位与 n</dt><dd>参与者为人类观察单位；场景、制动事件和时间点重复嵌套于同一参与者，不作为独立人类样本；Figure 4 详细展示1名参与者的6场景；训练记录总计9名参与者；该例制动事件数未报告</dd><dt>不确定性</dt><dd>定性描述；没有 event precision/recall、timing error、lead time、效应量或统计检验；图像像素未读取</dd><dt>原文位置</dt><dd>PDF 4 · Figure 4B,C,E,F</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>该例显示固定阈值与制动反应并非一一对应，SNN 可拟合其中部分反应。</dd><dt>适用边界</dt><dd>这是定性 comparator；没有按参与者汇总的阈值算法误差或 paired superiority。</dd><dt>实际负结果</dt><dd>固定 SSM threshold 标记在该示例若干响应处不能完全对应制动；范围仅限所述图例。</dd><dt>不能推出</dt><dd>不能说 SNN 对固定阈值定量显著更优，或静态阈值判定等同真实客观事故风险。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>时间积累模型是否能覆盖瞬时 SSM 阈值无法直接解释的制动反应？</li></ul></article><article><small>C6 / 直接结果 · observed_false_activation</small><h2>原文明确报告该单参与者训练示例中，SNN 有时在没有制动的时间段仍产生脉冲，例如 Figure 4C；因此即使整体时序拟合尚可，模型仍存在相对于制动目标的额外输出。</h2><h3>Evidence</h3><p>训练曲线的已报告失败情形</p><dl><dt>设计 / 对照</dt><dd>一个参与者的六个场景；示例网络两个隐藏层各8 neurons，Afac=1.0、tau=2.0、learning rate=10^-2；模型按参与者已有 episodes 优化；输出脉冲存在，但对应时间段没有制动</dd><dt>独立单位与 n</dt><dd>参与者为人类观察单位；场景、制动事件和时间点重复嵌套于同一参与者，不作为独立人类样本；Figure 4 详细展示1名参与者的6场景；训练记录总计9名参与者；该例制动事件数未报告</dd><dt>不确定性</dt><dd>源未给误报事件数、频率或阈值定义；不可从像素读数</dd><dt>原文位置</dt><dd>PDF 4 · Figure 4C</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>记录实际失败模式，避免只提正向拟合。</dd><dt>适用边界</dt><dd>只证明该示例存在额外输出，不提供总体 false-positive rate。</dd><dt>实际负结果</dt><dd>已观察并由原文明确报告无制动时段的额外 spiking。</dd><dt>不能推出</dt><dd>没有制动不等于没有主观危险感；不能把额外脉冲认定为神经风险机制失败或量化安全风险。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>模型在无制动时段是否仍产生目标不匹配脉冲？</li></ul></article><article><small>C7 / 直接结果 · observed_missed_braking_onset</small><h2>原文明确报告该单参与者训练示例中，SNN 有时未检测到某些制动启动，例如 Figure 4B；模型的总体定性对应不能排除真实漏检。</h2><h3>Evidence</h3><p>训练曲线的已报告漏检</p><dl><dt>设计 / 对照</dt><dd>一个参与者的六个场景；示例网络两个隐藏层各8 neurons，Afac=1.0、tau=2.0、learning rate=10^-2；模型按参与者已有 episodes 优化；已有制动启动而模型没有相应检测</dd><dt>独立单位与 n</dt><dd>参与者为人类观察单位；场景、制动事件和时间点重复嵌套于同一参与者，不作为独立人类样本；Figure 4 详细展示1名参与者的6场景；训练记录总计9名参与者；该例制动事件数未报告</dd><dt>不确定性</dt><dd>未报告漏检数量、recall 或时窗匹配规则</dd><dt>原文位置</dt><dd>PDF 4 · Figure 4B</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>记录模型对目标响应的实际遗漏。</dd><dt>适用边界</dt><dd>只覆盖原文所述示例，无法估计参与者总体漏检率。</dd><dt>实际负结果</dt><dd>已观察并由原文明确报告部分制动 onset 漏检。</dd><dt>不能推出</dt><dd>不能据此断言模型在真实道路中必然失效；反之也不能宣称所有风险反应已被捕获。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>拟合模型是否遗漏已发生的制动启动？</li></ul></article><article><small>C8 / 直接结果 · learned_threshold_parameter_summary</small><h2>对九名参与者各自最佳拟合模型的输入层参数汇总，原文描述 1/TH、ITTC、DRAC 三类 LIF spiking thresholds 相对文献初始化值均略有增加，且参与者之间总体较一致；图展示的是跨参与者均值及最小/最大值，而非置信区间。</h2><h3>Evidence</h3><p>逐参与者模型选择说明</p><dl><dt>设计 / 对照</dt><dd>逐人搜索 H、learning rate 及包络参数；按 MSE 和 braking maneuver 内输出 spike 比例选择最佳模型；不同参与者的最佳拟合模型</dd><dt>独立单位与 n</dt><dd>参与者及其选中模型；不是同一人多个模型当独立样本；9名参与者，每人选择一个最佳拟合模型供总体参数趋势分析；独立优化种子数未知</dd><dt>不确定性</dt><dd>图注仅给跨参与者 mean/min/max；min–max error bars 不是 SD/SE/CI；文本未给具体学习后数值或统计检验</dd><dt>原文位置</dt><dd>PDF 4 · V.B SSM Spiking Thresholds</dd></dl><p>输入 threshold 的 mean/min/max 汇总</p><dl><dt>设计 / 对照</dt><dd>逐人搜索 H、learning rate 及包络参数；按 MSE 和 braking maneuver 内输出 spike 比例选择最佳模型；各输入 learned threshold 对应初值1、1/1.5、3.3</dd><dt>独立单位与 n</dt><dd>9个参与者级选中模型；9名参与者，每人选择一个最佳拟合模型供总体参数趋势分析；独立优化种子数未知</dd><dt>不确定性</dt><dd>图注仅给跨参与者 mean/min/max；min–max error bars 不是 SD/SE/CI；文本未给具体学习后数值或统计检验</dd><dt>原文位置</dt><dd>PDF 5 · Figure 5</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>拟合后的阈值略上升，跨参与者没有文本所述的明显分离。</dd><dt>适用边界</dt><dd>只有小样本描述；不从未提供像素估计均值/范围，也不把“一致”写成等效性检验。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能认定得到通用安全阈值或人脑固有阈值；初始化、参数选择和监督目标可能影响结果。</dd><dt>未解决</dt><dd>实际参数数值、独立重训练稳定性和不同初始化影响待确认。</dd></dl><h3>相关问题</h3><ul><li>逐参与者拟合后，三类安全指标的 spiking thresholds 是否呈相近趋势？</li></ul></article><article><small>C9 / 直接结果 · learned_decay_parameter_summary</small><h2>九名参与者最佳拟合模型的输入层 decay 参数汇总显示，ITTC 的 beta 最高、保留非零输入的时间最长，DRAC 的 beta 最低、几乎立即衰减，1/TH 的 decay 也快于 ITTC；这是模型学到的指标间不同有效记忆，而非实测神经时间常数。</h2><h3>Evidence</h3><p>逐参与者 learned decay 的描述比较</p><dl><dt>设计 / 对照</dt><dd>逐人搜索 H、learning rate 及包络参数；按 MSE 和 braking maneuver 内输出 spike 比例选择最佳模型；ITTC、DRAC 与1/TH输入神经元</dd><dt>独立单位与 n</dt><dd>参与者级最佳拟合模型中的三类输入参数；9名参与者，每人选择一个最佳拟合模型供总体参数趋势分析；独立优化种子数未知</dd><dt>不确定性</dt><dd>图注仅给跨参与者 mean/min/max；min–max error bars 不是 SD/SE/CI；文本未给具体学习后数值或统计检验</dd><dt>原文位置</dt><dd>PDF 5 · Figure 6（图注第6页）</dd></dl><p>decay 的 mean/min/max 图注</p><dl><dt>设计 / 对照</dt><dd>逐人搜索 H、learning rate 及包络参数；按 MSE 和 braking maneuver 内输出 spike 比例选择最佳模型；三种输入的模型 decay</dd><dt>独立单位与 n</dt><dd>9个参与者级选中模型；9名参与者，每人选择一个最佳拟合模型供总体参数趋势分析；独立优化种子数未知</dd><dt>不确定性</dt><dd>图注仅给跨参与者 mean/min/max；min–max error bars 不是 SD/SE/CI；文本未给具体学习后数值或统计检验</dd><dt>原文位置</dt><dd>PDF 6 · Figure 6</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>不同 SSM 在该拟合模型中体现不同时间敏感性。</dd><dt>适用边界</dt><dd>只有源文字的排序/近立即衰减描述，没有可用数值、检验或秒级时间常数。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能把 beta 转成未报告的人类神经/行为时间常数，也不能从参数关联证明 ITTC 或 DRAC 对人类的因果作用。</dd><dt>未解决</dt><dd>输入尺度、持续性、包络/模型选择与 beta 差异的贡献没有被分离。</dd></dl><h3>相关问题</h3><ul><li>不同 SSM 是否在拟合的 LIF 模型中对应不同有效时间记忆？</li></ul></article><article><small>C10 / 解释 · input_persistence_interpretation</small><h2>作者解释 1/TH 比 ITTC 衰减更快时指出，1/TH 在持续跟车时保持非零，因此无需像短时非零 ITTC 那样保留更长记忆；这为 learned beta 差异提供输入持续性的解释，但不是经过输入持续性操控验证的机制。</h2><h3>Evidence</h3><p>依据输入持续性解释模型 decay 排序</p><dl><dt>设计 / 对照</dt><dd>逐人搜索 H、learning rate 及包络参数；按 MSE 和 braking maneuver 内输出 spike 比例选择最佳模型；持续非零1/TH与较间断非零ITTC</dd><dt>独立单位与 n</dt><dd>同一九人拟合模型及其SSM序列；9名参与者，每人选择一个最佳拟合模型供总体参数趋势分析；独立优化种子数未知</dd><dt>不确定性</dt><dd>图注仅给跨参与者 mean/min/max；min–max error bars 不是 SD/SE/CI；文本未给具体学习后数值或统计检验</dd><dt>原文位置</dt><dd>PDF 5 · Figure 6</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>提出 learned memory 可受输入特征持续性影响的解释。</dd><dt>适用边界</dt><dd>与 decay 结果共享同一参数汇总，无额外实验。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能推断主观危险感对1/TH天生记忆较短或证明人脑采用这些不同时间常数。</dd><dt>未解决</dt><dd>需要改变输入持续性/尺度并固定其他因素的比较。</dd></dl><h3>相关问题</h3><ul><li>输入的持续性是否解释拟合模型的时间记忆差异？</li></ul></article><article><small>C11 / 解释 · subjective_safety_proxy_interpretation</small><h2>作者将多 SSM 的 LIF 时间积累、与制动行为的定性对应以及 learned threshold/decay 趋势，解释为联系客观交通指标与主观安全反应的生物启发框架；该研究实际拟合的是制动代理，没有独立测量主观安全评分或神经活动。</h2><h3>Evidence</h3><p>对模型与行为对应的框架解释及作者边界声明</p><dl><dt>设计 / 对照</dt><dd>九人受控模拟，逐参与者优化；真实道路及跨人泛化为未来工作；SSM固定阈值对比行为拟合；无独立主观或生理验证</dd><dt>独立单位与 n</dt><dd>参与者为人类观察单位；场景、制动事件和时间点重复嵌套于同一参与者，不作为独立人类样本；使用9名参与者的记录；设计6个场景，每场约40 s；未报告最终有效 episode 数、制动事件总数或独立训练种子数</dd><dt>不确定性</dt><dd>作者明确小样本/情景数只允许优化问题，不支持 generalization；没有独立主观量表或神经数据</dd><dt>原文位置</dt><dd>PDF 6 · VI Conclusion and Future Work（续）</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>提供可继续检验的行为代理建模框架。</dd><dt>适用边界</dt><dd>模拟与真实道路安全感可不同；作者明示尚无泛化。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能宣称生物神经机制已验证、跨参与者/道路预测成立、节能高推理速度已测量或事故减少。</dd><dt>未解决</dt><dd>需跨人/情景测试、真实道路数据和直接主观测量；这些未进行不属于“泛化失败”的已观察负结果。</dd></dl><h3>相关问题</h3><ul><li>时间积累的交通指标模型能在独立数据中对应直接测得的主观安全感吗？</li></ul></article><details><summary>核对记录与来源信息</summary><pre>{
+  &quot;coverage&quot;: {
+    &quot;pdf_pages_read&quot;: [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    &quot;results_sections_seen&quot;: [
+      &quot;Abstract&quot;,
+      &quot;I Introduction&quot;,
+      &quot;II Related Work&quot;,
+      &quot;III.A Spiking Neural Networks&quot;,
+      &quot;III.B Surrogate Safety Measures&quot;,
+      &quot;IV.A Dataset&quot;,
+      &quot;IV.B Spiking Neural Network Architecture and Implementation Details&quot;,
+      &quot;IV.C Target and Loss Function&quot;,
+      &quot;V.A Alignment with Braking Onsets&quot;,
+      &quot;V.B SSM Spiking Thresholds&quot;,
+      &quot;VI Conclusion and Future Work&quot;,
+      &quot;Figure 1–6 captions&quot;,
+      &quot;Equations (1)–(10)&quot;,
+      &quot;References&quot;
+    ],
+    &quot;missing_material&quot;: [
+      &quot;图像像素未提供，不能读取Figure 4曲线或Figure 5/6的实际参数数值。&quot;,
+      &quot;没有提供原始驾驶数据、每个参与者/场景事件数或具体验证划分。&quot;,
+      &quot;没有提供独立泛化、真实道路验证、直接主观安全量表或神经活动数据。&quot;
+    ],
+    &quot;text_pass_complete&quot;: true,
+    &quot;notes&quot;: [
+      &quot;六页全部文本、方程、六图图注和参考文献已评估；没有提供附录/补充材料。&quot;,
+      &quot;身份与索引一致；实际源为 arXiv:2605.30368v1 [cs.NE]，2026-05-18，doi null。&quot;,
+      &quot;所有9名参与者记录用于逐人优化；6个设计场景及逐时点/神经元不可替代独立人数。&quot;,
+      &quot;第二轮源内复核完成：逐项对照完整设计、监督方程、定性比较、实际误激活/漏检、参数趋势、泛化声明与图注。&quot;,
+      &quot;全部quote为null；背景引用未独立读取，不建立任何跨论文关系。&quot;
+    ],
+    &quot;reading_mode&quot;: &quot;text_only&quot;,
+    &quot;figure_images_read&quot;: false,
+    &quot;scientific_verification&quot;: false,
+    &quot;source_pdf_offline&quot;: false,
+    &quot;archived_page_text_used&quot;: false
+  },
+  &quot;audit&quot;: {
+    &quot;source_match_checks&quot;: [],
+    &quot;model_findings&quot;: [
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;源为2026-05-18 arXiv v1，作者和题名匹配索引，未提供后续版本。&quot;,
+        &quot;suggested_correction&quot;: &quot;版本明确保留，doi不补造。&quot;,
+        &quot;pdf_page&quot;: 1,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C1&quot;,
+        &quot;issue&quot;: &quot;LIF示意和标准背景可能被误认为本文的生物发现；DRAC式与外部常见定义可能不同。&quot;,
+        &quot;suggested_correction&quot;: &quot;只归入方法构造；公式按源(6)保留，不使用外部公式纠改或生物验证。&quot;,
+        &quot;pdf_page&quot;: 3,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C2&quot;,
+        &quot;issue&quot;: &quot;源提及STDP/eligibility traces，但实际使用BPTT，target依未来制动事件向过去扩展。&quot;,
+        &quot;suggested_correction&quot;: &quot;已记录监督梯度训练和离线标签构造，不宣称STDP训练或独立提前预警。&quot;,
+        &quot;pdf_page&quot;: 4,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C3&quot;,
+        &quot;issue&quot;: &quot;源明确逐人优化而非train/val/test benchmark，又使用validation loss/checkpoint术语，但没有说明划分。&quot;,
+        &quot;suggested_correction&quot;: &quot;不强行解释为独立验证；需作者或实际划分数据澄清。&quot;,
+        &quot;pdf_page&quot;: 4,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C4&quot;,
+        &quot;issue&quot;: &quot;九人总记录不等于Figure 4展示了九人效果；六场景亦不等于确定有54有效episodes。&quot;,
+        &quot;suggested_correction&quot;: &quot;已区分单人六图与九人记录，不猜episode或制动事件总数。&quot;,
+        &quot;pdf_page&quot;: 5,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C6&quot;,
+        &quot;issue&quot;: &quot;无制动时额外脉冲和Figure 4B漏检是明确负结果。&quot;,
+        &quot;suggested_correction&quot;: &quot;已分别保留C6、C7，不稀释成未验证外推；失败次数/频率仍未知。&quot;,
+        &quot;pdf_page&quot;: 4,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C8&quot;,
+        &quot;issue&quot;: &quot;Figure 5/6 error bars为跨参与者min/max，文本没有具体learned数值。&quot;,
+        &quot;suggested_correction&quot;: &quot;仅保留文字趋势/排序，未估算像素或把范围称CI。&quot;,
+        &quot;pdf_page&quot;: 5,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C9&quot;,
+        &quot;issue&quot;: &quot;learned beta是模型参数且取决于输入、初始化、训练目标及选择；不是测得的人脑时间常数。&quot;,
+        &quot;suggested_correction&quot;: &quot;已区分参数结果C9与输入持续性解释C10，不做生物机制推断。&quot;,
+        &quot;pdf_page&quot;: 5,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C11&quot;,
+        &quot;issue&quot;: &quot;作者明确未做泛化；模拟安全感可能区别真实道路。&quot;,
+        &quot;suggested_correction&quot;: &quot;已写入非推论/未解决字段；不将未测试泛化错误写成已观察泛化失败。&quot;,
+        &quot;pdf_page&quot;: 6,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;第二轮源内审计覆盖所有方法/结果/图注，未见报告的定量onset timing、precision/recall或独立比较统计。&quot;,
+        &quot;suggested_correction&quot;: &quot;保持数值缺失，不制造事件准确率或独立生物/因果验证。&quot;,
+        &quot;pdf_page&quot;: 6,
+        &quot;resolved&quot;: true
+      }
+    ],
+    &quot;needs_human_review&quot;: true
+  },
+  &quot;source&quot;: {
+    &quot;filename&quot;: &quot;paper-W7163287286--Reinterpreting-Safety-Thresholds-as-Neuron-Spiking-Thresholds.pdf&quot;,
+    &quot;sha256&quot;: &quot;a565e1a356e683bb28c3067dcf84c8d298dccfbe5b16c2fe5ec18ce1f939dc05&quot;,
+    &quot;source_url&quot;: &quot;https://arxiv.org/pdf/2605.30368&quot;,
+    &quot;pdf_page_count&quot;: 6
+  },
+  &quot;provenance&quot;: {
+    &quot;created_at&quot;: &quot;2026-10-07T13:22:30.355350Z&quot;,
+    &quot;workflow&quot;: &quot;claim-commons-pdf-v1&quot;,
+    &quot;prompt_version&quot;: &quot;claim-commons-chatgpt-pdf-2026-10-07.1&quot;,
+    &quot;backend&quot;: &quot;authorized_parallel_GPT&quot;,
+    &quot;model&quot;: &quot;inherited_account_GPT&quot;,
+    &quot;provider_api_key_used&quot;: false,
+    &quot;source_sha256&quot;: &quot;a565e1a356e683bb28c3067dcf84c8d298dccfbe5b16c2fe5ec18ce1f939dc05&quot;,
+    &quot;source_audit_complete&quot;: true,
+    &quot;review_status&quot;: &quot;candidate&quot;,
+    &quot;database_updated&quot;: false
+  }
+}</pre></details></main><footer></footer></body></html>

@@ -1,0 +1,899 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "preprint",
+  "paper": {
+    "title": "Compact and Energy-Efficient Memristive Spiking Neuromorphic Accelerator for Bio-inspired Interception Tasks",
+    "authors": [
+      "Qianhou Qu",
+      "Sheng Lu",
+      "Sungyong Jung",
+      "Qilian Liang",
+      "Chenyun Pan"
+    ],
+    "doi": null,
+    "publication_year": 2026,
+    "venue": "arXiv (Cornell University)",
+    "url": "https://arxiv.org/pdf/2605.31141"
+  },
+  "source": {
+    "filename": "paper-W7163287777--Compact-and-Energy-Efficient-Memristive-Spiking-Neuromorphic-Accelerator-for-Bio-inspired-Inter.pdf",
+    "sha256": "4caecc734f1d6e251c2002d3f6440940360c31dbf3840637a81638083362b117",
+    "source_url": "https://arxiv.org/pdf/2605.31141",
+    "pdf_page_count": 21
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21
+    ],
+    "results_sections_seen": [
+      "2 Network Design and Training Methods",
+      "3.1 Overall System Architecture and Network Mapping",
+      "3.2 Proposed IF Neuron Circuit and Integration Behavior",
+      "3.3 Synaptic Interface Circuit",
+      "3.4.1 Memristor Model",
+      "3.4.2 Read Noise Modeling",
+      "3.4.3 Write Scheme and Multi-Level Weight Realization",
+      "4.1 Evaluation Methodology and Hardware Mapping",
+      "4.2 Circuit-to-System Validation Results",
+      "4.3 Robustness Analysis and Implementation Evaluation",
+      "5 Conclusion",
+      "Fig. 1-21 captions",
+      "Table 1",
+      "References"
+    ],
+    "missing_material": [
+      "未提供图像像素，不能检验波形、散点或版图细节。",
+      "未提供代码、原始数据、制造芯片或器件测量记录；正文未给出独立实测芯片验证。"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "完整评估全部21页文本和图表标题；本文件未含附录。",
+      "题名和五位作者与分配记录一致；按分配记录保留arXiv预印本身份，提供的页面未明确列出版本号或发布日期，不替换为后续版本。",
+      "第4节明确为仿真评价；第11-14页的噪声曲线和电平表述虽使用测量措辞，但没有足够实验方法证明为本研究新采集的物理器件数据。",
+      "第二次审计使用本轮完整保留的源文本，逐条核对条件、数字、图表定位、独立单位、实际失败和推断限制；不是独立复现。",
+      "训练200个episode、200个epoch和batch size 256并非测试样本的独立重复次数。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "4-30-1 SNN、确定性rate coding和几何截获标签构成电路与任务的联合评价条件。",
+      "role": "method",
+      "source_pages": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "decision": "include",
+      "reason": "作为映射、软件一致性和闭环任务命题的共同前提；不另计生物学发现。"
+    },
+    {
+      "summary": "输入与膜节点分离的IF电路改善与耦合节点比较电路的积分行为。",
+      "role": "result",
+      "source_pages": [
+        7,
+        8,
+        9
+      ],
+      "decision": "include",
+      "reason": "C1保存波形比较和实际饱和限制，C10另存作者机制解释；二者共用证据。"
+    },
+    {
+      "summary": "buffer和transmission-gate接口完成脉冲整形与阵列驱动。",
+      "role": "result",
+      "source_pages": [
+        7,
+        9,
+        10
+      ],
+      "decision": "include",
+      "reason": "C2，描述本设计中的60 ns、50 mV脉冲，不推断未量化的扰写降低幅度。"
+    },
+    {
+      "summary": "电导依赖、平滑饱和的RTN-inspired有效读噪声模型。",
+      "role": "result",
+      "source_pages": [
+        11,
+        12
+      ],
+      "decision": "include",
+      "reason": "C3为模型性质；不声称捕获了真实陷阱动力学或新增物理器件验证。"
+    },
+    {
+      "summary": "closed-loop write-verify与两器件并联的41级突触表示。",
+      "role": "result",
+      "source_pages": [
+        12,
+        13,
+        14
+      ],
+      "decision": "include",
+      "reason": "C4，区分电平数量和独立器件样本数量；物理测量归属未决。"
+    },
+    {
+      "summary": "软件权重向41级硬件权重的最近邻映射。",
+      "role": "result",
+      "source_pages": [
+        14,
+        15
+      ],
+      "decision": "include",
+      "reason": "C5；保留0.21 V归一化方法及其与阈值跨度不同的未决问题。"
+    },
+    {
+      "summary": "代表性推理波形和659输入样本的软件/电路输出一致性。",
+      "role": "result",
+      "source_pages": [
+        15,
+        16,
+        17
+      ],
+      "decision": "include",
+      "reason": "C6；单条波形说明流程，不作为另一组独立验证。"
+    },
+    {
+      "summary": "500条闭环轨迹中480条在50步内满足截获条件。",
+      "role": "result",
+      "source_pages": [
+        3,
+        4,
+        17,
+        18
+      ],
+      "decision": "include",
+      "reason": "C7，完整保留成功判据、运动条件和20条实际失败。"
+    },
+    {
+      "summary": "神经元级Monte Carlo模板注入200个系统变化实现。",
+      "role": "result",
+      "source_pages": [
+        18,
+        19
+      ],
+      "decision": "include",
+      "reason": "C8，定性轨迹聚集不替换为完整系统晶体管级Monte Carlo或成功率分布。"
+    },
+    {
+      "summary": "SKY130神经元面积和每spike能耗及文献表对照。",
+      "role": "result",
+      "source_pages": [
+        18,
+        19,
+        20
+      ],
+      "decision": "include",
+      "reason": "C9仅为神经元级指标，不计整机能耗，不声称所有对照中最优。"
+    },
+    {
+      "summary": "边缘部署、通用节能与真实生物截获机制的推广。",
+      "role": "hypothesis",
+      "source_pages": [
+        1,
+        2,
+        19,
+        20
+      ],
+      "decision": "exclude",
+      "reason": "未给出CPU/GPU整机能耗对照、物理部署或生物实验；作为非推断边界保留，不另造已证实命题。"
+    },
+    {
+      "summary": "参考文献中的既往器件、脑能耗和神经模型发现。",
+      "role": "background",
+      "source_pages": [
+        20,
+        21
+      ],
+      "decision": "exclude",
+      "reason": "不是本来源的独立新结果，不建立跨论文支持或复现关系。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "在本文模拟的阵列接口条件下，输入节点与膜电位存储节点分离的IF神经元可维持逐脉冲积分与阈值发放；作者构造的耦合节点比较电路则出现非线性积累和饱和，其50 mV输入脉冲使膜电位约在50 mV饱和，不能达到该比较电路的0.2 V发放阈值。",
+      "claim_type": "circuit_simulation_comparison",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "IF电路瞬态仿真与构造的耦合节点比较电路波形比较。",
+          "design": "本文神经元Vpos=0.9 V、Cmem=73.5 fF、发放阈值0.71 V、复位阈值0.88 V；比较电路采用50 mV前突触脉冲和0.2 V阈值。",
+          "comparator": "作者构造的输入节点直接连接膜电容的比较电路，不是所有既往神经元的系统基准。",
+          "measure": "逐脉冲膜电位轨迹、饱和水平与输出spike。",
+          "unit_of_analysis": "电路设计的瞬态波形；不是独立制造芯片或动物。",
+          "sample_size_as_reported": "未报告比较电路的独立重复数。",
+          "uncertainty": "定性波形对照，无效应置信区间。",
+          "assumptions": [
+            "采用文中所设输入脉冲与阈值条件。",
+            "结论限定于该比较电路与所模拟的接口负载。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "3.2",
+            "figure": "Fig. 6-9",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "本设计在所示条件下表现为更稳定的积分和发放。",
+        "boundary": "电路模型对照，不是实测芯片，也不证明所有低阈值耦合节点方案都失败。",
+        "negative_result": "所构造比较电路在50 mV输入下饱和，未能达到0.2 V发放阈值。",
+        "non_inference": "不能把该对照上升为生物神经元机制、通用推理精度提升或独立实测可靠性。",
+        "unresolved": "未量化不同输入幅度、阈值和电容优化后的完整对照空间。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "在memristive IMC接口下，分离输入与膜节点能否避免积分饱和并维持IF发放？"
+      ],
+      "shared_evidence_with": [
+        "C10"
+      ],
+      "review_notes": [
+        "0.2 V为比较电路阈值，不是本文神经元绝对发放电压0.71 V。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "本文神经元与后级1T1R阵列之间的buffer和transmission-gate接口将输出整形成0.9至0.95 V、60 ns的读域脉冲，并提供两条memristor分支的开关控制；正文指出直接由神经元驱动大transmission-gate负载会使脉宽展宽，buffer用于隔离该负载。",
+      "claim_type": "circuit_interface_design",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "接口电路设计说明与重复输入脉冲下的瞬态波形。",
+          "design": "buffer隔离神经元核心；三对transmission gates生成Spike、Si_1、Si_2，协调行驱动和两分支access nFET。",
+          "comparator": "不加buffer直接连接后级负载的定性设计比较。",
+          "measure": "整形后的电压摆幅和脉冲持续时间。",
+          "unit_of_analysis": "一套接口电路及其波形。",
+          "sample_size_as_reported": "未报告独立接口电路或重复仿真数量。",
+          "uncertainty": "没有给出脉宽分布或有/无buffer能耗统计。",
+          "assumptions": [
+            "采用文中传输门尺寸、负载及供电配置。"
+          ],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "3.3",
+            "figure": "Fig. 6, Fig. 10",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "接口可将spike转换为受控读脉冲并驱动选定突触分支。",
+        "boundary": "60 ns是所示配置的输出，不是全部工况保证。",
+        "negative_result": "正文报告直接连接重负载时出现明显脉宽展宽，但未给出其数值。",
+        "non_inference": "没有量化数据证明该接口消除了read-induced write noise或给出整机效率收益。",
+        "unresolved": "扰写概率、负载范围与接口能耗的单独测量未报告。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "SNN神经元输出如何在不直接驱动重负载的条件下提供受控memristor读脉冲？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "驱动波形为50 mV摆幅；这不是1.8 V系统供电幅度。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "本文在PKU-Stanford RRAM compact model中加入电导依赖、平滑饱和的有效读噪声项，以10 ns保持间隔更新Gaussian扰动；生成的相对读波动随电阻升高而增大并在高阻区趋于饱和，重现了作者用于建模的定性状态依赖趋势，但不是显式两态RTN陷阱过程。",
+      "claim_type": "computational_noise_model",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Verilog-A RRAM模型扩展及解析曲线与模型统计样本对照。",
+          "design": "sigma0=0.035、G0=7e-6 S、p_sigma=0.95，平滑边界sigma_min=0、sigma_max=0.35；Inoise=sigma_final Iideal N(t)。",
+          "comparator": "模型的解析电阻依赖曲线；正文引用既往HfOx实验作为趋势动机，未提供本研究新增物理验证。",
+          "measure": "相对电阻/读电流波动与电阻的关系。",
+          "unit_of_analysis": "不同电阻状态下的模型读噪声样本。",
+          "sample_size_as_reported": "模型统计样本数量及独立物理器件数未报告。",
+          "uncertainty": "无拟合误差、参数置信区间或独立验证数据统计。",
+          "assumptions": [
+            "以Gaussian sample-and-hold有效噪声近似代替陷阱捕获/释放和离散两态时间切换。",
+            "读电导由无噪声电流与参考电压定义。"
+          ],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "3.4.2",
+            "figure": "Fig. 11",
+            "equation": "Eq. 2-7",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "模型能够表达用于电路评价的电阻依赖相对读波动趋势。",
+        "boundary": "是有效随机模型性质，不是对真实RTN时域统计的完整验证。",
+        "negative_result": null,
+        "non_inference": "不能称为新HfOx器件实验，不能由该趋势识别真实缺陷或陷阱机制。",
+        "unresolved": "噪声参数的独立物理校准和时域相关结构尚未由本来源解决。",
+        "unresolved_attribution": "Fig. 11标题使用测量措辞，正文则说样本由模型生成；无法据此确定有新增物理器件数据。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "用何种有效读噪声模型可在SNN阵列仿真中保留RRAM状态依赖波动？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "保留sigma_max=0.35为平滑模型界限，不当作测得35%设备变异。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "在本文读噪声约束和closed-loop write-verify框架下，作者报告单memristor仅有16个稳定可区分电平，而两器件并联表示一个突触权重可形成41个可区分电平，覆盖约29 kOhm至2 MOhm的等效电阻范围。",
+      "claim_type": "noise_aware_synaptic_resolution",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "选择性write/reset、反复读校验和两memristor并联电平后处理。",
+          "design": "根据电导误差调整脉冲，过度编程时先reset；使用行、列、gate控制限制未选单元扰动。",
+          "comparator": "考虑读噪声的单memristor电平表示。",
+          "measure": "稳定可区分电平数与等效电阻范围。",
+          "unit_of_analysis": "突触状态/电平，不是独立器件、晶圆或重复实验。",
+          "sample_size_as_reported": "单器件16级、两器件并联41级；独立物理器件和重复数未报告。",
+          "uncertainty": "可区分稳定性判据及统计置信度未明确报告。",
+          "assumptions": [
+            "适用文中所用读噪声模型和write-verify条件。",
+            "41级为选定可实现电平集合，不等于两个16级状态的全部组合。"
+          ],
+          "source_locator": {
+            "pdf_page": 14,
+            "section": "3.4.3",
+            "figure": "Fig. 12-14",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "两器件并联扩大了用于权重映射的可区分电平集合。",
+        "boundary": "16和41是状态数，不是独立实验n；物理实测来源不清。",
+        "negative_result": "作者报告读噪声下单器件的可靠可区分电平受到限制，仅为16级。",
+        "non_inference": "不能证明制造良率、长期保持、耐久性或全阵列无扰写。",
+        "unresolved": "电平判别准则、独立器件验证和长期稳定性未报告。",
+        "unresolved_attribution": "正文使用测量和后处理措辞，但缺少辨别真实器件测量与模型表征的实验信息。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "在读噪声限制下，两器件并联能提供多少可区分突触权重电平？"
+      ],
+      "shared_evidence_with": [
+        "C5"
+      ],
+      "review_notes": [
+        "不把设计的选择性偏置方案写成已实测消除扰动。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "为将4-30-1 SNN部署到本文41级memristive突触模型，训练权重被限制于0.03至0.9；在单脉冲、其他输入神经元静息的单元表征中，以0.21 V有效积分范围归一化膜电位变化得到约0.032至0.902的硬件等效权重，再将每个软件权重映射到最近的可用电平。",
+      "claim_type": "software_hardware_weight_mapping",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "SNNTorch训练、选定突触状态扫描、单脉冲响应表征及最近邻量化。",
+          "design": "200个训练episode、200个epoch、batch size 256、Adam学习率0.001；训练标签来自几何截获模型，MSE损失和BPTT。",
+          "comparator": "受限软件权重范围0.03-0.9。",
+          "measure": "归一化单脉冲膜电位贡献和41级硬件权重范围。",
+          "unit_of_analysis": "所选突触模型的可编程状态与网络权重；训练episode不是硬件重复实验。",
+          "sample_size_as_reported": "41个可实现权重电平；未报告训练seed或独立硬件重复数。",
+          "uncertainty": "未提供映射误差分布或0.21 V归一化范围的独立校准误差。",
+          "assumptions": [
+            "仅激活第一输入神经元，其他输入保持静息。",
+            "正文指定0.21 V为有效积分归一化范围。",
+            "输入为50时间步确定性rate coding，每通道最多25个spike；硬件每帧推理24 microseconds。"
+          ],
+          "source_locator": {
+            "pdf_page": 15,
+            "section": "4.1.1-4.1.2",
+            "figure": "Fig. 15",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "该映射在模型中使软件与硬件权重覆盖范围近似匹配。",
+        "boundary": "只是范围匹配和离散映射，精度影响需由输出比较另行评估。",
+        "negative_result": null,
+        "non_inference": "不等同于无量化损失、在线学习或真实阵列校准。",
+        "unresolved": "0.21 V有效积分范围与0.9至0.71 V阈值跨度0.19 V的差别未在文本中解释。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "受读噪声和41级电平约束的memristive权重如何与训练SNN的权重范围对齐？"
+      ],
+      "shared_evidence_with": [
+        "C4"
+      ],
+      "review_notes": [
+        "不将41个状态或200个训练epoch当作独立验证重复。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "在659个推理输入样本上，本文量化映射后的memristive IMC电路模型与已训练SNNTorch SNN的归一化输出具有相关系数0.9622和MAE 0.0544，支持该条件下的软件到电路推理行为近似保持，而不是零误差等价。",
+      "claim_type": "software_circuit_inference_agreement",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "将软件输入转为硬件spike刺激，对每个样本配对比较电路模型与SNNTorch归一化输出。",
+          "design": "采用本文4-30-1网络、41级权重映射和编码流程；Fig. 16另示单样本层间积分/发放链。",
+          "comparator": "相同已训练SNNTorch模型的参考输出。",
+          "measure": "输出相关系数0.9622、归一化输出MAE 0.0544。",
+          "unit_of_analysis": "推理输入样本上的配对输出，不是659个独立训练模型或芯片。",
+          "sample_size_as_reported": "659个推理样本；其episode归属、独立性和训练/测试分割未报告。",
+          "uncertainty": "没有相关系数或MAE置信区间。",
+          "assumptions": [
+            "参考模型和电路模型采用同一任务输入/输出定义和已训练权重。"
+          ],
+          "source_locator": {
+            "pdf_page": 16,
+            "section": "4.2",
+            "figure": "Fig. 16-17",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所评估样本上硬件模型与软件输出具有较强一致性。",
+        "boundary": "659为输入样本数，相关不等于误差为零或任务成功率。",
+        "negative_result": null,
+        "non_inference": "不能推断659个独立实验、角度单位MAE、实测芯片一致性或未见任务泛化。",
+        "unresolved": "episode层级、数据分割和不同训练seed的变异未报告。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "有限电平和器件非理想性下，memristive IMC推理输出能多准确地保持软件SNN行为？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "Fig. 16单条波形不是独立验证集；0.0544按归一化输出报告，不换算为角度。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "在本文2D随机猎物轨迹闭环仿真中，捕食者从(0,0)、猎物从(8,0)出发，步长分别为1.3和1；以距离不超过1且50步内捕获为成功判据，memristive IMC电路模型驱动的4-30-1 SNN在500条完整轨迹中成功480条，成功率96%，其余20条未在窗口内成功。",
+      "claim_type": "closed_loop_task_performance",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "每步将前后时刻相对距离和角度编码为spike，经电路模型推理输出更新捕食者运动。",
+          "design": "2D连续空间、离散运动步，猎物随机轨迹；每条最多50步，距离<=1为捕获。",
+          "comparator": "预设捕获判据；未报告同一500轨迹上其他控制器的成功率对照。",
+          "measure": "480/500成功，即96%；20条窗口内失败。",
+          "unit_of_analysis": "完整模拟轨迹/episode，不是每步帧或独立芯片。",
+          "sample_size_as_reported": "500条完整轨迹；未给出随机seed或独立性细节。",
+          "uncertainty": "未报告成功率置信区间或多seed重复。",
+          "assumptions": [
+            "捕食者步长快于猎物：1.3对1。",
+            "限于所用初始距离、编码范围、随机轨迹生成和捕获半径。"
+          ],
+          "source_locator": {
+            "pdf_page": 17,
+            "section": "4.2; task definition 2.1",
+            "figure": "Fig. 18",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "电路模型在所设闭环任务条件下达到96%的窗口内捕获率。",
+        "boundary": "特定人工几何任务与速度优势条件，不是无限时域或一般追踪保证。",
+        "negative_result": "20/500条轨迹未在50步窗口内满足捕获条件。",
+        "non_inference": "不证明生物dragonfly机制、真实机器人性能或相对CPU/GPU的系统节能。",
+        "unresolved": "失败原因、不同运动速度和初始条件泛化以及控制器基准对照未报告。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "memristive SNN电路模型输出能否在给定速度优势和截获判据下支持闭环追捕？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "480成功与20失败来自同一500轨迹证据，不作为独立复现。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "本文先对单IF神经元模拟device mismatch和process-induced voltage/current variations，再为系统中的每个神经元随机抽取该Monte Carlo池中的模板；在200个系统变化实现中，所示两组代表性闭环轨迹仍较集中并保持总体追捕趋势，但这不是完整系统晶体管级Monte Carlo，也未报告变化条件下的捕获率分布。",
+      "claim_type": "hierarchical_variability_simulation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "两级变化分析：单神经元Monte Carlo和神经元级模板随机注入系统。",
+          "design": "每个神经元从先前Monte Carlo池独立抽取一个模板，重复构造200个完整系统变化实现；Fig. 19给出膜轨迹/spike时序变化，Fig. 20示两组代表性轨迹。",
+          "comparator": "不同随机变化实现下的轨迹聚集与共同追捕趋势；没有完整Spectre系统Monte Carlo对照。",
+          "measure": "膜轨迹离散、spike时序偏移和轨迹路径离散，定性报告。",
+          "unit_of_analysis": "系统模板抽样实现；底层神经元Monte Carlo池被重复使用。",
+          "sample_size_as_reported": "200个系统变化实现；底层单神经元Monte Carlo运行数未报告，图示为2组代表性轨迹。",
+          "uncertainty": "没有成功率分布、轨迹误差统计或置信区间。",
+          "assumptions": [
+            "单神经元变化模板能够近似其他神经元的局部变化影响。",
+            "系统使用模板注入代替完整晶体管级闭环变化仿真。"
+          ],
+          "source_locator": {
+            "pdf_page": 18,
+            "section": "4.3",
+            "figure": "Fig. 19-20",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所示模板注入下轨迹总体趋势得以保持，细节出现有限离散。",
+        "boundary": "层级近似和代表性图示；200个实现不是200个制造系统。",
+        "negative_result": null,
+        "non_inference": "不能写成所有变化下都捕获、变化成功率仍为96%、覆盖完整晶体管级Monte Carlo或独立芯片良率。",
+        "unresolved": "模板池大小、相关变化建模与全系统量化成功率尚未报告。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "用神经元级变化模板注入能观察到何种memristive SNN闭环轨迹稳健性？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "重复引用同一个神经元Monte Carlo池不构成新的独立器件证据。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "本文在130 nm SkyWater SKY130设计中报告IF神经元面积906 um^2、能耗10.67 pJ/spike，Table 1列供电1.8 V和归一化面积0.54 x 10^5 F^2；这是神经元级实现指标，而非包含memristor阵列、接口、编码和控制的整机每次截获能耗，也不是所列设计中所有原始指标都最小。",
+      "claim_type": "neuron_implementation_metrics",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "神经元版图实现及本文实现能耗报告，配合文献性能表比较。",
+          "design": "SKY130，130 nm模拟IF神经元，Table 1供电1.8 V；op-amp和comparator为主要面积/能耗贡献。",
+          "comparator": "Table 1的异工艺文献设计；未进行同工艺、同功能和同系统边界的重新测量。",
+          "measure": "906 um^2、10.67 pJ/spike和归一化面积0.54 x 10^5 F^2。",
+          "unit_of_analysis": "一类神经元电路设计；不是系统、轨迹或制造重复。",
+          "sample_size_as_reported": "独立芯片数和能耗重复测量数未报告。",
+          "uncertainty": "未给出能耗/面积统计误差或全系统功耗分解。",
+          "assumptions": [
+            "指标按文中神经元边界计算。",
+            "文献对照的工艺和实现风格不同，不能视作受控实验。"
+          ],
+          "source_locator": {
+            "pdf_page": 20,
+            "section": "4.3; Table 1",
+            "figure": "Fig. 21; Table 1",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所报告神经元设计在该实现边界内具有较小面积和低每spike能耗。",
+        "boundary": "对照表也列出900 um^2的设计及0.67 pJ/spike的设计；不宣称所有原始指标领先。",
+        "negative_result": null,
+        "non_inference": "不能证明整机相对CPU/GPU更节能、端到端能耗10.67 pJ/推理或实测芯片效率。",
+        "unresolved": "接口和阵列等外围功耗、端到端能耗和实测验证未报告。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "将输入/膜节点分离的IF设计实现于SKY130，其神经元级面积与每spike能耗是多少？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "只使用本文提供的对照表，不新增跨论文支持、反驳或复现关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "作者将耦合节点电路的非线性积分解释为膜电位变化同时改变输入端有效充电条件，并据此认为隔离输入与膜存储节点有助于稳定积分与spike时序；这是针对所示电路对照的机制解释，不是单独识别全部失真来源的实验证明。",
+      "claim_type": "circuit_mechanism_interpretation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "结合耦合节点拓扑与膜电位波形进行电路机制分析。",
+          "design": "输入节点直接连接膜电容的比较拓扑对照本文分离节点设计。",
+          "comparator": "作者构造的耦合节点电路。",
+          "measure": "随输入脉冲积累发生的非线性、饱和和作者讨论的时序失真。",
+          "unit_of_analysis": "同C1的电路拓扑及瞬态波形。",
+          "sample_size_as_reported": "同C1；没有额外独立机制实验。",
+          "uncertainty": "机制贡献未由逐项消融、参数扫描或独立物理测量量化。",
+          "assumptions": [
+            "输入与膜节点耦合导致充电条件随膜电位改变，是作者对该电路的解释。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "3.2",
+            "figure": "Fig. 7-9",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "拓扑与波形相符，支持作者提出的电路层解释。",
+        "boundary": "与C1共用证据，不是独立机制识别。",
+        "negative_result": null,
+        "non_inference": "不外推为真实神经膜机制；未证明ADC/DAC消除带来多少总能耗收益，也未排除其他电路非理想性。",
+        "unresolved": "不同非理想性对积分失真的相对贡献未分离。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "输入/膜节点耦合为何可能使memristive IMC神经元的积分条件随状态漂移？"
+      ],
+      "shared_evidence_with": [
+        "C1"
+      ],
+      "review_notes": [
+        "机制解释独立标记为interpretation，不与观察到的波形现象等同。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "完整阅读21页提供文本、21个图标题及Table 1和参考文献。本预印本提出面向人工2D截获任务的4-30-1 memristive SNN，使用分离输入/膜节点的IF设计、buffer接口、状态依赖有效读噪声模型、closed-loop write-verify与两器件并联的41级权重映射。659个输入样本的电路模型输出相对SNNTorch相关系数0.9622、归一化MAE 0.0544；在指定初始条件、步长1.3对1、50步窗口和距离<=1标准下，500条闭环轨迹成功480条，失败20条。200个变化实现来自神经元Monte Carlo模板注入，只有定性轨迹稳健性，不是完整系统晶体管级Monte Carlo。SKY130神经元报告906 um^2和10.67 pJ/spike，未给出端到端系统能耗。第二次源文审计区分了电平与独立器件n、输入样本与episode、神经元指标与整机指标，并把机制解释单列。测量/仿真措辞和0.21 V积分范围差别保留为未决来源问题。全部10条为待人工核查候选，无生物验证或跨论文支持/反驳/复现关系。",
+  "shared_evidence": [
+    {
+      "claim_id": "C1",
+      "with": [
+        "C10"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C5"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C4"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "with": [
+        "C1"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": "C3",
+        "issue": "图11标题含测量措辞，但正文说明为模型生成统计样本；不足以认定本研究采集了新物理器件数据。",
+        "suggested_correction": "已将命题限定为有效读噪声模型的趋势表达，物理数据归属仍交由人工核查。",
+        "pdf_page": 12,
+        "resolved": false
+      },
+      {
+        "claim_id": "C4",
+        "issue": "第13页使用测量和后处理措辞却未给出器件样本数和测量方法。",
+        "suggested_correction": "保留作者报告的16/41级，并明确这是电平数而非独立物理器件n，不声称实测芯片验证。",
+        "pdf_page": 13,
+        "resolved": false
+      },
+      {
+        "claim_id": "C5",
+        "issue": "0.21 V有效积分归一化范围与0.9-0.71=0.19 V阈值跨度不同，源文本未解释。",
+        "suggested_correction": "保留源文0.21 V且记录差别，不自行修正成0.19 V。",
+        "pdf_page": 15,
+        "resolved": false
+      },
+      {
+        "claim_id": "C6",
+        "issue": "659是推理输入样本数，未说明其episode独立性；MAE按归一化输出而非角度报告。",
+        "suggested_correction": "已使用输入样本作为分析单位并保留未报告的数据层级，不假定独立重复或角度误差。",
+        "pdf_page": 16,
+        "resolved": true
+      },
+      {
+        "claim_id": "C7",
+        "issue": "96%成功率限定于500条轨迹、50步窗口和1.3对1的速度条件。",
+        "suggested_correction": "已保留运动条件、判据及20条实际窗口内失败，不外推到变化条件。",
+        "pdf_page": 17,
+        "resolved": true
+      },
+      {
+        "claim_id": "C8",
+        "issue": "200次系统变化是神经元Monte Carlo模板池注入，不是完整Spectre系统Monte Carlo；未报告变化成功率。",
+        "suggested_correction": "已限定为层级近似和定性轨迹稳健性，禁止补入96%或全系统良率。",
+        "pdf_page": 18,
+        "resolved": true
+      },
+      {
+        "claim_id": "C9",
+        "issue": "10.67 pJ/spike为神经元指标；异工艺表有更低能耗或更小原始面积，不能称全面最优。",
+        "suggested_correction": "已明确系统边界和非受控文献对照，不构造全系统CPU/GPU节能结论。",
+        "pdf_page": 20,
+        "resolved": true
+      },
+      {
+        "claim_id": "C10",
+        "issue": "输入/膜节点耦合导致失真的说明属于作者机制解释，且复用C1证据。",
+        "suggested_correction": "已分设interpretation并双向标记共享证据，未建立跨来源关系。",
+        "pdf_page": 8,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "提供页面未列预印本具体版本号或发布日期。",
+        "suggested_correction": "保留分配的2026/arXiv索引身份及源文本题名，不补造更具体日期或后续期刊版本。",
+        "pdf_page": 1,
+        "resolved": false
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T13:36:33.274998Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "4caecc734f1d6e251c2002d3f6440940360c31dbf3840637a81638083362b117",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

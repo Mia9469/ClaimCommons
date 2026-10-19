@@ -1,0 +1,169 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Prototypical graph based deep label propagation with semantic augmentation for cross-subject and cross-session EEG emotion recognition</title><style>body{max-width:940px;margin:40px auto;padding:0 24px;background:#fffdf7;color:#12372f;font:16px/1.8 Georgia,serif}h1{font-size:26px;line-height:1.4}h2{font-size:20px;line-height:1.5}h3{font-size:16px}article{padding:26px 0;border-top:1px solid #bec4b8}small{color:#68766e}dl{display:grid;grid-template-columns:120px 1fr;gap:8px 20px}dt{font-weight:bold}dd{margin:0}li{padding:8px 0}p,dd{overflow-wrap:anywhere}.note{background:#eef2e2;padding:14px;border-left:3px solid #738968}summary{cursor:pointer}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.7 monospace}@media(max-width:600px){body{margin:24px auto;padding:0 18px}dl{grid-template-columns:1fr;gap:3px}dd{margin-bottom:12px}}@media print{body{margin:0;background:white}details{display:block}}</style><link rel="stylesheet" href="../../commons-v02.css?v=20261020-1"><link rel="stylesheet" href="../../examples.css?v=20260928-2"><link rel="stylesheet" href="../../site.css?v=20261020-1"><script defer src="../../site.js?v=20261020-1"></script><script defer src="../../report-ui.js?v=20261020-1"></script></head><body class="portal-page report-page" data-cc-report-shell="1" data-page="library" data-site-prefix="../../" data-library-paper="paper-W7167621717" data-report-language="zh" data-claim-records="{&quot;C1&quot;:&quot;structured-paper-W7167621717-1&quot;,&quot;C2&quot;:&quot;structured-paper-W7167621717-2&quot;,&quot;C3&quot;:&quot;structured-paper-W7167621717-3&quot;,&quot;C4&quot;:&quot;structured-paper-W7167621717-4&quot;,&quot;C5&quot;:&quot;structured-paper-W7167621717-5&quot;,&quot;C6&quot;:&quot;structured-paper-W7167621717-6&quot;,&quot;C7&quot;:&quot;structured-paper-W7167621717-7&quot;,&quot;C8&quot;:&quot;structured-paper-W7167621717-8&quot;,&quot;C9&quot;:&quot;structured-paper-W7167621717-9&quot;,&quot;C10&quot;:&quot;structured-paper-W7167621717-10&quot;,&quot;C11&quot;:&quot;structured-paper-W7167621717-11&quot;,&quot;C12&quot;:&quot;structured-paper-W7167621717-12&quot;,&quot;C13&quot;:&quot;structured-paper-W7167621717-13&quot;,&quot;C14&quot;:&quot;structured-paper-W7167621717-14&quot;,&quot;C15&quot;:&quot;structured-paper-W7167621717-15&quot;,&quot;C16&quot;:&quot;structured-paper-W7167621717-16&quot;,&quot;C17&quot;:&quot;structured-paper-W7167621717-17&quot;,&quot;C18&quot;:&quot;structured-paper-W7167621717-18&quot;,&quot;C19&quot;:&quot;structured-paper-W7167621717-19&quot;,&quot;C20&quot;:&quot;structured-paper-W7167621717-20&quot;,&quot;C21&quot;:&quot;structured-paper-W7167621717-21&quot;,&quot;C22&quot;:&quot;structured-paper-W7167621717-22&quot;,&quot;C23&quot;:&quot;structured-paper-W7167621717-23&quot;,&quot;C24&quot;:&quot;structured-paper-W7167621717-24&quot;,&quot;C25&quot;:&quot;structured-paper-W7167621717-25&quot;,&quot;C26&quot;:&quot;structured-paper-W7167621717-26&quot;,&quot;C27&quot;:&quot;structured-paper-W7167621717-27&quot;}"><header></header><main id="report-content"><div id="report-tools"></div><small>CLAIM COMMONS / 阅读报告</small><h1>Prototypical graph based deep label propagation with semantic augmentation for cross-subject and cross-session EEG emotion recognition</h1><p class="note">AI 文本提取候选，尚待人工核对。图像像素未读取；PDF 页码指文件中的页序。</p><p>本篇提出PGDLP，将源类统计的目标特征语义增强、动态原型图标签传播及自适应原型对齐用于无标签目标域EEG情绪分类。完整读取26页后提取27条候选，覆盖六个库内协议结果、全部六个跨库方向任务、八个消融和训练/噪声/表示/参数分析。第二次来源审计保留多处正文与表格标准差冲突、非显著强基线比较、SEED-IV WUCE未领先，以及跨库排名和单例收敛范围。SEED/SEED-IV各15人，DEAP过滤到14人；EEG片段、重采样点、模型重复和被试不能混为独立样本。所有结果是该PDF报告的算法评估，不是临床效能或生物机制验证；图像与外部附件未读。</p><a href="https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2026.1846592/pdf" rel="noreferrer">查看所读原文版本 ↗</a><details><summary>贡献清单与处理决定</summary><ul><li><b>ProAug、动态原型图标签传播、联合对齐和训练设计。</b><br>include · 作为可评估的方法设计提取C01–C03，性能和理论保证分开。</li><li><b>SEED/SEED-IV在CUCE、CUSE、WUCE的六项基准结果。</b><br>include · C04–C09按数据集及协议拆分；保留真实不领先和不显著比较。</li><li><b>DEAP与SEED的六项跨库迁移。</b><br>include · C10–C11按迁移方向保留全部六项均值和未领先条件。</li><li><b>八项组件移除/参数固定消融。</b><br>include · C12–C19逐项独立评估，记录同一SEED/表8共享证据。</li><li><b>自适应α轨迹、标签污染、特征可视化与混淆矩阵。</b><br>include · C20–C23保留示例范围、污染类型与各类读出，不将文字图注当像素。</li><li><b>λM、λA及辅助损失权重敏感性、训练收敛。</b><br>include · C24–C27为有限扫描/单示例经验结果，无普适收敛推断。</li><li><b>PGDLP必然同时降低HΔH距离和联合最优误差、保证目标泛化上界下降。</b><br>exclude · 援引已有域适应界并作解释，未提供足够新证明；C03明确非推论。</li><li><b>所有跨库任务第一或第二、所有基线显著更差、所有协议快速收敛及独立计算效率实测。</b><br>exclude · 内部表格或图注不支持该宽泛表述；未给壁钟和运行复杂度实测。</li><li><b>局部噪声适应性、多模态/few-shot扩展和整合图对比学习。</b><br>defer · 原文明示限制或未来方案，未实验，不冒充已经实现。</li><li><b>介绍、相关工作、引用列表及声明。</b><br>exclude · 已读，非本篇独立新结果；不建立跨文献支持/复制关系。</li></ul></details><article><small>C1 / 直接结果 · methodological</small><h2>PGDLP在有标签源域与无标签目标域共享情绪类别的UDA设置下，以源域类别均值及协方差构造目标深层特征的高斯语义增强，并随迭代逐步增大增强强度；这是特征空间变换，不是生成真实EEG或验证新的情绪生理机制。</h2><h3>Evidence</h3><p>ProAug方法定义</p><dl><dt>设计 / 对照</dt><dd>目标特征与对应源域类别原型混合，按源域类内协方差采样；类别依据目标伪标签；未增强目标深层特征</dd><dt>独立单位与 n</dt><dd>特征样本及类别原型；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 7 · 3.2.4</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>提出可嵌入交替训练的类别条件目标特征增强。</dd><dt>适用边界</dt><dd>只定义深层特征操作；其性能贡献另由消融评估。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能推断增强EEG生理真实性、因果情绪机制或任意域标签语义不变。</dd><dt>未解决</dt><dd>早期错误伪标签能否被普遍纠正未获理论保证。</dd></dl><h3>相关问题</h3><ul><li>源域类别统计怎样用于无标签目标域的EEG特征增强？</li></ul></article><article><small>C2 / 直接结果 · methodological</small><h2>PGDLP的ProtoLP用样本到类别原型的软分配构造W=ZΛ⁻¹Zᵀ，再以线性投影预测标签并交替更新原型；因此图的语义来自样本与原型，而非EEG电极空间连接。</h2><h3>Evidence</h3><p>原型二部图及参数化标签传播</p><dl><dt>设计 / 对照</dt><dd>类别数C的软分配矩阵代替直接逐样本相似度构建，学习投影A并迭代更新原型；固定样本两两相似图的传统LP</dd><dt>独立单位与 n</dt><dd>样本、类别原型与算法迭代；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 8 · 3.2.6–3.2.9</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>通过原型因子化简化相似度计算并使图随原型更新。</dd><dt>适用边界</dt><dd>未报告独立壁钟运行时间或普适复杂度实测；不加入源文没有的复杂度数值。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能据此解释电极连接或证明全部非凸交替步骤全局最优。</dd><dt>未解决</dt><dd>矩阵退化和排版中部分归一化/符号细节有待实现核对。</dd></dl><h3>相关问题</h3><ul><li>原型图怎样区别于电极图和传统样本标签传播？</li></ul></article><article><small>C3 / 直接结果 · methodological</small><h2>PGDLP同时使用域内原型对比与域间同类原型/特征对齐，以自适应α平衡判别性和可迁移性，并结合伪标签熵权重、类别权重、互信息及一致性损失交替训练。</h2><h3>Evidence</h3><p>Prototypical alignment及联合损失</p><dl><dt>设计 / 对照</dt><dd>共享特征网络，标签传播与网络训练交替，α按域内外距离估计；单独进行域间对齐或域内判别学习</dd><dt>独立单位与 n</dt><dd>类别原型、预测样本及训练轮次；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 10 · 3.2.10–3.3.3</dd></dl><p>α估计定义</p><dl><dt>设计 / 对照</dt><dd>按域内外距离比值逐轮估计；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>训练轮次；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 12 · 4.1</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>给出联合判别/对齐的训练设计。</dd><dt>适用边界</dt><dd>这是方法设计，不是证明目标错误上界一定下降。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能把采用既有域适应上界的讨论当作新收敛或泛化定理。</dd><dt>未解决</dt><dd>α估计与真实HΔH距离、联合最优风险的严格关系未在来源中证明。</dd></dl><h3>相关问题</h3><ul><li>域内判别性与域间对齐如何在EEG域适应中平衡？</li></ul></article><article><small>C4 / 直接结果 · benchmark_result</small><h2>在SEED三类情绪CUCE/LOSO实验中，PGDLP报告准确率91.65%，高于表1最佳基线DAPLP的89.48%；表中该比较无显著性星号，因此均值领先不能等同于显著优越。</h2><h3>Evidence</h3><p>EEG跨被试跨session分类</p><dl><dt>设计 / 对照</dt><dd>一个被试的session作目标，其他被试session作源，目标标签不用于UDA监督；表1传统与深度基线；DAPLP 89.48±6.44%</dd><dt>独立单位与 n</dt><dd>留出被试/session的分类准确率；片段非独立生物重复；SEED和SEED-IV各15名被试、3个session；1秒EEG片段为预测样本而非独立被试。§5.2称每设置重复10次且固定随机种子，重复运行与被试汇总层级未完全说明。</dd><dt>不确定性</dt><dd>表1 PGDLP 91.65±5.16%，±标为SD；与DAPLP以&#x27;-&#x27;标p≥0.05。</dd><dt>原文位置</dt><dd>PDF 14 · Table 1</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>此基准表中的最高报告均值。</dd><dt>适用边界</dt><dd>SEED预处理DE特征、离线UDA及所列比较。</dd><dt>实际负结果</dt><dd>与DAPLP等部分高水平基线未显示显著差异。</dd><dt>不能推出</dt><dd>不证明临床情绪判读效能或真实部署泛化。</dd><dt>未解决</dt><dd>同一固定种子的10次重复及主体汇总与Welch检验的独立性需核对。</dd></dl><h3>相关问题</h3><ul><li>PGDLP在SEED跨被试跨session分类中表现如何？</li></ul></article><article><small>C5 / 直接结果 · benchmark_result</small><h2>在SEED-IV四类情绪CUCE/LOSO实验中，PGDLP报告79.58±6.27%准确率，高于表2最佳基线DAPLP的78.17±5.04%，但表2没有为该比较标显著差异。</h2><h3>Evidence</h3><p>四类跨被试跨session分类</p><dl><dt>设计 / 对照</dt><dd>SEED-IV CUCE/LOSO、共享源目标类别；表2基线；DAPLP 78.17±5.04%</dd><dt>独立单位与 n</dt><dd>留出被试/session准确率；SEED和SEED-IV各15名被试、3个session；1秒EEG片段为预测样本而非独立被试。§5.2称每设置重复10次且固定随机种子，重复运行与被试汇总层级未完全说明。</dd><dt>不确定性</dt><dd>79.58±6.27%为表2SD；与DAPLP、UDDA等若干基线标&#x27;-&#x27;。</dd><dt>原文位置</dt><dd>PDF 15 · Table 2</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>在四类CUCE所列比较中报告均值最高。</dd><dt>适用边界</dt><dd>仅此离线基准、特征及协议。</dd><dt>实际负结果</dt><dd>相对若干强基线未达到报告的显著性阈值。</dd><dt>不能推出</dt><dd>不能据此证明类别数增加时性能普遍不受影响。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>四类情绪的跨被试跨session识别是否保持均值优势？</li></ul></article><article><small>C6 / 直接结果 · benchmark_result</small><h2>在SEED仅第一session的跨被试CUSE/LOSO实验中，PGDLP平均准确率96.67%，高于表3最佳基线DADPc的93.58%；与DADPc仍标为不显著，且PGDLP标准差在表3与正文不一致。</h2><h3>Evidence</h3><p>单session跨被试EEG分类</p><dl><dt>设计 / 对照</dt><dd>第一session，一被试目标、其余被试源；DADPc 93.58±6.35%及表3其他基线</dd><dt>独立单位与 n</dt><dd>留出被试准确率；SEED和SEED-IV各15名被试、3个session；1秒EEG片段为预测样本而非独立被试。§5.2称每设置重复10次且固定随机种子，重复运行与被试汇总层级未完全说明。</dd><dt>不确定性</dt><dd>表3和表8为±2.25%；PDF15正文为±11.25%；不得合并为已确定SD。</dd><dt>原文位置</dt><dd>PDF 16 · Table 3</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>所列SEED CUSE平均准确率最高。</dd><dt>适用边界</dt><dd>单session离线UDA，不覆盖跨session漂移。</dd><dt>实际负结果</dt><dd>表3对DADPc标p≥0.05。</dd><dt>不能推出</dt><dd>不能将正文与表格冲突静默修成一个确定的误差条。</dd><dt>未解决</dt><dd>真实SD及统计汇总层级待作者数据核对。</dd></dl><h3>相关问题</h3><ul><li>PGDLP在单session跨被试SEED分类中能达到什么性能？</li></ul></article><article><small>C7 / 直接结果 · benchmark_result</small><h2>在SEED-IV第一session的跨被试CUSE/LOSO实验中，PGDLP报告平均准确率95.78%，略高于表4 DAPLP的94.68%；其与若干强基线的差异不显著，标准差也有正文/表格冲突。</h2><h3>Evidence</h3><p>四类单session跨被试分类</p><dl><dt>设计 / 对照</dt><dd>SEED-IV第一session留出被试；DAPLP 94.68±6.18%、DADPc 94.62±4.37%及表4基线</dd><dt>独立单位与 n</dt><dd>留出被试准确率；SEED和SEED-IV各15名被试、3个session；1秒EEG片段为预测样本而非独立被试。§5.2称每设置重复10次且固定随机种子，重复运行与被试汇总层级未完全说明。</dd><dt>不确定性</dt><dd>表4为±3.41%；PDF15正文为±9.41%；表中对DAPLP、DADPc等标&#x27;-&#x27;。</dd><dt>原文位置</dt><dd>PDF 17 · Table 4</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>在表4报告均值领先。</dd><dt>适用边界</dt><dd>四类、第一session及源文评估协议。</dd><dt>实际负结果</dt><dd>表4对多项强基线标不显著。</dd><dt>不能推出</dt><dd>不推出统计显著超过所有方法。</dd><dt>未解决</dt><dd>标准差冲突和部分跨表重复的基线数字待核对。</dd></dl><h3>相关问题</h3><ul><li>PGDLP在四类单session跨被试任务中的优势有多大？</li></ul></article><article><small>C8 / 直接结果 · benchmark_result</small><h2>在SEED同一被试前两session到后一session的WUCE分类中，PGDLP平均准确率97.38%，高于表5 DAPLP的96.41%；表5对该比较标显著，但正文报告的SD和“超过最佳基线”的幅度与表格不一致。</h2><h3>Evidence</h3><p>同被试跨session分类</p><dl><dt>设计 / 对照</dt><dd>每被试session1、2源，session3目标；跨被试汇总；表5基线，DAPLP 96.41±2.68%</dd><dt>独立单位与 n</dt><dd>被试内session转移，汇总单位为被试；SEED和SEED-IV各15名被试、3个session；1秒EEG片段为预测样本而非独立被试。§5.2称每设置重复10次且固定随机种子，重复运行与被试汇总层级未完全说明。</dd><dt>不确定性</dt><dd>表5/表8为±1.48%；PDF15正文为±7.48%；Welch比较标p≤0.05。</dd><dt>原文位置</dt><dd>PDF 18 · Table 5</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>所列WUCE SEED均值最高。</dd><dt>适用边界</dt><dd>同被试三类任务；不是新被试评估。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能将同被试成绩推广到完全新被试或称近乎完美真实情绪识别。</dd><dt>未解决</dt><dd>正文2.68%最佳基线增益并不对应表5的最高基线；需保留原始数字而非接受该描述。</dd></dl><h3>相关问题</h3><ul><li>同被试跨session条件是否比跨被试条件更容易识别情绪？</li></ul></article><article><small>C9 / 直接结果 · benchmark_boundary</small><h2>在SEED-IV同被试跨session WUCE实验中，PGDLP平均准确率85.77%，低于表6 DS-AGC的87.83%，且二者差异标为不显著；这是所测条件下未领先的实际边界，而非“所有测试更优”。</h2><h3>Evidence</h3><p>四类同被试跨session分类</p><dl><dt>设计 / 对照</dt><dd>前两session到第三session；DS-AGC 87.83±4.21%</dd><dt>独立单位与 n</dt><dd>被试内session转移、跨被试汇总；SEED和SEED-IV各15名被试、3个session；1秒EEG片段为预测样本而非独立被试。§5.2称每设置重复10次且固定随机种子，重复运行与被试汇总层级未完全说明。</dd><dt>不确定性</dt><dd>表6 PGDLP±6.82%；PDF15正文±9.82%；与DS-AGC标p≥0.05。</dd><dt>原文位置</dt><dd>PDF 18 · Table 6</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>PGDLP在此表达到较高但非最高均值。</dd><dt>适用边界</dt><dd>SEED-IV WUCE是局部不领先情形。</dd><dt>实际负结果</dt><dd>所测均值低于DS-AGC；未检出二者显著差异。</dd><dt>不能推出</dt><dd>不能从算法均值差直接识别真实环境噪声的生物来源。</dd><dt>未解决</dt><dd>作者将该边界归因于局部噪声适应性，缺少独立噪声机制干预。</dd></dl><h3>相关问题</h3><ul><li>PGDLP是否在四类同被试跨session条件也优于全部基线？</li></ul></article><article><small>C10 / 直接结果 · benchmark_result</small><h2>统一32共同通道的160维DE特征后，DEAP→SEED三个session的PGDLP准确率依次为67.59%、65.68%、75.89%；表7在SI和SIII领先所列基线，但SII低于DADPc的66.30%和CAN的65.77%，并非均为第一或第二。</h2><h3>Evidence</h3><p>跨数据库EEG情绪UDA</p><dl><dt>设计 / 对照</dt><dd>过滤DEAP三类valence与SEED三类情绪；同维共同通道；表7所列基线，SII DADPc66.30%、CAN65.77%</dd><dt>独立单位与 n</dt><dd>数据库-session迁移任务、EEG片段；DEAP原32人，过滤后14人、3个选定trial，每trial有效60秒；SEED15人、3session。源文DEAP→SEED取2520源点/2775目标点，SEED→DEAP取41625重采样源点/180目标点；数据点不是独立被试。</dd><dt>不确定性</dt><dd>表7未给逐任务SD、CI或显著性检验。</dd><dt>原文位置</dt><dd>PDF 19 · Table 7</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>两个DEAP→SEED方向任务的所列均值领先。</dd><dt>适用边界</dt><dd>总体跨库性能较库内低，且过滤被试/trial限制外推。</dd><dt>实际负结果</dt><dd>DEAP→SII未超过至少两项表内基线。</dd><dt>不能推出</dt><dd>不推出跨设备、刺激或不同标签定义全面消除域差异。</dd><dt>未解决</dt><dd>DEAP量表描述内部矛盾、过滤方案与基线可比性待核对。</dd></dl><h3>相关问题</h3><ul><li>从DEAP到不同SEED session的迁移性能是否一致？</li></ul></article><article><small>C11 / 直接结果 · benchmark_result</small><h2>SEED三个session→DEAP时，PGDLP准确率分别为65.81%、59.27%、59.62%；表7中SII和SIII高于所列基线，而SI略低于CAN的66.12%，所以跨库优势依迁移方向及session变化。</h2><h3>Evidence</h3><p>SEED到DEAP的跨库UDA</p><dl><dt>设计 / 对照</dt><dd>共同32通道及统一三类映射；表7基线；SI→DEAP CAN66.12%</dd><dt>独立单位与 n</dt><dd>数据库-session迁移任务、EEG片段；DEAP原32人，过滤后14人、3个选定trial，每trial有效60秒；SEED15人、3session。源文DEAP→SEED取2520源点/2775目标点，SEED→DEAP取41625重采样源点/180目标点；数据点不是独立被试。</dd><dt>不确定性</dt><dd>未给SD/CI或这三项差异的显著性。</dd><dt>原文位置</dt><dd>PDF 19 · Table 7</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>SEED SII、SIII到DEAP的报告均值领先。</dd><dt>适用边界</dt><dd>SEED→DEAP最高均值仅65.81%，与库内测试不是同一泛化条件。</dd><dt>实际负结果</dt><dd>SI→DEAP未领先CAN。</dd><dt>不能推出</dt><dd>不推出无需无标签目标数据的即插即用识别。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>跨数据库情绪识别的优势是否取决于训练和目标方向？</li></ul></article><article><small>C12 / 直接结果 · ablation_result</small><h2>在保持SEED其余框架的ProAug消融中，CUCE、CUSE、WUCE准确率分别为87.37±5.48%、92.52±3.08%、94.30±3.84%，均低于完整框架的91.65%、96.67%、97.38%。</h2><h3>Evidence</h3><p>SEED组件消融</p><dl><dt>设计 / 对照</dt><dd>在CUCE、CUSE、WUCE分别移除或固定ProAug，与完整PGDLP对照；完整PGDLP 91.65±5.16%、96.67±2.25%、97.38±1.48%</dd><dt>独立单位与 n</dt><dd>共享SEED被试/session划分中的模型条件；SEED和SEED-IV各15名被试、3个session；1秒EEG片段为预测样本而非独立被试。§5.2称每设置重复10次且固定随机种子，重复运行与被试汇总层级未完全说明。</dd><dt>不确定性</dt><dd>表8给平均±SD；未给每项消融差异的独立显著性或CI。</dd><dt>原文位置</dt><dd>PDF 19 · Table 8</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>移除ProAug后SEED三个协议的均值均下降，支持目标特征语义增强对完整框架的预测性能有贡献。</dd><dt>适用边界</dt><dd>仅完整PGDLP相对于此单项移除/固定配置；模块存在耦合。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能单独证明增强特征保留真实情绪生理语义。</dd><dt>未解决</dt><dd>消融差异的统计显著性与随机重复独立性未报告清楚。</dd></dl><h3>相关问题</h3><ul><li>PGDLP中ProAug对跨域EEG分类有何贡献？</li></ul></article><article><small>C13 / 直接结果 · ablation_result</small><h2>在保持SEED其余框架的Intra-DA消融中，CUCE、CUSE、WUCE准确率分别为89.55±3.31%、93.30±4.02%、95.60±4.49%，均低于完整框架的91.65%、96.67%、97.38%。</h2><h3>Evidence</h3><p>SEED组件消融</p><dl><dt>设计 / 对照</dt><dd>在CUCE、CUSE、WUCE分别移除或固定Intra-DA，与完整PGDLP对照；完整PGDLP 91.65±5.16%、96.67±2.25%、97.38±1.48%</dd><dt>独立单位与 n</dt><dd>共享SEED被试/session划分中的模型条件；SEED和SEED-IV各15名被试、3个session；1秒EEG片段为预测样本而非独立被试。§5.2称每设置重复10次且固定随机种子，重复运行与被试汇总层级未完全说明。</dd><dt>不确定性</dt><dd>表8给平均±SD；未给每项消融差异的独立显著性或CI。</dd><dt>原文位置</dt><dd>PDF 19 · Table 8</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>移除域内原型对齐后SEED三个协议均值下降，支持域内判别约束的性能贡献。</dd><dt>适用边界</dt><dd>仅完整PGDLP相对于此单项移除/固定配置；模块存在耦合。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能据此证明所有类内结构变紧均由该模块独立引起。</dd><dt>未解决</dt><dd>消融差异的统计显著性与随机重复独立性未报告清楚。</dd></dl><h3>相关问题</h3><ul><li>PGDLP中Intra-DA对跨域EEG分类有何贡献？</li></ul></article><article><small>C14 / 直接结果 · ablation_result</small><h2>在保持SEED其余框架的Inter-DA消融中，CUCE、CUSE、WUCE准确率分别为79.10±5.01%、84.27±5.73%、89.87±6.17%，均低于完整框架的91.65%、96.67%、97.38%。</h2><h3>Evidence</h3><p>SEED组件消融</p><dl><dt>设计 / 对照</dt><dd>在CUCE、CUSE、WUCE分别移除或固定Inter-DA，与完整PGDLP对照；完整PGDLP 91.65±5.16%、96.67±2.25%、97.38±1.48%</dd><dt>独立单位与 n</dt><dd>共享SEED被试/session划分中的模型条件；SEED和SEED-IV各15名被试、3个session；1秒EEG片段为预测样本而非独立被试。§5.2称每设置重复10次且固定随机种子，重复运行与被试汇总层级未完全说明。</dd><dt>不确定性</dt><dd>表8给平均±SD；未给每项消融差异的独立显著性或CI。</dd><dt>原文位置</dt><dd>PDF 19 · Table 8</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>移除域间原型对齐后SEED三个协议均值明显下降，支持跨域对齐在此框架内的重要性。</dd><dt>适用边界</dt><dd>仅完整PGDLP相对于此单项移除/固定配置；模块存在耦合。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能从单模块消融识别真实神经语义一致性或普适必要条件。</dd><dt>未解决</dt><dd>消融差异的统计显著性与随机重复独立性未报告清楚。</dd></dl><h3>相关问题</h3><ul><li>PGDLP中Inter-DA对跨域EEG分类有何贡献？</li></ul></article><article><small>C15 / 直接结果 · ablation_result</small><h2>在保持SEED其余框架的Lpa（λA=0）消融中，CUCE、CUSE、WUCE准确率分别为76.34±5.61%、81.46±4.60%、87.19±4.73%，均低于完整框架的91.65%、96.67%、97.38%。</h2><h3>Evidence</h3><p>SEED组件消融</p><dl><dt>设计 / 对照</dt><dd>在CUCE、CUSE、WUCE分别移除或固定Lpa（λA=0），与完整PGDLP对照；完整PGDLP 91.65±5.16%、96.67±2.25%、97.38±1.48%</dd><dt>独立单位与 n</dt><dd>共享SEED被试/session划分中的模型条件；SEED和SEED-IV各15名被试、3个session；1秒EEG片段为预测样本而非独立被试。§5.2称每设置重复10次且固定随机种子，重复运行与被试汇总层级未完全说明。</dd><dt>不确定性</dt><dd>表8给平均±SD；未给每项消融差异的独立显著性或CI。</dd><dt>原文位置</dt><dd>PDF 19 · Table 8</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>同时取消原型对齐损失后SEED三个协议均值均下降，且表8列出的均值下降大于其他单项消融。</dd><dt>适用边界</dt><dd>仅完整PGDLP相对于此单项移除/固定配置；模块存在耦合。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>联合损失取消会同时改变多项约束，不能当作独立于域内/域间消融的重复验证。</dd><dt>未解决</dt><dd>消融差异的统计显著性与随机重复独立性未报告清楚。</dd></dl><h3>相关问题</h3><ul><li>PGDLP中Lpa（λA=0）对跨域EEG分类有何贡献？</li></ul></article><article><small>C16 / 直接结果 · ablation_result</small><h2>在保持SEED其余框架的LMI（β=0）消融中，CUCE、CUSE、WUCE准确率分别为90.59±4.18%、94.72±3.06%、97.11±3.51%，均低于完整框架的91.65%、96.67%、97.38%。</h2><h3>Evidence</h3><p>SEED组件消融</p><dl><dt>设计 / 对照</dt><dd>在CUCE、CUSE、WUCE分别移除或固定LMI（β=0），与完整PGDLP对照；完整PGDLP 91.65±5.16%、96.67±2.25%、97.38±1.48%</dd><dt>独立单位与 n</dt><dd>共享SEED被试/session划分中的模型条件；SEED和SEED-IV各15名被试、3个session；1秒EEG片段为预测样本而非独立被试。§5.2称每设置重复10次且固定随机种子，重复运行与被试汇总层级未完全说明。</dd><dt>不确定性</dt><dd>表8给平均±SD；未给每项消融差异的独立显著性或CI。</dd><dt>原文位置</dt><dd>PDF 19 · Table 8</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>移除目标互信息损失后SEED三个协议的平均准确率小幅下降，支持该损失的辅助贡献。</dd><dt>适用边界</dt><dd>仅完整PGDLP相对于此单项移除/固定配置；模块存在耦合。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不证明其在任意目标标签分布都提高泛化。</dd><dt>未解决</dt><dd>消融差异的统计显著性与随机重复独立性未报告清楚。</dd></dl><h3>相关问题</h3><ul><li>PGDLP中LMI（β=0）对跨域EEG分类有何贡献？</li></ul></article><article><small>C17 / 直接结果 · ablation_result</small><h2>在保持SEED其余框架的Lcon（γ=0）消融中，CUCE、CUSE、WUCE准确率分别为90.34±4.70%、94.88±3.41%、96.87±2.08%，均低于完整框架的91.65%、96.67%、97.38%。</h2><h3>Evidence</h3><p>SEED组件消融</p><dl><dt>设计 / 对照</dt><dd>在CUCE、CUSE、WUCE分别移除或固定Lcon（γ=0），与完整PGDLP对照；完整PGDLP 91.65±5.16%、96.67±2.25%、97.38±1.48%</dd><dt>独立单位与 n</dt><dd>共享SEED被试/session划分中的模型条件；SEED和SEED-IV各15名被试、3个session；1秒EEG片段为预测样本而非独立被试。§5.2称每设置重复10次且固定随机种子，重复运行与被试汇总层级未完全说明。</dd><dt>不确定性</dt><dd>表8给平均±SD；未给每项消融差异的独立显著性或CI。</dd><dt>原文位置</dt><dd>PDF 19 · Table 8</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>移除一致性损失后SEED三个协议的平均准确率小幅下降，支持一致性约束的辅助贡献。</dd><dt>适用边界</dt><dd>仅完整PGDLP相对于此单项移除/固定配置；模块存在耦合。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不证明模型已消除伪标签错误。</dd><dt>未解决</dt><dd>消融差异的统计显著性与随机重复独立性未报告清楚。</dd></dl><h3>相关问题</h3><ul><li>PGDLP中Lcon（γ=0）对跨域EEG分类有何贡献？</li></ul></article><article><small>C18 / 直接结果 · ablation_result</small><h2>在保持SEED其余框架的熵样本权重（σ̂i=1）消融中，CUCE、CUSE、WUCE准确率分别为89.56±4.33%、94.85±3.12%、96.50±2.07%，均低于完整框架的91.65%、96.67%、97.38%。</h2><h3>Evidence</h3><p>SEED组件消融</p><dl><dt>设计 / 对照</dt><dd>在CUCE、CUSE、WUCE分别移除或固定熵样本权重（σ̂i=1），与完整PGDLP对照；完整PGDLP 91.65±5.16%、96.67±2.25%、97.38±1.48%</dd><dt>独立单位与 n</dt><dd>共享SEED被试/session划分中的模型条件；SEED和SEED-IV各15名被试、3个session；1秒EEG片段为预测样本而非独立被试。§5.2称每设置重复10次且固定随机种子，重复运行与被试汇总层级未完全说明。</dd><dt>不确定性</dt><dd>表8给平均±SD；未给每项消融差异的独立显著性或CI。</dd><dt>原文位置</dt><dd>PDF 19 · Table 8</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>将伪标签熵样本权重固定为1后SEED三个协议均值下降，支持不确定性加权对预测性能的贡献。</dd><dt>适用边界</dt><dd>仅完整PGDLP相对于此单项移除/固定配置；模块存在耦合。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>分类消融不直接测量伪标签噪声的因果减少。</dd><dt>未解决</dt><dd>消融差异的统计显著性与随机重复独立性未报告清楚。</dd></dl><h3>相关问题</h3><ul><li>PGDLP中熵样本权重（σ̂i=1）对跨域EEG分类有何贡献？</li></ul></article><article><small>C19 / 直接结果 · ablation_result</small><h2>在保持SEED其余框架的聚类集中因子（τ̂c=1）消融中，CUCE、CUSE、WUCE准确率分别为90.47±3.10%、96.03±1.15%、96.71±2.27%，均低于完整框架的91.65%、96.67%、97.38%。</h2><h3>Evidence</h3><p>SEED组件消融</p><dl><dt>设计 / 对照</dt><dd>在CUCE、CUSE、WUCE分别移除或固定聚类集中因子（τ̂c=1），与完整PGDLP对照；完整PGDLP 91.65±5.16%、96.67±2.25%、97.38±1.48%</dd><dt>独立单位与 n</dt><dd>共享SEED被试/session划分中的模型条件；SEED和SEED-IV各15名被试、3个session；1秒EEG片段为预测样本而非独立被试。§5.2称每设置重复10次且固定随机种子，重复运行与被试汇总层级未完全说明。</dd><dt>不确定性</dt><dd>表8给平均±SD；未给每项消融差异的独立显著性或CI。</dd><dt>原文位置</dt><dd>PDF 19 · Table 8</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>将聚类集中因子固定为1后SEED三个协议均值下降，支持动态类条件温度/集中因子的性能贡献。</dd><dt>适用边界</dt><dd>仅完整PGDLP相对于此单项移除/固定配置；模块存在耦合。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能从此消融证明该因子是无偏聚类质量估计。</dd><dt>未解决</dt><dd>消融差异的统计显著性与随机重复独立性未报告清楚。</dd></dl><h3>相关问题</h3><ul><li>PGDLP中聚类集中因子（τ̂c=1）对跨域EEG分类有何贡献？</li></ul></article><article><small>C20 / 直接结果 · training_dynamics</small><h2>来源所示的SEED WUCE session1及CUSE subject1训练轨迹中，自适应α分别稳定在约0.70和0.67，模型错误率也趋稳；这些代表轨迹支持权重可随任务变化，但不构成所有被试或任务的收敛定理。</h2><h3>Evidence</h3><p>自适应α训练轨迹</p><dl><dt>设计 / 对照</dt><dd>跟踪两个示例设置中的权重及错误率；WUCE示例与CUSE示例；无固定α独立控制</dd><dt>独立单位与 n</dt><dd>示例任务的训练迭代；源文指定WUCE session1和CUSE subject1；未报告独立轨迹重复数。</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 19 · Figure 2</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>两个示例显示不同稳定权重。</dd><dt>适用边界</dt><dd>只据正文描述和图注，未读取图像像素；WUCE session1与§5.2默认第三session目标的关系未说明。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能证明该数值最优或α估计始终正确。</dd><dt>未解决</dt><dd>示例session设置与主协议对齐方式需核对。</dd></dl><h3>相关问题</h3><ul><li>自适应原型对齐权重在训练中如何变化？</li></ul></article><article><small>C21 / 直接结果 · robustness_result</small><h2>在SEED源域真标签中随机替换5%、10%、15%、20%、25%标签的测试里，作者描述PGDLP目标识别准确率仅随噪声增加而小幅下降，支持对该人工源标签噪声范围的有限鲁棒性。</h2><h3>Evidence</h3><p>人工源标签污染</p><dl><dt>设计 / 对照</dt><dd>仅源标签随机替换，目标标签用于性能评估；五个源标签噪声比例</dd><dt>独立单位与 n</dt><dd>标签污染条件和目标测试样本；5个噪声比例；独立随机污染实现数未单独给出。</dd><dt>不确定性</dt><dd>正文未给图3逐点准确率、SD或CI。</dd><dt>原文位置</dt><dd>PDF 20 · Figure 3</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>在所报5%至25%随机源标签污染下性能下降有限。</dd><dt>适用边界</dt><dd>只有来源文字趋势；无图像读取，不猜逐点数值。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能外推到系统性错标、目标伪标签污染或信号噪声；“目标仅评估”不等于UDA完全不使用目标无标签特征。</dd><dt>未解决</dt><dd>污染运行重复数及该噪声实验的目标特征使用细节未明确。</dd></dl><h3>相关问题</h3><ul><li>PGDLP能否耐受随机源域标签错误？</li></ul></article><article><small>C22 / 直接结果 · representation_visualization</small><h2>作者对SEED subject1、session2的t-SNE文字说明称，PGDLP从epoch50到200逐渐形成类内聚集与源目标重合，而PR-PL在epoch200仍存在源目标分离；这是一个嵌入可视化示例，不是直接量化真实域距离。</h2><h3>Evidence</h3><p>t-SNE深层特征投影</p><dl><dt>设计 / 对照</dt><dd>同一被试/session的多个epoch对比；PR-PL嵌入</dd><dt>独立单位与 n</dt><dd>一个被试/session的嵌入示例；Subject1 Session2；独立嵌入或随机种子重复未报告。</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 21 · Figure 4</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>该示例的文字描述与特征对齐设计一致。</dd><dt>适用边界</dt><dd>未读图像；t-SNE及单示例的选择限制。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能证明高维分布完全相同、因果机制或全体被试均如此。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>原型增强与对齐后的EEG特征是否呈现类别聚集？</li></ul></article><article><small>C23 / 直接结果 · class_specific_result</small><h2>在来源SEED WUCE混淆矩阵说明中，PGDLP负性、中性、正性类别识别率分别为98.43%、93.96%、99.76%，作者描述其负性与中性区分优于对照模型；中性仍是三个类别中最低的识别率。</h2><h3>Evidence</h3><p>类别混淆矩阵分析</p><dl><dt>设计 / 对照</dt><dd>SEED WUCE分类结果；BiDANN、BiHDM、PR-PL；来源称BiDANN中性76.72%</dd><dt>独立单位与 n</dt><dd>测试样本的类别条件比例；未给此矩阵的独立被试/session汇总n。</dd><dt>不确定性</dt><dd>文字未给各类别CI或误差条。</dd><dt>原文位置</dt><dd>PDF 21 · Figure 5</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>报告较高三类识别率，尤其改善来源所述中性和负性区分。</dd><dt>适用边界</dt><dd>类别条件识别率不同于跨被试总体准确率。</dd><dt>实际负结果</dt><dd>中性识别率仍低于负性与正性；不是无混淆。</dd><dt>不能推出</dt><dd>不等于检测患者情绪的灵敏度、特异度或诊断效能。</dd><dt>未解决</dt><dd>矩阵统计的确切汇总范围需原始数据确认。</dd></dl><h3>相关问题</h3><ul><li>PGDLP的平均准确率是否掩盖不同情绪类别的性能差异？</li></ul></article><article><small>C24 / 直接结果 · parameter_sensitivity</small><h2>在SEED CUCE超参数扫描的文字报告中，标签传播正则λM从0增大时准确率先升后稳，约0.65处最高；这是有限扫描范围的经验敏感性结果，不是最佳值普适结论。</h2><h3>Evidence</h3><p>λM扫描</p><dl><dt>设计 / 对照</dt><dd>SEED CUCE，其余参数按实验框架设置；λM=0及较大λM</dd><dt>独立单位与 n</dt><dd>超参数配置；扫描重复数及全部逐点数值未提供。</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 22 · Figure 6</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>作者描述非零图平滑正则改善该扫描的准确率。</dd><dt>适用边界</dt><dd>未读图像；默认§5.2 λM=0.1与扫描峰值0.65不同。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能把0.65当作对所有数据集最优或将曲线当作理论保证。</dd><dt>未解决</dt><dd>超参数选取是否使用目标标签及默认/扫描配置关系需澄清。</dd></dl><h3>相关问题</h3><ul><li>PGDLP对标签传播正则强度有多敏感？</li></ul></article><article><small>C25 / 直接结果 · parameter_sensitivity</small><h2>SEED CUCE扫描中，原型对齐损失系数λA约0.65时作者报告最佳性能，接近0时准确率明显降低，超过0.65后趋稳；这支持该协议中非零原型对齐约束的经验价值。</h2><h3>Evidence</h3><p>λA扫描</p><dl><dt>设计 / 对照</dt><dd>SEED CUCE对齐损失权重变化；λA接近0和高于0.65的配置</dd><dt>独立单位与 n</dt><dd>超参数配置；未报告 / 不适用</dd><dt>不确定性</dt><dd>未给完整逐点数值或不确定性。</dd><dt>原文位置</dt><dd>PDF 22 · Figure 6</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>有限扫描下存在非零有效权重区间。</dd><dt>适用边界</dt><dd>默认λA=0.6与描述的0.65峰值并非相同设置。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不证明任意域转移均有相同最佳对齐强度。</dd><dt>未解决</dt><dd>调参数据和训练/评估分离待核对。</dd></dl><h3>相关问题</h3><ul><li>原型对齐损失的强度如何影响跨域EEG分类？</li></ul></article><article><small>C26 / 直接结果 · parameter_sensitivity</small><h2>SEED CUCE中，一致性系数γ和互信息系数β的扫描被作者描述为从0增大到约0.2时提高性能，0.4以上变化不大；这是两项辅助损失在所测范围内的经验稳定性，不是无需调参的普遍保证。</h2><h3>Evidence</h3><p>γ与β敏感性分析</p><dl><dt>设计 / 对照</dt><dd>SEED CUCE分别扫描辅助损失系数；各系数为0及较大系数</dd><dt>独立单位与 n</dt><dd>超参数配置；未报告 / 不适用</dd><dt>不确定性</dt><dd>未给逐点数值、误差条或两系数交互扫描。</dd><dt>原文位置</dt><dd>PDF 22 · Figure 6</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>作者描述辅助损失在有限参数范围内较稳定。</dd><dt>适用边界</dt><dd>主实验默认γ=β=1；描述最优扫描点约0.2，不能混同。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能外推到联合调参、其他数据集或无目标数据的部署。</dd><dt>未解决</dt><dd>扫描与主实验参数选择关系未完全说明。</dd></dl><h3>相关问题</h3><ul><li>PGDLP的辅助一致性与互信息损失是否高度依赖精确参数？</li></ul></article><article><small>C27 / 直接结果 · training_dynamics</small><h2>图7所定位的SEED CUSE目标subject1训练示例被正文描述为约60次迭代后趋稳、后续目标函数波动小于1%；该证据只支持所示训练运行的经验稳定，不能证明全部三种协议或全局最优收敛。</h2><h3>Evidence</h3><p>训练收敛轨迹</p><dl><dt>设计 / 对照</dt><dd>目标subject1的SEED CUSE运行；同一运行早期和后期迭代</dd><dt>独立单位与 n</dt><dd>算法迭代，不是独立样本；图注仅CUSE target Subject1；独立运行数未单独给出。</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 23 · Figure 7</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>所示示例具有有限迭代经验稳定性。</dd><dt>适用边界</dt><dd>正文称三协议，但图注只定位CUSE subject1；不扩展图证据范围。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不等于一般非凸训练收敛证明、低延迟或运行时间优势。</dd><dt>未解决</dt><dd>图示具体纵轴及三协议全部轨迹未通过图像核查。</dd></dl><h3>相关问题</h3><ul><li>PGDLP在来源示例训练中是否出现稳定收敛轨迹？</li></ul></article><details><summary>核对记录与来源信息</summary><pre>{
+  &quot;coverage&quot;: {
+    &quot;pdf_pages_read&quot;: [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26
+    ],
+    &quot;results_sections_seen&quot;: [
+      &quot;3 Methodology：3.1–3.3和Algorithms1–2&quot;,
+      &quot;4 Discussion：α和聚类集中因子&quot;,
+      &quot;5.1–5.2 Datasets/Experimental protocols&quot;,
+      &quot;5.3.1 CUCE；5.3.2 CUSE；5.3.3 WUCE；5.3.4 CDCV&quot;,
+      &quot;5.4.1 Ablation；5.4.2 Balance factor；5.4.3 Noisy labels；5.4.4 Visualization/confusion matrix；5.4.5 Sensitivity；5.4.6 Convergence&quot;,
+      &quot;6 Conclusion；所有Figures1–7与Tables1–8图表说明；声明和完整References&quot;
+    ],
+    &quot;missing_material&quot;: [
+      &quot;图像像素未读取；图3/6/7无文字逐点值&quot;,
+      &quot;声明提到supplementary material，但本26页提供文本之外的附件未提供&quot;,
+      &quot;训练代码、原始个体预测及随机运行数据未提供&quot;
+    ],
+    &quot;text_pass_complete&quot;: true,
+    &quot;notes&quot;: [
+      &quot;全部26页提供文本按约18000字符分块读完，包括全部表格、图注、参考文献及声明。&quot;,
+      &quot;第二次来源审计在保留上下文中逐项核对协议、数字、图注、分析单位和共享证据，已校正跨库排名和过度显著性/收敛表述。&quot;,
+      &quot;reading_mode:text_only；figure_images_read:false；scientific_verification:false；human_checked:false；source_audit_complete仅指全源文本审计。&quot;,
+      &quot;实际标题/作者/DOI与索引一致；2026-07-07 Original Research，保留该PDF版本。&quot;,
+      &quot;所有来源英文引文为null，总引文字数0；未生成关系或独立重复验证链接。&quot;
+    ],
+    &quot;reading_mode&quot;: &quot;text_only&quot;,
+    &quot;figure_images_read&quot;: false,
+    &quot;scientific_verification&quot;: false,
+    &quot;source_pdf_offline&quot;: true,
+    &quot;archived_page_text_used&quot;: true
+  },
+  &quot;audit&quot;: {
+    &quot;source_match_checks&quot;: [],
+    &quot;model_findings&quot;: [
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;DEAP量表在PDF12写1–9，PDF13写five-point，但同页按valence&gt;7等阈值过滤。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留原文阈值和过滤样本，不能认定五点描述正确；等待作者/原始数据核对。&quot;,
+        &quot;pdf_page&quot;: 13,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C6&quot;,
+        &quot;issue&quot;: &quot;SEED CUSE正文±11.25与Tables3/8±2.25不一致。&quot;,
+        &quot;suggested_correction&quot;: &quot;均值96.67保留，uncertainty同时列出两值，不静默修复。&quot;,
+        &quot;pdf_page&quot;: 15,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C7&quot;,
+        &quot;issue&quot;: &quot;SEED-IV CUSE正文±9.41与Table4±3.41不一致。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留均值及两种SD来源。&quot;,
+        &quot;pdf_page&quot;: 15,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C8&quot;,
+        &quot;issue&quot;: &quot;SEED WUCE正文±7.48与Tables5/8±1.48不一致，正文称超最佳基线2.68%，但表5最高基线96.41%。&quot;,
+        &quot;suggested_correction&quot;: &quot;用表内均值比较，不重复错误最佳基线增益；SD待核对。&quot;,
+        &quot;pdf_page&quot;: 15,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C9&quot;,
+        &quot;issue&quot;: &quot;SEED-IV WUCE正文±9.82与Table6±6.82不一致。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留均值及两种SD来源。&quot;,
+        &quot;pdf_page&quot;: 15,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C10&quot;,
+        &quot;issue&quot;: &quot;正文称其余跨库两任务均第二，但Table7 DEAP→SII 65.68低于DADPc66.30和CAN65.77。&quot;,
+        &quot;suggested_correction&quot;: &quot;C10已保留真实表内次序，不宣称第二。&quot;,
+        &quot;pdf_page&quot;: 19,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;§5.2称固定随机种子且每设置重复10次，§5.3又称跨被试均值；Welch独立样本检验对应的单位不完全清楚。&quot;,
+        &quot;suggested_correction&quot;: &quot;片段、被试和运行重复分开；不以10次运行冒充10组独立人体样本。&quot;,
+        &quot;pdf_page&quot;: 13,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;§5.2称所有基线同一backbone；§5.3称基线在各自使用的pre-trained models上微调。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留作者比较设置，不自行认定所有基线实际完全匹配。&quot;,
+        &quot;pdf_page&quot;: 14,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C20&quot;,
+        &quot;issue&quot;: &quot;图2采用WUCE session1；主协议§5.2描述前两session训练/第三session测试。&quot;,
+        &quot;suggested_correction&quot;: &quot;只记录原文明示示例，待核对示例设置。&quot;,
+        &quot;pdf_page&quot;: 19,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C27&quot;,
+        &quot;issue&quot;: &quot;正文扩展收敛描述到三种协议，而Figure7只定位CUSE target Subject1。&quot;,
+        &quot;suggested_correction&quot;: &quot;C27限制为图注能够定位的示例。&quot;,
+        &quot;pdf_page&quot;: 23,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C3&quot;,
+        &quot;issue&quot;: &quot;采用既有域适应界并解释λ*降低不是新定理，也未验证α与真实风险严格对应。&quot;,
+        &quot;suggested_correction&quot;: &quot;已限定为方法设计和理论动机，不写成数学保证。&quot;,
+        &quot;pdf_page&quot;: 11,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;公式有PDF抽取缺失字形/符号，尤其原型更新归一化；没有读取图像或代码。&quot;,
+        &quot;suggested_correction&quot;: &quot;只使用清晰的结构定义，不重构模糊表达式。&quot;,
+        &quot;pdf_page&quot;: 8,
+        &quot;resolved&quot;: false
+      }
+    ],
+    &quot;needs_human_review&quot;: true
+  },
+  &quot;source&quot;: {
+    &quot;filename&quot;: &quot;paper-W7167621717--Prototypical-graph-based-deep-label-propagation-with-semantic-augmentation-for-cross-subject-an.pdf&quot;,
+    &quot;sha256&quot;: &quot;5a8534652d9b34cdfea58e7ca33d0920f7d8c669163995e73d06c37e850dec7f&quot;,
+    &quot;source_url&quot;: &quot;https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2026.1846592/pdf&quot;,
+    &quot;pdf_page_count&quot;: 26
+  },
+  &quot;provenance&quot;: {
+    &quot;created_at&quot;: &quot;2026-10-07T10:53:58.161607Z&quot;,
+    &quot;workflow&quot;: &quot;claim-commons-pdf-v1&quot;,
+    &quot;prompt_version&quot;: &quot;claim-commons-chatgpt-pdf-2026-10-07.1&quot;,
+    &quot;backend&quot;: &quot;authorized_parallel_GPT&quot;,
+    &quot;model&quot;: &quot;inherited_account_GPT&quot;,
+    &quot;provider_api_key_used&quot;: false,
+    &quot;source_sha256&quot;: &quot;5a8534652d9b34cdfea58e7ca33d0920f7d8c669163995e73d06c37e850dec7f&quot;,
+    &quot;source_audit_complete&quot;: true,
+    &quot;review_status&quot;: &quot;candidate&quot;,
+    &quot;database_updated&quot;: false,
+    &quot;source_data_corrections&quot;: [
+      &quot;Normalized zero-padded audit pointers to finalized claim IDs; scientific content unchanged.&quot;
+    ]
+  }
+}</pre></details></main><footer></footer></body></html>

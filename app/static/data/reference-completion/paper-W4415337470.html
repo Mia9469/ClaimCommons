@@ -1,0 +1,216 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>DelRec: learning delays in recurrent spiking neural networks</title><style>body{max-width:940px;margin:40px auto;padding:0 24px;background:#fffdf7;color:#12372f;font:16px/1.8 Georgia,serif}h1{font-size:26px;line-height:1.4}h2{font-size:20px;line-height:1.5}h3{font-size:16px}article{padding:26px 0;border-top:1px solid #bec4b8}small{color:#68766e}dl{display:grid;grid-template-columns:120px 1fr;gap:8px 20px}dt{font-weight:bold}dd{margin:0}li{padding:8px 0}p,dd{overflow-wrap:anywhere}.note{background:#eef2e2;padding:14px;border-left:3px solid #738968}summary{cursor:pointer}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.7 monospace}@media(max-width:600px){body{margin:24px auto;padding:0 18px}dl{grid-template-columns:1fr;gap:3px}dd{margin-bottom:12px}}@media print{body{margin:0;background:white}details{display:block}}</style><link rel="stylesheet" href="../../commons-v02.css?v=20261020-1"><link rel="stylesheet" href="../../examples.css?v=20260928-2"><link rel="stylesheet" href="../../site.css?v=20261020-1"><script defer src="../../site.js?v=20261020-1"></script><script defer src="../../report-ui.js?v=20261020-1"></script></head><body class="portal-page report-page" data-cc-report-shell="1" data-page="library" data-site-prefix="../../" data-library-paper="paper-W4415337470" data-report-language="zh" data-claim-records="{&quot;C1&quot;:&quot;structured-paper-W4415337470-1&quot;,&quot;C2&quot;:&quot;structured-paper-W4415337470-2&quot;,&quot;C3&quot;:&quot;structured-paper-W4415337470-3&quot;,&quot;C4&quot;:&quot;structured-paper-W4415337470-4&quot;,&quot;C5&quot;:&quot;structured-paper-W4415337470-5&quot;,&quot;C6&quot;:&quot;structured-paper-W4415337470-6&quot;,&quot;C7&quot;:&quot;structured-paper-W4415337470-7&quot;,&quot;C8&quot;:&quot;structured-paper-W4415337470-8&quot;,&quot;C9&quot;:&quot;structured-paper-W4415337470-9&quot;,&quot;C10&quot;:&quot;structured-paper-W4415337470-10&quot;,&quot;C11&quot;:&quot;structured-paper-W4415337470-11&quot;,&quot;C12&quot;:&quot;structured-paper-W4415337470-12&quot;,&quot;C13&quot;:&quot;structured-paper-W4415337470-13&quot;,&quot;C14&quot;:&quot;structured-paper-W4415337470-14&quot;,&quot;C15&quot;:&quot;structured-paper-W4415337470-15&quot;,&quot;C16&quot;:&quot;structured-paper-W4415337470-16&quot;}"><header></header><main id="report-content"><div id="report-tools"></div><small>CLAIM COMMONS / 阅读报告</small><h1>DelRec: learning delays in recurrent spiking neural networks</h1><p class="note">AI 文本提取候选，尚待人工核对。图像像素未读取；PDF 页码指文件中的页序。</p><p>这是Research Square于2026年4月15日发布的DelRec v1预印本，题名、作者及DOI与索引一致。全部29页提供文本已读，并在留存文本上下文中完成第二次逐命题来源审计；末页只列补充文件，不含S1–S4。论文用可微三角调度、宽度退火和整数推理学习循环延迟与权重，并以有限支撑组织循环缓冲。Mackey–Glass实验在18个τ×H条件、3训练种子的框架中展示学习循环延迟的预测收益，退火消融另作为独立命题。SSC学习循环延迟达到82.58±0.08%，固定随机循环延迟为82.22±0.18%；添加前馈延迟反而为82.19±0.16%，表内±定义与显著性检验未提供。PS-MNIST的96.21%只来自1种子，且作者排名筛除了部分复杂模型，不能作无限定SOTA主张。图2为单类别样例的刺激后层间活动；图6为层内延迟分布与权重相关，不以256神经元替代网络重复数；图7为零输入、整数延迟和较宽替代梯度下的局部敏感性，原始幅度、定性纹理和归一化能量分开，35输出类别不是独立训练重复。temporal skip-connections是结构性解释，优化干扰和复杂神经元组合收益是未验证假设。共保留16个可独立评估的候选；未提供补充材料、表误差定义、PS-MNIST读出维度、图6定义/重复、梯度约定及伪代码同步顺序的6项问题待进一步源材料澄清。没有本研究独立生物验证、硬件节能测量或跨论文关系推断。</p><a href="https://assets-eu.researchsquare.com/files/rs-9370190/v1_covered_d77bee0e-e480-41c7-b82c-8daa6ca4d84e.pdf?c=1776265675" rel="noreferrer">查看所读原文版本 ↗</a><details><summary>贡献清单与处理决定</summary><ul><li><b>循环延迟与权重联合学习、三角插值、退火及整数推理</b><br>include · C1；保留axonal/per-synapse与仅LIF实测的区分。</li><li><b>有限支撑与circular-buffer调度组织</b><br>include · C2；只记录方法，不推断未提供的速度或能耗。</li><li><b>Mackey–Glass跨18条件的预测收益</b><br>include · C3；实际重复为3训练种子，轨迹窗口不作独立n。</li><li><b>Mackey–Glass扩散宽度退火消融</b><br>include · C4；与学习相对固定的全条件收益分开。</li><li><b>SSC学习循环延迟相对固定随机延迟的准确率增益</b><br>include · C5；保留3种子及误差定义缺失。</li><li><b>SSC前馈与循环延迟联合学习的实际无收益结果</b><br>include · C6；保留参数量不同及未识别原因。</li><li><b>PS-MNIST单种子准确率及限定基线比较</b><br>include · C7；不用单种子支撑稳定性或无限定SOTA。</li><li><b>图2刺激后层间动力学分化样例</b><br>include · C8；单类别单样例图注，不升格为跨网络普遍规律。</li><li><b>图6逐层延迟分布的异质组织</b><br>include · C9；参数std和模型间不确定性分开。</li><li><b>图6延迟与输出循环权重关联</b><br>include · C10；保留固定延迟网络也有深层相关以及绝对值约定歧义。</li><li><b>图7原始替代梯度幅度的正文观察</b><br>include · C11；幅度解释严格限于评估约定，且记录跨模型幅度不可比的警告。</li><li><b>图7循环与前馈延迟网络的时空敏感性纹理区别</b><br>include · C12；不否定前馈延迟同样可有长时间敏感性。</li><li><b>图7归一化能量的时间分布</b><br>include · C13；35类别不是35独立训练重复。</li><li><b>temporal skip-connections的梯度路径解释</b><br>include · C14；没有S3或独立稳定性检验。</li><li><b>优化干扰、过参数化和任务需求不足的候选解释</b><br>include · C15；不识别具体原因。</li><li><b>延迟学习结合复杂神经元模型的扩展预测</b><br>include · C16；组合未直接测试。</li><li><b>生物myelination、polychronization与皮层时间尺度动机</b><br>exclude · 引用背景与类比不是本研究的独立生物实验；不提取为生物验证。</li><li><b>无条件state-of-the-art优先权或全模型排名</b><br>exclude · 表1主动排除部分复杂模型；仅保留所提供表内比较，不验证所有外部工作。</li><li><b>训练耗时、峰值内存、芯片能耗和部署收益</b><br>exclude · 没有本文硬件测量；S4未提供，Loihi能耗是引用背景，不能生成独立量化结果。</li><li><b>S1–S4补充内容</b><br>defer · 仅末页补充文件列表及正文引用，不包含文件内容；不影响全部已提供29页文本的完成。</li><li><b>参考文献、资助与代码可获得性</b><br>exclude · 已阅读但不构成本论文的新科学结果，不访问外部代码或参考论文。</li></ul></details><article><small>C1 / 直接结果 · method</small><h2>DelRec 在离散时间 RSNN 中把循环脉冲按 1+d 的延迟向未来调度，用可微三角扩散将实值延迟分配至相邻时刻，并联合训练延迟与循环权重；扩散宽度退火后，推理时将延迟取整。文中主要实验采用每个神经元共享输出延迟的 axonal delays，方法也描述支持 per-synapse delays，但性能验证仅使用 LIF 神经元。</h2><h3>Evidence</h3><p>循环延迟的离散时间形式化</p><dl><dt>设计 / 对照</dt><dd>循环输入由加权历史脉冲组成；d=0 时有效延迟仍为一个时间步。；所有循环连接有效延迟为一个时间步的 vanilla RSNN</dd><dt>独立单位与 n</dt><dd>算法中的神经元、循环连接与时间步；不是生物学样本；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 7 · 2.1 Delays in recurrent spiking neural networks</dd></dl><p>三角函数插值、宽度退火和可学习的个体宽度</p><dl><dt>设计 / 对照</dt><dd>Eq.7–8 给出三角扩散；SSC/PS-MNIST 另使用每神经元参数 p 调节宽度，初始 p=0，初始全局 σ=10，并按 Eq.15 衰减。；训练期实值扩散与推理期整数调度</dd><dt>独立单位与 n</dt><dd>形式化算法及其实现说明；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 22 · 4.4 Implementation for SSC and PSMNIST datasets</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>给出将循环延迟纳入 surrogate-gradient/BPTT 联合优化的算法。</dd><dt>适用边界</dt><dd>与 Eq.1–3 相容是方法范围；已展示的任务均使用 LIF，主要为 axonal delays。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不据此证明对任何神经元模型都有性能提升、替代梯度等于真实脉冲导数，或延迟取整完全无损。</dd><dt>未解决</dt><dd>未提供 per-synapse 相对于 axonal 的性能比较及独立取整损失消融。</dd></dl><h3>相关问题</h3><ul><li>如何在离散时间 RSNN 中同时学习循环连接权重和传输延迟？</li></ul></article><article><small>C2 / 直接结果 · method</small><h2>DelRec 利用三角扩散函数的有限支撑，将循环脉冲调度存储为 N×L 的 circular buffer，其中 L 随当前最大延迟与扩散宽度决定，而非保存完整 N×T 调度矩阵；这是一种缓冲组织方法，不能从该形式化本身推断实际训练更快或更省能。</h2><h3>Evidence</h3><p>有限支撑分析及 circular-buffer 算法</p><dl><dt>设计 / 对照</dt><dd>先以 N×T 描述调度，再用 Eq.13–14 的有限调度范围与循环指针实现。；存储整段序列全部未来时刻的调度矩阵</dd><dt>独立单位与 n</dt><dd>一个循环层的神经元数量及可调度延迟位置；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 20 · 4.1 Detailed delay learning procedure; 4.2 Learning algorithm</dd></dl><p>训练效率边界的作者说明</p><dl><dt>设计 / 对照</dt><dd>Discussion 报告 Python 调度与扩散退火带来较大训练开销，定量分析指向未提供的 S4。；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>实现及任务规模；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 18 · 3 Discussion</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>调度内存可按有限延迟窗口组织，不必按完整序列长度组织。</dd><dt>适用边界</dt><dd>实际开销依赖延迟范围和实现；作者明确承认训练开销与大网络/长序列的可扩展性限制。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不声称其训练速度、实际峰值内存或能耗优于 vanilla RSNN，也不把引用的芯片能耗当作本文实验。</dd><dt>未解决</dt><dd>S4 的定量开销分析和实际实现细节未提供。</dd></dl><h3>相关问题</h3><ul><li>有限支撑如何限制循环延迟学习的调度存储需求？</li></ul></article><article><small>C3 / 直接结果 · computational_performance</small><h2>在给定 Mackey–Glass 数值轨迹、150 步输入窗口、128 个 LIF 隐藏神经元以及 6 个系统延迟×3 个预测跨度的设置下，完整 DelRec 的测试 NMSE 优于无延迟与固定循环延迟基线；学习延迟相对固定延迟的平均 NMSE 降幅在全部 18 个条件中为正，较大收益位于中到长预测跨度。</h2><h3>Evidence</h3><p>Mackey–Glass 预测消融</p><dl><dt>设计 / 对照</dt><dd>比较无延迟、固定延迟、学习延迟但不退火，以及完整 DelRec 四种单隐藏层模型。；无延迟 RSNN 与固定循环延迟 RSNN</dd><dt>独立单位与 n</dt><dd>独立训练随机种子；同一轨迹的滑动窗口和时间点不是独立重复；图5c报告每条件 3 个种子；每个 τ 生成一条轨迹，长度 6000 点</dd><dt>不确定性</dt><dd>图5b误差条和5c误差均为 SEM；无逐条件精确数值或检验统计</dd><dt>原文位置</dt><dd>PDF 12 · Fig.5</dd></dl><p>预测任务生成与读出设置</p><dl><dt>设计 / 对照</dt><dd>Methods 4.3 给出轨迹生成、分割、标准化、窗口和网络；图5a 的 τ=40,H=25 示例 DelRec NMSE=0.074。；相同任务的四种模型</dd><dt>独立单位与 n</dt><dd>轨迹、训练种子和测试窗口分层区分；每 τ 一条轨迹；每条件 3 个训练种子</dd><dt>不确定性</dt><dd>0.074 为图示特定条件，不能替代总体误差分布</dd><dt>原文位置</dt><dd>PDF 20 · 4.3 Mackey-Glass time-series prediction</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>在所考察的全部条件，学习循环延迟相对固定循环延迟获得正的平均 NMSE 改善。</dd><dt>适用边界</dt><dd>限于指定数值系统、数据分割、窗口与网络，随机种子检验的是训练变异，不是不同生物系统或真实时间序列重复。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不将轨迹点数当作独立 n，不推广到所有混沌系统、任意预测跨度或真实脑记忆能力。</dd><dt>未解决</dt><dd>未提供每条件完整数值表、置信区间、种子配对说明及全部优化超参数。</dd></dl><h3>相关问题</h3><ul><li>学习循环延迟是否改善不同复杂度和预测跨度下的混沌时间序列预测？</li></ul></article><article><small>C4 / 直接结果 · computational_ablation</small><h2>在同一 Mackey–Glass 四模型比较中，完整 DelRec 相对于仍学习循环延迟但不进行 σ 退火的变体具有更好的测试 NMSE 总体表现，支持三角扩散宽度从宽到窄的调度在该任务设置中的实用价值。</h2><h3>Evidence</h3><p>扩散宽度退火消融</p><dl><dt>设计 / 对照</dt><dd>保留可学习循环延迟，比较有/无 σ 退火；其余任务框架同 Fig.5。；learned delays without sigma annealing</dd><dt>独立单位与 n</dt><dd>训练随机种子；不同任务条件不是独立复制；图5c明确 3 个种子；该四模型结果图以种子 SEM 描述误差</dd><dt>不确定性</dt><dd>图5b为 SEM；正文称退火有益，但未提供检验、p值或精确平均差</dd><dt>原文位置</dt><dd>PDF 11 · Fig.5</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>所提供消融支持退火优于不退火的总体性能观察。</dd><dt>适用边界</dt><dd>不把图5c学习相对固定的全条件正收益自动赋给退火相对不退火的每个条件。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不声称统计显著性已由具体检验建立，也不把该消融推广到所有网络、任务或调度函数。</dd><dt>未解决</dt><dd>各条件退火消融数值及统计检验未报告。</dd></dl><h3>相关问题</h3><ul><li>三角扩散宽度退火是否对循环延迟优化的预测性能有独立贡献？</li></ul></article><article><small>C5 / 直接结果 · computational_performance</small><h2>在 SSC 的三层、每层 256 个 LIF 神经元模型中，仅优化循环延迟的 DelRec 以约 0.37M 参数得到 82.58±0.08% 测试准确率，高于同为约 0.37M 参数的固定随机循环延迟变体 82.22±0.18%；平均差为 0.36 个百分点，每种模型报告 3 个训练随机种子。</h2><h3>Evidence</h3><p>SSC 循环延迟学习比较</p><dl><dt>设计 / 对照</dt><dd>比较学习循环权重及延迟与固定随机循环延迟、只学习权重的 DelRec 变体。；DelRec (fixed Rec. delays)</dd><dt>独立单位与 n</dt><dd>独立训练随机种子；语音样本为测试条目而非模型重复；Methods 4.4：每 SSC 模型 3 个随机种子；正文称数据集超过 100k 条、35 类，分割条目数未报告</dd><dt>不确定性</dt><dd>82.58±0.08% 对 82.22±0.18%；表1未定义±为SD或SEM，也无p值/CI</dd><dt>原文位置</dt><dd>PDF 13 · Table 1</dd></dl><p>SSC 架构及预处理说明</p><dl><dt>设计 / 对照</dt><dd>输入空间/时间分箱与三层256神经元配置，未使用归一化和数据增强。；相同 DelRec 变体</dd><dt>独立单位与 n</dt><dd>训练模型；每模型 3 个随机种子</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 22 · 4.4 Implementation for SSC and PSMNIST datasets</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>指定 SSC 设置下，学习循环延迟相对固定随机循环延迟具有小幅平均准确率优势。</dd><dt>适用边界</dt><dd>结果为3种子、指定预处理及架构的比较；误差类型未定义。作者表内还筛除了部分更复杂模型，不能称为无条件全领域最高。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>没有给出可独立核实的显著性检验；不证明生物延迟塑性、学习算法因果机制或硬件节能。</dd><dt>未解决</dt><dd>缺失表1误差定义、完整超参数、逐种子值及更多独立重复。</dd></dl><h3>相关问题</h3><ul><li>在相同 SSC 循环网络规模下，学习延迟较固定随机延迟获得多大分类收益？</li></ul></article><article><small>C6 / 直接结果 · computational_negative_result</small><h2>在 SSC 上同时学习前馈和循环延迟的 DelRec 变体约有 0.55M 参数、测试准确率 82.19±0.16%，低于仅学习循环延迟的 0.37M 参数变体 82.58±0.08%，也略低于固定随机循环延迟变体 82.22±0.18%；添加可学习前馈延迟在该比较中未带来收益。</h2><h3>Evidence</h3><p>前馈与循环延迟组合消融</p><dl><dt>设计 / 对照</dt><dd>用 DelRec 循环延迟学习并结合 DCLS 前馈延迟学习，与仅循环延迟和固定循环延迟变体比较。；DelRec (only Rec. delays)；DelRec (fixed Rec. delays)</dd><dt>独立单位与 n</dt><dd>独立训练随机种子；SSC每模型3个种子</dd><dt>不确定性</dt><dd>82.19±0.16%、82.58±0.08%、82.22±0.18%；±定义未提供，未给统计检验</dd><dt>原文位置</dt><dd>PDF 13 · Table 1</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>更多可学习延迟与参数未在该 SSC 配置下获得更高的平均测试准确率。</dd><dt>适用边界</dt><dd>组合配置与仅循环配置参数量不同；固定与组合间只差0.03个百分点，不能据此宣布统计显著劣化。</dd><dt>实际负结果</dt><dd>实际观察为组合变体准确率低于两种对照，而非无实验支持的负面推断。</dd><dt>不能推出</dt><dd>不推断所有任务中的前馈延迟学习都无效，也不将性能差直接识别为参数干扰的因果证据。</dd><dt>未解决</dt><dd>造成差异的优化、参数量及任务时间需求因素未分离。</dd></dl><h3>相关问题</h3><ul><li>前馈延迟与循环延迟同时学习是否必然改善 SSC 分类？</li></ul></article><article><small>C7 / 直接结果 · computational_performance</small><h2>在 PS-MNIST 的 784 步置换像素序列任务中，仅学习循环延迟的 DelRec 使用一个 64 神经元层和两个 212 神经元层、约 0.16M 参数，以一个训练随机种子取得 96.21% 测试准确率；表内作者重现的 ASRC-SNN 为 95.77%、约 0.15M 参数，此比较不是相同网络下的延迟学习纯消融。</h2><h3>Evidence</h3><p>PS-MNIST 分类及表内模型比较</p><dl><dt>设计 / 对照</dt><dd>MNIST 28×28 图像展平至784步并置换像素顺序；DelRec 使用 LIF，表1的 ASRC-SNN 标星为作者利用公开代码并分开验证/测试集重现。；表1 ASRC-SNN 的95.77%，约0.15M参数</dd><dt>独立单位与 n</dt><dd>训练模型随机种子；图像条目不替代模型重复；Methods 4.4：DelRec PS-MNIST结果仅1个种子；该表内对照的重复数未报告</dd><dt>不确定性</dt><dd>DelRec和对照均无表内误差区间；不估计方差</dd><dt>原文位置</dt><dd>PDF 13 · Table 1</dd></dl><p>PS-MNIST 架构及重复数</p><dl><dt>设计 / 对照</dt><dd>Methods 明确PS-MNIST只报告一个种子。；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>独立训练种子；1个种子</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 22 · 4.4 Implementation for SSC and PSMNIST datasets</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>单种子PS-MNIST结果优于表内所报告ASRC-SNN结果。</dd><dt>适用边界</dt><dd>限于表内选定基线与单次DelRec训练；Methods 的PS-MNIST输出维度描述无法由提供文本澄清。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不建立跨种子稳定性、统计显著性、全模型最高排名或循环延迟学习单因素因果效应。</dd><dt>未解决</dt><dd>重复训练、误差区间、实际PS-MNIST读出类别数和完整S1配置未提供。</dd></dl><h3>相关问题</h3><ul><li>只学习循环延迟的 LIF 网络在长置换像素序列任务中能取得怎样的准确率？</li></ul></article><article><small>C8 / 直接结果 · network_dynamics_observation</small><h2>SSC 类别0的一个图示输入样例中，学习循环延迟的网络在刺激结束后呈现层间分化：第1隐藏层响应较稀疏且选择性较强，第2层循环活动更持久，并形成较清晰、由更少神经元维持的 stationary regime；固定随机延迟对照的刺激后活动较弥散、层间分化较弱。</h2><h3>Evidence</h3><p>刺激后脉冲 raster 的图注描述</p><dl><dt>设计 / 对照</dt><dd>展示最佳SSC配置的前两个隐藏循环层，对比学习延迟与固定随机延迟网络；图注区分刺激诱发与后续stationary regime。；固定随机循环延迟模型</dd><dt>独立单位与 n</dt><dd>一个类别0输入样例及对应网络层；不是多次独立生物实验；图2明确一个SSC类别0样例；图示模型/种子重复数未报告</dd><dt>不确定性</dt><dd>未提供定量活动指标、差异区间或统计检验</dd><dt>原文位置</dt><dd>PDF 5 · Fig.2</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>图示样例显示学习延迟与较分化的刺激后循环活动相关。</dd><dt>适用边界</dt><dd>来自单个类别示例的定性图注；不能确认全类别、全种子都有同样动力学。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不把stationary regime等同于工作记忆储存、脑区功能、真正固定点证明或生物机制识别。</dd><dt>未解决</dt><dd>跨输入/种子的稳定性、活动量化及固定点/吸引子分析未提供。</dd></dl><h3>相关问题</h3><ul><li>循环延迟学习如何改变特定输入后的层间活动持续性与稳定活动子集？</li></ul></article><article><small>C9 / 直接结果 · network_parameter_structure</small><h2>在所展示的 SSC 训练网络中，学习循环延迟并非仅把所有延迟统一变长：第1层主要集中于短延迟、少数神经元延伸至约50时间步，随层深增加分布趋于对称；图6给出的3层延迟标准差分别为9.79、9.69、8.18时间步，固定随机延迟对照对应为7.33、7.60、7.19。</h2><h3>Evidence</h3><p>逐层 axonal delay 分布</p><dl><dt>设计 / 对照</dt><dd>比较联合学习延迟及权重与随机固定延迟、学习权重两种网络，正文描述浅层长尾与深层分布对称化。；固定随机循环延迟对照</dd><dt>独立单位与 n</dt><dd>网络层内的神经元/axonal delay 参数；不是独立网络重复；SSC架构每层256个神经元；图6实际纳入数量、展示网络数及种子汇总方式未明确，不能以256充当独立训练重复</dd><dt>不确定性</dt><dd>图内std是参数分布离散度，不是模型间不确定性；没有种子间误差或分布检验</dd><dt>原文位置</dt><dd>PDF 14 · Fig.6</dd></dl><p>延迟分布的正文解释</p><dl><dt>设计 / 对照</dt><dd>正文将浅层短延迟多数与长延迟少数、随深度对称化称为时间组织。；相同固定延迟对照</dd><dt>独立单位与 n</dt><dd>网络层及神经元参数；SSC架构每层256个神经元；图6实际纳入数量、展示网络数及种子汇总方式未明确，不能以256充当独立训练重复</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 15 · Fig.6</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>所展示模型形成层深相关且非均一的循环延迟组织。</dd><dt>适用边界</dt><dd>均值变化没有给出数字；层内std不能解释为种子重复误差或跨任务普遍规律。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不证明皮层层级时间尺度的生物起源，也不将理论DDE的无限维状态直接赋给有限离散缓冲实现。</dd><dt>未解决</dt><dd>其他任务、架构、神经元模型及不同种子是否形成类似组织仍未解决。</dd></dl><h3>相关问题</h3><ul><li>循环延迟学习形成统一长延迟还是层深和神经元相关的异质时间组织？</li></ul></article><article><small>C10 / 直接结果 · parameter_association</small><h2>在图6的 SSC 网络内，axonal recurrent delay 与正文所称平均绝对输出循环权重的 Pearson 相关随层深增加：学习延迟模型3层 r=0.21、0.39、0.55，固定随机延迟对照为−0.20、0.23、0.49；固定延迟网络也能在深层通过权重学习利用延迟，联合学习呈更强的描述性相关。</h2><h3>Evidence</h3><p>逐神经元延迟—输出权重相关</p><dl><dt>设计 / 对照</dt><dd>每层将神经元延迟与平均输出循环权重关联；正文说mean absolute outgoing recurrent weight，图注简写mean outgoing weight。；固定随机延迟、仅训练权重的SSC网络</dd><dt>独立单位与 n</dt><dd>每层神经元的延迟与输出权重汇总值；SSC架构每层256个神经元；图6实际纳入数量、展示网络数及种子汇总方式未明确，不能以256充当独立训练重复</dd><dt>不确定性</dt><dd>未提供p值、置信区间、相关差异检验或跨种子变异</dd><dt>原文位置</dt><dd>PDF 14 · Fig.6</dd></dl><p>权重适应与共同适应的正文说明</p><dl><dt>设计 / 对照</dt><dd>正文明确固定延迟深层r=0.49，联合学习r=0.55，因此不能说固定延迟完全不能产生延迟—权重关联。；固定延迟深层与联合学习深层</dd><dt>独立单位与 n</dt><dd>同一训练网络的参数关系；SSC架构每层256个神经元；图6实际纳入数量、展示网络数及种子汇总方式未明确，不能以256充当独立训练重复</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 15 · Fig.6</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>在展示的参数统计中，较长延迟通常伴随较强输出权重，联合学习的深层相关较高。</dd><dt>适用边界</dt><dd>实际权重汇总的绝对值约定与种子汇总不完整；r差值没有推断检验。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不宣称该关联只能由联合学习产生，不把相关当成因果共适应机制或生物髓鞘—突触耦合验证。</dd><dt>未解决</dt><dd>相同趋势的跨模型/跨种子稳定性，以及权重取绝对值的实现定义未澄清。</dd></dl><h3>相关问题</h3><ul><li>学习循环延迟是否伴随层深相关的延迟—权重关联，固定延迟能否通过权重适应产生该关联？</li></ul></article><article><small>C11 / 直接结果 · surrogate_gradient_observation</small><h2>在 SSC 模型的3000步零输入敏感性分析中，作者据图7色标和正文报告：学习循环延迟模型的输入替代梯度幅度相对固定随机延迟模型约高一个数量级；这仅是指定评估约定下的梯度幅度观察，不是实际训练梯度稳定性或误差传播改善的直接测量。</h2><h3>Evidence</h3><p>输出激活的输入 surrogate gradient map</p><dl><dt>设计 / 对照</dt><dd>比较类别0图示 gradient map；终点输出对零输入序列各时刻/通道的局部敏感性。；固定随机循环延迟SSC模型</dd><dt>独立单位与 n</dt><dd>图示类别0、训练网络及时间/输入通道；图7面板示例为类别0；面板的展示种子数未说明；Methods说明每模型类别评估3个独立种子</dd><dt>不确定性</dt><dd>未给原始幅度效应区间；色标幅度由正文报告，未读取图像像素</dd><dt>原文位置</dt><dd>PDF 16 · Fig.7a–d</dd></dl><p>敏感性计算约定</p><dl><dt>设计 / 对照</dt><dd>评估使用更宽替代梯度并取整延迟。；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>独立训练模型；每模型类别3个独立随机种子</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 24 · 4.5 Gradient maps</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>正文报告该配置下学习延迟网络具有较大的局部替代梯度幅度。</dd><dt>适用边界</dt><dd>Methods明确不同模型原始梯度幅度不能直接比较，随后使用归一化能量；因此这里只保留正文描述而非一般梯度改进结论。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不证明训练时消除梯度消失/爆炸，也不把较大幅度视为更大真实因果影响。</dd><dt>未解决</dt><dd>原始梯度大小对替代梯度宽度、网络尺度与种子选择的依赖未完整量化。</dd></dl><h3>相关问题</h3><ul><li>指定替代梯度评估下，循环延迟学习是否改变输入敏感性幅度？</li></ul></article><article><small>C12 / 直接结果 · spatiotemporal_selectivity_observation</small><h2>图7所述类别0的零输入 gradient map 中，学习循环延迟模型具有较细的神经元特异和时刻特异纹理；仅学习前馈延迟的模型也呈长时间敏感性，但分布在更宽的输入神经元群且缺少同样细粒度的时间选择性。该观察不是对前馈延迟无法产生长时依赖的证明。</h2><h3>Evidence</h3><p>gradient-map 时空纹理的正文及图注比较</p><dl><dt>设计 / 对照</dt><dd>比较学习循环延迟、固定延迟、未训练网络和仅学习前馈axonal delays的模型。；图7d学习前馈延迟模型；图7b固定随机循环延迟模型；图7a未训练模型</dd><dt>独立单位与 n</dt><dd>类别0图示敏感性图及对应训练模型；面板为类别0示例；纹理比较没有报告独立定量重复数或聚合统计</dd><dt>不确定性</dt><dd>没有时空选择性指标、CI或组间检验</dd><dt>原文位置</dt><dd>PDF 17 · Fig.7a–d</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>提供正文描述支持循环延迟与前馈延迟模型具有不同的时空敏感性组织。</dd><dt>适用边界</dt><dd>图示类别及模型中的定性区别；前馈延迟模型也具有较长时间敏感性。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不接受只有循环延迟才能形成长时依赖的排他性推广，不把图中模式当作真实神经元感受野或生物选择性。</dd><dt>未解决</dt><dd>纹理差异的量化、跨类别/种子稳定性及结构匹配的前馈对照未完整提供。</dd></dl><h3>相关问题</h3><ul><li>循环延迟与前馈延迟学习在局部时空敏感性结构上有何区别？</li></ul></article><article><small>C13 / 直接结果 · normalized_temporal_sensitivity</small><h2>把 SSC 模型的输入 gradient map 除以 Frobenius norm 再按输入通道平方求和，并平均全部输出类别及3个独立训练种子后，学习循环延迟模型较固定随机延迟模型把更多相对梯度能量分配到中间时间滞后，时间曲线也更有结构、较少单调衰减；该量比较时间分布而不是原始梯度总量。</h2><h3>Evidence</h3><p>归一化gradient-map能量剖面</p><dl><dt>设计 / 对照</dt><dd>Ẽc(t)=Σn(Gc(t,n)/||Gc||F)^2；平均全部输出类别和3种子。；固定随机循环延迟模型</dd><dt>独立单位与 n</dt><dd>独立训练随机种子；类别、输入通道与时间点为模型内重复测量；每模型类别3个独立种子；SSC共35输出类别，不等于105个独立网络重复</dd><dt>不确定性</dt><dd>图7e平均±SEM，未提供每滞后精确数值或多时刻统计检验</dd><dt>原文位置</dt><dd>PDF 17 · Fig.7e</dd></dl><p>梯度能量及Frobenius归一化定义</p><dl><dt>设计 / 对照</dt><dd>Methods分别定义原始与归一化能量，以去除模型间绝对尺度差异。；未归一化梯度能量</dd><dt>独立单位与 n</dt><dd>同一网络各输出类别的梯度图；每模型类别3独立种子，35类别为模型内读出</dd><dt>不确定性</dt><dd>报告跨类别和种子的平均与SEM，具体层级聚合估计程序未详细描述</dd><dt>原文位置</dt><dd>PDF 23 · 4.5 Gradient maps</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>在给定敏感性评估中，学习循环延迟关联于较宽且更结构化的相对时间依赖分布。</dd><dt>适用边界</dt><dd>零输入局部替代梯度、特定SSC模型、平均3种子；图中显示150步与正文175步不一致，不能给出精确有效记忆跨度。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不推断实际输入的信息被记忆多久、归一化后绝对梯度变大、训练稳定性改善或因果信用分配已识别。</dd><dt>未解决</dt><dd>跨真实输入与其他任务的一致性，以及聚合SEM的确切层级处理未完整提供。</dd></dl><h3>相关问题</h3><ul><li>循环延迟学习是否把局部时间敏感性从最近时刻重新分配到中间时间跨度？</li></ul></article><article><small>C14 / 解释 · computational_mechanism_interpretation</small><h2>作者把异质循环延迟解释为 temporal skip-connections：在 Eq.5 的时间展开图中，一个脉冲可直接影响 t+1+d 的网络输入，形成跨越中间状态的路径；这提供了较短的远时梯度路径解释，但本文所提供材料没有证明其必然消除梯度消失或爆炸。</h2><h3>Evidence</h3><p>延迟展开计算图与gradient-map结果的联合解释</p><dl><dt>设计 / 对照</dt><dd>比较vanilla RSNN的一步循环边与延迟循环边，并联系零输入敏感性分析。；所有循环延迟为一个时间步的计算图</dd><dt>独立单位与 n</dt><dd>计算图路径；图7的独立训练单位仍为3种子；计算图示意无实验n；图7评估每模型类别3种子</dd><dt>不确定性</dt><dd>无训练梯度爆炸/消失频率、条件数、收敛率或稳定性定理</dd><dt>原文位置</dt><dd>PDF 9 · Fig.4b</dd></dl><p>计算图示意的图注</p><dl><dt>设计 / 对照</dt><dd>图4描述延迟循环边跨越远时间步，细节指向未解决的引用及未提供S3。；vanilla RSNN</dd><dt>独立单位与 n</dt><dd>示意计算图；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 10 · Fig.4b</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>延迟提供跨时间步连接，为梯度路径缩短提出结构性解释。</dd><dt>适用边界</dt><dd>结构性路径不决定梯度乘积大小、优化稳定性或实际性能；S3未提供。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不把图7更大/更广敏感性直接认定为性能提升的唯一因果机制，不声称有收敛保证。</dd><dt>未解决</dt><dd>缩短路径对训练稳定性与性能的实际独立贡献尚未由所提供材料识别。</dd></dl><h3>相关问题</h3><ul><li>异质循环延迟可能通过怎样的时间计算图结构改变远时梯度路径？</li></ul></article><article><small>C15 / 假说 / 预测 · optimization_hypothesis</small><h2>对于 SSC 上同时学习前馈与循环延迟却没有增益的结果，作者提出优化过程中的参数干扰、时间结构过参数化或任务时间需求不足等候选解释；提供实验没有区分这些原因，因而它们仍是待检验假设而非已识别机制。</h2><h3>Evidence</h3><p>由组合消融提出的机制假设</p><dl><dt>设计 / 对照</dt><dd>Discussion及Results讨论组合模型准确率低于仅循环模型，但未进行能区分候选原因的干预。；仅循环延迟学习及固定循环延迟变体</dd><dt>独立单位与 n</dt><dd>假设的动机实验单位为训练随机种子，而非原因识别实验；动机为SSC每模型3种子；机制辨识实验未提供</dd><dt>不确定性</dt><dd>假设没有因果效应估计或统计区间</dd><dt>原文位置</dt><dd>PDF 18 · Table 1</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>明确提出可能解释负向消融的可检验研究方向。</dd><dt>适用边界</dt><dd>经验动机存在，但三种解释未被相互区分。</dd><dt>实际负结果</dt><dd>动机实验中增加前馈延迟没有提高平均SSC准确率；该负结果不能裁决原因。</dd><dt>不能推出</dt><dd>不把优化干扰、过参数化或时间需求不足写成已验证结论。</dd><dt>未解决</dt><dd>哪些参数或任务条件导致相互干扰，以及是否能通过不同优化与架构消除，仍未知。</dd></dl><h3>相关问题</h3><ul><li>前馈与循环延迟联合学习为何在 SSC 上不获益，如何区分优化干扰与任务需求解释？</li></ul></article><article><small>C16 / 假说 / 预测 · model_extension_hypothesis</small><h2>作者根据简单 LIF 网络配合可学习延迟的性能提出：把延迟学习与更复杂的神经元动力学结合，可能进一步提高时间任务表现；本研究并未提供这种组合的直接性能实验，因此该说法只作为预测性假设保留。</h2><h3>Evidence</h3><p>由简单LIF性能驱动的扩展预测</p><dl><dt>设计 / 对照</dt><dd>Results将DelRec使用简单LIF与表内部分更复杂模型比较，随后提出可能的组合收益。；既有LIF DelRec和表内不同神经元模型仅作动机；无复杂模型加DelRec的直接对照</dd><dt>独立单位与 n</dt><dd>研究假设；没有针对该组合的独立实验单位；组合实验未提供；动机SSC3种子、PS-MNIST1种子</dd><dt>不确定性</dt><dd>没有组合效应估计、重复数或误差区间</dd><dt>原文位置</dt><dd>PDF 12 · Table 1</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>提出复杂神经元动力学与延迟学习组合的可检验预测。</dd><dt>适用边界</dt><dd>所提供实验只直接验证LIF DelRec，不验证组合收益。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不把方法兼容性转化为已获性能提升，不声称复杂神经元模型一定优于简单LIF。</dd><dt>未解决</dt><dd>组合是否提高泛化、对优化和训练成本有何影响均需另行实验。</dd></dl><h3>相关问题</h3><ul><li>更复杂的神经元动力学与循环延迟学习组合能否获得额外性能增益？</li></ul></article><details><summary>核对记录与来源信息</summary><pre>{
+  &quot;coverage&quot;: {
+    &quot;pdf_pages_read&quot;: [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29
+    ],
+    &quot;results_sections_seen&quot;: [
+      &quot;2.1 Delays in recurrent spiking neural networks&quot;,
+      &quot;2.2 Learning delays in recurrent connections&quot;,
+      &quot;2.3 Recurrent delay learning as a memory basis for temporal data&quot;,
+      &quot;2.4 Recurrent delay learning improves performance on large temporal benchmarks&quot;,
+      &quot;2.5 Learned delays can self-organize into depth-dependent and neuron-dependent temporal receptive fields&quot;,
+      &quot;2.6 Learning delays structures temporal selectivity&quot;,
+      &quot;Fig.1–7文字/图注及文本标签&quot;,
+      &quot;Table 1及表下注释&quot;,
+      &quot;Methods 4.1–4.5、Eq.1–20、Algorithm 1&quot;
+    ],
+    &quot;missing_material&quot;: [
+      &quot;图像像素未提供；只读文本、图注和可抽取文字标签&quot;,
+      &quot;Supplementary S1–S4内容未提供；PDF页29只列supplementarynatcom.pdf&quot;,
+      &quot;外部代码、实际训练配置和未经提供的基线论文未读取&quot;
+    ],
+    &quot;text_pass_complete&quot;: true,
+    &quot;notes&quot;: [
+      &quot;只处理指定chunk中的paper-W4415337470。&quot;,
+      &quot;按源text_path一次顺序读完29页：六次完整输出各17530、16613、15260、16103、16950、3138字符（含页标记），无截断；随后在留存上下文作逐记录第二来源审计。&quot;,
+      &quot;封面DOI 10.21203/rs.3.rs-9370190/v1，发布于2026-04-15；非后续正式版本。&quot;,
+      &quot;PDF文件页1为封面；正文印刷页与文件页偏移1；全部locators为文件页。&quot;,
+      &quot;参考文献、致谢、代码及补充列表也已评估，不被算为新的独立研究结果。&quot;,
+      &quot;零直接引文；保留source-language术语。&quot;,
+      &quot;所有结果为文本来源审计后的AI候选，不是human scientific verification。&quot;
+    ],
+    &quot;reading_mode&quot;: &quot;text_only&quot;,
+    &quot;figure_images_read&quot;: false,
+    &quot;scientific_verification&quot;: false,
+    &quot;source_pdf_offline&quot;: false,
+    &quot;archived_page_text_used&quot;: false
+  },
+  &quot;audit&quot;: {
+    &quot;source_match_checks&quot;: [],
+    &quot;model_findings&quot;: [
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;第二次来源审计在已留存的全部29页文本上下文中完成，逐条核对方法、结果、对照、独立单位、n、缺失统计量和定位；未重新打开原始PDF。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留text_only/candidate/human_checked:false；科学真实性及可重复性未独立验证。&quot;,
+        &quot;pdf_page&quot;: null,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;来源封面为Research Square v1，Posted Date April 15th, 2026，题名和DOI与索引一致；封面Article标签不改变预印本版本。&quot;,
+        &quot;suggested_correction&quot;: &quot;document_type=preprint；保留索引作者拼写，正文作者相同，仅重音/标点排版不同。&quot;,
+        &quot;pdf_page&quot;: 1,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;全部PDF文件页1–29已读；正文印刷页1从PDF文件页2开始，末页只列Supplementary Files。&quot;,
+        &quot;suggested_correction&quot;: &quot;使用真实1-based PDF文件页；仅标示S1–S4未提供，不声称读过补充内容。&quot;,
+        &quot;pdf_page&quot;: 29,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C1&quot;,
+        &quot;issue&quot;: &quot;PDF页8一处DLCS与本文其他位置DCLS不一致，为同一被引前馈延迟方法的明显名称转录/排字错误。&quot;,
+        &quot;suggested_correction&quot;: &quot;记录中统一使用文中主要写法DCLS，不改原始源文本或共享代码。&quot;,
+        &quot;pdf_page&quot;: 8,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C4&quot;,
+        &quot;issue&quot;: &quot;图5c所有条件为正的是学习延迟相对固定延迟，不是退火相对不退火。&quot;,
+        &quot;suggested_correction&quot;: &quot;C3保留全条件正收益；C4只陈述正文支持的退火总体收益。&quot;,
+        &quot;pdf_page&quot;: 12,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C5&quot;,
+        &quot;issue&quot;: &quot;D2：分类表±未标明统计定义，提供文本没有可重算的显著性检验。&quot;,
+        &quot;suggested_correction&quot;: &quot;原样报告±；不将其写成SEM/SD，不继承作者显著性形容。&quot;,
+        &quot;pdf_page&quot;: 13,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C7&quot;,
+        &quot;issue&quot;: &quot;PS-MNIST仅1个种子且表内排名排除一些复杂模型；摘要无条件SOTA说法超出该比较的完整范围。&quot;,
+        &quot;suggested_correction&quot;: &quot;限定为表内选定模型比较，分别保留单种子与排名排除条件；不独立核实外部论文结果。&quot;,
+        &quot;pdf_page&quot;: 23,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C7&quot;,
+        &quot;issue&quot;: &quot;D3：Methods把两个分类任务共同写为35输出；不能由任务名称反推实际实现。&quot;,
+        &quot;suggested_correction&quot;: &quot;不把35作为PS-MNIST确认条件；记录源文歧义，待实际配置或S1。&quot;,
+        &quot;pdf_page&quot;: 22,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C8&quot;,
+        &quot;issue&quot;: &quot;图2只是一个SSC类别0样例，不能从图注推广到所有样例/种子。&quot;,
+        &quot;suggested_correction&quot;: &quot;陈述限定图示样例，避免工作记忆或固定点证明。&quot;,
+        &quot;pdf_page&quot;: 5,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C10&quot;,
+        &quot;issue&quot;: &quot;D4：Fig.6正文平均绝对输出权重与图注平均输出权重的定义不同，实际分析网络数与种子汇总未报。&quot;,
+        &quot;suggested_correction&quot;: &quot;使用正文定义并明确图注歧义；256是每层神经元结构数，不作独立模型n。&quot;,
+        &quot;pdf_page&quot;: 14,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C10&quot;,
+        &quot;issue&quot;: &quot;固定随机延迟网络深层仍有r=0.49；不能将延迟—权重关联断言为联合学习独有。&quot;,
+        &quot;suggested_correction&quot;: &quot;同时保留学习与固定3层r值，仅作描述性关联比较，不推断因果。&quot;,
+        &quot;pdf_page&quot;: 15,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C11&quot;,
+        &quot;issue&quot;: &quot;D5：正文用色标称原始梯度幅度约高一个数量级，而Methods说不同模型原始幅度不可比；实际评估是更宽的surrogate gradient。&quot;,
+        &quot;suggested_correction&quot;: &quot;只保留来源报告及严格约定，不能作为训练梯度稳定性或真实因果效应证据；主要时间形状另见归一化C13。&quot;,
+        &quot;pdf_page&quot;: 23,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C13&quot;,
+        &quot;issue&quot;: &quot;D5：正文175步与图7图注末150步、3000步评估不同；Eq.18输出导数与loss=-o的正号说明不一致。&quot;,
+        &quot;suggested_correction&quot;: &quot;3000步是输入长度、150步是图注显示窗口；不指定精确记忆范围，不解释梯度正负为兴奋/抑制；能量仅用平方。&quot;,
+        &quot;pdf_page&quot;: 16,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C13&quot;,
+        &quot;issue&quot;: &quot;35输出类别及时间/通道是同一个网络内测量，不是额外独立训练重复。&quot;,
+        &quot;suggested_correction&quot;: &quot;实际独立训练单位按Methods为每模型类别3种子；SEM层级细节未报告。&quot;,
+        &quot;pdf_page&quot;: 24,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C2&quot;,
+        &quot;issue&quot;: &quot;D6：Algorithm 1的pointer推进缩进位于神经元i循环内，无法仅凭形式化正文确定实际同步调度顺序。&quot;,
+        &quot;suggested_correction&quot;: &quot;算法记录遵循Eq.5、Eq.11–14及缓冲正文，不声称伪代码或代码已独立验证。&quot;,
+        &quot;pdf_page&quot;: 21,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;D1：S1–S4、外部代码、图像像素未提供/未读取；引用背景、硬件能耗与生物髓鞘机制不是本文自有实验。&quot;,
+        &quot;suggested_correction&quot;: &quot;明确缺失与非推断；不生成虚构补充实验或生物/硬件验证候选。&quot;,
+        &quot;pdf_page&quot;: 29,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C15&quot;,
+        &quot;issue&quot;: &quot;优化干扰、过参数化及任务需求解释来自作者推测，未做原因识别；复杂神经元组合收益也未实测。&quot;,
+        &quot;suggested_correction&quot;: &quot;C15、C16均标hypothesis，与已观察性能结果分开。&quot;,
+        &quot;pdf_page&quot;: 18,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;局部多图/多记录共享同一训练模型，不代表独立复制；引用方法只作本论文内比较对象。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留内部shared_evidence_with，relations为空；不建立跨论文support/contradiction/replication链接。&quot;,
+        &quot;pdf_page&quot;: null,
+        &quot;resolved&quot;: true
+      }
+    ],
+    &quot;needs_human_review&quot;: true
+  },
+  &quot;source&quot;: {
+    &quot;filename&quot;: &quot;paper-W4415337470--DelRec-learning-delays-in-recurrent-spiking-neural-networks.pdf&quot;,
+    &quot;sha256&quot;: &quot;a65f0a2bb027ac2ffc3f323eb30c0b3e8dfe01ea4954889696e094eb122df13d&quot;,
+    &quot;source_url&quot;: &quot;https://assets-eu.researchsquare.com/files/rs-9370190/v1_covered_d77bee0e-e480-41c7-b82c-8daa6ca4d84e.pdf?c=1776265675&quot;,
+    &quot;pdf_page_count&quot;: 29
+  },
+  &quot;provenance&quot;: {
+    &quot;created_at&quot;: &quot;2026-10-07T14:40:19.828373Z&quot;,
+    &quot;workflow&quot;: &quot;claim-commons-pdf-v1&quot;,
+    &quot;prompt_version&quot;: &quot;claim-commons-chatgpt-pdf-2026-10-07.1&quot;,
+    &quot;backend&quot;: &quot;authorized_parallel_GPT&quot;,
+    &quot;model&quot;: &quot;inherited_account_GPT&quot;,
+    &quot;provider_api_key_used&quot;: false,
+    &quot;source_sha256&quot;: &quot;a65f0a2bb027ac2ffc3f323eb30c0b3e8dfe01ea4954889696e094eb122df13d&quot;,
+    &quot;source_audit_complete&quot;: true,
+    &quot;review_status&quot;: &quot;candidate&quot;,
+    &quot;database_updated&quot;: false
+  }
+}</pre></details></main><footer></footer></body></html>

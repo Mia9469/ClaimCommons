@@ -1,0 +1,92 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>A general framework for interpretable neural learning based on local information-theoretic goal functions</title><style>body{max-width:940px;margin:40px auto;padding:0 24px;background:#fffdf7;color:#12372f;font:16px/1.8 Georgia,serif}h1{font-size:26px;line-height:1.4}h2{font-size:20px;line-height:1.5}h3{font-size:16px}article{padding:26px 0;border-top:1px solid #bec4b8}small{color:#68766e}dl{display:grid;grid-template-columns:120px 1fr;gap:8px 20px}dt{font-weight:bold}dd{margin:0}li{padding:8px 0}p,dd{overflow-wrap:anywhere}.note{background:#eef2e2;padding:14px;border-left:3px solid #738968}summary{cursor:pointer}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.7 monospace}@media(max-width:600px){body{margin:24px auto;padding:0 18px}dl{grid-template-columns:1fr;gap:3px}dd{margin-bottom:12px}}@media print{body{margin:0;background:white}details{display:block}}</style><link rel="stylesheet" href="../../commons-v02.css?v=20261020-1"><link rel="stylesheet" href="../../examples.css?v=20260928-2"><link rel="stylesheet" href="../../site.css?v=20261020-1"><script defer src="../../site.js?v=20261020-1"></script><script defer src="../../report-ui.js?v=20261020-1"></script></head><body class="portal-page report-page" data-cc-report-shell="1" data-page="library" data-site-prefix="../../" data-library-paper="paper-doi-8be2d790c8b1ce59" data-report-language="zh" data-claim-records="{&quot;C1&quot;:&quot;structured-paper-doi-8be2d790c8b1ce59-1&quot;,&quot;C2&quot;:&quot;structured-paper-doi-8be2d790c8b1ce59-2&quot;,&quot;C3&quot;:&quot;structured-paper-doi-8be2d790c8b1ce59-3&quot;,&quot;C4&quot;:&quot;structured-paper-doi-8be2d790c8b1ce59-4&quot;,&quot;C5&quot;:&quot;structured-paper-doi-8be2d790c8b1ce59-5&quot;,&quot;C6&quot;:&quot;structured-paper-doi-8be2d790c8b1ce59-6&quot;,&quot;C7&quot;:&quot;structured-paper-doi-8be2d790c8b1ce59-7&quot;,&quot;C8&quot;:&quot;structured-paper-doi-8be2d790c8b1ce59-8&quot;}"><header></header><main id="report-content"><div id="report-tools"></div><small>CLAIM COMMONS / 阅读报告</small><h1>A general framework for interpretable neural learning based on local information-theoretic goal functions</h1><p class="note">AI 文本提取候选，尚待人工核对。图像像素未读取；PDF 页码指文件中的页序。</p><p>完整评估11页（正文、所有图注及参考文献）。8候选覆盖条件PID更新、MNIST及信息诊断、独立条纹学习、关联记忆容量/失败、补充误差模型描述及规模化边界。统计单位为模型运行和共享数据，不是动物。保留不可微分箱、95-percentile、基线劣势及特定记忆判据；不暗示生物实现。</p><a href="https://doi.org/10.1073/pnas.2408125122" rel="noreferrer">查看所读原文版本 ↗</a><details><summary>贡献清单与处理决定</summary><ul><li><b>本文构建双输入类infomorphic单元，以I_sx PID的unique/redundant/synergistic及残余熵加权目标推导局部参数更新；实际实现固定分箱直方图并忽略分箱本身的梯度。</b><br>include · 计算结果/范围完整</li><li><b>MNIST单层10单元模型在100训练运行中平均测试准确率89.7%，低于同源比较logistic regression的91.9%；训练时标签作context，测试时置零。</b><br>include · 计算结果/范围完整</li><li><b>监督训练的冗余信息上升、残余随机熵降低；更易混淆数字的单元保留较多unique receptive信息，提供目标未完全匹配标签的诊断。</b><br>include · 计算结果/范围完整</li><li><b>8单元网络最大化相对其他单元的unique receptive信息，可学习8个独立随机横条的分布式编码，层互信息接近8 bit，但少数运行出现两个单元编码同一条。</b><br>include · 计算结果/范围完整</li><li><b>100单元关联记忆模型按20步后平均cosine retrieval&gt;95%定义容量，无噪声cue容量35模式，比该经典Hopfield比较的14模式高；优势延续到α=0.4测试扰动。</b><br>include · 计算结果/范围完整</li><li><b>该记忆模型在模式很少时不能可靠编码，因一些单元接收不变输入、可学习信息为零；超过容量时冗余仍可上升并伴随negative unique contextual信息。</b><br>include · 计算结果/范围完整</li><li><b>正文描述了以模型预测和观察作双输入、奖励synergy/unique且惩罚redundancy的原始误差单元，但完整SI实验未供，不能据此证明生物predictive coding实现。</b><br>include · 计算结果/范围完整</li><li><b>作者明确当前双输入网络尚无多层规模化能力，复杂梯度/高成本直方图也缺乏生物可实现性；增加输入类、替代密度估计和噪声约束是未完成路线。</b><br>include · 计算结果/范围完整</li><li><b>基础Shannon/PID定义及被引后续多输入性能</b><br>exclude · 不计为新的本篇实验</li></ul></details><article><small>C1 / 直接结果 · conditional_learning_rule</small><h2>本文构建双输入类infomorphic单元，以I_sx PID的unique/redundant/synergistic及残余熵加权目标推导局部参数更新；实际实现固定分箱直方图并忽略分箱本身的梯度。</h2><h3>Evidence</h3><p>目标/梯度推导及minibatch估计</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>神经元接收的聚合输入分布，非生物重复；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 5 · 2.2–2.3 / Eqs.7–9</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>本文构建双输入类infomorphic单元，以I_sx PID的unique/redundant/synergistic及残余熵加权目标推导局部参数更新；实际实现固定分箱直方图并忽略分箱本身的梯度。</dd><dt>适用边界</dt><dd>PID度量I_sx、离散二元输出、可微概率但不可微binning被固定</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>仿真数据/模型学习不是生物验证；局部目标可解释不保证所有任务或深层规模化。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>PID目标如何形成条件局部更新？</li></ul></article><article><small>C2 / 直接结果 · computational_result</small><h2>MNIST单层10单元模型在100训练运行中平均测试准确率89.7%，低于同源比较logistic regression的91.9%；训练时标签作context，测试时置零。</h2><h3>Evidence</h3><p>监督模型比较</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>运行、10单元及同一图像基准；100独立训练运行</dd><dt>不确定性</dt><dd>图显示95-percentile；未报告该效果的显著性检验</dd><dt>原文位置</dt><dd>PDF 6 · Fig.2 / 3.1</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>MNIST单层10单元模型在100训练运行中平均测试准确率89.7%，低于同源比较logistic regression的91.9%；训练时标签作context，测试时置零。</dd><dt>适用边界</dt><dd>任务专用激活/目标(0.1,0.1,1,0.1,0)；图为95-percentile不是均值CI</dd><dt>实际负结果</dt><dd>准确率低于logistic regression</dd><dt>不能推出</dt><dd>仿真数据/模型学习不是生物验证；局部目标可解释不保证所有任务或深层规模化。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>监督学习与logistic基线有何区别？</li></ul></article><article><small>C3 / 直接结果 · computational_result</small><h2>监督训练的冗余信息上升、残余随机熵降低；更易混淆数字的单元保留较多unique receptive信息，提供目标未完全匹配标签的诊断。</h2><h3>Evidence</h3><p>训练PID轨迹</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>共享运行及单元；同监督100运行</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 6 · 3.1.6 / Fig.2B–C</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>监督训练的冗余信息上升、残余随机熵降低；更易混淆数字的单元保留较多unique receptive信息，提供目标未完全匹配标签的诊断。</dd><dt>适用边界</dt><dd>诊断依所选PID，不证明所有信息原子非负或真实细胞功能</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>仿真数据/模型学习不是生物验证；局部目标可解释不保证所有任务或深层规模化。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>信息原子如何诊断监督误差？</li></ul></article><article><small>C4 / 直接结果 · computational_result</small><h2>8单元网络最大化相对其他单元的unique receptive信息，可学习8个独立随机横条的分布式编码，层互信息接近8 bit，但少数运行出现两个单元编码同一条。</h2><h3>Evidence</h3><p>无监督随机条纹模拟</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>运行和8模型单元；300独立训练运行；每条P=0.5</dd><dt>不确定性</dt><dd>图显示95-percentile；未报告该效果的显著性检验</dd><dt>原文位置</dt><dd>PDF 7 · Fig.3 / 3.2</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>8单元网络最大化相对其他单元的unique receptive信息，可学习8个独立随机横条的分布式编码，层互信息接近8 bit，但少数运行出现两个单元编码同一条。</dd><dt>适用边界</dt><dd>每图8时步、训练前半强weight decay；平均unique约0.77bit而非每单元恰1bit</dd><dt>实际负结果</dt><dd>偶发同条重复编码，unique平均低于1bit</dd><dt>不能推出</dt><dd>仿真数据/模型学习不是生物验证；局部目标可解释不保证所有任务或深层规模化。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>唯一信息目标能否分配独立特征？</li></ul></article><article><small>C5 / 直接结果 · computational_result</small><h2>100单元关联记忆模型按20步后平均cosine retrieval&gt;95%定义容量，无噪声cue容量35模式，比该经典Hopfield比较的14模式高；优势延续到α=0.4测试扰动。</h2><h3>Evidence</h3><p>噪声cue关联记忆仿真</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>运行、100单元及共享随机模式；25独立运行；35模式训练</dd><dt>不确定性</dt><dd>图显示95-percentile；未报告该效果的显著性检验</dd><dt>原文位置</dt><dd>PDF 8 · Fig.4 / 3.3</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>100单元关联记忆模型按20步后平均cosine retrieval&gt;95%定义容量，无噪声cue容量35模式，比该经典Hopfield比较的14模式高；优势延续到α=0.4测试扰动。</dd><dt>适用边界</dt><dd>随机0.5稀疏二元模式；训练每模式8步；测试仅1步cue；读出无二值化，与Hopfield规则不同</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>仿真数据/模型学习不是生物验证；局部目标可解释不保证所有任务或深层规模化。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>特定容量判据下记忆是否更鲁棒？</li></ul></article><article><small>C6 / 直接结果 · computational_result</small><h2>该记忆模型在模式很少时不能可靠编码，因一些单元接收不变输入、可学习信息为零；超过容量时冗余仍可上升并伴随negative unique contextual信息。</h2><h3>Evidence</h3><p>容量/信息轨迹分析</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>共享训练运行/单元；同记忆运行；具体低模式n未逐项供</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 7 · 3.3.5–3.3.6；Fig.4</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>该记忆模型在模式很少时不能可靠编码，因一些单元接收不变输入、可学习信息为零；超过容量时冗余仍可上升并伴随negative unique contextual信息。</dd><dt>适用边界</dt><dd>negative PID原子属该度量误信息解释，非负熵或负概率</dd><dt>实际负结果</dt><dd>极少模式编码失败；冗余上升不保证成功恢复</dd><dt>不能推出</dt><dd>仿真数据/模型学习不是生物验证；局部目标可解释不保证所有任务或深层规模化。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>信息改善能否保证可靠记忆？</li></ul></article><article><small>C7 / 直接结果 · computational_result</small><h2>正文描述了以模型预测和观察作双输入、奖励synergy/unique且惩罚redundancy的原始误差单元，但完整SI实验未供，不能据此证明生物predictive coding实现。</h2><h3>Evidence</h3><p>补充模型结果的正文描述</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>模型单元；无新增生物实验；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 8 · Discussion / SI Fig.S10正文描述</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>正文描述了以模型预测和观察作双输入、奖励synergy/unique且惩罚redundancy的原始误差单元，但完整SI实验未供，不能据此证明生物predictive coding实现。</dd><dt>适用边界</dt><dd>仅正文报告，补图和参数未供</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>仿真数据/模型学习不是生物验证；局部目标可解释不保证所有任务或深层规模化。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>误差单元模型证据覆盖到何处？</li></ul></article><article><small>C8 / 假说 / 预测 · implementation_boundary</small><h2>作者明确当前双输入网络尚无多层规模化能力，复杂梯度/高成本直方图也缺乏生物可实现性；增加输入类、替代密度估计和噪声约束是未完成路线。</h2><h3>Evidence</h3><p>设计限制及前瞻</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>本文框架/候选实现；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 9 · 4.1 Future Work</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>作者明确当前双输入网络尚无多层规模化能力，复杂梯度/高成本直方图也缺乏生物可实现性；增加输入类、替代密度估计和噪声约束是未完成路线。</dd><dt>适用边界</dt><dd>反馈与横向信息需不同角色；后续工作不能算本篇已验证结果</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>仿真数据/模型学习不是生物验证；局部目标可解释不保证所有任务或深层规模化。</dd><dt>未解决</dt><dd>多输入深层网络和低记忆成本的生物更新仍待验证</dd></dl><h3>相关问题</h3><ul><li>局部信息学习有哪些规模化/生物限制？</li></ul></article><details><summary>核对记录与来源信息</summary><pre>{
+  &quot;coverage&quot;: {
+    &quot;pdf_pages_read&quot;: [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    &quot;results_sections_seen&quot;: [
+      &quot;Information theory and PID&quot;,
+      &quot;Infomorphic model/local gradient&quot;,
+      &quot;3.1 Supervised MNIST&quot;,
+      &quot;3.2 Unsupervised bars&quot;,
+      &quot;3.3 Associative memory&quot;,
+      &quot;Discussion/Future Work&quot;,
+      &quot;Materials and Methods&quot;,
+      &quot;All captions and References&quot;
+    ],
+    &quot;missing_material&quot;: [
+      &quot;未读取图像像素；未提供的在线补充材料不计入覆盖&quot;
+    ],
+    &quot;text_pass_complete&quot;: true,
+    &quot;notes&quot;: [
+      &quot;逐页评估完整归档文字及所供附录；压缩排版空白不删除文字。&quot;,
+      &quot;二次审计使用已读源文本；文字覆盖不是科学验证。&quot;
+    ],
+    &quot;reading_mode&quot;: &quot;text_only&quot;,
+    &quot;figure_images_read&quot;: false,
+    &quot;scientific_verification&quot;: false,
+    &quot;source_pdf_offline&quot;: false,
+    &quot;archived_page_text_used&quot;: false
+  },
+  &quot;audit&quot;: {
+    &quot;source_match_checks&quot;: [],
+    &quot;model_findings&quot;: [
+      {
+        &quot;claim_id&quot;: &quot;C1&quot;,
+        &quot;issue&quot;: &quot;binning本身不可微，经验histogram按固定处理&quot;,
+        &quot;suggested_correction&quot;: &quot;不将所述梯度升级为完整连续PID目标的严格梯度&quot;,
+        &quot;pdf_page&quot;: 5,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C5&quot;,
+        &quot;issue&quot;: &quot;容量由平均cosine&gt;95%、20步定义且读出规则与Hopfield不同&quot;,
+        &quot;suggested_correction&quot;: &quot;35/100是特定设置，不泛化容量定理&quot;,
+        &quot;pdf_page&quot;: 7,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;图示95-percentile不等于均值95%CI&quot;,
+        &quot;suggested_correction&quot;: &quot;按图原词记录计算运行区间&quot;,
+        &quot;pdf_page&quot;: 6,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C7&quot;,
+        &quot;issue&quot;: &quot;SI S10等全文/像素未供&quot;,
+        &quot;suggested_correction&quot;: &quot;只提炼正文描述，明确缺失参数与原图&quot;,
+        &quot;pdf_page&quot;: 8,
+        &quot;resolved&quot;: true
+      }
+    ],
+    &quot;needs_human_review&quot;: true
+  },
+  &quot;source&quot;: {
+    &quot;filename&quot;: &quot;2025-PNAS-Interpretable-Neural-Learning-Information-Theory.pdf&quot;,
+    &quot;sha256&quot;: &quot;8da7ae383a160ff08f8ec1681cacbcbfad9ed4036d8f5b08e623061ed6a248db&quot;,
+    &quot;source_url&quot;: null,
+    &quot;pdf_page_count&quot;: 11
+  },
+  &quot;provenance&quot;: {
+    &quot;created_at&quot;: &quot;2026-10-07T10:51:58.890033Z&quot;,
+    &quot;workflow&quot;: &quot;claim-commons-pdf-v1&quot;,
+    &quot;prompt_version&quot;: &quot;claim-commons-chatgpt-pdf-2026-10-07.1&quot;,
+    &quot;backend&quot;: &quot;authorized_parallel_GPT&quot;,
+    &quot;model&quot;: &quot;inherited_account_GPT&quot;,
+    &quot;provider_api_key_used&quot;: false,
+    &quot;source_sha256&quot;: &quot;8da7ae383a160ff08f8ec1681cacbcbfad9ed4036d8f5b08e623061ed6a248db&quot;,
+    &quot;source_audit_complete&quot;: true,
+    &quot;review_status&quot;: &quot;candidate&quot;,
+    &quot;database_updated&quot;: false
+  }
+}</pre></details></main><footer></footer></body></html>

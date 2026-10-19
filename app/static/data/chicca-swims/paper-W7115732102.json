@@ -1,0 +1,1034 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "A Thermodynamically Consistent Thermal Equilibrium Gaussian White Noise Model for Nonlinear Resistors",
+    "authors": [
+      "Michele Bonnin",
+      "Léopold Van Brandt",
+      "Jean-Charles Delvenne",
+      "Fabio L. Traversa",
+      "Fabrizio Bonani"
+    ],
+    "doi": "10.1109/tcsi.2025.3639450",
+    "publication_year": 2025,
+    "venue": "IEEE Transactions on Circuits and Systems I Regular Papers",
+    "url": "https://doi.org/10.1109/tcsi.2025.3639450"
+  },
+  "source": {
+    "filename": "paper-W7115732102.pdf",
+    "sha256": "70a0d316674457d546ec3b10779974de7f4a9b2a75ccf5894ed95009374a1034",
+    "source_url": "https://research.dial.uclouvain.be/server/api/core/bitstreams/dad3e9b2-3706-4015-a165-adb487cb6e42/content",
+    "pdf_page_count": 14
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "results_sections_seen": [
+      "III.A Example 2",
+      "IV Theorem 1；Corollaries 2–4；Example 3；Dual circuit",
+      "V Theorems 5–7",
+      "Appendix A；Appendix B；Figures 1–11"
+    ],
+    "missing_material": [
+      "所有图像像素未提供。",
+      "独立数学审查、原始轨迹、数值实现及物理器件实验未提供。"
+    ],
+    "text_pass_complete": true,
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "notes": [
+      "14页作者排版稿保留LaTeX模板的2015/2005占位页眉日期；不将这些当真实投稿/发表日期。出版年与DOI仅取授权导入元数据（2025）。",
+      "全部正文、附录及参考文献已读；第二来源核对区分稳态、瞬态、同扩散等价和同温/异温条件。",
+      "source_audit_complete只表示文本来源核对完成，不表示定理已被独立验证。"
+    ]
+  },
+  "contribution_inventory": [
+    {
+      "summary": "在C=1 F、Z=1 A、γ=5 V^-1、T=300 K的指数电阻—线性电容数值例子中，将热噪声设为基于零电压微分电导的常幅高斯白噪声，本文所得稳态密度与相应解析解一致，却不同于Gibbs密度，并呈负偏斜及非零平均电压。",
+      "role": "result",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "保留独立理论表达、示例或模型构造，显式限定条件。"
+    },
+    {
+      "summary": "对光滑且满足存在唯一性与所述能量边界条件的一阶无源非线性电阻—电容系统，本文以零稳态概率流和Gibbs密度为约束求解扩散强度ODE，得到解释依赖的状态调制函数n0(q)及n1/2(q)，使相应Itô和Stratonovich模型具有同一Gibbs稳态。",
+      "role": "result",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "保留独立理论表达、示例或模型构造，显式限定条件。"
+    },
+    {
+      "summary": "对g(f(q))/f(q)≥0且满足光滑及解存在唯一性条件的无源电阻，本文给出可实现的替代表达：Itô扩散强度平方P=2kTg(f)/f，漂移为−g(f)+kT·d[g(f)/f]/dq，可用无噪声电阻并联随机电流源及漂移校正电流源表示。",
+      "role": "result",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "保留独立理论表达、示例或模型构造，显式限定条件。"
+    },
+    {
+      "summary": "对于本文共享P(q)=2kTg(f)/f的校正模型族，Itô漂移含kT·[g(f)/f]'、Stratonovich漂移含其一半、Hänggi–Klimontovich形式无该校正；按标准解释转换，作者将这三式视为同一Wiener实现和初态下轨道相同的SDE。",
+      "role": "result",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "保留独立理论表达、示例或模型构造，显式限定条件。"
+    },
+    {
+      "summary": "将本文噪声模型中的非线性电阻替换为g(f(q))=Gf(q)的线性电阻，并按原文选择积分常数后，噪声强度退化为sqrt(2kTG)，替代模型的漂移校正消失，恢复Johnson–Nyquist形式。",
+      "role": "result",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "保留独立理论表达、示例或模型构造，显式限定条件。"
+    },
+    {
+      "summary": "对前述指数电阻—线性电容例子，本文改用含漂移校正与状态扩散的Itô式39，在100、300及600 K的数值积分中所得稳态密度与Gibbs密度相符，展示校正模型在这三个温度的示例一致性。",
+      "role": "result",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "保留独立理论表达、示例或模型构造，显式限定条件。"
+    },
+    {
+      "summary": "本文将一阶电阻—电容噪声构造扩展到其电路对偶：对电流控制非线性电阻v=r(i)与磁通控制电感i=h(ϕ)，以电感能量H(ϕ)构造状态依赖随机电压源，或用电阻串联随机电压及漂移校正源的Thevenin形式。",
+      "role": "result",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "保留独立理论表达、示例或模型构造，显式限定条件。"
+    },
+    {
+      "summary": "在本文一阶校正电阻—电容模型达到Gibbs稳态且概率密度边界项消失时，Theorem 5给出平均电压E[f(q)]=0，从而排除这个模型在稳态中以电压偏置整流自身热涨落的Brillouin情形。",
+      "role": "result",
+      "source_pages": [
+        10
+      ],
+      "decision": "include",
+      "reason": "保留独立理论表达、示例或模型构造，显式限定条件。"
+    },
+    {
+      "summary": "对于本文校正的一阶无源模型，在密度与其导数的远端边界衰减、温度固定及所述正则性条件下，附录B将热浴熵与电路Shannon熵的总变化写成非负平方积分，得到瞬态总熵产生非负，而不是所有时刻严格为正。",
+      "role": "result",
+      "source_pages": [
+        13
+      ],
+      "decision": "include",
+      "reason": "保留独立理论表达、示例或模型构造，显式限定条件。"
+    },
+    {
+      "summary": "对于两个由同一非线性电容连接、处于相同温度且噪声Wiener过程独立的无源电阻，本文Theorem 7在Gibbs平衡和边界项消失下给出各电阻耗散与自身涨落注入平均功率相抵，因而电阻之间没有净热传递。",
+      "role": "result",
+      "source_pages": [
+        11
+      ],
+      "decision": "include",
+      "reason": "保留独立理论表达、示例或模型构造，显式限定条件。"
+    },
+    {
+      "summary": "本文对温度T1、T2不同的两个电阻，把稳态FPE与拟定Gibbs形式比较后写出Teq=[T1g1(f(q))+T2g2(f(q))]/[g1(f(q))+g2(f(q))]；同温时它为常数，但一般非线性异温情形右侧可依赖q，不能无条件解读为统一热平衡温度。",
+      "role": "result",
+      "source_pages": [
+        11
+      ],
+      "decision": "include",
+      "reason": "保留独立理论表达、示例或模型构造，显式限定条件。"
+    },
+    {
+      "summary": "原积分扩散模型与替代模型在一般瞬态中强/逐轨道等价",
+      "role": "result",
+      "source_pages": [
+        7,
+        8,
+        11,
+        12
+      ],
+      "decision": "defer",
+      "reason": "Appendix A通过ρst=ρG替换重写稳态方程；不足以在本次文本审计中核验更强动态等价。"
+    },
+    {
+      "summary": "任意多阶RLC网络、主动器件、量子电路或神经形态硬件普遍适用",
+      "role": "hypothesis",
+      "source_pages": [
+        8,
+        9,
+        11
+      ],
+      "decision": "defer",
+      "reason": "提出应用方向，没有本文实验或一般网络证明。"
+    },
+    {
+      "summary": "线性Johnson–Nyquist、OU解析解及既有Brillouin/热力学要求",
+      "role": "review_synthesis",
+      "source_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        13,
+        14
+      ],
+      "decision": "exclude",
+      "reason": "背景、已知基线与他文结论，不作为本文首创新结果。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "在C=1 F、Z=1 A、γ=5 V^-1、T=300 K的指数电阻—线性电容数值例子中，将热噪声设为基于零电压微分电导的常幅高斯白噪声，本文所得稳态密度与相应解析解一致，却不同于Gibbs密度，并呈负偏斜及非零平均电压。",
+      "claim_type": "simulation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "随机Runge–Kutta积分与稳态密度比较",
+          "design": "沿用例1数值方法及参数；该器件被假设严格无源。",
+          "comparator": "常噪声模型解析密度及Gibbs密度",
+          "measure": "稳态分布、偏斜与电压均值",
+          "unit_of_analysis": "单个模型的长时随机数值轨迹与解析分布",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "III.A Example 2",
+            "figure": "Figure 5",
+            "equation": "19–20",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在C=1 F、Z=1 A、γ=5 V^-1、T=300 K的指数电阻—线性电容数值例子中，将热噪声设为基于零电压微分电导的常幅高斯白噪声，本文所得稳态密度与相应解析解一致，却不同于Gibbs密度，并呈负偏斜及非零平均电压。",
+        "boundary": "Brillouin矛盾为已有理论背景，本篇提供其数值示例；非实际可抽取能量实验。",
+        "negative_result": "该常幅模型不满足Gibbs与零均值电压要求。",
+        "non_inference": "不能称真实非线性电阻违反热力学或证明所有白噪声模型不可能。",
+        "unresolved": "重复轨迹、收敛误差和其他非线性器件。",
+        "unresolved_attribution": "所供原文未解决或未报告。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "常幅高斯噪声在所示非线性电阻中为何给出非Gibbs稳态？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "对光滑且满足存在唯一性与所述能量边界条件的一阶无源非线性电阻—电容系统，本文以零稳态概率流和Gibbs密度为约束求解扩散强度ODE，得到解释依赖的状态调制函数n0(q)及n1/2(q)，使相应Itô和Stratonovich模型具有同一Gibbs稳态。",
+      "claim_type": "theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "由稳态Fokker–Planck方程求扩散强度",
+          "design": "i=g(v)、v=f(q)、F为电容储能；nα依赖F和温度。",
+          "comparator": null,
+          "measure": "扩散函数及Gibbs稳态",
+          "unit_of_analysis": "一阶SDE的解析稳态约束",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "所选积分常数使扩散强度实数可用，密度可正规化。",
+            "光滑性、边界衰减及解存在唯一性条件。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "IV Theorem 1",
+            "figure": "Figure 6",
+            "equation": "22–32",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "对光滑且满足存在唯一性与所述能量边界条件的一阶无源非线性电阻—电容系统，本文以零稳态概率流和Gibbs密度为约束求解扩散强度ODE，得到解释依赖的状态调制函数n0(q)及n1/2(q)，使相应Itô和Stratonovich模型具有同一Gibbs稳态。",
+        "boundary": "状态/负载依赖是核心假设；积分常数、正定性及边界选择需要适用条件。",
+        "negative_result": null,
+        "non_inference": "共同稳态不等于不同扩散的原模型轨道相同；不是微观噪声实测或任意网络定理。",
+        "unresolved": "一般器件的扩散正定性、积分常数和有限噪声频带。",
+        "unresolved_attribution": "所供原文未解决或未报告。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "允许状态及负载依赖能否构造Gibbs一致的非线性白噪声模型？"
+      ],
+      "shared_evidence_with": [
+        "C3",
+        "C4",
+        "C5"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "对g(f(q))/f(q)≥0且满足光滑及解存在唯一性条件的无源电阻，本文给出可实现的替代表达：Itô扩散强度平方P=2kTg(f)/f，漂移为−g(f)+kT·d[g(f)/f]/dq，可用无噪声电阻并联随机电流源及漂移校正电流源表示。",
+      "claim_type": "proposed_stochastic_model",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "扩散分解、漂移校正及等效电路构造",
+          "design": "原积分扩散模型与替代表达关系的推导在Appendix A。",
+          "comparator": null,
+          "measure": "状态扩散、漂移校正及电路表示",
+          "unit_of_analysis": "给定一阶电容负载的解析SDE",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "IV Corollary 2；Remark 6",
+            "figure": "Figure 7",
+            "equation": "35",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "对g(f(q))/f(q)≥0且满足光滑及解存在唯一性条件的无源电阻，本文给出可实现的替代表达：Itô扩散强度平方P=2kTg(f)/f，漂移为−g(f)+kT·d[g(f)/f]/dq，可用无噪声电阻并联随机电流源及漂移校正电流源表示。",
+        "boundary": "零电压点需用可定义极限；主动电阻不在此无源模型范围；数值积分要用SDE算法。",
+        "negative_result": null,
+        "non_inference": "可写入模拟器不等于已在商用软件部署；附录稳态变换不足以在这里核验原模型瞬态逐轨道等价。",
+        "unresolved": "原积分模型到替代模型的动态等价及0/0点、积分条件。",
+        "unresolved_attribution": "Appendix A式62代入ρst=ρG，原模型与替代模型的强等价需专门审查。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "漂移校正如何进入非线性电阻的模拟器友好噪声模型？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C4",
+        "C6",
+        "C8",
+        "C9",
+        "C10"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "对于本文共享P(q)=2kTg(f)/f的校正模型族，Itô漂移含kT·[g(f)/f]'、Stratonovich漂移含其一半、Hänggi–Klimontovich形式无该校正；按标准解释转换，作者将这三式视为同一Wiener实现和初态下轨道相同的SDE。",
+      "claim_type": "theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "随机积分解释的漂移转换",
+          "design": null,
+          "comparator": null,
+          "measure": "同扩散模型族的解释转换",
+          "unit_of_analysis": "相同噪声和初态的三种SDE表示",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "使用可微共享扩散函数及标准转换规则。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "IV Corollary 3 and interpretation conversion",
+            "figure": null,
+            "equation": "35–37",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "对于本文共享P(q)=2kTg(f)/f的校正模型族，Itô漂移含kT·[g(f)/f]'、Stratonovich漂移含其一半、Hänggi–Klimontovich形式无该校正；按标准解释转换，作者将这三式视为同一Wiener实现和初态下轨道相同的SDE。",
+        "boundary": "仅指35–37共享扩散族；22/24/33保持相同宏观漂移但不同扩散，只能直接确认共同稳态。",
+        "negative_result": null,
+        "non_inference": "不能把所有原始解释依赖nα模型都当作完全相同动态。",
+        "unresolved": "原式22/24与替代族之间的强等价。",
+        "unresolved_attribution": "所供原文未解决或未报告。"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "改变随机积分解释时哪些校正才对应同一轨道？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C3"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "将本文噪声模型中的非线性电阻替换为g(f(q))=Gf(q)的线性电阻，并按原文选择积分常数后，噪声强度退化为sqrt(2kTG)，替代模型的漂移校正消失，恢复Johnson–Nyquist形式。",
+      "claim_type": "theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "线性构成关系代入及积分",
+          "design": null,
+          "comparator": null,
+          "measure": "线性极限扩散与漂移",
+          "unit_of_analysis": "模型的解析线性极限",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "IV Corollary 4",
+            "figure": null,
+            "equation": "38；9（PDF第4页）",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "将本文噪声模型中的非线性电阻替换为g(f(q))=Gf(q)的线性电阻，并按原文选择积分常数后，噪声强度退化为sqrt(2kTG)，替代模型的漂移校正消失，恢复Johnson–Nyquist形式。",
+        "boundary": "适用同一噪声谱/随机积分归一化，不移用不同单边谱系数。",
+        "negative_result": null,
+        "non_inference": "既有Johnson–Nyquist公式不是本文首创；也不证明非线性模型唯一。",
+        "unresolved": "不同边界积分常数的物理解读。",
+        "unresolved_attribution": "所供原文未解决或未报告。"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "非线性扩展是否恢复正确线性噪声极限？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C3"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "对前述指数电阻—线性电容例子，本文改用含漂移校正与状态扩散的Itô式39，在100、300及600 K的数值积分中所得稳态密度与Gibbs密度相符，展示校正模型在这三个温度的示例一致性。",
+      "claim_type": "simulation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "校正SDE数值积分与Gibbs密度比较",
+          "design": "重新使用Example 2器件，改变温度。",
+          "comparator": "Gibbs分布与原常幅模型示例",
+          "measure": "稳态电压密度",
+          "unit_of_analysis": "每温度的长时模拟轨迹/经验密度",
+          "sample_size_as_reported": "3个温度；独立随机轨迹重复数未报告。",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "IV.A Example 3",
+            "figure": "Figure 8",
+            "equation": "39",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "对前述指数电阻—线性电容例子，本文改用含漂移校正与状态扩散的Itô式39，在100、300及600 K的数值积分中所得稳态密度与Gibbs密度相符，展示校正模型在这三个温度的示例一致性。",
+        "boundary": "无误差条、分布检验或泛化证明；图像像素未读，吻合依据正文。",
+        "negative_result": null,
+        "non_inference": "不是实际电阻热噪声测量或独立复制。",
+        "unresolved": "步长、长时收敛和重复误差。",
+        "unresolved_attribution": "所供原文未解决或未报告。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "校正模型在指数器件例子中是否呈Gibbs稳态？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C3"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "本文将一阶电阻—电容噪声构造扩展到其电路对偶：对电流控制非线性电阻v=r(i)与磁通控制电感i=h(ϕ)，以电感能量H(ϕ)构造状态依赖随机电压源，或用电阻串联随机电压及漂移校正源的Thevenin形式。",
+      "claim_type": "proposed_stochastic_model",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "电路对偶关系及噪声等效形式",
+          "design": null,
+          "comparator": null,
+          "measure": "磁通状态扩散和串联电压源结构",
+          "unit_of_analysis": "一阶电感负载的解析构造",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "IV.B The dual circuit",
+            "figure": "Figures 9–10（PDF第10页）",
+            "equation": "40–41",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "本文将一阶电阻—电容噪声构造扩展到其电路对偶：对电流控制非线性电阻v=r(i)与磁通控制电感i=h(ϕ)，以电感能量H(ϕ)构造状态依赖随机电压源，或用电阻串联随机电压及漂移校正源的Thevenin形式。",
+        "boundary": "沿用对应无源性、储能边界和SDE条件；不是任意RLC网络验证。",
+        "negative_result": null,
+        "non_inference": "没有硬件或商用模拟器实测，也不覆盖内部有源器件。",
+        "unresolved": "多阶网络及实际非线性电感适用性。",
+        "unresolved_attribution": "所供原文未解决或未报告。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "热噪声构造能否对偶为电流控制电阻的电压噪声模型？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "在本文一阶校正电阻—电容模型达到Gibbs稳态且概率密度边界项消失时，Theorem 5给出平均电压E[f(q)]=0，从而排除这个模型在稳态中以电压偏置整流自身热涨落的Brillouin情形。",
+      "claim_type": "theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Gibbs密度下均值积分及边界项",
+          "design": null,
+          "comparator": null,
+          "measure": "平均电压",
+          "unit_of_analysis": "稳态概率分布",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "V Theorem 5",
+            "figure": null,
+            "equation": "42",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在本文一阶校正电阻—电容模型达到Gibbs稳态且概率密度边界项消失时，Theorem 5给出平均电压E[f(q)]=0，从而排除这个模型在稳态中以电压偏置整流自身热涨落的Brillouin情形。",
+        "boundary": "证明针对整体电压；无源非线性支路的g(v)均值不能仅由E[v]=0直接推出。",
+        "negative_result": null,
+        "non_inference": "不是任意工作点、瞬态或所有电流源逐支路零均值的证明；不代表实际装置测量。",
+        "unresolved": "一般多元网络零偏置条件。",
+        "unresolved_attribution": "所供原文未解决或未报告。"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "Gibbs稳态和储能边界如何排除平均电压偏置？"
+      ],
+      "shared_evidence_with": [
+        "C3",
+        "C10"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "对于本文校正的一阶无源模型，在密度与其导数的远端边界衰减、温度固定及所述正则性条件下，附录B将热浴熵与电路Shannon熵的总变化写成非负平方积分，得到瞬态总熵产生非负，而不是所有时刻严格为正。",
+      "claim_type": "theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Itô能量平衡、Fokker–Planck和分部积分",
+          "design": "电路熵与浴熵相加；无源性g(f)/f≥0。",
+          "comparator": null,
+          "measure": "d(SB+SC)/dt≥0",
+          "unit_of_analysis": "时间依赖概率密度的解析熵平衡",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "边界项消失；零点的比值极限及积分定义有效。"
+          ],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "Appendix B Proof of Theorem 6",
+            "figure": null,
+            "equation": "72–79",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "对于本文校正的一阶无源模型，在密度与其导数的远端边界衰减、温度固定及所述正则性条件下，附录B将热浴熵与电路Shannon熵的总变化写成非负平方积分，得到瞬态总熵产生非负，而不是所有时刻严格为正。",
+        "boundary": "非负包含平衡等号；不意味着单独电路Shannon熵总增。",
+        "negative_result": null,
+        "non_inference": "不能从该证明推出任意非平衡驱动或有源系统的熵律。",
+        "unresolved": "附录中导数/符号排版及一般网络扩展。",
+        "unresolved_attribution": "所供原文未解决或未报告。"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "校正模型的热浴加电路总熵是否单调？"
+      ],
+      "shared_evidence_with": [
+        "C3"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "对于两个由同一非线性电容连接、处于相同温度且噪声Wiener过程独立的无源电阻，本文Theorem 7在Gibbs平衡和边界项消失下给出各电阻耗散与自身涨落注入平均功率相抵，因而电阻之间没有净热传递。",
+      "claim_type": "theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "独立噪声能量平衡和Gibbs分部积分",
+          "design": "两个电阻热浴同温；电容为无损储能元件。",
+          "comparator": null,
+          "measure": "每支路净平均功率",
+          "unit_of_analysis": "同温平衡的双电阻一阶电路",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "各噪声独立；相关乘积边界项消失。"
+          ],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "V Theorem 7",
+            "figure": "Figure 11（PDF第10页）",
+            "equation": "43–52",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "对于两个由同一非线性电容连接、处于相同温度且噪声Wiener过程独立的无源电阻，本文Theorem 7在Gibbs平衡和边界项消失下给出各电阻耗散与自身涨落注入平均功率相抵，因而电阻之间没有净热传递。",
+        "boundary": "同温平衡是关键；不是不同温浴无热流。",
+        "negative_result": null,
+        "non_inference": "不能视作有温差系统或任意多阶损耗网络都无热交换。",
+        "unresolved": "不同温浴下的非平衡热流和一般网络。",
+        "unresolved_attribution": "所供原文未解决或未报告。"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "同温电阻各自的噪声输入和耗散是否平衡？"
+      ],
+      "shared_evidence_with": [
+        "C3",
+        "C8",
+        "C11"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "本文对温度T1、T2不同的两个电阻，把稳态FPE与拟定Gibbs形式比较后写出Teq=[T1g1(f(q))+T2g2(f(q))]/[g1(f(q))+g2(f(q))]；同温时它为常数，但一般非线性异温情形右侧可依赖q，不能无条件解读为统一热平衡温度。",
+      "claim_type": "source_reported_theoretical_expression",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "稳态FPE与假定Gibbs形式的代入比较",
+          "design": null,
+          "comparator": null,
+          "measure": "形式有效温度比值",
+          "unit_of_analysis": "给定两构成函数的形式关系",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "V Theorem 7",
+            "figure": null,
+            "equation": "47–48",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "本文对温度T1、T2不同的两个电阻，把稳态FPE与拟定Gibbs形式比较后写出Teq=[T1g1(f(q))+T2g2(f(q))]/[g1(f(q))+g2(f(q))]；同温时它为常数，但一般非线性异温情形右侧可依赖q，不能无条件解读为统一热平衡温度。",
+        "boundary": "统一Gibbs温度至少要求右侧为常数；异温环境本身不满足同温平衡要求。",
+        "negative_result": null,
+        "non_inference": "不能把48式普遍当异温两热浴最终热平衡证明，或推断异温时零热流。",
+        "unresolved": "不同温度和非比例非线性函数下的真实稳态、热流及温度解释。",
+        "unresolved_attribution": "来源使用假定Gibbs形式；未给一般状态相关比值的全局平衡论证。"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "状态相关的加权温度能否代表全局平衡？"
+      ],
+      "shared_evidence_with": [
+        "C10"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "requires_theoretical_review"
+        ]
+      }
+    }
+  ],
+  "reading_summary": "保留11项候选：常幅噪声的反例模拟、稳态约束扩散构造、漂移校正与同扩散解释转换、线性极限、三温度示例、对偶电路、零均值电压、非负总熵产生、同温零热流及加权温度表达的边界。独立源核对并未认可所有强表述：Appendix A的稳态重写不足以核验原模型与替代模型一般瞬态等价；异温加权温度可状态相关；严格正熵与非负应区分。未进行数学证明复核或科学复现。",
+  "shared_evidence": [
+    {
+      "claim_id": "C2",
+      "with": [
+        "C3",
+        "C4",
+        "C5"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C2",
+        "C4",
+        "C6",
+        "C8",
+        "C9",
+        "C10"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C2",
+        "C3"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C2",
+        "C3"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C1",
+        "C3"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C3",
+        "C10"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C3"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "with": [
+        "C3",
+        "C8",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "with": [
+        "C10"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [
+      {
+        "claim_id": "C1",
+        "pdf_page": 6,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "text_anchor_matched": true,
+        "semantic_scope_checked_by": "inherited_GPT"
+      },
+      {
+        "claim_id": "C2",
+        "pdf_page": 7,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "text_anchor_matched": true,
+        "semantic_scope_checked_by": "inherited_GPT"
+      },
+      {
+        "claim_id": "C3",
+        "pdf_page": 8,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "text_anchor_matched": true,
+        "semantic_scope_checked_by": "inherited_GPT"
+      },
+      {
+        "claim_id": "C4",
+        "pdf_page": 8,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "text_anchor_matched": true,
+        "semantic_scope_checked_by": "inherited_GPT"
+      },
+      {
+        "claim_id": "C5",
+        "pdf_page": 8,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "text_anchor_matched": true,
+        "semantic_scope_checked_by": "inherited_GPT"
+      },
+      {
+        "claim_id": "C6",
+        "pdf_page": 9,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "text_anchor_matched": true,
+        "semantic_scope_checked_by": "inherited_GPT"
+      },
+      {
+        "claim_id": "C7",
+        "pdf_page": 9,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "text_anchor_matched": true,
+        "semantic_scope_checked_by": "inherited_GPT"
+      },
+      {
+        "claim_id": "C8",
+        "pdf_page": 10,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "text_anchor_matched": true,
+        "semantic_scope_checked_by": "inherited_GPT"
+      },
+      {
+        "claim_id": "C9",
+        "pdf_page": 13,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "text_anchor_matched": true,
+        "semantic_scope_checked_by": "inherited_GPT"
+      },
+      {
+        "claim_id": "C10",
+        "pdf_page": 11,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "text_anchor_matched": true,
+        "semantic_scope_checked_by": "inherited_GPT"
+      },
+      {
+        "claim_id": "C11",
+        "pdf_page": 11,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "text_anchor_matched": true,
+        "semantic_scope_checked_by": "inherited_GPT"
+      }
+    ],
+    "model_findings": [
+      {
+        "claim_id": "C3",
+        "issue": "Appendix A式62代入稳态Gibbs密度，随后被用于原模型与替代模型的动态等价表述。",
+        "suggested_correction": "仅保留替代模型构造及共同稳态；强等价独立命题defer，需审查生成算子及瞬态。",
+        "pdf_page": 12,
+        "resolved": false
+      },
+      {
+        "claim_id": "C11",
+        "issue": "式48在非比例非线性函数与异温情况下通常是状态函数，不能普遍当统一Teq。",
+        "suggested_correction": "把零热流限定同温；异温稳态/热流另行研究。",
+        "pdf_page": 11,
+        "resolved": false
+      },
+      {
+        "claim_id": "C9",
+        "issue": "摘要/定理题名称positive，附录结论为non-negative。",
+        "suggested_correction": "采用非负，保留平衡等号可能性。",
+        "pdf_page": 13,
+        "resolved": true
+      },
+      {
+        "claim_id": "C2",
+        "issue": "积分扩散式含任意积分常数；实数、正规化和边界条件缺少完整一般条件展开。",
+        "suggested_correction": "显式保留存在唯一性、正定及边界要求，人工审查具体构成函数。",
+        "pdf_page": 7,
+        "resolved": false
+      },
+      {
+        "claim_id": null,
+        "issue": "稿件仍有模板占位日期及公式文本可能缺少导数符号。",
+        "suggested_correction": "出版信息用导入元数据，公式严谨性需对照排版原件。",
+        "pdf_page": 1,
+        "resolved": false
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T07:13:20.177Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "70a0d316674457d546ec3b10779974de7f4a9b2a75ccf5894ed95009374a1034",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

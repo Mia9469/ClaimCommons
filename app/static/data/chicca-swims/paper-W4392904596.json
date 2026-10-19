@@ -1,0 +1,1075 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "An Event-Based Neural Compressive Telemetry With >11× Loss-Less Data Reduction for High-Bandwidth Intracortical Brain Computer Interfaces",
+    "authors": [
+      "Yuming He",
+      "Stan van der Ven",
+      "Hua-Peng Liaw",
+      "Chengyao Shi",
+      "Pietro Russo",
+      "Marios Gourdouparis",
+      "Mario Konijnenburg",
+      "Stefano Traferro",
+      "Martijn Timmermans",
+      "Carolina Mora López",
+      "Pieter J. A. Harpe",
+      "Eugenio Cantatore",
+      "Elisabetta Chicca",
+      "Yao‐Hong Liu"
+    ],
+    "doi": "10.1109/tbcas.2024.3378973",
+    "publication_year": 2024,
+    "venue": "IEEE Transactions on Biomedical Circuits and Systems",
+    "url": "https://doi.org/10.1109/tbcas.2024.3378973"
+  },
+  "source": {
+    "filename": "paper-W4392904596.pdf",
+    "sha256": "7e601808b3da68865759efff98109ec659a6504139b15e7c708c693bf8522f6c",
+    "source_url": "https://pure.tue.nl/ws/files/354817206/An_Event-Based_Neural_Compressive_Telemetry_With_gt11_Loss-Less_Data_Reduction_for_High-Bandwidth_Intracortical_Brain_Computer_Interfaces.pdf",
+    "pdf_page_count": 13
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "results_sections_seen": [
+      "II. The Proposed Serial Telemetry",
+      "III-A. Channel-Rotating Δ-ADC",
+      "III-B. Event Serializer With Spatial-Grouping Ternary AER",
+      "III-C. Event-Based LVDS Driver",
+      "IV-A. CR-Δ ADC and NCT Measurements",
+      "IV-B. Validation With In-Vivo Data",
+      "IV-C. Benchmark and Discussion",
+      "V. Conclusion",
+      "Figures 1–16 的所供文字与图注",
+      "Table I"
+    ],
+    "missing_material": [
+      "图像像素及仅存在于图内的数值、坐标和电路标注",
+      "原始数据、代码和芯片测试记录",
+      "未提供附录或补充材料正文"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "第1页明确标注 Publisher’s PDF / Version of Record；第2–13页对应期刊页1100–1111。",
+      "参考文献与作者简介均已评估，未作为本文新增结果。",
+      "所供文本存在 Δ、×、μ及面积单位乱码；可由摘要和量纲交叉核对的单位已注明解释依据。",
+      "正文与参考文献对两个验证数据集的物种描述冲突。",
+      "Loss-Less 在本文语境中指波形特征保留，不能解释为原始数字流逐比特无损。",
+      "芯片数量、独立实验重复和统计不确定性未报告。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "128通道NCT及支持16:1时间复用输入的通道轮转Δ-ADC。",
+      "role": "硬件方法",
+      "source_pages": [
+        4,
+        5,
+        7,
+        8
+      ],
+      "decision": "include",
+      "reason": "电路操作、制造工艺与多通道回放均有依据；AFE和输入复用器未集成。"
+    },
+    {
+      "summary": "7-bit、20 kSps Δ量化的压缩、分选匹配与波形误差模拟。",
+      "role": "模拟结果",
+      "source_pages": [
+        4
+      ],
+      "decision": "include",
+      "reason": "属于本文分析；原始分选输出仅为参考，非神经元真值。"
+    },
+    {
+      "summary": "空间分组ternary AER、事件时钟和占空比控制eLVDS。",
+      "role": "协议与电路方法",
+      "source_pages": [
+        6,
+        7
+      ],
+      "decision": "include",
+      "reason": "包格式、启停、缓存和溢出处理明确；未独立消融各机制。"
+    },
+    {
+      "summary": "单ADC与完整NCT的正弦精度、幅度扫描及安静期事件输出。",
+      "role": "台架测量",
+      "source_pages": [
+        7,
+        8
+      ],
+      "decision": "include",
+      "reason": "分别支持链路精度、低幅输入保真度和事件驱动行为。"
+    },
+    {
+      "summary": "两个预录数据集经DAC回放的波形保真度。",
+      "role": "硬件回放结果",
+      "source_pages": [
+        8,
+        9
+      ],
+      "decision": "include",
+      "reason": "不是新在体实验，也未直接测试硬件输出的分选准确率。"
+    },
+    {
+      "summary": "包含协议开销的压缩率和数据率。",
+      "role": "系统性能",
+      "source_pages": [
+        8,
+        9,
+        10
+      ],
+      "decision": "include",
+      "reason": "保留两个数据集的完整比较及平均放电率。"
+    },
+    {
+      "summary": "NCT每通道功耗与eLVDS功耗下降。",
+      "role": "系统功耗",
+      "source_pages": [
+        8,
+        9,
+        10
+      ],
+      "decision": "include",
+      "reason": "与压缩率分别可评估；LVDS比较条件未详述。"
+    },
+    {
+      "summary": "每通道存储、压缩数字面积和ENOB归一化能效基准。",
+      "role": "资源与文献比较",
+      "source_pages": [
+        9,
+        10
+      ],
+      "decision": "include",
+      "reason": "容量与能效口径明确，跨文献比较不构成独立复现。"
+    },
+    {
+      "summary": "每次转换能耗降低5–10倍、协议开销最多降低2倍。",
+      "role": "设计分析",
+      "source_pages": [
+        5,
+        6
+      ],
+      "decision": "defer",
+      "reason": "可保留为作者的设计解释，但缺少足以独立核对其定量幅度的测量与推导细节。"
+    },
+    {
+      "summary": "单ADC正弦条件下的功耗及Walden FoM。",
+      "role": "台架性能",
+      "source_pages": [
+        7
+      ],
+      "decision": "defer",
+      "reason": "正文报告282.19 fJ/conv，但0.11 mW/通道存在单位提取疑点；不能可靠恢复完整功耗比较。"
+    },
+    {
+      "summary": "严格无损、普遍保持分选准确率、降低组织损伤及长期植入适用性。",
+      "role": "应用外推",
+      "source_pages": [
+        2,
+        3,
+        8,
+        10
+      ],
+      "decision": "exclude",
+      "reason": "存在非零重构误差；未测硬件分选、组织温升、损伤或长期植入效果。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "对一个原始为10-bit、30 kSps的预录神经数据集，以输入等效满量程1.1 mVPP、20 kSps运行的7-bit Δ-ADC模型得到超过10倍的模拟压缩率；作者将Kilo-sort分选相对原始数据的影响评为可忽略，所示分选簇波形的NRMSE均不超过8.2%，对应SNR超过21.7 dB。",
+      "claim_type": "simulation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Δ量化模拟、Kilo-sort分选匹配和波形比较",
+          "design": "改变Δ-ADC分辨率，以原始记录的分选输出为参考；7-bit模型用于展示重构簇波形。",
+          "comparator": "原始10-bit、30 kSps记录及其分选输出",
+          "measure": "模拟压缩率、匹配spike百分比、NRMSE和SNR",
+          "unit_of_analysis": "一个数据集中的spike及所示分选簇波形",
+          "sample_size_as_reported": "一个数据集；spike数、簇数及重复次数未报告",
+          "uncertainty": "未报告置信区间；7-bit条件的确切匹配百分比未出现在所供文字中。",
+          "assumptions": [
+            "原始分选输出作为参考，不是独立神经元真值。",
+            "模拟量化不包含全部硬件误差。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "III-A",
+            "figure": "Figures 3–4",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "支持在该数据和模型条件下选择7-bit Δ量化。",
+        "boundary": "限于所用数据集、采样率、满量程及分选流程。",
+        "negative_result": null,
+        "non_inference": "不能证明硬件输出的分选准确率或任意记录下的无损性。",
+        "unresolved": "其他数据、事件密度和分选算法下的表现未报告。",
+        "unresolved_attribution": "本次审计识别的范围限制。"
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "Δ量化分辨率与采样率如何影响spike分选匹配和波形误差？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "可忽略是作者对分选匹配图的解释；未补造确切匹配率。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "本文在65-nm CMOS中实现128通道NCT，其中8个7-bit通道轮转Δ-ADC各接收16:1时间复用输入，为每个通道保存前一帧码并以该码开始当前转换，输出变化方向与量化Δ；128通道预录信号回放验证了该共享ADC架构的工作。",
+      "claim_type": "hardware_method",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "电路实现与芯片制造",
+          "design": "FIFO保存通道码；比较器、事件计数器和DAC控制模块完成逐通道Δ转换；StepMax设为31。",
+          "comparator": "正文描述的从中心码启动转换的常规SAR-ADC",
+          "measure": "128通道、8个ADC、16:1时间复用及7-bit状态保存",
+          "unit_of_analysis": "芯片架构、ADC模块和逻辑输入通道",
+          "sample_size_as_reported": "8个ADC、128通道；芯片数和独立重复未报告",
+          "uncertainty": null,
+          "assumptions": [
+            "外部输入复用器与ADC共享时钟。",
+            "所需比较必须在半个ADC时钟周期内完成。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "III-A",
+            "figure": "Figures 5–6",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "芯片制造说明与128通道模拟回放",
+          "design": "FPGA和8个外部12-bit DAC生成8路16:1时间复用输入。",
+          "comparator": null,
+          "measure": "128通道重构输出",
+          "unit_of_analysis": "NCT芯片及回放通道",
+          "sample_size_as_reported": "128通道",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "IV-A–IV-B",
+            "figure": "Figures 12、14",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "实现了保留各通道状态的共享Δ转换及128通道传输。",
+        "boundary": "芯片不含AFE或模拟输入复用器。",
+        "negative_result": null,
+        "non_inference": "128通道不是128次独立硬件重复；未证明更大规模性能。",
+        "unresolved": "跨芯片一致性及更大通道数下的时序裕量未报告。",
+        "unresolved_attribution": "本次审计识别。"
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "共享ADC如何保存时间复用神经记录中各通道的Δ转换状态？"
+      ],
+      "shared_evidence_with": [
+        "C5",
+        "C7"
+      ],
+      "review_notes": [
+        "5–10倍转换能耗下降未纳入实测定量结论。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "本文的空间分组ternary AER将同一ADC的活跃通道事件放入同一包，每包对该ADC只发送一次ADC ID，再以含SIGN和通道地址的CH ID重复次数编码Δ；事件序列化ring oscillator和eLVDS按包启停，提供减少地址重复和空闲功耗的实现机制。",
+      "claim_type": "protocol_and_circuit_method",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "包格式、双事件缓存及FSM设计",
+          "design": "分组发送ADC ID；每活跃通道使用10-bit事件存储及10-bit副本；FLAG表示包活跃期。",
+          "comparator": "重复发送ADC ID的事件编码",
+          "measure": "地址发送次数、Δ编码方式和事件缓存结构",
+          "unit_of_analysis": "事件包和逻辑模块",
+          "sample_size_as_reported": null,
+          "uncertainty": "最多2倍协议开销降低为设计分析，未提供独立实测比较。",
+          "assumptions": [
+            "邻近通道分配给同一ADC可利用其事件相关性。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "III-B",
+            "figure": "Figures 7–8",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "事件时钟与eLVDS电路设计",
+          "design": "启动计数器等待RO稳定；包结束关闭时钟；空闲时驱动输出置于VDD/2；采用Manchester编码。",
+          "comparator": "持续运行的序列化时钟与静态LVDS驱动",
+          "measure": "事件触发启停、溢出检测及后续频率调整",
+          "unit_of_analysis": "时钟及驱动器模块",
+          "sample_size_as_reported": null,
+          "uncertainty": "84–574 MHz为设计覆盖范围，未作为所供文本可核对的实测频率范围。",
+          "assumptions": [
+            "包须在允许的ADC帧时间内传完。",
+            "溢出后提高频率针对后续帧，不能保证已溢出帧无丢失。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "III-B–III-C",
+            "figure": "Figures 9–11",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提出并实现分组事件编码及按包启停的传输机制。",
+        "boundary": "效果依赖事件负载、通道分组和包长度。",
+        "negative_result": null,
+        "non_inference": "未独立消融机制，不能将全部节能定量归因于空间分组。",
+        "unresolved": "高事件负载下的溢出率和调频效果未报告。",
+        "unresolved_attribution": "本次审计识别。"
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "空间分组和按事件包启停如何减少神经遥测的地址开销与空闲功耗？"
+      ],
+      "shared_evidence_with": [
+        "C7",
+        "C10"
+      ],
+      "review_notes": [
+        "概念时序和电路图不构成独立重复测量。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "1-kHz正弦输入测试中，单个CR-Δ ADC达到6.98-bit ENOB；将该正弦施加到一个ADC的16通道并经完整NCT传输与重构后，SNDR为41.6 dB、系统ENOB为6.62 bit，SNDR较单ADC输出下降2.2 dB。",
+      "claim_type": "hardware_measurement",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "正弦输入、FFT及反序列化重构",
+          "design": "比较单ADC输出与一个ADC的16通道完整链路输出。",
+          "comparator": "单ADC输出",
+          "measure": "ENOB、SNDR及2.2 dB下降",
+          "unit_of_analysis": "ADC和NCT输出信号",
+          "sample_size_as_reported": "单ADC；完整链路输入为其16通道；芯片数和重复未报告",
+          "uncertainty": "未报告误差条或置信区间。",
+          "assumptions": [
+            "正弦谱测量用于评估链路有效分辨率。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "IV-A",
+            "figure": "Figure 13(a–b)",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "该正弦测试下完整链路保留约6.6-bit有效分辨率。",
+        "boundary": "属于台架正弦输入测试。",
+        "negative_result": "完整链路SNDR较单ADC输出下降2.2 dB。",
+        "non_inference": "不能据此证明无误差传输或神经分选准确率。",
+        "unresolved": "跨芯片、温度和负载变化未报告。",
+        "unresolved_attribution": "本次审计识别。"
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "事件压缩与传输链路使采样信号的有效分辨率下降多少？"
+      ],
+      "shared_evidence_with": [
+        "C8",
+        "C9"
+      ],
+      "review_notes": [
+        "使用6.62 bit，纠正讨论段的ENOB单位误写。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "Neuropixels和Utah array两个预录数据集经FPGA及8个外部12-bit DAC形成128通道时间复用模拟输入并送入NCT后，平均输入等效RMS重构误差分别为7.4和5.7 μVRMS；所示Neuropixels spike幅度降至31 μV时，重构NRMSE仍低于23%。",
+      "claim_type": "hardware_replay_validation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "预录数据模拟回放与原始/重构波形比较",
+          "design": "两个数据集分别形成8路16:1时间复用模拟输入。",
+          "comparator": "回放的原始记录",
+          "measure": "通道RMS误差及所示低幅spike的NRMSE",
+          "unit_of_analysis": "记录通道及所示spike波形",
+          "sample_size_as_reported": "两个数据集；128通道输入；动物数、spike数、芯片数及独立重复未报告",
+          "uncertainty": "有通道误差直方图，文字未给出离散度或置信区间。",
+          "assumptions": [
+            "回放检验所用信号的链路保真度。",
+            "31 μV波形结果不是所有低幅spike的总体误差界。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "IV-B",
+            "figure": "Figures 14–15",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所用回放记录支持较低波形重构误差及所示低幅spike的保留。",
+        "boundary": "属于台架回放，未包括集成AFE或新在体记录。",
+        "negative_result": null,
+        "non_inference": "低波形误差不直接证明分选准确率、行为解码或逐比特无损。",
+        "unresolved": "数据集物种冲突及低幅spike总体表现未解决。",
+        "unresolved_attribution": "物种冲突来自第8页与第11页；总体范围限制由本次审计识别。"
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "事件式神经遥测能保留多小幅度的细胞外spike波形？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C6",
+        "C10"
+      ],
+      "review_notes": [
+        "μV由摘要、满量程及量纲交叉解释；正文提取显示为mV。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "128通道预录数据硬件回放中，NCT包含协议开销的压缩率分别为Neuropixels 11.4倍和Utah array 13.7倍，对应数据率39.1和29.3 kbps/通道，表列平均放电率分别为64和38次/秒/通道。",
+      "claim_type": "compression_performance",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "回放输出数据量测量与性能汇总",
+          "design": "同一NCT架构处理两个不同记录数据集。",
+          "comparator": "未压缩数据流",
+          "measure": "含协议开销压缩率、数据率和平均放电率",
+          "unit_of_analysis": "数据集条件下的系统输出流",
+          "sample_size_as_reported": "两个数据集、128通道；独立重复未报告",
+          "uncertainty": "未报告统计不确定性；未详述未压缩基准的全部计算步骤。",
+          "assumptions": [
+            "压缩率依赖事件密度。",
+            "两个数据集不是受控放电率或探针密度干预。"
+          ],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "Table I",
+            "figure": "Figure 16（第9页）",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "两个所测数据集均实现超过11倍的含开销数据减少。",
+        "boundary": "压缩率具有信号依赖性。",
+        "negative_result": null,
+        "non_inference": "不能将两数据集差异归因于单一放电率或空间密度因素。",
+        "unresolved": "更高负载及其他相关性条件下的压缩率未报告。",
+        "unresolved_attribution": "放电率影响由作者指出；其余范围限制由本次审计识别。"
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "事件密度与空间相关性如何影响含协议开销的神经遥测压缩率？"
+      ],
+      "shared_evidence_with": [
+        "C5",
+        "C10"
+      ],
+      "review_notes": [
+        "采用正文及表格的11.4倍；摘要乱码未作为额外精确测量。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "NCT每通道使用27 bit状态与事件存储，包括7-bit通道轮转码和两份10-bit事件缓存；相对Table I中Epoch方案约1.5 kbit/通道，容量约减少55倍，本文表列压缩数字面积为70 μm²/通道。",
+      "claim_type": "hardware_resource",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "架构位数计数及文献资源比较",
+          "design": "汇总通道轮转FIFO和用于并行缓冲/处理的双事件缓存。",
+          "comparator": "Epoch方案约1.5 kbit/通道",
+          "measure": "每通道存储容量及压缩数字面积",
+          "unit_of_analysis": "设计的每通道资源",
+          "sample_size_as_reported": "本文128通道；Epoch比较设计64通道",
+          "uncertainty": "未报告资源计数或面积不确定性。",
+          "assumptions": [
+            "跨文献存储口径可用于容量比较。",
+            "工艺及模块范围影响面积比较。"
+          ],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "Table I",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "该架构每通道所需存储容量较小。",
+        "boundary": "55倍指容量比较；面积单位由芯片量纲解释。",
+        "negative_result": null,
+        "non_inference": "不能将容量差解释为访问次数或访问能耗降低55倍。",
+        "unresolved": "未进行同条件存储访问次数或能耗比较。",
+        "unresolved_attribution": "本次审计识别。"
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "通道轮转与双事件缓存需要多少每通道存储资源？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C3"
+      ],
+      "review_notes": [
+        "27 bit为7+10+10；不将结论中的memory access demand当作已测访问量。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "以ADC、压缩、序列化和数据驱动器的总功耗除以采样率、通道数和系统ENOB的乘积，本文NCT的归一化遥测能耗为7.5 pJ/bit；相对Table I中两个有线LVDS系统的953和963 pJ/bit，按此指标改善至少127倍。",
+      "claim_type": "metric_and_literature_benchmark",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "定义系统ENOB归一化指标并比较文献汇总值",
+          "design": "功耗范围包含ADC至数据驱动器，排除AFE。",
+          "comparator": "Table I中的Lopez与Wang有线LVDS系统",
+          "measure": "7.5、953、963 pJ/bit及其比值",
+          "unit_of_analysis": "硬件设计的系统汇总性能",
+          "sample_size_as_reported": "一个本文设计和两个文献设计",
+          "uncertainty": "无统一条件并列实验或置信区间。",
+          "assumptions": [
+            "比较值采用相容的功耗与系统ENOB口径。",
+            "bit为ENOB归一化尺度，不是实际发送比特。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "IV-C",
+            "figure": null,
+            "equation": "Equation (2)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "文献性能表",
+          "design": "汇总有线系统的归一化能耗。",
+          "comparator": "953和963 pJ/bit",
+          "measure": "遥测能耗",
+          "unit_of_analysis": "硬件设计",
+          "sample_size_as_reported": "两个文献比较设计",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "Table I",
+            "figure": null,
+            "equation": "Equation (2)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在作者定义的指标下优于两个表列有线系统。",
+        "boundary": "跨文献比较；无线功耗依赖距离，作者指出该指标可能不适于无线比较。",
+        "negative_result": null,
+        "non_inference": "不等于每个实际发送比特或完整植入系统节能127倍。",
+        "unresolved": "统一负载和测试条件下的优势幅度未确定。",
+        "unresolved_attribution": "无线限制由作者指出；统一条件限制由本次审计识别。"
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "如何考虑有效动态范围来比较压缩神经遥测能效？"
+      ],
+      "shared_evidence_with": [
+        "C4",
+        "C10"
+      ],
+      "review_notes": [
+        "7.5 pJ/bit是定义指标的计算结果，跨文献比较不构成复现。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "NCT正弦输入幅度扫描显示，在约3%满量程的输入下仍达到作者采用的12 dB SNDR、NRMSE低于25%的保真度标准；这是低幅模拟信号的台架测量，未直接测定spike分选准确率。",
+      "claim_type": "hardware_amplitude_sweep",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "输入幅度扫描与重构SNDR测量",
+          "design": "改变正弦输入幅度，按1.1 mVPP满量程归一化。",
+          "comparator": "作者援引的12 dB SNDR / 25% NRMSE标准",
+          "measure": "输入幅度与重构SNDR",
+          "unit_of_analysis": "各输入幅度条件下的重构信号",
+          "sample_size_as_reported": "幅度点数及独立重复未报告",
+          "uncertainty": "正文同时给出约3%满量程和约25.5 μV，但幅度口径及换算未说明，未强行统一。",
+          "assumptions": [
+            "12 dB标准来自引用文献，不是本文新建立的分选阈值。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "IV-A",
+            "figure": "Figure 13(c)",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "幅度扫描支持低幅输入下的波形保真度。",
+        "boundary": "限于所测模拟输入和作者采用的保真度标准。",
+        "negative_result": null,
+        "non_inference": "达到波形标准不能直接证明准确分选低幅spike。",
+        "unresolved": "百分比与电压值的幅度口径未明确。",
+        "unresolved_attribution": "本次审计识别。"
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "NCT的重构SNDR随输入幅度如何变化？"
+      ],
+      "shared_evidence_with": [
+        "C4"
+      ],
+      "review_notes": [
+        "补录草稿遗漏的幅度扫描结果；保留约3%而不补造电压换算。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "两个预录数据集回放的NCT功耗汇总约为1 μW/通道，不包含AFE；正文另报告事件驱动eLVDS功耗从3.3 mW降至114.6 μW，约降低30倍。spike-like模拟输入测试还显示，安静期输出事件包数量减少。",
+      "claim_type": "hardware_power_and_event_activity",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "回放功耗分解",
+          "design": "报告NCT子模块功耗及eLVDS比较。",
+          "comparator": "正文所列3.3 mW LVDS基准",
+          "measure": "约1 μW/通道、114.6 μW驱动功耗及约30倍下降",
+          "unit_of_analysis": "NCT系统和LVDS模块",
+          "sample_size_as_reported": "128通道；芯片数和独立重复未报告",
+          "uncertainty": "未报告统计不确定性或两个数据集各自的功耗；3.3 mW比较条件未详述。",
+          "assumptions": [
+            "系统功耗不包含AFE。",
+            "μW解释由摘要及表列功耗分解交叉支持。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "IV-B",
+            "figure": "Figure 15(b)",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "spike-like模拟输入与输出事件观察",
+          "design": "观察活跃及安静时段的NCT事件输出。",
+          "comparator": "同一输入中的活跃时段",
+          "measure": "安静期事件包减少",
+          "unit_of_analysis": "所示输入与输出时间段",
+          "sample_size_as_reported": "时间段长度、包数及重复次数未报告",
+          "uncertainty": "仅有定性文字描述。",
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "IV-A",
+            "figure": "Figure 13(d)",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所测系统功耗较低，并呈现随输入活动变化的事件输出。",
+        "boundary": "功耗覆盖所定义遥测链路；没有逐数据集独立功耗结果。",
+        "negative_result": null,
+        "non_inference": "未证明组织安全，也不能分别量化各设计机制的节能贡献。",
+        "unresolved": "高负载、长时间运行及受控LVDS比较条件未报告。",
+        "unresolved_attribution": "本次审计识别。"
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "事件驱动神经遥测在回放与安静时段下消耗多少功率？"
+      ],
+      "shared_evidence_with": [
+        "C3",
+        "C5",
+        "C6",
+        "C8"
+      ],
+      "review_notes": [
+        "从原C6拆出可独立评估的功耗结论，并补录Figure 13(d)定性结果。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "已再次评估全部13页所供文字，身份与正式出版版本一致。保留量化模拟、128通道硬件方法、事件协议、正弦精度、低幅扫描、预录数据回放、压缩率、功耗、资源及文献能效比较；补录低幅扫描和安静期事件输出，并拆分压缩与功耗。所测证据支持11.4和13.7倍含开销压缩、约1 μW/通道遥测功耗及特定低幅波形保留，不能证明严格无损、硬件分选准确率或组织安全。物种描述、幅度换算及单ADC功耗单位仍存在未解决问题；未报告独立芯片数量和实验重复。",
+  "shared_evidence": [
+    {
+      "claim_id": "C2",
+      "with": [
+        "C5",
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C7",
+        "C10"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C8",
+        "C9"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C2",
+        "C6",
+        "C10"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C5",
+        "C10"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C2",
+        "C3"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C4",
+        "C10"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C4"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "with": [
+        "C3",
+        "C5",
+        "C6",
+        "C8"
+      ]
+    }
+  ],
+  "audit": {
+    "initial_source_match_checks": [],
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": "C5",
+        "issue": "正文称Neuropixels数据来自鼠、Utah数据来自灵长类；参考文献标题分别称primates和mice。",
+        "suggested_correction": "只保留探针和数据集名称，物种待原始数据核对。",
+        "pdf_page": 11,
+        "resolved": false
+      },
+      {
+        "claim_id": null,
+        "issue": "Loss-Less容易被解释为逐比特无损，但本文报告量化及重构误差。",
+        "suggested_correction": "所有记录限定为所测波形保真度，不宣称严格无损。",
+        "pdf_page": 8,
+        "resolved": true
+      },
+      {
+        "claim_id": "C1",
+        "issue": "模拟分选匹配可能与硬件波形验证混为准确率证据。",
+        "suggested_correction": "保留模型分选和硬件重构为不同记录；原始分选输出不是神经元真值。",
+        "pdf_page": 4,
+        "resolved": true
+      },
+      {
+        "claim_id": "C6",
+        "issue": "草稿把压缩率和功耗放在同一命题，且可能暗示逐数据集功耗已报告。",
+        "suggested_correction": "压缩率保留于C6，功耗移至C10并注明未提供逐数据集功耗。",
+        "pdf_page": 8,
+        "resolved": true
+      },
+      {
+        "claim_id": "C9",
+        "issue": "草稿遗漏Figure 13(c)幅度扫描这一可独立评估结果。",
+        "suggested_correction": "新增低幅输入保真度记录，不把引用的波形标准写成本文实测分选准确率。",
+        "pdf_page": 8,
+        "resolved": true
+      },
+      {
+        "claim_id": "C9",
+        "issue": "正文的约3%满量程与约25.5 μV未说明幅度换算口径。",
+        "suggested_correction": "采用约3%满量程，保留电压换算疑点，不补造口径。",
+        "pdf_page": 8,
+        "resolved": false
+      },
+      {
+        "claim_id": "C10",
+        "issue": "草稿未记录Figure 13(d)安静期事件包减少的实测文字。",
+        "suggested_correction": "补录定性事件活动结果，不补造包数或节能幅度。",
+        "pdf_page": 8,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "所供文本将多处μV、μW和μm²提取为mV、mW和mm²。",
+        "suggested_correction": "采用可由摘要和量纲交叉支持的单位，并明确提取限制。",
+        "pdf_page": 10,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "单ADC正弦功耗0.11 mW/通道存在单位疑点；282.19 fJ/conv虽明确，完整功耗口径仍无法可靠核对。",
+        "suggested_correction": "在贡献清单保留为defer，不恢复未确定的功耗单位。",
+        "pdf_page": 7,
+        "resolved": false
+      },
+      {
+        "claim_id": "C7",
+        "issue": "55倍容量下降被论文结论延伸为55倍memory access demand下降。",
+        "suggested_correction": "量化结论仅限27 bit与约1.5 kbit的存储容量比较。",
+        "pdf_page": 10,
+        "resolved": true
+      },
+      {
+        "claim_id": "C8",
+        "issue": "讨论段将系统ENOB写为6.6 dB，且127倍指标易被误读为实际发送每bit的能耗比。",
+        "suggested_correction": "采用6.62 bit，并明确Equation (2)的ENOB归一化定义。",
+        "pdf_page": 9,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "草稿包含requested schema之外的source_check和review字段，且文本匹配不能代表真实科学复核。",
+        "suggested_correction": "删除额外字段，保留实际来源定位和审计说明。",
+        "pdf_page": null,
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T06:44:34.820515Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "signed_in_chatgpt_codex",
+    "authentication": "existing_ChatGPT_login",
+    "provider_api_key_used": false,
+    "model": "account_default_GPT",
+    "source_sha256": "7e601808b3da68865759efff98109ec659a6504139b15e7c708c693bf8522f6c",
+    "requests": [
+      {
+        "phase": "extraction",
+        "seconds": 269.42,
+        "usage": {
+          "input_tokens": 28740,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 7715,
+          "reasoning_output_tokens": 22
+        },
+        "backend": "signed_in_chatgpt_codex",
+        "tools_used": false
+      },
+      {
+        "phase": "source_audit",
+        "seconds": 218.43,
+        "usage": {
+          "input_tokens": 36462,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 9132,
+          "reasoning_output_tokens": 71
+        },
+        "backend": "signed_in_chatgpt_codex",
+        "tools_used": false
+      }
+    ],
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

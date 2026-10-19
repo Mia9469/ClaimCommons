@@ -1,0 +1,162 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Identifiability Without Gaussianity: Symbolic World Models and Near-Infinite Temporal Consistency</title><style>body{max-width:940px;margin:40px auto;padding:0 24px;background:#fffdf7;color:#12372f;font:16px/1.8 Georgia,serif}h1{font-size:26px;line-height:1.4}h2{font-size:20px;line-height:1.5}h3{font-size:16px}article{padding:26px 0;border-top:1px solid #bec4b8}small{color:#68766e}dl{display:grid;grid-template-columns:120px 1fr;gap:8px 20px}dt{font-weight:bold}dd{margin:0}li{padding:8px 0}p,dd{overflow-wrap:anywhere}.note{background:#eef2e2;padding:14px;border-left:3px solid #738968}summary{cursor:pointer}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.7 monospace}@media(max-width:600px){body{margin:24px auto;padding:0 18px}dl{grid-template-columns:1fr;gap:3px}dd{margin-bottom:12px}}@media print{body{margin:0;background:white}details{display:block}}</style><link rel="stylesheet" href="../../commons-v02.css?v=20261020-1"><link rel="stylesheet" href="../../examples.css?v=20260928-2"><link rel="stylesheet" href="../../site.css?v=20261020-1"><script defer src="../../site.js?v=20261020-1"></script><script defer src="../../report-ui.js?v=20261020-1"></script></head><body class="portal-page report-page" data-cc-report-shell="1" data-page="library" data-site-prefix="../../" data-library-paper="paper-W7164701596" data-report-language="zh" data-claim-records="{&quot;C1&quot;:&quot;structured-paper-W7164701596-1&quot;,&quot;C2&quot;:&quot;structured-paper-W7164701596-2&quot;,&quot;C3&quot;:&quot;structured-paper-W7164701596-3&quot;,&quot;C4&quot;:&quot;structured-paper-W7164701596-4&quot;,&quot;C5&quot;:&quot;structured-paper-W7164701596-5&quot;,&quot;C6&quot;:&quot;structured-paper-W7164701596-6&quot;,&quot;C7&quot;:&quot;structured-paper-W7164701596-7&quot;,&quot;C8&quot;:&quot;structured-paper-W7164701596-8&quot;,&quot;C9&quot;:&quot;structured-paper-W7164701596-9&quot;,&quot;C10&quot;:&quot;structured-paper-W7164701596-10&quot;,&quot;C11&quot;:&quot;structured-paper-W7164701596-11&quot;,&quot;C12&quot;:&quot;structured-paper-W7164701596-12&quot;}"><header></header><main id="report-content"><div id="report-tools"></div><small>CLAIM COMMONS / 阅读报告</small><h1>Identifiability Without Gaussianity: Symbolic World Models and Near-Infinite Temporal Consistency</h1><p class="note">AI 文本提取候选，尚待人工核对。图像像素未读取；PDF 页码指文件中的页序。</p><p>arXiv2606.12471v2（2026-07-06）28页全文含所有proofs/Table1–4/附录已读。PGSA已知状态/方程构造与条件Lipschitz误差代数可表述，非单射单观测限制和残差界均需前提。七轨迹高斯化/OLS和四FE算例无trained statistical公平对照，超长horizon是公式外推；bias传播、machineε、monotonic atoms、普适排序及形式化覆盖有未解项，保留而不强证。</p><a href="https://arxiv.org/pdf/2606.12471" rel="noreferrer">查看所读原文版本 ↗</a><details><summary>贡献清单与处理决定</summary><ul><li><b>PGSA把已解析的物理状态直接用作表示并执行已知组合C；若C在所需状态上确等真实W，则h=z和单步零模型误差由构造得到，与状态分布是否高斯无关。</b><br>include · 保留该命题的证据条件与边界</li><li><b>在相同初始态、W具Lipschitz常数L且每步实现有统一绝对误差≤η时，滚动误差满足ε_t≤ηΣ_{k&lt;t}L^k；这只是这些条件下的上界。</b><br>include · 保留该命题的证据条件与边界</li><li><b>该误差界在L&lt;1且容差δ&gt;η/(1−L)时给无限步保证；L=1只给线性上界及有限容差的保证窗口，而非无条件无限准确预测。</b><br>include · 保留该命题的证据条件与边界</li><li><b>作者在额外假设误差按至少tκ一致累积时提出统计模型有限容差上限；非高斯或非线性表示本身没有由供应证明推出这种累积。</b><br>include · 保留该命题的证据条件与边界</li><li><b>对固定表示h、固定平稳分布及限定仿射读出，任何该类读出的期望平方误差不低于其最优仿射回归残差；若线性不能恢复真实状态则该残差为正。</b><br>include · 保留该命题的证据条件与边界</li><li><b>同一瞬时观测g将不同状态映到相同值时，单观测确定性读出不能对两者均唯一恢复；若二者渲染后的未来不同，同样单观测预测至少在一者错误。</b><br>include · 保留该命题的证据条件与边界</li><li><b>若真实W=K+U、模型C=K且K为L_K-Lipschitz，单步误差≤sup||U||=M，再经K传播的差≤L_KM；该结果约束未覆盖动力而非新隐状态辨识。</b><br>include · 保留该命题的证据条件与边界</li><li><b>作者提出添加Atom可不重训地降低未覆盖残差界，但仅从加性分解和去掉某项不能一般推出M或L_KM单调下降。</b><br>include · 保留该命题的证据条件与边界</li><li><b>七个模拟轨迹的逐坐标经验CDF高斯化再做线性读出，报告R²从billiards .898到Lorenz96 .994；PGSA给真实状态/逆映射时R²=1由构造得到。</b><br>include · 保留该命题的证据条件与边界</li><li><b>表2的4.5×10¹³步及约31 Lyapunov times来自δ=.01与μ≈2.2e−16的公式外推，而不是运行到该长度测得的模型一致性；统计/注意力模型对比horizon亦为示意。</b><br>include · 保留该命题的证据条件与边界</li><li><b>FE算例的cantilever、heat sink、solenoid场结果与所选闭式参考约1–6%接近，但热传导材料参数不同，plate采用cantilever边界而非参考扫频的全夹紧/简支边界。</b><br>include · 保留该命题的证据条件与边界</li><li><b>论文报告Lean形式化只覆盖部分代数核心，明确不覆盖Klindt converse、bias coherence、线性残差命题和attention归约；这里不能据“零sorry”认定完整物理结论已验证。</b><br>include · 保留该命题的证据条件与边界</li><li><b>所有统计/视频/JEPA/transformer非高斯必败，PGSA为唯一条件和普适horizon排序</b><br>defer · 外部定理范围、表示共轭/非线性读出、真实κ及像素历史未受相同假设限制；无trained architecture比较</li><li><b>初始perception error只付一次</b><br>include · 有初始err时应加L^t||e0||；未测PGSA状态解析错误，不能假定已在μ量级</li><li><b>总体分布/非高斯控制与符号回归文献</b><br>include · 控制分布是构造、引用不是本篇新机制实验</li><li><b>所有证明、形式化表、附录说明及Figures1–8</b><br>include · 完整供应覆盖；无源码/编译/长期实证追加</li></ul></details><article><small>C1 / 直接结果 · theoretical</small><h2>PGSA把已解析的物理状态直接用作表示并执行已知组合C；若C在所需状态上确等真实W，则h=z和单步零模型误差由构造得到，与状态分布是否高斯无关。</h2><h3>Evidence</h3><p>输入真实typed state、C=W的已知方程构造</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>映射/状态；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 19 · Definition3; Theorem2 proof</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>PGSA把已解析的物理状态直接用作表示并执行已知组合C；若C在所需状态上确等真实W，则h=z和单步零模型误差由构造得到，与状态分布是否高斯无关。</dd><dt>适用边界</dt><dd>不发现方程或从非单射观测辨识隐变量；只在D等式，跨步须轨迹留D或等式连续扩展；任意稠密集相等不自动可判定。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>这些形式构造与计算算例不验证所有物理系统/训练架构的普遍优劣；知道真实状态与方程和从图像学习不是同一任务，形式化代数不自动证明物理/表示前提。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>在源文所述条件下，PGSA把已解析的物理状态直接用作表示并执行已知组合C；若C在所需状态上确等真实W，则h=z和单步零模型误差由构造得到，与状态分布是否高斯无关。是否成立？</li></ul></article><article><small>C2 / 直接结果 · theoretical</small><h2>在相同初始态、W具Lipschitz常数L且每步实现有统一绝对误差≤η时，滚动误差满足ε_t≤ηΣ_{k&lt;t}L^k；这只是这些条件下的上界。</h2><h3>Evidence</h3><p>triangle/Lipschitz递推</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>数值迭代状态；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 19 · Theorem3 proof</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>在相同初始态、W具Lipschitz常数L且每步实现有统一绝对误差≤η时，滚动误差满足ε_t≤ηΣ_{k&lt;t}L^k；这只是这些条件下的上界。</dd><dt>适用边界</dt><dd>η不能无条件等于浮点相对epsilon μ；还须考虑截断、求解、公差、量纲、状态估计和条件数；上界不直接给真实首次失败时刻。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>这些形式构造与计算算例不验证所有物理系统/训练架构的普遍优劣；知道真实状态与方程和从图像学习不是同一任务，形式化代数不自动证明物理/表示前提。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>在源文所述条件下，在相同初始态、W具Lipschitz常数L且每步实现有统一绝对误差≤η时，滚动误差满足ε_t≤ηΣ_{k&lt;t}L^k；这只是这些条件下的上界。是否成立？</li></ul></article><article><small>C3 / 直接结果 · theoretical</small><h2>该误差界在L&lt;1且容差δ&gt;η/(1−L)时给无限步保证；L=1只给线性上界及有限容差的保证窗口，而非无条件无限准确预测。</h2><h3>Evidence</h3><p>几何级数闭式</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>数值映射；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 20 · Theorem3 regimes; Limitations</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>该误差界在L&lt;1且容差δ&gt;η/(1−L)时给无限步保证；L=1只给线性上界及有限容差的保证窗口，而非无条件无限准确预测。</dd><dt>适用边界</dt><dd>非混沌或能量守恒不一般等L≤1；L&gt;1不一般等正Lyapunov；E≤tη给窗口保证，不给T*=δ/η精确等式。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>这些形式构造与计算算例不验证所有物理系统/训练架构的普遍优劣；知道真实状态与方程和从图像学习不是同一任务，形式化代数不自动证明物理/表示前提。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>在源文所述条件下，该误差界在L&lt;1且容差δ&gt;η/(1−L)时给无限步保证；L=1只给线性上界及有限容差的保证窗口，而非无条件无限准确预测。是否成立？</li></ul></article><article><small>C4 / 假说 / 预测 · theoretical</small><h2>作者在额外假设误差按至少tκ一致累积时提出统计模型有限容差上限；非高斯或非线性表示本身没有由供应证明推出这种累积。</h2><h3>Evidence</h3><p>一阶bias展开与非抵消下界假设</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>假定表示/预测器；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 7 · Assumption1; Theorem4; Lemma1 proof PDF23</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>作者在额外假设误差按至少tκ一致累积时提出统计模型有限容差上限；非高斯或非线性表示本身没有由供应证明推出这种累积。</dd><dt>适用边界</dt><dd>可逆非线性h可用h∘W∘h⁻¹及逆读出准确预测；Lemma未证每步必须重新注入表示bias，忽略O(b²)不能无符号保证范数下界。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>这些形式构造与计算算例不验证所有物理系统/训练架构的普遍优劣；知道真实状态与方程和从图像学习不是同一任务，形式化代数不自动证明物理/表示前提。</dd><dt>未解决</dt><dd>状态偏差到每步bias下界的桥接未成立；条件tκ为核心额外假设，而非所有非高斯world性质。</dd></dl><h3>相关问题</h3><ul><li>在源文所述条件下，作者在额外假设误差按至少tκ一致累积时提出统计模型有限容差上限；非高斯或非线性表示本身没有由供应证明推出这种累积。是否成立？</li></ul></article><article><small>C5 / 直接结果 · theoretical</small><h2>对固定表示h、固定平稳分布及限定仿射读出，任何该类读出的期望平方误差不低于其最优仿射回归残差；若线性不能恢复真实状态则该残差为正。</h2><h3>Evidence</h3><p>population最优affine回归</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>平稳分布和受限读出；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 20 · Proposition5 proof</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>对固定表示h、固定平稳分布及限定仿射读出，任何该类读出的期望平方误差不低于其最优仿射回归残差；若线性不能恢复真实状态则该残差为正。</dd><dt>适用边界</dt><dd>只界期望MSE，非每轨迹/每时点的点态误差；非线性读出、历史信息或其他训练目标不在此类；被引converse外部且未形式化。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>这些形式构造与计算算例不验证所有物理系统/训练架构的普遍优劣；知道真实状态与方程和从图像学习不是同一任务，形式化代数不自动证明物理/表示前提。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>在源文所述条件下，对固定表示h、固定平稳分布及限定仿射读出，任何该类读出的期望平方误差不低于其最优仿射回归残差；若线性不能恢复真实状态则该残差为正。是否成立？</li></ul></article><article><small>C6 / 直接结果 · theoretical</small><h2>同一瞬时观测g将不同状态映到相同值时，单观测确定性读出不能对两者均唯一恢复；若二者渲染后的未来不同，同样单观测预测至少在一者错误。</h2><h3>Evidence</h3><p>非单射/无左逆与条件未来分离</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>观测映射与确定性单时点读出；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 22 · Proposition9/Corollary10 proofs</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>同一瞬时观测g将不同状态映到相同值时，单观测确定性读出不能对两者均唯一恢复；若二者渲染后的未来不同，同样单观测预测至少在一者错误。</dd><dt>适用边界</dt><dd>不代表任一状态都无法预测，也非全部未来必不同；多帧可观测性、动作/附加传感器或已知方程可改善，不自动适用所有记忆/视频模型。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>这些形式构造与计算算例不验证所有物理系统/训练架构的普遍优劣；知道真实状态与方程和从图像学习不是同一任务，形式化代数不自动证明物理/表示前提。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>在源文所述条件下，同一瞬时观测g将不同状态映到相同值时，单观测确定性读出不能对两者均唯一恢复；若二者渲染后的未来不同，同样单观测预测至少在一者错误。是否成立？</li></ul></article><article><small>C7 / 直接结果 · theoretical</small><h2>若真实W=K+U、模型C=K且K为L_K-Lipschitz，单步误差≤sup||U||=M，再经K传播的差≤L_KM；该结果约束未覆盖动力而非新隐状态辨识。</h2><h3>Evidence</h3><p>条件性的residual/Lipschitz不等式</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>已知与未知动力分解；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 22 · Theorem8 proof</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>若真实W=K+U、模型C=K且K为L_K-Lipschitz，单步误差≤sup||U||=M，再经K传播的差≤L_KM；该结果约束未覆盖动力而非新隐状态辨识。</dd><dt>适用边界</dt><dd>分解、有效域、统一有限M已指定；不保证物理因果atoms独立或任意新方程覆盖改善。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>这些形式构造与计算算例不验证所有物理系统/训练架构的普遍优劣；知道真实状态与方程和从图像学习不是同一任务，形式化代数不自动证明物理/表示前提。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>在源文所述条件下，若真实W=K+U、模型C=K且K为L_K-Lipschitz，单步误差≤sup||U||=M，再经K传播的差≤L_KM；该结果约束未覆盖动力而非新隐状态辨识。是否成立？</li></ul></article><article><small>C8 / 假说 / 预测 · theoretical</small><h2>作者提出添加Atom可不重训地降低未覆盖残差界，但仅从加性分解和去掉某项不能一般推出M或L_KM单调下降。</h2><h3>Evidence</h3><p>注册表扩充的假说</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>原/新增方程项；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 14 · Theorem8 discussion; Figure7</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>作者提出添加Atom可不重训地降低未覆盖残差界，但仅从加性分解和去掉某项不能一般推出M或L_KM单调下降。</dd><dt>适用边界</dt><dd>残差项可能抵消，去掉一项使范数增加；K变化也可增L_K，需额外非抵消/一致常数条件；Figure7是理论示意非实验。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>这些形式构造与计算算例不验证所有物理系统/训练架构的普遍优劣；知道真实状态与方程和从图像学习不是同一任务，形式化代数不自动证明物理/表示前提。</dd><dt>未解决</dt><dd>单调改善前提和与所有统计模型需完全重训的对比未证。</dd></dl><h3>相关问题</h3><ul><li>在源文所述条件下，作者提出添加Atom可不重训地降低未覆盖残差界，但仅从加性分解和去掉某项不能一般推出M或L_KM单调下降。是否成立？</li></ul></article><article><small>C9 / 直接结果 · empirical</small><h2>七个模拟轨迹的逐坐标经验CDF高斯化再做线性读出，报告R²从billiards .898到Lorenz96 .994；PGSA给真实状态/逆映射时R²=1由构造得到。</h2><h3>Evidence</h3><p>坐标标准化、经验CDF→normal quantile和OLS</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>同7轨迹的样本；时间点相关；SHO、Billiards、Orbital、Laminar、QuantumSHO、Lorenz96、Lorenz；轨迹样本n未给</dd><dt>不确定性</dt><dd>无CI或独立重复；R²/残差为该构造结果</dd><dt>原文位置</dt><dd>PDF 26 · Table4; Figure2/4; Methods linear identifiability</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>七个模拟轨迹的逐坐标经验CDF高斯化再做线性读出，报告R²从billiards .898到Lorenz96 .994；PGSA给真实状态/逆映射时R²=1由构造得到。</dd><dt>适用边界</dt><dd>边际高斯化不去joint依赖，未证明是完整时序JEPA目标全局最优或所有trained encoder上界；无encoder训练/相同观测比较。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>这些形式构造与计算算例不验证所有物理系统/训练架构的普遍优劣；知道真实状态与方程和从图像学习不是同一任务，形式化代数不自动证明物理/表示前提。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>在源文所述条件下，七个模拟轨迹的逐坐标经验CDF高斯化再做线性读出，报告R²从billiards .898到Lorenz96 .994；PGSA给真实状态/逆映射时R²=1由构造得到。是否成立？</li></ul></article><article><small>C10 / 直接结果 · empirical</small><h2>表2的4.5×10¹³步及约31 Lyapunov times来自δ=.01与μ≈2.2e−16的公式外推，而不是运行到该长度测得的模型一致性；统计/注意力模型对比horizon亦为示意。</h2><h3>Evidence</h3><p>RK45轨迹的kurtosis/Benettinλ与形式误差界外推</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>7有限模拟系统和理论数字；未报告 / 不适用</dd><dt>不确定性</dt><dd>RK45 rtol1e−10/atol1e−12；Lorenz96 λ1.56、Lorenz .80；无重复CI</dd><dt>原文位置</dt><dd>PDF 25 · Table2; Figures3,5–6; AppendixC</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>表2的4.5×10¹³步及约31 Lyapunov times来自δ=.01与μ≈2.2e−16的公式外推，而不是运行到该长度测得的模型一致性；统计/注意力模型对比horizon亦为示意。</dd><dt>适用边界</dt><dd>积分公差远大于μ，非chaotic分类阈值.1不保证L=1；kurtosis非κbias测量，图3/7为理论图，工程静态解无真实滚动T。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>这些形式构造与计算算例不验证所有物理系统/训练架构的普遍优劣；知道真实状态与方程和从图像学习不是同一任务，形式化代数不自动证明物理/表示前提。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>在源文所述条件下，表2的4.5×10¹³步及约31 Lyapunov times来自δ=.01与μ≈2.2e−16的公式外推，而不是运行到该长度测得的模型一致性；统计/注意力模型对比horizon亦为示意。是否成立？</li></ul></article><article><small>C11 / 直接结果 · empirical</small><h2>FE算例的cantilever、heat sink、solenoid场结果与所选闭式参考约1–6%接近，但热传导材料参数不同，plate采用cantilever边界而非参考扫频的全夹紧/简支边界。</h2><h3>Evidence</h3><p>Gmsh/CalculiX/Elmer有限元计算</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>4数值算例与mesh节点（非独立实验）；节点6552/30421/7590/114696，非实验n</dd><dt>不确定性</dt><dd>cantilever2376.5vs2400MPa、15.16vs16mm；热128.1vs132.4°C；磁14.92vs14.05mT；plate42.9Hz不同BC</dd><dt>原文位置</dt><dd>PDF 25 · Table3 and solver validation</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>FE算例的cantilever、heat sink、solenoid场结果与所选闭式参考约1–6%接近，但热传导材料参数不同，plate采用cantilever边界而非参考扫频的全夹紧/简支边界。</dd><dt>适用边界</dt><dd>数值核对不是machine-precision或长期预测证据；热conductivity237vs205，plate不验证参考频率；不证明真实非线性材料/物理系统。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>这些形式构造与计算算例不验证所有物理系统/训练架构的普遍优劣；知道真实状态与方程和从图像学习不是同一任务，形式化代数不自动证明物理/表示前提。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>在源文所述条件下，FE算例的cantilever、heat sink、solenoid场结果与所选闭式参考约1–6%接近，但热传导材料参数不同，plate采用cantilever边界而非参考扫频的全夹紧/简支边界。是否成立？</li></ul></article><article><small>C12 / 解释 · methodological</small><h2>论文报告Lean形式化只覆盖部分代数核心，明确不覆盖Klindt converse、bias coherence、线性残差命题和attention归约；这里不能据“零sorry”认定完整物理结论已验证。</h2><h3>Evidence</h3><p>作者形式化映射范围说明</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>数学声明/外部前提；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 24 · AppendixB Table1; Limitations</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>论文报告Lean形式化只覆盖部分代数核心，明确不覆盖Klindt converse、bias coherence、线性残差命题和attention归约；这里不能据“零sorry”认定完整物理结论已验证。</dd><dt>适用边界</dt><dd>Theorem3仅两初态L^t传播形式，逐步rounding递推手工；Theorem4仅给定b&gt;0后容差算术；实际Lean工具未运行/文件未读。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>这些形式构造与计算算例不验证所有物理系统/训练架构的普遍优劣；知道真实状态与方程和从图像学习不是同一任务，形式化代数不自动证明物理/表示前提。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>在源文所述条件下，论文报告Lean形式化只覆盖部分代数核心，明确不覆盖Klindt converse、bias coherence、线性残差命题和attention归约；这里不能据“零sorry”认定完整物理结论已验证。是否成立？</li></ul></article><details><summary>核对记录与来源信息</summary><pre>{
+  &quot;coverage&quot;: {
+    &quot;pdf_pages_read&quot;: [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28
+    ],
+    &quot;results_sections_seen&quot;: [
+      &quot;PGSA Definitions1–3&quot;,
+      &quot;Theorems2–4/6/8&quot;,
+      &quot;Bias Lemma/Assumption1/Proposition5&quot;,
+      &quot;Attention/pixel propositions&quot;,
+      &quot;Measurements Figures1–8&quot;,
+      &quot;Limitations&quot;,
+      &quot;AppendixA all proofs&quot;,
+      &quot;AppendixB formal mapping Table1&quot;,
+      &quot;AppendixC Tables2–4&quot;,
+      &quot;AppendixD rollout/task asymmetry&quot;
+    ],
+    &quot;missing_material&quot;: [
+      &quot;实际Lean文件/编译、轨迹/solver artifact及完整SupplementaryInformation未读取/未验证&quot;,
+      &quot;图像像素未读取；所引Klindt等converse原文未供应&quot;,
+      &quot;统计模型无训练比较；未实测4.5e13步滚动&quot;
+    ],
+    &quot;text_pass_complete&quot;: true,
+    &quot;notes&quot;: [
+      &quot;所有供应页文字（含方法/附录/图表文字和参考文献）已完整评估，未采样代替全文。&quot;,
+      &quot;逐条第二审计以已读源比较真实单位、条件、统计与推断范围；不等于实验复现。&quot;
+    ],
+    &quot;reading_mode&quot;: &quot;text_only&quot;,
+    &quot;figure_images_read&quot;: false,
+    &quot;scientific_verification&quot;: false,
+    &quot;source_pdf_offline&quot;: false,
+    &quot;archived_page_text_used&quot;: false
+  },
+  &quot;audit&quot;: {
+    &quot;source_match_checks&quot;: [],
+    &quot;model_findings&quot;: [
+      {
+        &quot;claim_id&quot;: &quot;C1&quot;,
+        &quot;issue&quot;: &quot;已知typed true state/C=W构造不同于从观测学习辨识；D非自动不变或可判定&quot;,
+        &quot;suggested_correction&quot;: &quot;明确提供真实状态/方程的条件，不写通用辨识&quot;,
+        &quot;pdf_page&quot;: 19,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C2&quot;,
+        &quot;issue&quot;: &quot;μ相对epsilon被当统一绝对每步误差，忽略RK45/FE误差与条件数&quot;,
+        &quot;suggested_correction&quot;: &quot;用显式η≤界条件而非无条件machine precision&quot;,
+        &quot;pdf_page&quot;: 19,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C3&quot;,
+        &quot;issue&quot;: &quot;非混沌/守恒不等L=1；误差上界不等horizon等式，更不无限&quot;,
+        &quot;suggested_correction&quot;: &quot;保留正确条件递推和有限保证&quot;,
+        &quot;pdf_page&quot;: 20,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C4&quot;,
+        &quot;issue&quot;: &quot;非线性可逆表示可准确共轭动力；Lemma强制每步bias注入/一阶范数下界无充分证明&quot;,
+        &quot;suggested_correction&quot;: &quot;统计发散/attention普适上限延期&quot;,
+        &quot;pdf_page&quot;: 23,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C5&quot;,
+        &quot;issue&quot;: &quot;期望线性读出floor不是所有策略/点态/非线性floor；stationary前提限制&quot;,
+        &quot;suggested_correction&quot;: &quot;限定读出/分布及统计类型&quot;,
+        &quot;pdf_page&quot;: 20,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C6&quot;,
+        &quot;issue&quot;: &quot;单观测非单射不排除历史观测恢复或相同未来&quot;,
+        &quot;suggested_correction&quot;: &quot;收窄至少一者未来错误的条件&quot;,
+        &quot;pdf_page&quot;: 22,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C8&quot;,
+        &quot;issue&quot;: &quot;加法原子去项不保证残差sup范数下降，L_K也变化&quot;,
+        &quot;suggested_correction&quot;: &quot;单调扩充假说未解&quot;,
+        &quot;pdf_page&quot;: 14,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C9&quot;,
+        &quot;issue&quot;: &quot;经验边际高斯化不保证联合isotropicGaussian或时序objective全局optimum&quot;,
+        &quot;suggested_correction&quot;: &quot;结果只对应所算transform/OLS，不作所有模型上界&quot;,
+        &quot;pdf_page&quot;: 26,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C10&quot;,
+        &quot;issue&quot;: &quot;kurtosis不是bias，horizon不是实测且RKtol不为μ&quot;,
+        &quot;suggested_correction&quot;: &quot;明确测量与外推/示意&quot;,
+        &quot;pdf_page&quot;: 25,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C11&quot;,
+        &quot;issue&quot;: &quot;plate边界/热参数与参考不同且相差1–6%&quot;,
+        &quot;suggested_correction&quot;: &quot;保留特定算例一致性，非机器精度/时域验证&quot;,
+        &quot;pdf_page&quot;: 25,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C12&quot;,
+        &quot;issue&quot;: &quot;Lean只代数核心，关键前提/lemma/attention无formal&quot;,
+        &quot;suggested_correction&quot;: &quot;不得以形式化报告遮蔽科学假设缺口&quot;,
+        &quot;pdf_page&quot;: 24,
+        &quot;resolved&quot;: true
+      }
+    ],
+    &quot;needs_human_review&quot;: true
+  },
+  &quot;source&quot;: {
+    &quot;filename&quot;: &quot;paper-W7164701596--Identifiability-Without-Gaussianity-Symbolic-World-Models-and-Near-Infinite-Temporal-Consistenc.pdf&quot;,
+    &quot;sha256&quot;: &quot;c87e4033d4007215890cddaea765da448fca1811585f796e1deff21969fe7040&quot;,
+    &quot;source_url&quot;: &quot;https://arxiv.org/pdf/2606.12471&quot;,
+    &quot;pdf_page_count&quot;: 28
+  },
+  &quot;provenance&quot;: {
+    &quot;created_at&quot;: &quot;2026-10-07T11:59:01.490138Z&quot;,
+    &quot;workflow&quot;: &quot;claim-commons-pdf-v1&quot;,
+    &quot;prompt_version&quot;: &quot;claim-commons-chatgpt-pdf-2026-10-07.1&quot;,
+    &quot;backend&quot;: &quot;authorized_parallel_GPT&quot;,
+    &quot;model&quot;: &quot;inherited_account_GPT&quot;,
+    &quot;provider_api_key_used&quot;: false,
+    &quot;source_sha256&quot;: &quot;c87e4033d4007215890cddaea765da448fca1811585f796e1deff21969fe7040&quot;,
+    &quot;source_audit_complete&quot;: true,
+    &quot;review_status&quot;: &quot;candidate&quot;,
+    &quot;database_updated&quot;: false
+  }
+}</pre></details></main><footer></footer></body></html>

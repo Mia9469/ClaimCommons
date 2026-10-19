@@ -1,0 +1,1440 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "Plastic Arbor: A modern simulation framework for synaptic plasticity—From single synapses to networks of morphological neurons",
+    "authors": [
+      "Jannik Luboeinski",
+      "Sebastian Schmitt",
+      "Shirin Shafiee",
+      "Thorsten Hater",
+      "Fabian Bösch",
+      "Christian Tetzlaff"
+    ],
+    "doi": "10.1371/journal.pcbi.1013926",
+    "publication_year": 2026,
+    "venue": "PLoS Computational Biology",
+    "url": "https://doi.org/10.1371/journal.pcbi.1013926"
+  },
+  "source": {
+    "filename": "paper-W4404987875--Plastic-Arbor-A-modern-simulation-framework-for-synaptic-plasticity-From-single-synapses-to-net.pdf",
+    "sha256": "4e3b447420829f9f752d524f4152c98f331b3fdc905ce76b25f2aea3a5ee8569",
+    "source_url": "https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1013926&type=printable",
+    "pdf_page_count": 39
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39
+    ],
+    "results_sections_seen": [
+      "Design2.1–2.4",
+      "Results3.1–3.8全部plasticity/network/benchmark",
+      "Discussion/outlook",
+      "Tables1–10",
+      "S1AppendixA–O及TableA–C所有legend",
+      "Data/code/version与122references"
+    ],
+    "missing_material": [
+      "图像像素",
+      "S1Appendix正文/图像及TablesA–C实际数值",
+      "源代码、原始run/benchmark数据"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "完整39页text包括所有provided supporting legends和references。",
+      "software/model article；没有本篇新生物实验，也没有自行执行软件测试。",
+      "独立n以trial/realization/runtime重复为准；cylinders/spines/compartments不是独立n。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "Plastic Arbor新增POST_EVENT、round_robin_halt及NMODL stochastic/WHITE_NOISE与particle diffusion支持，用同一框架实现spike-driven、stochastic及空间扩散塑性模型。",
+      "role": "result",
+      "source_pages": [
+        4
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "所实现particle diffusion把物种视为中性并与电缆电流方程分开；用户可另接耦合机制，但框架本身不是完整电荷守恒electrodiffusion实现。",
+      "role": "result",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "单突触STDP时间窗和Poisson输入weight轨迹与Brian2/理论定量近似匹配，支持该指定实现的数值一致性。",
+      "role": "result",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "spike-driven homeostasis模型使LIF rate在改变另一输入时保持约50 Hz，而无homeostasis时主要随input rate变化；input为0时受wmax约束而不能无限补偿。",
+      "role": "result",
+      "source_pages": [
+        11
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "Graupner–Brunel calcium-based模型的timing-dependent plasticity均值近似复现原numerical curve，展示stochastic solver和postsynaptic variables联合实施。",
+      "role": "result",
+      "source_pages": [
+        12
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "四spine diffusion模型中刺激1与3可使未刺激近邻spine2 potentiation、远spine4 depression；Arbor与custom code相近，但后者exchange模型不同且注入幅度经调节。",
+      "role": "result",
+      "source_pages": [
+        13
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "STC单synapse模型复现early/late-phase塑性与PRP/tag依赖，Arbor、custom C++和Brian2轨迹大体一致；strong protocols产生late weight，weak只early变化。",
+      "role": "result",
+      "source_pages": [
+        17
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "2000-neuron recurrent STC网络在half-pattern cue、10s与8h recall中定性重现既有pattern completion趋势，但跨simulator量化差异没有完全消除。",
+      "role": "result",
+      "source_pages": [
+        19
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "简化multi-compartment STC网络中增长apical/basal dendrite长度倾向降低8h recall Q及mutual-information读出，尽管single EPSP用cmorpho校正。",
+      "role": "result",
+      "source_pages": [
+        22
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "同一简化network把soma及dendrite半径从6增至12μm时recall读出更好，方向与加长dendrites相反；这只是有效形态模型结果。",
+      "role": "result",
+      "source_pages": [
+        22
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "PRP扩散在10−11及10−15 m²/s设置可支持8h consolidation，10−19过慢则不能及时到tagged synapses以形成late plasticity；10s recall本身不依PRP。",
+      "role": "result",
+      "source_pages": [
+        22
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "2000-neuron10s-recall benchmark中CPU point simulators较Arbor更快且内存更少，但Arbor GPU可更快；从single compartment到48compartments的runtime及memory仅略增，per-spike分析保留该趋势。",
+      "role": "result",
+      "source_pages": [
+        23
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "busyring CPU workload中Arbor比CoreNEURON更快，即使加STDP仍更快；32768cell depth2总runtime为8.68s、加STDP26.16s，对CoreNEURON106.17s。",
+      "role": "result",
+      "source_pages": [
+        26
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "busyring GPU收益依scale：1024cell时可比CPU更慢，大network部分配置略快；所用8GB GPU设置下CoreNEURON各条件因memory未完成，最大CPU配置也未完成。",
+      "role": "result",
+      "source_pages": [
+        27
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "8h recall虽采用fast-forward跳过spikes/Ca只更新慢states，runtime仍因probe state保存/recipe切换overhead显著延长；它不是完整时间分辨率的8h simulation。",
+      "role": "result",
+      "source_pages": [
+        23
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "POST_EVENT、round_robin_halt、Euler–Maruyama/Threefry RNG",
+      "role": "method",
+      "source_pages": [
+        4,
+        5
+      ],
+      "decision": "include",
+      "reason": "框架功能inventory，noise当前独立Q=I"
+    },
+    {
+      "summary": "busyring memory scaling",
+      "role": "result",
+      "source_pages": [
+        24,
+        34
+      ],
+      "decision": "include",
+      "reason": "作者报告优于CoreNEURON且近linear，TableA具体单元格未供应，不猜数值"
+    },
+    {
+      "summary": "million complex-cell JUWELS/JEDI strong scaling>80%报告",
+      "role": "unresolved",
+      "source_pages": [
+        26,
+        27,
+        34
+      ],
+      "decision": "defer",
+      "reason": "无plasticity；AppendixO只有legend、TableC未供应，efficiency公式n归一化不清"
+    },
+    {
+      "summary": "替代simulators、未来structural plasticity/SBML/实验验证",
+      "role": "context",
+      "source_pages": [
+        28,
+        29,
+        30
+      ],
+      "decision": "exclude",
+      "reason": "比较/计划不当新quantitative实验"
+    },
+    {
+      "summary": "S1AppendixA–O及TablesA–C legends",
+      "role": "coverage",
+      "source_pages": [
+        31,
+        32,
+        33,
+        34
+      ],
+      "decision": "include",
+      "reason": "所有提供legend读完，实际附录文件未供应"
+    },
+    {
+      "summary": "122references与code/version availability",
+      "role": "context",
+      "source_pages": [
+        30,
+        31,
+        35,
+        36,
+        37,
+        38,
+        39
+      ],
+      "decision": "exclude",
+      "reason": "引用和可用性不等于本任务运行/验证"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "Plastic Arbor新增POST_EVENT、round_robin_halt及NMODL stochastic/WHITE_NOISE与particle diffusion支持，用同一框架实现spike-driven、stochastic及空间扩散塑性模型。",
+      "claim_type": "computational_method_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "作者numerical/model/benchmark比较",
+          "design": "按指定plasticity、solver、hardware和版本",
+          "comparator": "原implementation/control或所述model条件",
+          "measure": "simulation功能",
+          "unit_of_analysis": "模型trial/network realization或重复runtime，非cell/compartment独立实验",
+          "sample_size_as_reported": "算法/实施，无生物n",
+          "uncertainty": null,
+          "assumptions": [
+            "仿真与软件benchmark不等于生物实验"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "Design 2.1–2.4",
+            "figure": "Figure1第8页",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "Plastic Arbor新增POST_EVENT、round_robin_halt及NMODL stochastic/WHITE_NOISE与particle diffusion支持，用同一框架实现spike-driven、stochastic及空间扩散塑性模型。",
+        "boundary": "不同subsection使用不同Arbor version/commit；POST_EVENT可转送spike而非显式backpropagating AP。",
+        "negative_result": null,
+        "non_inference": "不证明生物necessity、真实memory表现或通用软件性能；没有本任务实际运行software tests。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "塑性与空间形态的仿真实现是否一致，且在何种条件下影响recall及计算成本？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7"
+      ],
+      "review_notes": [
+        "第二轮source audit：区分model-neuron/spine数与独立trial；跨simulator数值匹配不等于生物复制。版本、近似、调参和hardware范围逐条保留；没有自行软件验证。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "所实现particle diffusion把物种视为中性并与电缆电流方程分开；用户可另接耦合机制，但框架本身不是完整电荷守恒electrodiffusion实现。",
+      "claim_type": "computational_method_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "作者numerical/model/benchmark比较",
+          "design": "按指定plasticity、solver、hardware和版本",
+          "comparator": "原implementation/control或所述model条件",
+          "measure": "diffusion/cable coupling",
+          "unit_of_analysis": "模型trial/network realization或重复runtime，非cell/compartment独立实验",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "仿真与软件benchmark不等于生物实验"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "2.4 Diffusion",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所实现particle diffusion把物种视为中性并与电缆电流方程分开；用户可另接耦合机制，但框架本身不是完整电荷守恒electrodiffusion实现。",
+        "boundary": "避免重复计离子transport是建模选择；SDE当前noise Q=I，非任意相关noise。",
+        "negative_result": null,
+        "non_inference": "不证明生物necessity、真实memory表现或通用软件性能；没有本任务实际运行software tests。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "塑性与空间形态的仿真实现是否一致，且在何种条件下影响recall及计算成本？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7"
+      ],
+      "review_notes": [
+        "第二轮source audit：区分model-neuron/spine数与独立trial；跨simulator数值匹配不等于生物复制。版本、近似、调参和hardware范围逐条保留；没有自行软件验证。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "单突触STDP时间窗和Poisson输入weight轨迹与Brian2/理论定量近似匹配，支持该指定实现的数值一致性。",
+      "claim_type": "computational_method_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "作者numerical/model/benchmark比较",
+          "design": "按指定plasticity、solver、hardware和版本",
+          "comparator": "原implementation/control或所述model条件",
+          "measure": "weights/STDP window",
+          "unit_of_analysis": "模型trial/network realization或重复runtime，非cell/compartment独立实验",
+          "sample_size_as_reported": "单model synapse；时间点非独立实验",
+          "uncertainty": null,
+          "assumptions": [
+            "仿真与软件benchmark不等于生物实验"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "3.1 STDP",
+            "figure": "Figure2C,D",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "单突触STDP时间窗和Poisson输入weight轨迹与Brian2/理论定量近似匹配，支持该指定实现的数值一致性。",
+        "boundary": "time-window RMSE0.001μS；轨迹RMSE1.064μS；不是重新验证生物STDP。",
+        "negative_result": null,
+        "non_inference": "不证明生物necessity、真实memory表现或通用软件性能；没有本任务实际运行software tests。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "塑性与空间形态的仿真实现是否一致，且在何种条件下影响recall及计算成本？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C4",
+        "C5",
+        "C6",
+        "C7"
+      ],
+      "review_notes": [
+        "第二轮source audit：区分model-neuron/spine数与独立trial；跨simulator数值匹配不等于生物复制。版本、近似、调参和hardware范围逐条保留；没有自行软件验证。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "spike-driven homeostasis模型使LIF rate在改变另一输入时保持约50 Hz，而无homeostasis时主要随input rate变化；input为0时受wmax约束而不能无限补偿。",
+      "claim_type": "computational_method_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "作者numerical/model/benchmark比较",
+          "design": "按指定plasticity、solver、hardware和版本",
+          "comparator": "原implementation/control或所述model条件",
+          "measure": "firing rate、plastic weight",
+          "unit_of_analysis": "模型trial/network realization或重复runtime，非cell/compartment独立实验",
+          "sample_size_as_reported": "50 stochastic trials",
+          "uncertainty": null,
+          "assumptions": [
+            "仿真与软件benchmark不等于生物实验"
+          ],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "3.2 Homeostasis",
+            "figure": "Figure2E,G–I；Appendix FigA legend第31页",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "spike-driven homeostasis模型使LIF rate在改变另一输入时保持约50 Hz，而无homeostasis时主要随input rate变化；input为0时受wmax约束而不能无限补偿。",
+        "boundary": "不同输入源非独立neurons/动物；output rate跨simulator RMSE1.981Hz。",
+        "negative_result": "zero-input段weight上限限制homeostatic调整。",
+        "non_inference": "不证明生物necessity、真实memory表现或通用软件性能；没有本任务实际运行software tests。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "塑性与空间形态的仿真实现是否一致，且在何种条件下影响recall及计算成本？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C5",
+        "C6",
+        "C7"
+      ],
+      "review_notes": [
+        "第二轮source audit：区分model-neuron/spine数与独立trial；跨simulator数值匹配不等于生物复制。版本、近似、调参和hardware范围逐条保留；没有自行软件验证。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "Graupner–Brunel calcium-based模型的timing-dependent plasticity均值近似复现原numerical curve，展示stochastic solver和postsynaptic variables联合实施。",
+      "claim_type": "computational_method_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "作者numerical/model/benchmark比较",
+          "design": "按指定plasticity、solver、hardware和版本",
+          "comparator": "原implementation/control或所述model条件",
+          "measure": "DP curve",
+          "unit_of_analysis": "模型trial/network realization或重复runtime，非cell/compartment独立实验",
+          "sample_size_as_reported": "4000 model trials；每synapse60 spike pairs/1Hz",
+          "uncertainty": null,
+          "assumptions": [
+            "仿真与软件benchmark不等于生物实验"
+          ],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "3.3 Calcium plasticity",
+            "figure": "Figure2J第11页",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "Graupner–Brunel calcium-based模型的timing-dependent plasticity均值近似复现原numerical curve，展示stochastic solver和postsynaptic variables联合实施。",
+        "boundary": "shade95%CI为simulation trials；不是4000独立生物synapses。",
+        "negative_result": null,
+        "non_inference": "不证明生物necessity、真实memory表现或通用软件性能；没有本任务实际运行software tests。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "塑性与空间形态的仿真实现是否一致，且在何种条件下影响recall及计算成本？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C6",
+        "C7"
+      ],
+      "review_notes": [
+        "第二轮source audit：区分model-neuron/spine数与独立trial；跨simulator数值匹配不等于生物复制。版本、近似、调参和hardware范围逐条保留；没有自行软件验证。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "四spine diffusion模型中刺激1与3可使未刺激近邻spine2 potentiation、远spine4 depression；Arbor与custom code相近，但后者exchange模型不同且注入幅度经调节。",
+      "claim_type": "computational_method_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "作者numerical/model/benchmark比较",
+          "design": "按指定plasticity、solver、hardware和版本",
+          "comparator": "原implementation/control或所述model条件",
+          "measure": "Ca与heterosynaptic weight",
+          "unit_of_analysis": "模型trial/network realization或重复runtime，非cell/compartment独立实验",
+          "sample_size_as_reported": "4spines/一branch为模型坐标，非n4生物重复",
+          "uncertainty": null,
+          "assumptions": [
+            "仿真与软件benchmark不等于生物实验"
+          ],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "3.4 Heterosynaptic plasticity",
+            "figure": "Figure3第14页；Table4第15页",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "四spine diffusion模型中刺激1与3可使未刺激近邻spine2 potentiation、远spine4 depression；Arbor与custom code相近，但后者exchange模型不同且注入幅度经调节。",
+        "boundary": "Arbor4pA对custom5.5pA；不证明真实diffusion是唯一机制或完全同参数复现。",
+        "negative_result": null,
+        "non_inference": "不证明生物necessity、真实memory表现或通用软件性能；没有本任务实际运行software tests。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "塑性与空间形态的仿真实现是否一致，且在何种条件下影响recall及计算成本？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C7"
+      ],
+      "review_notes": [
+        "第二轮source audit：区分model-neuron/spine数与独立trial；跨simulator数值匹配不等于生物复制。版本、近似、调参和hardware范围逐条保留；没有自行软件验证。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "STC单synapse模型复现early/late-phase塑性与PRP/tag依赖，Arbor、custom C++和Brian2轨迹大体一致；strong protocols产生late weight，weak只early变化。",
+      "claim_type": "computational_method_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "作者numerical/model/benchmark比较",
+          "design": "按指定plasticity、solver、hardware和版本",
+          "comparator": "原implementation/control或所述model条件",
+          "measure": "early/late weight、Ca、PRP",
+          "unit_of_analysis": "模型trial/network realization或重复runtime，非cell/compartment独立实验",
+          "sample_size_as_reported": "early10×100trials；late10×10；protocol100trials",
+          "uncertainty": null,
+          "assumptions": [
+            "仿真与软件benchmark不等于生物实验"
+          ],
+          "source_locator": {
+            "pdf_page": 17,
+            "section": "3.5 STC",
+            "figure": "Figure4第18页；AppendixF legend第32页",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "STC单synapse模型复现early/late-phase塑性与PRP/tag依赖，Arbor、custom C++和Brian2轨迹大体一致；strong protocols产生late weight，weak只early变化。",
+        "boundary": "独立noise seeds是模拟重复；部分early曲线fit指标低，不能称所有量严格相同。",
+        "negative_result": "weak protocols不跨PRP synthesis threshold而无late-phase改变。",
+        "non_inference": "不证明生物necessity、真实memory表现或通用软件性能；没有本任务实际运行software tests。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "塑性与空间形态的仿真实现是否一致，且在何种条件下影响recall及计算成本？"
+      ],
+      "shared_evidence_with": [
+        "C8",
+        "C9",
+        "C10",
+        "C11"
+      ],
+      "review_notes": [
+        "第二轮source audit：区分model-neuron/spine数与独立trial；跨simulator数值匹配不等于生物复制。版本、近似、调参和hardware范围逐条保留；没有自行软件验证。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "2000-neuron recurrent STC网络在half-pattern cue、10s与8h recall中定性重现既有pattern completion趋势，但跨simulator量化差异没有完全消除。",
+      "claim_type": "computational_method_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "作者numerical/model/benchmark比较",
+          "design": "按指定plasticity、solver、hardware和版本",
+          "comparator": "原implementation/control或所述model条件",
+          "measure": "Q pattern completion",
+          "unit_of_analysis": "模型trial/network realization或重复runtime，非cell/compartment独立实验",
+          "sample_size_as_reported": "1600E/400I模型neuron；100 network realizations，patterns100/150/200/250",
+          "uncertainty": null,
+          "assumptions": [
+            "仿真与软件benchmark不等于生物实验"
+          ],
+          "source_locator": {
+            "pdf_page": 19,
+            "section": "3.5 Network recall",
+            "figure": "Figure4H；AppendixJ legend第33页",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "2000-neuron recurrent STC网络在half-pattern cue、10s与8h recall中定性重现既有pattern completion趋势，但跨simulator量化差异没有完全消除。",
+        "boundary": "finite-cylinder Arbor对真实point implementations、solver和complex dynamics不同。",
+        "negative_result": "full-network dynamics不能完整定量复制；Brian2没有8h结果因缺fast-forward。",
+        "non_inference": "不证明生物necessity、真实memory表现或通用软件性能；没有本任务实际运行software tests。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "塑性与空间形态的仿真实现是否一致，且在何种条件下影响recall及计算成本？"
+      ],
+      "shared_evidence_with": [
+        "C7",
+        "C9",
+        "C10",
+        "C11"
+      ],
+      "review_notes": [
+        "第二轮source audit：区分model-neuron/spine数与独立trial；跨simulator数值匹配不等于生物复制。版本、近似、调参和hardware范围逐条保留；没有自行软件验证。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "简化multi-compartment STC网络中增长apical/basal dendrite长度倾向降低8h recall Q及mutual-information读出，尽管single EPSP用cmorpho校正。",
+      "claim_type": "computational_method_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "作者numerical/model/benchmark比较",
+          "design": "按指定plasticity、solver、hardware和版本",
+          "comparator": "原implementation/control或所述model条件",
+          "measure": "recall Q/MI",
+          "unit_of_analysis": "模型trial/network realization或重复runtime，非cell/compartment独立实验",
+          "sample_size_as_reported": "100 network realizations/条件；31或48compartments不当样本n",
+          "uncertainty": null,
+          "assumptions": [
+            "仿真与软件benchmark不等于生物实验"
+          ],
+          "source_locator": {
+            "pdf_page": 22,
+            "section": "3.6 Morphological network",
+            "figure": "Figure5；AppendixK legend第33页",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "简化multi-compartment STC网络中增长apical/basal dendrite长度倾向降低8h recall Q及mutual-information读出，尽管single EPSP用cmorpho校正。",
+        "boundary": "统一有效diameter、简化tree、putative SPS与PRP模型；同时改变electrical activity，不是单独transport归因。",
+        "negative_result": null,
+        "non_inference": "不证明生物necessity、真实memory表现或通用软件性能；没有本任务实际运行software tests。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "塑性与空间形态的仿真实现是否一致，且在何种条件下影响recall及计算成本？"
+      ],
+      "shared_evidence_with": [
+        "C10",
+        "C11"
+      ],
+      "review_notes": [
+        "第二轮source audit：区分model-neuron/spine数与独立trial；跨simulator数值匹配不等于生物复制。版本、近似、调参和hardware范围逐条保留；没有自行软件验证。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "同一简化network把soma及dendrite半径从6增至12μm时recall读出更好，方向与加长dendrites相反；这只是有效形态模型结果。",
+      "claim_type": "computational_method_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "作者numerical/model/benchmark比较",
+          "design": "按指定plasticity、solver、hardware和版本",
+          "comparator": "原implementation/control或所述model条件",
+          "measure": "recall Q/MI",
+          "unit_of_analysis": "模型trial/network realization或重复runtime，非cell/compartment独立实验",
+          "sample_size_as_reported": "100 network realizations/条件",
+          "uncertainty": null,
+          "assumptions": [
+            "仿真与软件benchmark不等于生物实验"
+          ],
+          "source_locator": {
+            "pdf_page": 22,
+            "section": "3.6 Morphological network",
+            "figure": "Figure5I–L；Table6",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "同一简化network把soma及dendrite半径从6增至12μm时recall读出更好，方向与加长dendrites相反；这只是有效形态模型结果。",
+        "boundary": "functional approximation非真实细胞大小因果规律；cmorpho和volume-normalized synthesis threshold随形态设置。",
+        "negative_result": null,
+        "non_inference": "不证明生物necessity、真实memory表现或通用软件性能；没有本任务实际运行software tests。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "塑性与空间形态的仿真实现是否一致，且在何种条件下影响recall及计算成本？"
+      ],
+      "shared_evidence_with": [
+        "C9",
+        "C11"
+      ],
+      "review_notes": [
+        "第二轮source audit：区分model-neuron/spine数与独立trial；跨simulator数值匹配不等于生物复制。版本、近似、调参和hardware范围逐条保留；没有自行软件验证。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "PRP扩散在10−11及10−15 m²/s设置可支持8h consolidation，10−19过慢则不能及时到tagged synapses以形成late plasticity；10s recall本身不依PRP。",
+      "claim_type": "computational_method_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "作者numerical/model/benchmark比较",
+          "design": "按指定plasticity、solver、hardware和版本",
+          "comparator": "原implementation/control或所述model条件",
+          "measure": "PRP到达、late weight与recall",
+          "unit_of_analysis": "模型trial/network realization或重复runtime，非cell/compartment独立实验",
+          "sample_size_as_reported": "100 network realizations",
+          "uncertainty": null,
+          "assumptions": [
+            "仿真与软件benchmark不等于生物实验"
+          ],
+          "source_locator": {
+            "pdf_page": 22,
+            "section": "3.6 / 4.1",
+            "figure": "Figure5F–H/J–L",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "PRP扩散在10−11及10−15 m²/s设置可支持8h consolidation，10−19过慢则不能及时到tagged synapses以形成late plasticity；10s recall本身不依PRP。",
+        "boundary": "SPS soma concentration不完美代表total amount，需threshold除volume；不能外推真实protein diffusivity临界值。",
+        "negative_result": "过慢diffusion不能在tag窗口维持late-phase plasticity。",
+        "non_inference": "不证明生物necessity、真实memory表现或通用软件性能；没有本任务实际运行software tests。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "塑性与空间形态的仿真实现是否一致，且在何种条件下影响recall及计算成本？"
+      ],
+      "shared_evidence_with": [
+        "C9",
+        "C10"
+      ],
+      "review_notes": [
+        "第二轮source audit：区分model-neuron/spine数与独立trial；跨simulator数值匹配不等于生物复制。版本、近似、调参和hardware范围逐条保留；没有自行软件验证。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "2000-neuron10s-recall benchmark中CPU point simulators较Arbor更快且内存更少，但Arbor GPU可更快；从single compartment到48compartments的runtime及memory仅略增，per-spike分析保留该趋势。",
+      "claim_type": "computational_method_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "作者numerical/model/benchmark比较",
+          "design": "按指定plasticity、solver、hardware和版本",
+          "comparator": "原implementation/control或所述model条件",
+          "measure": "runtime与memory",
+          "unit_of_analysis": "模型trial/network realization或重复runtime，非cell/compartment独立实验",
+          "sample_size_as_reported": "10runtime trials/条件，2000model cells",
+          "uncertainty": null,
+          "assumptions": [
+            "仿真与软件benchmark不等于生物实验"
+          ],
+          "source_locator": {
+            "pdf_page": 23,
+            "section": "3.7 Resource benchmark",
+            "figure": "Figure6；AppendixL/M legends第33–34页",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "2000-neuron10s-recall benchmark中CPU point simulators较Arbor更快且内存更少，但Arbor GPU可更快；从single compartment到48compartments的runtime及memory仅略增，per-spike分析保留该趋势。",
+        "boundary": "multi-compartment spiking数更少；GPU额外memory未计入main-memory，不能比较totalGPU memory优势。",
+        "negative_result": "CPU Arbor不是所有point simulator的速度/内存优势。",
+        "non_inference": "不证明生物necessity、真实memory表现或通用软件性能；没有本任务实际运行software tests。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "塑性与空间形态的仿真实现是否一致，且在何种条件下影响recall及计算成本？"
+      ],
+      "shared_evidence_with": [
+        "C13",
+        "C14",
+        "C15"
+      ],
+      "review_notes": [
+        "第二轮source audit：区分model-neuron/spine数与独立trial；跨simulator数值匹配不等于生物复制。版本、近似、调参和hardware范围逐条保留；没有自行软件验证。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C13",
+      "statement": "busyring CPU workload中Arbor比CoreNEURON更快，即使加STDP仍更快；32768cell depth2总runtime为8.68s、加STDP26.16s，对CoreNEURON106.17s。",
+      "claim_type": "computational_method_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "作者numerical/model/benchmark比较",
+          "design": "按指定plasticity、solver、hardware和版本",
+          "comparator": "原implementation/control或所述model条件",
+          "measure": "wall time、setup/propagation",
+          "unit_of_analysis": "模型trial/network realization或重复runtime，非cell/compartment独立实验",
+          "sample_size_as_reported": "10trials/条件；32.81M synapses是工作量非独立n",
+          "uncertainty": null,
+          "assumptions": [
+            "仿真与软件benchmark不等于生物实验"
+          ],
+          "source_locator": {
+            "pdf_page": 26,
+            "section": "3.8 busyring",
+            "figure": "Table8；Figure7",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "busyring CPU workload中Arbor比CoreNEURON更快，即使加STDP仍更快；32768cell depth2总runtime为8.68s、加STDP26.16s，对CoreNEURON106.17s。",
+        "boundary": "HWS2 64-core Threadripper、各自best rank/thread；200ms simulation、随机weight0 synapses；非任意生物workload。",
+        "negative_result": null,
+        "non_inference": "不证明生物necessity、真实memory表现或通用软件性能；没有本任务实际运行software tests。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "塑性与空间形态的仿真实现是否一致，且在何种条件下影响recall及计算成本？"
+      ],
+      "shared_evidence_with": [
+        "C12",
+        "C14",
+        "C15"
+      ],
+      "review_notes": [
+        "第二轮source audit：区分model-neuron/spine数与独立trial；跨simulator数值匹配不等于生物复制。版本、近似、调参和hardware范围逐条保留；没有自行软件验证。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C14",
+      "statement": "busyring GPU收益依scale：1024cell时可比CPU更慢，大network部分配置略快；所用8GB GPU设置下CoreNEURON各条件因memory未完成，最大CPU配置也未完成。",
+      "claim_type": "computational_method_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "作者numerical/model/benchmark比较",
+          "design": "按指定plasticity、solver、hardware和版本",
+          "comparator": "原implementation/control或所述model条件",
+          "measure": "runtime及memory failure",
+          "unit_of_analysis": "模型trial/network realization或重复runtime，非cell/compartment独立实验",
+          "sample_size_as_reported": "10benchmarktrials/condition",
+          "uncertainty": null,
+          "assumptions": [
+            "仿真与软件benchmark不等于生物实验"
+          ],
+          "source_locator": {
+            "pdf_page": 27,
+            "section": "3.8 GPU",
+            "figure": "Tables8/9；Figure7G",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "busyring GPU收益依scale：1024cell时可比CPU更慢，大network部分配置略快；所用8GB GPU设置下CoreNEURON各条件因memory未完成，最大CPU配置也未完成。",
+        "boundary": "特定hardware/configuration，不证明CoreNEURON所有GPU不支持或所有Arbor设置更好。",
+        "negative_result": "小networkGPU可slowdown；所述CoreNEURON内存超限未完成。",
+        "non_inference": "不证明生物necessity、真实memory表现或通用软件性能；没有本任务实际运行software tests。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "塑性与空间形态的仿真实现是否一致，且在何种条件下影响recall及计算成本？"
+      ],
+      "shared_evidence_with": [
+        "C12",
+        "C13",
+        "C15"
+      ],
+      "review_notes": [
+        "第二轮source audit：区分model-neuron/spine数与独立trial；跨simulator数值匹配不等于生物复制。版本、近似、调参和hardware范围逐条保留；没有自行软件验证。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C15",
+      "statement": "8h recall虽采用fast-forward跳过spikes/Ca只更新慢states，runtime仍因probe state保存/recipe切换overhead显著延长；它不是完整时间分辨率的8h simulation。",
+      "claim_type": "computational_method_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "作者numerical/model/benchmark比较",
+          "design": "按指定plasticity、solver、hardware和版本",
+          "comparator": "原implementation/control或所述model条件",
+          "measure": "runtime与state-transfer overhead",
+          "unit_of_analysis": "模型trial/network realization或重复runtime，非cell/compartment独立实验",
+          "sample_size_as_reported": "10benchmarktrials",
+          "uncertainty": null,
+          "assumptions": [
+            "仿真与软件benchmark不等于生物实验"
+          ],
+          "source_locator": {
+            "pdf_page": 23,
+            "section": "3.7 / fast-forward",
+            "figure": "AppendixM legend第34页",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "8h recall虽采用fast-forward跳过spikes/Ca只更新慢states，runtime仍因probe state保存/recipe切换overhead显著延长；它不是完整时间分辨率的8h simulation。",
+        "boundary": "slow-phase approximation依无须追踪快速spike/Ca；未给全network精确误差界。",
+        "negative_result": "新增timestep仅10–20%，不能解释全部runtime增长。",
+        "non_inference": "不证明生物necessity、真实memory表现或通用软件性能；没有本任务实际运行software tests。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "塑性与空间形态的仿真实现是否一致，且在何种条件下影响recall及计算成本？"
+      ],
+      "shared_evidence_with": [
+        "C12",
+        "C13",
+        "C14"
+      ],
+      "review_notes": [
+        "第二轮source audit：区分model-neuron/spine数与独立trial；跨simulator数值匹配不等于生物复制。版本、近似、调参和hardware范围逐条保留；没有自行软件验证。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "完整39页。框架增加spike事件、多变量、随机solver及neutral diffusion，单synapse implementations近似匹配existing code，而network只能定性复现。模型中dendrite length较大recall较差、diameter较大较好，PRP过慢不能及时consolidate；都限简化morphology。CPU/GPU及busyring性能有明确hardware和workload范围，GPU小network可慢且某CoreNEURON配置OOM。多版本、CV定义和strong-scaling归一化等未解决，候选未人审。",
+  "shared_evidence": [
+    {
+      "claim_id": "C1",
+      "with": [
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C2",
+      "with": [
+        "C1",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C1",
+        "C2",
+        "C4",
+        "C5",
+        "C6",
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C5",
+        "C6",
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C6",
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C8",
+        "C9",
+        "C10",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C7",
+        "C9",
+        "C10",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C10",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "with": [
+        "C9",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "with": [
+        "C9",
+        "C10"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "with": [
+        "C13",
+        "C14",
+        "C15"
+      ]
+    },
+    {
+      "claim_id": "C13",
+      "with": [
+        "C12",
+        "C14",
+        "C15"
+      ]
+    },
+    {
+      "claim_id": "C14",
+      "with": [
+        "C12",
+        "C13",
+        "C15"
+      ]
+    },
+    {
+      "claim_id": "C15",
+      "with": [
+        "C12",
+        "C13",
+        "C14"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": null,
+        "issue": "不同subsections不同Arbor版本：0.9.1-dev2f4c325、PR2226 f0e456d、0.10.0、PR2489 65a4a3a；旧diffusion units×1e−7。",
+        "pdf_page": 30,
+        "suggested_correction": "版本及单位条件保留",
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "fit指标CV被正文叫coefficient of variation，数值接近1用作goodness-of-fit但与runtimeCV含义不清；部分early CV=0.201。",
+        "pdf_page": 18,
+        "suggested_correction": "未将CV当统一correlation/等效证明",
+        "resolved": false
+      },
+      {
+        "claim_id": "C6",
+        "issue": "custom diffusion改成统一exchange且I0由Arbor4pA改5.5pA。",
+        "pdf_page": 15,
+        "suggested_correction": "不声称同parameter严格复现",
+        "resolved": true
+      },
+      {
+        "claim_id": "C8",
+        "issue": "复杂network只能qualitative match，n100realizations而非n2000cells。",
+        "pdf_page": 19,
+        "suggested_correction": "保留实际negative和单位",
+        "resolved": true
+      },
+      {
+        "claim_id": "C12",
+        "issue": "GPU额外memory未计，不能据pmap宣称GPU total-memory优势。",
+        "pdf_page": 23,
+        "suggested_correction": "限制memory比较",
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "正文3.6引用Figs5H/6E,I明显混乱；实际model Figure5，runtimeFigure6。",
+        "pdf_page": 22,
+        "suggested_correction": "采用实际PDF Figure5及section locator",
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "strong-scaling ε=T(n0)/(T(n)n)，n0=4时是否n为相对节点倍数不清。",
+        "pdf_page": 27,
+        "suggested_correction": ">80%量化defer，待AppendixO/tableC核对",
+        "resolved": false
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T10:58:46.306958Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "4e3b447420829f9f752d524f4152c98f331b3fdc905ce76b25f2aea3a5ee8569",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

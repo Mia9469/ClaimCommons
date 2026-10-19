@@ -1,0 +1,110 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Topology Matters: A Cautionary Case Study of Graph SSL on Neuro-Inspired Benchmarks</title><style>body{max-width:940px;margin:40px auto;padding:0 24px;background:#fffdf7;color:#12372f;font:16px/1.8 Georgia,serif}h1{font-size:26px;line-height:1.4}h2{font-size:20px;line-height:1.5}h3{font-size:16px}article{padding:26px 0;border-top:1px solid #bec4b8}small{color:#68766e}dl{display:grid;grid-template-columns:120px 1fr;gap:8px 20px}dt{font-weight:bold}dd{margin:0}li{padding:8px 0}p,dd{overflow-wrap:anywhere}.note{background:#eef2e2;padding:14px;border-left:3px solid #738968}summary{cursor:pointer}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.7 monospace}@media(max-width:600px){body{margin:24px auto;padding:0 18px}dl{grid-template-columns:1fr;gap:3px}dd{margin-bottom:12px}}@media print{body{margin:0;background:white}details{display:block}}</style><link rel="stylesheet" href="../../commons-v02.css?v=20261020-1"><link rel="stylesheet" href="../../examples.css?v=20260928-2"><link rel="stylesheet" href="../../site.css?v=20261020-1"><script defer src="../../site.js?v=20261020-1"></script><script defer src="../../report-ui.js?v=20261020-1"></script></head><body class="portal-page report-page" data-cc-report-shell="1" data-page="library" data-site-prefix="../../" data-library-paper="paper-W7127739909" data-report-language="zh" data-claim-records="{&quot;C1&quot;:&quot;structured-paper-W7127739909-1&quot;,&quot;C2&quot;:&quot;structured-paper-W7127739909-2&quot;,&quot;C3&quot;:&quot;structured-paper-W7127739909-3&quot;,&quot;C4&quot;:&quot;structured-paper-W7127739909-4&quot;,&quot;C5&quot;:&quot;structured-paper-W7127739909-5&quot;,&quot;C6&quot;:&quot;structured-paper-W7127739909-6&quot;,&quot;C7&quot;:&quot;structured-paper-W7127739909-7&quot;,&quot;C8&quot;:&quot;structured-paper-W7127739909-8&quot;,&quot;C9&quot;:&quot;structured-paper-W7127739909-9&quot;,&quot;C10&quot;:&quot;structured-paper-W7127739909-10&quot;,&quot;C11&quot;:&quot;structured-paper-W7127739909-11&quot;,&quot;C12&quot;:&quot;structured-paper-W7127739909-12&quot;,&quot;C13&quot;:&quot;structured-paper-W7127739909-13&quot;,&quot;C14&quot;:&quot;structured-paper-W7127739909-14&quot;}"><header></header><main id="report-content"><div id="report-tools"></div><small>CLAIM COMMONS / 阅读报告</small><h1>Topology Matters: A Cautionary Case Study of Graph SSL on Neuro-Inspired Benchmarks</h1><p class="note">AI 文本提取候选，尚待人工核对。图像像素未读取；PDF 页码指文件中的页序。</p><p>14条候选覆盖层级边表示架构、生成基准、调参与训练曲线、表示可视化、三个明确失败任务、跨图迁移和全部重要消融。结果支持当前框架的局部目标失配解释，保留表文冲突、迁移输入和边移除实现疑点；真实脑及其他SSL方法仍未验证。</p><a href="https://arxiv.org/pdf/2602.03217" rel="noreferrer">查看所读原文版本 ↗</a><details><summary>贡献清单与处理决定</summary><ul><li><b>该框架以共享GraphSAGE骨干和节点、边、图三级投影头学习表示；显式边表示拼接两端隐藏状态与多通道边属性，而骨干消息聚合本身不使用边属性。</b><br>include · 可独立判断的贡献及边界</li><li><b>生成的500个合成图报告平均聚类系数0.259±0.032、平均最短路径1.87±0.025，并具社区、模拟采集站点偏移和SC/FC边通道，作为受控连接组样式基准。</b><br>include · 可独立判断的贡献及边界</li><li><b>24组超参数中，hidden=64、depth=2、embedding=64、边分布权重2.5获得最高复合验证分数2.19；作者观察提高边分布权重可改善子图回归而略损节点可分性。</b><br>include · 可独立判断的贡献及边界</li><li><b>所选模型的训练曲线显示总损失趋于平台、约90轮达到最佳验证损失，预测损失趋向更负、MMD较早稳定且正则项持续非零，梯度范数平滑下降。</b><br>include · 可独立判断的贡献及边界</li><li><b>t-SNE图中边表示按SC权重分位呈结构化分布，节点表示有部分标签分离，说明可视化并非完全无结构；但这些图没有证明高维表示保留全部拓扑信息。</b><br>include · 可独立判断的贡献及边界</li><li><b>链接预测中冻结边表示加逻辑回归的AUC为0.727，低于Jaccard的0.845，作者报告差值95%CI为[-0.123,-0.112]、p&lt;0.001；它仍高于原始特征余弦的0.686。</b><br>include · 可独立判断的贡献及边界</li><li><b>节点分类中SSL表示的F1为0.767，低于原始特征逻辑回归0.794和监督GraphSAGE；对最佳基线报告p&lt;0.01、差值95%CI[-0.145,-0.023]。</b><br>include · 可独立判断的贡献及边界</li><li><b>子图回归中冻结边表示加Ridge得到R²=-0.174，低于原始特征均值池化Ridge的0.189及WL-Hash的0.177；对最佳基线报告p&lt;0.01、差值95%CI[-0.686,-0.125]。</b><br>include · 可独立判断的贡献及边界</li><li><b>跨图社区数分类报告SSL冻结表示准确率47.2%，低于经典特征基线53%，高于作者列出的五类20%机会水平。</b><br>include · 可独立判断的贡献及边界</li><li><b>节点分类消融中，去除边分布损失后F1为0.801、去除协方差项为0.795，均高于完整模型0.767，提示多任务正则在该设置可能损害节点任务。</b><br>include · 可独立判断的贡献及边界</li><li><b>链接预测消融中移除DropEdge使AUC由0.727提高至0.752，移除预测器达到0.787，但仍低于Jaccard的0.845。</b><br>include · 可独立判断的贡献及边界</li><li><b>子图回归消融中移除DropEdge使R²由-0.174升至0.074，去除边头达到0.180，但仍略低于原始特征Ridge的0.189。</b><br>include · 可独立判断的贡献及边界</li><li><b>作者将DropEdge消融的改善和最佳基线差距解释为该框架的不变性目标与拓扑驱动任务失配；证据支持这一设置中的失败分析，但未唯一排除架构、任务构造或优化因素。</b><br>include · 可独立判断的贡献及边界</li><li><b>作者提出以社区、motif、modularity或聚类系数保持为预训练目标，并在真实HCP/UK Biobank连接组中检验，作为修复拓扑不变性失配的未来方向。</b><br>include · 可独立判断的贡献及边界</li><li><b>其他图SSL、脑网络与预训练方法的引文是背景，并非本研究对这些方法的比较实验。</b><br>exclude · 未实际评估引述SSL基线</li><li><b>小世界图类似脑网络只是基准设计动机，不是证明真实连接组生态有效性。</b><br>exclude · 已在基准候选中记录边界</li></ul></details><article><small>C1 / 直接结果 · graph_self_supervised_learning</small><h2>该框架以共享GraphSAGE骨干和节点、边、图三级投影头学习表示；显式边表示拼接两端隐藏状态与多通道边属性，而骨干消息聚合本身不使用边属性。</h2><h3>Evidence</h3><p>合成多模态图上的自监督预训练与冻结表示探测</p><dl><dt>设计 / 对照</dt><dd>单一参考图调参；标签探针训练与测试分离；四阶段评估；显式边投影与仅用节点特征/拓扑的消息传递</dd><dt>独立单位与 n</dt><dd>合成图或同图内节点/边/子图；bootstrap重采样不是独立训练重复；架构定义；无独立实验样本</dd><dt>不确定性</dt><dd>单图任务报告2000次配对bootstrap；不是2000个独立图或生物样本</dd><dt>原文位置</dt><dd>PDF 2 · Equations 4–9</dd></dl><p>合成多模态图上的自监督预训练与冻结表示探测</p><dl><dt>设计 / 对照</dt><dd>单一参考图调参；标签探针训练与测试分离；四阶段评估；三级预测损失、边分布匹配和防塌缩正则</dd><dt>独立单位与 n</dt><dd>合成图或同图内节点/边/子图；bootstrap重采样不是独立训练重复；架构定义；MMD每视图最多4096条边</dd><dt>不确定性</dt><dd>单图任务报告2000次配对bootstrap；不是2000个独立图或生物样本</dd><dt>原文位置</dt><dd>PDF 3 · Equations 10–17</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>该框架以共享GraphSAGE骨干和节点、边、图三级投影头学习表示；显式边表示拼接两端隐藏状态与多通道边属性，而骨干消息聚合本身不使用边属性。</dd><dt>适用边界</dt><dd>边属性只在最终边投影进入，不是所有尺度均通过消息传递融合模态；训练与评估图读出权重公式不同。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不是实测脑功能层级或神经生物学验证。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>哪些保留拓扑的预训练目标能在独立合成图和真实连接组上改善多尺度任务，而非只改善增强视图一致性？</li></ul></article><article><small>C2 / 直接结果 · graph_self_supervised_learning</small><h2>生成的500个合成图报告平均聚类系数0.259±0.032、平均最短路径1.87±0.025，并具社区、模拟采集站点偏移和SC/FC边通道，作为受控连接组样式基准。</h2><h3>Evidence</h3><p>合成多模态图上的自监督预训练与冻结表示探测</p><dl><dt>设计 / 对照</dt><dd>单一参考图调参；标签探针训练与测试分离；四阶段评估；作者描述的随机图等价对照，数值未列出</dd><dt>独立单位与 n</dt><dd>合成图或同图内节点/边/子图；bootstrap重采样不是独立训练重复；500个生成图；每图700至900节点、6至10社区</dd><dt>不确定性</dt><dd>单图任务报告2000次配对bootstrap；不是2000个独立图或生物样本</dd><dt>原文位置</dt><dd>PDF 3 · Experimental Setup / Synthetic Benchmark</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>生成的500个合成图报告平均聚类系数0.259±0.032、平均最短路径1.87±0.025，并具社区、模拟采集站点偏移和SC/FC边通道，作为受控连接组样式基准。</dd><dt>适用边界</dt><dd>SC随机缺失25%，FC由社区驱动AR(1)序列的相关生成；非真实MRI或生物连接组。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>高聚类和短路径本身不验证所有真实连接组性质或排除所有生成器偏差。</dd><dt>未解决</dt><dd>随机对照的具体数值、±含义及小世界归一化未充分报告。</dd></dl><h3>相关问题</h3><ul><li>哪些保留拓扑的预训练目标能在独立合成图和真实连接组上改善多尺度任务，而非只改善增强视图一致性？</li></ul></article><article><small>C3 / 直接结果 · graph_self_supervised_learning</small><h2>24组超参数中，hidden=64、depth=2、embedding=64、边分布权重2.5获得最高复合验证分数2.19；作者观察提高边分布权重可改善子图回归而略损节点可分性。</h2><h3>Evidence</h3><p>合成多模态图上的自监督预训练与冻结表示探测</p><dl><dt>设计 / 对照</dt><dd>单一参考图调参；标签探针训练与测试分离；四阶段评估；hidden、层数、维度及边损失权重网格</dd><dt>独立单位与 n</dt><dd>合成图或同图内节点/边/子图；bootstrap重采样不是独立训练重复；24种配置；同一参考图的验证划分</dd><dt>不确定性</dt><dd>单图任务报告2000次配对bootstrap；不是2000个独立图或生物样本</dd><dt>原文位置</dt><dd>PDF 5 · Fig.1</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>24组超参数中，hidden=64、depth=2、embedding=64、边分布权重2.5获得最高复合验证分数2.19；作者观察提高边分布权重可改善子图回归而略损节点可分性。</dd><dt>适用边界</dt><dd>选择基于验证指标，不是多个独立图上确认的普遍最优；测试不用于选择是作者描述。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>描述性权衡不是经统计检验的通用单调关系。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>哪些保留拓扑的预训练目标能在独立合成图和真实连接组上改善多尺度任务，而非只改善增强视图一致性？</li></ul></article><article><small>C4 / 直接结果 · graph_self_supervised_learning</small><h2>所选模型的训练曲线显示总损失趋于平台、约90轮达到最佳验证损失，预测损失趋向更负、MMD较早稳定且正则项持续非零，梯度范数平滑下降。</h2><h3>Evidence</h3><p>合成多模态图上的自监督预训练与冻结表示探测</p><dl><dt>设计 / 对照</dt><dd>单一参考图调参；标签探针训练与测试分离；四阶段评估；训练过程各损失项</dd><dt>独立单位与 n</dt><dd>合成图或同图内节点/边/子图；bootstrap重采样不是独立训练重复；示例训练轨迹；独立训练重复未报告</dd><dt>不确定性</dt><dd>单图任务报告2000次配对bootstrap；不是2000个独立图或生物样本</dd><dt>原文位置</dt><dd>PDF 5 · Fig.2</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>所选模型的训练曲线显示总损失趋于平台、约90轮达到最佳验证损失，预测损失趋向更负、MMD较早稳定且正则项持续非零，梯度范数平滑下降。</dd><dt>适用边界</dt><dd>曲线为指数移动平均展示，最多400轮、每轮1步，采用早停。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>平滑下降不证明无梯度消失、收敛到全局最优或所有表示绝不塌缩。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>哪些保留拓扑的预训练目标能在独立合成图和真实连接组上改善多尺度任务，而非只改善增强视图一致性？</li></ul></article><article><small>C5 / 解释 · graph_self_supervised_learning</small><h2>t-SNE图中边表示按SC权重分位呈结构化分布，节点表示有部分标签分离，说明可视化并非完全无结构；但这些图没有证明高维表示保留全部拓扑信息。</h2><h3>Evidence</h3><p>合成多模态图上的自监督预训练与冻结表示探测</p><dl><dt>设计 / 对照</dt><dd>单一参考图调参；标签探针训练与测试分离；四阶段评估；边权分位与节点类别着色</dd><dt>独立单位与 n</dt><dd>合成图或同图内节点/边/子图；bootstrap重采样不是独立训练重复；同一合成图的表示；无独立生物样本</dd><dt>不确定性</dt><dd>单图任务报告2000次配对bootstrap；不是2000个独立图或生物样本</dd><dt>原文位置</dt><dd>PDF 6 · Fig.3</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>t-SNE图中边表示按SC权重分位呈结构化分布，节点表示有部分标签分离，说明可视化并非完全无结构；但这些图没有证明高维表示保留全部拓扑信息。</dd><dt>适用边界</dt><dd>可视化为描述性证据，未报告量化聚类检验。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能把t-SNE分离写为脑组织机制或充分的防塌缩证明。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>哪些保留拓扑的预训练目标能在独立合成图和真实连接组上改善多尺度任务，而非只改善增强视图一致性？</li></ul></article><article><small>C6 / 直接结果 · graph_self_supervised_learning</small><h2>链接预测中冻结边表示加逻辑回归的AUC为0.727，低于Jaccard的0.845，作者报告差值95%CI为[-0.123,-0.112]、p&lt;0.001；它仍高于原始特征余弦的0.686。</h2><h3>Evidence</h3><p>合成多模态图上的自监督预训练与冻结表示探测</p><dl><dt>设计 / 对照</dt><dd>单一参考图调参；标签探针训练与测试分离；四阶段评估；冻结SSL表示与原始特征、拓扑启发式及监督GraphSAGE基线</dd><dt>独立单位与 n</dt><dd>合成图或同图内节点/边/子图；bootstrap重采样不是独立训练重复；单一合成参考图的节点/边/子图测试划分；训练随机种子数未报告</dd><dt>不确定性</dt><dd>单图任务报告2000次配对bootstrap；不是2000个独立图或生物样本</dd><dt>原文位置</dt><dd>PDF 6 · Table 1</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>链接预测中冻结边表示加逻辑回归的AUC为0.727，低于Jaccard的0.845，作者报告差值95%CI为[-0.123,-0.112]、p&lt;0.001；它仍高于原始特征余弦的0.686。</dd><dt>适用边界</dt><dd>每图15%正边留出，负边排除观测正边；置信区间针对本任务重采样而不是跨图重复。</dd><dt>实际负结果</dt><dd>该SSL边表示未胜过最佳拓扑基线或监督SAGE的0.802。</dd><dt>不能推出</dt><dd>不是所有经典方法均优于SSL，也不证明其完全没有拓扑信息。</dd><dt>未解决</dt><dd>骨干计算时是否从消息传递图中严格移除了待预测边，文中实现细节不充分；bootstrap的相关边处理未明确。</dd></dl><h3>相关问题</h3><ul><li>哪些保留拓扑的预训练目标能在独立合成图和真实连接组上改善多尺度任务，而非只改善增强视图一致性？</li></ul></article><article><small>C7 / 直接结果 · graph_self_supervised_learning</small><h2>节点分类中SSL表示的F1为0.767，低于原始特征逻辑回归0.794和监督GraphSAGE；对最佳基线报告p&lt;0.01、差值95%CI[-0.145,-0.023]。</h2><h3>Evidence</h3><p>合成多模态图上的自监督预训练与冻结表示探测</p><dl><dt>设计 / 对照</dt><dd>单一参考图调参；标签探针训练与测试分离；四阶段评估；冻结SSL表示与原始特征、拓扑启发式及监督GraphSAGE基线</dd><dt>独立单位与 n</dt><dd>合成图或同图内节点/边/子图；bootstrap重采样不是独立训练重复；单一合成参考图的节点/边/子图测试划分；训练随机种子数未报告</dd><dt>不确定性</dt><dd>单图任务报告2000次配对bootstrap；不是2000个独立图或生物样本</dd><dt>原文位置</dt><dd>PDF 6 · Table 1</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>节点分类中SSL表示的F1为0.767，低于原始特征逻辑回归0.794和监督GraphSAGE；对最佳基线报告p&lt;0.01、差值95%CI[-0.145,-0.023]。</dd><dt>适用边界</dt><dd>节点标签联合PageRank与特征分数经分位离散，标签探针为128隐藏单元MLP；不是纯无监督预测标签。</dd><dt>实际负结果</dt><dd>未比原始特征提供更高的描述性F1。</dd><dt>不能推出</dt><dd>没有给出与原始特征LR差异的独立显著性结论，监督模型也不是严格理论上界。</dd><dt>未解决</dt><dd>Table 1的监督GraphSAGE F1为0.848，正文为0.840；两值均保留为来源不一致。</dd></dl><h3>相关问题</h3><ul><li>哪些保留拓扑的预训练目标能在独立合成图和真实连接组上改善多尺度任务，而非只改善增强视图一致性？</li></ul></article><article><small>C8 / 直接结果 · graph_self_supervised_learning</small><h2>子图回归中冻结边表示加Ridge得到R²=-0.174，低于原始特征均值池化Ridge的0.189及WL-Hash的0.177；对最佳基线报告p&lt;0.01、差值95%CI[-0.686,-0.125]。</h2><h3>Evidence</h3><p>合成多模态图上的自监督预训练与冻结表示探测</p><dl><dt>设计 / 对照</dt><dd>单一参考图调参；标签探针训练与测试分离；四阶段评估；SSL边表示Ridge、原始特征Ridge与WL-Hash</dd><dt>独立单位与 n</dt><dd>合成图或同图内节点/边/子图；bootstrap重采样不是独立训练重复；单一图抽取200个随机子图，再按70/15/15划分；bootstrap2000次</dd><dt>不确定性</dt><dd>单图任务报告2000次配对bootstrap；不是2000个独立图或生物样本</dd><dt>原文位置</dt><dd>PDF 6 · Table 1</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>子图回归中冻结边表示加Ridge得到R²=-0.174，低于原始特征均值池化Ridge的0.189及WL-Hash的0.177；对最佳基线报告p&lt;0.01、差值95%CI[-0.686,-0.125]。</dd><dt>适用边界</dt><dd>负R²指该留出任务比常数均值参考更差；子图可能共享节点与边。</dd><dt>实际负结果</dt><dd>完整模型在该回归任务未获得正R²。</dd><dt>不能推出</dt><dd>不能从单一负R²断言所有结构信息完全丢失。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>哪些保留拓扑的预训练目标能在独立合成图和真实连接组上改善多尺度任务，而非只改善增强视图一致性？</li></ul></article><article><small>C9 / 直接结果 · graph_self_supervised_learning</small><h2>跨图社区数分类报告SSL冻结表示准确率47.2%，低于经典特征基线53%，高于作者列出的五类20%机会水平。</h2><h3>Evidence</h3><p>合成多模态图上的自监督预训练与冻结表示探测</p><dl><dt>设计 / 对照</dt><dd>单一参考图调参；标签探针训练与测试分离；四阶段评估；冻结图表示与聚合原始特征基线</dd><dt>独立单位与 n</dt><dd>合成图或同图内节点/边/子图；bootstrap重采样不是独立训练重复；500个合成图；80/20划分；重复汇总次数未报告</dd><dt>不确定性</dt><dd>单图任务报告2000次配对bootstrap；不是2000个独立图或生物样本</dd><dt>原文位置</dt><dd>PDF 6 · Fig.4（见PDF第7页）</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>跨图社区数分类报告SSL冻结表示准确率47.2%，低于经典特征基线53%，高于作者列出的五类20%机会水平。</dd><dt>适用边界</dt><dd>不同规模和社区数的合成图之间迁移，不是跨真实站点或真实脑数据迁移。</dd><dt>实际负结果</dt><dd>没有超过该任务特征基线。</dd><dt>不能推出</dt><dd>未提供置信区间或显著性，不能声称显著高于机会或显著低于基线。</dd><dt>未解决</dt><dd>方法段描述构造hand-crafted Xgraph而结果称冻结zG，探针输入来源不清；若恰为100个单次测试图，47.2%无法唯一映射整数正确数，不能猜测平均轮数。</dd></dl><h3>相关问题</h3><ul><li>哪些保留拓扑的预训练目标能在独立合成图和真实连接组上改善多尺度任务，而非只改善增强视图一致性？</li></ul></article><article><small>C10 / 解释 · graph_self_supervised_learning</small><h2>节点分类消融中，去除边分布损失后F1为0.801、去除协方差项为0.795，均高于完整模型0.767，提示多任务正则在该设置可能损害节点任务。</h2><h3>Evidence</h3><p>合成多模态图上的自监督预训练与冻结表示探测</p><dl><dt>设计 / 对照</dt><dd>单一参考图调参；标签探针训练与测试分离；四阶段评估；FULL vs去边分布匹配/协方差</dd><dt>独立单位与 n</dt><dd>合成图或同图内节点/边/子图；bootstrap重采样不是独立训练重复；九个组件变体；同一单图划分；种子数未报告</dd><dt>不确定性</dt><dd>单图任务报告2000次配对bootstrap；不是2000个独立图或生物样本</dd><dt>原文位置</dt><dd>PDF 7 · Fig.5</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>节点分类消融中，去除边分布损失后F1为0.801、去除协方差项为0.795，均高于完整模型0.767，提示多任务正则在该设置可能损害节点任务。</dd><dt>适用边界</dt><dd>消融使用已选超参数且没有重复训练区间；差异为描述性。</dd><dt>实际负结果</dt><dd>完整的多尺度目标不是节点任务的最佳组件组合。</dd><dt>不能推出</dt><dd>不能声称所有边学习或协方差正则本质有害。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>哪些保留拓扑的预训练目标能在独立合成图和真实连接组上改善多尺度任务，而非只改善增强视图一致性？</li></ul></article><article><small>C11 / 直接结果 · graph_self_supervised_learning</small><h2>链接预测消融中移除DropEdge使AUC由0.727提高至0.752，移除预测器达到0.787，但仍低于Jaccard的0.845。</h2><h3>Evidence</h3><p>合成多模态图上的自监督预训练与冻结表示探测</p><dl><dt>设计 / 对照</dt><dd>单一参考图调参；标签探针训练与测试分离；四阶段评估；FULL、NO_DROPEDGE和NO_PREDICTORS</dd><dt>独立单位与 n</dt><dd>合成图或同图内节点/边/子图；bootstrap重采样不是独立训练重复；九个组件变体；单图；未报告变体差异显著性</dd><dt>不确定性</dt><dd>单图任务报告2000次配对bootstrap；不是2000个独立图或生物样本</dd><dt>原文位置</dt><dd>PDF 7 · Fig.5</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>链接预测消融中移除DropEdge使AUC由0.727提高至0.752，移除预测器达到0.787，但仍低于Jaccard的0.845。</dd><dt>适用边界</dt><dd>随机保留85%边的增强被移除是局部受控比较，并非所有拓扑增强测试。</dd><dt>实际负结果</dt><dd>最佳报告的链接消融也未追平Jaccard。</dd><dt>不能推出</dt><dd>不证明其他SSL范式或适当重调参数后必然失败。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>哪些保留拓扑的预训练目标能在独立合成图和真实连接组上改善多尺度任务，而非只改善增强视图一致性？</li></ul></article><article><small>C12 / 直接结果 · graph_self_supervised_learning</small><h2>子图回归消融中移除DropEdge使R²由-0.174升至0.074，去除边头达到0.180，但仍略低于原始特征Ridge的0.189。</h2><h3>Evidence</h3><p>合成多模态图上的自监督预训练与冻结表示探测</p><dl><dt>设计 / 对照</dt><dd>单一参考图调参；标签探针训练与测试分离；四阶段评估；FULL、NO_DROPEDGE和NO_EDGE_HEAD</dd><dt>独立单位与 n</dt><dd>合成图或同图内节点/边/子图；bootstrap重采样不是独立训练重复；九个组件变体；同一200子图划分</dd><dt>不确定性</dt><dd>单图任务报告2000次配对bootstrap；不是2000个独立图或生物样本</dd><dt>原文位置</dt><dd>PDF 7 · Fig.5</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>子图回归消融中移除DropEdge使R²由-0.174升至0.074，去除边头达到0.180，但仍略低于原始特征Ridge的0.189。</dd><dt>适用边界</dt><dd>不同任务的最佳变体不同；不能由正R²称已达到基线优势。</dd><dt>实际负结果</dt><dd>完整模型为负R²；最佳报告消融未超过对应最佳经典基线。</dd><dt>不能推出</dt><dd>未报告 / 不适用</dd><dt>未解决</dt><dd>NO_EDGE_HEAD条件如何替代原本用于回归的边表示，文中未详细说明。</dd></dl><h3>相关问题</h3><ul><li>哪些保留拓扑的预训练目标能在独立合成图和真实连接组上改善多尺度任务，而非只改善增强视图一致性？</li></ul></article><article><small>C13 / 解释 · graph_self_supervised_learning</small><h2>作者将DropEdge消融的改善和最佳基线差距解释为该框架的不变性目标与拓扑驱动任务失配；证据支持这一设置中的失败分析，但未唯一排除架构、任务构造或优化因素。</h2><h3>Evidence</h3><p>合成多模态图上的自监督预训练与冻结表示探测</p><dl><dt>设计 / 对照</dt><dd>单一参考图调参；标签探针训练与测试分离；四阶段评估；完整模型与拓扑启发式、组件消融</dd><dt>独立单位与 n</dt><dd>合成图或同图内节点/边/子图；bootstrap重采样不是独立训练重复；同一合成基准中的一个SSL框架；未测试GraphCL/BGRL/GraphMAE</dd><dt>不确定性</dt><dd>单图任务报告2000次配对bootstrap；不是2000个独立图或生物样本</dd><dt>原文位置</dt><dd>PDF 8 · Discussion / Failure and Ablation Analysis</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>作者将DropEdge消融的改善和最佳基线差距解释为该框架的不变性目标与拓扑驱动任务失配；证据支持这一设置中的失败分析，但未唯一排除架构、任务构造或优化因素。</dd><dt>适用边界</dt><dd>比较未包括现代SSL基线，真实连接组、复杂重叠社区和rich-club均未验证。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能写成整个图SSL范式或真实脑连接组必然失败的定理，也不能把生成图称生物model organism实验。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>哪些保留拓扑的预训练目标能在独立合成图和真实连接组上改善多尺度任务，而非只改善增强视图一致性？</li></ul></article><article><small>C14 / 假说 / 预测 · graph_self_supervised_learning</small><h2>作者提出以社区、motif、modularity或聚类系数保持为预训练目标，并在真实HCP/UK Biobank连接组中检验，作为修复拓扑不变性失配的未来方向。</h2><h3>Evidence</h3><p>合成多模态图上的自监督预训练与冻结表示探测</p><dl><dt>设计 / 对照</dt><dd>单一参考图调参；标签探针训练与测试分离；四阶段评估；现有不变性目标与尚未实现的拓扑保持目标</dd><dt>独立单位与 n</dt><dd>合成图或同图内节点/边/子图；bootstrap重采样不是独立训练重复；无新增实验</dd><dt>不确定性</dt><dd>单图任务报告2000次配对bootstrap；不是2000个独立图或生物样本</dd><dt>原文位置</dt><dd>PDF 8 · Limitations and Future Directions / Conclusion</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>作者提出的可检验假说。</dd><dt>适用边界</dt><dd>这些替代目标未在本文训练评估。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不是已经证明有效的新算法或真实连接组成果。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>哪些保留拓扑的预训练目标能在独立合成图和真实连接组上改善多尺度任务，而非只改善增强视图一致性？</li></ul></article><details><summary>核对记录与来源信息</summary><pre>{
+  &quot;coverage&quot;: {
+    &quot;pdf_pages_read&quot;: [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    &quot;results_sections_seen&quot;: [
+      &quot;Method / Architecture and SSL objective&quot;,
+      &quot;Experimental Setup / Synthetic Benchmark and four stages&quot;,
+      &quot;Hyperparameter Selection and training dynamics&quot;,
+      &quot;Single-Graph Downstream Tasks&quot;,
+      &quot;Transfer Learning Across Graphs&quot;,
+      &quot;Ablation Study&quot;,
+      &quot;Discussion, limitations and conclusion&quot;
+    ],
+    &quot;missing_material&quot;: [
+      &quot;Fig.1–5原始像素及代码未读取；原始图/逐次训练记录未提供；真实连接组实验未进行&quot;
+    ],
+    &quot;text_pass_complete&quot;: true,
+    &quot;notes&quot;: [
+      &quot;完整读取缓存PDF顺序1–9页，含全部公式、方法、结果、图注、Table 1、讨论及参考文献；arXiv:2602.03217v1，3 Feb 2026。&quot;,
+      &quot;逐条第二来源审计区分合成图、单图内相关单位、2000次bootstrap及训练重复；保持真实负结果，不扩大为生物证据或整个范式证明。&quot;
+    ],
+    &quot;reading_mode&quot;: &quot;text_only&quot;,
+    &quot;figure_images_read&quot;: false,
+    &quot;scientific_verification&quot;: false,
+    &quot;source_pdf_offline&quot;: false,
+    &quot;archived_page_text_used&quot;: false
+  },
+  &quot;audit&quot;: {
+    &quot;source_match_checks&quot;: [],
+    &quot;model_findings&quot;: [
+      {
+        &quot;claim_id&quot;: &quot;C7&quot;,
+        &quot;issue&quot;: &quot;监督GraphSAGE的F1表格0.848与正文0.840不一致。&quot;,
+        &quot;pdf_page&quot;: 6,
+        &quot;suggested_correction&quot;: &quot;不合并或擅自选择更正。&quot;,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C9&quot;,
+        &quot;issue&quot;: &quot;迁移方法段Xgraph与结果段zG表述不一致，47.2%的单次样本数解释未提供。&quot;,
+        &quot;pdf_page&quot;: 4,
+        &quot;suggested_correction&quot;: &quot;保留输入与汇总方式不确定性。&quot;,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C6&quot;,
+        &quot;issue&quot;: &quot;链接探针骨干(X,E)中的目标边移除细节不充分，无法审计是否有target-link inclusion。&quot;,
+        &quot;pdf_page&quot;: 4,
+        &quot;suggested_correction&quot;: &quot;记录未解决，不指控已证实泄漏。&quot;,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C12&quot;,
+        &quot;issue&quot;: &quot;无边头回归的替代表征实现未描述。&quot;,
+        &quot;pdf_page&quot;: 7,
+        &quot;suggested_correction&quot;: &quot;保留消融数字及实现不确定性。&quot;,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C13&quot;,
+        &quot;issue&quot;: &quot;未测试现代SSL或真实连接组；广泛失败判断超出直接证据。&quot;,
+        &quot;pdf_page&quot;: 8,
+        &quot;suggested_correction&quot;: &quot;结论限定当前框架和生成任务。&quot;,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C6&quot;,
+        &quot;issue&quot;: &quot;2000是bootstrap重采样数，不是独立图/训练/受试者n。&quot;,
+        &quot;pdf_page&quot;: 4,
+        &quot;suggested_correction&quot;: &quot;已按实际单位注明。&quot;,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C8&quot;,
+        &quot;issue&quot;: &quot;负R²是指定任务的实际失败，不等同于完全无拓扑信息。&quot;,
+        &quot;pdf_page&quot;: 6,
+        &quot;suggested_correction&quot;: &quot;保留失败而避免全称无信息论断。&quot;,
+        &quot;resolved&quot;: true
+      }
+    ],
+    &quot;needs_human_review&quot;: true
+  },
+  &quot;source&quot;: {
+    &quot;filename&quot;: &quot;paper-W7127739909--Topology-Matters-A-Cautionary-Case-Study-of-Graph-SSL-on-Neuro-Inspired-Benchmarks.pdf&quot;,
+    &quot;sha256&quot;: &quot;084779c265e09bf6aa0b6197e81542dfafd9cece4636123ce313d0e8fe6432eb&quot;,
+    &quot;source_url&quot;: &quot;https://arxiv.org/pdf/2602.03217&quot;,
+    &quot;pdf_page_count&quot;: 9
+  },
+  &quot;provenance&quot;: {
+    &quot;created_at&quot;: &quot;2026-10-07T13:03:49.924088Z&quot;,
+    &quot;workflow&quot;: &quot;claim-commons-pdf-v1&quot;,
+    &quot;prompt_version&quot;: &quot;claim-commons-chatgpt-pdf-2026-10-07.1&quot;,
+    &quot;backend&quot;: &quot;authorized_parallel_GPT&quot;,
+    &quot;model&quot;: &quot;inherited_account_GPT&quot;,
+    &quot;provider_api_key_used&quot;: false,
+    &quot;source_sha256&quot;: &quot;084779c265e09bf6aa0b6197e81542dfafd9cece4636123ce313d0e8fe6432eb&quot;,
+    &quot;source_audit_complete&quot;: true,
+    &quot;review_status&quot;: &quot;candidate&quot;,
+    &quot;database_updated&quot;: false
+  }
+}</pre></details></main><footer></footer></body></html>

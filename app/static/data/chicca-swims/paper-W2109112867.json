@@ -1,0 +1,616 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "Emergent Auditory Feature Tuning in a Real-Time Neuromorphic VLSI System",
+    "authors": [
+      "Sadique Sheik",
+      "Martin Coath",
+      "Giacomo Indiveri",
+      "Susan L. Denham",
+      "Thomas Wennekers",
+      "Elisabetta Chicca"
+    ],
+    "doi": "10.3389/fnins.2012.00017",
+    "publication_year": 2012,
+    "venue": "Frontiers in Neuroscience",
+    "url": "https://doi.org/10.3389/fnins.2012.00017"
+  },
+  "source": {
+    "filename": "paper-W2109112867.pdf",
+    "sha256": "3615ff43f04627a8fcf49d808fb3a00d2f46fb779f596048a3e0cf5d55e66a4c",
+    "source_url": "https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2012.00017/pdf",
+    "pdf_page_count": 11
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "results_sections_seen": [
+      "3.1. DISTANCE MATRIX AND EMERGENT CONNECTIVITY",
+      "3.2. FM SWEEP TUNING CURVES",
+      "3.3. RANDOM DELAY PROFILE",
+      "Figures 1–11 captions",
+      "4. CONCLUSION",
+      "4.1. EXPLOITING DEVICE MISMATCH FOR IMPLEMENTING TEMPORAL DELAYS",
+      "4.2. LONG VS SHORT TIME SCALES",
+      "4.3. LIMITATIONS",
+      "5. DISCUSSION"
+    ],
+    "missing_material": [],
+    "text_pass_complete": true,
+    "notes": [
+      "所供文本是2012年正式发表的原创研究文章；标题、作者、DOI与身份元数据一致。",
+      "全部所供正文、公式、图注和参考文献均已评估；没有图像像素，矩阵和曲线结果仅依据文字及图注。",
+      "所供文章没有附录；引用的软件模型、器件论文及生物学研究不作为本研究的新结果。",
+      "Figure 6的暴露速度存在正文与图注冲突；第8页对线性延迟配置的图号引用也有错误。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "利用模拟器件失配和额外神经元的积分动力学实现可选择的毫秒级反馈延迟，并测量延迟分布。",
+      "role": "result",
+      "source_pages": [
+        3,
+        4,
+        9
+      ],
+      "decision": "include",
+      "reason": "独立的硬件方法及电路表征结果。"
+    },
+    {
+      "summary": "线性扫频暴露后，增强连接的位置随方向和速度改变，并与低van Rossum distance区域相符。",
+      "role": "result",
+      "source_pages": [
+        5,
+        6,
+        7
+      ],
+      "decision": "include",
+      "reason": "连接读出及时间相关性比较可独立评估。"
+    },
+    {
+      "summary": "分叉扫频形成包含跨分支相关性的连接模式，正文将其描述为并非两种单向扫频模式的简单线性组合。",
+      "role": "result",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "较复杂刺激的单独连接结果；非线性组合判断限于定性描述。"
+    },
+    {
+      "summary": "线性和分叉扫频暴露后，冻结可塑性时B2群体输出对训练速度表现出优先响应。",
+      "role": "result",
+      "source_pages": [
+        5,
+        7,
+        8
+      ],
+      "decision": "include",
+      "reason": "群体功能读出区别于连接矩阵结果。"
+    },
+    {
+      "summary": "所示随机延迟配置保留分叉扫频速度调谐，但输出水平较低。",
+      "role": "result",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "直接比较延迟配置；响应幅度比较同时存在可用突触数量差异。"
+    },
+    {
+      "summary": "通过AER mapper和三个芯片实现实时尖峰路由及网络配置。",
+      "role": "method",
+      "source_pages": [
+        2,
+        3,
+        4
+      ],
+      "decision": "exclude",
+      "reason": "作为上述实验的实现条件保留；本文没有单独报告通信性能基准，相关接口技术引用已有工作。"
+    },
+    {
+      "summary": "学习阈值控制调谐宽度，延迟、抑制及可塑性的相互作用产生选择性。",
+      "role": "interpretation",
+      "source_pages": [
+        3,
+        4,
+        7,
+        9
+      ],
+      "decision": "defer",
+      "reason": "规则及机制解释未配有阈值扫描或各机制的独立消融。"
+    },
+    {
+      "summary": "随机延迟可支持打乱通道顺序或其他无明显排列的刺激。",
+      "role": "interpretation",
+      "source_pages": [
+        9
+      ],
+      "decision": "defer",
+      "reason": "由随机延迟结果外推，未报告通道打乱实验。"
+    },
+    {
+      "summary": "持续静态输入可能造成广泛增强，可用输入突触抑制或神经元适应缓解。",
+      "role": "hypothesis",
+      "source_pages": [
+        9
+      ],
+      "decision": "defer",
+      "reason": "限制预测与候选解决方案，未报告对应测试。"
+    },
+    {
+      "summary": "扩展到长时间尺度、真实声音、噪声条件和信息论辨别精度。",
+      "role": "hypothesis",
+      "source_pages": [
+        9,
+        10
+      ],
+      "decision": "exclude",
+      "reason": "属于未来研究，未提供相应结果。"
+    },
+    {
+      "summary": "动态特征选择性是网络性质，并可能解释生物听觉系统中的选择性。",
+      "role": "interpretation",
+      "source_pages": [
+        9
+      ],
+      "decision": "defer",
+      "reason": "群体读出支持网络层面的描述，但不能排除单神经元的选择性，也未检验生物回路机制。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "在该实时neuromorphic VLSI系统中，额外神经元的突触与膜积分动力学被用于实现反馈传输延迟；特定全局偏置下，chip–3中1070个可用神经元的测得延迟为0.7–8.6 ms，均值约2.5 ms，可据此选择具有不同延迟的反馈路径。",
+      "claim_type": "hardware_method_characterization",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "测量输入尖峰到延迟神经元输出尖峰的时间差，并表征电路间延迟分布。",
+          "design": "在特定偏置配置下，利用器件失配产生的动力学差异，选择每个输入尖峰对应一个输出尖峰的延迟神经元。",
+          "comparator": "chip–3中其余神经元在该配置下产生多个尖峰或不发放。",
+          "measure": "延迟范围0.7–8.6 ms，均值约2.5 ms。",
+          "unit_of_analysis": "同一芯片上的神经元电路。",
+          "sample_size_as_reported": "chip–3共2048个神经元，Figure 3包含其中1070个神经元；系统使用三个多神经元芯片。",
+          "uncertainty": null,
+          "assumptions": [
+            "所选延迟神经元对每个输入尖峰产生一个输出尖峰。",
+            "延迟取决于突触强度、突触及神经元时间常数和发放阈值。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "2.3. DELAYED FEEDBACK",
+            "figure": "Figure 3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "无需专门的传播延迟电路，即可利用现有神经元电路实现所测毫秒级延迟。",
+        "boundary": "延迟分布来自特定偏置下的一枚芯片；1070个电路不是1070次独立硬件实验。",
+        "negative_result": "其余神经元在该配置下发放多个尖峰或不发放，不能作为所需的单输入单输出延迟单元。",
+        "non_inference": "未证明所有输入率、温度、偏置或芯片上的延迟稳定性。",
+        "unresolved": "重复测量误差及跨器件延迟稳定性未报告。",
+        "unresolved_attribution": "所供文本未提供这些测量。"
+      },
+      "broad_directions": [
+        "methods-causal",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "如何利用模拟器件失配实现可选择的毫秒级尖峰传输延迟？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "范围和均值描述电路间分布；不代表功能调谐的统计不确定性。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "在具有近似距离依赖反馈延迟和C→B2可塑性突触的32通道硬件网络中，反复呈现线性频率扫频后，增强的B1→B2有效连接随扫频方向和速度改变；所示连接矩阵的增强区域与输入尖峰及延迟反馈之间较低van Rossum distance的区域相符。",
+      "claim_type": "stimulus_dependent_connectivity",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "读取暴露后每条投射的增强突触数，并比较van Rossum distance矩阵。",
+          "design": "延迟投射的可塑性突触初始置低状态；每种暴露刺激在3 s内呈现30次。",
+          "comparator": "Figure 7比较−0.8、0.8及1.2 channels/ms线性扫频；Figure 6比较距离矩阵与学习后的连接矩阵。",
+          "measure": "负向扫频增强对角线下方连接，正向扫频增强上方连接；1.2 channels/ms条件的增强连接到对角线平均距离大于0.8条件；低距离区域与增强区域定性相符。",
+          "unit_of_analysis": "网络连接矩阵及其中的B1→B2有效投射。",
+          "sample_size_as_reported": "B1和B2各32个活跃神经元；每条所述B1→B2连接使用三个冗余可塑性突触；每种刺激30次训练呈现。独立实验重复数未报告。",
+          "uncertainty": null,
+          "assumptions": [
+            "输入尖峰模式经校准以补偿B1器件失配。",
+            "van Rossum distance使用τc=4 ms。",
+            "延迟近似随通道距离变化，受可用硬件延迟限制而偏离纯线性配置。",
+            "距离矩阵是增强倾向的代理，并未直接测量学习规则的全部状态变量。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "3.1. DISTANCE MATRIX AND EMERGENT CONNECTIVITY",
+            "figure": "Figures 6–7",
+            "equation": "Equation 4 on PDF page 5",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所示连接变化与线性扫频的方向、速度及时间相关性一致。",
+        "boundary": "依据计算机生成且经校准的简单扫频及定性矩阵比较。",
+        "negative_result": null,
+        "non_inference": "未独立证明延迟、抑制或可塑性的各自因果贡献，也未验证生物听觉皮层中的对应机制。",
+        "unresolved": "连接预测的定量准确性和跨实验稳定性未报告；Figure 6的确切暴露速度存在文本冲突。",
+        "unresolved_attribution": "正文与图注对Figure 6速度标注不一致；未提供预测误差或重复实验统计。"
+      },
+      "broad_directions": [
+        "learning-memory",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "延迟反馈与尖峰驱动可塑性如何将扫频方向和速度转化为连接模式？"
+      ],
+      "shared_evidence_with": [
+        "C3"
+      ],
+      "review_notes": [
+        "不为Figure 6指定确切速度；三个明确速度条件依据Figure 7。",
+        "未将定性区域重合描述为量化预测准确率。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "该32通道硬件网络暴露于上分支速度为1.0 channels/ms的分叉频率扫频后，形成的增强连接矩阵与对应van Rossum distance矩阵定性相符；正文描述该连接模式包含两分支之间的相关性，并非仅上行与下行扫频连接模式的简单线性组合。",
+      "claim_type": "multicomponent_stimulus_connectivity",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "比较分叉扫频的距离矩阵与暴露后每条投射的增强突触数。",
+          "design": "沿用近似距离依赖延迟及可塑性学习配置，使用分叉扫频作为暴露刺激。",
+          "comparator": "对应距离矩阵；两种单向扫频连接模式简单组合的定性预期。",
+          "measure": "增强连接矩阵及正文描述的跨分支相关结构。",
+          "unit_of_analysis": "所示网络配置的连接矩阵及其中投射。",
+          "sample_size_as_reported": "B1和B2各32个活跃神经元；每种暴露刺激在3 s内呈现30次。独立实验重复数未报告。",
+          "uncertainty": null,
+          "assumptions": [
+            "分叉扫频由上行和下行两个分支组成，报告速度指上分支。",
+            "使用经校准输入、延迟反馈和τc=4 ms的距离度量。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "3.1. DISTANCE MATRIX AND EMERGENT CONNECTIVITY",
+            "figure": "Figure 8",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所示学习连接反映了比单方向扫频更复杂的时间相关结构。",
+        "boundary": "跨分支结构及非简单线性组合的判断来自作者对矩阵的定性描述，没有正式组合检验。",
+        "negative_result": null,
+        "non_inference": "未证明任意复杂声音的组合编码或泛化能力。",
+        "unresolved": "跨分支连接对群体输出选择性的独立贡献尚未确定。",
+        "unresolved_attribution": "未提供跨分支连接消融或定量分解。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "分叉扫频的两分支时间关系是否可进入学习后的反馈连接结构？"
+      ],
+      "shared_evidence_with": [
+        "C2"
+      ],
+      "review_notes": [
+        "没有图像像素，未自行推断具体连接位置。",
+        "分叉刺激也用于C4，但连接矩阵与调谐曲线是不同读出，未据此建立独立复制关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "该32通道硬件网络对线性或分叉频率扫频进行3 s内30次暴露后，在关闭突触可塑性且保持其他参数不变的探测阶段，B2群体总尖峰数对训练扫频速度呈最大响应；1.0 channels/ms示例呈Gaussian-like调谐，其他所示训练速度也表现出匹配速度响应较强、不同速度响应较弱。",
+      "claim_type": "learned_population_tuning",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "训练后呈现同类但不同速度的探测刺激，统计B2群体总输出尖峰数。",
+          "design": "分别用线性和分叉扫频训练；训练后关闭可塑性，其他网络参数不变。",
+          "comparator": "每个训练条件下，匹配训练速度与不同探测速度的群体响应。",
+          "measure": "B2总尖峰数；1.0 channels/ms条件的峰值位置及多训练速度响应矩阵沿匹配对角线的最大响应。",
+          "unit_of_analysis": "每个训练速度与探测速度组合的B2群体输出。",
+          "sample_size_as_reported": "B2为32个活跃神经元；每种训练刺激呈现30次。探测呈现次数和独立训练重复数未报告。",
+          "uncertainty": null,
+          "assumptions": [
+            "输入是计算机生成的假设耳蜗尖峰，而非真实声音或实际硅耳蜗输出。",
+            "试次开始时神经元复位，训练开始时延迟投射可塑性突触置低状态。",
+            "探测阶段冻结学习，避免高学习率导致其他刺激快速改变突触状态。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "3.2. FM SWEEP TUNING CURVES",
+            "figure": "Figure 9; Figure 10 on PDF page 8",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "暴露后的群体读出对训练扫频的动态速度参数表现出优先响应。",
+        "boundary": "限于所测线性和分叉扫频、当前延迟范围及冻结可塑性的探测阶段；未报告峰值或宽度数值。",
+        "negative_result": null,
+        "non_inference": "未测量真实声音识别准确率、噪声鲁棒性、信息论辨别精度或持续在线学习的保留能力；群体读出不能排除单神经元选择性。",
+        "unresolved": "调谐宽度对学习阈值的定量依赖及刺激变异下的辨别精度尚未验证。",
+        "unresolved_attribution": "阈值控制宽度是正文解释，未提供阈值扫描；信息论量化列为未来工作。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "重复暴露能否使硬件尖峰网络的群体响应优先匹配训练扫频速度？"
+      ],
+      "shared_evidence_with": [
+        "C5"
+      ],
+      "review_notes": [
+        "30次训练呈现、32个输出电路及多个速度条件均不等于独立实验重复。",
+        "正文未提供未训练网络的对应调谐曲线，不能量化相对训练前的调谐增益。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "在所示随机反馈延迟配置中，该硬件网络暴露于上分支速度为1.0 channels/ms的分叉扫频后，仍形成增强连接和速度调谐；相较距离依赖延迟配置，调谐形状定性相似但B2群体输出较低，两条件同时存在可用突触数量差异，因此该例支持调谐不必依赖线性距离延迟关系，但不能单独归因其响应幅度差异。",
+      "claim_type": "architecture_generality",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "读取随机延迟配置的学习后连接矩阵及B2群体速度调谐曲线。",
+          "design": "随机反馈延迟配置学习分叉扫频，与前述距离依赖延迟配置进行定性比较。",
+          "comparator": "Figure 11C的随机延迟调谐与Figure 9B的距离依赖延迟调谐。",
+          "measure": "增强突触矩阵、调谐形状及较低的B2输出水平。",
+          "unit_of_analysis": "所示随机延迟网络配置的连接矩阵和群体输出。",
+          "sample_size_as_reported": "沿用3 s内30次训练呈现。随机配置数及独立重复数未报告；第8页称随机配置每个B2神经元可用两个而非三个突触，其计数口径与第3页逐投射描述不完全一致。",
+          "uncertainty": null,
+          "assumptions": [
+            "随机配置中存在能够使输入与延迟反馈在时间上相关的路径。",
+            "比较条件的可用突触数量不同，未控制该因素。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "3.3. RANDOM DELAY PROFILE",
+            "figure": "Figure 11; Figure 9B on PDF page 7",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所示随机延迟配置保留了学习后的分叉扫频速度调谐，线性距离依赖延迟并非该例形成调谐的必要条件。",
+        "boundary": "定性比较限于所示配置和分叉扫频，未证明随机配置总体的等效性能。",
+        "negative_result": "所示随机延迟配置的群体输出水平低于距离依赖延迟配置。",
+        "non_inference": "不能将较低输出单独归因于随机延迟；未直接检验打乱输入通道后能否学习。",
+        "unresolved": "控制突触数量后的延迟结构效应、随机配置间变异及突触计数口径仍未确定。",
+        "unresolved_attribution": "作者以可用突触数量减少解释较低输出，但未给出控制实验；逐神经元与逐投射计数描述存在歧义。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "形成扫频速度调谐是否必须采用随通道距离线性增加的反馈延迟？"
+      ],
+      "shared_evidence_with": [
+        "C4"
+      ],
+      "review_notes": [
+        "C4与本记录共享Figure 9B的比较基准，不能计为独立复制。",
+        "未将缺少随机配置数解释为仅测试一个配置。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "本文正式发表版本展示了实时多芯片尖峰网络对计算机生成扫频的学习：器件失配提供毫秒级反馈延迟，学习后的连接与刺激时间相关性定性相符，冻结可塑性后的B2群体输出优先响应训练速度。所示随机延迟配置也保留分叉扫频调谐，但输出幅度比较存在突触数量混杂。证据包括电路延迟分布、连接矩阵和群体尖峰计数；未报告独立重复数或统计不确定性。Figure 6速度和随机条件突触计数口径存在未解决的文本问题。真实声音、噪声、静态持续输入、长时间尺度及生物回路机制均未获得直接实验验证。",
+  "shared_evidence": [
+    {
+      "claim_id": "C2",
+      "with": [
+        "C3"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C2"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C5"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C4"
+      ]
+    }
+  ],
+  "audit": {
+    "initial_source_match_checks": [],
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": "C2",
+        "issue": "Figure 6正文将暴露速度标为5 ms−1，图注标为1.0 ms−1。",
+        "suggested_correction": "不指定该图的确切暴露速度，保留内部冲突；明确速度比较依据Figure 7。",
+        "pdf_page": 6,
+        "resolved": false
+      },
+      {
+        "claim_id": "C5",
+        "issue": "第8页将线性延迟配置指向Figure 3，实际配置矩阵是Figure 4；Figure 3为延迟直方图。",
+        "suggested_correction": "以第5页Figure 4定位距离依赖延迟配置。",
+        "pdf_page": 8,
+        "resolved": true
+      },
+      {
+        "claim_id": "C5",
+        "issue": "草稿仅记录两个与三个突触的数量差异，遗漏第8页逐B2神经元计数与第3页逐B1→B2投射计数之间的口径歧义。",
+        "suggested_correction": "保留第8页实际计数措辞并注明歧义，不自行换算为每条投射或网络总突触数。",
+        "pdf_page": 8,
+        "resolved": false
+      },
+      {
+        "claim_id": "C5",
+        "issue": "随机与距离依赖延迟配置的可用突触数量不同，输出差异缺少单因素控制。",
+        "suggested_correction": "保留较低输出观察，将突触数量解释归于作者，避免因果归因。",
+        "pdf_page": 8,
+        "resolved": true
+      },
+      {
+        "claim_id": "C5",
+        "issue": "草稿边界称一个随机配置，但本文未明确报告随机配置总数，且正文使用复数描述随机连接示例。",
+        "suggested_correction": "改为所示随机配置，并明确配置数未报告。",
+        "pdf_page": 8,
+        "resolved": true
+      },
+      {
+        "claim_id": "C4",
+        "issue": "训练呈现次数和群体神经元数不能作为独立重复数；本文也未提供对应训练前调谐曲线。",
+        "suggested_correction": "分别记录30次训练呈现、32个输出电路和未报告的独立重复数，不量化训练前后增益。",
+        "pdf_page": 7,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "静态持续输入、长时间尺度、真实声音、噪声鲁棒性和单神经元选择性缺少直接测试。",
+        "suggested_correction": "保留为限制、解释或未来问题，不转换为实测负结果或已验证泛化。",
+        "pdf_page": 9,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "草稿将C3与C4相互标记为共享证据，但两者分别依据连接矩阵和功能调谐读出。",
+        "suggested_correction": "移除该共享标记；保留C2与C3共有的距离矩阵分析，以及C4与C5实际共享的Figure 9B基准。",
+        "pdf_page": 7,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "草稿包含请求schema之外的source_check和review字段。",
+        "suggested_correction": "删除额外字段，源核查意见归入review_notes和audit_findings。",
+        "pdf_page": null,
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T06:39:51.547584Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "signed_in_chatgpt_codex",
+    "authentication": "existing_ChatGPT_login",
+    "provider_api_key_used": false,
+    "model": "account_default_GPT",
+    "source_sha256": "3615ff43f04627a8fcf49d808fb3a00d2f46fb779f596048a3e0cf5d55e66a4c",
+    "requests": [
+      {
+        "phase": "extraction",
+        "seconds": 132.77,
+        "usage": {
+          "input_tokens": 28065,
+          "cached_input_tokens": 12032,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 5353,
+          "reasoning_output_tokens": 29
+        },
+        "backend": "signed_in_chatgpt_codex",
+        "tools_used": false
+      },
+      {
+        "phase": "source_audit",
+        "seconds": 146.31,
+        "usage": {
+          "input_tokens": 33319,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 6227,
+          "reasoning_output_tokens": 33
+        },
+        "backend": "signed_in_chatgpt_codex",
+        "tools_used": false
+      }
+    ],
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

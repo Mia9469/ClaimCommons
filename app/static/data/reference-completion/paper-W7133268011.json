@@ -1,0 +1,2200 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "preprint",
+  "paper": {
+    "title": "Brain-OF: An Omnifunctional Foundation Model for fMRI, EEG and MEG",
+    "authors": [
+      "Hanning Guo",
+      "Hanwen Bi",
+      "Farah Abdellatif",
+      "Andrei Galbenus",
+      "Jon. N. Shah",
+      "Abigail Morrison"
+    ],
+    "doi": null,
+    "publication_year": 2026,
+    "venue": "arXiv (Cornell University)",
+    "url": "https://arxiv.org/pdf/2602.23410"
+  },
+  "source": {
+    "filename": "paper-W7133268011--Brain-OF-An-Omnifunctional-Foundation-Model-for-fMRI-EEG-and-MEG.pdf",
+    "sha256": "4d25f0bcdb503b4e2dbe734e231af9c6b086c7fd3ffa6ea110e8651755208d0b",
+    "source_url": "https://arxiv.org/pdf/2602.23410",
+    "pdf_page_count": 32
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32
+    ],
+    "results_sections_seen": [
+      "Architecture/ARNESS/DINT/MoE",
+      "MTFM",
+      "Main experiments Tables1–4",
+      "Occlusion",
+      "References",
+      "AppendixA datasets/preprocessing/splits",
+      "B baselines",
+      "C single-modality",
+      "D Shapley",
+      "E masks",
+      "F router",
+      "G task-fMRI",
+      "H reconstruction",
+      "I BrainOmni",
+      "J hyperparameters",
+      "K efficiency",
+      "L t-SNE",
+      "M component ablations",
+      "N SNR",
+      "O LoRA",
+      "P label efficiency",
+      "Q limitations/R broader impacts"
+    ],
+    "missing_material": [
+      "所有图像像素未阅；全部供应图注、表格和A–R附录文字已阅。",
+      "原始数据、受试者名单与模型代码未提供；不能独立核验排除/去重。"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "arXiv:2602.23410v3，2026-05-15；32页完整归档文字单次阅读与留存对照。",
+      "模型实验不是生物机制、诊断因果或临床前瞻验证；无跨论文自动关系。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "ARNESS、DINT、MoE、双域重建与多模态语料",
+      "role": "result",
+      "source_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        16,
+        17,
+        18,
+        19
+      ],
+      "decision": "include",
+      "reason": "方法、数据单位和fMRI FFT非物理谱定义保留。"
+    },
+    {
+      "summary": "主表9设置及两配对融合设置",
+      "role": "result",
+      "source_pages": [
+        6,
+        7,
+        8,
+        9,
+        20,
+        21
+      ],
+      "decision": "include",
+      "reason": "所有任务和主要反例纳入，划分以附录实际规则审计。"
+    },
+    {
+      "summary": "目标/模态/单模态、Shapley、mask/router与组件控制",
+      "role": "result",
+      "source_pages": [
+        8,
+        22,
+        23,
+        24,
+        25,
+        29,
+        30
+      ],
+      "decision": "include",
+      "reason": "不删去无收益、负迁移或组件替换反例。"
+    },
+    {
+      "summary": "HAD/BOLD5000、BrainOmni、SNR、LoRA和标签量",
+      "role": "result",
+      "source_pages": [
+        20,
+        21,
+        25,
+        26,
+        30,
+        31
+      ],
+      "decision": "include",
+      "reason": "附加结果完整覆盖；Top10与单测试受试者等边界明确。"
+    },
+    {
+      "summary": "归因、重建、t-SNE及效率",
+      "role": "interpretation",
+      "source_pages": [
+        9,
+        26,
+        27,
+        28,
+        29
+      ],
+      "decision": "include",
+      "reason": "定性图仅按图注，不能当机制/记忆检验或实时临床证据。"
+    },
+    {
+      "summary": "新模态、可穿戴与临床部署",
+      "role": "hypothesis",
+      "source_pages": [
+        31,
+        32
+      ],
+      "decision": "include",
+      "reason": "尚未实现的路线和风险。"
+    },
+    {
+      "summary": "背景书目中的模型、信号机制与临床发现",
+      "role": "review_synthesis",
+      "source_pages": [
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "decision": "exclude",
+      "reason": "不是本文的新证据，不能自动建立跨论文支持/复现。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "ARNESS 将不同通道/ROI与时间长度的输入重采样为128个潜token，并通过串行重采样支持配对多模态输入。",
+      "claim_type": "method_description",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Perceiver式cross-attention采样",
+          "design": "归档数据；验证集选模型，测试集报告5随机种子mean±SD",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "输入patch/token",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": null,
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "ARNESS 将不同通道/ROI与时间长度的输入重采样为128个潜token，并通过串行重采样支持配对多模态输入。",
+        "boundary": "patch64、原序列上限2048；串行顺序经验性设定，非任意长度/顺序无损映射。",
+        "negative_result": null,
+        "non_inference": "统一语义空间不证明多模态生理信号被精确对齐。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "多模态预训练和融合何时获益、何时负迁移？",
+        "严格受试者独立、噪声与计算预算控制下能否获得稳定的任务外泛化？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "Brain-OF 的 DINT 与稀疏 MoE 将差分/全局注意力同共享和路由专家结合，以应对模态异质性与噪声。",
+      "claim_type": "method_description",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "DINT attention与top-k专家路由",
+          "design": "归档数据；验证集选模型，测试集报告5随机种子mean±SD",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "模型token与专家",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": null,
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "Brain-OF 的 DINT 与稀疏 MoE 将差分/全局注意力同共享和路由专家结合，以应对模态异质性与噪声。",
+        "boundary": "共享/特异功能是设计与解释，不是专家生物学功能鉴定；有独立组件替换实验但并非每任务均优。",
+        "negative_result": null,
+        "non_inference": "注意力和专家不是神经机制的唯一对应。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "多模态预训练和融合何时获益、何时负迁移？",
+        "严格受试者独立、噪声与计算预算控制下能否获得稳定的任务外泛化？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "MTFM 同时重建时域信号和频域幅度；fMRI 的 ROI 轴 FFT 明确是固定正交变换，而非物理空间频率模型。",
+      "claim_type": "method_description",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "频率扰动、时间patch遮蔽与smooth L1重建",
+          "design": "归档数据；验证集选模型，测试集报告5随机种子mean±SD",
+          "comparator": null,
+          "measure": "时间损失权重.2、幅度损失权重.8；遮蔽默认N(.7,.05²)",
+          "unit_of_analysis": "信号patch/频率分量",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": null,
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "MTFM 同时重建时域信号和频域幅度；fMRI 的 ROI 轴 FFT 明确是固定正交变换，而非物理空间频率模型。",
+        "boundary": "fMRI ROI顺序不定义真实空间坐标谱；频域幅度目标没有直接相位重建要求。",
+        "negative_result": null,
+        "non_inference": "不能称已重建物理空间脑波或证明掌握神经活动机制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "多模态预训练和融合何时获益、何时负迁移？",
+        "严格受试者独立、噪声与计算预算控制下能否获得稳定的任务外泛化？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "作者报告预训练语料来自37个公开数据集、32278名参与者及5870984个样本，包含多模态重复记录和大量EEG片段。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "公开语料整理",
+          "design": "归档数据；验证集选模型，测试集报告5随机种子mean±SD",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "参与者、会话和片段必须区分",
+          "sample_size_as_reported": "作者称32278 unique participants、5870984 samples；2.8TB",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 16,
+            "section": null,
+            "figure": "Table 5",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者报告预训练语料来自37个公开数据集、32278名参与者及5870984个样本，包含多模态重复记录和大量EEG片段。",
+        "boundary": "跨模态受试者去重细节不充分；摘要约40与局限性超过40的表述和表中37不完全一致。",
+        "negative_result": null,
+        "non_inference": "587万样本不是587万独立受试者，语料多样性不等于所有群体外部效度。",
+        "unresolved": "数据集计数和跨模态unique计数口径待确认。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "多模态预训练和融合何时获益、何时负迁移？",
+        "严格受试者独立、噪声与计算预算控制下能否获得稳定的任务外泛化？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "SEED-V 情绪任务中 Huge 报告 Cohen's κ=26.36%±0.17，为主表最高；但附录明确每受试者每会话15试次按5/5/5划分。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "情绪五分类微调",
+          "design": "归档数据；验证集选模型，测试集报告5随机种子mean±SD",
+          "comparator": null,
+          "measure": "κ百分数而非准确率",
+          "unit_of_analysis": "同受试者的不同试次与片段",
+          "sample_size_as_reported": "20受试者、117744个1秒样本；5随机种子",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": null,
+            "figure": "Table 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "SEED-V 情绪任务中 Huge 报告 Cohen's κ=26.36%±0.17，为主表最高；但附录明确每受试者每会话15试次按5/5/5划分。",
+        "boundary": "主文严格subject-wise概括与附录trial-wise冲突，不能作为跨受试者结果。",
+        "negative_result": null,
+        "non_inference": "不证明个体外泛化或生物情绪类别机制。",
+        "unresolved": "需澄清实际代码所用划分。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "多模态预训练和融合何时获益、何时负迁移？",
+        "严格受试者独立、噪声与计算预算控制下能否获得稳定的任务外泛化？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "CHB-MIT 癫痫二分类中 Huge 报告BAC74.87%±0.84，在主表基线中最高，且使用严重不平衡的片段数据。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "癫痫片段分类",
+          "design": "归档数据；验证集选模型，测试集报告5随机种子mean±SD",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "患者与相关片段",
+          "sample_size_as_reported": "作者称22患者、326993个10秒片段，发作0.68%；5种子",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": null,
+            "figure": "Table 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "CHB-MIT 癫痫二分类中 Huge 报告BAC74.87%±0.84，在主表基线中最高，且使用严重不平衡的片段数据。",
+        "boundary": "附录训练IDs1–19、验证20–21、测试22–23；独立患者身份与重复病例未明。",
+        "negative_result": null,
+        "non_inference": "BAC不是普通准确率、发作前预测或临床报警效能。",
+        "unresolved": "患者总数与标识分割的去重口径不明。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "多模态预训练和融合何时获益、何时负迁移？",
+        "严格受试者独立、噪声与计算预算控制下能否获得稳定的任务外泛化？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "TUAB 异常EEG分类中 Huge 报告BAC82.87%±0.18；语料整理明确排除了 TUAB 测试受试者在 TUEG 中的记录。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "官方测试集异常分类",
+          "design": "归档数据；验证集选模型，测试集报告5随机种子mean±SD",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "受试者/会话/片段",
+          "sample_size_as_reported": "2383受试者、409455个10秒样本；5种子",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": null,
+            "figure": "Table 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "TUAB 异常EEG分类中 Huge 报告BAC82.87%±0.18；语料整理明确排除了 TUAB 测试受试者在 TUEG 中的记录。",
+        "boundary": "排除仅以文中报告为证，未读取原始名单；异常标签不是单一疾病机制。",
+        "negative_result": null,
+        "non_inference": "不能宣称对所有真实临床异常均完成验证。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "多模态预训练和融合何时获益、何时负迁移？",
+        "严格受试者独立、噪声与计算预算控制下能否获得稳定的任务外泛化？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "ADNI AD/对照 fMRI分类中 Huge 报告BAC71.79%±2.19，在主表最高。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "AD二分类，subject-wise7:1.5:1.5",
+          "design": "归档数据；验证集选模型，测试集报告5随机种子mean±SD",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "受试者，重复会话与样本非独立患者",
+          "sample_size_as_reported": "222参与者=110AD+112匹配对照；508会话产生618样本；5种子",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": null,
+            "figure": "Table 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "ADNI AD/对照 fMRI分类中 Huge 报告BAC71.79%±2.19，在主表最高。",
+        "boundary": "既有归档二分类，不含全面鉴别诊断或前瞻临床验证。",
+        "negative_result": null,
+        "non_inference": "预测不证明特异AD机制或临床可部署。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "多模态预训练和融合何时获益、何时负迁移？",
+        "严格受试者独立、噪声与计算预算控制下能否获得稳定的任务外泛化？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "ADHD-200 fMRI分类中 Huge 报告BAC63.51%±1.01，为所列主表最高均值。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "归档ADHD二分类",
+          "design": "归档数据；验证集选模型，测试集报告5随机种子mean±SD",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "受试者而不是会话/站点",
+          "sample_size_as_reported": "926人=573对照+353ADHD，1369会话；8站点；5种子",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": null,
+            "figure": "Table 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "ADHD-200 fMRI分类中 Huge 报告BAC63.51%±1.01，为所列主表最高均值。",
+        "boundary": "subject-wise随机划分不等于独立站点留出。",
+        "negative_result": null,
+        "non_inference": "未证明跨站点诊断泛化或病因机制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "多模态预训练和融合何时获益、何时负迁移？",
+        "严格受试者独立、噪声与计算预算控制下能否获得稳定的任务外泛化？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "CamCAN MEG脑龄回归中 Huge 的MAE7.87±0.22低于主表基线及Base8.99±0.14。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "年龄回归",
+          "design": "归档数据；验证集选模型，测试集报告5随机种子mean±SD",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "受试者和重复片段",
+          "sample_size_as_reported": "643 MEG受试者、177044个2秒片段；5种子",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": null,
+            "figure": "Table 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "CamCAN MEG脑龄回归中 Huge 的MAE7.87±0.22低于主表基线及Base8.99±0.14。",
+        "boundary": "年龄为横断面标签；验证/测试对象从预训练排除是作者报告。",
+        "negative_result": null,
+        "non_inference": "不证明纵向衰老机制或病理脑龄效度。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "多模态预训练和融合何时获益、何时负迁移？",
+        "严格受试者独立、噪声与计算预算控制下能否获得稳定的任务外泛化？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "CamCAN fMRI脑龄回归中 Huge 的MAE9.51±0.51虽优于Base12.09，却未超过 FFCL8.50和EEGConformer8.56。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "年龄回归基线比较",
+          "design": "归档数据；验证集选模型，测试集报告5随机种子mean±SD",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "受试者",
+          "sample_size_as_reported": "652受试者，652 fMRI记录；5种子",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": null,
+            "figure": "Table 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "CamCAN fMRI脑龄回归中 Huge 的MAE9.51±0.51虽优于Base12.09，却未超过 FFCL8.50和EEGConformer8.56。",
+        "boundary": "模型间预算与预训练语料不同；均值排序未作显著性检验。",
+        "negative_result": "Huge不是该fMRI任务最优。",
+        "non_inference": "不能概括为所有模态任务都获SOTA。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "多模态预训练和融合何时获益、何时负迁移？",
+        "严格受试者独立、噪声与计算预算控制下能否获得稳定的任务外泛化？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "LEMON fMRI年龄组分类中 Huge 的BAC61.79%低于BrainNetCNN70.08%，且低于Large62.85%；模型扩容不总带来单调收益。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "年轻/老年二分类",
+          "design": "归档数据；验证集选模型，测试集报告5随机种子mean±SD",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "受试者和重复扫描",
+          "sample_size_as_reported": "219 fMRI受试者、438扫描；5种子",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": null,
+            "figure": "Table 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "LEMON fMRI年龄组分类中 Huge 的BAC61.79%低于BrainNetCNN70.08%，且低于Large62.85%；模型扩容不总带来单调收益。",
+        "boundary": "类别为20–35/59–77岁，不是一般连续年龄或临床疾病。",
+        "negative_result": "fMRI年龄分类未达最优，Large到Huge下降。",
+        "non_inference": "不能把规模上升普遍等同更强泛化。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "多模态预训练和融合何时获益、何时负迁移？",
+        "严格受试者独立、噪声与计算预算控制下能否获得稳定的任务外泛化？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C13",
+      "statement": "LEMON EEG年龄组分类中 Huge 的BAC80.39%±0.59为主表最高，优于Base76.05%±0.44。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "年龄组二分类",
+          "design": "归档数据；验证集选模型，测试集报告5随机种子mean±SD",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "受试者和片段",
+          "sample_size_as_reported": "203 EEG受试者、17235个10秒片段；5种子",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": null,
+            "figure": "Table 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "LEMON EEG年龄组分类中 Huge 的BAC80.39%±0.59为主表最高，优于Base76.05%±0.44。",
+        "boundary": "年龄区间分离的二分类；不同模态可用受试者子集不同。",
+        "negative_result": null,
+        "non_inference": "不是连续脑龄精度或未见年龄段验证。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "多模态预训练和融合何时获益、何时负迁移？",
+        "严格受试者独立、噪声与计算预算控制下能否获得稳定的任务外泛化？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C14",
+      "statement": "MTFM 相比仅时间遮蔽在多数主表任务提高均值，但 CamCAN MEG 的MAE8.99对比8.96及LEMON EEG的BAC76.05对比76.90并无收益。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "预训练目标替换",
+          "design": "归档数据；验证集选模型，测试集报告5随机种子mean±SD",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "同架构数据划分上的5种子模型",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": null,
+            "figure": "Table 3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "MTFM 相比仅时间遮蔽在多数主表任务提高均值，但 CamCAN MEG 的MAE8.99对比8.96及LEMON EEG的BAC76.05对比76.90并无收益。",
+        "boundary": "未报告差异显著性；不能把轻微反向均值认定确定损害。",
+        "negative_result": "双域目标在这两项指标上均值不优于时间目标。",
+        "non_inference": "并未证明双域重建对所有脑任务必要。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "多模态预训练和融合何时获益、何时负迁移？",
+        "严格受试者独立、噪声与计算预算控制下能否获得稳定的任务外泛化？"
+      ],
+      "shared_evidence_with": [
+        "C3",
+        "C10",
+        "C13"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C15",
+      "statement": "移除一种预训练模态在多数任务降低均值，但存在交叉模态贡献和局部反例；例如移除EEG令LEMON fMRI BAC58.95升至60.29。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "leave-one-modality-out预训练消融",
+          "design": "归档数据；验证集选模型，测试集报告5随机种子mean±SD",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "模型版本而非生物操控",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": null,
+            "figure": "Table 3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "移除一种预训练模态在多数任务降低均值，但存在交叉模态贡献和局部反例；例如移除EEG令LEMON fMRI BAC58.95升至60.29。",
+        "boundary": "移除数据也改变语料构成和训练暴露；TUAB移除EEG差异仅81.88至81.86。",
+        "negative_result": "不是每一种模态对每任务都改善；移除fMRI的LEMON EEG76.17亦略高于76.05。",
+        "non_inference": "不识别三种信号的生理因果作用。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "多模态预训练和融合何时获益、何时负迁移？",
+        "严格受试者独立、噪声与计算预算控制下能否获得稳定的任务外泛化？"
+      ],
+      "shared_evidence_with": [
+        "C4"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C16",
+      "statement": "在相同架构与作者称可比计算预算的单模态预训练对照中，联合预训练多数任务较好，但ADNI fMRI-only的BAC70.10高于联合68.23。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "单模态/联合/无预训练控制",
+          "design": "归档数据；验证集选模型，测试集报告5随机种子mean±SD",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "相同Base架构的预训练版本",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 22,
+            "section": null,
+            "figure": "Table 7",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在相同架构与作者称可比计算预算的单模态预训练对照中，联合预训练多数任务较好，但ADNI fMRI-only的BAC70.10高于联合68.23。",
+        "boundary": "所有结果5种子；未报告相同预算的精确消耗或差异检验。",
+        "negative_result": "ADNI联合预训练未超过单fMRI预训练。",
+        "non_inference": "不能宣称跨模态总是优于专门化，亦非独立患者验证。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "多模态预训练和融合何时获益、何时负迁移？",
+        "严格受试者独立、噪声与计算预算控制下能否获得稳定的任务外泛化？"
+      ],
+      "shared_evidence_with": [
+        "C8",
+        "C15"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C17",
+      "statement": "CamCAN串行fMRI+MEG融合在Base/Large将MAE8.99/8.86降至8.87/8.78，但Huge融合8.21反而劣于仅MEG7.87。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "配对模态串行融合",
+          "design": "归档数据；验证集选模型，测试集报告5随机种子mean±SD",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "同参与者多模态片段",
+          "sample_size_as_reported": "621配对参与者、171057配对样本；5种子",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": null,
+            "figure": "Table 4",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "CamCAN串行fMRI+MEG融合在Base/Large将MAE8.99/8.86降至8.87/8.78，但Huge融合8.21反而劣于仅MEG7.87。",
+        "boundary": "较强单模态最后输入为经验顺序策略；配对群体与单模态群体不完全相同。",
+        "negative_result": "Huge融合并未改善CamCAN MEG基线。",
+        "non_inference": "加入fMRI不保证所有规模受益或唯一补偿机制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "多模态预训练和融合何时获益、何时负迁移？",
+        "严格受试者独立、噪声与计算预算控制下能否获得稳定的任务外泛化？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C10",
+        "C11"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C18",
+      "statement": "LEMON EEG+fMRI融合在Base/Large/Huge的BAC为76.77/78.32/81.10，略高于对应EEG-only76.05/78.04/80.39。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "配对年龄组融合",
+          "design": "归档数据；验证集选模型，测试集报告5随机种子mean±SD",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "参与者与相关配对片段",
+          "sample_size_as_reported": "194配对参与者、16471样本；5种子",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": null,
+            "figure": "Table 4",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "LEMON EEG+fMRI融合在Base/Large/Huge的BAC为76.77/78.32/81.10，略高于对应EEG-only76.05/78.04/80.39。",
+        "boundary": "收益较小、标准差重叠；未做等群体单模态比较或差异检验说明。",
+        "negative_result": null,
+        "non_inference": "不证明生理机制协同或临床显著获益。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "多模态预训练和融合何时获益、何时负迁移？",
+        "严格受试者独立、噪声与计算预算控制下能否获得稳定的任务外泛化？"
+      ],
+      "shared_evidence_with": [
+        "C12",
+        "C13",
+        "C17"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C19",
+      "statement": "按模型性能增益归一化的Shapley分析，TUAB 的MEG/fMRI/EEG贡献为.41/.37/.22，跨任务平均fMRI贡献最大；这些数值描述预训练数据贡献而非脑生理重要性。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "同一预训练消融结果的Shapley/相对贡献计算",
+          "design": "归档数据；验证集选模型，测试集报告5随机种子mean±SD",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "任务和模型coalition",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 23,
+            "section": null,
+            "figure": "Fig. 3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "按模型性能增益归一化的Shapley分析，TUAB 的MEG/fMRI/EEG贡献为.41/.37/.22，跨任务平均fMRI贡献最大；这些数值描述预训练数据贡献而非脑生理重要性。",
+        "boundary": "依赖无预训练基准、任务尺度和选定任务；相对重要性公式百分数与全局小数报告口径需澄清。",
+        "negative_result": null,
+        "non_inference": "不能比较模态临床价值、神经组织必要性或独立数据复现。",
+        "unresolved": "0.32等全局相对分数的比例/百分数口径不清。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "多模态预训练和融合何时获益、何时负迁移？",
+        "严格受试者独立、噪声与计算预算控制下能否获得稳定的任务外泛化？"
+      ],
+      "shared_evidence_with": [
+        "C15",
+        "C16"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C20",
+      "statement": "遮蔽率扫描显示任务最佳区间不同：默认.7在TUAB/ADNI BAC较好，而CamCAN MEG最低MAE8.83出现在.6，ADNI AUROC在.8更高。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "对称时域/频域遮蔽率.4–.9扫描",
+          "design": "归档数据；验证集选模型，测试集报告5随机种子mean±SD",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "Base模型不同超参数版本",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 24,
+            "section": null,
+            "figure": "Table 8",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "遮蔽率扫描显示任务最佳区间不同：默认.7在TUAB/ADNI BAC较好，而CamCAN MEG最低MAE8.83出现在.6，ADNI AUROC在.8更高。",
+        "boundary": "遮蔽分布σ=.05，默认.7为权衡，未确定普遍最优。",
+        "negative_result": "单一遮蔽率并非所有模态和指标最优。",
+        "non_inference": "任务差异不证明固有生理学习率或频谱机制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "多模态预训练和融合何时获益、何时负迁移？",
+        "严格受试者独立、噪声与计算预算控制下能否获得稳定的任务外泛化？"
+      ],
+      "shared_evidence_with": [
+        "C3",
+        "C14"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C21",
+      "statement": "路由bias更新率扫描中预训练γ=10^-3在所测三任务最佳，10^-2与10^-5较差；作者另报告微调阶段较小更新率更稳定。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "router bias敏感性实验",
+          "design": "归档数据；验证集选模型，测试集报告5随机种子mean±SD",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "Base预训练/微调配置",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 25,
+            "section": null,
+            "figure": "Fig. 4",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "路由bias更新率扫描中预训练γ=10^-3在所测三任务最佳，10^-2与10^-5较差；作者另报告微调阶段较小更新率更稳定。",
+        "boundary": "数值轨迹只在图中，像素未阅；具体微调比较未完整量化。",
+        "negative_result": "更新过快或过慢均未达到中间设置表现。",
+        "non_inference": "路由不稳定/专家失衡的机制解释未被单独识别。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "多模态预训练和融合何时获益、何时负迁移？",
+        "严格受试者独立、噪声与计算预算控制下能否获得稳定的任务外泛化？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C22",
+      "statement": "HAD 180分类的跨受试者评估中Base Top-10准确率16.17±.44高于Brain-JEPA12.31±1.69和BrainHarmonix6.38±.16。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "任务fMRI动作解码",
+          "design": "归档数据；验证集选模型，测试集报告5随机种子mean±SD",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "参与者及刺激样本",
+          "sample_size_as_reported": "30参与者；训练1–24、验证25–27、测试28–30；总21600样本；5种子",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 25,
+            "section": null,
+            "figure": "Table 9",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "HAD 180分类的跨受试者评估中Base Top-10准确率16.17±.44高于Brain-JEPA12.31±1.69和BrainHarmonix6.38±.16。",
+        "boundary": "指标是Top-10而非Top-1，测试只有3名受试者。",
+        "negative_result": null,
+        "non_inference": "模型分类不是脑如何表征动作的机制验证。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "多模态预训练和融合何时获益、何时负迁移？",
+        "严格受试者独立、噪声与计算预算控制下能否获得稳定的任务外泛化？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C23",
+      "statement": "BOLD5000三种图像来源解码中Base BAC40.49±.67略高于Brain-JEPA39.79±.41与BrainHarmonix38.94±1.66。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "任务fMRI来源域分类",
+          "design": "归档数据；验证集选模型，测试集报告5随机种子mean±SD",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "测试独立单位仅1名参与者",
+          "sample_size_as_reported": "4参与者，1–2训练、3验证、4测试；10508/5254/3108样本；5种子",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 25,
+            "section": null,
+            "figure": "Table 9",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "BOLD5000三种图像来源解码中Base BAC40.49±.67略高于Brain-JEPA39.79±.41与BrainHarmonix38.94±1.66。",
+        "boundary": "来源域不是任意视觉语义，差异未统计检验。",
+        "negative_result": null,
+        "non_inference": "不能称大规模跨人群认知解码验证。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "多模态预训练和融合何时获益、何时负迁移？",
+        "严格受试者独立、噪声与计算预算控制下能否获得稳定的任务外泛化？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C24",
+      "statement": "与BrainOmni Base比较时，Brain-OF在CHB-MIT和CamCAN MEG均值较好，但TUAB81.88与81.90非常接近且前者略低。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "额外基础模型比较",
+          "design": "归档数据；验证集选模型，测试集报告5随机种子mean±SD",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "同任务模型结果，预训练语料不同",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 26,
+            "section": null,
+            "figure": "Table 10",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "与BrainOmni Base比较时，Brain-OF在CHB-MIT和CamCAN MEG均值较好，但TUAB81.88与81.90非常接近且前者略低。",
+        "boundary": "作者说明BrainOmni语料含CamCAN，公平性不同；不提供等效性检验。",
+        "negative_result": "TUAB并非严格超过BrainOmni。",
+        "non_inference": "接近均值不证明两模型等效。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "多模态预训练和融合何时获益、何时负迁移？",
+        "严格受试者独立、噪声与计算预算控制下能否获得稳定的任务外泛化？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C25",
+      "statement": "稀疏MoE/ DINT组件替换多数任务降低表现，但vanilla attention在ADHD-200的BAC62.82高于DINT62.57，且ADNI上注意力替换比dense FFN更差。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Dense FFN/vanilla attention替换",
+          "design": "归档数据；验证集选模型，测试集报告5随机种子mean±SD",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "Base不同架构，5种子",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 30,
+            "section": null,
+            "figure": "Table 16",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "稀疏MoE/ DINT组件替换多数任务降低表现，但vanilla attention在ADHD-200的BAC62.82高于DINT62.57，且ADNI上注意力替换比dense FFN更差。",
+        "boundary": "参数/预算匹配细节未报告；“MoE所有任务最大退化”和“DINT一致提升”不受表格完全支持。",
+        "negative_result": "DINT和MoE并非所有比较方向均最优。",
+        "non_inference": "不能根据消融证明独特神经噪声机制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "多模态预训练和融合何时获益、何时负迁移？",
+        "严格受试者独立、噪声与计算预算控制下能否获得稳定的任务外泛化？"
+      ],
+      "shared_evidence_with": [
+        "C2"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C26",
+      "statement": "TUAB注入噪声的SNR压力测试中，DINT在20至−5dB的所报BAC均高于vanilla；−5dB为69.29±2.34对63.96±3.47。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "测试信号受控SNR噪声注入",
+          "design": "归档数据；验证集选模型，测试集报告5随机种子mean±SD",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "同测试信号和模型；5种子概括",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 30,
+            "section": null,
+            "figure": "Table 17",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "TUAB注入噪声的SNR压力测试中，DINT在20至−5dB的所报BAC均高于vanilla；−5dB为69.29±2.34对63.96±3.47。",
+        "boundary": "噪声分布、生成单位及是否匹配真实伪迹未详述；准确率下降不是表征坍缩的直接测量。",
+        "negative_result": null,
+        "non_inference": "不证明对所有真实噪声稳健或具有理论保证。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "多模态预训练和融合何时获益、何时负迁移？",
+        "严格受试者独立、噪声与计算预算控制下能否获得稳定的任务外泛化？"
+      ],
+      "shared_evidence_with": [
+        "C25"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C27",
+      "statement": "LoRA约更新2%参数时在ADNI/LEMON fMRI均值略高于全微调，但SEED-V、TUAB、ADHD和CamCAN MEG略差。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "rank32、alpha64低秩微调与全微调",
+          "design": "归档数据；验证集选模型，测试集报告5随机种子mean±SD",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "Base模型适配版本，5种子",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 30,
+            "section": null,
+            "figure": "Table 18",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "LoRA约更新2%参数时在ADNI/LEMON fMRI均值略高于全微调，但SEED-V、TUAB、ADHD和CamCAN MEG略差。",
+        "boundary": "部分微小提升没有显著性证据；未直接测量过拟合降低或全部系统内存。",
+        "negative_result": "参数高效不意味着性能无损。",
+        "non_inference": "不能把较好小数据均值直接归为已证实隐式正则化机制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "多模态预训练和融合何时获益、何时负迁移？",
+        "严格受试者独立、噪声与计算预算控制下能否获得稳定的任务外泛化？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C28",
+      "statement": "在标签比例扫描中，TUAB使用30%标注训练数据已超过81.5% BAC，接近全量81.88%；CamCAN MEG随标签增加降低MAE。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "10/30/50/70/100%训练标签比例",
+          "design": "归档数据；验证集选模型，测试集报告5随机种子mean±SD",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "既有数据集的训练子集，5种子",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 31,
+            "section": null,
+            "figure": "Fig. 7",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在标签比例扫描中，TUAB使用30%标注训练数据已超过81.5% BAC，接近全量81.88%；CamCAN MEG随标签增加降低MAE。",
+        "boundary": "未给30% CamCAN具体数值或标签选择独立单位；预训练仍使用大语料。",
+        "negative_result": null,
+        "non_inference": "不是从少量总体数据即可同样训练，也不代表全部新任务低资源效度。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "多模态预训练和融合何时获益、何时负迁移？",
+        "严格受试者独立、噪声与计算预算控制下能否获得稳定的任务外泛化？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C29",
+      "statement": "遮蔽通道/ROI的预测变化在TUAB额中央、ADNI颞叶和CamCAN颞顶传感器呈较大贡献，作者将其解释为生物学合理特征。",
+      "claim_type": "interpretation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "occlusion贡献图",
+          "design": "归档数据；验证集选模型，测试集报告5随机种子mean±SD",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "微调模型的通道/ROI归因",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": null,
+            "figure": "Fig. 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "遮蔽通道/ROI的预测变化在TUAB额中央、ADNI颞叶和CamCAN颞顶传感器呈较大贡献，作者将其解释为生物学合理特征。",
+        "boundary": "传感器不是神经源，预测必要输入不等于生物必要组织；无像素或独立归因稳定性检验。",
+        "negative_result": null,
+        "non_inference": "与既有文献一致不排除伪相关或证明临床适用。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "多模态预训练和融合何时获益、何时负迁移？",
+        "严格受试者独立、噪声与计算预算控制下能否获得稳定的任务外泛化？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C30",
+      "statement": "作者用跨模态重建图和t-SNE图说明信号结构保存与分类/年龄表征分离；供应文本只支持定性展示，不能证明未记忆训练输入。",
+      "claim_type": "interpretation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "重建及t-SNE定性可视化",
+          "design": "归档数据；验证集选模型，测试集报告5随机种子mean±SD",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "选择的示例与降维图",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 26,
+            "section": null,
+            "figure": "Fig. 5；PDF29 Fig.6",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者用跨模态重建图和t-SNE图说明信号结构保存与分类/年龄表征分离；供应文本只支持定性展示，不能证明未记忆训练输入。",
+        "boundary": "像素未阅，未报告独立重建误差、去噪真值、t-SNE稳定性或记忆检验。",
+        "negative_result": null,
+        "non_inference": "定性图不证实生成机制、真正流形或无记忆化。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "多模态预训练和融合何时获益、何时负迁移？",
+        "严格受试者独立、噪声与计算预算控制下能否获得稳定的任务外泛化？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C31",
+      "statement": "在A100/BF16、2048token、batch16条件下，Base/Large/Huge批延迟为88/178/297ms，摊销每样本约5.5/11.1/18.6ms；Huge预训练耗224张A100约153小时。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "模型资源与推理测量",
+          "design": "归档数据；验证集选模型，测试集报告5随机种子mean±SD",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "固定硬件批次；非患者",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 28,
+            "section": null,
+            "figure": "Table 15",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在A100/BF16、2048token、batch16条件下，Base/Large/Huge批延迟为88/178/297ms，摊销每样本约5.5/11.1/18.6ms；Huge预训练耗224张A100约153小时。",
+        "boundary": "摊销吞吐不是单条实时采集到输出的端到端延迟；总参数47.5M/331M/1.7B与活跃21.5M/150M/500M区分。",
+        "negative_result": null,
+        "non_inference": "未证明可穿戴部署、临床实时安全或能源成本。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "多模态预训练和融合何时获益、何时负迁移？",
+        "严格受试者独立、噪声与计算预算控制下能否获得稳定的任务外泛化？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C32",
+      "statement": "新增fNIRS/PET、通用多变量信号及更强交叉模态融合被提出为未来路线，当前语料模态不平衡和简单串行融合仍是限制。",
+      "claim_type": "hypothesis",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "预训练及任务微调比较",
+          "design": "归档数据；验证集选模型，测试集报告5随机种子mean±SD",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "后续工程/验证问题",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 31,
+            "section": null,
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "新增fNIRS/PET、通用多变量信号及更强交叉模态融合被提出为未来路线，当前语料模态不平衡和简单串行融合仍是限制。",
+        "boundary": "当前没有这些新模态实验或临床试验。",
+        "negative_result": null,
+        "non_inference": "开放源码或预训练不等于预先验证所有临床用途。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "多模态预训练和融合何时获益、何时负迁移？",
+        "严格受试者独立、噪声与计算预算控制下能否获得稳定的任务外泛化？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "32页arXiv v3、主文全部结果和A–R附录完整阅读后形成32项候选。按每个任务保留真实参与者/片段/五种子单位，纳入目标、模态、融合、架构、mask/router、LoRA和噪声控制的全部重要反例。SEED-V试次划分、CHB身份口径、语料计数和贡献分数单位保留未解；定性脑图、重建和t-SNE不作为唯一机制、生物验证或排除伪相关的证明。",
+  "shared_evidence": [
+    {
+      "claim_id": "C14",
+      "with": [
+        "C3",
+        "C10",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C15",
+      "with": [
+        "C4"
+      ]
+    },
+    {
+      "claim_id": "C16",
+      "with": [
+        "C8",
+        "C15"
+      ]
+    },
+    {
+      "claim_id": "C17",
+      "with": [
+        "C1",
+        "C10",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C18",
+      "with": [
+        "C12",
+        "C13",
+        "C17"
+      ]
+    },
+    {
+      "claim_id": "C19",
+      "with": [
+        "C15",
+        "C16"
+      ]
+    },
+    {
+      "claim_id": "C20",
+      "with": [
+        "C3",
+        "C14"
+      ]
+    },
+    {
+      "claim_id": "C25",
+      "with": [
+        "C2"
+      ]
+    },
+    {
+      "claim_id": "C26",
+      "with": [
+        "C25"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": "C5",
+        "issue": "主文称严格subject-wise分离，但A.3 SEED-V明确同受试者每会话试次5/5/5。",
+        "suggested_correction": "保留trial-wise评价，未解实际实现。",
+        "pdf_page": 20,
+        "resolved": false
+      },
+      {
+        "claim_id": "C6",
+        "issue": "22独立患者总数与病例IDs1–23分割不能直接等同；未给去重身份说明。",
+        "suggested_correction": "报告作者总数和实际IDs，不猜独立测试患者数。",
+        "pdf_page": 20,
+        "resolved": false
+      },
+      {
+        "claim_id": "C17",
+        "issue": "Huge CamCAN融合8.21劣于仅MEG7.87。",
+        "suggested_correction": "记录实际负迁移，不概括融合总胜。",
+        "pdf_page": 9,
+        "resolved": true
+      },
+      {
+        "claim_id": "C14",
+        "issue": "MTFM移除在CamCAN-MEG和LEMON-EEG的均值反而较好。",
+        "suggested_correction": "保留多数任务而非普遍优势。",
+        "pdf_page": 8,
+        "resolved": true
+      },
+      {
+        "claim_id": "C25",
+        "issue": "vanilla ADHD62.82高于DINT62.57；ADNI vanilla64.32低于dense64.60，不支持文中的一致改善/最大退化概括。",
+        "suggested_correction": "以表16记录限定反例，均值不作显著性。",
+        "pdf_page": 30,
+        "resolved": true
+      },
+      {
+        "claim_id": "C4",
+        "issue": "37/约40/超过40的数据集口径及跨模态unique去重不明。",
+        "suggested_correction": "使用表5和主方法37并保留差异，不新增确证人数。",
+        "pdf_page": 31,
+        "resolved": false
+      },
+      {
+        "claim_id": "C19",
+        "issue": "相对重要性公式×100%，全局报告.32/.29/.21；比例/百分数单位模糊。",
+        "suggested_correction": "只陈述排序与原数，不换算未确认量。",
+        "pdf_page": 24,
+        "resolved": false
+      },
+      {
+        "claim_id": "C29",
+        "issue": "重建、t-SNE和occlusion被作者用于否定记忆或伪相关，但没有对应独立检验。",
+        "suggested_correction": "降为定性解释，避免因果和记忆排除。",
+        "pdf_page": 29,
+        "resolved": true
+      },
+      {
+        "claim_id": "C30",
+        "issue": "每样本延迟为batch16的摊销，非单样本端到端响应。",
+        "suggested_correction": "同时保留批延迟、硬件和吞吐条件。",
+        "pdf_page": 28,
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T11:53:59.686052Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "4d25f0bcdb503b4e2dbe734e231af9c6b086c7fd3ffa6ea110e8651755208d0b",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

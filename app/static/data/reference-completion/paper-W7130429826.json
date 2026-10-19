@@ -1,0 +1,1950 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "A Physics Informed Neural Network (PINN) framework for fractional order modeling of Alzheimer's disease",
+    "authors": [
+      "Adnan Mehmood",
+      "Muhammad Farman",
+      "Farkhanda Afzal",
+      "Kottakkaran Sooppy Nisar",
+      "Mohammed Altaf Ahmed",
+      "Mohamed Hafez"
+    ],
+    "doi": "10.3389/fninf.2026.1748481",
+    "publication_year": 2026,
+    "venue": "Frontiers in Neuroinformatics",
+    "url": "https://doi.org/10.3389/fninf.2026.1748481"
+  },
+  "source": {
+    "filename": "paper-W7130429826--A-Physics-Informed-Neural-Network-PINN-framework-for-fractional-order-modeling-of-Alzheimer-s-d.pdf",
+    "sha256": "e3226b9f979c9a742c4696ff31c469b5dfc93838cd0992c0316ca0d8fc58016a",
+    "source_url": "https://public-pages-files-2025.frontiersin.org/journals/neuroinformatics/articles/10.3389/fninf.2026.1748481/pdf",
+    "pdf_page_count": 23
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+    ],
+    "results_sections_seen": [
+      "3.1–3.3 正性／解存在唯一性",
+      "3.4–3.9 equilibrium、R0、迭代及稳定性",
+      "3.10 log-sensitivity",
+      "4.1 biomarker解释",
+      "4.2 NSFD与分数阶模拟",
+      "5.1–5.2 PINN方法",
+      "6 模型比较、Tables 3–4",
+      "6.1 GL与控制",
+      "Figures 1–18及图注",
+      "7 Conclusion",
+      "声明／更正链接／References"
+    ],
+    "missing_material": [
+      "Figure image pixels未提供。",
+      "未提供另附supplementary material、完整训练代码及临床数据。",
+      "PDF声明2026-03-19 corrected并链接10.3389/fninf.2026.1821637，但该更正文件本身未提供。"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "全部23页以保留非空行与数学文本的空白压缩后顺序阅读；仅原始提供pages数组，无重新打开PDF。",
+      "实际版本为2026-02-18出版并带2026-03-19更正标记；同题名/DOI，不自行替换更正内容。",
+      "全部原文引号为null；定位用一基PDF页和节／图／式；未读取图像像素。",
+      "在保留全部来源上下文中二次审计了独立命题、表格数值、联合假设、单位与未决冲突。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "五室Caputo模型、分数阶PINN/GL实现和整数阶／数据NN比较",
+      "role": "method",
+      "source_pages": [
+        3,
+        4,
+        5,
+        15,
+        16,
+        17
+      ],
+      "decision": "include",
+      "reason": "保留模型与算法设计，非病理验证。"
+    },
+    {
+      "summary": "存在性／唯一性固定点分析",
+      "role": "conditional_theory",
+      "source_pages": [
+        5,
+        6
+      ],
+      "decision": "include",
+      "reason": "保留连续性、球映射、增长、收缩等联合条件。"
+    },
+    {
+      "summary": "正性、有界性／不变域及绝对稳定宣称",
+      "role": "theory",
+      "source_pages": [
+        4,
+        5,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "decision": "defer",
+      "reason": "正性下界存在γ遗漏及Mρ上界代入方向疑点；全局界、不变域和式51各差值近似相等未论证；不输出已严格证明的强命题。"
+    },
+    {
+      "summary": "R0矩阵及参数依赖",
+      "role": "model_index",
+      "source_pages": [
+        7,
+        8
+      ],
+      "decision": "include",
+      "reason": "仅作为指定线性化构造；不作为人类传播阈值。"
+    },
+    {
+      "summary": "四维反馈Jacobian数值",
+      "role": "reported_result",
+      "source_pages": [
+        11
+      ],
+      "decision": "include",
+      "reason": "矩阵／特征值只有四维，限制完整五室结论。"
+    },
+    {
+      "summary": "局部／全局稳定、chaos已被控制",
+      "role": "theory",
+      "source_pages": [
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "decision": "defer",
+      "reason": "全局Lyapunov代数、条件域与五维对应不清；没有混沌诊断。"
+    },
+    {
+      "summary": "200天轨迹、±10%log-sensitivity及NSFD扰动",
+      "role": "simulation",
+      "source_pages": [
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "decision": "include",
+      "reason": "区分时域和配置，tau参数清单冲突显式保留。"
+    },
+    {
+      "summary": "500天各分数阶室轨迹",
+      "role": "simulation",
+      "source_pages": [
+        14,
+        17,
+        18
+      ],
+      "decision": "include",
+      "reason": "逐状态完整提取；Aβ不敏感为实际报告的负结果。"
+    },
+    {
+      "summary": "临床biomarker映射",
+      "role": "interpretation",
+      "source_pages": [
+        12,
+        13
+      ],
+      "decision": "exclude",
+      "reason": "仅概念对应，没有临床数据或校准结果。"
+    },
+    {
+      "summary": "Figure14 baseline/PINN七输出比较",
+      "role": "simulation",
+      "source_pages": [
+        17,
+        18,
+        19
+      ],
+      "decision": "defer",
+      "reason": "图注出现非本模型的多个人群室；baseline学习控制和噪声口径前后冲突，不强行提取精确治疗优势。"
+    },
+    {
+      "summary": "训练时间、最终loss、FN/Aβ MSE、噪声与收敛",
+      "role": "simulation",
+      "source_pages": [
+        19,
+        20
+      ],
+      "decision": "include",
+      "reason": "分离指标并按表值，不声称baseline所有指标劣于fractional。"
+    },
+    {
+      "summary": "GL基准与常值／时变控制",
+      "role": "simulation",
+      "source_pages": [
+        19,
+        20,
+        21
+      ],
+      "decision": "include",
+      "reason": "限同方程数值一致性和命名控制方案，不称生物验证或数学最优。"
+    },
+    {
+      "summary": "Figure18雷达图",
+      "role": "conceptual_summary",
+      "source_pages": [
+        20,
+        22
+      ],
+      "decision": "exclude",
+      "reason": "概念评分，不是实测独立benchmark。"
+    },
+    {
+      "summary": "真实患者校准和纵向临床验证",
+      "role": "future_work",
+      "source_pages": [
+        21,
+        22
+      ],
+      "decision": "defer",
+      "reason": "作者列为未来工作，当前未提供。"
+    },
+    {
+      "summary": "文献、声明和更正链接",
+      "role": "background_metadata",
+      "source_pages": [
+        1,
+        2,
+        3,
+        22,
+        23
+      ],
+      "decision": "exclude",
+      "reason": "参考不是本研究结果；更正声明另保留版本边界。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "本文以共同 Caputo 阶数 σ∈(0,1] 耦合功能神经元 FN、病理神经元 IN、amyloid-β Aβ、tau Tμ 和 microglia Mρ；σ=1 是对应整数阶极限，记忆效应是模型假设而非已测定的病理机制。",
+      "claim_type": "model_formulation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "五室方程构造",
+          "design": "本文模型、参数设定下的数学分析或合成轨迹比较；不是患者实验。",
+          "comparator": "σ<1 与 σ=1 的数学表述",
+          "measure": "五个状态之间的生成、转移和清除项",
+          "unit_of_analysis": "五室确定性模型",
+          "sample_size_as_reported": null,
+          "uncertainty": "未报告独立重复数或置信区间。",
+          "assumptions": [
+            "仅适用于本文设定的方程、参数、初值和时间范围。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "3 Fractional order model",
+            "figure": null,
+            "equation": "9",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "本文以共同 Caputo 阶数 σ∈(0,1] 耦合功能神经元 FN、病理神经元 IN、amyloid-β Aβ、tau Tμ 和 microglia Mρ；σ=1 是对应整数阶极限，记忆效应是模型假设而非已测定的病理机制。",
+        "boundary": "限于提供的合成模型结果，未用临床或生物实验验证。",
+        "negative_result": null,
+        "non_inference": "非神经元计数模型的实测验证；Table 1 状态采用 g/ml。",
+        "unresolved": "σ 及各参数尚待真实纵向数据辨识。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "分数阶病理动力学模型在何种条件下可被约束学习或数值求解？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "Table 1 有假定／估计参数，且日与年混用；不自行换算。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "对本文 Caputo 初值问题，在连续右端、指定函数空间和自映射闭有界凸球、线性增长界及 τ 足够小使球半径条件成立时，Schauder 构造给出至少一个解；再同时满足 Lipschitz 常数 L 与 Lτ^σ/Γ(σ+1)<1，Banach 构造给出该区间内唯一解。",
+      "claim_type": "conditional_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Volterra 积分算子固定点论证",
+          "design": "本文模型、参数设定下的数学分析或合成轨迹比较；不是患者实验。",
+          "comparator": "加入收缩条件前后",
+          "measure": "解存在性与局部区间唯一性",
+          "unit_of_analysis": "所选有限区间初值问题",
+          "sample_size_as_reported": null,
+          "uncertainty": "条件性形式推导；没有独立证明验证。",
+          "assumptions": [
+            "0<σ≤1，χ=C([0,τ],R^n) 配置 sup 范数。",
+            "右端连续且在所选域满足线性增长及 Lipschitz 界。",
+            "ψm τ^σ/Γ(σ+1)<1，按式26选择非负有限球半径并使 T(B)⊆B。",
+            "唯一性还要求 Lτ^σ/Γ(σ+1)<1。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "3.3.1–3.3.2",
+            "figure": null,
+            "equation": "24–35",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "对本文 Caputo 初值问题，在连续右端、指定函数空间和自映射闭有界凸球、线性增长界及 τ 足够小使球半径条件成立时，Schauder 构造给出至少一个解；再同时满足 Lipschitz 常数 L 与 Lτ^σ/Γ(σ+1)<1，Banach 构造给出该区间内唯一解。",
+        "boundary": "保留证明使用的联合条件，不把 Theorem 2 的 P2 简写当作无条件结论。",
+        "negative_result": null,
+        "non_inference": "不证明该二次非线性系统全局满足线性增长界或任意长时间唯一性。",
+        "unresolved": "模型右端在何个不变有界域满足这些界未完整给定。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "分数阶病理动力学模型在何种条件下可被约束学习或数值求解？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "在 disease-free 状态并忽略 microglia 交互项的三病理状态下一代矩阵构造中，本文 R0 随 amyloid 感染参数 αinf 和神经元生成率 N 增大而增大，随神经元死亡率 φ1、amyloid 移出项 db+κ 及神经元移出项 γab+φ2 增大而减小；tau 降解 dm+ρ 未出现在该阈值表达中。",
+      "claim_type": "model_derived_index",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "指定 F、V 矩阵谱半径与灵敏度曲面",
+          "design": "本文模型、参数设定下的数学分析或合成轨迹比较；不是患者实验。",
+          "comparator": "正参数下相应参数增减",
+          "measure": "模型 R0 的参数依赖",
+          "unit_of_analysis": "线性化下一代矩阵",
+          "sample_size_as_reported": null,
+          "uncertainty": "未报告独立重复数或置信区间。",
+          "assumptions": [
+            "FN*=N/φ1，IN*=Aβ*=Tμ*=0，Mρ 交互在该分解中不出现。",
+            "参数为正，R0 定义为文内 K=FV^{-1} 的谱半径。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "3.5 The reproduction number",
+            "figure": "Figure 1",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在 disease-free 状态并忽略 microglia 交互项的三病理状态下一代矩阵构造中，本文 R0 随 amyloid 感染参数 αinf 和神经元生成率 N 增大而增大，随神经元死亡率 φ1、amyloid 移出项 db+κ 及神经元移出项 γab+φ2 增大而减小；tau 降解 dm+ρ 未出现在该阈值表达中。",
+        "boundary": "仅为指定线性化与下一代分解的指标；Fig.1 为参数曲面。",
+        "negative_result": null,
+        "non_inference": "不把 R0 当成人间传染率、临床阈值或完整五室稳定性证明。",
+        "unresolved": "文本根号排版与四／五维系统范围须人工核查。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "分数阶病理动力学模型在何种条件下可被约束学习或数值求解？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "本文在 ω1,ω2,ω3,ω4=(1,2,3,4)、N=700、φ1=0.00003、α=0.08、ρ=κ=0.025、γ=0.00017、φ2=0.00019、dβ=9.51、dμ=0.277 的设置下报告四维受控 Jacobian 四个特征值均为负实数。",
+      "claim_type": "reported_linear_stability",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Maple 特征值计算",
+          "design": "本文模型、参数设定下的数学分析或合成轨迹比较；不是患者实验。",
+          "comparator": "添加文内线性反馈的四维 Jacobian",
+          "measure": "四个报告特征值约 -1.00003、-4.302、-25.81188、-11.32652",
+          "unit_of_analysis": "一组四维矩阵参数配置",
+          "sample_size_as_reported": null,
+          "uncertainty": "未报告独立重复数或置信区间。",
+          "assumptions": [
+            "只接受式63矩阵及以上全部参数设定。"
+          ],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "3.9 Chaos stabilizing system",
+            "figure": null,
+            "equation": "63–64",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "本文在 ω1,ω2,ω3,ω4=(1,2,3,4)、N=700、φ1=0.00003、α=0.08、ρ=κ=0.025、γ=0.00017、φ2=0.00019、dβ=9.51、dμ=0.277 的设置下报告四维受控 Jacobian 四个特征值均为负实数。",
+        "boundary": "式63只展示四维矩阵；ω5虽列出但未进入该矩阵。",
+        "negative_result": null,
+        "non_inference": "不能提升为五室非线性全局稳定或 chaos 实证。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "分数阶病理动力学模型在何种条件下可被约束学习或数值求解？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "未重算特征值，保留 reported 限定。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "Figure 2 所描述的 200 天模型轨迹中，FN 近线性增加，IN 与 Aβ 呈不稳定增长，Tμ 初期升高后稳定，Mρ 随时间下降。",
+      "claim_type": "numerical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "室模型数值轨迹及图注",
+          "design": "本文模型、参数设定下的数学分析或合成轨迹比较；不是患者实验。",
+          "comparator": "同一图内五室轨迹",
+          "measure": "五状态随时间的不同形态",
+          "unit_of_analysis": "模型状态轨迹／数值配置",
+          "sample_size_as_reported": "一个报告的200天时间范围；独立数值重复数未报告。",
+          "uncertainty": "未报告独立重复数或置信区间。",
+          "assumptions": [
+            "仅适用于本文设定的方程、参数、初值和时间范围。"
+          ],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "3.9; Figure 2",
+            "figure": "Figure 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "Figure 2 所描述的 200 天模型轨迹中，FN 近线性增加，IN 与 Aβ 呈不稳定增长，Tμ 初期升高后稳定，Mρ 随时间下降。",
+        "boundary": "此处只记录图注描述；不与后续500／1000天配置混为同一实验。",
+        "negative_result": null,
+        "non_inference": "不能把 microglia 下降直接证明为真实免疫衰竭。",
+        "unresolved": "不同图使用的具体参数／初值对应关系不充分。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "分数阶病理动力学模型在何种条件下可被约束学习或数值求解？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "在 ±10% 参数扰动的时间依赖 log-sensitivity 分析中，FN 对 amyloid 毒性参数 α 呈较强负敏感性。",
+      "claim_type": "numerical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "NSFD 轨迹的 ±10% 对称扰动",
+          "design": "本文模型、参数设定下的数学分析或合成轨迹比较；不是患者实验。",
+          "comparator": "参数 p(1+0.1) 与 p(1-0.1)",
+          "measure": "Slog(t) 的符号与时间依赖；FN 对 α 的敏感性",
+          "unit_of_analysis": "模型状态轨迹／数值配置",
+          "sample_size_as_reported": null,
+          "uncertainty": "未报告独立重复数或置信区间。",
+          "assumptions": [
+            "仅适用于本文设定的方程、参数、初值和时间范围。"
+          ],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "3.10; 4 Results interpretation; Table 2",
+            "figure": "Figure 3; Table 2",
+            "equation": "65",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在 ±10% 参数扰动的时间依赖 log-sensitivity 分析中，FN 对 amyloid 毒性参数 α 呈较强负敏感性。",
+        "boundary": "文内局部扰动、指定参数范围；未报告效应区间。",
+        "negative_result": null,
+        "non_inference": "敏感性不等于患者中的因果驱动或独立生物机制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "cellular-metabolism"
+      ],
+      "scientific_questions": [
+        "该模型中哪些参数局部影响 FN 的时间轨迹？"
+      ],
+      "shared_evidence_with": [
+        "C7",
+        "C8",
+        "C9",
+        "C10"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "同一 log-sensitivity 分析中，IN 同时受 α 与 microglial 清除系数 β1 影响，正文把前者关联病理神经元增加、后者关联减少。",
+      "claim_type": "numerical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "NSFD 轨迹的 ±10% 对称扰动",
+          "design": "本文模型、参数设定下的数学分析或合成轨迹比较；不是患者实验。",
+          "comparator": "参数 p(1+0.1) 与 p(1-0.1)",
+          "measure": "Slog(t) 的符号与时间依赖；IN 对 α、β1 的敏感性",
+          "unit_of_analysis": "模型状态轨迹／数值配置",
+          "sample_size_as_reported": null,
+          "uncertainty": "未报告独立重复数或置信区间。",
+          "assumptions": [
+            "仅适用于本文设定的方程、参数、初值和时间范围。"
+          ],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "3.10; 4 Results interpretation; Table 2",
+            "figure": "Figure 3; Table 2",
+            "equation": "65",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "同一 log-sensitivity 分析中，IN 同时受 α 与 microglial 清除系数 β1 影响，正文把前者关联病理神经元增加、后者关联减少。",
+        "boundary": "文内局部扰动、指定参数范围；未报告效应区间。",
+        "negative_result": null,
+        "non_inference": "敏感性不等于患者中的因果驱动或独立生物机制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "cellular-metabolism"
+      ],
+      "scientific_questions": [
+        "该模型中哪些参数局部影响 IN 的时间轨迹？"
+      ],
+      "shared_evidence_with": [
+        "C6"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "同一 log-sensitivity 分析中，Aβ 轨迹对 α、β1 和 β2 均敏感，涉及病理神经元形成及 microglial 清除的耦合。",
+      "claim_type": "numerical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "NSFD 轨迹的 ±10% 对称扰动",
+          "design": "本文模型、参数设定下的数学分析或合成轨迹比较；不是患者实验。",
+          "comparator": "参数 p(1+0.1) 与 p(1-0.1)",
+          "measure": "Slog(t) 的符号与时间依赖；Aβ 对 α、β1、β2 的敏感性",
+          "unit_of_analysis": "模型状态轨迹／数值配置",
+          "sample_size_as_reported": null,
+          "uncertainty": "未报告独立重复数或置信区间。",
+          "assumptions": [
+            "仅适用于本文设定的方程、参数、初值和时间范围。"
+          ],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "3.10; 4 Results interpretation; Table 2",
+            "figure": "Figure 3; Table 2",
+            "equation": "65",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "同一 log-sensitivity 分析中，Aβ 轨迹对 α、β1 和 β2 均敏感，涉及病理神经元形成及 microglial 清除的耦合。",
+        "boundary": "文内局部扰动、指定参数范围；未报告效应区间。",
+        "negative_result": null,
+        "non_inference": "敏感性不等于患者中的因果驱动或独立生物机制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "cellular-metabolism"
+      ],
+      "scientific_questions": [
+        "该模型中哪些参数局部影响 Aβ 的时间轨迹？"
+      ],
+      "shared_evidence_with": [
+        "C6"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "同一 log-sensitivity 分析把 amyloid-to-tau 转换系数 κ 列为 Tμ 的主要影响参数之一；关于其他主导参数，正文与 Table 2 不完全一致。",
+      "claim_type": "numerical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "NSFD 轨迹的 ±10% 对称扰动",
+          "design": "本文模型、参数设定下的数学分析或合成轨迹比较；不是患者实验。",
+          "comparator": "参数 p(1+0.1) 与 p(1-0.1)",
+          "measure": "Slog(t) 的符号与时间依赖；Tμ 对 κ 的敏感性",
+          "unit_of_analysis": "模型状态轨迹／数值配置",
+          "sample_size_as_reported": null,
+          "uncertainty": "未报告独立重复数或置信区间。",
+          "assumptions": [
+            "仅适用于本文设定的方程、参数、初值和时间范围。"
+          ],
+          "source_locator": {
+            "pdf_page": 14,
+            "section": "3.10; 4 Results interpretation; Table 2",
+            "figure": "Figure 3; Table 2",
+            "equation": "65",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "同一 log-sensitivity 分析把 amyloid-to-tau 转换系数 κ 列为 Tμ 的主要影响参数之一；关于其他主导参数，正文与 Table 2 不完全一致。",
+        "boundary": "文内局部扰动、指定参数范围；未报告效应区间。",
+        "negative_result": null,
+        "non_inference": "敏感性不等于患者中的因果驱动或独立生物机制。",
+        "unresolved": "正文列 κ、β3，Table 2 列 α、κ，不能确定完整排序。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "cellular-metabolism"
+      ],
+      "scientific_questions": [
+        "该模型中哪些参数局部影响 Tμ 的时间轨迹？"
+      ],
+      "shared_evidence_with": [
+        "C6"
+      ],
+      "review_notes": [
+        "只纳入两个版本均支持的 κ；不强行统一完整主导参数清单。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "Table 2 将 β1、β2、β3 列为 Mρ 的主要敏感参数，而正文形容 Mρ 的 log-sensitivity 波动较温和。",
+      "claim_type": "numerical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "NSFD 轨迹的 ±10% 对称扰动",
+          "design": "本文模型、参数设定下的数学分析或合成轨迹比较；不是患者实验。",
+          "comparator": "参数 p(1+0.1) 与 p(1-0.1)",
+          "measure": "Slog(t) 的符号与时间依赖；Mρ 对 β1、β2、β3 的敏感性",
+          "unit_of_analysis": "模型状态轨迹／数值配置",
+          "sample_size_as_reported": null,
+          "uncertainty": "未报告独立重复数或置信区间。",
+          "assumptions": [
+            "仅适用于本文设定的方程、参数、初值和时间范围。"
+          ],
+          "source_locator": {
+            "pdf_page": 14,
+            "section": "3.10; 4 Results interpretation; Table 2",
+            "figure": "Figure 3; Table 2",
+            "equation": "65",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "Table 2 将 β1、β2、β3 列为 Mρ 的主要敏感参数，而正文形容 Mρ 的 log-sensitivity 波动较温和。",
+        "boundary": "文内局部扰动、指定参数范围；未报告效应区间。",
+        "negative_result": null,
+        "non_inference": "敏感性不等于患者中的因果驱动或独立生物机制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "cellular-metabolism"
+      ],
+      "scientific_questions": [
+        "该模型中哪些参数局部影响 Mρ 的时间轨迹？"
+      ],
+      "shared_evidence_with": [
+        "C6"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "正文对 Figures 4–8 的 NSFD 模拟报告，±10% 改变 neuronal infection rate、初始 tau、神经元生成率及 amyloid-to-tau 参数会改变各室轨迹：更高感染参数加重 FN 损失，更高生成率缓冲损失，且 IN、Aβ、Tμ 和 Mρ 的峰或波动随配置变化。",
+      "claim_type": "numerical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "NSFD 参数扰动模拟",
+          "design": "本文模型、参数设定下的数学分析或合成轨迹比较；不是患者实验。",
+          "comparator": "四类参数的 ±10% 设置",
+          "measure": "室轨迹下降、峰值与波动形态",
+          "unit_of_analysis": "模型状态轨迹／数值配置",
+          "sample_size_as_reported": null,
+          "uncertainty": "未报告独立重复数或置信区间。",
+          "assumptions": [
+            "仅适用于本文设定的方程、参数、初值和时间范围。"
+          ],
+          "source_locator": {
+            "pdf_page": 14,
+            "section": "4.2 Simulations",
+            "figure": "Figures 4–8",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "正文对 Figures 4–8 的 NSFD 模拟报告，±10% 改变 neuronal infection rate、初始 tau、神经元生成率及 amyloid-to-tau 参数会改变各室轨迹：更高感染参数加重 FN 损失，更高生成率缓冲损失，且 IN、Aβ、Tμ 和 Mρ 的峰或波动随配置变化。",
+        "boundary": "仅保留正文定性描述；不由未提供像素读取振幅或频率。",
+        "negative_result": null,
+        "non_inference": "不能据此认定真实 Alzheimer’s 病程或治疗疗效。",
+        "unresolved": "文内 b3／β3 与其他参数符号映射存在歧义，未据此给出精确排序。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "分数阶病理动力学模型在何种条件下可被约束学习或数值求解？"
+      ],
+      "shared_evidence_with": [
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "在本文报告的500天、分数阶取0.7、0.8、0.9、1.0的比较中，FN随时间增加，较低阶数的增长比整数阶配置更快。",
+      "claim_type": "numerical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "500天分数阶参数扫描",
+          "design": "本文模型、参数设定下的数学分析或合成轨迹比较；不是患者实验。",
+          "comparator": "σ∈{0.7,0.8,0.9,1.0}；文中此处记作 α",
+          "measure": "FN 的时序变化",
+          "unit_of_analysis": "模型状态轨迹／数值配置",
+          "sample_size_as_reported": "4个阶数配置；未报告独立重复。",
+          "uncertainty": "未报告独立重复数或置信区间。",
+          "assumptions": [
+            "仅适用于本文设定的方程、参数、初值和时间范围。"
+          ],
+          "source_locator": {
+            "pdf_page": 14,
+            "section": "4.2 Simulations",
+            "figure": "Figure 9",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在本文报告的500天、分数阶取0.7、0.8、0.9、1.0的比较中，FN随时间增加，较低阶数的增长比整数阶配置更快。",
+        "boundary": "500天、文中给定配置的定性模型描述；不等同其他时间范围的轨迹。",
+        "negative_result": null,
+        "non_inference": "不能据此证明记忆增强导致神经元恢复、真实感染清除或免疫激活。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "分数阶数改变在该配置下如何影响 FN 的瞬态？"
+      ],
+      "shared_evidence_with": [
+        "C13",
+        "C14",
+        "C15",
+        "C16"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C13",
+      "statement": "在上述分数阶比较中，正文报告 IN 对全部四个阶数单调衰减趋零，较低阶数衰减更快。",
+      "claim_type": "numerical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "500天分数阶参数扫描",
+          "design": "本文模型、参数设定下的数学分析或合成轨迹比较；不是患者实验。",
+          "comparator": "σ∈{0.7,0.8,0.9,1.0}；文中此处记作 α",
+          "measure": "IN 的时序变化",
+          "unit_of_analysis": "模型状态轨迹／数值配置",
+          "sample_size_as_reported": "4个阶数配置；未报告独立重复。",
+          "uncertainty": "未报告独立重复数或置信区间。",
+          "assumptions": [
+            "仅适用于本文设定的方程、参数、初值和时间范围。"
+          ],
+          "source_locator": {
+            "pdf_page": 14,
+            "section": "4.2 Simulations",
+            "figure": "Figure 10",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在上述分数阶比较中，正文报告 IN 对全部四个阶数单调衰减趋零，较低阶数衰减更快。",
+        "boundary": "500天、文中给定配置的定性模型描述；不等同其他时间范围的轨迹。",
+        "negative_result": null,
+        "non_inference": "不能据此证明记忆增强导致神经元恢复、真实感染清除或免疫激活。",
+        "unresolved": "Table 1的IN初值为0，与此处衰减描述需进一步核对，未假定二者是同一初值配置。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "分数阶数改变在该配置下如何影响 IN 的瞬态？"
+      ],
+      "shared_evidence_with": [
+        "C12"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C14",
+      "statement": "在上述分数阶比较中，正文报告 Aβ 保持在约10^-6量级、接近零，各阶数间变化很小。",
+      "claim_type": "numerical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "500天分数阶参数扫描",
+          "design": "本文模型、参数设定下的数学分析或合成轨迹比较；不是患者实验。",
+          "comparator": "σ∈{0.7,0.8,0.9,1.0}；文中此处记作 α",
+          "measure": "Aβ 的时序变化",
+          "unit_of_analysis": "模型状态轨迹／数值配置",
+          "sample_size_as_reported": "4个阶数配置；未报告独立重复。",
+          "uncertainty": "未报告独立重复数或置信区间。",
+          "assumptions": [
+            "仅适用于本文设定的方程、参数、初值和时间范围。"
+          ],
+          "source_locator": {
+            "pdf_page": 14,
+            "section": "4.2 Simulations",
+            "figure": "Figure 11",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在上述分数阶比较中，正文报告 Aβ 保持在约10^-6量级、接近零，各阶数间变化很小。",
+        "boundary": "500天、文中给定配置的定性模型描述；不等同其他时间范围的轨迹。",
+        "negative_result": "在所报告500天与阶数范围内，Aβ没有显示明显阶数敏感性。",
+        "non_inference": "不能据此证明记忆增强导致神经元恢复、真实感染清除或免疫激活。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "分数阶数改变在该配置下如何影响 Aβ 的瞬态？"
+      ],
+      "shared_evidence_with": [
+        "C12"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C15",
+      "statement": "在上述分数阶比较中，正文报告 Tμ 对四个阶数均快速衰减趋零，较低阶数清除略快。",
+      "claim_type": "numerical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "500天分数阶参数扫描",
+          "design": "本文模型、参数设定下的数学分析或合成轨迹比较；不是患者实验。",
+          "comparator": "σ∈{0.7,0.8,0.9,1.0}；文中此处记作 α",
+          "measure": "Tμ 的时序变化",
+          "unit_of_analysis": "模型状态轨迹／数值配置",
+          "sample_size_as_reported": "4个阶数配置；未报告独立重复。",
+          "uncertainty": "未报告独立重复数或置信区间。",
+          "assumptions": [
+            "仅适用于本文设定的方程、参数、初值和时间范围。"
+          ],
+          "source_locator": {
+            "pdf_page": 14,
+            "section": "4.2 Simulations",
+            "figure": "Figure 12",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在上述分数阶比较中，正文报告 Tμ 对四个阶数均快速衰减趋零，较低阶数清除略快。",
+        "boundary": "500天、文中给定配置的定性模型描述；不等同其他时间范围的轨迹。",
+        "negative_result": null,
+        "non_inference": "不能据此证明记忆增强导致神经元恢复、真实感染清除或免疫激活。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "分数阶数改变在该配置下如何影响 Tμ 的瞬态？"
+      ],
+      "shared_evidence_with": [
+        "C12"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C16",
+      "statement": "在上述分数阶比较中，Mρ 从约0.02 g/ml衰减，较低阶数配置更快趋于稳定，而整数阶保持较长瞬态。",
+      "claim_type": "numerical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "500天分数阶参数扫描",
+          "design": "本文模型、参数设定下的数学分析或合成轨迹比较；不是患者实验。",
+          "comparator": "σ∈{0.7,0.8,0.9,1.0}；文中此处记作 α",
+          "measure": "Mρ 的时序变化",
+          "unit_of_analysis": "模型状态轨迹／数值配置",
+          "sample_size_as_reported": "4个阶数配置；未报告独立重复。",
+          "uncertainty": "未报告独立重复数或置信区间。",
+          "assumptions": [
+            "仅适用于本文设定的方程、参数、初值和时间范围。"
+          ],
+          "source_locator": {
+            "pdf_page": 14,
+            "section": "4.2 Simulations",
+            "figure": "Figure 13",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在上述分数阶比较中，Mρ 从约0.02 g/ml衰减，较低阶数配置更快趋于稳定，而整数阶保持较长瞬态。",
+        "boundary": "500天、文中给定配置的定性模型描述；不等同其他时间范围的轨迹。",
+        "negative_result": null,
+        "non_inference": "不能据此证明记忆增强导致神经元恢复、真实感染清除或免疫激活。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "分数阶数改变在该配置下如何影响 Mρ 的瞬态？"
+      ],
+      "shared_evidence_with": [
+        "C12"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C17",
+      "statement": "本文 fractional PINN 将标量时间映射到五状态和两个控制输出，以数据误差和分数阶残差共同训练，并用 Grünwald–Letnikov 历史卷积近似分数阶导数；整数阶PINN设阶数为1，纯数据NN不施加这些方程残差。",
+      "claim_type": "computational_method",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "同架构约束学习设计",
+          "design": "本文模型、参数设定下的数学分析或合成轨迹比较；不是患者实验。",
+          "comparator": "fractional PINN、integer PINN、data-only NN",
+          "measure": "模型输出与方程残差损失",
+          "unit_of_analysis": "合成轨迹上的模型训练",
+          "sample_size_as_reported": null,
+          "uncertainty": "未报告独立重复数或置信区间。",
+          "assumptions": [
+            "仅适用于本文设定的方程、参数、初值和时间范围。"
+          ],
+          "source_locator": {
+            "pdf_page": 16,
+            "section": "5.1–5.2",
+            "figure": null,
+            "equation": "3–8;66",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "本文 fractional PINN 将标量时间映射到五状态和两个控制输出，以数据误差和分数阶残差共同训练，并用 Grünwald–Letnikov 历史卷积近似分数阶导数；整数阶PINN设阶数为1，纯数据NN不施加这些方程残差。",
+        "boundary": "训练／评估参考来自方程生成的合成轨迹；高斯噪声0–20%。",
+        "negative_result": null,
+        "non_inference": "未定义完整最优控制目标、代价、控制约束或临床输入，不能证明数学最优治疗。",
+        "unresolved": "纯数据NN是否具有两个控制输出，5.2与6的描述不一致；完整控制方程未提供。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "分数阶病理动力学模型在何种条件下可被约束学习或数值求解？"
+      ],
+      "shared_evidence_with": [
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23"
+      ],
+      "review_notes": [
+        "文内声称同架构，但对噪声条件的叙述冲突单独保留。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C18",
+      "statement": "Table 3 报告 baseline、integer PINN 和 fractional PINN 的平均训练时间依次为17.61、65.41和65.88秒，标准差依次0.24、0.11和0.86秒；在这组实验中两种PINN耗时接近且均高于baseline。",
+      "claim_type": "numerical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "文内训练统计",
+          "design": "本文模型、参数设定下的数学分析或合成轨迹比较；不是患者实验。",
+          "comparator": "三种训练模型",
+          "measure": "训练时间 mean±std，秒",
+          "unit_of_analysis": "训练运行（汇总数未报告）",
+          "sample_size_as_reported": null,
+          "uncertainty": "报告标准差0.24、0.11、0.86秒；没有 n 或置信区间。",
+          "assumptions": [
+            "仅适用于本文设定的方程、参数、初值和时间范围。"
+          ],
+          "source_locator": {
+            "pdf_page": 20,
+            "section": "6; Table 3",
+            "figure": "Figure 15; Table 3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "Table 3 报告 baseline、integer PINN 和 fractional PINN 的平均训练时间依次为17.61、65.41和65.88秒，标准差依次0.24、0.11和0.86秒；在这组实验中两种PINN耗时接近且均高于baseline。",
+        "boundary": "硬件、独立重复数及统计汇总范围未在提供文本明确说明。",
+        "negative_result": null,
+        "non_inference": "不能推断任意系统上的时间复杂度或能耗。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "分数阶病理动力学模型在何种条件下可被约束学习或数值求解？"
+      ],
+      "shared_evidence_with": [
+        "C17",
+        "C19",
+        "C20"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C19",
+      "statement": "Table 3 中 fractional PINN 的最终损失均值为1.09×10^-4（std 9.8×10^-5），低于 integer PINN 的6.89×10^-2（std 5.50×10^-2）；baseline四项损失统计均被显示为0.00。",
+      "claim_type": "numerical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "报告训练损失统计",
+          "design": "本文模型、参数设定下的数学分析或合成轨迹比较；不是患者实验。",
+          "comparator": "fractional、integer PINN 及 baseline",
+          "measure": "final loss mean、std",
+          "unit_of_analysis": "训练损失汇总",
+          "sample_size_as_reported": null,
+          "uncertainty": "均值及标准差按表抄录；独立 n 未报告。",
+          "assumptions": [
+            "仅适用于本文设定的方程、参数、初值和时间范围。"
+          ],
+          "source_locator": {
+            "pdf_page": 20,
+            "section": "6; Table 3",
+            "figure": "Table 3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "Table 3 中 fractional PINN 的最终损失均值为1.09×10^-4（std 9.8×10^-5），低于 integer PINN 的6.89×10^-2（std 5.50×10^-2）；baseline四项损失统计均被显示为0.00。",
+        "boundary": "不同损失是否同量纲／同组成未清楚交代；baseline0.00有显示精度限制。",
+        "negative_result": null,
+        "non_inference": "不能认定fractional损失低于baseline或把训练损失当作临床准确性。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "分数阶病理动力学模型在何种条件下可被约束学习或数值求解？"
+      ],
+      "shared_evidence_with": [
+        "C17",
+        "C18",
+        "C20"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C20",
+      "statement": "Table 4 的 FN MSE 对 fractional PINN 为37.0（std24.7）、integer PINN为4870（std3600），而baseline为0.01（std0.00）；fractional优于integer但不优于baseline的该项数值。",
+      "claim_type": "numerical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "状态MSE统计",
+          "design": "本文模型、参数设定下的数学分析或合成轨迹比较；不是患者实验。",
+          "comparator": "三种模型对合成参考轨迹的误差",
+          "measure": "FN mean squared error",
+          "unit_of_analysis": "模型状态轨迹／数值配置",
+          "sample_size_as_reported": null,
+          "uncertainty": "std按表给出，未报告n。",
+          "assumptions": [
+            "仅适用于本文设定的方程、参数、初值和时间范围。"
+          ],
+          "source_locator": {
+            "pdf_page": 20,
+            "section": "6; Table 4",
+            "figure": "Figure 15; Table 4",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "Table 4 的 FN MSE 对 fractional PINN 为37.0（std24.7）、integer PINN为4870（std3600），而baseline为0.01（std0.00）；fractional优于integer但不优于baseline的该项数值。",
+        "boundary": "MSE量纲、归一化及汇总重复数未明确给出。",
+        "negative_result": "fractional PINN的FN MSE不是三者最低；baseline数值更低。",
+        "non_inference": "不能复述正文泛化为相对全部baseline的精度优势。",
+        "unresolved": "表值与正文整体优势表述不一致。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "分数阶病理动力学模型在何种条件下可被约束学习或数值求解？"
+      ],
+      "shared_evidence_with": [
+        "C17",
+        "C18",
+        "C19",
+        "C21"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C21",
+      "statement": "Table 4 的 Aβ MSE 对 fractional PINN 显示均值和std为0.00，对integer PINN报告7.8×10^-5和8.8×10^-5，对baseline显示0.01和0.00；该表中的fractional Aβ误差最低到显示精度。",
+      "claim_type": "numerical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "状态MSE统计",
+          "design": "本文模型、参数设定下的数学分析或合成轨迹比较；不是患者实验。",
+          "comparator": "三种模型对合成轨迹的误差",
+          "measure": "Aβ mean squared error",
+          "unit_of_analysis": "模型状态轨迹／数值配置",
+          "sample_size_as_reported": null,
+          "uncertainty": "报告标准差，汇总重复数和误差精度解释缺失。",
+          "assumptions": [
+            "仅适用于本文设定的方程、参数、初值和时间范围。"
+          ],
+          "source_locator": {
+            "pdf_page": 20,
+            "section": "6; Table 4",
+            "figure": "Table 4",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "Table 4 的 Aβ MSE 对 fractional PINN 显示均值和std为0.00，对integer PINN报告7.8×10^-5和8.8×10^-5，对baseline显示0.01和0.00；该表中的fractional Aβ误差最低到显示精度。",
+        "boundary": "0.00不证明精确零误差；量纲、归一化和n缺失。",
+        "negative_result": null,
+        "non_inference": "不能从合成Aβ误差推断真实患者biomarker估计性能。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "分数阶病理动力学模型在何种条件下可被约束学习或数值求解？"
+      ],
+      "shared_evidence_with": [
+        "C17",
+        "C20"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C22",
+      "statement": "在0–20%噪声的文内比较中，作者报告fractional PINN最终损失随噪声只温和增加，且以20%噪声损失／0%损失定义的比率比integer PINN小约2–3个数量级。",
+      "claim_type": "numerical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "噪声扫描与损失比率",
+          "design": "本文模型、参数设定下的数学分析或合成轨迹比较；不是患者实验。",
+          "comparator": "fractional vs integer PINN 随噪声变化",
+          "measure": "final loss 与 robustness ratio",
+          "unit_of_analysis": "模型状态轨迹／数值配置",
+          "sample_size_as_reported": "噪声0–20%；具体水平数和独立重复数未报告。",
+          "uncertainty": "未报告独立重复数或置信区间。",
+          "assumptions": [
+            "仅适用于本文设定的方程、参数、初值和时间范围。"
+          ],
+          "source_locator": {
+            "pdf_page": 19,
+            "section": "6 Simulation results and comparative analysis",
+            "figure": "Figure 16",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在0–20%噪声的文内比较中，作者报告fractional PINN最终损失随噪声只温和增加，且以20%噪声损失／0%损失定义的比率比integer PINN小约2–3个数量级。",
+        "boundary": "只保留报告的配置依赖比较，噪声只加baseline与所有模型均用含噪数据两种叙述存在冲突。",
+        "negative_result": null,
+        "non_inference": "不能认定公平同噪声条件下已证明普适鲁棒性，也不能比较不同组成损失的物理意义。",
+        "unresolved": "噪声注入／评估口径和独立Monte Carlo重复数不清楚。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "分数阶病理动力学模型在何种条件下可被约束学习或数值求解？"
+      ],
+      "shared_evidence_with": [
+        "C17",
+        "C19",
+        "C23"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C23",
+      "statement": "Figure 16 的文字说明报告fractional PINN在较高噪声下损失下降平滑、振荡少，而integer PINN出现振荡和较早停滞。",
+      "claim_type": "numerical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "训练收敛曲线比较",
+          "design": "本文模型、参数设定下的数学分析或合成轨迹比较；不是患者实验。",
+          "comparator": "fractional vs integer PINN",
+          "measure": "loss随训练的定性收敛形态",
+          "unit_of_analysis": "模型状态轨迹／数值配置",
+          "sample_size_as_reported": null,
+          "uncertainty": "未报告独立重复数或置信区间。",
+          "assumptions": [
+            "仅适用于本文设定的方程、参数、初值和时间范围。"
+          ],
+          "source_locator": {
+            "pdf_page": 19,
+            "section": "6 Simulation results and comparative analysis",
+            "figure": "Figure 16",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "Figure 16 的文字说明报告fractional PINN在较高噪声下损失下降平滑、振荡少，而integer PINN出现振荡和较早停滞。",
+        "boundary": "文内训练曲线的报告，不是收敛定理；同噪声口径仍待澄清。",
+        "negative_result": null,
+        "non_inference": "不能证明优化问题全局良态或任意初始化都收敛。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "分数阶病理动力学模型在何种条件下可被约束学习或数值求解？"
+      ],
+      "shared_evidence_with": [
+        "C17",
+        "C22"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C24",
+      "statement": "正文的GL基准比较报告fractional PINN能贴近同一受控分数阶方程的GL参考轨迹，而integer PINN在瞬态阶段偏离并出现振荡。",
+      "claim_type": "numerical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "与Grünwald–Letnikov数值参考比较",
+          "design": "本文模型、参数设定下的数学分析或合成轨迹比较；不是患者实验。",
+          "comparator": "fractional PINN vs integer PINN，GL作模型参考",
+          "measure": "轨迹吻合与瞬态偏离",
+          "unit_of_analysis": "模型状态轨迹／数值配置",
+          "sample_size_as_reported": null,
+          "uncertainty": "未报告独立重复数或置信区间。",
+          "assumptions": [
+            "仅适用于本文设定的方程、参数、初值和时间范围。"
+          ],
+          "source_locator": {
+            "pdf_page": 19,
+            "section": "6; 6.1 Comparison with a classical fractional numerical solver",
+            "figure": "Figure 17",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "正文的GL基准比较报告fractional PINN能贴近同一受控分数阶方程的GL参考轨迹，而integer PINN在瞬态阶段偏离并出现振荡。",
+        "boundary": "PINN训练与GL都源于相同分数阶方程；属于数值一致性，不是独立生物复制。",
+        "negative_result": null,
+        "non_inference": "不能用同方程数值基准验证Alzheimer’s因果机制。",
+        "unresolved": "完整步长、控制目标及统一误差指标未给出。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "分数阶病理动力学模型在何种条件下可被约束学习或数值求解？"
+      ],
+      "shared_evidence_with": [
+        "C17",
+        "C22",
+        "C25"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C25",
+      "statement": "在Figure 17的GL治疗配置比较中，正文报告称为 Optimal Control 的时变干预比 Constant Control 更提高FN并降低IN、Aβ、Tμ和Mρ，常值干预仅表现中等改善。",
+      "claim_type": "numerical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "受控模型的GL轨迹比较",
+          "design": "本文模型、参数设定下的数学分析或合成轨迹比较；不是患者实验。",
+          "comparator": "Optimal Control vs Constant Control",
+          "measure": "五状态在两类文内命名控制下的变化",
+          "unit_of_analysis": "模型状态轨迹／数值配置",
+          "sample_size_as_reported": null,
+          "uncertainty": "未报告独立重复数或置信区间。",
+          "assumptions": [
+            "仅适用于本文设定的方程、参数、初值和时间范围。"
+          ],
+          "source_locator": {
+            "pdf_page": 20,
+            "section": "6.1 Comparison with a classical fractional numerical solver",
+            "figure": "Figure 17",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在Figure 17的GL治疗配置比较中，正文报告称为 Optimal Control 的时变干预比 Constant Control 更提高FN并降低IN、Aβ、Tμ和Mρ，常值干预仅表现中等改善。",
+        "boundary": "只记录文内命名的模拟方案比较；未见完整优化泛函或控制约束。",
+        "negative_result": null,
+        "non_inference": "不证明数学全局最优，也不对应真实药物剂量、临床结局或microglia越低越好。",
+        "unresolved": "控制构造和方案比较的可复现细节缺失。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "分数阶病理动力学模型在何种条件下可被约束学习或数值求解？"
+      ],
+      "shared_evidence_with": [
+        "C17",
+        "C24"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "此23页带更正标记的研究提出五室Alzheimer’s分数阶模型与fractional PINN，报告条件性固定点解分析、R0指标、参数敏感性、不同阶数轨迹、合成数据训练统计与GL比较。提取逐项区分方法、条件数学结果和reported数值结果，保留Aβ阶数变化不明显及FN MSE并非优于baseline的实际边界。正性／全局稳定推导、四／五维对应、噪声条件、tau参数排序和Figure14标签有未决问题；不强称完整模型被严格验证、临床有效或控制数学最优。未使用真实患者、未读图像或另附更正／supplement。",
+  "shared_evidence": [
+    {
+      "claim_id": "C6",
+      "with": [
+        "C7",
+        "C8",
+        "C9",
+        "C10"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "with": [
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "with": [
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "with": [
+        "C13",
+        "C14",
+        "C15",
+        "C16"
+      ]
+    },
+    {
+      "claim_id": "C13",
+      "with": [
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C14",
+      "with": [
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C15",
+      "with": [
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C16",
+      "with": [
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C17",
+      "with": [
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23"
+      ]
+    },
+    {
+      "claim_id": "C18",
+      "with": [
+        "C17",
+        "C19",
+        "C20"
+      ]
+    },
+    {
+      "claim_id": "C19",
+      "with": [
+        "C17",
+        "C18",
+        "C20"
+      ]
+    },
+    {
+      "claim_id": "C20",
+      "with": [
+        "C17",
+        "C18",
+        "C19",
+        "C21"
+      ]
+    },
+    {
+      "claim_id": "C21",
+      "with": [
+        "C17",
+        "C20"
+      ]
+    },
+    {
+      "claim_id": "C22",
+      "with": [
+        "C17",
+        "C19",
+        "C23"
+      ]
+    },
+    {
+      "claim_id": "C23",
+      "with": [
+        "C17",
+        "C22"
+      ]
+    },
+    {
+      "claim_id": "C24",
+      "with": [
+        "C17",
+        "C22",
+        "C25"
+      ]
+    },
+    {
+      "claim_id": "C25",
+      "with": [
+        "C17",
+        "C24"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": "C2",
+        "issue": "Theorem 2把P2简写为唯一性充分条件，但前段明确另需 Lτ^σ/Γ(σ+1)<1及算子自映射。",
+        "suggested_correction": "联合保留证明条件并限所选有限区间，未声称任意全局解。",
+        "pdf_page": 6,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "正性证明式13保留γ，式14／15的IN下界省略γ；microglia增长项使用sup给下界也有方向疑点。",
+        "suggested_correction": "正性／不变域强定理暂缓，不替作者修补证明。",
+        "pdf_page": 4,
+        "resolved": false
+      },
+      {
+        "claim_id": null,
+        "issue": "式51用各室差值近似相等而无假设论证；后续迭代稳定与Lyapunov推导还有范围／代数疑点。",
+        "suggested_correction": "不提取完整五室的无条件全局／绝对稳定或chaos控制命题。",
+        "pdf_page": 9,
+        "resolved": false
+      },
+      {
+        "claim_id": "C4",
+        "issue": "系统有五状态和ω5，但式63矩阵与式64只有四个特征值。",
+        "suggested_correction": "提取限四维矩阵及指定全参数；不推广第五状态。",
+        "pdf_page": 11,
+        "resolved": true
+      },
+      {
+        "claim_id": "C9",
+        "issue": "tau敏感参数正文列κ、β3；Table2列α、κ。",
+        "suggested_correction": "仅保留共同κ并记录其他主导项排序未决。",
+        "pdf_page": 14,
+        "resolved": false
+      },
+      {
+        "claim_id": "C13",
+        "issue": "Table1的IN初值0与500天段落IN从正值衰减的描述未对齐。",
+        "suggested_correction": "保留报道定性轨迹，明确不同图的初值映射未知。",
+        "pdf_page": 14,
+        "resolved": false
+      },
+      {
+        "claim_id": "C17",
+        "issue": "5.2说明data-only baseline不学习控制输出，6却描述baseline z1、z2值；完整控制方程、代价和约束未给定。",
+        "suggested_correction": "模型设计与命名方案只作数值方法／模拟，不证明最优性。",
+        "pdf_page": 17,
+        "resolved": false
+      },
+      {
+        "claim_id": "C22",
+        "issue": "5.1称同架构和训练条件，6称Gaussian noise只加baseline又称PINN拟合noisy data，比较口径冲突。",
+        "suggested_correction": "噪声优势限reported模拟，公平性与真实鲁棒性未确立。",
+        "pdf_page": 17,
+        "resolved": false
+      },
+      {
+        "claim_id": null,
+        "issue": "Figure14图注列age-structured susceptible、两类infected和population response等，非全文五室标签。",
+        "suggested_correction": "暂缓由该图提取精确室／控制优势，保留其已读与冲突。",
+        "pdf_page": 18,
+        "resolved": false
+      },
+      {
+        "claim_id": "C20",
+        "issue": "正文声称fractional总体MSE优于baseline；Table4 FN实际37.0 vs0.01。",
+        "suggested_correction": "按表保留fractional优于integer、不优于baseline的FN指标；Aβ独立记录且0.00限显示精度。",
+        "pdf_page": 20,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "Table1包含per year和per day，部分参数Assumed/Estimated，后续示例N、φ1又变化；没有统一临床标定。",
+        "suggested_correction": "不混用各配置参数，不把模型状态单位当实测神经元数。",
+        "pdf_page": 5,
+        "resolved": false
+      },
+      {
+        "claim_id": "C24",
+        "issue": "GL参考与PINN都使用同源分数阶方程；不是独立验证。",
+        "suggested_correction": "明确共享来源数值一致性，并留空跨论文关系。",
+        "pdf_page": 20,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "Source title differs in wording from indexed title: A Physics Informed Neural Network (PINN) framework for fractional order modeling of Alzheimer’s disease",
+        "suggested_correction": "Retain actual supplied-version identity; curator to reconcile metadata.",
+        "pdf_page": 1,
+        "resolved": false
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T11:38:42.992860Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "e3226b9f979c9a742c4696ff31c469b5dfc93838cd0992c0316ca0d8fc58016a",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

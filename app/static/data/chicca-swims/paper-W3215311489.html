@@ -1,0 +1,473 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>A neuromorphic model of olfactory processing and sparse coding in the Drosophila larva brain</title><style>body{max-width:940px;margin:40px auto;padding:0 24px;background:#fffdf7;color:#12372f;font:16px/1.8 Georgia,serif}h1{font-size:26px;line-height:1.4}h2{font-size:20px;line-height:1.5}h3{font-size:16px}article{padding:26px 0;border-top:1px solid #bec4b8}small{color:#68766e}dl{display:grid;grid-template-columns:120px 1fr;gap:8px 20px}dt{font-weight:bold}dd{margin:0}li{padding:8px 0}p,dd{overflow-wrap:anywhere}.note{background:#eef2e2;padding:14px;border-left:3px solid #738968}summary{cursor:pointer}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.7 monospace}@media(max-width:600px){body{margin:24px auto;padding:0 18px}dl{grid-template-columns:1fr;gap:3px}dd{margin-bottom:12px}}@media print{body{margin:0;background:white}details{display:block}}</style><link rel="stylesheet" href="../../commons-v02.css?v=20261020-1"><link rel="stylesheet" href="../../examples.css?v=20260928-2"><link rel="stylesheet" href="../../site.css?v=20261020-1"><script defer src="../../site.js?v=20261020-1"></script><script defer src="../../report-ui.js?v=20261020-1"></script></head><body class="portal-page report-page" data-cc-report-shell="1" data-page="library" data-site-prefix="../../" data-library-paper="paper-W3215311489" data-report-language="zh" data-claim-records="{&quot;C1&quot;:&quot;structured-paper-W3215311489-1&quot;,&quot;C2&quot;:&quot;structured-paper-W3215311489-2&quot;,&quot;C3&quot;:&quot;structured-paper-W3215311489-3&quot;,&quot;C4&quot;:&quot;structured-paper-W3215311489-4&quot;,&quot;C5&quot;:&quot;structured-paper-W3215311489-5&quot;,&quot;C6&quot;:&quot;structured-paper-W3215311489-6&quot;,&quot;C7&quot;:&quot;structured-paper-W3215311489-7&quot;,&quot;C8&quot;:&quot;structured-paper-W3215311489-8&quot;,&quot;C9&quot;:&quot;structured-paper-W3215311489-9&quot;,&quot;C10&quot;:&quot;structured-paper-W3215311489-10&quot;,&quot;C11&quot;:&quot;structured-paper-W3215311489-11&quot;,&quot;C12&quot;:&quot;structured-paper-W3215311489-12&quot;,&quot;C13&quot;:&quot;structured-paper-W3215311489-13&quot;}"><header></header><main id="report-content"><div id="report-tools"></div><small>CLAIM COMMONS / 阅读报告</small><h1>A neuromorphic model of olfactory processing and sparse coding in the Drosophila larva brain</h1><p class="note">AI 文本提取候选，尚待人工核对。图像像素未读取；PDF 页码指文件中的页序。</p><p>全文含补充部分支持十三项候选命题。核心结果是同一小连接模型在硬件与软件实现密到稀疏编码，APL反馈在受测组合中主导群体稀疏并与适应共同影响时间稀疏，完整配置增大三人工气味的表征距离。激活比例、跨实现相关、运行时间和硬件漂移分别保留。来源核对明确固定拓扑、ORN适应始终开启、20/100msbin不同与固定顺序；额外补图条件、模拟KC计数/百分比、统计细节和幼虫生理假设仍未解决。</p><a href="https://www.biorxiv.org/content/biorxiv/early/2021/09/17/2021.06.29.450278.full.pdf" rel="noreferrer">查看所读原文版本 ↗</a><details><summary>贡献清单与处理决定</summary><ul><li><b>单动物连接组约束的136神经元/833突触模型及DYNAP-SE映射。</b><br>include · 明确APL入度截取与SFA/APL发放假设。</li><li><b>ORN基线和气味响应的密到稀疏、相位—持续动态。</b><br>include · 区分软件/硬件随机输入和不完全一致的瞬态。</li><li><b>APL/LN/KC-SFA六组合对空间/时间稀疏的作用。</b><br>include · 限定固定拓扑、三人工气味；ORN适应始终开启。</li><li><b>至少一次活跃KC及有脉冲时间窗比例。</b><br>include · 不同于脉冲计数稀疏度，保留数值与100msbin。</li><li><b>跨实现条件效应相关及置换参照。</b><br>include · 六条件均值点不是20×三气味独立统计点。</li><li><b>完整稀疏配置增大气味响应余弦距离。</b><br>include · 不当作行为识别或学习准确率。</li><li><b>实时硬件与CPU3.8s运行、芯片偏置漂移和固定条件顺序。</b><br>include · 保留性能环境和比较混杂限制。</li><li><b>幼虫可能有类似成人的稀疏编码。</b><br>include · 独立标生物解释，APL发放/KC适应未知。</li><li><b>补图S2另外两种模拟条件的稀疏度。</b><br>defer · 图注说明有两个额外条件，但供给文本没有其标签或可读数值，不能从未见像素补全。</li><li><b>本文配对t检验的统计量、p值与全部效应区间。</b><br>defer · 方法列出检验，但所供文本没有相应结果数值。</li><li><b>适应提高可靠性/短时记忆、跨发育阶段作用差由一对一连接唯一决定。</b><br>defer · 可靠性/记忆明确未分析，阶段解释未独立消融。</li><li><b>物理节能量、联想学习、奖赏预测、趋化和机器人闭环控制。</b><br>defer · 没有本文功率测量、行为任务或塑性学习验收。</li><li><b>被引昆虫生理、连接组重建及其他神经形态网络实验。</b><br>exclude · 背景证据不是本文的新动物结果。</li></ul></details><article><small>C1 / 直接结果 · connectome_constrained_architecture</small><h2>本文以一个幼虫单侧嗅觉连接组为基础，构建136神经元、833突触模型并映射到DYNAP-SE两芯片五核心；网络含21 ORN、21 PN、21 LN、72 KC与1 APL。APL仅接收固定随机选定的64/72 KC以满足硬件入度限制，并假设ORN/KC具有适应、APL用脉冲实现反馈。</h2><h3>Evidence</h3><p>模型结构和混合信号硬件映射</p><dl><dt>设计 / 对照</dt><dd>单动物半球连接，FPGA供给控制脉冲；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>同一连接模型及其硬件映射；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 2 · Figure 1</dd></dl><p>精确模型规模与映射范围说明</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 7 · Discussion: Neuromorphic implementation versus computer simulation</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>小规模生物启发架构可在现有硬件实现。</dd><dt>适用边界</dt><dd>连接来自单动物，不是跨动物平均；硬件有参数失配并重新调偏置。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能认定本文重测连接组或证实幼虫APL必为发放神经元、KC必有适应。</dd><dt>未解决</dt><dd>幼虫APL的动作电位性质和KC适应是否存在。</dd></dl><h3>相关问题</h3><ul><li>连接组约束的小嗅觉网络如何在有限入度的混合信号芯片上实现？</li></ul></article><article><small>C2 / 直接结果 · hardware_and_simulation_result</small><h2>在5 Hz基线外部驱动下，本文DYNAP-SE模型的ORN自发率为6.2±3.0 Hz，Brian2模型为6.0±1.4 Hz；前者使用泊松输入，后者使用形状参数k=3的gamma过程，因此相近基线输出不是相同随机输入协议的严格等效测试。</h2><h3>Evidence</h3><p>基线硅仿真与软件模拟比较</p><dl><dt>设计 / 对照</dt><dd>芯片泊松、软件gamma(k=3)输入；均5 Hz；DYNAP-SE与Brian2</dd><dt>独立单位与 n</dt><dd>固定模型中的ORN；模型含21 ORN；基线统计重复数未单独说明</dd><dt>不确定性</dt><dd>正文给±3.0和±1.4，未明确该处误差类型</dd><dt>原文位置</dt><dd>PDF 3 · Methods: Spontaneous activity</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>两实现得到相近数量级的基线活动。</dd><dt>适用边界</dt><dd>所引生物率范围是先前文献，不是本文测量；±不能自行当作CI。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能证明两输入过程完全可比或全部神经元动态统计一致。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>软件与硬件不同随机驱动下能否匹配ORN基线活动？</li></ul></article><article><small>C3 / 直接结果 · hardware_and_simulation_result</small><h2>在所有稀疏机制开启的气味1示例中，DYNAP-SE硬件和Brian2均把ORN/PN较密集的刺激响应转为KC少数神经元、每个少数脉冲的响应；KC主要群体响应集中在刺激起始约100 ms，持续响应仅略高于自发水平。</h2><h3>Evidence</h3><p>DYNAP-SE网络刺激记录</p><dl><dt>设计 / 对照</dt><dd>气味1刺激2 s，完整机制；群体计数100 ms分bin；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>固定芯片网络的试验；图中个例轨迹，群体直方图平均20次试验</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 5 · Figure 2A</dd></dl><p>Brian2同架构软件模拟</p><dl><dt>设计 / 对照</dt><dd>固定结构及完整机制；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>软件随机输入实例；平均20次试验</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 5 · Figure 2B</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>受测模型实现空间与时间上稀疏的中心层响应。</dd><dt>适用边界</dt><dd>主要响应时间来自正文与图注描述；无图像像素独立确认。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能把模型KC活动称为本文幼虫神经记录、具体物理能耗或生物机制证明。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>小型嗅觉网络能否将密集外周输入转为短暂稀疏KC响应？</li></ul></article><article><small>C4 / 直接结果 · mechanism_ablation_result</small><h2>在本文六种LN/APL/KC-SFA组合、固定连接和三个人工气味的比较中，缺少APL反馈的条件都明显降低KC群体稀疏度；侧向抑制仅可部分恢复，讨论报告LN单独约Spop=0.6，而LN与APL组合约0.8，因此高群体稀疏度在所测配置中依赖APL反馈。</h2><h3>Evidence</h3><p>组件开关协议说明</p><dl><dt>设计 / 对照</dt><dd>三个人工气味输入，各刺激2 s；固定同一动物来源连接结构；ORN适应在全部条件保留。；六组不同组件开关</dd><dt>独立单位与 n</dt><dd>固定拓扑上的重复刺激；每条件20次试验/模型实例、三个人工气味；不是20个动物或20张独立芯片。</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 5 · Results: Analysis of sparsening factors in space and time</dd></dl><p>DYNAP-SE及Brian2组件比较</p><dl><dt>设计 / 对照</dt><dd>两秒内72KC脉冲计数构成Spop；有/无APL及LN条件</dd><dt>独立单位与 n</dt><dd>固定模型；每条件20次试验/模型实例、三个人工气味；不是20个动物或20张独立芯片。</dd><dt>不确定性</dt><dd>主图误差条标准差；未给配对t检验的数值结果</dd><dt>原文位置</dt><dd>PDF 6 · Figure 3A</dd></dl><p>约0.6与约0.8的正文说明</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 8 · Discussion: Mechanisms and function of population sparseness</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>APL在受测小网络中对高空间稀疏有主要作用。</dd><dt>适用边界</dt><dd>并未改变PN–KC连接或优化KC兴奋性；不是所有网络或动物的普适必要条件。</dd><dt>实际负结果</dt><dd>所测不含APL条件的KC群体稀疏度明显下降。</dd><dt>不能推出</dt><dd>不能称APL是唯一生物机制，也不能排除未测结构/阈值的替代方案。</dd><dt>未解决</dt><dd>不同连接组、权重或兴奋性下的必要性。</dd></dl><h3>相关问题</h3><ul><li>在固定幼虫嗅觉模型内，反馈抑制和侧向抑制对空间稀疏各贡献多少？</li></ul></article><article><small>C5 / 直接结果 · mechanism_ablation_result</small><h2>在同一六条件嗅觉模型比较中，完整机制的KC时间稀疏度约Stmp=0.8，含APL的配置保持较高水平；无APL时KC发放率适应能部分补偿。所有条件保留ORN适应，因此所谓LN-only仍有上游时间适应贡献。</h2><h3>Evidence</h3><p>DYNAP-SE和Brian2组件比较</p><dl><dt>设计 / 对照</dt><dd>三个人工气味输入，各刺激2 s；固定同一动物来源连接结构；ORN适应在全部条件保留。；不同APL/KC-SFA/LN组合</dd><dt>独立单位与 n</dt><dd>固定模型条件下重复输入；每条件20次试验/模型实例、三个人工气味；不是20个动物或20张独立芯片。</dd><dt>不确定性</dt><dd>图误差条标准差；不补未给p值</dd><dt>原文位置</dt><dd>PDF 6 · Figure 3B</dd></dl><p>上游SFA始终开启的边界解释</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 8 · Discussion: Mechanisms and function of temporal sparseness</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>反馈与KC适应共同参与此网络的时间稀疏，反馈贡献较强。</dd><dt>适用边界</dt><dd>不能把LN-only当完全无适应对照；只测三气味和两秒持续输入。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能推断幼虫生物KC适应存在、独立唯一机制或动态导航能力。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>保留上游适应时，KC适应与反馈抑制如何影响时间稀疏？</li></ul></article><article><small>C6 / 直接结果 · activation_result</small><h2>在三个人工气味、完整稀疏机制条件下，本文正文报告两秒刺激内至少发放一次的KC平均数为硬件20.6（28.6%）、软件16.7（22.9%）；该激活度量不同于基于脉冲计数分布的群体稀疏度。</h2><h3>Evidence</h3><p>至少一次脉冲的二值激活比例定义</p><dl><dt>设计 / 对照</dt><dd>整段2 s作一个时间bin；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>72KC群体中的响应比例；每条件20次试验/模型实例、三个人工气味；不是20个动物或20张独立芯片。</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 4 · Methods: Activation measure</dd></dl><p>硬件/软件活跃KC正文结果</p><dl><dt>设计 / 对照</dt><dd>三个人工气味输入，各刺激2 s；固定同一动物来源连接结构；ORN适应在全部条件保留。；完整条件与其他组件组合</dd><dt>独立单位与 n</dt><dd>同一结构的多次刺激；每条件20次试验/模型实例、三个人工气味；不是20个动物或20张独立芯片。</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 6 · Figure S1A on PDF page 12</dd></dl><p>补充图注与误差单位核对</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>未报告 / 不适用；每条件20次试验/模型实例、三个人工气味；不是20个动物或20张独立芯片。</dd><dt>不确定性</dt><dd>补图误差条为跨三个气味标准差</dd><dt>原文位置</dt><dd>PDF 12 · Figure S1A</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>完整配置只招募一部分KC而非全群体。</dd><dt>适用边界</dt><dd>模拟16.7/72与正文22.9%的对应不完全一致；同时保留源值不伪作精准自洽。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能把20.6当独立样本量或将Apop等同Spop。</dd><dt>未解决</dt><dd>模拟平均数与比例的原数据及舍入/排版原因。</dd></dl><h3>相关问题</h3><ul><li>至少一次脉冲的活跃KC比例与计数稀疏度有何区别？</li></ul></article><article><small>C7 / 直接结果 · activation_result</small><h2>在完整稀疏机制和三个人工气味下，本文把每个KC的两秒响应分为二十个100 ms窗口，至少有一次脉冲的窗口比例平均为硬件2.3%、软件3.4%，显示极低的时间占用；这不是用20 ms计数bin计算的Stmp。</h2><h3>Evidence</h3><p>时间二值激活定义</p><dl><dt>设计 / 对照</dt><dd>每KC二十个100 msbin；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>神经元—时间窗口嵌套于试验；每条件20次试验/模型实例、三个人工气味；不是20个动物或20张独立芯片。</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 4 · Methods: Activation measure</dd></dl><p>时间占用率正文结果</p><dl><dt>设计 / 对照</dt><dd>三个人工气味输入，各刺激2 s；固定同一动物来源连接结构；ORN适应在全部条件保留。；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>固定硬件/软件模型；每条件20次试验/模型实例、三个人工气味；不是20个动物或20张独立芯片。</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 6 · Figure S1B on PDF page 12</dd></dl><p>补充激活图注</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 12 · Figure S1B</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>稀疏响应只占很少时段。</dd><dt>适用边界</dt><dd>20 ms的Stmp与100 ms二值Atmp测量不同，不可互换。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能由低占用率直接计算系统节电比例、时序解码正确率或动态环境可靠性。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>稀疏KC响应在刺激期间占用了多少100 ms窗口？</li></ul></article><article><small>C8 / 直接结果 · cross_implementation_comparison</small><h2>在本文同一六种组件组合的汇总中，硬件与软件的KC空间稀疏度条件均值相关r=0.94，时间稀疏度r=0.96；一百个唯一随机条件置换的最大相关分别为0.91和0.87，支持两实现对组件组合效应的定性一致性。</h2><h3>Evidence</h3><p>六条件均值相关与置换参照</p><dl><dt>设计 / 对照</dt><dd>随机重排软件六条件均值100次；硬件均值与真实/置换软件条件均值</dd><dt>独立单位与 n</dt><dd>六个条件点；不是60个试验独立点；六条件；100唯一随机置换；每条件20次试验/三气味</dd><dt>不确定性</dt><dd>方法给置换均值/标准差；未报告精确尾概率或CI</dd><dt>原文位置</dt><dd>PDF 4 · Methods: Correlation across sparseness conditions</dd></dl><p>相关与置换最大值正文结果</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 6 · Figure 3A–B</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>组件效应方向跨两实现相近。</dd><dt>适用边界</dt><dd>共享结构、人工输入设计与机制假设；不是独立生物重复。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能推断逐神经元完全一致、绝对数值一致或用100置换自动补p值。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>同一连接模型的稀疏机制效应能否跨软件与硬件保持一致？</li></ul></article><article><small>C9 / 直接结果 · representation_separation_result</small><h2>在本文三个人工气味的KC平均响应比较中，完整机制相对关闭LN与APL、仅保留适应的条件具有更大平均余弦距离：硬件0.39（0.20）对0.07（0.02），软件0.85（0.06）对0.31（0.09），说明所测稀疏配置的气味响应表征更分离。</h2><h3>Evidence</h3><p>72维KC平均脉冲向量的余弦距离</p><dl><dt>设计 / 对照</dt><dd>2 s响应，跨20实例平均；完整机制与关闭LN/APL的SFA-only</dd><dt>独立单位与 n</dt><dd>固定模型响应均值向量的气味对；三个气味；20模型实例，连接不变</dd><dt>不确定性</dt><dd>正文括号给0.20/0.02/0.06/0.09但未明确此处统计类型</dd><dt>原文位置</dt><dd>PDF 4 · Methods: Distance measure</dd></dl><p>硬件和软件距离正文结果</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 6 · Figure 4 on PDF page 7</dd></dl><p>三气味响应图注</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 7 · Figure 4</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>稀疏配置伴随更少响应重叠和较大表征距离。</dd><dt>适用边界</dt><dd>只比较三个构造气味和两配置；参数及结构固定。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能称生物气味识别行为更佳、已训练分类准确率提高或因果唯一归于某单机制。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>稀疏KC配置是否增加所测气味在响应空间中的距离？</li></ul></article><article><small>C10 / 直接结果 · cross_implementation_boundary</small><h2>在本文气味1时间响应比较中，DYNAP-SE硬件的部分ORN起始和终止响应较软件延迟、初期相位响应增加较慢；软件的适应相关终止后静默在硬件上不明显且延迟。作者指出硬件与软件适应实现不同、硬件有效时间常数需事后估计。</h2><h3>Evidence</h3><p>硬件/软件时间响应比较</p><dl><dt>设计 / 对照</dt><dd>气味1同刺激时程；两实现</dd><dt>独立单位与 n</dt><dd>固定网络的时间响应；每条件20次试验/模型实例、三个人工气味；不是20个动物或20张独立芯片。</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 5 · Figure 2A–B</dd></dl><p>硬件适应调参及事后时间常数解释</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 7 · Discussion: Neuromorphic implementation versus computer simulation</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>跨实现定性稀疏效应相同，但瞬态不完全匹配。</dd><dt>适用边界</dt><dd>未给具体延迟值或受控SFA参数交换实验。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能认定SFA是全部差异的唯一来源，也不能把总体r高解释成时间动态等效。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>硬件与软件匹配稀疏度后，哪些瞬态响应仍不同？</li></ul></article><article><small>C11 / 直接结果 · runtime_comparison</small><h2>对本文136神经元、833突触网络，DYNAP-SE按实时神经动态运行；正文报告单核心64位PC、Ubuntu 18.04.5、0.1 ms软件步长的模拟每一秒生物时间需约3.8秒计算时间。</h2><h3>Evidence</h3><p>运行时间报告</p><dl><dt>设计 / 对照</dt><dd>所述单CPU环境及0.1 ms分辨率；DYNAP-SE实时运行与软件CPU模拟</dd><dt>独立单位与 n</dt><dd>指定平台和网络的运行报告；未给独立计时重复次数</dd><dt>不确定性</dt><dd>只有约3.8 s，未给误差或CI</dd><dt>原文位置</dt><dd>PDF 7 · Discussion: Neuromorphic implementation versus computer simulation</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>该软件环境下运行速度慢于实时硬件。</dd><dt>适用边界</dt><dd>方法另记Ubuntu16.04.2，与讨论计时环境不同；无CPU型号、优化与I/O成本明细。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能推断所有软件/规模都慢于芯片或计算得能耗优势。</dd><dt>未解决</dt><dd>计时平台差异、完整端到端延迟及重复计时。</dd></dl><h3>相关问题</h3><ul><li>在给定模型和平台上，实时硬件与CPU模拟的时间成本怎样比较？</li></ul></article><article><small>C12 / 直接结果 · hardware_operational_boundary</small><h2>本文DYNAP-SE实验报告偏置电流存在小时尺度漂移，实验组必须在受限时间内完成并在下一组前重新调整，尤其适应电路；六种机制条件在每次气味记录中采用固定顺序，因此跨条件和跨组比较不能视为无漂移、随机顺序的严格匹配。</h2><h3>Evidence</h3><p>硬件操作中的漂移观察</p><dl><dt>设计 / 对照</dt><dd>重调偏置后执行下一实验组；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>实验组，不是独立动物；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 7 · Discussion: Neuromorphic implementation versus computer simulation</dd></dl><p>固定条件顺序说明</p><dl><dt>设计 / 对照</dt><dd>顺序LN+APL+SFA、LN+SFA、LN、APL+SFA、LN+APL、SFA；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 2 · Methods: Implementation on the DYNAP-SE neuromorphic hardware</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>真实硬件运行需要漂移管理；模型实例在偏置上可能变化。</dd><dt>适用边界</dt><dd>漂移大小与温度曲线未量化；固定顺序影响程度没有专门测试。</dd><dt>实际负结果</dt><dd>受测硬件不能在不重调偏置的情况下保证小时尺度参数稳定。</dd><dt>不能推出</dt><dd>不能声称所有条件严格同时同参数、漂移已被补偿或模型波动等同动物间差异。</dd><dt>未解决</dt><dd>顺序/漂移混杂对机制效应的大小。</dd></dl><h3>相关问题</h3><ul><li>小时尺度偏置漂移与固定条件顺序如何影响模拟芯片的机制比较？</li></ul></article><article><small>C13 / 解释 · biological_interpretation</small><h2>作者把小规模幼虫结构模型中APL反馈支撑空间/时间稀疏、KC适应辅助时间稀疏的结果解释为幼虫也可能具有类似成人的稀疏嗅觉编码；但幼虫APL是否发放动作电位、KC是否具有所建模适应仍未确定。</h2><h3>Evidence</h3><p>模型结果到幼虫编码的解释</p><dl><dt>设计 / 对照</dt><dd>依据固定连接模型及引用成年动物研究；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>模型解释；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 7 · Discussion: Mechanisms and function of population sparseness</dd></dl><p>生物学未知与机制范围说明</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 8 · Discussion: Mechanisms and function of population/temporal sparseness</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>提供可检验的幼虫编码机制候选。</dd><dt>适用边界</dt><dd>不是本文生物实验；成人/其他昆虫证据不能直接替代幼虫验证。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能把模型内必要性当作动物内因果必需性、已证实学习能力或唯一机制。</dd><dt>未解决</dt><dd>幼虫KC适应、APL发放性质和自然动态气味编码。</dd></dl><h3>相关问题</h3><ul><li>幼虫是否利用所建模反馈与适应实现稀疏嗅觉编码？</li></ul></article><details><summary>核对记录与来源信息</summary><pre>{
+  &quot;coverage&quot;: {
+    &quot;pdf_pages_read&quot;: [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    &quot;results_sections_seen&quot;: [
+      &quot;Methods: network, DYNAP-SE, simulation, stimuli and analysis; Table 1; Equations 1–9&quot;,
+      &quot;Results: Olfactory pathway model&quot;,
+      &quot;Results: Circuit motifs and cellular adaptation&quot;,
+      &quot;Results: Dynamics of network response; Figure 2&quot;,
+      &quot;Results: Analysis of sparsening factors; Figure 3&quot;,
+      &quot;Results: Sparse representation supports stimulus separation; Figure 4&quot;,
+      &quot;Discussion and Outlook&quot;,
+      &quot;References; Supplements Figures S1–S2 (PDF pages 11–12)&quot;
+    ],
+    &quot;missing_material&quot;: [
+      &quot;全部主图/补图图像像素未提供；补图S2新增条件结果无法从文本确定。&quot;,
+      &quot;原始软硬件数据、源代码执行结果与期刊最终版未提供；未执行科学复现。&quot;
+    ],
+    &quot;text_pass_complete&quot;: true,
+    &quot;reading_mode&quot;: &quot;text_only&quot;,
+    &quot;figure_images_read&quot;: false,
+    &quot;scientific_verification&quot;: false,
+    &quot;notes&quot;: [
+      &quot;全部12页包括参考文献和补充图S1/S2说明已评估；第11页为补充标题页。&quot;,
+      &quot;实际来源为17 Sep 2021的bioRxiv预印本doi:10.1101/2021.06.29.450278；paper字段保留导入期刊doi:10.1088/2634-4386/ac3ba6，未核查期刊最终版本。&quot;,
+      &quot;硬件为同一固定模型在两张DYNAP-SE芯片的映射，软件为相同连接；均非本文动物实验。&quot;,
+      &quot;第二遍核对了SFA只在KC关闭、两种不同bin、20次试验与六条件点/三气味的不同分析单位、括号误差类型及数值对应。&quot;
+    ]
+  },
+  &quot;audit&quot;: {
+    &quot;source_match_checks&quot;: [
+      {
+        &quot;claim_id&quot;: &quot;C1&quot;,
+        &quot;evidence_index&quot;: 1,
+        &quot;pdf_page&quot;: 2,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;section&quot;: &quot;Methods: Spiking neural network model; DYNAP-SE implementation&quot;,
+        &quot;figure&quot;: &quot;Figure 1&quot;,
+        &quot;equation&quot;: null,
+        &quot;assessment&quot;: &quot;二次核对所供页文本与定位标签；这不是科学复现或图像验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C1&quot;,
+        &quot;evidence_index&quot;: 2,
+        &quot;pdf_page&quot;: 7,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;section&quot;: &quot;Discussion: Neuromorphic implementation versus computer simulation&quot;,
+        &quot;figure&quot;: null,
+        &quot;equation&quot;: null,
+        &quot;assessment&quot;: &quot;二次核对所供页文本与定位标签；这不是科学复现或图像验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C2&quot;,
+        &quot;evidence_index&quot;: 1,
+        &quot;pdf_page&quot;: 3,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;section&quot;: &quot;Methods: Spontaneous activity&quot;,
+        &quot;figure&quot;: null,
+        &quot;equation&quot;: null,
+        &quot;assessment&quot;: &quot;二次核对所供页文本与定位标签；这不是科学复现或图像验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C3&quot;,
+        &quot;evidence_index&quot;: 1,
+        &quot;pdf_page&quot;: 5,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;section&quot;: &quot;Results: Dynamics of network response to odor stimulation&quot;,
+        &quot;figure&quot;: &quot;Figure 2A&quot;,
+        &quot;equation&quot;: null,
+        &quot;assessment&quot;: &quot;二次核对所供页文本与定位标签；这不是科学复现或图像验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C3&quot;,
+        &quot;evidence_index&quot;: 2,
+        &quot;pdf_page&quot;: 5,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;section&quot;: &quot;Results: Dynamics of network response to odor stimulation&quot;,
+        &quot;figure&quot;: &quot;Figure 2B&quot;,
+        &quot;equation&quot;: null,
+        &quot;assessment&quot;: &quot;二次核对所供页文本与定位标签；这不是科学复现或图像验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C4&quot;,
+        &quot;evidence_index&quot;: 1,
+        &quot;pdf_page&quot;: 5,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;section&quot;: &quot;Results: Analysis of sparsening factors in space and time&quot;,
+        &quot;figure&quot;: null,
+        &quot;equation&quot;: null,
+        &quot;assessment&quot;: &quot;二次核对所供页文本与定位标签；这不是科学复现或图像验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C4&quot;,
+        &quot;evidence_index&quot;: 2,
+        &quot;pdf_page&quot;: 6,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;section&quot;: &quot;Results: Analysis of sparsening factors in space and time&quot;,
+        &quot;figure&quot;: &quot;Figure 3A&quot;,
+        &quot;equation&quot;: &quot;(7) on PDF page 3&quot;,
+        &quot;assessment&quot;: &quot;二次核对所供页文本与定位标签；这不是科学复现或图像验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C4&quot;,
+        &quot;evidence_index&quot;: 3,
+        &quot;pdf_page&quot;: 8,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;section&quot;: &quot;Discussion: Mechanisms and function of population sparseness&quot;,
+        &quot;figure&quot;: null,
+        &quot;equation&quot;: null,
+        &quot;assessment&quot;: &quot;二次核对所供页文本与定位标签；这不是科学复现或图像验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C5&quot;,
+        &quot;evidence_index&quot;: 1,
+        &quot;pdf_page&quot;: 6,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;section&quot;: &quot;Results: Analysis of sparsening factors in space and time&quot;,
+        &quot;figure&quot;: &quot;Figure 3B&quot;,
+        &quot;equation&quot;: &quot;(7) on PDF page 3&quot;,
+        &quot;assessment&quot;: &quot;二次核对所供页文本与定位标签；这不是科学复现或图像验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C5&quot;,
+        &quot;evidence_index&quot;: 2,
+        &quot;pdf_page&quot;: 8,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;section&quot;: &quot;Discussion: Mechanisms and function of temporal sparseness&quot;,
+        &quot;figure&quot;: null,
+        &quot;equation&quot;: null,
+        &quot;assessment&quot;: &quot;二次核对所供页文本与定位标签；这不是科学复现或图像验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C6&quot;,
+        &quot;evidence_index&quot;: 1,
+        &quot;pdf_page&quot;: 4,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;section&quot;: &quot;Methods: Activation measure&quot;,
+        &quot;figure&quot;: null,
+        &quot;equation&quot;: &quot;(8)&quot;,
+        &quot;assessment&quot;: &quot;二次核对所供页文本与定位标签；这不是科学复现或图像验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C6&quot;,
+        &quot;evidence_index&quot;: 2,
+        &quot;pdf_page&quot;: 6,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;section&quot;: &quot;Results: Analysis of sparsening factors in space and time&quot;,
+        &quot;figure&quot;: &quot;Figure S1A on PDF page 12&quot;,
+        &quot;equation&quot;: null,
+        &quot;assessment&quot;: &quot;二次核对所供页文本与定位标签；这不是科学复现或图像验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C6&quot;,
+        &quot;evidence_index&quot;: 3,
+        &quot;pdf_page&quot;: 12,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;section&quot;: &quot;Supplements&quot;,
+        &quot;figure&quot;: &quot;Figure S1A&quot;,
+        &quot;equation&quot;: null,
+        &quot;assessment&quot;: &quot;二次核对所供页文本与定位标签；这不是科学复现或图像验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C7&quot;,
+        &quot;evidence_index&quot;: 1,
+        &quot;pdf_page&quot;: 4,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;section&quot;: &quot;Methods: Activation measure&quot;,
+        &quot;figure&quot;: null,
+        &quot;equation&quot;: &quot;(8)&quot;,
+        &quot;assessment&quot;: &quot;二次核对所供页文本与定位标签；这不是科学复现或图像验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C7&quot;,
+        &quot;evidence_index&quot;: 2,
+        &quot;pdf_page&quot;: 6,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;section&quot;: &quot;Results: Analysis of sparsening factors in space and time&quot;,
+        &quot;figure&quot;: &quot;Figure S1B on PDF page 12&quot;,
+        &quot;equation&quot;: null,
+        &quot;assessment&quot;: &quot;二次核对所供页文本与定位标签；这不是科学复现或图像验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C7&quot;,
+        &quot;evidence_index&quot;: 3,
+        &quot;pdf_page&quot;: 12,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;section&quot;: &quot;Supplements&quot;,
+        &quot;figure&quot;: &quot;Figure S1B&quot;,
+        &quot;equation&quot;: null,
+        &quot;assessment&quot;: &quot;二次核对所供页文本与定位标签；这不是科学复现或图像验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C8&quot;,
+        &quot;evidence_index&quot;: 1,
+        &quot;pdf_page&quot;: 4,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;section&quot;: &quot;Methods: Correlation across sparseness conditions&quot;,
+        &quot;figure&quot;: null,
+        &quot;equation&quot;: null,
+        &quot;assessment&quot;: &quot;二次核对所供页文本与定位标签；这不是科学复现或图像验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C8&quot;,
+        &quot;evidence_index&quot;: 2,
+        &quot;pdf_page&quot;: 6,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;section&quot;: &quot;Results: Analysis of sparsening factors in space and time&quot;,
+        &quot;figure&quot;: &quot;Figure 3A–B&quot;,
+        &quot;equation&quot;: null,
+        &quot;assessment&quot;: &quot;二次核对所供页文本与定位标签；这不是科学复现或图像验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C9&quot;,
+        &quot;evidence_index&quot;: 1,
+        &quot;pdf_page&quot;: 4,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;section&quot;: &quot;Methods: Distance measure&quot;,
+        &quot;figure&quot;: null,
+        &quot;equation&quot;: &quot;(9)&quot;,
+        &quot;assessment&quot;: &quot;二次核对所供页文本与定位标签；这不是科学复现或图像验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C9&quot;,
+        &quot;evidence_index&quot;: 2,
+        &quot;pdf_page&quot;: 6,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;section&quot;: &quot;Results: Sparse representation supports stimulus separation&quot;,
+        &quot;figure&quot;: &quot;Figure 4 on PDF page 7&quot;,
+        &quot;equation&quot;: null,
+        &quot;assessment&quot;: &quot;二次核对所供页文本与定位标签；这不是科学复现或图像验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C9&quot;,
+        &quot;evidence_index&quot;: 3,
+        &quot;pdf_page&quot;: 7,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;section&quot;: &quot;Results: Sparse representation supports stimulus separation&quot;,
+        &quot;figure&quot;: &quot;Figure 4&quot;,
+        &quot;equation&quot;: null,
+        &quot;assessment&quot;: &quot;二次核对所供页文本与定位标签；这不是科学复现或图像验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C10&quot;,
+        &quot;evidence_index&quot;: 1,
+        &quot;pdf_page&quot;: 5,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;section&quot;: &quot;Results: Dynamics of network response to odor stimulation&quot;,
+        &quot;figure&quot;: &quot;Figure 2A–B&quot;,
+        &quot;equation&quot;: null,
+        &quot;assessment&quot;: &quot;二次核对所供页文本与定位标签；这不是科学复现或图像验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C10&quot;,
+        &quot;evidence_index&quot;: 2,
+        &quot;pdf_page&quot;: 7,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;section&quot;: &quot;Discussion: Neuromorphic implementation versus computer simulation&quot;,
+        &quot;figure&quot;: null,
+        &quot;equation&quot;: null,
+        &quot;assessment&quot;: &quot;二次核对所供页文本与定位标签；这不是科学复现或图像验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C11&quot;,
+        &quot;evidence_index&quot;: 1,
+        &quot;pdf_page&quot;: 7,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;section&quot;: &quot;Discussion: Neuromorphic implementation versus computer simulation&quot;,
+        &quot;figure&quot;: null,
+        &quot;equation&quot;: null,
+        &quot;assessment&quot;: &quot;二次核对所供页文本与定位标签；这不是科学复现或图像验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C12&quot;,
+        &quot;evidence_index&quot;: 1,
+        &quot;pdf_page&quot;: 7,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;section&quot;: &quot;Discussion: Neuromorphic implementation versus computer simulation&quot;,
+        &quot;figure&quot;: null,
+        &quot;equation&quot;: null,
+        &quot;assessment&quot;: &quot;二次核对所供页文本与定位标签；这不是科学复现或图像验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C12&quot;,
+        &quot;evidence_index&quot;: 2,
+        &quot;pdf_page&quot;: 2,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;section&quot;: &quot;Methods: Implementation on the DYNAP-SE neuromorphic hardware&quot;,
+        &quot;figure&quot;: null,
+        &quot;equation&quot;: null,
+        &quot;assessment&quot;: &quot;二次核对所供页文本与定位标签；这不是科学复现或图像验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C13&quot;,
+        &quot;evidence_index&quot;: 1,
+        &quot;pdf_page&quot;: 7,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;section&quot;: &quot;Discussion: Mechanisms and function of population sparseness&quot;,
+        &quot;figure&quot;: null,
+        &quot;equation&quot;: null,
+        &quot;assessment&quot;: &quot;二次核对所供页文本与定位标签；这不是科学复现或图像验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C13&quot;,
+        &quot;evidence_index&quot;: 2,
+        &quot;pdf_page&quot;: 8,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;section&quot;: &quot;Discussion: Mechanisms and function of population/temporal sparseness&quot;,
+        &quot;figure&quot;: null,
+        &quot;equation&quot;: null,
+        &quot;assessment&quot;: &quot;二次核对所供页文本与定位标签；这不是科学复现或图像验证。&quot;
+      }
+    ],
+    &quot;model_findings&quot;: [
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;期刊元数据与bioRxiv预印本来源版本不同。&quot;,
+        &quot;suggested_correction&quot;: &quot;不可自动认为已核查期刊最终版；保留预印本URL与日期。&quot;,
+        &quot;pdf_page&quot;: 1,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C1&quot;,
+        &quot;issue&quot;: &quot;APL只接64/72KC、KC适应与APL脉冲性有假设成分。&quot;,
+        &quot;suggested_correction&quot;: &quot;不称逐突触完全复刻或已证实的幼虫生理。&quot;,
+        &quot;pdf_page&quot;: 2,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C4&quot;,
+        &quot;issue&quot;: &quot;关闭SFA只涉及KC，ORN适应始终开启。&quot;,
+        &quot;suggested_correction&quot;: &quot;把必要性限定到该组件协议，LN-only不解释为无适应。&quot;,
+        &quot;pdf_page&quot;: 5,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C6&quot;,
+        &quot;issue&quot;: &quot;软件16.7个KC和22.9%与72细胞分母不完全对应。&quot;,
+        &quot;suggested_correction&quot;: &quot;需原始数据/原图核查，不擅自改源值。&quot;,
+        &quot;pdf_page&quot;: 6,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;补图S2两个额外模拟条件仅有图注，无可读标签或值。&quot;,
+        &quot;suggested_correction&quot;: &quot;贡献暂缓，不能凭空补出。&quot;,
+        &quot;pdf_page&quot;: 12,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;配对t检验方法有说明但结果统计量和p值未供给。&quot;,
+        &quot;suggested_correction&quot;: &quot;不发明显著性；误差条单位按具体图注保留。&quot;,
+        &quot;pdf_page&quot;: 4,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C8&quot;,
+        &quot;issue&quot;: &quot;跨实现相关是同拓扑六个条件的均值相关。&quot;,
+        &quot;suggested_correction&quot;: &quot;不当作独立动物复现，不补置换p值。&quot;,
+        &quot;pdf_page&quot;: 6,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C11&quot;,
+        &quot;issue&quot;: &quot;方法Ubuntu16.04.2与计时讨论Ubuntu18.04.5不一致，CPU基准细节有限。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留具体报告环境，不推广速度结论。&quot;,
+        &quot;pdf_page&quot;: 7,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C12&quot;,
+        &quot;issue&quot;: &quot;所有条件顺序固定且硬件有小时尺度漂移。&quot;,
+        &quot;suggested_correction&quot;: &quot;需随机顺序/漂移控制才能完整隔离混杂。&quot;,
+        &quot;pdf_page&quot;: 2,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C13&quot;,
+        &quot;issue&quot;: &quot;幼虫APL动作电位与KC适应尚未确认。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留interpretation而非生物因果结果。&quot;,
+        &quot;pdf_page&quot;: 8,
+        &quot;resolved&quot;: false
+      }
+    ],
+    &quot;needs_human_review&quot;: true
+  },
+  &quot;source&quot;: {
+    &quot;filename&quot;: &quot;paper-W3215311489.pdf&quot;,
+    &quot;sha256&quot;: &quot;76aecbb8237719efbd687c48500590cf7ef6a884eb4e7222c5e551dba21d2ee9&quot;,
+    &quot;source_url&quot;: &quot;https://www.biorxiv.org/content/biorxiv/early/2021/09/17/2021.06.29.450278.full.pdf&quot;,
+    &quot;pdf_page_count&quot;: 12
+  },
+  &quot;provenance&quot;: {
+    &quot;created_at&quot;: &quot;2026-10-07T07:13:36.983Z&quot;,
+    &quot;workflow&quot;: &quot;claim-commons-pdf-v1&quot;,
+    &quot;prompt_version&quot;: &quot;claim-commons-chatgpt-pdf-2026-10-07.1&quot;,
+    &quot;backend&quot;: &quot;authorized_parallel_GPT&quot;,
+    &quot;model&quot;: &quot;inherited_GPT&quot;,
+    &quot;provider_api_key_used&quot;: false,
+    &quot;source_sha256&quot;: &quot;76aecbb8237719efbd687c48500590cf7ef6a884eb4e7222c5e551dba21d2ee9&quot;,
+    &quot;source_audit_complete&quot;: true,
+    &quot;review_status&quot;: &quot;candidate&quot;,
+    &quot;database_updated&quot;: false
+  }
+}</pre></details></main><footer></footer></body></html>

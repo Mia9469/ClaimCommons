@@ -1,0 +1,1653 @@
+{
+  "document_type": "review",
+  "coverage": {
+    "results_sections_seen": [
+      "2 IFAT（含2.1.5 Results）",
+      "3 DeepSouth",
+      "4 BrainScaleS",
+      "5 Dynap-SEL",
+      "6 2DIFWTA",
+      "7 PARCA",
+      "8 Transistor-channel systems",
+      "9 Other neural emulators",
+      "10 Discussion; Tables 1–5; Figures 1–30",
+      "11 Acknowledgement; 12 References"
+    ],
+    "missing_material": [
+      "全部图像像素及引用论文全文不在本次来源中。",
+      "引用实验原始数据、芯片批次数和部分统计定义未提供。",
+      "未提供独立补充材料；本文件不包含期刊后续更正全文。"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "55页为标注provisional的综述稿，不是期刊最终排版；所有所供文本及参考文献均已评估。",
+      "综述中即使使用we或展示测量实例，也不提升为本次独立新结果。",
+      "原始正文作者Kundan Kumar与导入元数据K. Siva Kumar不一致；其余部分名字也有缩写差异，元数据保留导入记录并待人工核对。",
+      "原文内部冲突采用可定位正文并保留审查标记，不推断更正内容。"
+    ],
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "逐系统归纳架构、工作时间和资源取舍",
+      "role": "review_synthesis",
+      "source_pages": [
+        3,
+        9,
+        11,
+        15,
+        24,
+        28,
+        32,
+        36,
+        43,
+        44,
+        45
+      ],
+      "decision": "include",
+      "reason": "核心综述贡献；各系统拆开并限制为转述。"
+    },
+    {
+      "summary": "MNIFAT模式、面积、失配、5 V功耗和1 V外推",
+      "role": "review_synthesis",
+      "source_pages": [
+        4,
+        5,
+        6,
+        8,
+        9
+      ],
+      "decision": "include",
+      "reason": "有详细表征文字；分离模式、测量和估算，避免叠加容量。"
+    },
+    {
+      "summary": "PARCA理想方案、二值实物宏与引用联合仿真",
+      "role": "review_synthesis",
+      "source_pages": [
+        32,
+        33,
+        34,
+        35
+      ],
+      "decision": "include",
+      "reason": "属于不同证据层，分别保留。"
+    },
+    {
+      "summary": "通道式模型、浮栅和树突应用",
+      "role": "review_synthesis",
+      "source_pages": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42
+      ],
+      "decision": "include",
+      "reason": "保留引用归属，不列为新硅片实验。"
+    },
+    {
+      "summary": "远期亚pJ系统、任意规模扩展、更先进工艺及生物智能",
+      "role": "前景",
+      "source_pages": [
+        10,
+        24,
+        26,
+        27,
+        42,
+        45
+      ],
+      "decision": "defer",
+      "reason": "缺少当前实现和对应测量。"
+    },
+    {
+      "summary": "引用原始神经元理论、商业市场增长和生物背景",
+      "role": "背景",
+      "source_pages": [
+        1,
+        2,
+        3,
+        5,
+        28,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55
+      ],
+      "decision": "exclude",
+      "reason": "非本综述新结果。"
+    },
+    {
+      "summary": "表5中冲突或缺乏统一口径的精确跨系统排名",
+      "role": "比较风险",
+      "source_pages": [
+        28,
+        43,
+        44,
+        45
+      ],
+      "decision": "defer",
+      "reason": "正文模式数量、突触数量、工艺和芯片/板级边界不统一。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "综述描述的MNIFAT以共享突触、比较器和阈值适应模块实现2040个Mihalas–Niebur神经元，或切换为4080个独立I&F神经元；其删去内生脉冲诱导电流并令复位等于静息电位的简化模型只保留九类发放行为，而非原模型全部20类。",
+      "claim_type": "architecture_review",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "结构与模式容量综述",
+          "design": "0.5 µm CMOS、5 V设计；两单元组成一个M-N神经元",
+          "comparator": "原始M-N模型",
+          "measure": "模式容量和模型简化",
+          "unit_of_analysis": "电路架构",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "2.1–2.1.1",
+            "figure": "Figure 1",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "方程与模型删减描述",
+          "design": null,
+          "comparator": "原始模型",
+          "measure": "保留行为范围",
+          "unit_of_analysis": "模型",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "2.1.2",
+            "figure": null,
+            "equation": "Equations 7–14",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "给出共享计算单元的两种工作模式。",
+        "boundary": "2040与4080是互斥模式，不能相加为同时可用容量。",
+        "negative_result": null,
+        "non_inference": "不能把简化模型视作全部生物发放行为的实现。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "共享计算资源如何改变神经元容量和行为表达范围？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "review_secondary_evidence",
+          "source_table_conflict"
+        ]
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "综述报告的0.5 µm MNIFAT单I&F存储单元尺寸为41.7×35.84 µm，面积约1495 µm²、密度668.9个/mm²；与所引同工艺设计相比，面积为其62.3%，密度高于所列416.7个/mm²及387.1个/mm²。",
+      "claim_type": "measured_hardware_review",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "布局尺寸及跨论文比较",
+          "design": "相同0.5 µm工艺的所选设计比较",
+          "comparator": "引用[19]、[20]",
+          "measure": "单元面积和神经元密度",
+          "unit_of_analysis": "布局单元及所选芯片设计",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "2.1.5 Results",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所列设计的单元更密集。",
+        "boundary": "属于选择性跨设计比较，不是同条件系统级基准。",
+        "negative_result": null,
+        "non_inference": "不能据此推断完整系统面积或所有工艺节点均占优。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "共享电路能否提高神经元阵列的面积密度？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "review_secondary_evidence"
+        ]
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "综述在固定突触权重、1 MHz输入事件率下报告MNIFAT的跨单元输出/输入事件比：2040个M-N单元为0.0208±1.22×10⁻⁵，4080个I&F单元为0.0222±5.57×10⁻⁵；表1对照设计的2400个单元为0.0210±1.70×10⁻³，所述I&F阵列的离散程度较小。",
+      "claim_type": "measured_hardware_review",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "固定输入阵列表征和既有阵列对照",
+          "design": "固定权重、1 MHz输入",
+          "comparator": "Vogelstein等[19]阵列",
+          "measure": "输出/输入事件比及跨单元离散程度",
+          "unit_of_analysis": "同一芯片内神经元单元",
+          "sample_size_as_reported": "2040 M-N或4080 I&F；对照2400单元",
+          "uncertainty": "表1以σ标记I&F离散量；M-N的±量未另明确定义",
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "2.1.5 Results",
+            "figure": "Table 1",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所报告I&F单元的比值离散更小。",
+        "boundary": "单元数不是独立芯片批次数；比较来自引用实验。",
+        "negative_result": null,
+        "non_inference": "共享电路的解释不构成独立因果消融，也不证明零失配。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "共享突触和比较器是否降低阵列单元间响应离散？"
+      ],
+      "shared_evidence_with": [
+        "C1"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "review_secondary_evidence"
+        ]
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "综述报告MNIFAT在5 V供电、1 MHz输入事件率下测得平均功耗360 µW，对应每个输入突触事件360 pJ；该值不包含任意任务或整套外部路由系统的统一能耗基准。",
+      "claim_type": "measured_hardware_review",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "功率测量及按事件率换算",
+          "design": "5 V、1 MHz",
+          "comparator": "所引500/800 nm芯片；非同条件复测",
+          "measure": "平均功率及输入事件能量",
+          "unit_of_analysis": "芯片在给定输入条件下的测量",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "事件分母为输入突触事件"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "2.1.5 Results；续页9",
+            "figure": "Table 2 on page 9",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "给定输入条件下获得360 pJ/事件。",
+        "boundary": "板级外围功耗及芯片重复数未报告。",
+        "negative_result": null,
+        "non_inference": "不能外推为不同网络、负载或完整应用的能耗。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "MNIFAT在规定供电和事件率下的能量成本是多少？"
+      ],
+      "shared_evidence_with": [
+        "C5"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "review_secondary_evidence"
+        ]
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "MNIFAT综述未能因电路板问题实测低电压工作；文中仅用仿真验证1 V下较慢运行，并在动态能量随V²缩放且电容不变的假设下，将5 V的360 pJ/事件外推为1 V时约14.4 pJ/事件。",
+      "claim_type": "simulation_and_estimate_review",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "电路仿真与电压缩放估算",
+          "design": "低电压硬件测量不可用",
+          "comparator": "5 V实测360 pJ/事件",
+          "measure": "1 V操作可行性和估计事件能量",
+          "unit_of_analysis": "仿真条件及能量缩放模型",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "动态能量按V²缩放",
+            "电容保持不变"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "2.1.5 Results",
+            "figure": "Table 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "报告仿真和条件性估算。",
+        "boundary": "表2的55 nm行也标为估算，不能混同当前500 nm实测芯片。",
+        "negative_result": null,
+        "non_inference": "不能声称1 V事件能耗经实物验证。",
+        "unresolved": "1 V下板级实测及误差。",
+        "unresolved_attribution": "正文明确说明电路板问题阻止低电压测量。"
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "低电压MNIFAT的性能和能耗有何实测与估算边界？"
+      ],
+      "shared_evidence_with": [
+        "C4"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "not_measured",
+          "review_secondary_evidence"
+        ]
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "综述归纳的HiAER-IFAT以分层树式地址事件路由连接局部密集、全局稀疏的神经阵列；所引四芯片板级实例为256k神经元、256M连接，而22 pJ/事件是所引单芯片IFAT事件能量，不是包含外部DRAM查表的板级总能耗。",
+      "claim_type": "architecture_review",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "既有系统架构与规格综述",
+          "design": "分层路由和DRAM连接表",
+          "comparator": "平坦长距离路由；未给同条件数值基准",
+          "measure": "板级容量、单芯片能耗口径",
+          "unit_of_analysis": "既有板级系统与单芯片",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "2.2",
+            "figure": "Figure 4",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "分层组织兼顾可重配置长程连接和局部计算。",
+        "boundary": "主证据来自引用[23]、[24]等。",
+        "negative_result": null,
+        "non_inference": "不能将单芯片能耗当作端到端能耗，或将亚pJ未来目标当作已实现。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "多层地址事件路由如何支持大规模可重配置连接？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "review_secondary_evidence"
+        ]
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "综述描述的DeepSouth使用100神经元小柱、按类型共享事件计数与结构化连接参数，在Terasic DE5 FPGA上报告可按网络配置实时模拟20 million至2.6 billion LIF神经元；五倍慢于实时则报告100 million至12.8 billion，但详细设计节仅明确200k或1M个时分复用小柱，容量口径未充分统一。",
+      "claim_type": "fpga_system_review",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "FPGA架构与实现规模描述",
+          "design": "每小柱100神经元、最多八类型、结构化连接",
+          "comparator": "逐点存储任意连接",
+          "measure": "可模拟神经元数量和时间尺度",
+          "unit_of_analysis": "单FPGA实现及网络配置",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "3 DeepSouth；3.1",
+            "figure": "Figure 5",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "时分复用与连接约束描述",
+          "design": "实时200k小柱；五倍慢1M小柱",
+          "comparator": "任意逐突触网络",
+          "measure": "事件计数共享、扇出与时分容量",
+          "unit_of_analysis": "设计配置",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "3.1.2–3.1.3",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "结构约束和时分复用支持大网络模拟。",
+        "boundary": "容量范围与小柱数字存在未解释口径差异；共享计数并非独立逐脉冲传递。",
+        "negative_result": null,
+        "non_inference": "不能推断任意稠密网络均达最大容量，或已完备支持PyNN。",
+        "unresolved": "范围端点、容量单位与时分小柱数的对应关系。",
+        "unresolved_attribution": "正文第11–12页及表5口径不一致；PyNN完整兼容在第15页仍是后续工作。"
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "结构化连接和时分复用如何扩大FPGA神经模拟规模？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "source_internal_inconsistency",
+          "review_secondary_evidence"
+        ]
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "综述描述的第一代BrainScaleS采用180 nm HICANN、384芯片未切割晶圆和连续时间模拟AdEx电路，目标时间加速因子为10⁴；芯片间低延迟L1事件通信与带时间戳的L2主机通信被分别设计以适应加速导致的带宽和延迟约束。",
+      "claim_type": "architecture_review",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "物理模型和目标加速描述",
+          "design": "第一代AdEx模拟电路",
+          "comparator": "生物墙钟时间",
+          "measure": "目标加速与实现模型",
+          "unit_of_analysis": "架构",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 15,
+            "section": "4 BrainScaleS",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "通信层次设计说明",
+          "design": "L1实时6-bit事件与L2分包时间戳",
+          "comparator": "未加速事件通信",
+          "measure": "编码和延迟约束",
+          "unit_of_analysis": "通信架构",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 17,
+            "section": "4.1 HICANN ASIC",
+            "figure": "Figures 9–10",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "晶圆系统归纳",
+          "design": null,
+          "comparator": null,
+          "measure": "并行塑性、校准与晶圆扩展",
+          "unit_of_analysis": "第一代系统",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 24,
+            "section": "4.4 Summary",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "通过物理模拟及晶圆互连支持加速模型运行。",
+        "boundary": "10⁴是本文所述目标/系统时间映射，不是所有任务的统一实测加速比。",
+        "negative_result": null,
+        "non_inference": "不能据此断言生物机制被验证或任意任务端到端快10⁴倍。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "加速连续时间模拟如何改变通信和封装要求？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "review_secondary_evidence"
+        ]
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "综述描述的28 nm FDSOI Dynap-SEL包含四个256神经元非塑性核与一个64神经元塑性核，并以核内源地址广播、片内目的核地址及片间相对地址三级路由组合SRAM和TCAM；设计可连接至16×16芯片阵列而不依赖外部映射表。",
+      "claim_type": "architecture_review",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "模块和路由结构综述",
+          "design": "三层异步路由、分布式异构存储",
+          "comparator": "纯网格或纯分层路由",
+          "measure": "连接层次、核容量及设计扩展",
+          "unit_of_analysis": "芯片架构",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 25,
+            "section": "5.1.1",
+            "figure": "Figure 15",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提供片内和片间可编程事件通信。",
+        "boundary": "16×16是架构支持的扩展范围，不是本文展示全部阵列实测。",
+        "negative_result": null,
+        "non_inference": "不能从存算共置单独推断完整系统能耗优势；图17突触数与正文有冲突。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "异构片上存储和混合路由如何支持多核脉冲计算？"
+      ],
+      "shared_evidence_with": [
+        "C10"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "review_secondary_evidence",
+          "source_table_conflict"
+        ]
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "综述描述的Dynap-SEL塑性核为每个64个模拟神经元配置128个4-bit塑性突触、64个非塑性突触及四个线性突触；最多合并八行时可形成每神经元1024塑性与512非塑性输入，但可用神经元降为八个，体现输入扇入与神经元数的资源交换。",
+      "claim_type": "architecture_review",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "塑性核配置描述",
+          "design": "4-bit增减计数学习、DPI滤波与行合并",
+          "comparator": "未合并64神经元配置",
+          "measure": "每神经元突触数和可用神经元数",
+          "unit_of_analysis": "配置模式",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 26,
+            "section": "5.1.2",
+            "figure": "Figure 16",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "资源合并机制说明",
+          "design": null,
+          "comparator": null,
+          "measure": "八行合并限制",
+          "unit_of_analysis": "配置模式",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 27,
+            "section": "5.1.2；5.2",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "可重新分配神经元与扇入资源。",
+        "boundary": "学习规则来自引用[70]；本文不是独立学习性能基准。",
+        "negative_result": null,
+        "non_inference": "不能将结构存在等同于学习收敛、准确率或生物塑性因果验证。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "learning-memory",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "可塑性核如何在神经元数量和输入空间之间交换资源？"
+      ],
+      "shared_evidence_with": [
+        "C9"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "review_secondary_evidence"
+        ]
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "综述中的2DIFWTA为0.35 µm、2048神经元阵列，可用本地兴奋连接构成一个二维或32个64神经元的一维协作网络；抑制竞争通过可配置AER连接实现，因而邻域协作和全局竞争不由同一固定连线承担。",
+      "claim_type": "architecture_review",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "芯片结构综述",
+          "design": "32×64 I&F阵列",
+          "comparator": "二维与32个一维模式",
+          "measure": "容量和协作竞争连接",
+          "unit_of_analysis": "架构",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 29,
+            "section": "6.1",
+            "figure": "Figure 18",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "本地连接配置描述",
+          "design": "二维近邻或一维第一/第二邻居",
+          "comparator": "不同连接模式",
+          "measure": "拓扑模式",
+          "unit_of_analysis": "配置",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 32,
+            "section": "6.4",
+            "figure": "Figure 19 on page 30",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提供可重配置协作竞争网络结构。",
+        "boundary": "有限状态机、听觉等应用均转述先前文献。",
+        "negative_result": null,
+        "non_inference": "不能当作本文新任务性能或新神经生物学机制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "局部兴奋和可配置抑制如何组合协作竞争网络？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "review_secondary_evidence"
+        ]
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "综述描述PARCA用电阻交叉阵列并行形成加权电流和脉冲重叠写入；同时报告已制造130 nm、64×64 RRAM 1T1R核心，但该具体宏使用二值RRAM及列外周神经元时分顺序读出，不能与理想全并行多级模拟权重方案混为同一实测实现。",
+      "claim_type": "architecture_and_fabrication_review",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "读写架构归纳",
+          "design": "行脉冲数×列占空窗口控制更新",
+          "comparator": "逐行存储器读出",
+          "measure": "加权求和与权重更新",
+          "unit_of_analysis": "拟议架构",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 33,
+            "section": "7 PARCA",
+            "figure": "Figure 21",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "已制造宏描述",
+          "design": "M4/M5间集成二值RRAM；时分复用CMOS神经元",
+          "comparator": "理想多级全并行方案",
+          "measure": "阵列规模与读出方式",
+          "unit_of_analysis": "64×64核心",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 34,
+            "section": "7 PARCA",
+            "figure": "Figure 22",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "区分阵列计算方案与具体已制造宏。",
+        "boundary": "没有该宏完整学习精度和系统能耗实测。",
+        "negative_result": null,
+        "non_inference": "不能声称文中64×64宏已证明全并行模拟训练。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "电阻交叉阵列方案与二值实物宏有哪些实现差距？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "review_secondary_evidence"
+        ]
+      }
+    },
+    {
+      "id": "C13",
+      "statement": "综述转述的MNIST稀疏编码器件–算法联合仿真中，朴素采用非理想电阻突触的识别率约65%，理想算法约97%，加入消除关断电流、改善写入线性、冗余平均及放宽互连等措施后约95%；这些数字来自引用[95–96]而非本文新硅片测量。",
+      "claim_type": "simulation_review",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "既有联合仿真归纳",
+          "design": "逐项纳入精度、非线性、有限开关比、变异和IR drop",
+          "comparator": "理想稀疏编码与朴素实际器件映射",
+          "measure": "MNIST识别率",
+          "unit_of_analysis": "引用仿真条件",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 34,
+            "section": "7 PARCA",
+            "figure": "Figure 23",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "缓解策略归纳",
+          "design": null,
+          "comparator": "未缓解非理想映射",
+          "measure": "识别率恢复和资源代价",
+          "unit_of_analysis": "引用仿真条件",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 35,
+            "section": "7 PARCA",
+            "figure": "Figure 23; Table 3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "非理想映射可严重降低精度，缓解后仍非理想值。",
+        "boundary": "非理想因素与缓解策略来自同一引用模型，措施付出面积、功耗或速度成本。",
+        "negative_result": "所引仿真朴素非理想映射低于理想算法，缓解后约95%仍低于约97%。",
+        "non_inference": "不能当作64×64核心实测或所有电阻器件的通用性能。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "器件非理想性及缓解策略如何影响稀疏编码精度？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "review_secondary_evidence",
+          "simulation_not_silicon"
+        ]
+      }
+    },
+    {
+      "id": "C14",
+      "statement": "综述归纳的晶体管通道式神经系统用MOSFET通道近似生物离子通道，并用浮栅元件共置非易失权重与突触响应；所述IC具有可配置胞体、学习突触及AER接口，文中展示的突触学习和WTA示例均沿用已有研究。",
+      "claim_type": "architecture_review",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "物理类比及既有器件综述",
+          "design": "MOSFET通道与浮栅模型",
+          "comparator": "生物通道模型",
+          "measure": "神经动力学和存储响应实现",
+          "unit_of_analysis": "电路模型",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 36,
+            "section": "8.1–8.2",
+            "figure": "Figures 24–25",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "既有IC与测量实例归纳",
+          "design": "10k递归学习、10k AER学习、10k固定突触",
+          "comparator": "非学习权重配置",
+          "measure": "芯片结构与WTA示例",
+          "unit_of_analysis": "引用IC",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 38,
+            "section": "8.3",
+            "figure": "Figure 26",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提供存算共置和生物动力学近似的实现路径。",
+        "boundary": "通道物理只是相似而非相同；表5的10 nm行不能代表图26芯片工艺。",
+        "negative_result": null,
+        "non_inference": "不能由类比推出生物机制相同，或把EEPROM缩放预测当作当前IC实测。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "learning-memory",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "通道式模型和浮栅存储怎样共同实现神经计算？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "review_secondary_evidence",
+          "source_table_conflict"
+        ]
+      }
+    },
+    {
+      "id": "C15",
+      "statement": "综述转述的晶体管通道神经IC路径规划通过从目标节点发起脉冲波前形成路线，引用研究称在许多随机迷宫场景中正确且最优；本文未给场景数量、统计区间或统一对照，故只能保留为特定既有方法的综述陈述。",
+      "claim_type": "application_review",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "先前路径规划理论和实验综述",
+          "design": "目标77向网格传播、实例从22出发",
+          "comparator": "解析最优路径",
+          "measure": "正确和最优路线",
+          "unit_of_analysis": "引用迷宫场景",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "正文称100%但未报告随机场景数量"
+          ],
+          "source_locator": {
+            "pdf_page": 39,
+            "section": "8.3",
+            "figure": "Figure 27 on page 40",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "概括脉冲波前路径规划能力。",
+        "boundary": "结果归于引用[111]。",
+        "negative_result": null,
+        "non_inference": "不能作为本文新实验或无条件成功保证。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "脉冲波前如何在神经IC上表示路径规划？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "review_secondary_evidence",
+          "missing_sample_count"
+        ]
+      }
+    },
+    {
+      "id": "C16",
+      "statement": "综述归纳的可配置树突IC允许有源/无源树突汇聚至胞体，并转述YES–NO与NO–YES时序词检测示例；作者将树突结构类比于HMM线性树，但本文没有报告完整词汇集准确率或能耗比较实验。",
+      "claim_type": "application_review",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "可配置树突结构综述",
+          "design": "FPAA路由、主动通道",
+          "comparator": "将树突视作导线",
+          "measure": "可配置树突结构",
+          "unit_of_analysis": "架构",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 41,
+            "section": "8.4",
+            "figure": "Figure 28",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "既有时序分类例示",
+          "design": "YES/NO两个输入顺序",
+          "comparator": "两种顺序",
+          "measure": "检测时序",
+          "unit_of_analysis": "引用分类实例",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 42,
+            "section": "8.4",
+            "figure": "Figure 29",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "给出树突计算与时序词检测的综述实例。",
+        "boundary": "文中千倍效率陈述归于先前研究且无本文同条件数值比较。",
+        "negative_result": null,
+        "non_inference": "不能推断通用语音识别、HMM等价或新的效率基准。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "可配置树突结构如何参与时序模式检测？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "review_secondary_evidence"
+        ]
+      }
+    },
+    {
+      "id": "C17",
+      "statement": "综述将Neurogrid归为面向神经模拟的混合信号多芯片系统，转述16个约65k神经元芯片合计约1M神经元、整板约3 W；这是所引用配置的规格，不是本文重新测得的通用功耗。",
+      "claim_type": "system_review",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "既有系统规格归纳",
+          "design": "16神经核心板",
+          "comparator": "未给匹配任务基准",
+          "measure": "神经元数与板级功率",
+          "unit_of_analysis": "引用系统",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 43,
+            "section": "9.1 Neurogrid",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "归纳混合信号板级规模。",
+        "boundary": "芯片和整板功耗有不同边界。",
+        "negative_result": null,
+        "non_inference": "不能与其他芯片每事件能量直接排名。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "Neurogrid采用何种容量与功耗边界？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "review_secondary_evidence"
+        ]
+      }
+    },
+    {
+      "id": "C18",
+      "statement": "综述将TrueNorth归为数字神经芯片，转述单片4096核、每核256神经元和每神经元256突触，单片约72 mW；并转述16芯片板在所述1 kHz条件下约1 W，未进行与模拟系统的同任务比较。",
+      "claim_type": "system_review",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "数字系统规格归纳",
+          "design": "28 nm数字实现及NS16e板",
+          "comparator": "未给同任务基准",
+          "measure": "芯片容量及两层功率口径",
+          "unit_of_analysis": "引用芯片及板",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 43,
+            "section": "9.2 TrueNorth",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "归纳数字系统的大规模低功耗配置。",
+        "boundary": "表5及参考文献[119]存在代际/工艺口径问题。",
+        "negative_result": null,
+        "non_inference": "不能把数字低功耗唯一归因于工艺节点。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "数字神经系统的功耗比较需要哪些实现条件？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "review_secondary_evidence"
+        ]
+      }
+    },
+    {
+      "id": "C19",
+      "statement": "综述转述SpiNNaker以18核处理器芯片和脑启发通信模拟神经网络，所述每节点16k神经元；4节点板和48节点板分别为64k和768k神经元，后者约80 W，这些是引用配置规格而非本文复测或固定物理神经元容量。",
+      "claim_type": "system_review",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "处理器系统规格归纳",
+          "design": "可编程18核节点；正文列4节点板64k与48节点板",
+          "comparator": "未给同任务基准",
+          "measure": "模拟容量和板级功率",
+          "unit_of_analysis": "引用处理器板配置",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 43,
+            "section": "9.3 SpiNNaker",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "处理器与事件通信支持可编程神经模拟。",
+        "boundary": "正文小板为4节点而非16节点；按原文4节点/64k理解。",
+        "negative_result": null,
+        "non_inference": "不能把每节点16k当作硬连线固定容量或与模拟芯片直接效率比较。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "处理器式神经模拟的容量如何依赖网络配置？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "review_secondary_evidence"
+        ]
+      }
+    },
+    {
+      "id": "C20",
+      "statement": "综述按模拟/数字实现、加速时间、连接灵活性、片上学习及接口工具归纳大型神经模拟器的取舍，并明确不将这些系统按单一优劣排序；表5来自不同技术、芯片/板级及事件定义，不能构成统一性能基准。",
+      "claim_type": "comparative_synthesis",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "定性跨架构综合",
+          "design": "所选系统和历史规格",
+          "comparator": "跨技术与系统层级比较",
+          "measure": "用途、时间尺度、连接及学习取舍",
+          "unit_of_analysis": "综述架构类别",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 44,
+            "section": "10 Discussion",
+            "figure": "Table 5 on page 45",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "系统选择依赖用途和约束。",
+        "boundary": "非系统综述或统一复测；技术代际受稿件时间限制。",
+        "negative_result": null,
+        "non_inference": "不能推出任何架构在全部任务上优越。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "神经模拟系统应如何按任务和证据边界比较？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "review_secondary_evidence",
+          "heterogeneous_benchmark"
+        ]
+      }
+    }
+  ],
+  "reading_summary": "本稿是大型神经模拟器综述，核心价值是比较架构与适用约束，不是统一跑分。保留20条可独立评估的综述命题，明确区分MNIFAT实测、低电压仿真/估算、PARCA拟议并行方案和二值制造宏，以及转述的通道/树突应用。正文与汇总表及作者元数据的冲突需要人工确认。",
+  "shared_evidence": [
+    {
+      "id": "SE1",
+      "claim_ids": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5"
+      ],
+      "source_pages": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "description": "同一MNIFAT设计和表征；单元数非独立芯片数，估算依赖同一5 V功率值。",
+      "independence": "非独立复现"
+    },
+    {
+      "id": "SE2",
+      "claim_ids": [
+        "C9",
+        "C10"
+      ],
+      "source_pages": [
+        24,
+        25,
+        26,
+        27,
+        28
+      ],
+      "description": "同一Dynap-SEL架构的路由与塑性核。",
+      "independence": "同一设计"
+    }
+  ],
+  "audit": {
+    "source_match_checks": [
+      {
+        "check": "full_text_and_identity",
+        "status": "assessed",
+        "details": "55页全文、图表说明和引用归属已核对；标题一致，作者存在命名不一致。"
+      },
+      {
+        "check": "second_source_check",
+        "status": "completed",
+        "details": "逐命题回对所读页面；特别核对MNIFAT模式数、±量、能耗分母及仿真标记，保留内部冲突。"
+      }
+    ],
+    "model_findings": [
+      {
+        "claim_id": "C1",
+        "issue": "表5写6120神经元，正文是2040 M-N或4080 I&F的互斥模式。",
+        "pdf_page": 45,
+        "resolved": true,
+        "suggested_correction": "不相加；采用正文模式表述。"
+      },
+      {
+        "claim_id": "C7",
+        "issue": "DeepSouth大范围容量与200k/1M小柱及表5不统一；摘要式PyNN表述超过第15页实际支持。",
+        "pdf_page": 12,
+        "resolved": false,
+        "suggested_correction": "人工核查原始系统文章和最终版本。"
+      },
+      {
+        "claim_id": "C9",
+        "issue": "图17说明每非塑性核64k突触，与第25页16k/核及64×256不一致。",
+        "pdf_page": 28,
+        "resolved": false,
+        "suggested_correction": null
+      },
+      {
+        "claim_id": "C14",
+        "issue": "表5把浮栅缩放10 nm列入系统工艺，与已有IC描述边界不一。",
+        "pdf_page": 45,
+        "resolved": false,
+        "suggested_correction": null
+      },
+      {
+        "claim_id": null,
+        "issue": "作者Kundan Kumar与导入记录K. Siva Kumar不一致。",
+        "pdf_page": 1,
+        "resolved": false,
+        "suggested_correction": null
+      },
+      {
+        "claim_id": "C5",
+        "issue": "1 V结果不是实测，55 nm表行也是估算。",
+        "pdf_page": 9,
+        "resolved": true,
+        "suggested_correction": "分开标为仿真和能量缩放估算。"
+      }
+    ],
+    "needs_human_review": true
+  },
+  "format": "claim-commons-pdf-v1",
+  "paper": {
+    "title": "Large-Scale Neuromorphic Spiking Array Processors: A Quest to Mimic the Brain",
+    "authors": [
+      "Chetan Singh Thakur",
+      "Jamal Lottier Molin",
+      "Gert Cauwenberghs",
+      "Giacomo Indiveri",
+      "K. Siva Kumar",
+      "Ning Qiao",
+      "Johannes Schemmel",
+      "Runchun Wang",
+      "Elisabetta Chicca",
+      "Jennifer Hasler",
+      "Jae-sun Seo",
+      "Shimeng Yu",
+      "Yu Kevin Cao",
+      "André van Schaik",
+      "Ralph Etienne‐Cummings"
+    ],
+    "doi": "10.3389/fnins.2018.00891",
+    "publication_year": 2018,
+    "venue": "Frontiers in Neuroscience",
+    "url": "https://doi.org/10.3389/fnins.2018.00891"
+  },
+  "source": {
+    "filename": "paper-W2803748862.pdf",
+    "sha256": "d68558c10c8e6803f5523e4ad3ce2acc9800b2ca7a62b33fde79cd2c46e4cad4",
+    "source_url": "https://arxiv.org/pdf/1805.08932",
+    "pdf_page_count": 55
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T06:51:40.193Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "d68558c10c8e6803f5523e4ad3ce2acc9800b2ca7a62b33fde79cd2c46e4cad4",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

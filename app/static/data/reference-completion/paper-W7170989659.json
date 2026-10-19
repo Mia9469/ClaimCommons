@@ -1,0 +1,1433 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "preprint",
+  "paper": {
+    "title": "Physics-Informed Graph-Neural Decoding of the Surface Code: the Logical Signal as an Exact Topological Pairing",
+    "authors": [
+      "P. E. Trevisanutto",
+      "S. Dhanpal",
+      "S Basak",
+      "L. Petit",
+      "J. Thiyagalingam"
+    ],
+    "doi": null,
+    "publication_year": 2026,
+    "venue": "arXiv (Cornell University)",
+    "url": "https://arxiv.org/pdf/2607.20060"
+  },
+  "source": {
+    "filename": "paper-W7170989659--Physics-Informed-Graph-Neural-Decoding-of-the-Surface-Code-the-Logical-Signal-as-an-Exact-Topol.pdf",
+    "sha256": "d00704e3f67e17c397aab132d293ff7e30b141dff259c85e6e76b89d16b1ed42",
+    "source_url": "https://arxiv.org/pdf/2607.20060",
+    "pdf_page_count": 19
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "results_sections_seen": [
+      "Graph/DEC/Prop1 proof",
+      "GINE/weight/Jacobi",
+      "four readouts",
+      "Training and logical axis",
+      "d5/d7 comparisons",
+      "Laplace control",
+      "Bare metric/MWPM",
+      "AppendixA–D"
+    ],
+    "missing_material": [
+      "图像像素未读取",
+      "训练样本总数及axis选择分割未给",
+      "未测k>1/highp/biasednoise"
+    ],
+    "text_pass_complete": true,
+    "notes": "arXiv2607.20060v2，页眉7/29正文Dated7/30；全部19页及附录证明/6图2表29参考评估。",
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": true,
+    "archived_page_text_used": true
+  },
+  "contribution_inventory": [
+    {
+      "summary": "作者设计GINE生成syndrome依赖正边权、Poisson/Jacobi层及边界电流或全场pooling的可微解码器。",
+      "role": "interpretation",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "对于正权图且每连通分量接触Dirichlet边界的精确解，两个零电位sink的流入分别等于χ和1−χ对内部源的加权和，差为Σ(1−2χ)ρ。",
+      "role": "result",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "电势差Bφ是exact梯度；以一致的电阻网络度量解释时，驱动电流无需另加独立循环电流分量。",
+      "role": "interpretation",
+      "source_pages": [
+        4
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "作者把双sink统计量解释为表面码相对拓扑的逻辑信号，但该强解释未由Green恒等式或只有图的一维complex证明。",
+      "role": "interpretation",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "实际25次Jacobi后内部相对残差约0.150±0.028，100次约0.021±0.012，训练和测试使用相同步数而非精确稳态读出。",
+      "role": "result",
+      "source_pages": [
+        18
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "d5 p=.005五seed中，two-sink BA=.898±.013/AUC=.958±.010，与single-J及φ的配对差均未达到显著。",
+      "role": "result",
+      "source_pages": [
+        13
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "d7 p=.005时，two-sink BA=.857±.011，single-J .811±.021，配对均差+.046±.025，t=4.1、p=.014。",
+      "role": "result",
+      "source_pages": [
+        14
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "d7 two-sink与φ均值有差，但p=.18未显著；一个φ训练dead-start贡献了大部分差距。",
+      "role": "result",
+      "source_pages": [
+        14
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "diffusion模型在warmup后成功学习，d5 BA=.875±.023而非随机；早期无warmup的灾难性失败被作者归于训练协议。",
+      "role": "result",
+      "source_pages": [
+        13
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "两sink施加电位差、去syndrome源的Laplace控制在所用训练初始化中不学习，AUC=.50。",
+      "role": "result",
+      "source_pages": [
+        12
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "均匀权χ的bare统计量BA由d5约.63降到d7约.56，学习metric及标量校准对所测更大图更重要。",
+      "role": "result",
+      "source_pages": [
+        14
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "全部学习解码器的报告BA均低于同DEM的MWPM，d5 MWPM=.980、d7=.989。",
+      "role": "result",
+      "source_pages": [
+        13
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "作者提出直接χ读出、多个logical qubit边界对及bias-aware训练，暂未实测；闭toric code不在当前边界构造内。",
+      "role": "hypothesis",
+      "source_pages": [
+        16
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "AppendixA电磁/Aharonov–Bohm是直觉类比，作者明确非证明支柱。",
+      "role": "interpretation",
+      "source_pages": [
+        17
+      ],
+      "decision": "exclude",
+      "reason": "不新增物理实证"
+    },
+    {
+      "summary": "AppendixC Euler稳定性需dt<2/λmax；dtmax.5不被所给粗界单独保证，实际谱未提供。",
+      "role": "interpretation",
+      "source_pages": [
+        18
+      ],
+      "decision": "unresolved",
+      "reason": "不替作者运行验证"
+    },
+    {
+      "summary": "高p=.01/.015数据在方法列出但未报定量比较/排序，不能补造高噪声表现。",
+      "role": "result",
+      "source_pages": [
+        11,
+        12,
+        16
+      ],
+      "decision": "unresolved",
+      "reason": "没有有效不同readout次序实证"
+    },
+    {
+      "summary": "全部6图注2表29参考评估，图d7仅illustrative的图注与正式TableII使用需区别。",
+      "role": "result",
+      "source_pages": [
+        3,
+        13,
+        14,
+        19
+      ],
+      "decision": "include",
+      "reason": "全文贡献已盘点"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "作者设计GINE生成syndrome依赖正边权、Poisson/Jacobi层及边界电流或全场pooling的可微解码器。",
+      "claim_type": "quantum_graph_decoder",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "GNN/离散Poisson归纳偏置",
+          "design": "4层hidden64；DEM提供边成本；rotated memory-z circuit",
+          "comparator": "单sink/two-sink/φ/diffusion",
+          "measure": "逻辑分类",
+          "unit_of_analysis": "理论对象/独立模拟训练seed",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "III decoder",
+            "figure": "Fig5",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者设计GINE生成syndrome依赖正边权、Poisson/Jacobi层及边界电流或全场pooling的可微解码器。",
+        "boundary": "软件/Stim仿真，无量子芯片；模型已用已知噪声DEM成本。",
+        "negative_result": null,
+        "non_inference": "不是无需噪声模型或无训练参数的完整解码器。",
+        "unresolved": "图5softplus与正文exp(-ce+δ)+floor不一致；4层后标h3有索引疑误。",
+        "unresolved_attribution": "来源局限及提取者来源复核"
+      },
+      "broad_directions": [
+        "quantum-error-correction",
+        "graph-learning",
+        "mathematical-physics"
+      ],
+      "scientific_questions": [
+        "双边界Poisson统计量在什么条件下可解释并改善逻辑错误预测？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12",
+        "C13"
+      ],
+      "review_notes": [
+        "19页Prop1及AppendixA–D二次审计；解析identity/有限迭代/逻辑类解释分开；n5配对不显著非等效；具体假设、实际negative与未来未测分清。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "对于正权图且每连通分量接触Dirichlet边界的精确解，两个零电位sink的流入分别等于χ和1−χ对内部源的加权和，差为Σ(1−2χ)ρ。",
+      "claim_type": "quantum_graph_decoder",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "L对称性/离散Green恒等式",
+          "design": "χ边界0/1、内部谐和；φ内部Lφ=ρ、边界0/0",
+          "comparator": "直接求χ vssink flux",
+          "measure": "精确实数加权identity",
+          "unit_of_analysis": "解析图恒等式",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "正权",
+            "每分量有固定边界",
+            "同一对称L",
+            "精确解两个Dirichlet问题"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "Proposition1",
+            "figure": "Eq6–9",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "对于正权图且每连通分量接触Dirichlet边界的精确解，两个零电位sink的流入分别等于χ和1−χ对内部源的加权和，差为Σ(1−2χ)ρ。",
+        "boundary": "只证明电阻网络边界统计量；不单独证明它为Z2逻辑奇偶或充分信息。",
+        "negative_result": null,
+        "non_inference": "数值近似解和任意图逻辑分类不能由该恒等式自动精确。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "quantum-error-correction",
+        "graph-learning",
+        "mathematical-physics"
+      ],
+      "scientific_questions": [
+        "双边界Poisson统计量在什么条件下可解释并改善逻辑错误预测？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12",
+        "C13"
+      ],
+      "review_notes": [
+        "19页Prop1及AppendixA–D二次审计；解析identity/有限迭代/逻辑类解释分开；n5配对不显著非等效；具体假设、实际negative与未来未测分清。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "电势差Bφ是exact梯度；以一致的电阻网络度量解释时，驱动电流无需另加独立循环电流分量。",
+      "claim_type": "quantum_graph_decoder",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "图场分解解释",
+          "design": "J=diag(w)Bφ与场Bφ需分开",
+          "comparator": "独立circulation sector",
+          "measure": "场成分",
+          "unit_of_analysis": "场分解",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "Hodge/gradient discussion",
+            "figure": "Eq3–5",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "电势差Bφ是exact梯度；以一致的电阻网络度量解释时，驱动电流无需另加独立循环电流分量。",
+        "boundary": "普通欧氏J不一定属于imB；加权flux内积应与算子一致。",
+        "negative_result": null,
+        "non_inference": "BᵀJ=ρ只表散度，单凭它不证明任意J无harmonic分量。",
+        "unresolved": "源文Eq4写Bψ欧氏分解随后对J用⋆1加权，内积及边界条件未充分一致。",
+        "unresolved_attribution": "来源局限及提取者来源复核"
+      },
+      "broad_directions": [
+        "quantum-error-correction",
+        "graph-learning",
+        "mathematical-physics"
+      ],
+      "scientific_questions": [
+        "双边界Poisson统计量在什么条件下可解释并改善逻辑错误预测？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12",
+        "C13"
+      ],
+      "review_notes": [
+        "19页Prop1及AppendixA–D二次审计；解析identity/有限迭代/逻辑类解释分开；n5配对不显著非等效；具体假设、实际negative与未来未测分清。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "作者把双sink统计量解释为表面码相对拓扑的逻辑信号，但该强解释未由Green恒等式或只有图的一维complex证明。",
+      "claim_type": "quantum_graph_decoder",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "作者拓扑论证及来源审计",
+          "design": "图无2-cells；C是实数metric依赖vote而σ为detector0-cochain",
+          "comparator": "代码逻辑类与图cycle space",
+          "measure": "提出的拓扑解释",
+          "unit_of_analysis": "尚未充分建立的拓扑主张",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "Relative topology interpretation",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者把双sink统计量解释为表面码相对拓扑的逻辑信号，但该强解释未由Green恒等式或只有图的一维complex证明。",
+        "boundary": "不认定H1(G,∂G;Z2)维数=k；局部cycle需稳定子/2-cell商结构。",
+        "negative_result": null,
+        "non_inference": "同syndrome可对应不同逻辑错误；非零sink差不必是实际逻辑错误，标量不能精确识别每error。",
+        "unresolved": "对连通图两边界顶点relative H1仍含b1并额外一维；作者把所有局部cycles自动商掉及1−2χ实数和视Z2配对的步骤缺失。",
+        "unresolved_attribution": "来源局限及提取者来源复核"
+      },
+      "broad_directions": [
+        "quantum-error-correction",
+        "graph-learning",
+        "mathematical-physics"
+      ],
+      "scientific_questions": [
+        "双边界Poisson统计量在什么条件下可解释并改善逻辑错误预测？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12",
+        "C13"
+      ],
+      "review_notes": [
+        "19页Prop1及AppendixA–D二次审计；解析identity/有限迭代/逻辑类解释分开；n5配对不显著非等效；具体假设、实际negative与未来未测分清。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "实际25次Jacobi后内部相对残差约0.150±0.028，100次约0.021±0.012，训练和测试使用相同步数而非精确稳态读出。",
+      "claim_type": "quantum_graph_decoder",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "残差迭代审计",
+          "design": "d5 p.005；有限budget",
+          "comparator": "25 vs100步",
+          "measure": "相对Poisson残差",
+          "unit_of_analysis": "理论对象/独立模拟训练seed",
+          "sample_size_as_reported": "5训练seeds",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 18,
+            "section": "AppendixB",
+            "figure": "Eq14–15",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "实际25次Jacobi后内部相对残差约0.150±0.028，100次约0.021±0.012，训练和测试使用相同步数而非精确稳态读出。",
+        "boundary": "数值收敛方向有支持，25步不是Gauss law exact；一致预算只保证同一特征函数。",
+        "negative_result": "25步仍有约15%相对残差。",
+        "non_inference": "不等于实现精确Prop1统计量。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "quantum-error-correction",
+        "graph-learning",
+        "mathematical-physics"
+      ],
+      "scientific_questions": [
+        "双边界Poisson统计量在什么条件下可解释并改善逻辑错误预测？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12",
+        "C13"
+      ],
+      "review_notes": [
+        "19页Prop1及AppendixA–D二次审计；解析identity/有限迭代/逻辑类解释分开；n5配对不显著非等效；具体假设、实际negative与未来未测分清。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "d5 p=.005五seed中，two-sink BA=.898±.013/AUC=.958±.010，与single-J及φ的配对差均未达到显著。",
+      "claim_type": "quantum_graph_decoder",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "同split多seed比较",
+          "design": "80/10/10分层；validation择checkpoint/threshold",
+          "comparator": "single-J .893±.009、φ .910±.018",
+          "measure": "BA/AUC",
+          "unit_of_analysis": "理论对象/独立模拟训练seed",
+          "sample_size_as_reported": "5独立seeds/各自生成split；训练样本总数未提供",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "d5 readouts",
+            "figure": "TableI",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "d5 p=.005五seed中，two-sink BA=.898±.013/AUC=.958±.010，与single-J及φ的配对差均未达到显著。",
+        "boundary": "小n未显著不证明统计等效或标量充分性；边界与readout同时改变。",
+        "negative_result": "two−single差+.005±.012，p=.43；two−φ−.012±.024，p=.33。",
+        "non_inference": "不能称two最准确、无信息损失或优于φ。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "quantum-error-correction",
+        "graph-learning",
+        "mathematical-physics"
+      ],
+      "scientific_questions": [
+        "双边界Poisson统计量在什么条件下可解释并改善逻辑错误预测？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12",
+        "C13"
+      ],
+      "review_notes": [
+        "19页Prop1及AppendixA–D二次审计；解析identity/有限迭代/逻辑类解释分开；n5配对不显著非等效；具体假设、实际negative与未来未测分清。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "d7 p=.005时，two-sink BA=.857±.011，single-J .811±.021，配对均差+.046±.025，t=4.1、p=.014。",
+      "claim_type": "quantum_graph_decoder",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "配对5seed比较",
+          "design": "更长patience及minimumepoch的协议",
+          "comparator": "single-sink current pool",
+          "measure": "BA",
+          "unit_of_analysis": "理论对象/独立模拟训练seed",
+          "sample_size_as_reported": "5seeds，所有配对差为正",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 14,
+            "section": "Larger distance",
+            "figure": "TableII",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "d7 p=.005时，two-sink BA=.857±.011，single-J .811±.021，配对均差+.046±.025，t=4.1、p=.014。",
+        "boundary": "在测试d7设置有t-test优势，但n5及检验选取限制，不是任意distance性能规律。",
+        "negative_result": "Wilcoxon p=.06未达常用.05，不能称所有统计均显著。",
+        "non_inference": "不是与MWPM或量子硬件纠错效能的优势。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "quantum-error-correction",
+        "graph-learning",
+        "mathematical-physics"
+      ],
+      "scientific_questions": [
+        "双边界Poisson统计量在什么条件下可解释并改善逻辑错误预测？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12",
+        "C13"
+      ],
+      "review_notes": [
+        "19页Prop1及AppendixA–D二次审计；解析identity/有限迭代/逻辑类解释分开；n5配对不显著非等效；具体假设、实际negative与未来未测分清。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "d7 two-sink与φ均值有差，但p=.18未显著；一个φ训练dead-start贡献了大部分差距。",
+      "claim_type": "quantum_graph_decoder",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "seed失败控制",
+          "design": "φ一seed BA.713，其余约.82–.86",
+          "comparator": "two vsφ .815±.061",
+          "measure": "BA差与敏感性",
+          "unit_of_analysis": "理论对象/独立模拟训练seed",
+          "sample_size_as_reported": "5seeds，事后子集4",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 14,
+            "section": "φ baseline failure",
+            "figure": "TableII",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "d7 two-sink与φ均值有差，但p=.18未显著；一个φ训练dead-start贡献了大部分差距。",
+        "boundary": "剔除失败seed为事后诊断不是更公平主效应；不显著不是等效。",
+        "negative_result": "全5Wilcoxon p=.13；除该seed均差降约.018仍未显著。",
+        "non_inference": null,
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "quantum-error-correction",
+        "graph-learning",
+        "mathematical-physics"
+      ],
+      "scientific_questions": [
+        "双边界Poisson统计量在什么条件下可解释并改善逻辑错误预测？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C9",
+        "C10",
+        "C11",
+        "C12",
+        "C13"
+      ],
+      "review_notes": [
+        "19页Prop1及AppendixA–D二次审计；解析identity/有限迭代/逻辑类解释分开；n5配对不显著非等效；具体假设、实际negative与未来未测分清。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "diffusion模型在warmup后成功学习，d5 BA=.875±.023而非随机；早期无warmup的灾难性失败被作者归于训练协议。",
+      "claim_type": "quantum_graph_decoder",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "训练对照与多seed比较",
+          "design": "15Eulersteps及learnable dt；无physics residual损失",
+          "comparator": "有/无warmup先期运行；其他readouts",
+          "measure": "BA/AUC",
+          "unit_of_analysis": "理论对象/独立模拟训练seed",
+          "sample_size_as_reported": "正式5seeds；先期次数未报告",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "Diffusion correction",
+            "figure": "TableI/Fig6",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "diffusion模型在warmup后成功学习，d5 BA=.875±.023而非随机；早期无warmup的灾难性失败被作者归于训练协议。",
+        "boundary": "数学diffusion无稳态Poisson平衡，但不表示不能携带分类信息；所有diffusion比较不只readout还loss变化。",
+        "negative_result": "预设J>φ>diffusion层级未得到数据支持；无warmup先期失败不是内在不可能。",
+        "non_inference": null,
+        "unresolved": "第16页称diffusion高于single-J却表.875<.893；未给paired证明所有差显著。",
+        "unresolved_attribution": "来源局限及提取者来源复核"
+      },
+      "broad_directions": [
+        "quantum-error-correction",
+        "graph-learning",
+        "mathematical-physics"
+      ],
+      "scientific_questions": [
+        "双边界Poisson统计量在什么条件下可解释并改善逻辑错误预测？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C10",
+        "C11",
+        "C12",
+        "C13"
+      ],
+      "review_notes": [
+        "19页Prop1及AppendixA–D二次审计；解析identity/有限迭代/逻辑类解释分开；n5配对不显著非等效；具体假设、实际negative与未来未测分清。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "两sink施加电位差、去syndrome源的Laplace控制在所用训练初始化中不学习，AUC=.50。",
+      "claim_type": "quantum_graph_decoder",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "source vsboundary驱动控制",
+          "design": "均匀边权时所有样本场相同",
+          "comparator": "ρ=σ Poisson",
+          "measure": "AUC",
+          "unit_of_analysis": "理论对象/独立模拟训练seed",
+          "sample_size_as_reported": "control独立seed次数未给",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "Source-free negative control",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "两sink施加电位差、去syndrome源的Laplace控制在所用训练初始化中不学习，AUC=.50。",
+        "boundary": "真实观察限制于该初始化/架构；w(σ)可依syndrome，source-free场原则上不必sample-independent。",
+        "negative_result": "所设控制训练失败。",
+        "non_inference": "不证明全部Laplace/weight-only架构数学上无法学习。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "quantum-error-correction",
+        "graph-learning",
+        "mathematical-physics"
+      ],
+      "scientific_questions": [
+        "双边界Poisson统计量在什么条件下可解释并改善逻辑错误预测？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C11",
+        "C12",
+        "C13"
+      ],
+      "review_notes": [
+        "19页Prop1及AppendixA–D二次审计；解析identity/有限迭代/逻辑类解释分开；n5配对不显著非等效；具体假设、实际negative与未来未测分清。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "均匀权χ的bare统计量BA由d5约.63降到d7约.56，学习metric及标量校准对所测更大图更重要。",
+      "claim_type": "quantum_graph_decoder",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "uniform权与trained对照",
+          "design": "逻辑轴按真实label经验选择，d7均衡边界72/72",
+          "comparator": "w1 vs学习模型",
+          "measure": "bare BA",
+          "unit_of_analysis": "理论对象/独立模拟训练seed",
+          "sample_size_as_reported": "bare测试样本/重复n未报告",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 14,
+            "section": "Bare signal and partition",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "均匀权χ的bare统计量BA由d5约.63降到d7约.56，学习metric及标量校准对所测更大图更重要。",
+        "boundary": "经验partition需要独立training选择验证；更小bare BA不证明全部噪声/距离趋势。",
+        "negative_result": null,
+        "non_inference": null,
+        "unresolved": "逻辑轴测试用了true error chain/label但未交代与test隔离，可能信息泄露范围未明。",
+        "unresolved_attribution": "来源局限及提取者来源复核"
+      },
+      "broad_directions": [
+        "quantum-error-correction",
+        "graph-learning",
+        "mathematical-physics"
+      ],
+      "scientific_questions": [
+        "双边界Poisson统计量在什么条件下可解释并改善逻辑错误预测？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C12",
+        "C13"
+      ],
+      "review_notes": [
+        "19页Prop1及AppendixA–D二次审计；解析identity/有限迭代/逻辑类解释分开；n5配对不显著非等效；具体假设、实际negative与未来未测分清。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "全部学习解码器的报告BA均低于同DEM的MWPM，d5 MWPM=.980、d7=.989。",
+      "claim_type": "quantum_graph_decoder",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "同噪声参考比较",
+          "design": "circuit-level depolarizing p.005",
+          "comparator": "four learned decoders",
+          "measure": "BA",
+          "unit_of_analysis": "理论对象/独立模拟训练seed",
+          "sample_size_as_reported": "5neural seeds；MWPM同模拟参考",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "MWPM limitation",
+            "figure": "TableI–II",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "全部学习解码器的报告BA均低于同DEM的MWPM，d5 MWPM=.980、d7=.989。",
+        "boundary": "用已知DEM参数；不推出MWPM对任意相关/漂移噪声绝对最优。",
+        "negative_result": "本模型未超过MWPM。",
+        "non_inference": "MWPM最小权error-chain与error-class概率和的最大似然不是普遍等价。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "quantum-error-correction",
+        "graph-learning",
+        "mathematical-physics"
+      ],
+      "scientific_questions": [
+        "双边界Poisson统计量在什么条件下可解释并改善逻辑错误预测？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C13"
+      ],
+      "review_notes": [
+        "19页Prop1及AppendixA–D二次审计；解析identity/有限迭代/逻辑类解释分开；n5配对不显著非等效；具体假设、实际negative与未来未测分清。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C13",
+      "statement": "作者提出直接χ读出、多个logical qubit边界对及bias-aware训练，暂未实测；闭toric code不在当前边界构造内。",
+      "claim_type": "quantum_graph_decoder",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "拓扑/架构扩展假说",
+          "design": "拟加2k sinks/k输出；偏置DEM初始化",
+          "comparator": "未实施新code/biased训练",
+          "measure": "泛化方案",
+          "unit_of_analysis": "未来方向",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 16,
+            "section": "Future work",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者提出的可检验假说。",
+        "boundary": "2k边界要求并非所有k逻辑码的普适拓扑，更多sink无信号/必降性能也未验证。",
+        "negative_result": null,
+        "non_inference": "没有k>1、d9、高噪声或bias优势结果。",
+        "unresolved": "多边界维度和同boundary子sink谐和函数归零的论证未证明。",
+        "unresolved_attribution": "来源局限及提取者来源复核"
+      },
+      "broad_directions": [
+        "quantum-error-correction",
+        "graph-learning",
+        "mathematical-physics"
+      ],
+      "scientific_questions": [
+        "双边界Poisson统计量在什么条件下可解释并改善逻辑错误预测？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12"
+      ],
+      "review_notes": [
+        "19页Prop1及AppendixA–D二次审计；解析identity/有限迭代/逻辑类解释分开；n5配对不显著非等效；具体假设、实际negative与未来未测分清。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "双边界Green恒等式明确，但有限Jacobi及relative图拓扑不能直接证明精确逻辑类充分统计。五seed仿真在d7改善single-J，未证优于φ或MWPM；保留diffusion训练成功、实际负控制与理论缺口。",
+  "shared_evidence": [
+    {
+      "claim_id": "C1",
+      "with": [
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C2",
+      "with": [
+        "C1",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C1",
+        "C2",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C9",
+        "C10",
+        "C11",
+        "C12",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C10",
+        "C11",
+        "C12",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C11",
+        "C12",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C12",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C13",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": "C4",
+        "issue": "裸图relativeH1不是一个逻辑qubit的quotient，实数σ加权统计不是自动Z2 topological invariant；同σ存在不同logical errors。",
+        "pdf_page": 7,
+        "suggested_correction": null,
+        "resolved": false
+      },
+      {
+        "claim_id": "C5",
+        "issue": "主文exactGauss与AppendixB15%残差矛盾，实际有限步s25不等稳态s∞。",
+        "pdf_page": 18,
+        "suggested_correction": null,
+        "resolved": false
+      },
+      {
+        "claim_id": null,
+        "issue": "Eq18 homogeneous diffusion u=e^-tLρ趋零/常量，其Lu不趋ρ；缺持续源，不能称t∞恢复Poisson。",
+        "pdf_page": 11,
+        "suggested_correction": null,
+        "resolved": false
+      },
+      {
+        "claim_id": null,
+        "issue": "无边界L存在零模，Jacobi全谱还可含2，不能无条件always converge；anchored connected条件应显式。",
+        "pdf_page": 17,
+        "suggested_correction": null,
+        "resolved": false
+      },
+      {
+        "claim_id": null,
+        "issue": "dtmax=.5由2dmaxwmax界不能无条件确保Euler稳定。",
+        "pdf_page": 18,
+        "suggested_correction": null,
+        "resolved": false
+      },
+      {
+        "claim_id": "C6",
+        "issue": "五seed不显著不是统计等效，不能证明scalar饱和所有信息。",
+        "pdf_page": 12,
+        "suggested_correction": "保留实际p及非推论",
+        "resolved": true
+      },
+      {
+        "claim_id": "C1",
+        "issue": "w=e^-ce+floor不是MWPM ce成本同权；模型已用DEM，且图softplus/正文exp、floor .1 vs10^-5有配置差异。",
+        "pdf_page": 9,
+        "suggested_correction": null,
+        "resolved": false
+      },
+      {
+        "claim_id": "C11",
+        "issue": "经验logical-axis基于label与true-chain判据的使用分割未明。",
+        "pdf_page": 12,
+        "suggested_correction": null,
+        "resolved": false
+      },
+      {
+        "claim_id": "C9",
+        "issue": "diffusion相对single-J排序文字与表矛盾；diffusion无physics penalty，不是全部loss相同。",
+        "pdf_page": 16,
+        "suggested_correction": null,
+        "resolved": false
+      },
+      {
+        "claim_id": "C13",
+        "issue": "更多sink不能分相对sameboundary论证和k>1推广仅假说。",
+        "pdf_page": 10,
+        "suggested_correction": null,
+        "resolved": false
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T12:13:27.301530Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "d00704e3f67e17c397aab132d293ff7e30b141dff259c85e6e76b89d16b1ed42",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

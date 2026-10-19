@@ -1,0 +1,1879 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "preprint",
+  "paper": {
+    "title": "NeuroTrain: Surveying Local Learning Rules for Spiking Neural Networks with an Open Benchmarking Framework",
+    "authors": [
+      "Alessio Caviglia",
+      "Filippo Marostica",
+      "Roberta Bardini",
+      "Alessandro Savino",
+      "Stefano Di Carlo"
+    ],
+    "doi": null,
+    "publication_year": 2026,
+    "venue": "arXiv (Cornell University)",
+    "url": "https://arxiv.org/pdf/2605.15058"
+  },
+  "source": {
+    "filename": "paper-W7161452324--NeuroTrain-Surveying-Local-Learning-Rules-for-Spiking-Neural-Networks-with-an-Open-Benchmarking.pdf",
+    "sha256": "d9f19500ee47dd2b28412c4a48f67378acef3b94d92589910514215dd82333f7",
+    "source_url": "https://arxiv.org/pdf/2605.15058",
+    "pdf_page_count": 28
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28
+    ],
+    "results_sections_seen": [
+      "1 Introduction; 2 Background",
+      "3 Survey positioning",
+      "4.1 taxonomy/locality/mechanisms",
+      "4.2.1 supervised, unsupervised, RL",
+      "4.2.2 ANN conversion",
+      "4.2.3 Evolutionary/zeroth-order",
+      "5 dataloaders/models/trainers/campaign/HPO/snapshot",
+      "6 Conclusions and data/AI disclosure",
+      "Figures1–4; Tables1–2",
+      "References1–196"
+    ],
+    "missing_material": [
+      "所有图像像素",
+      "作者刻意未嵌入的完整外部benchmark配置/结果与代码",
+      "原算法理论的完整证明/补充材料未提供"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "arXiv2605.15058v1 14May2026；28页归档文字及完整热图数值、模型caption与参考文献一次评估。",
+      "复核每个热图条目的data/model对应，不把N/S设零；HPO与独立seed重复区分。",
+      "第二次来源审计使用本次全文上下文，模型实验非生物 validation。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "该综述以training strategy、learning signal及time/space locality区分SNN算法；time-local可用当前状态/有限eligibility traces，space-local还考虑突触可用信号和update locking，两维不可混同。",
+      "role": "review_synthesis",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "可独立判断的分类、方法贡献、固定快照对比或作者benchmark边界。"
+    },
+    {
+      "summary": "surrogate-gradient BPTT保持spiking forward但以proxy derivative处理backward；完整时间展开通常需保存O(T)状态，并有时间/空间非局部及更新等待代价。",
+      "role": "review_synthesis",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "可独立判断的分类、方法贡献、固定快照对比或作者benchmark边界。"
+    },
+    {
+      "summary": "eligibility-trace规则将temporal credit压缩为forward状态；e-prop/OSTL等仍可能依赖output/top-down learning signal，online不自动等于space-local或exact global gradient。",
+      "role": "review_synthesis",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "可独立判断的分类、方法贡献、固定快照对比或作者benchmark边界。"
+    },
+    {
+      "summary": "DFA把output error随机投射各层而仍需等forward输出，DRTP用已知target减少这种等待；两者均可能包含global teaching signal，不能将random projection等同无全局信息。",
+      "role": "review_synthesis",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "可独立判断的分类、方法贡献、固定快照对比或作者benchmark边界。"
+    },
+    {
+      "summary": "DECOLLE等辅助local heads使层级目标解耦，降低global backward依赖但增加参数/目标设计，并可能出现对下游任务的weak coupling；TP采用forward dual-path input/target传播。",
+      "role": "review_synthesis",
+      "source_pages": [
+        10
+      ],
+      "decision": "include",
+      "reason": "可独立判断的分类、方法贡献、固定快照对比或作者benchmark边界。"
+    },
+    {
+      "summary": "unsupervised STDP常与competition、homeostasis、architecture或supervised readout组合；报道的classification accuracy不代表全部end-to-end pipeline没有标签，深度扩展限制为所述方法/任务。",
+      "role": "review_synthesis",
+      "source_pages": [
+        11
+      ],
+      "decision": "include",
+      "reason": "可独立判断的分类、方法贡献、固定快照对比或作者benchmark边界。"
+    },
+    {
+      "summary": "所引stochastic spiking/MCMC或WTA STDP–EM解释依赖特定随机网络/竞争电路，不说明所有STDP或生物皮层都在实现同一Bayesian inference算法。",
+      "role": "review_synthesis",
+      "source_pages": [
+        11
+      ],
+      "decision": "include",
+      "reason": "可独立判断的分类、方法贡献、固定快照对比或作者benchmark边界。"
+    },
+    {
+      "summary": "reward-modulated STDP用局部eligibility与相对baseline的reward调制处理延迟credit；spiking RL的actor/critic、surrogate global训练和local塑性有不同 locality，部署spiking actor不等于训练也局部。",
+      "role": "review_synthesis",
+      "source_pages": [
+        11
+      ],
+      "decision": "include",
+      "reason": "可独立判断的分类、方法贡献、固定快照对比或作者benchmark边界。"
+    },
+    {
+      "summary": "纯ANN→SNN conversion的ReLU/IF rate近似是在constant input、reset-by-subtraction及T时间平均条件下O(1/T)误差；低延迟受clipping/quantization/uneven propagation及架构约束影响。",
+      "role": "review_synthesis",
+      "source_pages": [
+        12
+      ],
+      "decision": "include",
+      "reason": "可独立判断的分类、方法贡献、固定快照对比或作者benchmark边界。"
+    },
+    {
+      "summary": "evolutionary/perturbation可优化离散/连续连接、延迟或非可微资源目标；但部分NAS仍以内层surrogate BPTT学权重，因此不能因outer search为evolutionary称系统完全gradient-free。",
+      "role": "review_synthesis",
+      "source_pages": [
+        13
+      ],
+      "decision": "include",
+      "reason": "可独立判断的分类、方法贡献、固定快照对比或作者benchmark边界。"
+    },
+    {
+      "summary": "NeuroTrain把dataloader、model、trainer隔离为共同接口，用campaign筛除不兼容组合并支持custom与Optuna；当前reference networks统一standard snnTorch LIF，但无法支持每个trainer×model×dataset。",
+      "role": "result",
+      "source_pages": [
+        15
+      ],
+      "decision": "include",
+      "reason": "可独立判断的分类、方法贡献、固定快照对比或作者benchmark边界。"
+    },
+    {
+      "summary": "Figure4快照比较10个trainers在8datasets与Conv/FC/recurrent模型，20epochs、每配置10 Optuna trials，约850 GPU-hours；未给独立seed重复或统计分布。",
+      "role": "result",
+      "source_pages": [
+        17
+      ],
+      "decision": "include",
+      "reason": "可独立判断的分类、方法贡献、固定快照对比或作者benchmark边界。"
+    },
+    {
+      "summary": "Fashion-MNIST快照中TP在Conv/FC/R分别84.6%/86.2%/85.9%，BPTT为82.9%/83.7%/82.8%，该协议下forward-only规则显示更高reported accuracy。",
+      "role": "result",
+      "source_pages": [
+        17
+      ],
+      "decision": "include",
+      "reason": "可独立判断的分类、方法贡献、固定快照对比或作者benchmark边界。"
+    },
+    {
+      "summary": "MNIST快照BPTT为98.9%/97.8%/96.9%，TP为98.2%/97.5%/97.4%，Conv/FC相对排名与R不同，不能只取单个最高值概括local/global优劣。",
+      "role": "result",
+      "source_pages": [
+        17
+      ],
+      "decision": "include",
+      "reason": "可独立判断的分类、方法贡献、固定快照对比或作者benchmark边界。"
+    },
+    {
+      "summary": "CIFAR-10 Conv-SNN快照ESD-RTRL56.9%、TP54.7%、OTTT49.2%、BPTT44.9%，示例中非BPTT规则可有更高accuracy，但全部是小规模固定conv架构。",
+      "role": "result",
+      "source_pages": [
+        17
+      ],
+      "decision": "include",
+      "reason": "可独立判断的分类、方法贡献、固定快照对比或作者benchmark边界。"
+    },
+    {
+      "summary": "DVS Gesture Conv配置DECOLLE78.4%高于BPTT63.6%，但DECOLLE recurrent条目为N/S；局部分类器的结果与架构支持范围必须同时判断。",
+      "role": "result",
+      "source_pages": [
+        17
+      ],
+      "decision": "include",
+      "reason": "可独立判断的分类、方法贡献、固定快照对比或作者benchmark边界。"
+    },
+    {
+      "summary": "SHD recurrent快照BPTT69.6%、TP57.6%、ETLP26.9%、OSTTP5.7%，这些local/online规则在该协议明显较低；在SHD FC，TP49.8%与BPTT49.6%的次序又不同。",
+      "role": "result",
+      "source_pages": [
+        17
+      ],
+      "decision": "include",
+      "reason": "可独立判断的分类、方法贡献、固定快照对比或作者benchmark边界。"
+    },
+    {
+      "summary": "SVHN下DECOLLE Conv55.9%低于BPTT83.8%，但FC74.9%高于BPTT53.6%，same dataset不同架构使相对排名反转，反对跨配置通用冠军解释。",
+      "role": "result",
+      "source_pages": [
+        17
+      ],
+      "decision": "include",
+      "reason": "可独立判断的分类、方法贡献、固定快照对比或作者benchmark边界。"
+    },
+    {
+      "summary": "作者把统一接口视作fairer benchmarking基础而非最终排名，承认adapted implementations可改进、标准化可能达不到各算法specialized best-case；paper故意只给快照且完整结果在外部repo。",
+      "role": "interpretation",
+      "source_pages": [
+        16
+      ],
+      "decision": "include",
+      "reason": "可独立判断的分类、方法贡献、固定快照对比或作者benchmark边界。"
+    },
+    {
+      "summary": "早期SpikeProp/ReSuMe/Tempotron等、STDP variants/homeostasis/forward-forward及其他survey背景。",
+      "role": "background_and_review",
+      "source_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "decision": "include",
+      "reason": "纳入分类和条件命题；不逐个文献经典结果重复算新实验或完备理论。"
+    },
+    {
+      "summary": "更广模型、hardware-aware benchmarking、richer metrics和未来社区框架。",
+      "role": "hypothesis",
+      "source_pages": [
+        17,
+        18
+      ],
+      "decision": "defer",
+      "reason": "展望非已测on-chip效率或全面扩展验证。"
+    },
+    {
+      "summary": "references1–196与AI language editing披露。",
+      "role": "bibliography_and_disclosure",
+      "source_pages": [
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28
+      ],
+      "decision": "exclude",
+      "reason": "全部评估；引用原文未另行全文阅读，不把引用条目视独立复现。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "该综述以training strategy、learning signal及time/space locality区分SNN算法；time-local可用当前状态/有限eligibility traces，space-local还考虑突触可用信号和update locking，两维不可混同。",
+      "claim_type": "method_review",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "4.1; Figure2",
+          "design": "综述算法及被引理论/模型",
+          "comparator": "文中训练路线、credit signals与locality条件",
+          "measure": "该综述以training strategy、learning signal及time/space locality区分SNN算法；time-local可用当前状态/有限eligibility traces，space-local还考虑突触可用信号和update locking，两维不可混同。",
+          "unit_of_analysis": "被引算法及模型/证明，不是原始生物实验",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "局部定义是算法约束，非严格生物真实性。",
+            "不把GPU hours当能耗，N/S不当negative experiment"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "4.1; Figure2",
+            "figure": "4.1; Figure2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "该综述以training strategy、learning signal及time/space locality区分SNN算法；time-local可用当前状态/有限eligibility traces，space-local还考虑突触可用信号和update locking，两维不可混同。",
+        "boundary": "局部定义是算法约束，非严格生物真实性。",
+        "negative_result": null,
+        "non_inference": "局部定义是算法约束，非严格生物真实性。",
+        "unresolved": "跨架构公平性、seed uncertainty、原理论完整条件及neuromorphic hardware指标待核对。",
+        "unresolved_attribution": "来源作者明示scope及本次审计边界。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "SNN局部学习如何在任务、架构及资源条件间权衡credit assignment与性能？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C3",
+        "C4",
+        "C5"
+      ],
+      "review_notes": [
+        "综述与模型基准不同；shared heatmap/HPO不作独立复现或生物验证。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "surrogate-gradient BPTT保持spiking forward但以proxy derivative处理backward；完整时间展开通常需保存O(T)状态，并有时间/空间非局部及更新等待代价。",
+      "claim_type": "method_review",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "4.2.1 Enabling backpropagation",
+          "design": "综述算法及被引理论/模型",
+          "comparator": "文中训练路线、credit signals与locality条件",
+          "measure": "surrogate-gradient BPTT保持spiking forward但以proxy derivative处理backward；完整时间展开通常需保存O(T)状态，并有时间/空间非局部及更新等待代价。",
+          "unit_of_analysis": "被引算法及模型/证明，不是原始生物实验",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "O(T)针对标准存储历史方案；surrogate梯度不是Heaviside真实导数，本文无新复杂度定理。",
+            "不把GPU hours当能耗，N/S不当negative experiment"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "4.2.1 Enabling backpropagation",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "surrogate-gradient BPTT保持spiking forward但以proxy derivative处理backward；完整时间展开通常需保存O(T)状态，并有时间/空间非局部及更新等待代价。",
+        "boundary": "O(T)针对标准存储历史方案；surrogate梯度不是Heaviside真实导数，本文无新复杂度定理。",
+        "negative_result": null,
+        "non_inference": "O(T)针对标准存储历史方案；surrogate梯度不是Heaviside真实导数，本文无新复杂度定理。",
+        "unresolved": "跨架构公平性、seed uncertainty、原理论完整条件及neuromorphic hardware指标待核对。",
+        "unresolved_attribution": "来源作者明示scope及本次审计边界。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "SNN局部学习如何在任务、架构及资源条件间权衡credit assignment与性能？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C3",
+        "C4",
+        "C5"
+      ],
+      "review_notes": [
+        "综述与模型基准不同；shared heatmap/HPO不作独立复现或生物验证。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "eligibility-trace规则将temporal credit压缩为forward状态；e-prop/OSTL等仍可能依赖output/top-down learning signal，online不自动等于space-local或exact global gradient。",
+      "claim_type": "method_review",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "4.2.1 Trace-centric; Table2",
+          "design": "综述算法及被引理论/模型",
+          "comparator": "文中训练路线、credit signals与locality条件",
+          "measure": "eligibility-trace规则将temporal credit压缩为forward状态；e-prop/OSTL等仍可能依赖output/top-down learning signal，online不自动等于space-local或exact global gradient。",
+          "unit_of_analysis": "被引算法及模型/证明，不是原始生物实验",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "是否gradient-equivalent取决于原算法项/近似和网络条件，本文未重证全部假设。",
+            "不把GPU hours当能耗，N/S不当negative experiment"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "4.2.1 Trace-centric; Table2",
+            "figure": "4.2.1 Trace-centric; Table2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "eligibility-trace规则将temporal credit压缩为forward状态；e-prop/OSTL等仍可能依赖output/top-down learning signal，online不自动等于space-local或exact global gradient。",
+        "boundary": "是否gradient-equivalent取决于原算法项/近似和网络条件，本文未重证全部假设。",
+        "negative_result": null,
+        "non_inference": "是否gradient-equivalent取决于原算法项/近似和网络条件，本文未重证全部假设。",
+        "unresolved": "跨架构公平性、seed uncertainty、原理论完整条件及neuromorphic hardware指标待核对。",
+        "unresolved_attribution": "来源作者明示scope及本次审计边界。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "SNN局部学习如何在任务、架构及资源条件间权衡credit assignment与性能？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C4",
+        "C5"
+      ],
+      "review_notes": [
+        "综述与模型基准不同；shared heatmap/HPO不作独立复现或生物验证。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "DFA把output error随机投射各层而仍需等forward输出，DRTP用已知target减少这种等待；两者均可能包含global teaching signal，不能将random projection等同无全局信息。",
+      "claim_type": "method_review",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "4.1 DFA/DRTP",
+          "design": "综述算法及被引理论/模型",
+          "comparator": "文中训练路线、credit signals与locality条件",
+          "measure": "DFA把output error随机投射各层而仍需等forward输出，DRTP用已知target减少这种等待；两者均可能包含global teaching signal，不能将random projection等同无全局信息。",
+          "unit_of_analysis": "被引算法及模型/证明，不是原始生物实验",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "source的update-free措辞不作零权重更新解释；局部性按明确时空定义。",
+            "不把GPU hours当能耗，N/S不当negative experiment"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "4.1 DFA/DRTP",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "DFA把output error随机投射各层而仍需等forward输出，DRTP用已知target减少这种等待；两者均可能包含global teaching signal，不能将random projection等同无全局信息。",
+        "boundary": "source的update-free措辞不作零权重更新解释；局部性按明确时空定义。",
+        "negative_result": null,
+        "non_inference": "source的update-free措辞不作零权重更新解释；局部性按明确时空定义。",
+        "unresolved": "跨架构公平性、seed uncertainty、原理论完整条件及neuromorphic hardware指标待核对。",
+        "unresolved_attribution": "来源作者明示scope及本次审计边界。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "SNN局部学习如何在任务、架构及资源条件间权衡credit assignment与性能？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C5"
+      ],
+      "review_notes": [
+        "综述与模型基准不同；shared heatmap/HPO不作独立复现或生物验证。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "DECOLLE等辅助local heads使层级目标解耦，降低global backward依赖但增加参数/目标设计，并可能出现对下游任务的weak coupling；TP采用forward dual-path input/target传播。",
+      "claim_type": "method_review",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "4.2.1; Table2",
+          "design": "综述算法及被引理论/模型",
+          "comparator": "文中训练路线、credit signals与locality条件",
+          "measure": "DECOLLE等辅助local heads使层级目标解耦，降低global backward依赖但增加参数/目标设计，并可能出现对下游任务的weak coupling；TP采用forward dual-path input/target传播。",
+          "unit_of_analysis": "被引算法及模型/证明，不是原始生物实验",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "不同local目标和feedback实现不能只凭标签统一推学习/硬件成本。",
+            "不把GPU hours当能耗，N/S不当negative experiment"
+          ],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "4.2.1; Table2",
+            "figure": "4.2.1; Table2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "DECOLLE等辅助local heads使层级目标解耦，降低global backward依赖但增加参数/目标设计，并可能出现对下游任务的weak coupling；TP采用forward dual-path input/target传播。",
+        "boundary": "不同local目标和feedback实现不能只凭标签统一推学习/硬件成本。",
+        "negative_result": null,
+        "non_inference": "不同local目标和feedback实现不能只凭标签统一推学习/硬件成本。",
+        "unresolved": "跨架构公平性、seed uncertainty、原理论完整条件及neuromorphic hardware指标待核对。",
+        "unresolved_attribution": "来源作者明示scope及本次审计边界。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "SNN局部学习如何在任务、架构及资源条件间权衡credit assignment与性能？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ],
+      "review_notes": [
+        "综述与模型基准不同；shared heatmap/HPO不作独立复现或生物验证。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "unsupervised STDP常与competition、homeostasis、architecture或supervised readout组合；报道的classification accuracy不代表全部end-to-end pipeline没有标签，深度扩展限制为所述方法/任务。",
+      "claim_type": "method_review",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "4.2.1 Unsupervised",
+          "design": "综述算法及被引理论/模型",
+          "comparator": "文中训练路线、credit signals与locality条件",
+          "measure": "unsupervised STDP常与competition、homeostasis、architecture或supervised readout组合；报道的classification accuracy不代表全部end-to-end pipeline没有标签，深度扩展限制为所述方法/任务。",
+          "unit_of_analysis": "被引算法及模型/证明，不是原始生物实验",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "roughly5-layer经验范围不是所有STDP网络的数学上限或生物学习定律。",
+            "不把GPU hours当能耗，N/S不当negative experiment"
+          ],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "4.2.1 Unsupervised",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "unsupervised STDP常与competition、homeostasis、architecture或supervised readout组合；报道的classification accuracy不代表全部end-to-end pipeline没有标签，深度扩展限制为所述方法/任务。",
+        "boundary": "roughly5-layer经验范围不是所有STDP网络的数学上限或生物学习定律。",
+        "negative_result": null,
+        "non_inference": "roughly5-layer经验范围不是所有STDP网络的数学上限或生物学习定律。",
+        "unresolved": "跨架构公平性、seed uncertainty、原理论完整条件及neuromorphic hardware指标待核对。",
+        "unresolved_attribution": "来源作者明示scope及本次审计边界。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "SNN局部学习如何在任务、架构及资源条件间权衡credit assignment与性能？"
+      ],
+      "shared_evidence_with": [
+        "C7",
+        "C8"
+      ],
+      "review_notes": [
+        "综述与模型基准不同；shared heatmap/HPO不作独立复现或生物验证。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "所引stochastic spiking/MCMC或WTA STDP–EM解释依赖特定随机网络/竞争电路，不说明所有STDP或生物皮层都在实现同一Bayesian inference算法。",
+      "claim_type": "method_review",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "4.2.1 refs127–130",
+          "design": "综述算法及被引理论/模型",
+          "comparator": "文中训练路线、credit signals与locality条件",
+          "measure": "所引stochastic spiking/MCMC或WTA STDP–EM解释依赖特定随机网络/竞争电路，不说明所有STDP或生物皮层都在实现同一Bayesian inference算法。",
+          "unit_of_analysis": "被引算法及模型/证明，不是原始生物实验",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "这些是文献理论综合，原证明与完整假设未在本PDF展开。",
+            "不把GPU hours当能耗，N/S不当negative experiment"
+          ],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "4.2.1 refs127–130",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所引stochastic spiking/MCMC或WTA STDP–EM解释依赖特定随机网络/竞争电路，不说明所有STDP或生物皮层都在实现同一Bayesian inference算法。",
+        "boundary": "这些是文献理论综合，原证明与完整假设未在本PDF展开。",
+        "negative_result": null,
+        "non_inference": "这些是文献理论综合，原证明与完整假设未在本PDF展开。",
+        "unresolved": "跨架构公平性、seed uncertainty、原理论完整条件及neuromorphic hardware指标待核对。",
+        "unresolved_attribution": "来源作者明示scope及本次审计边界。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "SNN局部学习如何在任务、架构及资源条件间权衡credit assignment与性能？"
+      ],
+      "shared_evidence_with": [
+        "C6",
+        "C8"
+      ],
+      "review_notes": [
+        "综述与模型基准不同；shared heatmap/HPO不作独立复现或生物验证。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "reward-modulated STDP用局部eligibility与相对baseline的reward调制处理延迟credit；spiking RL的actor/critic、surrogate global训练和local塑性有不同 locality，部署spiking actor不等于训练也局部。",
+      "claim_type": "method_review",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "4.2.1 Reinforcement PDF11–12",
+          "design": "综述算法及被引理论/模型",
+          "comparator": "文中训练路线、credit signals与locality条件",
+          "measure": "reward-modulated STDP用局部eligibility与相对baseline的reward调制处理延迟credit；spiking RL的actor/critic、surrogate global训练和local塑性有不同 locality，部署spiking actor不等于训练也局部。",
+          "unit_of_analysis": "被引算法及模型/证明，不是原始生物实验",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "模型或被引Loihi部署不是本研究生物验证/硬件节能测量。",
+            "不把GPU hours当能耗，N/S不当negative experiment"
+          ],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "4.2.1 Reinforcement PDF11–12",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "reward-modulated STDP用局部eligibility与相对baseline的reward调制处理延迟credit；spiking RL的actor/critic、surrogate global训练和local塑性有不同 locality，部署spiking actor不等于训练也局部。",
+        "boundary": "模型或被引Loihi部署不是本研究生物验证/硬件节能测量。",
+        "negative_result": null,
+        "non_inference": "模型或被引Loihi部署不是本研究生物验证/硬件节能测量。",
+        "unresolved": "跨架构公平性、seed uncertainty、原理论完整条件及neuromorphic hardware指标待核对。",
+        "unresolved_attribution": "来源作者明示scope及本次审计边界。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "SNN局部学习如何在任务、架构及资源条件间权衡credit assignment与性能？"
+      ],
+      "shared_evidence_with": [
+        "C6",
+        "C7"
+      ],
+      "review_notes": [
+        "综述与模型基准不同；shared heatmap/HPO不作独立复现或生物验证。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "纯ANN→SNN conversion的ReLU/IF rate近似是在constant input、reset-by-subtraction及T时间平均条件下O(1/T)误差；低延迟受clipping/quantization/uneven propagation及架构约束影响。",
+      "claim_type": "method_review",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "4.2.2",
+          "design": "综述算法及被引理论/模型",
+          "comparator": "文中训练路线、credit signals与locality条件",
+          "measure": "纯ANN→SNN conversion的ReLU/IF rate近似是在constant input、reset-by-subtraction及T时间平均条件下O(1/T)误差；低延迟受clipping/quantization/uneven propagation及架构约束影响。",
+          "unit_of_analysis": "被引算法及模型/证明，不是原始生物实验",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "不推广为任意LIF、时间编码或Transformer的同一定理；hybrid fine-tuning与纯冻结conversion分开。",
+            "不把GPU hours当能耗，N/S不当negative experiment"
+          ],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "4.2.2",
+            "figure": null,
+            "equation": "所述O(1/T)近似，联合constant input/reset-by-subtraction条件",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "纯ANN→SNN conversion的ReLU/IF rate近似是在constant input、reset-by-subtraction及T时间平均条件下O(1/T)误差；低延迟受clipping/quantization/uneven propagation及架构约束影响。",
+        "boundary": "不推广为任意LIF、时间编码或Transformer的同一定理；hybrid fine-tuning与纯冻结conversion分开。",
+        "negative_result": null,
+        "non_inference": "不推广为任意LIF、时间编码或Transformer的同一定理；hybrid fine-tuning与纯冻结conversion分开。",
+        "unresolved": "跨架构公平性、seed uncertainty、原理论完整条件及neuromorphic hardware指标待核对。",
+        "unresolved_attribution": "来源作者明示scope及本次审计边界。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "SNN局部学习如何在任务、架构及资源条件间权衡credit assignment与性能？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "综述与模型基准不同；shared heatmap/HPO不作独立复现或生物验证。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "evolutionary/perturbation可优化离散/连续连接、延迟或非可微资源目标；但部分NAS仍以内层surrogate BPTT学权重，因此不能因outer search为evolutionary称系统完全gradient-free。",
+      "claim_type": "method_review",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "4.2.3 Optimization",
+          "design": "综述算法及被引理论/模型",
+          "comparator": "文中训练路线、credit signals与locality条件",
+          "measure": "evolutionary/perturbation可优化离散/连续连接、延迟或非可微资源目标；但部分NAS仍以内层surrogate BPTT学权重，因此不能因outer search为evolutionary称系统完全gradient-free。",
+          "unit_of_analysis": "被引算法及模型/证明，不是原始生物实验",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "全球fitness/search不等于突触局部；无本文ImageNet规模原创实验。",
+            "不把GPU hours当能耗，N/S不当negative experiment"
+          ],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "4.2.3 Optimization",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "evolutionary/perturbation可优化离散/连续连接、延迟或非可微资源目标；但部分NAS仍以内层surrogate BPTT学权重，因此不能因outer search为evolutionary称系统完全gradient-free。",
+        "boundary": "全球fitness/search不等于突触局部；无本文ImageNet规模原创实验。",
+        "negative_result": null,
+        "non_inference": "全球fitness/search不等于突触局部；无本文ImageNet规模原创实验。",
+        "unresolved": "跨架构公平性、seed uncertainty、原理论完整条件及neuromorphic hardware指标待核对。",
+        "unresolved_attribution": "来源作者明示scope及本次审计边界。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "SNN局部学习如何在任务、架构及资源条件间权衡credit assignment与性能？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "综述与模型基准不同；shared heatmap/HPO不作独立复现或生物验证。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "NeuroTrain把dataloader、model、trainer隔离为共同接口，用campaign筛除不兼容组合并支持custom与Optuna；当前reference networks统一standard snnTorch LIF，但无法支持每个trainer×model×dataset。",
+      "claim_type": "benchmark_method",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "5.1–5.4; Figure3",
+          "design": "NeuroTrain统一软件小规模实验快照，20epochs/10 Optuna trials",
+          "comparator": "Figure4各方法×dataset×architecture；标准化与specialized配置",
+          "measure": "NeuroTrain把dataloader、model、trainer隔离为共同接口，用campaign筛除不兼容组合并支持custom与Optuna；当前reference networks统一standard snnTorch LIF，但无法支持每个trainer×model×dataset。",
+          "unit_of_analysis": "trained model configuration及HPO trial，不是生物样本",
+          "sample_size_as_reported": "8 datasets、3 architecture types、10 trainers；每配置20epochs/10 HPO trials；独立seeds与test n未报",
+          "uncertainty": null,
+          "assumptions": [
+            "软件方法贡献，不是所有原算法最佳配置的复现认证；N/S为不支持而非失败。",
+            "不把GPU hours当能耗，N/S不当negative experiment"
+          ],
+          "source_locator": {
+            "pdf_page": 15,
+            "section": "5.1–5.4; Figure3",
+            "figure": "5.1–5.4; Figure3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "NeuroTrain把dataloader、model、trainer隔离为共同接口，用campaign筛除不兼容组合并支持custom与Optuna；当前reference networks统一standard snnTorch LIF，但无法支持每个trainer×model×dataset。",
+        "boundary": "软件方法贡献，不是所有原算法最佳配置的复现认证；N/S为不支持而非失败。",
+        "negative_result": null,
+        "non_inference": "软件方法贡献，不是所有原算法最佳配置的复现认证；N/S为不支持而非失败。",
+        "unresolved": "跨架构公平性、seed uncertainty、原理论完整条件及neuromorphic hardware指标待核对。",
+        "unresolved_attribution": "来源作者明示scope及本次审计边界。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "SNN局部学习如何在任务、架构及资源条件间权衡credit assignment与性能？"
+      ],
+      "shared_evidence_with": [
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19"
+      ],
+      "review_notes": [
+        "综述与模型基准不同；shared heatmap/HPO不作独立复现或生物验证。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "Figure4快照比较10个trainers在8datasets与Conv/FC/recurrent模型，20epochs、每配置10 Optuna trials，约850 GPU-hours；未给独立seed重复或统计分布。",
+      "claim_type": "benchmark_method",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "5.4; Figure4",
+          "design": "NeuroTrain统一软件小规模实验快照，20epochs/10 Optuna trials",
+          "comparator": "Figure4各方法×dataset×architecture；标准化与specialized配置",
+          "measure": "Figure4快照比较10个trainers在8datasets与Conv/FC/recurrent模型，20epochs、每配置10 Optuna trials，约850 GPU-hours；未给独立seed重复或统计分布。",
+          "unit_of_analysis": "trained model configuration及HPO trial，不是生物样本",
+          "sample_size_as_reported": "8 datasets、3 architecture types、10 trainers；每配置20epochs/10 HPO trials；独立seeds与test n未报",
+          "uncertainty": null,
+          "assumptions": [
+            "10 trials为HPO而非10独立复现；e-prop替换部分多hidden架构为512-unit single recurrent。",
+            "不把GPU hours当能耗，N/S不当negative experiment"
+          ],
+          "source_locator": {
+            "pdf_page": 17,
+            "section": "5.4; Figure4",
+            "figure": "5.4; Figure4",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "Figure4快照比较10个trainers在8datasets与Conv/FC/recurrent模型，20epochs、每配置10 Optuna trials，约850 GPU-hours；未给独立seed重复或统计分布。",
+        "boundary": "10 trials为HPO而非10独立复现；e-prop替换部分多hidden架构为512-unit single recurrent。",
+        "negative_result": null,
+        "non_inference": "10 trials为HPO而非10独立复现；e-prop替换部分多hidden架构为512-unit single recurrent。",
+        "unresolved": "跨架构公平性、seed uncertainty、原理论完整条件及neuromorphic hardware指标待核对。",
+        "unresolved_attribution": "来源作者明示scope及本次审计边界。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "SNN局部学习如何在任务、架构及资源条件间权衡credit assignment与性能？"
+      ],
+      "shared_evidence_with": [
+        "C11",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19"
+      ],
+      "review_notes": [
+        "综述与模型基准不同；shared heatmap/HPO不作独立复现或生物验证。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C13",
+      "statement": "Fashion-MNIST快照中TP在Conv/FC/R分别84.6%/86.2%/85.9%，BPTT为82.9%/83.7%/82.8%，该协议下forward-only规则显示更高reported accuracy。",
+      "claim_type": "benchmark_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Figure4 Fashion-MNIST",
+          "design": "NeuroTrain统一软件小规模实验快照，20epochs/10 Optuna trials",
+          "comparator": "Figure4各方法×dataset×architecture；标准化与specialized配置",
+          "measure": "Fashion-MNIST快照中TP在Conv/FC/R分别84.6%/86.2%/85.9%，BPTT为82.9%/83.7%/82.8%，该协议下forward-only规则显示更高reported accuracy。",
+          "unit_of_analysis": "trained model configuration及HPO trial，不是生物样本",
+          "sample_size_as_reported": "8 datasets、3 architecture types、10 trainers；每配置20epochs/10 HPO trials；独立seeds与test n未报",
+          "uncertainty": null,
+          "assumptions": [
+            "无CI或显著性，只有20epochs/限定搜索预算；不推TP普遍优于BPTT。",
+            "不把GPU hours当能耗，N/S不当negative experiment"
+          ],
+          "source_locator": {
+            "pdf_page": 17,
+            "section": "Figure4 Fashion-MNIST",
+            "figure": "Figure4 Fashion-MNIST",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "Fashion-MNIST快照中TP在Conv/FC/R分别84.6%/86.2%/85.9%，BPTT为82.9%/83.7%/82.8%，该协议下forward-only规则显示更高reported accuracy。",
+        "boundary": "无CI或显著性，只有20epochs/限定搜索预算；不推TP普遍优于BPTT。",
+        "negative_result": null,
+        "non_inference": "无CI或显著性，只有20epochs/限定搜索预算；不推TP普遍优于BPTT。",
+        "unresolved": "跨架构公平性、seed uncertainty、原理论完整条件及neuromorphic hardware指标待核对。",
+        "unresolved_attribution": "来源作者明示scope及本次审计边界。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "SNN局部学习如何在任务、架构及资源条件间权衡credit assignment与性能？"
+      ],
+      "shared_evidence_with": [
+        "C11",
+        "C12",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19"
+      ],
+      "review_notes": [
+        "综述与模型基准不同；shared heatmap/HPO不作独立复现或生物验证。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C14",
+      "statement": "MNIST快照BPTT为98.9%/97.8%/96.9%，TP为98.2%/97.5%/97.4%，Conv/FC相对排名与R不同，不能只取单个最高值概括local/global优劣。",
+      "claim_type": "benchmark_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Figure4 MNIST",
+          "design": "NeuroTrain统一软件小规模实验快照，20epochs/10 Optuna trials",
+          "comparator": "Figure4各方法×dataset×architecture；标准化与specialized配置",
+          "measure": "MNIST快照BPTT为98.9%/97.8%/96.9%，TP为98.2%/97.5%/97.4%，Conv/FC相对排名与R不同，不能只取单个最高值概括local/global优劣。",
+          "unit_of_analysis": "trained model configuration及HPO trial，不是生物样本",
+          "sample_size_as_reported": "8 datasets、3 architecture types、10 trainers；每配置20epochs/10 HPO trials；独立seeds与test n未报",
+          "uncertainty": null,
+          "assumptions": [
+            "以表中reported test accuracy比较，不做统计等效判断。",
+            "不把GPU hours当能耗，N/S不当negative experiment"
+          ],
+          "source_locator": {
+            "pdf_page": 17,
+            "section": "Figure4 MNIST",
+            "figure": "Figure4 MNIST",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "MNIST快照BPTT为98.9%/97.8%/96.9%，TP为98.2%/97.5%/97.4%，Conv/FC相对排名与R不同，不能只取单个最高值概括local/global优劣。",
+        "boundary": "以表中reported test accuracy比较，不做统计等效判断。",
+        "negative_result": "MNIST Conv/FC TP数值低于BPTT，R方向相反。",
+        "non_inference": "以表中reported test accuracy比较，不做统计等效判断。",
+        "unresolved": "跨架构公平性、seed uncertainty、原理论完整条件及neuromorphic hardware指标待核对。",
+        "unresolved_attribution": "来源作者明示scope及本次审计边界。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "SNN局部学习如何在任务、架构及资源条件间权衡credit assignment与性能？"
+      ],
+      "shared_evidence_with": [
+        "C11",
+        "C12",
+        "C13",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19"
+      ],
+      "review_notes": [
+        "综述与模型基准不同；shared heatmap/HPO不作独立复现或生物验证。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C15",
+      "statement": "CIFAR-10 Conv-SNN快照ESD-RTRL56.9%、TP54.7%、OTTT49.2%、BPTT44.9%，示例中非BPTT规则可有更高accuracy，但全部是小规模固定conv架构。",
+      "claim_type": "benchmark_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Figure4 CIFAR-10",
+          "design": "NeuroTrain统一软件小规模实验快照，20epochs/10 Optuna trials",
+          "comparator": "Figure4各方法×dataset×architecture；标准化与specialized配置",
+          "measure": "CIFAR-10 Conv-SNN快照ESD-RTRL56.9%、TP54.7%、OTTT49.2%、BPTT44.9%，示例中非BPTT规则可有更高accuracy，但全部是小规模固定conv架构。",
+          "unit_of_analysis": "trained model configuration及HPO trial，不是生物样本",
+          "sample_size_as_reported": "8 datasets、3 architecture types、10 trainers；每配置20epochs/10 HPO trials；独立seeds与test n未报",
+          "uncertainty": null,
+          "assumptions": [
+            "不能当large-scale CIFAR/ImageNet最佳算法排名或高效芯片结果。",
+            "不把GPU hours当能耗，N/S不当negative experiment"
+          ],
+          "source_locator": {
+            "pdf_page": 17,
+            "section": "Figure4 CIFAR-10",
+            "figure": "Figure4 CIFAR-10",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "CIFAR-10 Conv-SNN快照ESD-RTRL56.9%、TP54.7%、OTTT49.2%、BPTT44.9%，示例中非BPTT规则可有更高accuracy，但全部是小规模固定conv架构。",
+        "boundary": "不能当large-scale CIFAR/ImageNet最佳算法排名或高效芯片结果。",
+        "negative_result": null,
+        "non_inference": "不能当large-scale CIFAR/ImageNet最佳算法排名或高效芯片结果。",
+        "unresolved": "跨架构公平性、seed uncertainty、原理论完整条件及neuromorphic hardware指标待核对。",
+        "unresolved_attribution": "来源作者明示scope及本次审计边界。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "SNN局部学习如何在任务、架构及资源条件间权衡credit assignment与性能？"
+      ],
+      "shared_evidence_with": [
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C16",
+        "C17",
+        "C18",
+        "C19"
+      ],
+      "review_notes": [
+        "综述与模型基准不同；shared heatmap/HPO不作独立复现或生物验证。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C16",
+      "statement": "DVS Gesture Conv配置DECOLLE78.4%高于BPTT63.6%，但DECOLLE recurrent条目为N/S；局部分类器的结果与架构支持范围必须同时判断。",
+      "claim_type": "benchmark_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Figure4 DVSGesture",
+          "design": "NeuroTrain统一软件小规模实验快照，20epochs/10 Optuna trials",
+          "comparator": "Figure4各方法×dataset×architecture；标准化与specialized配置",
+          "measure": "DVS Gesture Conv配置DECOLLE78.4%高于BPTT63.6%，但DECOLLE recurrent条目为N/S；局部分类器的结果与架构支持范围必须同时判断。",
+          "unit_of_analysis": "trained model configuration及HPO trial，不是生物样本",
+          "sample_size_as_reported": "8 datasets、3 architecture types、10 trainers；每配置20epochs/10 HPO trials；独立seeds与test n未报",
+          "uncertainty": null,
+          "assumptions": [
+            "N/S不是算法实测不收敛；没有hardware或神经生物验证。",
+            "不把GPU hours当能耗，N/S不当negative experiment"
+          ],
+          "source_locator": {
+            "pdf_page": 17,
+            "section": "Figure4 DVSGesture",
+            "figure": "Figure4 DVSGesture",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "DVS Gesture Conv配置DECOLLE78.4%高于BPTT63.6%，但DECOLLE recurrent条目为N/S；局部分类器的结果与架构支持范围必须同时判断。",
+        "boundary": "N/S不是算法实测不收敛；没有hardware或神经生物验证。",
+        "negative_result": null,
+        "non_inference": "N/S不是算法实测不收敛；没有hardware或神经生物验证。",
+        "unresolved": "跨架构公平性、seed uncertainty、原理论完整条件及neuromorphic hardware指标待核对。",
+        "unresolved_attribution": "来源作者明示scope及本次审计边界。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "SNN局部学习如何在任务、架构及资源条件间权衡credit assignment与性能？"
+      ],
+      "shared_evidence_with": [
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C17",
+        "C18",
+        "C19"
+      ],
+      "review_notes": [
+        "综述与模型基准不同；shared heatmap/HPO不作独立复现或生物验证。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C17",
+      "statement": "SHD recurrent快照BPTT69.6%、TP57.6%、ETLP26.9%、OSTTP5.7%，这些local/online规则在该协议明显较低；在SHD FC，TP49.8%与BPTT49.6%的次序又不同。",
+      "claim_type": "benchmark_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Figure4 SHD",
+          "design": "NeuroTrain统一软件小规模实验快照，20epochs/10 Optuna trials",
+          "comparator": "Figure4各方法×dataset×architecture；标准化与specialized配置",
+          "measure": "SHD recurrent快照BPTT69.6%、TP57.6%、ETLP26.9%、OSTTP5.7%，这些local/online规则在该协议明显较低；在SHD FC，TP49.8%与BPTT49.6%的次序又不同。",
+          "unit_of_analysis": "trained model configuration及HPO trial，不是生物样本",
+          "sample_size_as_reported": "8 datasets、3 architecture types、10 trainers；每配置20epochs/10 HPO trials；独立seeds与test n未报",
+          "uncertainty": null,
+          "assumptions": [
+            "是reported数值差，不声称统计显著或所有local规则处理时间任务失败。",
+            "不把GPU hours当能耗，N/S不当negative experiment"
+          ],
+          "source_locator": {
+            "pdf_page": 17,
+            "section": "Figure4 SHD",
+            "figure": "Figure4 SHD",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "SHD recurrent快照BPTT69.6%、TP57.6%、ETLP26.9%、OSTTP5.7%，这些local/online规则在该协议明显较低；在SHD FC，TP49.8%与BPTT49.6%的次序又不同。",
+        "boundary": "是reported数值差，不声称统计显著或所有local规则处理时间任务失败。",
+        "negative_result": "SHD recurrent所列TP/ETLP/OSTTP accuracy低于同列BPTT。",
+        "non_inference": "是reported数值差，不声称统计显著或所有local规则处理时间任务失败。",
+        "unresolved": "跨架构公平性、seed uncertainty、原理论完整条件及neuromorphic hardware指标待核对。",
+        "unresolved_attribution": "来源作者明示scope及本次审计边界。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "SNN局部学习如何在任务、架构及资源条件间权衡credit assignment与性能？"
+      ],
+      "shared_evidence_with": [
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C18",
+        "C19"
+      ],
+      "review_notes": [
+        "综述与模型基准不同；shared heatmap/HPO不作独立复现或生物验证。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C18",
+      "statement": "SVHN下DECOLLE Conv55.9%低于BPTT83.8%，但FC74.9%高于BPTT53.6%，same dataset不同架构使相对排名反转，反对跨配置通用冠军解释。",
+      "claim_type": "benchmark_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Figure4 SVHN",
+          "design": "NeuroTrain统一软件小规模实验快照，20epochs/10 Optuna trials",
+          "comparator": "Figure4各方法×dataset×architecture；标准化与specialized配置",
+          "measure": "SVHN下DECOLLE Conv55.9%低于BPTT83.8%，但FC74.9%高于BPTT53.6%，same dataset不同架构使相对排名反转，反对跨配置通用冠军解释。",
+          "unit_of_analysis": "trained model configuration及HPO trial，不是生物样本",
+          "sample_size_as_reported": "8 datasets、3 architecture types、10 trainers；每配置20epochs/10 HPO trials；独立seeds与test n未报",
+          "uncertainty": null,
+          "assumptions": [
+            "具体training/architecture/HPO实现决定范围，无独立重复误差。",
+            "不把GPU hours当能耗，N/S不当negative experiment"
+          ],
+          "source_locator": {
+            "pdf_page": 17,
+            "section": "Figure4 SVHN",
+            "figure": "Figure4 SVHN",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "SVHN下DECOLLE Conv55.9%低于BPTT83.8%，但FC74.9%高于BPTT53.6%，same dataset不同架构使相对排名反转，反对跨配置通用冠军解释。",
+        "boundary": "具体training/architecture/HPO实现决定范围，无独立重复误差。",
+        "negative_result": "SVHN Conv DECOLLE accuracy低于BPTT；FC方向相反。",
+        "non_inference": "具体training/architecture/HPO实现决定范围，无独立重复误差。",
+        "unresolved": "跨架构公平性、seed uncertainty、原理论完整条件及neuromorphic hardware指标待核对。",
+        "unresolved_attribution": "来源作者明示scope及本次审计边界。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "SNN局部学习如何在任务、架构及资源条件间权衡credit assignment与性能？"
+      ],
+      "shared_evidence_with": [
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C19"
+      ],
+      "review_notes": [
+        "综述与模型基准不同；shared heatmap/HPO不作独立复现或生物验证。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C19",
+      "statement": "作者把统一接口视作fairer benchmarking基础而非最终排名，承认adapted implementations可改进、标准化可能达不到各算法specialized best-case；paper故意只给快照且完整结果在外部repo。",
+      "claim_type": "benchmark_interpretation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "5.4; 6 Conclusions",
+          "design": "作者对benchmark适用性的解释",
+          "comparator": "Figure4各方法×dataset×architecture；标准化与specialized配置",
+          "measure": "作者把统一接口视作fairer benchmarking基础而非最终排名，承认adapted implementations可改进、标准化可能达不到各算法specialized best-case；paper故意只给快照且完整结果在外部repo。",
+          "unit_of_analysis": "trained model configuration及HPO trial，不是生物样本",
+          "sample_size_as_reported": "8 datasets、3 architecture types、10 trainers；每配置20epochs/10 HPO trials；独立seeds与test n未报",
+          "uncertainty": null,
+          "assumptions": [
+            "外部最新repo未读取；本文不能证明最佳性能复现、所有资源开销或现实hardware收益。",
+            "不把GPU hours当能耗，N/S不当negative experiment"
+          ],
+          "source_locator": {
+            "pdf_page": 16,
+            "section": "5.4; 6 Conclusions",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者把统一接口视作fairer benchmarking基础而非最终排名，承认adapted implementations可改进、标准化可能达不到各算法specialized best-case；paper故意只给快照且完整结果在外部repo。",
+        "boundary": "外部最新repo未读取；本文不能证明最佳性能复现、所有资源开销或现实hardware收益。",
+        "negative_result": null,
+        "non_inference": "外部最新repo未读取；本文不能证明最佳性能复现、所有资源开销或现实hardware收益。",
+        "unresolved": "跨架构公平性、seed uncertainty、原理论完整条件及neuromorphic hardware指标待核对。",
+        "unresolved_attribution": "来源作者明示scope及本次审计边界。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "SNN局部学习如何在任务、架构及资源条件间权衡credit assignment与性能？"
+      ],
+      "shared_evidence_with": [
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18"
+      ],
+      "review_notes": [
+        "综述与模型基准不同；shared heatmap/HPO不作独立复现或生物验证。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "完整28页预印本，19条候选区分SNN算法taxonomic综述、NeuroTrain软件方法和8数据集/3架构快照。热图支持明显任务/架构交互及local规则的正面/不利比较，不能得到通用最佳算法；N/S为不支持，20epochs/10 HPO不是统计重复，e-prop配置有替换。转换近似和梯度/局部性保留共同条件，所有模型结果不当生物学习机制或硬件节能验证，外部完整repo未读。",
+  "shared_evidence": [
+    {
+      "claim_id": "C1",
+      "with": [
+        "C2",
+        "C3",
+        "C4",
+        "C5"
+      ]
+    },
+    {
+      "claim_id": "C2",
+      "with": [
+        "C1",
+        "C3",
+        "C4",
+        "C5"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C1",
+        "C2",
+        "C4",
+        "C5"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C5"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C7",
+        "C8"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C6",
+        "C8"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C6",
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "with": [
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "with": [
+        "C11",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19"
+      ]
+    },
+    {
+      "claim_id": "C13",
+      "with": [
+        "C11",
+        "C12",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19"
+      ]
+    },
+    {
+      "claim_id": "C14",
+      "with": [
+        "C11",
+        "C12",
+        "C13",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19"
+      ]
+    },
+    {
+      "claim_id": "C15",
+      "with": [
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C16",
+        "C17",
+        "C18",
+        "C19"
+      ]
+    },
+    {
+      "claim_id": "C16",
+      "with": [
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C17",
+        "C18",
+        "C19"
+      ]
+    },
+    {
+      "claim_id": "C17",
+      "with": [
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C18",
+        "C19"
+      ]
+    },
+    {
+      "claim_id": "C18",
+      "with": [
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C19"
+      ]
+    },
+    {
+      "claim_id": "C19",
+      "with": [
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": "C1",
+        "issue": "二次审计：核对time/space locality、适用模型/假设、snapshot配置和actual units；无seed统计不补猜。",
+        "suggested_correction": "保留固定版本/条件与biological/hardware non-inference。",
+        "pdf_page": 6,
+        "resolved": true
+      },
+      {
+        "claim_id": "C2",
+        "issue": "二次审计：核对time/space locality、适用模型/假设、snapshot配置和actual units；无seed统计不补猜。",
+        "suggested_correction": "保留固定版本/条件与biological/hardware non-inference。",
+        "pdf_page": 9,
+        "resolved": true
+      },
+      {
+        "claim_id": "C3",
+        "issue": "二次审计：核对time/space locality、适用模型/假设、snapshot配置和actual units；无seed统计不补猜。",
+        "suggested_correction": "保留固定版本/条件与biological/hardware non-inference。",
+        "pdf_page": 9,
+        "resolved": true
+      },
+      {
+        "claim_id": "C4",
+        "issue": "二次审计：核对time/space locality、适用模型/假设、snapshot配置和actual units；无seed统计不补猜。",
+        "suggested_correction": "保留固定版本/条件与biological/hardware non-inference。",
+        "pdf_page": 7,
+        "resolved": true
+      },
+      {
+        "claim_id": "C5",
+        "issue": "二次审计：核对time/space locality、适用模型/假设、snapshot配置和actual units；无seed统计不补猜。",
+        "suggested_correction": "保留固定版本/条件与biological/hardware non-inference。",
+        "pdf_page": 10,
+        "resolved": true
+      },
+      {
+        "claim_id": "C6",
+        "issue": "二次审计：核对time/space locality、适用模型/假设、snapshot配置和actual units；无seed统计不补猜。",
+        "suggested_correction": "保留固定版本/条件与biological/hardware non-inference。",
+        "pdf_page": 11,
+        "resolved": true
+      },
+      {
+        "claim_id": "C7",
+        "issue": "二次审计：核对time/space locality、适用模型/假设、snapshot配置和actual units；无seed统计不补猜。",
+        "suggested_correction": "保留固定版本/条件与biological/hardware non-inference。",
+        "pdf_page": 11,
+        "resolved": true
+      },
+      {
+        "claim_id": "C8",
+        "issue": "二次审计：核对time/space locality、适用模型/假设、snapshot配置和actual units；无seed统计不补猜。",
+        "suggested_correction": "保留固定版本/条件与biological/hardware non-inference。",
+        "pdf_page": 11,
+        "resolved": true
+      },
+      {
+        "claim_id": "C9",
+        "issue": "二次审计：核对time/space locality、适用模型/假设、snapshot配置和actual units；无seed统计不补猜。",
+        "suggested_correction": "保留固定版本/条件与biological/hardware non-inference。",
+        "pdf_page": 12,
+        "resolved": true
+      },
+      {
+        "claim_id": "C10",
+        "issue": "二次审计：核对time/space locality、适用模型/假设、snapshot配置和actual units；无seed统计不补猜。",
+        "suggested_correction": "保留固定版本/条件与biological/hardware non-inference。",
+        "pdf_page": 13,
+        "resolved": true
+      },
+      {
+        "claim_id": "C11",
+        "issue": "二次审计：核对time/space locality、适用模型/假设、snapshot配置和actual units；无seed统计不补猜。",
+        "suggested_correction": "保留固定版本/条件与biological/hardware non-inference。",
+        "pdf_page": 15,
+        "resolved": true
+      },
+      {
+        "claim_id": "C12",
+        "issue": "二次审计：核对time/space locality、适用模型/假设、snapshot配置和actual units；无seed统计不补猜。",
+        "suggested_correction": "保留固定版本/条件与biological/hardware non-inference。",
+        "pdf_page": 17,
+        "resolved": true
+      },
+      {
+        "claim_id": "C13",
+        "issue": "二次审计：核对time/space locality、适用模型/假设、snapshot配置和actual units；无seed统计不补猜。",
+        "suggested_correction": "保留固定版本/条件与biological/hardware non-inference。",
+        "pdf_page": 17,
+        "resolved": true
+      },
+      {
+        "claim_id": "C14",
+        "issue": "二次审计：核对time/space locality、适用模型/假设、snapshot配置和actual units；无seed统计不补猜。",
+        "suggested_correction": "保留固定版本/条件与biological/hardware non-inference。",
+        "pdf_page": 17,
+        "resolved": true
+      },
+      {
+        "claim_id": "C15",
+        "issue": "二次审计：核对time/space locality、适用模型/假设、snapshot配置和actual units；无seed统计不补猜。",
+        "suggested_correction": "保留固定版本/条件与biological/hardware non-inference。",
+        "pdf_page": 17,
+        "resolved": true
+      },
+      {
+        "claim_id": "C16",
+        "issue": "二次审计：核对time/space locality、适用模型/假设、snapshot配置和actual units；无seed统计不补猜。",
+        "suggested_correction": "保留固定版本/条件与biological/hardware non-inference。",
+        "pdf_page": 17,
+        "resolved": true
+      },
+      {
+        "claim_id": "C17",
+        "issue": "二次审计：核对time/space locality、适用模型/假设、snapshot配置和actual units；无seed统计不补猜。",
+        "suggested_correction": "保留固定版本/条件与biological/hardware non-inference。",
+        "pdf_page": 17,
+        "resolved": true
+      },
+      {
+        "claim_id": "C18",
+        "issue": "二次审计：核对time/space locality、适用模型/假设、snapshot配置和actual units；无seed统计不补猜。",
+        "suggested_correction": "保留固定版本/条件与biological/hardware non-inference。",
+        "pdf_page": 17,
+        "resolved": true
+      },
+      {
+        "claim_id": "C19",
+        "issue": "二次审计：核对time/space locality、适用模型/假设、snapshot配置和actual units；无seed统计不补猜。",
+        "suggested_correction": "保留固定版本/条件与biological/hardware non-inference。",
+        "pdf_page": 16,
+        "resolved": true
+      },
+      {
+        "claim_id": "C12",
+        "issue": "e-prop将部分multi-hidden architectures替换为512-unit single recurrent，且10 Optuna trials不是独立复现。",
+        "suggested_correction": "不直接公平比较替换模型的算法效果，明确HPO分母。",
+        "pdf_page": 17,
+        "resolved": true
+      },
+      {
+        "claim_id": "C19",
+        "issue": "完整outcomes/configs外部维护且paper刻意未嵌入；标准化implementation并非各算法最优原版。",
+        "suggested_correction": "不声称已读repo、复现最佳或最终排名。",
+        "pdf_page": 16,
+        "resolved": false
+      },
+      {
+        "claim_id": "C9",
+        "issue": "纯conversion说“无on-device adaptation”需要限定冻结pipeline；同节有hybrid fine-tuning，理论equivalence也依赖coding/operator条件。",
+        "suggested_correction": "已限定纯转换和共同IF条件，不推广所有混合方案。",
+        "pdf_page": 13,
+        "resolved": true
+      },
+      {
+        "claim_id": "C4",
+        "issue": "DRTP“update-free”可能为措辞错误，规则仍发生weight updates。",
+        "suggested_correction": "只描述减少update locking，不写无需更新。",
+        "pdf_page": 7,
+        "resolved": false
+      },
+      {
+        "claim_id": null,
+        "issue": "先前survey/algorithm分类为作者综述判断，未给systematic search/完整原证明；图4缺seed分布及test样本数。",
+        "suggested_correction": "保持review_synthesis及reported accuracy，不补独立单位或显著性。",
+        "pdf_page": 17,
+        "resolved": false
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T10:56:04.473174Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "d9f19500ee47dd2b28412c4a48f67378acef3b94d92589910514215dd82333f7",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

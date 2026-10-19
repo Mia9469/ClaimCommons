@@ -1,0 +1,1640 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "preprint",
+  "paper": {
+    "title": "Encoding of movement primitives and body posture through distributed proprioception in walking and climbing insects",
+    "authors": [
+      "Thomas van der Veen",
+      "Volker Dürr",
+      "Elisabetta Chicca"
+    ],
+    "doi": "10.1101/2024.09.27.615364",
+    "publication_year": 2024,
+    "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+    "url": "https://doi.org/10.1101/2024.09.27.615364"
+  },
+  "source": {
+    "filename": "paper-W4403003995.pdf",
+    "sha256": "57b54ccd5fd46a3ab5bf7a4897146478c191445f7d9a9d93fbd05a90f4f9c30e",
+    "source_url": "https://www.biorxiv.org/content/biorxiv/early/2024/09/29/2024.09.27.615364.full.pdf",
+    "pdf_page_count": 27
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27
+    ],
+    "results_sections_seen": [
+      "Methods: Dataset, SNN architecture, MP and posture evaluation",
+      "Results: MP optimization, encoding properties, CCN, PENs",
+      "Discussion and Future scope",
+      "Supporting information captions",
+      "References"
+    ],
+    "missing_material": [
+      "图1–8及S1图的像素未提供。",
+      "S2/S3表只有说明而无实际条目；伴随论文和原始运动学数据/代码未随页提供。"
+    ],
+    "text_pass_complete": true,
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "notes": [
+      "源为bioRxiv 2024-09-29版本，页脚2024-09-24；未宣称已同行评议。",
+      "全部27页含正文、所有图注、表1–2、支持信息说明及参考文献均已读。",
+      "离线确定性模型；运动捕捉测量不等于模型神经元的生物测量。"
+    ]
+  },
+  "contribution_inventory": [
+    {
+      "summary": "新增112/腿运动原语层和3个位姿读出单元",
+      "role": "result",
+      "source_pages": [
+        5,
+        6,
+        8,
+        9
+      ],
+      "decision": "include",
+      "reason": "明确为模型架构，不把伴随论文的低级感觉编码当本篇新结果。"
+    },
+    {
+      "summary": "MP时间常数/权重优化与位置/速度、两/三输入组比较",
+      "role": "result",
+      "source_pages": [
+        10,
+        11,
+        19
+      ],
+      "decision": "include",
+      "reason": "分别保留独立比较，MCC参考条件与步态评分不同。"
+    },
+    {
+      "summary": "摆动、支撑、触地、离地最佳原语",
+      "role": "result",
+      "source_pages": [
+        12,
+        13
+      ],
+      "decision": "include",
+      "reason": "各目标单独可评估，具体缺失像素数值不猜测。"
+    },
+    {
+      "summary": "关节/腿型统计、α一致性、βγ反转与前腿位置比较",
+      "role": "result",
+      "source_pages": [
+        13,
+        14,
+        15,
+        16
+      ],
+      "decision": "include",
+      "reason": "统计n=24为配对模型组合，非动物重复。"
+    },
+    {
+      "summary": "CCN分类与入选连接计数",
+      "role": "result",
+      "source_pages": [
+        9,
+        15,
+        16,
+        17
+      ],
+      "decision": "include",
+      "reason": "均值MCC和连线数分别记录，保留试次描述不一致。"
+    },
+    {
+      "summary": "PEN回归、权重扫描与错误峰/领先轨迹",
+      "role": "result",
+      "source_pages": [
+        9,
+        17,
+        18,
+        20,
+        21
+      ],
+      "decision": "include",
+      "reason": "误差为z归一化量纲，错误示例是真实负向观察。"
+    },
+    {
+      "summary": "低级运动学能生成高阶本体表征",
+      "role": "interpretation",
+      "source_pages": [
+        17,
+        20,
+        21
+      ],
+      "decision": "include",
+      "reason": "限定模型充分性，不主张真实神经因果机制。"
+    },
+    {
+      "summary": "S2/S3中后腿前六最佳原语的完整组合与得分",
+      "role": "result",
+      "source_pages": [
+        15,
+        22
+      ],
+      "decision": "defer",
+      "reason": "仅引用和标题说明，未提供表格内容。"
+    },
+    {
+      "summary": "噪声、多感觉、其他自由度、空间协调及学习优化",
+      "role": "hypothesis",
+      "source_pages": [
+        21,
+        22
+      ],
+      "decision": "defer",
+      "reason": "未实现的未来方向。"
+    },
+    {
+      "summary": "伴随论文毛场/一阶神经元、高准确角度编码和早期ANN俯仰结果",
+      "role": "background",
+      "source_pages": [
+        1,
+        2,
+        3,
+        19,
+        20,
+        24,
+        25
+      ],
+      "decision": "exclude",
+      "reason": "既有或伴随工作不计本篇新增结果。"
+    },
+    {
+      "summary": "原始运动捕捉采集和生物步态生理证据",
+      "role": "background",
+      "source_pages": [
+        3,
+        4,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ],
+      "decision": "exclude",
+      "reason": "本篇复用既有数据，而非新采集或新动物细胞实验。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "本文将毛场本体感觉 SNN 扩展为每腿112个、全身672个运动原语中间神经元；每个原语用同一腿两个或三个不同关节的位置/速度输入做时间重合检测，随后三个位姿读出神经元汇合六腿信息。",
+      "claim_type": "proposed_spiking_architecture",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "运动原语组合枚举与LIF模型构建",
+          "design": "从每个关节四种位置/速度输入或不连接的组合中排除少于两输入的情况。",
+          "comparator": null,
+          "measure": "112种每腿有效组合与层级连接",
+          "unit_of_analysis": "模型拓扑",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "每关节最多取一种位置或速度输入。",
+            "原始感觉和第一阶编码来自伴随论文。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "Methods: Layer three; Synapse connections",
+            "figure": "Figure 1d",
+            "equation": "Equation 4",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "明确给出局部运动组合到全身姿态的层级架构。",
+        "boundary": "模型由运动学驱动，Python仿真步长0.25ms；没有硬件实现或新神经记录。",
+        "negative_result": null,
+        "non_inference": "不等于昆虫真实存在112类原语细胞或已经实现闭环运动控制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "少量局部关节信号如何组合成多腿层级本体表征？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "text_only",
+          "deterministic_model",
+          "no_neural_recordings"
+        ]
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "在78次平地运动学试验驱动的 MP 层参数搜索中，最优输入权重随时间常数增大总体降低，p-v与p-p-v组变化较不一致；按MCC评估的整体性能在τ约0.2 ms附近达到峰值，再随τ增加下降。",
+      "claim_type": "simulation_parameter_optimization_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "权重/时间常数网格搜索",
+          "design": "权重在2–18mV间按2mV步长搜索，各输入组分别优化。",
+          "comparator": "不同τ及组内最优权重",
+          "measure": "MP参考状态MCC与最优权重",
+          "unit_of_analysis": "模型参数×输入组合",
+          "sample_size_as_reported": "来源数据共9只Carausius morosus；MP层使用78次平地行走试验。672个模型MP单元不是独立动物样本",
+          "uncertainty": null,
+          "assumptions": [
+            "参考状态按真实关节方向/角域的重合生成。",
+            "每轨迹100时间箱，有一次发放即记阳性。"
+          ],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "Results: Layer three; Optimization and performance",
+            "figure": "Figure 2A,B; Table 1",
+            "equation": "Equation 5",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "存在该确定性模型的较短时间窗最优区间。",
+        "boundary": "Table 1误将τ0.2写为mV；此处按正文0.2ms记录。未报告独立测试分割或MCC不确定性。",
+        "negative_result": null,
+        "non_inference": "不能推断真实昆虫最优时间常数或跨数据的参数最优性。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "重合检测的时间窗与权重怎样影响模型原语编码？"
+      ],
+      "shared_evidence_with": [
+        "C3",
+        "C4"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "text_only",
+          "deterministic_model",
+          "no_neural_recordings",
+          "table_unit_inconsistency"
+        ]
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "在同一MP层优化结果中，含较多位置输入的原语组合取得比含较多速度输入的组合更高的参考状态MCC，例如p-p优于v-v。",
+      "claim_type": "comparative_simulation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "按输入类型分组比较最优MCC",
+          "design": "每个组分别优化输入权重。",
+          "comparator": "较多速度输入组",
+          "measure": "组合条件编码的MCC",
+          "unit_of_analysis": "一个模型输入组合组",
+          "sample_size_as_reported": "来源数据共9只Carausius morosus；MP层使用78次平地行走试验。672个模型MP单元不是独立动物样本",
+          "uncertainty": null,
+          "assumptions": [
+            "比较针对运动原语参考状态，不是直接比较步态阶段得分。"
+          ],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "Results: Optimization and performance",
+            "figure": "Figure 2B",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "输入类型影响模型原语条件的匹配程度。",
+        "boundary": "没有正文数值差或显著性，不能混同后续最佳摆动编码为v-v-v。",
+        "negative_result": null,
+        "non_inference": "不证明位置感觉在真实动物中一般更重要。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "位置与速度输入组合在该原语模型中的参考状态匹配有何差别？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C4"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "text_only",
+          "deterministic_model",
+          "no_neural_recordings"
+        ]
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "在相同MP层参数评估中，两输入原语组通常略优于三输入组的参考状态MCC；作者解释为三路脉冲完全重合比两路更难发生。",
+      "claim_type": "comparative_simulation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "按输入路数比较模型MCC",
+          "design": "以各组最优权重比较两输入与三输入组。",
+          "comparator": "三输入组，例如v-v-v",
+          "measure": "参考状态MCC",
+          "unit_of_analysis": "模型组合组",
+          "sample_size_as_reported": "来源数据共9只Carausius morosus；MP层使用78次平地行走试验。672个模型MP单元不是独立动物样本",
+          "uncertainty": null,
+          "assumptions": [
+            "各组分别优化，并非固定权重的一项纯输入路数消融。"
+          ],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "Results: Optimization and performance",
+            "figure": "Figure 2B",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "额外输入约束在该模型中可能降低组合事件检测。",
+        "boundary": "只报告略优；重合概率解释未独立量化。",
+        "negative_result": null,
+        "non_inference": "不能推断更多感觉输入必然损害步态表征或真实网络性能。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "增加重合检测所需输入路数是否降低该模型的事件匹配？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C3"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "text_only",
+          "deterministic_model",
+          "no_neural_recordings"
+        ]
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "在78次平地步态数据的阶段分析中，最优摆动编码器来自左后腿，组合为α速度正、β速度正、γ速度负；它在标准摆动相位时间箱中发放概率近100%，支撑相位近0%，与摆动标注的重合优于其任一单路输入。",
+      "claim_type": "data_driven_simulation_encoding_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "最优模型原语的阶段发放分析",
+          "design": "由全部672原语中选择最高摆动得分，再按摆动/支撑各8箱统计。",
+          "comparator": "三个单关节速度输入；支撑阶段",
+          "measure": "每相位箱至少一次发放概率与标注重合",
+          "unit_of_analysis": "选出的模型原语及标准化步态周期",
+          "sample_size_as_reported": "来源数据共9只Carausius morosus；MP层使用78次平地行走试验。672个模型MP单元不是独立动物样本",
+          "uncertainty": null,
+          "assumptions": [
+            "模型组合为前伸、抬腿、屈曲的同时发生。",
+            "单例轨迹与全部试验的相位概率不可当独立重复。"
+          ],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "Results: Encoding properties",
+            "figure": "Figure 3; Figure 4A",
+            "equation": "Equations 6–7",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "多关节组合可在该数据上表征摆动阶段。",
+        "boundary": "最高得分原语按同一数据选择，无额外外部测试；百分数不是动作分类准确率。",
+        "negative_result": null,
+        "non_inference": "不证明实际左后腿有此细胞或模型精确复现脉冲时间。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "同腿多关节速度重合能否比单输入更专一地编码摆动相位？"
+      ],
+      "shared_evidence_with": [
+        "C6",
+        "C7",
+        "C8",
+        "C12"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "text_only",
+          "deterministic_model",
+          "no_neural_recordings"
+        ]
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "在本文对全部672个模型原语的阶段筛选中，支撑阶段的最高表现编码器也属于三速度输入组，发放相位分布与摆动编码器不同，支持仅由关节运动学区分互斥步态阶段。",
+      "claim_type": "data_driven_simulation_encoding_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "最优支撑原语筛选及相位概率分析",
+          "design": "按支撑目标与摆动目标互补的评分筛选最高表现单元。",
+          "comparator": "摆动阶段与单关节输入",
+          "measure": "支撑相位发放分布",
+          "unit_of_analysis": "一个被选出的模型原语",
+          "sample_size_as_reported": "来源数据共9只Carausius morosus；MP层使用78次平地行走试验。672个模型MP单元不是独立动物样本",
+          "uncertainty": null,
+          "assumptions": [
+            "阶段评分基于时间归一化的16箱概率。"
+          ],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "Results: Encoding properties",
+            "figure": "Figure 4B",
+            "equation": "Equations 6–7",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "存在支撑偏好的模型运动组合。",
+        "boundary": "图注给出组类型，但缺失像素和表S2/S3内容，不能列出精确组合或得分。",
+        "negative_result": null,
+        "non_inference": "不能推断支撑相位已无误分类或真实支撑控制不需载荷反馈。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "纯运动学原语能否产生支撑阶段偏好？"
+      ],
+      "shared_evidence_with": [
+        "C5",
+        "C7",
+        "C8",
+        "C12"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "text_only",
+          "deterministic_model",
+          "no_neural_recordings"
+        ]
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "在同一模型筛选中，摆动到支撑的触地过渡最高表现编码器属于两位置输入组p-p，说明部分关节位置组合可表征步态阶段转换，而不只是整个摆动或支撑时段。",
+      "claim_type": "data_driven_simulation_transition_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "触地过渡目标相位模板评分",
+          "design": "把原语发放概率与跨摆动后半/支撑前半的模板比较。",
+          "comparator": "整个摆动/支撑的目标模板",
+          "measure": "触地过渡目标得分及相位发放概率",
+          "unit_of_analysis": "被选出的模型MP单元",
+          "sample_size_as_reported": "来源数据共9只Carausius morosus；MP层使用78次平地行走试验。672个模型MP单元不是独立动物样本",
+          "uncertainty": null,
+          "assumptions": [
+            "目标模板覆盖转换前后时间箱，不是毫秒精度事件检测。"
+          ],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "Results: Encoding properties",
+            "figure": "Figure 4C",
+            "equation": "Equations 6–7",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "模型中有触地过渡偏好的位置组合。",
+        "boundary": "未提供像素内具体组合、数值得分或真实时间定位误差。",
+        "negative_result": null,
+        "non_inference": "不能把模板匹配称为精确触地时刻的实测预测。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "位置输入组合能否标记摆动到支撑的过渡区间？"
+      ],
+      "shared_evidence_with": [
+        "C5",
+        "C6",
+        "C8",
+        "C12"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "text_only",
+          "deterministic_model",
+          "no_neural_recordings"
+        ]
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "在同一模型筛选中，支撑到摆动的离地过渡最高表现编码器属于一位置加两速度输入组，区别于触地过渡最佳的两位置组。",
+      "claim_type": "data_driven_simulation_transition_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "离地过渡目标相位模板评分",
+          "design": "筛选最接近触地模板互补模式的原语。",
+          "comparator": "触地过渡最佳组p-p",
+          "measure": "离地过渡相位发放概率/目标匹配",
+          "unit_of_analysis": "被选出的模型MP单元",
+          "sample_size_as_reported": "来源数据共9只Carausius morosus；MP层使用78次平地行走试验。672个模型MP单元不是独立动物样本",
+          "uncertainty": null,
+          "assumptions": [
+            "原文p-v-v与分类v-v-p均指输入成分类型，不强行指定关节顺序。"
+          ],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "Results: Encoding properties",
+            "figure": "Figure 4D",
+            "equation": "Equations 6–7",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "两类阶段转换可由不同运动组合表征。",
+        "boundary": "无提供精确tuple、得分或逐事件时间误差。",
+        "negative_result": null,
+        "non_inference": "不证明离地的生物触发机制或因果控制作用。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "不同位置/速度组合是否区分触地与离地过渡？"
+      ],
+      "shared_evidence_with": [
+        "C5",
+        "C6",
+        "C7",
+        "C12"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "text_only",
+          "deterministic_model",
+          "no_neural_recordings"
+        ]
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "按关节输入分组的MP摆动得分中，所有六腿的α关节速度正输入均偏向摆动、速度负输入偏向支撑；表2的配对t值在各腿均为正且超过其p<0.001临界值3.792。",
+      "claim_type": "model_score_statistical_comparison",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "模型组合摆动得分的双侧配对t比较",
+          "design": "在相同其他输入组合下配对vel+与vel−组。",
+          "comparator": "α关节vel−输入组",
+          "measure": "摆动得分配对t值",
+          "unit_of_analysis": "24对模型输入组合，而非24只动物",
+          "sample_size_as_reported": "每个关节n=24配对模型组合；数据源78次行走试验",
+          "uncertainty": "报告t值与显著性阈值，无生物个体效应CI",
+          "assumptions": [
+            "组合评分共享同一动物运动数据，组合不是独立生物重复。"
+          ],
+          "source_locator": {
+            "pdf_page": 15,
+            "section": "Results: Joint- and leg-specific contributions",
+            "figure": "Figure 5; Table 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "前伸相关输入在各腿一致关联摆动表征。",
+        "boundary": "统计单位为模型输入组合，不是动物独立效应。",
+        "negative_result": null,
+        "non_inference": "不证明α速度输入因果决定真实步态切换。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "α关节方向编码与模型摆动/支撑得分是否跨腿一致关联？"
+      ],
+      "shared_evidence_with": [
+        "C10",
+        "C11"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "text_only",
+          "deterministic_model",
+          "no_neural_recordings"
+        ]
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "同一MP得分分析显示前后腿的β、γ速度方向关联反转：γ速度正在前腿偏摆动而后腿偏支撑，β速度正则在前腿偏支撑而后腿偏摆动；左右腿总体相似，中腿部分速度输入存在不对称。",
+      "claim_type": "model_score_statistical_comparison",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "按关节/腿分组比较摆动得分",
+          "design": "结合表2速度配对t值符号比较前后腿。",
+          "comparator": "前腿与后腿；左与右腿",
+          "measure": "摆动得分关联方向及t值符号",
+          "unit_of_analysis": "腿型×关节的模型输入组合",
+          "sample_size_as_reported": "表2每关节24对组合；非独立动物数",
+          "uncertainty": null,
+          "assumptions": [
+            "同一运动学试验用于所有腿的模型编码。"
+          ],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "Results: Encoding properties",
+            "figure": "Figure 5; Table 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "编码关联依赖关节和腿型，不能套用统一速度符号。",
+        "boundary": "不是生物细胞比较；中腿差异不支持严格左右对称。",
+        "negative_result": null,
+        "non_inference": "不证明功能反转由某个独立神经连接机制导致。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "前后腿的关节运动方向是否与不同步态相位关联？"
+      ],
+      "shared_evidence_with": [
+        "C9",
+        "C11"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "text_only",
+          "deterministic_model",
+          "no_neural_recordings"
+        ]
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "表2中，前腿α关节pos+与pos−对应的MP摆动得分比较未达到p<0.05阈值，右/左前腿t分别−0.95、−0.19；前腿β不能一概称无差异，右前腿t=3.36超过p<0.01阈值，左前腿t=−0.29未达到阈值。",
+      "claim_type": "model_score_negative_and_boundary_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "位置输入模型得分配对t检验",
+          "design": "用文中临界值2.074与2.819分别判断5%和1%阈值。",
+          "comparator": "pos+与pos−",
+          "measure": "配对t值及阈值判断",
+          "unit_of_analysis": "每关节的24对模型输入组合",
+          "sample_size_as_reported": "n=24对/关节",
+          "uncertainty": "表中给t值和阈值，未给效应量CI",
+          "assumptions": [
+            "仅依据所报告模型统计，不补充精确p值。"
+          ],
+          "source_locator": {
+            "pdf_page": 15,
+            "section": "Results: Joint- and leg-specific contributions",
+            "figure": "Table 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "对前腿位置编码的笼统讨论作出表格限定。",
+        "boundary": "正文称前腿α和β差异很少或无差异，右前腿β实际达到给出的1%阈值。",
+        "negative_result": "前腿α两侧及左前腿β的模型比较未达到所报告5%显著性阈值。",
+        "non_inference": "不显著不是等效证明，更不能推断动物位置传感无功能。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "哪些前腿位置输入比较未显示摆动得分差异，哪些例外需保留？"
+      ],
+      "shared_evidence_with": [
+        "C9",
+        "C10"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "text_only",
+          "deterministic_model",
+          "no_neural_recordings",
+          "discussion_table_scope_difference"
+        ]
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "在按腿型汇总的模型原语得分分布中，中腿和后腿比前腿拥有更多强摆动/支撑编码单元；过渡编码在后腿最强、中腿居中、前腿很弱。",
+      "claim_type": "data_driven_simulation_population_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "腿型分组的相位/过渡得分直方图",
+          "design": "左右腿合并，以得分>0.75或<0.25定义强编码，并列5/95百分位。",
+          "comparator": "前腿、中腿、后腿",
+          "measure": "强编码模型单元数量与分布宽度",
+          "unit_of_analysis": "每腿型224模型MP单元",
+          "sample_size_as_reported": "每腿型224模型单元；同一78次行走数据",
+          "uncertainty": null,
+          "assumptions": [
+            "强编码阈值为模型评分定义，不是生物神经元筛选阈值。"
+          ],
+          "source_locator": {
+            "pdf_page": 14,
+            "section": "Results: Encoding properties",
+            "figure": "Figure 6",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "同一原语库的步态表征能力依赖腿型。",
+        "boundary": "具体数量在图像中，正文只给比较方向；未从像素猜测。",
+        "negative_result": null,
+        "non_inference": "不说明真实前腿感觉信息较少，也未隔离搜索/短步等解释。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "模型原语库的相位编码是否随前、中、后腿不同？"
+      ],
+      "shared_evidence_with": [
+        "C5",
+        "C6",
+        "C7",
+        "C8"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "text_only",
+          "deterministic_model",
+          "no_neural_recordings"
+        ]
+      }
+    },
+    {
+      "id": "C13",
+      "statement": "将体轴俯仰大于10°定义为攀爬后，模型CCN在ωccn=0.15 mV、Rccn=1.8时报告15轮留一式评估平均MCC=0.597；示例中主要在高俯仰时发放，但低于阈值也出现假阳性。",
+      "claim_type": "data_driven_simulation_classification_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "攀爬偏置选连接和参数网格搜索",
+          "design": "每试验50时间箱比较是否发放与是否pitch>10°，报告15轮均值。",
+          "comparator": "运动学10°阈值标注",
+          "measure": "MCC与假阳性",
+          "unit_of_analysis": "一个留出试验的时间箱及跨试验汇总",
+          "sample_size_as_reported": "来源数据共9只动物、15次双台阶试验；姿态层报告15轮留一式评估，方法另称20训练试次，未统一",
+          "uncertainty": null,
+          "assumptions": [
+            "10°为人为标签阈值。",
+            "连接偏置由训练运动学估计；未明确嵌套参数选择或动物级留出。"
+          ],
+          "source_locator": {
+            "pdf_page": 16,
+            "section": "Results: Climbing classifier neuron",
+            "figure": "Figure 7",
+            "equation": "Equation 5",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "模型对该阈值攀爬标签具有中等正相关分类能力。",
+        "boundary": "方法20训练试次与15数据/轮数未统一，不能声称严格无泄漏外部验证。",
+        "negative_result": "所示CCN轨迹在pitch<10°时仍出现假阳性发放。",
+        "non_inference": "MCC0.597不是59.7%准确率，也不等于动物神经元的攀爬识别表现。",
+        "unresolved": "20训练试次与15留一轮数据的关系、参数选择/测试独立性未明确。",
+        "unresolved_attribution": "方法页9与数据页3、图7的内在描述差异。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "从局部运动原语读出能否在给定运动学中分类高俯仰状态？"
+      ],
+      "shared_evidence_with": [
+        "C14",
+        "C15",
+        "C16"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "text_only",
+          "deterministic_model",
+          "no_neural_recordings",
+          "cross_validation_description_unclear"
+        ]
+      }
+    },
+    {
+      "id": "C14",
+      "statement": "在CCN最佳偏置阈值Rccn=1.8下，连到姿态读出层的MP单元数为中腿46、前腿35、后腿28；该排序是选连接统计，不是剔除腿输入后的独立性能消融。",
+      "claim_type": "simulation_connectivity_selection_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "按攀爬/行走发放偏置筛选连接",
+          "design": "偏置较强的单元分别以正/负权重接入CCN。",
+          "comparator": "三种腿型",
+          "measure": "入选连接单元计数",
+          "unit_of_analysis": "训练得到的模型连接集合",
+          "sample_size_as_reported": "46/35/28模型单元；不是动物样本",
+          "uncertainty": null,
+          "assumptions": [
+            "关联偏置决定选择；并未把连接数换算为信息量。"
+          ],
+          "source_locator": {
+            "pdf_page": 16,
+            "section": "Results: Climbing classifier neuron",
+            "figure": "Figure 7A",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "同一阈值下中腿入选最多。",
+        "boundary": "作者称贡献排序；此处限为实际报告的连接数。",
+        "negative_result": null,
+        "non_inference": "不能推断中腿对真实姿态因果贡献最大或35前腿贡献超过28后腿已由消融证实。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "攀爬偏置阈值会从哪类腿选择较多运动原语输入？"
+      ],
+      "shared_evidence_with": [
+        "C13"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "text_only",
+          "deterministic_model",
+          "no_neural_recordings"
+        ]
+      }
+    },
+    {
+      "id": "C15",
+      "statement": "两PEN的差分发放率经z归一化后估计体轴俯仰；结果正文在Rpen=1.620、ωpen=10 mV时报告15轮平均MSE=0.664，并显示权重提高后误差下降至平台。",
+      "claim_type": "data_driven_simulation_regression_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "双PEN差分发放率与归一化运动学回归",
+          "design": "两PEN分别汇集高/低俯仰偏置原语，比较z标准化时间序列。",
+          "comparator": "z标准化真实俯仰时间序列",
+          "measure": "时间点均方误差与权重扫描",
+          "unit_of_analysis": "一个试验时间序列及15轮汇总",
+          "sample_size_as_reported": "来源数据共9只动物、15次双台阶试验；姿态层报告15轮留一式评估，方法另称20训练试次，未统一",
+          "uncertainty": null,
+          "assumptions": [
+            "运动捕捉5ms采样插值至0.25ms；插值点不是新增独立观测。",
+            "误差在z归一化量纲而非角度。"
+          ],
+          "source_locator": {
+            "pdf_page": 17,
+            "section": "Results: Pitch estimator neurons",
+            "figure": "Figure 8A",
+            "equation": "Equations 9–10",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "层级模型可从分布式关节运动学读出粗略俯仰变化。",
+        "boundary": "讨论写MSE0.660，图8说明另写ω=7.0mV且把指标标为MCC；保留正文数值与冲突。",
+        "negative_result": null,
+        "non_inference": "不能换算为0.664°误差、精确绝对姿态或未见个体泛化。",
+        "unresolved": "正文/讨论MSE0.664/0.660、正文/图注权重10/7mV及MSE/MCC标签不一致。",
+        "unresolved_attribution": "页17结果、页18图8说明、页20讨论；图像/代码不可核查。"
+      },
+      "broad_directions": [
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "分布式运动原语的差分脉冲率能否估计归一化体轴俯仰？"
+      ],
+      "shared_evidence_with": [
+        "C13",
+        "C16"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "text_only",
+          "deterministic_model",
+          "no_neural_recordings",
+          "internal_metric_parameter_inconsistency"
+        ]
+      }
+    },
+    {
+      "id": "C16",
+      "statement": "本文PEN示例轨迹的俯仰估计仍有明显噪声：接近均值的示例错误预测一整段峰值，较差示例在部分时段领先真实俯仰；因此整体误差表现不代表逐时刻忠实跟踪。",
+      "claim_type": "simulation_actual_negative_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "按表现选择示例的预测/真值轨迹比较",
+          "design": "展示较优、近均值及较差留出试验，并给滑动平均。",
+          "comparator": "真实运动学俯仰轨迹",
+          "measure": "错误峰值、噪声和时间领先",
+          "unit_of_analysis": "与C15相同15轮中的选择性示例",
+          "sample_size_as_reported": "来源数据共9只动物、15次双台阶试验；姿态层报告15轮留一式评估，方法另称20训练试次，未统一",
+          "uncertainty": null,
+          "assumptions": [
+            "没有报告峰误差大小、时间领先毫秒数或滑动平均窗口。"
+          ],
+          "source_locator": {
+            "pdf_page": 18,
+            "section": "Results: Pitch estimator neurons",
+            "figure": "Figure 8B–D",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "明确保留估计不准确的实际示例。",
+        "boundary": "图中的10%最佳/最差为表现排序展示，不是置信区间。",
+        "negative_result": "错误预测整段峰值、部分时段提前于真值且有明显噪声。",
+        "non_inference": "不能把提前峰解释成已证实的预测神经编码。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "该俯仰模型在哪些时间结构上偏离真实运动学？"
+      ],
+      "shared_evidence_with": [
+        "C13",
+        "C15"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "text_only",
+          "deterministic_model",
+          "no_neural_recordings"
+        ]
+      }
+    },
+    {
+      "id": "C17",
+      "statement": "作者据模型中的步态与俯仰读出提出：仅用局部关节位置和速度可在给定行走/攀爬数据中形成高阶本体表征，而不显式输入载荷或地面接触；这是一项模型充分性解释，真实昆虫是否只靠运动学仍未验证。",
+      "claim_type": "biological_model_interpretation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "模型结果的生物意义解释",
+          "design": "综合阶段和姿态读出，不增加新的动物神经证据。",
+          "comparator": "依赖载荷/地面交互的替代模型",
+          "measure": "高层步态/体轴参数表征的模型可实现性",
+          "unit_of_analysis": "同一确定性模型和原运动学数据",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "数据本身保留实际行走时的运动学-载荷相关性。",
+            "模型只有一种毛场感觉来源，噪声和多模态整合未测试。"
+          ],
+          "source_locator": {
+            "pdf_page": 20,
+            "section": "Discussion: Movement primitive layer; Posture layer",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "运动学输入在该离线模型中足以产生一定高阶表征。",
+        "boundary": "没有载荷解耦扰动、闭环控制、真实细胞记录或其他姿态自由度验证。",
+        "negative_result": null,
+        "non_inference": "不证明运动学感觉是生物中的唯一或必要机制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "局部运动学的模型充分性在何种扰动下仍能成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "text_only",
+          "deterministic_model",
+          "no_neural_recordings"
+        ]
+      }
+    }
+  ],
+  "reading_summary": "已完整评估27页，保留17项候选命题：原语架构和优化、四类步态相位/转换编码、腿与关节的模型评分差异、攀爬分类、PEN俯仰回归及其失败轨迹。既有9只动物的78次平地与15次台阶数据驱动模型；模型单元数、时间箱和插值点不是独立动物样本。姿态评估的训练试次数、PEN指标/权重和部分表格单位有未解决矛盾。模型支持运动学输入的有限充分性，不证明昆虫真实神经机制；图像、完整S2/S3表与原始数据未读，未做科学复现。",
+  "shared_evidence": [
+    {
+      "claim_id": "C2",
+      "with": [
+        "C3",
+        "C4"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C2",
+        "C4"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C2",
+        "C3"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C6",
+        "C7",
+        "C8",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C5",
+        "C7",
+        "C8",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C5",
+        "C6",
+        "C8",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C5",
+        "C6",
+        "C7",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C10",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "with": [
+        "C9",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "with": [
+        "C9",
+        "C10"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "with": [
+        "C5",
+        "C6",
+        "C7",
+        "C8"
+      ]
+    },
+    {
+      "claim_id": "C13",
+      "with": [
+        "C14",
+        "C15",
+        "C16"
+      ]
+    },
+    {
+      "claim_id": "C14",
+      "with": [
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C15",
+      "with": [
+        "C13",
+        "C16"
+      ]
+    },
+    {
+      "claim_id": "C16",
+      "with": [
+        "C13",
+        "C15"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [
+      {
+        "claim_id": "C1",
+        "pdf_page": 6,
+        "section": "Methods: Layer three; Synapse connections",
+        "figure": "Figure 1d",
+        "equation": "Equation 4",
+        "page_exists": true,
+        "quote": null,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "scope": "第二遍仅核对所供文本与图注；不含图像核查或科学复现。"
+      },
+      {
+        "claim_id": "C2",
+        "pdf_page": 11,
+        "section": "Results: Layer three; Optimization and performance",
+        "figure": "Figure 2A,B; Table 1",
+        "equation": "Equation 5",
+        "page_exists": true,
+        "quote": null,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "scope": "第二遍仅核对所供文本与图注；不含图像核查或科学复现。"
+      },
+      {
+        "claim_id": "C3",
+        "pdf_page": 11,
+        "section": "Results: Optimization and performance",
+        "figure": "Figure 2B",
+        "equation": null,
+        "page_exists": true,
+        "quote": null,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "scope": "第二遍仅核对所供文本与图注；不含图像核查或科学复现。"
+      },
+      {
+        "claim_id": "C4",
+        "pdf_page": 11,
+        "section": "Results: Optimization and performance",
+        "figure": "Figure 2B",
+        "equation": null,
+        "page_exists": true,
+        "quote": null,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "scope": "第二遍仅核对所供文本与图注；不含图像核查或科学复现。"
+      },
+      {
+        "claim_id": "C5",
+        "pdf_page": 12,
+        "section": "Results: Encoding properties",
+        "figure": "Figure 3; Figure 4A",
+        "equation": "Equations 6–7",
+        "page_exists": true,
+        "quote": null,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "scope": "第二遍仅核对所供文本与图注；不含图像核查或科学复现。"
+      },
+      {
+        "claim_id": "C6",
+        "pdf_page": 13,
+        "section": "Results: Encoding properties",
+        "figure": "Figure 4B",
+        "equation": "Equations 6–7",
+        "page_exists": true,
+        "quote": null,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "scope": "第二遍仅核对所供文本与图注；不含图像核查或科学复现。"
+      },
+      {
+        "claim_id": "C7",
+        "pdf_page": 13,
+        "section": "Results: Encoding properties",
+        "figure": "Figure 4C",
+        "equation": "Equations 6–7",
+        "page_exists": true,
+        "quote": null,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "scope": "第二遍仅核对所供文本与图注；不含图像核查或科学复现。"
+      },
+      {
+        "claim_id": "C8",
+        "pdf_page": 13,
+        "section": "Results: Encoding properties",
+        "figure": "Figure 4D",
+        "equation": "Equations 6–7",
+        "page_exists": true,
+        "quote": null,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "scope": "第二遍仅核对所供文本与图注；不含图像核查或科学复现。"
+      },
+      {
+        "claim_id": "C9",
+        "pdf_page": 15,
+        "section": "Results: Joint- and leg-specific contributions",
+        "figure": "Figure 5; Table 2",
+        "equation": null,
+        "page_exists": true,
+        "quote": null,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "scope": "第二遍仅核对所供文本与图注；不含图像核查或科学复现。"
+      },
+      {
+        "claim_id": "C10",
+        "pdf_page": 13,
+        "section": "Results: Encoding properties",
+        "figure": "Figure 5; Table 2",
+        "equation": null,
+        "page_exists": true,
+        "quote": null,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "scope": "第二遍仅核对所供文本与图注；不含图像核查或科学复现。"
+      },
+      {
+        "claim_id": "C11",
+        "pdf_page": 15,
+        "section": "Results: Joint- and leg-specific contributions",
+        "figure": "Table 2",
+        "equation": null,
+        "page_exists": true,
+        "quote": null,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "scope": "第二遍仅核对所供文本与图注；不含图像核查或科学复现。"
+      },
+      {
+        "claim_id": "C12",
+        "pdf_page": 14,
+        "section": "Results: Encoding properties",
+        "figure": "Figure 6",
+        "equation": null,
+        "page_exists": true,
+        "quote": null,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "scope": "第二遍仅核对所供文本与图注；不含图像核查或科学复现。"
+      },
+      {
+        "claim_id": "C13",
+        "pdf_page": 16,
+        "section": "Results: Climbing classifier neuron",
+        "figure": "Figure 7",
+        "equation": "Equation 5",
+        "page_exists": true,
+        "quote": null,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "scope": "第二遍仅核对所供文本与图注；不含图像核查或科学复现。"
+      },
+      {
+        "claim_id": "C14",
+        "pdf_page": 16,
+        "section": "Results: Climbing classifier neuron",
+        "figure": "Figure 7A",
+        "equation": null,
+        "page_exists": true,
+        "quote": null,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "scope": "第二遍仅核对所供文本与图注；不含图像核查或科学复现。"
+      },
+      {
+        "claim_id": "C15",
+        "pdf_page": 17,
+        "section": "Results: Pitch estimator neurons",
+        "figure": "Figure 8A",
+        "equation": "Equations 9–10",
+        "page_exists": true,
+        "quote": null,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "scope": "第二遍仅核对所供文本与图注；不含图像核查或科学复现。"
+      },
+      {
+        "claim_id": "C16",
+        "pdf_page": 18,
+        "section": "Results: Pitch estimator neurons",
+        "figure": "Figure 8B–D",
+        "equation": null,
+        "page_exists": true,
+        "quote": null,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "scope": "第二遍仅核对所供文本与图注；不含图像核查或科学复现。"
+      },
+      {
+        "claim_id": "C17",
+        "pdf_page": 20,
+        "section": "Discussion: Movement primitive layer; Posture layer",
+        "figure": null,
+        "equation": null,
+        "page_exists": true,
+        "quote": null,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "scope": "第二遍仅核对所供文本与图注；不含图像核查或科学复现。"
+      }
+    ],
+    "model_findings": [
+      {
+        "claim_id": null,
+        "issue": "MP时间常数表1写0.2mV，正文写0.2ms。",
+        "pdf_page": 11,
+        "resolved": false,
+        "suggested_correction": "以正文记录0.2ms并保留单位冲突供人工确认。"
+      },
+      {
+        "claim_id": "C13",
+        "issue": "方法称20训练试次，与15台阶试验及15轮留一评估不一致；参数选择是否独立于报告测试不明。",
+        "pdf_page": 9,
+        "resolved": false,
+        "suggested_correction": "不推断严格外部/动物级泛化。"
+      },
+      {
+        "claim_id": "C15",
+        "issue": "PEN正文MSE0.664与讨论0.660；图8写MCC和7mV而正文为MSE和10mV。",
+        "pdf_page": 18,
+        "resolved": false,
+        "suggested_correction": "保留正文报告与全部来源差异，不自定正确版本。"
+      },
+      {
+        "claim_id": "C11",
+        "issue": "前腿α/β低或无差异的笼统讨论不完全适用于右前腿β t=3.36。",
+        "pdf_page": 15,
+        "resolved": true,
+        "suggested_correction": "按表2分别保留α两侧、β左右的统计判断。"
+      },
+      {
+        "claim_id": null,
+        "issue": "配对模型组合与15轮/时间箱共享数据，不能认定动物级独立重复。",
+        "pdf_page": 15,
+        "resolved": true,
+        "suggested_correction": "分析单位和独立性限制写入证据。"
+      },
+      {
+        "claim_id": null,
+        "issue": "支持信息仅标题说明，无法验证前六tuple表或图像数值。",
+        "pdf_page": 22,
+        "resolved": false,
+        "suggested_correction": "暂缓完整S2/S3组合提取。"
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T06:59:42.381Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "57b54ccd5fd46a3ab5bf7a4897146478c191445f7d9a9d93fbd05a90f4f9c30e",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

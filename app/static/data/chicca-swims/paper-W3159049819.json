@@ -1,0 +1,785 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "Ferroelectric Tunneling Junctions for Edge Computing",
+    "authors": [
+      "Erika Covi",
+      "Quang T. Duong",
+      "Suzanne Lancaster",
+      "Viktor Havel",
+      "J. Coignus",
+      "Justine Barbot",
+      "Ole Richter",
+      "Philipp H. Klein",
+      "Elisabetta Chicca",
+      "L. Grenouillet",
+      "A. Dimoulas",
+      "Thomas Mikolajick",
+      "Stefan Slesazeck"
+    ],
+    "doi": "10.1109/iscas51556.2021.9401800",
+    "publication_year": 2021,
+    "venue": "IEEE International Symposium on Circuits and Systems proceedings",
+    "url": "https://doi.org/10.1109/iscas51556.2021.9401800"
+  },
+  "source": {
+    "filename": "paper-W3159049819.pdf",
+    "sha256": "fe9fca92c2043686a33ef39c95b97bd8f78fe4be983d5f62ad9ef739630751d9",
+    "source_url": "https://arxiv.org/pdf/2107.01853",
+    "pdf_page_count": 5
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "results_sections_seen": [
+      "II.A FTJ basic structure",
+      "II.B FTJ programming characteristics",
+      "II.C FTJ reading characteristics",
+      "II.D FTJ device engineering",
+      "III.A Differential pair for normalized synaptic weighting cells",
+      "III.B Non-volatile SRAM cell",
+      "SUMMARY",
+      "Fig. 1–3 captions"
+    ],
+    "missing_material": [
+      "图像像素未提供。",
+      "器件数量、独立实验重复次数及电路仿真完整参数未报告。"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "正文为包含器件电学测量和电路仿真的会议研究论文，标题与身份元数据一致。",
+      "作者表中的Philip Klein与元数据中的Philipp H. Klein存在拼写及缩写差异，不足以判定文献身份不符。",
+      "所供文本未明确版本；参考文献保留匿名作者及in press表述，不能据此确认正式出版版或预印本。",
+      "全部正文、图注及参考文献均已评估；参考文献中的实验不作为本文新增证据。",
+      "Fig. 1为示意能带图，Fig. 2为器件测量，Fig. 3为电路示意及仿真。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "单层与双层FTJ的能带、隧穿电阻调制和能效背景。",
+      "role": "background",
+      "source_pages": [
+        1,
+        2
+      ],
+      "decision": "exclude",
+      "reason": "主要为既有研究及示意解释，未提供本文独立的能效或结构优劣比较。"
+    },
+    {
+      "summary": "器件A扫描频率变化对应动态电流和有效矫顽电压变化。",
+      "role": "result",
+      "source_pages": [
+        2,
+        3
+      ],
+      "decision": "include",
+      "reason": "具有明确器件结构、扫描条件及测量读出。"
+    },
+    {
+      "summary": "器件A脉冲写入后的低压读电流远小于动态扫描平台电流。",
+      "role": "result",
+      "source_pages": [
+        2,
+        3
+      ],
+      "decision": "include",
+      "reason": "测量协议和电流数值明确；不能把两种协议视为相同条件的电流比较。"
+    },
+    {
+      "summary": "由PV曲线推断FTJ电容依赖极化状态及施加电压。",
+      "role": "interpretation",
+      "source_pages": [
+        2,
+        3
+      ],
+      "decision": "include",
+      "reason": "这是可独立评估的读出机制解释，需与直接电容测量及脉冲抵消验证区分。"
+    },
+    {
+      "summary": "自电容主导时的读出时间关系及65 ms估算。",
+      "role": "analytical_estimate",
+      "source_pages": [
+        3
+      ],
+      "decision": "include",
+      "reason": "公式、数值输入与理想化条件均明确。"
+    },
+    {
+      "summary": "Al替代TiN电极使开关滞回正向移动，但未获得预期导通电流增加。",
+      "role": "result",
+      "source_pages": [
+        2,
+        3,
+        4
+      ],
+      "decision": "include",
+      "reason": "比较与实际负结果明确；界面解释和保持风险需另行限定。"
+    },
+    {
+      "summary": "结晶退火时TiN盖层的有无对应正向极化开关峰宽度差异。",
+      "role": "result",
+      "source_pages": [
+        2,
+        4
+      ],
+      "decision": "include",
+      "reason": "名义层厚相同的工艺比较可独立评估。"
+    },
+    {
+      "summary": "互补FTJ差分权重单元的编程、预充电及读出仿真。",
+      "role": "result",
+      "source_pages": [
+        4
+      ],
+      "decision": "include",
+      "reason": "报告模型电流密度条件及节点电压、支路电流读出。"
+    },
+    {
+      "summary": "FTJ增强NV-SRAM的差分信号建立与再生恢复仿真。",
+      "role": "result",
+      "source_pages": [
+        4,
+        5
+      ],
+      "decision": "include",
+      "reason": "电路恢复顺序和供电条件明确。"
+    },
+    {
+      "summary": "失配缓解、连续可调积分时间常数、多级权重、阵列密度及系统能效应用。",
+      "role": "prospective_application",
+      "source_pages": [
+        3,
+        4,
+        5
+      ],
+      "decision": "exclude",
+      "reason": "本文未提供失配统计、连续调节验证、多级状态实验、阵列布局或系统能耗比较。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "含10 nm HZO和2 nm Al2O3的TiN/Al2O3/HZO/TiN器件A，在±5.5 V三角扫描频率由1 kHz提高到50 kHz时，动态电流增大，有效矫顽电压由约2.5 V升至约4 V。",
+      "claim_type": "device_characterization",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "三角电压扫描测量IV曲线，并积分提取PV曲线。",
+          "design": "器件A在1 kHz和50 kHz下扫描，斜率分别为11 mV/µs和0.55 V/µs。",
+          "comparator": "器件A的两种扫描频率。",
+          "measure": "动态电流及极化开关峰对应的有效矫顽电压。",
+          "unit_of_analysis": "器件A对应的电学扫描曲线。",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "II.B FTJ programming characteristics",
+            "figure": "Fig. 2a–b，图注位于第2页",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所报告扫描条件下，频率升高伴随动态电流和有效开关阈值增加。",
+        "boundary": "限于器件A及所给扫描条件，未报告器件间统计。",
+        "negative_result": null,
+        "non_inference": "不能由此独立证明NLS开关机制。",
+        "unresolved": "扫描速率效应的器件间变异未报告。",
+        "unresolved_attribution": "作者以介电位移电流解释背景电流增长，并引用既有NLS研究解释矫顽电压变化。"
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "双层HZO FTJ的扫描频率如何影响动态电流与有效矫顽电压？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C5",
+        "C8"
+      ],
+      "review_notes": [
+        "同一图中的曲线及其积分结果不构成独立重复。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "器件A经±4.5 V、10 µs脉冲分别写入低阻和高阻状态后，在0–2 V范围以50 mV步进、于每次步进后记录电流的DC-IV测量中，读电流约为6 nA；1 kHz三角扫描的平台电流约为20 µA，两种协议下的电流量级明显不同。",
+      "claim_type": "device_readout_characterization",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "脉冲写入后进行低压阶梯DC-IV测量。",
+          "design": "读电压低于矫顽电压；每次50 mV电压步进后记录电流以减小位移电流。",
+          "comparator": "Fig. 2d的低压读电流与Fig. 2a的1 kHz动态扫描平台电流。",
+          "measure": "约6 nA读电流及约20 µA扫描平台电流。",
+          "unit_of_analysis": "器件A在不同测量协议下的电流曲线。",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "低于矫顽电压的读取条件用于避免极化翻转。"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "II.C FTJ reading characteristics",
+            "figure": "Fig. 2a,d，图注位于第2页",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "步进读出减小位移电流，作者据此将低压读电流主要归于极化相关隧穿电流。",
+        "boundary": "动态扫描与DC读出具有不同电压及采样协议；具体采样等待时间未报告。",
+        "negative_result": null,
+        "non_inference": "不能将动态平台电流视为稳态漏电，也不能据此证明长期无扰动读取。",
+        "unresolved": "采样等待时间、读取扰动及器件间分布未报告。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "如何减小FTJ读出中的电容位移电流并测得极化相关隧穿电流？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C3",
+        "C4"
+      ],
+      "review_notes": [
+        "20 µA与6 nA之比约为3.3×10³；正文所称超过四个数量级与这两个数值不一致。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "当读出节点电容由FTJ自身电容主导时，达到电压差ΔV的理想充电时间满足tread=ΔV C0FTJ/JFTJ；采用ΔV=50 mV、C0FTJ=1.3 µF/cm²和器件A对应的JFTJ=1 pA/µm²，估算读出时间为65 ms。",
+      "claim_type": "analytical_estimate",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "以单位面积电容和电流密度进行充电时间解析估算。",
+          "design": "假定FTJ自身电容主导待充电节点，并使用给定参数估算电压建立时间。",
+          "comparator": null,
+          "measure": "tread=65 ms。",
+          "unit_of_analysis": "理想化FTJ读出节点。",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "FTJ自身电容主导节点总电容。",
+            "以固定电流密度和单位面积电容进行估算。",
+            "假定最小可辨电压差为50 mV。"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "II.C FTJ reading characteristics",
+            "figure": "参数关联Fig. 2中的器件A",
+            "equation": "tread = ΔV C0FTJ / JFTJ",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "该参数组合给出65 ms的理想化读出时间。",
+        "boundary": "这是解析估算，未测量实际电路或阵列访问时间。",
+        "negative_result": null,
+        "non_inference": "不能将65 ms推广至所有FTJ或本文采用其他模型参数的电路。",
+        "unresolved": "寄生电容、实际感测阈值和非恒定电流对延时的影响未量化。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "FTJ电流密度与单位面积自电容如何共同约束电压感测时间？"
+      ],
+      "shared_evidence_with": [
+        "C2"
+      ],
+      "review_notes": [
+        "面积在所给理想模型中约去；该关系依赖自电容主导条件。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "相对于TiN/Al2O3/HZO/TiN器件A，采用Al/Al2O3/HZO/TiN结构的器件C在写入IV测量中表现出整体开关滞回向正电压移动，但实验未观察到降低隧穿势垒所预期的导通读电流增加。",
+      "claim_type": "device_engineering_comparison",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "比较两种电极结构的写入IV及脉冲写入后读出IV。",
+          "design": "将接触Al2O3隧穿层的TiN电极替换为Al；器件A读电压扫至2 V，器件C扫至2.5 V。",
+          "comparator": "器件C与器件A。",
+          "measure": "滞回及开关峰电压位置、导通读电流。",
+          "unit_of_analysis": "两种电极结构对应的FTJ电学曲线。",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "II.D FTJ device engineering",
+            "figure": "Fig. 2c–d，图注位于第2页",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "Al电极器件的开关滞回向正电压移动。",
+        "boundary": "未报告控制所有工艺差异的器件统计；两器件的读电压扫描上限不同。",
+        "negative_result": "未观察到预期的导通读电流增加。",
+        "non_inference": "约400 meV势垒降低是基于功函数的预期；氧化物清除及保持失效均未直接验证。",
+        "unresolved": "界面变化为何影响导通读电流，以及负向开关峰接近零电压是否影响保持性能，尚未确定。",
+        "unresolved_attribution": "作者推测Al清除氧化物导致有效Al2O3厚度减小，并预测负向开关峰移动可能造成保持风险。"
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "隧穿层接触电极的材料变化如何影响FTJ开关电压与导通读电流？"
+      ],
+      "shared_evidence_with": [
+        "C2"
+      ],
+      "review_notes": [
+        "正文提出可采用2.5 V或3 V正读电压；实际读出扫描明确报告的器件C上限为2.5 V。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "对于名义层厚相同的TiN/Al2O3/HZO/TiN器件，HZO在TiN盖层存在时结晶退火的工艺A，与先无盖层退火再沉积同厚TiN电极的工艺B，产生明显不同的正向极化开关电流峰宽度。",
+      "claim_type": "fabrication_comparison",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "比较两种制备工艺对应的极化开关IV曲线。",
+          "design": "保持名义层厚相同，改变结晶退火与TiN电极沉积顺序。",
+          "comparator": "器件A与器件B。",
+          "measure": "正向极化开关电流峰宽度。",
+          "unit_of_analysis": "工艺A和工艺B对应的器件曲线。",
+          "sample_size_as_reported": null,
+          "uncertainty": "未报告峰宽数值、误差或统计检验。",
+          "assumptions": [
+            "层厚一致性为名义一致，未提供厚度统计。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "II.D FTJ device engineering",
+            "figure": "Fig. 2a，图注位于第2页",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "退火盖层条件与正向开关峰宽度差异相关。",
+        "boundary": "所供文本仅支持定性差异，不能确定数值幅度或哪种工艺峰更宽。",
+        "negative_result": null,
+        "non_inference": "未证明界面氧化态是唯一原因，也未验证多级存储性能改善。",
+        "unresolved": "导致峰宽差异的界面变化及工艺可重复性未确定。",
+        "unresolved_attribution": "作者预期工艺差异主要改变HZO与Al2O3之间的界面性质及氧化态，未提供材料表征。"
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "HZO结晶退火时的TiN盖层条件如何影响FTJ极化开关峰宽度？"
+      ],
+      "shared_evidence_with": [
+        "C1"
+      ],
+      "review_notes": [
+        "与C1共用Fig. 2a，但评估的是不同比较；不构成独立重复验证。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "在FTJ模型电流密度约为器件A十倍的差分2T1C权重电路仿真中，两个互补编程FTJ分别处于低阻和高阻状态时，浮置节点n1、n2在100 µs内形成约30 mV电压差，并经共用尾电流的差分晶体管对产生约200 nA支路电流差。",
+      "claim_type": "circuit_simulation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "差分FTJ权重单元的编程、预充电及读出时序仿真。",
+          "design": "两个FTJ、四个访问晶体管、两个读晶体管和一个尾电流偏置晶体管；两个FTJ互补编程。",
+          "comparator": "同一差分单元中低阻与高阻FTJ对应的节点和支路。",
+          "measure": "100 µs内约30 mV节点电压差、约200 nA支路电流差；I1+I2=Ib。",
+          "unit_of_analysis": "所展示差分电路配置的仿真轨迹。",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "FTJ模型电流密度约为器件A的十倍。",
+            "读取期间n1和n2浮置。",
+            "两个FTJ采用互补编程；所示读出条件为一低阻、一高阻。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "III.A Differential pair for normalized synaptic weighting cells",
+            "figure": "Fig. 3a,c",
+            "equation": "I1 + I2 = Ib",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "该仿真展示将互补FTJ阻态转换为受尾电流约束的差分电流输出。",
+        "boundary": "结果限于所展示模型和电路配置，模型电流密度高于器件A。",
+        "negative_result": null,
+        "non_inference": "未验证实物电路、失配鲁棒性、多级权重精度、学习性能或系统能效。",
+        "unresolved": "实际器件能否达到模型电流密度，以及器件变异如何影响输出，未验证。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "互补FTJ阻态如何通过浮置节点和差分晶体管对编码归一化突触权重？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "多个时序阶段和插图属于同一仿真证据。",
+        "未将基于NLS提出的权重更新调节方案提升为已验证的多级学习结果。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "FTJ增强NV-SRAM单元的仿真显示，先将交叉耦合反相器供电Vup置为0 V以建立FTJ阻态对应的初始差分节点电压，再将Vup升至5 V，可将该差分信号再生放大为完整数字电压摆幅，恢复SRAM逻辑状态。",
+      "claim_type": "circuit_simulation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "FTJ增强NV-SRAM单元的读取与恢复时序仿真。",
+          "design": "以交叉耦合反相器替代差分读出级；先关闭其供电建立差分信号，再开启供电。",
+          "comparator": "Vup=0 V的差分信号建立阶段与Vup=5 V的再生恢复阶段。",
+          "measure": "Q与Qn恢复为完整数字电压摆幅。",
+          "unit_of_analysis": "所展示NV-SRAM单元配置的仿真轨迹。",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "初始FTJ阻态能够形成供再生放大的差分信号。",
+            "恢复供电Vdd为5 V。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "III.B Non-volatile SRAM cell",
+            "figure": "Fig. 3b,d，图注位于第4页",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "单元级仿真支持以FTJ产生的初始差分信号恢复SRAM逻辑状态。",
+        "boundary": "未报告恢复时间数值、成功率统计或完整模型参数。",
+        "negative_result": null,
+        "non_inference": "未验证实物掉电保持、阵列并行恢复、经典SRAM等效密度或系统节能；也不能自动套用C6的模型电流密度条件。",
+        "unresolved": "器件变异、保持衰减及供电时序对恢复可靠性的影响未测。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "FTJ阻态产生的差分电压如何通过分阶段供电的交叉耦合反相器恢复SRAM状态？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "Fig. 3c和3d对应不同电路仿真，共处一图不构成独立重复。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "作者依据器件A的PV曲线，将该FTJ解释为电容随极化状态和施加电压变化的非线性mem-capacitor，并指出这种依赖可能妨碍利用读脉冲上升沿与下降沿抵消位移电流。",
+      "claim_type": "readout_mechanism_interpretation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "依据电流积分得到的PV曲线解释电容非线性及读出影响。",
+          "design": "结合器件A的PV曲线讨论读脉冲两边沿位移电流抵消方案。",
+          "comparator": "理想边沿抵消设想与电容依赖极化状态及电压的情形。",
+          "measure": "PV曲线；背景单位面积自电容约1.3 µF/cm²。",
+          "unit_of_analysis": "器件A的PV曲线及其读出解释。",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "从PV曲线推断电容对状态和电压的依赖。",
+            "背景自电容以HZO与Al2O3串联电容解释。"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "II.C FTJ reading characteristics",
+            "figure": "Fig. 2b，图注位于第2页",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者提出状态及电压相关电容是FTJ读出电路需要考虑的因素。",
+        "boundary": "依据PV曲线作出解释，未报告独立电容测量或边沿抵消实验。",
+        "negative_result": null,
+        "non_inference": "不能认定边沿抵消方案已被实验判定失败。",
+        "unresolved": "非线性电容对读脉冲净位移电流及感测误差的影响未量化。",
+        "unresolved_attribution": "潜在读出干扰属于作者的机制解释和预测。"
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "FTJ电容对极化状态和电压的依赖如何影响读脉冲位移电流抵消？"
+      ],
+      "shared_evidence_with": [
+        "C1"
+      ],
+      "review_notes": [
+        "PV曲线由IV数据积分得到，不能视为独立实验验证。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "已再次核对全部5页正文、图注和参考文献。本文支持HZO双层FTJ的扫描频率效应、低压读电流、自电容读出约束、电极及退火工艺比较，并展示差分权重单元和NV-SRAM恢复仿真。补入非线性电容的作者解释，修正采样时序措辞与电流数量级比较。Al电极未带来预期导通电流增加；界面原因和保持风险仍未验证。硬件电路、阵列可靠性、系统能效及器件统计均超出所供证据。",
+  "shared_evidence": [
+    {
+      "claim_id": "C1",
+      "with": [
+        "C2",
+        "C5",
+        "C8"
+      ]
+    },
+    {
+      "claim_id": "C2",
+      "with": [
+        "C1",
+        "C3",
+        "C4"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C2"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C2"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C1"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C1"
+      ]
+    }
+  ],
+  "audit": {
+    "initial_source_match_checks": [],
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": "C2",
+        "issue": "正文声称两电流相差超过四个数量级，与20 µA和6 nA不一致。",
+        "suggested_correction": "保留报告数值，并说明其比值约为3.3×10³。",
+        "pdf_page": 3,
+        "resolved": true
+      },
+      {
+        "claim_id": "C2",
+        "issue": "草稿将步进后采样写成延后采样，可能暗示已知等待时间或已达到稳态。",
+        "suggested_correction": "改为每次电压步进后记录电流，并标明采样等待时间未报告。",
+        "pdf_page": 3,
+        "resolved": true
+      },
+      {
+        "claim_id": "C6",
+        "issue": "差分电路仿真采用约为器件A十倍的模型电流密度。",
+        "suggested_correction": "在命题、证据条件及边界中保留该条件。",
+        "pdf_page": 4,
+        "resolved": true
+      },
+      {
+        "claim_id": "C4",
+        "issue": "势垒降低、氧化物清除与保持风险并非直接验证结果。",
+        "suggested_correction": "分别标记为功函数驱动的预期、作者推测和潜在风险。",
+        "pdf_page": 3,
+        "resolved": true
+      },
+      {
+        "claim_id": "C8",
+        "issue": "草稿遗漏了基于PV曲线提出的非线性电容解释及其读出影响。",
+        "suggested_correction": "增加interpretation记录，不将潜在边沿抵消问题写成实际负结果。",
+        "pdf_page": 3,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "总结中的电路实现措辞可能被误读为硬件演示。",
+        "suggested_correction": "依据Fig. 3图注，将两个电路结果明确标记为仿真。",
+        "pdf_page": 5,
+        "resolved": true
+      },
+      {
+        "claim_id": "C6",
+        "issue": "草稿的theory-ai标签缺少独立AI理论结果支撑。",
+        "suggested_correction": "保留权重编码方向，改用methods-causal描述器件电路方法。",
+        "pdf_page": 4,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "草稿包含请求schema之外的source_check和review字段。",
+        "suggested_correction": "删除额外字段，仅保留规定schema。",
+        "pdf_page": null,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "所供文本未明确正式出版版或预印本版本。",
+        "suggested_correction": "保留版本不确定性，不引入后来发表版本的信息。",
+        "pdf_page": 5,
+        "resolved": false
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T05:46:19.002330Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "signed_in_chatgpt_codex",
+    "authentication": "existing_ChatGPT_login",
+    "provider_api_key_used": false,
+    "model": "account_default_GPT",
+    "source_sha256": "fe9fca92c2043686a33ef39c95b97bd8f78fe4be983d5f62ad9ef739630751d9",
+    "requests": [
+      {
+        "phase": "extraction",
+        "seconds": 123.17,
+        "usage": {
+          "input_tokens": 20944,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 5697,
+          "reasoning_output_tokens": 16
+        },
+        "backend": "signed_in_chatgpt_codex",
+        "tools_used": false
+      },
+      {
+        "phase": "source_audit",
+        "seconds": 147.42,
+        "usage": {
+          "input_tokens": 26542,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 7135,
+          "reasoning_output_tokens": 99
+        },
+        "backend": "signed_in_chatgpt_codex",
+        "tools_used": false
+      }
+    ],
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

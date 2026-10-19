@@ -1,0 +1,858 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "Deconstructing dynamics of symmetry breaking",
+    "authors": [
+      "Fumika Suzuki",
+      "Wojciech H. Zurek"
+    ],
+    "doi": "10.1073/pnas.2523903122",
+    "publication_year": 2025,
+    "venue": "Proceedings of the National Academy of Sciences",
+    "url": "https://doi.org/10.1073/pnas.2523903122"
+  },
+  "source": {
+    "filename": "2025-PNAS-Dynamics-Symmetry-Breaking.pdf",
+    "sha256": "86b5113115f13fec2e53b812e547eab631c155cfae538bcef55ebb38b94a44ff",
+    "source_url": null,
+    "pdf_page_count": 9
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "results_sections_seen": [
+      "Temporal Landau–Ginzburg解析",
+      "Gross–Pitaevskii amplitude解析",
+      "Order parameter/KZM",
+      "Underdamped-overdamped/crossover/defectnumerics",
+      "Spatialstructure及correlation",
+      "Discussion/predictions、Figures1–7、87references"
+    ],
+    "missing_material": [
+      "SI Appendix",
+      "图像像素",
+      "原始simulation grid、fullnoise-run/fitstatistics"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "全部9页text一次完整评估。",
+      "2025实际版本/DOI，no新lab experiment。",
+      "analyticODE、1+1PDE数值与跨dimensionhypothesis分开；多图共享同模型。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "Landau–Ginzburg时间方程在overdamped、linear quench ε=t/τQ条件下，忽略spatial/noise和惯性项后为Bernoulli ODE，可写含erfi的解析order-parameter解。",
+      "role": "result",
+      "source_pages": [
+        3
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "Gross–Pitaevskii去空间/噪声后，分离amplitude/phase可得可解析Bernoulli amplitude方程，包含γ dissipation、g nonlinearity和linear ε(t)。",
+      "role": "result",
+      "source_pages": [
+        4
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "1+1维numerical Langevin和stochastic GP的order-parameter增长与reduced analytic曲线近似相容；Langevin spatial RMS稍低、最大值稍高，分别受defects和noise影响。",
+      "role": "result",
+      "source_pages": [
+        3
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "作者以φ首次正时间inflection φddot=0定位catch-up/freeze-out；reduced解对nonzero φ0的依赖较慢且主要logarithmic，order parameter在impulse区仍演化而非完全静止。",
+      "role": "interpretation",
+      "source_pages": [
+        4
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "混合惯性/阻尼ODE的numerical inflection times呈由underdamped约τQ^(1/3)到overdamped约τQ^(1/2)的crossover；η0.2时随quench变慢出现该过渡。",
+      "role": "result",
+      "source_pages": [
+        5
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "full 1+1 Langevin PDE的kink-number quench scaling与时间crossover相容：η0.01约−0.31、η1约−0.27；η0.2从小τQ约−0.34转大τQ约−0.27，接近−1/3到−1/4预期。",
+      "role": "result",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "1D静态空间方程有Jacobi-elliptic解，小amplitude相对√ε时接近cosine，characteristic spatial scale约ε^(−1/2)；在freeze-out代入给出两阻尼regime的healing-length scaling。",
+      "role": "result",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "1+1 Langevin模拟中与同一run最终tF=200配置的correlation在−t-hat后开始增长、+t-hat后接近1；t/t-hat重缩放后多quench曲线近似重合，不同run之间约0。",
+      "role": "result",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "作者提出直接监测quench期间magnetization、polarization或BEC density的时间增长来检验KZM foundational conjecture，而不只统计final defects。",
+      "role": "hypothesis",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "KZM已知general ν/z scaling及sonic horizon背景",
+      "role": "background",
+      "source_pages": [
+        1,
+        2
+      ],
+      "decision": "exclude",
+      "reason": "不是本篇新定理；temporal主导不证明sonic机制所有场合无效"
+    },
+    {
+      "summary": "higher-dimensional与conserved/diffusive系统外推",
+      "role": "hypothesis",
+      "source_pages": [
+        3,
+        7
+      ],
+      "decision": "defer",
+      "reason": "正文仅expect/general reasoning，无本篇对应field simulation"
+    },
+    {
+      "summary": "closed-loop winding讨论及ML defect-location引用",
+      "role": "context",
+      "source_pages": [
+        8
+      ],
+      "decision": "exclude",
+      "reason": "既有研究与extension，不作本篇新实验"
+    },
+    {
+      "summary": "SI numericalprotocol和数据",
+      "role": "unresolved",
+      "source_pages": [
+        1,
+        6,
+        8
+      ],
+      "decision": "defer",
+      "reason": "正文9页未供应SI；不能猜grid/run counts"
+    },
+    {
+      "summary": "87references",
+      "role": "background",
+      "source_pages": [
+        8,
+        9
+      ],
+      "decision": "exclude",
+      "reason": "完整阅读，不自动cross-paper support"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "Landau–Ginzburg时间方程在overdamped、linear quench ε=t/τQ条件下，忽略spatial/noise和惯性项后为Bernoulli ODE，可写含erfi的解析order-parameter解。",
+      "claim_type": "phase_transition_model_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "ODE解析/field numerics或预测",
+          "design": "原文Landau–Ginzburg/GP及linearquench模型",
+          "comparator": "reduced ODE与full-field或不同damping/quench",
+          "measure": "φ(t)解析解",
+          "unit_of_analysis": "数学对象/field realization及参数scan，非实验受试者",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "V=(φ4−2εφ2)/8",
+            "ηφdot主导φddot",
+            "nonzero初始φ0",
+            "省去spatial/noise"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "Temporal evolution",
+            "figure": "Equation4",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "Landau–Ginzburg时间方程在overdamped、linear quench ε=t/τQ条件下，忽略spatial/noise和惯性项后为Bernoulli ODE，可写含erfi的解析order-parameter解。",
+        "boundary": "exact只对reduced ODE，不是full stochastic PDE解析解。",
+        "negative_result": null,
+        "non_inference": "不把已引用laboratory KZM证据当本篇新实验；不宣称全phase-transition普遍机制或完全冻结。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "order-parameter时间增长与damping如何在给定模型中产生Kibble–Zurek freeze-out及defect scaling？"
+      ],
+      "shared_evidence_with": [
+        "C3",
+        "C4"
+      ],
+      "review_notes": [
+        "第二次逐条来源审计完成；保留实际分析单位、任务条件及统计边界，不由不显著推出等效或唯一机制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "Gross–Pitaevskii去空间/噪声后，分离amplitude/phase可得可解析Bernoulli amplitude方程，包含γ dissipation、g nonlinearity和linear ε(t)。",
+      "claim_type": "phase_transition_model_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "ODE解析/field numerics或预测",
+          "design": "原文Landau–Ginzburg/GP及linearquench模型",
+          "comparator": "reduced ODE与full-field或不同damping/quench",
+          "measure": "|φ(t)|/condensate density",
+          "unit_of_analysis": "数学对象/field realization及参数scan，非实验受试者",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "complex order parameter",
+            "constantγ/g、linear quench",
+            "noise影响用初值表达"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "Gross–Pitaevskii",
+            "figure": "Equations6–8；Figure4",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "Gross–Pitaevskii去空间/噪声后，分离amplitude/phase可得可解析Bernoulli amplitude方程，包含γ dissipation、g nonlinearity和linear ε(t)。",
+        "boundary": "不含full field或完整quantum fluctuations；不能当BEC实际实验结果。",
+        "negative_result": null,
+        "non_inference": "不把已引用laboratory KZM证据当本篇新实验；不宣称全phase-transition普遍机制或完全冻结。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "order-parameter时间增长与damping如何在给定模型中产生Kibble–Zurek freeze-out及defect scaling？"
+      ],
+      "shared_evidence_with": [
+        "C3"
+      ],
+      "review_notes": [
+        "第二次逐条来源审计完成；保留实际分析单位、任务条件及统计边界，不由不显著推出等效或唯一机制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "1+1维numerical Langevin和stochastic GP的order-parameter增长与reduced analytic曲线近似相容；Langevin spatial RMS稍低、最大值稍高，分别受defects和noise影响。",
+      "claim_type": "phase_transition_model_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "ODE解析/field numerics或预测",
+          "design": "原文Landau–Ginzburg/GP及linearquench模型",
+          "comparator": "reduced ODE与full-field或不同damping/quench",
+          "measure": "RMS/max与analytic curve",
+          "unit_of_analysis": "数学对象/field realization及参数scan，非实验受试者",
+          "sample_size_as_reported": "数值trajectory，独立noise runs n此处未明示",
+          "uncertainty": null,
+          "assumptions": [
+            "Langevin例η1、τQ128–1024、θ1e−8",
+            "GP例γ0.01,g0.05,τQ0.05,θ1e−3"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "Temporal comparison",
+            "figure": "Figures2/4",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "1+1维numerical Langevin和stochastic GP的order-parameter增长与reduced analytic曲线近似相容；Langevin spatial RMS稍低、最大值稍高，分别受defects和noise影响。",
+        "boundary": "不同observable不严格相等；正文expect higher dimensions不等于数值验证。",
+        "negative_result": null,
+        "non_inference": "不把已引用laboratory KZM证据当本篇新实验；不宣称全phase-transition普遍机制或完全冻结。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "order-parameter时间增长与damping如何在给定模型中产生Kibble–Zurek freeze-out及defect scaling？"
+      ],
+      "shared_evidence_with": [
+        "C2"
+      ],
+      "review_notes": [
+        "第二次逐条来源审计完成；保留实际分析单位、任务条件及统计边界，不由不显著推出等效或唯一机制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "作者以φ首次正时间inflection φddot=0定位catch-up/freeze-out；reduced解对nonzero φ0的依赖较慢且主要logarithmic，order parameter在impulse区仍演化而非完全静止。",
+      "claim_type": "phase_transition_model_result",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "ODE解析/field numerics或预测",
+          "design": "原文Landau–Ginzburg/GP及linearquench模型",
+          "comparator": "reduced ODE与full-field或不同damping/quench",
+          "measure": "freezeout inflection与rescaled growth",
+          "unit_of_analysis": "数学对象/field realization及参数scan，非实验受试者",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "nonzero noise-seeded φ0",
+            "同一potential与linear quench"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "Evolution/KZM",
+            "figure": "Figures3/5",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者以φ首次正时间inflection φddot=0定位catch-up/freeze-out；reduced解对nonzero φ0的依赖较慢且主要logarithmic，order parameter在impulse区仍演化而非完全静止。",
+        "boundary": "φ0=0的noise-free对称解不会自动选择破缺；log-dependence不能保证任意noise或regime完全无影响。",
+        "negative_result": null,
+        "non_inference": "不把已引用laboratory KZM证据当本篇新实验；不宣称全phase-transition普遍机制或完全冻结。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "order-parameter时间增长与damping如何在给定模型中产生Kibble–Zurek freeze-out及defect scaling？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C3"
+      ],
+      "review_notes": [
+        "第二次逐条来源审计完成；保留实际分析单位、任务条件及统计边界，不由不显著推出等效或唯一机制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "混合惯性/阻尼ODE的numerical inflection times呈由underdamped约τQ^(1/3)到overdamped约τQ^(1/2)的crossover；η0.2时随quench变慢出现该过渡。",
+      "claim_type": "phase_transition_model_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "ODE解析/field numerics或预测",
+          "design": "原文Landau–Ginzburg/GP及linearquench模型",
+          "comparator": "reduced ODE与full-field或不同damping/quench",
+          "measure": "t-hat对τQ",
+          "unit_of_analysis": "数学对象/field realization及参数scan，非实验受试者",
+          "sample_size_as_reported": "参数scan，独立重复n未明示",
+          "uncertainty": null,
+          "assumptions": [
+            "φ0=1e−4",
+            "η0.01/0.2/1；相同ODE"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "Underdamped/overdamped",
+            "figure": "Figure6A–C",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "混合惯性/阻尼ODE的numerical inflection times呈由underdamped约τQ^(1/3)到overdamped约τQ^(1/2)的crossover；η0.2时随quench变慢出现该过渡。",
+        "boundary": "所报局部slopes0.32/0.46及η0.2的0.35/0.42无CI；η³τQ≈1为regime估计不是精确sharp边界。",
+        "negative_result": null,
+        "non_inference": "不把已引用laboratory KZM证据当本篇新实验；不宣称全phase-transition普遍机制或完全冻结。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "order-parameter时间增长与damping如何在给定模型中产生Kibble–Zurek freeze-out及defect scaling？"
+      ],
+      "shared_evidence_with": [
+        "C6",
+        "C7",
+        "C8"
+      ],
+      "review_notes": [
+        "第二次逐条来源审计完成；保留实际分析单位、任务条件及统计边界，不由不显著推出等效或唯一机制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "full 1+1 Langevin PDE的kink-number quench scaling与时间crossover相容：η0.01约−0.31、η1约−0.27；η0.2从小τQ约−0.34转大τQ约−0.27，接近−1/3到−1/4预期。",
+      "claim_type": "phase_transition_model_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "ODE解析/field numerics或预测",
+          "design": "原文Landau–Ginzburg/GP及linearquench模型",
+          "comparator": "reduced ODE与full-field或不同damping/quench",
+          "measure": "N versus τQ",
+          "unit_of_analysis": "数学对象/field realization及参数scan，非实验受试者",
+          "sample_size_as_reported": "numerical full-field runs；n/fit误差未供给",
+          "uncertainty": null,
+          "assumptions": [
+            "real scalar field",
+            "θ1e−8",
+            "quench ranges4–128与128–16384"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "Defect density",
+            "figure": "Figure6D；Equations13/16",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "full 1+1 Langevin PDE的kink-number quench scaling与时间crossover相容：η0.01约−0.31、η1约−0.27；η0.2从小τQ约−0.34转大τQ约−0.27，接近−1/3到−1/4预期。",
+        "boundary": "近似exponent而非严格相等；defect annihilation之后仍可能发生；不推广所有universality classes。",
+        "negative_result": null,
+        "non_inference": "不把已引用laboratory KZM证据当本篇新实验；不宣称全phase-transition普遍机制或完全冻结。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "order-parameter时间增长与damping如何在给定模型中产生Kibble–Zurek freeze-out及defect scaling？"
+      ],
+      "shared_evidence_with": [
+        "C5",
+        "C7",
+        "C8"
+      ],
+      "review_notes": [
+        "第二次逐条来源审计完成；保留实际分析单位、任务条件及统计边界，不由不显著推出等效或唯一机制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "1D静态空间方程有Jacobi-elliptic解，小amplitude相对√ε时接近cosine，characteristic spatial scale约ε^(−1/2)；在freeze-out代入给出两阻尼regime的healing-length scaling。",
+      "claim_type": "phase_transition_model_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "ODE解析/field numerics或预测",
+          "design": "原文Landau–Ginzburg/GP及linearquench模型",
+          "comparator": "reduced ODE与full-field或不同damping/quench",
+          "measure": "空间周期/healing length",
+          "unit_of_analysis": "数学对象/field realization及参数scan，非实验受试者",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "无time/noise的stationary equation",
+            "1D，φ'(0)=0",
+            "ε>0且|φ0|≪√ε"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "Spatial structure",
+            "figure": "Equations17–19",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "1D静态空间方程有Jacobi-elliptic解，小amplitude相对√ε时接近cosine，characteristic spatial scale约ε^(−1/2)；在freeze-out代入给出两阻尼regime的healing-length scaling。",
+        "boundary": "spatial filtering interpretation不是full stochastic field严格separation；需要Laplacian及允许相关defect的topology。",
+        "negative_result": null,
+        "non_inference": "不把已引用laboratory KZM证据当本篇新实验；不宣称全phase-transition普遍机制或完全冻结。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "order-parameter时间增长与damping如何在给定模型中产生Kibble–Zurek freeze-out及defect scaling？"
+      ],
+      "shared_evidence_with": [
+        "C5",
+        "C6",
+        "C8"
+      ],
+      "review_notes": [
+        "第二次逐条来源审计完成；保留实际分析单位、任务条件及统计边界，不由不显著推出等效或唯一机制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "1+1 Langevin模拟中与同一run最终tF=200配置的correlation在−t-hat后开始增长、+t-hat后接近1；t/t-hat重缩放后多quench曲线近似重合，不同run之间约0。",
+      "claim_type": "phase_transition_model_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "ODE解析/field numerics或预测",
+          "design": "原文Landau–Ginzburg/GP及linearquench模型",
+          "comparator": "reduced ODE与full-field或不同damping/quench",
+          "measure": "s(t,tF)",
+          "unit_of_analysis": "数学对象/field realization及参数scan，非实验受试者",
+          "sample_size_as_reported": "τQ8/64/512，每项3条symmetry-breaking evolutions",
+          "uncertainty": null,
+          "assumptions": [
+            "θ1e−2",
+            "同run与不同run final-state比较"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "Configuration correlation",
+            "figure": "Figure7；Equation20",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "1+1 Langevin模拟中与同一run最终tF=200配置的correlation在−t-hat后开始增长、+t-hat后接近1；t/t-hat重缩放后多quench曲线近似重合，不同run之间约0。",
+        "boundary": "不同trajectories只是模型控制；没有formal universality检验/uncertainty，不证明所有空间维度。",
+        "negative_result": "不同run配置correlation描述性约0。",
+        "non_inference": "不把已引用laboratory KZM证据当本篇新实验；不宣称全phase-transition普遍机制或完全冻结。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "order-parameter时间增长与damping如何在给定模型中产生Kibble–Zurek freeze-out及defect scaling？"
+      ],
+      "shared_evidence_with": [
+        "C5",
+        "C6",
+        "C7"
+      ],
+      "review_notes": [
+        "第二次逐条来源审计完成；保留实际分析单位、任务条件及统计边界，不由不显著推出等效或唯一机制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "作者提出直接监测quench期间magnetization、polarization或BEC density的时间增长来检验KZM foundational conjecture，而不只统计final defects。",
+      "claim_type": "phase_transition_model_result",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "ODE解析/field numerics或预测",
+          "design": "原文Landau–Ginzburg/GP及linearquench模型",
+          "comparator": "reduced ODE与full-field或不同damping/quench",
+          "measure": "未来order-parameter时间观测",
+          "unit_of_analysis": "数学对象/field realization及参数scan，非实验受试者",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "足够temporal resolution和spatial uniformity"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Discussion / proposed tests",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者提出的可检验假说。",
+        "boundary": "本篇没有新lab experiment；observability/gradient confounds仍待测试。",
+        "negative_result": null,
+        "non_inference": "不把已引用laboratory KZM证据当本篇新实验；不宣称全phase-transition普遍机制或完全冻结。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "order-parameter时间增长与damping如何在给定模型中产生Kibble–Zurek freeze-out及defect scaling？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二次逐条来源审计完成；保留实际分析单位、任务条件及统计边界，不由不显著推出等效或唯一机制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "完整9页。特定reducedODE解析可解释orderparameter catch-up，数值1+1模型支持damping-dependent freezeout/kink scaling及configuration锁定。exactness不包含fullnoise/spatialPDE，高维推广和直接实验时间观测仍待检验。noise初值、normalisedprefactor及未供给SI限制保留；候选未人审。",
+  "shared_evidence": [
+    {
+      "claim_id": "C1",
+      "with": [
+        "C3",
+        "C4"
+      ]
+    },
+    {
+      "claim_id": "C2",
+      "with": [
+        "C3"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C2"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C1",
+        "C3"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C6",
+        "C7",
+        "C8"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C5",
+        "C7",
+        "C8"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C5",
+        "C6",
+        "C8"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C5",
+        "C6",
+        "C7"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": null,
+        "issue": "source为PNAS2025 Vol122(48)e2523903122，2025-11-25，不是2026下载日期。",
+        "pdf_page": 1,
+        "suggested_correction": "output bibliography依source",
+        "resolved": true
+      },
+      {
+        "claim_id": "C1",
+        "issue": "analytic exactness限overdamped noise-free/spatial-free ODE。",
+        "pdf_page": 3,
+        "suggested_correction": "保留joint assumptions",
+        "resolved": true
+      },
+      {
+        "claim_id": "C4",
+        "issue": "φ0影响只在所述noise/参数范围slow/logarithmic；φ0=0不触发symmetry selection。",
+        "pdf_page": 4,
+        "suggested_correction": "不写noise完全无关",
+        "resolved": true
+      },
+      {
+        "claim_id": "C5",
+        "issue": "fitexponents无CI、seed counts只部分图供给；不按meshpoint扩大n。",
+        "pdf_page": 6,
+        "suggested_correction": "keep uncertainty null",
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "Eq14/15的τ0及normalised timeprefactor表述不完全一致。",
+        "pdf_page": 5,
+        "suggested_correction": "只提比例/scaling，不补造dimensionfulprefactor",
+        "resolved": false
+      },
+      {
+        "claim_id": null,
+        "issue": "SI方法、actualpixels和更高dimension未提供；所有coverage仅9 suppliedpages。",
+        "pdf_page": 8,
+        "suggested_correction": "limits明确",
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T11:09:47.178056Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "86b5113115f13fec2e53b812e547eab631c155cfae538bcef55ebb38b94a44ff",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

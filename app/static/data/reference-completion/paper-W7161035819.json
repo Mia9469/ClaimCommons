@@ -1,0 +1,970 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "Federated training of spiking neural networks on edge hardware for audio processing",
+    "authors": [
+      "Swaroop S. Kaimal",
+      "Ashwin JB",
+      "S. Sofana Reka",
+      "Prakash Venugopal"
+    ],
+    "doi": "10.3389/fnins.2026.1827009",
+    "publication_year": 2026,
+    "venue": "Frontiers in Neuroscience",
+    "url": "https://doi.org/10.3389/fnins.2026.1827009"
+  },
+  "source": {
+    "filename": "paper-W7161035819--Federated-training-of-spiking-neural-networks-on-edge-hardware-for-audio-processing.pdf",
+    "sha256": "df5805b2a5075540132e2ab22ad596e94fb472d4bb49a77ce58c460826a022ae",
+    "source_url": "https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2026.1827009/pdf",
+    "pdf_page_count": 12
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "results_sections_seen": [
+      "Methods architecture/LIF/model",
+      "FedAvg/FedAdam/FedPAQ/TopK",
+      "Local training/dataset/augmentation",
+      "Hardware/power limitations",
+      "Tables1–3/results/nonIID",
+      "Conclusions; all figures/citations"
+    ],
+    "missing_material": [
+      "图像像素、原始训练数据/代码未读取",
+      "患者独立split、augment隔离、准确SNNtimesteps/训练round预算和部分Fed算法配置未给",
+      "可靠功耗、通信bytes/latency与隐私攻击数据未供应"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "所有供应页文字（含方法/附录/图表文字和参考文献）已完整评估，未采样代替全文。",
+      "逐条第二审计以已读源比较真实单位、条件、统计与推断范围；不等于实验复现。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "该实现可在两台RaspberryPi5 CPU客户端经WiFi/socket顺序本地训练并聚合SNN，处理八种呼吸标签spectrogram；并非原生神经形态芯片或实时并行训练示范。",
+      "role": "result",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "单客户端SNN平均准确率97.19±.84%、MacroF1 .9738±.0071，CNN98.12±.53%、.9824±.0048；CNN到90%所需轮数较少。",
+      "role": "result",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "RPi5每轮SNN本地训练平均214.6±5.8s，比CNN47.3±2.1s约慢4.5倍；单客户端90%轮数对应训练时间差约12倍。",
+      "role": "result",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "FedAvg双客户端中，α从10降到.1时SNN准确率从85.94降至49.19、CNN从87.50降至47.68；两者在.1均未达70%阈值。",
+      "role": "result",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "α≥.5的FedAvg配置中CNN准确率均更高，SNN仅α.1均值略高；这不足以证SNN总体或严重非IID下有统计显著鲁棒优势。",
+      "role": "result",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "双客户端SNN在α.5聚合比较中，FedAdam的89.06±1.38%、F1 .9022±.0131最高且9轮到70%，高于同表FedAvg/FedPAQ均值。",
+      "role": "result",
+      "source_pages": [
+        10
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "该FedPAQ配置准确率低于70%而FedAvg/FedAdam/TopK达到目标；降低更新表示/频率可与精度代价同时出现。",
+      "role": "result",
+      "source_pages": [
+        10
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "作者称TopK仅发送最大50%更新分量，在α.5获得与FedAvg接近的平均准确率；实际payload压缩或带宽/耗能收益未定量测得。",
+      "role": "result",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "本研究尝试的软件/inline功耗测量不足以可靠隔离模型负载，作者明确不能据此比较SNN/CNN能效；后者的节能优势限原生芯片未来研究。",
+      "role": "result",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "联邦协议保留原始音频在客户端、只发送模型更新，但本篇未做差分隐私/攻击泄漏或安全聚合评价，不能写数据隐私有数学/实证保证。",
+      "role": "result",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "920录音经COPD降采样及VTLP后形成约每类180、总1440图，构成该accuracy评估的数据基础；增强图不是新增患者，未供明确患者独立/增强前后test隔离。",
+      "role": "result",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "作者把α.1的SNN略高均值解释为阈值过滤/代理梯度的隐式正则及较少client divergence，但未给分离这些机制的消融或实际梯度噪声比较。",
+      "role": "interpretation",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "实时audio异常、个性化健康、neuromorphic硬件和规模扩展",
+      "role": "hypothesis",
+      "source_pages": [
+        11
+      ],
+      "decision": "include",
+      "reason": "未来应用，无实时任务/临床部署/大规模client实验"
+    },
+    {
+      "summary": "通信overhead、latency及能耗整体tradeoff",
+      "role": "result",
+      "source_pages": [
+        1,
+        2,
+        8
+      ],
+      "decision": "defer",
+      "reason": "主结果只有轮数/训练time，未给measured bytes/网络等待/耗能，不能当完整实测维度"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "该实现可在两台RaspberryPi5 CPU客户端经WiFi/socket顺序本地训练并聚合SNN，处理八种呼吸标签spectrogram；并非原生神经形态芯片或实时并行训练示范。",
+      "claim_type": "computational",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "3conv+LIF+FC，β=.95，Adam与FLserver",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "2客户端设备/训练运行",
+          "sample_size_as_reported": "2RPi5，8GB/quadCortexA76；5种子结果",
+          "uncertainty": "设备范围是具体2client而非大规模联邦",
+          "assumptions": [
+            "各client顺序训练、更新离散；无运行环境多样/设备脱落/实时流长期验证。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Hardware and communication setup; Architecture",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "该实现可在两台RaspberryPi5 CPU客户端经WiFi/socket顺序本地训练并聚合SNN，处理八种呼吸标签spectrogram；并非原生神经形态芯片或实时并行训练示范。",
+        "boundary": "各client顺序训练、更新离散；无运行环境多样/设备脱落/实时流长期验证。",
+        "negative_result": null,
+        "non_inference": "现有数据/设备benchmark不是临床、真实隐私威胁或生物神经机制验证；模拟脉冲不自动带来CPU节能，描述性均值不等显著等效。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "CPU边缘联邦SNN可行性",
+        "非IID/聚合策略和训练成本",
+        "诊断/能耗/隐私证据区分"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，该实现可在两台RaspberryPi5 CPU客户端经WiFi/socket顺序本地训练并聚合SNN，处理八种呼吸标签spectrogram；并非原生神经形态芯片或实时并行训练示范。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "单客户端SNN平均准确率97.19±.84%、MacroF1 .9738±.0071，CNN98.12±.53%、.9824±.0048；CNN到90%所需轮数较少。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "单client相似conv配置比较",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "独立随机训练种子",
+          "sample_size_as_reported": "5种子",
+          "uncertainty": "均值±SD；SNN8round、CNN3round",
+          "assumptions": [
+            "无显著性或等效检验；主文未给patient-heldout或完整train/test比例/划分，不写临床准确度。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Table1",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "单客户端SNN平均准确率97.19±.84%、MacroF1 .9738±.0071，CNN98.12±.53%、.9824±.0048；CNN到90%所需轮数较少。",
+        "boundary": "无显著性或等效检验；主文未给patient-heldout或完整train/test比例/划分，不写临床准确度。",
+        "negative_result": null,
+        "non_inference": "现有数据/设备benchmark不是临床、真实隐私威胁或生物神经机制验证；模拟脉冲不自动带来CPU节能，描述性均值不等显著等效。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "CPU边缘联邦SNN可行性",
+        "非IID/聚合策略和训练成本",
+        "诊断/能耗/隐私证据区分"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，单客户端SNN平均准确率97.19±.84%、MacroF1 .9738±.0071，CNN98.12±.53%、.9824±.0048；CNN到90%所需轮数较少。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "RPi5每轮SNN本地训练平均214.6±5.8s，比CNN47.3±2.1s约慢4.5倍；单客户端90%轮数对应训练时间差约12倍。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "CPU浮点LIF时间展开/梯度的wallclock",
+          "design": null,
+          "comparator": null,
+          "measure": "local training时间",
+          "unit_of_analysis": "客户端训练运行",
+          "sample_size_as_reported": "结果5独立种子；时间具体汇总层级未再区分",
+          "uncertainty": "SNN8round≈28.6min，CNN3≈2.4min，±source SD",
+          "assumptions": [
+            "不包括全部网络等待/聚合或端到端推断latency；慢不直接等于已测更高能耗。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Training performance hardware timings",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "RPi5每轮SNN本地训练平均214.6±5.8s，比CNN47.3±2.1s约慢4.5倍；单客户端90%轮数对应训练时间差约12倍。",
+        "boundary": "不包括全部网络等待/聚合或端到端推断latency；慢不直接等于已测更高能耗。",
+        "negative_result": "SNN在本CPU设置无训练速度优势。",
+        "non_inference": "现有数据/设备benchmark不是临床、真实隐私威胁或生物神经机制验证；模拟脉冲不自动带来CPU节能，描述性均值不等显著等效。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "CPU边缘联邦SNN可行性",
+        "非IID/聚合策略和训练成本",
+        "诊断/能耗/隐私证据区分"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，RPi5每轮SNN本地训练平均214.6±5.8s，比CNN47.3±2.1s约慢4.5倍；单客户端90%轮数对应训练时间差约12倍。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "FedAvg双客户端中，α从10降到.1时SNN准确率从85.94降至49.19、CNN从87.50降至47.68；两者在.1均未达70%阈值。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Dirichlet标签异质性扫描",
+          "design": null,
+          "comparator": null,
+          "measure": "global accuracy/F1",
+          "unit_of_analysis": "5seed两client运行",
+          "sample_size_as_reported": "5种子/配置",
+          "uncertainty": "均值±SD：SNN85.94±1.42→49.19±3.54%；CNN87.50±1.14→47.68±3.92%；.1time dash",
+          "assumptions": [
+            "强异质性下保留高于均衡8类12.5%并不等保持可靠；没有无穷期失败证明，限既定未明round预算。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "Table2",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "FedAvg双客户端中，α从10降到.1时SNN准确率从85.94降至49.19、CNN从87.50降至47.68；两者在.1均未达70%阈值。",
+        "boundary": "强异质性下保留高于均衡8类12.5%并不等保持可靠；没有无穷期失败证明，限既定未明round预算。",
+        "negative_result": "α.1显著描述性性能退化，未达到70% criterion。",
+        "non_inference": "现有数据/设备benchmark不是临床、真实隐私威胁或生物神经机制验证；模拟脉冲不自动带来CPU节能，描述性均值不等显著等效。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "CPU边缘联邦SNN可行性",
+        "非IID/聚合策略和训练成本",
+        "诊断/能耗/隐私证据区分"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，FedAvg双客户端中，α从10降到.1时SNN准确率从85.94降至49.19、CNN从87.50降至47.68；两者在.1均未达70%阈值。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "α≥.5的FedAvg配置中CNN准确率均更高，SNN仅α.1均值略高；这不足以证SNN总体或严重非IID下有统计显著鲁棒优势。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "相同α跨模型描述比较",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "共享划分/训练条件的运行",
+          "sample_size_as_reported": "5种子",
+          "uncertainty": "α1 SNN75.31±1.87 vsCNN86.34±1.38，α.5 72.50±2.76 vs75.94±2.31；α.1差1.51pp",
+          "assumptions": [
+            "均值范围未给配对检验/CI；α1差约11pp不能一概叫modest；不同timesteps/优化计算预算需澄清。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "Table2",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "α≥.5的FedAvg配置中CNN准确率均更高，SNN仅α.1均值略高；这不足以证SNN总体或严重非IID下有统计显著鲁棒优势。",
+        "boundary": "均值范围未给配对检验/CI；α1差约11pp不能一概叫modest；不同timesteps/优化计算预算需澄清。",
+        "negative_result": null,
+        "non_inference": "现有数据/设备benchmark不是临床、真实隐私威胁或生物神经机制验证；模拟脉冲不自动带来CPU节能，描述性均值不等显著等效。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "CPU边缘联邦SNN可行性",
+        "非IID/聚合策略和训练成本",
+        "诊断/能耗/隐私证据区分"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，α≥.5的FedAvg配置中CNN准确率均更高，SNN仅α.1均值略高；这不足以证SNN总体或严重非IID下有统计显著鲁棒优势。是否成立？"
+      ],
+      "shared_evidence_with": [
+        "C4"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "双客户端SNN在α.5聚合比较中，FedAdam的89.06±1.38%、F1 .9022±.0131最高且9轮到70%，高于同表FedAvg/FedPAQ均值。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "FedAdam/FedAvg/FedPAQ/TopK配置比较",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "训练种子",
+          "sample_size_as_reported": "5独立种子",
+          "uncertainty": "FedAvg72.50±2.76%、13轮；FedPAQ68.74±3.24%；无显著性检验",
+          "assumptions": [
+            "不能从单任务α.5确定所有非IID最优；EqFedAdam Δ定义/client−server与减号、转写分母平方根需源码/像素确认，算法配置未完整。"
+          ],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "Table3",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "双客户端SNN在α.5聚合比较中，FedAdam的89.06±1.38%、F1 .9022±.0131最高且9轮到70%，高于同表FedAvg/FedPAQ均值。",
+        "boundary": "不能从单任务α.5确定所有非IID最优；EqFedAdam Δ定义/client−server与减号、转写分母平方根需源码/像素确认，算法配置未完整。",
+        "negative_result": null,
+        "non_inference": "现有数据/设备benchmark不是临床、真实隐私威胁或生物神经机制验证；模拟脉冲不自动带来CPU节能，描述性均值不等显著等效。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "CPU边缘联邦SNN可行性",
+        "非IID/聚合策略和训练成本",
+        "诊断/能耗/隐私证据区分"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，双客户端SNN在α.5聚合比较中，FedAdam的89.06±1.38%、F1 .9022±.0131最高且9轮到70%，高于同表FedAvg/FedPAQ均值。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "该FedPAQ配置准确率低于70%而FedAvg/FedAdam/TopK达到目标；降低更新表示/频率可与精度代价同时出现。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "量化/周期聚合与其他策略比较",
+          "design": null,
+          "comparator": null,
+          "measure": "accuracy/criterion",
+          "unit_of_analysis": "5seed",
+          "sample_size_as_reported": "5种子",
+          "uncertainty": "FedPAQ68.74±3.24%、MacroF1 .6286±.0341；time-to70 dash",
+          "assumptions": [
+            "quantizationbit、周期及总round预算未给，不能称FedPAQ一般无效或证明定量通信节省。"
+          ],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "Table3",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "该FedPAQ配置准确率低于70%而FedAvg/FedAdam/TopK达到目标；降低更新表示/频率可与精度代价同时出现。",
+        "boundary": "quantizationbit、周期及总round预算未给，不能称FedPAQ一般无效或证明定量通信节省。",
+        "negative_result": "本FedPAQ配置未达70%。",
+        "non_inference": "现有数据/设备benchmark不是临床、真实隐私威胁或生物神经机制验证；模拟脉冲不自动带来CPU节能，描述性均值不等显著等效。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "CPU边缘联邦SNN可行性",
+        "非IID/聚合策略和训练成本",
+        "诊断/能耗/隐私证据区分"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，该FedPAQ配置准确率低于70%而FedAvg/FedAdam/TopK达到目标；降低更新表示/频率可与精度代价同时出现。是否成立？"
+      ],
+      "shared_evidence_with": [
+        "C6"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "作者称TopK仅发送最大50%更新分量，在α.5获得与FedAvg接近的平均准确率；实际payload压缩或带宽/耗能收益未定量测得。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Top50%update sparsification",
+          "design": null,
+          "comparator": null,
+          "measure": "score与selected updates",
+          "unit_of_analysis": "两client更新",
+          "sample_size_as_reported": "5seed",
+          "uncertainty": "Table3 TopK72.50±2.63%、F1 .6404±.0309；正文72.81不一致",
+          "assumptions": [
+            "发送一半分量不保证bytes恰减半（indices/协议开销），模型性能近似不是等效检验或脉冲结构导致冗余的独立机制证明。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "Table3; aggregation text",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者称TopK仅发送最大50%更新分量，在α.5获得与FedAvg接近的平均准确率；实际payload压缩或带宽/耗能收益未定量测得。",
+        "boundary": "发送一半分量不保证bytes恰减半（indices/协议开销），模型性能近似不是等效检验或脉冲结构导致冗余的独立机制证明。",
+        "negative_result": null,
+        "non_inference": "现有数据/设备benchmark不是临床、真实隐私威胁或生物神经机制验证；模拟脉冲不自动带来CPU节能，描述性均值不等显著等效。",
+        "unresolved": "正文/表TopK准确率冲突；无通信实测。",
+        "unresolved_attribution": "源文或本次审计"
+      },
+      "broad_directions": [
+        "CPU边缘联邦SNN可行性",
+        "非IID/聚合策略和训练成本",
+        "诊断/能耗/隐私证据区分"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，作者称TopK仅发送最大50%更新分量，在α.5获得与FedAvg接近的平均准确率；实际payload压缩或带宽/耗能收益未定量测得。是否成立？"
+      ],
+      "shared_evidence_with": [
+        "C6"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "本研究尝试的软件/inline功耗测量不足以可靠隔离模型负载，作者明确不能据此比较SNN/CNN能效；后者的节能优势限原生芯片未来研究。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "软件估计/inline sensor尝试及其限制",
+          "design": null,
+          "comparator": null,
+          "measure": "功耗测量可解释性",
+          "unit_of_analysis": "RPi系统级负载",
+          "sample_size_as_reported": "测量重复/设备精度未给",
+          "uncertainty": "无可靠可比较power profiles",
+          "assumptions": [
+            "这是实际未获得可靠能效结果，不是证明同功耗/节能；CPU张量模拟不能用neuromorphic事件成本代替实测。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Hardware power paragraph",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "本研究尝试的软件/inline功耗测量不足以可靠隔离模型负载，作者明确不能据此比较SNN/CNN能效；后者的节能优势限原生芯片未来研究。",
+        "boundary": "这是实际未获得可靠能效结果，不是证明同功耗/节能；CPU张量模拟不能用neuromorphic事件成本代替实测。",
+        "negative_result": "未获得可靠SNN/CNN能耗比较。",
+        "non_inference": "现有数据/设备benchmark不是临床、真实隐私威胁或生物神经机制验证；模拟脉冲不自动带来CPU节能，描述性均值不等显著等效。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "CPU边缘联邦SNN可行性",
+        "非IID/聚合策略和训练成本",
+        "诊断/能耗/隐私证据区分"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，本研究尝试的软件/inline功耗测量不足以可靠隔离模型负载，作者明确不能据此比较SNN/CNN能效；后者的节能优势限原生芯片未来研究。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "联邦协议保留原始音频在客户端、只发送模型更新，但本篇未做差分隐私/攻击泄漏或安全聚合评价，不能写数据隐私有数学/实证保证。",
+      "claim_type": "methodological",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "raw-data local/weights server的协议设计",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "设备与更新",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "socket协议或不发原始数据不排除模型更新泄漏；引用DP研究不是本实现部署DP。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "FL/local training; Conclusions security future work",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "联邦协议保留原始音频在客户端、只发送模型更新，但本篇未做差分隐私/攻击泄漏或安全聚合评价，不能写数据隐私有数学/实证保证。",
+        "boundary": "socket协议或不发原始数据不排除模型更新泄漏；引用DP研究不是本实现部署DP。",
+        "negative_result": null,
+        "non_inference": "现有数据/设备benchmark不是临床、真实隐私威胁或生物神经机制验证；模拟脉冲不自动带来CPU节能，描述性均值不等显著等效。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "CPU边缘联邦SNN可行性",
+        "非IID/聚合策略和训练成本",
+        "诊断/能耗/隐私证据区分"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，联邦协议保留原始音频在客户端、只发送模型更新，但本篇未做差分隐私/攻击泄漏或安全聚合评价，不能写数据隐私有数学/实证保证。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "920录音经COPD降采样及VTLP后形成约每类180、总1440图，构成该accuracy评估的数据基础；增强图不是新增患者，未供明确患者独立/增强前后test隔离。",
+      "claim_type": "methodological",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "频率warping/均衡类别及Dirichlet分配",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "原录音/增强图嵌套于未知患者数",
+          "sample_size_as_reported": "920原音频，1440均衡图，8类；患者数本篇未给",
+          "uncertainty": null,
+          "assumptions": [
+            "不能称平衡保证genuine learning或cross-patient generalization；若同源增强跨split会泄漏，但现来源不足直接认定已发生。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Dataset processing; Section3.5",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "920录音经COPD降采样及VTLP后形成约每类180、总1440图，构成该accuracy评估的数据基础；增强图不是新增患者，未供明确患者独立/增强前后test隔离。",
+        "boundary": "不能称平衡保证genuine learning或cross-patient generalization；若同源增强跨split会泄漏，但现来源不足直接认定已发生。",
+        "negative_result": null,
+        "non_inference": "现有数据/设备benchmark不是临床、真实隐私威胁或生物神经机制验证；模拟脉冲不自动带来CPU节能，描述性均值不等显著等效。",
+        "unresolved": "patient-heldout、录音/增强切分和类别误差明细未给。",
+        "unresolved_attribution": "源文或本次审计"
+      },
+      "broad_directions": [
+        "CPU边缘联邦SNN可行性",
+        "非IID/聚合策略和训练成本",
+        "诊断/能耗/隐私证据区分"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，920录音经COPD降采样及VTLP后形成约每类180、总1440图，构成该accuracy评估的数据基础；增强图不是新增患者，未供明确患者独立/增强前后test隔离。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "作者把α.1的SNN略高均值解释为阈值过滤/代理梯度的隐式正则及较少client divergence，但未给分离这些机制的消融或实际梯度噪声比较。",
+      "claim_type": "computational",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "模型对比的作者解释",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "共享实验",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "不能把group score差当神经机制或已测稀疏更新规律，尤其无配对统计证明。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "Training performance mechanistic paragraph",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者把α.1的SNN略高均值解释为阈值过滤/代理梯度的隐式正则及较少client divergence，但未给分离这些机制的消融或实际梯度噪声比较。",
+        "boundary": "不能把group score差当神经机制或已测稀疏更新规律，尤其无配对统计证明。",
+        "negative_result": null,
+        "non_inference": "现有数据/设备benchmark不是临床、真实隐私威胁或生物神经机制验证；模拟脉冲不自动带来CPU节能，描述性均值不等显著等效。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "CPU边缘联邦SNN可行性",
+        "非IID/聚合策略和训练成本",
+        "诊断/能耗/隐私证据区分"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，作者把α.1的SNN略高均值解释为阈值过滤/代理梯度的隐式正则及较少client divergence，但未给分离这些机制的消融或实际梯度噪声比较。是否成立？"
+      ],
+      "shared_evidence_with": [
+        "C4",
+        "C5",
+        "C6",
+        "C8"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "12页2026原始研究全文、所有表图/References全读。两RPi5客户端CPU FL-SNN在既有8类呼吸spectrogram可训，五种子分数有较高但未验证患者独立泛化。强α.1失败、CPU时间成本、FedPAQ低分和功耗无可靠比较均保留。TopK/F1转写及FedAdam公式问题、数据/配置/通信缺失不隐藏；隐私、原生节能、临床与阈值机制未实证。",
+  "shared_evidence": [
+    {
+      "claim_id": "C5",
+      "with": [
+        "C4"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "with": [
+        "C4",
+        "C5",
+        "C6",
+        "C8"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": "C11",
+        "issue": "920录音/1440增强图非1440患者；患者holdout/augment隔离未给",
+        "suggested_correction": "明确真实单位，临床泛化仍未验证",
+        "pdf_page": 8,
+        "resolved": false
+      },
+      {
+        "claim_id": "C3",
+        "issue": "round数不等wallclock且CPU SNN慢4.5x/90%约12x",
+        "suggested_correction": "同时保留速度代价",
+        "pdf_page": 8,
+        "resolved": true
+      },
+      {
+        "claim_id": "C4",
+        "issue": "强nonIID两者未达70却结论称robust/high severe data",
+        "suggested_correction": "限定真实失败范围",
+        "pdf_page": 9,
+        "resolved": true
+      },
+      {
+        "claim_id": "C6",
+        "issue": "FedAdam公式Δ客户端−服务器和减号/分母转写有待澄清",
+        "suggested_correction": "不由表直接认证实际优化实现或普适算法优越",
+        "pdf_page": 6,
+        "resolved": false
+      },
+      {
+        "claim_id": "C8",
+        "issue": "TopK正文72.81、表72.50；Table3FedAvgF1 SD±2.76误用accuracy单位",
+        "suggested_correction": "使用Table3TopK及Table2同FedAvgF1±.0284可定位值，不猜其他改数",
+        "pdf_page": 10,
+        "resolved": false
+      },
+      {
+        "claim_id": "C9",
+        "issue": "power measurements inconclusive",
+        "suggested_correction": "不写低功耗实证",
+        "pdf_page": 8,
+        "resolved": true
+      },
+      {
+        "claim_id": "C10",
+        "issue": "FL保留raw不等隐私保证",
+        "suggested_correction": "无安全/泄漏/DP证明",
+        "pdf_page": 11,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "SNNT/实际encoding、局部epoch/globalround/test策略和quantization参数缺失",
+        "suggested_correction": "限定可行性示范，复现/公平预算待解",
+        "pdf_page": 7,
+        "resolved": false
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T12:09:08.984223Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "df5805b2a5075540132e2ab22ad596e94fb472d4bb49a77ce58c460826a022ae",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

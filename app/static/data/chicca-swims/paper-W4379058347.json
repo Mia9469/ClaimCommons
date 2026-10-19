@@ -1,0 +1,969 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "Closed-loop sound source localization in neuromorphic systems",
+    "authors": [
+      "Thorben Schoepe",
+      "Daniel Gutiérrez-Galán",
+      "Juan Pedro Dominguez-Morales",
+      "Hugh Greatorex",
+      "Angel F. Jimenez-Fernandez",
+      "Alejandro Linares-Barranco",
+      "Elisabetta Chicca"
+    ],
+    "doi": "10.1088/2634-4386/acdaba",
+    "publication_year": 2023,
+    "venue": "Neuromorphic Computing and Engineering",
+    "url": "https://doi.org/10.1088/2634-4386/acdaba"
+  },
+  "source": {
+    "filename": "paper-W4379058347.pdf",
+    "sha256": "a1cc930e88b198f51286998b2315721538bf4dfd508f568896fcf391cb862645",
+    "source_url": "https://idus.us.es/server/api/core/bitstreams/418d7046-dbfd-4fd2-b21c-b41fb150b0a9/content",
+    "pdf_page_count": 19
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "results_sections_seen": [
+      "2.1–2.5 Methodology",
+      "3.1–3.2 Experiments",
+      "4.1.1–4.2 Results",
+      "5 Discussion；Figures 1–12；Table 1"
+    ],
+    "missing_material": [
+      "图像像素未提供。",
+      "正文引用的在线补充材料Figure A.1不在所供19页。",
+      "原始数据和代码未运行；无独立科学复现。"
+    ],
+    "text_pass_complete": true,
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "notes": [
+      "出版版本带封面；PDF第1页封面，第2页为文章首面，定位均用文件页序。",
+      "完整19页含参考文献已读；二次核对了物理/模拟输入、指标定义及功耗证据。",
+      "第一性结果为静态声源闭环，不自动拓展为动态、多源、全方位定位。"
+    ]
+  },
+  "contribution_inventory": [
+    {
+      "summary": "本文以双耳NAS单频带、左右各4个FPGA TDE、SpiNNaker时差转频率/半环吸引子/中心检测网络及FPGA电机控制板构成无学习的闭环声源定向系统，人工设置连接和参数，用脉冲活动更新云台偏航方向。",
+      "role": "result",
+      "source_pages": [
+        5
+      ],
+      "decision": "include",
+      "reason": "保留独立结构、仿真、物理测量、边界和预算。"
+    },
+    {
+      "summary": "在NEST人工事件输入仿真中，TDE对非偏好时差无响应、近零偏好时差响应最大并随正时差增大衰减；加入500 Hz噪声提高整体活动，再以40 µs标准差的时差抖动输入后，响应过渡变平滑且峰位置随促进时间常数变化。",
+      "role": "result",
+      "source_pages": [
+        11
+      ],
+      "decision": "include",
+      "reason": "保留独立结构、仿真、物理测量、边界和预算。"
+    },
+    {
+      "summary": "在本文时差转频率网络仿真中，理想精确输入的输出在零附近和较大时差处存在跃变；加入500 Hz噪声及40 µs高斯时差抖动后，左右输出随时差在约600 µs以内近线性增长，超过此范围略衰减。",
+      "role": "result",
+      "source_pages": [
+        12
+      ],
+      "decision": "include",
+      "reason": "保留独立结构、仿真、物理测量、边界和预算。"
+    },
+    {
+      "summary": "在500 Hz扬声器距双耳麦克风50 cm、云台以22.5°间隔作180°扫转的实物实验中，本文SpiNNaker时差转频率网络的左右输出差在所示整个角度范围近线性变化，可用于转向控制。",
+      "role": "result",
+      "source_pages": [
+        12
+      ],
+      "decision": "include",
+      "reason": "保留独立结构、仿真、物理测量、边界和预算。"
+    },
+    {
+      "summary": "在同一500 Hz实物扫转实验中，每次电机转动时两侧TDE活动突然增加、左右差接近零，随后时差转频率输出差也下降；作者将其解释为靠近麦克风的电机声音同时到达两耳并干扰定向信号。",
+      "role": "result",
+      "source_pages": [
+        10
+      ],
+      "decision": "include",
+      "reason": "保留独立结构、仿真、物理测量、边界和预算。"
+    },
+    {
+      "summary": "在扬声器50 cm处、九个起始相对角度的静态闭环实验中，本文系统对250 Hz、500 Hz及语音朝声源方向转动后维持附近姿态；结果报告滚动均值标准差分别为1.24、2.6、5.5°，平均滚动标准差分别为4.2、7.9、16.9°，语音条件波动最大。",
+      "role": "result",
+      "source_pages": [
+        13
+      ],
+      "decision": "include",
+      "reason": "保留独立结构、仿真、物理测量、边界和预算。"
+    },
+    {
+      "summary": "在本文500 Hz、50 cm固定声源闭环试验的九个起始角中，云台均在开始后的5 s内完成首次朝向声源的转动；按1–5 s不同窗口计算的平均转速与初始角差呈近线性关系。",
+      "role": "result",
+      "source_pages": [
+        13
+      ],
+      "decision": "include",
+      "reason": "保留独立结构、仿真、物理测量、边界和预算。"
+    },
+    {
+      "summary": "在本文单次500 Hz闭环轨迹中，定位时云台最高速度约33°/s，而初始化阶段显示该云台最大速度约±38°/s；作者据此认为现有秒级响应主要受机械转速限制，换更快云台的收益尚未实测。",
+      "role": "result",
+      "source_pages": [
+        14
+      ],
+      "decision": "include",
+      "reason": "保留独立结构、仿真、物理测量、边界和预算。"
+    },
+    {
+      "summary": "本文提出在约5–10神经元宽的半环吸引子活动峰后接入中心检测网络，通过局部兴奋核及全局抑制WTA选峰中心，64个输出神经元对应180°云台范围、名义角度分辨率约2.8°；该滤波器用于减少直接宽峰驱动造成的云台抖动。",
+      "role": "result",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "保留独立结构、仿真、物理测量、边界和预算。"
+    },
+    {
+      "summary": "按本文实现清单与引用组件预算，闭环处理使用326个神经元、约400突触及SpiNNaker芯片18核中的2核；NAS约29.7 mW、8个TDE约12 mW、SpiNNaker上限约930 mW，汇总处理功耗约1 W，而非全文提供的整机实测。",
+      "role": "result",
+      "source_pages": [
+        17
+      ],
+      "decision": "include",
+      "reason": "保留独立结构、仿真、物理测量、边界和预算。"
+    },
+    {
+      "summary": "比其他系统或人类更优、更小以及首个闭环ITD系统的优先权",
+      "role": "review_synthesis",
+      "source_pages": [
+        3,
+        15,
+        16,
+        17
+      ],
+      "decision": "exclude",
+      "reason": "非系统全面检索或匹配实验；引用对照不等于新测量。"
+    },
+    {
+      "summary": "360°、ILD、仰角、ASIC双位数mW及更快云台",
+      "role": "hypothesis",
+      "source_pages": [
+        16,
+        17
+      ],
+      "decision": "defer",
+      "reason": "未来方案，无当前直接验证。"
+    },
+    {
+      "summary": "补充图A.1的WTA细节",
+      "role": "result",
+      "source_pages": [
+        11
+      ],
+      "decision": "defer",
+      "reason": "补充材料未提供。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "本文以双耳NAS单频带、左右各4个FPGA TDE、SpiNNaker时差转频率/半环吸引子/中心检测网络及FPGA电机控制板构成无学习的闭环声源定向系统，人工设置连接和参数，用脉冲活动更新云台偏航方向。",
+      "claim_type": "proposed_architecture",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "端到端事件硬件与SNN结构设计",
+          "design": "双耳相距150 mm；NAS64频带中使用每耳约500 Hz单通道。",
+          "comparator": null,
+          "measure": "传感—网络—电机控制连接",
+          "unit_of_analysis": "所述模型或实验条件的一条轨迹或参数组合",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "2.4 SSL system；2.5 SSL network",
+            "figure": "Figure 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "本文以双耳NAS单频带、左右各4个FPGA TDE、SpiNNaker时差转频率/半环吸引子/中心检测网络及FPGA电机控制板构成无学习的闭环声源定向系统，人工设置连接和参数，用脉冲活动更新云台偏航方向。",
+        "boundary": "处理链为事件驱动，但FPGA及SpiNNaker并非全模拟/无时钟；半环覆盖180°。",
+        "negative_result": null,
+        "non_inference": "不能从结构推断首个全球实现、360°定位或学习性能。",
+        "unresolved": "多源、移动声源、ILD/仰角及宽频带覆盖。",
+        "unresolved_attribution": "所供原文未解决或未报告。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "如何把双耳时差直接用于事件驱动闭环转向？"
+      ],
+      "shared_evidence_with": [
+        "C4",
+        "C6",
+        "C7",
+        "C9",
+        "C10"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "在NEST人工事件输入仿真中，TDE对非偏好时差无响应、近零偏好时差响应最大并随正时差增大衰减；加入500 Hz噪声提高整体活动，再以40 µs标准差的时差抖动输入后，响应过渡变平滑且峰位置随促进时间常数变化。",
+      "claim_type": "simulation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "人工Poisson输入、附加噪声与高斯抖动仿真",
+          "design": "ITD −800至800 µs；4促进时间常数；图注40 µs。",
+          "comparator": "精确时差、附加500 Hz噪声、再加时差抖动",
+          "measure": "TDE放电响应曲线",
+          "unit_of_analysis": "所述模型或实验条件的一条轨迹或参数组合",
+          "sample_size_as_reported": "4种时间常数，仿真重复次数未报告。",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "4.1.1 TDE",
+            "figure": "Figure 6a–c",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在NEST人工事件输入仿真中，TDE对非偏好时差无响应、近零偏好时差响应最大并随正时差增大衰减；加入500 Hz噪声提高整体活动，再以40 µs标准差的时差抖动输入后，响应过渡变平滑且峰位置随促进时间常数变化。",
+        "boundary": "正文第10页有40 ms笔误，与方法和图注40 µs冲突；仿真TDE有LIF膜电位，FPGA没有。",
+        "negative_result": null,
+        "non_inference": "不是真实神经元测量或噪声必然改善精度的证明。",
+        "unresolved": "噪声统计与TDE实现差异的定量影响。",
+        "unresolved_attribution": "所供原文未解决或未报告。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "输入噪声和时差抖动如何改变TDE调谐曲线？"
+      ],
+      "shared_evidence_with": [
+        "C3"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "在本文时差转频率网络仿真中，理想精确输入的输出在零附近和较大时差处存在跃变；加入500 Hz噪声及40 µs高斯时差抖动后，左右输出随时差在约600 µs以内近线性增长，超过此范围略衰减。",
+      "claim_type": "simulation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "兴奋基线加抑制输入及左右WTA的SNN仿真",
+          "design": "长时间常数TDE兴奋两输出；短常数TDE抑制对側输出。",
+          "comparator": "不同噪声/抖动输入",
+          "measure": "左右输出放电率对ITD曲线",
+          "unit_of_analysis": "所述模型或实验条件的一条轨迹或参数组合",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "4.1.2 Time to rate network",
+            "figure": "Figure 7a–c",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在本文时差转频率网络仿真中，理想精确输入的输出在零附近和较大时差处存在跃变；加入500 Hz噪声及40 µs高斯时差抖动后，左右输出随时差在约600 µs以内近线性增长，超过此范围略衰减。",
+        "boundary": "输入统计影响线性；非无条件完整线性变换；约400–500 µs处WTA状态改变。",
+        "negative_result": "精确输入输出有跃变；超过约600 µs噪声配置略衰减。",
+        "non_inference": "不能把网络设计意图称为所有条件下的线性定理。",
+        "unresolved": "配置与输入分布下线性区和误差。",
+        "unresolved_attribution": "所供原文未解决或未报告。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "怎样的输入条件使时差到频率近线性？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C4"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "在500 Hz扬声器距双耳麦克风50 cm、云台以22.5°间隔作180°扫转的实物实验中，本文SpiNNaker时差转频率网络的左右输出差在所示整个角度范围近线性变化，可用于转向控制。",
+      "claim_type": "hardware_measurement",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "真实声场FPGA/NAS/SpiNNaker开环扫描",
+          "design": "每4 s移至下一角度；图6d平均3试次。",
+          "comparator": null,
+          "measure": "输出率差与声源方位",
+          "unit_of_analysis": "所述模型或实验条件的一条轨迹或参数组合",
+          "sample_size_as_reported": "图6d报告3 trials；图7d未另列独立样本数。",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "4.1.2 Time to rate network",
+            "figure": "Figure 7d；Figure 6d（PDF第11页）",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在500 Hz扬声器距双耳麦克风50 cm、云台以22.5°间隔作180°扫转的实物实验中，本文SpiNNaker时差转频率网络的左右输出差在所示整个角度范围近线性变化，可用于转向控制。",
+        "boundary": "单声音频率、单距离和所示空间；不推定斜率或CI。",
+        "negative_result": null,
+        "non_inference": "开环率映射不是闭环定位误差或其他声学条件泛化。",
+        "unresolved": "混响、距离及声音频率范围。",
+        "unresolved_attribution": "所供原文未解决或未报告。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "时差转频率网络在实物扫转时是否产生可用角度信号？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C3",
+        "C5"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "在同一500 Hz实物扫转实验中，每次电机转动时两侧TDE活动突然增加、左右差接近零，随后时差转频率输出差也下降；作者将其解释为靠近麦克风的电机声音同时到达两耳并干扰定向信号。",
+      "claim_type": "hardware_observation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "电机动作期间的硬件放电观察",
+          "design": null,
+          "comparator": "转动期间与静止期间",
+          "measure": "TDE整体放电及左右差",
+          "unit_of_analysis": "所述模型或实验条件的一条轨迹或参数组合",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "4.1.1 TDE",
+            "figure": "Figure 6d（PDF第11页）；Figure 7d",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在同一500 Hz实物扫转实验中，每次电机转动时两侧TDE活动突然增加、左右差接近零，随后时差转频率输出差也下降；作者将其解释为靠近麦克风的电机声音同时到达两耳并干扰定向信号。",
+        "boundary": "没有隔离/屏蔽电机的匹配干预；归因是解释。",
+        "negative_result": "运动时定向率差被压低。",
+        "non_inference": "不能认定电机噪声因果作用已单独验证，或系统对自噪声完全鲁棒。",
+        "unresolved": "电机噪声消融与闭环抖动贡献。",
+        "unresolved_attribution": "所供原文未解决或未报告。"
+      },
+      "broad_directions": [
+        "methods-causal",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "机器人自身运动会否扰乱ITD定向信号？"
+      ],
+      "shared_evidence_with": [
+        "C4",
+        "C7"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "在扬声器50 cm处、九个起始相对角度的静态闭环实验中，本文系统对250 Hz、500 Hz及语音朝声源方向转动后维持附近姿态；结果报告滚动均值标准差分别为1.24、2.6、5.5°，平均滚动标准差分别为4.2、7.9、16.9°，语音条件波动最大。",
+      "claim_type": "hardware_measurement",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "真实云台闭环及摄像头角度追踪",
+          "design": "九起始角−100至80°；初始化10 s后运行110 s；滚动统计从5 s后计。",
+          "comparator": "250 Hz、500 Hz、Google语音命令",
+          "measure": "角位置及两种滚动标准差",
+          "unit_of_analysis": "各输入条件中不同初始角的闭环运行；时间点相关",
+          "sample_size_as_reported": "9个起始角；正文称9 cases；每角独立重复数未另给。",
+          "uncertainty": "报告的是波动标准差，不是均值CI。",
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "4.2 Closed-loop localization",
+            "figure": "Figure 8a",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在扬声器50 cm处、九个起始相对角度的静态闭环实验中，本文系统对250 Hz、500 Hz及语音朝声源方向转动后维持附近姿态；结果报告滚动均值标准差分别为1.24、2.6、5.5°，平均滚动标准差分别为4.2、7.9、16.9°，语音条件波动最大。",
+        "boundary": "作者讨论将两统计误称为mean error±SD；保留结果的定义。",
+        "negative_result": null,
+        "non_inference": "不能把1.24°直接当常规MAE、RMSE或偏差；不是移动声源追踪。",
+        "unresolved": "误差指标定义、窗口长度与重复变异。",
+        "unresolved_attribution": "所供原文未解决或未报告。"
+      },
+      "broad_directions": [
+        "behavior-cognition",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "静态声源闭环定向在音调和语音下有何波动？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C7",
+        "C8"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "在本文500 Hz、50 cm固定声源闭环试验的九个起始角中，云台均在开始后的5 s内完成首次朝向声源的转动；按1–5 s不同窗口计算的平均转速与初始角差呈近线性关系。",
+      "claim_type": "hardware_measurement",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "摄像头追踪闭环角度和初始转速",
+          "design": "声源固定，九起始角；窗口1至5 s。",
+          "comparator": null,
+          "measure": "首次转向时间、初始角差与平均速度",
+          "unit_of_analysis": "所述模型或实验条件的一条轨迹或参数组合",
+          "sample_size_as_reported": "9起始角；未给回归CI或斜率。",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "4.2 Closed-loop localization",
+            "figure": "Figure 8b；Figure 9（PDF第14页）",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在本文500 Hz、50 cm固定声源闭环试验的九个起始角中，云台均在开始后的5 s内完成首次朝向声源的转动；按1–5 s不同窗口计算的平均转速与初始角差呈近线性关系。",
+        "boundary": "完成首次转向不是精确无误差稳定；速度随接近目标下降。",
+        "negative_result": null,
+        "non_inference": "不能宣称所有声音都5 s内收敛、百毫秒响应或无自噪声影响。",
+        "unresolved": "动态目标及快速云台表现。",
+        "unresolved_attribution": "所供原文未解决或未报告。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "初始声源角差如何决定闭环转向速度？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C5",
+        "C6",
+        "C8"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "在本文单次500 Hz闭环轨迹中，定位时云台最高速度约33°/s，而初始化阶段显示该云台最大速度约±38°/s；作者据此认为现有秒级响应主要受机械转速限制，换更快云台的收益尚未实测。",
+      "claim_type": "hardware_observation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "单次初始化与定向运行的速度比较",
+          "design": null,
+          "comparator": "初始化最大速度与闭环定位速度",
+          "measure": "角速度及响应时间",
+          "unit_of_analysis": "所述模型或实验条件的一条轨迹或参数组合",
+          "sample_size_as_reported": "Figure 12单次轨迹。",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 14,
+            "section": "4.2 Closed-loop localization",
+            "figure": "Figure 12（PDF第16页）",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在本文单次500 Hz闭环轨迹中，定位时云台最高速度约33°/s，而初始化阶段显示该云台最大速度约±38°/s；作者据此认为现有秒级响应主要受机械转速限制，换更快云台的收益尚未实测。",
+        "boundary": "接近最大速度的观察支持可行性解释，但未拆分处理、通信与机械延迟。",
+        "negative_result": null,
+        "non_inference": "不能因作者归因而宣称机械限制已由换平台实验独立证实。",
+        "unresolved": "更换执行器后的延迟及能耗。",
+        "unresolved_attribution": "所供原文未解决或未报告。"
+      },
+      "broad_directions": [
+        "behavior-cognition",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "机械速度是否可能限制当前系统响应时间？"
+      ],
+      "shared_evidence_with": [
+        "C6",
+        "C7"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "本文提出在约5–10神经元宽的半环吸引子活动峰后接入中心检测网络，通过局部兴奋核及全局抑制WTA选峰中心，64个输出神经元对应180°云台范围、名义角度分辨率约2.8°；该滤波器用于减少直接宽峰驱动造成的云台抖动。",
+      "claim_type": "proposed_architecture",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "中心提取网络与位置控制编码设计",
+          "design": "256半环神经元；64中心检测神经元；一输出ID映射位置。",
+          "comparator": null,
+          "measure": "峰中心输出、离散角度映射",
+          "unit_of_analysis": "所述模型或实验条件的一条轨迹或参数组合",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "2.5.3 Center detector network",
+            "figure": "Figure 5b（PDF第8页）",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "本文提出在约5–10神经元宽的半环吸引子活动峰后接入中心检测网络，通过局部兴奋核及全局抑制WTA选峰中心，64个输出神经元对应180°云台范围、名义角度分辨率约2.8°；该滤波器用于减少直接宽峰驱动造成的云台抖动。",
+        "boundary": "名义离散分辨率不等于定位误差；未提供有/无滤波器的定量消融。",
+        "negative_result": null,
+        "non_inference": "不能把抖动改善描述为统计验证的因果效应。",
+        "unresolved": "消融后的抖动、响应速度和分辨率权衡。",
+        "unresolved_attribution": "所供原文未解决或未报告。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "如何把分散活动峰转为稳定电机位置编码？"
+      ],
+      "shared_evidence_with": [
+        "C1"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "按本文实现清单与引用组件预算，闭环处理使用326个神经元、约400突触及SpiNNaker芯片18核中的2核；NAS约29.7 mW、8个TDE约12 mW、SpiNNaker上限约930 mW，汇总处理功耗约1 W，而非全文提供的整机实测。",
+      "claim_type": "hardware_resource_estimate",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "实现资源清单及文献/组件功耗预算",
+          "design": "NAS128频通道中使用2通道；TDE约1120寄存器、1440 LUT。",
+          "comparator": null,
+          "measure": "计算单元与估计功耗",
+          "unit_of_analysis": "所述模型或实验条件的一条轨迹或参数组合",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 17,
+            "section": "5 Discussion and conclusions",
+            "figure": "Table 1（PDF第16页）",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "按本文实现清单与引用组件预算，闭环处理使用326个神经元、约400突触及SpiNNaker芯片18核中的2核；NAS约29.7 mW、8个TDE约12 mW、SpiNNaker上限约930 mW，汇总处理功耗约1 W，而非全文提供的整机实测。",
+        "boundary": "组件功耗多引自既有资料；未纳入云台、电机、麦克风及整板所有开销。",
+        "negative_result": null,
+        "non_inference": "不是整机电表测量、低于所有对照的能效或ASIC已达到双位数mW。",
+        "unresolved": "整机实测及匹配任务的功耗对照。",
+        "unresolved_attribution": "所供原文未解决或未报告。"
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "闭环网络的实现规模与功耗证据处于何种层级？"
+      ],
+      "shared_evidence_with": [
+        "C1"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "保留10项候选，区分端到端结构、TDE仿真、时差转换的条件线性、真实扫转和电机自噪声、静态闭环滚动波动、起始角—速度关系、机械速度限制、峰中心滤波设计及功耗预算。重要范围限制是单低频通道、固定50 cm声源和180°半环；1.24/2.6/5.5°按结果是滚动均值标准差，不等同常规平均误差；约1 W是处理组件预算。",
+  "shared_evidence": [
+    {
+      "claim_id": "C1",
+      "with": [
+        "C4",
+        "C6",
+        "C7",
+        "C9",
+        "C10"
+      ]
+    },
+    {
+      "claim_id": "C2",
+      "with": [
+        "C3"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C2",
+        "C4"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C1",
+        "C3",
+        "C5"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C4",
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C1",
+        "C7",
+        "C8"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C1",
+        "C5",
+        "C6",
+        "C8"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C6",
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C1"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "with": [
+        "C1"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [
+      {
+        "claim_id": "C1",
+        "pdf_page": 5,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "text_anchor_matched": true,
+        "semantic_scope_checked_by": "inherited_GPT"
+      },
+      {
+        "claim_id": "C2",
+        "pdf_page": 11,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "text_anchor_matched": true,
+        "semantic_scope_checked_by": "inherited_GPT"
+      },
+      {
+        "claim_id": "C3",
+        "pdf_page": 12,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "text_anchor_matched": true,
+        "semantic_scope_checked_by": "inherited_GPT"
+      },
+      {
+        "claim_id": "C4",
+        "pdf_page": 12,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "text_anchor_matched": true,
+        "semantic_scope_checked_by": "inherited_GPT"
+      },
+      {
+        "claim_id": "C5",
+        "pdf_page": 10,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "text_anchor_matched": true,
+        "semantic_scope_checked_by": "inherited_GPT"
+      },
+      {
+        "claim_id": "C6",
+        "pdf_page": 13,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "text_anchor_matched": true,
+        "semantic_scope_checked_by": "inherited_GPT"
+      },
+      {
+        "claim_id": "C7",
+        "pdf_page": 13,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "text_anchor_matched": true,
+        "semantic_scope_checked_by": "inherited_GPT"
+      },
+      {
+        "claim_id": "C8",
+        "pdf_page": 14,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "text_anchor_matched": true,
+        "semantic_scope_checked_by": "inherited_GPT"
+      },
+      {
+        "claim_id": "C9",
+        "pdf_page": 9,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "text_anchor_matched": true,
+        "semantic_scope_checked_by": "inherited_GPT"
+      },
+      {
+        "claim_id": "C10",
+        "pdf_page": 17,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "text_anchor_matched": true,
+        "semantic_scope_checked_by": "inherited_GPT"
+      }
+    ],
+    "model_findings": [
+      {
+        "claim_id": "C6",
+        "issue": "结果将1.24/2.6/5.5°定义为滚动均值标准差，讨论和Table 1称mean error。",
+        "suggested_correction": "保留结果指标定义，并人工检查数据及计算代码。",
+        "pdf_page": 15,
+        "resolved": false
+      },
+      {
+        "claim_id": "C2",
+        "issue": "正文写时差高斯SD40 ms；方法、图6图注为40 µs。",
+        "suggested_correction": "按方法和图注40 µs提取，同时保留来源冲突。",
+        "pdf_page": 10,
+        "resolved": false
+      },
+      {
+        "claim_id": "C3",
+        "issue": "τfac在方法不同段落写68/320 µs或63/315 µs。",
+        "suggested_correction": "不擅自统一；需核对配置代码和补充材料。",
+        "pdf_page": 7,
+        "resolved": false
+      },
+      {
+        "claim_id": "C10",
+        "issue": "约1 W来自组件资料汇总，没有整机功耗实测。",
+        "suggested_correction": "标为预算并说明排除的机械/外围。",
+        "pdf_page": 17,
+        "resolved": true
+      },
+      {
+        "claim_id": "C9",
+        "issue": "中心滤波缺少有无对照的量化证据。",
+        "suggested_correction": "保持设计命题，不提为因果已证实。",
+        "pdf_page": 9,
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T07:04:49.056Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "a1cc930e88b198f51286998b2315721538bf4dfd508f568896fcf391cb862645",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

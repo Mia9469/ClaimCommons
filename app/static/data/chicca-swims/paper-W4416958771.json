@@ -1,0 +1,1092 @@
+{
+  "document_type": "preprint",
+  "coverage": {
+    "results_sections_seen": [
+      "2.1 Model",
+      "2.2 Circuit blocks and current scaling",
+      "2.3 Theory/tuning",
+      "3.1 Setup",
+      "3.2.1–3.2.4 Measurements/power/mismatch",
+      "3.3 Temperature",
+      "4 Discussion",
+      "5 Conclusions",
+      "Appendices A–C; Tables 1–3; Figures 1–14; References"
+    ],
+    "missing_material": [
+      "全部图像像素未提供。",
+      "未给模型/仿真实现、原型热循环次数及观察时长；数据可用声明仅指文章内容。",
+      "期刊正式发表版本未在本次来源中。"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "23页来源为2026-04-08修订预印本，初稿2025-11-30；导入元数据为2026期刊记录，不替换来源版本。",
+      "已完整评估附录A尺寸、B偏置与C证明。",
+      "摘要/结论能耗措辞宽于3.2.3，严格标记SPICE估计及修订设计。",
+      "附录C有唯一性推论不足和式15单调方向疑点，未做独立证明或科学复现。"
+    ],
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "电流模式混合反馈架构、失活和原型",
+      "role": "result",
+      "source_pages": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        10,
+        18,
+        19
+      ],
+      "decision": "include",
+      "reason": "设计、模拟消融和原型实现分开。"
+    },
+    {
+      "summary": "稳态调参、sigmoid论证及电流缩放",
+      "role": "theoretical_result",
+      "source_pages": [
+        8,
+        9,
+        19,
+        20
+      ],
+      "decision": "include",
+      "reason": "条件性理论分析，保留证明疑点。"
+    },
+    {
+      "summary": "输入响应、单偏置调节及瞬态burst",
+      "role": "measured_result",
+      "source_pages": [
+        2,
+        11,
+        12
+      ],
+      "decision": "include",
+      "reason": "芯片定性结果，不冒充完整任务性能。"
+    },
+    {
+      "summary": "能耗与失配优化",
+      "role": "simulation_result",
+      "source_pages": [
+        12,
+        13,
+        18,
+        19
+      ],
+      "decision": "include",
+      "reason": "未在修订实物验证；模式保留与活动产率分开。"
+    },
+    {
+      "summary": "温区模式稳定与测试期无漂移",
+      "role": "measured_result",
+      "source_pages": [
+        13,
+        14
+      ],
+      "decision": "include",
+      "reason": "频率/形态变化和未知测试范围明确。"
+    },
+    {
+      "summary": "面积成本与后续网络/闭环调节",
+      "role": "design/future",
+      "source_pages": [
+        15,
+        16,
+        17,
+        18
+      ],
+      "decision": "include",
+      "reason": "保留已报告布局成本，后续网络实现不作为已完成。"
+    },
+    {
+      "summary": "全面网络鲁棒性、自动闭环补偿和实测能耗",
+      "role": "future_work",
+      "source_pages": [
+        16,
+        17
+      ],
+      "decision": "defer",
+      "reason": "明确下一芯片/未来实验内容。"
+    },
+    {
+      "summary": "优于所有生物/人工模型、引文生物现象与跨论文效率比较",
+      "role": "背景或解释",
+      "source_pages": [
+        1,
+        2,
+        15,
+        21,
+        22,
+        23
+      ],
+      "decision": "exclude",
+      "reason": "不是本研究独立新测量，比较边界不同。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "本文提出电流模式混合反馈神经元，以三个DPI滤波状态实现快、慢、超慢时间尺度，两个sigmoid提供快/慢正反馈，慢和超慢负反馈保持线性；180 nm原型包含16个神经元，共用外部产生的12个偏置电压。",
+      "claim_type": "circuit_architecture",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "电路架构和原型实现",
+          "design": "X-FAB 180 nm、外部12-bit DAC、复用读出",
+          "comparator": "先前电压模式混合反馈",
+          "measure": "状态/反馈结构及原型配置",
+          "unit_of_analysis": "芯片设计",
+          "sample_size_as_reported": "16神经元；一测试芯片",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "2.1–2.2；3.1",
+            "figure": "Figures 2,4,5,8,9; full schematic page 18",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "实现可调连续时间混合反馈。",
+        "boundary": "原型未优化失配且逐一选择电流输出。",
+        "negative_result": null,
+        "non_inference": "不等于已集成网络、学习系统或完整AER通信。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "少量电流模式模块如何构成可调神经元？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "本文模型用慢电流削减快正反馈增益、超慢电流削减慢正反馈增益；所示有/无失活比较仿真中，加入失活缩短脉冲和burst持续时间，但未直接报告失活单独造成的实测节能量。",
+      "claim_type": "simulation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "模型仿真消融",
+          "design": "IGf=IGf,0−Is；IGs=IGs,0−Iu",
+          "comparator": "不含失活的同模型",
+          "measure": "脉冲/burst时间范围",
+          "unit_of_analysis": "模型条件",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "2.1",
+            "figure": "Figure 3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "模拟中缩短发放事件。",
+        "boundary": "只展示轨迹，未提供效应统计或功率消融。",
+        "negative_result": null,
+        "non_inference": "不能将设计动机当作单独实测节能机制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "正反馈失活如何改变事件持续时间？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "在τf≪τs≪τu、滤波增益均为1且忽略失活的近稳态分析下，本文用快/慢/超慢输出–输入曲线的斜率和双稳区相对位置选择tonic spiking或bursting；慢阈值先于快阈值时模型可以产生bursting。",
+      "claim_type": "theoretical_analysis",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "分层近稳态推导",
+          "design": "时间尺度分离、Gf=Gs=Gu=1、忽略失活",
+          "comparator": "不同正反馈参数",
+          "measure": "双稳阈值与模型发放模式",
+          "unit_of_analysis": "简化动力系统",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "2.3",
+            "figure": "Figure 7 on page 9",
+            "equation": "Equations 5–6",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "给出DC特征驱动的调参方法。",
+        "boundary": "依赖上述近似；不是任意参数的全局稳定性定理。",
+        "negative_result": null,
+        "non_inference": "不能从曲线局部斜率推断完整网络的全局鲁棒性。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "稳态曲线如何预测发放模式？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "本文附录C在亚阈值MOS模型、忽略沟道长度调制且Q6饱和等假设下，主张电流sigmoid具有单值且递增输入–输出；但所供证明以两边均递增推出唯一解，且Vin与Iin的文字单调关系与式15相反，故该理论保证仍需人工核查。",
+      "claim_type": "theoretical_result_as_reported",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "器件方程和隐式解论证",
+          "design": "式7–20；饱和及亚阈值近似",
+          "comparator": "不同输入电流",
+          "measure": "单值性与单调性",
+          "unit_of_analysis": "电路静态方程",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 20,
+            "section": "Appendix C",
+            "figure": "Figure 5 on page 7",
+            "equation": "Equations 7–20",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者给出sigmoid形状与可调阈值/范围/饱和的分析。",
+        "boundary": "证明文本存在推论不足和符号方向疑点。",
+        "negative_result": null,
+        "non_inference": "未完成独立数学验证，不把主张升为已证正确。",
+        "unresolved": "隐式方程唯一性与单调方向的严谨推导。",
+        "unresolved_attribution": "第19–20页内部推理与式15关系不一致。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "附录方程是否充分保证sigmoid单值单调？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "proof_gap",
+          "source_internal_inconsistency"
+        ]
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "本文电流模式模型预测：在亚阈值且所有偏置电流统一缩放时，反馈相对阈值和定性发放模式保持；时间尺度会改变，且正文称快sigmoid基准约7 µA以上进入中等反型后偏离缩放预测。",
+      "claim_type": "theoretical_scaling",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "电流缩放与近稳态结构分析",
+          "design": "统一缩放、保持弱反型",
+          "comparator": "不同电流尺度",
+          "measure": "定性模式和阈值相对位置",
+          "unit_of_analysis": "模型与器件工作区",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Current-scale invariance；2.3",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提供电流尺度调节的条件性依据。",
+        "boundary": "7 µA为所用180 nm技术的正文范围描述，未给完整扫描。",
+        "negative_result": null,
+        "non_inference": "不是绝对频率/功耗不变，也不能跨工艺无条件推广。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "电流统一缩放保持哪些动力学特征？"
+      ],
+      "shared_evidence_with": [
+        "C10",
+        "C11",
+        "C12"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "本文180 nm原型的测量中，增加外加电流使tonic spiking或bursting活动频率增加；在bursting配置下较大输入会令burst重叠并转为快spiking。",
+      "claim_type": "measured_silicon_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "芯片电流响应测量",
+          "design": "室温、1.8 V、不同神经元偏置",
+          "comparator": "递增输入电流",
+          "measure": "发放和burst频率、模式变化",
+          "unit_of_analysis": "单神经元轨迹",
+          "sample_size_as_reported": "16单元原型；本图具体独立重复数未报",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "3.2.1",
+            "figure": "Figure 10",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "测得输入依赖发放和模式变化。",
+        "boundary": "作者说明不同神经元需特定偏置，定量同偏置失配未实测。",
+        "negative_result": null,
+        "non_inference": "不能推断所有单元同参数一致或生物输入机制被证明。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "输入强度怎样改变原型发放？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "本文在输入电流固定时仅增加慢正反馈增益偏置IGs,0，使实物神经元从tonic spiking平滑转向tonic bursting，burst内脉冲数随偏置增加，展示单偏置调节发放模式。",
+      "claim_type": "measured_silicon_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "单偏置扫描测量",
+          "design": "输入不变、慢正反馈增益增加",
+          "comparator": "不同IGs,0",
+          "measure": "模式和burst内脉冲数",
+          "unit_of_analysis": "原型神经元轨迹",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "3.2.2",
+            "figure": "Figure 11",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "单偏置可调节spiking/bursting。",
+        "boundary": "仅示例和定性多次试验，未给统计重复数。",
+        "negative_result": null,
+        "non_inference": "不证明神经递质机制相同或完成闭环自动适应。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "慢正反馈偏置能否独立调节发放模式？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "本文图1对同一步进电流展示实物神经元在不同单偏置条件下分别产生慢tonic spiking或一次瞬态burst；作者将其分别解释为频率编码与变化唤醒，但没有测量任务级编码效益。",
+      "claim_type": "measured_silicon_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "相同输入、偏置切换的芯片记录",
+          "design": "相同输入阶跃",
+          "comparator": "两种偏置",
+          "measure": "持续发放或瞬态burst",
+          "unit_of_analysis": "神经元轨迹",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 2,
+            "section": "Introduction",
+            "figure": "Figure 1",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "同输入可出现不同时间响应。",
+        "boundary": "生物记录为引用Sherman；原型亚阈值整合更快。",
+        "negative_result": null,
+        "non_inference": "不能当作生物机制证明或任务性能增益。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "同输入下调节能否切换持续与瞬态响应？"
+      ],
+      "shared_evidence_with": [
+        "C7"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "本文失配优化后的修订电路SPICE仿真、1.8 V条件下，静息功率约3 nW；tonic spiking为217 pJ/spike（23 Hz）、101 pJ/spike（50 Hz）、41 pJ/spike（160 Hz），3-spike/burst且18 bursts/s时约90 pJ/spike。",
+      "claim_type": "simulated_power",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "SPICE能耗估计",
+          "design": "修订尺寸/布局，排除偏置、数字控制和输出",
+          "comparator": "不同模式和频率",
+          "measure": "静息功率及平均每spike能耗",
+          "unit_of_analysis": "仿真工作条件",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "3.2.3",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "模型估计神经元核心低功率运行。",
+        "boundary": "明确无法在共享原型上验证能耗；217超过摘要40–200范围。",
+        "negative_result": null,
+        "non_inference": "不能称硅片实测或系统级能耗，也不与每MAC直接比较。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "模式和频率怎样改变仿真每脉冲能耗？"
+      ],
+      "shared_evidence_with": [
+        "C15"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "simulation_not_measured",
+          "excluded_peripherals"
+        ]
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "本文优化设计的200点foundry Monte Carlo中，pA偏置的tonic firing产率约75–80%；名义spiking配置出现模式混合且频率CV约36%，名义bursting下bursting频率CV31%、转为spiking的频率CV38%。",
+      "claim_type": "mismatch_simulation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "foundry失配Monte Carlo",
+          "design": "修订设计、固定输入、Table 3 pA偏置",
+          "comparator": "理想名义模式",
+          "measure": "发放产率、模式与频率CV",
+          "unit_of_analysis": "仿真失配实例",
+          "sample_size_as_reported": "200点/参数条件",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "3.2.4",
+            "figure": "Figure 12",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "低电流运行存在显著失配敏感性。",
+        "boundary": "不是原型200个实测神经元；发放产率不等于目标模式产率。",
+        "negative_result": "约20–25%实例不tonic firing，且活动实例可进入非目标模式。",
+        "non_inference": "不能将定性原型行为当作同偏置全阵列可靠性。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "超低电流下失配怎样影响模式和频率？"
+      ],
+      "shared_evidence_with": [
+        "C11",
+        "C12"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "simulation_not_silicon"
+        ]
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "本文将优化设计偏置电流统一提高1000倍到nA并调整输入以匹配频率后，200点Monte Carlo的名义spiking配置全部tonic firing且保持spiking，频率离散约11%，优于pA配置。",
+      "claim_type": "mismatch_simulation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Monte Carlo电流尺度比较",
+          "design": "1000倍偏置、输入重新调整",
+          "comparator": "pA配置",
+          "measure": "活动/模式产率、频率离散",
+          "unit_of_analysis": "仿真实例",
+          "sample_size_as_reported": "200点/条件",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "3.2.4",
+            "figure": "Figure 12",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "nA条件改善所述spiking鲁棒性。",
+        "boundary": "输入也调整；功率会增大。",
+        "negative_result": null,
+        "non_inference": "不是已制造修订芯片的100%良率。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "提高偏置能否改善spiking失配鲁棒性？"
+      ],
+      "shared_evidence_with": [
+        "C10",
+        "C5"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "simulation_not_silicon"
+        ]
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "本文nA偏置优化设计的名义bursting Monte Carlo中，200点均tonic firing，但约23%转为慢spiking；保留bursting者频率离散约11%，spiking者约9%（排除3个离群点），所以100%活动产率不是100%bursting保留。",
+      "claim_type": "mismatch_simulation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "模式分组失配分析",
+          "design": "1000倍偏置和频率匹配输入",
+          "comparator": "pA名义bursting",
+          "measure": "模式保留及频率离散",
+          "unit_of_analysis": "仿真实例",
+          "sample_size_as_reported": "200点；spiking离散排除3离群点",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "3.2.4",
+            "figure": "Figure 12",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "电流缩放改善活动与频率稳定性但仍有模式失败。",
+        "boundary": "图12分组47 spiking/153 bursting；正文约23%。",
+        "negative_result": "约23%未保持bursting。",
+        "non_inference": "不能宣称bursting目标模式产率100%。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "活动产率和目标bursting保留率是否一致？"
+      ],
+      "shared_evidence_with": [
+        "C10",
+        "C11",
+        "C5"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "simulation_not_silicon",
+          "regime_not_firing_yield"
+        ]
+      }
+    },
+    {
+      "id": "C13",
+      "statement": "本文在偏置电压保持不变的5–45 °C气候箱实验中，两代表神经元分别保持spiking或bursting模式，而频率约从0.5 Hz升至25 Hz；burst内脉冲数从低温四个降至高温两个，说明定性模式稳定但频率与burst形态并非温度不变。",
+      "claim_type": "measured_temperature_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "气候箱温变测量",
+          "design": "监测DAC与温度稳定、固定偏置电压",
+          "comparator": "5–45 °C",
+          "measure": "spiking/interburst频率、burst内脉冲数",
+          "unit_of_analysis": "原型神经元温度轨迹",
+          "sample_size_as_reported": "两个代表神经元；试验次数未报",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 14,
+            "section": "3.3",
+            "figure": "Figure 13",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "温区内保留定性可激发模式。",
+        "boundary": "仅两代表单元；热循环数和漂移观察时长未报。",
+        "negative_result": null,
+        "non_inference": "不能称频率不变、工业全温区可靠或已验证长期寿命。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "温度改变时哪些发放性质保持？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C14",
+      "statement": "本文在反复升降温和不同偏置/试验中报告未观察到退化或漂移，但未给循环次数、观察时长和定量漂移限；该证据仅支持所观察测试期间的定性重复性。",
+      "claim_type": "measured_stability_report",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "重复热循环的正文报告",
+          "design": "多次试验与偏置条件",
+          "comparator": "同测试期间前后",
+          "measure": "是否观察漂移/退化",
+          "unit_of_analysis": "原型测试周期",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 14,
+            "section": "3.3",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "测试期间未报告漂移。",
+        "boundary": "时长和重复数量未知。",
+        "negative_result": null,
+        "non_inference": "不能当作长期稳定性或耐久寿命定量保证。",
+        "unresolved": "重复次数和长期观察范围。",
+        "unresolved_attribution": "正文未给定量测试范围。"
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "所报告温度重复性覆盖多久、多少循环？"
+      ],
+      "shared_evidence_with": [
+        "C13"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C15",
+      "statement": "本文报告神经元布局面积约3800 µm²，主要由快/慢/超慢DPI电容占用；附录修订设计的电容为0.5/2/8 pF，反映生物相关时间尺度与集成密度的面积取舍，缩容和先进节点仅列为后续方案。",
+      "claim_type": "layout_design_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "电路尺寸表和面积讨论",
+          "design": "失配优化修订布局",
+          "comparator": "更紧凑但复杂的候选积分技术",
+          "measure": "电容和报告布局面积",
+          "unit_of_analysis": "设计布局",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 18,
+            "section": "Appendix A；Discussion 4.1见页15",
+            "figure": "Table 2; Figure 14",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "给出时间尺度的硬件面积成本。",
+        "boundary": "Table 2不是原型全部3 µm×300 nm尺寸；不能混用。",
+        "negative_result": null,
+        "non_inference": "不能据工艺缩放推断面积同比下降或方案已实测。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "多时间尺度电容给集成密度带来何种成本？"
+      ],
+      "shared_evidence_with": [
+        "C9"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "revised_design_not_prototype"
+        ]
+      }
+    }
+  ],
+  "reading_summary": "修订预印本给出可调电流模式混合反馈神经元，180 nm原型实测支持输入调节、单偏置发放模式切换及5–45 °C定性模式保持。能耗和改进失配均为修订设计仿真，nA下100%活动不等于100%bursting保留。附录sigmoid证明有需人工核查的推理/符号问题。",
+  "shared_evidence": [
+    {
+      "id": "SE1",
+      "claim_ids": [
+        "C1",
+        "C6",
+        "C7",
+        "C8",
+        "C13",
+        "C14"
+      ],
+      "source_pages": [
+        2,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "description": "同16单元初版原型；定性试验与代表神经元并非独立制造重复。",
+      "independence": "同原型"
+    },
+    {
+      "id": "SE2",
+      "claim_ids": [
+        "C5",
+        "C9",
+        "C10",
+        "C11",
+        "C12",
+        "C15"
+      ],
+      "source_pages": [
+        8,
+        12,
+        13,
+        18,
+        19
+      ],
+      "description": "失配优化后的修订电路仿真/设计，未制造；不能同初版硅片测量混合。",
+      "independence": "共享模型/修订设计"
+    }
+  ],
+  "audit": {
+    "source_match_checks": [
+      {
+        "check": "identity/version/coverage",
+        "status": "completed",
+        "details": "23页含全部附录；来源是修订预印本而导入身份指期刊。"
+      },
+      {
+        "check": "second_source_check",
+        "status": "completed",
+        "details": "逐项核对实测/修订仿真、能耗排除项、200点与活动/模式产率、温度范围和附录C论证。"
+      }
+    ],
+    "model_findings": [
+      {
+        "claim_id": "C9",
+        "issue": "摘要及结论能耗措辞可能被误读为实测，3.2.3明确不可实测验证。",
+        "pdf_page": 12,
+        "resolved": true,
+        "suggested_correction": "仅记录仿真核心能耗。"
+      },
+      {
+        "claim_id": "C12",
+        "issue": "100% firing yield不等于100%bursting模式保留。",
+        "pdf_page": 13,
+        "resolved": true,
+        "suggested_correction": "约23%模式变化列实际负结果。"
+      },
+      {
+        "claim_id": "C4",
+        "issue": "附录由两边递增推唯一解不充分；式15给Vin随Iin减小，文字却称增加。",
+        "pdf_page": 20,
+        "resolved": false,
+        "suggested_correction": "人工重推隐式关系，不能仅依赖此证明。"
+      },
+      {
+        "claim_id": "C14",
+        "issue": "长期稳定性没有给热循环数或时长。",
+        "pdf_page": 14,
+        "resolved": false,
+        "suggested_correction": "请求测试范围。"
+      }
+    ],
+    "needs_human_review": true
+  },
+  "format": "claim-commons-pdf-v1",
+  "paper": {
+    "title": "A neuromodulable current-mode silicon neuron for robust and adaptive neuromorphic systems",
+    "authors": [
+      "Loris Mendolia",
+      "Chenxi Wen",
+      "Elisabetta Chicca",
+      "Giacomo Indiveri",
+      "Rodolphe J. Sepulchre",
+      "Jean‐Michel Redouté",
+      "Alessio Franci"
+    ],
+    "doi": "10.1088/2634-4386/aeaf14",
+    "publication_year": 2026,
+    "venue": "Neuromorphic Computing and Engineering",
+    "url": "https://doi.org/10.1088/2634-4386/aeaf14"
+  },
+  "source": {
+    "filename": "paper-W4416958771.pdf",
+    "sha256": "a4637e6b9d33baf17f61c82bf406638f86cb2279773d9d5fdfba37fba5247be9",
+    "source_url": "https://arxiv.org/pdf/2512.01133",
+    "pdf_page_count": 23
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T07:00:01.848Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "a4637e6b9d33baf17f61c82bf406638f86cb2279773d9d5fdfba37fba5247be9",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

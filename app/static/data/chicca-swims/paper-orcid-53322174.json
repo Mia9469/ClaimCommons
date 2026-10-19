@@ -1,0 +1,458 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "correction",
+  "paper": {
+    "title": "Corrigendum: Large-Scale Neuromorphic Spiking Array Processors: A Quest to Mimic the Brain",
+    "authors": [
+      "Chetan Singh Thakur",
+      "Jamal Lottier Molin",
+      "Gert Cauwenberghs",
+      "Giacomo Indiveri",
+      "Kundan Kumar",
+      "Ning Qiao",
+      "Johannes Schemmel",
+      "Runchun Wang",
+      "Elisabetta Chicca",
+      "Jennifer Olson Hasler",
+      "Jae-sun Seo",
+      "Shimeng Yu",
+      "Yu Cao",
+      "André van Schaik",
+      "Ralph Etienne-Cummings"
+    ],
+    "doi": "10.3389/fnins.2018.00991",
+    "publication_year": 2019,
+    "venue": "Frontiers in Neuroscience",
+    "url": "https://pub.uni-bielefeld.de/publication/2933297"
+  },
+  "source": {
+    "filename": "paper-orcid-53322174.pdf",
+    "sha256": "db9f9bb9b73f2d28398572365733ea801e166e6b514d15bd3e0b82369d402002",
+    "source_url": "https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2018.00991/pdf",
+    "pdf_page_count": 2
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2
+    ],
+    "results_sections_seen": [
+      "更正正文",
+      "TABLE 5 | Comparison of event-based neural processors及脚注"
+    ],
+    "missing_material": [
+      "被更正的2018年原文及其证据来源未提供"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "实际文档为2019年1月7日发表的更正，标题、作者和DOI与元数据一致。",
+      "已评估全部所供文字、比较表及脚注；没有图像像素或补充材料。",
+      "表5重列的其他参数不构成本更正的新实验结果。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "将Transistor-Channel的每神经元面积由4 cm²更正为空缺。",
+      "role": "correction",
+      "source_pages": [
+        1,
+        2
+      ],
+      "decision": "include",
+      "reason": "明确、可独立核查的数值字段更正。"
+    },
+    {
+      "summary": "将TrueNorth的突触可塑性由STDP更正为No Plasticity。",
+      "role": "correction",
+      "source_pages": [
+        1,
+        2
+      ],
+      "decision": "include",
+      "reason": "明确、可独立核查的功能分类更正。"
+    },
+    {
+      "summary": "为Loihi的0.4 mm²面积添加脚注，说明其对应含1,024个神经单元的神经突触核心。",
+      "role": "correction",
+      "source_pages": [
+        1,
+        2
+      ],
+      "decision": "include",
+      "reason": "明确面积指标的实际单位，具有独立的解释意义。"
+    },
+    {
+      "summary": "作者声明更正不改变原文科学结论，原文已更新。",
+      "role": "作者声明及出版状态",
+      "source_pages": [
+        1
+      ],
+      "decision": "exclude",
+      "reason": "不是新增科学结果；缺少原文，无法独立审核结论是否受影响。"
+    },
+    {
+      "summary": "表5重列11种事件驱动神经处理器的技术、规模、面积、能耗及可塑性参数。",
+      "role": "比较表重列",
+      "source_pages": [
+        2
+      ],
+      "decision": "exclude",
+      "reason": "除三项明确更正外，未提供新的比较分析、测量或验证。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "本更正将表5中Transistor-Channel处理器的每神经元面积由4 cm²改为空缺，该表因此不再提供其每神经元面积数值。",
+      "claim_type": "表格数值更正",
+      "role": "correction",
+      "evidence": [
+        {
+          "method": "核对更正正文与更正后表5",
+          "design": null,
+          "comparator": "原表所列4 cm²",
+          "measure": "每神经元面积字段由4 cm²改为破折号，正文说明为空缺",
+          "unit_of_analysis": "Transistor-Channel的每神经元面积表格字段",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 1,
+            "section": "更正正文",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "读取更正后比较表",
+          "design": null,
+          "comparator": null,
+          "measure": "Area per neuron列为破折号",
+          "unit_of_analysis": "Transistor-Channel表格行",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 2,
+            "section": "Table 5",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "原面积数值被撤回，改为空缺。",
+        "boundary": "仅确认表5字段的更正，没有新的面积测量。",
+        "negative_result": null,
+        "non_inference": "空缺不表示面积为零，不能据此比较面积效率。",
+        "unresolved": "实际每神经元面积未报告。",
+        "unresolved_attribution": "更正文档未提供替代面积值或计算依据。"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "Transistor-Channel处理器的每神经元面积是多少？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C3"
+      ],
+      "review_notes": [
+        "正文与表格是同一次更正的两个定位点，不是独立重复验证。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "本更正将表5中TrueNorth处理器的突触可塑性由STDP改为No Plasticity，撤销原表对其支持STDP的标注。",
+      "claim_type": "处理器功能分类更正",
+      "role": "correction",
+      "evidence": [
+        {
+          "method": "核对更正正文与更正后表5",
+          "design": null,
+          "comparator": "原表的STDP分类",
+          "measure": "突触可塑性分类改为No Plasticity",
+          "unit_of_analysis": "TrueNorth的突触可塑性表格字段",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 1,
+            "section": "更正正文",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "读取更正后比较表",
+          "design": null,
+          "comparator": null,
+          "measure": "Synaptic plasticity列为No Plasticity",
+          "unit_of_analysis": "TrueNorth表格行",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 2,
+            "section": "Table 5",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "更正后的比较表将TrueNorth归类为无突触可塑性。",
+        "boundary": "该证据是分类更正，没有提供功能测试或架构论证。",
+        "negative_result": null,
+        "non_inference": "不能据此排除外部训练或学习相关用途。",
+        "unresolved": "更正分类的具体技术依据未展开。",
+        "unresolved_attribution": "所供文本未提供相关架构说明或实验。"
+      },
+      "broad_directions": [
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "TrueNorth处理器是否支持突触可塑性及STDP？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C3"
+      ],
+      "review_notes": [
+        "No Plasticity是更正后的分类，不是本文实验得到的阴性结果。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "本更正为表5中Loihi的0.4 mm²面积值添加脚注，明确该值对应神经突触核心面积，每核心实现1,024个神经单元，不能直接解释为单个神经元面积。",
+      "claim_type": "面积指标单位更正",
+      "role": "correction",
+      "evidence": [
+        {
+          "method": "读取正文中的面积标注更正",
+          "design": null,
+          "comparator": "原表无脚注的0.4 mm²",
+          "measure": "0.4 mm²面积值新增脚注标记",
+          "unit_of_analysis": "Loihi面积表格字段",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 1,
+            "section": "更正正文",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "联合读取表5面积值及脚注",
+          "design": null,
+          "comparator": null,
+          "measure": "核心面积0.4 mm²，每核心实现1,024个神经单元",
+          "unit_of_analysis": "神经突触核心",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 2,
+            "section": "Table 5及面积脚注",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "脚注明确面积值对应核心，并给出每核心的神经单元容量。",
+        "boundary": "1,024是每核心实现的神经单元数，不是独立样本数或实验重复数。",
+        "negative_result": null,
+        "non_inference": "不能将0.4 mm²直接与其他处理器的每神经元面积作同单位比较；本文未提供面积分摊方法。",
+        "unresolved": "可比的每神经元面积及核心面积构成未在本更正中说明。",
+        "unresolved_attribution": "所供文本仅补充核心面积脚注，没有进一步分析。"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "Loihi的0.4 mm²面积指标对应什么硬件单位及神经单元容量？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2"
+      ],
+      "review_notes": [
+        "表头仍为Area per neuron，实际单位需依据脚注识别。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "第二次核对全部两页文字、表5及脚注，确认这是与身份元数据一致的2019年更正。保留三项独立更正：撤回Transistor-Channel面积值、修正TrueNorth可塑性分类、明确Loihi面积的核心单位及容量。共享正文和表格不构成独立验证；本文没有新增实验。原文未提供，无法核查作者关于科学结论不变的声明。",
+  "shared_evidence": [
+    {
+      "claim_id": "C1",
+      "with": [
+        "C2",
+        "C3"
+      ]
+    },
+    {
+      "claim_id": "C2",
+      "with": [
+        "C1",
+        "C3"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C1",
+        "C2"
+      ]
+    }
+  ],
+  "audit": {
+    "initial_source_match_checks": [],
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": null,
+        "issue": "元数据work_type为journal-article，实际文档明确标为CORRECTION。",
+        "suggested_correction": "保留身份一致判断，将document_type设为correction。",
+        "pdf_page": 1,
+        "resolved": true
+      },
+      {
+        "claim_id": "C3",
+        "issue": "Loihi面积所在列表头为每神经元面积，但脚注明确其对应核心面积。",
+        "suggested_correction": "以神经突触核心作为实际分析单位，保留表头与脚注的口径差异。",
+        "pdf_page": 2,
+        "resolved": true
+      },
+      {
+        "claim_id": "C3",
+        "issue": "每核心1,024个神经单元可能被误当作样本量。",
+        "suggested_correction": "作为架构容量记录，sample_size_as_reported保持null。",
+        "pdf_page": 2,
+        "resolved": true
+      },
+      {
+        "claim_id": "C2",
+        "issue": "No Plasticity分类不能被写成本文实验验证的阴性结果。",
+        "suggested_correction": "保留correction角色，negative_result设为null。",
+        "pdf_page": 1,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "草稿包含请求schema之外的source_check及review字段，其检查状态没有所供文本依据。",
+        "suggested_correction": "删除这些字段，仅保留来源定位与文字审核说明。",
+        "pdf_page": null,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "作者声称更正不改变原文结论，但原文及证据未提供，无法独立核查。",
+        "suggested_correction": "仅记录为作者声明并排除出科学更正命题，保留原文缺失的范围限制。",
+        "pdf_page": 1,
+        "resolved": false
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T04:55:29.642609Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "signed_in_chatgpt_codex",
+    "authentication": "existing_ChatGPT_login",
+    "provider_api_key_used": false,
+    "model": "account_default_GPT",
+    "source_sha256": "db9f9bb9b73f2d28398572365733ea801e166e6b514d15bd3e0b82369d402002",
+    "requests": [
+      {
+        "phase": "extraction",
+        "seconds": 54.2,
+        "usage": {
+          "input_tokens": 15180,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2631,
+          "reasoning_output_tokens": 0
+        },
+        "backend": "signed_in_chatgpt_codex",
+        "tools_used": false
+      },
+      {
+        "phase": "source_audit",
+        "seconds": 62.94,
+        "usage": {
+          "input_tokens": 17800,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2935,
+          "reasoning_output_tokens": 0
+        },
+        "backend": "signed_in_chatgpt_codex",
+        "tools_used": false
+      }
+    ],
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

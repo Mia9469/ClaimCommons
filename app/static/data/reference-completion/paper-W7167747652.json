@@ -1,0 +1,1725 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "preprint",
+  "paper": {
+    "title": "Shunting Inhibition and Dendritic Branching Shape Local Credit Assignment",
+    "authors": [
+      "Houman Safaai",
+      "Maceo Richards",
+      "Bernardo L. Sabatini"
+    ],
+    "doi": null,
+    "publication_year": 2026,
+    "venue": "arXiv (Cornell University)",
+    "url": "https://arxiv.org/pdf/2607.03556"
+  },
+  "source": {
+    "filename": "paper-W7167747652--Shunting-Inhibition-and-Dendritic-Branching-Shape-Local-Credit-Assignment.pdf",
+    "sha256": "13bf835eac65fb5aafd556fcb155c165152744321824dd438cc3d670dc1a4f9f",
+    "source_url": "https://arxiv.org/pdf/2607.03556",
+    "pdf_page_count": 42
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42
+    ],
+    "results_sections_seen": [
+      "Theorem1、Corollary1、Propositions1/2",
+      "Local Rules3F/4F/5F",
+      "Experiments全部主图",
+      "Appendix A.1–A.16全部diagnostics/controls",
+      "Tables S1–S27与Figures S1–S12",
+      "Appendix B完整implementation及Algorithm1",
+      "Appendix C.1–C.4（Proposition3）",
+      "Appendix D.1–D.3及末页cue routing"
+    ],
+    "missing_material": [
+      "图像像素",
+      "accompanying source package及原始checkpoint/trial记录",
+      "生物validation实验"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "全部42页，包括所有附录证明、表格、图注及protocol均评估。",
+      "arXiv v2 actual source，steady-state passive tree与人工任务。",
+      "main5 seeds、部分3/15seed及one-seed profile分别保留，未按batch/区室/tensor扩大独立n。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "在稳态非负conductance rooted dendritic tree、每区室到soma只有唯一父路径且可微reactivation的联合假设下，精确synaptic gradient可分解为本地eligibility x·Rtotal·(E−V)与compartment error；后者为soma voltage error乘沿唯一路径的conductance及reactivation derivative乘积。",
+      "role": "result",
+      "source_pages": [
+        5
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "固定dendritic coupling时，在某祖先compartment增加非负inhibitory conductance会按gtotal/(gtotal+ΔGI)乘积衰减其后代conductance-only path gains；不经该祖先的路径不受此项影响。",
+      "role": "result",
+      "source_pages": [
+        5
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "若z=logαcond、β为附加inhibition的路径衰减，则log-gain variance降低当且仅当Cov(z,β)>Var(β)/2；因此shunting并非无条件压缩path-gain场。",
+      "role": "result",
+      "source_pages": [
+        39
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "对单example、单soma/tree且提供exact layer-soma error、两个gradient非零、path gains非负时，3F ancestry-shared gradient与exact gradient的cosine为1/sqrt(1+CVw(αeffective)^2)，权重由eligibility平方确定。",
+      "role": "result",
+      "source_pages": [
+        39
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "作者的exact factorization重建与autograd梯度在数值精度内一致，包括softplus参数变换、masks及reactivation坐标转换；该检查支持定理与实施对应而非生物验证。",
+      "role": "result",
+      "source_pages": [
+        3
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "主5F matched-width/scalar-fallback条件的shunting LocalCA在MNIST、Fashion-MNIST和figure-ground MNIST分别约91.1%、83.8%、80.3%，比matched shunting BP约低6.0、5.1、5.8个百分点。",
+      "role": "result",
+      "source_pages": [
+        18
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "初始3 paired checkpoints中shunting branch gradient方向优于additive，但独立5-seed operational重复未重现可靠方向排序；whole-model cosine还会受exact-aligned soma block能量分配误导。",
+      "role": "result",
+      "source_pages": [
+        20
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "15 paired seeds的3F initialization factorial中，analytical initialization下shunting与additive准确率均90.92%；occupancy-calibrated初始化下additive高约0.67个百分点，表明cross-core方向依初始化policy。",
+      "role": "result",
+      "source_pages": [
+        17
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "exact path-transport oracle供给compartment error时，3F和5F在shunting MNIST都约97.1–97.2%，接近matched BP97.03%；local或backprop decoder更新没有明显额外收益。",
+      "role": "result",
+      "source_pages": [
+        17
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "在每个core内部将scalar fallback换为每neuron一个soma coordinate共享其13个tree compartments的反馈，15 paired seeds全部提升MNIST 3F accuracy：shunting+6.40、additive+5.56个百分点。",
+      "role": "result",
+      "source_pages": [
+        17
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "训练后去掉、打乱或用均值替换learned inhibitory field会使所测模型性能崩溃：MNIST约90.4%降至19.8–26.4%，noise约80.5%降至10.3–19.3%，支持field的sample-dependent forward功能。",
+      "role": "result",
+      "source_pages": [
+        28
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "固定forward voltages、derivatives、couplings、soma errors和eligibility，仅去除backward parent-resistance的inhibitory load时，distal gains上升但credit方向基本不变；所测高inhibition noise条件也为此负结果。",
+      "role": "result",
+      "source_pages": [
+        21
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "noise task增加随机feedback rank或递归path信息可部分接近oracle，但不总单调；cue-routing中最佳unstructured rank2约84.6%优于structured pathway-vector约81.5%，后者没有解决structured feedback缺口。",
+      "role": "result",
+      "source_pages": [
+        30
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "flattened CIFAR-10紧凑模型中shunting MW LocalCA约29.7%，rank4约35.0%，transport oracle约47.2%接近BP49.5%；去掉learned I-to-E降低表现，additive gain/normalization控制未恢复MW缺口。",
+      "role": "result",
+      "source_pages": [
+        26
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "独立stress设置中随dendritic depth从1增至4，shunting local准确率63.5%到57.4%，additive54.9%到29.7%；broadcast-noise扰动下shunting在σ≤0.1较稳，additive在σ=1到chance。",
+      "role": "result",
+      "source_pages": [
+        41
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "one-feedforward-layer noise probe中显式inhibitory cells的path-transport LocalCA约94.2%，冻结I-cell dendrite更新约93.8%，接近相应BP95.1%；这说明该扩展模型可产生有用inhibitory场，不等于生物验证。",
+      "role": "result",
+      "source_pages": [
+        28
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "同一shunting checkpoint family的matched rule对照中，5F描述性准确率91.19%，3F89.90%、4F90.05%；clamp和EMA小扫描保持约92%表现，支持5F为有限稳健性的经验preconditioner而非额外error channel。",
+      "role": "result",
+      "source_pages": [
+        17
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "figure-ground MNIST中适度HSIC auxiliary weight0.01–0.1改善LocalCA，main与heldout seed对照均显示weight0.01较0更高；该auxiliary objective不属于conductance-factorization定理。",
+      "role": "result",
+      "source_pages": [
+        24
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "作者的one-seed matched current-code profile没有速度或内存优势：LocalCA190 s、BP125 s，峰值CUDA allocation均1.70 GiB；hardware energy没有测量。",
+      "role": "result",
+      "source_pages": [
+        34
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "模型提出focal conductance扰动应优先影响其descendant synapses的teaching/plasticity、高resistance枝条受影响更大，以及route-specific任务需比global scalar更丰富反馈的可检验生物预测。",
+      "role": "hypothesis",
+      "source_pages": [
+        30
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "forward fixed-state factor replacements、norm-matched one-step和activation occupancy",
+      "role": "control",
+      "source_pages": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "decision": "include",
+      "reason": "no reliable core ordering；hybrid不代表新物理forward模型"
+    },
+    {
+      "summary": "unrestricted SVD及log covariance margin",
+      "role": "boundary",
+      "source_pages": [
+        16,
+        28,
+        29,
+        39
+      ],
+      "decision": "include",
+      "reason": "rank与field fidelity不同；margin没有正支持"
+    },
+    {
+      "summary": "morphology×inhibition grid",
+      "role": "boundary",
+      "source_pages": [
+        25,
+        27
+      ],
+      "decision": "include",
+      "reason": "10−6coupling floor；仅描述，不是causal morphology实验"
+    },
+    {
+      "summary": "其他学习方法比较与references",
+      "role": "background",
+      "source_pages": [
+        2,
+        11,
+        12,
+        13,
+        14
+      ],
+      "decision": "exclude",
+      "reason": "不产生自动support/contradiction/replication"
+    },
+    {
+      "summary": "Appendix B完整implementation、Algorithm1、hyperparameters及assets",
+      "role": "methods",
+      "source_pages": [
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38
+      ],
+      "decision": "include",
+      "reason": "完整评估未执行任何代码"
+    },
+    {
+      "summary": "Appendix C random-broadcast intuition",
+      "role": "hypothesis",
+      "source_pages": [
+        39
+      ],
+      "decision": "defer",
+      "reason": "直觉不作为独立convergence theorem"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "在稳态非负conductance rooted dendritic tree、每区室到soma只有唯一父路径且可微reactivation的联合假设下，精确synaptic gradient可分解为本地eligibility x·Rtotal·(E−V)与compartment error；后者为soma voltage error乘沿唯一路径的conductance及reactivation derivative乘积。",
+      "claim_type": "theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "解析chain-rule证明",
+          "design": "steady-state tree computation graph",
+          "comparator": "精确loss derivative",
+          "measure": "gradient factorization",
+          "unit_of_analysis": "数学对象，无样本数",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "每区室唯一parent及soma路径",
+            "稳态非spiking conductance方程，正leak与非负conductance/drive",
+            "reactivation可微，voltage/activation error坐标转换保留",
+            "参数变换softplus的chain derivative另计"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "Theorem 1 / Corollary 1",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在稳态非负conductance rooted dendritic tree、每区室到soma只有唯一父路径且可微reactivation的联合假设下，精确synaptic gradient可分解为本地eligibility x·Rtotal·(E−V)与compartment error；后者为soma voltage error乘沿唯一路径的conductance及reactivation derivative乘积。",
+        "boundary": "只覆盖conductance-stage参数；decoder、top-k、HSIC、router等不由此定理保证；无spiking/time/recurrent paths。",
+        "negative_result": null,
+        "non_inference": "不证明低带宽broadcast等于exact error或生物实现精确backprop。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "conductance、shunting与树形branching如何限制局部credit assignment及反馈可实现性？"
+      ],
+      "shared_evidence_with": [
+        "C20",
+        "C2"
+      ],
+      "review_notes": [
+        "第二轮来源审计保留joint theorem假设与voltage/activation坐标；区分seed、checkpoint、batch、parameter tensor与细胞。对negative/混合结果不省略，内部多图及oracle不称生物独立复制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "固定dendritic coupling时，在某祖先compartment增加非负inhibitory conductance会按gtotal/(gtotal+ΔGI)乘积衰减其后代conductance-only path gains；不经该祖先的路径不受此项影响。",
+      "claim_type": "theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "解析代数推导",
+          "design": "固定couplings的path-gain扰动",
+          "comparator": "增加前/后inhibition",
+          "measure": "αcond ratio与log derivative",
+          "unit_of_analysis": "数学路径，不是实验样本",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "只在祖先path compartments加ΔGI≥0",
+            "保持dendritic couplings及基准其他conductance项固定",
+            "αcond不含reactivation derivatives"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "Proposition 2",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "固定dendritic coupling时，在某祖先compartment增加非负inhibitory conductance会按gtotal/(gtotal+ΔGI)乘积衰减其后代conductance-only path gains；不经该祖先的路径不受此项影响。",
+        "boundary": "仅conductance-only gain及固定coupling；forward voltage和activation derivatives改变时，不能直接当有效gradient效应。",
+        "negative_result": null,
+        "non_inference": "衰减本身不证明gain compression、学习改善或生物必要性。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "conductance、shunting与树形branching如何限制局部credit assignment及反馈可实现性？"
+      ],
+      "shared_evidence_with": [
+        "C20",
+        "C1"
+      ],
+      "review_notes": [
+        "第二轮来源审计保留joint theorem假设与voltage/activation坐标；区分seed、checkpoint、batch、parameter tensor与细胞。对negative/混合结果不省略，内部多图及oracle不称生物独立复制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "若z=logαcond、β为附加inhibition的路径衰减，则log-gain variance降低当且仅当Cov(z,β)>Var(β)/2；因此shunting并非无条件压缩path-gain场。",
+      "claim_type": "theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "解析variance恒等式",
+          "design": "同一compartment/example平均测度",
+          "comparator": "z对z−β",
+          "measure": "Var与Cov",
+          "unit_of_analysis": "数学分布",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "同一概率/平均测度下有限二阶矩",
+            "β由固定conductance path衰减定义"
+          ],
+          "source_locator": {
+            "pdf_page": 39,
+            "section": "Appendix C.1",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "若z=logαcond、β为附加inhibition的路径衰减，则log-gain variance降低当且仅当Cov(z,β)>Var(β)/2；因此shunting并非无条件压缩path-gain场。",
+        "boundary": "条件依统计轴；不是关于unweighted CV或error rank的同一定理。",
+        "negative_result": "作者所选inhibited morphology checkpoints的该margin略为负，未作为正compression结果。",
+        "non_inference": "不能声称inhibition自动降rank。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "conductance、shunting与树形branching如何限制局部credit assignment及反馈可实现性？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C4",
+        "C5"
+      ],
+      "review_notes": [
+        "第二轮来源审计保留joint theorem假设与voltage/activation坐标；区分seed、checkpoint、batch、parameter tensor与细胞。对negative/混合结果不省略，内部多图及oracle不称生物独立复制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "对单example、单soma/tree且提供exact layer-soma error、两个gradient非零、path gains非负时，3F ancestry-shared gradient与exact gradient的cosine为1/sqrt(1+CVw(αeffective)^2)，权重由eligibility平方确定。",
+      "claim_type": "theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "解析cosine代数证明",
+          "design": "pre-batch单example",
+          "comparator": "exact path gradient对ancestry-shared 3F",
+          "measure": "weighted alignment",
+          "unit_of_analysis": "数学gradient",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "exact voltage-space soma error",
+            "两gradient非零",
+            "reactivation derivatives和couplings非负",
+            "eligibility-square权重；pre-batch"
+          ],
+          "source_locator": {
+            "pdf_page": 39,
+            "section": "Proposition 3",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "对单example、单soma/tree且提供exact layer-soma error、两个gradient非零、path gains非负时，3F ancestry-shared gradient与exact gradient的cosine为1/sqrt(1+CVw(αeffective)^2)，权重由eligibility平方确定。",
+        "boundary": "不保证batch-averaged practical multilayer gradient；需exact soma error而非final-core复用。",
+        "negative_result": null,
+        "non_inference": "不能把unweighted architecture CV直接代入或证明training收敛。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "conductance、shunting与树形branching如何限制局部credit assignment及反馈可实现性？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C5"
+      ],
+      "review_notes": [
+        "第二轮来源审计保留joint theorem假设与voltage/activation坐标；区分seed、checkpoint、batch、parameter tensor与细胞。对negative/混合结果不省略，内部多图及oracle不称生物独立复制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "作者的exact factorization重建与autograd梯度在数值精度内一致，包括softplus参数变换、masks及reactivation坐标转换；该检查支持定理与实施对应而非生物验证。",
+      "claim_type": "computational_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "raw-parameter gradient重建",
+          "design": "相同forward state及batch",
+          "comparator": "autograd",
+          "measure": "relative L2/norm reconstruction error",
+          "unit_of_analysis": "模拟配置/独立seed或checkpoint，非生物细胞",
+          "sample_size_as_reported": "图每点parameter tensor；main diagnostics5 seeds",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "Exact reconstruction",
+            "figure": "Figure 2A；Appendix B.4",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者的exact factorization重建与autograd梯度在数值精度内一致，包括softplus参数变换、masks及reactivation坐标转换；该检查支持定理与实施对应而非生物验证。",
+        "boundary": "parameter tensors不是独立实验单位；未自行运行代码或重建检查。",
+        "negative_result": null,
+        "non_inference": "人工任务或模型身份不证明生物机制、真实dendritic carrier或普遍学习优势。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "conductance、shunting与树形branching如何限制局部credit assignment及反馈可实现性？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ],
+      "review_notes": [
+        "第二轮来源审计保留joint theorem假设与voltage/activation坐标；区分seed、checkpoint、batch、parameter tensor与细胞。对negative/混合结果不省略，内部多图及oracle不称生物独立复制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "主5F matched-width/scalar-fallback条件的shunting LocalCA在MNIST、Fashion-MNIST和figure-ground MNIST分别约91.1%、83.8%、80.3%，比matched shunting BP约低6.0、5.1、5.8个百分点。",
+      "claim_type": "computational_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "matched-capacity训练比较",
+          "design": "同tree/非负constraints；local decoder",
+          "comparator": "matched BP及additive local",
+          "measure": "heldout test accuracy",
+          "unit_of_analysis": "模拟配置/独立seed或checkpoint，非生物细胞",
+          "sample_size_as_reported": "5 seeds；additive FG BP reference未提供",
+          "uncertainty": "Local ±SD约0.5/0.3/0.6个百分点",
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 18,
+            "section": "Table S8",
+            "figure": "Figure 4A",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "主5F matched-width/scalar-fallback条件的shunting LocalCA在MNIST、Fashion-MNIST和figure-ground MNIST分别约91.1%、83.8%、80.3%，比matched shunting BP约低6.0、5.1、5.8个百分点。",
+        "boundary": "FG LocalCA另用HSIC0.01，BP用cross-entropy；不能称完全matched objective；不是SOTA或3F固有限度。",
+        "negative_result": "restricted feedback未达到matched BP表现。",
+        "non_inference": "人工任务或模型身份不证明生物机制、真实dendritic carrier或普遍学习优势。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "conductance、shunting与树形branching如何限制局部credit assignment及反馈可实现性？"
+      ],
+      "shared_evidence_with": [
+        "C17"
+      ],
+      "review_notes": [
+        "第二轮来源审计保留joint theorem假设与voltage/activation坐标；区分seed、checkpoint、batch、parameter tensor与细胞。对negative/混合结果不省略，内部多图及oracle不称生物独立复制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "初始3 paired checkpoints中shunting branch gradient方向优于additive，但独立5-seed operational重复未重现可靠方向排序；whole-model cosine还会受exact-aligned soma block能量分配误导。",
+      "claim_type": "computational_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "matched 3F checkpoint diagnostics",
+          "design": "非somatic blocks，train/validation/test batch先在checkpoint内平均",
+          "comparator": "shunting对additive",
+          "measure": "branch cosine/norm及whole-model cosine",
+          "unit_of_analysis": "模拟配置/独立seed或checkpoint，非生物细胞",
+          "sample_size_as_reported": "初始3 paired checkpoints；replication5 paired seeds",
+          "uncertainty": "replication parameter-weighted cosine0.155±0.045对0.164±0.048（SD）",
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 20,
+            "section": "Tables S9/S10",
+            "figure": "Figure 2B,C",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "初始3 paired checkpoints中shunting branch gradient方向优于additive，但独立5-seed operational重复未重现可靠方向排序；whole-model cosine还会受exact-aligned soma block能量分配误导。",
+        "boundary": "两个core activation/initialization不同；内部seed重复不是独立生物复制。",
+        "negative_result": "5-seed cohort未重现shunting普遍方向优势。",
+        "non_inference": "人工任务或模型身份不证明生物机制、真实dendritic carrier或普遍学习优势。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "conductance、shunting与树形branching如何限制局部credit assignment及反馈可实现性？"
+      ],
+      "shared_evidence_with": [
+        "C8",
+        "C12"
+      ],
+      "review_notes": [
+        "第二轮来源审计保留joint theorem假设与voltage/activation坐标；区分seed、checkpoint、batch、parameter tensor与细胞。对negative/混合结果不省略，内部多图及oracle不称生物独立复制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "15 paired seeds的3F initialization factorial中，analytical initialization下shunting与additive准确率均90.92%；occupancy-calibrated初始化下additive高约0.67个百分点，表明cross-core方向依初始化policy。",
+      "claim_type": "computational_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "2×2architecture/initialization factorial",
+          "design": "一致feedback、decoder、optimizer与schedule",
+          "comparator": "两core及两policy",
+          "measure": "MNIST test accuracy",
+          "unit_of_analysis": "模拟配置/独立seed或checkpoint，非生物细胞",
+          "sample_size_as_reported": "15 paired seeds/cell",
+          "uncertainty": "analytical paired p=0.982；occupancy p=0.022；interaction p=0.036",
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 17,
+            "section": "Table S5",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "15 paired seeds的3F initialization factorial中，analytical initialization下shunting与additive准确率均90.92%；occupancy-calibrated初始化下additive高约0.67个百分点，表明cross-core方向依初始化policy。",
+        "boundary": "未显著不证明严格等效；occupancy calibration仍非所有forward state完全匹配。",
+        "negative_result": "没有普遍shunting accuracy优势。",
+        "non_inference": "人工任务或模型身份不证明生物机制、真实dendritic carrier或普遍学习优势。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "conductance、shunting与树形branching如何限制局部credit assignment及反馈可实现性？"
+      ],
+      "shared_evidence_with": [
+        "C7",
+        "C12"
+      ],
+      "review_notes": [
+        "第二轮来源审计保留joint theorem假设与voltage/activation坐标；区分seed、checkpoint、batch、parameter tensor与细胞。对negative/混合结果不省略，内部多图及oracle不称生物独立复制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "exact path-transport oracle供给compartment error时，3F和5F在shunting MNIST都约97.1–97.2%，接近matched BP97.03%；local或backprop decoder更新没有明显额外收益。",
+      "claim_type": "computational_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "exact-transport factorial",
+          "design": "3F/5F×decoder local/BP",
+          "comparator": "matched BP",
+          "measure": "test accuracy",
+          "unit_of_analysis": "模拟配置/独立seed或checkpoint，非生物细胞",
+          "sample_size_as_reported": "5 matched seeds/condition",
+          "uncertainty": "BP97.03±0.08%，oracle各97.12–97.21%，±SD",
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 17,
+            "section": "Table S6",
+            "figure": "Figure 5C",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "exact path-transport oracle供给compartment error时，3F和5F在shunting MNIST都约97.1–97.2%，接近matched BP97.03%；local或backprop decoder更新没有明显额外收益。",
+        "boundary": "数值接近不是等效检验；oracle直接给精确nonlocal信号，不是拟议生物规则。",
+        "negative_result": null,
+        "non_inference": "不能证明现实局部学习已解决credit problem。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "conductance、shunting与树形branching如何限制局部credit assignment及反馈可实现性？"
+      ],
+      "shared_evidence_with": [
+        "C6",
+        "C8",
+        "C10"
+      ],
+      "review_notes": [
+        "第二轮来源审计保留joint theorem假设与voltage/activation坐标；区分seed、checkpoint、batch、parameter tensor与细胞。对negative/混合结果不省略，内部多图及oracle不称生物独立复制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "在每个core内部将scalar fallback换为每neuron一个soma coordinate共享其13个tree compartments的反馈，15 paired seeds全部提升MNIST 3F accuracy：shunting+6.40、additive+5.56个百分点。",
+      "claim_type": "computational_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "within-core反馈替换",
+          "design": "保留regular [3,3] tree与训练policy",
+          "comparator": "MW/scalar fallback对neuron-wise",
+          "measure": "test accuracy与branch diagnostic cosine",
+          "unit_of_analysis": "模拟配置/独立seed或checkpoint，非生物细胞",
+          "sample_size_as_reported": "15 paired seeds/core；13 compartments/模型neuron非样本n",
+          "uncertainty": "paired t p=1.3e−12/1.3e−14；signed-rank6.1e−5",
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 17,
+            "section": "Table S7",
+            "figure": "Figure 4E",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在每个core内部将scalar fallback换为每neuron一个soma coordinate共享其13个tree compartments的反馈，15 paired seeds全部提升MNIST 3F accuracy：shunting+6.40、additive+5.56个百分点。",
+        "boundary": "within-core替换可作计算intervention；cross-core不同初始化仅描述；真实morphology路由未测。",
+        "negative_result": null,
+        "non_inference": "不能证明每neuronal teaching coordinate的生物carrier或唯一机制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "conductance、shunting与树形branching如何限制局部credit assignment及反馈可实现性？"
+      ],
+      "shared_evidence_with": [
+        "C6",
+        "C8",
+        "C9"
+      ],
+      "review_notes": [
+        "第二轮来源审计保留joint theorem假设与voltage/activation坐标；区分seed、checkpoint、batch、parameter tensor与细胞。对negative/混合结果不省略，内部多图及oracle不称生物独立复制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "训练后去掉、打乱或用均值替换learned inhibitory field会使所测模型性能崩溃：MNIST约90.4%降至19.8–26.4%，noise约80.5%降至10.3–19.3%，支持field的sample-dependent forward功能。",
+      "claim_type": "computational_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "post-training replay intervention",
+          "design": "512-example heldout subset，zero/shuffle/per-branch mean/uniform mean",
+          "comparator": "learned inhibition",
+          "measure": "accuracy",
+          "unit_of_analysis": "模拟配置/独立seed或checkpoint，非生物细胞",
+          "sample_size_as_reported": "512 examples；主intervention family5 seeds（Table S3）",
+          "uncertainty": "原态MNIST90.4±1.1%，noise80.5±2.4%",
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 28,
+            "section": "Post-training inhibition intervention",
+            "figure": "Figures 3C/S11",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "训练后去掉、打乱或用均值替换learned inhibitory field会使所测模型性能崩溃：MNIST约90.4%降至19.8–26.4%，noise约80.5%降至10.3–19.3%，支持field的sample-dependent forward功能。",
+        "boundary": "干预同时改变forward computation；不能隔离backward credit causality。",
+        "negative_result": "matched global conductance load未保持训练后性能。",
+        "non_inference": "不证明shunting单独使restricted feedback更接近exact。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "conductance、shunting与树形branching如何限制局部credit assignment及反馈可实现性？"
+      ],
+      "shared_evidence_with": [
+        "C12"
+      ],
+      "review_notes": [
+        "第二轮来源审计保留joint theorem假设与voltage/activation坐标；区分seed、checkpoint、batch、parameter tensor与细胞。对negative/混合结果不省略，内部多图及oracle不称生物独立复制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "固定forward voltages、derivatives、couplings、soma errors和eligibility，仅去除backward parent-resistance的inhibitory load时，distal gains上升但credit方向基本不变；所测高inhibition noise条件也为此负结果。",
+      "claim_type": "computational_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "fixed-state diagnostic hybrid",
+          "design": "no-I仅作用backward resistance，非物理forward模型",
+          "comparator": "actual对counterfactual",
+          "measure": "gain ratio及MW/neuron-wise cosine",
+          "unit_of_analysis": "模拟配置/独立seed或checkpoint，非生物细胞",
+          "sample_size_as_reported": "5 checkpoints/setting",
+          "uncertainty": "MNIST gain1.070±0.008，MW cosine0.1422→0.1426；noise gain1.281±0.010，cosine0.0653→0.0649",
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 21,
+            "section": "Table S13 / Backward-only counterfactual",
+            "figure": "Figure S3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "固定forward voltages、derivatives、couplings、soma errors和eligibility，仅去除backward parent-resistance的inhibitory load时，distal gains上升但credit方向基本不变；所测高inhibition noise条件也为此负结果。",
+        "boundary": "局部operating point，不是所有inhibition regime无效；terminal inhibition无后代路径。",
+        "negative_result": "所测backward-only attenuation移除没有明显改变direction。",
+        "non_inference": "不支持单独path attenuation解释全部learning优势。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "conductance、shunting与树形branching如何限制局部credit assignment及反馈可实现性？"
+      ],
+      "shared_evidence_with": [
+        "C11"
+      ],
+      "review_notes": [
+        "第二轮来源审计保留joint theorem假设与voltage/activation坐标；区分seed、checkpoint、batch、parameter tensor与细胞。对negative/混合结果不省略，内部多图及oracle不称生物独立复制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C13",
+      "statement": "noise task增加随机feedback rank或递归path信息可部分接近oracle，但不总单调；cue-routing中最佳unstructured rank2约84.6%优于structured pathway-vector约81.5%，后者没有解决structured feedback缺口。",
+      "claim_type": "computational_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "rank/structure ladder",
+          "design": "noise与context-dependent cue tasks",
+          "comparator": "MW、random K、path、oracle",
+          "measure": "test accuracy",
+          "unit_of_analysis": "模拟配置/独立seed或checkpoint，非生物细胞",
+          "sample_size_as_reported": "各主feedback ladder5 seeds",
+          "uncertainty": "noise MW66.2±1.6%、K8 79.5±1.9%、oracle84.7±1.8%；cue K2 84.6±8.2%、pathway81.5±12.6%",
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 30,
+            "section": "Table S19",
+            "figure": "Figure S12第42页",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "noise task增加随机feedback rank或递归path信息可部分接近oracle，但不总单调；cue-routing中最佳unstructured rank2约84.6%优于structured pathway-vector约81.5%，后者没有解决structured feedback缺口。",
+        "boundary": "不同tasks与alias policy不统一；unrestricted SVD low-rank不等于可用feedback兼容。",
+        "negative_result": "structured pathway-vector未胜最佳unstructured低rank；router高度specialization不保证成功。",
+        "non_inference": "人工任务或模型身份不证明生物机制、真实dendritic carrier或普遍学习优势。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "conductance、shunting与树形branching如何限制局部credit assignment及反馈可实现性？"
+      ],
+      "shared_evidence_with": [
+        "C14"
+      ],
+      "review_notes": [
+        "第二轮来源审计保留joint theorem假设与voltage/activation坐标；区分seed、checkpoint、batch、parameter tensor与细胞。对negative/混合结果不省略，内部多图及oracle不称生物独立复制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C14",
+      "statement": "flattened CIFAR-10紧凑模型中shunting MW LocalCA约29.7%，rank4约35.0%，transport oracle约47.2%接近BP49.5%；去掉learned I-to-E降低表现，additive gain/normalization控制未恢复MW缺口。",
+      "claim_type": "computational_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "harder-dataset control ladder",
+          "design": "nonnegative depth4 core、nonlinear decoder，无augmentation",
+          "comparator": "BP、MW、rank4、oracle及no-I/additive controls",
+          "measure": "test accuracy",
+          "unit_of_analysis": "模拟配置/独立seed或checkpoint，非生物细胞",
+          "sample_size_as_reported": "70 runs，14条件×5 seeds",
+          "uncertainty": "shunt BP49.5±0.4%、MW29.7±1.3%、oracle47.2±0.6%",
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 26,
+            "section": "Table S16",
+            "figure": "Figure S8",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "flattened CIFAR-10紧凑模型中shunting MW LocalCA约29.7%，rank4约35.0%，transport oracle约47.2%接近BP49.5%；去掉learned I-to-E降低表现，additive gain/normalization控制未恢复MW缺口。",
+        "boundary": "训练epochs/decay等local与BP设置不同；仅mechanistic stress，不是competitive vision benchmark。",
+        "negative_result": "additive gain/normalization控制未救回restricted反馈水平。",
+        "non_inference": "人工任务或模型身份不证明生物机制、真实dendritic carrier或普遍学习优势。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "conductance、shunting与树形branching如何限制局部credit assignment及反馈可实现性？"
+      ],
+      "shared_evidence_with": [
+        "C13"
+      ],
+      "review_notes": [
+        "第二轮来源审计保留joint theorem假设与voltage/activation坐标；区分seed、checkpoint、batch、parameter tensor与细胞。对negative/混合结果不省略，内部多图及oracle不称生物独立复制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C15",
+      "statement": "独立stress设置中随dendritic depth从1增至4，shunting local准确率63.5%到57.4%，additive54.9%到29.7%；broadcast-noise扰动下shunting在σ≤0.1较稳，additive在σ=1到chance。",
+      "claim_type": "computational_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "depth及broadcast-noise sweeps",
+          "design": "nonnegative artificial tasks；depth sweep所有coupling stage active",
+          "comparator": "两core及matched BP",
+          "measure": "accuracy、coupling activity",
+          "unit_of_analysis": "模拟配置/独立seed或checkpoint，非生物细胞",
+          "sample_size_as_reported": "depth共40 LocalCA runs；未将tree branches当独立seeds",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 41,
+            "section": "Appendix D.3",
+            "figure": "Figure S6第25页",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "独立stress设置中随dendritic depth从1增至4，shunting local准确率63.5%到57.4%，additive54.9%到29.7%；broadcast-noise扰动下shunting在σ≤0.1较稳，additive在σ=1到chance。",
+        "boundary": "不同于存在10−6coupling floor的morphology×inhibition图；优势依regime，更多inhibition/depth不总更好。",
+        "negative_result": "additive在高broadcast噪声达chance；主morphology图不足以隔离causal topology effect。",
+        "non_inference": "人工任务或模型身份不证明生物机制、真实dendritic carrier或普遍学习优势。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "conductance、shunting与树形branching如何限制局部credit assignment及反馈可实现性？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二轮来源审计保留joint theorem假设与voltage/activation坐标；区分seed、checkpoint、batch、parameter tensor与细胞。对negative/混合结果不省略，内部多图及oracle不称生物独立复制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C16",
+      "statement": "one-feedforward-layer noise probe中显式inhibitory cells的path-transport LocalCA约94.2%，冻结I-cell dendrite更新约93.8%，接近相应BP95.1%；这说明该扩展模型可产生有用inhibitory场，不等于生物验证。",
+      "claim_type": "computational_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "explicit-I input-mode对照",
+          "design": "[3,3] tree，one excitatory及inhibitory population",
+          "comparator": "direct stream、trained/frozen I-cell updates及BP",
+          "measure": "test accuracy",
+          "unit_of_analysis": "模拟配置/独立seed或checkpoint，非生物细胞",
+          "sample_size_as_reported": "3 seeds",
+          "uncertainty": "94.2±0.2%、93.8±0.2%、BP95.1±0.3%",
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 28,
+            "section": "Table S17",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "one-feedforward-layer noise probe中显式inhibitory cells的path-transport LocalCA约94.2%，冻结I-cell dendrite更新约93.8%，接近相应BP95.1%；这说明该扩展模型可产生有用inhibitory场，不等于生物验证。",
+        "boundary": "oracle/path transport条件；非recurrent lateral inhibitory circuit。",
+        "negative_result": null,
+        "non_inference": "不能证明真实PV/SST回路或无需精确反馈。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "conductance、shunting与树形branching如何限制局部credit assignment及反馈可实现性？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二轮来源审计保留joint theorem假设与voltage/activation坐标；区分seed、checkpoint、batch、parameter tensor与细胞。对negative/混合结果不省略，内部多图及oracle不称生物独立复制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C17",
+      "statement": "同一shunting checkpoint family的matched rule对照中，5F描述性准确率91.19%，3F89.90%、4F90.05%；clamp和EMA小扫描保持约92%表现，支持5F为有限稳健性的经验preconditioner而非额外error channel。",
+      "claim_type": "computational_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "matched rule与clamp/EMA sensitivity",
+          "design": "相同feedback/decoder/optimizer及effective group LR；duplicate inert nominal-LR rows合并",
+          "comparator": "3F/4F/5F及clamp/EMA variants",
+          "measure": "MNIST accuracy",
+          "unit_of_analysis": "模拟配置/独立seed或checkpoint，非生物细胞",
+          "sample_size_as_reported": "archived3 unique seeds/rule；sensitivity3 seeds",
+          "uncertainty": "SD1.13/1.35/0.49个百分点，未提供显著差异检验",
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 17,
+            "section": "Table S4 / Appendix A.4",
+            "figure": "Figure S1第18页",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "同一shunting checkpoint family的matched rule对照中，5F描述性准确率91.19%，3F89.90%、4F90.05%；clamp和EMA小扫描保持约92%表现，支持5F为有限稳健性的经验preconditioner而非额外error channel。",
+        "boundary": "只within-shunting descriptive；4F covariance被clamp、可>1，不能当Pearson correlation或神经证明。",
+        "negative_result": null,
+        "non_inference": "人工任务或模型身份不证明生物机制、真实dendritic carrier或普遍学习优势。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "conductance、shunting与树形branching如何限制局部credit assignment及反馈可实现性？"
+      ],
+      "shared_evidence_with": [
+        "C6"
+      ],
+      "review_notes": [
+        "第二轮来源审计保留joint theorem假设与voltage/activation坐标；区分seed、checkpoint、batch、parameter tensor与细胞。对negative/混合结果不省略，内部多图及oracle不称生物独立复制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C18",
+      "statement": "figure-ground MNIST中适度HSIC auxiliary weight0.01–0.1改善LocalCA，main与heldout seed对照均显示weight0.01较0更高；该auxiliary objective不属于conductance-factorization定理。",
+      "claim_type": "computational_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "HSIC×seed-set matched control",
+          "design": "main seeds42–46、heldout47–49；相同w0/w0.01",
+          "comparator": "HSIC权重及seed sets",
+          "measure": "FG test accuracy",
+          "unit_of_analysis": "模拟配置/独立seed或checkpoint，非生物细胞",
+          "sample_size_as_reported": "main5 seeds；heldout3 seeds",
+          "uncertainty": "main74.9±2.6%→80.5±1.5%；heldout77.3±0.9%→80.0±1.9%",
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 24,
+            "section": "Appendix A.7",
+            "figure": "Figure S5",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "figure-ground MNIST中适度HSIC auxiliary weight0.01–0.1改善LocalCA，main与heldout seed对照均显示weight0.01较0更高；该auxiliary objective不属于conductance-factorization定理。",
+        "boundary": "Figure D.2另称约3 pp收益，不将不同seed-set增益混为同一个估计；MNIST影响很小。",
+        "negative_result": null,
+        "non_inference": "不能把FG改进全部归于shunting/local eligibility。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "conductance、shunting与树形branching如何限制局部credit assignment及反馈可实现性？"
+      ],
+      "shared_evidence_with": [
+        "C6"
+      ],
+      "review_notes": [
+        "第二轮来源审计保留joint theorem假设与voltage/activation坐标；区分seed、checkpoint、batch、parameter tensor与细胞。对negative/混合结果不省略，内部多图及oracle不称生物独立复制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C19",
+      "statement": "作者的one-seed matched current-code profile没有速度或内存优势：LocalCA190 s、BP125 s，峰值CUDA allocation均1.70 GiB；hardware energy没有测量。",
+      "claim_type": "computational_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "同模型运行profile",
+          "design": "RTX PRO6000、相同batch及180-epoch schedule/hooks/evaluation",
+          "comparator": "LocalCA对BP",
+          "measure": "wall time、peak allocation",
+          "unit_of_analysis": "模拟配置/独立seed或checkpoint，非生物细胞",
+          "sample_size_as_reported": "1 seed",
+          "uncertainty": "reserved2.03对1.97 GiB",
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 34,
+            "section": "Appendix B.12",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者的one-seed matched current-code profile没有速度或内存优势：LocalCA190 s、BP125 s，峰值CUDA allocation均1.70 GiB；hardware energy没有测量。",
+        "boundary": "仅研究实施保留diagnostic state，非优化实现；不是普遍性能结论。",
+        "negative_result": "该profile LocalCA不更快且peak memory未降低。",
+        "non_inference": "不能声称energy-efficient或硬件能耗优势。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "conductance、shunting与树形branching如何限制局部credit assignment及反馈可实现性？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二轮来源审计保留joint theorem假设与voltage/activation坐标；区分seed、checkpoint、batch、parameter tensor与细胞。对negative/混合结果不省略，内部多图及oracle不称生物独立复制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C20",
+      "statement": "模型提出focal conductance扰动应优先影响其descendant synapses的teaching/plasticity、高resistance枝条受影响更大，以及route-specific任务需比global scalar更丰富反馈的可检验生物预测。",
+      "claim_type": "computational_result",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "从path-gain身份提出预测",
+          "design": "需同时控制local input、voltage及somatic teaching状态",
+          "comparator": "descendant对sister、high对low resistance、scalar对更丰富feedback",
+          "measure": "预测plasticity/teaching efficacy",
+          "unit_of_analysis": "模拟配置/独立seed或checkpoint，非生物细胞",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 30,
+            "section": "Table S18",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者提出的可检验假说。",
+        "boundary": "本文无对应生物干预实验；不能把qualitative预测当已测结果。",
+        "negative_result": null,
+        "non_inference": "尚未识别universal soma-error carrier。",
+        "unresolved": "active dendrites、spikes、calcium temporal dynamics与recurrent paths需要扩展。",
+        "unresolved_attribution": "来源局限及提取者来源复核"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "conductance、shunting与树形branching如何限制局部credit assignment及反馈可实现性？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2"
+      ],
+      "review_notes": [
+        "第二轮来源审计保留joint theorem假设与voltage/activation坐标；区分seed、checkpoint、batch、parameter tensor与细胞。对negative/混合结果不省略，内部多图及oracle不称生物独立复制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "全文42页及完整附录审计。exact local-eligibility×path-error分解有明确稳态单路径联合假设；inhibitory衰减不无条件压缩或改善learning。restricted feedback保留5–6pp缺口，oracle和neuron-wise显著缩小；初始direction优势未重现、匹配初始化无普遍shunting优势、backward-only操控方向近零、structured routing未勝最佳rank2等负结果均保留。posttraining抑制操控只证forward重要性。模型预测未生物验证，profile不显示速度/内存优势且无能耗测量。候选未人审。",
+  "shared_evidence": [
+    {
+      "claim_id": "C1",
+      "with": [
+        "C20",
+        "C2"
+      ]
+    },
+    {
+      "claim_id": "C2",
+      "with": [
+        "C20",
+        "C1"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C1",
+        "C2",
+        "C4",
+        "C5"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C5"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C17"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C8",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C7",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C6",
+        "C8",
+        "C10"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "with": [
+        "C6",
+        "C8",
+        "C9"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "with": [
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "with": [
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C13",
+      "with": [
+        "C14"
+      ]
+    },
+    {
+      "claim_id": "C14",
+      "with": [
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C17",
+      "with": [
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C18",
+      "with": [
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C20",
+      "with": [
+        "C1",
+        "C2"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": null,
+        "issue": "实际arXiv2607.03556v2，2026-07-27；无DOI，保留预印本version。",
+        "pdf_page": 1,
+        "suggested_correction": "document_type preprint",
+        "resolved": true
+      },
+      {
+        "claim_id": "C7",
+        "issue": "初始三checkpoint方向排序在五seed重复未重现。",
+        "pdf_page": 20,
+        "suggested_correction": "保留actual negative，不外推普遍shunting优势",
+        "resolved": true
+      },
+      {
+        "claim_id": "C8",
+        "issue": "初始化policy可翻转core优势，不属于architecture-only因果。",
+        "pdf_page": 17,
+        "suggested_correction": "限定within-policy及within-core反馈干预",
+        "resolved": true
+      },
+      {
+        "claim_id": "C6",
+        "issue": "FG LocalCA加HSIC而BP standard CE；Additive FG BP reference缺失。",
+        "pdf_page": 18,
+        "suggested_correction": "保留matched-capacity但不称全部objective匹配",
+        "resolved": true
+      },
+      {
+        "claim_id": "C12",
+        "issue": "backward-only no-I和factor substitutions不是self-consistent physical forward model。",
+        "pdf_page": 21,
+        "suggested_correction": "限diagnostic counterfactual",
+        "resolved": true
+      },
+      {
+        "claim_id": "C15",
+        "issue": "主morphology grid floor与depth-sweep全stage active为不同控制，不能混为同一geometry结果。",
+        "pdf_page": 25,
+        "suggested_correction": "保留不同setting",
+        "resolved": true
+      },
+      {
+        "claim_id": "C19",
+        "issue": "one-seed runtime无energy测量。",
+        "pdf_page": 34,
+        "suggested_correction": "不宣称能耗优势",
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "原文Table S3提validation-selected，Table S24部分fixed-epoch no early stopping，具体selection policy需code/package核对。",
+        "pdf_page": 35,
+        "suggested_correction": "保留源描述及任务设置，未自行运行验证",
+        "resolved": false
+      },
+      {
+        "claim_id": null,
+        "issue": "source package/immutable tag待publication；仅提供PDF文本，图像及代码未读取。",
+        "pdf_page": 14,
+        "suggested_correction": "不冒称代码复现或像素审核",
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T10:44:32.821013Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "13bf835eac65fb5aafd556fcb155c165152744321824dd438cc3d670dc1a4f9f",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

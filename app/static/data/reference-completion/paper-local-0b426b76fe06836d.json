@@ -1,0 +1,1144 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "On the Distribution of Firing Rates in Networks of Cortical Neurons",
+    "authors": [
+      "Alex Roxin",
+      "Nicolas Brunel",
+      "David Hansel",
+      "Gianluigi Mongillo",
+      "Carl van Vreeswijk"
+    ],
+    "doi": "10.1523/JNEUROSCI.1677-11.2011",
+    "publication_year": 2011,
+    "venue": "Journal of Neuroscience",
+    "url": "https://doi.org/10.1523/jneurosci.1677-11.2011"
+  },
+  "source": {
+    "filename": "2011-Journal-of-Neuroscience-Firing-Rate-Distributions-Cortical-Networks.pdf",
+    "sha256": "92dc68a3f98946f432ce78c5e09d7a6b02b17320ee529f4d7f17a9a4f9cdbd4c",
+    "source_url": null,
+    "pdf_page_count": 10
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "results_sections_seen": [
+      "Distribution transformation",
+      "Power/shortτ limits",
+      "Recurrent self-consistency",
+      "Conductance model",
+      "Noise/timeconstant/mean controls",
+      "E/I heterogeneity",
+      "Existing rat/mouse fit",
+      "Weight variance",
+      "Discussion/allreferences"
+    ],
+    "missing_material": [
+      "图像像素未阅；Fig1–8全部图注文字已阅。",
+      "data-not-shown结果、原动物元数据和拟合统计/逐单元数据未供。"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "10页完整文字阅读；Journal of Neuroscience2011-11-09，DOI10.1523/JNEUROSCI.1677-11.2011。",
+      "解析条件、技术网络重复和动物再分析分开；所有quotes null。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "一般变换、exp/power/LIF联合极限",
+      "role": "result",
+      "source_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "decision": "include",
+      "reason": "所有joint scaling和diffusion/可逆条件保留，不只取极限结论。"
+    },
+    {
+      "summary": "噪声/τ/均率与回路、E/I差异对照",
+      "role": "result",
+      "source_pages": [
+        5,
+        6,
+        7
+      ],
+      "decision": "include",
+      "reason": "高指数不更近、均率增大偏差、极端异质双峰等重要负边界记录。"
+    },
+    {
+      "summary": "10实现LIF与既有in-vivo拟合、silent排除",
+      "role": "result",
+      "source_pages": [
+        7,
+        8,
+        9
+      ],
+      "decision": "include",
+      "reason": "模型重复和92神经元不作独立动物，拟合不作唯一机制。"
+    },
+    {
+      "summary": "50k conductance及synaptic variance控制",
+      "role": "result",
+      "source_pages": [
+        3,
+        4,
+        8,
+        9
+      ],
+      "decision": "include",
+      "reason": "记录反直觉宽度缩小和有限parameter范围。"
+    },
+    {
+      "summary": "conductance LIF、调σ+τ等data-not-shown",
+      "role": "result",
+      "source_pages": [
+        3,
+        6
+      ],
+      "decision": "defer",
+      "reason": "只概述，未供应完整结果。"
+    },
+    {
+      "summary": "shot noise、相关/非随机和层/类型扩展",
+      "role": "hypothesis",
+      "source_pages": [
+        9,
+        10
+      ],
+      "decision": "include",
+      "reason": "不排除替代真实机制，完整书目已阅。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "当共同f–I函数可逆且单调可微时，跨神经元平均输入分布经变量变换给出率密度P(ν)=f(φ^-1(ν))/|φ'(φ^-1(ν))|；输出形状同时依输入和增益。",
+      "claim_type": "conditional_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "pushforward/变量变换",
+          "design": "单元解析/重标度、随机LIF和conductance E/I控制，既有动物数据拟合",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "数学输入/输出分布",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 2,
+            "section": null,
+            "figure": null,
+            "equation": "(1)–(4)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "当共同f–I函数可逆且单调可微时，跨神经元平均输入分布经变量变换给出率密度P(ν)=f(φ^-1(ν))/|φ'(φ^-1(ν))|；输出形状同时依输入和增益。",
+        "boundary": "共同传递函数及可逆区间，不涵盖任意多值、异质或非单调响应。",
+        "negative_result": null,
+        "non_inference": "推导不是实测神经输入或唯一生物机制鉴定。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "输入分布和噪声相关增益如何共同约束率分布？",
+        "怎样区分近lognormal、联合渐近极限和生物机制唯一性？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "Gaussian平均输入在指数f–I下精确产生lognormal率，在仿射f–I下产生Gaussian；所以相同输入统计配不同增益可产生不同率分布。",
+      "claim_type": "conditional_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "特定传递函数的精确变换",
+          "design": "单元解析/重标度、随机LIF和conductance E/I控制，既有动物数据拟合",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "数学分布",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 2,
+            "section": null,
+            "figure": null,
+            "equation": "(5)–(6)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "Gaussian平均输入在指数f–I下精确产生lognormal率，在仿射f–I下产生Gaussian；所以相同输入统计配不同增益可产生不同率分布。",
+        "boundary": "指数/仿射函数在所定义域、无其他异质；实率非负限制与理想Gaussian需区别。",
+        "negative_result": null,
+        "non_inference": "观察到lognormal不能反推出唯一指数机制或Gaussian输入。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "输入分布和噪声相关增益如何共同约束率分布？",
+        "怎样区分近lognormal、联合渐近极限和生物机制唯一性？"
+      ],
+      "shared_evidence_with": [
+        "C1"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "半整流power-law的Gaussian输入可产生零率质量与偏斜连续率；指数ζ→∞时须同步缩小输入SD及调整均值，才能得到有限非零lognormal极限。",
+      "claim_type": "conditional_asymptotic_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "power-law大指数联合标度",
+          "design": "单元解析/重标度、随机LIF和conductance E/I控制，既有动物数据拟合",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "渐近参数/数学分布",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 2,
+            "section": null,
+            "figure": null,
+            "equation": "(7)–(9)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "半整流power-law的Gaussian输入可产生零率质量与偏斜连续率；指数ζ→∞时须同步缩小输入SD及调整均值，才能得到有限非零lognormal极限。",
+        "boundary": "Δ和均值偏移均为O(1/ζ)，固定输出均值/宽度；单独ζ增大会改变分布尺度。",
+        "negative_result": null,
+        "non_inference": "生理有限power并不严格等同lognormal。",
+        "unresolved": "归档Eq7零率质量系数/式5指数符号存在排版/OCR歧义，未按残缺式补造公式。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "输入分布和噪声相关增益如何共同约束率分布？",
+        "怎样区分近lognormal、联合渐近极限和生物机制唯一性？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "LIF在Gaussian白噪声驱动下，远阈下、近阈和高阈上分别呈更快于指数、近power-law和近线性响应，因此生理率区间只能局部近似膨胀f–I。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Siegert f–I与不同输入区间",
+          "design": "单元解析/重标度、随机LIF和conductance E/I控制，既有动物数据拟合",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "非耦合LIF解析响应",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": null,
+            "figure": null,
+            "equation": "(38)–(39)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "LIF在Gaussian白噪声驱动下，远阈下、近阈和高阈上分别呈更快于指数、近power-law和近线性响应，因此生理率区间只能局部近似膨胀f–I。",
+        "boundary": "大量弱、近无关、快动力输入的diffusion近似；阈上可受不应期饱和。",
+        "negative_result": null,
+        "non_inference": "不是任意输入或全部真实细胞都具有相同全局power-law。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "输入分布和噪声相关增益如何共同约束率分布？",
+        "怎样区分近lognormal、联合渐近极限和生物机制唯一性？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "固定平均率5Hz和log率方差1.04、随噪声重调输入时，减小噪声虽提高局部power指数，却可令率分布偏离lognormal更远。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "噪声强度与输入重标度控制",
+          "design": "单元解析/重标度、随机LIF和conductance E/I控制，既有动物数据拟合",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "同解析模型的参数配置",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": null,
+            "figure": "Fig. 3A–C",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "固定平均率5Hz和log率方差1.04、随噪声重调输入时，减小噪声虽提高局部power指数，却可令率分布偏离lognormal更远。",
+        "boundary": "需区分固定τ与同时调τ使拐点靠近平均率的另一情境。",
+        "negative_result": "局部指数增大不自动使整个率分布更接近lognormal。",
+        "non_inference": "不能用power指数单项预测分布整体。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "输入分布和噪声相关增益如何共同约束率分布？",
+        "怎样区分近lognormal、联合渐近极限和生物机制唯一性？"
+      ],
+      "shared_evidence_with": [
+        "C3",
+        "C4"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "LIF τ→0能得到指数化f–I和有限lognormal，但必须使X=(θ−μ)/σ随τ适当发散、Δ∝1/X并保持相应均率；固定其他参数只会令率发散。",
+      "claim_type": "conditional_asymptotic_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "短膜时间常数联合极限",
+          "design": "单元解析/重标度、随机LIF和conductance E/I控制，既有动物数据拟合",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "数学模型渐近",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": null,
+            "figure": null,
+            "equation": "(23)–(27)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "LIF τ→0能得到指数化f–I和有限lognormal，但必须使X=(θ−μ)/σ随τ适当发散、Δ∝1/X并保持相应均率；固定其他参数只会令率发散。",
+        "boundary": "有限ν0和a标度、无不应期或率远低于其倒数；严格τ0非生理值。",
+        "negative_result": null,
+        "non_inference": "不能声称任意短τ或任意固定输入下精确lognormal。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "输入分布和噪声相关增益如何共同约束率分布？",
+        "怎样区分近lognormal、联合渐近极限和生物机制唯一性？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C4"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "固定log率方差、将平均率从1提高到20Hz时，分布更偏离lognormal，因为高率样本进入较线性的阈上f–I区。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "均率扫描与宽度控制",
+          "design": "单元解析/重标度、随机LIF和conductance E/I控制，既有动物数据拟合",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "模型参数/率分布",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": null,
+            "figure": "Fig. 4",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "固定log率方差、将平均率从1提高到20Hz时，分布更偏离lognormal，因为高率样本进入较线性的阈上f–I区。",
+        "boundary": "τ=2ms、σ=2mV等选定参数；图注μ只列3值对应4率，精确最后配置未明。",
+        "negative_result": "更高均率不保持同样lognormal近似。",
+        "non_inference": "不证明真实脑平均率提高必同样改变分布。",
+        "unresolved": "Fig4输入均值列表缺少与4率一一对应的值。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "输入分布和噪声相关增益如何共同约束率分布？",
+        "怎样区分近lognormal、联合渐近极限和生物机制唯一性？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "随机LIF E/I网络在异步波动驱动区产生近Gaussian跨单元平均输入、明显右偏率与不规则放电，均率约6.4Hz大于median约5Hz。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "E/I随机连接模拟与self-consistent Fokker-Planck",
+          "design": "单元解析/重标度、随机LIF和conductance E/I控制，既有动物数据拟合",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "模拟网络为重复，12500节点非独立动物",
+          "sample_size_as_reported": "NE10000、NI2500、p=.1；10个不同网络实现，每10s",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": null,
+            "figure": "Fig. 5",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "随机LIF E/I网络在异步波动驱动区产生近Gaussian跨单元平均输入、明显右偏率与不规则放电，均率约6.4Hz大于median约5Hz。",
+        "boundary": "弱小近独立输入、Poisson近似、稳态与white-noise条件；并非严格Gaussian全域。",
+        "negative_result": null,
+        "non_inference": "计算神经网络不是生物学验证。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "输入分布和噪声相关增益如何共同约束率分布？",
+        "怎样区分近lognormal、联合渐近极限和生物机制唯一性？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "该LIF率分布近lognormal但有系统残差：低率单元过多、高率单元较少，有限生理参数下不应称严格lognormal。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "同模型模拟分布与拟合对照",
+          "design": "单元解析/重标度、随机LIF和conductance E/I控制，既有动物数据拟合",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "网络实现",
+          "sample_size_as_reported": "同10×10s network runs；error bars SD",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": null,
+            "figure": "Fig. 5D",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "该LIF率分布近lognormal但有系统残差：低率单元过多、高率单元较少，有限生理参数下不应称严格lognormal。",
+        "boundary": "图像未阅，文字/图注描述为模型结果而非显著性检验。",
+        "negative_result": "lognormal拟合不能完全覆盖低/高尾。",
+        "non_inference": "这些偏差不等于模型整体预测失败。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "输入分布和噪声相关增益如何共同约束率分布？",
+        "怎样区分近lognormal、联合渐近极限和生物机制唯一性？"
+      ],
+      "shared_evidence_with": [
+        "C8"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "提高抑制细胞相对平均率可拓宽混合群体高率尾，但E/I分布分得过开时会呈双峰，最佳近lognormal只在中间情境。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "两群体外部输入差异，固定总体均率/宽度",
+          "design": "单元解析/重标度、随机LIF和conductance E/I控制，既有动物数据拟合",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "E/I群体模型",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": null,
+            "figure": "Fig. 6",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提高抑制细胞相对平均率可拓宽混合群体高率尾，但E/I分布分得过开时会呈双峰，最佳近lognormal只在中间情境。",
+        "boundary": "调输入和网络参数共同使总体均率保持5Hz；不能只视单个变量孤立操控。",
+        "negative_result": "异质性过强不维持单峰lognormal。",
+        "non_inference": "不证明所有抑制细胞群构成真实lognormal尾的唯一原因。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "输入分布和噪声相关增益如何共同约束率分布？",
+        "怎样区分近lognormal、联合渐近极限和生物机制唯一性？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "模型对既有大鼠听皮层自发和小鼠barrel任务数据的率分布作近似匹配，小鼠数据所述低率过量/高率不足可被LIF形式描述。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "再利用既有in-vivo率分布进行模型拟合",
+          "design": "单元解析/重标度、随机LIF和conductance E/I控制，既有动物数据拟合",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "实测神经元嵌套动物与另外模型实现",
+          "sample_size_as_reported": "小鼠原数据92神经元；动物n未给；rat n未列；模型NE8000/NI2000，10网络×10s",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": null,
+            "figure": "Fig. 7",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "模型对既有大鼠听皮层自发和小鼠barrel任务数据的率分布作近似匹配，小鼠数据所述低率过量/高率不足可被LIF形式描述。",
+        "boundary": "小鼠fit排除约10%silent (<.0083Hz)数据，实际纳入n未进一步说明；未提供独立验证或模型比较统计。",
+        "negative_result": null,
+        "non_inference": "拟合形状不识别真实输入/增益，也不证明远优lognormal的显著性。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "输入分布和噪声相关增益如何共同约束率分布？",
+        "怎样区分近lognormal、联合渐近极限和生物机制唯一性？"
+      ],
+      "shared_evidence_with": [
+        "C8",
+        "C9",
+        "C10"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "Wang–Buzsáki/Hodgkin–Huxley型conductance网络也在所测波动驱动条件产生右偏率，均率4.9Hz、median2.2Hz，ISI CV约1.1。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "conductance-based E/I网络仿真",
+          "design": "单元解析/重标度、随机LIF和conductance E/I控制，既有动物数据拟合",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "模型节点、突触和实现",
+          "sample_size_as_reported": "NE40000、NI10000；每节点平均1600E/400I synapses；独立网络重复n未报",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": null,
+            "figure": "Fig. 8A–D",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "Wang–Buzsáki/Hodgkin–Huxley型conductance网络也在所测波动驱动条件产生右偏率，均率4.9Hz、median2.2Hz，ISI CV约1.1。",
+        "boundary": "选定外部Gaussian恒流和conductance动力，不是所有生物细胞模型。",
+        "negative_result": null,
+        "non_inference": "模型多样性不是第二动物样本复现。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "输入分布和噪声相关增益如何共同约束率分布？",
+        "怎样区分近lognormal、联合渐近极限和生物机制唯一性？"
+      ],
+      "shared_evidence_with": [
+        "C8"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C13",
+      "statement": "固定平均conductance、增加log-synaptic SD至.8时，conductance网络率分布仍偏斜但宽度反而缩小；短τ LIF解释为时间波动降低增益的效应超过平均输入变宽。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "synaptic-variance扫描与短τ解析",
+          "design": "单元解析/重标度、随机LIF和conductance E/I控制，既有动物数据拟合",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "模型权重分布与输出率",
+          "sample_size_as_reported": "σg0–.8；50k模型节点，重复n未报",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": null,
+            "figure": "Fig. 8D",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "固定平均conductance、增加log-synaptic SD至.8时，conductance网络率分布仍偏斜但宽度反而缩小；短τ LIF解释为时间波动降低增益的效应超过平均输入变宽。",
+        "boundary": "Δ及σ共同改变、其他模型条件固定；单独固定σ而改Δ不会同样结论。",
+        "negative_result": "更宽突触权重不必产生更宽放电率。",
+        "non_inference": "不是任意网络或实验突触异质性的普遍规律。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "输入分布和噪声相关增益如何共同约束率分布？",
+        "怎样区分近lognormal、联合渐近极限和生物机制唯一性？"
+      ],
+      "shared_evidence_with": [
+        "C6",
+        "C12"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C14",
+      "statement": "作者将非线性f–I作为不需强相关输入即可解释lognormal-like率的一种充分模型路线，但明确没有排除真实输入相关或非随机结构。",
+      "claim_type": "interpretation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "理论/模拟与替代机制比较",
+          "design": "单元解析/重标度、随机LIF和conductance E/I控制，既有动物数据拟合",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "模型解释",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": null,
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者将非线性f–I作为不需强相关输入即可解释lognormal-like率的一种充分模型路线，但明确没有排除真实输入相关或非随机结构。",
+        "boundary": "标准固定p连接为简化；严格τ→0/ζ∞极限生理不成立，有限ζ3–5/τ5–10ms只近似。",
+        "negative_result": null,
+        "non_inference": "不能由观测分布唯一识别输入相关不存在或生物机制被证实。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "输入分布和噪声相关增益如何共同约束率分布？",
+        "怎样区分近lognormal、联合渐近极限和生物机制唯一性？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C11",
+        "C12",
+        "C13"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C15",
+      "statement": "将结果推广到稀有大幅shot-noise、皮层层级/细胞类型异质性或弱中等输入相关，是作者提出的质性预期，未在本文完整逐项验证。",
+      "claim_type": "hypothesis",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "基于expansive f–I的后续外推",
+          "design": "单元解析/重标度、随机LIF和conductance E/I控制，既有动物数据拟合",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "未来模型/记录情境",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": null,
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "将结果推广到稀有大幅shot-noise、皮层层级/细胞类型异质性或弱中等输入相关，是作者提出的质性预期，未在本文完整逐项验证。",
+        "boundary": "data-not-shown及未研究异质性不算已阅数值结果。",
+        "negative_result": null,
+        "non_inference": "未证明这些条件维持同精确分布或参数关系。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "输入分布和噪声相关增益如何共同约束率分布？",
+        "怎样区分近lognormal、联合渐近极限和生物机制唯一性？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "10页经典理论/模拟论文全读，形成15项候选。Gaussian输入与增益变换、ζ/τ联合极限、噪声/均率/EI差异、随机回路及conductance检验完整纳入。保留非精确lognormal、极端异质双峰与更宽权重反而窄率等边界。10网络技术重复、50k模型节点和原92神经元/静默排除严格区分；拟合不排除输入相关、非随机结构或识别唯一生物机制，OCR/参数不清留待审。",
+  "shared_evidence": [
+    {
+      "claim_id": "C2",
+      "with": [
+        "C1"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C1",
+        "C2"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C3",
+        "C4"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C2",
+        "C4"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C8"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "with": [
+        "C8",
+        "C9",
+        "C10"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "with": [
+        "C8"
+      ]
+    },
+    {
+      "claim_id": "C13",
+      "with": [
+        "C6",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C14",
+      "with": [
+        "C1",
+        "C11",
+        "C12",
+        "C13"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": "C6",
+        "issue": "τ→0固定其他值会率发散，必须同时使X/Δ按给定方式标度并考虑不应期。",
+        "suggested_correction": "保持联合极限而非短τ独自充分。",
+        "pdf_page": 3,
+        "resolved": true
+      },
+      {
+        "claim_id": "C3",
+        "issue": "归档Eq5 exponent负号、Eq7零率质量及部分OCR数学符号不清。",
+        "suggested_correction": "使用正文明确的变换/渐近叙述，不写残缺精确公式。",
+        "pdf_page": 2,
+        "resolved": false
+      },
+      {
+        "claim_id": "C7",
+        "issue": "Fig4四率对应均值参数只三项。",
+        "suggested_correction": "不补第四值，保持趋势限定。",
+        "pdf_page": 6,
+        "resolved": false
+      },
+      {
+        "claim_id": "C12",
+        "issue": "conductance Methods gK以40mV表示，conductance单位有维度歧义；门控/外部流单位需像素或原代码确认。",
+        "suggested_correction": "不把不清单位列为确定可复现实验规格。",
+        "pdf_page": 4,
+        "resolved": false
+      },
+      {
+        "claim_id": "C11",
+        "issue": "92神经元和10%静默排除不是动物数；真实统计n与模型10网络不同。",
+        "suggested_correction": "保留原数/排除，未知animal n不猜。",
+        "pdf_page": 9,
+        "resolved": true
+      },
+      {
+        "claim_id": "C13",
+        "issue": "权重方差同时改变quenched输入与temporal noise，不能把输出缩窄推成独立普遍因果规律。",
+        "suggested_correction": "限定模型和共同变化条件。",
+        "pdf_page": 3,
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T12:37:06.490388Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "92dc68a3f98946f432ce78c5e09d7a6b02b17320ee529f4d7f17a9a4f9cdbd4c",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

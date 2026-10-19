@@ -1,0 +1,2006 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "preprint",
+  "paper": {
+    "title": "A Physical Theory of Backpropagation: Exact Gradients from the Least-Action Principle",
+    "authors": [
+      "Antonino Emanuele Scurria"
+    ],
+    "doi": null,
+    "publication_year": 2026,
+    "venue": "arXiv (Cornell University)",
+    "url": "https://arxiv.org/pdf/2602.02281"
+  },
+  "source": {
+    "filename": "paper-W7127540573--A-Physical-Theory-of-Backpropagation-Exact-Gradients-from-the-Least-Action-Principle.pdf",
+    "sha256": "af54cb8d4629c3e54f1add4d0696ec1366101b96fafdc0968ce10ae0525be0ce",
+    "source_url": "https://arxiv.org/pdf/2602.02281",
+    "pdf_page_count": 22
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22
+    ],
+    "results_sections_seen": [
+      "3 From Layers to Global Flow (3.1-3.7)",
+      "4 The Discrete Trace: Recovering Backpropagation (4.1-4.2)",
+      "5 Empirical Validation (5.1-5.2)",
+      "6 Related Work: weight-transport limitation",
+      "7 Conclusion: prospective physical/biological relevance",
+      "A Overview on Out-of-Equilibrium Mechanics (A.1-A.4)",
+      "B Extension to Second-Order Dynamics",
+      "C Algorithm 1 Dyadic Backpropagation",
+      "D Proof of Forward Layer Freezing",
+      "E Algorithm 2 Dynamical Backpropagation",
+      "F Properties of the Equilibrium (F.1-F.2)",
+      "G Alternative Formulation: Split-Dynamics (G.1-G.2; Algorithm 3)",
+      "H Additional Experimental Results (H.1-H.5)",
+      "Figures 1-8 supplied text/captions",
+      "Pages 10-12: acknowledgments/disclosure/references assessed"
+    ],
+    "missing_material": [
+      "图像像素未提供；只使用抽取文本和图注。",
+      "第 7 页所提固定种子补充代码和单独补充文件未提供，未读取。",
+      "独立训练重复/种子数量、split 专属量化结果及解决范数图注冲突的数据未在供给文本中报告。"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "指定 source.text_path 全部 22 页通过六个有页标记、均小于 18000 字符的输出完整读取，无输出截断；附录 A-H、全部算法、参考文献及 Figures 1-8 图注均已评估。",
+      "实际源版本 arXiv:2602.02281v2 [cs.LG], 11 May 2026；标题、作者 Antonino Emanuele Scurria、年份与索引一致；索引未给版本日期，未替换为其他版本或出版版本。",
+      "公式抽取有控制字符或版面移位；记号以同源方程 (9)、(19)-(20)、(36)-(39) 及对应说明确定，不猜图像或未提供材料。",
+      "完整阅读后在留存全部源文上下文中逐条进行第二次审计；未重开 PDF、访问外部文献、调用 provider model 或运行软件测试。",
+      "独立样本不由 epoch、batch size、层数、参数数、梯度元素、步长条件或 GPU 数推断。",
+      "所有 quote 均为 null；直接引用英文词数为 0，仅保留术语和定位。",
+      "候选明确保留局部/全局论证边界、范数数字冲突、split 等价缺证和早停伪代码索引歧义；文本审计不是科学复现或人类审阅。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "双变量作用量、耗散约定与均值-应力动力学（C1）。",
+      "role": "result",
+      "source_pages": [
+        3,
+        4,
+        5,
+        13,
+        14,
+        15
+      ],
+      "decision": "include",
+      "reason": "原始构造；保留网络、损失、变分与耗散联合条件。"
+    },
+    {
+      "summary": "幂零平衡逆算子、敏感度与参数梯度等价（C2）。",
+      "role": "result",
+      "source_pages": [
+        5,
+        17
+      ],
+      "decision": "include",
+      "reason": "独立可评估的平衡梯度结果，不把背景 BP 当新结果。"
+    },
+    {
+      "summary": "单位步长前向冻结与 2L 步恢复（C3）。",
+      "role": "result",
+      "source_pages": [
+        6,
+        7,
+        16,
+        17
+      ],
+      "decision": "include",
+      "reason": "区别于单纯平衡等价；保留同步旧状态、固定参数与单位步长。"
+    },
+    {
+      "summary": "一阶平衡谱与源文全局稳定性声明（C4）。",
+      "role": "result",
+      "source_pages": [
+        5,
+        18
+      ],
+      "decision": "include",
+      "reason": "提取支持的局部结果，较强全局命题留为未解决审计问题。"
+    },
+    {
+      "summary": "二阶质量扩展的平衡不变与局部谱（C5-C6）。",
+      "role": "result",
+      "source_pages": [
+        15,
+        16
+      ],
+      "decision": "include",
+      "reason": "完整覆盖 B；平衡与稳定性可独立判定。"
+    },
+    {
+      "summary": "准确率约 93% 与训练损失轨迹（C7-C8）。",
+      "role": "result",
+      "source_pages": [
+        7,
+        8,
+        19,
+        20
+      ],
+      "decision": "include",
+      "reason": "独立读出；不补独立重复 n 或统计等效。"
+    },
+    {
+      "summary": "梯度方向、范数、相对误差与 SNR（C9-C10）。",
+      "role": "result",
+      "source_pages": [
+        7,
+        8,
+        19,
+        20,
+        21
+      ],
+      "decision": "include",
+      "reason": "方向与幅值分别判定；SNR 为相同残差补充指标，不另作独立重复。"
+    },
+    {
+      "summary": "步长相关松弛迭代数趋近 18（C11）。",
+      "role": "result",
+      "source_pages": [
+        7,
+        8
+      ],
+      "decision": "include",
+      "reason": "计算迭代读出不同于准确率；不推断能耗/延时优势。"
+    },
+    {
+      "summary": "早层误差漂移与作者归因（C12-C13）。",
+      "role": "result / interpretation",
+      "source_pages": [
+        20,
+        21,
+        22
+      ],
+      "decision": "include",
+      "reason": "H.5、末页图注完整覆盖；观察与解释分开。"
+    },
+    {
+      "summary": "split 构造与定性性能（C14-C15）。",
+      "role": "result",
+      "source_pages": [
+        18,
+        19
+      ],
+      "decision": "include",
+      "reason": "完整覆盖 G；不继承无条件精确性或挪用主实验数值。"
+    },
+    {
+      "summary": "W^T 与 weight transport 限制（C16）。",
+      "role": "result",
+      "source_pages": [
+        4,
+        5,
+        9
+      ],
+      "decision": "include",
+      "reason": "真实结构边界，不是未测条件下猜测的负结果。"
+    },
+    {
+      "summary": "硬件实现与多区室生物相关性（C17-C18）。",
+      "role": "hypothesis",
+      "source_pages": [
+        1,
+        2,
+        9
+      ],
+      "decision": "include",
+      "reason": "作者前瞻性设想，不冒充物理或生物实验证据。"
+    },
+    {
+      "summary": "Noether、symplectic geometry、Hamilton-Jacobi 与 path-integral 工具系统利用。",
+      "role": "future_direction",
+      "source_pages": [
+        1,
+        2,
+        9
+      ],
+      "decision": "exclude",
+      "reason": "源文明确留给未来，没有给对应新定理/分析，不新增空泛成果。"
+    },
+    {
+      "summary": "相关工作历史首次性与其他方法概括。",
+      "role": "background / positioning",
+      "source_pages": [
+        1,
+        2,
+        8,
+        9,
+        11,
+        12
+      ],
+      "decision": "exclude",
+      "reason": "只读本源背景；未读被引论文，不建立跨论文支持、反驳、复现关系。"
+    },
+    {
+      "summary": "致谢、资助、参考文献与代码可用性。",
+      "role": "nonresearch / availability",
+      "source_pages": [
+        7,
+        10,
+        11,
+        12
+      ],
+      "decision": "exclude",
+      "reason": "全部评估但非独立研究结果；未读取未供代码或像素。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "对固定参数的前馈网络，本文在 x、z 双变量空间采用 L=(x-z)^T F((x+z)/2)+C([(x+z)/2]_L,y)，并结合其规定的符号不对称 Euler-Lagrange 方程与 Rayleigh 耗散，得到同时演化的均值 m_dot=F(m) 与应力 s_dot=(W^T D(m)-I)s+g(m_L)；相同 x、z 初态在去掉损失时应力保持为零，有限损失驱动则使应力承载敏感度。",
+      "claim_type": "theoretical_construction",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "所定义作用量、耗散与变量变换的代数推导",
+          "design": "将 F(a)=sigma(Wa+beta)-a 提升为双变量作用量，并按本文规定的耗散方程求动力学。",
+          "comparator": "同一前馈流的单变量松弛，以及有/无损失的双变量系统",
+          "measure": "双变量运动方程与 m=(x+z)/2、s=x-z 的演化",
+          "unit_of_analysis": "所定义向量场、作用量与状态；非实验样本",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "固定输入、目标与网络参数；有限深度 L 的无反馈前馈连接，堆叠矩阵 W 严格块下三角。",
+            "激活逐元素作用；D(m)=diag[sigma_prime(Wm+beta)]；讨论梯度时所需导数存在。",
+            "任务损失仅依赖输出层，损失梯度在全局状态中仅注入输出块。",
+            "采用本文指定的有耗散、符号不对称变分规则；physical-limit 初态 x(0)=z(0)。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "3.4 The Least Action path",
+            "figure": null,
+            "equation": "(5)-(8)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "均值-应力变量变换",
+          "design": null,
+          "comparator": null,
+          "measure": "m_dot=F(m)，s_dot=(W^T D(m)-I)s+g(m_L)",
+          "unit_of_analysis": "构造的方程",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "固定输入、目标与网络参数；有限深度 L 的无反馈前馈连接，堆叠矩阵 W 严格块下三角。",
+            "激活逐元素作用；D(m)=diag[sigma_prime(Wm+beta)]；讨论梯度时所需导数存在。",
+            "任务损失仅依赖输出层，损失梯度在全局状态中仅注入输出块。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "3.5 Mean-Stress Variables",
+            "figure": null,
+            "equation": "(9)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "附录作用量构造",
+          "design": null,
+          "comparator": null,
+          "measure": "Lagrangian lifting 与前馈流对应",
+          "unit_of_analysis": "构造的方程",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "固定输入、目标与网络参数；有限深度 L 的无反馈前馈连接，堆叠矩阵 W 严格块下三角。",
+            "激活逐元素作用；D(m)=diag[sigma_prime(Wm+beta)]；讨论梯度时所需导数存在。",
+            "任务损失仅依赖输出层，损失梯度在全局状态中仅注入输出块。"
+          ],
+          "source_locator": {
+            "pdf_page": 14,
+            "section": "A.2-A.3",
+            "figure": null,
+            "equation": "(29)-(32)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "给出同一个双变量动力学中的推理与敏感度演化；损失强度不需要趋于零。",
+        "boundary": "这是给定形式和耗散约定下的数学构造；仍需转置权重。",
+        "negative_result": null,
+        "non_inference": "不把纯无耗散 Hamilton 原理单独等同于本系统；未证明任意物理基底会自然实现此构造，也没有生物机制验证。",
+        "unresolved": "具体器件、噪声与硬件约束下的性质未验证。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "能否用同一双变量变分动力学同时表示前馈推理与梯度敏感度？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C4",
+        "C5",
+        "C16",
+        "C17",
+        "C18"
+      ],
+      "review_notes": [
+        "不把作者的首次性表述变成已跨文献核验的优先权结论。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "在固定参数、严格前馈结构与所需导数存在的条件下，双变量平衡均值等于标准前馈激活；令 D_bar=D(m_bar)、M=W^T D_bar，则 M^L=0 且 s_bar=sum_{k=0}^{L-1} M^k g，因此 s_bar 为损失对各层激活的总敏感度。取 delta_l=D_l s_bar_l，权重与偏置梯度分别为 delta_l a_{l-1}^T 与 delta_l，与该网络标准 BP 相同；第一层的 a_0 为固定输入。",
+      "claim_type": "equilibrium_gradient_equivalence",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "平衡线性系统与有限 Neumann 级数推导",
+          "design": null,
+          "comparator": "同一网络的标准链式 BP 递推",
+          "measure": "(I-W^T D_bar)^(-1)g 与逐层总敏感度",
+          "unit_of_analysis": "有限深度前馈网络的解析平衡；无独立实验 n",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "固定输入、目标与网络参数；有限深度 L 的无反馈前馈连接，堆叠矩阵 W 严格块下三角。",
+            "激活逐元素作用；D(m)=diag[sigma_prime(Wm+beta)]；讨论梯度时所需导数存在。",
+            "任务损失仅依赖输出层，损失梯度在全局状态中仅注入输出块。",
+            "在前馈平衡点评价 D_bar 与损失梯度，并在平衡态读取参数梯度。"
+          ],
+          "source_locator": {
+            "pdf_page": 17,
+            "section": "F.1 Explicit Equivalence to Backpropagation",
+            "figure": null,
+            "equation": "(36)-(39)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "逐层梯度读出公式",
+          "design": null,
+          "comparator": null,
+          "measure": "delta=D_bar s_bar；dC/dW_l=delta_l a_{l-1}^T；dC/db_l=delta_l",
+          "unit_of_analysis": "网络层与参数导数，不是独立重复",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "固定输入、目标与网络参数；有限深度 L 的无反馈前馈连接，堆叠矩阵 W 严格块下三角。",
+            "激活逐元素作用；D(m)=diag[sigma_prime(Wm+beta)]；讨论梯度时所需导数存在。",
+            "任务损失仅依赖输出层，损失梯度在全局状态中仅注入输出块。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "3.6-3.7",
+            "figure": null,
+            "equation": "(10)-(11), (14)-(16)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "解析平衡应力与局部读出恢复标准 BP。",
+        "boundary": "要求固定前馈拓扑、相同导数与平衡态；不是有限误差数值迭代逐位相等的保证。",
+        "negative_result": null,
+        "non_inference": "不推广到任意反馈网络，不意味着消除 W^T 的 weight transport。",
+        "unresolved": "非理想硬件、非平衡早停误差没有由此等价式单独控制。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "平衡应力如何编码激活总敏感度并读出参数梯度？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C3",
+        "C5",
+        "C16"
+      ],
+      "review_notes": [
+        "总敏感度依据 F.1；第 5 页式 (13) 只作为局部更新函数对显式权重的偏导，不误作完整平衡状态的总导数。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "在固定参数、输入与目标、L 层严格前馈 W、输出块损失驱动和单位 Euler 步长条件下，同步更新 m^{k+1}=sigma(Wm^k+beta)、s^{k+1}=W^T D(m^k)s^k+g(m_L^k) 从任意有限初态出发，在 k>=L 时均值为标准前馈激活，在 k>=2L 时应力为精确 BP 敏感度；2L 是本文保证的充分步数，并非所有初态必需的最小步数。",
+      "claim_type": "finite_step_discrete_equivalence",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "逐层冻结归纳与固定算子幂零性证明",
+          "design": null,
+          "comparator": "同一网络的标准前向与 BP；非单位步长不受本有限步证明覆盖",
+          "measure": "m^k=m_bar（k>=L），s^k=s_bar（k>=2L）",
+          "unit_of_analysis": "任意有限 L 层网络的迭代状态；非 L 次独立实验",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "固定输入、目标与网络参数；有限深度 L 的无反馈前馈连接，堆叠矩阵 W 严格块下三角。",
+            "激活逐元素作用；D(m)=diag[sigma_prime(Wm+beta)]；讨论梯度时所需导数存在。",
+            "任务损失仅依赖输出层，损失梯度在全局状态中仅注入输出块。",
+            "Euler 步长恰为 1；同步使用旧 m^k 评价 D 和损失驱动。",
+            "精确算术命题，不把浮点早停误差纳入代数恒等式。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "4.1-4.2",
+            "figure": null,
+            "equation": "(19)-(20), Lemma 4.1, Theorem 4.2",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "前向冻结完整证明",
+          "design": null,
+          "comparator": null,
+          "measure": "第 l 层在 k>=l 后冻结",
+          "unit_of_analysis": "归纳证明",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "固定输入、目标与网络参数；有限深度 L 的无反馈前馈连接，堆叠矩阵 W 严格块下三角。",
+            "激活逐元素作用；D(m)=diag[sigma_prime(Wm+beta)]；讨论梯度时所需导数存在。",
+            "任务损失仅依赖输出层，损失梯度在全局状态中仅注入输出块。"
+          ],
+          "source_locator": {
+            "pdf_page": 16,
+            "section": "D Proof of Forward Layer Freezing",
+            "figure": null,
+            "equation": "Lemma 4.1",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "单位步长同步算法",
+          "design": null,
+          "comparator": null,
+          "measure": "2L 次更新及最终梯度读出",
+          "unit_of_analysis": "算法步骤",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "固定输入、目标与网络参数；有限深度 L 的无反馈前馈连接，堆叠矩阵 W 严格块下三角。",
+            "激活逐元素作用；D(m)=diag[sigma_prime(Wm+beta)]；讨论梯度时所需导数存在。",
+            "任务损失仅依赖输出层，损失梯度在全局状态中仅注入输出块。",
+            "单位 Euler 步长。"
+          ],
+          "source_locator": {
+            "pdf_page": 17,
+            "section": "E Algorithmic Form of the Discrete Dynamics",
+            "figure": null,
+            "equation": "Algorithm 2",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "单位步长同步过程至多 2L 次更新后可读出 BP 梯度，无需外部模式切换。",
+        "boundary": "只适用于该离散映射；连续流不因此具有有限时刻终止性质。",
+        "negative_result": null,
+        "non_inference": "不把 2L 称为普适复杂度下界，不推断所有步长都有限步精确。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "什么结构与步长保证同步动力学有限步恢复 BP？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C11"
+      ],
+      "review_notes": [
+        "将正文 exactly 2L/lower bound 限定为已证明的充分上界。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "对本文均值-应力连续系统，在平衡点满足雅可比线性化所需可微性时，均值动力学不依赖应力，前向及应力对角块分别为严格下/上三角部分减 I；因此平衡雅可比全部 2n 个特征值为 -1，支持局部线性稳定。所供 F.2 的谱论证本身没有完成正文所称的非线性全局指数稳定证明。",
+      "claim_type": "local_linear_stability",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "平衡雅可比块三角谱分析",
+          "design": null,
+          "comparator": "J_mm 与 J_ss 的谱",
+          "measure": "spec(J_mm)=spec(J_ss)={-1}；总重数 2n",
+          "unit_of_analysis": "2n 维线性化矩阵；n 为状态维数，不是样本量",
+          "sample_size_as_reported": null,
+          "uncertainty": "源文从局部谱直接宣称全局稳定，未给控制全局非线性轨迹的额外条件与证明。",
+          "assumptions": [
+            "固定输入、目标与网络参数；有限深度 L 的无反馈前馈连接，堆叠矩阵 W 严格块下三角。",
+            "激活逐元素作用；D(m)=diag[sigma_prime(Wm+beta)]；讨论梯度时所需导数存在。",
+            "任务损失仅依赖输出层，损失梯度在全局状态中仅注入输出块。",
+            "全系统平衡雅可比存在；局部线性化条件适用。"
+          ],
+          "source_locator": {
+            "pdf_page": 18,
+            "section": "F.2 Exponential Stability of the Equilibrium",
+            "figure": null,
+            "equation": "(40)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "解析谱支持平衡点局部线性稳定。",
+        "boundary": "局部导数自变量遵照 (9) 为 Wm+beta；ReLU 转折点不直接满足通常光滑线性化假设。",
+        "negative_result": null,
+        "non_inference": "负特征值不单独证明全局指数稳定、任意初态统一速率或不存在非正规瞬态放大。",
+        "unresolved": "全局稳定与所需全局正则性条件需补充论证。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "前馈双变量连续流的局部稳定性由何种谱结构保证？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C6"
+      ],
+      "review_notes": [
+        "不假装已独立完成作者所称的全局稳定证明。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "按附录 B 规定的二阶运动方程，给 x、z 加入相同正质量 m_mass 和单位线性耗散后，静止平衡时速度与加速度项消失，因此平衡条件与一阶系统相同，平衡应力仍读出同一前馈网络的 BP 梯度；质量项改变瞬态而不改变这一平衡条件。",
+      "claim_type": "second_order_equilibrium_invariance",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "静止平衡消项",
+          "design": "带动能项作用量及运动方程与无质量形式比较。",
+          "comparator": "同一 F、损失、耗散约定的一阶系统",
+          "measure": "partial_x L=partial_z L=0 及应力梯度读出",
+          "unit_of_analysis": "静止平衡；未报告二阶独立实验",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "固定输入、目标与网络参数；有限深度 L 的无反馈前馈连接，堆叠矩阵 W 严格块下三角。",
+            "激活逐元素作用；D(m)=diag[sigma_prime(Wm+beta)]；讨论梯度时所需导数存在。",
+            "任务损失仅依赖输出层，损失梯度在全局状态中仅注入输出块。",
+            "质量参数为正；按 Appendix B 方程；静止平衡速度与加速度均为零。"
+          ],
+          "source_locator": {
+            "pdf_page": 15,
+            "section": "B Extension to Second-Order Dynamics",
+            "figure": null,
+            "equation": "(33)-(35)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "该二阶方程的平衡梯度形式不随质量项改变。",
+        "boundary": "平衡条件结果，不是实测二阶器件或所有轨迹收敛的保证。",
+        "negative_result": null,
+        "non_inference": "不推断更快、更节能或对噪声更鲁棒。",
+        "unresolved": "没有二阶专属数值与硬件性能验证。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "恢复惯性项是否改变双变量系统的平衡梯度？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C6"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "在附录 B 的二阶系统可作平衡点线性化、质量 m_mass>0 与单位阻尼的条件下，一阶特征值 -1 对应的二阶根满足 m_mass*mu^2+mu+1=0，其实部为负，支持局部线性稳定；这一根式分析不能单独证明作者所称的非线性全局指数稳定。",
+      "claim_type": "second_order_local_linear_stability",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "阻尼振子特征多项式分析",
+          "design": null,
+          "comparator": "F.2 一阶平衡雅可比谱",
+          "measure": "m_mass*mu^2+mu+1=0 的根之实部",
+          "unit_of_analysis": "线性化模态；无实验 n",
+          "sample_size_as_reported": null,
+          "uncertainty": "仅给线性谱对应，未完成全局非线性证明。",
+          "assumptions": [
+            "固定输入、目标与网络参数；有限深度 L 的无反馈前馈连接，堆叠矩阵 W 严格块下三角。",
+            "激活逐元素作用；D(m)=diag[sigma_prime(Wm+beta)]；讨论梯度时所需导数存在。",
+            "任务损失仅依赖输出层，损失梯度在全局状态中仅注入输出块。",
+            "质量 m_mass>0；单位阻尼；Appendix B 方程与可线性化平衡点。"
+          ],
+          "source_locator": {
+            "pdf_page": 16,
+            "section": "B Stability",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "带质量扩展的局部线性特征根保持负实部。",
+        "boundary": "仅线性化结果；质量影响振荡和瞬态。",
+        "negative_result": null,
+        "non_inference": "不推广为所有非线性轨迹全局指数收敛。",
+        "unresolved": "全局稳定需独立于根式的补充证明。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "质量与阻尼怎样改变双变量平衡附近的稳定模态？"
+      ],
+      "shared_evidence_with": [
+        "C4",
+        "C5"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "在 CIFAR-10、约 5M 参数的 9 层 VGG-style CNN、100 epochs 与共享随机种子设置下，作者报告 Algorithm 1 在 eta=0.25、0.50、0.75、1.00 的测试准确率轨迹与标准 BP 基线相近，峰值约 93%；这是单一任务/架构中的观察性性能相当，不是统计等效或跨任务泛化结论。",
+      "claim_type": "empirical_accuracy_comparison",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "数字数值实验及正文/图注报告",
+          "design": "CIFAR-10、9 层 VGG-style CNN（约 5M 参数）；四个卷积块通道 [64,128,256,512] 与线性分类器；100 epochs、batch size 64；SGD/Nesterov momentum 0.9、weight decay 5e-4、余弦学习率 0.035 至 0.0002；随机裁剪、翻转、Cutout、label smoothing 0.1。",
+          "comparator": "标准 BP / PyTorch autodiff 或同系列不同 Euler 步长",
+          "measure": "测试准确率轨迹与约 93% 峰值",
+          "unit_of_analysis": "训练模型/步长条件；梯度在训练中重复读出，独立运行数未报。epoch、层、参数、minibatch 及同一梯度的多个指标不作独立重复。",
+          "sample_size_as_reported": "4 个 Euler 步长条件 eta={0.25,0.50,0.75,1.00}，每条件训练 100 epochs，batch size=64；独立训练重复及随机种子数量、训练/测试样本总数未报告。",
+          "uncertainty": "各条件共享随机种子但数量未报；没有跨独立重复的置信区间、误差条或显著性检验；图像像素与补充代码未供给。",
+          "assumptions": [
+            "Algorithm 1 使用 forward Euler；每次参数更新最多 1000 次松弛；连续迭代差范数早停阈值 1e-6。",
+            "PyTorch 2.7.1 autodiff 为梯度参照；数字计算使用 IEEE 754 Float32。",
+            "步长条件与多个指标来自同一 CIFAR-10/VGG 系列，不是独立数据集或独立重复。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "5.1-5.2 Generalization Performance",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "数字数值实验及正文/图注报告",
+          "design": "CIFAR-10、9 层 VGG-style CNN（约 5M 参数）；四个卷积块通道 [64,128,256,512] 与线性分类器；100 epochs、batch size 64；SGD/Nesterov momentum 0.9、weight decay 5e-4、余弦学习率 0.035 至 0.0002；随机裁剪、翻转、Cutout、label smoothing 0.1。",
+          "comparator": "标准 BP / PyTorch autodiff 或同系列不同 Euler 步长",
+          "measure": "四个步长与 BP 的准确率相近",
+          "unit_of_analysis": "训练模型/步长条件；梯度在训练中重复读出，独立运行数未报。epoch、层、参数、minibatch 及同一梯度的多个指标不作独立重复。",
+          "sample_size_as_reported": "4 个 Euler 步长条件 eta={0.25,0.50,0.75,1.00}，每条件训练 100 epochs，batch size=64；独立训练重复及随机种子数量、训练/测试样本总数未报告。",
+          "uncertainty": "各条件共享随机种子但数量未报；没有跨独立重复的置信区间、误差条或显著性检验；图像像素与补充代码未供给。",
+          "assumptions": [
+            "Algorithm 1 使用 forward Euler；每次参数更新最多 1000 次松弛；连续迭代差范数早停阈值 1e-6。",
+            "PyTorch 2.7.1 autodiff 为梯度参照；数字计算使用 IEEE 754 Float32。",
+            "步长条件与多个指标来自同一 CIFAR-10/VGG 系列，不是独立数据集或独立重复。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Figure 1 caption",
+            "figure": "Figure 1",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所测条件峰值准确率约 93%，与 BP 接近。",
+        "boundary": "一项数据集与一种网络；独立重复不确定性未报。",
+        "negative_result": null,
+        "non_inference": "轨迹接近不等于统计非劣效、优于 BP 或生物/器件验证。",
+        "unresolved": "多种子分布与跨架构/任务表现未报。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "双变量松弛能否在所测 CIFAR-10/VGG 中保留 BP 分类性能？"
+      ],
+      "shared_evidence_with": [
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12",
+        "C13"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "在同一 CIFAR-10/9 层 VGG 系列中，H.1 与 Figure 3 报告 eta=0.25、0.50、0.75、1.00 的训练损失曲线基本重合，未见所测步长造成明显轨迹分离；这只支持该设置中没有明显损失轨迹劣化，不排除未测条件或更小优化差异。",
+      "claim_type": "empirical_loss_trajectory_comparison",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "数字数值实验及正文/图注报告",
+          "design": "CIFAR-10、9 层 VGG-style CNN（约 5M 参数）；四个卷积块通道 [64,128,256,512] 与线性分类器；100 epochs、batch size 64；SGD/Nesterov momentum 0.9、weight decay 5e-4、余弦学习率 0.035 至 0.0002；随机裁剪、翻转、Cutout、label smoothing 0.1。",
+          "comparator": "同一 Algorithm 1 的 eta=1 条件",
+          "measure": "不同步长的训练损失随 epoch 变化",
+          "unit_of_analysis": "训练模型/步长条件；梯度在训练中重复读出，独立运行数未报。epoch、层、参数、minibatch 及同一梯度的多个指标不作独立重复。",
+          "sample_size_as_reported": "4 个 Euler 步长条件 eta={0.25,0.50,0.75,1.00}，每条件训练 100 epochs，batch size=64；独立训练重复及随机种子数量、训练/测试样本总数未报告。",
+          "uncertainty": "各条件共享随机种子但数量未报；没有跨独立重复的置信区间、误差条或显著性检验；图像像素与补充代码未供给。",
+          "assumptions": [
+            "Algorithm 1 使用 forward Euler；每次参数更新最多 1000 次松弛；连续迭代差范数早停阈值 1e-6。",
+            "PyTorch 2.7.1 autodiff 为梯度参照；数字计算使用 IEEE 754 Float32。",
+            "步长条件与多个指标来自同一 CIFAR-10/VGG 系列，不是独立数据集或独立重复。"
+          ],
+          "source_locator": {
+            "pdf_page": 19,
+            "section": "H.1 Training Stability and Loss Trajectory",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "数字数值实验及正文/图注报告",
+          "design": "CIFAR-10、9 层 VGG-style CNN（约 5M 参数）；四个卷积块通道 [64,128,256,512] 与线性分类器；100 epochs、batch size 64；SGD/Nesterov momentum 0.9、weight decay 5e-4、余弦学习率 0.035 至 0.0002；随机裁剪、翻转、Cutout、label smoothing 0.1。",
+          "comparator": "Algorithm 1 各步长条件",
+          "measure": "0-100 epochs 损失曲线重合的描述",
+          "unit_of_analysis": "训练模型/步长条件；梯度在训练中重复读出，独立运行数未报。epoch、层、参数、minibatch 及同一梯度的多个指标不作独立重复。",
+          "sample_size_as_reported": "4 个 Euler 步长条件 eta={0.25,0.50,0.75,1.00}，每条件训练 100 epochs，batch size=64；独立训练重复及随机种子数量、训练/测试样本总数未报告。",
+          "uncertainty": "各条件共享随机种子但数量未报；没有跨独立重复的置信区间、误差条或显著性检验；图像像素与补充代码未供给。",
+          "assumptions": [
+            "Algorithm 1 使用 forward Euler；每次参数更新最多 1000 次松弛；连续迭代差范数早停阈值 1e-6。",
+            "PyTorch 2.7.1 autodiff 为梯度参照；数字计算使用 IEEE 754 Float32。",
+            "步长条件与多个指标来自同一 CIFAR-10/VGG 系列，不是独立数据集或独立重复。"
+          ],
+          "source_locator": {
+            "pdf_page": 20,
+            "section": "Figure 3 caption",
+            "figure": "Figure 3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者描述四个步长条件的训练损失曲线重合。",
+        "boundary": "依据正文/图注而非像素重读；无独立运行分布。",
+        "negative_result": "所报系列未观察到明显步长相关损失轨迹分离。",
+        "non_inference": "未见差异不证明没有任何优化伪影或任意步长均稳定。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "改变 Euler 步长是否明显改变所测训练损失轨迹？"
+      ],
+      "shared_evidence_with": [
+        "C7",
+        "C9",
+        "C10",
+        "C11",
+        "C12",
+        "C13"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "在同一 CIFAR-10/9 层 VGG 的 Float32 实验中，H.3 报告松弛梯度与 PyTorch BP 的全局方向误差 1-cos(theta) 持续低于 1e-5、通常在 1e-7 附近；Figure 2 对 eta=0.75 的逐层 log10(1-CosSim) 描述为约 -6 至 -8。这支持方向高度对齐，不等于完整梯度向量相对范数误差为 1e-7。",
+      "claim_type": "empirical_gradient_direction_fidelity",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "数字数值实验及正文/图注报告",
+          "design": "CIFAR-10、9 层 VGG-style CNN（约 5M 参数）；四个卷积块通道 [64,128,256,512] 与线性分类器；100 epochs、batch size 64；SGD/Nesterov momentum 0.9、weight decay 5e-4、余弦学习率 0.035 至 0.0002；随机裁剪、翻转、Cutout、label smoothing 0.1。",
+          "comparator": "标准 BP / PyTorch autodiff 或同系列不同 Euler 步长",
+          "measure": "全局 1-cos(theta) 的报告量级",
+          "unit_of_analysis": "训练模型/步长条件；梯度在训练中重复读出，独立运行数未报。epoch、层、参数、minibatch 及同一梯度的多个指标不作独立重复。",
+          "sample_size_as_reported": "4 个 Euler 步长条件 eta={0.25,0.50,0.75,1.00}，每条件训练 100 epochs，batch size=64；独立训练重复及随机种子数量、训练/测试样本总数未报告。",
+          "uncertainty": "各条件共享随机种子但数量未报；没有跨独立重复的置信区间、误差条或显著性检验；图像像素与补充代码未供给。",
+          "assumptions": [
+            "Algorithm 1 使用 forward Euler；每次参数更新最多 1000 次松弛；连续迭代差范数早停阈值 1e-6。",
+            "PyTorch 2.7.1 autodiff 为梯度参照；数字计算使用 IEEE 754 Float32。",
+            "步长条件与多个指标来自同一 CIFAR-10/VGG 系列，不是独立数据集或独立重复。"
+          ],
+          "source_locator": {
+            "pdf_page": 20,
+            "section": "H.3 Directional Alignment",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "数字数值实验及正文/图注报告",
+          "design": "CIFAR-10、9 层 VGG-style CNN（约 5M 参数）；四个卷积块通道 [64,128,256,512] 与线性分类器；100 epochs、batch size 64；SGD/Nesterov momentum 0.9、weight decay 5e-4、余弦学习率 0.035 至 0.0002；随机裁剪、翻转、Cutout、label smoothing 0.1。",
+          "comparator": "标准 BP / PyTorch autodiff 或同系列不同 Euler 步长",
+          "measure": "全局 cosine misalignment 定义",
+          "unit_of_analysis": "训练模型/步长条件；梯度在训练中重复读出，独立运行数未报。epoch、层、参数、minibatch 及同一梯度的多个指标不作独立重复。",
+          "sample_size_as_reported": "4 个 Euler 步长条件 eta={0.25,0.50,0.75,1.00}，每条件训练 100 epochs，batch size=64；独立训练重复及随机种子数量、训练/测试样本总数未报告。",
+          "uncertainty": "各条件共享随机种子但数量未报；没有跨独立重复的置信区间、误差条或显著性检验；图像像素与补充代码未供给。",
+          "assumptions": [
+            "Algorithm 1 使用 forward Euler；每次参数更新最多 1000 次松弛；连续迭代差范数早停阈值 1e-6。",
+            "PyTorch 2.7.1 autodiff 为梯度参照；数字计算使用 IEEE 754 Float32。",
+            "步长条件与多个指标来自同一 CIFAR-10/VGG 系列，不是独立数据集或独立重复。"
+          ],
+          "source_locator": {
+            "pdf_page": 21,
+            "section": "Figure 5 caption",
+            "figure": "Figure 5",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "数字数值实验及正文/图注报告",
+          "design": "CIFAR-10、9 层 VGG-style CNN（约 5M 参数）；四个卷积块通道 [64,128,256,512] 与线性分类器；100 epochs、batch size 64；SGD/Nesterov momentum 0.9、weight decay 5e-4、余弦学习率 0.035 至 0.0002；随机裁剪、翻转、Cutout、label smoothing 0.1。",
+          "comparator": "标准 BP / PyTorch autodiff 或同系列不同 Euler 步长",
+          "measure": "eta=0.75 的逐层 log10(1-CosSim) 约 -6 至 -8",
+          "unit_of_analysis": "训练模型/步长条件；梯度在训练中重复读出，独立运行数未报。epoch、层、参数、minibatch 及同一梯度的多个指标不作独立重复。",
+          "sample_size_as_reported": "4 个 Euler 步长条件 eta={0.25,0.50,0.75,1.00}，每条件训练 100 epochs，batch size=64；独立训练重复及随机种子数量、训练/测试样本总数未报告。",
+          "uncertainty": "各条件共享随机种子但数量未报；没有跨独立重复的置信区间、误差条或显著性检验；图像像素与补充代码未供给。",
+          "assumptions": [
+            "Algorithm 1 使用 forward Euler；每次参数更新最多 1000 次松弛；连续迭代差范数早停阈值 1e-6。",
+            "PyTorch 2.7.1 autodiff 为梯度参照；数字计算使用 IEEE 754 Float32。",
+            "步长条件与多个指标来自同一 CIFAR-10/VGG 系列，不是独立数据集或独立重复。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Figure 2 caption",
+            "figure": "Figure 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所测梯度方向接近 BP，正文和图注给出量级。",
+        "boundary": "方向指标不等同完整向量欧氏误差。",
+        "negative_result": null,
+        "non_inference": "不能写成所有梯度元素均精确，或所有误差指标都是 1e-7。",
+        "unresolved": "独立重复方向误差分布未报。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "梯度方向的高精度是否意味着完整梯度同样精确？"
+      ],
+      "shared_evidence_with": [
+        "C7",
+        "C8",
+        "C10",
+        "C11",
+        "C12",
+        "C13"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "在同一 CIFAR-10/9 层 VGG 系列中，作者报告松弛/BP 梯度范数比接近 1，并报告 SNR=||grad_BP||^2/||grad_relax-grad_BP||^2 持续超过 1e6、峰值近 1e9；但 H.2 的范数比偏差约 -0.0003 至 +0.0001 与 Figure 4 图注小于 1e-4 相冲突，供给文本不支持一个无冲突的统一偏差上界。",
+      "claim_type": "empirical_gradient_magnitude_fidelity",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "数字数值实验及正文/图注报告",
+          "design": "CIFAR-10、9 层 VGG-style CNN（约 5M 参数）；四个卷积块通道 [64,128,256,512] 与线性分类器；100 epochs、batch size 64；SGD/Nesterov momentum 0.9、weight decay 5e-4、余弦学习率 0.035 至 0.0002；随机裁剪、翻转、Cutout、label smoothing 0.1。",
+          "comparator": "标准 BP / PyTorch autodiff 或同系列不同 Euler 步长",
+          "measure": "范数比近 1；正文偏差范围约 -0.0003 至 +0.0001",
+          "unit_of_analysis": "训练模型/步长条件；梯度在训练中重复读出，独立运行数未报。epoch、层、参数、minibatch 及同一梯度的多个指标不作独立重复。",
+          "sample_size_as_reported": "4 个 Euler 步长条件 eta={0.25,0.50,0.75,1.00}，每条件训练 100 epochs，batch size=64；独立训练重复及随机种子数量、训练/测试样本总数未报告。",
+          "uncertainty": "各条件共享随机种子但数量未报；没有跨独立重复的置信区间、误差条或显著性检验；图像像素与补充代码未供给。",
+          "assumptions": [
+            "Algorithm 1 使用 forward Euler；每次参数更新最多 1000 次松弛；连续迭代差范数早停阈值 1e-6。",
+            "PyTorch 2.7.1 autodiff 为梯度参照；数字计算使用 IEEE 754 Float32。",
+            "步长条件与多个指标来自同一 CIFAR-10/VGG 系列，不是独立数据集或独立重复。"
+          ],
+          "source_locator": {
+            "pdf_page": 19,
+            "section": "H.2 Gradient Norm Consistency",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "数字数值实验及正文/图注报告",
+          "design": "CIFAR-10、9 层 VGG-style CNN（约 5M 参数）；四个卷积块通道 [64,128,256,512] 与线性分类器；100 epochs、batch size 64；SGD/Nesterov momentum 0.9、weight decay 5e-4、余弦学习率 0.035 至 0.0002；随机裁剪、翻转、Cutout、label smoothing 0.1。",
+          "comparator": "标准 BP / PyTorch autodiff 或同系列不同 Euler 步长",
+          "measure": "图注范数偏差上界；SNR 定义与报告量级",
+          "unit_of_analysis": "训练模型/步长条件；梯度在训练中重复读出，独立运行数未报。epoch、层、参数、minibatch 及同一梯度的多个指标不作独立重复。",
+          "sample_size_as_reported": "4 个 Euler 步长条件 eta={0.25,0.50,0.75,1.00}，每条件训练 100 epochs，batch size=64；独立训练重复及随机种子数量、训练/测试样本总数未报告。",
+          "uncertainty": "各条件共享随机种子但数量未报；没有跨独立重复的置信区间、误差条或显著性检验；图像像素与补充代码未供给。",
+          "assumptions": [
+            "Algorithm 1 使用 forward Euler；每次参数更新最多 1000 次松弛；连续迭代差范数早停阈值 1e-6。",
+            "PyTorch 2.7.1 autodiff 为梯度参照；数字计算使用 IEEE 754 Float32。",
+            "步长条件与多个指标来自同一 CIFAR-10/VGG 系列，不是独立数据集或独立重复。"
+          ],
+          "source_locator": {
+            "pdf_page": 20,
+            "section": "Figure 4 caption; H.4 Signal-to-Noise Ratio",
+            "figure": "Figure 4",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "数字数值实验及正文/图注报告",
+          "design": "CIFAR-10、9 层 VGG-style CNN（约 5M 参数）；四个卷积块通道 [64,128,256,512] 与线性分类器；100 epochs、batch size 64；SGD/Nesterov momentum 0.9、weight decay 5e-4、余弦学习率 0.035 至 0.0002；随机裁剪、翻转、Cutout、label smoothing 0.1。",
+          "comparator": "标准 BP / PyTorch autodiff 或同系列不同 Euler 步长",
+          "measure": "SNR 超过 1e6 的文字报告",
+          "unit_of_analysis": "训练模型/步长条件；梯度在训练中重复读出，独立运行数未报。epoch、层、参数、minibatch 及同一梯度的多个指标不作独立重复。",
+          "sample_size_as_reported": "4 个 Euler 步长条件 eta={0.25,0.50,0.75,1.00}，每条件训练 100 epochs，batch size=64；独立训练重复及随机种子数量、训练/测试样本总数未报告。",
+          "uncertainty": "各条件共享随机种子但数量未报；没有跨独立重复的置信区间、误差条或显著性检验；图像像素与补充代码未供给。",
+          "assumptions": [
+            "Algorithm 1 使用 forward Euler；每次参数更新最多 1000 次松弛；连续迭代差范数早停阈值 1e-6。",
+            "PyTorch 2.7.1 autodiff 为梯度参照；数字计算使用 IEEE 754 Float32。",
+            "步长条件与多个指标来自同一 CIFAR-10/VGG 系列，不是独立数据集或独立重复。"
+          ],
+          "source_locator": {
+            "pdf_page": 21,
+            "section": "Figure 6 caption",
+            "figure": "Figure 6",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所报范数接近与相对误差比支持本设置的近似数值一致性。",
+        "boundary": "SNR 是同一梯度残差的代数量，不是额外独立实验或随机物理噪声测量。",
+        "negative_result": null,
+        "non_inference": "不声称完整梯度相对误差为机器精度，也不推断器件抗噪性能。",
+        "unresolved": "范数正文与图注冲突，需原图/数据澄清；不凭未供像素选较强上界。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "幅值与整体梯度误差接近 BP 的报告是否具有一致的数值界限？"
+      ],
+      "shared_evidence_with": [
+        "C7",
+        "C8",
+        "C9",
+        "C11",
+        "C12",
+        "C13"
+      ],
+      "review_notes": [
+        "SNR 作为同一误差的补充证据，不另作独立重复或冗余命题。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "在所测 CIFAR-10/9 层 VGG、每训练步骤最多 1000 次松弛与 1e-6 迭代差早停条件下，作者报告 eta 趋近 1 时平均松弛迭代数趋近 2L=18；这是该模型的数值迭代数观察，与单位步长充分步数证明一致，但没有测量比 BP 更快或更省能。",
+      "claim_type": "empirical_relaxation_iteration_comparison",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "数字数值实验及正文/图注报告",
+          "design": "CIFAR-10、9 层 VGG-style CNN（约 5M 参数）；四个卷积块通道 [64,128,256,512] 与线性分类器；100 epochs、batch size 64；SGD/Nesterov momentum 0.9、weight decay 5e-4、余弦学习率 0.035 至 0.0002；随机裁剪、翻转、Cutout、label smoothing 0.1。",
+          "comparator": "四步长与 L=9 对应的理论充分步数 18",
+          "measure": "平均松弛迭代次数 K 随 eta 变化",
+          "unit_of_analysis": "训练模型/步长条件；梯度在训练中重复读出，独立运行数未报。epoch、层、参数、minibatch 及同一梯度的多个指标不作独立重复。",
+          "sample_size_as_reported": "4 个 Euler 步长条件 eta={0.25,0.50,0.75,1.00}，每条件训练 100 epochs，batch size=64；独立训练重复及随机种子数量、训练/测试样本总数未报告。",
+          "uncertainty": "各条件共享随机种子但数量未报；没有跨独立重复的置信区间、误差条或显著性检验；图像像素与补充代码未供给。",
+          "assumptions": [
+            "Algorithm 1 使用 forward Euler；每次参数更新最多 1000 次松弛；连续迭代差范数早停阈值 1e-6。",
+            "PyTorch 2.7.1 autodiff 为梯度参照；数字计算使用 IEEE 754 Float32。",
+            "步长条件与多个指标来自同一 CIFAR-10/VGG 系列，不是独立数据集或独立重复。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "5.2 Gradient Fidelity and Dynamics",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "数字数值实验及正文/图注报告",
+          "design": "CIFAR-10、9 层 VGG-style CNN（约 5M 参数）；四个卷积块通道 [64,128,256,512] 与线性分类器；100 epochs、batch size 64；SGD/Nesterov momentum 0.9、weight decay 5e-4、余弦学习率 0.035 至 0.0002；随机裁剪、翻转、Cutout、label smoothing 0.1。",
+          "comparator": "四步长与理论 18 次",
+          "measure": "eta 趋近 1 时迭代数趋近 18",
+          "unit_of_analysis": "训练模型/步长条件；梯度在训练中重复读出，独立运行数未报。epoch、层、参数、minibatch 及同一梯度的多个指标不作独立重复。",
+          "sample_size_as_reported": "4 个 Euler 步长条件 eta={0.25,0.50,0.75,1.00}，每条件训练 100 epochs，batch size=64；独立训练重复及随机种子数量、训练/测试样本总数未报告。",
+          "uncertainty": "各条件共享随机种子但数量未报；没有跨独立重复的置信区间、误差条或显著性检验；图像像素与补充代码未供给。",
+          "assumptions": [
+            "Algorithm 1 使用 forward Euler；每次参数更新最多 1000 次松弛；连续迭代差范数早停阈值 1e-6。",
+            "PyTorch 2.7.1 autodiff 为梯度参照；数字计算使用 IEEE 754 Float32。",
+            "步长条件与多个指标来自同一 CIFAR-10/VGG 系列，不是独立数据集或独立重复。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Figure 2 caption",
+            "figure": "Figure 2 center",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "较大步长减少所测松弛迭代，并接近单位步长充分步数。",
+        "boundary": "平均次数受网络、早停与实现影响；18 不称为普适下界。",
+        "negative_result": null,
+        "non_inference": "没有 BP 对照的延时/能耗；单次 GPU 运行时间不等于能效或速度优势。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "Euler 步长如何影响所测松弛迭代次数？"
+      ],
+      "shared_evidence_with": [
+        "C3",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C12",
+        "C13"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "同一 CIFAR-10/9 层 VGG 系列的 H.5 与 Figures 7-8 描述：eta=0.25 时早层随训练出现轻微方向误差累积，eta=1.0 时各层方向误差受机器精度限制、近乎完全对齐；这是一种逐层数值读出的步长相关边界，不是额外独立训练或生物层级现象。",
+      "claim_type": "empirical_layerwise_step_size_boundary",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "数字数值实验及正文/图注报告",
+          "design": "CIFAR-10、9 层 VGG-style CNN（约 5M 参数）；四个卷积块通道 [64,128,256,512] 与线性分类器；100 epochs、batch size 64；SGD/Nesterov momentum 0.9、weight decay 5e-4、余弦学习率 0.035 至 0.0002；随机裁剪、翻转、Cutout、label smoothing 0.1。",
+          "comparator": "eta=0.25 与 eta=1.0",
+          "measure": "早层方向漂移与单位步长逐层对齐",
+          "unit_of_analysis": "训练模型/步长条件；梯度在训练中重复读出，独立运行数未报。epoch、层、参数、minibatch 及同一梯度的多个指标不作独立重复。",
+          "sample_size_as_reported": "4 个 Euler 步长条件 eta={0.25,0.50,0.75,1.00}，每条件训练 100 epochs，batch size=64；独立训练重复及随机种子数量、训练/测试样本总数未报告。",
+          "uncertainty": "各条件共享随机种子但数量未报；没有跨独立重复的置信区间、误差条或显著性检验；图像像素与补充代码未供给。",
+          "assumptions": [
+            "Algorithm 1 使用 forward Euler；每次参数更新最多 1000 次松弛；连续迭代差范数早停阈值 1e-6。",
+            "PyTorch 2.7.1 autodiff 为梯度参照；数字计算使用 IEEE 754 Float32。",
+            "步长条件与多个指标来自同一 CIFAR-10/VGG 系列，不是独立数据集或独立重复。"
+          ],
+          "source_locator": {
+            "pdf_page": 21,
+            "section": "H.5 Layer-wise Misalignment and Time Step",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "数字数值实验及正文/图注报告",
+          "design": "CIFAR-10、9 层 VGG-style CNN（约 5M 参数）；四个卷积块通道 [64,128,256,512] 与线性分类器；100 epochs、batch size 64；SGD/Nesterov momentum 0.9、weight decay 5e-4、余弦学习率 0.035 至 0.0002；随机裁剪、翻转、Cutout、label smoothing 0.1。",
+          "comparator": "eta=0.25 与 eta=1.0",
+          "measure": "逐层 log10(1-CosSim) 的文字描述",
+          "unit_of_analysis": "训练模型/步长条件；梯度在训练中重复读出，独立运行数未报。epoch、层、参数、minibatch 及同一梯度的多个指标不作独立重复。",
+          "sample_size_as_reported": "4 个 Euler 步长条件 eta={0.25,0.50,0.75,1.00}，每条件训练 100 epochs，batch size=64；独立训练重复及随机种子数量、训练/测试样本总数未报告。",
+          "uncertainty": "各条件共享随机种子但数量未报；没有跨独立重复的置信区间、误差条或显著性检验；图像像素与补充代码未供给。",
+          "assumptions": [
+            "Algorithm 1 使用 forward Euler；每次参数更新最多 1000 次松弛；连续迭代差范数早停阈值 1e-6。",
+            "PyTorch 2.7.1 autodiff 为梯度参照；数字计算使用 IEEE 754 Float32。",
+            "步长条件与多个指标来自同一 CIFAR-10/VGG 系列，不是独立数据集或独立重复。"
+          ],
+          "source_locator": {
+            "pdf_page": 22,
+            "section": "Figures 7-8 captions",
+            "figure": "Figures 7-8",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "较小步长下有早层方向精度轻微下降，单位步长近乎机器精度对齐。",
+        "boundary": "图注未给逐层精确数值或独立运行分布。",
+        "negative_result": "eta=1.0 的所述逐层读出中未报告明显超出机器精度的方向失配。",
+        "non_inference": "方向对齐不推断完整梯度无范数误差。",
+        "unresolved": null,
+        "unresolved_attribution": "层间差异的原因由作者解释，并无独立因果操纵。"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "小步长是否在早层积累方向误差，单位步长能否减轻所测误差？"
+      ],
+      "shared_evidence_with": [
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C13"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C13",
+      "statement": "作者在 H.5 将 eta=0.25 时较早层的轻微方向漂移解释为有限时间步近似的数值误差在反向敏感度传递中累积；该解释与 eta=1 的对照描述相容，但没有通过误差源消融或独立精度操纵确定唯一机制。",
+      "claim_type": "numerical_error_attribution",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "数字数值实验及正文/图注报告",
+          "design": "CIFAR-10、9 层 VGG-style CNN（约 5M 参数）；四个卷积块通道 [64,128,256,512] 与线性分类器；100 epochs、batch size 64；SGD/Nesterov momentum 0.9、weight decay 5e-4、余弦学习率 0.035 至 0.0002；随机裁剪、翻转、Cutout、label smoothing 0.1。",
+          "comparator": "eta=0.25 漂移与 eta=1 近乎完美对齐",
+          "measure": "作者的有限步数值误差累积解释",
+          "unit_of_analysis": "训练模型/步长条件；梯度在训练中重复读出，独立运行数未报。epoch、层、参数、minibatch 及同一梯度的多个指标不作独立重复。",
+          "sample_size_as_reported": "4 个 Euler 步长条件 eta={0.25,0.50,0.75,1.00}，每条件训练 100 epochs，batch size=64；独立训练重复及随机种子数量、训练/测试样本总数未报告。",
+          "uncertainty": "各条件共享随机种子但数量未报；没有跨独立重复的置信区间、误差条或显著性检验；图像像素与补充代码未供给。",
+          "assumptions": [
+            "Algorithm 1 使用 forward Euler；每次参数更新最多 1000 次松弛；连续迭代差范数早停阈值 1e-6。",
+            "PyTorch 2.7.1 autodiff 为梯度参照；数字计算使用 IEEE 754 Float32。",
+            "步长条件与多个指标来自同一 CIFAR-10/VGG 系列，不是独立数据集或独立重复。"
+          ],
+          "source_locator": {
+            "pdf_page": 21,
+            "section": "H.5 Layer-wise Misalignment and Time Step",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "保留有限步数值误差累积这一解释。",
+        "boundary": "这是 C12 观察的解释，不是新独立结果。",
+        "negative_result": null,
+        "non_inference": "未分离截断、舍入、早停或其他实现因素的贡献。",
+        "unresolved": "无误差来源分解或独立精度操纵。",
+        "unresolved_attribution": "具体来源与相对贡献未被唯一识别。"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "早层方向漂移的误差来源是否已被唯一识别？"
+      ],
+      "shared_evidence_with": [
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C14",
+      "statement": "附录 G 从忽略应力 x-z 高阶非线性项出发提出 split-dynamics：前向驱动平均 F(x)、F(z)，转置 Jacobian 与损失梯度分别在 x、z 求值，Algorithm 3 用平衡均值与应力读出梯度。这是有高阶截断假设的变体；供给文本未证明其在任意有限应力和非线性下继承原 midpoint 动力学的精确 BP 结论。",
+      "claim_type": "approximate_split_dynamics_construction",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "高阶应力截断与 split 方程定义",
+          "design": null,
+          "comparator": "共同 midpoint 求值的 Equation (8)",
+          "measure": "平均前向驱动与分别求值的 Jacobian/损失驱动",
+          "unit_of_analysis": "近似方程构造，非器件实验",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "固定输入、目标与网络参数；有限深度 L 的无反馈前馈连接，堆叠矩阵 W 严格块下三角。",
+            "激活逐元素作用；D(m)=diag[sigma_prime(Wm+beta)]；讨论梯度时所需导数存在。",
+            "任务损失仅依赖输出层，损失梯度在全局状态中仅注入输出块。",
+            "忽略应力高阶非线性项；截断误差界未给。"
+          ],
+          "source_locator": {
+            "pdf_page": 18,
+            "section": "G.1 Split-Dynamics Equations",
+            "figure": null,
+            "equation": "(41)-(42)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "split 离散算法与读出",
+          "design": null,
+          "comparator": null,
+          "measure": "分别计算 D_x,D_z,g_x,g_z；以 D(m_bar)s_bar m_bar^T 读出",
+          "unit_of_analysis": "算法步骤",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "Appendix G 的截断变体；有限应力一般等价证明未给。"
+          ],
+          "source_locator": {
+            "pdf_page": 19,
+            "section": "G.2 Split-Jacobian Relaxation Algorithm",
+            "figure": null,
+            "equation": "Algorithm 3",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提出减少共同 midpoint 导数求值的实现变体。",
+        "boundary": "不能在缺少高阶分析时自动继承 C2、C3 的一般精确等价或有限步定理。",
+        "negative_result": null,
+        "non_inference": "便于硬件实现的动机不是制造或器件验证。",
+        "unresolved": "有限应力与高阶非线性适用条件、误差界需进一步证明。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "分别评价两个状态的 split 变体何时保持原方法梯度性质？"
+      ],
+      "shared_evidence_with": [
+        "C15",
+        "C17"
+      ],
+      "review_notes": [
+        "保留高阶忽略条件，不把口头精确性理由升级为证明。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C15",
+      "statement": "G.2 定性报告 split-dynamics Algorithm 3 在相同任务上与 Algorithm 1 性能匹配；供给文本未给 split 专属准确率、梯度误差、独立运行数或图表，因此仅保留作者报告的有限任务性能相近，不能据此证明 split 的一般精确梯度等价。",
+      "claim_type": "qualitative_split_performance_report",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "附录定性测试报告",
+          "design": "作者称同任务测试；未单列完整实验设置或数值表。",
+          "comparator": "Algorithm 1",
+          "measure": "性能匹配的定性报告；无 split 专属效应值",
+          "unit_of_analysis": "任务/算法条件；独立运行不可辨认",
+          "sample_size_as_reported": "split 专属运行数、种子数量和样本量未报。",
+          "uncertainty": "无专属误差条、检验或梯度误差图表。",
+          "assumptions": [
+            "不把主实验数值自动转移为 split 专属结果。"
+          ],
+          "source_locator": {
+            "pdf_page": 19,
+            "section": "G.2 Split-Jacobian Relaxation Algorithm",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "源文称 split 与原算法在所测任务性能相近。",
+        "boundary": "专属量化证据有限。",
+        "negative_result": null,
+        "non_inference": "性能相近不等于梯度逐项相等，也不是主实验独立复现。",
+        "unresolved": "split 专属指标、误差与独立重复资料未供给。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "split 变体有哪些单独报告的性能与梯度证据？"
+      ],
+      "shared_evidence_with": [
+        "C14"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C16",
+      "statement": "双变量信用分配不要求前馈 W 对称，但应力更新显式使用 W^T D(m)，因此仍保留 BP 的 weight transport 要求；作者将 feedback alignment 或 Kolen-Pollack 式结合列为未来工作，并未证明去掉转置权重后仍得到精确梯度。",
+      "claim_type": "architectural_boundary",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "方程结构与明确限制",
+          "design": null,
+          "comparator": "无 W 对称限制与无需 W^T 这两种不同条件",
+          "measure": "应力算子中显式 W^T",
+          "unit_of_analysis": "算法信息访问要求，非生物实验",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "固定输入、目标与网络参数；有限深度 L 的无反馈前馈连接，堆叠矩阵 W 严格块下三角。",
+            "激活逐元素作用；D(m)=diag[sigma_prime(Wm+beta)]；讨论梯度时所需导数存在。",
+            "任务损失仅依赖输出层，损失梯度在全局状态中仅注入输出块。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "6 Related Work: Limitation: weight transport",
+            "figure": null,
+            "equation": "(8)-(9)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "区分不要求权重对称与仍需转置权重访问。",
+        "boundary": "限制适用于本文已证明的精确构造。",
+        "negative_result": null,
+        "non_inference": "未解决生物/器件 weight transport 问题；不导入其他方法的结果。",
+        "unresolved": "替代反馈权重的精度和稳定性未在本源验证。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "无需权重对称是否等于无需 weight transport？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C17",
+        "C18"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C17",
+      "statement": "作者提出：若 analog 或 neuromorphic substrate 能实现本文规定的双变量局部动力学，信用分配可能由器件松弛承载，而非单独模拟符号 BP。这是数学构造导出的实现设想；本文数字实验没有测试实际器件、延时、能耗或器件噪声。",
+      "claim_type": "physical_implementation_hypothesis",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "讨论中的实现设想",
+          "design": null,
+          "comparator": "符号 BP 与潜在松弛硬件的概念比较；无硬件对照",
+          "measure": null,
+          "unit_of_analysis": "实现设想；无受测器件",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "器件需实现本文力/损失驱动、导数与双变量更新；未实测。",
+            "保留 W^T 要求。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "7 Conclusion",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "保留自然松弛承载信用分配的待检验假设。",
+        "boundary": "只有数学与数字实验，没有模拟/神经形态器件证据。",
+        "negative_result": null,
+        "non_inference": "不赋予已验证低能耗、器件优势或生物机制结论。",
+        "unresolved": "可制造实现、非理想元件、耗散与能效尚待测量。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "真实模拟或神经形态器件能否满足双变量梯度动力学条件？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C14",
+        "C16"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C18",
+      "statement": "作者将 x、z 双变量结构与 multi-compartment cortical neurons 作概念类比，提出可能启发生物 credit assignment 研究；本文没有神经元、动物或生物干预实验，因此这种关联只是一项待检验相关性假设，并非生物系统执行精确 BP 的证据。",
+      "claim_type": "biological_relevance_hypothesis",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "结论中的结构类比",
+          "design": null,
+          "comparator": "双变量结构与多区室结构的概念类比；无生物对照",
+          "measure": null,
+          "unit_of_analysis": "概念结构，非受测神经元或动物",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "只依据本文类比；所引背景文献不作为本源独立证据或跨论文关系。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "7 Conclusion",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "保留潜在生物相关性，不升级为机制结果。",
+        "boundary": "本源没有生物样本、操纵或 readout。",
+        "negative_result": null,
+        "non_inference": "未证明多区室细胞实现这些方程、访问 W^T 或计算精确 BP。",
+        "unresolved": "生物实现、weight transport 与区分替代解释的实验未供给。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "learning-memory",
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "双变量与多区室神经元的类比能否形成可检验的生物实现？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C16"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "已完整评估 Antonino Emanuele Scurria 的 arXiv:2602.02281v2（2026-05-11）全部 22 页文字、Figures 1-8 图注及附录 A-H，并在留存源文上下文完成二次审计。本文是原始理论/数值预印本：构造有规定耗散的 x-z 双变量动力学，平衡应力与 BP 敏感度等价；固定参数、严格前馈及单位 Euler 步长下，至多 2L 次同步更新恢复 BP。二阶扩展保持静止平衡并给局部谱分析。CIFAR-10/9 层 VGG 的所报准确率约 93%、损失轨迹相近；方向误差通常约 1e-7，范数近 1、SNR 高，eta 趋近 1 时迭代数趋近 18。这些指标共用同一训练系列，不构成独立重复。早层方向漂移是数值观察，归因为 interpretation；硬件与生物多区室关联是 hypothesis，未作真实器件、神经元或动物验证。关键限制是仍需 W^T、独立重复数未报、范数正文/图注数字冲突、局部谱不能单独证明全局稳定、split 缺少一般有限应力精确等价及独立量化结果，以及早停伪代码最终状态索引歧义。未读取补充代码、外部论文或图像像素；全部为 human_checked:false 候选，不建立跨论文关系。",
+  "shared_evidence": [
+    {
+      "claim_id": "C1",
+      "with": [
+        "C2",
+        "C4",
+        "C5",
+        "C16",
+        "C17",
+        "C18"
+      ]
+    },
+    {
+      "claim_id": "C2",
+      "with": [
+        "C1",
+        "C3",
+        "C5",
+        "C16"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C2",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C1",
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C1",
+        "C2",
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C4",
+        "C5"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C7",
+        "C9",
+        "C10",
+        "C11",
+        "C12",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C7",
+        "C8",
+        "C10",
+        "C11",
+        "C12",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "with": [
+        "C7",
+        "C8",
+        "C9",
+        "C11",
+        "C12",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "with": [
+        "C3",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C12",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "with": [
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C13",
+      "with": [
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C14",
+      "with": [
+        "C15",
+        "C17"
+      ]
+    },
+    {
+      "claim_id": "C15",
+      "with": [
+        "C14"
+      ]
+    },
+    {
+      "claim_id": "C16",
+      "with": [
+        "C1",
+        "C2",
+        "C17",
+        "C18"
+      ]
+    },
+    {
+      "claim_id": "C17",
+      "with": [
+        "C1",
+        "C14",
+        "C16"
+      ]
+    },
+    {
+      "claim_id": "C18",
+      "with": [
+        "C1",
+        "C16"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": null,
+        "issue": "已在全部 22 页留存文本上下文中完成第二次审计，核对定位、完整联合假设、分析单位、数值、角色与共享证据。",
+        "suggested_correction": "保留候选状态，源文检查不是科学复现或人类核验。",
+        "pdf_page": null,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "首页为 arXiv:2602.02281v2 [cs.LG], 11 May 2026；标题、作者与索引一致，索引没有该版本日期。",
+        "suggested_correction": "保留实际 v2 和 2026-05-11；不替代为其他版本。",
+        "pdf_page": 1,
+        "resolved": true
+      },
+      {
+        "claim_id": "C3",
+        "issue": "源文 exactly 2L/lower bound 并未证明所有初态最小所需步数。",
+        "suggested_correction": "用至多 2L / 充分步数，不推断连续流有限时刻终止。",
+        "pdf_page": 6,
+        "resolved": true
+      },
+      {
+        "claim_id": "C4",
+        "issue": "F.2 与 B 从平衡点线性谱直接宣称全局指数稳定；缺少相应全局非线性证明与条件。",
+        "suggested_correction": "C4、C6 限定局部线性结果，更强结论留待理论/人工审查。",
+        "pdf_page": 18,
+        "resolved": false
+      },
+      {
+        "claim_id": "C4",
+        "issue": "F.2 的 sigma_prime(m) 与式 (9) 的 sigma_prime(Wm+beta) 自变量写法不一致。",
+        "suggested_correction": "根据同源 F 与式 (9) 使用 Wm+beta；不改变块三角谱论证、不改源文件。",
+        "pdf_page": 18,
+        "resolved": true
+      },
+      {
+        "claim_id": "C2",
+        "issue": "式 (13) 将局部更新偏导写得像完整平衡导数，可能混淆两者。",
+        "suggested_correction": "总敏感度以 F.1 论证，参数读出只用局部显式偏导。",
+        "pdf_page": 5,
+        "resolved": true
+      },
+      {
+        "claim_id": "C9",
+        "issue": "Float32 精度的强表述容易把方向指标量级误作完整向量相对误差。",
+        "suggested_correction": "C9 与 C10 分开方向/幅值，不将全部误差写为 1e-7。",
+        "pdf_page": 7,
+        "resolved": true
+      },
+      {
+        "claim_id": "C10",
+        "issue": "H.2 的偏差约 -0.0003 至 +0.0001 与 Figure 4 小于 1e-4 的图注冲突。",
+        "suggested_correction": "保留近 1 共同结论及冲突，需未供原图/数据，不猜较强上界。",
+        "pdf_page": 20,
+        "resolved": false
+      },
+      {
+        "claim_id": "C14",
+        "issue": "G 高阶截断后声称仅线性项贡献梯度，但没有任意有限应力下与 midpoint 一般精确等价证明。",
+        "suggested_correction": "保留截断假设与未证明边界；C15 定性性能不是等价证明。",
+        "pdf_page": 18,
+        "resolved": false
+      },
+      {
+        "claim_id": "C7",
+        "issue": "主实验共享随机种子但数量及独立训练数未报，split 也无专属运行资料。",
+        "suggested_correction": "步长、epoch、batch size、9 层、5M 参数、GPU 和多个指标均不充当独立 n。",
+        "pdf_page": 7,
+        "resolved": false
+      },
+      {
+        "claim_id": "C10",
+        "issue": "Algorithm 1 先算 k+1 状态并早停，随后以 k 状态命名平衡，最终读出索引有歧义；补充实现未供。",
+        "suggested_correction": "保留早停近似边界，不猜代码实际选择哪一状态。",
+        "pdf_page": 16,
+        "resolved": false
+      },
+      {
+        "claim_id": "C13",
+        "issue": "H.5 的数值误差归因未分离截断、舍入、早停等来源。",
+        "suggested_correction": "保留 interpretation，不写成唯一机制识别。",
+        "pdf_page": 21,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "硬件前景与多区室类比无硬件或生物实验；背景引用不是本源独立证据。",
+        "suggested_correction": "C17-C18 按 hypothesis 保存；relations 为空，不補物理、生物或因果验证。",
+        "pdf_page": 9,
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T14:22:06.579203Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "af54cb8d4629c3e54f1add4d0696ec1366101b96fafdc0968ce10ae0525be0ce",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

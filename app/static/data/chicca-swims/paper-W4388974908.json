@@ -1,0 +1,1028 @@
+{
+  "document_type": "preprint",
+  "coverage": {
+    "results_sections_seen": [
+      "II.A Models; II.B BPTT/surrogate training",
+      "III.A Setup",
+      "III.B Leakages",
+      "III.C Recurrence",
+      "III.D Heterogeneity",
+      "IV Discussion",
+      "V Conclusion",
+      "Tables I–VI; Figures 1–5; Acknowledgements; References"
+    ],
+    "missing_material": [
+      "全部图像像素未提供。",
+      "原始训练结果、随机种子、代码及完整超参选择轨迹未提供。",
+      "2023期刊版未提供；本稿无独立附录或补充正文。"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "10页arXiv v1，2022-11-14；导入身份为2023 Frontiers版本，标题作者相符而版本不同。",
+      "3次初始化的±是SD，不是SEM/CI或显著性。",
+      "数据划分N-MNIST60000/10000、SHD8332/2088；14 ms步长与200隐藏单元。",
+      "表中最佳常数值来自测试精度扫描；未报告独立验证选择协议，保留模型选择局限。",
+      "发放计数与方程算术不是本研究硬件面积/功耗测试。"
+    ],
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "前馈三模型精度和常数敏感度",
+      "role": "result",
+      "source_pages": [
+        4,
+        5
+      ],
+      "decision": "include",
+      "reason": "SHD和N-MNIST分开，保留最优/最差和局限。"
+    },
+    {
+      "summary": "泄漏、发放和训练权重解释",
+      "role": "result/interpretation",
+      "source_pages": [
+        5,
+        6
+      ],
+      "decision": "include",
+      "reason": "发放结果与因果解释分开；权重方向冲突记录。"
+    },
+    {
+      "summary": "循环的精度及活动影响",
+      "role": "result",
+      "source_pages": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "decision": "include",
+      "reason": "数据集/模型分拆，IF负结果不遗漏。"
+    },
+    {
+      "summary": "共同训练常数的前馈/循环结果",
+      "role": "result",
+      "source_pages": [
+        7,
+        8,
+        9
+      ],
+      "decision": "include",
+      "reason": "新增自由度与异质性混杂，不升为机制证明。"
+    },
+    {
+      "summary": "更新算术成本和经验归纳",
+      "role": "result/interpretation",
+      "source_pages": [
+        8,
+        9
+      ],
+      "decision": "include",
+      "reason": "区分分析计数与有限范围经验结论。"
+    },
+    {
+      "summary": "真实硬件节能/面积、连续噪声及在线学习",
+      "role": "未来工作",
+      "source_pages": [
+        9
+      ],
+      "decision": "defer",
+      "reason": "FPGA/Loihi实现及多种情境明确留待后续。"
+    },
+    {
+      "summary": "引用IF相对Perceptron面积、Loihi任务节能和生物漏通道",
+      "role": "背景",
+      "source_pages": [
+        1,
+        2,
+        9,
+        10
+      ],
+      "decision": "exclude",
+      "reason": "不是本文新测量。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "本文三层前馈SNN在SHD语音数字数据上，仅训练权重且网格调节固定时间常数时，无膜泄漏IF达到78.36±0.87%测试准确率，高于报告的LIF最佳77.20%及CUBA-LIF最佳76.94±1.13%；更复杂泄漏模型并未在该配置取得更高最佳精度。",
+      "claim_type": "computational_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "三模型前馈训练比较",
+          "design": "700-200-20网络、Δt14 ms、Adamax/BPTT surrogate、200 epochs",
+          "comparator": "IF、LIF、CUBA-LIF最佳网格结果",
+          "measure": "测试准确率",
+          "unit_of_analysis": "随机初始化训练运行",
+          "sample_size_as_reported": "3次随机初始化；8332训练/2088测试",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "III.B.1",
+            "figure": "Table IIa见页5",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "简单IF在该前馈任务不逊于泄漏模型。",
+        "boundary": "±为3运行SD；无显著性检验且仅一个架构。",
+        "negative_result": null,
+        "non_inference": "不能推出泄漏对所有语音或噪声环境无用。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "前馈SHD中增加泄漏复杂性改善精度吗？"
+      ],
+      "shared_evidence_with": [
+        "C3",
+        "C4"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "本文三层前馈N-MNIST中，IF测试准确率97.50±0.06%，LIF最佳97.64%，CUBA-LIF最佳97.41±0.07%；IF与泄漏模型精度接近，但并非所有指标都最高。",
+      "claim_type": "computational_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "固定时间常数网格与权重训练",
+          "design": "2312-200-10网络、14 ms步长、50 epochs",
+          "comparator": "IF与LIF/CUBA-LIF最佳配置",
+          "measure": "测试准确率",
+          "unit_of_analysis": "训练运行",
+          "sample_size_as_reported": "3随机初始化；60000训练/10000测试",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "III.B.1",
+            "figure": "Table IIb",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "低复杂IF接近最佳泄漏模型。",
+        "boundary": "±SD；N-MNIST源自静态图像移动传感器。",
+        "negative_result": null,
+        "non_inference": "不证明普遍无时间信息或IF显著更优。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "空间主导数据是否需要泄漏模型？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "本文前馈CUBA-LIF时间常数扫描中，SHD最佳/最差测试准确率76.94±1.13%/45.39±1.64%，相差31.55个百分点；N-MNIST对应97.41±0.07%/95.82±0.11%，相差1.59个百分点，表明这两数据集对所扫时间常数的敏感度不同。",
+      "claim_type": "parameter_sensitivity_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "τmem×τsyn网格扫描",
+          "design": "τmem14–1680 ms，τsyn14–140 ms",
+          "comparator": "网格内最好与最差",
+          "measure": "测试准确率跨度",
+          "unit_of_analysis": "参数条件及训练运行",
+          "sample_size_as_reported": "3次初始化/条件",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "III.B.1",
+            "figure": "Table II见页5",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "SHD网格精度跨度更大。",
+        "boundary": "跨度不是同条件独立因果效应或SD；跨数据集还改变任务/维度。",
+        "negative_result": null,
+        "non_inference": "不能唯一归因于时间信息丰富程度。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "时间常数敏感度如何随数据集变化？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "本文CUBA-LIF的最佳固定常数配置均偏向最短已扫突触常数14 ms；SHD前馈最佳为τmem1680 ms、τsyn14 ms，循环最佳为1120 ms、14 ms；延长突触常数一般增加发放却未带来最佳精度。",
+      "claim_type": "parameter_comparison_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "时间常数网格与发放计数",
+          "design": "14 ms步长，τsyn14–140 ms",
+          "comparator": "较长τsyn",
+          "measure": "准确率及隐藏层活动",
+          "unit_of_analysis": "参数条件",
+          "sample_size_as_reported": "3次初始化/条件",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "III.B；III.C结果见页8",
+            "figure": "Tables II–III; Figure 2见页6",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所扫短突触常数更利于最佳精度。",
+        "boundary": "14 ms对应α约0.368，不是LIF的α=0；趋势不视作每条件严格单调。",
+        "negative_result": null,
+        "non_inference": "不能断言所有突触滤波应删除。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "突触时间常数如何交换活动量与精度？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C3",
+        "C5"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "本文以测试集隐藏层spike计数评估活动时，IF在部分配置比LIF更稀疏，CUBA-LIF在某些短τsyn条件也更稀疏；增加泄漏并不必然减少网络发放，最稀疏SHD条件同时可能具有最低精度。",
+      "claim_type": "activity_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "测试集隐藏层事件计数",
+          "design": "分别训练三模型、比较常数配置",
+          "comparator": "IF/LIF/CUBA-LIF",
+          "measure": "隐藏层发放量与精度",
+          "unit_of_analysis": "测试集推理及模型条件",
+          "sample_size_as_reported": "3次训练；未给图中全部数值",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "III.B.2",
+            "figure": "Figure 2见页6",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "泄漏与稀疏并非统一对应。",
+        "boundary": "隐藏层计数是代理，不含所有运算和静息开销。",
+        "negative_result": "所测部分泄漏模型比IF产生更多spike。",
+        "non_inference": "不能等同硬件能耗或证明少spike一定差/好。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "泄漏是否总能提高发放稀疏性？"
+      ],
+      "shared_evidence_with": [
+        "C4",
+        "C6"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "activity_not_measured_energy"
+        ]
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "本文比较训练权重分布以解释LIF为何可能比IF发放更多：图3所报第二层权重SD为LIF0.1258、IF0.0948；这与训练补偿解释相容，但CUBA-LIF/LIF的图4说明和正文对SD方向不一致，不能据此确定统一因果机制。",
+      "claim_type": "training_interpretation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "训练权重分布比较",
+          "design": "LIF τmem420 ms与IF；另比较CUBA-LIF/LIF",
+          "comparator": "不同模型训练后权重",
+          "measure": "权重SD及发放解释",
+          "unit_of_analysis": "训练后权重元素/配置",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "III.B.2",
+            "figure": "Figures 3–4",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "权重变化可解释部分反直觉发放。",
+        "boundary": "权重元素不是独立训练样本；无隔离因果消融。",
+        "negative_result": null,
+        "non_inference": "不认定BPTT增权为唯一原因，也不采用矛盾方向。",
+        "unresolved": "图4与正文关于CUBA-LIF和LIF权重SD方向。",
+        "unresolved_attribution": "页5正文称CUBA-LIF更高，页6图4列LIF更高。"
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "训练权重变化如何影响泄漏与活动关系？"
+      ],
+      "shared_evidence_with": [
+        "C5"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "source_internal_inconsistency"
+        ]
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "本文在同样SHD结构中加入隐藏层显式循环后，最佳LIF达到83.41±0.37%、CUBA-LIF82.74±0.17%，均高于对应前馈最佳77.20%和76.94%；此配置下循环与泄漏组合有更高报告精度。",
+      "claim_type": "recurrence_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "前馈/循环架构训练比较",
+          "design": "同200隐藏单元、各自常数网格",
+          "comparator": "对应前馈最佳",
+          "measure": "SHD测试准确率",
+          "unit_of_analysis": "训练运行和架构",
+          "sample_size_as_reported": "3随机初始化；±SD",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "III.C.1；Discussion",
+            "figure": "Table IIIa见页8; Figure 5见页7",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所测泄漏模型从循环中获益。",
+        "boundary": "循环增加参数和连接，非等参数容量对照。",
+        "negative_result": null,
+        "non_inference": "不能唯一归因循环记忆机制或推断所有任务皆获益。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "显式循环如何改变SHD泄漏模型表现？"
+      ],
+      "shared_evidence_with": [
+        "C8",
+        "C10"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "本文IF在SHD加入显式循环后，测试准确率由前馈78.36%降至循环77.93%，差0.43个百分点；同时spike活动增加，因此更多循环活动不必然提高该模型准确率。",
+      "claim_type": "negative_computational_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "IF前馈/循环比较",
+          "design": "无膜泄漏IF、200隐藏单元",
+          "comparator": "前馈IF",
+          "measure": "SHD准确率",
+          "unit_of_analysis": "训练运行",
+          "sample_size_as_reported": "3次初始化；差值未给不确定区间",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "III.C.1；活动分析见页7",
+            "figure": "Table IIIa见页8; Figure 5",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "该配置未见循环收益。",
+        "boundary": "小差值无显著性检验，不断言显著损害。",
+        "negative_result": "报告测试精度降低0.43个百分点。",
+        "non_inference": "不能认为IF理论上无法利用循环。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "IF增加循环是否必然改善SHD？"
+      ],
+      "shared_evidence_with": [
+        "C7",
+        "C10"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "本文N-MNIST加入显式循环未显示一致精度提升：LIF最佳97.64%→97.48%，CUBA-LIF97.41%→97.35%，IF97.50%→97.54%；所述最优配置比较只出现很小且方向不一致的变化。",
+      "claim_type": "recurrence_boundary_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "架构最佳网格比较",
+          "design": "同2312-200-10基础网络",
+          "comparator": "前馈各模型",
+          "measure": "测试准确率",
+          "unit_of_analysis": "训练运行/模型",
+          "sample_size_as_reported": "3随机初始化",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "III.C.1",
+            "figure": "Tables IIb–IIIb",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "该数据集无一致循环收益。",
+        "boundary": "未给这些差值CI或显著性，参数数量不同。",
+        "negative_result": "LIF/CUBA-LIF最佳报告精度略低于前馈。",
+        "non_inference": "不能宣称循环严格无效或因空间数据必然无益。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "N-MNIST是否呈一致循环改善？"
+      ],
+      "shared_evidence_with": [
+        "C2"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "本文测试集隐藏层spike计数中，SHD加循环的平均增幅为CUBA-LIF53.55%、LIF53.35%、IF53.58%；N-MNIST平均增幅分别3.89%、16.78%、15.75%，且部分常数条件反而减少，活动变化具有数据集和模型依赖。",
+      "claim_type": "activity_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "前馈/循环隐藏层计数",
+          "design": "跨所扫常数配置汇总",
+          "comparator": "对应前馈",
+          "measure": "平均spike增幅",
+          "unit_of_analysis": "配置/测试集隐藏活动",
+          "sample_size_as_reported": "3次训练；配置汇总平均方式未完全细述",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "III.C.2",
+            "figure": "Figure 2见页6",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "循环在SHD增加活动更明显。",
+        "boundary": "不含读出/整芯片计算成本；数字是相对计数。",
+        "negative_result": null,
+        "non_inference": "不能由发放增幅确定能耗或准确率因果贡献。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "循环对活动的影响是否跨数据集一致？"
+      ],
+      "shared_evidence_with": [
+        "C7",
+        "C8",
+        "C9"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "activity_not_measured_energy"
+        ]
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "本文前馈网络将时间常数与权重共同训练后，SHD最佳精度CUBA-LIF76.94%→78.69%、LIF77.20%→79.84%；N-MNIST则分别97.41%→97.24%和97.64%→97.41%，异质常数训练未在两任务一致获益。",
+      "claim_type": "heterogeneity_training_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "共同学习时间常数与权重",
+          "design": "由相同网格初值开始；IF不适用",
+          "comparator": "仅训练权重的最佳配置",
+          "measure": "测试准确率",
+          "unit_of_analysis": "训练方案/运行",
+          "sample_size_as_reported": "3随机初始化；此表未列SD",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "III.D",
+            "figure": "Table Va",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "前馈SHD报告更高最佳值。",
+        "boundary": "同时改变训练自由度、常数优化与异质性，非单独异质性消融。",
+        "negative_result": "N-MNIST最佳值下降。",
+        "non_inference": "不能唯一归因异质性或认为空间任务严格无影响。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "learning-memory",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "可训练时间常数在前馈任务何时有益？"
+      ],
+      "shared_evidence_with": [
+        "C12"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "本文循环SHD共同训练时间常数后，CUBA-LIF最佳82.74±0.17%→82.84±1.17%、LIF83.41±0.37%→83.47±2.12%；增加很小且运行SD更大，不能认定可靠显著改善，N-MNIST最佳值也未提高。",
+      "claim_type": "heterogeneity_training_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "循环网络共同学习常数",
+          "design": "CUBA-LIF学τsyn/τmem；LIF学τmem",
+          "comparator": "仅权重训练",
+          "measure": "最佳精度及运行SD",
+          "unit_of_analysis": "训练运行",
+          "sample_size_as_reported": "3随机初始化；±SD",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "III.D；Discussion",
+            "figure": "Table Vb见页8",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "循环SHD最佳均值略高。",
+        "boundary": "差值0.10/0.06百分点，未检验显著性；N-MNIST为97.35→97.14与97.48→97.38。",
+        "negative_result": "N-MNIST最佳均值未改善。",
+        "non_inference": "不能将微小均值变化称稳健提升或生物异质性因果证明。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "learning-memory",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "循环网络可训练常数的增益是否可靠？"
+      ],
+      "shared_evidence_with": [
+        "C11"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C13",
+      "statement": "本文所用离散更新方程每神经元每时间步，IF/LIF/CUBA-LIF分别需0/1/2次泄漏乘法、N·P/N·P/N·P+1次加法及各一次阈值比较；这是方程运算计数，不是FPGA/Loihi测得面积或功耗。",
+      "claim_type": "analytical_operation_count",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "离散更新算术计数",
+          "design": "N为输入连接数，P为收到spike比例",
+          "comparator": "三模型",
+          "measure": "每步乘法、加法、比较数",
+          "unit_of_analysis": "神经元更新步骤",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "IV Discussion",
+            "figure": "Table VI",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "泄漏增加该实现的更新运算。",
+        "boundary": "硬件可采用不同实现优化；不含存储、通信等。",
+        "negative_result": null,
+        "non_inference": "不能据乘法计数给出实际倍数能耗或芯片面积优势。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "不同泄漏模型增加多少更新算术？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "not_hardware_measurement"
+        ]
+      }
+    },
+    {
+      "id": "C14",
+      "statement": "本文把两基准与一个200隐藏单元架构中的比较解释为：泄漏最有用的情形是任务有时间结构且网络有显式循环；这一解释受数据集、14 ms步长、网络容量及离线BPTT训练限制，不是普遍必要条件定理。",
+      "claim_type": "interpretation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "跨实验归纳",
+          "design": "SHD/N-MNIST、前馈/循环、三模型",
+          "comparator": "各实验组合",
+          "measure": "精度/活动规律",
+          "unit_of_analysis": "实验条件集",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "V Conclusion",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提出面向模型简化的有限范围经验归纳。",
+        "boundary": "连续噪声、关键词检测、在线塑性及更复杂架构未测试。",
+        "negative_result": null,
+        "non_inference": "不能外推生物泄漏无功能，或所有无循环网络都不需要泄漏。",
+        "unresolved": "连续噪声下误报、局部在线学习及其他架构的泄漏作用。",
+        "unresolved_attribution": "作者在结论明确作为后续情境/研究。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "泄漏收益如何依赖任务和网络循环？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C7",
+        "C8",
+        "C9"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "2022预印本对两个事件数字基准、三种神经元及前馈/循环结构进行离线训练比较。IF在前馈SHD表现强，循环提升泄漏模型但不提升IF；N-MNIST无一致循环增益。泄漏不保证稀疏，时间常数共同训练收益依赖任务且不稳定。硬件效率只做代理/算术分析，图4权重SD方向有内部冲突。",
+  "shared_evidence": [
+    {
+      "id": "SE1",
+      "claim_ids": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6"
+      ],
+      "source_pages": [
+        4,
+        5,
+        6
+      ],
+      "description": "共享前馈网格、三次初始化及测试集；权重元素非独立训练重复。",
+      "independence": "共享训练和数据"
+    },
+    {
+      "id": "SE2",
+      "claim_ids": [
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C14"
+      ],
+      "source_pages": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "description": "共享前馈/循环对照；循环增加参数，归纳不是新独立证据。",
+      "independence": "同模型族/数据"
+    },
+    {
+      "id": "SE3",
+      "claim_ids": [
+        "C11",
+        "C12"
+      ],
+      "source_pages": [
+        7,
+        8,
+        9
+      ],
+      "description": "共同学习常数改变自由度及异质性，不能分辨单一机制。",
+      "independence": "同训练协议"
+    }
+  ],
+  "audit": {
+    "source_match_checks": [
+      {
+        "check": "identity/version/coverage",
+        "status": "completed",
+        "details": "2022预印本全部10页评估；导入期刊年份2023不替换来源版本。"
+      },
+      {
+        "check": "second_source_check",
+        "status": "completed",
+        "details": "回对Table I划分、II/III最佳值、V异质结果及SD、VI算术、正文/图4方向和硬件未实现边界。"
+      }
+    ],
+    "model_findings": [
+      {
+        "claim_id": "C6",
+        "issue": "正文称CUBA-LIF第二层权重SD高于LIF，图4给相反方向。",
+        "pdf_page": 6,
+        "resolved": false,
+        "suggested_correction": "看原始权重及最终版本。"
+      },
+      {
+        "claim_id": "C12",
+        "issue": "均值改善远小于运行SD，不能称显著可靠增益。",
+        "pdf_page": 9,
+        "resolved": true,
+        "suggested_correction": "保留微小均值变化和更大SD。"
+      },
+      {
+        "claim_id": null,
+        "issue": "时间常数扫描报告测试精度，未说明独立验证选参。",
+        "pdf_page": 4,
+        "resolved": false,
+        "suggested_correction": "人工确认模型选择和测试使用协议。"
+      },
+      {
+        "claim_id": "C14",
+        "issue": "摘要/结论only措辞超过有限两数据集一个架构的范围。",
+        "pdf_page": 9,
+        "resolved": true,
+        "suggested_correction": "标为范围受限interpretation。"
+      },
+      {
+        "claim_id": "C13",
+        "issue": "FPGA和Loihi实际能耗是未来工作。",
+        "pdf_page": 9,
+        "resolved": true,
+        "suggested_correction": "不把计数代理列实测。"
+      }
+    ],
+    "needs_human_review": true
+  },
+  "format": "claim-commons-pdf-v1",
+  "paper": {
+    "title": "Impact of spiking neurons leakages and network recurrences on event-based spatio-temporal pattern recognition",
+    "authors": [
+      "Mohamed Sadek Bouanane",
+      "Dalila Cherifi",
+      "Elisabetta Chicca",
+      "Lyes Khacef"
+    ],
+    "doi": "10.3389/fnins.2023.1244675",
+    "publication_year": 2023,
+    "venue": "Frontiers in Neuroscience",
+    "url": "https://doi.org/10.3389/fnins.2023.1244675"
+  },
+  "source": {
+    "filename": "paper-W4388974908.pdf",
+    "sha256": "9220689522e393dd63233d875513372061e0bfc47f3e8356d2daca5b1ad1610c",
+    "source_url": "https://arxiv.org/pdf/2211.07761",
+    "pdf_page_count": 10
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T07:14:32.247Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "9220689522e393dd63233d875513372061e0bfc47f3e8356d2daca5b1ad1610c",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

@@ -1,0 +1,1559 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "preprint",
+  "paper": {
+    "title": "NeuroLoRA: Context-Aware Neuromodulation for Parameter-Efficient Multi-Task Adaptation",
+    "authors": [
+      "Yuxin Yang",
+      "Haoran Zhang",
+      "Mingxuan Li",
+      "Jiachen Xu",
+      "Ruoxi Shen",
+      "Zhenyu Wang",
+      "Tianhao Liu",
+      "Siqi Chen",
+      "Weilin Huang"
+    ],
+    "doi": null,
+    "publication_year": 2026,
+    "venue": "arXiv (Cornell University)",
+    "url": "https://arxiv.org/pdf/2603.12378"
+  },
+  "source": {
+    "filename": "paper-W7138824594--NeuroLoRA-Context-Aware-Neuromodulation-for-Parameter-Efficient-Multi-Task-Adaptation.pdf",
+    "sha256": "204734ddc0c5b4ecd9376c3475b5182e4c88751d07c153ab6e600287ea59b413",
+    "source_url": "https://arxiv.org/pdf/2603.12378",
+    "pdf_page_count": 10
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "results_sections_seen": [
+      "3.1-3.3方法与损失",
+      "4.1实验配置",
+      "4.2单任务/Table 1",
+      "4.3合并/Table 2",
+      "4.4持续学习/Table 3/Eq.9",
+      "4.5消融/Table 4",
+      "4.6活跃rank和lambda敏感性",
+      "5 Discussion",
+      "6 Conclusion/Limitations",
+      "Appendix A初始化期望分析",
+      "Appendix B/Table 5完整超参数"
+    ],
+    "missing_material": [
+      "图像像素未提供；未读取外部实现、数据集或任何未供给的补充内容。"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "供给的10页全文分4个不超过18000字符的输出阅读，包含正文、所有表格文字、参考文献和附录A/B；没有重开PDF。",
+      "源首页为arXiv:2603.12378v1 [cs.LG]，12 Mar 2026；只提取该v1版本，不代入后续版本。",
+      "标题与任务索引一致；源首页作者9人，索引只列前6人。局部输出按首页补入Tianhao Liu、Siqi Chen、Weilin Huang，索引条目未修改。",
+      "索引作者为Yuxin Yang、Haoran Zhang、Mingxuan Li、Jiachen Xu、Ruoxi Shen、Zhenyu Wang；其与源前6人一致。",
+      "第二轮源文审计在保留全文上下文中逐项核对贡献、页码、比较器、种子单位和结论边界；不是独立复现或科学验证。",
+      "表格得分均按原文报告；未猜测题目数、标准差、p值或生物实验。单模块门控参数与全模型总比例不能混同。",
+      "Table 1个别任务基线被合并与消融重用；shared_evidence只记录本文复用，多个记录或表格不是独立重复。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "冻结A上的逐token动态门控与TopK更新（C1）。",
+      "role": "method",
+      "source_pages": [
+        3,
+        4,
+        7,
+        10
+      ],
+      "decision": "include",
+      "reason": "保留可实施构造，限制参数开销与初始化推断。"
+    },
+    {
+      "summary": "活跃/非活跃B列平方余弦软惩罚（C2）。",
+      "role": "method",
+      "source_pages": [
+        4,
+        5
+      ],
+      "decision": "include",
+      "reason": "与门控构造分开评估，不称严格正交。"
+    },
+    {
+      "summary": "Gaussian初始化方向重叠期望（C3）。",
+      "role": "theoretical_result",
+      "source_pages": [
+        10
+      ],
+      "decision": "include",
+      "reason": "保留联合分布假设与初始化范围。"
+    },
+    {
+      "summary": "单任务MMLU、文字ScienceQA、GSM8K（C4-C6）。",
+      "role": "result",
+      "source_pages": [
+        5,
+        6
+      ],
+      "decision": "include",
+      "reason": "各任务可分别评估；与Full FT比较不被摘要表述覆盖。"
+    },
+    {
+      "summary": "Task Arithmetic与TIES免训练合并（C7-C8）。",
+      "role": "result",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "区分策略，标明相同个别适配器与相对降幅。"
+    },
+    {
+      "summary": "固定顺序持续学习/BWT（C9）。",
+      "role": "result",
+      "source_pages": [
+        6,
+        7
+      ],
+      "decision": "include",
+      "reason": "保留实际负BWT与顺序限制。"
+    },
+    {
+      "summary": "动态、静态及无门控消融（C10）。",
+      "role": "result",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "保留完整比较，不把实现等价性视为已知。"
+    },
+    {
+      "summary": "去Lorth与训练A消融（C11-C12）。",
+      "role": "result",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "独立组件干预，保留全部报告下降。"
+    },
+    {
+      "summary": "dh、k与lambda敏感性（C13-C15）。",
+      "role": "result",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "覆盖所有正文/表列参数点，不补造k=12或lambda=0.05得分。"
+    },
+    {
+      "summary": "路由与去相关的互补作用解释（C16）。",
+      "role": "interpretation",
+      "source_pages": [
+        6,
+        7,
+        8
+      ],
+      "decision": "include",
+      "reason": "不提升为直接测量的机制。"
+    },
+    {
+      "summary": "序列级attention pooling扩展（C17）。",
+      "role": "hypothesis",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "与已实施门控区分。"
+    },
+    {
+      "summary": "gamma=1、beta=0使初始gate约为1并等同FlyLoRA。",
+      "role": "unresolved_source_statement",
+      "source_pages": [
+        4
+      ],
+      "decision": "defer",
+      "reason": "Eq.3并不由这些值保证sigmoid为1，等待原实现或作者澄清。"
+    },
+    {
+      "summary": "全模型仅0.14%可训练参数及训练速度优势。",
+      "role": "unresolved_source_statement",
+      "source_pages": [
+        5,
+        7,
+        10
+      ],
+      "decision": "defer",
+      "reason": "只提供单模块参数公式，无全模块合计和计时测量，不把总占比或速度优势作为已核实结果。"
+    },
+    {
+      "summary": "全方法/全任务最优、严格消除干扰、任务无关连续流与生物机制验证。",
+      "role": "unsupported_extension",
+      "source_pages": [
+        1,
+        2,
+        5,
+        7,
+        8
+      ],
+      "decision": "exclude",
+      "reason": "Table 1的Full FT更高；缺少对应直接测量或实验。"
+    },
+    {
+      "summary": "引用的FlyLoRA、Fly-CL及生物神经调制背景和参考文献。",
+      "role": "background",
+      "source_pages": [
+        1,
+        2,
+        3,
+        8,
+        9,
+        10
+      ],
+      "decision": "exclude",
+      "reason": "不是本篇原创实验；不建立跨论文支持/矛盾/复制关系。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "NeuroLoRA提出在冻结稀疏随机下投影A之后，以单个输入token表示x驱动的瓶颈门控对Ax逐维重标定，再按调制后绝对值TopK选择B的rank-wise experts；训练B与门控参数而保持A冻结。",
+      "claim_type": "method",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "算法定义",
+          "design": "mx=sigmoid(W2 GELU(W1 x))*gamma+beta；h_prime=(Ax)*mx；按|h_prime|选择k个维度。",
+          "comparator": "FlyLoRA的冻结A与未调制|Ax| TopK路由。",
+          "measure": "门控、专家选择与低秩更新的计算定义。",
+          "unit_of_analysis": "一个LoRA投影模块及输入token；维度不是独立样本。",
+          "sample_size_as_reported": "实验默认r=32、k=8、rho=0.25、dh=64。",
+          "uncertainty": null,
+          "assumptions": [
+            "门控只显式读取单token表示，并无单独的跨token注意力汇聚。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "3.2 NeuroLoRA",
+            "figure": null,
+            "equation": "3-6",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "参数量公式",
+          "design": null,
+          "comparator": "不带门控的FlyLoRA。",
+          "measure": "每个模块新增din*dh+dh*r+2r参数；din=4096时文中给出264256。",
+          "unit_of_analysis": "一个投影模块；不是整个模型的总开销。",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "全模型合计需要全部注入模块的数量与维度，文中未给出可核对明细。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "5 Discussion / Computational Overhead",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提供输入依赖、可训练的稀疏专家重标定方法。",
+        "boundary": "这是算法构造；token表示可含预训练模型的上下文信息，但门控本身不直接读取完整序列。",
+        "negative_result": null,
+        "non_inference": "不能由神经调制类比推出真实多巴胺机制；不能把单模块开销比例当作全模型开销。",
+        "unresolved": "Eq.3的初始化等价性和全模型参数比例存在待核对问题。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "如何在冻结随机投影上实现输入依赖的低秩专家路由？"
+      ],
+      "shared_evidence_with": [
+        "C17"
+      ],
+      "review_notes": [
+        "NEURO-INIT：gamma=1、beta=0并不足以保证sigmoid输出为1，原文初始等同FlyLoRA的表述不能由公式直接推出。",
+        "NEURO-PARAM：保留每模块公式，未把Table 1中0.14%当作经独立核验的总参数占比。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "NeuroLoRA用当前输入激活与未激活的B列之间平方余弦相似度的平均值作为Lorth，并优化Ltask+lambda*Lorth；该软惩罚旨在减少专家方向重叠，而不是施加严格的跨任务正交约束。",
+      "claim_type": "method",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "损失函数定义",
+          "design": "对Iactive与Iinactive的所有列对求平均平方余弦相似度。",
+          "comparator": "仅优化任务损失的lambda=0设置。",
+          "measure": "方向重叠的软正则项。",
+          "unit_of_analysis": "B的列对；不是独立训练重复。",
+          "sample_size_as_reported": "r=32、k=8；默认lambda=0.1。",
+          "uncertainty": null,
+          "assumptions": [
+            "需非零列范数以定义归一化余弦；公式未说明零范数处理。",
+            "激活集合随输入变化；正则并不等同冻结旧任务子空间。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "3.3 Contrastive Orthogonality Loss",
+            "figure": null,
+            "equation": "7-8",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "明确了可训练的方向去相关正则目标。",
+        "boundary": "惩罚项只鼓励较小重叠，没有本文证明的训练全过程硬上界。",
+        "negative_result": null,
+        "non_inference": "不保证所有任务、所有输入下完全正交，也不单独证明消除遗忘。",
+        "unresolved": "零范数数值处理、最终方向相关性分布及正则的训练期保证未报告。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "对激活和未激活低秩专家方向的软去相关能否改善任务解耦？"
+      ],
+      "shared_evidence_with": [
+        "C3"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "附录A在B的两列独立同分布、各向同性Gaussian初始化的假设下，给出其平方余弦相似度期望约为1/dout；dout=4096时相应初始Lorth期望约2.4e-4，此陈述只针对随机初始化。",
+      "claim_type": "theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "随机初始化期望分析",
+          "design": "B各列独立取自N(0,I/dout)，考察两个独立列的归一化内积平方。",
+          "comparator": null,
+          "measure": "E[c_ij^2]约1/dout；初始E[Lorth]约2.4e-4。",
+          "unit_of_analysis": "Gaussian随机列对及其分布期望。",
+          "sample_size_as_reported": "例示dout=4096；未报告Monte Carlo验证样本量。",
+          "uncertainty": null,
+          "assumptions": [
+            "两列独立、各向同性Gaussian且非零。",
+            "结论不适用于未经证明的相关训练后列分布。"
+          ],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "Appendix A Derivation of the Orthogonality Loss Bound",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提供初始化时小方向重叠的理论尺度。",
+        "boundary": "正文附录只有简短期望论述，不是训练后约束或一般有限秩收敛定理。",
+        "negative_result": null,
+        "non_inference": "不能将初始化期望解释为每次运行的确定性上界；附录提到训练相关性O(1e-2)但未提供对应测量或推导。",
+        "unresolved": "训练过程中相关性增长及Lorth能否一直维持初始水平，缺少本文可核对的证明或数据。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "独立各向同性低秩专家列在初始化时具有何种方向重叠尺度？"
+      ],
+      "shared_evidence_with": [
+        "C2"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "在Llama-3-8B的单任务MMLU评估中，NeuroLoRA报告准确率66.3%，高于FlyLoRA的65.1%及表列其余PEFT方法，但低于Full FT的66.8%。",
+      "claim_type": "computational_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "模型训练与基准评估",
+          "design": "同一Llama-3-8B，在全部attention层的query/key/value/output投影处适配；默认r=32、k=8、rho=0.25、dh=64、lambda=0.1，训练3 epochs。ScienceQA仅使用text-only子集。",
+          "comparator": "FlyLoRA 65.1、LoRA 64.2、AdaLoRA 64.5、DoRA 64.8、MoLE 63.9、Full FT 66.8。",
+          "measure": "MMLU准确率；NeuroLoRA 66.3，较FlyLoRA高1.2个百分点。",
+          "unit_of_analysis": "随机种子对应的模型训练运行；测试题目嵌套于固定基准。",
+          "sample_size_as_reported": "3个随机种子；各任务训练/验证/测试样本量未报告。",
+          "uncertainty": "全篇报告取3个随机种子的均值；未报告逐种子结果、标准差、置信区间或显著性检验。",
+          "assumptions": [
+            "仅限本文Llama-3-8B及指定任务、训练配置和评估协议。",
+            "测试集实际题目数及逐种子分布未报告，3个种子不是3个独立基础模型或生物实验。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "4.2 Single-Task Results",
+            "figure": "Table 1",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在本表PEFT比较中取得最高MMLU准确率。",
+        "boundary": "固定基础模型；平均数无离散度；不涵盖其他模型规模。",
+        "negative_result": "没有达到Full FT所报告的66.8%。",
+        "non_inference": "不能说超过所有方法，亦不能把1.2个百分点称为经显著性检验的改善。",
+        "unresolved": "任务样本量、种子方差与参数占比合计明细未报告。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "输入调制的低秩专家路由能否改善固定模型的知识问答适配？"
+      ],
+      "shared_evidence_with": [
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C16"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "在Llama-3-8B的单任务text-only ScienceQA评估中，NeuroLoRA报告准确率95.5%，高于FlyLoRA的94.1%和表列其余PEFT方法，但低于Full FT的96.2%。",
+      "claim_type": "computational_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "模型训练与基准评估",
+          "design": "同一Llama-3-8B，在全部attention层的query/key/value/output投影处适配；默认r=32、k=8、rho=0.25、dh=64、lambda=0.1，训练3 epochs。ScienceQA仅使用text-only子集。",
+          "comparator": "FlyLoRA 94.1、LoRA 94.0、AdaLoRA 93.6、DoRA 94.3、MoLE 93.1、Full FT 96.2。",
+          "measure": "text-only ScienceQA准确率；较FlyLoRA高1.4个百分点。",
+          "unit_of_analysis": "随机种子对应的模型训练运行；测试题目嵌套于固定基准。",
+          "sample_size_as_reported": "3个随机种子；各任务训练/验证/测试样本量未报告。",
+          "uncertainty": "全篇报告取3个随机种子的均值；未报告逐种子结果、标准差、置信区间或显著性检验。",
+          "assumptions": [
+            "仅限本文Llama-3-8B及指定任务、训练配置和评估协议。",
+            "测试集实际题目数及逐种子分布未报告，3个种子不是3个独立基础模型或生物实验。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "4.1-4.2",
+            "figure": "Table 1",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在所评PEFT方法中改善文字科学问答准确率。",
+        "boundary": "只读取文本子集，并未测试ScienceQA全部多模态输入。",
+        "negative_result": "未达到Full FT所报告准确率。",
+        "non_inference": "不支持视觉科学推理或其他模型的泛化结论。",
+        "unresolved": "text-only筛选样本数、数据划分明细及种子离散度未报告。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "动态专家调制能否提高文字科学问答的参数高效适配效果？"
+      ],
+      "shared_evidence_with": [
+        "C4",
+        "C6",
+        "C7",
+        "C8"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "在Llama-3-8B的单任务GSM8K评估中，NeuroLoRA报告准确率61.2%，高于FlyLoRA的58.7%及表列其余PEFT方法，但低于Full FT的62.4%；相对FlyLoRA的提升为2.5个百分点。",
+      "claim_type": "computational_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "模型训练与基准评估",
+          "design": "同一Llama-3-8B，在全部attention层的query/key/value/output投影处适配；默认r=32、k=8、rho=0.25、dh=64、lambda=0.1，训练3 epochs。ScienceQA仅使用text-only子集。",
+          "comparator": "FlyLoRA 58.7、LoRA 56.2、AdaLoRA 56.8、DoRA 57.4、MoLE 55.8、Full FT 62.4。",
+          "measure": "GSM8K准确率。",
+          "unit_of_analysis": "随机种子对应的模型训练运行；测试题目嵌套于固定基准。",
+          "sample_size_as_reported": "3个随机种子；各任务训练/验证/测试样本量未报告。",
+          "uncertainty": "全篇报告取3个随机种子的均值；未报告逐种子结果、标准差、置信区间或显著性检验。",
+          "assumptions": [
+            "仅限本文Llama-3-8B及指定任务、训练配置和评估协议。",
+            "测试集实际题目数及逐种子分布未报告，3个种子不是3个独立基础模型或生物实验。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "4.2 Single-Task Results",
+            "figure": "Table 1",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在所评PEFT方法中改善数学应用题任务得分。",
+        "boundary": "只限本文GSM8K协议和基础模型，未报告问题级错误分布。",
+        "negative_result": "仍低于Full FT的62.4%。",
+        "non_inference": "得分改善不直接证明逐步推理机制或神经调制的生物有效性。",
+        "unresolved": "重复运行方差、题目数量与解题步骤级测量未报告。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "输入依赖的专家调制能否改善低秩适配的多步数学题表现？"
+      ],
+      "shared_evidence_with": [
+        "C4",
+        "C5",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "把分别适配MMLU、text-only ScienceQA和GSM8K的适配器用Task Arithmetic免训练合并时，NeuroLoRA的三任务平均准确率为71.8%，相对个别适配器均值74.3%降3.4%；FlyLoRA对应为68.9%、72.6%和5.1%的相对下降。",
+      "claim_type": "computational_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "模型训练与基准评估",
+          "design": "同一Llama-3-8B，在全部attention层的query/key/value/output投影处适配；默认r=32、k=8、rho=0.25、dh=64、lambda=0.1，训练3 epochs。ScienceQA仅使用text-only子集。 各任务先分别训练，合并门控参数使用简单平均；合并不再训练。",
+          "comparator": "FlyLoRA 68.9（相对降5.1%）、LoRA 58.2（18.6%）、DoRA 59.8（17.2%）。",
+          "measure": "Task Arithmetic合并后的三任务平均准确率及相对个别适配器均值下降比例。",
+          "unit_of_analysis": "随机种子对应的模型训练运行；测试题目嵌套于固定基准。",
+          "sample_size_as_reported": "3个随机种子；各任务训练/验证/测试样本量未报告。",
+          "uncertainty": "全篇报告取3个随机种子的均值；未报告逐种子结果、标准差、置信区间或显著性检验。",
+          "assumptions": [
+            "仅限本文Llama-3-8B及指定任务、训练配置和评估协议。",
+            "测试集实际题目数及逐种子分布未报告，3个种子不是3个独立基础模型或生物实验。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "4.3 Multi-Task Model Merging",
+            "figure": "Table 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在表列方法中有最高合并平均准确率与最小相对损失。",
+        "boundary": "只评三个适配器和一种基础模型；门控采用平均而不是保持各任务原始路由。",
+        "negative_result": "合并后仍比各任务独立适配的平均得分低。",
+        "non_inference": "3.4%为相对下降而不是3.4个百分点；不能由此证明所有跨任务子空间严格正交。",
+        "unresolved": "Task Arithmetic权重、随机投影跨适配器对齐细节及合并方差未完整报告。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "冻结投影并平均调制门控能否减少任务算术合并的性能损失？"
+      ],
+      "shared_evidence_with": [
+        "C4",
+        "C5",
+        "C6",
+        "C8",
+        "C16"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "对同样三个分别训练的适配器采用TIES-Merging时，NeuroLoRA的三任务平均准确率为72.3%，相对独立适配均值降2.7%；FlyLoRA为69.6%且相对降4.1%，表列LoRA和DoRA也有更大下降。",
+      "claim_type": "computational_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "模型训练与基准评估",
+          "design": "同一Llama-3-8B，在全部attention层的query/key/value/output投影处适配；默认r=32、k=8、rho=0.25、dh=64、lambda=0.1，训练3 epochs。ScienceQA仅使用text-only子集。 个别适配器与Task Arithmetic实验共用；门控参数简单平均。",
+          "comparator": "FlyLoRA 69.6（相对降4.1%）、LoRA 60.5（15.4%）、DoRA 61.7（14.5%）。",
+          "measure": "TIES合并后的三任务平均准确率与相对下降。",
+          "unit_of_analysis": "随机种子对应的模型训练运行；测试题目嵌套于固定基准。",
+          "sample_size_as_reported": "3个随机种子；各任务训练/验证/测试样本量未报告。",
+          "uncertainty": "全篇报告取3个随机种子的均值；未报告逐种子结果、标准差、置信区间或显著性检验。",
+          "assumptions": [
+            "仅限本文Llama-3-8B及指定任务、训练配置和评估协议。",
+            "测试集实际题目数及逐种子分布未报告，3个种子不是3个独立基础模型或生物实验。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "4.3 Multi-Task Model Merging",
+            "figure": "Table 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在表列TIES合并方法中取得最高均值及最低相对降幅。",
+        "boundary": "与C7共用个别任务适配器及其比较基线，不是独立复制。",
+        "negative_result": "TIES合并后仍未保持个别适配器全部得分。",
+        "non_inference": "不证明TIES在任意任务数下优于Task Arithmetic，也未报告策略差异显著性。",
+        "unresolved": "TIES裁剪/合并超参数和完整逐任务、逐种子结果未报告。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "动态门控适配器能否在TIES合并下减轻跨任务干扰？"
+      ],
+      "shared_evidence_with": [
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C16"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "按MMLU→text-only ScienceQA→GSM8K各训练3 epochs的固定顺序持续适配Llama-3-8B后，NeuroLoRA-Seq最终三任务准确率为62.1%、92.0%、60.4%，均值71.5%、BWT=-2.6；其平均得分与BWT均优于表列持续学习基线，但仍存在负向后向迁移。",
+      "claim_type": "computational_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "模型训练与基准评估",
+          "design": "同一Llama-3-8B，在全部attention层的query/key/value/output投影处适配；默认r=32、k=8、rho=0.25、dh=64、lambda=0.1，训练3 epochs。ScienceQA仅使用text-only子集。 固定三任务顺序；每个任务3 epochs，全部训练后测试所有任务。",
+          "comparator": "FlyLoRA-Seq均值69.1/BWT=-4.3；O-LoRA 67.7/-5.8；EWC+LoRA 66.1/-7.5；LoRA-Seq 63.8/-11.3。",
+          "measure": "最终逐任务准确率、平均准确率与BWT=(1/(T-1))*sum(R_Ti-R_ii)。",
+          "unit_of_analysis": "随机种子对应的模型训练运行；测试题目嵌套于固定基准。",
+          "sample_size_as_reported": "3个随机种子；各任务训练/验证/测试样本量未报告。",
+          "uncertainty": "全篇报告取3个随机种子的均值；未报告逐种子结果、标准差、置信区间或显著性检验。",
+          "assumptions": [
+            "仅限本文Llama-3-8B及指定任务、训练配置和评估协议。",
+            "测试集实际题目数及逐种子分布未报告，3个种子不是3个独立基础模型或生物实验。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "4.4 Continual Learning",
+            "figure": "Table 3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在指定顺序下有较高最终得分和较小遗忘。",
+        "boundary": "只测试一个任务顺序和三个任务；最后任务GSM8K并非此前任务的遗忘测量。",
+        "negative_result": "BWT仍为-2.6，不能说完全无遗忘。",
+        "non_inference": "最后GSM8K保持单任务61.2%的约98.7%，不能代表全部旧任务知识保持率；不证明无任务边界的连续数据流学习。",
+        "unresolved": "任务顺序敏感性、更长序列、各时间点完整R矩阵和BWT不确定性未报告。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "门控和方向正则能否在固定连续任务序列中改善稳定性与可塑性折衷？"
+      ],
+      "shared_evidence_with": [
+        "C6",
+        "C16"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "GSM8K消融中，完整NeuroLoRA准确率61.2%，去掉调制门控为58.7%，改为输入无关的静态可学习门控为59.4%；动态门控在该比较中分别高2.5和1.8个百分点。",
+      "claim_type": "ablation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "模型训练与基准评估",
+          "design": "同一Llama-3-8B，在全部attention层的query/key/value/output投影处适配；默认r=32、k=8、rho=0.25、dh=64、lambda=0.1，训练3 epochs。ScienceQA仅使用text-only子集。",
+          "comparator": "无Modulation Gate 58.7；Static Gate 59.4；完整模型61.2。",
+          "measure": "GSM8K准确率及门控类型消融差异。",
+          "unit_of_analysis": "随机种子对应的模型训练运行；测试题目嵌套于固定基准。",
+          "sample_size_as_reported": "3个随机种子；各任务训练/验证/测试样本量未报告。",
+          "uncertainty": "全篇报告取3个随机种子的均值；未报告逐种子结果、标准差、置信区间或显著性检验。",
+          "assumptions": [
+            "仅限本文Llama-3-8B及指定任务、训练配置和评估协议。",
+            "测试集实际题目数及逐种子分布未报告，3个种子不是3个独立基础模型或生物实验。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "4.5 Ablation Study",
+            "figure": "Table 4",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "完整输入依赖门控优于静态门控及无门控的所示变体。",
+        "boundary": "仅单模型单任务消融；没有运行间方差。",
+        "negative_result": "静态门控未恢复完整模型得分。",
+        "non_inference": "不能据此声称动态路由是唯一机制，或称去门控是Table 4最大的全部消融下降。",
+        "unresolved": "删除门控后的Lorth处理及完整训练匹配细节未详报，不能自动认定该变体在所有实现细节上等同原FlyLoRA。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "输入依赖性而非仅可学习增益是否有助于GSM8K适配？"
+      ],
+      "shared_evidence_with": [
+        "C6",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "在GSM8K消融中，lambda=0去掉Lorth时准确率为60.1%，低于完整NeuroLoRA的61.2%，报告差为1.1个百分点。",
+      "claim_type": "ablation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "模型训练与基准评估",
+          "design": "同一Llama-3-8B，在全部attention层的query/key/value/output投影处适配；默认r=32、k=8、rho=0.25、dh=64、lambda=0.1，训练3 epochs。ScienceQA仅使用text-only子集。",
+          "comparator": "lambda=0的w/o Lorth与默认lambda=0.1。",
+          "measure": "GSM8K准确率60.1与61.2。",
+          "unit_of_analysis": "随机种子对应的模型训练运行；测试题目嵌套于固定基准。",
+          "sample_size_as_reported": "3个随机种子；各任务训练/验证/测试样本量未报告。",
+          "uncertainty": "全篇报告取3个随机种子的均值；未报告逐种子结果、标准差、置信区间或显著性检验。",
+          "assumptions": [
+            "仅限本文Llama-3-8B及指定任务、训练配置和评估协议。",
+            "测试集实际题目数及逐种子分布未报告，3个种子不是3个独立基础模型或生物实验。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "4.5 Ablation Study",
+            "figure": "Table 4",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在指定配置中，保留正交软惩罚伴随更高得分。",
+        "boundary": "此消融只直接测量GSM8K，不是合并或持续学习的正则专属消融。",
+        "negative_result": null,
+        "non_inference": "不能把合并与遗忘改善全部因果归于Lorth；并未给出专家方向分离的直接量化。",
+        "unresolved": "差异显著性及正则对任务间方向相关性的实际影响未报告。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "平方余弦正则是否改善固定GSM8K适配配置？"
+      ],
+      "shared_evidence_with": [
+        "C6",
+        "C10",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "在GSM8K消融中，把冻结稀疏投影A改为可训练A后准确率降到57.8%，低于完整模型61.2%，报告下降3.4个百分点，幅度大于去门控的2.5个百分点。",
+      "claim_type": "ablation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "模型训练与基准评估",
+          "design": "同一Llama-3-8B，在全部attention层的query/key/value/output投影处适配；默认r=32、k=8、rho=0.25、dh=64、lambda=0.1，训练3 epochs。ScienceQA仅使用text-only子集。",
+          "comparator": "w/ Trainable A与冻结A的完整NeuroLoRA。",
+          "measure": "GSM8K准确率57.8与61.2。",
+          "unit_of_analysis": "随机种子对应的模型训练运行；测试题目嵌套于固定基准。",
+          "sample_size_as_reported": "3个随机种子；各任务训练/验证/测试样本量未报告。",
+          "uncertainty": "全篇报告取3个随机种子的均值；未报告逐种子结果、标准差、置信区间或显著性检验。",
+          "assumptions": [
+            "仅限本文Llama-3-8B及指定任务、训练配置和评估协议。",
+            "测试集实际题目数及逐种子分布未报告，3个种子不是3个独立基础模型或生物实验。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "4.5 Ablation Study",
+            "figure": "Table 4",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在此设置中，冻结A的变体得分较高。",
+        "boundary": "训练A改变可训练参数和优化问题，不是单独测量随机投影的生物作用。",
+        "negative_result": "可训练A变体表现下降。",
+        "non_inference": "不能由单任务下降证明所有可训练投影都会有更差泛化；表注最大下降的表述与数值不一致。",
+        "unresolved": "新增参数是否使用匹配优化超参数以及方差未报告。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "在相同任务配置中保持随机下投影冻结是否比训练它更有利？"
+      ],
+      "shared_evidence_with": [
+        "C6",
+        "C10",
+        "C11",
+        "C13",
+        "C14",
+        "C15"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C13",
+      "statement": "在GSM8K的门控瓶颈维度比较中，dh=32、64、128分别报告60.6%、61.2%、61.1%的准确率；所测配置没有显示把dh从64增至128能够进一步提高得分。",
+      "claim_type": "sensitivity_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "模型训练与基准评估",
+          "design": "同一Llama-3-8B，在全部attention层的query/key/value/output投影处适配；默认r=32、k=8、rho=0.25、dh=64、lambda=0.1，训练3 epochs。ScienceQA仅使用text-only子集。",
+          "comparator": "dh=32、64、128，其余使用默认配置。",
+          "measure": "GSM8K准确率。",
+          "unit_of_analysis": "随机种子对应的模型训练运行；测试题目嵌套于固定基准。",
+          "sample_size_as_reported": "3个随机种子；各任务训练/验证/测试样本量未报告。",
+          "uncertainty": "全篇报告取3个随机种子的均值；未报告逐种子结果、标准差、置信区间或显著性检验。",
+          "assumptions": [
+            "仅限本文Llama-3-8B及指定任务、训练配置和评估协议。",
+            "测试集实际题目数及逐种子分布未报告，3个种子不是3个独立基础模型或生物实验。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "4.5 Ablation Study",
+            "figure": "Table 4",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "dh=64在三个所列点中有最高均值。",
+        "boundary": "只有三个取值，0.1个百分点差异无不确定性信息。",
+        "negative_result": "所报告dh=128得分没有高于dh=64。",
+        "non_inference": "不能推断统计等价、普遍饱和阈值或所有模型的最佳瓶颈维度。",
+        "unresolved": "维度变化的总参数开销、训练耗时及得分方差未报告。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "门控瓶颈宽度对参数高效数学题适配有什么影响？"
+      ],
+      "shared_evidence_with": [
+        "C6",
+        "C10",
+        "C11",
+        "C12",
+        "C14",
+        "C15"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C14",
+      "statement": "固定总rank r=32的GSM8K敏感性分析中，NeuroLoRA在k=4、8、16时报告59.8%、61.2%、60.3%的准确率；k=8是作者所测k集合的报告峰值。",
+      "claim_type": "sensitivity_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "模型训练与基准评估",
+          "design": "同一Llama-3-8B，在全部attention层的query/key/value/output投影处适配；默认r=32、k=8、rho=0.25、dh=64、lambda=0.1，训练3 epochs。ScienceQA仅使用text-only子集。 固定r=32，仅改变k。",
+          "comparator": "测试k集合为{4,8,12,16}；正文未列k=12得分。",
+          "measure": "不同活跃rank下GSM8K准确率。",
+          "unit_of_analysis": "随机种子对应的模型训练运行；测试题目嵌套于固定基准。",
+          "sample_size_as_reported": "3个随机种子；各任务训练/验证/测试样本量未报告。",
+          "uncertainty": "全篇报告取3个随机种子的均值；未报告逐种子结果、标准差、置信区间或显著性检验。",
+          "assumptions": [
+            "仅限本文Llama-3-8B及指定任务、训练配置和评估协议。",
+            "测试集实际题目数及逐种子分布未报告，3个种子不是3个独立基础模型或生物实验。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "4.6 Sensitivity Analysis / Effect of Active Rank k",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在所报告点中中等活跃比例取得更高得分。",
+        "boundary": "r仅固定为32，不能外推其他rank的最优稀疏度。",
+        "negative_result": "k=4和16的所报告得分均低于k=8。",
+        "non_inference": "容量不足和专家特化减弱是作者解释，不是直接测得的中介机制。",
+        "unresolved": "k=12具体值、方差与专家特化量化未报告。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "激活专家数量如何影响固定rank的任务适配得分？"
+      ],
+      "shared_evidence_with": [
+        "C6",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C15"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C15",
+      "statement": "GSM8K的Lorth权重分析中，lambda=0.01、0.1、0.2分别报告60.4%、61.2%、60.7%的准确率；按验证集网格搜索选定的0.1，在所列数值中最好，而更大正则权重未继续提高得分。",
+      "claim_type": "sensitivity_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "模型训练与基准评估",
+          "design": "同一Llama-3-8B，在全部attention层的query/key/value/output投影处适配；默认r=32、k=8、rho=0.25、dh=64、lambda=0.1，训练3 epochs。ScienceQA仅使用text-only子集。 lambda在held-out验证集上从{0.01,0.05,0.1,0.2}选择。",
+          "comparator": "lambda=0.01、0.1、0.2；网格另包含0.05但未列其准确率。",
+          "measure": "GSM8K准确率与正则权重。",
+          "unit_of_analysis": "随机种子对应的模型训练运行；测试题目嵌套于固定基准。",
+          "sample_size_as_reported": "3个随机种子；各任务训练/验证/测试样本量未报告。",
+          "uncertainty": "全篇报告取3个随机种子的均值；未报告逐种子结果、标准差、置信区间或显著性检验。",
+          "assumptions": [
+            "仅限本文Llama-3-8B及指定任务、训练配置和评估协议。",
+            "测试集实际题目数及逐种子分布未报告，3个种子不是3个独立基础模型或生物实验。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "4.6 Sensitivity Analysis / Effect of lambda",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所报告均值在lambda=0.1较高。",
+        "boundary": "选择基于本文验证集，未报告其大小、独立性明细或跨任务迁移。",
+        "negative_result": "lambda=0.2的得分比0.1低0.5个百分点。",
+        "non_inference": "弱正则无法分离子空间和强正则抑制表达力是未独立测量的解释。",
+        "unresolved": "lambda=0.05结果、验证划分与正则作用的直接量化未报告。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "专家方向正则的强度如何影响任务表现？"
+      ],
+      "shared_evidence_with": [
+        "C6",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C16",
+      "statement": "作者将GSM8K相对FlyLoRA较大的单任务增益、较小合并损失和较少持续学习遗忘解释为输入调制与专家方向去相关的互补作用；本文得分与消融支持这种解释的可行性，但没有直接识别其任务路由或中介机制。",
+      "claim_type": "mechanistic_interpretation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "模型训练与基准评估",
+          "design": "同一Llama-3-8B，在全部attention层的query/key/value/output投影处适配；默认r=32、k=8、rho=0.25、dh=64、lambda=0.1，训练3 epochs。ScienceQA仅使用text-only子集。",
+          "comparator": "FlyLoRA及各持续学习基线。",
+          "measure": "单任务、合并与BWT得分。",
+          "unit_of_analysis": "随机种子对应的模型训练运行；测试题目嵌套于固定基准。",
+          "sample_size_as_reported": "3个随机种子；各任务训练/验证/测试样本量未报告。",
+          "uncertainty": "全篇报告取3个随机种子的均值；未报告逐种子结果、标准差、置信区间或显著性检验。",
+          "assumptions": [
+            "仅限本文Llama-3-8B及指定任务、训练配置和评估协议。",
+            "测试集实际题目数及逐种子分布未报告，3个种子不是3个独立基础模型或生物实验。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "4.2-4.4",
+            "figure": "Tables 1-3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "模型训练与基准评估",
+          "design": "同一Llama-3-8B，在全部attention层的query/key/value/output投影处适配；默认r=32、k=8、rho=0.25、dh=64、lambda=0.1，训练3 epochs。ScienceQA仅使用text-only子集。",
+          "comparator": "动态/静态/无门控与lambda=0变体。",
+          "measure": "消融准确率。",
+          "unit_of_analysis": "随机种子对应的模型训练运行；测试题目嵌套于固定基准。",
+          "sample_size_as_reported": "3个随机种子；各任务训练/验证/测试样本量未报告。",
+          "uncertainty": "全篇报告取3个随机种子的均值；未报告逐种子结果、标准差、置信区间或显著性检验。",
+          "assumptions": [
+            "仅限本文Llama-3-8B及指定任务、训练配置和评估协议。",
+            "测试集实际题目数及逐种子分布未报告，3个种子不是3个独立基础模型或生物实验。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "4.5-5 Discussion",
+            "figure": "Table 4",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提供与观察到的表现差异相容的算法层解释。",
+        "boundary": "门控只显式输入单token表示；未展示真实token路由、专家激活跨任务分布或训练后正交性。",
+        "negative_result": null,
+        "non_inference": "不是生物神经调制验证，不证明FlyLoRA的隐藏表示完全没有上下文；也不是正式任务无关持续流评估。",
+        "unresolved": "动态路由和去相关对合并/遗忘的各自贡献及中介证据仍未分离。",
+        "unresolved_attribution": "解释来自本文Discussion和结果归因；不是独立实验识别出的机制。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "动态专家调制与方向去相关可能如何共同减少任务干扰？"
+      ],
+      "shared_evidence_with": [
+        "C4",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C17",
+      "statement": "作者提出未来可用attention pooling把跨token或序列级上下文加入当前逐token调制门控，以期进一步改善适配表现；本文没有实施或评估这一扩展。",
+      "claim_type": "future_hypothesis",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "未来方法设想",
+          "design": "当前gate作用于单token；建议通过attention pooling引入sequence-level上下文。",
+          "comparator": "现有逐token门控。",
+          "measure": "潜在适配性能改善，未测量。",
+          "unit_of_analysis": "未实施的模型变体。",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "需要新增序列上下文模块并另行评估。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Limitations",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提出可检验的门控上下文扩展方向。",
+        "boundary": "仅是未来工作建议，无新增结果。",
+        "negative_result": null,
+        "non_inference": "不能作为已验证改进、序列级机制或普遍收益。",
+        "unresolved": "是否改善准确率、效率或持续学习均未知。",
+        "unresolved_attribution": "本文Limitations的建议。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "序列级上下文汇聚是否比逐token增益调制更有助于适配？"
+      ],
+      "shared_evidence_with": [
+        "C1"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "本篇为2026年3月12日arXiv v1预印本。完整读取10页供给文本、Tables 1-5、初始化分析及超参数附录，形成17个可独立评估的候选记录：门控/软正则方法、受Gaussian假设限制的初始化期望、三个单任务结果、两种合并策略、固定序列持续学习、组件消融与参数敏感性，并将机制解释和未来序列上下文假设分开。比较只限Llama-3-8B和三个基准，ScienceQA为文字子集，全文报告3随机种子均值但没有方差。NeuroLoRA优于所列PEFT基线而非Full FT，负BWT仍表明遗忘。门控初始化等价性和全模型参数总占比不能从供给公式/明细核实，已保留未解决问题；不宣称严格正交、无任务边界泛化或生物机制验证。所有记录为human_checked:false候选，只有源文本审计，没有图像阅读或独立复现。",
+  "shared_evidence": [
+    {
+      "claim_id": "C1",
+      "with": [
+        "C17"
+      ]
+    },
+    {
+      "claim_id": "C2",
+      "with": [
+        "C3"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C2"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C16"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C4",
+        "C6",
+        "C7",
+        "C8"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C4",
+        "C5",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C4",
+        "C5",
+        "C6",
+        "C8",
+        "C16"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C16"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C6",
+        "C16"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "with": [
+        "C6",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "with": [
+        "C6",
+        "C10",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "with": [
+        "C6",
+        "C10",
+        "C11",
+        "C13",
+        "C14",
+        "C15"
+      ]
+    },
+    {
+      "claim_id": "C13",
+      "with": [
+        "C6",
+        "C10",
+        "C11",
+        "C12",
+        "C14",
+        "C15"
+      ]
+    },
+    {
+      "claim_id": "C14",
+      "with": [
+        "C6",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C15"
+      ]
+    },
+    {
+      "claim_id": "C15",
+      "with": [
+        "C6",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14"
+      ]
+    },
+    {
+      "claim_id": "C16",
+      "with": [
+        "C4",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C17",
+      "with": [
+        "C1"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": null,
+        "issue": "NEURO-AUTHORS：索引遗漏源首页最后3位作者，非错配PDF。",
+        "suggested_correction": "仅在本篇输出补齐9人，保留索引与源差异，identity_consistent保持真实同一文献含义。",
+        "pdf_page": 1,
+        "resolved": true
+      },
+      {
+        "claim_id": "C1",
+        "issue": "NEURO-INIT：Eq.3及gamma=1、beta=0不能推出初始mx约1或等同FlyLoRA。",
+        "suggested_correction": "C1不声称初始化等价；待核对实现/初始化说明。",
+        "pdf_page": 4,
+        "resolved": false
+      },
+      {
+        "claim_id": "C1",
+        "issue": "NEURO-PARAM：Table 1的0.14%总参数与逐模块264256新增参数缺少可核对的全模型合计；没有训练速度测量。",
+        "suggested_correction": "保留每模块公式，不核实总比例或速度；要求完整注入模块维度/计数。",
+        "pdf_page": 7,
+        "resolved": false
+      },
+      {
+        "claim_id": null,
+        "issue": "NEURO-TABLE1：文字/图注称所有方法最佳，但Full FT在三任务都高于NeuroLoRA。",
+        "suggested_correction": "C4-C6明确限定PEFT最佳，并保留低于Full FT的实际边界。",
+        "pdf_page": 5,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "NEURO-ABLATION：Table 4图注称去门控最大下降，但Trainable A下降3.4大于2.5。",
+        "suggested_correction": "C10/C12以表内数值为准，不沿用错误排序。",
+        "pdf_page": 7,
+        "resolved": true
+      },
+      {
+        "claim_id": "C3",
+        "issue": "NEURO-ORTH：初始化期望被文字扩展为训练后相关性上界，未提供证明或对应测量。",
+        "suggested_correction": "C2/C3限于软惩罚定义和初始化期望，训练保证列为未知。",
+        "pdf_page": 10,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "NEURO-STATS：3个种子均值缺少离散度；任务题目数和部分敏感性点未报告。",
+        "suggested_correction": "保留3种子与实际已列点，不补造显著性或缺失值。",
+        "pdf_page": 5,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "NEURO-INTERPRET：将得分差异直接归于任务路由/子空间分离/生物神经调制会越界。",
+        "suggested_correction": "C16仅为解释，C17仅为未测试假设；跨模型、顺序与生物泛化均未建立。",
+        "pdf_page": 8,
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T13:49:44.542493Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "204734ddc0c5b4ecd9376c3475b5182e4c88751d07c153ab6e600287ea59b413",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

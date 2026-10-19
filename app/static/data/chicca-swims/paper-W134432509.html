@@ -1,0 +1,123 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>A Neuromorphic VLSI Implementation of a Simplified Electrosensory System in a Weakly Electric Fish</title><style>body{max-width:940px;margin:40px auto;padding:0 24px;background:#fffdf7;color:#12372f;font:16px/1.8 Georgia,serif}h1{font-size:26px;line-height:1.4}h2{font-size:20px;line-height:1.5}h3{font-size:16px}article{padding:26px 0;border-top:1px solid #bec4b8}small{color:#68766e}dl{display:grid;grid-template-columns:120px 1fr;gap:8px 20px}dt{font-weight:bold}dd{margin:0}li{padding:8px 0}p,dd{overflow-wrap:anywhere}.note{background:#eef2e2;padding:14px;border-left:3px solid #738968}summary{cursor:pointer}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.7 monospace}@media(max-width:600px){body{margin:24px auto;padding:0 18px}dl{grid-template-columns:1fr;gap:3px}dd{margin-bottom:12px}}@media print{body{margin:0;background:white}details{display:block}}</style><link rel="stylesheet" href="../../commons-v02.css?v=20261020-1"><link rel="stylesheet" href="../../examples.css?v=20260928-2"><link rel="stylesheet" href="../../site.css?v=20261020-1"><script defer src="../../site.js?v=20261020-1"></script><script defer src="../../report-ui.js?v=20261020-1"></script></head><body class="portal-page report-page" data-cc-report-shell="1" data-page="library" data-site-prefix="../../" data-library-paper="paper-W134432509" data-report-language="zh" data-claim-records="{&quot;C1&quot;:&quot;structured-paper-W134432509-1&quot;,&quot;C2&quot;:&quot;structured-paper-W134432509-2&quot;}"><header></header><main id="report-content"><div id="report-tools"></div><small>CLAIM COMMONS / 阅读报告</small><h1>A Neuromorphic VLSI Implementation of a Simplified Electrosensory System in a Weakly Electric Fish</h1><p class="note">AI 文本提取候选，尚待人工核对。图像像素未读取；PDF 页码指文件中的页序。</p><p>已重新核对所供单页海报的全部文字，包括参考文献。保留两项模型结果：不同抑制与反馈条件下的 Lf 放电响应，以及较强输入对应更早放电的关系。两项结果共享模型与部分观察。物体接近程度编码属于作者解释；正文没有直接距离验证、生物数据比较或已完成的 VLSI 硬件结果。</p><a href="http://www-labsticc.univ-ubs.fr/~coussy/neucomp2013/index_fichiers/material/posters/poster2.pdf" rel="noreferrer">查看所读原文版本 ↗</a><details><summary>贡献清单与处理决定</summary><ul><li><b>构建包含电感受器传入、兴奋性与抑制性颗粒细胞、Mg、Lf 及 EOCD 调制的简化 ELL 脉冲网络。</b><br>include · 作为两项结果的共同模型与方法条件保留；不单独宣称硬件实现或生物学验证。</li><li><b>比较低输入、无 Mg 抑制及恢复 Mg 抑制与 EOCD 反馈条件下的 Lf 放电。</b><br>include · 保留完整条件比较；联合恢复操作不能支持分别归因。</li><li><b>Lf 在较强输入下开始放电，逆潜伏期增加对应更早放电。</b><br>include · 输入强度与放电时序关系可独立评估。</li><li><b>作者将可见脉冲时间抖动归因于模拟的片上神经元失配。</b><br>defer · 保留失配为模型设置；没有失配消融或定量比较支持独立机制结论。</li><li><b>作者将强度—潜伏期关系解释为物体接近程度的时间编码，并称其重现生物学观察。</b><br>include · 附于输入—时序结果的解释与推断边界中；没有直接距离测试或生物数据比较，不另生成验证主张。</li><li><b>在 multichip AER 系统上实现近距离实时感知。</b><br>exclude · 正文明确该实现仍在研究中，没有完成实现或性能结果。</li></ul></details><article><small>C1 / 直接结果 · 计算模型条件比较</small><h2>在简化 ELL 脉冲网络的条件比较中，低 basal EOD（DC）与低 LEOD 幅度下 Lf 不放电；无 Mg 抑制时，Lf 在 basal EOD 下也产生脉冲；恢复 Mg 抑制与 EOCD 反馈的联合条件下，Lf 在较强 LEOD 区域放电。</h2><h3>Evidence</h3><p>采用 leaky integrate-and-fire 神经元并模拟片上神经元失配的 ELL 网络建模</p><dl><dt>设计 / 对照</dt><dd>以 CASE-I、CASE-II、CASE-III 展示改变 basal EOD（DC）、LEOD 幅度及抑制与反馈条件时的网络脉冲响应。；低 DC 与低 LEOD 幅度；无 Mg 抑制；恢复 Mg 抑制与 EOCD 反馈。</dd><dt>独立单位与 n</dt><dd>模型网络在各输入与连接条件下的 Lf 脉冲响应；模型含100个电感受器传入单元、100个兴奋性颗粒细胞及100个抑制性颗粒细胞；Mg、Lf 数量及独立仿真次数未报告。</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 1 · CASE-I、CASE-II、CASE-III 的文字说明</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>所报告条件比较支持：无 Mg 抑制时可出现 basal EOD 响应，恢复抑制与反馈的联合条件下 Lf 响应位于较强 LEOD 区域。</dd><dt>适用边界</dt><dd>仅限海报描述的简化网络及条件；未报告完整参数、效应大小或不确定性。</dd><dt>实际负结果</dt><dd>低 DC 与低 LEOD 幅度条件下 Lf 未放电。</dd><dt>不能推出</dt><dd>不能分别量化 Mg 抑制与 EOCD 的贡献，也不能据此确认真实鱼脑或已制成芯片中的同等效应。</dd><dt>未解决</dt><dd>分别改变 Mg 抑制与 EOCD 时，Lf 对 basal EOD 和较强 LEOD 的响应如何变化？</dd></dl><h3>相关问题</h3><ul><li>Mg 抑制与 EOCD 反馈条件如何改变简化 ELL 网络中 Lf 对 basal EOD 与较强 LEOD 的响应？</li></ul></article><article><small>C2 / 直接结果 · 计算模型输入—时序关系</small><h2>在简化 ELL 网络中，以 LEOD 幅度和 basal EOD（DC）为强度参数展示的 Lf 响应表明：较低输入下无放电，超过未量化的强度水平后开始放电；较强输入对应增加的逆放电潜伏期，即更早放电。</h2><h3>Evidence</h3><p>网络模型响应及 Lf 逆潜伏期随输入强度参数变化的图示文字</p><dl><dt>设计 / 对照</dt><dd>将 Lf 逆潜伏期作为 LEOD 幅度与 DC 的函数展示。；较低与较强输入条件</dd><dt>独立单位与 n</dt><dd>模型 Lf 在各输入参数条件下的响应；Lf 数量、输入参数点数量及独立仿真次数未报告。</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 1 · Lf 逆潜伏期随 LEOD 幅度及 DC 变化的图示说明</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>图示文字支持较强电输入对应更早 Lf 放电；作者将这一时序关系解释为物体接近程度的时间编码。</dd><dt>适用边界</dt><dd>没有可读取的数值曲线、阈值、效应大小或不确定性；也未分别量化 DC 与 LEOD 幅度的贡献。</dd><dt>实际负结果</dt><dd>较低 DC 与 LEOD 幅度下 Lf 未放电，与 C1 的低输入观察重叠。</dd><dt>不能推出</dt><dd>不能推断距离解码精度、对物体大小的泛化、与生物数据的定量一致性、实时感知性能或已完成的 VLSI 功能。</dd><dt>未解决</dt><dd>在物体大小及电场条件变化时，Lf 潜伏期能否可靠表征物体距离？</dd></dl><h3>相关问题</h3><ul><li>简化 ELL 网络的 Lf 放电潜伏期如何随 LEOD 幅度与 basal EOD（DC）变化？</li><li>Lf 潜伏期能否在物体大小及电场条件变化时可靠表征距离？</li></ul></article><details><summary>核对记录与来源信息</summary><pre>{
+  &quot;coverage&quot;: {
+    &quot;pdf_pages_read&quot;: [
+      1
+    ],
+    &quot;results_sections_seen&quot;: [
+      &quot;Electrosensory Lateral Line Lobe Model&quot;,
+      &quot;Spiking Response in ELL Layers&quot;,
+      &quot;Lf Response as a Function of LEOD Input&quot;,
+      &quot;Conclusions and Future Work&quot;
+    ],
+    &quot;missing_material&quot;: [
+      &quot;未提供图像像素，不能读取曲线数值或具体脉冲时间。&quot;,
+      &quot;未报告完整仿真参数、独立运行次数、统计不确定性或硬件实验数据。&quot;
+    ],
+    &quot;text_pass_complete&quot;: true,
+    &quot;notes&quot;: [
+      &quot;已评估所供第1页全部文字，包括参考文献；没有提供附录或补充材料。&quot;,
+      &quot;实际文档为单页海报，元数据类型为 conference-paper；标题及作者身份相符，正文作者 Leonel Gomez 与元数据姓名形式不同。&quot;,
+      &quot;正文明确报告 modeling study，multichip AER 实现仍在研究中；不能由标题推断硬件已经实现。&quot;,
+      &quot;生物学背景及引用文献中的发现不作为本文原创结果。&quot;
+    ],
+    &quot;reading_mode&quot;: &quot;text_only&quot;,
+    &quot;figure_images_read&quot;: false,
+    &quot;scientific_verification&quot;: false
+  },
+  &quot;audit&quot;: {
+    &quot;initial_source_match_checks&quot;: [],
+    &quot;source_match_checks&quot;: [],
+    &quot;model_findings&quot;: [
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;元数据为 conference-paper，实际提供内容为单页海报。&quot;,
+        &quot;suggested_correction&quot;: &quot;按 poster 记录实际文档类型，保留一致的标题身份。&quot;,
+        &quot;pdf_page&quot;: 1,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;标题包含 VLSI Implementation，但正文仅报告建模，并将 multichip AER 实现列为进行中的工作。&quot;,
+        &quot;suggested_correction&quot;: &quot;全部结果限定为模型结果，不生成已完成硬件实现或性能主张。&quot;,
+        &quot;pdf_page&quot;: 1,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C1&quot;,
+        &quot;issue&quot;: &quot;恢复 Mg 抑制与 EOCD 是联合操作，不能分别归因；各条件完整匹配设置也未报告。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留联合条件比较，删除过强的独立机制或量化因果表述。&quot;,
+        &quot;pdf_page&quot;: 1,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C2&quot;,
+        &quot;issue&quot;: &quot;强度—潜伏期关系没有直接验证距离编码精度或生物学一致性。&quot;,
+        &quot;suggested_correction&quot;: &quot;直接主张限定为输入—时序关系，距离编码保留为作者解释。&quot;,
+        &quot;pdf_page&quot;: 1,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;模型细胞数不能作为独立重复数；两项主张共享模型及低输入无放电观察。&quot;,
+        &quot;suggested_correction&quot;: &quot;明确分析单位与未报告的运行次数，并保留双向 shared_evidence_with。&quot;,
+        &quot;pdf_page&quot;: 1,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;草稿包含请求模式之外的 source_check 与 review 字段，且 source_check 暗示工具式核验。&quot;,
+        &quot;suggested_correction&quot;: &quot;移除额外字段，仅记录基于所供文字的核对结果。&quot;,
+        &quot;pdf_page&quot;: 1,
+        &quot;resolved&quot;: true
+      }
+    ],
+    &quot;needs_human_review&quot;: true
+  },
+  &quot;source&quot;: {
+    &quot;filename&quot;: &quot;paper-W134432509.pdf&quot;,
+    &quot;sha256&quot;: &quot;b1b9f538f0c9653d0495c5f634079a5cc94f54c64edaaca366ef6e36ecaf269d&quot;,
+    &quot;source_url&quot;: &quot;http://www-labsticc.univ-ubs.fr/~coussy/neucomp2013/index_fichiers/material/posters/poster2.pdf&quot;,
+    &quot;pdf_page_count&quot;: 1
+  },
+  &quot;provenance&quot;: {
+    &quot;created_at&quot;: &quot;2026-10-07T04:55:38.852781Z&quot;,
+    &quot;workflow&quot;: &quot;claim-commons-pdf-v1&quot;,
+    &quot;prompt_version&quot;: &quot;claim-commons-chatgpt-pdf-2026-10-07.1&quot;,
+    &quot;backend&quot;: &quot;signed_in_chatgpt_codex&quot;,
+    &quot;authentication&quot;: &quot;existing_ChatGPT_login&quot;,
+    &quot;provider_api_key_used&quot;: false,
+    &quot;model&quot;: &quot;account_default_GPT&quot;,
+    &quot;source_sha256&quot;: &quot;b1b9f538f0c9653d0495c5f634079a5cc94f54c64edaaca366ef6e36ecaf269d&quot;,
+    &quot;requests&quot;: [
+      {
+        &quot;phase&quot;: &quot;extraction&quot;,
+        &quot;seconds&quot;: 63.55,
+        &quot;usage&quot;: {
+          &quot;input_tokens&quot;: 14691,
+          &quot;cached_input_tokens&quot;: 0,
+          &quot;cache_write_input_tokens&quot;: 0,
+          &quot;output_tokens&quot;: 2758,
+          &quot;reasoning_output_tokens&quot;: 46
+        },
+        &quot;backend&quot;: &quot;signed_in_chatgpt_codex&quot;,
+        &quot;tools_used&quot;: false
+      },
+      {
+        &quot;phase&quot;: &quot;source_audit&quot;,
+        &quot;seconds&quot;: 62.81,
+        &quot;usage&quot;: {
+          &quot;input_tokens&quot;: 17321,
+          &quot;cached_input_tokens&quot;: 0,
+          &quot;cache_write_input_tokens&quot;: 0,
+          &quot;output_tokens&quot;: 3116,
+          &quot;reasoning_output_tokens&quot;: 49
+        },
+        &quot;backend&quot;: &quot;signed_in_chatgpt_codex&quot;,
+        &quot;tools_used&quot;: false
+      }
+    ],
+    &quot;source_audit_complete&quot;: true,
+    &quot;review_status&quot;: &quot;candidate&quot;,
+    &quot;database_updated&quot;: false
+  }
+}</pre></details></main><footer></footer></body></html>

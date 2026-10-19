@@ -1,0 +1,312 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Modulo Sampling: Performance Guarantees in the Presence of Quantization</title><style>body{max-width:940px;margin:40px auto;padding:0 24px;background:#fffdf7;color:#12372f;font:16px/1.8 Georgia,serif}h1{font-size:26px;line-height:1.4}h2{font-size:20px;line-height:1.5}h3{font-size:16px}article{padding:26px 0;border-top:1px solid #bec4b8}small{color:#68766e}dl{display:grid;grid-template-columns:120px 1fr;gap:8px 20px}dt{font-weight:bold}dd{margin:0}li{padding:8px 0}p,dd{overflow-wrap:anywhere}.note{background:#eef2e2;padding:14px;border-left:3px solid #738968}summary{cursor:pointer}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.7 monospace}@media(max-width:600px){body{margin:24px auto;padding:0 18px}dl{grid-template-columns:1fr;gap:3px}dd{margin-bottom:12px}}@media print{body{margin:0;background:white}details{display:block}}</style><link rel="stylesheet" href="../../commons-v02.css?v=20261020-1"><link rel="stylesheet" href="../../examples.css?v=20260928-2"><link rel="stylesheet" href="../../site.css?v=20261020-1"><script defer src="../../site.js?v=20261020-1"></script><script defer src="../../report-ui.js?v=20261020-1"></script></head><body class="portal-page report-page" data-cc-report-shell="1" data-page="library" data-site-prefix="../../" data-library-paper="paper-W4413468590" data-report-language="zh" data-claim-records="{&quot;C1&quot;:&quot;structured-paper-W4413468590-1&quot;,&quot;C2&quot;:&quot;structured-paper-W4413468590-2&quot;,&quot;C3&quot;:&quot;structured-paper-W4413468590-3&quot;,&quot;C4&quot;:&quot;structured-paper-W4413468590-4&quot;,&quot;C5&quot;:&quot;structured-paper-W4413468590-5&quot;,&quot;C6&quot;:&quot;structured-paper-W4413468590-6&quot;,&quot;C7&quot;:&quot;structured-paper-W4413468590-7&quot;,&quot;C8&quot;:&quot;structured-paper-W4413468590-8&quot;,&quot;C9&quot;:&quot;structured-paper-W4413468590-9&quot;,&quot;C10&quot;:&quot;structured-paper-W4413468590-10&quot;,&quot;C11&quot;:&quot;structured-paper-W4413468590-11&quot;,&quot;C12&quot;:&quot;structured-paper-W4413468590-12&quot;,&quot;C13&quot;:&quot;structured-paper-W4413468590-13&quot;,&quot;C14&quot;:&quot;structured-paper-W4413468590-14&quot;}"><header></header><main id="report-content"><div id="report-tools"></div><small>CLAIM COMMONS / 阅读报告</small><h1>Modulo Sampling: Performance Guarantees in the Presence of Quantization</h1><p class="note">AI 文本提取候选，尚待人工核对。图像像素未读取；PDF 页码指文件中的页序。</p><p>本文分析两种模ADC：已知折叠支持时的展开及抖动MSE，和用OMP替代辅助位、带RIP和额外位宽条件的展开。最小门限下得到比常规幅度量化更快的过采样误差缩放，并扩展到不重叠强弱分量。六组数值研究包括低2/3位宽的失败/无优势和无抖动经验结果。来源二查保留附录噪声项、RIP/幅度记号、复杂度缩放和无抖动随机来源等具体人工数学核查事项；未运行仿真或进行硅验证。</p><a href="https://www.weizmann.ac.il/math/yonina/sites/math.yonina/files/Modulo_Sampling_Performance_Guarantees_in_the_Presence_of_Quantization.pdf" rel="noreferrer">查看所读原文版本 ↗</a><details><summary>贡献清单与处理决定</summary><ul><li><b>带外恢复的秩充分条件和带辅助位MSE定理。</b><br>include · 完整保留门限、抖动、截断与理想滤波；注明部分已在ISIT2024版本发表。</li><li><b>最小门限下常规ADC比较及OF^-3/OF^-1缩放。</b><br>include · 同幅度位宽非同总比特率；c边界不严格胜出。</li><li><b>未知支持OMP流程和RIP/位宽罚项恢复定理。</b><br>include · Theorem2来自[48]不算原创；V的RIP不已知自动满足。</li><li><b>恢复计算复杂度。</b><br>include · 采用明确N/K/S式；随采样率平方的无条件外推暂缓。</li><li><b>异频带强弱分量NMSE界与数字通道化。</b><br>include · 保留频带互斥、单位能量、最小门限和理想带通。</li><li><b>Simulation1–3的量化/OMP/强弱分量误差。</b><br>include · 区分20000和5000噪声实现；图像无法读具体值。</li><li><b>Simulation4的4位优势与6位相近、Simulation5的2/3位负结果。</b><br>include · 重要低位宽失败不得隐藏，非恢复必要性证明。</li><li><b>Simulation6无抖动经验比较。</b><br>include · 不沿用精确抖动定理；随机实现来源仍不明。</li><li><b>一位幅度量化、真实硬件非理想/同步、谱泄漏/滑窗、快速稀疏恢复。</b><br>defer · 正文列为后续问题或引用替代算法，无本文硬件验证。</li><li><b>额外OR门能耗微不足道、相较模拟滤波硬件省电。</b><br>defer · 未进行硅/FPGA功率、面积、同步或滤波器匹配测量。</li><li><b>已有HoD、prediction、OMP支持定理、硬件原型、UNO等。</b><br>exclude · 引用结果不是本文新证明/硬件实验。</li></ul></details><article><small>C1 / 直接结果 · source_reported_theoretical_result</small><h2>对于本文的带限输入、可忽略截断误差的有限观察窗口和额外一位折叠位置集合 S，Lemma 1 报告 OF&gt;3 且模门限 λ′≥||f||∞/(OF−2) 是带外 Fourier 子矩阵 VS 满列秩的充分条件，从而可在已知支持时计算唯一的残差差分估计。</h2><h3>Evidence</h3><p>折叠稀疏度与带外测量数的界</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>有限窗口的 Fourier 子矩阵；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 6 · III.A / Lemma 1</dd></dl><p>折叠支持上界和维度推导</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>支持集合和带外频率；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 12 · Appendix A</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>对于本文的带限输入、可忽略截断误差的有限观察窗口和额外一位折叠位置集合 S，Lemma 1 报告 OF&gt;3 且模门限 λ′≥||f||∞/(OF−2) 是带外 Fourier 子矩阵 VS 满列秩的充分条件，从而可在已知支持时计算唯一的残差差分估计。</dd><dt>适用边界</dt><dd>充分而非必要；不提供每个矩阵的数值条件数或噪声放大界。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能只凭 OF&gt;3 保证任意门限、窗口和实际电路下稳定展开。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>已知折叠位置时，何种采样率与模门限条件允许残差求解？</li></ul></article><article><small>C2 / 直接结果 · source_reported_theoretical_result</small><h2>在非减性三角抖动量化、额外一位折叠信息、理想低通、可忽略截断误差和 OF&gt;3、b&gt;3 条件下，本文 Theorem 1 对 λ′=c||f||∞/(OF−2)、1≤c≤OF−2 报告可准确恢复模残差，并给出重建误差 MSEr=c²||f||∞²/[OF(2^b−2)²(OF−2)²]，剩余误差仅为过滤后的量化噪声。</h2><h3>Evidence</h3><p>残差差分估计、整数舍入与噪声功率分析</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>模型信号样本与抖动随机总体；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 6 · III.A / Theorem 1</dd></dl><p>差分噪声界和舍入条件推导</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>理论恢复流程；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 12 · Appendix B</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>在非减性三角抖动量化、额外一位折叠信息、理想低通、可忽略截断误差和 OF&gt;3、b&gt;3 条件下，本文 Theorem 1 对 λ′=c||f||∞/(OF−2)、1≤c≤OF−2 报告可准确恢复模残差，并给出重建误差 MSEr=c²||f||∞²/[OF(2^b−2)²(OF−2)²]，剩余误差仅为过滤后的量化噪声。</dd><dt>适用边界</dt><dd>记录作者定理而非已独立验证；c=OF−2 对应不折叠边界，原先严格门限范围需单独理解。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能把准确展开等同原信号无误差，也不能外推非理想硬件和无抖动的精确 MSE。</dd><dt>未解决</dt><dd>附录B对支持之外差分噪声及伪逆放大作用的处理。</dd></dl><h3>相关问题</h3><ul><li>带一位折叠信息的量化模采样在什么条件下只剩量化噪声？</li></ul></article><article><small>C3 / 直接结果 · source_reported_theoretical_comparison</small><h2>采用最小理论门限 c=1 且满足本文展开与抖动条件时，模 ADC 的 MSEr 为常规 ADC 的 1/(OF−2)²，因此 OF&gt;3 时更低；在固定量化位宽且恢复条件持续满足的比较中，模 ADC 误差按 O(OF^-3) 缩放，常规 ADC 按 O(OF^-1) 缩放。</h2><h3>Evidence</h3><p>两个不过载抖动量化模型的公式比较</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；同幅度量化位宽 b、同采样率的常规 ADC</dd><dt>独立单位与 n</dt><dd>信号及量化模型；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 6 · III.A / comparison with conventional ADC</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>采用最小理论门限 c=1 且满足本文展开与抖动条件时，模 ADC 的 MSEr 为常规 ADC 的 1/(OF−2)²，因此 OF&gt;3 时更低；在固定量化位宽且恢复条件持续满足的比较中，模 ADC 误差按 O(OF^-3) 缩放，常规 ADC 按 O(OF^-1) 缩放。</dd><dt>适用边界</dt><dd>相同 b 是幅度量化位宽，不是相同总比特流率；辅助系统多用一位折叠信息。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能推断实测能耗更低、总数据率相同或所有 c 都严格改善；若 c=OF−2 比值为1。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>适当门限下，模采样为什么在理论上得到更快的过采样误差衰减？</li></ul></article><article><small>C4 / 直接结果 · proposed_recovery_algorithm</small><h2>为不提供折叠位置位的模 ADC，本文提出先用带外 Fourier 数据和有界噪声停止准则进行 OMP 支持恢复，再在所估支持上作伪逆残差求解、量化格点舍入、累计求和和理想低通，得到不依赖额外折叠位的恢复流程。</h2><h3>Evidence</h3><p>贪婪稀疏恢复与展开算法设计</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>算法；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 5 · II.C / Modulo ADC without 1-bit folding information</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>为不提供折叠位置位的模 ADC，本文提出先用带外 Fourier 数据和有界噪声停止准则进行 OMP 支持恢复，再在所估支持上作伪逆残差求解、量化格点舍入、累计求和和理想低通，得到不依赖额外折叠位的恢复流程。</dd><dt>适用边界</dt><dd>流程可提出不等于所有信号上正确；恢复条件由Theorem3限定。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不是新硬件实现，也不保证 OMP 比所有稀疏算法快。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>缺少折叠辅助位时，怎样利用带外稀疏残差估计支持？</li></ul></article><article><small>C5 / 直接结果 · source_reported_theoretical_result</small><h2>对本文无辅助位的 OMP 模采样模型，Theorem 3 在可忽略截断、指定 λ′=c||f||∞/(OF−2)、OF&gt;3，以及 V 满足所需 RIP、δ_(L0+1)&lt;1/(√L0+1) 和 b&gt;3+log2ζ（ζ为式16的η/RIP/稀疏度项）时报告精确支持恢复及与 Theorem 1 相同的 MSEr；量化位宽条件比已知支持情形更严格。</h2><h3>Evidence</h3><p>应用引用OMP支持恢复界并推导量化位宽条件</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>满足 RIP 的测量矩阵及稀疏残差；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 7 · III.B / Theorem 3</dd></dl><p>最小差分幅度与有界噪声的条件应用</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>理论算法；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 12 · Appendix C; continuation on PDF page 13</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>对本文无辅助位的 OMP 模采样模型，Theorem 3 在可忽略截断、指定 λ′=c||f||∞/(OF−2)、OF&gt;3，以及 V 满足所需 RIP、δ_(L0+1)&lt;1/(√L0+1) 和 b&gt;3+log2ζ（ζ为式16的η/RIP/稀疏度项）时报告精确支持恢复及与 Theorem 1 相同的 MSEr；量化位宽条件比已知支持情形更严格。</dd><dt>适用边界</dt><dd>原文承认 RIP 常数难以实际计算，部分DFT类随机矩阵的既有高概率结果不是对本文每个确定矩阵的验证。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能只写 OF&gt;3、b&gt;3+log2ζ 而删除 RIP 条件，不能把引用 Theorem2 当作本文原创。</dd><dt>未解决</dt><dd>实际确定 V 的 RIP 值和附录C最小差分幅度表述与 2λ′格点定义的对应。</dd></dl><h3>相关问题</h3><ul><li>无折叠辅助位时，OMP的准确展开需要哪些额外矩阵和位宽条件？</li></ul></article><article><small>C6 / 直接结果 · algorithm_complexity_analysis</small><h2>按本文有限窗口实现的主要计算步骤，有辅助位的 SVD 伪逆恢复复杂度为 O(K|S|²)，无辅助位的朴素 OMP 加展开为 O(NK+K|S|²)，其中N为窗口样本数、K为带外频率数、|S|为折叠支持大小且|S|≤K。</h2><h3>Evidence</h3><p>SVD及朴素OMP的操作阶数推导</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；已知支持与支持未知</dd><dt>独立单位与 n</dt><dd>观察窗口算法；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 7 · III.C / Computational complexity</dd></dl><p>窗口/采样率代入及实践限制讨论</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>算法输入规模；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 8 · III.C continuation</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>按本文有限窗口实现的主要计算步骤，有辅助位的 SVD 伪逆恢复复杂度为 O(K|S|²)，无辅助位的朴素 OMP 加展开为 O(NK+K|S|²)，其中N为窗口样本数、K为带外频率数、|S|为折叠支持大小且|S|≤K。</dd><dt>适用边界</dt><dd>正文称随采样率平方增长，但式中还包含|S|增长；通用采样率阶数需进一步说明条件。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>没有实测运行时间、低功耗电路实现或同平台算法速度比较。</dd><dt>未解决</dt><dd>固定时窗下 |S| 随采样率/门限变化时的实际总复杂度阶数。</dd></dl><h3>相关问题</h3><ul><li>去除辅助位的代价如何随窗口、带外频率和折叠次数变化？</li></ul></article><article><small>C7 / 直接结果 · source_reported_theoretical_result</small><h2>对频带互不重叠、各自单位能量的两分量 f=α1f1+α2f2，在有折叠辅助位及 Theorem1 条件和最小门限选择下，本文 Corollary1 给出第i分量 NMSE≤[2(α1²+α2²)/αi²]·[ωi/π]·[1/{OF(2^b−2)²(OF−2)²}]；界随分量带宽增大、随该分量能量减小而变差。</h2><h3>Evidence</h3><p>分离频带两分量模型及数字理想带通恢复</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>各带限分量；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 8 · IV Case study / signal model</dd></dl><p>过滤量化噪声及幅度上界</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；常规ADC对应分量误差上界</dd><dt>独立单位与 n</dt><dd>分量；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 9 · IV / Corollary 1</dd></dl><p>Corollary1 推导</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>理论分量误差；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 13 · Appendix D</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>对频带互不重叠、各自单位能量的两分量 f=α1f1+α2f2，在有折叠辅助位及 Theorem1 条件和最小门限选择下，本文 Corollary1 给出第i分量 NMSE≤[2(α1²+α2²)/αi²]·[ωi/π]·[1/{OF(2^b−2)²(OF−2)²}]；界随分量带宽增大、随该分量能量减小而变差。</dd><dt>适用边界</dt><dd>是上界，较小上界不单独构成任意具体信号的实际误差排序；无辅助位还需Theorem3条件。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能声称消除弱分量量化误差，或推广到重叠频带、真实滤波器及所有雷达。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>分量能量与带宽怎样共同决定强弱信号模采样误差界？</li></ul></article><article><small>C8 / 直接结果 · simulation_result</small><h2>在五个随机系数和时移 sinc² 脉冲组成、峰值归一化1、最高频率50 Hz的模拟信号上，b=4、OF=3–15的三角抖动仿真中，已知折叠位恢复的平均 MSE随 OF 衰减快于常规 ADC，作者报告与理论公式一致；OF=3时门限等于输入峰值，二者MSE相同。</h2><h3>Evidence</h3><p>合成信号量化与恢复Monte Carlo</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；同b的常规ADC</dd><dt>独立单位与 n</dt><dd>i.i.d.抖动/噪声实现；每OF 20,000 i.i.d. noise realizations；不是20,000独立硬件。</dd><dt>不确定性</dt><dd>报告均值，无数值区间；未读取图像。</dd><dt>原文位置</dt><dd>PDF 9 · Figure 4</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>在五个随机系数和时移 sinc² 脉冲组成、峰值归一化1、最高频率50 Hz的模拟信号上，b=4、OF=3–15的三角抖动仿真中，已知折叠位恢复的平均 MSE随 OF 衰减快于常规 ADC，作者报告与理论公式一致；OF=3时门限等于输入峰值，二者MSE相同。</dd><dt>适用边界</dt><dd>OF=3是无折叠边界，不满足严格 OF&gt;3 定理的非平凡情况。</dd><dt>实际负结果</dt><dd>OF=3时没有MSE优势。</dd><dt>不能推出</dt><dd>不能把仿真吻合当作定理证明或硬件复现。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>带辅助位模型的模拟量化误差是否呈现理论预测的OF依赖？</li></ul></article><article><small>C9 / 直接结果 · simulation_result</small><h2>在与 Simulation1 相同的峰值归一化 sinc² 输入上，b=4、OF=4–15、OMP停止参数η=0.8、每OF 20,000噪声实现的仿真中，无辅助位的 OMP 恢复与带辅助位方案均比常规ADC有较低平均 MSE，作者报告两模方案的OF趋势接近理论。</h2><h3>Evidence</h3><p>OMP与辅助位展开的Monte Carlo比较</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；常规ADC及已知折叠位方案</dd><dt>独立单位与 n</dt><dd>同输入模型的噪声实现；每OF 20,000 i.i.d. noise realizations</dd><dt>不确定性</dt><dd>无数值区间，未读曲线像素。</dd><dt>原文位置</dt><dd>PDF 10 · Figure 5</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>在与 Simulation1 相同的峰值归一化 sinc² 输入上，b=4、OF=4–15、OMP停止参数η=0.8、每OF 20,000噪声实现的仿真中，无辅助位的 OMP 恢复与带辅助位方案均比常规ADC有较低平均 MSE，作者报告两模方案的OF趋势接近理论。</dd><dt>适用边界</dt><dd>仿真使用η=0.8，但没有报告每个矩阵RIP或核对该经验参数与定理η定义。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能证明对所有确定信号或 b=4 均满足Theorem3。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>无辅助位OMP在测试信号上能否保持已知支持的误差水平？</li></ul></article><article><small>C10 / 直接结果 · simulation_result</small><h2>在两分量合成输入 α1=1、α2=0.25、强分量频带[-20,20] Hz和弱分量频带[-90,-50]∪[50,90] Hz上，b=4、OF=4–11、η=0.7、5,000噪声实现的仿真中，带辅助位及无辅助位模恢复在强、弱两个分量上均优于常规ADC，且作者报告满足所推NMSE上界。</h2><h3>Evidence</h3><p>不重叠频带分量的量化恢复Monte Carlo</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；常规ADC与两种模ADC恢复</dd><dt>独立单位与 n</dt><dd>相同两分量输入的噪声实现；5,000 i.i.d. noise realizations</dd><dt>不确定性</dt><dd>未报告区间，图像值不可读。</dd><dt>原文位置</dt><dd>PDF 10 · Figures 6–7</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>在两分量合成输入 α1=1、α2=0.25、强分量频带[-20,20] Hz和弱分量频带[-90,-50]∪[50,90] Hz上，b=4、OF=4–11、η=0.7、5,000噪声实现的仿真中，带辅助位及无辅助位模恢复在强、弱两个分量上均优于常规ADC，且作者报告满足所推NMSE上界。</dd><dt>适用边界</dt><dd>两分量结果共享同一输入和噪声实验，不是两次独立复现；特定幅度比/带宽。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不是雷达硬件测量，也不能据此证明任意幅度动态范围可恢复。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>模采样能否在所测异频带强弱混合信号中同时降低两个分量的量化误差？</li></ul></article><article><small>C11 / 直接结果 · comparative_simulation_result</small><h2>在本文同一 sinc² 输入的恢复算法比较仿真中，b=4时提出的 OMP和辅助位方法的NMSE优于所比 HoD、预测和 B²R² 方法；提高至b=6后，后三者达到与提出方法相近的表现，说明所示优势依赖量化位宽。</h2><h3>Evidence</h3><p>五种恢复方案的Monte Carlo比较</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；HoD、prediction、B²R²、OMP及已知支持</dd><dt>独立单位与 n</dt><dd>共同输入下噪声实现；2,000 i.i.d. noise realizations，η=0.8。</dd><dt>不确定性</dt><dd>没有数值差和CI；仅保留正文相对关系。</dd><dt>原文位置</dt><dd>PDF 11 · Figures 8–9 captions on PDF page 10</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>在本文同一 sinc² 输入的恢复算法比较仿真中，b=4时提出的 OMP和辅助位方法的NMSE优于所比 HoD、预测和 B²R² 方法；提高至b=6后，后三者达到与提出方法相近的表现，说明所示优势依赖量化位宽。</dd><dt>适用边界</dt><dd>算法实现/调参细节不足以完整恢复匹配条件；不是所有输入的排序。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能把HoD较差唯一归为噪声敏感性的已验证因果机制。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>低位宽与较高位宽是否改变模展开算法的相对误差？</li></ul></article><article><small>C12 / 直接结果 · negative_simulation_result</small><h2>在本文违反充分条件的低位宽测试中，b=2、所测试OF≥2时，常规ADC的NMSE优于带辅助位和无辅助位两种模ADC恢复；因此模采样并非在任意量化位宽都降低误差。</h2><h3>Evidence</h3><p>低位宽设置的Monte Carlo比较</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；常规ADC与两个模方案</dd><dt>独立单位与 n</dt><dd>信号/噪声实现；2,000 i.i.d. noise realizations，η=0.8。</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 11 · Figure 10</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>在本文违反充分条件的低位宽测试中，b=2、所测试OF≥2时，常规ADC的NMSE优于带辅助位和无辅助位两种模ADC恢复；因此模采样并非在任意量化位宽都降低误差。</dd><dt>适用边界</dt><dd>OF≥2只限图10测试网格，不是全部无限参数点。</dd><dt>实际负结果</dt><dd>b=2的所测条件下两个模方案都差于常规ADC。</dd><dt>不能推出</dt><dd>不构成恢复充分条件的必要性证明。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>两位量化时模采样是否仍有误差优势？</li></ul></article><article><small>C13 / 直接结果 · negative_simulation_result</small><h2>在本文低位宽测试中，b=3、所测试OF≥2时，常规ADC优于无辅助位OMP模恢复，并与带辅助位方案相近；辅助位不能保证该低位宽下严格MSE优势。</h2><h3>Evidence</h3><p>三位量化的Monte Carlo比较</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；常规ADC、OMP模恢复和辅助位模恢复</dd><dt>独立单位与 n</dt><dd>共同输入的噪声实现；2,000 i.i.d. noise realizations。</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 11 · Figure 10</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>在本文低位宽测试中，b=3、所测试OF≥2时，常规ADC优于无辅助位OMP模恢复，并与带辅助位方案相近；辅助位不能保证该低位宽下严格MSE优势。</dd><dt>适用边界</dt><dd>同一Simulation5参数测试网格；不补造图中数值或普适阈值。</dd><dt>实际负结果</dt><dd>无辅助位方案较差；带辅助位方案无明显优势。</dd><dt>不能推出</dt><dd>不能据此把 b&gt;3 视为所有可能算法的必要条件。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>三位量化下，折叠辅助位是否改变模采样相对性能？</li></ul></article><article><small>C14 / 直接结果 · simulation_result</small><h2>在本文无抖动量化的 sinc² 合成信号仿真中，b=4、OF=4–11、η=0.8和门限1/(OF−2)时，作者报告带辅助位和OMP两种模恢复均比常规ADC有较低MSE；这将经验表现扩展到无抖动设置，但不扩展三角抖动定理的精确误差公式。</h2><h3>Evidence</h3><p>去掉抖动的数值比较</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；无抖动常规ADC与两种模方案</dd><dt>独立单位与 n</dt><dd>数值实现；正文仍写5,000 i.i.d. noise realizations；移除抖动后随机来源未清楚说明。</dd><dt>不确定性</dt><dd>无CI或图像值。</dd><dt>原文位置</dt><dd>PDF 11 · Figure 11</dd></dl><p>正文结果结论</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>设置；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 12 · Simulation-6 continuation</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>在本文无抖动量化的 sinc² 合成信号仿真中，b=4、OF=4–11、η=0.8和门限1/(OF−2)时，作者报告带辅助位和OMP两种模恢复均比常规ADC有较低MSE；这将经验表现扩展到无抖动设置，但不扩展三角抖动定理的精确误差公式。</dd><dt>适用边界</dt><dd>无抖动时不再可直接沿用白噪声、独立二阶矩假设。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不证明无抖动所有信号也按精确O(OF^-3)规律。</dd><dt>未解决</dt><dd>无抖动5000次实现中噪声/信号如何独立重采样。</dd></dl><h3>相关问题</h3><ul><li>无抖动实际量化是否仍能在所测设置中看到模采样误差优势？</li></ul></article><details><summary>核对记录与来源信息</summary><pre>{
+  &quot;coverage&quot;: {
+    &quot;pdf_pages_read&quot;: [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    &quot;results_sections_seen&quot;: [
+      &quot;II Modulo ADC models and recovery methods&quot;,
+      &quot;III Lemma1; Theorems1/3; computational complexity&quot;,
+      &quot;IV weak/strong components; Corollary1&quot;,
+      &quot;V Simulations1–6; Figures1–11&quot;,
+      &quot;Appendices A–D; references and biographies&quot;
+    ],
+    &quot;missing_material&quot;: [
+      &quot;所有图像像素和公式版面未提供，部分数学符号在文本提取中不清晰。&quot;,
+      &quot;实际矩阵RIP验证、原始数值数据、硬件非理想和功率测量未提供。&quot;
+    ],
+    &quot;text_pass_complete&quot;: true,
+    &quot;reading_mode&quot;: &quot;text_only&quot;,
+    &quot;figure_images_read&quot;: false,
+    &quot;scientific_verification&quot;: false,
+    &quot;notes&quot;: [
+      &quot;完整评估14页正式排版全文及所有附录/图注/引用。&quot;,
+      &quot;标题、三作者及 DOI 与元数据相符；期刊卷73，2025。&quot;,
+      &quot;第二遍逐项核查门限、位宽、抖动、截断、RIP、辅助位开销、低位宽负结果及证据来源。&quot;,
+      &quot;理论命题按作者原文报告，不宣称证明已独立验证或数值复现。&quot;
+    ]
+  },
+  &quot;audit&quot;: {
+    &quot;source_match_checks&quot;: [
+      {
+        &quot;claim_id&quot;: &quot;C1&quot;,
+        &quot;evidence_index&quot;: 1,
+        &quot;pdf_page&quot;: 6,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;semantic_source_check&quot;: &quot;模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C1&quot;,
+        &quot;evidence_index&quot;: 2,
+        &quot;pdf_page&quot;: 12,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;semantic_source_check&quot;: &quot;模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C2&quot;,
+        &quot;evidence_index&quot;: 1,
+        &quot;pdf_page&quot;: 6,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;semantic_source_check&quot;: &quot;模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C2&quot;,
+        &quot;evidence_index&quot;: 2,
+        &quot;pdf_page&quot;: 12,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;semantic_source_check&quot;: &quot;模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C3&quot;,
+        &quot;evidence_index&quot;: 1,
+        &quot;pdf_page&quot;: 6,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;semantic_source_check&quot;: &quot;模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C4&quot;,
+        &quot;evidence_index&quot;: 1,
+        &quot;pdf_page&quot;: 5,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;semantic_source_check&quot;: &quot;模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C5&quot;,
+        &quot;evidence_index&quot;: 1,
+        &quot;pdf_page&quot;: 7,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;semantic_source_check&quot;: &quot;模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C5&quot;,
+        &quot;evidence_index&quot;: 2,
+        &quot;pdf_page&quot;: 12,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;semantic_source_check&quot;: &quot;模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C6&quot;,
+        &quot;evidence_index&quot;: 1,
+        &quot;pdf_page&quot;: 7,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;semantic_source_check&quot;: &quot;模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C6&quot;,
+        &quot;evidence_index&quot;: 2,
+        &quot;pdf_page&quot;: 8,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;semantic_source_check&quot;: &quot;模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C7&quot;,
+        &quot;evidence_index&quot;: 1,
+        &quot;pdf_page&quot;: 8,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;semantic_source_check&quot;: &quot;模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C7&quot;,
+        &quot;evidence_index&quot;: 2,
+        &quot;pdf_page&quot;: 9,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;semantic_source_check&quot;: &quot;模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C7&quot;,
+        &quot;evidence_index&quot;: 3,
+        &quot;pdf_page&quot;: 13,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;semantic_source_check&quot;: &quot;模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C8&quot;,
+        &quot;evidence_index&quot;: 1,
+        &quot;pdf_page&quot;: 9,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;semantic_source_check&quot;: &quot;模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C9&quot;,
+        &quot;evidence_index&quot;: 1,
+        &quot;pdf_page&quot;: 10,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;semantic_source_check&quot;: &quot;模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C10&quot;,
+        &quot;evidence_index&quot;: 1,
+        &quot;pdf_page&quot;: 10,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;semantic_source_check&quot;: &quot;模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C11&quot;,
+        &quot;evidence_index&quot;: 1,
+        &quot;pdf_page&quot;: 11,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;semantic_source_check&quot;: &quot;模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C12&quot;,
+        &quot;evidence_index&quot;: 1,
+        &quot;pdf_page&quot;: 11,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;semantic_source_check&quot;: &quot;模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C13&quot;,
+        &quot;evidence_index&quot;: 1,
+        &quot;pdf_page&quot;: 11,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;semantic_source_check&quot;: &quot;模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C14&quot;,
+        &quot;evidence_index&quot;: 1,
+        &quot;pdf_page&quot;: 11,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;semantic_source_check&quot;: &quot;模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C14&quot;,
+        &quot;evidence_index&quot;: 2,
+        &quot;pdf_page&quot;: 12,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;semantic_source_check&quot;: &quot;模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。&quot;
+      }
+    ],
+    &quot;model_findings&quot;: [
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;PDF为IEEE TSP正式排版，14页含全部附录A–D及作者简介；部分一位辅助结果沿用会议论文[40]。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留期刊版本身份和贡献继承，不制造独立复现链接。&quot;,
+        &quot;pdf_page&quot;: 2,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C3&quot;,
+        &quot;issue&quot;: &quot;同 b 比较不是同总比特率，且一般 c=OF−2 时与常规误差相等。&quot;,
+        &quot;suggested_correction&quot;: &quot;严格优势限定最小门限 c=1 和OF&gt;3。&quot;,
+        &quot;pdf_page&quot;: 6,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C2&quot;,
+        &quot;issue&quot;: &quot;Eq.(6)包含S之外的差分量化噪声，但附录B的伪逆误差展开直接写成VS(∆zS+∆εS)，未明确说明这些噪声项如何消失。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留为作者报告的定理，人工审查其精确MSE和无需条件数的误差界。&quot;,
+        &quot;pdf_page&quot;: 12,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C5&quot;,
+        &quot;issue&quot;: &quot;附录C写残差/最小差分为λ′，而Eq.(2)给残差在2λ′Z；V的RIP也没有实际算出。&quot;,
+        &quot;suggested_correction&quot;: &quot;引用式16定义ζ而不重构不清楚符号，人工核查幅度、矩阵归一化和RIP。&quot;,
+        &quot;pdf_page&quot;: 12,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C6&quot;,
+        &quot;issue&quot;: &quot;复杂度式含K|S|²，但正文泛称固定时窗下随采样率平方；稀疏度是否固定未明确。&quot;,
+        &quot;suggested_correction&quot;: &quot;只使用明确的N/K/S阶数，无条件采样率阶数暂缓。&quot;,
+        &quot;pdf_page&quot;: 8,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C14&quot;,
+        &quot;issue&quot;: &quot;无抖动实验仍写5000 i.i.d.噪声实现；剩余随机来源不明确。&quot;,
+        &quot;suggested_correction&quot;: &quot;不猜测是抖动、信号重采样或其它噪声。&quot;,
+        &quot;pdf_page&quot;: 11,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;主文称可积输入、比较段又概称所有有限能量信号，且文本矩阵实/复记号与伪逆记号有排版疑点。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留较窄带限可积/有限窗条件；正式数学审查应查看原公式像素。&quot;,
+        &quot;pdf_page&quot;: 3,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C7&quot;,
+        &quot;issue&quot;: &quot;Extractor omitted factor 2 in the Equation19 NMSE bound.&quot;,
+        &quot;suggested_correction&quot;: &quot;Restored factor 2 from source PDF page9.&quot;,
+        &quot;pdf_page&quot;: 9,
+        &quot;resolved&quot;: true
+      }
+    ],
+    &quot;needs_human_review&quot;: true
+  },
+  &quot;source&quot;: {
+    &quot;filename&quot;: &quot;paper-W4413468590.pdf&quot;,
+    &quot;sha256&quot;: &quot;5b1d8b37a33fbfa50dc0e960755b3dc0f040fb8641be9ca7e6f2265195f63229&quot;,
+    &quot;source_url&quot;: &quot;https://www.weizmann.ac.il/math/yonina/sites/math.yonina/files/Modulo_Sampling_Performance_Guarantees_in_the_Presence_of_Quantization.pdf&quot;,
+    &quot;pdf_page_count&quot;: 14
+  },
+  &quot;provenance&quot;: {
+    &quot;created_at&quot;: &quot;2026-10-07T07:02:09.863Z&quot;,
+    &quot;workflow&quot;: &quot;claim-commons-pdf-v1&quot;,
+    &quot;prompt_version&quot;: &quot;claim-commons-chatgpt-pdf-2026-10-07.1&quot;,
+    &quot;backend&quot;: &quot;authorized_parallel_GPT&quot;,
+    &quot;model&quot;: &quot;inherited_GPT&quot;,
+    &quot;provider_api_key_used&quot;: false,
+    &quot;source_sha256&quot;: &quot;5b1d8b37a33fbfa50dc0e960755b3dc0f040fb8641be9ca7e6f2265195f63229&quot;,
+    &quot;source_audit_complete&quot;: true,
+    &quot;review_status&quot;: &quot;candidate&quot;,
+    &quot;database_updated&quot;: false,
+    &quot;transcription_correction&quot;: &quot;User-authorized factor2 correction, 2026-10-07; original retained in pending-corrections.&quot;
+  }
+}</pre></details></main><footer></footer></body></html>

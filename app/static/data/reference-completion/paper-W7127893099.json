@@ -1,0 +1,2261 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "A brain-constrained neural model of cognition and language with NEST: transitioning from the Felix framework",
+    "authors": [
+      "Maxime Carriere",
+      "Fynn Dobler",
+      "Hans Ekkehard Plesser",
+      "Agata Feledyn",
+      "Rosario Tomasello",
+      "Thomas Wennekers",
+      "Friedemann Pulvermüller"
+    ],
+    "doi": "10.1007/s11571-026-10415-5",
+    "publication_year": 2026,
+    "venue": "Cognitive Neurodynamics",
+    "url": "https://doi.org/10.1007/s11571-026-10415-5"
+  },
+  "source": {
+    "filename": "paper-W7127893099--A-brain-constrained-neural-model-of-cognition-and-language-with-NEST-transitioning-from-the-Fel.pdf",
+    "sha256": "5daa58797efdc0aaaead5404625e5528bb09fcaa94a9368aced65a540829171c",
+    "source_url": "https://link.springer.com/content/pdf/10.1007/s11571-026-10415-5.pdf?error=cookies_not_supported&code=118fee78-de0e-45ba-9383-9812df9f6eb0",
+    "pdf_page_count": 24
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "results_sections_seen": [
+      "Macro/Micro-level implementations",
+      "Tables1–4与连接／学习／时标说明",
+      "Single neuron与multi-area training/evaluation",
+      "Statistical analysis",
+      "Results: One neuron comparison",
+      "CA size/topographical distribution",
+      "CA emergence over learning episodes",
+      "Spatiotemporal activation",
+      "Discussion、Implications、Conclusion",
+      "Figures1–6全部图注",
+      "Declarations、References"
+    ],
+    "missing_material": [
+      "Figure image pixels未提供。",
+      "独立Supplementary Information与S1/S2、object-word time-course及参数分析未随pages提供。",
+      "公开代码／Docker／HPC计时日志未访问。"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "全部24页provided archived text按顺序完整读取，包括References；仅去多余空白。",
+      "首页为Cognitive Neurodynamics2026 20:48、同DOI，注明modified publication2026，未给修改细节。",
+      "首页作者为Maxime Carriere、Fynn Dobler、Hans Ekkehard Plesser、Agata Feledyn、Rosario Tomasello、Thomas Wennekers、Friedemann Pulvermüller；本次只纠正独立extraction author metadata，canonical/assignment由parent处理。",
+      "保持全文上下文做第二次来源审计；确认12seed、6+6patterns、training repetition与CA units区别、实现间无直接检验、参数调节与ms映射。",
+      "所有quote=null、一基PDF定位，未读figure pixels或unprovided supplement。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "NEST3.6 felixmodule、十二区架构和开放实现",
+      "role": "method",
+      "source_pages": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        15,
+        21
+      ],
+      "decision": "include",
+      "reason": "工程转移和抽象模型设计，外链未运行验证。"
+    },
+    {
+      "summary": "时标、delay、积分、连接和Hebbian参数迁移",
+      "role": "method",
+      "source_pages": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "decision": "include",
+      "reason": "明确不是严格逐参数不变；FAVG30不翻倍。"
+    },
+    {
+      "summary": "单pair膜电位、adaptation和spike匹配",
+      "role": "simulation",
+      "source_pages": [
+        13,
+        15,
+        16
+      ],
+      "decision": "include",
+      "reason": "三个readout分别可审，全部限单示例。"
+    },
+    {
+      "summary": "CA全体topography、约两倍size、ANOVA与区域post-hoc",
+      "role": "simulation",
+      "source_pages": [
+        14,
+        15,
+        16,
+        17
+      ],
+      "decision": "include",
+      "reason": "全部结果与实际否定记录，不合成跨implementation显著性。"
+    },
+    {
+      "summary": "CA随着learning episodes增长／平台",
+      "role": "simulation",
+      "source_pages": [
+        17
+      ],
+      "decision": "include",
+      "reason": "保留作者training-step用语，不转为ms或重复样本n。"
+    },
+    {
+      "summary": "action-word时空扩散、幅度、latency及V1无激活",
+      "role": "simulation",
+      "source_pages": [
+        18,
+        19
+      ],
+      "decision": "include",
+      "reason": "保留同一图共享证据；峰count不是CA count。"
+    },
+    {
+      "summary": "object-word activation supplement",
+      "role": "reported_supplement",
+      "source_pages": [
+        18
+      ],
+      "decision": "defer",
+      "reason": "正文仅指向补充；提供24页无该补充，不能声称已读曲线。"
+    },
+    {
+      "summary": "更大CA源于excitation而非更高learning efficiency、改参数消融",
+      "role": "supplement_claim",
+      "source_pages": [
+        12,
+        19
+      ],
+      "decision": "defer",
+      "reason": "S1/S2及更全面parameter analysis未提供，delay机制只标interpretation。"
+    },
+    {
+      "summary": "完全功能等价与delay唯一原因",
+      "role": "interpretation",
+      "source_pages": [
+        16,
+        19
+      ],
+      "decision": "defer",
+      "reason": "参数和网络数量／latency存在实际差异；无实现间直接统计或matched ablation。"
+    },
+    {
+      "summary": "spiking inhibitory preliminary tests",
+      "role": "exploratory",
+      "source_pages": [
+        13
+      ],
+      "decision": "defer",
+      "reason": "正文称promising但不提供设计、曲线、n或消融细节，不称已完整验证。"
+    },
+    {
+      "summary": "runtime约六倍改善",
+      "role": "reported_benchmark",
+      "source_pages": [
+        1,
+        20
+      ],
+      "decision": "include",
+      "reason": "按作者报告保留，无绝对时间、CI或matched benchmark。"
+    },
+    {
+      "summary": "global inhibition生理映射",
+      "role": "hypothesis",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "明确未建模corticothalamic回路，标假说。"
+    },
+    {
+      "summary": "右半球、大词汇、syntax、4:1 E/I、dendrites、STDP/RL、distance delays",
+      "role": "future_work",
+      "source_pages": [
+        20,
+        21
+      ],
+      "decision": "defer",
+      "reason": "未完成的拓展；不写成结果。"
+    },
+    {
+      "summary": "引用neuroimaging、皮层解剖及此前Felix研究",
+      "role": "cited_background",
+      "source_pages": [
+        1,
+        2,
+        3,
+        19,
+        21,
+        22,
+        23,
+        24
+      ],
+      "decision": "exclude",
+      "reason": "非新实验／独立复制；不建自动跨论文关系。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "本文在NEST3.6中开发felixmodule，以felix_exc、felix_inh、abs_synapse及felix_spike_recorder转移原Felix BPAM-o-CAL的细胞、学习和记录机制，提供12区域语义关联学习网络的Python实现。",
+      "claim_type": "computational_method",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "NEST扩展与模型实现",
+          "design": "本文Felix与NEST的brain-constrained模型迁移／数值比较。",
+          "comparator": "原C/Felix框架 vsNEST3.6扩展",
+          "measure": "自定义细胞、突触与记录模型",
+          "unit_of_analysis": "软件实现",
+          "sample_size_as_reported": "文中12独立网络随机seed；六action与六object patterns，不能把cells或training trials当独立样本。",
+          "uncertainty": "文本给模块名与运行环境；未独立执行。",
+          "assumptions": [
+            "保留原模型核心原则，但参数按文中迁移方案调整。"
+          ],
+          "source_locator": {
+            "pdf_page": 15,
+            "section": "Simulation framework and code availability",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "本文在NEST3.6中开发felixmodule，以felix_exc、felix_inh、abs_synapse及felix_spike_recorder转移原Felix BPAM-o-CAL的细胞、学习和记录机制，提供12区域语义关联学习网络的Python实现。",
+        "boundary": "代码公开与Docker可用仅据文本声明，未访问外链或运行软件。",
+        "negative_result": null,
+        "non_inference": "不将公开声明当独立复现成功或多硬件扩展已验证。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "更换神经模拟环境后哪些语义cell assembly模式保留、哪些数值特征改变？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "迁移模型保留左半球auditory、articulatory、visual和dorsolateral motor四系统各三区域；每区625 spiking excitatory、625 graded inhibitory及一个global inhibitory unit，E/I=1:1仅为downsampled cortical patch表征而非真实皮层比例。",
+      "claim_type": "model_architecture",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "12区域网络结构",
+          "design": "本文Felix与NEST的brain-constrained模型迁移／数值比较。",
+          "comparator": "Felix vsNEST；真实约4:1比例作为未实现的背景",
+          "measure": "每区模型unit类型与数量",
+          "unit_of_analysis": "区域／模型unit",
+          "sample_size_as_reported": "12区域；每区625 E、625 I、1 GI。",
+          "uncertainty": "除另列ANOVA外，未报告实现间直接检验或置信区间。",
+          "assumptions": [
+            "空间仅保持拓扑，小区群体活动聚合成单模型unit。",
+            "当前研究保留1:1以比较，生物4:1仍为未来工作。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "Macro-level implementations; Table 1",
+            "figure": "Figure 1; Table 1",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "迁移模型保留左半球auditory、articulatory、visual和dorsolateral motor四系统各三区域；每区625 spiking excitatory、625 graded inhibitory及一个global inhibitory unit，E/I=1:1仅为downsampled cortical patch表征而非真实皮层比例。",
+        "boundary": "7500是总excitatory model units，不是样本n；mean-field抑制单元不是7500真实interneurons。",
+        "negative_result": null,
+        "non_inference": "不认为该配置证明生物E/I平衡或unitary synapse物理尺度。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "更换神经模拟环境后哪些语义cell assembly模式保留、哪些数值特征改变？"
+      ],
+      "shared_evidence_with": [
+        "C3",
+        "C4",
+        "C5",
+        "C6"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "NEST为显式非零突触delay采用0.5ms内部步长，E→E delay为1ms，E→I及I→E各0.5ms；两实现所报告的excitatory time step均对应1ms，不能把NEST内部步长当成所有报告时间步。",
+      "claim_type": "implementation_design",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "更新顺序与delay映射",
+          "design": "本文Felix与NEST的brain-constrained模型迁移／数值比较。",
+          "comparator": "Felix1ms/近即刻抑制 vsNEST0.5ms内部步",
+          "measure": "时间分辨率及两级E-I-E链delay",
+          "unit_of_analysis": "模型积分／连接时间",
+          "sample_size_as_reported": "文中12独立网络随机seed；六action与六object patterns，不能把cells或training trials当独立样本。",
+          "uncertainty": "除另列ANOVA外，未报告实现间直接检验或置信区间。",
+          "assumptions": [
+            "以PDF13的明确ms澄清前文time-step措辞。",
+            "只对应指定delay，未包含distance-dependent delay。"
+          ],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "Numerical simulation details",
+            "figure": null,
+            "equation": "Table 3",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "NEST为显式非零突触delay采用0.5ms内部步长，E→E delay为1ms，E→I及I→E各0.5ms；两实现所报告的excitatory time step均对应1ms，不能把NEST内部步长当成所有报告时间步。",
+        "boundary": "短至2个报告步的刺激是时间压缩近似，不等价2ms自然word comprehension。",
+        "negative_result": null,
+        "non_inference": "不能据此独立验证人类词义机制或宣布模型与真实皮层等价。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "更换神经模拟环境后哪些语义cell assembly模式保留、哪些数值特征改变？"
+      ],
+      "shared_evidence_with": [
+        "C4",
+        "C23",
+        "C24"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "为迁移到NEST，excitatory膜时间常数从2.5增至5、inhibitory从5增至10、global从12增至24，adaptation从10增至20；firing-rate averaging常数保持30不变。",
+      "claim_type": "implementation_design",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "模型参数对应表",
+          "design": "本文Felix与NEST的brain-constrained模型迁移／数值比较。",
+          "comparator": "Felix vsNEST数值配置",
+          "measure": "膜、global、adaptation及FAVG时间常数",
+          "unit_of_analysis": "时间常数配置",
+          "sample_size_as_reported": "文中12独立网络随机seed；六action与六object patterns，不能把cells或training trials当独立样本。",
+          "uncertainty": "除另列ANOVA外，未报告实现间直接检验或置信区间。",
+          "assumptions": [
+            "Table2参数对应与PDF13积分步约定联合理解。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Micro-level implementation; Table 2",
+            "figure": "Table 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "为迁移到NEST，excitatory膜时间常数从2.5增至5、inhibitory从5增至10、global从12增至24，adaptation从10增至20；firing-rate averaging常数保持30不变。",
+        "boundary": "不是所有time constants都翻倍；参数为本文模型时间约定。",
+        "negative_result": null,
+        "non_inference": "不能把调整参数后的匹配称逐参数不变的数值复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "更换神经模拟环境后哪些语义cell assembly模式保留、哪些数值特征改变？"
+      ],
+      "shared_evidence_with": [
+        "C3",
+        "C9",
+        "C10",
+        "C11"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "NEST的E→E Hebbian规则保留co-active LTP及homo-/heterosynaptic LTD，只对E→E塑性；相较Felix，θ−由0.14降至0.11、每次权重步Δ由0.0008降至0.0002，θpre0.05、θ+0.15及权重上限0.225保持。",
+      "claim_type": "implementation_design",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "阈值Hebbian更新规则与参数表",
+          "design": "本文Felix与NEST的brain-constrained模型迁移／数值比较。",
+          "comparator": "Felix与NEST塑性设置",
+          "measure": "LTP/LTD条件、步长及上限",
+          "unit_of_analysis": "突触更新配置",
+          "sample_size_as_reported": "文中12独立网络随机seed；六action与六object patterns，不能把cells或training trials当独立样本。",
+          "uncertainty": "除另列ANOVA外，未报告实现间直接检验或置信区间。",
+          "assumptions": [
+            "按文内pre-rate和postsynaptic membrane thresholds，不补改式8边界等号优先级。"
+          ],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "Learning mechanisms; Table 4",
+            "figure": "Table 4",
+            "equation": "8",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "NEST的E→E Hebbian规则保留co-active LTP及homo-/heterosynaptic LTD，只对E→E塑性；相较Felix，θ−由0.14降至0.11、每次权重步Δ由0.0008降至0.0002，θpre0.05、θ+0.15及权重上限0.225保持。",
+        "boundary": "原有规则的工程迁移，不是新生物可塑性实验；其余抑制连接static。",
+        "negative_result": null,
+        "non_inference": "不能据此独立验证人类词义机制或宣布模型与真实皮层等价。",
+        "unresolved": "未提供supplementary parameter analysis；不认定调整的独立因果贡献。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "更换神经模拟环境后哪些语义cell assembly模式保留、哪些数值特征改变？"
+      ],
+      "shared_evidence_with": [
+        "C13",
+        "C21",
+        "C27"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "NEST inter-area E→E Gaussian连接在within-system使用kC=0.13、cross-system使用0.065，后者为Felix相应概率的一半；这是为限制显式delay下cross-system扩散而改变的拓扑参数，而非两实现连接完全相同。",
+      "claim_type": "implementation_design",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "区域连接概率设计",
+          "design": "本文Felix与NEST的brain-constrained模型迁移／数值比较。",
+          "comparator": "NEST跨系统减半 vsFelix不区分类别",
+          "measure": "within/cross-system概率及初始化",
+          "unit_of_analysis": "概率网络生成配置",
+          "sample_size_as_reported": "文中12独立网络随机seed；六action与六object patterns，不能把cells或training trials当独立样本。",
+          "uncertainty": "除另列ANOVA外，未报告实现间直接检验或置信区间。",
+          "assumptions": [
+            "只跨系统概率减半；within-system保留kC0.13。"
+          ],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "Inter-area connections",
+            "figure": "Figure 2; Table 3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "NEST inter-area E→E Gaussian连接在within-system使用kC=0.13、cross-system使用0.065，后者为Felix相应概率的一半；这是为限制显式delay下cross-system扩散而改变的拓扑参数，而非两实现连接完全相同。",
+        "boundary": "σx=σy=9，19×19投射范围，初始plastic weight uniform[0,0.1]；未独立隔离delay效应。",
+        "negative_result": null,
+        "non_inference": "不称神经解剖比例实测或维持完全相同网络。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "更换神经模拟环境后哪些语义cell assembly模式保留、哪些数值特征改变？"
+      ],
+      "shared_evidence_with": [
+        "C7",
+        "C8",
+        "C27"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "在local E→E isotropic Gaussian Bernoulli配置（σ=3.2、kC0.15、toroidal25×25网格及19×19邻域）中，正文报告每excitatory unit平均9.5个local连接，standard error0.008。",
+      "claim_type": "simulation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "距离依赖Bernoulli网络生成",
+          "design": "本文Felix与NEST的brain-constrained模型迁移／数值比较。",
+          "comparator": "为对齐Felix平均local degree的NEST配置",
+          "measure": "每E unit的local连接数",
+          "unit_of_analysis": "E unit的生成连接数",
+          "sample_size_as_reported": "625 E units/area；统计SE对应独立网络n未明确给出。",
+          "uncertainty": "reported mean9.5、SE0.008，不与远程连接SD混同。",
+          "assumptions": [
+            "两平台按文内调整后的连接、时间常数和学习参数运行，而非全部参数不变。",
+            "CA根据六个auditory/articulatory evaluation trials的文内spike门槛定义。",
+            "左半球12-area抽象模型；空间只保拓扑，学习／刺激时间压缩。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Local connections",
+            "figure": "Figure 2G",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在local E→E isotropic Gaussian Bernoulli配置（σ=3.2、kC0.15、toroidal25×25网格及19×19邻域）中，正文报告每excitatory unit平均9.5个local连接，standard error0.008。",
+        "boundary": "这是配置的连接统计，不是每unit独立研究样本；SE汇总的重复数不清楚。",
+        "negative_result": null,
+        "non_inference": "不能据此独立验证人类词义机制或宣布模型与真实皮层等价。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "更换神经模拟环境后哪些语义cell assembly模式保留、哪些数值特征改变？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C6",
+        "C8"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "对NEST远程E→E配置，正文报告每excitatory unit的within-system连接均值33.78（SD0.15）和cross-system16.65（SD0.01），符合文内cross-system更稀疏的生成方案。",
+      "claim_type": "simulation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "连接生成统计",
+          "design": "本文Felix与NEST的brain-constrained模型迁移／数值比较。",
+          "comparator": "within-system vscross-system E→E",
+          "measure": "平均连接数及reported SD",
+          "unit_of_analysis": "模型E unit的远程degree",
+          "sample_size_as_reported": "每area625E；统计SD对应的网络样本数未明确。",
+          "uncertainty": "reported SD0.15及0.01，区别local SE0.008。",
+          "assumptions": [
+            "两平台按文内调整后的连接、时间常数和学习参数运行，而非全部参数不变。",
+            "CA根据六个auditory/articulatory evaluation trials的文内spike门槛定义。",
+            "左半球12-area抽象模型；空间只保拓扑，学习／刺激时间压缩。"
+          ],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "Inter-area connections",
+            "figure": "Figure 2G; Table 3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "对NEST远程E→E配置，正文报告每excitatory unit的within-system连接均值33.78（SD0.15）和cross-system16.65（SD0.01），符合文内cross-system更稀疏的生成方案。",
+        "boundary": "统计是模型结构，不是生物皮层测量；未说明SD的独立汇总单位。",
+        "negative_result": null,
+        "non_inference": "不能据此独立验证人类词义机制或宣布模型与真实皮层等价。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "更换神经模拟环境后哪些语义cell assembly模式保留、哪些数值特征改变？"
+      ],
+      "shared_evidence_with": [
+        "C6",
+        "C7"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "对16个报告时间步constant-current输入的单excitatory—single inhibitory pair，Figure3正文／图注报告NEST与Felix的excitatory和inhibitory膜电位轨迹重合。",
+      "claim_type": "simulation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "最小两unit恒流模拟",
+          "design": "本文Felix与NEST的brain-constrained模型迁移／数值比较。",
+          "comparator": "按调参后NEST vsFelix",
+          "measure": "depolarisation/repolarisation与inhibitory Vm",
+          "unit_of_analysis": "一对模型units的轨迹",
+          "sample_size_as_reported": "1 excitatory+1 inhibitory，恒流16 time steps；独立重复n未给。",
+          "uncertainty": "除另列ANOVA外，未报告实现间直接检验或置信区间。",
+          "assumptions": [
+            "本文指定输入及已迁移参数。"
+          ],
+          "source_locator": {
+            "pdf_page": 15,
+            "section": "Results: One neuron comparison",
+            "figure": "Figure 3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "对16个报告时间步constant-current输入的单excitatory—single inhibitory pair，Figure3正文／图注报告NEST与Felix的excitatory和inhibitory膜电位轨迹重合。",
+        "boundary": "一个展示的minimal configuration；没有误差容差或统计分布。",
+        "negative_result": null,
+        "non_inference": "不证明所有输入、噪声或参数下数值完全一致。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "更换神经模拟环境后哪些语义cell assembly模式保留、哪些数值特征改变？"
+      ],
+      "shared_evidence_with": [
+        "C4",
+        "C10",
+        "C11"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "同一minimal pair恒流比较中，作者报告两实现的adaptation变量在高发放期间的增长及刺激后衰减轨迹相同。",
+      "claim_type": "simulation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "minimal pair时序比较",
+          "design": "本文Felix与NEST的brain-constrained模型迁移／数值比较。",
+          "comparator": "NEST vsFelix",
+          "measure": "adaptation轨迹",
+          "unit_of_analysis": "模型excitatory unit的adaptation轨迹",
+          "sample_size_as_reported": "单示例pair；独立重复n未给。",
+          "uncertainty": "除另列ANOVA外，未报告实现间直接检验或置信区间。",
+          "assumptions": [
+            "文内恒流与adaptation参数。"
+          ],
+          "source_locator": {
+            "pdf_page": 15,
+            "section": "Results: One neuron comparison",
+            "figure": "Figure 3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "同一minimal pair恒流比较中，作者报告两实现的adaptation变量在高发放期间的增长及刺激后衰减轨迹相同。",
+        "boundary": "同一单配置的数值报告，不是独立样本复制。",
+        "negative_result": null,
+        "non_inference": "不能据此独立验证人类词义机制或宣布模型与真实皮层等价。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "更换神经模拟环境后哪些语义cell assembly模式保留、哪些数值特征改变？"
+      ],
+      "shared_evidence_with": [
+        "C9",
+        "C11"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "同一minimal pair恒流比较中，作者报告NEST与Felix的spike时间和spike数量对齐。",
+      "claim_type": "simulation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "spike时序记录比较",
+          "design": "本文Felix与NEST的brain-constrained模型迁移／数值比较。",
+          "comparator": "NEST vsFelix",
+          "measure": "spike timing与count",
+          "unit_of_analysis": "单模型excitatory unit spike train",
+          "sample_size_as_reported": "single pair、16 time steps输入；重复n未报告。",
+          "uncertainty": "除另列ANOVA外，未报告实现间直接检验或置信区间。",
+          "assumptions": [
+            "文内输入／阈值设定。"
+          ],
+          "source_locator": {
+            "pdf_page": 16,
+            "section": "Results: One neuron comparison",
+            "figure": "Figure 3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "同一minimal pair恒流比较中，作者报告NEST与Felix的spike时间和spike数量对齐。",
+        "boundary": "仅所展示输入；没有形式等价证明、误差界或全参数检验。",
+        "negative_result": null,
+        "non_inference": "不能据此独立验证人类词义机制或宣布模型与真实皮层等价。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "更换神经模拟环境后哪些语义cell assembly模式保留、哪些数值特征改变？"
+      ],
+      "shared_evidence_with": [
+        "C9",
+        "C10"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "在每网络学习六action和六object triplets后，Felix与NEST按六个auditory/articulatory evaluation trials识别出的CA在12区域的相对类别分布总体相似；迁移保留该任务的topographical semantic specificity。",
+      "claim_type": "simulation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "12-seed模拟和CA mapping",
+          "design": "本文Felix与NEST的brain-constrained模型迁移／数值比较。",
+          "comparator": "调参后的Felix vsNEST",
+          "measure": "各area平均CA cell counts及类别轮廓",
+          "unit_of_analysis": "独立随机seed的模型网络",
+          "sample_size_as_reported": "文中12独立网络随机seed；六action与六object patterns，不能把cells或training trials当独立样本。",
+          "uncertainty": "除另列ANOVA外，未报告实现间直接检验或置信区间。",
+          "assumptions": [
+            "两平台按文内调整后的连接、时间常数和学习参数运行，而非全部参数不变。",
+            "CA根据六个auditory/articulatory evaluation trials的文内spike门槛定义。",
+            "左半球12-area抽象模型；空间只保拓扑，学习／刺激时间压缩。"
+          ],
+          "source_locator": {
+            "pdf_page": 16,
+            "section": "Cell assemblies size and topographical distribution",
+            "figure": "Figure 4",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在每网络学习六action和六object triplets后，Felix与NEST按六个auditory/articulatory evaluation trials识别出的CA在12区域的相对类别分布总体相似；迁移保留该任务的topographical semantic specificity。",
+        "boundary": "没有直接implementation因素检验；只在两实现各自统计和图形趋势层面比较。",
+        "negative_result": null,
+        "non_inference": "不能称精确一比一等价或独立重做引用的人体neuroimaging。",
+        "unresolved": "CA标准“至少四次spike/六trials”未擅改为四个独立trial。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "更换神经模拟环境后哪些语义cell assembly模式保留、哪些数值特征改变？"
+      ],
+      "shared_evidence_with": [
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C13",
+      "statement": "同一word-learning比较中，正文报告NEST的CA约为Felix的两倍大；这一数量差异并未破坏所报告的相对topographical类别轮廓。",
+      "claim_type": "simulation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "CA count的描述性实现对照",
+          "design": "本文Felix与NEST的brain-constrained模型迁移／数值比较。",
+          "comparator": "NEST vsFelix",
+          "measure": "平均CA size的约两倍差异",
+          "unit_of_analysis": "独立随机seed的模型网络",
+          "sample_size_as_reported": "文中12独立网络随机seed；六action与六object patterns，不能把cells或training trials当独立样本。",
+          "uncertainty": "除另列ANOVA外，未报告实现间直接检验或置信区间。",
+          "assumptions": [
+            "两平台按文内调整后的连接、时间常数和学习参数运行，而非全部参数不变。",
+            "CA根据六个auditory/articulatory evaluation trials的文内spike门槛定义。",
+            "左半球12-area抽象模型；空间只保拓扑，学习／刺激时间压缩。"
+          ],
+          "source_locator": {
+            "pdf_page": 16,
+            "section": "Cell assemblies size and topographical distribution",
+            "figure": "Figure 4",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "同一word-learning比较中，正文报告NEST的CA约为Felix的两倍大；这一数量差异并未破坏所报告的相对topographical类别轮廓。",
+        "boundary": "粗略倍数来自正文；无实现间直接statistical test或精确effect size。",
+        "negative_result": null,
+        "non_inference": "更大CA不代表更优学习效率或更接近人脑。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "更换神经模拟环境后哪些语义cell assembly模式保留、哪些数值特征改变？"
+      ],
+      "shared_evidence_with": [
+        "C12",
+        "C21",
+        "C23",
+        "C27"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C14",
+      "statement": "Felix和NEST各自的two-way repeated-measures ANOVA均发现CA size的Area×WordType交互：Felix F(11,121)=25.41、NEST F(11,121)=137.68，均p<0.001；类别效应依区域而变。",
+      "claim_type": "simulation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "各实现内部WordType(2)×Area(12) RM-ANOVA",
+          "design": "本文Felix与NEST的brain-constrained模型迁移／数值比较。",
+          "comparator": "同实现action/object和12areas；非跨实现差异",
+          "measure": "interaction F及p",
+          "unit_of_analysis": "12独立随机seed网络上的区域／词类重复测量",
+          "sample_size_as_reported": "文中12独立网络随机seed；六action与六object patterns，不能把cells或training trials当独立样本。",
+          "uncertainty": "报告F、df和p，未给effect-size/CI。",
+          "assumptions": [
+            "两平台按文内调整后的连接、时间常数和学习参数运行，而非全部参数不变。",
+            "CA根据六个auditory/articulatory evaluation trials的文内spike门槛定义。",
+            "左半球12-area抽象模型；空间只保拓扑，学习／刺激时间压缩。"
+          ],
+          "source_locator": {
+            "pdf_page": 16,
+            "section": "Cell assemblies size and topographical distribution",
+            "figure": "Figure 4",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "Felix和NEST各自的two-way repeated-measures ANOVA均发现CA size的Area×WordType交互：Felix F(11,121)=25.41、NEST F(11,121)=137.68，均p<0.001；类别效应依区域而变。",
+        "boundary": "F数值不同不构成跨实现effect difference检验。",
+        "negative_result": null,
+        "non_inference": "不能据此独立验证人类词义机制或宣布模型与真实皮层等价。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "更换神经模拟环境后哪些语义cell assembly模式保留、哪些数值特征改变？"
+      ],
+      "shared_evidence_with": [
+        "C12",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C15",
+      "statement": "两实现内部的ANOVA均发现CA size随Area显著变化：Felix F(11,121)=198.04、NEST F(11,121)=587.23，均p<0.001。",
+      "claim_type": "simulation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "WordType×Area RM-ANOVA",
+          "design": "本文Felix与NEST的brain-constrained模型迁移／数值比较。",
+          "comparator": "每实现内部12areas",
+          "measure": "Area main effect",
+          "unit_of_analysis": "独立随机seed的模型网络",
+          "sample_size_as_reported": "文中12独立网络随机seed；六action与六object patterns，不能把cells或training trials当独立样本。",
+          "uncertainty": "F、df、p按正文；无effect-size/CI。",
+          "assumptions": [
+            "两平台按文内调整后的连接、时间常数和学习参数运行，而非全部参数不变。",
+            "CA根据六个auditory/articulatory evaluation trials的文内spike门槛定义。",
+            "左半球12-area抽象模型；空间只保拓扑，学习／刺激时间压缩。"
+          ],
+          "source_locator": {
+            "pdf_page": 16,
+            "section": "Cell assemblies size and topographical distribution",
+            "figure": "Figure 4",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "两实现内部的ANOVA均发现CA size随Area显著变化：Felix F(11,121)=198.04、NEST F(11,121)=587.23，均p<0.001。",
+        "boundary": "是同一批网络的统计分析，与交互不是独立重复。",
+        "negative_result": null,
+        "non_inference": "不能据此独立验证人类词义机制或宣布模型与真实皮层等价。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "更换神经模拟环境后哪些语义cell assembly模式保留、哪些数值特征改变？"
+      ],
+      "shared_evidence_with": [
+        "C12",
+        "C14",
+        "C16",
+        "C20"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C16",
+      "statement": "把全部12areas合并考察的WordType主效应在两实现中均不显著：Felix F(1,11)=0.35、p0.565；NEST F(1,11)=0.36、p0.563。",
+      "claim_type": "simulation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "WordType×Area RM-ANOVA",
+          "design": "本文Felix与NEST的brain-constrained模型迁移／数值比较。",
+          "comparator": "action vsobject整体CA size",
+          "measure": "WordType main effect",
+          "unit_of_analysis": "独立随机seed的模型网络",
+          "sample_size_as_reported": "文中12独立网络随机seed；六action与六object patterns，不能把cells或training trials当独立样本。",
+          "uncertainty": "F、df、p按正文；未做equivalence test。",
+          "assumptions": [
+            "两平台按文内调整后的连接、时间常数和学习参数运行，而非全部参数不变。",
+            "CA根据六个auditory/articulatory evaluation trials的文内spike门槛定义。",
+            "左半球12-area抽象模型；空间只保拓扑，学习／刺激时间压缩。"
+          ],
+          "source_locator": {
+            "pdf_page": 17,
+            "section": "Cell assemblies size and topographical distribution",
+            "figure": "Figure 4",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "把全部12areas合并考察的WordType主效应在两实现中均不显著：Felix F(1,11)=0.35、p0.565；NEST F(1,11)=0.36、p0.563。",
+        "boundary": "仅计算模型的实现比较，无新受试者或生物干预数据。",
+        "negative_result": "两实现未检出整体WordType主效应。",
+        "non_inference": "不显著不证明类别等价，也不能抹去显著Area×WordType交互。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "更换神经模拟环境后哪些语义cell assembly模式保留、哪些数值特征改变？"
+      ],
+      "shared_evidence_with": [
+        "C12",
+        "C14",
+        "C15",
+        "C19"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C17",
+      "statement": "两实现内部Tukey/Bonferroni后续比较显示，action-word CA在extrasylvian motor区域M1L、PML、PFL比object-word更大（reported p<0.0042）；正文还报告action-word CA在V1没有CA cells。",
+      "claim_type": "simulation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "WordType区域内post-hoc比较",
+          "design": "本文Felix与NEST的brain-constrained模型迁移／数值比较。",
+          "comparator": "action vsobject（每实现内部）",
+          "measure": "motor CA size及V1缺失CA的描述",
+          "unit_of_analysis": "独立随机seed的模型网络",
+          "sample_size_as_reported": "文中12独立网络随机seed；六action与六object patterns，不能把cells或training trials当独立样本。",
+          "uncertainty": "区域比较p<0.0042；准确单区域p与CI未给。",
+          "assumptions": [
+            "两平台按文内调整后的连接、时间常数和学习参数运行，而非全部参数不变。",
+            "CA根据六个auditory/articulatory evaluation trials的文内spike门槛定义。",
+            "左半球12-area抽象模型；空间只保拓扑，学习／刺激时间压缩。"
+          ],
+          "source_locator": {
+            "pdf_page": 17,
+            "section": "Cell assemblies size and topographical distribution",
+            "figure": "Figure 4",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "两实现内部Tukey/Bonferroni后续比较显示，action-word CA在extrasylvian motor区域M1L、PML、PFL比object-word更大（reported p<0.0042）；正文还报告action-word CA在V1没有CA cells。",
+        "boundary": "12比较的critical p0.0042；0 CA限本文阈值和配置。",
+        "negative_result": "本文CA定义下action词在V1未形成CA。",
+        "non_inference": "不能推断所有visual neurons完全无发放或动作词在生物视觉皮层无表示。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "behavior-cognition",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "更换神经模拟环境后哪些语义cell assembly模式保留、哪些数值特征改变？"
+      ],
+      "shared_evidence_with": [
+        "C12",
+        "C14",
+        "C18",
+        "C19"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C18",
+      "statement": "同一post-hoc分析显示，object-word CA在extrasylvian visual区域V1、TO、AT比action-word更大（reported p<0.0042）；正文还报告object-word CA在M1L没有CA cells。",
+      "claim_type": "simulation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "WordType区域内post-hoc比较",
+          "design": "本文Felix与NEST的brain-constrained模型迁移／数值比较。",
+          "comparator": "object vsaction（每实现内部）",
+          "measure": "visual CA size及M1L缺失CA的描述",
+          "unit_of_analysis": "独立随机seed的模型网络",
+          "sample_size_as_reported": "文中12独立网络随机seed；六action与六object patterns，不能把cells或training trials当独立样本。",
+          "uncertainty": "p<0.0042，未给完整区域effect-size/CI。",
+          "assumptions": [
+            "两平台按文内调整后的连接、时间常数和学习参数运行，而非全部参数不变。",
+            "CA根据六个auditory/articulatory evaluation trials的文内spike门槛定义。",
+            "左半球12-area抽象模型；空间只保拓扑，学习／刺激时间压缩。"
+          ],
+          "source_locator": {
+            "pdf_page": 17,
+            "section": "Cell assemblies size and topographical distribution",
+            "figure": "Figure 4",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "同一post-hoc分析显示，object-word CA在extrasylvian visual区域V1、TO、AT比action-word更大（reported p<0.0042）；正文还报告object-word CA在M1L没有CA cells。",
+        "boundary": "CA是否出现依六evaluation trials的定义；无生物干预。",
+        "negative_result": "本文CA定义下object词在M1L未形成CA。",
+        "non_inference": "不能据此独立验证人类词义机制或宣布模型与真实皮层等价。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "behavior-cognition",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "更换神经模拟环境后哪些语义cell assembly模式保留、哪些数值特征改变？"
+      ],
+      "shared_evidence_with": [
+        "C12",
+        "C14",
+        "C17",
+        "C19"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C19",
+      "statement": "在perisylvian A1、AB、PB、M1i、PMi、PFi中，两实现均未报告action/object的显著CA size差异。",
+      "claim_type": "simulation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "按area的Tukey/Bonferroni检验",
+          "design": "本文Felix与NEST的brain-constrained模型迁移／数值比较。",
+          "comparator": "action vsobject，各实现内部",
+          "measure": "perisylvian CA size的WordType差异",
+          "unit_of_analysis": "独立随机seed的模型网络",
+          "sample_size_as_reported": "文中12独立网络随机seed；六action与六object patterns，不能把cells或training trials当独立样本。",
+          "uncertainty": "未提供各区具体p或power；多重比较门槛0.0042。",
+          "assumptions": [
+            "两平台按文内调整后的连接、时间常数和学习参数运行，而非全部参数不变。",
+            "CA根据六个auditory/articulatory evaluation trials的文内spike门槛定义。",
+            "左半球12-area抽象模型；空间只保拓扑，学习／刺激时间压缩。"
+          ],
+          "source_locator": {
+            "pdf_page": 17,
+            "section": "Cell assemblies size and topographical distribution",
+            "figure": "Figure 4",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在perisylvian A1、AB、PB、M1i、PMi、PFi中，两实现均未报告action/object的显著CA size差异。",
+        "boundary": "差异未检出不是已证实phonological invariance或统计等价。",
+        "negative_result": "上述六区没有检出word-type相关的显著CA size差异。",
+        "non_inference": "不能据此独立验证人类词义机制或宣布模型与真实皮层等价。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "更换神经模拟环境后哪些语义cell assembly模式保留、哪些数值特征改变？"
+      ],
+      "shared_evidence_with": [
+        "C12",
+        "C14",
+        "C16",
+        "C17",
+        "C18"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C20",
+      "statement": "正文描述两实现的CA cells总体沿区域层级呈connector hubs（PB、PFi、AT、PFL）多于secondary（AB、PMi、TO、PML）、再多于primary（A1、M1i、V1、M1L）的趋势，对两词类均如此。",
+      "claim_type": "simulation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "CA topography描述性比较",
+          "design": "本文Felix与NEST的brain-constrained模型迁移／数值比较。",
+          "comparator": "三层区域及两词类",
+          "measure": "hub/secondary/primary CA count趋势",
+          "unit_of_analysis": "独立随机seed的模型网络",
+          "sample_size_as_reported": "文中12独立网络随机seed；六action与六object patterns，不能把cells或training trials当独立样本。",
+          "uncertainty": "除另列ANOVA外，未报告实现间直接检验或置信区间。",
+          "assumptions": [
+            "两平台按文内调整后的连接、时间常数和学习参数运行，而非全部参数不变。",
+            "CA根据六个auditory/articulatory evaluation trials的文内spike门槛定义。",
+            "左半球12-area抽象模型；空间只保拓扑，学习／刺激时间压缩。"
+          ],
+          "source_locator": {
+            "pdf_page": 16,
+            "section": "Cell assemblies size and topographical distribution",
+            "figure": "Figure 4",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "正文描述两实现的CA cells总体沿区域层级呈connector hubs（PB、PFi、AT、PFL）多于secondary（AB、PMi、TO、PML）、再多于primary（A1、M1i、V1、M1L）的趋势，对两词类均如此。",
+        "boundary": "正文总体层级趋势，没有单独层级统计检验；不覆盖每一个类别×区域的绝对零值。",
+        "negative_result": null,
+        "non_inference": "不能据此独立验证人类词义机制或宣布模型与真实皮层等价。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "更换神经模拟环境后哪些语义cell assembly模式保留、哪些数值特征改变？"
+      ],
+      "shared_evidence_with": [
+        "C12",
+        "C15"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C21",
+      "statement": "随word-learning episodes增加，两实现CA总体增长轨迹相似，perisylvian增长在最初约500个文中learning-steps最陡、约1000后趋于平台；NEST较大CA差距从早期出现并持续。",
+      "claim_type": "simulation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "训练进程CA mapping",
+          "design": "本文Felix与NEST的brain-constrained模型迁移／数值比较。",
+          "comparator": "Felix vsNEST及早／晚学习阶段",
+          "measure": "CA count随learning episodes的变化",
+          "unit_of_analysis": "独立随机seed的模型网络",
+          "sample_size_as_reported": "文中12独立网络随机seed；六action与六object patterns，不能把cells或training trials当独立样本。",
+          "uncertainty": "除另列ANOVA外，未报告实现间直接检验或置信区间。",
+          "assumptions": [
+            "两平台按文内调整后的连接、时间常数和学习参数运行，而非全部参数不变。",
+            "CA根据六个auditory/articulatory evaluation trials的文内spike门槛定义。",
+            "左半球12-area抽象模型；空间只保拓扑，学习／刺激时间压缩。"
+          ],
+          "source_locator": {
+            "pdf_page": 17,
+            "section": "Cell assemblies emergence over learning episodes",
+            "figure": "Figure 5",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "随word-learning episodes增加，两实现CA总体增长轨迹相似，perisylvian增长在最初约500个文中learning-steps最陡、约1000后趋于平台；NEST较大CA差距从早期出现并持续。",
+        "boundary": "此处learning-steps是图5训练进程用语，不擅换算为单神经元ms时间或当作独立样本。",
+        "negative_result": null,
+        "non_inference": "平台不证明所有内部连接不再变化或现实语言学习在1000ms完成。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "更换神经模拟环境后哪些语义cell assembly模式保留、哪些数值特征改变？"
+      ],
+      "shared_evidence_with": [
+        "C12",
+        "C13"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C22",
+      "statement": "对学后action pattern的A1刺激（5个报告步baseline、2个报告步刺激、随后传播），两实现均先在A1激活并向AB、PB及articulatory区域传播，早期perisylvian传播大体接近。",
+      "claim_type": "simulation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "action-word auditory cue的spike time course",
+          "design": "本文Felix与NEST的brain-constrained模型迁移／数值比较。",
+          "comparator": "Felix vsNEST早期活动",
+          "measure": "跨区域spike count传播顺序",
+          "unit_of_analysis": "学后模型各区spike-count轨迹",
+          "sample_size_as_reported": "Figure6 action-word示例；独立trajectory统计n未列。",
+          "uncertainty": "除另列ANOVA外，未报告实现间直接检验或置信区间。",
+          "assumptions": [
+            "两平台按文内调整后的连接、时间常数和学习参数运行，而非全部参数不变。",
+            "CA根据六个auditory/articulatory evaluation trials的文内spike门槛定义。",
+            "左半球12-area抽象模型；空间只保拓扑，学习／刺激时间压缩。"
+          ],
+          "source_locator": {
+            "pdf_page": 18,
+            "section": "Spatiotemporal activation",
+            "figure": "Figure 6",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "对学后action pattern的A1刺激（5个报告步baseline、2个报告步刺激、随后传播），两实现均先在A1激活并向AB、PB及articulatory区域传播，早期perisylvian传播大体接近。",
+        "boundary": "每报告步为1ms，但整个过程是时间压缩示意；不是自然语音latency预测。",
+        "negative_result": null,
+        "non_inference": "不能据此独立验证人类词义机制或宣布模型与真实皮层等价。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "更换神经模拟环境后哪些语义cell assembly模式保留、哪些数值特征改变？"
+      ],
+      "shared_evidence_with": [
+        "C23",
+        "C24",
+        "C25"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C23",
+      "statement": "同一action-word A1 cue的time course中，正文报告NEST在PFi、PML和M1L等远端区域的峰／激活量高于Felix，符合更大CA的描述。",
+      "claim_type": "simulation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "跨区spike-count轨迹对照",
+          "design": "本文Felix与NEST的brain-constrained模型迁移／数值比较。",
+          "comparator": "NEST vsFelix指定action cue",
+          "measure": "峰活动与远端募集",
+          "unit_of_analysis": "区域spike-count轨迹",
+          "sample_size_as_reported": "图示action cue；完整轨迹重复n未给。",
+          "uncertainty": "除另列ANOVA外，未报告实现间直接检验或置信区间。",
+          "assumptions": [
+            "两平台按文内调整后的连接、时间常数和学习参数运行，而非全部参数不变。",
+            "CA根据六个auditory/articulatory evaluation trials的文内spike门槛定义。",
+            "左半球12-area抽象模型；空间只保拓扑，学习／刺激时间压缩。"
+          ],
+          "source_locator": {
+            "pdf_page": 18,
+            "section": "Spatiotemporal activation",
+            "figure": "Figure 6",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "同一action-word A1 cue的time course中，正文报告NEST在PFi、PML和M1L等远端区域的峰／激活量高于Felix，符合更大CA的描述。",
+        "boundary": "没有实现间显著性检验；spike counts不同于CA membership数量。",
+        "negative_result": null,
+        "non_inference": "不能据此独立验证人类词义机制或宣布模型与真实皮层等价。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "更换神经模拟环境后哪些语义cell assembly模式保留、哪些数值特征改变？"
+      ],
+      "shared_evidence_with": [
+        "C13",
+        "C22",
+        "C24",
+        "C27"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C24",
+      "statement": "同一action cue模拟中，NEST相较Felix的peak timing滞后随离A1更远的处理层级而积累，在PML和M1L等区域更明显；正文将其关联到显式synaptic delays。",
+      "claim_type": "simulation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "activation time-course实现比较",
+          "design": "本文Felix与NEST的brain-constrained模型迁移／数值比较。",
+          "comparator": "NEST显式delay vsFelix近即刻更新",
+          "measure": "remote peak timing相对滞后",
+          "unit_of_analysis": "模型区域峰时刻",
+          "sample_size_as_reported": "展示的action cue时序；重复n及delay效应CI未给。",
+          "uncertainty": "除另列ANOVA外，未报告实现间直接检验或置信区间。",
+          "assumptions": [
+            "两平台按文内调整后的连接、时间常数和学习参数运行，而非全部参数不变。",
+            "CA根据六个auditory/articulatory evaluation trials的文内spike门槛定义。",
+            "左半球12-area抽象模型；空间只保拓扑，学习／刺激时间压缩。"
+          ],
+          "source_locator": {
+            "pdf_page": 18,
+            "section": "Spatiotemporal activation",
+            "figure": "Figure 6",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "同一action cue模拟中，NEST相较Felix的peak timing滞后随离A1更远的处理层级而积累，在PML和M1L等区域更明显；正文将其关联到显式synaptic delays。",
+        "boundary": "实际delay effect与其他调参共同变化；未提供独立delay ablation。",
+        "negative_result": null,
+        "non_inference": "不能据此认定delay是全部差异的唯一因果。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "更换神经模拟环境后哪些语义cell assembly模式保留、哪些数值特征改变？"
+      ],
+      "shared_evidence_with": [
+        "C3",
+        "C22",
+        "C23",
+        "C27"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C25",
+      "statement": "Figure6 action-word time-course的正文报告，两实现中V1均未观察到activation，而motor系统较强、visual整体较弱。",
+      "claim_type": "simulation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "action cue后的区域spike-count记录",
+          "design": "本文Felix与NEST的brain-constrained模型迁移／数值比较。",
+          "comparator": "motor vsvisual，两实现action cue",
+          "measure": "V1 activation及系统活动范围",
+          "unit_of_analysis": "模型区域spike活动",
+          "sample_size_as_reported": "Figure6 action-word示例；阈值／精确n未给。",
+          "uncertainty": "除另列ANOVA外，未报告实现间直接检验或置信区间。",
+          "assumptions": [
+            "两平台按文内调整后的连接、时间常数和学习参数运行，而非全部参数不变。",
+            "CA根据六个auditory/articulatory evaluation trials的文内spike门槛定义。",
+            "左半球12-area抽象模型；空间只保拓扑，学习／刺激时间压缩。"
+          ],
+          "source_locator": {
+            "pdf_page": 18,
+            "section": "Spatiotemporal activation",
+            "figure": "Figure 6",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "Figure6 action-word time-course的正文报告，两实现中V1均未观察到activation，而motor系统较强、visual整体较弱。",
+        "boundary": "这是指定模拟与cue的实际负结果，与所有词类或所有visual区域无反应不同。",
+        "negative_result": "该action cue展示条件下V1未出现观测到的activation。",
+        "non_inference": "不能据此独立验证人类词义机制或宣布模型与真实皮层等价。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "behavior-cognition",
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "更换神经模拟环境后哪些语义cell assembly模式保留、哪些数值特征改变？"
+      ],
+      "shared_evidence_with": [
+        "C22",
+        "C23",
+        "C24"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C26",
+      "statement": "作者报告迁移至NEST后simulation runtime较Felix减少到约六分之一；文本列出NEST3.6、6个Intel Xeon CPU cores、AlmaLinux8和Slurm环境。",
+      "claim_type": "reported_computational_performance",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "报告运行耗时比较",
+          "design": "本文Felix与NEST的brain-constrained模型迁移／数值比较。",
+          "comparator": "NEST vsFelix",
+          "measure": "约sixfold runtime reduction",
+          "unit_of_analysis": "程序simulation运行",
+          "sample_size_as_reported": "文中12独立网络随机seed；六action与六object patterns，不能把cells或training trials当独立样本。",
+          "uncertainty": "约六倍的作者报告，无均值/CI/n。",
+          "assumptions": [
+            "仅本研究模型和所报告执行环境。"
+          ],
+          "source_locator": {
+            "pdf_page": 20,
+            "section": "Discussion; Simulation framework",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者报告迁移至NEST后simulation runtime较Felix减少到约六分之一；文本列出NEST3.6、6个Intel Xeon CPU cores、AlmaLinux8和Slurm环境。",
+        "boundary": "未提供绝对运行时间、计时重复n、误差或两实现完全匹配的hardware/thread测量表。",
+        "negative_result": null,
+        "non_inference": "不能称任何规模均六倍更快、能耗六倍改善或扩展右半球已完成。",
+        "unresolved": "详细benchmark计时口径不在提供文本。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "该NEST迁移在报告的模型／执行环境中带来何种速度变化？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C27",
+      "statement": "作者把NEST更大CA与更高／更晚远端活动解释为delayed inhibition使早期excitation有更久传播窗口；但该实现比较同时调整时间常数、连接概率及学习参数，提供文本不足以确认唯一因果来源。",
+      "claim_type": "implementation_mechanism_interpretation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "实现差异的机制解释",
+          "design": "本文Felix与NEST的brain-constrained模型迁移／数值比较。",
+          "comparator": "NEST vsFelix多项实现变化",
+          "measure": "delay—inhibition—CA recruitment链条",
+          "unit_of_analysis": "独立随机seed的模型网络",
+          "sample_size_as_reported": "文中12独立网络随机seed；六action与六object patterns，不能把cells或training trials当独立样本。",
+          "uncertainty": "除另列ANOVA外，未报告实现间直接检验或置信区间。",
+          "assumptions": [
+            "两平台按文内调整后的连接、时间常数和学习参数运行，而非全部参数不变。",
+            "CA根据六个auditory/articulatory evaluation trials的文内spike门槛定义。",
+            "左半球12-area抽象模型；空间只保拓扑，学习／刺激时间压缩。"
+          ],
+          "source_locator": {
+            "pdf_page": 19,
+            "section": "Discussion",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者把NEST更大CA与更高／更晚远端活动解释为delayed inhibition使早期excitation有更久传播窗口；但该实现比较同时调整时间常数、连接概率及学习参数，提供文本不足以确认唯一因果来源。",
+        "boundary": "Discussion解释，提到的Supplementary S1/S2未提供。",
+        "negative_result": null,
+        "non_inference": "不将single-neuron示例吻合当成所有network差异只能由delay引起的证明。",
+        "unresolved": "需delay与其他参数分离的matched ablation，及未提供supplementary数据。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "更换神经模拟环境后哪些语义cell assembly模式保留、哪些数值特征改变？"
+      ],
+      "shared_evidence_with": [
+        "C3",
+        "C5",
+        "C6",
+        "C13",
+        "C23",
+        "C24"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C28",
+      "statement": "作者将每区global mean-field inhibitory unit解释为对corticothalamic／reticular gain-control系统的高度简化近似；当前网络并未显式模拟这些解剖回路。",
+      "claim_type": "biological_mapping_hypothesis",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "抽象抑制模块与生理类比",
+          "design": "本文Felix与NEST的brain-constrained模型迁移／数值比较。",
+          "comparator": "single-area inhibitory pool vs分布式生理系统",
+          "measure": "区域总excitatory输出的均匀feedback",
+          "unit_of_analysis": "模型与解剖对应假说",
+          "sample_size_as_reported": "文中12独立网络随机seed；六action与六object patterns，不能把cells或training trials当独立样本。",
+          "uncertainty": "除另列ANOVA外，未报告实现间直接检验或置信区间。",
+          "assumptions": [
+            "只采用公式6区域总活动low-pass feedback。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "Global inhibition",
+            "figure": null,
+            "equation": "6",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者将每区global mean-field inhibitory unit解释为对corticothalamic／reticular gain-control系统的高度简化近似；当前网络并未显式模拟这些解剖回路。",
+        "boundary": "文中明确需要进一步研究该解释；它不是已验证的回路对应。",
+        "negative_result": null,
+        "non_inference": "不能据此独立验证人类词义机制或宣布模型与真实皮层等价。",
+        "unresolved": "global单元与实际gain-control系统的映射尚未建立。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "区域global inhibition抽象如何与分布式皮层／丘脑gain control对应？"
+      ],
+      "shared_evidence_with": [
+        "C2"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "此24页modified-publication2026研究将原Felix十二区域BPAM-o-CAL移植至NEST3.6并开发felixmodule，保留语义关联学习的核心架构但调整积分／delay、时间常数、cross-system概率及Hebbian参数。单pair输入示例报告膜电位、适应和spike吻合；12seed网络下两实现均显示motor-action与visual-object CA偏好、区域交互而非整体词类主效应，perisylvian无显著类别差异。NEST CA约更大两倍且远端峰更高／更晚，故topography相似不能等同精确功能／数值等价，作者未做跨实现直接统计。约六倍耗时改善仅为reported benchmark。机制解释、未提供supplement的消融和未来拓展保留边界；首页七作者仅在extraction纠正并交父任务协调。",
+  "shared_evidence": [
+    {
+      "claim_id": "C2",
+      "with": [
+        "C3",
+        "C4",
+        "C5",
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C4",
+        "C23",
+        "C24"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C3",
+        "C9",
+        "C10",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C13",
+        "C21",
+        "C27"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C7",
+        "C8",
+        "C27"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C2",
+        "C6",
+        "C8"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C6",
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C4",
+        "C10",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "with": [
+        "C9",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "with": [
+        "C9",
+        "C10"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "with": [
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21"
+      ]
+    },
+    {
+      "claim_id": "C13",
+      "with": [
+        "C12",
+        "C21",
+        "C23",
+        "C27"
+      ]
+    },
+    {
+      "claim_id": "C14",
+      "with": [
+        "C12",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19"
+      ]
+    },
+    {
+      "claim_id": "C15",
+      "with": [
+        "C12",
+        "C14",
+        "C16",
+        "C20"
+      ]
+    },
+    {
+      "claim_id": "C16",
+      "with": [
+        "C12",
+        "C14",
+        "C15",
+        "C19"
+      ]
+    },
+    {
+      "claim_id": "C17",
+      "with": [
+        "C12",
+        "C14",
+        "C18",
+        "C19"
+      ]
+    },
+    {
+      "claim_id": "C18",
+      "with": [
+        "C12",
+        "C14",
+        "C17",
+        "C19"
+      ]
+    },
+    {
+      "claim_id": "C19",
+      "with": [
+        "C12",
+        "C14",
+        "C16",
+        "C17",
+        "C18"
+      ]
+    },
+    {
+      "claim_id": "C20",
+      "with": [
+        "C12",
+        "C15"
+      ]
+    },
+    {
+      "claim_id": "C21",
+      "with": [
+        "C12",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C22",
+      "with": [
+        "C23",
+        "C24",
+        "C25"
+      ]
+    },
+    {
+      "claim_id": "C23",
+      "with": [
+        "C13",
+        "C22",
+        "C24",
+        "C27"
+      ]
+    },
+    {
+      "claim_id": "C24",
+      "with": [
+        "C3",
+        "C22",
+        "C23",
+        "C27"
+      ]
+    },
+    {
+      "claim_id": "C25",
+      "with": [
+        "C22",
+        "C23",
+        "C24"
+      ]
+    },
+    {
+      "claim_id": "C27",
+      "with": [
+        "C3",
+        "C5",
+        "C6",
+        "C13",
+        "C23",
+        "C24"
+      ]
+    },
+    {
+      "claim_id": "C28",
+      "with": [
+        "C2"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": null,
+        "issue": "任务元数据只有六位作者，首页／contributions还有Friedemann Pulvermüller；Fynn Raphael Dobler在本PDF显示Fynn Dobler。",
+        "suggested_correction": "仅本extraction按首页七作者记录；父任务核对canonical author list，非document identity block。",
+        "pdf_page": 1,
+        "resolved": false
+      },
+      {
+        "claim_id": "C3",
+        "issue": "前文delay/time-step措辞有混淆，PDF13明确NEST内部0.5ms、报告excitatory step1ms。",
+        "suggested_correction": "按明确数值保留E-E1ms、E-I/I-E各0.5ms；不把学习episodes换成ms。",
+        "pdf_page": 13,
+        "resolved": true
+      },
+      {
+        "claim_id": "C4",
+        "issue": "“all membrane and adaptation constants doubled”不能扩张为所有常数；FAVG在Table2两者均30。",
+        "suggested_correction": "逐项列实际变更，FAVG保持不变。",
+        "pdf_page": 8,
+        "resolved": true
+      },
+      {
+        "claim_id": "C6",
+        "issue": "正文／Discussion有identical architecture、full functional equivalence措辞，但cross-system、time constants和plasticity参数确实不同。",
+        "suggested_correction": "迁移保核心架构和相对类别趋势，不声称逐参数等价。",
+        "pdf_page": 10,
+        "resolved": true
+      },
+      {
+        "claim_id": "C7",
+        "issue": "local degree9.5±0.008标standard error，remote33.78±0.15、16.65±0.01标standard deviation。",
+        "suggested_correction": "各自原样区分SE/SD，不猜汇总n。",
+        "pdf_page": 11,
+        "resolved": true
+      },
+      {
+        "claim_id": "C12",
+        "issue": "PDF14称每trial active若至少1spike、CA若six trials至少4spikes；不能无证改为至少4个独立trials。",
+        "suggested_correction": "保留spikecriterion及6evaluation trials，不把阈值二值化细节补猜。",
+        "pdf_page": 14,
+        "resolved": true
+      },
+      {
+        "claim_id": "C14",
+        "issue": "作者明确未做两实现直接statistical comparisons。",
+        "suggested_correction": "各实现ANOVA分别完整记录，不以F值大小推导NEST/Felix差异显著或等价。",
+        "pdf_page": 15,
+        "resolved": true
+      },
+      {
+        "claim_id": "C21",
+        "issue": "Results偶写hub PFM，但整个架构定义PFL，PFM未定义。",
+        "suggested_correction": "按一致已定义hub列表PB/PFi/AT/PFL处理清晰标签转录；不新建PFM区域。",
+        "pdf_page": 17,
+        "resolved": true
+      },
+      {
+        "claim_id": "C17",
+        "issue": "Discussion一处将PFi列action-specific motor，和Results perisylvian PFi无差异冲突。",
+        "suggested_correction": "统计命题采用Results extrasylvian M1L/PML/PFL，保留Discussion标签冲突为未决。",
+        "pdf_page": 19,
+        "resolved": false
+      },
+      {
+        "claim_id": "C27",
+        "issue": "作者称仅delay解释network差异，但同时调多个参数；更高excitation而非学习效率的证据指向未提供S1/S2。",
+        "suggested_correction": "delay机制为interpretation，not sole causal validation；更强效率论断暂缓。",
+        "pdf_page": 19,
+        "resolved": false
+      },
+      {
+        "claim_id": "C26",
+        "issue": "约sixfold runtime改善无绝对时间／n／误差或matched execution条件表。",
+        "suggested_correction": "保留reported benchmark，不能普遍化能耗、规模或硬件。",
+        "pdf_page": 20,
+        "resolved": false
+      },
+      {
+        "claim_id": null,
+        "issue": "Supplementary object-word timecourse、spiking inhibition tests、parameter sweeps不在provided pages。",
+        "suggested_correction": "完整覆盖正文但不标补充已读、不虚构补充曲线或n。",
+        "pdf_page": 18,
+        "resolved": false
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T11:49:32.608949Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "5daa58797efdc0aaaead5404625e5528bb09fcaa94a9368aced65a540829171c",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

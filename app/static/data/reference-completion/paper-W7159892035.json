@@ -1,0 +1,2139 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "preprint",
+  "paper": {
+    "title": "EdgeSpike: Spiking Neural Networks for Low-Power Autonomous Sensing in Edge IoT Architectures",
+    "authors": [
+      "Gustav Olaf Yunus Laitinen-Fredriksson Lundström-Imanov",
+      "Taner Yilmaz"
+    ],
+    "doi": null,
+    "publication_year": 2026,
+    "venue": "arXiv (Cornell University)",
+    "url": "https://arxiv.org/pdf/2604.27004"
+  },
+  "source": {
+    "filename": "paper-W7159892035--EdgeSpike-Spiking-Neural-Networks-for-Low-Power-Autonomous-Sensing-in-Edge-IoT-Architectures.pdf",
+    "sha256": "373d3745dbcead93016be0a450219be17f614097f61af407564b6d8a1a865e08",
+    "source_url": "https://arxiv.org/pdf/2604.27004",
+    "pdf_page_count": 9
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "results_sections_seen": [
+      "III-A/B：LIF、direct encoding与hybrid surrogate训练（式1–4）",
+      "III-C：NAS（Table I、II；式5–6；Fig.1）",
+      "III-D/E：三平台runtime与局部适应（式7）",
+      "IV-A/B/C：五任务数据、硬件与基线测量协议",
+      "V-A：五任务分类（Table III）",
+      "V-B：能耗与活动率关联（Tables IV–V、Fig.2）",
+      "V-C：时延（Table VI）",
+      "V-D/E：选定架构与内存（Tables VII–VIII）",
+      "V-F：KWS消融（Table IX）",
+      "V-G：分层发放（Fig.3）",
+      "VI-A/B/C：单站配置、预算、日耗、寿命与漂移（式8、Figs.4–5、Table X）",
+      "VII-A/B/C：比较公平性、适应/泛化与威胁",
+      "VIII：结论、致谢；第8页参考文献与第9页作者简介"
+    ],
+    "missing_material": [
+      "图像像素未提供，仅评估完整图题/表格/正文文本。",
+      "提及的reviewer-artifact bundle、预处理代码、Zenodo记录、源码和原始数据未供应；发布计划不是已访问材料。",
+      "没有供应独立补充材料；本9页文本未见附录。",
+      "逐种子结果、原始遥测、条件分配与完整硬件峰值内存记录未供。"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "完整供应文本75,323字符，一次载入后分成五个约17,500字符片段，覆盖所有9页，包括参考文献与简介；未重新打开PDF。",
+      "实际来源标题/两作者/2026日期与索引一致；PDF第1页标arXiv:2604.27004v1 [cs.NE]，29 Apr 2026，IEEE页眉为VOL.XX/NO.XX占位，不当作已发表journal版本。",
+      "identity_consistent:true只表示本文件与所分配论文身份一致，不是论文各数值自洽；索引venue保留arXiv，未猜DOI或正式卷期。",
+      "第二轮来源内审计在保留的全文上下文中对24候选逐条核对，分离实测、作者外推和未来假设；所有quote=null，English原文引用词数为0。",
+      "中文命题保留source-language方法术语；明确五训练种子、1,000调用、受试者/机器、节点、月份与单站之间的独立性差别。",
+      "只完成文本审计，不是科学验证；候选human_checked:false；没有跨论文support/contradiction/replication关系。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "在35类Google Speech Commands v2、16 kHz一秒音频、T=8的KWS基准中，EdgeSpike top-1准确率为94.1±0.21%，INT8三块depthwise-separable CNN为95.2±0.18%；表III报告SNN低1.1个百分点，Welch t检验p=0.004。",
+      "role": "result",
+      "source_pages": [
+        4
+      ],
+      "decision": "include",
+      "reason": "可独立评估的来源命题；保留条件、比较、统计单位与边界，未解决问题写入审计。"
+    },
+    {
+      "summary": "在CWRU轴承数据与私有九个月风机齿轮箱数据、FFT加delta-modulation、T=16的MFD基准中，EdgeSpike top-1准确率为93.7±0.27%，INT8 1-D ResNet-18变体为94.8±0.22%；表III报告SNN低1.1个百分点，Welch t检验p=0.008。",
+      "role": "result",
+      "source_pages": [
+        4
+      ],
+      "decision": "include",
+      "reason": "可独立评估的来源命题；保留条件、比较、统计单位与边界，未解决问题写入审计。"
+    },
+    {
+      "summary": "在18名受试者、12种手势、8通道2 kHz sEMG、leave-two-subjects-out交叉验证、T=16的EMG基准中，EdgeSpike top-1准确率为89.2±0.41%，INT8 temporal convolutional network为90.6±0.36%；表III报告SNN低1.4个百分点，Welch t检验p=0.012。",
+      "role": "result",
+      "source_pages": [
+        4
+      ],
+      "decision": "include",
+      "reason": "可独立评估的来源命题；保留条件、比较、统计单位与边界，未解决问题写入审计。"
+    },
+    {
+      "summary": "在77 GHz FMCW雷达、作者报告6类活动、16名受试者、4,800条序列、80/20受试者独立划分、T=8的Radar HAR基准中，EdgeSpike top-1准确率为90.8±0.33%，INT8 lightweight CNN为92.1±0.29%；表III报告SNN低1.3个百分点，Welch t检验p=0.007。",
+      "role": "result",
+      "source_pages": [
+        4
+      ],
+      "decision": "include",
+      "reason": "可独立评估的来源命题；保留条件、比较、统计单位与边界，未解决问题写入审计。"
+    },
+    {
+      "summary": "在混凝土梁与现场声发射数据、4类结构健康声发射事件、512 kHz采样降至32 kHz、T=8的SHAM基准中，EdgeSpike top-1准确率为89.2±0.38%，INT8三块depthwise-separable CNN为90.5±0.32%；表III报告SNN低1.3个百分点，Welch t检验p=0.010。",
+      "role": "result",
+      "source_pages": [
+        4
+      ],
+      "decision": "include",
+      "reason": "可独立评估的来源命题；保留条件、比较、统计单位与边界，未解决问题写入审计。"
+    },
+    {
+      "summary": "在同一STM32L496 Cortex-M4上的五任务比较中，EdgeSpike RLE sparse能量依KWS/MFD/EMG/Radar HAR/SHAM顺序为1.20/1.96/2.69/4.80/3.22 mJ，INT8 dense CNN为9.50/13.70/17.20/22.10/14.80 mJ；报告节能倍数7.9/7.0/6.4/4.6/4.6，任务倍数均值6.1。",
+      "role": "result",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "可独立评估的来源命题；保留条件、比较、统计单位与边界，未解决问题写入审计。"
+    },
+    {
+      "summary": "Loihi 2上的EdgeSpike在KWS/MFD/EMG/Radar HAR/SHAM分别报告0.297/0.361/0.860/0.470/0.449 mJ每次推理；以Cortex-M4的INT8 CNN能量为参照，相对倍数为32/38/20/47/33，五任务倍数均值34。",
+      "role": "result",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "可独立评估的来源命题；保留条件、比较、统计单位与边界，未解决问题写入审计。"
+    },
+    {
+      "summary": "SpiNNaker 2上的EdgeSpike在KWS/MFD/EMG/Radar HAR/SHAM分别报告0.380/0.442/0.956/0.539/0.592 mJ每次推理；相对Cortex-M4 INT8 CNN的倍数为25/31/18/41/25，五任务倍数均值28。",
+      "role": "result",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "可独立评估的来源命题；保留条件、比较、统计单位与边界，未解决问题写入审计。"
+    },
+    {
+      "summary": "作者报告五任务在Loihi 2/SpiNNaker 2/Cortex-M4共15个配置的平均端到端推理时延为2.1–9.4 ms；最大值是EMG/Cortex-M4的9.4 ms，最小值为KWS/Loihi 2的2.1 ms。",
+      "role": "result",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "可独立评估的来源命题；保留条件、比较、统计单位与边界，未解决问题写入审计。"
+    },
+    {
+      "summary": "EdgeSpike在深度、神经元数、T、decay、连接稀疏度和skip六维搜索空间内报告8,400个五任务可行候选；KWS/Loihi 2的图1给出12个非支配点，验证准确率87.9–92.8%、预测能量0.21–5.10 mJ，所选D=3、N=256、T=8、50%连接、residual、learnable-shared decay配置为91.8%与0.42 mJ。",
+      "role": "result",
+      "source_pages": [
+        3
+      ],
+      "decision": "include",
+      "reason": "可独立评估的来源命题；保留条件、比较、统计单位与边界，未解决问题写入审计。"
+    },
+    {
+      "summary": "在作者重新完整训练的64个架构候选中，10-epoch代理评估准确率与完整训练准确率的Pearson相关报告为r=0.91，95% CI为[0.84,0.95]。",
+      "role": "result",
+      "source_pages": [
+        3
+      ],
+      "decision": "include",
+      "reason": "可独立评估的来源命题；保留条件、比较、统计单位与边界，未解决问题写入审计。"
+    },
+    {
+      "summary": "表VIII中五个选定EdgeSpike模型的INT8权重为184–896 KB、参数为184–896 K，逐时间步峰值activation为41–127 KB；所列权重适合1 MB flash且activation数值低于128 KB，但这不能证明权重加activation总静态内存满足NAS的128 KB约束。",
+      "role": "result",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "可独立评估的来源命题；保留条件、比较、统计单位与边界，未解决问题写入审计。"
+    },
+    {
+      "summary": "KWS/Loihi 2中，将完整EdgeSpike的direct encoding（T=8）替为rate编码（T=64）后，准确率由94.1%变93.0%，能量由0.297变1.840 mJ；作者据此报告direct encoding约6.2倍的该配置能耗优势。",
+      "role": "result",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "可独立评估的来源命题；保留条件、比较、统计单位与边界，未解决问题写入审计。"
+    },
+    {
+      "summary": "KWS/Loihi 2中，移除前60%训练阶段将fast-sigmoid sharpness k从0.5升至4.0的curriculum、改用固定k=1.0后，准确率从94.1%降到93.2%，能量从0.297升到0.321 mJ。",
+      "role": "result",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "可独立评估的来源命题；保留条件、比较、统计单位与边界，未解决问题写入审计。"
+    },
+    {
+      "summary": "KWS/Loihi 2中，去除activity regulariser（λr=0，对照完整λr=0.01）后，准确率从94.1%变93.8%，能量从0.297变0.612 mJ；完整配置与无正则配置的能量比约为1:2.1。",
+      "role": "result",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "可独立评估的来源命题；保留条件、比较、统计单位与边界，未解决问题写入审计。"
+    },
+    {
+      "summary": "KWS/Loihi 2中，NAS选定的完整EdgeSpike为94.1%、0.297 mJ，作者所列random feasible architecture为90.7%、1.180 mJ；NAS配置准确率高3.4 pp且能量约低3.9倍，并非等准确率的配对。",
+      "role": "result",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "可独立评估的来源命题；保留条件、比较、统计单位与边界，未解决问题写入审计。"
+    },
+    {
+      "summary": "五个选定EdgeSpike网络的mean spike-activity rate依KWS/MFD/EMG/Radar HAR/SHAM为16.8%/22.3%/28.4%/36.1%/31.7%；图3文字说明报告同一任务更深层发放更少。",
+      "role": "result",
+      "source_pages": [
+        5
+      ],
+      "decision": "include",
+      "reason": "可独立评估的来源命题；保留条件、比较、统计单位与边界，未解决问题写入审计。"
+    },
+    {
+      "summary": "EdgeSpike定义只更新首层权重的trace-based Hebbian在线规则，不运行backpropagation；作者给定δ=1、η=10^-4、weight decay=5×10^-4，16-bit缓冲每1,000次推理flush到flash，状态开销是每synapse group 8 bytes，最大首层合计3.2 KB。",
+      "role": "result",
+      "source_pages": [
+        3
+      ],
+      "decision": "include",
+      "reason": "可独立评估的来源命题；保留条件、比较、统计单位与边界，未解决问题写入审计。"
+    },
+    {
+      "summary": "单一欧洲温带混凝土铁路高架桥的64节点SHAM部署（2025年7月至2026年1月）中，作者报告适应关闭时准确率从首月91.0%到末月88.9%，开启时末月90.3%，末月恢复1.4 pp、仍比首月低0.7 pp；但表X第4月开启适应为89.9%，相对首月下降1.1 pp，不能称全期最大下降仅0.7 pp。",
+      "role": "result",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "可独立评估的来源命题；保留条件、比较、统计单位与边界，未解决问题写入审计。"
+    },
+    {
+      "summary": "该64节点七个月单站部署的图5文字说明报告平均日能耗1.638±0.022 mWh/day；表X月值为1.62/1.65/1.63/1.64/1.61/1.59/1.63 mWh，但均值行也写1.638，其与这些月值的简单平均不一致，聚合权重和±定义未提供。",
+      "role": "result",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "可独立评估的来源命题；保留条件、比较、统计单位与边界，未解决问题写入审计。"
+    },
+    {
+      "summary": "作者对可用约2 Wh电池的SHAM现场节点，在声称第3月后优化的条件下外推EdgeSpike寿命1,978天，以CNN现场312天为参照给出约6.3倍；但同期1.638 mWh/day和2 Wh直接相除约为1,221天，表X月寿命为1,212–1,258天，供应文本不足以重建1,978天外推。",
+      "role": "interpretation",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "可独立评估的来源命题；保留条件、比较、统计单位与边界，未解决问题写入审计。"
+    },
+    {
+      "summary": "七个月64节点部署中，作者报告平均每节点1,028次flash写入，并称低于STM32L496耐久规格；提供文本没有实际写入分布、flash寿命试验或所引规格的耐久数值。",
+      "role": "result",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "可独立评估的来源命题；保留条件、比较、统计单位与边界，未解决问题写入审计。"
+    },
+    {
+      "summary": "64节点、七个月的单站铁路高架桥部署中，作者报告3个节点发生sensor-cable damage，并于第4月现场更换/维修后恢复全网；这是真实报告的硬件故障，不能把部署描述为零故障。",
+      "role": "result",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "可独立评估的来源命题；保留条件、比较、统计单位与边界，未解决问题写入审计。"
+    },
+    {
+      "summary": "作者推测首层局部Hebbian适应后末月仍残余的0.7 pp退化，可能需要deeper-layer e-prop或小规模周期校准集来进一步改善；论文没有测试这两种补救方案。",
+      "role": "hypothesis",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "可独立评估的来源命题；保留条件、比较、统计单位与边界，未解决问题写入审计。"
+    },
+    {
+      "summary": "TensorFlow Lite Micro CNN与EdgeSpike五任务总体平均准确率91.4%/92.6%及均值差1.2 pp。",
+      "role": "derived_summary",
+      "source_pages": [
+        1,
+        4,
+        7
+      ],
+      "decision": "exclude",
+      "reason": "已由C01–C05各任务完整保留；平均不另算独立结果。"
+    },
+    {
+      "summary": "移除sparse kernels的Table IX行（dense Cortex-M，94.1%、9.50 mJ）。",
+      "role": "ablation_comparator",
+      "source_pages": [
+        5,
+        7
+      ],
+      "decision": "exclude",
+      "reason": "该表标题KWS/Loihi 2而此行改用Cortex-M，不能把跨平台32倍变化作为孤立kernel消融；同平台整栈能耗已由C06保留。"
+    },
+    {
+      "summary": "与外引Yin/SpikNAS/TrueNorth的94.1比91.8、89.2比87.5、93.7比89.6准确率比较。",
+      "role": "secondary_literature_comparison",
+      "source_pages": [
+        2,
+        4,
+        8
+      ],
+      "decision": "exclude",
+      "reason": "对手分数源自文献、无同协议重评；参考文献不当作本论文独立实验，且不建立跨论文图关系。"
+    },
+    {
+      "summary": "将约30%活动率解释为Cortex-M带宽上限及提出cache-aware tiling/structured sparsity。",
+      "role": "interpretation_and_future_hypothesis",
+      "source_pages": [
+        5,
+        7
+      ],
+      "decision": "exclude",
+      "reason": "无独立带宽读数或tiling干预；观测活动率/能耗已保留，不提升为实证机制或普适阈值。"
+    },
+    {
+      "summary": "将1.2 pp差解释为短T理论下界、第一项longitudinal SNN-IoT研究及跨领域安全适用。",
+      "role": "interpretation_or_priority_assertion",
+      "source_pages": [
+        1,
+        6,
+        7
+      ],
+      "decision": "exclude",
+      "reason": "未给本来源定理证明、全面优先权调查、漏检安全结果或事件级风险分析。"
+    },
+    {
+      "summary": "宣称NAS内存约束与预算完全满足、能耗代理与现场匹配0.01%。",
+      "role": "unresolved_resource_accounting",
+      "source_pages": [
+        3,
+        5,
+        6,
+        7
+      ],
+      "decision": "defer",
+      "reason": "联合weights+activations定义与Table VIII矛盾；Eq.8能量单位、Fig.5/Table X平均和寿命外推未闭合；相关候选保留有限报告，不背书一致性。"
+    },
+    {
+      "summary": "Cortex-M7/M85、Spike-driven Transformer扩展、全年/多站部署及源码/Zenodo将来发布。",
+      "role": "future_work_and_availability",
+      "source_pages": [
+        4,
+        7
+      ],
+      "decision": "exclude",
+      "reason": "属于未来工作或发布计划；供应版本没有相应实验、仓库或审稿artifact正文，未访问外部来源。"
+    },
+    {
+      "summary": "LIF、训练目标、优化器与各硬件/编码实现、Table II代理参数等方法条件。",
+      "role": "methodological_context",
+      "source_pages": [
+        2,
+        3,
+        4
+      ],
+      "decision": "include",
+      "reason": "作为各相关命题的条件而非重复创造独立科学结果；首层规则独立方法命题为C18。"
+    },
+    {
+      "summary": "引用列表、致谢与作者简介。",
+      "role": "non_result_content",
+      "source_pages": [
+        7,
+        8,
+        9
+      ],
+      "decision": "exclude",
+      "reason": "均已阅读；不产生本论文科学候选。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "在35类Google Speech Commands v2、16 kHz一秒音频、T=8的KWS基准中，EdgeSpike top-1准确率为94.1±0.21%，INT8三块depthwise-separable CNN为95.2±0.18%；表III报告SNN低1.1个百分点，Welch t检验p=0.004。",
+      "claim_type": "benchmark_accuracy",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "任务特定编码与直接surrogate-gradient训练；INT8基线比较",
+          "design": "35类Google Speech Commands v2、16 kHz一秒音频、T=8",
+          "comparator": "INT8三块depthwise-separable CNN",
+          "measure": "测试top-1准确率及SNN与CNN差值",
+          "unit_of_analysis": "训练种子；测试音频片段重复用于各模型，讲话者独立单位数未报告",
+          "sample_size_as_reported": "训练/验证/测试片段84,843/9,981/11,005；每方法准确率按五个独立训练种子报告",
+          "uncertainty": "均值±标准差；Welch t检验p=0.004",
+          "assumptions": [
+            "采用源文数据划分和训练协议",
+            "不同训练种子共用相应任务数据；不据此认定数据层级独立性"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "IV-A/IV-C; V-A Classification Accuracy",
+            "figure": "Table III",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "EdgeSpike在该任务的报告准确率为94.1±0.21%。",
+        "boundary": "仅限所述数据、编码、短时窗、模型与划分；基准五任务简单平均为91.4%，CNN为92.6%，不是新增独立实验。",
+        "negative_result": "相对该INT8基线低1.1个百分点；不能表述为已达到相同准确率。",
+        "non_inference": "不推断生物学学习机制、群体等价性、现场安全性或分布外性能。",
+        "unresolved": "缺少原始划分、逐种子及受试者/机器/事件层级结果，无法重新评估泛化与统计假设。",
+        "unresolved_attribution": "来源未报告；提取审计边界"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "短时窗SNN在35类keyword spotting上能否保持INT8 CNN准确率？"
+      ],
+      "shared_evidence_with": [
+        "C13",
+        "C14",
+        "C15",
+        "C16"
+      ],
+      "review_notes": [
+        "human_checked:false；这是供人工审阅的来源文本候选，不是独立复现。",
+        "表III的±为五个训练种子的标准差；任务片段、受试者、传感器节点与训练种子不是可互换的独立样本。",
+        "原始预测、划分清单和逐种子分数未提供；只保留作者报告的Welch检验，不自行补充统计结果。",
+        "shared_evidence_with仅标示本来源内复用的完整基线行、CNN参照、活动率或同一现场队列；读数可以不同，不能计为独立复现或跨论文关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      },
+      "human_checked": false
+    },
+    {
+      "id": "C2",
+      "statement": "在CWRU轴承数据与私有九个月风机齿轮箱数据、FFT加delta-modulation、T=16的MFD基准中，EdgeSpike top-1准确率为93.7±0.27%，INT8 1-D ResNet-18变体为94.8±0.22%；表III报告SNN低1.1个百分点，Welch t检验p=0.008。",
+      "claim_type": "benchmark_accuracy",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "任务特定编码与直接surrogate-gradient训练；INT8基线比较",
+          "design": "CWRU轴承数据与私有九个月风机齿轮箱数据、FFT加delta-modulation、T=16",
+          "comparator": "INT8 1-D ResNet-18变体",
+          "measure": "测试top-1准确率及SNN与CNN差值",
+          "unit_of_analysis": "训练种子；私有语料的机器层级单位为3台风机，片段不是独立机器重复",
+          "sample_size_as_reported": "训练/验证/测试片段52,180/8,640/9,120；私有部分来自3台风机、26,400个一秒片段；五个训练种子",
+          "uncertainty": "均值±标准差；Welch t检验p=0.008",
+          "assumptions": [
+            "采用源文数据划分和训练协议",
+            "不同训练种子共用相应任务数据；不据此认定数据层级独立性"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "IV-A/IV-C; V-A Classification Accuracy",
+            "figure": "Table III",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "EdgeSpike在该任务的报告准确率为93.7±0.27%。",
+        "boundary": "仅限所述数据、编码、短时窗、模型与划分；基准五任务简单平均为91.4%，CNN为92.6%，不是新增独立实验。",
+        "negative_result": "相对该INT8基线低1.1个百分点；不能表述为已达到相同准确率。",
+        "non_inference": "不推断生物学学习机制、群体等价性、现场安全性或分布外性能。",
+        "unresolved": "缺少原始划分、逐种子及受试者/机器/事件层级结果，无法重新评估泛化与统计假设。",
+        "unresolved_attribution": "来源未报告；提取审计边界"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "短时窗SNN在混合轴承/风机故障数据上与INT8分类器有多大准确率差？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "human_checked:false；这是供人工审阅的来源文本候选，不是独立复现。",
+        "表III的±为五个训练种子的标准差；任务片段、受试者、传感器节点与训练种子不是可互换的独立样本。",
+        "原始预测、划分清单和逐种子分数未提供；只保留作者报告的Welch检验，不自行补充统计结果。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      },
+      "human_checked": false
+    },
+    {
+      "id": "C3",
+      "statement": "在18名受试者、12种手势、8通道2 kHz sEMG、leave-two-subjects-out交叉验证、T=16的EMG基准中，EdgeSpike top-1准确率为89.2±0.41%，INT8 temporal convolutional network为90.6±0.36%；表III报告SNN低1.4个百分点，Welch t检验p=0.012。",
+      "claim_type": "benchmark_accuracy",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "任务特定编码与直接surrogate-gradient训练；INT8基线比较",
+          "design": "18名受试者、12种手势、8通道2 kHz sEMG、leave-two-subjects-out交叉验证、T=16",
+          "comparator": "INT8 temporal convolutional network",
+          "measure": "测试top-1准确率及SNN与CNN差值",
+          "unit_of_analysis": "受试者为人群层级单位；报告的±和检验针对训练种子，而非18名受试者的独立置信区间",
+          "sample_size_as_reported": "18名受试者；五个训练种子；总窗口数与实际交叉验证折数未报告",
+          "uncertainty": "均值±标准差；Welch t检验p=0.012",
+          "assumptions": [
+            "采用源文数据划分和训练协议",
+            "不同训练种子共用相应任务数据；不据此认定数据层级独立性"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "IV-A/IV-C; V-A Classification Accuracy",
+            "figure": "Table III",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "EdgeSpike在该任务的报告准确率为89.2±0.41%。",
+        "boundary": "仅限所述数据、编码、短时窗、模型与划分；基准五任务简单平均为91.4%，CNN为92.6%，不是新增独立实验。",
+        "negative_result": "相对该INT8基线低1.4个百分点；不能表述为已达到相同准确率。",
+        "non_inference": "不推断生物学学习机制、群体等价性、现场安全性或分布外性能。",
+        "unresolved": "缺少原始划分、逐种子及受试者/机器/事件层级结果，无法重新评估泛化与统计假设。",
+        "unresolved_attribution": "来源未报告；提取审计边界"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "EdgeSpike在留受试者sEMG手势识别中相对INT8 TCN的准确率如何？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "human_checked:false；这是供人工审阅的来源文本候选，不是独立复现。",
+        "表III的±为五个训练种子的标准差；任务片段、受试者、传感器节点与训练种子不是可互换的独立样本。",
+        "原始预测、划分清单和逐种子分数未提供；只保留作者报告的Welch检验，不自行补充统计结果。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      },
+      "human_checked": false
+    },
+    {
+      "id": "C4",
+      "statement": "在77 GHz FMCW雷达、作者报告6类活动、16名受试者、4,800条序列、80/20受试者独立划分、T=8的Radar HAR基准中，EdgeSpike top-1准确率为90.8±0.33%，INT8 lightweight CNN为92.1±0.29%；表III报告SNN低1.3个百分点，Welch t检验p=0.007。",
+      "claim_type": "benchmark_accuracy",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "任务特定编码与直接surrogate-gradient训练；INT8基线比较",
+          "design": "77 GHz FMCW雷达、作者报告6类活动、16名受试者、4,800条序列、80/20受试者独立划分、T=8",
+          "comparator": "INT8 lightweight CNN",
+          "measure": "测试top-1准确率及SNN与CNN差值",
+          "unit_of_analysis": "受试者为人群层级单位；序列和训练种子不等于独立受试者重复",
+          "sample_size_as_reported": "16名受试者、4,800条序列、五个训练种子；各划分受试者确数未给出",
+          "uncertainty": "均值±标准差；Welch t检验p=0.007",
+          "assumptions": [
+            "采用源文数据划分和训练协议",
+            "不同训练种子共用相应任务数据；不据此认定数据层级独立性"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "IV-A/IV-C; V-A Classification Accuracy",
+            "figure": "Table III",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "EdgeSpike在该任务的报告准确率为90.8±0.33%。",
+        "boundary": "仅限所述数据、编码、短时窗、模型与划分；基准五任务简单平均为91.4%，CNN为92.6%，不是新增独立实验。",
+        "negative_result": "相对该INT8基线低1.3个百分点；不能表述为已达到相同准确率。",
+        "non_inference": "不推断生物学学习机制、群体等价性、现场安全性或分布外性能。",
+        "unresolved": "缺少原始划分、逐种子及受试者/机器/事件层级结果，无法重新评估泛化与统计假设。",
+        "unresolved_attribution": "来源未报告；提取审计边界"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "短时窗SNN在人群独立的雷达活动识别划分上损失多少准确率？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "human_checked:false；这是供人工审阅的来源文本候选，不是独立复现。",
+        "表III的±为五个训练种子的标准差；任务片段、受试者、传感器节点与训练种子不是可互换的独立样本。",
+        "原始预测、划分清单和逐种子分数未提供；只保留作者报告的Welch检验，不自行补充统计结果。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      },
+      "human_checked": false
+    },
+    {
+      "id": "C5",
+      "statement": "在混凝土梁与现场声发射数据、4类结构健康声发射事件、512 kHz采样降至32 kHz、T=8的SHAM基准中，EdgeSpike top-1准确率为89.2±0.38%，INT8三块depthwise-separable CNN为90.5±0.32%；表III报告SNN低1.3个百分点，Welch t检验p=0.010。",
+      "claim_type": "benchmark_accuracy",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "任务特定编码与直接surrogate-gradient训练；INT8基线比较",
+          "design": "混凝土梁与现场声发射数据、4类结构健康声发射事件、512 kHz采样降至32 kHz、T=8",
+          "comparator": "INT8三块depthwise-separable CNN",
+          "measure": "测试top-1准确率及SNN与CNN差值",
+          "unit_of_analysis": "训练种子及声发射片段；64现场节点不是64个独立结构或部署站点",
+          "sample_size_as_reported": "源文列38,400/9,600个一秒片段；五个训练种子；梁试件数、事件独立数与单独验证划分未报告",
+          "uncertainty": "均值±标准差；Welch t检验p=0.010",
+          "assumptions": [
+            "采用源文数据划分和训练协议",
+            "不同训练种子共用相应任务数据；不据此认定数据层级独立性"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "IV-A/IV-C; V-A Classification Accuracy",
+            "figure": "Table III",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "EdgeSpike在该任务的报告准确率为89.2±0.38%。",
+        "boundary": "仅限所述数据、编码、短时窗、模型与划分；基准五任务简单平均为91.4%，CNN为92.6%，不是新增独立实验。",
+        "negative_result": "相对该INT8基线低1.3个百分点；不能表述为已达到相同准确率。",
+        "non_inference": "不推断生物学学习机制、群体等价性、现场安全性或分布外性能。",
+        "unresolved": "缺少原始划分、逐种子及受试者/机器/事件层级结果，无法重新评估泛化与统计假设。",
+        "unresolved_attribution": "来源未报告；提取审计边界"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "EdgeSpike对四类结构声发射事件的基准准确率与INT8 CNN相差多少？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "human_checked:false；这是供人工审阅的来源文本候选，不是独立复现。",
+        "表III的±为五个训练种子的标准差；任务片段、受试者、传感器节点与训练种子不是可互换的独立样本。",
+        "原始预测、划分清单和逐种子分数未提供；只保留作者报告的Welch检验，不自行补充统计结果。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      },
+      "human_checked": false
+    },
+    {
+      "id": "C6",
+      "statement": "在同一STM32L496 Cortex-M4上的五任务比较中，EdgeSpike RLE sparse能量依KWS/MFD/EMG/Radar HAR/SHAM顺序为1.20/1.96/2.69/4.80/3.22 mJ，INT8 dense CNN为9.50/13.70/17.20/22.10/14.80 mJ；报告节能倍数7.9/7.0/6.4/4.6/4.6，任务倍数均值6.1。",
+      "claim_type": "iso_platform_inference_energy",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Otii Arc电流测量（100 kSPS、10 µA分辨率）",
+          "design": "同一80 MHz Cortex-M4；各任务选定SNN与任务特定INT8 CNN比较",
+          "comparator": "TensorFlow Lite Micro INT8 dense CNN",
+          "measure": "每次推理平均能量及相对倍数",
+          "unit_of_analysis": "推理调用；五个不同任务/选定模型；独立物理MCU数未报告",
+          "sample_size_as_reported": "每配置1,000次调用；不是1,000块独立芯片",
+          "uncertainty": null,
+          "assumptions": [
+            "沿用源文传感/编码与稳态测量协议",
+            "模型和准确率不同；不把整栈差异等同于纯kernel干预"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "V-B Energy per Inference",
+            "figure": "Table V",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "五任务均报告同平台推理能量降低，倍数均值6.1。",
+        "boundary": "仅是所列模型相对TFLM INT8 dense基线；7.9等倍数是逐任务比值的均值，不是两个平均能量的比值。",
+        "negative_result": null,
+        "non_inference": "不归因于单一kernel或SNN神经元机制；不能直接推导整节点电池寿命。",
+        "unresolved": "CMSIS-NN基线、设备间变异和功耗误差未测明。",
+        "unresolved_attribution": "VII-A承认CMSIS-NN可能缩小同平台优势；其他为审计边界"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "在相同Cortex-M4上，稀疏SNN整栈相对INT8 dense CNN节能多少？"
+      ],
+      "shared_evidence_with": [
+        "C7",
+        "C8",
+        "C17",
+        "C21"
+      ],
+      "review_notes": [
+        "human_checked:false；这是供人工审阅的来源文本候选，不是独立复现。",
+        "图2能量与活动率关联不构成独立因果机制鉴定。",
+        "shared_evidence_with仅标示本来源内复用的完整基线行、CNN参照、活动率或同一现场队列；读数可以不同，不能计为独立复现或跨论文关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      },
+      "human_checked": false
+    },
+    {
+      "id": "C7",
+      "statement": "Loihi 2上的EdgeSpike在KWS/MFD/EMG/Radar HAR/SHAM分别报告0.297/0.361/0.860/0.470/0.449 mJ每次推理；以Cortex-M4的INT8 CNN能量为参照，相对倍数为32/38/20/47/33，五任务倍数均值34。",
+      "claim_type": "cross_platform_inference_energy",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Loihi 2片上power-domain meters",
+          "design": "五个选定SNN配置在Loihi 2执行；参照CNN在Cortex-M4执行",
+          "comparator": "Cortex-M4 INT8 CNN：9.50/13.70/17.20/22.10/14.80 mJ",
+          "measure": "推理能量；跨平台CNN/SNN比值",
+          "unit_of_analysis": "推理调用；平台与模型联合配置",
+          "sample_size_as_reported": "每配置1,000次调用；独立Loihi 2设备数未报告",
+          "uncertainty": null,
+          "assumptions": [
+            "片上计量与MCU电流计量范围遵循源文，系统边界未逐项对齐",
+            "CNN与SNN并非同硬件比较"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "V-B Energy per Inference; VII-A Comparison Fairness",
+            "figure": "Table IV",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "Loihi 2的报告跨平台倍数范围20–47、任务均值34。",
+        "boundary": "硬件加软件联合差异；与SpiNNaker 2五任务均值28等权平均才得到作者31倍总摘要。",
+        "negative_result": null,
+        "non_inference": "不把34或31倍解释为仅改网络算法的纯效应，也不声称在Loihi 2实测CNN基线。",
+        "unresolved": "片上计量对外围/主机能耗覆盖、设备间方差未提供。",
+        "unresolved_attribution": "来源未报告；提取审计边界"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "Loihi 2运行EdgeSpike相对Cortex-M4 INT8 CNN的跨平台能耗差是多少？"
+      ],
+      "shared_evidence_with": [
+        "C6",
+        "C8",
+        "C13",
+        "C14",
+        "C15",
+        "C16"
+      ],
+      "review_notes": [
+        "human_checked:false；这是供人工审阅的来源文本候选，不是独立复现。",
+        "shared_evidence_with仅标示本来源内复用的完整基线行、CNN参照、活动率或同一现场队列；读数可以不同，不能计为独立复现或跨论文关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      },
+      "human_checked": false
+    },
+    {
+      "id": "C8",
+      "statement": "SpiNNaker 2上的EdgeSpike在KWS/MFD/EMG/Radar HAR/SHAM分别报告0.380/0.442/0.956/0.539/0.592 mJ每次推理；相对Cortex-M4 INT8 CNN的倍数为25/31/18/41/25，五任务倍数均值28。",
+      "claim_type": "cross_platform_inference_energy",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "SpiNNaker 2片上power-domain meters",
+          "design": "五个选定SNN配置；CNN参照仍在Cortex-M4",
+          "comparator": "Cortex-M4 INT8 CNN：9.50/13.70/17.20/22.10/14.80 mJ",
+          "measure": "推理能量及跨平台比值",
+          "unit_of_analysis": "推理调用；平台与模型联合配置",
+          "sample_size_as_reported": "每配置1,000次调用；独立SpiNNaker 2设备数未报告",
+          "uncertainty": null,
+          "assumptions": [
+            "保留芯片/软件不同这一联合条件",
+            "计量系统边界未逐项对齐"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "V-B Energy per Inference; VII-A Comparison Fairness",
+            "figure": "Table IV",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "SpiNNaker 2报告跨平台倍数范围18–41、任务均值28。",
+        "boundary": "不能用跨平台倍数孤立SNN算法收益；两神经形态平台平均31倍共用同一CNN能量参照。",
+        "negative_result": null,
+        "non_inference": "不是同芯片CNN控制实验，亦非独立复现同平台6.1倍结果。",
+        "unresolved": "硬件重复数和能耗分布未报告。",
+        "unresolved_attribution": "来源未报告；提取审计边界"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "SpiNNaker 2运行EdgeSpike相对Cortex-M4 INT8 CNN的跨平台能耗差是多少？"
+      ],
+      "shared_evidence_with": [
+        "C6",
+        "C7"
+      ],
+      "review_notes": [
+        "human_checked:false；这是供人工审阅的来源文本候选，不是独立复现。",
+        "shared_evidence_with仅标示本来源内复用的完整基线行、CNN参照、活动率或同一现场队列；读数可以不同，不能计为独立复现或跨论文关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      },
+      "human_checked": false
+    },
+    {
+      "id": "C9",
+      "statement": "作者报告五任务在Loihi 2/SpiNNaker 2/Cortex-M4共15个配置的平均端到端推理时延为2.1–9.4 ms；最大值是EMG/Cortex-M4的9.4 ms，最小值为KWS/Loihi 2的2.1 ms。",
+      "claim_type": "end_to_end_latency",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "稳态wall-clock端到端计时",
+          "design": "KWS 2.1/3.2/4.8；MFD 3.4/4.1/6.2；EMG 5.7/6.9/9.4；Radar 4.2/5.3/7.6；SHAM 6.8/7.8/8.1 ms（Loihi/SpiNNaker/Cortex顺序）",
+          "comparator": null,
+          "measure": "从传感输入到分类输出的平均时延；表题包括传感前端、编码及适用时的USB-host readback",
+          "unit_of_analysis": "稳态推理调用；15个任务-硬件配置",
+          "sample_size_as_reported": "每配置1,000次稳态调用；非15个独立现场试验",
+          "uncertainty": null,
+          "assumptions": [
+            "按源文端到端边界计时",
+            "原始采样窗口/缓冲等待与计时起点的实现细节未供"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "V-C Inference Latency",
+            "figure": "Table VI",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所报告配置的平均端到端时延均不超过9.4 ms。",
+        "boundary": "这是平均值，不是单次最坏情况、尾部时延或一年连续运行的硬保证。",
+        "negative_result": null,
+        "non_inference": "不把一秒音频或200 ms sEMG的采集窗口解读为也在9.4 ms内完成。",
+        "unresolved": "未报告尾部分位数、抖动、采样等待及设备间方差。",
+        "unresolved_attribution": "来源未报告；提取审计边界"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "各传感任务的EdgeSpike平均端到端时延在三硬件上是否满足短时延预算？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "human_checked:false；这是供人工审阅的来源文本候选，不是独立复现。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      },
+      "human_checked": false
+    },
+    {
+      "id": "C10",
+      "statement": "EdgeSpike在深度、神经元数、T、decay、连接稀疏度和skip六维搜索空间内报告8,400个五任务可行候选；KWS/Loihi 2的图1给出12个非支配点，验证准确率87.9–92.8%、预测能量0.21–5.10 mJ，所选D=3、N=256、T=8、50%连接、residual、learnable-shared decay配置为91.8%与0.42 mJ。",
+      "claim_type": "constrained_architecture_search",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "能耗代理剪枝、weight-shared supernet初始化与10-epoch代理微调",
+          "design": "六维1,728种拓扑扩展至五任务；能耗Emax和静态内存Mmax联合约束；20% held-out子集代理评估",
+          "comparator": null,
+          "measure": "可行候选数、验证准确率-预测能耗Pareto前沿",
+          "unit_of_analysis": "架构候选/共享supernet；非8,400次独立硬件实验",
+          "sample_size_as_reported": "8,400候选；12个KWS非支配配置；supernet预训练32 GPU小时、搜索14.2 GPU小时",
+          "uncertainty": null,
+          "assumptions": [
+            "Emax按运营者预算设定但逐任务数值未报告",
+            "能耗代理用五批前向活动率及Table II校准",
+            "源文将M定义为weights+activations，128/512 KB约束与后续模型表存在未解决差异"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "III-C Hardware-Aware Neural Architecture Search",
+            "figure": "Table I; Fig. 1",
+            "equation": "5–6",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "来源报告约束搜索及12点KWS预测前沿。",
+        "boundary": "图1为验证/代理能量；不能替换表III测试94.1%或表IV实测0.297 mJ。候选跨任务展开说明与图注称KWS 8,400候选的计数范围需核对。",
+        "negative_result": null,
+        "non_inference": "不称证明全搜索空间全局最优、实测每个候选或满足未明示的全部内存预算。",
+        "unresolved": "候选逐任务计数、Emax、静态内存约束与最终部署表的口径无法由供应文本完全核对。",
+        "unresolved_attribution": "来源范围/资源定义不一致；审计发现"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "硅校准能耗代理与内存预算约束的NAS产生怎样的准确率-能量前沿？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "human_checked:false；这是供人工审阅的来源文本候选，不是独立复现。",
+        "所列搜索约束保留为联合条件，不因最终模型表而默改M的定义。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      },
+      "human_checked": false
+    },
+    {
+      "id": "C11",
+      "statement": "在作者重新完整训练的64个架构候选中，10-epoch代理评估准确率与完整训练准确率的Pearson相关报告为r=0.91，95% CI为[0.84,0.95]。",
+      "claim_type": "proxy_full_training_agreement",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "架构代理分数与完整训练分数的相关分析",
+          "design": "共享supernet预训练后代理微调；对64个候选另做完整训练",
+          "comparator": "相同候选的完整训练准确率",
+          "measure": "Pearson相关及95% CI",
+          "unit_of_analysis": "架构候选；候选可能共享拓扑和预训练信息，不是64个独立数据集",
+          "sample_size_as_reported": "64个重新训练候选；每候选完整重训次数未报告",
+          "uncertainty": "95% CI [0.84,0.95]（来源报告）",
+          "assumptions": [
+            "代理训练与完整训练针对源文候选和数据范围",
+            "相关不等于误差上界或排名完全一致"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "III-C Hardware-Aware Neural Architecture Search",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "该64候选样本中报告较高代理-完整训练准确率相关。",
+        "boundary": "不覆盖未重训的全部候选、全部硬件或能耗代理精度。",
+        "negative_result": null,
+        "non_inference": "不把相关等同于因果关系、无偏估计或Pareto最优性证明。",
+        "unresolved": "64候选选择策略、分任务组成、CI计算和逐候选误差未供。",
+        "unresolved_attribution": "来源未报告；提取审计边界"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "短代理微调准确率对完整训练准确率的预测一致性有多大？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "human_checked:false；这是供人工审阅的来源文本候选，不是独立复现。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      },
+      "human_checked": false
+    },
+    {
+      "id": "C12",
+      "statement": "表VIII中五个选定EdgeSpike模型的INT8权重为184–896 KB、参数为184–896 K，逐时间步峰值activation为41–127 KB；所列权重适合1 MB flash且activation数值低于128 KB，但这不能证明权重加activation总静态内存满足NAS的128 KB约束。",
+      "claim_type": "deployment_memory_footprint",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "选定模型参数与资源表",
+          "design": "KWS/MFD/EMG/Radar/SHAM权重412/613/896/184/438 KB；峰值activation 84/108/127/41/91 KB",
+          "comparator": "1 MB flash及128 KB activation参照；NAS将M定义为weights+activations",
+          "measure": "INT8权重容量、每时间步峰值activation",
+          "unit_of_analysis": "五个模型的资源清单；非独立芯片样本",
+          "sample_size_as_reported": "5个选定模型；运行时完整SRAM与栈/路由/编码工作区未报告",
+          "uncertainty": null,
+          "assumptions": [
+            "权重驻flash与activation驻SRAM不能混为同一资源",
+            "表题明确activation是T窗口内的逐时间步最大值"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "V-E Model Size and Memory Footprint",
+            "figure": "Table VIII",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "源表支持权重flash容量与列出的activation大小比较。",
+        "boundary": "不包括全部运行时状态和工作区；EMG activation 127 KB接近128 KB，而权重为896 KB。",
+        "negative_result": null,
+        "non_inference": "不声称所有模型weights+activations≤128 KB或满足神经形态512 KB联合约束。",
+        "unresolved": "NAS静态内存定义、部署内存分层和完整峰值SRAM需作者/代码澄清。",
+        "unresolved_attribution": "III-C与Table VIII资源口径未对齐；审计发现"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "EdgeSpike选定模型的flash权重与逐时间步activation占用是否满足分别声明的资源预算？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "human_checked:false；这是供人工审阅的来源文本候选，不是独立复现。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      },
+      "human_checked": false
+    },
+    {
+      "id": "C13",
+      "statement": "KWS/Loihi 2中，将完整EdgeSpike的direct encoding（T=8）替为rate编码（T=64）后，准确率由94.1%变93.0%，能量由0.297变1.840 mJ；作者据此报告direct encoding约6.2倍的该配置能耗优势。",
+      "claim_type": "encoding_ablation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "KWS组件删除/替换表",
+          "design": "KWS、Loihi 2；direct编码T=8对rate编码T=64",
+          "comparator": "去direct encoding、rate T=64版本",
+          "measure": "top-1准确率和每次推理能量",
+          "unit_of_analysis": "训练配置及推理调用；不是独立任务重复",
+          "sample_size_as_reported": "总体协议准确率五训练种子、能量1,000调用；表IX未给逐行重复数或不确定度",
+          "uncertainty": null,
+          "assumptions": [
+            "仅在该任务/硬件及作者配置中比较",
+            "未提供每种消融完整架构、重调参和逐种子结果"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "V-F Ablation Study",
+            "figure": "Table IX",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "该编码/时间窗联合替换与1.1 pp准确率差和约6.2倍能耗差相联系。",
+        "boundary": "编码和T同时变化，不能单独归因于编码方式且不能将全部节能因子相乘。",
+        "negative_result": "rate/T=64版本准确率低1.1 pp且能量更高。",
+        "non_inference": "不外推所有任务或仅由缩短T造成的纯因果效应。",
+        "unresolved": "单独控制T的编码消融与重复不确定度未供。",
+        "unresolved_attribution": "来源未报告；提取审计边界"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "direct encoding与短T的联合选择如何影响KWS准确率和能耗？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C7",
+        "C14",
+        "C15",
+        "C16"
+      ],
+      "review_notes": [
+        "human_checked:false；这是供人工审阅的来源文本候选，不是独立复现。",
+        "shared_evidence_with仅标示本来源内复用的完整基线行、CNN参照、活动率或同一现场队列；读数可以不同，不能计为独立复现或跨论文关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      },
+      "human_checked": false
+    },
+    {
+      "id": "C14",
+      "statement": "KWS/Loihi 2中，移除前60%训练阶段将fast-sigmoid sharpness k从0.5升至4.0的curriculum、改用固定k=1.0后，准确率从94.1%降到93.2%，能量从0.297升到0.321 mJ。",
+      "claim_type": "surrogate_curriculum_ablation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "KWS组件删除/替换表",
+          "design": "KWS、Loihi 2；渐进sharpness与固定k=1.0",
+          "comparator": "无surrogate curriculum版本",
+          "measure": "准确率0.9 pp差及推理能量",
+          "unit_of_analysis": "训练配置及推理调用；不是独立任务重复",
+          "sample_size_as_reported": "总体协议准确率五训练种子、能量1,000调用；表IX未给逐行重复数或不确定度",
+          "uncertainty": null,
+          "assumptions": [
+            "仅在该任务/硬件及作者配置中比较",
+            "未提供每种消融完整架构、重调参和逐种子结果"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "V-F Ablation Study",
+            "figure": "Table IX",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "源表中curriculum配置报告更高KWS准确率。",
+        "boundary": "仅该sharpness方案与固定k=1.0的比较；没有普遍最优调度证明。",
+        "negative_result": "固定k=1.0版本低0.9 pp；表列能量也不同。",
+        "non_inference": "不根据作者称能耗变化很小而声称能耗完全相等或无显著差异。",
+        "unresolved": "无逐种子误差、收敛曲线及其他k调度比较。",
+        "unresolved_attribution": "来源未报告；提取审计边界"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "surrogate sharpness curriculum在短时窗KWS训练中是否改善测试准确率？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C7",
+        "C13",
+        "C15",
+        "C16"
+      ],
+      "review_notes": [
+        "human_checked:false；这是供人工审阅的来源文本候选，不是独立复现。",
+        "shared_evidence_with仅标示本来源内复用的完整基线行、CNN参照、活动率或同一现场队列；读数可以不同，不能计为独立复现或跨论文关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      },
+      "human_checked": false
+    },
+    {
+      "id": "C15",
+      "statement": "KWS/Loihi 2中，去除activity regulariser（λr=0，对照完整λr=0.01）后，准确率从94.1%变93.8%，能量从0.297变0.612 mJ；完整配置与无正则配置的能量比约为1:2.1。",
+      "claim_type": "activity_regularizer_ablation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "KWS组件删除/替换表",
+          "design": "KWS、Loihi 2；完整activity regulariser与λr=0",
+          "comparator": "无activity regulariser版本",
+          "measure": "测试准确率和能量",
+          "unit_of_analysis": "训练配置及推理调用；不是独立任务重复",
+          "sample_size_as_reported": "总体协议准确率五训练种子、能量1,000调用；表IX未给逐行重复数或不确定度",
+          "uncertainty": null,
+          "assumptions": [
+            "仅在该任务/硬件及作者配置中比较",
+            "未提供每种消融完整架构、重调参和逐种子结果"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "V-F Ablation Study",
+            "figure": "Table IX",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "该消融支持activity regulariser在该配置中与较低能耗并存。",
+        "boundary": "只给整体配置结果；未列删除前后的分层活动率或正式中介分析。",
+        "negative_result": "无正则版本能量增加、准确率低0.3 pp。",
+        "non_inference": "不称直接证明稀疏发放是全部能耗差的唯一机制。",
+        "unresolved": "活动率中介、显著性和其他任务泛化未测明。",
+        "unresolved_attribution": "来源未报告；提取审计边界"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "activity regularisation在KWS SNN中怎样改变准确率-能耗折衷？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C7",
+        "C13",
+        "C14",
+        "C16"
+      ],
+      "review_notes": [
+        "human_checked:false；这是供人工审阅的来源文本候选，不是独立复现。",
+        "shared_evidence_with仅标示本来源内复用的完整基线行、CNN参照、活动率或同一现场队列；读数可以不同，不能计为独立复现或跨论文关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      },
+      "human_checked": false
+    },
+    {
+      "id": "C16",
+      "statement": "KWS/Loihi 2中，NAS选定的完整EdgeSpike为94.1%、0.297 mJ，作者所列random feasible architecture为90.7%、1.180 mJ；NAS配置准确率高3.4 pp且能量约低3.9倍，并非等准确率的配对。",
+      "claim_type": "nas_selection_ablation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "KWS组件删除/替换表",
+          "design": "KWS、Loihi 2；NAS选定模型对随机可行模型",
+          "comparator": "random feasible architecture",
+          "measure": "准确率差与能量比",
+          "unit_of_analysis": "训练配置及推理调用；不是独立任务重复",
+          "sample_size_as_reported": "总体协议准确率五训练种子、能量1,000调用；表IX未给逐行重复数或不确定度",
+          "uncertainty": null,
+          "assumptions": [
+            "仅在该任务/硬件及作者配置中比较",
+            "未提供每种消融完整架构、重调参和逐种子结果"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "V-F Ablation Study",
+            "figure": "Table IX",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "源表的NAS选定模型同时具有更高准确率和更低能耗。",
+        "boundary": "随机架构数量、参数匹配与重调参未供；不支持源文概括的严格可比准确率控制。",
+        "negative_result": "所列随机模型准确率低3.4 pp。",
+        "non_inference": "不推断所有随机架构、其他NAS方法或搜索空间全局最优。",
+        "unresolved": "随机模型选择与重复分布未报告。",
+        "unresolved_attribution": "来源未报告；提取审计边界"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "硬件约束NAS选定模型相对所列随机可行模型的准确率和能耗优势是什么？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C7",
+        "C13",
+        "C14",
+        "C15"
+      ],
+      "review_notes": [
+        "human_checked:false；这是供人工审阅的来源文本候选，不是独立复现。",
+        "shared_evidence_with仅标示本来源内复用的完整基线行、CNN参照、活动率或同一现场队列；读数可以不同，不能计为独立复现或跨论文关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      },
+      "human_checked": false
+    },
+    {
+      "id": "C17",
+      "statement": "五个选定EdgeSpike网络的mean spike-activity rate依KWS/MFD/EMG/Radar HAR/SHAM为16.8%/22.3%/28.4%/36.1%/31.7%；图3文字说明报告同一任务更深层发放更少。",
+      "claim_type": "spike_activity_description",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "网络活动率统计与分层箱线图文字说明",
+          "design": "五任务选定模型；数值与Table V对应",
+          "comparator": null,
+          "measure": "平均spike-activity rate和层深发放趋势",
+          "unit_of_analysis": "层/任务网络及输入所诱发的发放；具体输入与神经元统计单元未说明",
+          "sample_size_as_reported": "5个任务网络；统计输入批次、层内独立样本数和种子分层未供",
+          "uncertainty": "Fig. 3箱体25/75百分位、须5/95百分位；不是置信区间",
+          "assumptions": [
+            "只用源文数值和caption，不读取图像像素",
+            "不把多个层当独立模型复现"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "V-G Spike-Activity Distribution",
+            "figure": "Fig. 3; Table V (PDF 6)",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所列模型呈任务相关发放率，caption描述更深层稀疏。",
+        "boundary": "这与训练活动正则设计一致，但不是单独消融证明。",
+        "negative_result": null,
+        "non_inference": "不推断生物神经发放、机制唯一性或普遍30%带宽阈值。",
+        "unresolved": "活动率计算时间聚合、输入样本量及层级不确定度未给。",
+        "unresolved_attribution": "来源未报告；提取审计边界"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "选定SNN的任务和层深与发放稀疏度怎样关联？"
+      ],
+      "shared_evidence_with": [
+        "C6"
+      ],
+      "review_notes": [
+        "human_checked:false；这是供人工审阅的来源文本候选，不是独立复现。",
+        "shared_evidence_with仅标示本来源内复用的完整基线行、CNN参照、活动率或同一现场队列；读数可以不同，不能计为独立复现或跨论文关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      },
+      "human_checked": false
+    },
+    {
+      "id": "C18",
+      "statement": "EdgeSpike定义只更新首层权重的trace-based Hebbian在线规则，不运行backpropagation；作者给定δ=1、η=10^-4、weight decay=5×10^-4，16-bit缓冲每1,000次推理flush到flash，状态开销是每synapse group 8 bytes，最大首层合计3.2 KB。",
+      "claim_type": "local_plasticity_method",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "局部适应规则和状态存储设计",
+          "design": "首层pre/post trace与weight decay；不与服务器通信",
+          "comparator": null,
+          "measure": "更新范围、trace-group状态字节及flash flush频率",
+          "unit_of_analysis": "synapse group与最大首层实现配置；不是生物突触或独立实验重复",
+          "sample_size_as_reported": "每group 8 bytes；最大首层3.2 KB；group数和分组方式未报告",
+          "uncertainty": null,
+          "assumptions": [
+            "仅首层权重更新，group不是单一synapse",
+            "源式(1)与式(7)前后突触i/j索引命名需实现澄清"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "III-E Local Plasticity Adaptation Rule (continues PDF 4)",
+            "figure": null,
+            "equation": "7",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者提出可在有限存储中执行的局部、无全局梯度首层更新设计。",
+        "boundary": "这是所述方法与资源报告，不是完整STDP或深层持续学习能力的实验证明。",
+        "negative_result": null,
+        "non_inference": "不把8 bytes/group改成8 bytes/synapse，也不推断生物机制验证。",
+        "unresolved": "分组、固定点溢出/稳定性和索引语义未由提供文本完全规定。",
+        "unresolved_attribution": "来源设计描述不完整；审计边界"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "首层局部trace学习如何控制在线适应状态和写入开销？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "human_checked:false；这是供人工审阅的来源文本候选，不是独立复现。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      },
+      "human_checked": false
+    },
+    {
+      "id": "C19",
+      "statement": "单一欧洲温带混凝土铁路高架桥的64节点SHAM部署（2025年7月至2026年1月）中，作者报告适应关闭时准确率从首月91.0%到末月88.9%，开启时末月90.3%，末月恢复1.4 pp、仍比首月低0.7 pp；但表X第4月开启适应为89.9%，相对首月下降1.1 pp，不能称全期最大下降仅0.7 pp。",
+      "claim_type": "longitudinal_drift_adaptation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "七个月节点遥测与适应开关条件性能比较",
+          "design": "64节点、单站、四类SHAM；只更新首层的局部规则",
+          "comparator": "无在线适应条件",
+          "measure": "月度分类准确率、末月损失/恢复及全期表列值",
+          "unit_of_analysis": "节点/月份的重复观察，独立部署站点为1；准确率标注事件数未报告",
+          "sample_size_as_reported": "64初始节点、7个月、1站；启用/关闭条件节点分配、配对和独立标注数未报告",
+          "uncertainty": null,
+          "assumptions": [
+            "两条件比较按源表保留，随机化/盲法未说明",
+            "训练种子不等于现场节点或月份"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "VI-C Drift-Adaptation Performance; VII-C",
+            "figure": "Table X; Fig. 5 (PDF 6)",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者报告末月适应条件比关闭条件高1.4 pp。",
+        "boundary": "末月残余0.7 pp不是全期最大退化；表X至少第4月下降1.1 pp。",
+        "negative_result": "关闭适应末月下降2.1 pp；适应后仍残余退化，且全期0.7 pp上界与表列值不符。",
+        "non_inference": "不证明深层漂移被纠正、局部规则的唯一因果机制、跨站泛化或结构危险事件的安全识别。",
+        "unresolved": "ground truth规模、条件分配、数据独立性、全年/多站验证未供。",
+        "unresolved_attribution": "VII-C说明全年/多站仍在进行；其他为审计边界"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "首层局部适应能否减小单站结构声发射的季节漂移，改善是否覆盖所有月份？"
+      ],
+      "shared_evidence_with": [
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24"
+      ],
+      "review_notes": [
+        "human_checked:false；这是供人工审阅的来源文本候选，不是独立复现。",
+        "shared_evidence_with仅标示本来源内复用的完整基线行、CNN参照、活动率或同一现场队列；读数可以不同，不能计为独立复现或跨论文关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      },
+      "human_checked": false
+    },
+    {
+      "id": "C20",
+      "statement": "该64节点七个月单站部署的图5文字说明报告平均日能耗1.638±0.022 mWh/day；表X月值为1.62/1.65/1.63/1.64/1.61/1.59/1.63 mWh，但均值行也写1.638，其与这些月值的简单平均不一致，聚合权重和±定义未提供。",
+      "claim_type": "field_daily_energy_report",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "节点长期能耗遥测及月度汇总",
+          "design": "STM32L496、声发射、LoRa SF9；硬件触发平均8.2次/节点/小时",
+          "comparator": null,
+          "measure": "日能耗及月汇总",
+          "unit_of_analysis": "节点日/月重复测量；独立部署站点1",
+          "sample_size_as_reported": "64初始节点、7个月、1站；3节点第4月维修/更换；有效节点日数未给",
+          "uncertainty": "caption报告±0.022 mWh/day，未说明是SD、SE还是其他",
+          "assumptions": [
+            "source-only记录，原始遥测和计量边界未供",
+            "月值与总体统计口径可能不同但来源没有解释"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "VI-B Battery-Life Extension Results",
+            "figure": "Fig. 5; Table X (PDF 7)",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "来源报告日能耗稳定在约1.6 mWh/day的量级。",
+        "boundary": "1.638及±0.022是作者报告，不经原始遥测独立确认；月度聚合与Eq. 8单位问题未解决。",
+        "negative_result": null,
+        "non_inference": "不能据称与预算匹配0.01%而视作能耗代理已独立校准。",
+        "unresolved": "统计聚合权重、误差定义、缺失节点日和计量范围未给。",
+        "unresolved_attribution": "来源内部聚合/单位不一致；审计发现"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "单站64节点长期部署的日能耗报告是否与月度汇总及预算一致？"
+      ],
+      "shared_evidence_with": [
+        "C19",
+        "C21",
+        "C22",
+        "C23",
+        "C24"
+      ],
+      "review_notes": [
+        "human_checked:false；这是供人工审阅的来源文本候选，不是独立复现。",
+        "shared_evidence_with仅标示本来源内复用的完整基线行、CNN参照、活动率或同一现场队列；读数可以不同，不能计为独立复现或跨论文关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      },
+      "human_checked": false
+    },
+    {
+      "id": "C21",
+      "statement": "作者对可用约2 Wh电池的SHAM现场节点，在声称第3月后优化的条件下外推EdgeSpike寿命1,978天，以CNN现场312天为参照给出约6.3倍；但同期1.638 mWh/day和2 Wh直接相除约为1,221天，表X月寿命为1,212–1,258天，供应文本不足以重建1,978天外推。",
+      "claim_type": "battery_lifetime_projection",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "电量预算、日能耗和作者寿命外推",
+          "design": "4.32 Wh标称一次电池，低温/截止/自放电后约2 Wh可用；197推理/日；作者称第3月后duty-cycle/thermal/self-calibration优化",
+          "comparator": "CNN推理14.8 mJ；作者列预测510–592天、称低温deep-sleep问题现场312天",
+          "measure": "作者预测1,978/312≈6.3倍；与预算对应的约1,221天不同",
+          "unit_of_analysis": "单站节点的外推；非完成电池耗尽的独立寿命试验",
+          "sample_size_as_reported": "64节点7个月；电池完整耗尽样本、312天参照的独立测试持续时间未报告",
+          "uncertainty": null,
+          "assumptions": [
+            "外推必须依赖可用电量和优化后真实平均功率",
+            "作者未给能支持1,978天的优化后独立日能耗序列"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "VI-A Energy Budget; VI-B Battery-Life Extension Results",
+            "figure": null,
+            "equation": "8 (PDF 5)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "可保留作者提出的1,978天和6.3倍预测，但其数值依据未由供应遥测闭合。",
+        "boundary": "七个月并非1,978天实测存活；原始日预算和第3月后优化未一致呈现。",
+        "negative_result": null,
+        "non_inference": "不声称已经实测6.3倍寿命、不将全部系统/睡眠策略差异归因于SNN计算。",
+        "unresolved": "Eq. 8能量单位、优化后预算与CNN参照312天的观测依据需要澄清。",
+        "unresolved_attribution": "来源内部外推不一致；审计发现"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "现场日能耗和可用电量能否支持作者提出的多年度电池寿命优势？"
+      ],
+      "shared_evidence_with": [
+        "C6",
+        "C19",
+        "C20",
+        "C22",
+        "C23",
+        "C24"
+      ],
+      "review_notes": [
+        "human_checked:false；这是供人工审阅的来源文本候选，不是独立复现。",
+        "寿命数字保留为作者解释而非已验证结果；具体数值问题见审计。",
+        "shared_evidence_with仅标示本来源内复用的完整基线行、CNN参照、活动率或同一现场队列；读数可以不同，不能计为独立复现或跨论文关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      },
+      "human_checked": false
+    },
+    {
+      "id": "C22",
+      "statement": "七个月64节点部署中，作者报告平均每节点1,028次flash写入，并称低于STM32L496耐久规格；提供文本没有实际写入分布、flash寿命试验或所引规格的耐久数值。",
+      "claim_type": "flash_write_telemetry",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "在线适应相关写入遥测",
+          "design": "首层适应，16-bit更新缓冲与flash持久化",
+          "comparator": "作者引用的STM32L496耐久规格；所引文档内容未供",
+          "measure": "每节点flash写入数",
+          "unit_of_analysis": "同站节点的七个月累计；非独立耐久加速试验",
+          "sample_size_as_reported": "64初始节点；作者报告平均1,028写入/节点；有效累积节点数、分布未给",
+          "uncertainty": null,
+          "assumptions": [
+            "只能读取报告的写入计数，不核实未提供的数据手册"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "VI-C Drift-Adaptation Performance",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "来源报告该运行期平均写入负载为1,028次/节点。",
+        "boundary": "耐久合规是作者依据外引规格作的判断，未在本供应文本中试验验证。",
+        "negative_result": null,
+        "non_inference": "不推断多年flash可靠性或所有节点均低于同一写入阈值。",
+        "unresolved": "写入分布、维修节点累计口径、与每1,000次推理flush的关系及真实耐久裕度未说明。",
+        "unresolved_attribution": "来源未报告；提取审计边界"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "局部适应在七个月运行中产生多大flash写入负载？"
+      ],
+      "shared_evidence_with": [
+        "C19",
+        "C20",
+        "C21",
+        "C23",
+        "C24"
+      ],
+      "review_notes": [
+        "human_checked:false；这是供人工审阅的来源文本候选，不是独立复现。",
+        "shared_evidence_with仅标示本来源内复用的完整基线行、CNN参照、活动率或同一现场队列；读数可以不同，不能计为独立复现或跨论文关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      },
+      "human_checked": false
+    },
+    {
+      "id": "C23",
+      "statement": "64节点、七个月的单站铁路高架桥部署中，作者报告3个节点发生sensor-cable damage，并于第4月现场更换/维修后恢复全网；这是真实报告的硬件故障，不能把部署描述为零故障。",
+      "claim_type": "field_hardware_failure",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "现场维护事件记录",
+          "design": "单桥64初始节点；七个月",
+          "comparator": null,
+          "measure": "受损节点数和第4月恢复运行",
+          "unit_of_analysis": "节点及电缆；独立站点1",
+          "sample_size_as_reported": "3个受损节点/64初始节点；暴露时间、故障机制与替换对象细节未给",
+          "uncertainty": null,
+          "assumptions": [
+            "源文称更换未造成服务中断，但未提供缺失数据量和逐节点时间线"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "VI-B Battery-Life Extension Results",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者报告现场维修后恢复全网。",
+        "boundary": "一站短观察，不能用节点数估计独立气候或全生命周期可靠性。",
+        "negative_result": "3节点有传感器电缆损伤。",
+        "non_inference": "不推断整个运行期零故障、零数据丢失或与SNN算法存在因果关系。",
+        "unresolved": "电缆损伤原因、故障时间、设备替换范围和长期可靠性尚不明确。",
+        "unresolved_attribution": "来源未报告；提取审计边界"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "低功耗SHAM节点在真实桥梁部署中出现了哪些硬件故障与恢复事件？"
+      ],
+      "shared_evidence_with": [
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C24"
+      ],
+      "review_notes": [
+        "human_checked:false；这是供人工审阅的来源文本候选，不是独立复现。",
+        "shared_evidence_with仅标示本来源内复用的完整基线行、CNN参照、活动率或同一现场队列；读数可以不同，不能计为独立复现或跨论文关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      },
+      "human_checked": false
+    },
+    {
+      "id": "C24",
+      "statement": "作者推测首层局部Hebbian适应后末月仍残余的0.7 pp退化，可能需要deeper-layer e-prop或小规模周期校准集来进一步改善；论文没有测试这两种补救方案。",
+      "claim_type": "deeper_adaptation_hypothesis",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "基于末月残余退化的讨论性推测",
+          "design": "现行首层规则在单站SHAM中的末月91.0%到90.3%；拟议深层/校准改进",
+          "comparator": "当前首层局部适应；拟议方案未实施",
+          "measure": "现有残余准确率差；补救效应未测",
+          "unit_of_analysis": "沿用同一部署证据；新增方案无实验单位",
+          "sample_size_as_reported": "新增方案n=null（未测试）；基础现场64初始节点、7个月、1站",
+          "uncertainty": null,
+          "assumptions": [
+            "只是一项未来改进假设，不能由现有残差定位机制"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "VII-B Generalisation and Plasticity",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "来源提出深层学习或周期校准作为可检验方向。",
+        "boundary": "未提供新方案实现、性能或因果定位。",
+        "negative_result": null,
+        "non_inference": "不能断言漂移一定发生在深层、e-prop必然恢复准确率或内存合规。",
+        "unresolved": "哪一方案有效、代价多大及残余漂移原因仍待直接实验。",
+        "unresolved_attribution": "作者明确的讨论/未来工作推测"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "深层局部学习或周期校准能否在资源受限节点中改善首层适应的残余漂移？"
+      ],
+      "shared_evidence_with": [
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23"
+      ],
+      "review_notes": [
+        "human_checked:false；这是供人工审阅的来源文本候选，不是独立复现。",
+        "shared_evidence_with仅标示本来源内复用的完整基线行、CNN参照、活动率或同一现场队列；读数可以不同，不能计为独立复现或跨论文关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      },
+      "human_checked": false
+    }
+  ],
+  "reading_summary": "已完整阅读EdgeSpike arXiv:2604.27004v1（29 Apr 2026）的9页、所有提供的正文/式1–8/表I–X/图1–5说明，以及参考文献和作者简介。24个候选覆盖五任务准确率、同/跨平台能耗、15配置平均时延、NAS前沿与代理相关、分层内存、四项可解释消融、发放率、首层局部适应设计、单站漂移、能耗/寿命外推、flash写入、实际电缆故障和一项明确未测的深层适应假设。论文报告准确率均值91.4%对INT8 CNN 92.6%；同Cortex-M能耗倍数均值6.1，Loihi与SpiNNaker跨平台均值34/28（合并31）。这些是有限协议下作者报告，五种子、1,000调用、受试者/机器和64节点不能互作独立样本。现场仅一桥一模态、七个月；末月适应恢复1.4 pp，但表中第4月已有1.1 pp下降，不支持全期最大0.7 pp。寿命1,978天/6.3倍仅为未闭合预测，能量单位、月均聚合及NAS内存定义有真实内部差异，全部保留给人工审阅；没有猜测校正值、外部查证、生物机制验证、图像读取或独立科学复现。最终仍为candidate、human_checked:false。",
+  "shared_evidence": [
+    {
+      "claim_id": "C1",
+      "with": [
+        "C13",
+        "C14",
+        "C15",
+        "C16"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C7",
+        "C8",
+        "C17",
+        "C21"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C6",
+        "C8",
+        "C13",
+        "C14",
+        "C15",
+        "C16"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C6",
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C13",
+      "with": [
+        "C1",
+        "C7",
+        "C14",
+        "C15",
+        "C16"
+      ]
+    },
+    {
+      "claim_id": "C14",
+      "with": [
+        "C1",
+        "C7",
+        "C13",
+        "C15",
+        "C16"
+      ]
+    },
+    {
+      "claim_id": "C15",
+      "with": [
+        "C1",
+        "C7",
+        "C13",
+        "C14",
+        "C16"
+      ]
+    },
+    {
+      "claim_id": "C16",
+      "with": [
+        "C1",
+        "C7",
+        "C13",
+        "C14",
+        "C15"
+      ]
+    },
+    {
+      "claim_id": "C17",
+      "with": [
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C19",
+      "with": [
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24"
+      ]
+    },
+    {
+      "claim_id": "C20",
+      "with": [
+        "C19",
+        "C21",
+        "C22",
+        "C23",
+        "C24"
+      ]
+    },
+    {
+      "claim_id": "C21",
+      "with": [
+        "C6",
+        "C19",
+        "C20",
+        "C22",
+        "C23",
+        "C24"
+      ]
+    },
+    {
+      "claim_id": "C22",
+      "with": [
+        "C19",
+        "C20",
+        "C21",
+        "C23",
+        "C24"
+      ]
+    },
+    {
+      "claim_id": "C23",
+      "with": [
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C24"
+      ]
+    },
+    {
+      "claim_id": "C24",
+      "with": [
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": null,
+        "issue": "第1页为arXiv v1；IEEE期刊占位页眉、收到/修订日期不能证明已正式接收或发表。",
+        "suggested_correction": "保留preprint和29 Apr 2026版本标识，不用外部版本替代。",
+        "pdf_page": 1,
+        "resolved": true
+      },
+      {
+        "claim_id": "C21",
+        "issue": "Eq.8将197×3.22 mJ写成0.634 mWh/day，但按所写单位仅约0.1762 mWh/day；197×0.616 µJ写成0.121 mWh/day，但约0.0000337 mWh/day。11.15 µA×3.3 V×24 h约0.8831 mWh/day，所写分项不能闭合1.638 mWh/day。",
+        "suggested_correction": "这是按来源明确单位的核算，不是修复真实测量；记录单位/预算歧义并等待作者澄清，不能猜哪个单位是笔误。",
+        "pdf_page": 6,
+        "resolved": false
+      },
+      {
+        "claim_id": "C21",
+        "issue": "约2 Wh与1.638 mWh/day对应约1,221天，Table X也列约1,212–1,258天；第3月后1,978天外推未给对应优化后日耗或可重建预算。",
+        "suggested_correction": "保留为未解决的作者预测；不声称长期寿命已经实测。",
+        "pdf_page": 6,
+        "resolved": false
+      },
+      {
+        "claim_id": "C21",
+        "issue": "第1页将9.5 mJ每秒推理、2 Wh电池和312天连用；单按所列计算推理耗能约0.228 Wh/day、寿命约8.77天，与312天不符。现场部分又是平均197次/日，不能与一秒cadence混用。",
+        "suggested_correction": "区分intro演示与实际部署；312天只作作者所报参照，观测依据待澄清。",
+        "pdf_page": 1,
+        "resolved": false
+      },
+      {
+        "claim_id": "C19",
+        "issue": "作者称适应后最大退化0.7 pp；Table X首月91.0%、第4月89.9%至少下降1.1 pp，第5月90.1%也下降0.9 pp。",
+        "suggested_correction": "C19只保留末月0.7 pp和恢复1.4 pp，不重复全期0.7 pp上界；原表与概括差异仍未解决。",
+        "pdf_page": 7,
+        "resolved": false
+      },
+      {
+        "claim_id": "C20",
+        "issue": "Table X七个月能源1.62/1.65/1.63/1.64/1.61/1.59/1.63的简单平均约1.6243，均值行/Fig.5却为1.638；不能确定是否存在不同权重或聚合样本。±0.022的统计定义未供。",
+        "suggested_correction": "保留作者报告及聚合不一致，不臆造校正遥测均值或误差类型。",
+        "pdf_page": 7,
+        "resolved": false
+      },
+      {
+        "claim_id": "C12",
+        "issue": "III-C的M定义为weights+activations、Cortex-M≤128 KB及neuromorphic≤512 KB，Table VIII所选权重184–896 KB已不普遍符合；源文后改以1 MB flash及activation≤128 KB描述。",
+        "suggested_correction": "仅记录权重flash与峰值activation，联合内存约束仍待解释，不强称符合。",
+        "pdf_page": 7,
+        "resolved": false
+      },
+      {
+        "claim_id": "C10",
+        "issue": "III-C把8,400候选描述为五任务展开空间，Fig.1图注却将KWS前沿称跨8,400候选；缺逐任务计数和Emax，无法统一候选范围。",
+        "suggested_correction": "保留源文两种范围并在候选边界记录；不声称8,400个KWS候选均独立实测。",
+        "pdf_page": 3,
+        "resolved": false
+      },
+      {
+        "claim_id": "C10",
+        "issue": "Fig.1所选KWS为验证91.8%/预测0.42 mJ，后续Table III/IV/IX为测试94.1%/实测0.297 mJ；供应文本没有代理能量的逐候选残差。",
+        "suggested_correction": "已分离验证/预测和测试/测量，不把两者混用；预测精度未独立认证。",
+        "pdf_page": 3,
+        "resolved": true
+      },
+      {
+        "claim_id": "C10",
+        "issue": "式6突触能量项使用mean activity rate但未显式乘T，神经元状态项则含T；缺少实现与校准细节，无法明确计数口径。",
+        "suggested_correction": "保留方法方程为来源定义，不自行添加T或补造proxy精度。",
+        "pdf_page": 3,
+        "resolved": false
+      },
+      {
+        "claim_id": "C16",
+        "issue": "V-F称NAS对随机可行架构在comparable accuracy下节能；Table IX是94.1%对90.7%，差3.4 pp。",
+        "suggested_correction": "C16明确不属等准确率控制；不推广一般NAS优势。",
+        "pdf_page": 7,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "Table IX标题KWS on Loihi 2，但−Sparse kernels行标dense Cortex-M，平台改变与kernel改变耦合。",
+        "suggested_correction": "不提取纯kernel因果效应，C06保留真实同平台整栈比较。",
+        "pdf_page": 7,
+        "resolved": true
+      },
+      {
+        "claim_id": "C18",
+        "issue": "式1的W_ij由j到i，而式7将x_i描述为pre-trace、y_j为post-trace；group状态8 bytes又不能与逐synapse状态直接等同。",
+        "suggested_correction": "不猜实现索引或group大小；按首层局部规则/每group开销记录。",
+        "pdf_page": 3,
+        "resolved": false
+      },
+      {
+        "claim_id": "C19",
+        "issue": "64节点同一桥梁、7个月重复观察；未给适应开关的分配、随机化、标注事件n或有效独立事件数。",
+        "suggested_correction": "保留描述性条件差异、单站边界；不宣称64次独立复现或机制识别。",
+        "pdf_page": 6,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "所谓无深睡故障、1.2 pp可接受、理论短T下界、30%带宽阈值、文献优先权与未来开放发布均无本供应文本内对应独立证据。",
+        "suggested_correction": "将已报告原始指标与解释/预测区分；未来deep-layer方案仅C24 hypothesis。",
+        "pdf_page": 7,
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T14:04:09.360272Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "373d3745dbcead93016be0a450219be17f614097f61af407564b6d8a1a865e08",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false,
+    "human_checked": false
+  },
+  "human_checked": false
+}

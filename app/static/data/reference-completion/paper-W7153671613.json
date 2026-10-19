@@ -1,0 +1,1075 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "preprint",
+  "paper": {
+    "title": "Neuromodulation supports robust rhythmic pattern transitions in degenerate central pattern generators with fixed connectivity",
+    "authors": [
+      "Arthur Fyon",
+      "Alessio Franci",
+      "Pierre Sacré",
+      "Guillaume Drion"
+    ],
+    "doi": null,
+    "publication_year": 2026,
+    "venue": "arXiv (Cornell University)",
+    "url": "https://arxiv.org/pdf/2604.08312"
+  },
+  "source": {
+    "filename": "paper-W7153671613--Neuromodulation-supports-robust-rhythmic-pattern-transitions-in-degenerate-central-pattern-gene.pdf",
+    "sha256": "09231e59c899aceb7b55cbf0a3a414eead701aa47a3989d827366195dd926f43",
+    "source_url": "https://arxiv.org/pdf/2604.08312",
+    "pdf_page_count": 8
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "results_sections_seen": [
+      "I. Introduction",
+      "II. Problem formulation及Definition 1-2",
+      "III. Proposed architecture",
+      "IV. Symmetry-based existence of gaits / A-C及Theorem 1",
+      "V. Neuronal implementation / A-B",
+      "VI. Design principles",
+      "VII. Robust gait control / A-B",
+      "VIII. Conclusions and future work",
+      "Fig. 1-6完整供给图注",
+      "Acknowledgment / Code availability / References"
+    ],
+    "missing_material": [
+      "图像像素未提供",
+      "外链代码/数据未提供或打开",
+      "没有供给补充文件或更后版本"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "已完整评估8页文字、公式转录、全部图注及参考文献；没有供给附录，未重新打开PDF。",
+      "源首页明确arXiv:2604.08312v1 [math.DS]，日期9 Apr 2026；不是替代后续发表版本，也不推定会议接受状态。",
+      "题名和4名作者与指定索引一致，DOI保持null。",
+      "第二遍审计在保留的全页上下文中核对理论前提、源文维数定义、模型角色、n、比较和负结果。",
+      "20次初始化仿真与200个电导参数网络为不同证据集合；6/8完整节点和5/6约化节点不是实验重复。",
+      "引用的H/K定理、既有DIC控制器及退化网络生成算法不是本文新增独立实验。",
+      "第3页所谓投影强度变化与固定connectome应区分为活动依赖抑制输出和固定耦合规则；不推定突触可塑性或结构重连。",
+      "源文k维节点的余维/连通分支论证和异质参数的Γ等变适用性保留为未决，不能因200个仿真成功强行判定理论完备。",
+      "所有quote为null，英文逐字引文总数为0；定位为真实1-based PDF页序。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "固定connectome、三层神经调制CPG及两种投影组织",
+      "role": "result",
+      "source_pages": [
+        2,
+        3,
+        5
+      ],
+      "decision": "include",
+      "reason": "C1；完整与约化节点数区分。"
+    },
+    {
+      "summary": "单投影对指定gallop的对称性障碍",
+      "role": "interpretation",
+      "source_pages": [
+        4
+      ],
+      "decision": "include",
+      "reason": "C2；源文维数及等变前提存在未决，不确认为全称不可能性。"
+    },
+    {
+      "summary": "双投影gallop及trot的形式对称相容性",
+      "role": "interpretation",
+      "source_pages": [
+        4
+      ],
+      "decision": "include",
+      "reason": "C3；存在性形式条件与具体模型稳定性分开。"
+    },
+    {
+      "summary": "DIC三反馈增益、自适应电导调制与网络整合",
+      "role": "result",
+      "source_pages": [
+        5,
+        6
+      ],
+      "decision": "include",
+      "reason": "C4；控制器来自前作，本文贡献限于结构化网络整合。"
+    },
+    {
+      "summary": "非对称结构20次初值仿真中的步态失败及trot同类文字报告",
+      "role": "result",
+      "source_pages": [
+        6,
+        7
+      ],
+      "decision": "include",
+      "reason": "C5；真实数值负结果，不扩成普遍机制定理。"
+    },
+    {
+      "summary": "对称结构分别维持gallop/trot的静态轨迹",
+      "role": "result",
+      "source_pages": [
+        6,
+        7
+      ],
+      "decision": "include",
+      "reason": "C6；与200网络切换证据部分共享且不额外算重复。"
+    },
+    {
+      "summary": "200个退化网络、最高五倍电导变化的gallop→trot切换",
+      "role": "result",
+      "source_pages": [
+        6,
+        7
+      ],
+      "decision": "include",
+      "reason": "C7；限定采样集合、方向和相位输出。"
+    },
+    {
+      "summary": "投影对称、多活动模式与适宜抑制强度的联合设计原则",
+      "role": "interpretation",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "C8；0.8只是所测值，无工作区间扫描。"
+    },
+    {
+      "summary": "跨神经元模型的控制原则推广",
+      "role": "hypothesis",
+      "source_pages": [
+        2,
+        5,
+        6,
+        7
+      ],
+      "decision": "include",
+      "reason": "C9；其他模型尚未实现。"
+    },
+    {
+      "summary": "扩展更大CPG和更复杂步态的模块化假设",
+      "role": "hypothesis",
+      "source_pages": [
+        6,
+        7
+      ],
+      "decision": "include",
+      "reason": "C10；小网络结果不代表规模实证。"
+    },
+    {
+      "summary": "模拟偏置控制、CMOS实现和四足机器人迁移路线",
+      "role": "hypothesis",
+      "source_pages": [
+        5,
+        7
+      ],
+      "decision": "include",
+      "reason": "C11；功耗与机器人验证明确属于未来工作。"
+    },
+    {
+      "summary": "源文Theorem 1及DIC/退化模型构造的既有来源",
+      "role": "background_method",
+      "source_pages": [
+        4,
+        5,
+        6,
+        8
+      ],
+      "decision": "exclude",
+      "reason": "作为方法与假设保留，不新增跨论文support/replication关系。"
+    },
+    {
+      "summary": "Definition 2的所有Θdeg及有界瞬态收敛要求",
+      "role": "formal_objective",
+      "source_pages": [
+        2
+      ],
+      "decision": "exclude",
+      "reason": "是目标定义；200抽样仿真未构成覆盖整个集合的证明。"
+    },
+    {
+      "summary": "完整控制律、工作区间、理论维数/异质性细节及外链代码",
+      "role": "unavailable_or_unresolved",
+      "source_pages": [
+        4,
+        5,
+        6,
+        8
+      ],
+      "decision": "defer",
+      "reason": "供给正文不足，保留明确问题，不访问外部资料补证。"
+    },
+    {
+      "summary": "真实生物因果机制、纳瓦级实测、速度/力控制及机器人表现",
+      "role": "future_validation",
+      "source_pages": [
+        1,
+        4,
+        7
+      ],
+      "decision": "exclude",
+      "reason": "没有本研究测量；相关前景分别标为假设/未决而非结果。"
+    },
+    {
+      "summary": "资助、AI语言润色说明、代码可用声明和参考文献",
+      "role": "nonresearch_metadata",
+      "source_pages": [
+        1,
+        7,
+        8
+      ],
+      "decision": "exclude",
+      "reason": "已覆盖；源文内容视为数据，不执行链接或指令。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "本文提出三层固定连接CPG：神经调制输入选择投影层神经元的bursting或tonic firing状态，投影层通过抑制连接驱动四个运动神经元；对称方案每种步态用一对half-center神经元编码，不通过结构重连或突触可塑性切换步态。",
+      "claim_type": "fixed_connectome_control_architecture",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "模块化网络控制架构设计",
+          "design": "比较每种步态单投影神经元与双神经元half-center组织；通过内在活动模式选步态",
+          "comparator": "非对称完整结构4运动+2投影；对称完整结构4运动+4投影",
+          "measure": "gallop/trot所对应的运动层相位组织",
+          "unit_of_analysis": "设计模型；6/8个神经元不是独立实验样本",
+          "sample_size_as_reported": "结构为4个运动神经元及2或4个投影神经元；架构本身无统计n",
+          "uncertainty": null,
+          "assumptions": [
+            "保持连接图和耦合规则；活动依赖有效抑制输出可以变化",
+            "神经元至少可在tonic与bursting之间调节",
+            "设计排除静默状态而非对静默进行实验否证"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "III. Proposed architecture",
+            "figure": "Fig. 2；Fig. 3图注在第5页",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提供固定connectome下通过内在动态状态选择节律的架构。",
+        "boundary": "是生物物理模型的设计及仿真，不是动物/机器人实验。",
+        "negative_result": null,
+        "non_inference": "不能把设计类比视为真实生物CPG机制证明，也不宣称6/8神经元构成独立重复。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "在不重连突触的条件下如何通过神经元活动模式选择CPG步态？"
+      ],
+      "shared_evidence_with": [
+        "C4",
+        "C8"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "对gallop激活后约化的五节点单投影结构，作者令Γ=Z2×Z2、K=⟨(1 2)(3 4)⟩、H=Γ，并以LK={u=v}使Fix(K)\\LK分为u>v与u<v、H交换两分支为由，主张该拓扑不支持所指定gallop周期轨道；这一分支论证对k维节点及异质参数的适用范围未在源文闭合。",
+      "claim_type": "claimed_topological_obstruction_with_open_assumptions",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "H/K周期轨道对称判据的拓扑应用",
+          "design": "四个运动节点及一个活跃gallop投影节点；丢弃tonic投影输出后约化",
+          "comparator": "指定gallop同步/半周期交换要求与该拓扑的对称群",
+          "measure": "连通分支是否被H保持",
+          "unit_of_analysis": "一个约化拓扑的理论论证，不是统计样本",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "完整向量场须为有限群Γ等变；仅图自同构本身不保证异质参数系统等变",
+            "空间子群K与时空子群H满足H/K为循环群",
+            "K为各向同性子群",
+            "dim Fix(K)≥2，等于2时还有源文未展开的附加条件",
+            "H保持Fix(K)去除额外对称固定集LK后的某个连通分支",
+            "判据描述具有指定对称性的某个等变ODE周期轨道的可实现性，不保证给定STG系统稳定或受控收敛",
+            "tonic编码节点的抑制输出在约化分析中被忽略",
+            "源文定义u、v为k维却使用标量次序与余维1；对k>1须澄清"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "IV.A. Nonexistence of a gallop with a single projection neuron",
+            "figure": "Fig. 3左；图注在第5页",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "保留作者对单投影结构提出的指定步态障碍及其论证路径。",
+        "boundary": "源推导把u=v称余维1并使用u>v；在已定义的k维状态下存在适用性疑问。",
+        "negative_result": null,
+        "non_inference": "不能认定所有非对称CPG或实际多维STG模型都被该推导证明绝不可能产生gallop；仿真失败也不补成全称证明。",
+        "unresolved": "须澄清k维状态的余维/连通性以及异质参数向量场的Γ等变性。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "单投影拓扑的对称性障碍在什么节点维数和参数条件下成立？"
+      ],
+      "shared_evidence_with": [
+        "C3",
+        "C8"
+      ],
+      "review_notes": [
+        "Theorem 1为源文转述既有定理，本文新贡献是拓扑应用；不把引述定理当作原创证明。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "对gallop约化后的六节点双投影结构，作者仍取Γ=Z2×Z2、K=⟨(1 2)(3 4)⟩、H=Γ，得到Fix(K)坐标(u,v,w,z)和LK={u=v,w=z}，据去除LK后连通而认为满足四项H/K条件；trot以对角同步子群作类似处理。这支持目标轨道的形式对称相容性，而非所用STG参数下稳定性的单独证明。",
+      "claim_type": "symmetric_projection_orbit_compatibility",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "对称群、固定子空间与H/K判据的拓扑分析",
+          "design": "四运动节点+两个活跃gallop投影节点；a交换同对左右，b交换前后及投影",
+          "comparator": "五节点单投影约化结构与六节点双投影约化结构",
+          "measure": "形式空间/时空对称的周期轨道可实现条件",
+          "unit_of_analysis": "两个约化拓扑的分析；不是实际完整网络节点数或独立n",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "完整向量场须为有限群Γ等变；仅图自同构本身不保证异质参数系统等变",
+            "空间子群K与时空子群H满足H/K为循环群",
+            "K为各向同性子群",
+            "dim Fix(K)≥2，等于2时还有源文未展开的附加条件",
+            "H保持Fix(K)去除额外对称固定集LK后的某个连通分支",
+            "判据描述具有指定对称性的某个等变ODE周期轨道的可实现性，不保证给定STG系统稳定或受控收敛",
+            "tonic输出被丢弃",
+            "trot要求x1=x4、x2=x3的对角同步",
+            "多维节点及异质参数时的定理应用仍需人工复核"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "IV.B. Existence of a gallop with two projection neurons / IV.C. Extension to trot",
+            "figure": "Fig. 3右；图注在第5页",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "支持所列群论条件下双投影结构与指定gallop/trot对称性相容。",
+        "boundary": "存在性判据不能替代所选动力学的轨道构造、稳定分析或控制收敛证明。",
+        "negative_result": null,
+        "non_inference": "不能由图结构直接推出每组异质参数均有稳定轨道，或已经证明所有退化网络的有界时间切换。",
+        "unresolved": "异质参数破坏严格等变性时如何应用此形式分析未说明。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "双投影half-center拓扑为何与目标步态的空间和时空对称相容？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C8"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "本文将单神经元DIC自适应控制整合进CPG网络：在阈值Vth用3×p敏感性矩阵把离子最大电导映射到fast/slow/ultraslow三种反馈增益，步态逻辑设定目标增益，状态依赖控制再调节一部分最大电导以选择tonic或bursting。",
+      "claim_type": "network_integration_of_adaptive_DIC_control",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "DIC反馈增益参数化及MRAC思想的状态依赖调制",
+          "design": "7种离子通道的单室STG模型中，将既有单神经元控制器用于结构化CPG",
+          "comparator": "实际与目标DIC增益；没有本文中新控制器对所有基线的定量比较",
+          "measure": "活动模式及网络相位切换",
+          "unit_of_analysis": "控制器/模型设计；3维增益和7通道不是独立样本",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "阈值处S(Vth)与受控参数可用于实现所需增益",
+            "可调节电导子集足够且系统支持tonic/bursting目标",
+            "抑制GABAergic突触反转电位约−75 mV；耦合函数固定"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "V.B. Neuromodulation as adaptive control",
+            "figure": "Fig. 4（第6页）",
+            "equation": "Eq. 2-4",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "给出低维目标空间控制异质高维电导模型的网络级整合方法。",
+        "boundary": "单神经元DIC控制框架来自本文明确引用的前作；本文主张的扩展是网络整合。",
+        "negative_result": null,
+        "non_inference": "本文未给出覆盖整个退化参数连续集合的控制收敛证明，也未实测电路控制功耗。",
+        "unresolved": "所供正文未给出完整自适应律、受控通道子集和全局可达/收敛条件。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "怎样用DIC反馈增益而不是统一电导增量控制退化CPG中的活动模式？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C7",
+        "C8"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "在非对称单神经元/步态投影结构的STG仿真中，激活gallop投影后运动层持续相位切换、不能维持规则步态；该失败在20次不同初值仿真中仍出现，初始V均匀取自−65至−55 mV，正文还报告trot出现同类现象。",
+      "claim_type": "asymmetric_architecture_simulation_failure",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "电压轨迹与跨初值相位模式的数值仿真",
+          "design": "完整非对称结构4运动+2投影，按gallop编码激活；改变初始膜电位",
+          "comparator": "规则目标步态与实际持续相位切换；不同初始化；对称结构另见Fig. 6",
+          "measure": "运动神经元同步/反相关系与能否维持规则周期",
+          "unit_of_analysis": "同一结构的初始化仿真运行，不是20个动物或20个独立制造网络",
+          "sample_size_as_reported": "20次不同初始条件仿真；V(0)均匀分布−65至−55 mV；trot重复数未单独报告",
+          "uncertainty": null,
+          "assumptions": [
+            "使用本文STG及所测试结构/耦合参数",
+            "四个运动神经元输出分类为步态而非真实身体运动"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "VII.A. Asymmetric gait control leads to gait disruption",
+            "figure": "Fig. 5（图注在第7页）",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提供所测非对称设计未形成规则目标步态的实际数值负结果。",
+        "boundary": "20次是初值重复；trot同类结果只有文字报告且未明确另有20次。",
+        "negative_result": "所测非对称结构出现持续相位切换，未收敛到规则步态。",
+        "non_inference": "不能从有限初始化证明所有参数、所有非对称拓扑或所有初值都不可能；与对称结构同时改变神经元数，不能唯一归因于对称性。",
+        "unresolved": null,
+        "unresolved_attribution": "与对称架构比较时投影数和拓扑同时改变，没有独立因果消融。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "所测试单投影CPG能否在不同初值下维持gallop/trot相位模式？"
+      ],
+      "shared_evidence_with": [
+        "C6"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "在对称half-center投影结构的所示STG仿真中，分别激活gallop或trot编码神经元时，四运动神经元产生相应且持续的节律；Fig. 6上部展示的是不进行步态切换的两种电压轨迹。",
+      "claim_type": "symmetric_static_gait_generation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "固定结构下的单步态电压轨迹仿真",
+          "design": "完整对称结构4运动+4投影，分别选择gallop或trot编码",
+          "comparator": "两种激活模式；与非对称结构的失败对照并非只改变一个因素",
+          "measure": "四个运动节点的节律相位关系",
+          "unit_of_analysis": "所示模型轨迹；每种固定步态独立运行次数未报告",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "选择编码神经元的bursting/tonic状态",
+            "所示上部轨迹不包含切换操作"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "VII.B. Symmetric gait control under degeneracy",
+            "figure": "Fig. 6上部（图注在第7页）",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "支持对称设计在所示参数下生成两种目标输出模式。",
+        "boundary": "没有单独给出该不切换展示的独立重复数或稳定性谱。",
+        "negative_result": null,
+        "non_inference": "不能把静态示例当作额外200次独立切换重复或证明动物步态/力学稳定。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "对称投影结构能否分别生成两种目标CPG相位模式？"
+      ],
+      "shared_evidence_with": [
+        "C5",
+        "C7"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "在固定连接和突触强度、最大突触电导0.8 mS/cm²的200个退化STG模型网络中，离子电导跨神经元变化可达五倍；将gallop编码从bursting切到tonic并激活trot编码后，正文报告全部200个网络保持目标gallop→trot定性相位过渡。",
+      "claim_type": "robust_transition_in_sampled_degenerate_networks",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "不同最大离子电导的网络群体数值仿真",
+          "design": "用源文所引算法生成200个退化网络；固定connectome及突触强度后神经调制切换",
+          "comparator": "切换前gallop与切换后trot；不同电导网络；没有相同拓扑的开环调制性能基线",
+          "measure": "运动层步态等价的同步/反相关系；图注报告相位均值与min-max范围",
+          "unit_of_analysis": "200个不同参数网络仿真实例；不是生物个体、独立硬件芯片或神经元n",
+          "sample_size_as_reported": "200个网络；电导变化最高五倍；每网络独立随机种子/初值重复数未报告",
+          "uncertainty": "Fig. 6实线为网络群体均值，阴影为min-max而非置信区间；无统计显著性或数值切换时间界",
+          "assumptions": [
+            "网络集合按特定退化构造算法抽样，不等于所有可能参数",
+            "神经元可由控制在tonic/bursting之间切换",
+            "最大抑制突触电导固定0.8 mS/cm²且落在本例可工作范围",
+            "步态定义仅为四个运动神经元的相位关系"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "VI. Design principles / VII.B. Symmetric gait control under degeneracy",
+            "figure": "Fig. 6下部（图注在第7页）",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "支持该抽样网络群体内固定connectome的gallop→trot相位切换。",
+        "boundary": "只测试所选STG模型、采样集合、连接强度及方向；未给出通用有界瞬态时间。",
+        "negative_result": null,
+        "non_inference": "不能把200个成功仿真等同于Definition 2对所有Θdeg的全称收敛证明，也不能推定反向/其他步态、真实动物、机器人或CMOS已验证。",
+        "unresolved": "未测试的退化参数、初值范围、扰动和切换时间分布仍未知。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "固定连接CPG能否在大电导差异的抽样退化网络中稳定完成gallop到trot切换？"
+      ],
+      "shared_evidence_with": [
+        "C4",
+        "C6",
+        "C8"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "作者归纳该固定连接架构的三项联合设计要求：步态投影须具有目标对称结构、单神经元须可在tonic与bursting间调节、抑制耦合须足以锁定运动层而不过强以致完全抑制；0.8 mS/cm²仅为本文群体仿真的一个可工作值。",
+      "claim_type": "joint_architectural_design_principles",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "综合形式对称分析、DIC控制和数值示例",
+          "design": "以三项联合要求概括本文架构，不做连续突触强度扫描",
+          "comparator": "概念上的耦合过弱/适宜/过强条件；无给定阈值对照数据",
+          "measure": "预期的相位锁定和活动维持",
+          "unit_of_analysis": "同一理论/仿真材料的综合，不是新独立实验",
+          "sample_size_as_reported": "已报告200个网络见C7，不再作为额外样本",
+          "uncertainty": null,
+          "assumptions": [
+            "对称推导适用性须连同C2/C3的未决前提保留",
+            "单元的模式边界随参数变化",
+            "控制电导子集可实现目标增益"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "VI. Design principles",
+            "figure": "Fig. 3-6的设计综合",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提出可用于此架构的联合设计指导。",
+        "boundary": "突触强度工作区间及通用充分性未推导/扫描；对称必要性有维数及等变前提疑问。",
+        "negative_result": null,
+        "non_inference": "不能断言三项条件已构成任意神经元/参数下的充分稳定性定理，也不能将未测试过弱/过强情形当作实测负结果。",
+        "unresolved": "通用工作范围与完整稳定/可达条件仍待建立。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "稳健固定连接CPG的拓扑、单元动态和耦合设计需要哪些联合条件？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C7"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "作者假设该神经调制架构可推广到其他能通过参数调节在tonic与bursting间转换的神经元模型；本文只实现STG七通道模型，其他模型的增益参数化、可控性和步态切换尚未被测试。",
+      "claim_type": "model_generality_proposal",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "从定性活动模式与反馈结构提出模型迁移假设",
+          "design": "将当前STG模型的控制原则外推到具备多活动模式的模型",
+          "comparator": "已示STG与未实现的其他神经元模型；没有额外模型数据",
+          "measure": "预期可调节模式及步态切换",
+          "unit_of_analysis": "理论设计外推，不是独立仿真数据集",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "必须具有可调tonic/bursting模式",
+            "其他模型需有适用的反馈增益和可控参数子集",
+            "投影与耦合须能组织目标相位"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "VI. Design principles / VIII. Conclusions and future work",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "明确提出有条件的模型普适性研究方向。",
+        "boundary": "验证仅限当前生物物理STG实现。",
+        "negative_result": null,
+        "non_inference": "不把model-agnostic叙述当作多模型实证或任意模型的定理。",
+        "unresolved": "其他模型的控制律、稳定性和实际转换需验证。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "该控制原则能否迁移到不同神经元模型？"
+      ],
+      "shared_evidence_with": [
+        "C4",
+        "C8"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "作者假设可通过添加局部神经调制模块，在不改变核心控制架构的前提下扩展到更大CPG和更复杂步态；本文演示仅包括四运动神经元的gallop/trot，未测量网络扩展后的性能。",
+      "claim_type": "modular_scalability_hypothesis",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "基于局部反馈与模块化组织的扩展推测",
+          "design": "提出添加模块而非重新设计核心控制器",
+          "comparator": "当前两步态小网络与未实现的大规模/复杂步态网络",
+          "measure": "预期的架构可扩展性",
+          "unit_of_analysis": "设计推测；无大规模网络运行",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "局部模块的互联不会破坏目标相位组织",
+            "新增模块仍满足控制与耦合要求"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "VIII. Conclusions and future work",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "给出模块化扩展的可检验假设。",
+        "boundary": "未报告扩展规模、复杂步态结果、计算开销或耦合干扰。",
+        "negative_result": null,
+        "non_inference": "不能说本文已经实证规模扩展性或任意步态控制。",
+        "unresolved": "跨模块干扰与新增步态的对称/稳定条件尚待测试。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "添加神经调制模块能否保持固定连接CPG的控制性能？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C4"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "作者提出把目标反馈增益映射到bias currents、以模拟控制环调节少数电导参数，从而将当前架构迁移到mixed-feedback/CMOS神经形态控制器；低功耗分析、控制简化和真实四足机器人验证被明确列为未来工作。",
+      "claim_type": "neuromorphic_translation_hypothesis",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "从可控/不可控电导分解提出电路映射方案",
+          "design": "将电导调制类比为偏置电流，拟构建模拟控制环",
+          "comparator": "当前生物物理数值模型与尚未实现的神经形态硬件/机器人",
+          "measure": "预期可实现的控制映射；没有实测功耗或真实机器人指标",
+          "unit_of_analysis": "硬件实施设想，不是制造器件或动物实验",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "硬件具有足够可调偏置和等效反馈增益",
+            "制造失配可被所选控制子集补偿",
+            "控制环开销与时间尺度需满足实现约束"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "VIII. Conclusions and future work",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提出从模型参数控制到神经形态电路的具体映射路线。",
+        "boundary": "真实硬件、纳瓦级功耗、机器人运行均未在本文测量。",
+        "negative_result": null,
+        "non_inference": "不能将引用的低功耗电路背景或制造失配类比当作本架构的实测能耗/可靠性验证。",
+        "unresolved": "电路功耗、闭环稳定性及真实四足运动测试需后续实现。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "DIC目标增益能否映射到低功耗神经形态硬件的偏置控制？"
+      ],
+      "shared_evidence_with": [
+        "C4",
+        "C9"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "全部8页已评估，源为2026-04-09 arXiv v1。本文提出固定connectome的三层神经调制CPG，把DIC反馈增益控制整合到STG模型。非对称结构在20次不同初值仿真中持续相位切换；对称结构可分别形成目标节律，并在200个抽样退化网络、最高五倍电导变化下报告gallop→trot相位切换。20次初始化、200参数网络和6/8神经元结构是不同分析单位。对称性论证的k维余维/连通性、异质参数Γ等变性及具体系统存在/稳定的衔接仍需澄清；没有整个Θdeg的全称收敛证明。规模、多模型、CMOS低功耗与真实机器人均是未验证假设/未来工作。图像像素、外链代码及其他版本未阅读，所有记录保持候选与human_checked:false，不建立跨论文关系。",
+  "shared_evidence": [
+    {
+      "claim_id": "C1",
+      "with": [
+        "C4",
+        "C8"
+      ]
+    },
+    {
+      "claim_id": "C2",
+      "with": [
+        "C3",
+        "C8"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C2",
+        "C8"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C1",
+        "C7",
+        "C8"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C5",
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C4",
+        "C6",
+        "C8"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C4",
+        "C8"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "with": [
+        "C1",
+        "C4"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "with": [
+        "C4",
+        "C9"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": null,
+        "issue": "源为arXiv:2604.08312v1，9 Apr 2026；无更后版本内容。",
+        "suggested_correction": "保持preprint及v1范围，不引用后续发表或会议接受事实。",
+        "pdf_page": 1,
+        "resolved": true
+      },
+      {
+        "claim_id": "C2",
+        "issue": "源文把u、v定义为k维，却把u=v写为余维1并将其补集分为u>v/u<v；k>1时该标量排序/连通性论证未说明。",
+        "suggested_correction": "人工澄清标量约化假设或修订多维证明；候选只保留带未决前提的作者主张。",
+        "pdf_page": 4,
+        "resolved": false
+      },
+      {
+        "claim_id": "C3",
+        "issue": "仅图自同构不能自动保证任意异质θ的向量场Γ等变，源文未解释与退化群体的衔接。",
+        "suggested_correction": "保留Γ等变为联合前提，并请求理论适用范围澄清；不以数值结果替代证明。",
+        "pdf_page": 4,
+        "resolved": false
+      },
+      {
+        "claim_id": "C3",
+        "issue": "源文将对称轨道存在条件与具体STG稳定节律叙述接近，二者不能无条件等同。",
+        "suggested_correction": "记录为形式对称相容性，具体稳定/切换分别按C6/C7的仿真证据。",
+        "pdf_page": 4,
+        "resolved": true
+      },
+      {
+        "claim_id": "C4",
+        "issue": "正文给出增益映射和目标，但没有完整自适应律、受控通道列表或全局收敛条件。",
+        "suggested_correction": "记录为方法整合及有限仿真，不推定完整控制证明；实施细节待后续材料。",
+        "pdf_page": 5,
+        "resolved": false
+      },
+      {
+        "claim_id": "C5",
+        "issue": "20次为不同初值仿真；四运动神经元不是n，trot的20次未单独报告。",
+        "suggested_correction": "只把20用于正文明确的失败重复，并保留trot的n未知。",
+        "pdf_page": 6,
+        "resolved": true
+      },
+      {
+        "claim_id": "C7",
+        "issue": "200参数网络只覆盖抽样退化集合；min-max阴影不是CI，未给通用有界瞬态时间。",
+        "suggested_correction": "限于200网络的定性相位切换，不称所有参数上的Definition 2已证明。",
+        "pdf_page": 6,
+        "resolved": true
+      },
+      {
+        "claim_id": "C8",
+        "issue": "耦合过弱/过强是设计推断，无正文扫描结果。",
+        "suggested_correction": "不写成实际负结果，不虚构阈值区间。",
+        "pdf_page": 6,
+        "resolved": true
+      },
+      {
+        "claim_id": "C11",
+        "issue": "mixed-feedback/CMOS、低功耗和真实机器人为未来实施，不是完成的验证。",
+        "suggested_correction": "标为hypothesis，明确所有硬件/机器人读出未测。",
+        "pdf_page": 7,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "图像像素和外链代码/数据不在供给页文中。",
+        "suggested_correction": "仅以全部页文、公式转录与图注作文本覆盖，不声称读过外链材料。",
+        "pdf_page": 8,
+        "resolved": false
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T13:29:59.649488Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "09231e59c899aceb7b55cbf0a3a414eead701aa47a3989d827366195dd926f43",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

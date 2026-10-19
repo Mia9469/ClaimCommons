@@ -1,0 +1,1299 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "preprint",
+  "paper": {
+    "title": "Texture Recognition Using a Biologically Plausible Spiking Phase-Locked Loop Model for Spike Train Frequency Decomposition",
+    "authors": [
+      "Michele Mastella",
+      "Tesse Tiemens",
+      "Elisabetta Chicca"
+    ],
+    "doi": "10.48550/arxiv.2403.09723",
+    "publication_year": 2024,
+    "venue": "arXiv (Cornell University)",
+    "url": "https://doi.org/10.48550/arxiv.2403.09723"
+  },
+  "source": {
+    "filename": "paper-W4392929636.pdf",
+    "sha256": "5eda952fb184f696cecee571682886ccbdbfbd65ee38faa889ef2baba2ee77e8",
+    "source_url": "https://arxiv.org/pdf/2403.09723",
+    "pdf_page_count": 16
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16
+    ],
+    "results_sections_seen": [
+      "2.1 sPLL analysis; 2.2 layer; 2.3 somatosensory; 2.4 MST decoding",
+      "4 Models; 5 Methods including optimization and potential well",
+      "Figures1–3; Supplementary Materials and Figure S1; references"
+    ],
+    "missing_material": [
+      "所有图像像素未提供，Figure3E的精确准确率/脉冲表值不可从文本恢复。",
+      "原始神经数据、代码执行、已称搭建但未公开的CMOS测量未提供。"
+    ],
+    "text_pass_complete": true,
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "notes": [
+      "评估全部16页，包括附带的IRH/FFT补充比较与全部图注/参考文献。",
+      "不把PC/皮层原始采集和先前TDE/sPLL模型重记为新实验。",
+      "第二遍来源核查保留纹理准确率、频率上限和Hucktowel频谱表述差异，区分本征/响应频率。"
+    ]
+  },
+  "contribution_inventory": [
+    {
+      "summary": "反馈开关的锁定分析、异质50单元频率响应及谐波歧义。",
+      "role": "模型仿真",
+      "source_pages": [
+        3,
+        4,
+        5,
+        10,
+        12,
+        13
+      ],
+      "decision": "include",
+      "reason": "局部锁定与现象学势景分开，不声称全局稳定。"
+    },
+    {
+      "summary": "四纹理既有PC数据的频谱特征提取和三种线性分类。",
+      "role": "既有数据再分析",
+      "source_pages": [
+        5,
+        6,
+        7
+      ],
+      "decision": "include",
+      "reason": "生物记录归原文[4]，本研究仅新模型分析；准确率79±6与81冲突。"
+    },
+    {
+      "summary": "双频27类任务中的sPLL/r-LIF/LSTM比较。",
+      "role": "合成数据仿真",
+      "source_pages": [
+        6,
+        7,
+        8,
+        11,
+        12
+      ],
+      "decision": "include",
+      "reason": "15种子、2700样本及不同优化策略可核查；不可读最终表数字不补造。"
+    },
+    {
+      "summary": "核心资源计数及较少脉冲/较低脉冲计数标准差。",
+      "role": "模型复杂度结果",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "只作网络代理，不当作硅能量实测。"
+    },
+    {
+      "summary": "补充IRH/FFT单频与双频比较。",
+      "role": "补充仿真",
+      "source_pages": [
+        15,
+        16
+      ],
+      "decision": "include",
+      "reason": "完整评估所供补充，维度和种子可核对，保留定性准确率。"
+    },
+    {
+      "summary": "相位势井可视化与体感回路对应。",
+      "role": "interpretation / hypothesis",
+      "source_pages": [
+        7,
+        12,
+        13
+      ],
+      "decision": "include",
+      "reason": "分别标现象学解释及生物假说，不作为独立生理发现。"
+    },
+    {
+      "summary": "原始sPLL核心、TDE、LIF与Ahissar闭环假说。",
+      "role": "先前模型/背景",
+      "source_pages": [
+        2,
+        9,
+        10,
+        13,
+        14
+      ],
+      "decision": "exclude",
+      "reason": "Sec4.3注明sPLL已由[31]介绍；本稿新分析不等于首次提出所有基本组件。"
+    },
+    {
+      "summary": "已搭建测试但尚未公开的CMOS实现。",
+      "role": "不可用硅证据",
+      "source_pages": [
+        9
+      ],
+      "decision": "defer",
+      "reason": "无电路、测量、能耗或延迟结果，不构建硅命题。"
+    },
+    {
+      "summary": "利用运动本体感觉调Ibias实现滑动速度不变、人工皮肤和跨层多通道传输。",
+      "role": "未来应用",
+      "source_pages": [
+        8,
+        9
+      ],
+      "decision": "defer",
+      "reason": "未在本文闭环触觉平台或速度扫描中验证。"
+    },
+    {
+      "summary": "生物原始记录与Figure3E像素中准确率/脉冲表值。",
+      "role": "不可用证据",
+      "source_pages": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "decision": "defer",
+      "reason": "部分数据被文字概述但原始统计与图像缺失。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "在本文一秒单频输入仿真示例中，输入36 Hz、CCO偏置电流40（归一化单位）时，TDE→CCO反馈使sPLL锁定输入附近；关闭反馈时相位周期积累并交替产生高低TDE活动，开启反馈时相位在零附近两侧波动，而非固定于理想PLL的精确零相差。",
+      "claim_type": "controlled_simulation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "同一sPLL有/无反馈的仿真比较",
+          "design": null,
+          "comparator": "TDE至CCO反馈开/关",
+          "measure": "频率、相差及TDE活动",
+          "unit_of_analysis": "单个模型与初态轨迹",
+          "sample_size_as_reported": "一秒示例；潜势构造用多个初态，数量未报告。",
+          "uncertainty": null,
+          "assumptions": [
+            "FAC/TRG主要处理单次配对，SYN积分多个TDE脉冲。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "2.1 sPLL Analysis",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "反馈条件与时长图注",
+          "design": null,
+          "comparator": null,
+          "measure": "锁定动力学",
+          "unit_of_analysis": "仿真",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "2.1",
+            "figure": "Figure 1A–D",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在本文一秒单频输入仿真示例中，输入36 Hz、CCO偏置电流40（归一化单位）时，TDE→CCO反馈使sPLL锁定输入附近；关闭反馈时相位周期积累并交替产生高低TDE活动，开启反馈时相位在零附近两侧波动，而非固定于理想PLL的精确零相差。",
+        "boundary": "只支持所述参数和锁定范围；不是所有起点/频率的全局稳定性定理。",
+        "negative_result": "锁定时不是严格恒定零相差，表现为零附近摆动。",
+        "non_inference": "不是硅测量或生物反馈回路干预。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "反馈怎样改变sPLL对周期脉冲的锁定行为？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C3",
+        "C10"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "本文将50个偏置电流不同的sPLL并联，电流范围12–60（归一化单位），对30–54 Hz范围的27种输入频率进行测试；能有效锁定的单元有较低归一化TDE总脉冲数，未锁定或锁定较差的附近单元可产生较高活动，因而层输出对输入频率呈选择性。",
+      "claim_type": "simulation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "异质振荡器层的频率扫描",
+          "design": null,
+          "comparator": null,
+          "measure": "TDE归一化脉冲数及CCO锁定",
+          "unit_of_analysis": "单元×输入频率",
+          "sample_size_as_reported": "50 sPLLs，27 input frequencies（Figure1F）；不等于独立重复数。",
+          "uncertainty": null,
+          "assumptions": [
+            "按输入频率和CCO无输入本征频率归一化计数。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "2.2 A Layer of sPLLs",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "频率扫描图注",
+          "design": null,
+          "comparator": null,
+          "measure": "锁定范围和响应矩阵",
+          "unit_of_analysis": "并联单元",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "sPLL layer",
+            "figure": "Figure 1E–F",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "本文将50个偏置电流不同的sPLL并联，电流范围12–60（归一化单位），对30–54 Hz范围的27种输入频率进行测试；能有效锁定的单元有较低归一化TDE总脉冲数，未锁定或锁定较差的附近单元可产生较高活动，因而层输出对输入频率呈选择性。",
+        "boundary": "仅所测频率范围；多个单元可锁定同一输入，不是唯一频率标签。",
+        "negative_result": null,
+        "non_inference": "尚未实际实现归一化WTA输出层，也不能由低TDE活动直接识别任意自然频谱。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "异质sPLL层能否用TDE活动图谱区分周期输入频率？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C3"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "本文sPLL层的频率扫描显示，单元不仅可锁定输入频率，也可锁定其倍频；作者解释较低频率脉冲可被视作高频脉冲缺失部分事件，因此该模型的低TDE活动存在基频与谐波歧义。",
+      "claim_type": "simulation_boundary_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "频率响应中的谐波锁定观察",
+          "design": null,
+          "comparator": null,
+          "measure": "输入频率倍频处的锁定",
+          "unit_of_analysis": "单元频率扫描",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "2.2 A Layer of sPLLs",
+            "figure": "Figure 1F caption on PDF page 3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "本文sPLL层的频率扫描显示，单元不仅可锁定输入频率，也可锁定其倍频；作者解释较低频率脉冲可被视作高频脉冲缺失部分事件，因此该模型的低TDE活动存在基频与谐波歧义。",
+        "boundary": "是所用脉冲编码的歧义；没有额外谐波消歧算法验证。",
+        "negative_result": "不能保证低TDE活动仅对应真实基频。",
+        "non_inference": "不能把锁定峰直接当作独立输入变量的数量或唯一频谱成分。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "sPLL是否会把脉冲基频与倍频混淆？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C4"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "将既有猕猴PC传入脉冲记录（四种纹理、每种63个trial）输入本文200个并联sPLL两秒后，TDE计数图谱呈纹理选择性，低响应区域与输入功率谱峰相关；最低TDE活动关联的CCO在同纹理跨trial产生较一致频谱，展示对既有神经脉冲数据的模型特征提取。",
+      "claim_type": "biological_data_driven_simulation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "重新分析作者提供的既有PC神经数据",
+          "design": null,
+          "comparator": null,
+          "measure": "TDE响应、输入FFT及获选CCO频谱",
+          "unit_of_analysis": "原数据trial与模型振荡器",
+          "sample_size_as_reported": "4 textures ×63 trials；200 sPLLs；非本文新动物记录。",
+          "uncertainty": "低trial变异为正文定性描述，无可读取统计值。",
+          "assumptions": [
+            "原数据来自Weber et al.[4]，不是独立重复的采集。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "2.3 Modeling the somatosensory pathway",
+            "figure": "Figure 2A–E",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "纹理输入模型仿真及计数归一化",
+          "design": null,
+          "comparator": null,
+          "measure": "低响应区域与频谱峰的对应",
+          "unit_of_analysis": "记录trial",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "正文报告CCO驱动范围50–125 Hz；不能用图上响应频率代替本征参数。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "2.3",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "将既有猕猴PC传入脉冲记录（四种纹理、每种63个trial）输入本文200个并联sPLL两秒后，TDE计数图谱呈纹理选择性，低响应区域与输入功率谱峰相关；最低TDE活动关联的CCO在同纹理跨trial产生较一致频谱，展示对既有神经脉冲数据的模型特征提取。",
+        "boundary": "定性频谱一致不等于逐trial精确解码、全部纹理或滑动速度不变。",
+        "negative_result": null,
+        "non_inference": "不能把作者重绘外部PC记录当作新生理测量，也不能把CCO类似皮层频谱当作已发现真实PLL回路。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "sPLL响应是否携带既有PC记录中的纹理频谱特征？"
+      ],
+      "shared_evidence_with": [
+        "C3",
+        "C5",
+        "C11"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "在本文四纹理PC记录的线性读出比较中，Figure2F报告sPLL特征准确率79%±6%、输入FFT特征99%±0%、单纯脉冲计数36%±2%；正文另写sPLL为81%。两种表述均支持sPLL优于计数但低于FFT，不过sPLL准确数值尚未一致。",
+      "claim_type": "classification_result_with_source_discrepancy",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "三种特征的线性纹理分类",
+          "design": null,
+          "comparator": "PC总计数、FFT和200个TDE输出",
+          "measure": "测试准确率",
+          "unit_of_analysis": "既有纹理trial / 训练读出",
+          "sample_size_as_reported": "原数据4×63 trials；训练测试划分和此实验独立运行数未明确给出。",
+          "uncertainty": "图表为±6/0/2个百分点，统计类型未定义。",
+          "assumptions": [
+            "分类比较仅重用既有数据。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "2.3",
+            "figure": "Figure 2F",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "正文分类数字核对",
+          "design": null,
+          "comparator": null,
+          "measure": "36%、99%和81%",
+          "unit_of_analysis": "同一分类报告",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "2.3 / linear classifier results",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在本文四纹理PC记录的线性读出比较中，Figure2F报告sPLL特征准确率79%±6%、输入FFT特征99%±0%、单纯脉冲计数36%±2%；正文另写sPLL为81%。两种表述均支持sPLL优于计数但低于FFT，不过sPLL准确数值尚未一致。",
+        "boundary": "FFT不是与sPLL性能等同；各预处理和生物数据训练划分不完整。",
+        "negative_result": "sPLL报告准确率低于FFT；图表与正文sPLL数字不一致。",
+        "non_inference": "不能称sPLL达到99%或独立验证猕猴纹理识别机制，也不能把合成数据81/9/10划分套到PC实验。",
+        "unresolved": "最终准确率、±统计类型及生物数据读出划分。",
+        "unresolved_attribution": "预印本文本内部不一致且缺少该实验完整训练细节。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "sPLL计数特征相对直接FFT和输入脉冲计数的纹理解码表现如何？"
+      ],
+      "shared_evidence_with": [
+        "C4"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "inconsistent_accuracy_reporting"
+        ]
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "在本文27类双频合并脉冲合成任务中，以50个固定sPLL的TDE总计数训练线性读出，测试准确率曲线接近两层50维LSTM，优于所比一层/两层50神经元r-LIF及直接输入脉冲计数读出；该结果来自15个随机实例，而非通用多频解码优势证明。",
+      "claim_type": "comparative_simulation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "合成双频类别的模型比较",
+          "design": null,
+          "comparator": "50 sPLLs、1/2层r-LIF、2层LSTM及计数线性基线",
+          "measure": "测试准确率",
+          "unit_of_analysis": "随机初始化/训练实例和测试样本",
+          "sample_size_as_reported": "27组合每组合100次，共2700；train2187、validation243、test270；每模型15实例。",
+          "uncertainty": "Figure3绘制15实例和均值；具体最终准确率表值不能从所供文本完整恢复。",
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "2.4 Multiple frequency decoding",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "数据划分和调参流程核查",
+          "design": null,
+          "comparator": null,
+          "measure": "训练/验证/测试及优化策略",
+          "unit_of_analysis": "模型实例",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "sPLL仅训练读出；r-LIF按100次annealing优化超参数，sPLL手工预调，LSTM未自动调参。",
+            "随机移位和逐脉冲抖动，合并重合脉冲为一次事件。"
+          ],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "5.3; 5.7",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "模型/种子数量图注",
+          "design": null,
+          "comparator": null,
+          "measure": "准确率轨迹",
+          "unit_of_analysis": "15实例",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "2.4",
+            "figure": "Figure 3A–E",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在本文27类双频合并脉冲合成任务中，以50个固定sPLL的TDE总计数训练线性读出，测试准确率曲线接近两层50维LSTM，优于所比一层/两层50神经元r-LIF及直接输入脉冲计数读出；该结果来自15个随机实例，而非通用多频解码优势证明。",
+        "boundary": "架构/训练/调参不同；双频分类标签是组合类不是多标签估频；频率上限正文54/57有冲突。",
+        "negative_result": null,
+        "non_inference": "不能推出所有D-SNN不适合多频输入或SOTA全面胜出；未与讨论的S-LPF库做完整匹配比较。",
+        "unresolved": "Figure3E不可读数值及F2上限54/57 Hz差异。",
+        "unresolved_attribution": "图表像素未提供；Results与Methods参数表述不同。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "固定频率选择层能否比所测试循环SNN更容易读出双频脉冲组合？"
+      ],
+      "shared_evidence_with": [
+        "C7",
+        "C8",
+        "C9"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "本文双频分类比较的核心网络计数为：50个sPLL共100个神经元和150条固定突触；一层r-LIF为50个神经元、2550条可塑突触；两层r-LIF为100个神经元、7550条可塑突触，sPLL核心以更少连接获得所报告的分类表现。",
+      "claim_type": "model_resource_analysis",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "实现拓扑的神经元和突触计数",
+          "design": null,
+          "comparator": "sPLL与一层/两层r-LIF核心",
+          "measure": "神经元/连接数量与可塑性",
+          "unit_of_analysis": "网络拓扑",
+          "sample_size_as_reported": "100/50/100是核心神经元计数，不是样本n。",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "2.4 / resource comparison",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "本文双频分类比较的核心网络计数为：50个sPLL共100个神经元和150条固定突触；一层r-LIF为50个神经元、2550条可塑突触；两层r-LIF为100个神经元、7550条可塑突触，sPLL核心以更少连接获得所报告的分类表现。",
+        "boundary": "不包括三者后接读出的完整参数/存储和训练成本；sPLL不是比一层r-LIF神经元更少。",
+        "negative_result": null,
+        "non_inference": "不能据核心突触数直接给出芯片面积、整网络功率或训练速度优势。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "频率专用sPLL核心相对循环LIF需要多少连接资源？"
+      ],
+      "shared_evidence_with": [
+        "C6",
+        "C8"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "本文双频任务报告sPLL层的总脉冲数及跨实例标准差都低于所比两种r-LIF网络；这给出模型活动稀疏性优势，但未提供本文芯片上每次推理能耗测量。",
+      "claim_type": "simulation_activity_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "分类模型的总脉冲活动比较",
+          "design": null,
+          "comparator": "50个sPLL与1/2层r-LIF",
+          "measure": "总脉冲计数及其标准差",
+          "unit_of_analysis": "网络实例/推理活动",
+          "sample_size_as_reported": "比较来自15个实例；图表精确脉冲计数不可读。",
+          "uncertainty": "正文明确提及standard deviation较低，但不报告数值。",
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "2.4 / spike count comparison",
+            "figure": "Figure 3E caption on PDF page 6",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "本文双频任务报告sPLL层的总脉冲数及跨实例标准差都低于所比两种r-LIF网络；这给出模型活动稀疏性优势，但未提供本文芯片上每次推理能耗测量。",
+        "boundary": "活动数量仅为可能影响事件硬件能耗的代理，发放单位和突触fanout成本不同。",
+        "negative_result": null,
+        "non_inference": "不能使用引用fJ–nJ事件能量乘出本文已实测能耗，或单独由标准差较低推出更强准确率鲁棒性。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "频率专用sPLL层是否以较低模型脉冲活动实现双频分类？"
+      ],
+      "shared_evidence_with": [
+        "C6",
+        "C7"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "在本文补充合成数据比较中，用200维IRH或FFT特征训练100轮线性分类器、重复15个随机种子时，单频任务两者可相近区分频率；合并两个频率后FFT更可靠，IRH受合并后相邻脉冲间隔混合与抖动影响而难以区分原始频率。",
+      "claim_type": "comparative_simulation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "IRH与FFT特征及合并脉冲分析",
+          "design": null,
+          "comparator": null,
+          "measure": "特征可辨识性",
+          "unit_of_analysis": "单频/双频合成样本",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "IRH测试为200 bins；10 bins仅供展示。"
+          ],
+          "source_locator": {
+            "pdf_page": 15,
+            "section": "Supplementary Materials / Fourier Transform and Interspike Interval",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "两特征的线性分类比较",
+          "design": null,
+          "comparator": "IRH与FFT；单频与双频任务",
+          "measure": "分类准确率",
+          "unit_of_analysis": "随机种子和测试样本",
+          "sample_size_as_reported": "15 seeds、200维特征、100 epochs；单频有27实例/类表述。",
+          "uncertainty": "没有可读取具体准确率或CI。",
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 16,
+            "section": "Supplementary Materials",
+            "figure": "Figure S1",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在本文补充合成数据比较中，用200维IRH或FFT特征训练100轮线性分类器、重复15个随机种子时，单频任务两者可相近区分频率；合并两个频率后FFT更可靠，IRH受合并后相邻脉冲间隔混合与抖动影响而难以区分原始频率。",
+        "boundary": "相同维数不保证相同计算成本；针对所合成的两路周期脉冲与噪声。",
+        "negative_result": null,
+        "non_inference": "不能证明IRH对所有多频码不可辨或FFT解决任意脉冲混叠。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "多频合并脉冲为何使ISI直方图不如FFT易于读取原始频率？"
+      ],
+      "shared_evidence_with": [
+        "C6"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "本文依据多个初始条件的sPLL模拟轨迹，以假想频率力、TDE反馈力和任意摩擦常数构造相位势能可视化，反馈开启时出现局部势阱；该图为锁定行为的现象学解释，而非推导了真实电路能量或全局稳定性保证。",
+      "claim_type": "model_dynamics_interpretation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "从模拟相位速度/加速度数值积分构造势景",
+          "design": null,
+          "comparator": null,
+          "measure": "局部相位势阱",
+          "unit_of_analysis": "模型轨迹",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "引入fictitious forces、arbitrary Cf和与CCO突触动力相关的质量。",
+            "各初态模拟数据联合积分。"
+          ],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "5.8 Potential Well Analysis",
+            "figure": null,
+            "equation": "Equations (21)–(24)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "反馈开关势景图注",
+          "design": null,
+          "comparator": null,
+          "measure": "现象学势井",
+          "unit_of_analysis": "一秒示例",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "sPLL Analysis",
+            "figure": "Figure 1D",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "本文依据多个初始条件的sPLL模拟轨迹，以假想频率力、TDE反馈力和任意摩擦常数构造相位势能可视化，反馈开启时出现局部势阱；该图为锁定行为的现象学解释，而非推导了真实电路能量或全局稳定性保证。",
+        "boundary": "原文近似相位/电流关系不是完整稳定性证明。",
+        "negative_result": null,
+        "non_inference": "不能把该V当作已证明Lyapunov函数或物理耗散能量。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "相位势景可视化能为sPLL锁定提供何种解释而非证明？"
+      ],
+      "shared_evidence_with": [
+        "C1"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "基于sPLL对既有PC纹理脉冲的解码和获选CCO频谱与引用皮层数据的定性相似，作者提出体感通路中的振荡器—相位检测闭环可作为纹理频谱解码的生物候选机制。",
+      "claim_type": "biological_circuit_hypothesis",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "模型输出与既有皮层记录的定性类比",
+          "design": null,
+          "comparator": "模型CCO与Lieber/Bensmaia[5]已发表皮层频谱",
+          "measure": "候选体感微回路",
+          "unit_of_analysis": "模型到生物解释",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "2.3 Modeling the somatosensory pathway",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "基于sPLL对既有PC纹理脉冲的解码和获选CCO频谱与引用皮层数据的定性相似，作者提出体感通路中的振荡器—相位检测闭环可作为纹理频谱解码的生物候选机制。",
+        "boundary": "没有本研究的新皮层/丘脑生理采集、干预、连接或振荡器鉴别实验；继承Ahissar既有假说。",
+        "negative_result": null,
+        "non_inference": "不能确定皮层/丘脑真的实施sPLL，也不证明机制唯一或速度不变。",
+        "unresolved": "真实回路的相位反馈、因果必要性与滑动速度补偿。",
+        "unresolved_attribution": "生物类比和未来方向，非本文已验证机制。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "体感系统是否通过振荡相位反馈而非其它读出机制解码纹理？"
+      ],
+      "shared_evidence_with": [
+        "C4"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "biological_hypothesis_not_validated"
+        ]
+      }
+    }
+  ],
+  "reading_summary": "该预印本用先前sPLL结构进行反馈锁定、异质频率层、既有PC纹理数据再分析和双频合成分类。新分析支持频率选择、相较输入总计数更好的纹理读出、对所比r-LIF的双频优势及较低核心连接/活动；倍频歧义、与FFT的准确率差、非统一调参和源内数值冲突保留。两页补充的IRH/FFT比较已覆盖。势井为现象学解释，体感PLL为假说；无公开硅测量或新的生理验证。",
+  "shared_evidence": [
+    {
+      "claim_id": "C1",
+      "with": [
+        "C2",
+        "C3",
+        "C10"
+      ]
+    },
+    {
+      "claim_id": "C2",
+      "with": [
+        "C1",
+        "C3"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C1",
+        "C2",
+        "C4"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C3",
+        "C5",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C4"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C7",
+        "C8",
+        "C9"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C6",
+        "C8"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C6",
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "with": [
+        "C1"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "with": [
+        "C4"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [
+      {
+        "claim_id": "C1",
+        "evidence_index": 1,
+        "pdf_page": 4,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "semantic_source_check": "模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。"
+      },
+      {
+        "claim_id": "C1",
+        "evidence_index": 2,
+        "pdf_page": 3,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "semantic_source_check": "模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。"
+      },
+      {
+        "claim_id": "C2",
+        "evidence_index": 1,
+        "pdf_page": 4,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "semantic_source_check": "模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。"
+      },
+      {
+        "claim_id": "C2",
+        "evidence_index": 2,
+        "pdf_page": 3,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "semantic_source_check": "模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。"
+      },
+      {
+        "claim_id": "C3",
+        "evidence_index": 1,
+        "pdf_page": 5,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "semantic_source_check": "模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。"
+      },
+      {
+        "claim_id": "C4",
+        "evidence_index": 1,
+        "pdf_page": 5,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "semantic_source_check": "模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。"
+      },
+      {
+        "claim_id": "C4",
+        "evidence_index": 2,
+        "pdf_page": 6,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "semantic_source_check": "模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。"
+      },
+      {
+        "claim_id": "C5",
+        "evidence_index": 1,
+        "pdf_page": 5,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "semantic_source_check": "模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。"
+      },
+      {
+        "claim_id": "C5",
+        "evidence_index": 2,
+        "pdf_page": 6,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "semantic_source_check": "模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。"
+      },
+      {
+        "claim_id": "C6",
+        "evidence_index": 1,
+        "pdf_page": 7,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "semantic_source_check": "模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。"
+      },
+      {
+        "claim_id": "C6",
+        "evidence_index": 2,
+        "pdf_page": 12,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "semantic_source_check": "模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。"
+      },
+      {
+        "claim_id": "C6",
+        "evidence_index": 3,
+        "pdf_page": 6,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "semantic_source_check": "模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。"
+      },
+      {
+        "claim_id": "C7",
+        "evidence_index": 1,
+        "pdf_page": 8,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "semantic_source_check": "模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。"
+      },
+      {
+        "claim_id": "C8",
+        "evidence_index": 1,
+        "pdf_page": 8,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "semantic_source_check": "模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。"
+      },
+      {
+        "claim_id": "C9",
+        "evidence_index": 1,
+        "pdf_page": 15,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "semantic_source_check": "模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。"
+      },
+      {
+        "claim_id": "C9",
+        "evidence_index": 2,
+        "pdf_page": 16,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "semantic_source_check": "模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。"
+      },
+      {
+        "claim_id": "C10",
+        "evidence_index": 1,
+        "pdf_page": 13,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "semantic_source_check": "模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。"
+      },
+      {
+        "claim_id": "C10",
+        "evidence_index": 2,
+        "pdf_page": 3,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "semantic_source_check": "模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。"
+      },
+      {
+        "claim_id": "C11",
+        "evidence_index": 1,
+        "pdf_page": 7,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "semantic_source_check": "模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。"
+      }
+    ],
+    "model_findings": [
+      {
+        "claim_id": null,
+        "issue": "实际为arXiv:2403.09723v1，2024-03-12；16页含两页Supplementary Materials。",
+        "suggested_correction": "完整覆盖并保留预印本身份。",
+        "pdf_page": 1,
+        "resolved": true
+      },
+      {
+        "claim_id": "C5",
+        "issue": "纹理准确率Figure2F为79±6%，正文为81%；±类型未定义。",
+        "suggested_correction": "同时保留两种报告，不能合并成已确认数字。",
+        "pdf_page": 6,
+        "resolved": false
+      },
+      {
+        "claim_id": "C6",
+        "issue": "Results称F2到57 Hz；Methods称F1/F2均到54 Hz并以27组合定义数据。",
+        "suggested_correction": "保留明确Methods样本/划分及内部差异，人工核对代码与图S1。",
+        "pdf_page": 12,
+        "resolved": false
+      },
+      {
+        "claim_id": "C4",
+        "issue": "正文/图注关于Hucktowel主峰80与160 Hz的表述不同，且CCO本征/响应频率不应混用。",
+        "suggested_correction": "只提取频谱相关与倍频歧义，不指定唯一基频。",
+        "pdf_page": 7,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "低资源论述不包含完整读出成本；功率依据引用单事件范围而非本文测量。",
+        "suggested_correction": "区分核心计数、模型活动与硅能耗，CMOS验证延后。",
+        "pdf_page": 8,
+        "resolved": true
+      },
+      {
+        "claim_id": "C10",
+        "issue": "Models若干频率/相位近似式存在与前文互补TDE关系不一致的记号，Fig1势景由虚拟力数值构造。",
+        "suggested_correction": "不补写严谨动力学定理；数学一致性需原公式/代码人工审查。",
+        "pdf_page": 10,
+        "resolved": false
+      },
+      {
+        "claim_id": null,
+        "issue": "原生物分类数据划分未明，Figure3E表信息未完整提取，图像均未见。",
+        "suggested_correction": "准确数值和泛化质量保持未决，非科学复验。",
+        "pdf_page": 6,
+        "resolved": false
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T07:12:19.054Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "5eda952fb184f696cecee571682886ccbdbfbd65ee38faa889ef2baba2ee77e8",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

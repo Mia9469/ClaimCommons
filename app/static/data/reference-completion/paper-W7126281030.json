@@ -1,0 +1,1336 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "preprint",
+  "paper": {
+    "title": "Can Local Learning Match Self-Supervised Backpropagation?",
+    "authors": [
+      "Wu S. Zihan",
+      "Ariane Delrocq",
+      "Wulfram Gerstner",
+      "Guillaume Bellec"
+    ],
+    "doi": null,
+    "publication_year": 2026,
+    "venue": "arXiv (Cornell University)",
+    "url": "https://arxiv.org/pdf/2601.21683"
+  },
+  "source": {
+    "filename": "paper-W7126281030--Can-Local-Learning-Match-Self-Supervised-Backpropagation.pdf",
+    "sha256": "5421c1fc0fde350c18758abd3252d0e724d8bb295e321e2c73d4fd521368f8b4",
+    "source_url": "https://arxiv.org/pdf/2601.21683",
+    "pdf_page_count": 22
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22
+    ],
+    "results_sections_seen": [
+      "1–2 Introduction/local-SSL formalism",
+      "3.1 Exact theory/controls",
+      "3.2 DFB/corollary/theorem/oracle",
+      "3.3 Spatial convnet existence and empirical alignment",
+      "4 Table2/ablation/BP comparisons",
+      "5 Table3 resource estimate/biological interpretation",
+      "AppendixA Algorithms1–3",
+      "AppendixB full proofs",
+      "AppendixC architecture/pooling/dataset/training details",
+      "AppendixD PC/DFA negative controls/TablesA4–A5",
+      "AppendixE rank/training-time controls/FigsA1–A2;References"
+    ],
+    "missing_material": [
+      "图像像素未读取",
+      "外部训练代码/模型/原始seed结果未提供或未执行"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "完整读取22页arXiv2601.21683v2 2Jun2026，封面注明accepted ICML2026；不假作后续版本。",
+      "全部理论条件、dataset/seed、appendix controls及negative结果已对照，图像像素未读取。",
+      "n区分input batches、model seeds及fixed image datasets；4seed CI与ImageNet无CI分别记录。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "作者用layerwise contrastive scores与trainable/fixed投影 B 统一 CLAPP、FF-like、PhyLL、SCFF 的局部损失表示，并在层间stop gradients。",
+      "role": "result",
+      "source_pages": [
+        3
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "Theorem3.1 证明理想deep linear、square orthonormal weights条件下，局部与global BP-SSL在同一weight evaluation点的更新相等，附录给出可分batch损失扩展。",
+      "role": "result",
+      "source_pages": [
+        4
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "作者未将精确相等定理扩展到 FF 所需的layer-activity normalization，也明确不适用于一般非线性网络。",
+      "role": "interpretation",
+      "source_pages": [
+        4
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "六层128-unit数值检验中，理想条件的local/global gradient cosine达到1；去除orthogonality/linearity或B可训练条件，以及降低B rank会降低alignment，早层尤其明显。",
+      "role": "result",
+      "source_pages": [
+        4
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "Theorem3.3 在batch=1、linear f、shrinking semi-orthonormal deep linear网络及最优投影条件下，DFB使相对global gradient的squared Frobenius error不大于普通layer-local reference。",
+      "role": "result",
+      "source_pages": [
+        5
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "shrinking-width linear网络以及MNIST ReLU MLP模拟中，trainable top-layer DFB 提高gradient cosine；固定random B的对照表现较弱。",
+      "role": "result",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "Proposition3.5 对无nonlinearity/max-pooling的linear convnet，在patch size1且B允许全空间linear operator时构造与BP等梯度的投影；全局pooling则存在无法匹配的情形。",
+      "role": "result",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "local feedback增加2D spatial dependence在linear convnet和STL-10 VGG中提高gradient alignment，DFB进一步提高；不同训练阶段的对照保持该趋势。",
+      "role": "result",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "文中BP-dependent oracle直接优化B使activation gradient接近global BP，用于比较局部DFB的剩余差距，而不是一个无需BP的可实施局部算法。",
+      "role": "interpretation",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "CLAPP++基线先加入SimCLR-style augmentations与多层concat linear readout，再加入spatial B、DFB或二者之和；比较改进不能全部归于理论反馈因素。",
+      "role": "result",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "移除spatial dependence的CLAPP++基线在CIFAR/STL/Tiny/ImageNet为73.21/75.10/28.18/38.31%，加spatial后为80.51/78.66/36.63/42.55%，对应主要性能增益。",
+      "role": "result",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "DFB变体在四表列任务有小幅提升，但local＋DFB双损失并非处处最好：ImageNet双损失42.49%低于DFB44.16%。",
+      "role": "result",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "局部变体在较小benchmarks接近所用BP baselines，但不是已做等价检验：STL最佳local79.62%与BP-CLAPP++80.36%/BP-InfoNCE81.97%仍不同；ImageNet最佳local44.16%低于48.52%/55.19%。",
+      "role": "result",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "作者naive iPC/DFA SSL实现低于所用BP/CLAPP，但iPC supervised CIFAR接近BP；低SSL准确率不等于没有任何有用表征。",
+      "role": "result",
+      "source_pages": [
+        21
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "作者估计理想逐层更新/删除activations可省约38%–60% activation-storage VRAM；Table3给出batch256的A100 iteration成本，但整轮benchmark训练实际用stop-gradient实现。",
+      "role": "interpretation",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "作者把CLAPP++的prediction-modulated Hebbian更新和DFB解释为树突/neuromodulatory机制的计算候选，但本篇没有生物实验验证这些具体规则。",
+      "role": "hypothesis",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "相关Hebbian/SSL/塑性史、现有neurohardware和normative背景已评估。",
+      "role": "review_synthesis",
+      "source_pages": [
+        1,
+        2,
+        3,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "decision": "exclude",
+      "reason": "被引文献背景不算本篇新生物实验或自动cross-paper支持；超范围ResNet/残差扩展仍未来方向。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "作者用layerwise contrastive scores与trainable/fixed投影 B 统一 CLAPP、FF-like、PhyLL、SCFF 的局部损失表示，并在层间stop gradients。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "局部SSL共同形式化",
+          "design": "作者用layerwise contrastive scores与trainable/fixed投影 B 统一 CLAPP、FF-like、PhyLL、SCFF 的局部损失表示，并在层间stop gradients。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "模型损失/投影机制",
+          "sample_size_as_reported": null,
+          "uncertainty": "纯数学结果无生物样本量；未给该处完整实验repeat/CI，不能推统计等价。",
+          "assumptions": [
+            "原算法的reference、normalization、loss type不同；统一符号不证明全部生物可实现或完全相同算法。"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "3;Table1 p4;Algorithms p14",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者用layerwise contrastive scores与trainable/fixed投影 B 统一 CLAPP、FF-like、PhyLL、SCFF 的局部损失表示，并在层间stop gradients。",
+        "boundary": "原算法的reference、normalization、loss type不同；统一符号不证明全部生物可实现或完全相同算法。",
+        "negative_result": null,
+        "non_inference": "理论或image-model实验不是生物皮层验证；同一模型/数据的梯度与准确率指标不构成独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "哪些算法差异实际决定梯度与表示品质？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "Theorem3.1 证明理想deep linear、square orthonormal weights条件下，局部与global BP-SSL在同一weight evaluation点的更新相等，附录给出可分batch损失扩展。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "正交变换保持score和Frobenius regularizer、最优B对应证明",
+          "design": "Theorem3.1 证明理想deep linear、square orthonormal weights条件下，局部与global BP-SSL在同一weight evaluation点的更新相等，附录给出可分batch损失扩展。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "数学network/update，不是生物样本",
+          "sample_size_as_reported": null,
+          "uncertainty": "纯数学结果无生物样本量；未给该处完整实验repeat/CI，不能推统计等价。",
+          "assumptions": [
+            "f convex且decreasing；可训练B需正L2正则、无约束最优解、比W快并达到B*；或fixedI理想情形。相同forward/ref与top objective；不含实际normalization/nonlinearity或保证长期W保持orthogonal。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "Theorem3.1;B.1 pp14–15",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "Theorem3.1 证明理想deep linear、square orthonormal weights条件下，局部与global BP-SSL在同一weight evaluation点的更新相等，附录给出可分batch损失扩展。",
+        "boundary": "f convex且decreasing；可训练B需正L2正则、无约束最优解、比W快并达到B*；或fixedI理想情形。相同forward/ref与top objective；不含实际normalization/nonlinearity或保证长期W保持orthogonal。",
+        "negative_result": null,
+        "non_inference": "理论或image-model实验不是生物皮层验证；同一模型/数据的梯度与准确率指标不构成独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "有限速度B学习和偏离正交时误差能否定量控制？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "作者未将精确相等定理扩展到 FF 所需的layer-activity normalization，也明确不适用于一般非线性网络。",
+      "claim_type": "interpretation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "理论适用边界",
+          "design": "作者未将精确相等定理扩展到 FF 所需的layer-activity normalization，也明确不适用于一般非线性网络。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "算法类别/数学假设",
+          "sample_size_as_reported": null,
+          "uncertainty": "纯数学结果无生物样本量；未给该处完整实验repeat/CI，不能推统计等价。",
+          "assumptions": [
+            "这是未证明范围，不是实际FF所有实例都不可能匹配BP的定理。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "Theorem comments;Section3.1–3.2",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": null,
+        "boundary": "这是未证明范围，不是实际FF所有实例都不可能匹配BP的定理。",
+        "negative_result": null,
+        "non_inference": "理论或image-model实验不是生物皮层验证；同一模型/数据的梯度与准确率指标不构成独立复制。",
+        "unresolved": "normalization与nonlinear gates下精确或误差界尚未提供。",
+        "unresolved_attribution": "综述作者的限制、开放问题或源文审计"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "归一化导数改变哪些局部/全局对应条件？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "六层128-unit数值检验中，理想条件的local/global gradient cosine达到1；去除orthogonality/linearity或B可训练条件，以及降低B rank会降低alignment，早层尤其明显。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "条件剥除与低秩控制模拟",
+          "design": "六层128-unit数值检验中，理想条件的local/global gradient cosine达到1；去除orthogonality/linearity或B可训练条件，以及降低B rank会降低alignment，早层尤其明显。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "固定模型/MNIST input batches，非128个生物神经元",
+          "sample_size_as_reported": "1024 MNIST samples/32 batches；6layers×128人工units",
+          "uncertainty": "图2error bars为跨input batches的95%CI；非独立训练seed或动物CI。",
+          "assumptions": [
+            "数值条件检验不是证明所有drop-condition模型绝不能匹配，rank constraints改变projection search space。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "Fig2;FigA1 p22",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "六层128-unit数值检验中，理想条件的local/global gradient cosine达到1；去除orthogonality/linearity或B可训练条件，以及降低B rank会降低alignment，早层尤其明显。",
+        "boundary": "数值条件检验不是证明所有drop-condition模型绝不能匹配，rank constraints改变projection search space。",
+        "negative_result": "去掉定理条件后未保持原理想cosine=1的对齐。",
+        "non_inference": "理论或image-model实验不是生物皮层验证；同一模型/数据的梯度与准确率指标不构成独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "最小反馈rank与任务相关维度怎样决定对齐？"
+      ],
+      "shared_evidence_with": [
+        "C2"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "Theorem3.3 在batch=1、linear f、shrinking semi-orthonormal deep linear网络及最优投影条件下，DFB使相对global gradient的squared Frobenius error不大于普通layer-local reference。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "row-space/null-space分解与gradient error比较",
+          "design": "Theorem3.3 在batch=1、linear f、shrinking semi-orthonormal deep linear网络及最优投影条件下，DFB使相对global gradient的squared Frobenius error不大于普通layer-local reference。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "数学gradient matrices",
+          "sample_size_as_reported": null,
+          "uncertainty": "纯数学结果无生物样本量；未给该处完整实验repeat/CI，不能推统计等价。",
+          "assumptions": [
+            "不等式是Frobenius error而非任意batch或softplus/nonlinear情况下的cosine定理；corollary3.2的精确相等另需constant width orthonormal。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "Theorem3.3;B.2 pp15–17",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "Theorem3.3 在batch=1、linear f、shrinking semi-orthonormal deep linear网络及最优投影条件下，DFB使相对global gradient的squared Frobenius error不大于普通layer-local reference。",
+        "boundary": "不等式是Frobenius error而非任意batch或softplus/nonlinear情况下的cosine定理；corollary3.2的精确相等另需constant width orthonormal。",
+        "negative_result": null,
+        "non_inference": "理论或image-model实验不是生物皮层验证；同一模型/数据的梯度与准确率指标不构成独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "超出linear f/batch1时可否导出类似控制界？"
+      ],
+      "shared_evidence_with": [
+        "C2"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "shrinking-width linear网络以及MNIST ReLU MLP模拟中，trainable top-layer DFB 提高gradient cosine；固定random B的对照表现较弱。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "linear/softplus及ReLU训练后held-out gradient比较",
+          "design": "shrinking-width linear网络以及MNIST ReLU MLP模拟中，trainable top-layer DFB 提高gradient cosine；固定random B的对照表现较弱。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "模型及MNIST batches/test images",
+          "sample_size_as_reported": "linear widths128→4；ReLU6layers×512，20epochs，batch32；训练seed数未列",
+          "uncertainty": "纯数学结果无生物样本量；未给该处完整实验repeat/CI，不能推统计等价。",
+          "assumptions": [
+            "nonlinear/较大batch趋势属于数值证据，不能当Theorem3.3扩展；top features参与学习但不跨层backprop。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "Fig3;AppendixC p18",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "shrinking-width linear网络以及MNIST ReLU MLP模拟中，trainable top-layer DFB 提高gradient cosine；固定random B的对照表现较弱。",
+        "boundary": "nonlinear/较大batch趋势属于数值证据，不能当Theorem3.3扩展；top features参与学习但不跨层backprop。",
+        "negative_result": null,
+        "non_inference": "理论或image-model实验不是生物皮层验证；同一模型/数据的梯度与准确率指标不构成独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "DFB优势在不同任务和feedback延迟下是否保持？"
+      ],
+      "shared_evidence_with": [
+        "C5",
+        "C4"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "Proposition3.5 对无nonlinearity/max-pooling的linear convnet，在patch size1且B允许全空间linear operator时构造与BP等梯度的投影；全局pooling则存在无法匹配的情形。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "flattened convolution composition的存在性构造",
+          "design": "Proposition3.5 对无nonlinearity/max-pooling的linear convnet，在patch size1且B允许全空间linear operator时构造与BP等梯度的投影；全局pooling则存在无法匹配的情形。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "数学convnet/feedback operators",
+          "sample_size_as_reported": null,
+          "uncertainty": "纯数学结果无生物样本量；未给该处完整实验repeat/CI，不能推统计等价。",
+          "assumptions": [
+            "存在B不证明local loss训练必然找到该B；full spatial B可非常昂贵，实际局部pooling/relu/maxpool不满足全部条件。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "Proposition3.5;B.3 pp17–18",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "Proposition3.5 对无nonlinearity/max-pooling的linear convnet，在patch size1且B允许全空间linear operator时构造与BP等梯度的投影；全局pooling则存在无法匹配的情形。",
+        "boundary": "存在B不证明local loss训练必然找到该B；full spatial B可非常昂贵，实际局部pooling/relu/maxpool不满足全部条件。",
+        "negative_result": null,
+        "non_inference": "理论或image-model实验不是生物皮层验证；同一模型/数据的梯度与准确率指标不构成独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "有限空间rank和pooling下能保留多少BP结构？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "local feedback增加2D spatial dependence在linear convnet和STL-10 VGG中提高gradient alignment，DFB进一步提高；不同训练阶段的对照保持该趋势。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "spatial/DFB控制与held-out gradient comparisons",
+          "design": "local feedback增加2D spatial dependence在linear convnet和STL-10 VGG中提高gradient alignment，DFB进一步提高；不同训练阶段的对照保持该趋势。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "模型、input batches、训练阶段；不是独立复现",
+          "sample_size_as_reported": null,
+          "uncertainty": "纯数学结果无生物样本量；未给该处完整实验repeat/CI，不能推统计等价。",
+          "assumptions": [
+            "实际B增加参数和VRAM成本；Fig4C共同移除top spatial dependence以使last loss相同，测量100epochs/其他阶段。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "Fig4;FigA2 p22",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "local feedback增加2D spatial dependence在linear convnet和STL-10 VGG中提高gradient alignment，DFB进一步提高；不同训练阶段的对照保持该趋势。",
+        "boundary": "实际B增加参数和VRAM成本；Fig4C共同移除top spatial dependence以使last loss相同，测量100epochs/其他阶段。",
+        "negative_result": null,
+        "non_inference": "理论或image-model实验不是生物皮层验证；同一模型/数据的梯度与准确率指标不构成独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "匹配B参数数目而改变空间结构后增量是否仍在？"
+      ],
+      "shared_evidence_with": [
+        "C7",
+        "C6"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "文中BP-dependent oracle直接优化B使activation gradient接近global BP，用于比较局部DFB的剩余差距，而不是一个无需BP的可实施局部算法。",
+      "claim_type": "interpretation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "gradient-MSE oracle comparator",
+          "design": "文中BP-dependent oracle直接优化B使activation gradient接近global BP，用于比较局部DFB的剩余差距，而不是一个无需BP的可实施局部算法。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "受限投影类的数学/数值比较",
+          "sample_size_as_reported": null,
+          "uncertainty": "纯数学结果无生物样本量；未给该处完整实验repeat/CI，不能推统计等价。",
+          "assumptions": [
+            "近oracle不证明所有local rules的全局最优cosine上界或生物学习规则；该构造实际需要BP。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "Definition3.4;Figs3–4",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "文中BP-dependent oracle直接优化B使activation gradient接近global BP，用于比较局部DFB的剩余差距，而不是一个无需BP的可实施局部算法。",
+        "boundary": "近oracle不证明所有local rules的全局最优cosine上界或生物学习规则；该构造实际需要BP。",
+        "negative_result": null,
+        "non_inference": "理论或image-model实验不是生物皮层验证；同一模型/数据的梯度与准确率指标不构成独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "不访问BP的规则能否达到同样受限类中的对齐？"
+      ],
+      "shared_evidence_with": [
+        "C6",
+        "C8"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "CLAPP++基线先加入SimCLR-style augmentations与多层concat linear readout，再加入spatial B、DFB或二者之和；比较改进不能全部归于理论反馈因素。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "无标签SSL pretraining＋frozen encoder supervised linear probe",
+          "design": "CLAPP++基线先加入SimCLR-style augmentations与多层concat linear readout，再加入spatial B、DFB或二者之和；比较改进不能全部归于理论反馈因素。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "独立model runs与固定image datasets，不是生物n",
+          "sample_size_as_reported": null,
+          "uncertainty": "纯数学结果无生物样本量；未给该处完整实验repeat/CI，不能推统计等价。",
+          "assumptions": [
+            "supervised labels用于readout不是SSL pretrain；readout跨层，architecture为VGG-like，不是完整现代ResNet SSL。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "4 Empirical;C pp19–20",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "CLAPP++基线先加入SimCLR-style augmentations与多层concat linear readout，再加入spatial B、DFB或二者之和；比较改进不能全部归于理论反馈因素。",
+        "boundary": "supervised labels用于readout不是SSL pretrain；readout跨层，architecture为VGG-like，不是完整现代ResNet SSL。",
+        "negative_result": null,
+        "non_inference": "理论或image-model实验不是生物皮层验证；同一模型/数据的梯度与准确率指标不构成独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "representation-coding",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "共同augmentations和readout下反馈结构的独立收益多少？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "移除spatial dependence的CLAPP++基线在CIFAR/STL/Tiny/ImageNet为73.21/75.10/28.18/38.31%，加spatial后为80.51/78.66/36.63/42.55%，对应主要性能增益。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "相同VGG/SSL recipe的ablation linear-probe comparison",
+          "design": "移除spatial dependence的CLAPP++基线在CIFAR/STL/Tiny/ImageNet为73.21/75.10/28.18/38.31%，加spatial后为80.51/78.66/36.63/42.55%，对应主要性能增益。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "模型training seeds和测试集images",
+          "sample_size_as_reported": "有±条目来自4 seeds；无±ablation/ImageNet条目精确重复数未列",
+          "uncertainty": "纯数学结果无生物样本量；未给该处完整实验repeat/CI，不能推统计等价。",
+          "assumptions": [
+            "表中差值不是单独显著性检验；B参数量同时改变。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Table2",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "移除spatial dependence的CLAPP++基线在CIFAR/STL/Tiny/ImageNet为73.21/75.10/28.18/38.31%，加spatial后为80.51/78.66/36.63/42.55%，对应主要性能增益。",
+        "boundary": "表中差值不是单独显著性检验；B参数量同时改变。",
+        "negative_result": null,
+        "non_inference": "理论或image-model实验不是生物皮层验证；同一模型/数据的梯度与准确率指标不构成独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "参数匹配和空间打乱控制下主要增益是否保持？"
+      ],
+      "shared_evidence_with": [
+        "C10",
+        "C8"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "DFB变体在四表列任务有小幅提升，但local＋DFB双损失并非处处最好：ImageNet双损失42.49%低于DFB44.16%。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "local-loss variants linear probe比较",
+          "design": "DFB变体在四表列任务有小幅提升，但local＋DFB双损失并非处处最好：ImageNet双损失42.49%低于DFB44.16%。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "模型runs/固定datasets",
+          "sample_size_as_reported": null,
+          "uncertainty": "纯数学结果无生物样本量；未给该处完整实验repeat/CI，不能推统计等价。",
+          "assumptions": [
+            "CIFAR/STL/Tiny双损失为81.18/79.62/37.78%；ImageNet未给CI，不判显著性；不能声明增加反馈总有单调收益。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Table2/4 Empirical",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "DFB变体在四表列任务有小幅提升，但local＋DFB双损失并非处处最好：ImageNet双损失42.49%低于DFB44.16%。",
+        "boundary": "CIFAR/STL/Tiny双损失为81.18/79.62/37.78%；ImageNet未给CI，不判显著性；不能声明增加反馈总有单调收益。",
+        "negative_result": "在ImageNet双损失未保持相对DFB的最好表现。",
+        "non_inference": "理论或image-model实验不是生物皮层验证；同一模型/数据的梯度与准确率指标不构成独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "深层任务中loss竞争为何改变反馈收益？"
+      ],
+      "shared_evidence_with": [
+        "C11",
+        "C10"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C13",
+      "statement": "局部变体在较小benchmarks接近所用BP baselines，但不是已做等价检验：STL最佳local79.62%与BP-CLAPP++80.36%/BP-InfoNCE81.97%仍不同；ImageNet最佳local44.16%低于48.52%/55.19%。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "同VGG下local与end-to-end SSL比较",
+          "design": "局部变体在较小benchmarks接近所用BP baselines，但不是已做等价检验：STL最佳local79.62%与BP-CLAPP++80.36%/BP-InfoNCE81.97%仍不同；ImageNet最佳local44.16%低于48.52%/55.19%。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "模型training runs/linear probe tests",
+          "sample_size_as_reported": "CIFAR/STL/Tiny有±结果为4seeds/95%CI；ImageNet无CI",
+          "uncertainty": "纯数学结果无生物样本量；未给该处完整实验repeat/CI，不能推统计等价。",
+          "assumptions": [
+            "BP-InfoNCE是linear head/VGG基线，作者明确非global SSL SOTA；CIFAR与Tiny closeness不证明全部模型无gap。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Table2;BP performance discussion",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "局部变体在较小benchmarks接近所用BP baselines，但不是已做等价检验：STL最佳local79.62%与BP-CLAPP++80.36%/BP-InfoNCE81.97%仍不同；ImageNet最佳local44.16%低于48.52%/55.19%。",
+        "boundary": "BP-InfoNCE是linear head/VGG基线，作者明确非global SSL SOTA；CIFAR与Tiny closeness不证明全部模型无gap。",
+        "negative_result": "ImageNet差距仍明显存在于所报数值；STL并未数值相等。",
+        "non_inference": "理论或image-model实验不是生物皮层验证；同一模型/数据的梯度与准确率指标不构成独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "更强global baselines与残差网络上local规则能缩小多少差距？"
+      ],
+      "shared_evidence_with": [
+        "C12",
+        "C11"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C14",
+      "statement": "作者naive iPC/DFA SSL实现低于所用BP/CLAPP，但iPC supervised CIFAR接近BP；低SSL准确率不等于没有任何有用表征。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "选定PC/DFA实现与有限hyperparameter search",
+          "design": "作者naive iPC/DFA SSL实现低于所用BP/CLAPP，但iPC supervised CIFAR接近BP；低SSL准确率不等于没有任何有用表征。",
+          "comparator": "PC/BP同supervised或CLAPP/LPL objectives",
+          "measure": null,
+          "unit_of_analysis": "模型runs及datasets",
+          "sample_size_as_reported": null,
+          "uncertainty": "A4 supervised72.41/71.92；CLAPP BP/PC65.68/45.62(CIFAR),78.36/36.75(STL)；LPL73.65/47.68,70.29/51.21；Table2 PC-CIFAR46.52与A4不一致。",
+          "assumptions": [
+            "PC使用指定iPC及T={1,9,17},ηh={.01,.1,.5}搜索；不证明所有predictive coding/SSL原则上失败。test-epoch选择best亦需注意。"
+          ],
+          "source_locator": {
+            "pdf_page": 21,
+            "section": "AppendixD;TableA4;Table2 p8",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者naive iPC/DFA SSL实现低于所用BP/CLAPP，但iPC supervised CIFAR接近BP；低SSL准确率不等于没有任何有用表征。",
+        "boundary": "PC使用指定iPC及T={1,9,17},ηh={.01,.1,.5}搜索；不证明所有predictive coding/SSL原则上失败。test-epoch选择best亦需注意。",
+        "negative_result": "所测试PC/DFA未达到其BP/CLAPP SSL对照水平。",
+        "non_inference": "理论或image-model实验不是生物皮层验证；同一模型/数据的梯度与准确率指标不构成独立复制。",
+        "unresolved": "PC-CIFAR两处数值及具体setup对应未说明。",
+        "unresolved_attribution": "综述作者的限制、开放问题或源文审计"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "更充分活动优化和反馈机制能否改变SSL的差距？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C15",
+      "statement": "作者估计理想逐层更新/删除activations可省约38%–60% activation-storage VRAM；Table3给出batch256的A100 iteration成本，但整轮benchmark训练实际用stop-gradient实现。",
+      "claim_type": "interpretation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "ideal algorithms activation tensor accounting＋iteration benchmark",
+          "design": "作者估计理想逐层更新/删除activations可省约38%–60% activation-storage VRAM；Table3给出batch256的A100 iteration成本，但整轮benchmark训练实际用stop-gradient实现。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "algorithm configurations/hardware iteration，非完整训练峰内存实测",
+          "sample_size_as_reported": null,
+          "uncertainty": "纯数学结果无生物样本量；未给该处完整实验repeat/CI，不能推统计等价。",
+          "assumptions": [
+            "STL estimated5.47→3.38GB、ImageNet11.10→4.60GB仅activation storage；不自动含B、optimizer、decoder/全部内存；作者未用ideal implementation完成整个训练。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "Table3;AppendixA p14",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者估计理想逐层更新/删除activations可省约38%–60% activation-storage VRAM；Table3给出batch256的A100 iteration成本，但整轮benchmark训练实际用stop-gradient实现。",
+        "boundary": "STL estimated5.47→3.38GB、ImageNet11.10→4.60GB仅activation storage；不自动含B、optimizer、decoder/全部内存；作者未用ideal implementation完成整个训练。",
+        "negative_result": null,
+        "non_inference": "理论或image-model实验不是生物皮层验证；同一模型/数据的梯度与准确率指标不构成独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "完整训练及空间B的全部内存成本能否兑现估计？"
+      ],
+      "shared_evidence_with": [
+        "C10",
+        "C11"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C16",
+      "statement": "作者把CLAPP++的prediction-modulated Hebbian更新和DFB解释为树突/neuromodulatory机制的计算候选，但本篇没有生物实验验证这些具体规则。",
+      "claim_type": "hypothesis",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "模型更新式与被引生理的解释性对应",
+          "design": "作者把CLAPP++的prediction-modulated Hebbian更新和DFB解释为树突/neuromodulatory机制的计算候选，但本篇没有生物实验验证这些具体规则。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "算法/既有塑性文献，不是新神经元实验",
+          "sample_size_as_reported": null,
+          "uncertainty": "纯数学结果无生物样本量；未给该处完整实验repeat/CI，不能推统计等价。",
+          "assumptions": [
+            "层内gradient/local prediction仍需可用signals与plasticity规则；2D feedback和global scalar的存在性及功能不能由image accuracy确认。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "Biological plausibility",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者把CLAPP++的prediction-modulated Hebbian更新和DFB解释为树突/neuromodulatory机制的计算候选，但本篇没有生物实验验证这些具体规则。",
+        "boundary": "层内gradient/local prediction仍需可用signals与plasticity规则；2D feedback和global scalar的存在性及功能不能由image accuracy确认。",
+        "negative_result": null,
+        "non_inference": "理论或image-model实验不是生物皮层验证；同一模型/数据的梯度与准确率指标不构成独立复制。",
+        "unresolved": "actual cortical circuits如何实现投影学习、gating和时相尚待验证。",
+        "unresolved_attribution": "综述作者的限制、开放问题或源文审计"
+      },
+      "broad_directions": [
+        "learning-memory",
+        "representation-coding",
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "细胞/树突可测plasticity是否符合该输入依赖及反馈学习预测？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C6",
+        "C8"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "该v2工作通过严格条件下局部/global SSL梯度对应指导CLAPP++空间反馈及DFB。实际nonlinear VGG中alignment/linear-probe性能改善，但STL仍有数值差距，ImageNet未匹配global baseline；归一化/非线性理论未扩展，PC比较限具体实现，VRAM为ideal activation估计。无生物validation或普遍local learning最优性证明。",
+  "shared_evidence": [
+    {
+      "claim_id": "C3",
+      "with": [
+        "C1",
+        "C2"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C2"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C2"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C5",
+        "C4"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C1",
+        "C2"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C7",
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C6",
+        "C8"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "with": [
+        "C10",
+        "C8"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "with": [
+        "C11",
+        "C10"
+      ]
+    },
+    {
+      "claim_id": "C13",
+      "with": [
+        "C12",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C15",
+      "with": [
+        "C10",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C16",
+      "with": [
+        "C1",
+        "C6",
+        "C8"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": "C2",
+        "pdf_page": 4,
+        "issue": "标题/摘要易将理想线性相等泛化至实际FF-normalization及nonlinear训练。",
+        "suggested_correction": "保留orthogonal/fixed optimalB/no-normalization共同条件与当前evaluation点范围。",
+        "resolved": true
+      },
+      {
+        "claim_id": "C5",
+        "pdf_page": 5,
+        "issue": "Theorem3.3是batch1/linear f的Frobenius inequality，不是所有cosine或nonlinear定理。",
+        "suggested_correction": "softplus、ReLU和larger batch仅数值证据。",
+        "resolved": true
+      },
+      {
+        "claim_id": "C7",
+        "pdf_page": 18,
+        "issue": "存在full spatial B与实际局部学习收敛、nonlinear实际B不是同一主张；证明中某中间score标为z̃l BLc̃l有维度/下标呈现疑问。",
+        "suggested_correction": "依据operator构造保留存在性范围，原下标问题待核对。",
+        "resolved": false
+      },
+      {
+        "claim_id": "C13",
+        "pdf_page": 8,
+        "issue": "作者称前三任务gap disappeared，但STL表值仍不同且未做等价检验；global基线非SOTA。",
+        "suggested_correction": "仅接近/具体值，不写已证统计等价或全部SSL SOTA达到。",
+        "resolved": true
+      },
+      {
+        "claim_id": "C12",
+        "pdf_page": 8,
+        "issue": "both损失在ImageNet不优于DFB；所有local变体都超SOTA亦不逐项成立（CIFAR80.51<SCFF80.60）。",
+        "suggested_correction": "保留最佳与各变体/各任务范围。",
+        "resolved": true
+      },
+      {
+        "claim_id": "C14",
+        "pdf_page": 21,
+        "issue": "PC-CIFAR Table2 46.52 vsA4 45.62；poor performance被夸为无useful representation。",
+        "suggested_correction": "保留数值冲突与实现限定，不造统一值或全类失败定理。",
+        "resolved": false
+      },
+      {
+        "claim_id": "C15",
+        "pdf_page": 9,
+        "issue": "VRAM是ideal activation估计，whole training未执行ideal algorithm。",
+        "suggested_correction": "不是完整系统已兑现VRAM/energy收益。",
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "pdf_page": 1,
+        "issue": "indexed first-author Wu Zihan与source Wu S. Zihan有差别。",
+        "suggested_correction": "仅输出按source补middle initial；保留v2/accepted ICML版身份。",
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T12:37:00.064425Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "5421c1fc0fde350c18758abd3252d0e724d8bb295e321e2c73d4fd521368f8b4",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

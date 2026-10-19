@@ -1,0 +1,1321 @@
+{
+  "document_type": "research_article",
+  "coverage": {
+    "results_sections_seen": [
+      "2.1 Characteristics",
+      "2.2 Mechanisms",
+      "2.3 Tunability",
+      "2.4 Reproducibility",
+      "2.5 Sensory processing",
+      "3 Conclusion",
+      "4.1–4.5 Methods",
+      "Figures 1–8; References; Supporting Information notice"
+    ],
+    "missing_material": [
+      "全部图像像素。",
+      "adma74813-sup-0001-SuppMat.pdf及S1–S23等引用材料。",
+      "可向作者申请但未提供的原始数据。"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "19页发表版，标题作者DOI与导入记录一致。",
+      "第16页2026-09-02更正仅更新致谢，不是科学结论更正。",
+      "器件实测与模拟神经元/突触/事件相机输入分开。",
+      "τeff为剩余衰减幅度1%时间。"
+    ],
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "堆叠、电学、面积、变异与耐久",
+      "role": "result",
+      "source_pages": [
+        2,
+        3,
+        4,
+        14,
+        15
+      ],
+      "decision": "include",
+      "reason": "按独立测量维度拆分。"
+    },
+    {
+      "summary": "输运、保护层与离子模型",
+      "role": "interpretation",
+      "source_pages": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "decision": "include",
+      "reason": "机制仅为对照与模型支持，补充细节缺失。"
+    },
+    {
+      "summary": "SET/READ/厚度/电极调节",
+      "role": "result/interpretation",
+      "source_pages": [
+        8,
+        9,
+        10
+      ],
+      "decision": "include",
+      "reason": "独立干预和机制解释分开。"
+    },
+    {
+      "summary": "周期、跨器件及多状态重复性",
+      "role": "result",
+      "source_pages": [
+        10
+      ],
+      "decision": "include",
+      "reason": "正确区分周期、分段和器件单位。"
+    },
+    {
+      "summary": "TDE、移动条、时间窗和整合取舍",
+      "role": "result/interpretation",
+      "source_pages": [
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "decision": "include",
+      "reason": "保留硬件与模拟边界。"
+    },
+    {
+      "summary": "完整CMOS集成、其他感觉模态与最宽范围排名",
+      "role": "未来方案",
+      "source_pages": [
+        11,
+        14
+      ],
+      "decision": "defer",
+      "reason": "尚无完整集成或对应模态测量，比较补表未供。"
+    },
+    {
+      "summary": "致谢更正",
+      "role": "correction",
+      "source_pages": [
+        16
+      ],
+      "decision": "exclude",
+      "reason": "无科学命题修订。"
+    },
+    {
+      "summary": "既有模型、引用TDE及他文结果",
+      "role": "背景",
+      "source_pages": [
+        1,
+        2,
+        11,
+        17,
+        18,
+        19
+      ],
+      "decision": "exclude",
+      "reason": "不作本文新结果。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "本文制备Pt/α-STO/TaOₓ/Ta挥发性器件，采用5 nm非晶SrTiO₃、约3.5 nm原生TaOₓ、40 nm Ta及30 nm Pt；工艺温度不超过400 °C，符合作者采用的CMOS后端温度约束。",
+      "claim_type": "device_fabrication",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "制备和作者报告的结构表征",
+          "design": "PLD、溅射和蒸发",
+          "comparator": null,
+          "measure": "层厚和温度",
+          "unit_of_analysis": "器件堆叠",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 2,
+            "section": "2.1；4.1见页14",
+            "figure": "Figure 1",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "制备后端温度兼容堆叠。",
+        "boundary": "显微图仅有图注，未读像素。",
+        "negative_result": null,
+        "non_inference": "温度兼容不等于已完成CMOS整合。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "非晶STO怎样满足后端温度要求？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "本文Pt/5 nm α-STO/TaOₓ/Ta器件在所测电压扫描中无需forming或外加电流限流，具有渐进式八字形开关、ON/OFF比超过10³和整流比超过10⁴；10 ms SET幅值由3.5至4 V时，脉冲后电流出现明显开启阈值。",
+      "claim_type": "measured_device_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "DC和脉冲测量",
+          "design": "0→3→−2→0 V扫描；2–4 V/10 ms SET、1.2 V READ",
+          "comparator": "不同SET幅度",
+          "measure": "开关比、整流比及阈值",
+          "unit_of_analysis": "器件偏置条件",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "2.1",
+            "figure": "Figure 1d,g–i",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "实现渐进且自限流挥发开关。",
+        "boundary": "阈值依赖协议。",
+        "negative_result": null,
+        "non_inference": "未证明完整被动阵列的串扰或能耗优势。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "器件的开关阈值和整流特征是什么？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "本文50个50×50 µm²器件在1.4 V下的LRS/HRS变异系数分别为0.28/0.16；不同面积焊盘与单交叉器件的电流呈面积依赖，支持面积相关开关描述。",
+      "claim_type": "measured_device_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "CDF与面积扫描",
+          "design": "焊盘10×10至200×200 µm²、交叉器件5×5至10×10 µm²",
+          "comparator": "不同面积与状态",
+          "measure": "变异系数、面积依赖",
+          "unit_of_analysis": "器件",
+          "sample_size_as_reported": "CDF为50器件；每面积器件数未报",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "2.1",
+            "figure": "Figure 1e–f",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "跨器件电流有可测离散，且依赖面积。",
+        "boundary": "同芯片/所述尺寸范围。",
+        "negative_result": null,
+        "non_inference": "不能单独排除所有局部不均匀机制或推断跨批良率。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "面积相关器件的响应离散是多少？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "本文器件在4 V/10 ms SET和−0.9 V/6 ms主动RESET、每次1.1 V立即读出条件下，完成超过1.2×10⁶循环且被作者描述为退化很小；这不是相同数量的完整自然衰减循环。",
+      "claim_type": "measured_endurance",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "主动复位耐久测试",
+          "design": "SET/RESET交替",
+          "comparator": "循环过程",
+          "measure": "循环数及电流水平",
+          "unit_of_analysis": "器件循环轨迹",
+          "sample_size_as_reported": ">1.2×10⁶循环；独立器件数未报",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "2.1；解释见页4",
+            "figure": "Figure 1j",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "主动复位条件下长循环运行。",
+        "boundary": "完全自然衰减2000循环仅引用S7。",
+        "negative_result": null,
+        "non_inference": "循环数不是独立器件数，也不代表长期环境可靠性。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "主动RESET寿命与自然衰减寿命有何区别？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "supplement_not_supplied"
+        ]
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "本文结合取消Pt/STO势垒的堆叠对照、Ta₂O₅层对照和温变I–V拟合，将小至中等偏压下的电流主导机制归为Pt/α-STO肖特基势垒隧穿，而非STO体或TaOₓ限流。",
+      "claim_type": "transport_interpretation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "堆叠对照与输运拟合的正文报告",
+          "design": "Pt/Ta/α-STO/TaOₓ/Ta、Ta₂O₅对照；Tsu–Esaki模型",
+          "comparator": "完整原堆叠",
+          "measure": "漏电、开关和I–V拟合",
+          "unit_of_analysis": "器件对照与模型",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "2.2.1；温变分析见页6",
+            "figure": "Figure 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "支持界面势垒主导解释。",
+        "boundary": "S9–S13曲线和参数未提供。",
+        "negative_result": "取消Pt/STO势垒的对照在正文中被报告为高漏电且无开关。",
+        "non_inference": "不证明唯一机制或全部偏压范围。",
+        "unresolved": "拟合残差和参数辨识。",
+        "unresolved_attribution": "关键细节仅位于未提供补充材料。"
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "哪个界面主导器件电流？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "supplement_not_supplied"
+        ]
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "本文去除原TaOₓ保护界面的Nb:STO底电极堆叠需forming并呈丝状开关，作者据对照和能带模型解释TaOₓ限制局部电场并支持自限流。",
+      "claim_type": "stack_mechanism_interpretation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "堆叠对照和泊松模型",
+          "design": "Pt/α-STO/Nb:STO",
+          "comparator": "Pt/α-STO/TaOₓ/Ta",
+          "measure": "forming和自限流",
+          "unit_of_analysis": "堆叠",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "2.2.1",
+            "figure": "Figure 2c",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "支持TaOₓ参与稳定开关。",
+        "boundary": "换底电极同时改变多项界面条件；S11未供。",
+        "negative_result": null,
+        "non_inference": "不能当作无混杂单变量因果证明。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "TaOₓ如何影响forming和自限流？"
+      ],
+      "shared_evidence_with": [
+        "C5"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "supplement_not_supplied"
+        ]
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "本文在3.7 V/10 ms SET后测量300–335 K衰减，逆拉普拉斯时间常数谱为随温度移动的宽峰；谱峰Arrhenius拟合给出表观活化能0.13 eV，不直接等于固有氧离子迁移势垒。",
+      "claim_type": "measured_kinetics",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "温变衰减、逆变换及拟合",
+          "design": "300–335 K、固定SET",
+          "comparator": "不同温度",
+          "measure": "谱峰和表观能垒",
+          "unit_of_analysis": "温度条件的衰减轨迹",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "2.2.2",
+            "figure": "Figure 3a–c",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "得到温变电流衰减和表观0.13 eV。",
+        "boundary": "未给CI，S15–S16分析细节未供。",
+        "negative_result": null,
+        "non_inference": "小表观能垒不能单独决定电子或离子机制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "表观衰减能垒是否等于离子迁移能垒？"
+      ],
+      "shared_evidence_with": [
+        "C8"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "supplement_not_supplied"
+        ]
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "本文采用已有Pt/STO三耦合区域离子模型匹配300 K衰减，并将阈值、温度、读脉冲和电极变化解释为氧离子再结合/回扩散共同作用；区室空位浓度和较高迁移势垒是模型变量，不是本器件直接成像结果。",
+      "claim_type": "physical_model_interpretation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "引用模型应用和参数匹配",
+          "design": "R/S/T区域、初始浓度和势垒拟合",
+          "comparator": "实测300 K衰减",
+          "measure": "拟合电流与模型空位演化",
+          "unit_of_analysis": "同一模型拟合",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "2.2.2",
+            "figure": "Figure 3d–f",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "模型可解释所示动力学。",
+        "boundary": "模型假定TaOₓ贡献较小；S17未供。",
+        "negative_result": null,
+        "non_inference": "不能证明模型唯一或所有电子贡献为零。",
+        "unresolved": "独立迁移测量与参数辨识。",
+        "unresolved_attribution": "电学和模型支持而非直接观察，补充模型文件未供。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "耦合离子过程如何形成多时间尺度？"
+      ],
+      "shared_evidence_with": [
+        "C7",
+        "C9",
+        "C10",
+        "C11",
+        "C12"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "model_not_unique",
+          "supplement_not_supplied"
+        ]
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "本文5 nm α-STO器件在1.2 V读出下，改变SET幅值4.1–4.5 V（5 ms）或宽度5–30 ms（4.2 V），使有效衰减时间跨32–59 ms；τeff定义为剩余衰减幅度降至1%的时间，而非单指数e折时间。",
+      "claim_type": "measured_tunability",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "SET脉冲扫描",
+          "design": "两组幅度/宽度干预",
+          "comparator": "不同SET",
+          "measure": "τeff",
+          "unit_of_analysis": "器件条件",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "2.3",
+            "figure": "Figure 4a–b见页9",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "SET调节短时窗口。",
+        "boundary": "依赖READ和1%定义。",
+        "negative_result": null,
+        "non_inference": "不能当作跨器件统计范围或标准单指数时间常数。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "SET参数如何调节衰减？"
+      ],
+      "shared_evidence_with": [
+        "C10"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "本文5 nm α-STO器件在4.2 V/20 ms SET后，增加1 ms读脉冲数（10至90）或读幅值（0.9–1.9 V）延长衰减，所述READ协议使τeff处于71–184 ms范围；读出不是无扰动观察。",
+      "claim_type": "measured_read_disturbance",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "READ扫描",
+          "design": "固定SET",
+          "comparator": "不同读出条件",
+          "measure": "电流和τeff",
+          "unit_of_analysis": "同器件协议",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "2.3",
+            "figure": "Figure 4c–d见页9",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "READ也改变动力学。",
+        "boundary": "电流幅值也随电压变化，S18归一化图未供。",
+        "negative_result": null,
+        "non_inference": "不能当作无READ的自然寿命。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "读操作怎样改变时间响应？"
+      ],
+      "shared_evidence_with": [
+        "C9"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "readout_affects_state"
+        ]
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "本文20 nm α-STO器件在1.2 V薄层协议之外采用1.8 V READ，扫描SET幅度3–7 V（50 ms）或6 V下宽度10–500 ms，单器件τeff跨193 ms–4.1 s，显示厚层设计可提供更长可用窗口。",
+      "claim_type": "measured_tunability",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "厚层器件SET扫描",
+          "design": "20 nm STO、1.8 V READ",
+          "comparator": "5 nm薄层实验但刺激/读出不匹配",
+          "measure": "τeff 193 ms–4.1 s",
+          "unit_of_analysis": "单器件条件",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "2.3",
+            "figure": "Figure 4e–f",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "厚层设计扩展时间窗口。",
+        "boundary": "厚度比较同时改变刺激和读出。",
+        "negative_result": null,
+        "non_inference": "不能把全部增长唯一归因于厚度。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "厚度设计如何扩展衰减时间？"
+      ],
+      "shared_evidence_with": [
+        "C9"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "本文正文报告Au顶电极的长衰减约40 s，以及1 nm Pt/30 nm Au组合电极的先快后慢衰减，并据此提出电极内氧迁移参与调节；对应原始曲线只在未提供补充材料中。",
+      "claim_type": "electrode_interpretation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "电极替换的正文报告",
+          "design": "Au及Pt/Au顶电极",
+          "comparator": "Pt顶电极",
+          "measure": "开启电压和衰减形态",
+          "unit_of_analysis": "电极条件",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "2.3；续页10",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "电极工程与衰减变化关联。",
+        "boundary": "缺S20及对应长衰减图。",
+        "negative_result": null,
+        "non_inference": "不能认定唯一氧迁移机制。",
+        "unresolved": "Au/Pt-Au原始曲线与层结构。",
+        "unresolved_attribution": "相关补充材料未提供。"
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "顶电极怎样调节挥发动力学？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "supplement_not_supplied"
+        ]
+      }
+    },
+    {
+      "id": "C13",
+      "statement": "本文单器件采用分段SET–READ重建true decay，展示65个重建周期、每周期15段，共975段，并报告约10个初始周期后稳定；这不同于65次连续无读扰衰减。",
+      "claim_type": "measured_reproducibility",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "分段重建",
+          "design": "每段重新SET、逐步增加延迟",
+          "comparator": "持续READ协议",
+          "measure": "重建衰减一致性",
+          "unit_of_analysis": "同器件重建周期",
+          "sample_size_as_reported": "65周期×15段=975段",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "2.4",
+            "figure": "Figure 5a",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所示轨迹周期一致。",
+        "boundary": "未给定量CV或CI；有初始调理。",
+        "negative_result": null,
+        "non_inference": "不能把975段视作独立器件或连续测量。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "怎样避免持续读扰评估重复性？"
+      ],
+      "shared_evidence_with": [
+        "C14"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "initial_conditioning"
+        ]
+      }
+    },
+    {
+      "id": "C14",
+      "statement": "本文45个同芯片器件在4.2 V/20 ms SET及分段true-decay协议下呈作者描述的紧密聚集衰减轨迹，支持该芯片内的器件一致性，但未给跨批或衰减时间CI。",
+      "claim_type": "measured_reproducibility",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "跨器件重建衰减",
+          "design": "同芯片固定SET",
+          "comparator": "不同器件",
+          "measure": "轨迹离散",
+          "unit_of_analysis": "器件",
+          "sample_size_as_reported": "45个同芯片器件",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "2.4",
+            "figure": "Figure 5b",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所测芯片内行为一致。",
+        "boundary": "仅特定芯片和刺激。",
+        "negative_result": null,
+        "non_inference": "不能推出量产批间稳定性。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "器件间衰减有多一致？"
+      ],
+      "shared_evidence_with": [
+        "C13"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C15",
+      "statement": "本文单器件在4.1 V SET、1–20 ms宽度、10 ms后1.2 V READ及主动RESET下，报告多个无重叠电流状态、每宽度100次；正文称16态/4 bit，图5c称17态并报告1700次，准确状态数未统一。",
+      "claim_type": "measured_multistate_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "固定延迟多状态循环",
+          "design": "RESET −0.9 V/6 ms",
+          "comparator": "不同SET宽度",
+          "measure": "10 ms读电流分离",
+          "unit_of_analysis": "单器件宽度条件",
+          "sample_size_as_reported": "每宽度100次；16/17态冲突，报告1700次",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "2.4",
+            "figure": "Figure 5c",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "固定延迟下多状态可区分。",
+        "boundary": "不是每态完整衰减曲线不重叠。",
+        "negative_result": null,
+        "non_inference": "不能当作非易失4 bit存储或全时间范围分辨。",
+        "unresolved": "16/17态数量与1700次构成。",
+        "unresolved_attribution": "正文与图注冲突。"
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "可分辨多少可调衰减状态？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "source_internal_inconsistency"
+        ]
+      }
+    },
+    {
+      "id": "C16",
+      "statement": "本文memristive TDE以FAC写入和TRG读出实物器件，将实测电流送入模拟指数突触和LIF神经元；随机事件示例中，短FAC→TRG间隔产生更强模拟脉冲响应，实现硬件状态到模型发放的时间编码。",
+      "claim_type": "hybrid_device_simulation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "器件实测加模拟后级",
+          "design": "示例SET4.5 V/5 ms、READ1.3 V；模拟τTRG5 ms、τm50 ms、C1 pF、阈值25 mV",
+          "comparator": "不同事件间隔",
+          "measure": "实测电流和模拟发放",
+          "unit_of_analysis": "单器件输入序列",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "2.5；Methods 4.5见页15–16",
+            "figure": "Figure 7",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "实现时间差的混合编码。",
+        "boundary": "突触和LIF均模拟。",
+        "negative_result": null,
+        "non_inference": "不是完整物理TDE或生物神经元验证。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "器件如何把时间差映射成发放？"
+      ],
+      "shared_evidence_with": [
+        "C17",
+        "C18"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "hybrid_not_full_hardware"
+        ]
+      }
+    },
+    {
+      "id": "C17",
+      "statement": "本文模拟10×10像素传感器的十种条运动速度，以单器件顺序复用90个虚拟TDE位置，平均读电流随速度增加；八个同芯片100×100 µm²器件使用相同输入流时，实测电流驱动的模拟发放呈一致群体速度编码。",
+      "claim_type": "hybrid_motion_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "模拟事件输入与器件测量",
+          "design": "SET4.2 V/20 ms、READ1.4 V/20 ms",
+          "comparator": "十种速度与八器件",
+          "measure": "读电流和模拟脉冲数",
+          "unit_of_analysis": "器件×输入条件",
+          "sample_size_as_reported": "8同芯片器件；10速度；90虚拟位置",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "2.5；Methods 4.5见页16",
+            "figure": "Figure 8a–c",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "特定模拟视觉输入下编码速度。",
+        "boundary": "虚拟位置顺序复用，非90物理单位并行。",
+        "negative_result": null,
+        "non_inference": "不推断真实相机光流精度、能耗或跨芯片泛化。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "混合TDE能否编码移动边缘速度？"
+      ],
+      "shared_evidence_with": [
+        "C16"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "synthetic_sensor_input",
+          "hybrid_not_full_hardware"
+        ]
+      }
+    },
+    {
+      "id": "C18",
+      "statement": "本文对同一器件施加10 s、FAC–TRG间隔0–200 ms的同一序列，改变SET脉冲宽度后，较长脉冲使模拟LIF对更长间隔仍响应，且短间隔的脉冲更多，说明输入可以调节混合TDE时间窗。",
+      "claim_type": "hybrid_tunability",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "同输入、不同FAC宽度",
+          "design": "SET4 V、READ1.3 V；模拟τTRG2 ms、τm50 ms、C1 pF、阈值50 mV",
+          "comparator": "三种宽度条件",
+          "measure": "模拟脉冲和响应时间窗",
+          "unit_of_analysis": "同器件序列条件",
+          "sample_size_as_reported": "同序列三次；不是独立器件重复",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 14,
+            "section": "2.5；4.5见页16",
+            "figure": "Figure 8d",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "可调时间选择性。",
+        "boundary": "序列同步补偿长脉冲；S22–S23未供。",
+        "negative_result": null,
+        "non_inference": "不推断听觉/嗅觉已测或完整接口时序表现。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "FAC怎样调节时间窗口？"
+      ],
+      "shared_evidence_with": [
+        "C16",
+        "C9"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "hybrid_not_full_hardware",
+          "supplement_not_supplied"
+        ]
+      }
+    },
+    {
+      "id": "C19",
+      "statement": "本文解释，当FAC平均间隔短于衰减时间，TRG采到的状态包含多个近期FAC而非只对应最近事件；长衰减有利稀疏或慢事件，短衰减更适合高事件率下时间区分。",
+      "claim_type": "temporal_tradeoff_interpretation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "操作机制解释",
+          "design": "历史累积状态",
+          "comparator": "长/短衰减窗口",
+          "measure": "整合和选择性",
+          "unit_of_analysis": "模型操作条件",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 14,
+            "section": "2.5",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "指出时间整合与分辨取舍。",
+        "boundary": "未提供完整多事件误归属基准。",
+        "negative_result": null,
+        "non_inference": "不能把TRG响应归于唯一FAC。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "历史累积何时影响时间差归属？"
+      ],
+      "shared_evidence_with": [
+        "C16",
+        "C18"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "实测非晶STO挥发器件的电学、耐久、重复性和时间调节，并以器件电流驱动模拟后级演示TDE与模拟运动编码。读出影响状态，τeff不是e折时间。机制依赖模型及未供补充材料，多状态16/17数量需人工确认。",
+  "shared_evidence": [
+    {
+      "id": "SE1",
+      "claim_ids": [
+        "C5",
+        "C6",
+        "C7",
+        "C8"
+      ],
+      "source_pages": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "description": "同一界面/离子模型解释链，拟合不独立于匹配数据。",
+      "independence": "非独立复现"
+    },
+    {
+      "id": "SE2",
+      "claim_ids": [
+        "C9",
+        "C10",
+        "C11",
+        "C12"
+      ],
+      "source_pages": [
+        8,
+        9,
+        10
+      ],
+      "description": "不同调节协议；厚度比较也改变刺激和读出。",
+      "independence": "不同条件而非匹配复现"
+    },
+    {
+      "id": "SE3",
+      "claim_ids": [
+        "C16",
+        "C17",
+        "C18",
+        "C19"
+      ],
+      "source_pages": [
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "description": "同混合TDE和模拟LIF，虚拟位置不是独立器件。",
+      "independence": "同实现"
+    }
+  ],
+  "audit": {
+    "source_match_checks": [
+      {
+        "check": "identity/full_text",
+        "status": "completed",
+        "details": "19页文本、图注、方法与参考文献全覆盖。"
+      },
+      {
+        "check": "second_source_check",
+        "status": "completed",
+        "details": "回对τeff、循环单位、器件数、状态数冲突、模拟后级和补充缺口。"
+      }
+    ],
+    "model_findings": [
+      {
+        "claim_id": "C15",
+        "issue": "正文16态/4 bit与图注17态/1700次不一致。",
+        "pdf_page": 10,
+        "resolved": false,
+        "suggested_correction": "查看图和原始数据。"
+      },
+      {
+        "claim_id": "C8",
+        "issue": "离子模型不能提升为唯一机制。",
+        "pdf_page": 7,
+        "resolved": true,
+        "suggested_correction": "保留interpretation。"
+      },
+      {
+        "claim_id": "C17",
+        "issue": "90虚拟位置、模拟相机和模拟神经元不等于完整实物系统。",
+        "pdf_page": 11,
+        "resolved": true,
+        "suggested_correction": "标明混合演示。"
+      },
+      {
+        "claim_id": null,
+        "issue": "关键补充材料未提供。",
+        "pdf_page": 19,
+        "resolved": false,
+        "suggested_correction": "补齐后人工审查。"
+      }
+    ],
+    "needs_human_review": true
+  },
+  "format": "claim-commons-pdf-v1",
+  "paper": {
+    "title": "Volatile Memristive Devices With Tunable Temporal Dynamics For Event‐Based Sensing",
+    "authors": [
+      "Dimitrios Spithouris",
+      "Johannes Hellwig",
+      "Hugh Greatorex",
+      "Clemens Wittberg",
+      "Panagiotis Koutsogiannis",
+      "César Magén",
+      "Elisabetta Chicca",
+      "Regina Dittmann"
+    ],
+    "doi": "10.1002/adma.74813",
+    "publication_year": 2026,
+    "venue": "Advanced Materials",
+    "url": "https://doi.org/10.1002/adma.74813"
+  },
+  "source": {
+    "filename": "paper-W7204856188.pdf",
+    "sha256": "990ff40e83c29d8573319d3eb1483f8b2b82a7801154f2c91c9689e63905dd0c",
+    "source_url": "https://zaguan.unizar.es/record/177869/files/texto_completo.pdf",
+    "pdf_page_count": 19
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T06:57:27.259Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "990ff40e83c29d8573319d3eb1483f8b2b82a7801154f2c91c9689e63905dd0c",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

@@ -1,0 +1,1566 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "preprint",
+  "paper": {
+    "title": "Feature leakage and the identifiability of direct-dependency entropy models of neural activity",
+    "authors": [
+      "Houman Safaai",
+      "Bernardo L. Sabatini"
+    ],
+    "doi": null,
+    "publication_year": 2026,
+    "venue": "arXiv (Cornell University)",
+    "url": "https://arxiv.org/pdf/2606.01661"
+  },
+  "source": {
+    "filename": "paper-W7163596320--Feature-leakage-and-the-identifiability-of-direct-dependency-entropy-models-of-neural-activity.pdf",
+    "sha256": "92a0eeafc6701595060bfa3733a37a96572194131402bc6c20d9a9f98c6cc3dd",
+    "source_url": "https://arxiv.org/pdf/2606.01661",
+    "pdf_page_count": 32
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32
+    ],
+    "results_sections_seen": [
+      "Definitions/entropy",
+      "Fisher local leakage",
+      "Restricted support",
+      "Binary coskewness",
+      "Representation simulations",
+      "Reweighting controls",
+      "CA1/V1 diagnostic tables",
+      "Raw coactivity/contrast",
+      "Temporal simulations",
+      "Methods/References",
+      "SI A proofs/count-valued",
+      "SI B scaling/parameters",
+      "SI C empirical controls",
+      "SI D temporal schematic"
+    ],
+    "missing_material": [
+      "所有图像像素未阅；供应Fig1–5、S1–S7全部图注和S1–S3表已阅。",
+      "analysis package中的greedy和K320数值未提供；源记录/动物元数据未供。"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "arXiv:2606.01661v1，2026-06-01；全部32页主文和完整供应SI文字阅读。",
+      "此处feature leakage是统计特征投影，不等同训练/测试数据泄漏。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "局部Fisher、受限支持、矩保持、二元代数及计数推广",
+      "role": "result",
+      "source_pages": [
+        3,
+        5,
+        6,
+        7,
+        23,
+        24,
+        25
+      ],
+      "decision": "include",
+      "reason": "完整供应证明逐项核对，joint assumptions不拆开。"
+    },
+    {
+      "summary": "七表示、固定响应重加权、K3–10和raw/temporal ground truth",
+      "role": "result",
+      "source_pages": [
+        4,
+        7,
+        8,
+        9,
+        10,
+        13,
+        14,
+        15,
+        16,
+        20,
+        25,
+        26,
+        27,
+        32
+      ],
+      "decision": "include",
+      "reason": "保留对称表示低归属、true-additive控制和真实负R²。"
+    },
+    {
+      "summary": "精选CA1、匹配null和去输出选择控制",
+      "role": "result",
+      "source_pages": [
+        9,
+        11,
+        12,
+        14,
+        15,
+        17,
+        18,
+        19,
+        20,
+        28,
+        31
+      ],
+      "decision": "include",
+      "reason": "单位是表/targets非动物，条件选择和有效样本限制明确。"
+    },
+    {
+      "summary": "V1与人口/表阶匹配",
+      "role": "result",
+      "source_pages": [
+        11,
+        13,
+        19,
+        29,
+        30
+      ],
+      "decision": "include",
+      "reason": "更小效果、不同时间和记录条件，不当严格脑区因果差异。"
+    },
+    {
+      "summary": "greedy字典/K320额外检查",
+      "role": "result",
+      "source_pages": [
+        7,
+        18
+      ],
+      "decision": "defer",
+      "reason": "analysis package未供，仅质性概述不能作完整结果。"
+    },
+    {
+      "summary": "讨论/书目与生物高阶问题",
+      "role": "interpretation",
+      "source_pages": [
+        1,
+        2,
+        15,
+        16,
+        17,
+        20,
+        21,
+        22
+      ],
+      "decision": "include",
+      "reason": "预测有效性与机制不可识别分开，无自动跨论文关系。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "条件MaxEnt的一阶权重匹配输出率和输出—输入共活动，其解释熵和原始共活动预测是给定输入分布下的统计描述，不是因果突触权重或机制分解。",
+      "claim_type": "interpretive_scope",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "条件logistic/MaxEnt定义",
+          "design": "固定响应表改变输入权重；留出模型比较与可加surrogate",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "条件分布与统计量",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": null,
+            "figure": null,
+            "equation": "(1)–(4)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "条件MaxEnt的一阶权重匹配输出率和输出—输入共活动，其解释熵和原始共活动预测是给定输入分布下的统计描述，不是因果突触权重或机制分解。",
+        "boundary": "first-order指条件log-odds可加，不是概率或生物响应必为线性。",
+        "negative_result": null,
+        "non_inference": "高预测率不排除隐藏、时间或高阶机制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "观测分布的准确预测何时能够识别条件规则，何时吸收遗漏统计？",
+        "怎样区分有限支持、相关输入、时间proxy与具体生物机制？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "在可微条件指数族、固定输入权重及可逆I_FF条件下，遗漏参数小扰动使拟合直接参数发生I_FF^-1 I_FG λ+O(||λ||²)位移；其残余KL由Fisher Schur补二次项控制。",
+      "claim_type": "conditional_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "矩匹配微分与局部信息几何",
+          "design": "固定响应表改变输入权重；留出模型比较与可加surrogate",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "局部参数与Fisher块",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 24,
+            "section": null,
+            "figure": null,
+            "equation": "(36)–(46)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在可微条件指数族、固定输入权重及可逆I_FF条件下，遗漏参数小扰动使拟合直接参数发生I_FF^-1 I_FG λ+O(||λ||²)位移；其残余KL由Fisher Schur补二次项控制。",
+        "boundary": "仅λ=0附近、共同行为支持/正则性；若Schur曲率缺下界，小KL不约束被吸收分量。",
+        "negative_result": null,
+        "non_inference": "不是任意大扰动的全局线性公式或全部非线性幅度上界。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "观测分布的准确预测何时能够识别条件规则，何时吸收遗漏统计？",
+        "怎样区分有限支持、相关输入、时间proxy与具体生物机制？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "若遗漏统计在观察支持上满足G=AᵀF+c(x)，条件归一化消去c(x)，含遗漏机制与移位一阶参数可产生完全相同观测条件分布。",
+      "claim_type": "conditional_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "受限支持上的精确吸收构造",
+          "design": "固定响应表改变输入权重；留出模型比较与可加surrogate",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "数学反例",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": null,
+            "figure": null,
+            "equation": "(11)–(14)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "若遗漏统计在观察支持上满足G=AᵀF+c(x)，条件归一化消去c(x)，含遗漏机制与移位一阶参数可产生完全相同观测条件分布。",
+        "boundary": "此为足够构造条件，例x3=x1x2仅在支持上成立；不推定真实解剖连接。",
+        "negative_result": null,
+        "non_inference": "完美拟合也不证明遗漏机制不存在，但亦不证明某具体生物遗漏机制真实存在。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "观测分布的准确预测何时能够识别条件规则，何时吸收遗漏统计？",
+        "怎样区分有限支持、相关输入、时间proxy与具体生物机制？"
+      ],
+      "shared_evidence_with": [
+        "C2"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "在条件均值为零、与已纳入统计正交且保持非负性的扰动H下，可保持全部MaxEnt约束不变同时改变与H耦合的遗漏统计，故矩约束本身不足以排除遗漏结构。",
+      "claim_type": "conditional_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "条件归一化与矩保持的扰动证明",
+          "design": "固定响应表改变输入权重；留出模型比较与可加surrogate",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "小ε扰动的条件分布",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 25,
+            "section": null,
+            "figure": null,
+            "equation": "(47)–(51)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在条件均值为零、与已纳入统计正交且保持非负性的扰动H下，可保持全部MaxEnt约束不变同时改变与H耦合的遗漏统计，故矩约束本身不足以排除遗漏结构。",
+        "boundary": "要求逐x E[H|x]=0、E[FH]=0、1+εH≥0及E[GH]≠0同时满足。",
+        "negative_result": null,
+        "non_inference": "未对任意G或每个数据集证明可产生任意机制改变。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "观测分布的准确预测何时能够识别条件规则，何时吸收遗漏统计？",
+        "怎样区分有限支持、相关输入、时间proxy与具体生物机制？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C3"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "对二元输入，中心乘积的匹配索引coskewness满足E[δi²δj]=(1−2pi)Cov(xi,xj)，稀疏相关输入可把高阶特征投影进一阶空间。",
+      "claim_type": "exact_algebraic_identity",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "二元变量代数",
+          "design": "固定响应表改变输入权重；留出模型比较与可加surrogate",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "二元分布矩",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": null,
+            "figure": null,
+            "equation": "(15)–(18)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "对二元输入，中心乘积的匹配索引coskewness满足E[δi²δj]=(1−2pi)Cov(xi,xj)，稀疏相关输入可把高阶特征投影进一阶空间。",
+        "boundary": "恒等式为输入分布矩，不等于一般response-variance加权Fisher泄漏；实际需权重p(1-p)。",
+        "negative_result": null,
+        "non_inference": "稀疏本身或输入协方差不证明输出存在高阶因果机制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "观测分布的准确预测何时能够识别条件规则，何时吸收遗漏统计？",
+        "怎样区分有限支持、相关输入、时间proxy与具体生物机制？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "单输入任意非线性在二值化支持{0,1}上都可写成常数加线性项，因此仅二元输入活动不能辨别原始单输入阈值/饱和响应形状。",
+      "claim_type": "exact_support_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "二元支持函数展开",
+          "design": "固定响应表改变输入权重；留出模型比较与可加surrogate",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "函数在两个支持点上的值",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": null,
+            "figure": null,
+            "equation": "(19)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "单输入任意非线性在二值化支持{0,1}上都可写成常数加线性项，因此仅二元输入活动不能辨别原始单输入阈值/饱和响应形状。",
+        "boundary": "不涉及连续原信号全域或多输入交互消失。",
+        "negative_result": null,
+        "non_inference": "二值一阶可加不证明连续生物输入机制线性。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "观测分布的准确预测何时能够识别条件规则，何时吸收遗漏统计？",
+        "怎样区分有限支持、相关输入、时间proxy与具体生物机制？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "计数值变量使用完整单输入indicator统计时得到可加softmax直接模型，遗漏多输入统计仍可经Fisher交叉块投影，因此更丰富字母表不自动解决机制可识别性。",
+      "claim_type": "conditional_theoretical_extension",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "count-valued统计族推广",
+          "design": "固定响应表改变输入权重；留出模型比较与可加surrogate",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "统计族，不是计数生物实验",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 25,
+            "section": null,
+            "figure": null,
+            "equation": "(52)–(54)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "计数值变量使用完整单输入indicator统计时得到可加softmax直接模型，遗漏多输入统计仍可经Fisher交叉块投影，因此更丰富字母表不自动解决机制可识别性。",
+        "boundary": "需要相同条件族/可识别参数及局部正则条件；没有对应计数记录的经验验证。",
+        "negative_result": null,
+        "non_inference": "不是所有连续/计数算法均不可识别的普遍定理。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "观测分布的准确预测何时能够识别条件规则，何时吸收遗漏统计？",
+        "怎样区分有限支持、相关输入、时间proxy与具体生物机制？"
+      ],
+      "shared_evidence_with": [
+        "C2"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "纯高阶、零线性drive的模拟在二元与偏斜表示下可取得较高一阶熵归属；ρ=.9时二元约.84，而中心化Gaussian/uniform约0，交互模型仍改善留出NLL。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "七表示与相关度的ground-truth sweep",
+          "design": "固定响应表改变输入权重；留出模型比较与可加surrogate",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "模拟样本/随机特征，非生物独立实验",
+          "sample_size_as_reported": "K32、120随机pair；训练10^6、测试10^6样本；二元率.20、输出目标.15",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": null,
+            "figure": "Fig. 2；Tables S1–S3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "纯高阶、零线性drive的模拟在二元与偏斜表示下可取得较高一阶熵归属；ρ=.9时二元约.84，而中心化Gaussian/uniform约0，交互模型仍改善留出NLL。",
+        "boundary": "表示为共同Gaussian的确定变换，半正态/χ²非单调；ρ为潜生成参数非全部实际Pearson。",
+        "negative_result": "对称中心化表示中此通道未见明显一阶归属；NLL仍可检出交互优势。",
+        "non_inference": "不能以此估计生物高阶占比。",
+        "unresolved": "正文独立输入归属为零的强措辞与S3二元.04/偏斜.02–.07不完全一致。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "观测分布的准确预测何时能够识别条件规则，何时吸收遗漏统计？",
+        "怎样区分有限支持、相关输入、时间proxy与具体生物机制？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "固定响应表而改变经验、product和balanced输入权重的模拟，使纯高阶响应的一阶归属降低，同时保留真正可加响应的一阶表现。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "固定P(y|x)、仅改变q(x)并重新拟合",
+          "design": "固定响应表改变输入权重；留出模型比较与可加surrogate",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "完整有限输入状态表",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": null,
+            "figure": "Figs. 1–3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "固定响应表而改变经验、product和balanced输入权重的模拟，使纯高阶响应的一阶归属降低，同时保留真正可加响应的一阶表现。",
+        "boundary": "product为保留单输入率的较温和去相关，balanced为稀有状态高权重压力端点；不是实际神经干预。",
+        "negative_result": null,
+        "non_inference": "F1阈值的保留不等于条件logit严格可加；AND/XOR例依不同权重表现。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "观测分布的准确预测何时能够识别条件规则，何时吸收遗漏统计？",
+        "怎样区分有限支持、相关输入、时间proxy与具体生物机制？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "在泄漏易发的模拟分布中，输入数K从3到10增大可令纯二/三阶规则的一阶归属从.36/.55升至.63/.87，balanced归属仍接近零。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "高阶generator输入数扫描",
+          "design": "固定响应表改变输入权重；留出模型比较与可加surrogate",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "模拟规则/特征空间",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 27,
+            "section": null,
+            "figure": "Fig. S2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在泄漏易发的模拟分布中，输入数K从3到10增大可令纯二/三阶规则的一阶归属从.36/.55升至.63/.87，balanced归属仍接近零。",
+        "boundary": "组合特征代理增加的特定分布；更大K320与greedy字典检查只在未供analysis package概述。",
+        "negative_result": null,
+        "non_inference": "不证明真实神经元输入越多机制越高阶。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "观测分布的准确预测何时能够识别条件规则，何时吸收遗漏统计？",
+        "怎样区分有限支持、相关输入、时间proxy与具体生物机制？"
+      ],
+      "shared_evidence_with": [
+        "C8",
+        "C9"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "CA1归档矩阵1485神经元、70338时间bin的平均活动率.0185、median.0127，median二元coskewness因子.9746；精选局部输入比整体pair更富相关/投影。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "既有二值记录与输入选择几何",
+          "design": "固定响应表改变输入权重；留出模型比较与可加surrogate",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "一份记录的神经元/pair；不是独立动物",
+          "sample_size_as_reported": "1485神经元、70338bins；1101870无序pair；动物n未报告",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": null,
+            "figure": "Fig. 4a；Fig. S3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "CA1归档矩阵1485神经元、70338时间bin的平均活动率.0185、median.0127，median二元coskewness因子.9746；精选局部输入比整体pair更富相关/投影。",
+        "boundary": "整体仅32%pair正相关、mean .002；精选median Pearson .173、投影.146不能代表总体。",
+        "negative_result": null,
+        "non_inference": "输入泄漏易发不直接证明输出具体高阶机制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "观测分布的准确预测何时能够识别条件规则，何时吸收遗漏统计？",
+        "怎样区分有限支持、相关输入、时间proxy与具体生物机制？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "40靶细胞的776个精选三输入CA1表中，一阶可用熵归属median由经验.754到product.679、balanced.459；674个经验成功中350保留、324跨过.5阈值。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "完整8状态局部表、固定响应与重拟合",
+          "design": "固定响应表改变输入权重；留出模型比较与可加surrogate",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "相关局部表/同记录targets，非776独立动物",
+          "sample_size_as_reported": "40targets、776cubes、674经验F1≥.5；350/674保留(.519；bootstrap CI .482–.556)",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": null,
+            "figure": "Fig. 4",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "40靶细胞的776个精选三输入CA1表中，一阶可用熵归属median由经验.754到product.679、balanced.459；674个经验成功中350保留、324跨过.5阈值。",
+        "boundary": "每状态每训练折≥80、Jeffreys平滑；balanced为压力控制、Neff median1698；选择富含输出共活动。",
+        "negative_result": null,
+        "non_inference": "324/674不是CA1生物高阶神经元比例或树突机制频率。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "观测分布的准确预测何时能够识别条件规则，何时吸收遗漏统计？",
+        "怎样区分有限支持、相关输入、时间proxy与具体生物机制？"
+      ],
+      "shared_evidence_with": [
+        "C9",
+        "C11"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C13",
+      "statement": "以各局部表的可加拟合生成匹配状态计数的null后，13480个surrogate中没有跨入分布敏感类别，远低于真实精选表324/674。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "同计数/折/平滑/重拟合的additive surrogate",
+          "design": "固定响应表改变输入权重；留出模型比较与可加surrogate",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "模型条件下的surrogate表，非独立生物重复",
+          "sample_size_as_reported": "20模拟×674表=13480；0阳性，报告rule-of-three95%上界.02%",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 19,
+            "section": null,
+            "figure": "Fig. S6",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "以各局部表的可加拟合生成匹配状态计数的null后，13480个surrogate中没有跨入分布敏感类别，远低于真实精选表324/674。",
+        "boundary": "控制的是所拟合可加null的抽样/平滑误分，不能排除所有hidden-state或时间依赖。",
+        "negative_result": "匹配可加null未出现相同重加权分类变化。",
+        "non_inference": "不能证明所有观察非可加都源自突触交互或估计零误报风险。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "观测分布的准确预测何时能够识别条件规则，何时吸收遗漏统计？",
+        "怎样区分有限支持、相关输入、时间proxy与具体生物机制？"
+      ],
+      "shared_evidence_with": [
+        "C12"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C14",
+      "statement": "去掉输出共活动选择、改用输入共同采样与随机targets的3000表控制中，350经验成功里259分布敏感(.74，CI .69–.79)，说明去掉该选择不消除现象。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "unselected base-rate控制",
+          "design": "固定响应表改变输入权重；留出模型比较与可加surrogate",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "仍有输入采样/成功条件选择的局部表",
+          "sample_size_as_reported": "3000tables→350empirical successes；259/350；median F1 .638→.316；95%条件non-additive(CI92–97)",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": null,
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "去掉输出共活动选择、改用输入共同采样与随机targets的3000表控制中，350经验成功里259分布敏感(.74，CI .69–.79)，说明去掉该选择不消除现象。",
+        "boundary": "不是未选择的全部神经群体，仍要求well-sampled与empirical-success。",
+        "negative_result": null,
+        "non_inference": "不能将74%作为总体CA1高阶响应流行率。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "观测分布的准确预测何时能够识别条件规则，何时吸收遗漏统计？",
+        "怎样区分有限支持、相关输入、时间proxy与具体生物机制？"
+      ],
+      "shared_evidence_with": [
+        "C12",
+        "C13"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C15",
+      "statement": "V1自然图像和自发记录的两输入表重加权变化小于主要CA1三输入分析：median .602→.511和.653→.579，成功保留107/182及120/173。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "V1两输入局部诊断",
+          "design": "固定响应表改变输入权重；留出模型比较与可加surrogate",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "同记录局部表",
+          "sample_size_as_reported": "182/173经验成功；动物n与总表数未在正文报告",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": null,
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "V1自然图像和自发记录的两输入表重加权变化小于主要CA1三输入分析：median .602→.511和.653→.579，成功保留107/182及120/173。",
+        "boundary": "输入表阶数和记录时长不同，不能将差异唯一归因脑区。",
+        "negative_result": null,
+        "non_inference": "多数保留并不证明V1没有非可加或隐藏机制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "观测分布的准确预测何时能够识别条件规则，何时吸收遗漏统计？",
+        "怎样区分有限支持、相关输入、时间proxy与具体生物机制？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C16",
+      "statement": "将V1降采样为1485神经元并在CA1/V1均用两输入表后，分布敏感成分仍存在，支持不是仅由V1较大记录群体造成。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "matched-population/table-order控制",
+          "design": "固定响应表改变输入权重；留出模型比较与可加surrogate",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "同来源数据的技术下采样",
+          "sample_size_as_reported": "N=1485神经元；图中per-seed点数未文字给出",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 30,
+            "section": null,
+            "figure": "Fig. S5",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "将V1降采样为1485神经元并在CA1/V1均用两输入表后，分布敏感成分仍存在，支持不是仅由V1较大记录群体造成。",
+        "boundary": "没有匹配记录时长、动物/状态/采样方式，secondary generality check而非严格脑区比较。",
+        "negative_result": null,
+        "non_inference": "不构成新动物复制或生物脑区机制差异。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "观测分布的准确预测何时能够识别条件规则，何时吸收遗漏统计？",
+        "怎样区分有限支持、相关输入、时间proxy与具体生物机制？"
+      ],
+      "shared_evidence_with": [
+        "C11",
+        "C15"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C17",
+      "statement": "8二元输入的纯pair-XOR模拟在稀有11角状态采样下，一阶模型解释.91熵且二/三/四阶raw共活动R²=.99/.98/.96；balanced权重使归属近零并出现负R²。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "固定高阶真值与rare-corner分布",
+          "design": "固定响应表改变输入权重；留出模型比较与可加surrogate",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "ground-truth模拟统计",
+          "sample_size_as_reported": "8输入、4pairs，每pair P(11)=.005；模拟样本n未在该段给出",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": null,
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "8二元输入的纯pair-XOR模拟在稀有11角状态采样下，一阶模型解释.91熵且二/三/四阶raw共活动R²=.99/.98/.96；balanced权重使归属近零并出现负R²。",
+        "boundary": "product归属.46，R².30/−.81/−4.48；balanced R²−.15/−.66/−2.22为差于阶内均值baseline。",
+        "negative_result": "去泄漏权重下raw共活动预测可差于均值基线。",
+        "non_inference": "高raw共活动R²不是条件交互不存在的证据。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "观测分布的准确预测何时能够识别条件规则，何时吸收遗漏统计？",
+        "怎样区分有限支持、相关输入、时间proxy与具体生物机制？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C18",
+      "statement": "CA1局部raw共活动结果依refit和transfer不同：经验二/三阶R².93/.94，balanced重新拟合仍.97/.90，但经验fit转移至balanced仅.75/.61。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "同响应表下重新拟合与跨权重转移分开",
+          "design": "固定响应表改变输入权重；留出模型比较与可加surrogate",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "同776局部表的共活动项",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 14,
+            "section": null,
+            "figure": "Fig. 5c–e",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "CA1局部raw共活动结果依refit和transfer不同：经验二/三阶R².93/.94，balanced重新拟合仍.97/.90，但经验fit转移至balanced仅.75/.61。",
+        "boundary": "balanced-refit高raw准确仍可伴低一阶熵归属，二者不是同一条件交互检验。",
+        "negative_result": null,
+        "non_inference": "不能把重新拟合当经验权重模型的分布外泛化。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "观测分布的准确预测何时能够识别条件规则，何时吸收遗漏统计？",
+        "怎样区分有限支持、相关输入、时间proxy与具体生物机制？"
+      ],
+      "shared_evidence_with": [
+        "C12",
+        "C17"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C19",
+      "statement": "条件logit pair-contrast检验中，精选经验成功673/674超过每表可加surrogate的95分位，median最大|Δ|2.44对null .44；保留和敏感表都可条件非可加。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "逐表对比和null校准",
+          "design": "固定响应表改变输入权重；留出模型比较与可加surrogate",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "局部表嵌套相同记录，非独立动物",
+          "sample_size_as_reported": "674经验成功；200surrogates每表用于contrast；673/674(99.9%；CI99.6–100)",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 15,
+            "section": null,
+            "figure": null,
+            "equation": "(26)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "条件logit pair-contrast检验中，精选经验成功673/674超过每表可加surrogate的95分位，median最大|Δ|2.44对null .44；保留和敏感表都可条件非可加。",
+        "boundary": "逐表阈值与全表多重比较/相关性处理未完整说明；保持其他输入条件后的contrast是统计响应，不是因果干预。",
+        "negative_result": null,
+        "non_inference": "不能认定99.9%神经元具有非线性树突计算；F1是可用熵分数非分类F1-score。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "观测分布的准确预测何时能够识别条件规则，何时吸收遗漏统计？",
+        "怎样区分有限支持、相关输入、时间proxy与具体生物机制？"
+      ],
+      "shared_evidence_with": [
+        "C12",
+        "C13",
+        "C18"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C20",
+      "statement": "12个自相关二元输入的纯lag-one生成器中，瞬时模型可在自相关.98时达到延迟共活动R²=.996，但正确lag模型仍改善留出NLL .006–.138 bits/sample。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "独立Markov输入、瞬时/lag模型比较",
+          "design": "固定响应表改变输入权重；留出模型比较与可加surrogate",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "模拟时间序列/bin，非生物重复",
+          "sample_size_as_reported": "12输入、stationary rate .20、autocorrelation约.05–.98；独立序列n未给",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 15,
+            "section": null,
+            "figure": "Fig. 5g–h；Fig. S7",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "12个自相关二元输入的纯lag-one生成器中，瞬时模型可在自相关.98时达到延迟共活动R²=.996，但正确lag模型仍改善留出NLL .006–.138 bits/sample。",
+        "boundary": "高自相关产生proxy；synthetic参数不应当CA1实测机制。",
+        "negative_result": null,
+        "non_inference": "预测延迟共活动不能识别瞬时因果机制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "观测分布的准确预测何时能够识别条件规则，何时吸收遗漏统计？",
+        "怎样区分有限支持、相关输入、时间proxy与具体生物机制？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C21",
+      "statement": "作者建议将重加权、条件交互及时间/隐藏状态替代模型联合用于界定直接MaxEnt结论；随机输入与留出控制解决过拟合，不能单独解决遗漏机制吸收。",
+      "claim_type": "interpretation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "理论、模拟与局部再分析的综合边界",
+          "design": "固定响应表改变输入权重；留出模型比较与可加surrogate",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "不同诊断问题",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 17,
+            "section": null,
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者建议将重加权、条件交互及时间/隐藏状态替代模型联合用于界定直接MaxEnt结论；随机输入与留出控制解决过拟合，不能单独解决遗漏机制吸收。",
+        "boundary": "不复现完整高维greedy模型，也不否定其实际分布预测有效性；局部响应/配对选择限制普遍性。",
+        "negative_result": null,
+        "non_inference": "没有识别真实synaptic输入或全部神经计算，不能自动建立跨论文矛盾关系。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "观测分布的准确预测何时能够识别条件规则，何时吸收遗漏统计？",
+        "怎样区分有限支持、相关输入、时间proxy与具体生物机制？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C12",
+        "C19",
+        "C20"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "32页主文与供应Supplementary Information全读、逐命题二次对照后形成21项候选。理论保持局部正则、Fisher可逆及受限支持条件；模拟、计数推广、稀疏代数、重加权和时间proxy分开。CA1的776局部表/40targets及条件成功子集不代表动物数或高阶生物机制流行率；V1与匹配null提供局部控制而非机制唯一证明。保留ρ0小正归属、bootstrap层级、clip/分母与完整高维检查未供等未解事项。",
+  "shared_evidence": [
+    {
+      "claim_id": "C3",
+      "with": [
+        "C2"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C2",
+        "C3"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C2"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "with": [
+        "C8",
+        "C9"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "with": [
+        "C9",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C13",
+      "with": [
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C14",
+      "with": [
+        "C12",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C16",
+      "with": [
+        "C11",
+        "C15"
+      ]
+    },
+    {
+      "claim_id": "C18",
+      "with": [
+        "C12",
+        "C17"
+      ]
+    },
+    {
+      "claim_id": "C19",
+      "with": [
+        "C12",
+        "C13",
+        "C18"
+      ]
+    },
+    {
+      "claim_id": "C21",
+      "with": [
+        "C1",
+        "C2",
+        "C12",
+        "C19",
+        "C20"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": "C2",
+        "issue": "Fisher公式仅局部且I_FF须可逆；Schur缺下界不能用小残差限制全部遗漏幅度。",
+        "suggested_correction": "保持可微/可逆/小扰动条件和残余/吸收区分。",
+        "pdf_page": 24,
+        "resolved": true
+      },
+      {
+        "claim_id": "C5",
+        "issue": "Eq18输入coskewness不含response variance，正文声明不用于CA1数值Fisher估计。",
+        "suggested_correction": "不把精确代数恒等式误作实际加权泄漏数值估计。",
+        "pdf_page": 7,
+        "resolved": true
+      },
+      {
+        "claim_id": "C8",
+        "issue": "正文声称独立输入无归属，而S3ρ0二元.04、lognormal/.exponential/.χ²有小正值。",
+        "suggested_correction": "限制对称中心化近零结论，保留其余独立端点差异。",
+        "pdf_page": 26,
+        "resolved": false
+      },
+      {
+        "claim_id": "C12",
+        "issue": "776表由40targets精选，bootstrap按表的层级独立性未交代，不能当总体CA1比例。",
+        "suggested_correction": "保留作者表级CI和诊断选择限制。",
+        "pdf_page": 11,
+        "resolved": false
+      },
+      {
+        "claim_id": "C19",
+        "issue": "20/cube用于重加权误分null，200/cube用于contrast；99.9%是条件统计表而非生物机制。",
+        "suggested_correction": "分清两种null数量及条件/因果命题。",
+        "pdf_page": 19,
+        "resolved": true
+      },
+      {
+        "claim_id": "C18",
+        "issue": "balanced-refit的高raw R²不代表原模型transfer；两类检验不同。",
+        "suggested_correction": "保留refit/transfer与熵/条件contrast的区别。",
+        "pdf_page": 14,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "Fm near-zero分母时可clip[-1.5,1.5]；selected CA1原始可用熵median.061bits，8/776<.02；动物n与完整元数据缺失。",
+        "suggested_correction": "不要当严格0–1机制分解或独立神经实验；保留数值/单位限制。",
+        "pdf_page": 17,
+        "resolved": false
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T12:04:56.838928Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "92a0eeafc6701595060bfa3733a37a96572194131402bc6c20d9a9f98c6cc3dd",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

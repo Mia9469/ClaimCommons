@@ -1,0 +1,415 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Towards efficient keyword spotting using spike-based time difference encoders</title><style>body{max-width:940px;margin:40px auto;padding:0 24px;background:#fffdf7;color:#12372f;font:16px/1.8 Georgia,serif}h1{font-size:26px;line-height:1.4}h2{font-size:20px;line-height:1.5}h3{font-size:16px}article{padding:26px 0;border-top:1px solid #bec4b8}small{color:#68766e}dl{display:grid;grid-template-columns:120px 1fr;gap:8px 20px}dt{font-weight:bold}dd{margin:0}li{padding:8px 0}p,dd{overflow-wrap:anywhere}.note{background:#eef2e2;padding:14px;border-left:3px solid #738968}summary{cursor:pointer}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.7 monospace}@media(max-width:600px){body{margin:24px auto;padding:0 18px}dl{grid-template-columns:1fr;gap:3px}dd{margin-bottom:12px}}@media print{body{margin:0;background:white}details{display:block}}</style><link rel="stylesheet" href="../../commons-v02.css?v=20261020-1"><link rel="stylesheet" href="../../examples.css?v=20260928-2"><link rel="stylesheet" href="../../site.css?v=20261020-1"><script defer src="../../site.js?v=20261020-1"></script><script defer src="../../report-ui.js?v=20261020-1"></script></head><body class="portal-page report-page" data-cc-report-shell="1" data-page="library" data-site-prefix="../../" data-library-paper="paper-W4414903451" data-report-language="zh" data-claim-records="{&quot;C1&quot;:&quot;structured-paper-W4414903451-1&quot;,&quot;C2&quot;:&quot;structured-paper-W4414903451-2&quot;,&quot;C3&quot;:&quot;structured-paper-W4414903451-3&quot;,&quot;C4&quot;:&quot;structured-paper-W4414903451-4&quot;,&quot;C5&quot;:&quot;structured-paper-W4414903451-5&quot;,&quot;C6&quot;:&quot;structured-paper-W4414903451-6&quot;,&quot;C7&quot;:&quot;structured-paper-W4414903451-7&quot;,&quot;C8&quot;:&quot;structured-paper-W4414903451-8&quot;,&quot;C9&quot;:&quot;structured-paper-W4414903451-9&quot;,&quot;C10&quot;:&quot;structured-paper-W4414903451-10&quot;,&quot;C11&quot;:&quot;structured-paper-W4414903451-11&quot;,&quot;C12&quot;:&quot;structured-paper-W4414903451-12&quot;,&quot;C13&quot;:&quot;structured-paper-W4414903451-13&quot;}"><header></header><main id="report-content"><div id="report-tools"></div><small>CLAIM COMMONS / 阅读报告</small><h1>Towards efficient keyword spotting using spike-based time difference encoders</h1><p class="note">AI 文本提取候选，尚待人工核对。图像像素未读取；PDF 页码指文件中的页序。</p><p>全部供给文本支持十三项候选命题，覆盖TDE任务架构、输入时间信息、信息驱动剪枝、容量条件下准确率、脉冲与逐层操作成本、训练量敏感性及频率/时间常数特征解释。二次核查强调最高25个测试epoch平均的选择偏差、训练参数并非完全一致、事件计数使用全数据集，以及SynOps不等于实测功率。正式显著性检验、剪枝数据隔离、频率坐标与信息估计细节仍待人工核查。</p><a href="https://arxiv.org/pdf/2503.15402" rel="noreferrer">查看所读原文版本 ↗</a><details><summary>贡献清单与处理决定</summary><ul><li><b>TDE频率对架构和τg/W2监督训练配置。</b><br>include · 既有TDE模型的新任务使用，不误归首创TDE或局部学习。</li><li><b>输入时间模式与总率信息比较。</b><br>include · 保留400ms首脉冲窗口、bin和频带间误差范围。</li><li><b>交叉相关剪枝优于随机、540单元的容量/性能取舍。</b><br>include · 逐项比较与资源权衡独立拆分，不以误差重叠证明非劣。</li><li><b>近似连接容量匹配下的最大/中等/较小架构准确率。</b><br>include · 保留中等规模参数数量差，避免称严格等参数。</li><li><b>总脉冲稀疏性、SynOps约92%减少及下一层事件负载变化。</b><br>include · 事件计数为成本代理，不是功率；前馈LIF更少脉冲也记录。</li><li><b>缩小训练量的性能敏感性。</b><br>include · 保留作者显著性措辞但标缺少统计明细。</li><li><b>强输出权重对应频率对、τg分布以及与初始高相关配对不一致。</b><br>include · 三个分析可独立评估，共享同一强权重筛选。</li><li><b>固定输入连接是数据效率提升的主要原因。</b><br>defer · 训练参数较少与架构先验未独立消融。</li><li><b>约92%实际节能、额外TDE隔室成本可忽略、任意深度网络收益。</b><br>defer · 真实硬件漏积分、静态功率、前处理与更深层部署未测。</li><li><b>生物时序码、既有TDE电路、Loihi实现或其他任务研究。</b><br>exclude · 引用的先前结果不能算本文新硅测量或新生物证据。</li><li><b>端侧实时共振峰提取及芯片任务验证。</b><br>defer · 全文明确后续工作，当前预处理离线。</li></ul></details><article><small>C1 / 直接结果 · information_analysis</small><h2>在TIdigits三共振峰经32频带CuBa-LIF转换的输入脉冲中，作者对从首脉冲起400 ms窗口逐频带比较时序模式与总率信息，报告时序信息在部分受测bin条件下高于率信息，而约15–20 ms的bin尺度二者相近。</h2><h3>Evidence</h3><p>输入脉冲的信息量比较</p><dl><dt>设计 / 对照</dt><dd>改变模式时间bin，另移除时间结构计算率信息；Ipattern与Irate</dd><dt>独立单位与 n</dt><dd>编码频带，不是独立被试；32个编码频带；数据集225成人、11类、每类450次语音</dd><dt>不确定性</dt><dd>图中均值/标准差为32频带间变异；未给估计偏差修正、CI</dd><dt>原文位置</dt><dd>PDF 11 · Figure 5</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>输入编码保留有分类潜力的时间结构。</dd><dt>适用边界</dt><dd>正文关于较大时间窗的措辞与精度/bin关系需原图核对；不补信息比特值。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能宣称实际皮层时间码机制、时间信息唯一决定分类，或图误差条为成人间不确定性。</dd><dt>未解决</dt><dd>时间bin趋势的精确方向和信息估计的偏差控制。</dd></dl><h3>相关问题</h3><ul><li>共振峰编码后，脉冲时序包含多少超出总发放率的类别信息？</li></ul></article><article><small>C2 / 直接结果 · task_architecture</small><h2>本文把TDE用于三层关键词网络：每个隐藏单元固定接收两个有方向的频带输入，前一输入的增益迹调制后一输入的突触电流；输入权重固定为1，训练每单元增益时间常数τg和输出矩阵W2，因而频率配对由架构预设而非经W1学习。</h2><h3>Evidence</h3><p>既有TDE模型的任务架构设计</p><dl><dt>设计 / 对照</dt><dd>CuBa-LIF输入/输出层，固定有方向频带配对；LIF/LIFrec在隐藏输入权重上的学习方案</dd><dt>独立单位与 n</dt><dd>网络架构；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 7 · Figure 4 on PDF page 8</dd></dl><p>τg与W2梯度训练定义</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 9 · 2.3. Offline training with back-propagation through time</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>构建显式频率对/时间尺度的特征网络。</dd><dt>适用边界</dt><dd>离线监督BPTT，不是片上局部学习；TDE本身不是本文首次提出。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能推断部署能耗、所有参数受严格相同容量约束或任意语音条件的优越性。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>固定频率对和可训练时间常数如何组成TDE关键词特征网络？</li></ul></article><article><small>C3 / 直接结果 · pruning_comparison</small><h2>按输入频带对交叉相关最高值排序并删除低排名TDE单元，比随机剪枝在本文所有受测剪枝规模上获得更高平均测试准确率：例如540单元为87.86±1.12%对85.83±0.46%，186单元为83.70±1.55%对79.53±1.77%。</h2><h3>Evidence</h3><p>监督BPTT/替代梯度数值训练与推断</p><dl><dt>设计 / 对照</dt><dd>类内平均、跨类取最大交叉相关；其最优lag用于τg初始化；相同隐藏单元数量的随机剪枝</dd><dt>独立单位与 n</dt><dd>独立随机初始化训练；三次独立学习迭代；剪枝规模676、650、540、378、186、68、23</dd><dt>不确定性</dt><dd>均值与括号标准差来自三次独立随机初始化学习；每次取跨epoch最高25个测试准确率的平均，不是25次独立重复。</dd><dt>原文位置</dt><dd>PDF 12 · Figure 6 on PDF page 13</dd></dl><p>准确率表逐值核对</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 14 · Table 2</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>有信息的剪枝在该任务中优于所述随机基线。</dd><dt>适用边界</dt><dd>最高测试epoch平均可能乐观；准确率差并未报告对应统计检验。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能把剪枝阈值、epoch或频率对视为独立实验，也不能宣称完整部署基准。</dd><dt>未解决</dt><dd>剪枝统计是否涉及测试样本、评估集是否与模型选择隔离。</dd></dl><h3>相关问题</h3><ul><li>输入交叉相关能否指导TDE剪枝而保留识别性能？</li></ul></article><article><small>C4 / 直接结果 · resource_accuracy_tradeoff</small><h2>在本文TDE网络中，从992个全频率配对单元剪为540单元，使隐藏单元数及连接数约减少45.5%；报告准确率由89.08±1.25%变为87.86±1.12%，即表中均值相差1.22个百分点。</h2><h3>Evidence</h3><p>监督BPTT/替代梯度数值训练与推断</p><dl><dt>设计 / 对照</dt><dd>TIdigits成人11类，离线三共振峰预处理，32频带CuBa-LIF编码，15 ms模拟步长/时间bin，BPTT+ADAM；类均衡随机训练/测试划分。；992个隐藏TDE单元</dd><dt>独立单位与 n</dt><dd>独立训练网络；三次独立学习迭代</dd><dt>不确定性</dt><dd>均值与括号标准差来自三次独立随机初始化学习；每次取跨epoch最高25个测试准确率的平均，不是25次独立重复。</dd><dt>原文位置</dt><dd>PDF 14 · Table 2</dd></dl><p>连接数核对</p><dl><dt>设计 / 对照</dt><dd>12896连接减为7020；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 16 · Table 4</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>该剪枝点提供明显容量缩减与较小报告性能差。</dd><dt>适用边界</dt><dd>1.22为准确率百分点的算术差，不是相对百分比；无正式非劣效界。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能把小差值认作已证明性能等价或45.5%实测内存/能耗节省。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>剪掉约半数TDE单元需要付出多少报告准确率代价？</li></ul></article><article><small>C5 / 直接结果 · classification_comparison</small><h2>在本文最大、连接容量近似平衡的TIdigits网络中，992 TDE单元报告89.08±1.25%准确率，94个递归CuBa-LIF单元为91.11±1.07%，300个前馈CuBa-LIF单元为71.46±0.44%；较小186 TDE与32递归LIF条件分别为83.70±1.55%和83.03±5.14%。</h2><h3>Evidence</h3><p>监督BPTT/替代梯度数值训练与推断</p><dl><dt>设计 / 对照</dt><dd>TIdigits成人11类，离线三共振峰预处理，32频带CuBa-LIF编码，15 ms模拟步长/时间bin，BPTT+ADAM；类均衡随机训练/测试划分。；近似相同连接容量的LIFrec和LIF</dd><dt>独立单位与 n</dt><dd>独立初始化训练网络；每架构/规模三次独立学习</dd><dt>不确定性</dt><dd>均值与括号标准差来自三次独立随机初始化学习；每次取跨epoch最高25个测试准确率的平均，不是25次独立重复。</dd><dt>原文位置</dt><dd>PDF 16 · Table 4</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>在该协议下TDE高于前馈LIF，接近递归LIF，且排序依规模变化。</dd><dt>适用边界</dt><dd>每架构超参数没有分别完整优化；三次训练和最佳测试epoch汇总不能代表所有条件。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能认定统计等价、TDE全面优于递归LIF或普适表征机制优势。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>近似匹配连接容量时，TDE、递归LIF和前馈LIF的任务准确率怎样比较？</li></ul></article><article><small>C6 / 直接结果 · capacity_conditioned_classification</small><h2>在重点比较的中等规模TIdigits网络中，TDE、递归LIF、前馈LIF分别使用540、65、163个隐藏单元，连接数为7020、7020、7009，训练参数为6480、7020、7009，报告准确率为87.86±1.12%、90.04±0.80%、71.59±2.72%；因此匹配的是近似连接容量，而不是完全相同的单元数或训练参数数。</h2><h3>Evidence</h3><p>监督BPTT/替代梯度数值训练与推断</p><dl><dt>设计 / 对照</dt><dd>TIdigits成人11类，离线三共振峰预处理，32频带CuBa-LIF编码，15 ms模拟步长/时间bin，BPTT+ADAM；类均衡随机训练/测试划分。；中等规模LIFrec/LIF</dd><dt>独立单位与 n</dt><dd>网络架构及独立训练；三次独立学习迭代，数据集每类450次、225成人</dd><dt>不确定性</dt><dd>均值与括号标准差来自三次独立随机初始化学习；每次取跨epoch最高25个测试准确率的平均，不是25次独立重复。</dd><dt>原文位置</dt><dd>PDF 15 · Table 3</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>明确TDE与对照性能比较的实际资源条件。</dd><dt>适用边界</dt><dd>固定频率对先验和训练参数差异尚未被单独消融。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能将连接数当精确硬件内存字节数，或把差异唯一归于TDE时间动力学。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>神经元模型比较应匹配连接、单元还是可训练参数容量？</li></ul></article><article><small>C7 / 直接结果 · spike_sparsity_result</small><h2>对中等规模受训网络在完整TIdigits数据集上的每关键词平均输出脉冲统计，TDE总计1095个、递归LIF为2339个、前馈LIF为898个；TDE相对递归LIF少53.19%，但并不比前馈LIF更少。</h2><h3>Evidence</h3><p>训练后全数据集推断事件计数</p><dl><dt>设计 / 对照</dt><dd>与C6相同网络配置；逐层统计每关键词平均；LIFrec与LIF</dd><dt>独立单位与 n</dt><dd>语音样本上的网络事件统计，非独立成人重复；全文数据集11类、每类450次；事件计数汇总的运行数未单独说明</dd><dt>不确定性</dt><dd>计数无标准差或CI</dd><dt>原文位置</dt><dd>PDF 15 · Table 3; Figure 7</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>TDE比递归LIF更稀疏，但稀疏性与准确率存在不同权衡。</dd><dt>适用边界</dt><dd>使用完整数据集而非仅独立测试集，包含训练样本；总脉冲不是能耗。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能泛称TDE比所有LIF网络都更稀疏，或53%脉冲减少等于53%能耗减少。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>TDE的稀疏性优势是否同时成立于递归与前馈LIF对照？</li></ul></article><article><small>C8 / 直接结果 · analytical_operation_count</small><h2>按本文把输入脉冲积分和输出脉冲发放均计作事件操作的SynOps定义，中等规模网络每关键词平均TDE为14417次、递归LIF为175548次、前馈LIF为21771次；TDE相对递归LIF少91.79%（约92%），这是解析事件成本代理而非实际能耗测量。</h2><h3>Evidence</h3><p>事件操作成本定义</p><dl><dt>设计 / 对照</dt><dd>总计所有单元输入积分与输出发放事件；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>模型事件操作；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 10 · 2.4. Comparison of the performance of different network models</dd></dl><p>完整数据集训练后事件计数</p><dl><dt>设计 / 对照</dt><dd>网络配置同C6；LIFrec/LIF</dd><dt>独立单位与 n</dt><dd>网络推断序列；数据集每类450次；操作计数重复数未给</dd><dt>不确定性</dt><dd>事件总数无标准差</dd><dt>原文位置</dt><dd>PDF 15 · Table 3</dd></dl><p>能耗代理范围说明</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 19 · 4. Conclusions</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>在所述事件定义中TDE大幅减少递归LIF成本。</dd><dt>适用边界</dt><dd>数字实现的每步漏积分更新、静态功耗和TDE额外状态成本未完全覆盖。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能写成实测92%节能、硬件总功耗改善或任意平台的能耗比例。</dd><dt>未解决</dt><dd>硬件部署后的真实能量及离线共振峰预处理成本。</dd></dl><h3>相关问题</h3><ul><li>约92%SynOps减少在什么成本假设下成立，又不等同哪些能耗结论？</li></ul></article><article><small>C9 / 直接结果 · layerwise_operation_result</small><h2>在中等规模关键词网络中，TDE隐藏层每关键词3572次SynOps，而递归LIF为151076次；尽管两者输出层都用相同数量与类型的CuBa-LIF，输出层SynOps仍为10768对24395，显示隐藏层事件负载差异延伸到下一层。</h2><h3>Evidence</h3><p>逐层事件成本分解</p><dl><dt>设计 / 对照</dt><dd>同C6配置；L2均11个CuBa-LIF；LIFrec</dd><dt>独立单位与 n</dt><dd>相同网络完整数据集中的层级事件计数；完整数据集；层不是独立重复</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 15 · Figure 7; Table 3</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>输出层结构相同不保证输出层动态成本相同。</dd><dt>适用边界</dt><dd>只比较所述三层网络，并非深层扩展实验。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能用这一层效应直接定量预测任意深度网络的节能倍率。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>隐藏层时序与稀疏负载差异会怎样影响下一层事件成本？</li></ul></article><article><small>C10 / 直接结果 · training_data_sensitivity</small><h2>在保持测试集规模不变、减少TIdigits训练样本的TDE与递归LIF比较中，正文报告从100%降到75%训练量时TDE性能未发生统计显著下降，而递归LIF有显著下降，且递归LIF对进一步减少训练量总体更敏感。</h2><h3>Evidence</h3><p>监督BPTT/替代梯度数值训练与推断</p><dl><dt>设计 / 对照</dt><dd>训练集逐步缩小，测试集固定；递归LIF与TDE；100%与75%训练量</dd><dt>独立单位与 n</dt><dd>独立训练配置；该图独立运行数、训练/测试绝对样本数未单独报告</dd><dt>不确定性</dt><dd>作者称统计显著/不显著，但未给检验名、p值、效应CI</dd><dt>原文位置</dt><dd>PDF 16 · Figure 8</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>所述配置下TDE报告为对减样本更稳健。</dd><dt>适用边界</dt><dd>不能由未显著变化证明等效或相同准确率；评估仍可能受最高测试epoch选择影响。</dd><dt>实际负结果</dt><dd>作者报告受测TDE在75%训练量条件未见显著下降；并非正式等效结果。</dd><dt>不能推出</dt><dd>不能认定固定连接是唯一原因、普遍数据效率优势或训练更快的实测时长结论。</dd><dt>未解决</dt><dd>显著性检验、数据隔离以及架构先验与参数量的独立贡献。</dd></dl><h3>相关问题</h3><ul><li>训练量减至75%时，TDE与递归LIF的性能敏感性有何不同？</li></ul></article><article><small>C11 / 直接结果 · trained_feature_analysis</small><h2>在全992单元TDE网络训练后，按每类输出W2绝对值最大的二十五项映射回频率配对，正文报告强贡献配对主要集中于约0–1500 Hz且不同关键词之间重叠较少，支持该浅层固定配对结构的可追溯特征解释。</h2><h3>Evidence</h3><p>输出权重到输入频率对的反向映射</p><dl><dt>设计 / 对照</dt><dd>每类筛选绝对值最大25项；关键词类别</dd><dt>独立单位与 n</dt><dd>已训练网络的类特征，不是独立样本；每类25项为筛选数量；此分析重复数未单独给出</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 17 · Figure 9 on PDF page 18</dd></dl><p>图注筛选与可重叠映射说明</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 18 · Figure 9 top-left</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>结果参数可对应具体频率对，而不只是无名隐变量。</dd><dt>适用边界</dt><dd>只分析强权重子集；方法输入范围0–4 kHz，而结果段总范围称3000 Hz，需图/代码核对。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能由稀少重叠证明因果必要特征、完备可解释性或生物局部编码。</dd><dt>未解决</dt><dd>结果频率坐标范围、权重筛选的稳定性。</dd></dl><h3>相关问题</h3><ul><li>固定频率对结构能否把分类输出关联到明确输入特征？</li></ul></article><article><small>C12 / 直接结果 · trained_timescale_analysis</small><h2>在同一全单元TDE网络的每类二十五个强输出权重所对应时间常数分析中，正文报告不同关键词具有不同τg分布，例如oh对应较长时间尺度、seven较短；这些分布描述模型对频率配对事件的学习时间窗口。</h2><h3>Evidence</h3><p>强贡献TDE时间常数按类汇总</p><dl><dt>设计 / 对照</dt><dd>与C11同一筛选；不同关键词</dd><dt>独立单位与 n</dt><dd>训练后参数子集；每类25项；独立训练重复数在此分析未单独说明</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 17 · Figure 9 top-right on PDF page 18</dd></dl><p>τg筛选图注</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 18 · Figure 9 top-right</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>类别可通过模型的频率对与时间窗口共同描述。</dd><dt>适用边界</dt><dd>正文没有τg的逐类精确值或正式分布比较统计。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能认定τg就是语音物理持续时间、因果生成机制或听觉皮层时间常数。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>TDE学习时间常数怎样反映不同关键词的频率对时间结构？</li></ul></article><article><small>C13 / 直接结果 · feature_selection_boundary</small><h2>将全单元TDE网络各类二十五个强输出权重频率对与数据初始最高交叉相关频率对比较时，正文报告匹配较少，二者平均欧氏距离大于不同已训练网络同类特征之间距离，且该方向见于所有关键词；因此最相关输入对不等同最终最强分类特征。</h2><h3>Evidence</h3><p>频率坐标中的匹配及距离比较</p><dl><dt>设计 / 对照</dt><dd>将强W2配对与各类高交叉相关配对比较；不同已训练网络的同类配对距离</dd><dt>独立单位与 n</dt><dd>频率对集合/类别；不是独立语音重复；各类强权重25项；距离比较运行数未明确</dd><dt>不确定性</dt><dd>正文称距离显著更高但没有检验名、p值或CI</dd><dt>原文位置</dt><dd>PDF 17 · Figure 9 bottom on PDF page 18</dd></dl><p>距离指标图注</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 18 · Figure 9 bottom</dd></dl><p>交叉相关与分类贡献区别的结论</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 21 · 4. Conclusions</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>剪枝相关性可有用，但不能取代判别特征学习。</dd><dt>适用边界</dt><dd>结论限定于所用排序、筛选和任务，未经特征消除因果测试。</dd><dt>实际负结果</dt><dd>初始高相关配对与受训强权重配对只有少量重合。</dd><dt>不能推出</dt><dd>不能断言所有高相关配对无用或交叉相关不能提取任何判别信息。</dd><dt>未解决</dt><dd>正式统计和匹配方法的稳健性。</dd></dl><h3>相关问题</h3><ul><li>最高输入交叉相关是否能直接预测训练后的主要判别特征？</li></ul></article><details><summary>核对记录与来源信息</summary><pre>{
+  &quot;coverage&quot;: {
+    &quot;pdf_pages_read&quot;: [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26
+    ],
+    &quot;results_sections_seen&quot;: [
+      &quot;2.1. Dataset and spike-based encoding&quot;,
+      &quot;2.2–2.4. Architectures, offline training and comparison; Equations 1–13; Table 1&quot;,
+      &quot;3.1. Time pattern versus rate; Figure 5&quot;,
+      &quot;3.2. Data-driven TDE-based network architecture; Figure 6; Table 2&quot;,
+      &quot;3.3. Classification accuracy and inference efficiency; Figure 7; Tables 3–4&quot;,
+      &quot;3.4. Training data efficiency; Figure 8&quot;,
+      &quot;3.5. Interpretation of network parameters; Figure 9&quot;,
+      &quot;4. Conclusions; References&quot;
+    ],
+    &quot;missing_material&quot;: [
+      &quot;全部图像像素未提供。&quot;,
+      &quot;原训练代码/种子、分割清单、信息估计明细及端侧硬件能耗未提供；未执行复现。&quot;
+    ],
+    &quot;text_pass_complete&quot;: true,
+    &quot;reading_mode&quot;: &quot;text_only&quot;,
+    &quot;figure_images_read&quot;: false,
+    &quot;scientific_verification&quot;: false,
+    &quot;notes&quot;: [
+      &quot;全部26页供给文本、图1–9图注、表1–4与参考文献已评估；无独立附录或补充材料文本。&quot;,
+      &quot;来源为arXiv:2503.15402v1（19 Mar 2025），标题、署名与导入预印本元数据一致。&quot;,
+      &quot;第二遍核对了测试epoch选择、三次随机训练、连接/参数差异、全数据集事件计数、1.22个百分点与能耗代理范围。&quot;,
+      &quot;文中全部新任务结果来自软件模型，不是硬件关键词识别功率测量；离线Matlab共振峰前处理未计入部署系统耗能。&quot;
+    ]
+  },
+  &quot;audit&quot;: {
+    &quot;source_match_checks&quot;: [
+      {
+        &quot;claim_id&quot;: &quot;C1&quot;,
+        &quot;evidence_index&quot;: 1,
+        &quot;pdf_page&quot;: 11,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;section&quot;: &quot;3.1. Time pattern versus rate&quot;,
+        &quot;figure&quot;: &quot;Figure 5&quot;,
+        &quot;equation&quot;: null,
+        &quot;assessment&quot;: &quot;二次核对所供页文本与定位标签；这不是科学复现或图像验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C2&quot;,
+        &quot;evidence_index&quot;: 1,
+        &quot;pdf_page&quot;: 7,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;section&quot;: &quot;2.2.2. Time Difference Encoder (TDE)&quot;,
+        &quot;figure&quot;: &quot;Figure 4 on PDF page 8&quot;,
+        &quot;equation&quot;: &quot;(5)–(8)&quot;,
+        &quot;assessment&quot;: &quot;二次核对所供页文本与定位标签；这不是科学复现或图像验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C2&quot;,
+        &quot;evidence_index&quot;: 2,
+        &quot;pdf_page&quot;: 9,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;section&quot;: &quot;2.3. Offline training with back-propagation through time&quot;,
+        &quot;figure&quot;: null,
+        &quot;equation&quot;: &quot;(11)&quot;,
+        &quot;assessment&quot;: &quot;二次核对所供页文本与定位标签；这不是科学复现或图像验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C3&quot;,
+        &quot;evidence_index&quot;: 1,
+        &quot;pdf_page&quot;: 12,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;section&quot;: &quot;3.2. Data-driven TDE-based network architecture&quot;,
+        &quot;figure&quot;: &quot;Figure 6 on PDF page 13&quot;,
+        &quot;equation&quot;: null,
+        &quot;assessment&quot;: &quot;二次核对所供页文本与定位标签；这不是科学复现或图像验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C3&quot;,
+        &quot;evidence_index&quot;: 2,
+        &quot;pdf_page&quot;: 14,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;section&quot;: &quot;3.2. Data-driven TDE-based network architecture&quot;,
+        &quot;figure&quot;: &quot;Table 2&quot;,
+        &quot;equation&quot;: null,
+        &quot;assessment&quot;: &quot;二次核对所供页文本与定位标签；这不是科学复现或图像验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C4&quot;,
+        &quot;evidence_index&quot;: 1,
+        &quot;pdf_page&quot;: 14,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;section&quot;: &quot;3.2. Data-driven TDE-based network architecture&quot;,
+        &quot;figure&quot;: &quot;Table 2&quot;,
+        &quot;equation&quot;: null,
+        &quot;assessment&quot;: &quot;二次核对所供页文本与定位标签；这不是科学复现或图像验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C4&quot;,
+        &quot;evidence_index&quot;: 2,
+        &quot;pdf_page&quot;: 16,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;section&quot;: &quot;3.3. Classification accuracy and inference efficiency&quot;,
+        &quot;figure&quot;: &quot;Table 4&quot;,
+        &quot;equation&quot;: &quot;(12) on PDF page 10&quot;,
+        &quot;assessment&quot;: &quot;二次核对所供页文本与定位标签；这不是科学复现或图像验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C5&quot;,
+        &quot;evidence_index&quot;: 1,
+        &quot;pdf_page&quot;: 16,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;section&quot;: &quot;3.3. Classification accuracy and inference efficiency&quot;,
+        &quot;figure&quot;: &quot;Table 4&quot;,
+        &quot;equation&quot;: null,
+        &quot;assessment&quot;: &quot;二次核对所供页文本与定位标签；这不是科学复现或图像验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C6&quot;,
+        &quot;evidence_index&quot;: 1,
+        &quot;pdf_page&quot;: 15,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;section&quot;: &quot;3.3. Classification accuracy and inference efficiency&quot;,
+        &quot;figure&quot;: &quot;Table 3&quot;,
+        &quot;equation&quot;: null,
+        &quot;assessment&quot;: &quot;二次核对所供页文本与定位标签；这不是科学复现或图像验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C7&quot;,
+        &quot;evidence_index&quot;: 1,
+        &quot;pdf_page&quot;: 15,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;section&quot;: &quot;3.3. Classification accuracy and inference efficiency&quot;,
+        &quot;figure&quot;: &quot;Table 3; Figure 7&quot;,
+        &quot;equation&quot;: null,
+        &quot;assessment&quot;: &quot;二次核对所供页文本与定位标签；这不是科学复现或图像验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C8&quot;,
+        &quot;evidence_index&quot;: 1,
+        &quot;pdf_page&quot;: 10,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;section&quot;: &quot;2.4. Comparison of the performance of different network models&quot;,
+        &quot;figure&quot;: null,
+        &quot;equation&quot;: &quot;(13)&quot;,
+        &quot;assessment&quot;: &quot;二次核对所供页文本与定位标签；这不是科学复现或图像验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C8&quot;,
+        &quot;evidence_index&quot;: 2,
+        &quot;pdf_page&quot;: 15,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;section&quot;: &quot;3.3. Classification accuracy and inference efficiency&quot;,
+        &quot;figure&quot;: &quot;Table 3&quot;,
+        &quot;equation&quot;: null,
+        &quot;assessment&quot;: &quot;二次核对所供页文本与定位标签；这不是科学复现或图像验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C8&quot;,
+        &quot;evidence_index&quot;: 3,
+        &quot;pdf_page&quot;: 19,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;section&quot;: &quot;4. Conclusions&quot;,
+        &quot;figure&quot;: null,
+        &quot;equation&quot;: null,
+        &quot;assessment&quot;: &quot;二次核对所供页文本与定位标签；这不是科学复现或图像验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C9&quot;,
+        &quot;evidence_index&quot;: 1,
+        &quot;pdf_page&quot;: 15,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;section&quot;: &quot;3.3. Classification accuracy and inference efficiency&quot;,
+        &quot;figure&quot;: &quot;Figure 7; Table 3&quot;,
+        &quot;equation&quot;: null,
+        &quot;assessment&quot;: &quot;二次核对所供页文本与定位标签；这不是科学复现或图像验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C10&quot;,
+        &quot;evidence_index&quot;: 1,
+        &quot;pdf_page&quot;: 16,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;section&quot;: &quot;3.4. Training data efficiency&quot;,
+        &quot;figure&quot;: &quot;Figure 8&quot;,
+        &quot;equation&quot;: null,
+        &quot;assessment&quot;: &quot;二次核对所供页文本与定位标签；这不是科学复现或图像验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C11&quot;,
+        &quot;evidence_index&quot;: 1,
+        &quot;pdf_page&quot;: 17,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;section&quot;: &quot;3.5. Interpretation of network parameters&quot;,
+        &quot;figure&quot;: &quot;Figure 9 on PDF page 18&quot;,
+        &quot;equation&quot;: null,
+        &quot;assessment&quot;: &quot;二次核对所供页文本与定位标签；这不是科学复现或图像验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C11&quot;,
+        &quot;evidence_index&quot;: 2,
+        &quot;pdf_page&quot;: 18,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;section&quot;: &quot;3.5. Interpretation of network parameters&quot;,
+        &quot;figure&quot;: &quot;Figure 9 top-left&quot;,
+        &quot;equation&quot;: null,
+        &quot;assessment&quot;: &quot;二次核对所供页文本与定位标签；这不是科学复现或图像验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C12&quot;,
+        &quot;evidence_index&quot;: 1,
+        &quot;pdf_page&quot;: 17,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;section&quot;: &quot;3.5. Interpretation of network parameters&quot;,
+        &quot;figure&quot;: &quot;Figure 9 top-right on PDF page 18&quot;,
+        &quot;equation&quot;: null,
+        &quot;assessment&quot;: &quot;二次核对所供页文本与定位标签；这不是科学复现或图像验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C12&quot;,
+        &quot;evidence_index&quot;: 2,
+        &quot;pdf_page&quot;: 18,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;section&quot;: &quot;3.5. Interpretation of network parameters&quot;,
+        &quot;figure&quot;: &quot;Figure 9 top-right&quot;,
+        &quot;equation&quot;: null,
+        &quot;assessment&quot;: &quot;二次核对所供页文本与定位标签；这不是科学复现或图像验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C13&quot;,
+        &quot;evidence_index&quot;: 1,
+        &quot;pdf_page&quot;: 17,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;section&quot;: &quot;3.5. Interpretation of network parameters&quot;,
+        &quot;figure&quot;: &quot;Figure 9 bottom on PDF page 18&quot;,
+        &quot;equation&quot;: null,
+        &quot;assessment&quot;: &quot;二次核对所供页文本与定位标签；这不是科学复现或图像验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C13&quot;,
+        &quot;evidence_index&quot;: 2,
+        &quot;pdf_page&quot;: 18,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;section&quot;: &quot;3.5. Interpretation of network parameters&quot;,
+        &quot;figure&quot;: &quot;Figure 9 bottom&quot;,
+        &quot;equation&quot;: null,
+        &quot;assessment&quot;: &quot;二次核对所供页文本与定位标签；这不是科学复现或图像验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C13&quot;,
+        &quot;evidence_index&quot;: 3,
+        &quot;pdf_page&quot;: 21,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;section&quot;: &quot;4. Conclusions&quot;,
+        &quot;figure&quot;: null,
+        &quot;equation&quot;: null,
+        &quot;assessment&quot;: &quot;二次核对所供页文本与定位标签；这不是科学复现或图像验证。&quot;
+      }
+    ],
+    &quot;model_findings&quot;: [
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;每次报告性能取25个最佳测试epoch平均，测试集用于选择表现。&quot;,
+        &quot;suggested_correction&quot;: &quot;需独立外层评估或盲测；当前只作为该报告协议下候选值。&quot;,
+        &quot;pdf_page&quot;: 10,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;训练/测试随机划分比例、是否按成人隔离及交叉验证折数未清楚报告。&quot;,
+        &quot;suggested_correction&quot;: &quot;人工核查代码和数据分割；不推断未见成人泛化。&quot;,
+        &quot;pdf_page&quot;: 10,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C3&quot;,
+        &quot;issue&quot;: &quot;数据驱动交叉相关使用范围是否只限训练样本未说明。&quot;,
+        &quot;suggested_correction&quot;: &quot;确认剪枝/初始化不使用测试数据或其标签后才能作无泄漏评估。&quot;,
+        &quot;pdf_page&quot;: 12,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C6&quot;,
+        &quot;issue&quot;: &quot;三网络并非相同隐藏单元数、严格相同连接数或参数数。&quot;,
+        &quot;suggested_correction&quot;: &quot;完整保留540/65/163单元、7020/7020/7009连接及6480/7020/7009参数。&quot;,
+        &quot;pdf_page&quot;: 15,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C4&quot;,
+        &quot;issue&quot;: &quot;正文1.22%由89.08与87.86相减得到百分点差。&quot;,
+        &quot;suggested_correction&quot;: &quot;表值明确写为1.22个百分点，未当相对比例。&quot;,
+        &quot;pdf_page&quot;: 14,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C8&quot;,
+        &quot;issue&quot;: &quot;约92%为解析SynOps减少而非测得的功率降低。&quot;,
+        &quot;suggested_correction&quot;: &quot;同时保留额外迹更新、静态耗能和离线前端未计入的限制。&quot;,
+        &quot;pdf_page&quot;: 19,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C10&quot;,
+        &quot;issue&quot;: &quot;显著性结论没有检验名、p值和CI。&quot;,
+        &quot;suggested_correction&quot;: &quot;不将无显著差异等同于等效，不新增检验统计。&quot;,
+        &quot;pdf_page&quot;: 16,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C11&quot;,
+        &quot;issue&quot;: &quot;方法0–4kHz与参数解释总频率3000Hz的坐标范围不同。&quot;,
+        &quot;suggested_correction&quot;: &quot;需原图、频带定义或代码确认。&quot;,
+        &quot;pdf_page&quot;: 17,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C1&quot;,
+        &quot;issue&quot;: &quot;信息估计器、偏差校正及bin趋势措辞不够明确。&quot;,
+        &quot;suggested_correction&quot;: &quot;需原图与计算细节；不补比特值或精确曲线。&quot;,
+        &quot;pdf_page&quot;: 11,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C13&quot;,
+        &quot;issue&quot;: &quot;距差的显著性没有正式统计说明。&quot;,
+        &quot;suggested_correction&quot;: &quot;仅保留作者描述方向和匹配稀少，不发明统计。&quot;,
+        &quot;pdf_page&quot;: 17,
+        &quot;resolved&quot;: false
+      }
+    ],
+    &quot;needs_human_review&quot;: true
+  },
+  &quot;source&quot;: {
+    &quot;filename&quot;: &quot;paper-W4414903451.pdf&quot;,
+    &quot;sha256&quot;: &quot;edb0e82f262882a28c94703c9094c6885235e25be420b414ad9d7cbe11787bb2&quot;,
+    &quot;source_url&quot;: &quot;https://arxiv.org/pdf/2503.15402&quot;,
+    &quot;pdf_page_count&quot;: 26
+  },
+  &quot;provenance&quot;: {
+    &quot;created_at&quot;: &quot;2026-10-07T07:03:44.580Z&quot;,
+    &quot;workflow&quot;: &quot;claim-commons-pdf-v1&quot;,
+    &quot;prompt_version&quot;: &quot;claim-commons-chatgpt-pdf-2026-10-07.1&quot;,
+    &quot;backend&quot;: &quot;authorized_parallel_GPT&quot;,
+    &quot;model&quot;: &quot;inherited_GPT&quot;,
+    &quot;provider_api_key_used&quot;: false,
+    &quot;source_sha256&quot;: &quot;edb0e82f262882a28c94703c9094c6885235e25be420b414ad9d7cbe11787bb2&quot;,
+    &quot;source_audit_complete&quot;: true,
+    &quot;review_status&quot;: &quot;candidate&quot;,
+    &quot;database_updated&quot;: false
+  }
+}</pre></details></main><footer></footer></body></html>

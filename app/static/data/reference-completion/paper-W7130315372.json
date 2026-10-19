@@ -1,0 +1,1201 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "NeoHebbian synapses to accelerate online training of neuromorphic hardware",
+    "authors": [
+      "S. Pande",
+      "S. S. Bezugam",
+      "Tinish Bhattacharya",
+      "Ewelina Wlaźlak",
+      "A. Chakravorty",
+      "B. Chakrabarti"
+    ],
+    "doi": "10.1038/s41598-026-35641-z",
+    "publication_year": 2026,
+    "venue": "Scientific Reports",
+    "url": "https://doi.org/10.1038/s41598-026-35641-z"
+  },
+  "source": {
+    "filename": "paper-W7130315372--NeoHebbian-synapses-to-accelerate-online-training-of-neuromorphic-hardware.pdf",
+    "sha256": "172941cacbc18dc4ea8727dfc99c7ad8906ea75217a5c9028f408e712d84f063",
+    "source_url": "https://www.nature.com/articles/s41598-026-35641-z.pdf?error=cookies_not_supported&code=feba946b-917d-4d05-9f07-29f0ad442c7f",
+    "pdf_page_count": 16
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16
+    ],
+    "results_sections_seen": [
+      "Eligibility learning",
+      "Temperature-dependent ReRAM experiment",
+      "1T1H1M/differential array",
+      "Transient heat model",
+      "RL grids",
+      "TIMIT precision/thermal/variability",
+      "Area-energy estimates",
+      "Limitations"
+    ],
+    "missing_material": [
+      "SupplementarySections1/4/5未供给",
+      "图像像素未读取",
+      "完整实制heater阵列/训练系统未展示"
+    ],
+    "text_pass_complete": true,
+    "notes": "全部16页、11图注、性能估值表与71参考评估；实测和模拟范围明确。",
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "作者提出用非易失ReRAM电导编码权重、共址heater造成的局部温度编码资格迹的双状态突触。",
+      "role": "interpretation",
+      "source_pages": [
+        3
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "实制250×250nm²氧化物ReRAM示例具有约2Vforming、约1Vswitching及0.1V读时约20的on/off比。",
+      "role": "result",
+      "source_pages": [
+        4
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "固定编程脉冲下，ReRAM相对电导变化依环境温度和初始G0变化：SET在低电导较大而RESET在高电导较大。",
+      "role": "result",
+      "source_pages": [
+        5
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "作者在triode近似及非线性电压缩放条件下，使heater功率近似正比于预突触状态和后突触代理信号的乘积；差分两单元处理正负更新。",
+      "role": "interpretation",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "30nm氧化层等假定几何的瞬态热模拟显示heater到ReRAM自热耦合；改缩间距和加厚电极可增加自耦合并减小邻居串热。",
+      "role": "result",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "热自然衰减和邻居串热是资格实现的真实设计限制；当加热脉冲长于τTH，温度进入稳态而不能继续积累资格。",
+      "role": "result",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "3/5/7/10边长gridworld中，适度温度衰减/资格折扣通常比γ=0或γ=1更快达到五次连续正奖励的学习基准。",
+      "role": "result",
+      "source_pages": [
+        10
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "固定50%器件变异的gridworld仿真中，导电热漂移系数与折扣影响成功比例；作者报告较大grid对该漂移系数的敏感度较小。",
+      "role": "result",
+      "source_pages": [
+        10
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "在TIMIT RSNN仿真中，热突触的浮点表现接近理想软件突触；有限精度需每ReRAM约200状态以使所报测试准确率下降小于3%。",
+      "role": "result",
+      "source_pages": [
+        11
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "TIMIT仿真随热时间常数增大而改善，并在τTH约1μs以上趋平台；更密的F/pitch串热带来约3%的性能损失。",
+      "role": "result",
+      "source_pages": [
+        12
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "所示TIMIT硬件感知训练对直到100%器件变异仅约1%准确率下降，增大网络也改善表现。",
+      "role": "result",
+      "source_pages": [
+        13
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "估算的单1T-1H-1M单元面积约450F²/1.9μm²，heater每10ns资格更新约4.5pJ，使所列单元总每步能量约5pJ。",
+      "role": "result",
+      "source_pages": [
+        13
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "作者提出用几何/材料调热时间常数并利用热变量加速本地资格学习，但温度不可直接读控、升温可靠性与长期集成仍是未解决问题。",
+      "role": "hypothesis",
+      "source_pages": [
+        14
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "e-prop预状态/伪梯度/全局学习信号与dataframe末批更新，不等于任意每步无缓冲准确梯度。",
+      "role": "interpretation",
+      "source_pages": [
+        2,
+        3,
+        11
+      ],
+      "decision": "boundary",
+      "reason": "具体资格公式及外围成本在缺失补充"
+    },
+    {
+      "summary": "背景芯片及热神经元文献不作为本文独立实现；已有IEDM48与本工作不能自动认定独立重复。",
+      "role": "review_synthesis",
+      "source_pages": [
+        14,
+        15
+      ],
+      "decision": "exclude",
+      "reason": "71参考完整评估"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "作者提出用非易失ReRAM电导编码权重、共址heater造成的局部温度编码资格迹的双状态突触。",
+      "claim_type": "thermal_eligibility",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "物理架构与三阶段学习设计",
+          "design": "1T-1H-1M，推断/e-update时间复用，dataframe末更新",
+          "comparator": "标准电域资格状态",
+          "measure": "双状态编码",
+          "unit_of_analysis": "器件设计",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "Thermal neoHebbian synapse",
+            "figure": "Fig2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者提出用非易失ReRAM电导编码权重、共址heater造成的局部温度编码资格迹的双状态突触。",
+        "boundary": "集成heater及阵列是设计/建模；实测仅环境升温模拟heater作用。",
+        "negative_result": null,
+        "non_inference": "不是完整芯片或生物资格迹实验。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "neuromorphic-hardware",
+        "learning-plasticity",
+        "computational-efficiency"
+      ],
+      "scientific_questions": [
+        "物理热状态能在什么精度、时标与开销条件下实现资格学习？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C12",
+        "C13"
+      ],
+      "review_notes": [
+        "第二来源审计全16页11图注及性能表；独立器件/循环/20仿真/语料说话人分开；温控实测、集成热模型及任务模拟/估值分层。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "实制250×250nm²氧化物ReRAM示例具有约2Vforming、约1Vswitching及0.1V读时约20的on/off比。",
+      "claim_type": "thermal_eligibility",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "器件制造及I–V",
+          "design": "ALD bilayer、1V/s扫描",
+          "comparator": "高低电导态",
+          "measure": "电气特性",
+          "unit_of_analysis": "器件测量/仿真",
+          "sample_size_as_reported": "独立器件/批次数未报告",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "Experimental fabrication",
+            "figure": "Fig3a",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "实制250×250nm²氧化物ReRAM示例具有约2Vforming、约1Vswitching及0.1V读时约20的on/off比。",
+        "boundary": "代表性I–V不等于大阵列yield、200态精度或长期耐久。",
+        "negative_result": null,
+        "non_inference": "未测集成热资格阵列学习。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "neuromorphic-hardware",
+        "learning-plasticity",
+        "computational-efficiency"
+      ],
+      "scientific_questions": [
+        "物理热状态能在什么精度、时标与开销条件下实现资格学习？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C12",
+        "C13"
+      ],
+      "review_notes": [
+        "第二来源审计全16页11图注及性能表；独立器件/循环/20仿真/语料说话人分开；温控实测、集成热模型及任务模拟/估值分层。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "固定编程脉冲下，ReRAM相对电导变化依环境温度和初始G0变化：SET在低电导较大而RESET在高电导较大。",
+      "claim_type": "thermal_eligibility",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "重编到同G0后温控重复脉冲",
+          "design": "SET .85V/280μs；RESET -1.05V/280μs；G0调准5%",
+          "comparator": "不同温度与G0",
+          "measure": "ΔG/G0",
+          "unit_of_analysis": "器件测量/仿真",
+          "sample_size_as_reported": "每温度×G0 SET10循环、RESET30循环；独立器件数不明",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "Temperature-dependent switching",
+            "figure": "Fig3b–f",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "固定编程脉冲下，ReRAM相对电导变化依环境温度和初始G0变化：SET在低电导较大而RESET在高电导较大。",
+        "boundary": "循环不是独立器件；温度增益和状态饱和不意味着全范围线性。",
+        "negative_result": null,
+        "non_inference": "外部温度实验不直接验证纳秒heater脉冲与瞬态资格积分。",
+        "unresolved": "缺少批间/器件间独立重复和完整不确定度。",
+        "unresolved_attribution": "来源局限及提取者来源复核"
+      },
+      "broad_directions": [
+        "neuromorphic-hardware",
+        "learning-plasticity",
+        "computational-efficiency"
+      ],
+      "scientific_questions": [
+        "物理热状态能在什么精度、时标与开销条件下实现资格学习？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C4",
+        "C5",
+        "C6",
+        "C12",
+        "C13"
+      ],
+      "review_notes": [
+        "第二来源审计全16页11图注及性能表；独立器件/循环/20仿真/语料说话人分开；温控实测、集成热模型及任务模拟/估值分层。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "作者在triode近似及非线性电压缩放条件下，使heater功率近似正比于预突触状态和后突触代理信号的乘积；差分两单元处理正负更新。",
+      "claim_type": "thermal_eligibility",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "电路推导",
+          "design": "VH1∝sqrtψ、VOV含sqrtf/(1−sqrtf)，差分G+−G−",
+          "comparator": "所需资格乘积",
+          "measure": "局部功率及权重符号",
+          "unit_of_analysis": "电路模型",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "Cell and array operation",
+            "figure": "Eq1–3/Fig4–5",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者在triode近似及非线性电压缩放条件下，使heater功率近似正比于预突触状态和后突触代理信号的乘积；差分两单元处理正负更新。",
+        "boundary": "需要正幅度和适当归一化，负ψ必须路由到另一heater；τ和脉冲长度影响积分。",
+        "negative_result": null,
+        "non_inference": "未实测全电路乘法精度或纯local系统误差信号成本。",
+        "unresolved": "f必须落可实缩放范围，global L信号/ψ符号、pre/post外围以及triode适用范围需完整实现。",
+        "unresolved_attribution": "来源局限及提取者来源复核"
+      },
+      "broad_directions": [
+        "neuromorphic-hardware",
+        "learning-plasticity",
+        "computational-efficiency"
+      ],
+      "scientific_questions": [
+        "物理热状态能在什么精度、时标与开销条件下实现资格学习？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C5",
+        "C6",
+        "C12",
+        "C13"
+      ],
+      "review_notes": [
+        "第二来源审计全16页11图注及性能表；独立器件/循环/20仿真/语料说话人分开；温控实测、集成热模型及任务模拟/估值分层。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "30nm氧化层等假定几何的瞬态热模拟显示heater到ReRAM自热耦合；改缩间距和加厚电极可增加自耦合并减小邻居串热。",
+      "claim_type": "thermal_eligibility",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "瞬态热方程数值",
+          "design": "F60nm示例；3×3邻域，扫描pitch/feature size",
+          "comparator": "原与修改堆叠",
+          "measure": "温度响应/耦合系数",
+          "unit_of_analysis": "器件测量/仿真",
+          "sample_size_as_reported": "模型几何扫描；独立物理样品n无",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Electrothermal modeling",
+            "figure": "Fig6",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "30nm氧化层等假定几何的瞬态热模拟显示heater到ReRAM自热耦合；改缩间距和加厚电极可增加自耦合并减小邻居串热。",
+        "boundary": "只基于热参数和几何假设，不是实制阵列热成像。",
+        "negative_result": null,
+        "non_inference": "模拟改良不构成制造可靠性验证。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "neuromorphic-hardware",
+        "learning-plasticity",
+        "computational-efficiency"
+      ],
+      "scientific_questions": [
+        "物理热状态能在什么精度、时标与开销条件下实现资格学习？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C6",
+        "C12",
+        "C13"
+      ],
+      "review_notes": [
+        "第二来源审计全16页11图注及性能表；独立器件/循环/20仿真/语料说话人分开；温控实测、集成热模型及任务模拟/估值分层。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "热自然衰减和邻居串热是资格实现的真实设计限制；当加热脉冲长于τTH，温度进入稳态而不能继续积累资格。",
+      "claim_type": "thermal_eligibility",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "热模型机制分析",
+          "design": "缺活动时衰减；脉宽与热时间常数关系",
+          "comparator": "理想保持eΣ",
+          "measure": "资格积分误差",
+          "unit_of_analysis": "模型约束",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Thermal limitations",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "热自然衰减和邻居串热是资格实现的真实设计限制；当加热脉冲长于τTH，温度进入稳态而不能继续积累资格。",
+        "boundary": "不同任务所需τ不同；传统eΣ保持与折扣迹不可混同。",
+        "negative_result": "热衰减破坏持续保持，串热产生错误e-update，长脉冲使积累饱和。",
+        "non_inference": "不是无损精确资格储存。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "neuromorphic-hardware",
+        "learning-plasticity",
+        "computational-efficiency"
+      ],
+      "scientific_questions": [
+        "物理热状态能在什么精度、时标与开销条件下实现资格学习？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C12",
+        "C13"
+      ],
+      "review_notes": [
+        "第二来源审计全16页11图注及性能表；独立器件/循环/20仿真/语料说话人分开；温控实测、集成热模型及任务模拟/估值分层。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "3/5/7/10边长gridworld中，适度温度衰减/资格折扣通常比γ=0或γ=1更快达到五次连续正奖励的学习基准。",
+      "claim_type": "thermal_eligibility",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "硬件感知SNN仿真",
+          "design": "4动作LIF、差分7bitReRAM；每episode重置",
+          "comparator": "不同γ与器件变异",
+          "measure": "达到基准所需episode",
+          "unit_of_analysis": "器件测量/仿真",
+          "sample_size_as_reported": "每参数×grid20独立仿真运行",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "RL thermal decay",
+            "figure": "Fig8",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "3/5/7/10边长gridworld中，适度温度衰减/资格折扣通常比γ=0或γ=1更快达到五次连续正奖励的学习基准。",
+        "boundary": "是虚拟鼠/奶酪任务，非动物导航；五次成功不等于最优路径或长期泛化。",
+        "negative_result": "快速衰减γ0与不衰减γ1均较慢，较大grid尤其不衰减不佳；器件变异增加所需轮数。",
+        "non_inference": null,
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "neuromorphic-hardware",
+        "learning-plasticity",
+        "computational-efficiency"
+      ],
+      "scientific_questions": [
+        "物理热状态能在什么精度、时标与开销条件下实现资格学习？"
+      ],
+      "shared_evidence_with": [
+        "C8"
+      ],
+      "review_notes": [
+        "第二来源审计全16页11图注及性能表；独立器件/循环/20仿真/语料说话人分开；温控实测、集成热模型及任务模拟/估值分层。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "固定50%器件变异的gridworld仿真中，导电热漂移系数与折扣影响成功比例；作者报告较大grid对该漂移系数的敏感度较小。",
+      "claim_type": "thermal_eligibility",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "温度漂移扫描",
+          "design": "W乘(1+α(T−Tamb))；7bit差分",
+          "comparator": "不同α/γ",
+          "measure": "归一化成功比",
+          "unit_of_analysis": "器件测量/仿真",
+          "sample_size_as_reported": "每参数×grid20运行",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "RL conductance drift",
+            "figure": "Fig9",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "固定50%器件变异的gridworld仿真中，导电热漂移系数与折扣影响成功比例；作者报告较大grid对该漂移系数的敏感度较小。",
+        "boundary": "success ratio被定义为成功次数除扫描最大成功次数，不是天然校准成功概率。",
+        "negative_result": null,
+        "non_inference": "不能说更大真实阵列温漂不重要。",
+        "unresolved": "冗余是作者解释而非独立消融机制。",
+        "unresolved_attribution": "来源局限及提取者来源复核"
+      },
+      "broad_directions": [
+        "neuromorphic-hardware",
+        "learning-plasticity",
+        "computational-efficiency"
+      ],
+      "scientific_questions": [
+        "物理热状态能在什么精度、时标与开销条件下实现资格学习？"
+      ],
+      "shared_evidence_with": [
+        "C7"
+      ],
+      "review_notes": [
+        "第二来源审计全16页11图注及性能表；独立器件/循环/20仿真/语料说话人分开；温控实测、集成热模型及任务模拟/估值分层。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "在TIMIT RSNN仿真中，热突触的浮点表现接近理想软件突触；有限精度需每ReRAM约200状态以使所报测试准确率下降小于3%。",
+      "claim_type": "thermal_eligibility",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "时序分类仿真",
+          "design": "39输入、200隐藏LIF、61非脉冲readout；平均700步/sample",
+          "comparator": "浮点理想突触及状态数",
+          "measure": "分类准确率",
+          "unit_of_analysis": "器件测量/仿真",
+          "sample_size_as_reported": "TIMIT含630说话人；训练/测试拆分及独立种子n未明确",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "TIMIT precision",
+            "figure": "Fig11b–c",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在TIMIT RSNN仿真中，热突触的浮点表现接近理想软件突触；有限精度需每ReRAM约200状态以使所报测试准确率下降小于3%。",
+        "boundary": "630为语料总人数不是实验独立运行数；200状态是模拟要求，非本文实测器件200态。",
+        "negative_result": "较低状态精度有性能下降。",
+        "non_inference": "语音计算不是生物/实体芯片验证。",
+        "unresolved": "正文training accuracy与图注test accuracy称谓不一；相对百分比/百分点下降口径未清。",
+        "unresolved_attribution": "来源局限及提取者来源复核"
+      },
+      "broad_directions": [
+        "neuromorphic-hardware",
+        "learning-plasticity",
+        "computational-efficiency"
+      ],
+      "scientific_questions": [
+        "物理热状态能在什么精度、时标与开销条件下实现资格学习？"
+      ],
+      "shared_evidence_with": [
+        "C10",
+        "C11"
+      ],
+      "review_notes": [
+        "第二来源审计全16页11图注及性能表；独立器件/循环/20仿真/语料说话人分开；温控实测、集成热模型及任务模拟/估值分层。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "TIMIT仿真随热时间常数增大而改善，并在τTH约1μs以上趋平台；更密的F/pitch串热带来约3%的性能损失。",
+      "claim_type": "thermal_eligibility",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "衰减及串热扫描",
+          "design": "热模型参数写入input/recurrent阵列",
+          "comparator": "不同τ、F、K",
+          "measure": "测试准确率",
+          "unit_of_analysis": "器件测量/仿真",
+          "sample_size_as_reported": "独立训练n未报告",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "TIMIT thermal nonidealities",
+            "figure": "Fig11d–e",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "TIMIT仿真随热时间常数增大而改善，并在τTH约1μs以上趋平台；更密的F/pitch串热带来约3%的性能损失。",
+        "boundary": "实际10ms语音帧与加速硬件时钟不同；1μs是所设仿真资源条件。",
+        "negative_result": "短τTH损害任务，阵列加密的串热使准确率下降。",
+        "non_inference": "不证明任意长期时序能被微秒热迹保存。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "neuromorphic-hardware",
+        "learning-plasticity",
+        "computational-efficiency"
+      ],
+      "scientific_questions": [
+        "物理热状态能在什么精度、时标与开销条件下实现资格学习？"
+      ],
+      "shared_evidence_with": [
+        "C9",
+        "C11"
+      ],
+      "review_notes": [
+        "第二来源审计全16页11图注及性能表；独立器件/循环/20仿真/语料说话人分开；温控实测、集成热模型及任务模拟/估值分层。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "所示TIMIT硬件感知训练对直到100%器件变异仅约1%准确率下降，增大网络也改善表现。",
+      "claim_type": "thermal_eligibility",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "器件变异和网络规模仿真",
+          "design": "变化模型见未提供SI5",
+          "comparator": "不同变异及网络规模",
+          "measure": "测试准确率",
+          "unit_of_analysis": "器件测量/仿真",
+          "sample_size_as_reported": "独立种子及变异分布在缺失SI",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "TIMIT variability",
+            "figure": "Fig11f",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所示TIMIT硬件感知训练对直到100%器件变异仅约1%准确率下降，增大网络也改善表现。",
+        "boundary": "特定变异分布与冗余架构的耐受，不能称所有device非理想都鲁棒。",
+        "negative_result": null,
+        "non_inference": "未证明真实制造yield、热疲劳或耐久性。",
+        "unresolved": "误差分布、重训和外围噪声范围未能审计。",
+        "unresolved_attribution": "来源局限及提取者来源复核"
+      },
+      "broad_directions": [
+        "neuromorphic-hardware",
+        "learning-plasticity",
+        "computational-efficiency"
+      ],
+      "scientific_questions": [
+        "物理热状态能在什么精度、时标与开销条件下实现资格学习？"
+      ],
+      "shared_evidence_with": [
+        "C9",
+        "C10"
+      ],
+      "review_notes": [
+        "第二来源审计全16页11图注及性能表；独立器件/循环/20仿真/语料说话人分开；温控实测、集成热模型及任务模拟/估值分层。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "估算的单1T-1H-1M单元面积约450F²/1.9μm²，heater每10ns资格更新约4.5pJ，使所列单元总每步能量约5pJ。",
+      "claim_type": "thermal_eligibility",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "几何和电能解析估计",
+          "design": "65nm晶体管、250nmReRAM、500Ωheater；10ns假设",
+          "comparator": "异技术文献估值",
+          "measure": "面积/单元每步能量",
+          "unit_of_analysis": "估算物理单元",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "Area/energy comparison",
+            "figure": "Table1",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "估算的单1T-1H-1M单元面积约450F²/1.9μm²，heater每10ns资格更新约4.5pJ，使所列单元总每步能量约5pJ。",
+        "boundary": "估计不是实测整机；差分逻辑突触需两物理单元并有外围、ADC/信号缩放/时序成本。",
+        "negative_result": null,
+        "non_inference": "不证明完整训练time-to-solution或energy-to-solution优于所有基线。",
+        "unresolved": "实验编程280μs与估算10ns/不同write假设的外推未实证；few fJ与Gw/电压/编程时长口径不完整。",
+        "unresolved_attribution": "来源局限及提取者来源复核"
+      },
+      "broad_directions": [
+        "neuromorphic-hardware",
+        "learning-plasticity",
+        "computational-efficiency"
+      ],
+      "scientific_questions": [
+        "物理热状态能在什么精度、时标与开销条件下实现资格学习？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C13"
+      ],
+      "review_notes": [
+        "第二来源审计全16页11图注及性能表；独立器件/循环/20仿真/语料说话人分开；温控实测、集成热模型及任务模拟/估值分层。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C13",
+      "statement": "作者提出用几何/材料调热时间常数并利用热变量加速本地资格学习，但温度不可直接读控、升温可靠性与长期集成仍是未解决问题。",
+      "claim_type": "thermal_eligibility",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "应用展望及限制",
+          "design": "未来材料、热器件/大阵列",
+          "comparator": "未做寿命/全面硬件benchmark",
+          "measure": "可部署性",
+          "unit_of_analysis": "研究方向",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 14,
+            "section": "Discussion",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者提出的可检验假说。",
+        "boundary": "概念有器件温控支持，完整在线系统尚需集成与实测。",
+        "negative_result": null,
+        "non_inference": "不能称已达到人脑能效或生物精确资格学习。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "neuromorphic-hardware",
+        "learning-plasticity",
+        "computational-efficiency"
+      ],
+      "scientific_questions": [
+        "物理热状态能在什么精度、时标与开销条件下实现资格学习？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C12"
+      ],
+      "review_notes": [
+        "第二来源审计全16页11图注及性能表；独立器件/循环/20仿真/语料说话人分开；温控实测、集成热模型及任务模拟/估值分层。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "热资格双状态设计有ReRAM温控电导实验支持，任务与集成热阵列性能来自模拟。记录20运行RL、循环非独立器件、200态/τ条件、实际负控制及单元能耗估计未含系统验证。",
+  "shared_evidence": [
+    {
+      "claim_id": "C1",
+      "with": [
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C12",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C2",
+      "with": [
+        "C1",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C12",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C1",
+        "C2",
+        "C4",
+        "C5",
+        "C6",
+        "C12",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C5",
+        "C6",
+        "C12",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C6",
+        "C12",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C12",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C8"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C10",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "with": [
+        "C9",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "with": [
+        "C9",
+        "C10"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C13",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C12"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": "C1",
+        "issue": "摘要完整实验验证措辞需限定到外部温度ReRAM响应，未展示实制heater+阵列。",
+        "pdf_page": 5,
+        "suggested_correction": "器件与模型分层",
+        "resolved": true
+      },
+      {
+        "claim_id": "C3",
+        "issue": "10/30为每状态温度循环，不是独立器件n。",
+        "pdf_page": 5,
+        "suggested_correction": "不猜器件数",
+        "resolved": true
+      },
+      {
+        "claim_id": "C9",
+        "issue": "200可分态只是仿真要求，器件动态范围20不证明200态。",
+        "pdf_page": 11,
+        "suggested_correction": null,
+        "resolved": false
+      },
+      {
+        "claim_id": "C12",
+        "issue": "差分两单元、外围能耗及280μs到10ns加速外推未纳入验证。",
+        "pdf_page": 13,
+        "suggested_correction": null,
+        "resolved": false
+      },
+      {
+        "claim_id": "C9",
+        "issue": "训练/测试曲线称谓与SI条件未明。",
+        "pdf_page": 12,
+        "suggested_correction": null,
+        "resolved": false
+      },
+      {
+        "claim_id": "C4",
+        "issue": "原文ψ一处非负、一处含global L符号；幅度/符号分工必须保留。",
+        "pdf_page": 7,
+        "suggested_correction": null,
+        "resolved": false
+      },
+      {
+        "claim_id": null,
+        "issue": "Fig5b把weight-update写ϕW=0而正文ϕW=1，标注不一致。",
+        "pdf_page": 7,
+        "suggested_correction": null,
+        "resolved": false
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T12:01:23.528186Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "172941cacbc18dc4ea8727dfc99c7ad8906ea75217a5c9028f408e712d84f063",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

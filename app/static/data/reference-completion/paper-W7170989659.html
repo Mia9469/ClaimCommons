@@ -1,0 +1,141 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Physics-Informed Graph-Neural Decoding of the Surface Code: the Logical Signal as an Exact Topological Pairing</title><style>body{max-width:940px;margin:40px auto;padding:0 24px;background:#fffdf7;color:#12372f;font:16px/1.8 Georgia,serif}h1{font-size:26px;line-height:1.4}h2{font-size:20px;line-height:1.5}h3{font-size:16px}article{padding:26px 0;border-top:1px solid #bec4b8}small{color:#68766e}dl{display:grid;grid-template-columns:120px 1fr;gap:8px 20px}dt{font-weight:bold}dd{margin:0}li{padding:8px 0}p,dd{overflow-wrap:anywhere}.note{background:#eef2e2;padding:14px;border-left:3px solid #738968}summary{cursor:pointer}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.7 monospace}@media(max-width:600px){body{margin:24px auto;padding:0 18px}dl{grid-template-columns:1fr;gap:3px}dd{margin-bottom:12px}}@media print{body{margin:0;background:white}details{display:block}}</style><link rel="stylesheet" href="../../commons-v02.css?v=20261020-1"><link rel="stylesheet" href="../../examples.css?v=20260928-2"><link rel="stylesheet" href="../../site.css?v=20261020-1"><script defer src="../../site.js?v=20261020-1"></script><script defer src="../../report-ui.js?v=20261020-1"></script></head><body class="portal-page report-page" data-cc-report-shell="1" data-page="library" data-site-prefix="../../" data-library-paper="paper-W7170989659" data-report-language="zh" data-claim-records="{&quot;C1&quot;:&quot;structured-paper-W7170989659-1&quot;,&quot;C2&quot;:&quot;structured-paper-W7170989659-2&quot;,&quot;C3&quot;:&quot;structured-paper-W7170989659-3&quot;,&quot;C4&quot;:&quot;structured-paper-W7170989659-4&quot;,&quot;C5&quot;:&quot;structured-paper-W7170989659-5&quot;,&quot;C6&quot;:&quot;structured-paper-W7170989659-6&quot;,&quot;C7&quot;:&quot;structured-paper-W7170989659-7&quot;,&quot;C8&quot;:&quot;structured-paper-W7170989659-8&quot;,&quot;C9&quot;:&quot;structured-paper-W7170989659-9&quot;,&quot;C10&quot;:&quot;structured-paper-W7170989659-10&quot;,&quot;C11&quot;:&quot;structured-paper-W7170989659-11&quot;,&quot;C12&quot;:&quot;structured-paper-W7170989659-12&quot;,&quot;C13&quot;:&quot;structured-paper-W7170989659-13&quot;}"><header></header><main id="report-content"><div id="report-tools"></div><small>CLAIM COMMONS / 阅读报告</small><h1>Physics-Informed Graph-Neural Decoding of the Surface Code: the Logical Signal as an Exact Topological Pairing</h1><p class="note">AI 文本提取候选，尚待人工核对。图像像素未读取；PDF 页码指文件中的页序。</p><p>双边界Green恒等式明确，但有限Jacobi及relative图拓扑不能直接证明精确逻辑类充分统计。五seed仿真在d7改善single-J，未证优于φ或MWPM；保留diffusion训练成功、实际负控制与理论缺口。</p><a href="https://arxiv.org/pdf/2607.20060" rel="noreferrer">查看所读原文版本 ↗</a><details><summary>贡献清单与处理决定</summary><ul><li><b>作者设计GINE生成syndrome依赖正边权、Poisson/Jacobi层及边界电流或全场pooling的可微解码器。</b><br>include · 可独立判断的贡献及边界</li><li><b>对于正权图且每连通分量接触Dirichlet边界的精确解，两个零电位sink的流入分别等于χ和1−χ对内部源的加权和，差为Σ(1−2χ)ρ。</b><br>include · 可独立判断的贡献及边界</li><li><b>电势差Bφ是exact梯度；以一致的电阻网络度量解释时，驱动电流无需另加独立循环电流分量。</b><br>include · 可独立判断的贡献及边界</li><li><b>作者把双sink统计量解释为表面码相对拓扑的逻辑信号，但该强解释未由Green恒等式或只有图的一维complex证明。</b><br>include · 可独立判断的贡献及边界</li><li><b>实际25次Jacobi后内部相对残差约0.150±0.028，100次约0.021±0.012，训练和测试使用相同步数而非精确稳态读出。</b><br>include · 可独立判断的贡献及边界</li><li><b>d5 p=.005五seed中，two-sink BA=.898±.013/AUC=.958±.010，与single-J及φ的配对差均未达到显著。</b><br>include · 可独立判断的贡献及边界</li><li><b>d7 p=.005时，two-sink BA=.857±.011，single-J .811±.021，配对均差+.046±.025，t=4.1、p=.014。</b><br>include · 可独立判断的贡献及边界</li><li><b>d7 two-sink与φ均值有差，但p=.18未显著；一个φ训练dead-start贡献了大部分差距。</b><br>include · 可独立判断的贡献及边界</li><li><b>diffusion模型在warmup后成功学习，d5 BA=.875±.023而非随机；早期无warmup的灾难性失败被作者归于训练协议。</b><br>include · 可独立判断的贡献及边界</li><li><b>两sink施加电位差、去syndrome源的Laplace控制在所用训练初始化中不学习，AUC=.50。</b><br>include · 可独立判断的贡献及边界</li><li><b>均匀权χ的bare统计量BA由d5约.63降到d7约.56，学习metric及标量校准对所测更大图更重要。</b><br>include · 可独立判断的贡献及边界</li><li><b>全部学习解码器的报告BA均低于同DEM的MWPM，d5 MWPM=.980、d7=.989。</b><br>include · 可独立判断的贡献及边界</li><li><b>作者提出直接χ读出、多个logical qubit边界对及bias-aware训练，暂未实测；闭toric code不在当前边界构造内。</b><br>include · 可独立判断的贡献及边界</li><li><b>AppendixA电磁/Aharonov–Bohm是直觉类比，作者明确非证明支柱。</b><br>exclude · 不新增物理实证</li><li><b>AppendixC Euler稳定性需dt&lt;2/λmax；dtmax.5不被所给粗界单独保证，实际谱未提供。</b><br>unresolved · 不替作者运行验证</li><li><b>高p=.01/.015数据在方法列出但未报定量比较/排序，不能补造高噪声表现。</b><br>unresolved · 没有有效不同readout次序实证</li><li><b>全部6图注2表29参考评估，图d7仅illustrative的图注与正式TableII使用需区别。</b><br>include · 全文贡献已盘点</li></ul></details><article><small>C1 / 解释 · quantum_graph_decoder</small><h2>作者设计GINE生成syndrome依赖正边权、Poisson/Jacobi层及边界电流或全场pooling的可微解码器。</h2><h3>Evidence</h3><p>GNN/离散Poisson归纳偏置</p><dl><dt>设计 / 对照</dt><dd>4层hidden64；DEM提供边成本；rotated memory-z circuit；单sink/two-sink/φ/diffusion</dd><dt>独立单位与 n</dt><dd>理论对象/独立模拟训练seed；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 8 · Fig5</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>作者设计GINE生成syndrome依赖正边权、Poisson/Jacobi层及边界电流或全场pooling的可微解码器。</dd><dt>适用边界</dt><dd>软件/Stim仿真，无量子芯片；模型已用已知噪声DEM成本。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不是无需噪声模型或无训练参数的完整解码器。</dd><dt>未解决</dt><dd>图5softplus与正文exp(-ce+δ)+floor不一致；4层后标h3有索引疑误。</dd></dl><h3>相关问题</h3><ul><li>双边界Poisson统计量在什么条件下可解释并改善逻辑错误预测？</li></ul></article><article><small>C2 / 直接结果 · quantum_graph_decoder</small><h2>对于正权图且每连通分量接触Dirichlet边界的精确解，两个零电位sink的流入分别等于χ和1−χ对内部源的加权和，差为Σ(1−2χ)ρ。</h2><h3>Evidence</h3><p>L对称性/离散Green恒等式</p><dl><dt>设计 / 对照</dt><dd>χ边界0/1、内部谐和；φ内部Lφ=ρ、边界0/0；直接求χ vssink flux</dd><dt>独立单位与 n</dt><dd>解析图恒等式；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 6 · Eq6–9</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>对于正权图且每连通分量接触Dirichlet边界的精确解，两个零电位sink的流入分别等于χ和1−χ对内部源的加权和，差为Σ(1−2χ)ρ。</dd><dt>适用边界</dt><dd>只证明电阻网络边界统计量；不单独证明它为Z2逻辑奇偶或充分信息。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>数值近似解和任意图逻辑分类不能由该恒等式自动精确。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>双边界Poisson统计量在什么条件下可解释并改善逻辑错误预测？</li></ul></article><article><small>C3 / 解释 · quantum_graph_decoder</small><h2>电势差Bφ是exact梯度；以一致的电阻网络度量解释时，驱动电流无需另加独立循环电流分量。</h2><h3>Evidence</h3><p>图场分解解释</p><dl><dt>设计 / 对照</dt><dd>J=diag(w)Bφ与场Bφ需分开；独立circulation sector</dd><dt>独立单位与 n</dt><dd>场分解；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 4 · Eq3–5</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>电势差Bφ是exact梯度；以一致的电阻网络度量解释时，驱动电流无需另加独立循环电流分量。</dd><dt>适用边界</dt><dd>普通欧氏J不一定属于imB；加权flux内积应与算子一致。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>BᵀJ=ρ只表散度，单凭它不证明任意J无harmonic分量。</dd><dt>未解决</dt><dd>源文Eq4写Bψ欧氏分解随后对J用⋆1加权，内积及边界条件未充分一致。</dd></dl><h3>相关问题</h3><ul><li>双边界Poisson统计量在什么条件下可解释并改善逻辑错误预测？</li></ul></article><article><small>C4 / 解释 · quantum_graph_decoder</small><h2>作者把双sink统计量解释为表面码相对拓扑的逻辑信号，但该强解释未由Green恒等式或只有图的一维complex证明。</h2><h3>Evidence</h3><p>作者拓扑论证及来源审计</p><dl><dt>设计 / 对照</dt><dd>图无2-cells；C是实数metric依赖vote而σ为detector0-cochain；代码逻辑类与图cycle space</dd><dt>独立单位与 n</dt><dd>尚未充分建立的拓扑主张；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 7 · Relative topology interpretation</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>作者把双sink统计量解释为表面码相对拓扑的逻辑信号，但该强解释未由Green恒等式或只有图的一维complex证明。</dd><dt>适用边界</dt><dd>不认定H1(G,∂G;Z2)维数=k；局部cycle需稳定子/2-cell商结构。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>同syndrome可对应不同逻辑错误；非零sink差不必是实际逻辑错误，标量不能精确识别每error。</dd><dt>未解决</dt><dd>对连通图两边界顶点relative H1仍含b1并额外一维；作者把所有局部cycles自动商掉及1−2χ实数和视Z2配对的步骤缺失。</dd></dl><h3>相关问题</h3><ul><li>双边界Poisson统计量在什么条件下可解释并改善逻辑错误预测？</li></ul></article><article><small>C5 / 直接结果 · quantum_graph_decoder</small><h2>实际25次Jacobi后内部相对残差约0.150±0.028，100次约0.021±0.012，训练和测试使用相同步数而非精确稳态读出。</h2><h3>Evidence</h3><p>残差迭代审计</p><dl><dt>设计 / 对照</dt><dd>d5 p.005；有限budget；25 vs100步</dd><dt>独立单位与 n</dt><dd>理论对象/独立模拟训练seed；5训练seeds</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 18 · Eq14–15</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>实际25次Jacobi后内部相对残差约0.150±0.028，100次约0.021±0.012，训练和测试使用相同步数而非精确稳态读出。</dd><dt>适用边界</dt><dd>数值收敛方向有支持，25步不是Gauss law exact；一致预算只保证同一特征函数。</dd><dt>实际负结果</dt><dd>25步仍有约15%相对残差。</dd><dt>不能推出</dt><dd>不等于实现精确Prop1统计量。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>双边界Poisson统计量在什么条件下可解释并改善逻辑错误预测？</li></ul></article><article><small>C6 / 直接结果 · quantum_graph_decoder</small><h2>d5 p=.005五seed中，two-sink BA=.898±.013/AUC=.958±.010，与single-J及φ的配对差均未达到显著。</h2><h3>Evidence</h3><p>同split多seed比较</p><dl><dt>设计 / 对照</dt><dd>80/10/10分层；validation择checkpoint/threshold；single-J .893±.009、φ .910±.018</dd><dt>独立单位与 n</dt><dd>理论对象/独立模拟训练seed；5独立seeds/各自生成split；训练样本总数未提供</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 13 · TableI</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>d5 p=.005五seed中，two-sink BA=.898±.013/AUC=.958±.010，与single-J及φ的配对差均未达到显著。</dd><dt>适用边界</dt><dd>小n未显著不证明统计等效或标量充分性；边界与readout同时改变。</dd><dt>实际负结果</dt><dd>two−single差+.005±.012，p=.43；two−φ−.012±.024，p=.33。</dd><dt>不能推出</dt><dd>不能称two最准确、无信息损失或优于φ。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>双边界Poisson统计量在什么条件下可解释并改善逻辑错误预测？</li></ul></article><article><small>C7 / 直接结果 · quantum_graph_decoder</small><h2>d7 p=.005时，two-sink BA=.857±.011，single-J .811±.021，配对均差+.046±.025，t=4.1、p=.014。</h2><h3>Evidence</h3><p>配对5seed比较</p><dl><dt>设计 / 对照</dt><dd>更长patience及minimumepoch的协议；single-sink current pool</dd><dt>独立单位与 n</dt><dd>理论对象/独立模拟训练seed；5seeds，所有配对差为正</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 14 · TableII</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>d7 p=.005时，two-sink BA=.857±.011，single-J .811±.021，配对均差+.046±.025，t=4.1、p=.014。</dd><dt>适用边界</dt><dd>在测试d7设置有t-test优势，但n5及检验选取限制，不是任意distance性能规律。</dd><dt>实际负结果</dt><dd>Wilcoxon p=.06未达常用.05，不能称所有统计均显著。</dd><dt>不能推出</dt><dd>不是与MWPM或量子硬件纠错效能的优势。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>双边界Poisson统计量在什么条件下可解释并改善逻辑错误预测？</li></ul></article><article><small>C8 / 直接结果 · quantum_graph_decoder</small><h2>d7 two-sink与φ均值有差，但p=.18未显著；一个φ训练dead-start贡献了大部分差距。</h2><h3>Evidence</h3><p>seed失败控制</p><dl><dt>设计 / 对照</dt><dd>φ一seed BA.713，其余约.82–.86；two vsφ .815±.061</dd><dt>独立单位与 n</dt><dd>理论对象/独立模拟训练seed；5seeds，事后子集4</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 14 · TableII</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>d7 two-sink与φ均值有差，但p=.18未显著；一个φ训练dead-start贡献了大部分差距。</dd><dt>适用边界</dt><dd>剔除失败seed为事后诊断不是更公平主效应；不显著不是等效。</dd><dt>实际负结果</dt><dd>全5Wilcoxon p=.13；除该seed均差降约.018仍未显著。</dd><dt>不能推出</dt><dd>未报告 / 不适用</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>双边界Poisson统计量在什么条件下可解释并改善逻辑错误预测？</li></ul></article><article><small>C9 / 直接结果 · quantum_graph_decoder</small><h2>diffusion模型在warmup后成功学习，d5 BA=.875±.023而非随机；早期无warmup的灾难性失败被作者归于训练协议。</h2><h3>Evidence</h3><p>训练对照与多seed比较</p><dl><dt>设计 / 对照</dt><dd>15Eulersteps及learnable dt；无physics residual损失；有/无warmup先期运行；其他readouts</dd><dt>独立单位与 n</dt><dd>理论对象/独立模拟训练seed；正式5seeds；先期次数未报告</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 13 · TableI/Fig6</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>diffusion模型在warmup后成功学习，d5 BA=.875±.023而非随机；早期无warmup的灾难性失败被作者归于训练协议。</dd><dt>适用边界</dt><dd>数学diffusion无稳态Poisson平衡，但不表示不能携带分类信息；所有diffusion比较不只readout还loss变化。</dd><dt>实际负结果</dt><dd>预设J&gt;φ&gt;diffusion层级未得到数据支持；无warmup先期失败不是内在不可能。</dd><dt>不能推出</dt><dd>未报告 / 不适用</dd><dt>未解决</dt><dd>第16页称diffusion高于single-J却表.875&lt;.893；未给paired证明所有差显著。</dd></dl><h3>相关问题</h3><ul><li>双边界Poisson统计量在什么条件下可解释并改善逻辑错误预测？</li></ul></article><article><small>C10 / 直接结果 · quantum_graph_decoder</small><h2>两sink施加电位差、去syndrome源的Laplace控制在所用训练初始化中不学习，AUC=.50。</h2><h3>Evidence</h3><p>source vsboundary驱动控制</p><dl><dt>设计 / 对照</dt><dd>均匀边权时所有样本场相同；ρ=σ Poisson</dd><dt>独立单位与 n</dt><dd>理论对象/独立模拟训练seed；control独立seed次数未给</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 12 · Source-free negative control</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>两sink施加电位差、去syndrome源的Laplace控制在所用训练初始化中不学习，AUC=.50。</dd><dt>适用边界</dt><dd>真实观察限制于该初始化/架构；w(σ)可依syndrome，source-free场原则上不必sample-independent。</dd><dt>实际负结果</dt><dd>所设控制训练失败。</dd><dt>不能推出</dt><dd>不证明全部Laplace/weight-only架构数学上无法学习。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>双边界Poisson统计量在什么条件下可解释并改善逻辑错误预测？</li></ul></article><article><small>C11 / 直接结果 · quantum_graph_decoder</small><h2>均匀权χ的bare统计量BA由d5约.63降到d7约.56，学习metric及标量校准对所测更大图更重要。</h2><h3>Evidence</h3><p>uniform权与trained对照</p><dl><dt>设计 / 对照</dt><dd>逻辑轴按真实label经验选择，d7均衡边界72/72；w1 vs学习模型</dd><dt>独立单位与 n</dt><dd>理论对象/独立模拟训练seed；bare测试样本/重复n未报告</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 14 · Bare signal and partition</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>均匀权χ的bare统计量BA由d5约.63降到d7约.56，学习metric及标量校准对所测更大图更重要。</dd><dt>适用边界</dt><dd>经验partition需要独立training选择验证；更小bare BA不证明全部噪声/距离趋势。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>未报告 / 不适用</dd><dt>未解决</dt><dd>逻辑轴测试用了true error chain/label但未交代与test隔离，可能信息泄露范围未明。</dd></dl><h3>相关问题</h3><ul><li>双边界Poisson统计量在什么条件下可解释并改善逻辑错误预测？</li></ul></article><article><small>C12 / 直接结果 · quantum_graph_decoder</small><h2>全部学习解码器的报告BA均低于同DEM的MWPM，d5 MWPM=.980、d7=.989。</h2><h3>Evidence</h3><p>同噪声参考比较</p><dl><dt>设计 / 对照</dt><dd>circuit-level depolarizing p.005；four learned decoders</dd><dt>独立单位与 n</dt><dd>理论对象/独立模拟训练seed；5neural seeds；MWPM同模拟参考</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 13 · TableI–II</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>全部学习解码器的报告BA均低于同DEM的MWPM，d5 MWPM=.980、d7=.989。</dd><dt>适用边界</dt><dd>用已知DEM参数；不推出MWPM对任意相关/漂移噪声绝对最优。</dd><dt>实际负结果</dt><dd>本模型未超过MWPM。</dd><dt>不能推出</dt><dd>MWPM最小权error-chain与error-class概率和的最大似然不是普遍等价。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>双边界Poisson统计量在什么条件下可解释并改善逻辑错误预测？</li></ul></article><article><small>C13 / 假说 / 预测 · quantum_graph_decoder</small><h2>作者提出直接χ读出、多个logical qubit边界对及bias-aware训练，暂未实测；闭toric code不在当前边界构造内。</h2><h3>Evidence</h3><p>拓扑/架构扩展假说</p><dl><dt>设计 / 对照</dt><dd>拟加2k sinks/k输出；偏置DEM初始化；未实施新code/biased训练</dd><dt>独立单位与 n</dt><dd>未来方向；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 16 · Future work</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>作者提出的可检验假说。</dd><dt>适用边界</dt><dd>2k边界要求并非所有k逻辑码的普适拓扑，更多sink无信号/必降性能也未验证。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>没有k&gt;1、d9、高噪声或bias优势结果。</dd><dt>未解决</dt><dd>多边界维度和同boundary子sink谐和函数归零的论证未证明。</dd></dl><h3>相关问题</h3><ul><li>双边界Poisson统计量在什么条件下可解释并改善逻辑错误预测？</li></ul></article><details><summary>核对记录与来源信息</summary><pre>{
+  &quot;coverage&quot;: {
+    &quot;pdf_pages_read&quot;: [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    &quot;results_sections_seen&quot;: [
+      &quot;Graph/DEC/Prop1 proof&quot;,
+      &quot;GINE/weight/Jacobi&quot;,
+      &quot;four readouts&quot;,
+      &quot;Training and logical axis&quot;,
+      &quot;d5/d7 comparisons&quot;,
+      &quot;Laplace control&quot;,
+      &quot;Bare metric/MWPM&quot;,
+      &quot;AppendixA–D&quot;
+    ],
+    &quot;missing_material&quot;: [
+      &quot;图像像素未读取&quot;,
+      &quot;训练样本总数及axis选择分割未给&quot;,
+      &quot;未测k&gt;1/highp/biasednoise&quot;
+    ],
+    &quot;text_pass_complete&quot;: true,
+    &quot;notes&quot;: &quot;arXiv2607.20060v2，页眉7/29正文Dated7/30；全部19页及附录证明/6图2表29参考评估。&quot;,
+    &quot;reading_mode&quot;: &quot;text_only&quot;,
+    &quot;figure_images_read&quot;: false,
+    &quot;scientific_verification&quot;: false,
+    &quot;source_pdf_offline&quot;: true,
+    &quot;archived_page_text_used&quot;: true
+  },
+  &quot;audit&quot;: {
+    &quot;source_match_checks&quot;: [],
+    &quot;model_findings&quot;: [
+      {
+        &quot;claim_id&quot;: &quot;C4&quot;,
+        &quot;issue&quot;: &quot;裸图relativeH1不是一个逻辑qubit的quotient，实数σ加权统计不是自动Z2 topological invariant；同σ存在不同logical errors。&quot;,
+        &quot;pdf_page&quot;: 7,
+        &quot;suggested_correction&quot;: null,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C5&quot;,
+        &quot;issue&quot;: &quot;主文exactGauss与AppendixB15%残差矛盾，实际有限步s25不等稳态s∞。&quot;,
+        &quot;pdf_page&quot;: 18,
+        &quot;suggested_correction&quot;: null,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;Eq18 homogeneous diffusion u=e^-tLρ趋零/常量，其Lu不趋ρ；缺持续源，不能称t∞恢复Poisson。&quot;,
+        &quot;pdf_page&quot;: 11,
+        &quot;suggested_correction&quot;: null,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;无边界L存在零模，Jacobi全谱还可含2，不能无条件always converge；anchored connected条件应显式。&quot;,
+        &quot;pdf_page&quot;: 17,
+        &quot;suggested_correction&quot;: null,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;dtmax=.5由2dmaxwmax界不能无条件确保Euler稳定。&quot;,
+        &quot;pdf_page&quot;: 18,
+        &quot;suggested_correction&quot;: null,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C6&quot;,
+        &quot;issue&quot;: &quot;五seed不显著不是统计等效，不能证明scalar饱和所有信息。&quot;,
+        &quot;pdf_page&quot;: 12,
+        &quot;suggested_correction&quot;: &quot;保留实际p及非推论&quot;,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C1&quot;,
+        &quot;issue&quot;: &quot;w=e^-ce+floor不是MWPM ce成本同权；模型已用DEM，且图softplus/正文exp、floor .1 vs10^-5有配置差异。&quot;,
+        &quot;pdf_page&quot;: 9,
+        &quot;suggested_correction&quot;: null,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C11&quot;,
+        &quot;issue&quot;: &quot;经验logical-axis基于label与true-chain判据的使用分割未明。&quot;,
+        &quot;pdf_page&quot;: 12,
+        &quot;suggested_correction&quot;: null,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C9&quot;,
+        &quot;issue&quot;: &quot;diffusion相对single-J排序文字与表矛盾；diffusion无physics penalty，不是全部loss相同。&quot;,
+        &quot;pdf_page&quot;: 16,
+        &quot;suggested_correction&quot;: null,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C13&quot;,
+        &quot;issue&quot;: &quot;更多sink不能分相对sameboundary论证和k&gt;1推广仅假说。&quot;,
+        &quot;pdf_page&quot;: 10,
+        &quot;suggested_correction&quot;: null,
+        &quot;resolved&quot;: false
+      }
+    ],
+    &quot;needs_human_review&quot;: true
+  },
+  &quot;source&quot;: {
+    &quot;filename&quot;: &quot;paper-W7170989659--Physics-Informed-Graph-Neural-Decoding-of-the-Surface-Code-the-Logical-Signal-as-an-Exact-Topol.pdf&quot;,
+    &quot;sha256&quot;: &quot;d00704e3f67e17c397aab132d293ff7e30b141dff259c85e6e76b89d16b1ed42&quot;,
+    &quot;source_url&quot;: &quot;https://arxiv.org/pdf/2607.20060&quot;,
+    &quot;pdf_page_count&quot;: 19
+  },
+  &quot;provenance&quot;: {
+    &quot;created_at&quot;: &quot;2026-10-07T12:13:27.301530Z&quot;,
+    &quot;workflow&quot;: &quot;claim-commons-pdf-v1&quot;,
+    &quot;prompt_version&quot;: &quot;claim-commons-chatgpt-pdf-2026-10-07.1&quot;,
+    &quot;backend&quot;: &quot;authorized_parallel_GPT&quot;,
+    &quot;model&quot;: &quot;inherited_account_GPT&quot;,
+    &quot;provider_api_key_used&quot;: false,
+    &quot;source_sha256&quot;: &quot;d00704e3f67e17c397aab132d293ff7e30b141dff259c85e6e76b89d16b1ed42&quot;,
+    &quot;source_audit_complete&quot;: true,
+    &quot;review_status&quot;: &quot;candidate&quot;,
+    &quot;database_updated&quot;: false
+  }
+}</pre></details></main><footer></footer></body></html>

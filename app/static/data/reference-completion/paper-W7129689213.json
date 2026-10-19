@@ -1,0 +1,1076 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "preprint",
+  "paper": {
+    "title": "An Efficient Computing Theory of Prefrontal Structured Working Memory Representations",
+    "authors": [
+      "William Dorrell",
+      "Peter E. Latham",
+      "Timothy E.J. Behrens",
+      "James C. R. Whittington"
+    ],
+    "doi": "10.64898/2026.02.16.706126",
+    "publication_year": 2026,
+    "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+    "url": "https://doi.org/10.64898/2026.02.16.706126"
+  },
+  "source": {
+    "filename": "paper-W7129689213--An-Efficient-Computing-Theory-of-Prefrontal-Structured-Working-Memory-Representations.pdf",
+    "sha256": "abe579e954d1dff6616f143bf87f9dba5133dcb13c1e436b285b172bb1a0316c",
+    "source_url": "https://www.biorxiv.org/content/biorxiv/early/2026/03/08/2026.02.16.706126.full.pdf",
+    "pdf_page_count": 36
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36
+    ],
+    "results_sections_seen": [
+      "2 Efficient computing constraints",
+      "3 Subspace structure and task diversity",
+      "4 Recall distance, rotation, algorithm inference",
+      "5 Discussion",
+      "A Gated-linear RNN",
+      "B.1 Subspace/Bias",
+      "B.2 Full nonconvex loss",
+      "B.3 Simplified orthogonality/modularity",
+      "C Noise limit",
+      "D Simulations",
+      "E Estimator and data reanalysis",
+      "F Supplementary experiments",
+      "References"
+    ],
+    "missing_material": [
+      "图像像素",
+      "所引原始研究完整数据/分析代码未在此次重跑；不视为新实验"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "完整36页，含A–F全部供应附录及图注；源为2026-03-08 bioRxiv版，未同行评审。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "在仿射读出和行动相关线性转移约束、可独立解码的满秩记忆及足够表示维度下，最小L2活动/权重成本的无非负限制解只保留按行动偏移编码的子空间结构；它们不必几何正交。",
+      "role": "result",
+      "source_pages": [
+        18
+      ],
+      "decision": "include",
+      "reason": "保留联合假设与实际不匹配"
+    },
+    {
+      "summary": "引入仿射输入和非负活动后，作者在行动构成群、各状态刺激边缘相同等条件下得到子空间加不变偏置结构；非群情形的广泛推广仍为猜想。",
+      "role": "result",
+      "source_pages": [
+        20
+      ],
+      "decision": "include",
+      "reason": "保留联合假设与实际不匹配"
+    },
+    {
+      "summary": "对去掉循环权重交叉项的简化损失、无非负限制及独立零均值记忆，正交化不增活动成本并降低权重成本；记忆相关可改变最优对齐方向。",
+      "role": "result",
+      "source_pages": [
+        24
+      ],
+      "decision": "include",
+      "reason": "保留联合假设与实际不匹配"
+    },
+    {
+      "summary": "在简化损失、非负活动和range-independent支持条件下，允许模块化拆分的表示将不同记忆分配到不同神经元可降低成本；支持独立不是统计独立。",
+      "role": "result",
+      "source_pages": [
+        26
+      ],
+      "decision": "include",
+      "reason": "保留联合假设与实际不匹配"
+    },
+    {
+      "summary": "数值优化中独立刺激产生较正交/组合式编码，较依赖刺激产生更对齐/情境式单元；带符号对齐随相关符号变化，而非相关越强必然同向。",
+      "role": "result",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "保留联合假设与实际不匹配"
+    },
+    {
+      "summary": "重分析Panichello–Buschman和Xie数据支持独立采样较正交、无放回采样较正向对齐的区别；改变采样方式交换对齐的预测尚未以新干预验证。",
+      "role": "interpretation",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "保留联合假设与实际不匹配"
+    },
+    {
+      "summary": "模型中活动成本压缩子空间、读出成本放大当前子空间、循环成本限制尺寸差，使编码大小依靠离读出距离和行动结构；同样一步可读出的记忆趋于等尺寸。",
+      "role": "result",
+      "source_pages": [
+        12
+      ],
+      "decision": "include",
+      "reason": "保留联合假设与实际不匹配"
+    },
+    {
+      "summary": "在固定/可变延迟模型中，只有尚不用读出的时段允许较低成本旋转表示；从最早可能读出起需稳定/可读，匹配所引动态编码模式。",
+      "role": "result",
+      "source_pages": [
+        10
+      ],
+      "decision": "include",
+      "reason": "保留联合假设与实际不匹配"
+    },
+    {
+      "summary": "在作者的候选算法及效率假设下，既有记忆槽尺寸梯度更符合output conveyor而非output gating；输入门控仍可由行动时步差异形成。",
+      "role": "hypothesis",
+      "source_pages": [
+        12
+      ],
+      "decision": "include",
+      "reason": "保留联合假设与实际不匹配"
+    },
+    {
+      "summary": "附录的合成数据表明首主角和近90°角度指标、条件平均及正则回归可偏置对齐；差分和OLS二阶矩修正/PSD投影改善部分估计但仍有方差及偏差限制。",
+      "role": "result",
+      "source_pages": [
+        33
+      ],
+      "decision": "include",
+      "reason": "保留联合假设与实际不匹配"
+    },
+    {
+      "summary": "Xie数据的三种估计均给出1→2→3槽尺寸下降和部分正对齐，但显著对齐的槽组合及幅度不一致，作者不对精确幅度作强主张。",
+      "role": "result",
+      "source_pages": [
+        34
+      ],
+      "decision": "include",
+      "reason": "保留联合假设与实际不匹配"
+    },
+    {
+      "summary": "理论未匹配Panichello–Buschman的单神经元非模块现象及El-Gaby的任务进度叠加编码，尚不能解释所有PFC单细胞响应或唯一算法选择。",
+      "role": "result",
+      "source_pages": [
+        13
+      ],
+      "decision": "include",
+      "reason": "保留联合假设与实际不匹配"
+    },
+    {
+      "summary": "作者在小iid零均值Gaussian活动/权重噪声和精确线性重构极限下把L2正则解释为噪声鲁棒性代价，提供效率目标的另一个条件性动机。",
+      "role": "result",
+      "source_pages": [
+        26
+      ],
+      "decision": "include",
+      "reason": "保留联合假设与实际不匹配"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "在仿射读出和行动相关线性转移约束、可独立解码的满秩记忆及足够表示维度下，最小L2活动/权重成本的无非负限制解只保留按行动偏移编码的子空间结构；它们不必几何正交。",
+      "claim_type": "theory",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "理论推导",
+          "design": null,
+          "comparator": null,
+          "measure": "子空间结构、大小、对齐或规定损失的相应结论",
+          "unit_of_analysis": "数学构造/任务假设",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "无非负约束；均值中心化；刺激不能由其他位置完全预测；正确转移/解码及联合线性独立"
+          ],
+          "source_locator": {
+            "pdf_page": 18,
+            "section": "B.1.1–B.1.2",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在仿射读出和行动相关线性转移约束、可独立解码的满秩记忆及足够表示维度下，最小L2活动/权重成本的无非负限制解只保留按行动偏移编码的子空间结构；它们不必几何正交。",
+        "boundary": "无非负约束；均值中心化；刺激不能由其他位置完全预测；正确转移/解码及联合线性独立",
+        "negative_result": null,
+        "non_inference": "规范最优、模拟及既有数据相符不证明生物实现了唯一最优算法；理论条件不能扩展为任意非线性网络。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "representation-coding",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "记忆子空间结构何时由计算约束导出？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "引入仿射输入和非负活动后，作者在行动构成群、各状态刺激边缘相同等条件下得到子空间加不变偏置结构；非群情形的广泛推广仍为猜想。",
+      "claim_type": "theory",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "条件理论及偏置分析",
+          "design": null,
+          "comparator": null,
+          "measure": "子空间结构、大小、对齐或规定损失的相应结论",
+          "unit_of_analysis": "数学构造/任务假设",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "群结构、等边缘和最小非负偏置；不是任意有边界任务"
+          ],
+          "source_locator": {
+            "pdf_page": 20,
+            "section": "B.1.3；续p21",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "引入仿射输入和非负活动后，作者在行动构成群、各状态刺激边缘相同等条件下得到子空间加不变偏置结构；非群情形的广泛推广仍为猜想。",
+        "boundary": "群结构、等边缘和最小非负偏置；不是任意有边界任务",
+        "negative_result": null,
+        "non_inference": "规范最优、模拟及既有数据相符不证明生物实现了唯一最优算法；理论条件不能扩展为任意非线性网络。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "representation-coding",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "非负仿射表示何时保持子空间结构？"
+      ],
+      "shared_evidence_with": [
+        "C1"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "对去掉循环权重交叉项的简化损失、无非负限制及独立零均值记忆，正交化不增活动成本并降低权重成本；记忆相关可改变最优对齐方向。",
+      "claim_type": "theory",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "简化损失推导",
+          "design": null,
+          "comparator": null,
+          "measure": "子空间结构、大小、对齐或规定损失的相应结论",
+          "unit_of_analysis": "数学构造/任务假设",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "简化循环损失，满秩、零均值、独立记忆；不能自动当完整非凸损失定理"
+          ],
+          "source_locator": {
+            "pdf_page": 24,
+            "section": "B.3.1–B.3.2；续p25",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "对去掉循环权重交叉项的简化损失、无非负限制及独立零均值记忆，正交化不增活动成本并降低权重成本；记忆相关可改变最优对齐方向。",
+        "boundary": "简化循环损失，满秩、零均值、独立记忆；不能自动当完整非凸损失定理",
+        "negative_result": null,
+        "non_inference": "规范最优、模拟及既有数据相符不证明生物实现了唯一最优算法；理论条件不能扩展为任意非线性网络。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "representation-coding",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "简化损失下独立记忆是否正交？"
+      ],
+      "shared_evidence_with": [
+        "C1"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "在简化损失、非负活动和range-independent支持条件下，允许模块化拆分的表示将不同记忆分配到不同神经元可降低成本；支持独立不是统计独立。",
+      "claim_type": "theory",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "模块化构造证明",
+          "design": null,
+          "comparator": null,
+          "measure": "子空间结构、大小、对齐或规定损失的相应结论",
+          "unit_of_analysis": "数学构造/任务假设",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "最小偏置；所有支持组合/足够神经元可拆分；保持可解码；不是固定任意神经元预算"
+          ],
+          "source_locator": {
+            "pdf_page": 26,
+            "section": "B.3.3",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在简化损失、非负活动和range-independent支持条件下，允许模块化拆分的表示将不同记忆分配到不同神经元可降低成本；支持独立不是统计独立。",
+        "boundary": "最小偏置；所有支持组合/足够神经元可拆分；保持可解码；不是固定任意神经元预算",
+        "negative_result": null,
+        "non_inference": "规范最优、模拟及既有数据相符不证明生物实现了唯一最优算法；理论条件不能扩展为任意非线性网络。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "representation-coding",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "支持独立何时产生神经元模块化？"
+      ],
+      "shared_evidence_with": [
+        "C3"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "数值优化中独立刺激产生较正交/组合式编码，较依赖刺激产生更对齐/情境式单元；带符号对齐随相关符号变化，而非相关越强必然同向。",
+      "claim_type": "simulation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "参数化/直接表示优化",
+          "design": null,
+          "comparator": null,
+          "measure": "子空间结构、大小、对齐或规定损失的相应结论",
+          "unit_of_analysis": "数值任务/参数和噪声配置",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "给定仿射约束、L2成本与任务统计；完整问题非凸，未给普遍全局优化证书"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "Fig.4 / D / F.1 pp35–36",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "数值优化中独立刺激产生较正交/组合式编码，较依赖刺激产生更对齐/情境式单元；带符号对齐随相关符号变化，而非相关越强必然同向。",
+        "boundary": "给定仿射约束、L2成本与任务统计；完整问题非凸，未给普遍全局优化证书",
+        "negative_result": null,
+        "non_inference": "规范最优、模拟及既有数据相符不证明生物实现了唯一最优算法；理论条件不能扩展为任意非线性网络。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "representation-coding",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "任务相关如何改变最优表示？"
+      ],
+      "shared_evidence_with": [
+        "C3",
+        "C4"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "重分析Panichello–Buschman和Xie数据支持独立采样较正交、无放回采样较正向对齐的区别；改变采样方式交换对齐的预测尚未以新干预验证。",
+      "claim_type": "interpretation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "既有神经记录重分析与模型对照",
+          "design": null,
+          "comparator": null,
+          "measure": "子空间结构、大小、对齐或规定损失的相应结论",
+          "unit_of_analysis": "共享原始记录的神经元/试次",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "正确试次及指定延迟窗；对齐幅度受噪声/估计方法影响；原始动物n未在供应源列全"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "3.2 / Appendix E",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "重分析Panichello–Buschman和Xie数据支持独立采样较正交、无放回采样较正向对齐的区别；改变采样方式交换对齐的预测尚未以新干预验证。",
+        "boundary": "正确试次及指定延迟窗；对齐幅度受噪声/估计方法影响；原始动物n未在供应源列全",
+        "negative_result": null,
+        "non_inference": "规范最优、模拟及既有数据相符不证明生物实现了唯一最优算法；理论条件不能扩展为任意非线性网络。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "representation-coding",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "采样规则能否解释记录的对齐差异？"
+      ],
+      "shared_evidence_with": [
+        "C5",
+        "C10",
+        "C11"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "模型中活动成本压缩子空间、读出成本放大当前子空间、循环成本限制尺寸差，使编码大小依靠离读出距离和行动结构；同样一步可读出的记忆趋于等尺寸。",
+      "claim_type": "simulation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "规范模型及既有数据大小比较",
+          "design": null,
+          "comparator": null,
+          "measure": "子空间结构、大小、对齐或规定损失的相应结论",
+          "unit_of_analysis": "数值任务/参数和噪声配置",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "L2代理成本/λ及给定子空间算法；神经元数仅作为部分实验的尺寸代理"
+          ],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "Fig.5A–F / 4.1",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "模型中活动成本压缩子空间、读出成本放大当前子空间、循环成本限制尺寸差，使编码大小依靠离读出距离和行动结构；同样一步可读出的记忆趋于等尺寸。",
+        "boundary": "L2代理成本/λ及给定子空间算法；神经元数仅作为部分实验的尺寸代理",
+        "negative_result": null,
+        "non_inference": "规范最优、模拟及既有数据相符不证明生物实现了唯一最优算法；理论条件不能扩展为任意非线性网络。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "representation-coding",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "读出距离如何决定槽大小？"
+      ],
+      "shared_evidence_with": [
+        "C1"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "在固定/可变延迟模型中，只有尚不用读出的时段允许较低成本旋转表示；从最早可能读出起需稳定/可读，匹配所引动态编码模式。",
+      "claim_type": "simulation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "延迟及读出要求模拟",
+          "design": null,
+          "comparator": null,
+          "measure": "子空间结构、大小、对齐或规定损失的相应结论",
+          "unit_of_analysis": "数值任务/参数和噪声配置",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "神经/权重L2代价和规定读出窗口；不是实际代谢测量"
+          ],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "4.2 / Fig.5G",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在固定/可变延迟模型中，只有尚不用读出的时段允许较低成本旋转表示；从最早可能读出起需稳定/可读，匹配所引动态编码模式。",
+        "boundary": "神经/权重L2代价和规定读出窗口；不是实际代谢测量",
+        "negative_result": null,
+        "non_inference": "规范最优、模拟及既有数据相符不证明生物实现了唯一最优算法；理论条件不能扩展为任意非线性网络。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "representation-coding",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "何时旋转记忆能节省代理成本？"
+      ],
+      "shared_evidence_with": [
+        "C7"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "在作者的候选算法及效率假设下，既有记忆槽尺寸梯度更符合output conveyor而非output gating；输入门控仍可由行动时步差异形成。",
+      "claim_type": "hypothesis",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "gated-linear RNN及规范算法比较",
+          "design": null,
+          "comparator": null,
+          "measure": "子空间结构、大小、对齐或规定损失的相应结论",
+          "unit_of_analysis": "数值任务/参数和噪声配置",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "限定候选集合、时序和代价；快速行为/钙时程不能直接判定输出轨迹"
+          ],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "4.3 / Fig.5H–I / F.2 pp35–36",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在作者的候选算法及效率假设下，既有记忆槽尺寸梯度更符合output conveyor而非output gating；输入门控仍可由行动时步差异形成。",
+        "boundary": "限定候选集合、时序和代价；快速行为/钙时程不能直接判定输出轨迹",
+        "negative_result": null,
+        "non_inference": "规范最优、模拟及既有数据相符不证明生物实现了唯一最优算法；理论条件不能扩展为任意非线性网络。",
+        "unresolved": "固定序列长度/慢输出的算法预测仍需新实验",
+        "unresolved_attribution": "作者4.3/Discussion"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "representation-coding",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "输出传送带是否被唯一识别？"
+      ],
+      "shared_evidence_with": [
+        "C7",
+        "C11"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "附录的合成数据表明首主角和近90°角度指标、条件平均及正则回归可偏置对齐；差分和OLS二阶矩修正/PSD投影改善部分估计但仍有方差及偏差限制。",
+      "claim_type": "methods",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "合成噪声及估计器比较",
+          "design": null,
+          "comparator": null,
+          "measure": "子空间结构、大小、对齐或规定损失的相应结论",
+          "unit_of_analysis": "数值任务/参数和噪声配置",
+          "sample_size_as_reported": "主角实验1000噪声抽样；估计器Fig.10为100噪声抽样，其余未统一报告",
+          "uncertainty": null,
+          "assumptions": [
+            "Gaussian噪声；差分只改一个刺激；OLS假设；PSD投影不保证最终无偏"
+          ],
+          "source_locator": {
+            "pdf_page": 33,
+            "section": "E.2–E.6 / Figs.7–10",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "附录的合成数据表明首主角和近90°角度指标、条件平均及正则回归可偏置对齐；差分和OLS二阶矩修正/PSD投影改善部分估计但仍有方差及偏差限制。",
+        "boundary": "Gaussian噪声；差分只改一个刺激；OLS假设；PSD投影不保证最终无偏",
+        "negative_result": null,
+        "non_inference": "规范最优、模拟及既有数据相符不证明生物实现了唯一最优算法；理论条件不能扩展为任意非线性网络。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "representation-coding",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "对齐估计如何受噪声偏置？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "Xie数据的三种估计均给出1→2→3槽尺寸下降和部分正对齐，但显著对齐的槽组合及幅度不一致，作者不对精确幅度作强主张。",
+      "claim_type": "reanalysis",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "共享神经数据多估计器重分析",
+          "design": null,
+          "comparator": null,
+          "measure": "子空间结构、大小、对齐或规定损失的相应结论",
+          "unit_of_analysis": "共享原始记录的神经元/试次",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "同一数据不是独立复制；差分用于方向、去偏估计用于大小"
+          ],
+          "source_locator": {
+            "pdf_page": 34,
+            "section": "E.7；续p35 / Fig.11",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "Xie数据的三种估计均给出1→2→3槽尺寸下降和部分正对齐，但显著对齐的槽组合及幅度不一致，作者不对精确幅度作强主张。",
+        "boundary": "同一数据不是独立复制；差分用于方向、去偏估计用于大小",
+        "negative_result": null,
+        "non_inference": "规范最优、模拟及既有数据相符不证明生物实现了唯一最优算法；理论条件不能扩展为任意非线性网络。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "representation-coding",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "多估计器对重分析哪些结论一致？"
+      ],
+      "shared_evidence_with": [
+        "C10"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "理论未匹配Panichello–Buschman的单神经元非模块现象及El-Gaby的任务进度叠加编码，尚不能解释所有PFC单细胞响应或唯一算法选择。",
+      "claim_type": "boundary",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "模型与被引记录的显式不匹配",
+          "design": null,
+          "comparator": null,
+          "measure": "子空间结构、大小、对齐或规定损失的相应结论",
+          "unit_of_analysis": "数值任务/参数和噪声配置",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "实际模型负面边界，而非未测结果"
+          ],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "Discussion",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "理论未匹配Panichello–Buschman的单神经元非模块现象及El-Gaby的任务进度叠加编码，尚不能解释所有PFC单细胞响应或唯一算法选择。",
+        "boundary": "实际模型负面边界，而非未测结果",
+        "negative_result": "非负模型未复现独立记忆单神经元混合调谐；任务进度叠加编码未被解释",
+        "non_inference": "规范最优、模拟及既有数据相符不证明生物实现了唯一最优算法；理论条件不能扩展为任意非线性网络。",
+        "unresolved": "算法选择、chunking及子空间内部计算未解释",
+        "unresolved_attribution": "作者4.3/Discussion"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "representation-coding",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "理论在哪些单神经元现象上失败？"
+      ],
+      "shared_evidence_with": [
+        "C4",
+        "C5",
+        "C6"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C13",
+      "statement": "作者在小iid零均值Gaussian活动/权重噪声和精确线性重构极限下把L2正则解释为噪声鲁棒性代价，提供效率目标的另一个条件性动机。",
+      "claim_type": "theory",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "期望重构损失极限推导",
+          "design": null,
+          "comparator": null,
+          "measure": "子空间结构、大小、对齐或规定损失的相应结论",
+          "unit_of_analysis": "数学构造/任务假设",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "线性映射、可精确拟合、iid小Gaussian噪声；比例系数维度/常数未独立核验"
+          ],
+          "source_locator": {
+            "pdf_page": 26,
+            "section": "Appendix C / Eqs.72–74",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者在小iid零均值Gaussian活动/权重噪声和精确线性重构极限下把L2正则解释为噪声鲁棒性代价，提供效率目标的另一个条件性动机。",
+        "boundary": "线性映射、可精确拟合、iid小Gaussian噪声；比例系数维度/常数未独立核验",
+        "negative_result": null,
+        "non_inference": "规范最优、模拟及既有数据相符不证明生物实现了唯一最优算法；理论条件不能扩展为任意非线性网络。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "representation-coding",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "L2效率损失有哪些噪声动机？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "完整评估36页含全部A–F附录。13项覆盖计算约束的子空间、群结构偏置、简化损失正交/模块证明、任务相关、大小/旋转、条件输出算法预测、估计器及数据重分析、实际负面边界和小噪声L2动机。严格区分统计独立与支持独立、完整非凸与简化损失、条件定理与仿真。未新采集动物实验，算法归因/能耗仍规范性。",
+  "shared_evidence": [
+    {
+      "claim_id": "C2",
+      "with": [
+        "C1"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C1"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C3"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C3",
+        "C4"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C5",
+        "C10",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C1"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C7",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "with": [
+        "C10"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "with": [
+        "C4",
+        "C5",
+        "C6"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": null,
+        "issue": "完整损失非凸；简化损失证明不可混为完整问题一般定理",
+        "suggested_correction": "逐项保留损失、非负、群结构和支持条件",
+        "pdf_page": 23,
+        "resolved": true
+      },
+      {
+        "claim_id": "C9",
+        "issue": "output conveyor由规范模型与尺寸推断而非直接观察",
+        "suggested_correction": "标为假说，不能唯一机制归因",
+        "pdf_page": 12,
+        "resolved": true
+      },
+      {
+        "claim_id": "C10",
+        "issue": "OLS残差/n噪声估计和PSD投影并非一般严格无偏保证；方法选择陈述也有前后差异",
+        "suggested_correction": "只记录源中方法/合成行为，不承诺普遍无偏或无假阳性",
+        "pdf_page": 34,
+        "resolved": false
+      },
+      {
+        "claim_id": null,
+        "issue": "附录数学式存在转录/索引错写，如Eq.45标签；未据此重造公式",
+        "suggested_correction": "保留源文定位及定性条件，不输出不确定公式",
+        "pdf_page": 22,
+        "resolved": false
+      },
+      {
+        "claim_id": "C12",
+        "issue": "作者明确列单神经元和任务进度失败",
+        "suggested_correction": "保留实际模型不匹配而非只写未测试",
+        "pdf_page": 13,
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T10:48:26.920410Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "abe579e954d1dff6616f143bf87f9dba5133dcb13c1e436b285b172bb1a0316c",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

@@ -1,0 +1,790 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "preprint",
+  "paper": {
+    "title": "Neural Spelling: A Spell-Based BCI System for Language Neural Decoding",
+    "authors": [
+      "Xiaowei Jiang",
+      "Jinzhao Zhou",
+      "Yiqun Duan",
+      "Ziyi Zhao",
+      "Yu-Cheng Chang",
+      "Thomas Do",
+      "Chin-Teng Lin"
+    ],
+    "doi": "10.1109/tbme.2026.3691322",
+    "publication_year": 2026,
+    "venue": "IEEE Transactions on Biomedical Engineering",
+    "url": "https://doi.org/10.1109/tbme.2026.3691322"
+  },
+  "source": {
+    "filename": "paper-W4406975478--Neural-Spelling-A-Spell-Based-BCI-System-for-Language-Neural-Decoding.pdf",
+    "sha256": "8d5d0529cae4e9c444df12ec6ca3140143c5ae34e586916669733be7ad0e9535",
+    "source_url": "https://arxiv.org/pdf/2501.17489",
+    "pdf_page_count": 14
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "results_sections_seen": [
+      "Methods CNS two stages/Eq1–7",
+      "Participants/instrumentation/task/preprocessing",
+      "Stage1 model/confusion/ROI-frequency",
+      "Stage2 synthetic sentence data/TableIII",
+      "Ablations TablesIV–V",
+      "Spectral/ITC correlations",
+      "Limitations/FutureWork",
+      "Figures1–8; References"
+    ],
+    "missing_material": [
+      "供应版本arXiv2501.17489v2，2026-03-02；索引IEEE2026DOI期刊版本未供应",
+      "完整SupplementalSectionsI–II/TableI与ERP数据未供应",
+      "图像像素、原始数据/代码、明确训练评估拆分和LLM训练语料细节未供应"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "所有供应页文字（含方法/附录/图表文字和参考文献）已完整评估，未采样代替全文。",
+      "逐条第二审计以已读源比较真实单位、条件、统计与推断范围；不等于实验复现。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "研究采集全部26字母的实际书写EEG和笔迹：32名健康右利手英语母语者招募后剔除4人，每人设计650trial，并非运动受限患者或自由句子录制。",
+      "role": "result",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "CNS以EEG CNN与笔迹ResNet18的cos²嵌入匹配加交叉熵训练字母分类，再用个体字母混淆分布逐阶段增加文字噪声微调BART，分开神经分类与语言纠错。",
+      "role": "result",
+      "source_pages": [
+        4
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "所报个体内CNN+ConL的Top1/3/5准确率为33.10±11.54%、57.77±12.89%、71.46±11.11%，比无ConL的27.23/51.34/65.29描述性更高，且多数所列基线配对比较达显著。",
+      "role": "result",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "字母混淆被报告具有结构性，如M–N容易混淆，提示实际运动/视觉相似性可影响解码；不能据此排除解码器误差或唯一归因神经运动基本元。",
+      "role": "result",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "特征比较中，全频带/全部ROI组合表现最好，gamma30–70Hz及额/前额电极单独解码贡献较高，而低频谱的字母区分较弱。",
+      "role": "result",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "源文的字母谱比较与字母对差异在多ROI/频带报告显著，低频ITC主要在运动起始0–1s出现；这些是任务相关sensor-level模式而不是神经区域必要性。",
+      "role": "result",
+      "source_pages": [
+        10
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "在Story-Plots文字按个体分类噪声合成的句子任务中，BART-large课程设置相较无课程设置将CER/WER从44.96/53.54降至38.94/46.68，并提高BLEU/ROUGE。",
+      "role": "result",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "源文承认生成句子可能产生创造性改写，而非逐字恢复原意；流畅和指标提高不能保证意图保真，安全/幻觉控制尚列未来工作。",
+      "role": "interpretation",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "源文将更少候选字母采样与显式空格报告为较有利的去噪条件，但表格存在模型行/设置重合，尚不能严格隔离topK、空格和课程的独立效应。",
+      "role": "result",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "only NLC、onlyLLM和NLC+LLM比较及CER/WER回归",
+      "role": "result",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "文字/图仅报告改善和正线性关系，无r、p和独立单位数，不补猜"
+    },
+    {
+      "summary": "课程噪声强度、阶段数/调度形状与ERP",
+      "role": "result",
+      "source_pages": [
+        5,
+        10
+      ],
+      "decision": "defer",
+      "reason": "结果仅指向未供应SupplementalSectionsI–II"
+    },
+    {
+      "summary": "在线、低校准、少样本、想象/减少运动与临床沟通",
+      "role": "hypothesis",
+      "source_pages": [
+        11,
+        12
+      ],
+      "decision": "include",
+      "reason": "尚未测试的未来路线，不当已有临床/在线性能"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "研究采集全部26字母的实际书写EEG和笔迹：32名健康右利手英语母语者招募后剔除4人，每人设计650trial，并非运动受限患者或自由句子录制。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "64channel EEG1000Hz、笔迹60Hz、每字母25次，视觉提示后实际书写",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "独立受试者及嵌套trial",
+          "sample_size_as_reported": "招募32，排除4后28；650设计trial/人",
+          "uncertainty": "招募平均年龄24.94±.29，误差类型未明确；未给排除后性别分布",
+          "assumptions": [
+            "功效分析约需30人而最终28，不能自动称功效要求已满足；线下任务且外部字母提示/运动伴随信号存在。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "Participants; Instrumentation; Experimental Design",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "研究采集全部26字母的实际书写EEG和笔迹：32名健康右利手英语母语者招募后剔除4人，每人设计650trial，并非运动受限患者或自由句子录制。",
+        "boundary": "功效分析约需30人而最终28，不能自动称功效要求已满足；线下任务且外部字母提示/运动伴随信号存在。",
+        "negative_result": null,
+        "non_inference": "实际书写/离线个体内结果不证明想象书写、严重运动受限患者或在线独立意图读取；sensor-level谱与分类相关不识别局部因果表征。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "非侵入实际书写字母解码",
+        "语言先验纠错与意图保真",
+        "跨个体/在线/运动受限外推边界"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，研究采集全部26字母的实际书写EEG和笔迹：32名健康右利手英语母语者招募后剔除4人，每人设计650trial，并非运动受限患者或自由句子录制。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "CNS以EEG CNN与笔迹ResNet18的cos²嵌入匹配加交叉熵训练字母分类，再用个体字母混淆分布逐阶段增加文字噪声微调BART，分开神经分类与语言纠错。",
+      "claim_type": "computational",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "两阶段跨模态训练与课程文字去噪",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "模型/受试者分类输出",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "0.35CE+.65匹配loss的经验权重；笔迹用于训练目标，是否严格仅用训练trial混淆建立噪声分布未清楚；这是offline pipeline。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "Methodology Eq3–7; Figure2",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "CNS以EEG CNN与笔迹ResNet18的cos²嵌入匹配加交叉熵训练字母分类，再用个体字母混淆分布逐阶段增加文字噪声微调BART，分开神经分类与语言纠错。",
+        "boundary": "0.35CE+.65匹配loss的经验权重；笔迹用于训练目标，是否严格仅用训练trial混淆建立噪声分布未清楚；这是offline pipeline。",
+        "negative_result": null,
+        "non_inference": "实际书写/离线个体内结果不证明想象书写、严重运动受限患者或在线独立意图读取；sensor-level谱与分类相关不识别局部因果表征。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "非侵入实际书写字母解码",
+        "语言先验纠错与意图保真",
+        "跨个体/在线/运动受限外推边界"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，CNS以EEG CNN与笔迹ResNet18的cos²嵌入匹配加交叉熵训练字母分类，再用个体字母混淆分布逐阶段增加文字噪声微调BART，分开神经分类与语言纠错。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "所报个体内CNN+ConL的Top1/3/5准确率为33.10±11.54%、57.77±12.89%、71.46±11.11%，比无ConL的27.23/51.34/65.29描述性更高，且多数所列基线配对比较达显著。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "个体内离线CNN/ConL与LSTM/Transformer等baseline比较",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "受试者-session聚合，不是trial独立n",
+          "sample_size_as_reported": "最终28受试者；表述subject-sessions但session/拆分数未列",
+          "uncertainty": "均值±SD；配对t检验，BH修正；多数baseline标p<.05/.01/.001",
+          "assumptions": [
+            "CNN+ConL vsCNN−ConL直接p未列，不能强称其显著；未描述完整train/validation/test划分/超参隔离，不称跨个体generalization。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "TableII; Stage1 Model Performance",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所报个体内CNN+ConL的Top1/3/5准确率为33.10±11.54%、57.77±12.89%、71.46±11.11%，比无ConL的27.23/51.34/65.29描述性更高，且多数所列基线配对比较达显著。",
+        "boundary": "CNN+ConL vsCNN−ConL直接p未列，不能强称其显著；未描述完整train/validation/test划分/超参隔离，不称跨个体generalization。",
+        "negative_result": null,
+        "non_inference": "实际书写/离线个体内结果不证明想象书写、严重运动受限患者或在线独立意图读取；sensor-level谱与分类相关不识别局部因果表征。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "非侵入实际书写字母解码",
+        "语言先验纠错与意图保真",
+        "跨个体/在线/运动受限外推边界"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，所报个体内CNN+ConL的Top1/3/5准确率为33.10±11.54%、57.77±12.89%、71.46±11.11%，比无ConL的27.23/51.34/65.29描述性更高，且多数所列基线配对比较达显著。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "字母混淆被报告具有结构性，如M–N容易混淆，提示实际运动/视觉相似性可影响解码；不能据此排除解码器误差或唯一归因神经运动基本元。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "按字母条件概率的混淆与层次聚类",
+          "design": null,
+          "comparator": null,
+          "measure": "字母混淆",
+          "unit_of_analysis": "共享受试者/字母trial",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "正文称最佳I33.12/最差R15与总体Top1=33.10难一致，具体各字母数值不作可靠推断；不能等同真实用户选择率。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "Confusion matrix; Figure5",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "字母混淆被报告具有结构性，如M–N容易混淆，提示实际运动/视觉相似性可影响解码；不能据此排除解码器误差或唯一归因神经运动基本元。",
+        "boundary": "正文称最佳I33.12/最差R15与总体Top1=33.10难一致，具体各字母数值不作可靠推断；不能等同真实用户选择率。",
+        "negative_result": null,
+        "non_inference": "实际书写/离线个体内结果不证明想象书写、严重运动受限患者或在线独立意图读取；sensor-level谱与分类相关不识别局部因果表征。",
+        "unresolved": "混淆矩阵条件/模型与总体表的一致性待澄清。",
+        "unresolved_attribution": "源文或本次审计"
+      },
+      "broad_directions": [
+        "非侵入实际书写字母解码",
+        "语言先验纠错与意图保真",
+        "跨个体/在线/运动受限外推边界"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，字母混淆被报告具有结构性，如M–N容易混淆，提示实际运动/视觉相似性可影响解码；不能据此排除解码器误差或唯一归因神经运动基本元。是否成立？"
+      ],
+      "shared_evidence_with": [
+        "C3"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "特征比较中，全频带/全部ROI组合表现最好，gamma30–70Hz及额/前额电极单独解码贡献较高，而低频谱的字母区分较弱。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "ROI/频带PSD输入消融",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "同受试者sensor-level EEG",
+          "sample_size_as_reported": null,
+          "uncertainty": "具体每ROI/频带效应和CI未在文字给",
+          "assumptions": [
+            "保守ICA<3成分和插值不证明完全去除实际书写肌电/眼动/视觉差异，额gamma不能直接定位PFC因果语言表征。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Figure3; informative EEG feature analysis",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "特征比较中，全频带/全部ROI组合表现最好，gamma30–70Hz及额/前额电极单独解码贡献较高，而低频谱的字母区分较弱。",
+        "boundary": "保守ICA<3成分和插值不证明完全去除实际书写肌电/眼动/视觉差异，额gamma不能直接定位PFC因果语言表征。",
+        "negative_result": null,
+        "non_inference": "实际书写/离线个体内结果不证明想象书写、严重运动受限患者或在线独立意图读取；sensor-level谱与分类相关不识别局部因果表征。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "非侵入实际书写字母解码",
+        "语言先验纠错与意图保真",
+        "跨个体/在线/运动受限外推边界"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，特征比较中，全频带/全部ROI组合表现最好，gamma30–70Hz及额/前额电极单独解码贡献较高，而低频谱的字母区分较弱。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "源文的字母谱比较与字母对差异在多ROI/频带报告显著，低频ITC主要在运动起始0–1s出现；这些是任务相关sensor-level模式而不是神经区域必要性。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "谱ANOVA/配对t、BH与ITC可视化",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "受试者内字母条件及重复trial",
+          "sample_size_as_reported": "最终28人；Figure6报告F(25,675)",
+          "uncertainty": "图注FDR_BH p<.05；ITC没有给独立比较统计p",
+          "assumptions": [
+            "ITC公式需振幅/模长约定，图形“显著”描述不替代统计检验；UMAP相近不证明共享特定认知通路。"
+          ],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "Figures6–8; Discussion neurophysiology/ITC",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "源文的字母谱比较与字母对差异在多ROI/频带报告显著，低频ITC主要在运动起始0–1s出现；这些是任务相关sensor-level模式而不是神经区域必要性。",
+        "boundary": "ITC公式需振幅/模长约定，图形“显著”描述不替代统计检验；UMAP相近不证明共享特定认知通路。",
+        "negative_result": null,
+        "non_inference": "实际书写/离线个体内结果不证明想象书写、严重运动受限患者或在线独立意图读取；sensor-level谱与分类相关不识别局部因果表征。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "非侵入实际书写字母解码",
+        "语言先验纠错与意图保真",
+        "跨个体/在线/运动受限外推边界"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，源文的字母谱比较与字母对差异在多ROI/频带报告显著，低频ITC主要在运动起始0–1s出现；这些是任务相关sensor-level模式而不是神经区域必要性。是否成立？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C5"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "在Story-Plots文字按个体分类噪声合成的句子任务中，BART-large课程设置相较无课程设置将CER/WER从44.96/53.54降至38.94/46.68，并提高BLEU/ROUGE。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "文字去噪而非连续句子EEG解码",
+          "design": null,
+          "comparator": null,
+          "measure": "CER/WER/BLEU/ROUGE",
+          "unit_of_analysis": "文字story plots、由字母分布采样的噪声及模型",
+          "sample_size_as_reported": "1320story plots全部用于所称test；句子总数/独立种子n未给",
+          "uncertainty": "BLEU4 35.76→44.42；文字±2.2及ROUGE±.86误差单位未明确；无给直接p",
+          "assumptions": [
+            "LLM微调文本来源/排重与测试隔离不清楚；语料纠错不代表新用户连续脑信号句子性能或实时WER。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "TableIII; Stage2 Sentence Dataset/Performance",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在Story-Plots文字按个体分类噪声合成的句子任务中，BART-large课程设置相较无课程设置将CER/WER从44.96/53.54降至38.94/46.68，并提高BLEU/ROUGE。",
+        "boundary": "LLM微调文本来源/排重与测试隔离不清楚；语料纠错不代表新用户连续脑信号句子性能或实时WER。",
+        "negative_result": null,
+        "non_inference": "实际书写/离线个体内结果不证明想象书写、严重运动受限患者或在线独立意图读取；sensor-level谱与分类相关不识别局部因果表征。",
+        "unresolved": "训练/测试语料隔离和产生混淆分布的数据划分待澄清。",
+        "unresolved_attribution": "源文或本次审计"
+      },
+      "broad_directions": [
+        "非侵入实际书写字母解码",
+        "语言先验纠错与意图保真",
+        "跨个体/在线/运动受限外推边界"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，在Story-Plots文字按个体分类噪声合成的句子任务中，BART-large课程设置相较无课程设置将CER/WER从44.96/53.54降至38.94/46.68，并提高BLEU/ROUGE。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "源文承认生成句子可能产生创造性改写，而非逐字恢复原意；流畅和指标提高不能保证意图保真，安全/幻觉控制尚列未来工作。",
+      "claim_type": "computational",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "生成输出定性及作者限制说明",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "高字母解码受试者P11示例和合成文本",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "选择表现最好P11的示例不代表普通用户；没有临床用户确认意图、盲评或hallucination率量化。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "Stage2 qualitative results; FutureWork p12",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "源文承认生成句子可能产生创造性改写，而非逐字恢复原意；流畅和指标提高不能保证意图保真，安全/幻觉控制尚列未来工作。",
+        "boundary": "选择表现最好P11的示例不代表普通用户；没有临床用户确认意图、盲评或hallucination率量化。",
+        "negative_result": null,
+        "non_inference": "实际书写/离线个体内结果不证明想象书写、严重运动受限患者或在线独立意图读取；sensor-level谱与分类相关不识别局部因果表征。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "非侵入实际书写字母解码",
+        "语言先验纠错与意图保真",
+        "跨个体/在线/运动受限外推边界"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，源文承认生成句子可能产生创造性改写，而非逐字恢复原意；流畅和指标提高不能保证意图保真，安全/幻觉控制尚列未来工作。是否成立？"
+      ],
+      "shared_evidence_with": [
+        "C7"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "源文将更少候选字母采样与显式空格报告为较有利的去噪条件，但表格存在模型行/设置重合，尚不能严格隔离topK、空格和课程的独立效应。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "候选范围与空格消融报告",
+          "design": null,
+          "comparator": null,
+          "measure": "文字去噪指标",
+          "unit_of_analysis": "共享文字与分类分布",
+          "sample_size_as_reported": null,
+          "uncertainty": "表无误差/显著性检验；BARTlarge top3WER46.68、top26 71.36仅转述",
+          "assumptions": [
+            "TableIV large的有/无space正好重现TableIII课程有/无全指标；TableV base top3却重现IIIlarge无课程，非一致独立消融出处。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "TablesIV–V; Ablation SectionG",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "源文将更少候选字母采样与显式空格报告为较有利的去噪条件，但表格存在模型行/设置重合，尚不能严格隔离topK、空格和课程的独立效应。",
+        "boundary": "TableIV large的有/无space正好重现TableIII课程有/无全指标；TableV base top3却重现IIIlarge无课程，非一致独立消融出处。",
+        "negative_result": null,
+        "non_inference": "实际书写/离线个体内结果不证明想象书写、严重运动受限患者或在线独立意图读取；sensor-level谱与分类相关不识别局部因果表征。",
+        "unresolved": "模型标签/设置/重复数值的归因未解决。",
+        "unresolved_attribution": "源文或本次审计"
+      },
+      "broad_directions": [
+        "非侵入实际书写字母解码",
+        "语言先验纠错与意图保真",
+        "跨个体/在线/运动受限外推边界"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，源文将更少候选字母采样与显式空格报告为较有利的去噪条件，但表格存在模型行/设置重合，尚不能严格隔离topK、空格和课程的独立效应。是否成立？"
+      ],
+      "shared_evidence_with": [
+        "C7"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "供应arXiv2501.17489v2全部14页含Methods/表图/References已评估。最终28健康人实际26字母书写的个体内离线CNN解码和模拟文字去噪是不同证据；课程BART指标有所改善但WER仍46.68、意图保真不保证。作者/版本、字母率、消融表、数据划分和伪迹/外推限制保留；没有患者/想象/在线验证。",
+  "shared_evidence": [
+    {
+      "claim_id": "C4",
+      "with": [
+        "C3"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C1",
+        "C5"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C7"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": null,
+        "issue": "索引Charles Zhou及6作者，源文Jinzhao Zhou且7作者；PDF是arXivv2非供应IEEE期刊版",
+        "suggested_correction": "补源首页实际作者，保留DOI期刊版本绑定未核查",
+        "pdf_page": 1,
+        "resolved": true
+      },
+      {
+        "claim_id": "C1",
+        "issue": "32招募剔4后28，仍声称约30功效标准已满足",
+        "suggested_correction": "不宣称样本满足确定功效；保留实际n",
+        "pdf_page": 6,
+        "resolved": false
+      },
+      {
+        "claim_id": "C3",
+        "issue": "within-subject offline被摘要写robust across users；训练测试方法未清楚",
+        "suggested_correction": "限定个体内及待审拆分，不推subject-independent",
+        "pdf_page": 11,
+        "resolved": true
+      },
+      {
+        "claim_id": "C4",
+        "issue": "最高字母33.12/最低15与平均33.10不一致",
+        "suggested_correction": "精确字母率延期，记录条件待澄清",
+        "pdf_page": 7,
+        "resolved": false
+      },
+      {
+        "claim_id": "C5",
+        "issue": "实际动作和gamma/PFC sensor-level贡献不能排除肌电等或证明localized neural source",
+        "suggested_correction": "所有生理为相关，非因果机制",
+        "pdf_page": 11,
+        "resolved": true
+      },
+      {
+        "claim_id": "C7",
+        "issue": "句子任务是GT文字经混淆分布采样，不实际句子脑录制；全部story plots作为test但训练来源不明",
+        "suggested_correction": "注明模拟输入、语料排重待解",
+        "pdf_page": 8,
+        "resolved": false
+      },
+      {
+        "claim_id": "C9",
+        "issue": "TablesIII/IV/V数值与模型标签重复/矛盾",
+        "suggested_correction": "保留作者消融报告但不做独立归因",
+        "pdf_page": 8,
+        "resolved": false
+      },
+      {
+        "claim_id": "C8",
+        "issue": "创造性改写可能违背用户意图且临床安全未测试",
+        "suggested_correction": "流畅不等准确意图，未来验证未完成",
+        "pdf_page": 12,
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T11:48:26.395447Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "8d5d0529cae4e9c444df12ec6ca3140143c5ae34e586916669733be7ad0e9535",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

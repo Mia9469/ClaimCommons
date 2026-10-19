@@ -1,0 +1,1862 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "review",
+  "paper": {
+    "title": "Spike-based local synaptic plasticity: a survey of computational models and neuromorphic circuits",
+    "authors": [
+      "Lyes Khacef",
+      "Philipp Klein",
+      "Matteo Cartiglia",
+      "Arianna Rubino",
+      "Giacomo Indiveri",
+      "Elisabetta Chicca"
+    ],
+    "doi": "10.1088/2634-4386/ad05da",
+    "publication_year": 2023,
+    "venue": "Neuromorphic Computing and Engineering",
+    "url": "https://doi.org/10.1088/2634-4386/ad05da"
+  },
+  "source": {
+    "filename": "paper-W4300980536.pdf",
+    "sha256": "d01b0376180d2227105df6a37ca07503eb5f817fe5b6cf8bf1414ffb8d5046e9",
+    "source_url": "https://arxiv.org/pdf/2209.15536",
+    "pdf_page_count": 45
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45
+    ],
+    "results_sections_seen": [
+      "2. Synaptic plasticity overview",
+      "3. Computational primitives of synaptic plasticity",
+      "4.1–4.13. Models; Tables 1–15",
+      "5.1–5.7. CMOS implementations; Figures 3–7; Table 16",
+      "6.1–6.4. Discussion and conclusion",
+      "References"
+    ],
+    "missing_material": [
+      "全部图像像素未提供；仅审读正文、表格文本与图注。"
+    ],
+    "text_pass_complete": true,
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "notes": [
+      "全部45页所供文本均已评估，包含表1–16、图1–7图注和参考文献；第41页截断部分已补读。",
+      "实际来源为arXiv:2209.15536v2，首页标5 Nov 2022；条目按导入元数据保留2023年期刊DOI，不代表核查了期刊最终版。",
+      "此文明确无新创建或分析数据；所有结果性比较均按review_synthesis处理。",
+      "来源核对使用供给文本和缓存中的第二遍定位核对；未读取图像、运行科学复现或访问模型API。"
+    ]
+  },
+  "contribution_inventory": [
+    {
+      "summary": "严格局部性定义、十二模型统一比较及迹/触发/权重机制分类。",
+      "role": "review_synthesis",
+      "source_pages": [
+        2,
+        3,
+        8,
+        9,
+        10,
+        12,
+        35
+      ],
+      "decision": "include",
+      "reason": "构成本文的比较框架；分别保留可独立评估维度。"
+    },
+    {
+      "summary": "四类CMOS构件及五个塑性家族的模型—电路映射与偏离。",
+      "role": "review_synthesis",
+      "source_pages": [
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34
+      ],
+      "decision": "include",
+      "reason": "作为引用文献的综合，不宣称本文制造或测量。"
+    },
+    {
+      "summary": "单钙迹C-STDP的单侧活动限制。",
+      "role": "review_synthesis",
+      "source_pages": [
+        17,
+        18
+      ],
+      "decision": "include",
+      "reason": "明确模型可允许的边界，不将其当作生物实验负结果。"
+    },
+    {
+      "summary": "专用CMOS实现空白、多时间尺度和多隔室障碍。",
+      "role": "review_synthesis",
+      "source_pages": [
+        34,
+        35
+      ],
+      "decision": "include",
+      "reason": "限定于所供2022年稿及作者检索范围。"
+    },
+    {
+      "summary": "BPTT局部性限制、信用分配问题与物理迹生成开销。",
+      "role": "review_synthesis",
+      "source_pages": [
+        36,
+        37,
+        38
+      ],
+      "decision": "include",
+      "reason": "讨论性综合，不是本文对照试验。"
+    },
+    {
+      "summary": "可由四类基本构件构建所有规则、新型忆阻器带来节能与非易失存储收益。",
+      "role": "hypothesis",
+      "source_pages": [
+        35,
+        38
+      ],
+      "decision": "defer",
+      "reason": "没有逐模型新实现或定量匹配基准。"
+    },
+    {
+      "summary": "结构可塑性与突触学习相互作用构建自组织网络。",
+      "role": "interpretation",
+      "source_pages": [
+        37
+      ],
+      "decision": "defer",
+      "reason": "作为研究方向保留，未提供本文新的网络实验或机制分离。"
+    },
+    {
+      "summary": "历史、既有神经科学实验、先前机器学习准确率、先前芯片测量。",
+      "role": "background",
+      "source_pages": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "decision": "exclude",
+      "reason": "这些是被引研究，不是本综述新增结果；相关机制仅进入综述综合。"
+    },
+    {
+      "summary": "统一生物塑性规则或所有局部方法的普适性能排序。",
+      "role": "hypothesis",
+      "source_pages": [
+        35,
+        36,
+        37
+      ],
+      "decision": "defer",
+      "reason": "作者未建立统一规则，也未提供统一比较数据。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "本综述把局部突触可塑性限定为更新所需信息在空间上直接可达、在时间上即时可达，且源自连接该突触的前后神经元；因此，即使奖励等第三因子能够扩散到突触，只要它不是由这些前后突触位置直接产生，就被排除在本文的严格局部性范围之外。",
+      "claim_type": "conceptual_framework",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "综述定义与范围比较",
+          "design": "对照前后神经元信息与外来反馈信号",
+          "comparator": null,
+          "measure": "局部性准入条件",
+          "unit_of_analysis": "学习规则的信息依赖",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 2,
+            "section": "1. Introduction",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "三因子规则的范围说明",
+          "design": null,
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": null,
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "1. Introduction",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提供统一但严格的模型筛选原则。",
+        "boundary": "是作者选定的操作定义，不是所有文献通用的局部性定义。",
+        "negative_result": null,
+        "non_inference": "不能推断三因子规则不可物理实现或不具生物学合理性。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "learning-memory",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "神经形态突触学习的局部性应怎样按信息来源和物理可达性定义？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "本综述用局部变量、脉冲交互、更新触发、权重类型与边界、双稳态和停止学习维度比较十二种代表性规则，并按信息依赖归为四组：RDSP依赖突触前迹；STDP、T-STDP、C-STDP、SBCM和BDSP依赖前后活动迹；V-STDP、DPSS、MPDP和H-MPDP结合突触前迹与突触后电压；SDSP和C-MPDP结合突触后电压与突触后迹。",
+      "claim_type": "comparative_framework",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "跨模型比较表",
+          "design": null,
+          "comparator": null,
+          "measure": "规则的变量、触发与权重机制",
+          "unit_of_analysis": "模型，不是实验样本",
+          "sample_size_as_reported": "十二种代表性模型",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "4. Models of synaptic plasticity",
+            "figure": "Table 1",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "局部变量分类综合",
+          "design": null,
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": null,
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 35,
+            "section": "6.1. Toward a unified synaptic plasticity framework",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "建立可用于模型和硬件比较的共同表示。",
+        "boundary": "代表性选择而非穷尽检索；变量分类把多隔室电压等细节汇总到高层类别。",
+        "negative_result": null,
+        "non_inference": "不能由统一比较框架推断存在唯一的生物学习规则或相同任务表现。",
+        "unresolved": "各机制在不同任务中的必要性和组合方式。",
+        "unresolved_attribution": "作者在讨论中保留统一规则是否可成立为开放问题。"
+      },
+      "broad_directions": [
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "不同局部塑性规则可以用哪些共同变量和机制比较？"
+      ],
+      "shared_evidence_with": [
+        "C3",
+        "C4",
+        "C5"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "在本综述的迹变量表示中，逐脉冲加和的指数衰减迹实现all-to-all交互并可估计近期平均发放率；每次脉冲把迹重置到固定上界的capped迹实现nearest-spike交互并编码距最近脉冲的时间，因此跳变量与上界共同改变学习对时序和频率的敏感性。",
+      "claim_type": "trace_comparison",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "两种迹动力学方程比较",
+          "design": null,
+          "comparator": "累加迹与封顶迹",
+          "measure": "迹状态对既往脉冲的依赖",
+          "unit_of_analysis": "迹动力学定义",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "3.2. Spikes interaction",
+            "figure": null,
+            "equation": "(1), (2)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "说明同样的指数衰减可服务于不同脉冲交互机制。",
+        "boundary": "属于本文采用的理想点过程描述；实际电路的非线性和范围未统一测试。",
+        "negative_result": null,
+        "non_inference": "不能把nearest-spike规则理解为任务中完全不存在频率影响。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "learning-memory",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "迹变量的累加与封顶怎样改变塑性的时间和频率敏感性？"
+      ],
+      "shared_evidence_with": [
+        "C2"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "本综述区分前脉冲触发、后脉冲触发、双侧脉冲触发、连续更新以及事件与连续混合更新：例如SDSP在前脉冲到达时更新，RDSP在后脉冲时更新，C-STDP连续更新，V-STDP采用前脉冲触发抑制和连续增强；事件触发被提出为利用脉冲稀疏性减少更新次数的设计途径。",
+      "claim_type": "update_trigger_comparison",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "更新触发机制综述",
+          "design": null,
+          "comparator": "事件更新、连续更新与混合更新",
+          "measure": "更新发生的时刻",
+          "unit_of_analysis": "规则机制",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "3.3. Update trigger",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "规则逐项对照",
+          "design": null,
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": null,
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "4. Models of synaptic plasticity",
+            "figure": "Table 1",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "更新时机是独立于变量类型的硬件设计维度。",
+        "boundary": "节能是机制层面的设计论证，本文没有统一功耗基准。",
+        "negative_result": null,
+        "non_inference": "不能宣称事件规则在所有活动率和硬件上都比连续规则低功耗。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "learning-memory",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "事件触发和连续权重更新给硬件实现带来哪些不同要求？"
+      ],
+      "shared_evidence_with": [
+        "C2"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "本综述把权重分辨率、双稳态、硬软边界与停止学习视为不同机制：SDSP可用模拟内部变量决定二值转换并在后神经元活动过低或过高时停止学习；C-STDP采用双稳态和软边界，而本表中的多个其他模型没有双稳态或内生停止学习机制。",
+      "claim_type": "stability_mechanism_comparison",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "权重与学习门控定义",
+          "design": null,
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": null,
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "3.4. Synaptic weights; 3.5. Stop-learning",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "稳定性相关机制比较",
+          "design": null,
+          "comparator": "SDSP、C-STDP与其他表列规则",
+          "measure": "分辨率、稳态、边界和门控",
+          "unit_of_analysis": "模型机制",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "4. Models of synaptic plasticity",
+            "figure": "Table 1",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "所综述SDSP的内部变量与双稳态解释",
+          "design": null,
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": null,
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 15,
+            "section": "4.3. Brader et al. (2007): SDSP",
+            "figure": null,
+            "equation": "(5), (6)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "稳定性与学习停止不能被简化为同一属性。",
+        "boundary": "所述记忆维护能力来自被综述的先前研究；本综述未产生新记忆容量数据。",
+        "negative_result": null,
+        "non_inference": "不能据此宣称这些机制消除灾难性遗忘或在任意网络中维持旧记忆。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "权重边界、双稳态和停止学习在在线记忆维护中有哪些不同作用？"
+      ],
+      "shared_evidence_with": [
+        "C2"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "本综述把混合信号CMOS局部塑性电路拆成四类可复用部件：迹生成器、比较器、权重更新器和双稳态反馈；它们分别用积分或非线性衰减电路、WTA或放大器、权重电容充放电通路及正反馈阈值电路实现对应操作。",
+      "claim_type": "circuit_primitives",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "电路功能分解",
+          "design": null,
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": null,
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 25,
+            "section": "5.1. CMOS building blocks",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "权重更新及双稳态电路说明",
+          "design": null,
+          "comparator": null,
+          "measure": "功能部件与模型操作的对应",
+          "unit_of_analysis": "被综述的电路架构",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 26,
+            "section": "5.1. CMOS building blocks",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "为模型机制与电路构件建立映射。",
+        "boundary": "没有为所有十二种规则给出新制造电路；图像像素不可审读。",
+        "negative_result": null,
+        "non_inference": "不能由模块可组合推断任意模型已完成硅实现或得到性能验证。",
+        "unresolved": "用基本模块实现所有所列规则的可扩展性。",
+        "unresolved_attribution": "作者将推广到尚未实现规则表述为潜在可能。"
+      },
+      "broad_directions": [
+        "methods-causal",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "局部学习规则可怎样分解为可复用的CMOS功能部件？"
+      ],
+      "shared_evidence_with": [
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "在综述的Indiveri等STDP电路中，前后脉冲各生成一个衰减电压迹，权重电容的充放电由相对脉冲时序门控；亚阈值晶体管的指数电流—电压关系把线性衰减的电压迹转为随时间差指数变化的更新电流，而其他STDP实现可能采用不同交互、边界或双稳态。",
+      "claim_type": "STDP_circuit_mapping",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "已发表电路的工作原理综合",
+          "design": null,
+          "comparator": null,
+          "measure": "脉冲时序到权重更新电流的映射",
+          "unit_of_analysis": "被引电路，不是本文测量",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 28,
+            "section": "5.2. Spike-Timing Dependent Plasticity (STDP)",
+            "figure": "Figure 3",
+            "equation": "(3)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "原模型与各实现的差异列表",
+          "design": null,
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": null,
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 27,
+            "section": "5. CMOS implementations",
+            "figure": "Table 16",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "具体示范物理器件性质如何映射时序塑性。",
+        "boundary": "是对Indiveri等既有实现的说明；本文未重新测量芯片。",
+        "negative_result": null,
+        "non_inference": "不能将全部STDP电路视为同一方程的等价实现。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "亚阈值CMOS如何实现指数STDP时间窗？"
+      ],
+      "shared_evidence_with": [
+        "C6"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "本综述指出，Azghadi等T-STDP电路通过四个独立脉冲迹和配对、三联项偏置实现Pfister–Gerstner方程中的更新项；部分其他被称为T-STDP的电路更侧重复现pair-STDP与BCM组合的功能，因此复现行为与复现同一方程需区分。",
+      "claim_type": "triplet_circuit_mapping",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "被引电路和模型方程对照",
+          "design": null,
+          "comparator": "方程级实现与功能级实现",
+          "measure": "独立迹、偏置及配对/三联更新项",
+          "unit_of_analysis": "文献中的实现",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 29,
+            "section": "5.3. Triplet-based STDP (T-STDP)",
+            "figure": "Figure 4",
+            "equation": "(4)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "各迹电容与更新电流说明",
+          "design": null,
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": null,
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 30,
+            "section": "5.3. Triplet-based STDP (T-STDP)",
+            "figure": "Figure 4",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "保留方程一致性与现象一致性的区别。",
+        "boundary": "Azghadi示例在表16被标为模拟电路；另列实现的制造状态不相同。",
+        "negative_result": null,
+        "non_inference": "不能把本综述的电路说明当作新硅测量或独立复现。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "T-STDP电路复现方程和复现塑性现象有什么区别？"
+      ],
+      "shared_evidence_with": [
+        "C6"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "在本综述的Chicca等2014年SDSP实现中，前脉冲触发权重电容的充放电，后膜电压比较决定更新方向，后脉冲DPI迹经三个阈值比较产生学习门控，慢正反馈把内部权重电压推向两个稳定状态；表16中的早期SDSP硬件没有后脉冲迹与停止学习部件。",
+      "claim_type": "SDSP_circuit_mapping",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "SDSP电路模块说明",
+          "design": null,
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": null,
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 30,
+            "section": "5.4. Spike-Driven Synaptic Plasticity (SDSP)",
+            "figure": "Figure 5",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "门控、充放电与稳态原理对照",
+          "design": null,
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": null,
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 31,
+            "section": "5.4. Spike-Driven Synaptic Plasticity (SDSP)",
+            "figure": "Figure 5",
+            "equation": "(5), (6)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "早期与后续实现差异综合",
+          "design": null,
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": null,
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 27,
+            "section": "5. CMOS implementations",
+            "figure": "Table 16",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "显示SDSP完整实现所需的分工和早期实现的缺项。",
+        "boundary": "所述电路均来自引用文献，本文没有新增硬件实验。",
+        "negative_result": null,
+        "non_inference": "不能由有停止学习部件推断完整网络的终身学习已获证实。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "SDSP电路怎样分离更新方向、学习门控和长期稳态？"
+      ],
+      "shared_evidence_with": [
+        "C6"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "本综述的Maldonado Huayaney等C-STDP硬件把原模型的软边界改为硬边界：延迟前脉冲与后脉冲共享一个DPI钙迹，两个比较器分别门控连续增强和抑制，权重电容及慢正反馈实现效能更新与双稳态。",
+      "claim_type": "calcium_circuit_mapping",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "原模型到电路的修改说明",
+          "design": null,
+          "comparator": "原C-STDP软边界模型",
+          "measure": "迹、阈值更新、稳态及边界",
+          "unit_of_analysis": "被引电路模型",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 32,
+            "section": "5.5. Calcium-based STDP (C-STDP)",
+            "figure": "Figure 6",
+            "equation": "(21)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "DPI、WTA和双稳态部件说明",
+          "design": null,
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": null,
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 33,
+            "section": "5.5. Calcium-based STDP (C-STDP)",
+            "figure": "Figure 6",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "该实现保留钙阈值和双稳态功能，但不是原模型边界机制的原样复制。",
+        "boundary": "图6未画出前脉冲延展电路，且未提供像素。",
+        "negative_result": null,
+        "non_inference": "不能推断硬软边界在统计权重分布或学习任务中等价。",
+        "unresolved": "原文此节把关联模型称为2007工作，而4.5和参考文献区分2007与2012模型。",
+        "unresolved_attribution": "源稿内部的年份归属需要人工核对。"
+      },
+      "broad_directions": [
+        "methods-causal",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "钙塑性模型改用硬边界时哪些功能被保留、哪些尚不能视为等价？"
+      ],
+      "shared_evidence_with": [
+        "C6",
+        "C15"
+      ],
+      "review_notes": [
+        "保留源稿的模型归属歧义，不自行替作者订正文献年份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "model_attribution_ambiguity"
+        ]
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "本综述比较Häfliger等1997年电路与后来RDSP模型：两者均在后脉冲到达时根据前活动决定更新方向，但既有电路使用最近前脉冲相关迹、固定反相器阈值，并在后脉冲结束后重置相关迹，而RDSP以积分迹及可设目标值控制增强与抑制。",
+      "claim_type": "RDSP_circuit_mapping",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "早期电路与后期规则比较",
+          "design": null,
+          "comparator": "Diehl–Cook RDSP规则",
+          "measure": "前活动迹、阈值和重置方式",
+          "unit_of_analysis": "文献模型与电路",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 34,
+            "section": "5.6. Rate Dependent Synaptic Plasticity (RDSP)",
+            "figure": "Figure 7",
+            "equation": "(15)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "目标迹阈值与软边界说明",
+          "design": null,
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": null,
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 21,
+            "section": "4.9. Diehl and Cook (2015): RDSP",
+            "figure": null,
+            "equation": "(15)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "名称或定性相关学习相似不意味着完全相同的动态机制。",
+        "boundary": "正文把相关信号称为binary，但随后又描述电容电压和反相器比较；不能只凭文本消解这种表述。",
+        "negative_result": null,
+        "non_inference": "不能把该历史电路列为RDSP原方程的严格实现。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "RDSP与早期相关检测电路在迹、阈值和重置上有什么差别？"
+      ],
+      "shared_evidence_with": [
+        "C6"
+      ],
+      "review_notes": [
+        "电容电压与二值相关信号的粒度表述保留为人工复核项。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "textual_signal_description_ambiguity"
+        ]
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "截至所供2022年综述稿，作者没有找到所列其他规则的专用CMOS实现，并把V-STDP多时间尺度瞬态和DPSS多隔室神经元复杂度列为障碍；同时说明已有混合忆阻器–CMOS或复用既有处理器的相关方案，未纳入详细评估。",
+      "claim_type": "implementation_gap",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "文献覆盖与实现障碍综合",
+          "design": null,
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": null,
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 34,
+            "section": "5.7. Other models implementations",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "混合与复用实现的范围说明",
+          "design": null,
+          "comparator": null,
+          "measure": "专用CMOS与相关替代方案是否进入综述",
+          "unit_of_analysis": "文献范围",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 35,
+            "section": "5.7. Other models implementations",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "指出该综述覆盖中的实现空白与工程难点。",
+        "boundary": "限定于作者知识、选定范围和所供版本日期，不是截至当前的系统检索结论。",
+        "negative_result": null,
+        "non_inference": "不能据此断言相关规则不能实现、全球不存在任何实现或后续仍无进展。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "多时间尺度和多隔室变量为什么增加局部学习电路的实现负担？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C13",
+      "statement": "本综述认为标准BPTT需要保存整段试验活动并跨层传播误差，不符合本文的时间与空间局部性；资格迹、反馈对齐和局部损失等方法可减少部分非局部依赖，但在线递归SNN的局部信用分配和复杂任务表现仍被列为开放问题。",
+      "claim_type": "credit_assignment_synthesis",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "BPTT信息要求与替代方法综合",
+          "design": null,
+          "comparator": "标准BPTT与减少非局部信息的策略",
+          "measure": "记忆和跨层通信依赖",
+          "unit_of_analysis": "算法信息依赖",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 36,
+            "section": "6.2. Overcoming back-propagation limits for online learning",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "模型性能和开放问题讨论",
+          "design": null,
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": null,
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 37,
+            "section": "6.2. Overcoming back-propagation limits for online learning",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "把局部硬件学习的约束与信用分配问题联系起来。",
+        "boundary": "定性综述而非统一训练基准；DPSS、BDSP等例子来自先前工作。",
+        "negative_result": null,
+        "non_inference": "不能断言局部学习普遍不能近似梯度或必然低于所有监督方法。",
+        "unresolved": "在线递归网络如何兼顾局部性、信用分配和复杂任务性能。",
+        "unresolved_attribution": "作者明确将此作为研究中的问题。"
+      },
+      "broad_directions": [
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "在线局部学习怎样避免BPTT的整段活动存储和跨层误差依赖？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C14",
+      "statement": "本综述指出，在脉冲以数字事件传输的混合信号系统中，需突触前活动迹的学习规则通常要在突触后位置重新生成该迹，从而增加实现开销；新型忆阻存储降低此开销和支持非易失权重被提出为潜在路线，而非本文已测得的优势。",
+      "claim_type": "physical_locality_tradeoff",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "物理信号可达性与开销讨论",
+          "design": null,
+          "comparator": null,
+          "measure": "突触前迹本地生成与权重存储需求",
+          "unit_of_analysis": "电路实现依赖",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 38,
+            "section": "6.4. CMOS neuromorphic circuits",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "算法上的局部变量仍可能在物理通信系统中需要额外电路。",
+        "boundary": "未量化统一面积、功耗或启动时间。",
+        "negative_result": null,
+        "non_inference": "不能把忆阻器的潜在收益作为本文的新器件测量结果。",
+        "unresolved": "迹生成与非易失存储的具体面积、能耗和可靠性收益。",
+        "unresolved_attribution": "此稿将这些收益表述为未来技术潜力。"
+      },
+      "broad_directions": [
+        "methods-causal",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "数字脉冲通信下的突触前迹为何会产生额外本地电路开销？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C15",
+      "statement": "本综述对单一共享钙迹C-STDP提出范围限制：因效能更新仅依赖由前后脉冲合成的迹和阈值，在某些状态下仅有前侧或仅有后侧活动也可改变权重，极端时可把低效能突触推向高效能，因此该方程不自动保证所有更新都要求前后共同活动。",
+      "claim_type": "model_limitation_synthesis",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "单钙变量模型的信息依赖说明",
+          "design": null,
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": null,
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 17,
+            "section": "4.5. Graupner and Brunel (2012): C-STDP",
+            "figure": null,
+            "equation": "(9)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "孤立活动导致效能变化的模型边界描述",
+          "design": null,
+          "comparator": "共同活动与单侧活动",
+          "measure": "模型允许的权重状态转换",
+          "unit_of_analysis": "模型状态",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 18,
+            "section": "4.5. Graupner and Brunel (2012): C-STDP",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "记录共享钙迹模型的相关性要求限制。",
+        "boundary": "是本综述对既有模型的分析，没有给出新的单侧活动实验或统一参数扫描。",
+        "negative_result": null,
+        "non_inference": "不能推断生物突触一定出现这些极端转换或C-STDP所有参数都出现同一行为。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "单一前后共享钙迹能否保证塑性只在共同活动时发生？"
+      ],
+      "shared_evidence_with": [
+        "C10"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "全文文本阅读形成十五项候选综合命题，分别保留严格局部性、十二模型比较、迹与更新机制、稳定性部件、五类既有电路的映射与改动、实现缺口、信用分配及物理迹开销。二次核查特别区分模型与实现、模拟与制造、现象复现与方程一致性，以及单钙迹模型的单侧活动边界。此稿是2022年arXiv v2而不是已核对的2023年出版版；没有本文新实验或科学复现。",
+  "shared_evidence": [
+    {
+      "claim_id": "C2",
+      "with": [
+        "C3",
+        "C4",
+        "C5"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C2"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C2"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C2"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "with": [
+        "C6",
+        "C15"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "with": [
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C15",
+      "with": [
+        "C10"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [
+      {
+        "claim_id": "C1",
+        "evidence_index": 1,
+        "pdf_page": 2,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "section": "1. Introduction",
+        "figure": null,
+        "equation": null,
+        "assessment": "二次核对所供页文本与定位标签；这不是科学复现或图像验证。"
+      },
+      {
+        "claim_id": "C1",
+        "evidence_index": 2,
+        "pdf_page": 3,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "section": "1. Introduction",
+        "figure": null,
+        "equation": null,
+        "assessment": "二次核对所供页文本与定位标签；这不是科学复现或图像验证。"
+      },
+      {
+        "claim_id": "C2",
+        "evidence_index": 1,
+        "pdf_page": 12,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "section": "4. Models of synaptic plasticity",
+        "figure": "Table 1",
+        "equation": null,
+        "assessment": "二次核对所供页文本与定位标签；这不是科学复现或图像验证。"
+      },
+      {
+        "claim_id": "C2",
+        "evidence_index": 2,
+        "pdf_page": 35,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "section": "6.1. Toward a unified synaptic plasticity framework",
+        "figure": null,
+        "equation": null,
+        "assessment": "二次核对所供页文本与定位标签；这不是科学复现或图像验证。"
+      },
+      {
+        "claim_id": "C3",
+        "evidence_index": 1,
+        "pdf_page": 9,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "section": "3.2. Spikes interaction",
+        "figure": null,
+        "equation": "(1), (2)",
+        "assessment": "二次核对所供页文本与定位标签；这不是科学复现或图像验证。"
+      },
+      {
+        "claim_id": "C4",
+        "evidence_index": 1,
+        "pdf_page": 10,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "section": "3.3. Update trigger",
+        "figure": null,
+        "equation": null,
+        "assessment": "二次核对所供页文本与定位标签；这不是科学复现或图像验证。"
+      },
+      {
+        "claim_id": "C4",
+        "evidence_index": 2,
+        "pdf_page": 12,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "section": "4. Models of synaptic plasticity",
+        "figure": "Table 1",
+        "equation": null,
+        "assessment": "二次核对所供页文本与定位标签；这不是科学复现或图像验证。"
+      },
+      {
+        "claim_id": "C5",
+        "evidence_index": 1,
+        "pdf_page": 10,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "section": "3.4. Synaptic weights; 3.5. Stop-learning",
+        "figure": null,
+        "equation": null,
+        "assessment": "二次核对所供页文本与定位标签；这不是科学复现或图像验证。"
+      },
+      {
+        "claim_id": "C5",
+        "evidence_index": 2,
+        "pdf_page": 12,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "section": "4. Models of synaptic plasticity",
+        "figure": "Table 1",
+        "equation": null,
+        "assessment": "二次核对所供页文本与定位标签；这不是科学复现或图像验证。"
+      },
+      {
+        "claim_id": "C5",
+        "evidence_index": 3,
+        "pdf_page": 15,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "section": "4.3. Brader et al. (2007): SDSP",
+        "figure": null,
+        "equation": "(5), (6)",
+        "assessment": "二次核对所供页文本与定位标签；这不是科学复现或图像验证。"
+      },
+      {
+        "claim_id": "C6",
+        "evidence_index": 1,
+        "pdf_page": 25,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "section": "5.1. CMOS building blocks",
+        "figure": null,
+        "equation": null,
+        "assessment": "二次核对所供页文本与定位标签；这不是科学复现或图像验证。"
+      },
+      {
+        "claim_id": "C6",
+        "evidence_index": 2,
+        "pdf_page": 26,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "section": "5.1. CMOS building blocks",
+        "figure": null,
+        "equation": null,
+        "assessment": "二次核对所供页文本与定位标签；这不是科学复现或图像验证。"
+      },
+      {
+        "claim_id": "C7",
+        "evidence_index": 1,
+        "pdf_page": 28,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "section": "5.2. Spike-Timing Dependent Plasticity (STDP)",
+        "figure": "Figure 3",
+        "equation": "(3)",
+        "assessment": "二次核对所供页文本与定位标签；这不是科学复现或图像验证。"
+      },
+      {
+        "claim_id": "C7",
+        "evidence_index": 2,
+        "pdf_page": 27,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "section": "5. CMOS implementations",
+        "figure": "Table 16",
+        "equation": null,
+        "assessment": "二次核对所供页文本与定位标签；这不是科学复现或图像验证。"
+      },
+      {
+        "claim_id": "C8",
+        "evidence_index": 1,
+        "pdf_page": 29,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "section": "5.3. Triplet-based STDP (T-STDP)",
+        "figure": "Figure 4",
+        "equation": "(4)",
+        "assessment": "二次核对所供页文本与定位标签；这不是科学复现或图像验证。"
+      },
+      {
+        "claim_id": "C8",
+        "evidence_index": 2,
+        "pdf_page": 30,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "section": "5.3. Triplet-based STDP (T-STDP)",
+        "figure": "Figure 4",
+        "equation": null,
+        "assessment": "二次核对所供页文本与定位标签；这不是科学复现或图像验证。"
+      },
+      {
+        "claim_id": "C9",
+        "evidence_index": 1,
+        "pdf_page": 30,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "section": "5.4. Spike-Driven Synaptic Plasticity (SDSP)",
+        "figure": "Figure 5",
+        "equation": null,
+        "assessment": "二次核对所供页文本与定位标签；这不是科学复现或图像验证。"
+      },
+      {
+        "claim_id": "C9",
+        "evidence_index": 2,
+        "pdf_page": 31,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "section": "5.4. Spike-Driven Synaptic Plasticity (SDSP)",
+        "figure": "Figure 5",
+        "equation": "(5), (6)",
+        "assessment": "二次核对所供页文本与定位标签；这不是科学复现或图像验证。"
+      },
+      {
+        "claim_id": "C9",
+        "evidence_index": 3,
+        "pdf_page": 27,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "section": "5. CMOS implementations",
+        "figure": "Table 16",
+        "equation": null,
+        "assessment": "二次核对所供页文本与定位标签；这不是科学复现或图像验证。"
+      },
+      {
+        "claim_id": "C10",
+        "evidence_index": 1,
+        "pdf_page": 32,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "section": "5.5. Calcium-based STDP (C-STDP)",
+        "figure": "Figure 6",
+        "equation": "(21)",
+        "assessment": "二次核对所供页文本与定位标签；这不是科学复现或图像验证。"
+      },
+      {
+        "claim_id": "C10",
+        "evidence_index": 2,
+        "pdf_page": 33,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "section": "5.5. Calcium-based STDP (C-STDP)",
+        "figure": "Figure 6",
+        "equation": null,
+        "assessment": "二次核对所供页文本与定位标签；这不是科学复现或图像验证。"
+      },
+      {
+        "claim_id": "C11",
+        "evidence_index": 1,
+        "pdf_page": 34,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "section": "5.6. Rate Dependent Synaptic Plasticity (RDSP)",
+        "figure": "Figure 7",
+        "equation": "(15)",
+        "assessment": "二次核对所供页文本与定位标签；这不是科学复现或图像验证。"
+      },
+      {
+        "claim_id": "C11",
+        "evidence_index": 2,
+        "pdf_page": 21,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "section": "4.9. Diehl and Cook (2015): RDSP",
+        "figure": null,
+        "equation": "(15)",
+        "assessment": "二次核对所供页文本与定位标签；这不是科学复现或图像验证。"
+      },
+      {
+        "claim_id": "C12",
+        "evidence_index": 1,
+        "pdf_page": 34,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "section": "5.7. Other models implementations",
+        "figure": null,
+        "equation": null,
+        "assessment": "二次核对所供页文本与定位标签；这不是科学复现或图像验证。"
+      },
+      {
+        "claim_id": "C12",
+        "evidence_index": 2,
+        "pdf_page": 35,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "section": "5.7. Other models implementations",
+        "figure": null,
+        "equation": null,
+        "assessment": "二次核对所供页文本与定位标签；这不是科学复现或图像验证。"
+      },
+      {
+        "claim_id": "C13",
+        "evidence_index": 1,
+        "pdf_page": 36,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "section": "6.2. Overcoming back-propagation limits for online learning",
+        "figure": null,
+        "equation": null,
+        "assessment": "二次核对所供页文本与定位标签；这不是科学复现或图像验证。"
+      },
+      {
+        "claim_id": "C13",
+        "evidence_index": 2,
+        "pdf_page": 37,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "section": "6.2. Overcoming back-propagation limits for online learning",
+        "figure": null,
+        "equation": null,
+        "assessment": "二次核对所供页文本与定位标签；这不是科学复现或图像验证。"
+      },
+      {
+        "claim_id": "C14",
+        "evidence_index": 1,
+        "pdf_page": 38,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "section": "6.4. CMOS neuromorphic circuits",
+        "figure": null,
+        "equation": null,
+        "assessment": "二次核对所供页文本与定位标签；这不是科学复现或图像验证。"
+      },
+      {
+        "claim_id": "C15",
+        "evidence_index": 1,
+        "pdf_page": 17,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "section": "4.5. Graupner and Brunel (2012): C-STDP",
+        "figure": null,
+        "equation": "(9)",
+        "assessment": "二次核对所供页文本与定位标签；这不是科学复现或图像验证。"
+      },
+      {
+        "claim_id": "C15",
+        "evidence_index": 2,
+        "pdf_page": 18,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "section": "4.5. Graupner and Brunel (2012): C-STDP",
+        "figure": null,
+        "equation": null,
+        "assessment": "二次核对所供页文本与定位标签；这不是科学复现或图像验证。"
+      }
+    ],
+    "model_findings": [
+      {
+        "claim_id": null,
+        "issue": "供给稿与条目元数据的版本/年份不同。",
+        "suggested_correction": "保留arXiv v2身份及期刊元数据，不把两版本默认为同一文本。",
+        "pdf_page": 1,
+        "resolved": true
+      },
+      {
+        "claim_id": "C10",
+        "issue": "5.5的2007模型归属与4.5的2012模型说明需要核对。",
+        "suggested_correction": "人工核对被引原文；本提取不订正文献年份。",
+        "pdf_page": 32,
+        "resolved": false
+      },
+      {
+        "claim_id": "C11",
+        "issue": "正文binary相关信号与电容电压叙述的粒度有歧义。",
+        "suggested_correction": "需读原电路图和原论文，不能由文本猜测精确实现。",
+        "pdf_page": 34,
+        "resolved": false
+      },
+      {
+        "claim_id": null,
+        "issue": "所有图像像素及被引原始实验、芯片数据未提供。",
+        "suggested_correction": "只认可文本来源一致性，保留人工和原始证据核查。",
+        "pdf_page": 38,
+        "resolved": false
+      },
+      {
+        "claim_id": "C12",
+        "issue": "实现空白只限作者知识与2022年所供范围。",
+        "suggested_correction": "未推广成当前全球不存在实现。",
+        "pdf_page": 34,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "不建立跨论文支持、复制或因果链接。",
+        "suggested_correction": "relations保持空数组。",
+        "pdf_page": null,
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T06:50:00.678Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "d01b0376180d2227105df6a37ca07503eb5f817fe5b6cf8bf1414ffb8d5046e9",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

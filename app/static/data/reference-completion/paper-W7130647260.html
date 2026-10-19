@@ -1,0 +1,174 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Modelling brain metabolism with interacting nonautonomous phase oscillators</title><style>body{max-width:940px;margin:40px auto;padding:0 24px;background:#fffdf7;color:#12372f;font:16px/1.8 Georgia,serif}h1{font-size:26px;line-height:1.4}h2{font-size:20px;line-height:1.5}h3{font-size:16px}article{padding:26px 0;border-top:1px solid #bec4b8}small{color:#68766e}dl{display:grid;grid-template-columns:120px 1fr;gap:8px 20px}dt{font-weight:bold}dd{margin:0}li{padding:8px 0}p,dd{overflow-wrap:anywhere}.note{background:#eef2e2;padding:14px;border-left:3px solid #738968}summary{cursor:pointer}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.7 monospace}@media(max-width:600px){body{margin:24px auto;padding:0 18px}dl{grid-template-columns:1fr;gap:3px}dd{margin-bottom:12px}}@media print{body{margin:0;background:white}details{display:block}}</style><link rel="stylesheet" href="../../commons-v02.css?v=20261020-1"><link rel="stylesheet" href="../../examples.css?v=20260928-2"><link rel="stylesheet" href="../../site.css?v=20261020-1"><script defer src="../../site.js?v=20261020-1"></script><script defer src="../../report-ui.js?v=20261020-1"></script></head><body class="portal-page report-page" data-cc-report-shell="1" data-page="library" data-site-prefix="../../" data-library-paper="paper-W7130647260" data-report-language="zh" data-claim-records="{&quot;C1&quot;:&quot;structured-paper-W7130647260-1&quot;,&quot;C2&quot;:&quot;structured-paper-W7130647260-2&quot;,&quot;C3&quot;:&quot;structured-paper-W7130647260-3&quot;,&quot;C4&quot;:&quot;structured-paper-W7130647260-4&quot;,&quot;C5&quot;:&quot;structured-paper-W7130647260-5&quot;,&quot;C6&quot;:&quot;structured-paper-W7130647260-6&quot;,&quot;C7&quot;:&quot;structured-paper-W7130647260-7&quot;}"><header></header><main id="report-content"><div id="report-tools"></div><small>CLAIM COMMONS / 阅读报告</small><h1>Modelling brain metabolism with interacting nonautonomous phase oscillators</h1><p class="note">AI 文本提取候选，尚待人工核对。图像像素未读取；PDF 页码指文件中的页序。</p><p>本文是2026-02-20发表、2026-02-24标注更正的Original Research，标题、作者身份及DOI与本chunk一致；第12页称小修改不影响科学内容。全部14页、8个图注、2个表、讨论/总结、更正说明和参考文献已读，未见附录；没有读取图像像素或外部代码/补充材料。论文用五节点非自治Kuramoto相位模型表达NVU协调，频率及耦合由文献/其他细胞估计和建模选择而来。新结果包括三类锁相标签、健康预设调参路径的有氧到糖酵解转换、氧耦合下降时明显有氧区缺失，以及葡萄糖/乳酸联合受损时保留静息有氧但高需求协调受限。实际未锁相结果与未测试外推分开；ATP不足只保留为解释，代谢失同步参与痴呆只保留为假说。没有本研究采集的患者、动物或细胞证据，也没有显式ATP、pH或离子稳态变量。每次模拟2000 s、步长0.1 s，独立运行/噪声实现数和统计不确定性未报告；五振荡器与三个S示例都不是独立n。二次源文审计发现星形胶质供给耦合0.05/0.025冲突、互耦激活方向冲突、状态7与健康同步条件的差别及全部节点同步于氧的过宽措辞；候选已限定并保留人工核查需求。完整参数仍缺报，文本不支持定量ATP下降、患者因果机制、抗噪/拟合优效或治疗结论。保留7条中文AI候选与共享证据标记，human_checked:false，无跨论文关系、数据库或站点变更。</p><a href="https://www.frontiersin.org/journals/network-physiology/articles/10.3389/fnetp.2026.1720336/pdf" rel="noreferrer">查看所读原文版本 ↗</a><details><summary>贡献清单与处理决定</summary><ul><li><b>五振荡器非自治Kuramoto模型及锁相读出。</b><br>include · C1独立方法贡献；保留单向供给、相位简化和缺报参数。</li><li><b>静息参数空间8种锁相配置的三类模式标签。</b><br>include · C2分类结果；不把模式标签当作ATP测量，保留状态7与健康条件差别。</li><li><b>预设健康需求路径的有氧/过渡/糖酵解转换。</b><br>include · C3；频率与多个耦合联合改变，图5/6不是独立复制。</li><li><b>氧耦合下降导致明显有氧区缺失，高需求仍可葡萄糖主导。</b><br>include · C4独立计算扰动；区分低需求解锁和高需求转换。</li><li><b>葡萄糖/乳酸耦合联合下降与激活上调受抑。</b><br>include · C5；静息有氧保留，高需求协调受限，不能单因素归因。</li><li><b>相位模式失效对应潜在ATP供需不足。</b><br>include · C6独立功能解释；没有ATP直接输出或测量。</li><li><b>代谢失同步可能参与痴呆病理。</b><br>include · C7未验证机制假说，不写成患者因果发现。</li><li><b>相位方法抗噪、非自治稳定性与相对质量模型的优势。</b><br>exclude · 主要援引前作或方法动机，没有本文统一抗噪、拟合或成本比较。</li><li><b>扩展双向NVC、空间网络、其他疾病、connectomes或digital twins。</b><br>exclude · 未来开发建议，不是已完成的独立科学贡献；保留为范围与未决问题。</li><li><b>更正版本、背景生物学与参考文献。</b><br>exclude · 版本进入身份说明；背景及文献不计为本文独立实验或跨论文证据关系。</li></ul></details><article><small>C1 / 直接结果 · methodological_model</small><h2>本文构造了包含氧供给Ox、葡萄糖供给Glu、神经元糖酵解GO、神经元线粒体MO和星形胶质细胞糖酵解GOa的五振荡器非自治Kuramoto相位模型；以供给到代谢过程的正耦合、MO对糖酵解的负耦合、时变本征频率及pink noise表示代谢协调，而不是求解代谢物浓度或ATP产量。</h2><h3>Evidence</h3><p>非自治相位方程构建与四阶Runge-Kutta积分。</p><dl><dt>设计 / 对照</dt><dd>式3规定Ox/Glu外驱动、GO和GOa受葡萄糖驱动及MO抑制，MO受GO、GOa和Ox驱动；积分后分析相位锁定。；概念上区别于质量/浓度模型；没有统一数据拟合、计算成本或抗噪比较实验。</dd><dt>独立单位与 n</dt><dd>给定参数组与噪声实现下的五振荡器模拟轨迹及其锁相关系；振荡器、时间采样点与扫描格点不是独立生物样本。；每次模拟2000 s、时间步长0.1 s；独立重复轨迹、种子或噪声实现数未报告。5个振荡器是模型组成，不是n=5。</dd><dt>不确定性</dt><dd>仅报告定性锁相及频率行为；未报告跨独立运行的方差、置信区间、统计检验或数值收敛误差。</dd><dt>原文位置</dt><dd>PDF 4 · 2.4 Nonautonomous phase dynamics model</dd></dl><p>时变本征频率及生化节点对应的定义。</p><dl><dt>设计 / 对照</dt><dd>式1在中心频率周围引入幅度A、调制频率omega_mod的正弦变化；图1把生化流程映射到振荡器。；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>方程及节点对应关系，不是独立实验。；未报告 / 不适用</dd><dt>不确定性</dt><dd>所给文字未给出A、omega_mod及sigma的完整数值。</dd><dt>原文位置</dt><dd>PDF 3 · 1</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>给出用于模拟代谢过程时间协调的简化现象学模型。</dd><dt>适用边界</dt><dd>只适用于这套五相位变量和耦合结构，不是脑内数据校准的生化反应模型。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能宣称已证明比质量模型更准确、更节省计算或更抗噪；没有本文的统一比较实验。</dd><dt>未解决</dt><dd>完整调制、噪声、sigmoidal函数与GOa抑制反馈参数缺报，仍需数据校准和复现。</dd></dl><h3>相关问题</h3><ul><li>如何用非自治相位振荡器表示NVU代谢过程与供给的协调？</li></ul></article><article><small>C2 / 直接结果 · synchronization_regime_classification</small><h2>在作者选定的静息频率和代谢耦合扫描中，表2所列8种锁相配置被归并为有氧、过渡和糖酵解三类：有氧类含Ox-MO与GO-MO锁相，过渡类没有GO-MO锁相；糖酵解类含GOa-MO与Glu-GOa锁相，但其中状态7并没有GO-MO锁相。</h2><h3>Evidence</h3><p>参数空间相位锁定分类。</p><dl><dt>设计 / 对照</dt><dd>以表1静息频率为基础扫描代谢振荡器耦合；图3A保留表2编号0-7，图3B按作者模式标签简化。；同一模型参数空间的不同锁相配置；没有实测健康状态标签。</dd><dt>独立单位与 n</dt><dd>给定参数组的模拟锁相配置；8种类别标签不是8个独立重复。；表2报告8种配置标签；扫描格点、独立运行和噪声实现数未报告，时长及步长见2.4。</dd><dt>不确定性</dt><dd>仅报告定性锁相及频率行为；未报告跨独立运行的方差、置信区间、统计检验或数值收敛误差。</dd><dt>原文位置</dt><dd>PDF 6 · 3</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>模型参数空间可按供给/代谢锁相关系组织成三类作者定义的模式。</dd><dt>适用边界</dt><dd>标签是相位关系的生物学解释；糖酵解分类不一概意味着GO与MO已经同步。</dd><dt>实际负结果</dt><dd>表2状态7的GO-MO栏没有锁相标记，过渡类亦无GO-MO锁相。</dd><dt>不能推出</dt><dd>不能把类别标签当作测得的ATP效率、疾病诊断或全部糖酵解状态健康的证据。</dd><dt>未解决</dt><dd>状态7的标签与正文强调的GO-MO同步健康条件有差别，分类含义需澄清。</dd></dl><h3>相关问题</h3><ul><li>不同代谢与供给锁相配置如何区分有氧、过渡和糖酵解模式？</li></ul></article><article><small>C3 / 直接结果 · simulation_activation_transition</small><h2>在健康参数路径中，同时增加氧/葡萄糖供给频率并按预设规则改变供给及GO-MO耦合后，S=1、1.25和1.5分别呈现有氧、过渡和糖酵解模式；图6所述神经元GO与MO频率随S增加由氧供给主导转向葡萄糖供给主导，而过渡模式中GO与MO未保持锁相。</h2><h3>Evidence</h3><p>健康参数路径的相位空间扫描与频率读出。</p><dl><dt>设计 / 对照</dt><dd>图5比较S=1、1.25、1.5；图6展示随供给频率缩放的代谢振荡器频率，耦合改变见图4。；同一健康模型在不同外设需求代理S下的静息、早期激活与充分激活参数状态。</dd><dt>独立单位与 n</dt><dd>给定参数组与噪声实现下的五振荡器模拟轨迹及其锁相关系；振荡器、时间采样点与扫描格点不是独立生物样本。；每次模拟2000 s、时间步长0.1 s；独立重复轨迹、种子或噪声实现数未报告。5个振荡器是模型组成，不是n=5。</dd><dt>不确定性</dt><dd>仅报告定性锁相及频率行为；未报告跨独立运行的方差、置信区间、统计检验或数值收敛误差。</dd><dt>原文位置</dt><dd>PDF 8 · 5; 6</dd></dl><p>健康频率变化的正文说明。</p><dl><dt>设计 / 对照</dt><dd>正文描述GO和MO从氧供给同步转向葡萄糖供给同步，过渡态定义见3.2。；低需求和高需求供给参数状态。</dd><dt>独立单位与 n</dt><dd>给定参数组与噪声实现下的五振荡器模拟轨迹及其锁相关系；振荡器、时间采样点与扫描格点不是独立生物样本。；每次模拟2000 s、时间步长0.1 s；独立重复轨迹、种子或噪声实现数未报告。5个振荡器是模型组成，不是n=5。</dd><dt>不确定性</dt><dd>仅报告定性锁相及频率行为；未报告跨独立运行的方差、置信区间、统计检验或数值收敛误差。</dd><dt>原文位置</dt><dd>PDF 9 · 6</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>预设共同调参路径可以表现有氧到糖酵解的协调转换及中间解锁区域。</dd><dt>适用边界</dt><dd>S由研究者设置，不是闭环神经活动驱动的自主适应；频率与多个耦合作用没有分离。</dd><dt>实际负结果</dt><dd>过渡模式中GO与MO不同步，是所示模型的具体未锁相结果。</dd><dt>不能推出</dt><dd>不能宣称真实脑必然在这些S值切换、全部五个振荡器都1:1锁到氧供给，或ATP需求已定量满足。</dd><dt>未解决</dt><dd>转变阈值、完整sigmoidal规则及其参数缺报；互耦数值方向存在源文冲突。</dd></dl><h3>相关问题</h3><ul><li>供给频率与代谢耦合共同变化时，健康模型如何由有氧模式转向糖酵解模式？</li></ul></article><article><small>C4 / 直接结果 · simulation_oxygen_supply_perturbation</small><h2>相对于健康模型，仅下调氧供给到MO的耦合、保持葡萄糖与乳酸供给耦合的激活规则不变时，图7在S=1、1.25、1.5均没有明显有氧区域；低需求下Ox与MO解锁，而高需求下仍可转向葡萄糖供给主导的代谢行为。</h2><h3>Evidence</h3><p>氧供给有效耦合削弱的计算扰动。</p><dl><dt>设计 / 对照</dt><dd>静息与激活时均减小epsilon_OxMO；图7B-D为三种S的相位空间，7E为需求增加时的频率。；相同S及其余供给耦合规则下的健康模型图5/6。</dd><dt>独立单位与 n</dt><dd>给定参数组与噪声实现下的五振荡器模拟轨迹及其锁相关系；振荡器、时间采样点与扫描格点不是独立生物样本。；每次模拟2000 s、时间步长0.1 s；独立重复轨迹、种子或噪声实现数未报告。5个振荡器是模型组成，不是n=5。</dd><dt>不确定性</dt><dd>仅报告定性锁相及频率行为；未报告跨独立运行的方差、置信区间、统计检验或数值收敛误差。</dd><dt>原文位置</dt><dd>PDF 9 · 7</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>削弱氧有效耦合可以使所示路径失去明显静息有氧区，但仍保留高需求葡萄糖主导行为。</dd><dt>适用边界</dt><dd>仅限该氧耦合扰动与所示路径；低需求解锁不等于始终处于完全同步的糖酵解态。</dd><dt>实际负结果</dt><dd>所示三种S下无明显有氧区，低需求时Ox-MO不能维持锁相。</dd><dt>不能推出</dt><dd>不能定量推出氧浓度下降、真实线粒体损伤、ATP缺口或患者效应；耦合并非实测供给量。</dd><dt>未解决</dt><dd>氧耦合确切下降值、跨运行稳定性及与脑氧实测数据的对应未明确。</dd></dl><h3>相关问题</h3><ul><li>削弱氧供给到线粒体的有效耦合如何改变静息有氧协调与高需求糖酵解转换？</li></ul></article><article><small>C5 / 直接结果 · simulation_joint_glucose_lactate_perturbation</small><h2>当静息葡萄糖和乳酸供给耦合同时减半、且激活后的葡萄糖耦合增强明显受抑时，图8模型在静息下仍保留有氧模式；但随S增加，糖酵解区域未像健康模型那样占主导，神经元GO与MO不能相互锁相，也不能与葡萄糖供给锁相。</h2><h3>Evidence</h3><p>葡萄糖及乳酸供给联合削弱的计算扰动。</p><dl><dt>设计 / 对照</dt><dd>两种静息供给耦合同时减半并削弱激活时葡萄糖耦合上升；图8B-D比较S=1、1.25、1.5，8E展示频率。；相同S的健康路径，尤其图5C的高需求糖酵解状态及图6频率。</dd><dt>独立单位与 n</dt><dd>给定参数组与噪声实现下的五振荡器模拟轨迹及其锁相关系；振荡器、时间采样点与扫描格点不是独立生物样本。；每次模拟2000 s、时间步长0.1 s；独立重复轨迹、种子或噪声实现数未报告。5个振荡器是模型组成，不是n=5。</dd><dt>不确定性</dt><dd>仅报告定性锁相及频率行为；未报告跨独立运行的方差、置信区间、统计检验或数值收敛误差。</dd><dt>原文位置</dt><dd>PDF 10 · 8</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>联合削弱主要破坏该模型的高需求模式转换，而静息有氧模式仍可保留。</dd><dt>适用边界</dt><dd>属于双供给共同干预加激活规则改变，不能简写成葡萄糖或乳酸的单因素实验。</dd><dt>实际负结果</dt><dd>高需求时糖酵解区域未占主导，GO/MO彼此及与Glu供给未锁相。</dd><dt>不能推出</dt><dd>不能推出单独葡萄糖/乳酸下降效应、星形胶质细胞作用必需性或实际ATP不足已测得。</dd><dt>未解决</dt><dd>各供给途径独立贡献、联合效应与补偿能力需拆分扰动和实测。</dd></dl><h3>相关问题</h3><ul><li>联合削弱葡萄糖与乳酸时，为何模型静息有氧协调可保留而高需求适应受限？</li></ul></article><article><small>C6 / 解释 · metabolic_function_interpretation</small><h2>作者将氧耦合受损时缺失静息有氧模式，以及葡萄糖/乳酸耦合受损时无法完成高需求模式转换，解释为可能降低代谢供能能力、使ATP供应难以满足需求；这一ATP供需解释依据相位模式，而模型并未显式计算ATP或测量ATP产量。</h2><h3>Evidence</h3><p>由氧扰动模式推及能量供给的作者解释。</p><dl><dt>设计 / 对照</dt><dd>4.2末段把缺少静息有氧模式解释为ATP总产量不足。；健康模型静息有氧模式。</dd><dt>独立单位与 n</dt><dd>给定参数组与噪声实现下的五振荡器模拟轨迹及其锁相关系；振荡器、时间采样点与扫描格点不是独立生物样本。；每次模拟2000 s、时间步长0.1 s；独立重复轨迹、种子或噪声实现数未报告。5个振荡器是模型组成，不是n=5。</dd><dt>不确定性</dt><dd>未报告ATP量、ATP缺口或能量需求的估计误差。</dd><dt>原文位置</dt><dd>PDF 9 · 7</dd></dl><p>由联合供给扰动推及高需求供能的作者解释。</p><dl><dt>设计 / 对照</dt><dd>4.3把转换受限解释为可能无法满足刺激时的代谢需求。；健康模型高需求糖酵解模式。</dd><dt>独立单位与 n</dt><dd>给定参数组与噪声实现下的五振荡器模拟轨迹及其锁相关系；振荡器、时间采样点与扫描格点不是独立生物样本。；每次模拟2000 s、时间步长0.1 s；独立重复轨迹、种子或噪声实现数未报告。5个振荡器是模型组成，不是n=5。</dd><dt>不确定性</dt><dd>未报告ATP供需与功能损失的定量不确定性。</dd><dt>原文位置</dt><dd>PDF 10 · 8</dd></dl><p>模型解释的显式范围限定。</p><dl><dt>设计 / 对照</dt><dd>讨论明确省略ATP动力学、pH和离子稳态，将通路约化为五振荡器。；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>模型范围说明，不是独立实验。；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 11 · 5 Discussion</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>作者提出协调模式可能对应不同供能能力的功能解释。</dd><dt>适用边界</dt><dd>这是interpretation，不是ATP原始测量或校准的动力学预测。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能报告已测ATP下降、量化能量亏损、证明神经元损伤或将同步自动等同能量效率。</dd><dt>未解决</dt><dd>相位关系与ATP生成、能量消耗及神经功能的定量映射仍需验证。</dd></dl><h3>相关问题</h3><ul><li>相位协调及其失效能否可靠反映ATP供需与代谢效率，而不只是锁相类别？</li></ul></article><article><small>C7 / 假说 / 预测 · dementia_mechanism_hypothesis</small><h2>作者提出，NVU内代谢过程与供给之间的同步受损及其引起的负荷适应受限，可能参与痴呆相关病理；本文健康与供应受损模型的对比仅为这一机制假说提供定性可行性说明，没有识别患者中的因果机制。</h2><h3>Evidence</h3><p>氧供给扰动与健康模型的定性对比。</p><dl><dt>设计 / 对照</dt><dd>氧耦合受损使明显有氧区缺失，参数扰动被用作痴呆相关供给异常代理。；图5/6健康路径。</dd><dt>独立单位与 n</dt><dd>给定参数组与噪声实现下的五振荡器模拟轨迹及其锁相关系；振荡器、时间采样点与扫描格点不是独立生物样本。；每次模拟2000 s、时间步长0.1 s；独立重复轨迹、种子或噪声实现数未报告。5个振荡器是模型组成，不是n=5。</dd><dt>不确定性</dt><dd>没有临床效应、诊断性能或病理因果估计。</dd><dt>原文位置</dt><dd>PDF 9 · 7</dd></dl><p>联合供应扰动的定性可行性说明。</p><dl><dt>设计 / 对照</dt><dd>葡萄糖/乳酸耦合下降限制激活时协调转换，并非实际病例/对照实验。；健康高需求路径。</dd><dt>独立单位与 n</dt><dd>给定参数组与噪声实现下的五振荡器模拟轨迹及其锁相关系；振荡器、时间采样点与扫描格点不是独立生物样本。；每次模拟2000 s、时间步长0.1 s；独立重复轨迹、种子或噪声实现数未报告。5个振荡器是模型组成，不是n=5。</dd><dt>不确定性</dt><dd>未报告患者、动物或培养细胞的独立验证样本。</dd><dt>原文位置</dt><dd>PDF 10 · 8</dd></dl><p>作者病理假说及验证要求。</p><dl><dt>设计 / 对照</dt><dd>讨论与总结称结果为痴呆样NVU障碍，并要求实验验证参数；摘要以可能参与病理限定。；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>同一模拟证据的解释性推广。；未报告 / 不适用</dd><dt>不确定性</dt><dd>真实疾病效应与因果方向未估计。</dd><dt>原文位置</dt><dd>PDF 11 · 5 Discussion / 6 Summary</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>形成代谢同步失调可能参与痴呆相关病理的可检验假说。</dd><dt>适用边界</dt><dd>只在特定模型与参数映射下给出定性可行性，不证明真实疾病机制。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能证明失同步导致痴呆、是起始病因、独立于其他病因，或恢复同步可治疗。</dd><dt>未解决</dt><dd>需要同时记录相位/代谢/神经功能并作干预，区分原因、后果和反馈。</dd></dl><h3>相关问题</h3><ul><li>NVU代谢同步受损是痴呆相关功能异常的原因、后果，还是反馈的一部分？</li></ul></article><details><summary>核对记录与来源信息</summary><pre>{
+  &quot;coverage&quot;: {
+    &quot;pdf_pages_read&quot;: [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    &quot;results_sections_seen&quot;: [
+      &quot;2.4 Nonautonomous phase dynamics model&quot;,
+      &quot;3.1 Natural frequencies / 3.2 The parameter space&quot;,
+      &quot;3.2.1 Coupling strengths during energy demand&quot;,
+      &quot;3.2.2 Dynamic changes with increased demand&quot;,
+      &quot;3.2.3 Metabolism in dementia&quot;,
+      &quot;4.1 Resting and active state changes in the brain&quot;,
+      &quot;4.2 Impaired oxygen supply coupling&quot;,
+      &quot;4.3 Impaired glucose supply coupling&quot;,
+      &quot;5 Discussion&quot;,
+      &quot;6 Summary&quot;,
+      &quot;Figures 1-8 captions; Tables 1-2; Correction note; References&quot;
+    ],
+    &quot;missing_material&quot;: [
+      &quot;图1-8像素未提供；只审读正文、图注和表格文本。&quot;,
+      &quot;作者链接的代码仓库内容不在指定页文本内，未访问；完整数值参数与独立运行信息未在文字中给全。&quot;
+    ],
+    &quot;text_pass_complete&quot;: true,
+    &quot;notes&quot;: [
+      &quot;指定text_path一次载入全部14页、98824字符，分6个不超过18000源文字符的连续输出审读，页内跨块内容接续，无跳页。&quot;,
+      &quot;第1页为Original Research，2026-02-20发表、2026-02-24更正；第12页说明小修改不影响科学内容。是带更正标注的原始研究，而非单独correction。&quot;,
+      &quot;标题、作者身份和DOI与指派记录一致；索引Samuel J K Barnes与源页Samuel J. K. Barnes仅中间名标点不同。保留索引形式与版本差别说明。&quot;,
+      &quot;已评估引言、生物学背景、模型/参数/全部结果、8个图注、2个表、讨论/总结、数据与更正说明、参考文献。所给14页未见附录或单独补充材料。&quot;,
+      &quot;在保留的全部源文上下文中完成第二次逐条审计，核对表2、式3、4.1健康路径及4.2/4.3实际扰动；未重开PDF。&quot;,
+      &quot;文本完整与定位检查不代表软件复现、图像审查、科学验证或人工核准；仍为human_checked:false候选。&quot;,
+      &quot;全部quote为null，英文源文逐字引用总量为0；采用真实1-based PDF页、章节、图和公式定位。&quot;
+    ],
+    &quot;reading_mode&quot;: &quot;text_only&quot;,
+    &quot;figure_images_read&quot;: false,
+    &quot;scientific_verification&quot;: false,
+    &quot;source_pdf_offline&quot;: false,
+    &quot;archived_page_text_used&quot;: false
+  },
+  &quot;audit&quot;: {
+    &quot;source_match_checks&quot;: [],
+    &quot;model_findings&quot;: [
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;源页标注2026-02-24更正，索引只给年份。&quot;,
+        &quot;suggested_correction&quot;: &quot;coverage保留发表/更正日期及小修改不影响科学内容的说明；不改共享元数据。&quot;,
+        &quot;pdf_page&quot;: 12,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C1&quot;,
+        &quot;issue&quot;: &quot;引言的双向NVC与实际式3单向供给结构不同。&quot;,
+        &quot;suggested_correction&quot;: &quot;按方程和讨论保留单向外驱动，不宣称实现神经元到血流反馈。&quot;,
+        &quot;pdf_page&quot;: 11,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C1&quot;,
+        &quot;issue&quot;: &quot;式3后的epsilon_GluGO文字解释写成进入GOa，与公式epsilon_GluGOa对应不一致，公式页文本另有等号/括号编码损坏。&quot;,
+        &quot;suggested_correction&quot;: &quot;按明确节点对应转述，不复制损坏字符，不补造参数；源版标记仍需人工确认。&quot;,
+        &quot;pdf_page&quot;: 4,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C2&quot;,
+        &quot;issue&quot;: &quot;表1的Glu-&gt;GOa耦合为0.05，3.2.1正文为0.025。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留内部冲突，不选一个值当全部模拟实际值；需人工核对代码。&quot;,
+        &quot;pdf_page&quot;: 5,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C3&quot;,
+        &quot;issue&quot;: &quot;3.2.2的MO-&gt;GO、GO-&gt;MO激活数值方向与表1、3.2.1及4.1相反。&quot;,
+        &quot;suggested_correction&quot;: &quot;候选依表1和4.1限定健康路径，披露冲突，不声称已确认实现。&quot;,
+        &quot;pdf_page&quot;: 7,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C2&quot;,
+        &quot;issue&quot;: &quot;表2状态7为糖酵解却无GO-MO锁相，正文另称GO-MO同步是所有健康状态必需。&quot;,
+        &quot;suggested_correction&quot;: &quot;按表逐项限定类别，不把糖酵解区一概称健康或有效供能；标准待澄清。&quot;,
+        &quot;pdf_page&quot;: 6,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C3&quot;,
+        &quot;issue&quot;: &quot;4.1称全部振荡器同步于氧，但式3的Ox/Glu无互耦且表1频率不同，表2亦不含全部关系锁相。&quot;,
+        &quot;suggested_correction&quot;: &quot;限定为文本和图6明确讨论的GO/MO主导供给改变，不外推全部节点1:1同步。&quot;,
+        &quot;pdf_page&quot;: 8,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C4&quot;,
+        &quot;issue&quot;: &quot;4.2各S下糖酵解主导措辞不能替代其低需求解锁、高需求葡萄糖主导的具体描述。&quot;,
+        &quot;suggested_correction&quot;: &quot;已区分缺少明显有氧区、低需求解锁与高需求转换，不写全部状态完全锁相。&quot;,
+        &quot;pdf_page&quot;: 9,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C5&quot;,
+        &quot;issue&quot;: &quot;4.3标题仅说葡萄糖，但实际包含葡萄糖/乳酸共同减半及激活上调受抑。&quot;,
+        &quot;suggested_correction&quot;: &quot;已按联合扰动提取，明确不能分离各因素贡献。&quot;,
+        &quot;pdf_page&quot;: 10,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C6&quot;,
+        &quot;issue&quot;: &quot;ATP不足及最优供能措辞超过实际模型变量，讨论明确没有ATP动力学。&quot;,
+        &quot;suggested_correction&quot;: &quot;单列interpretation，无ATP量、效应大小或实测供需亏损。&quot;,
+        &quot;pdf_page&quot;: 11,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C7&quot;,
+        &quot;issue&quot;: &quot;痴呆样参数映射没有本文患者、动物或细胞验证。&quot;,
+        &quot;suggested_correction&quot;: &quot;单列hypothesis，不推断病理起始、因果识别、诊断或治疗；背景不代替验证。&quot;,
+        &quot;pdf_page&quot;: 11,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;A、omega_mod、sigma、GOa抑制反馈和sigmoidal函数参数未完整报告；氧扰动值及独立运行数亦缺报。&quot;,
+        &quot;suggested_correction&quot;: &quot;明确未报告，不从像素推值，不把振荡器、S示例或采样点当独立n；完整复现待人工检查代码/补充信息。&quot;,
+        &quot;pdf_page&quot;: 4,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;图5/6为图7/8共同健康比较，ATP解释及病理假说共用同一组模拟证据。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留shared_evidence_with，不把多图/多候选当独立复制；无跨论文关系。&quot;,
+        &quot;pdf_page&quot;: 11,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;第二次源文审计已逐项核对方法、分类、实际干预、比较组、独立单位、实际阴性、解释/假说和全文覆盖。&quot;,
+        &quot;suggested_correction&quot;: &quot;保持未解决源文冲突及缺报；所有quote为空，定位到真实页；文本审核不提升为人工或科学验证。&quot;,
+        &quot;pdf_page&quot;: null,
+        &quot;resolved&quot;: true
+      }
+    ],
+    &quot;needs_human_review&quot;: true
+  },
+  &quot;source&quot;: {
+    &quot;filename&quot;: &quot;paper-W7130647260--Modelling-brain-metabolism-with-interacting-nonautonomous-phase-oscillators.pdf&quot;,
+    &quot;sha256&quot;: &quot;e5682cccbf3474c438b49eb8dd9ca03a632a044773f1b8bf287917a36c05e212&quot;,
+    &quot;source_url&quot;: &quot;https://www.frontiersin.org/journals/network-physiology/articles/10.3389/fnetp.2026.1720336/pdf&quot;,
+    &quot;pdf_page_count&quot;: 14
+  },
+  &quot;provenance&quot;: {
+    &quot;created_at&quot;: &quot;2026-10-07T15:26:43.634385Z&quot;,
+    &quot;workflow&quot;: &quot;claim-commons-pdf-v1&quot;,
+    &quot;prompt_version&quot;: &quot;claim-commons-chatgpt-pdf-2026-10-07.1&quot;,
+    &quot;backend&quot;: &quot;authorized_parallel_GPT&quot;,
+    &quot;model&quot;: &quot;inherited_account_GPT&quot;,
+    &quot;provider_api_key_used&quot;: false,
+    &quot;source_sha256&quot;: &quot;e5682cccbf3474c438b49eb8dd9ca03a632a044773f1b8bf287917a36c05e212&quot;,
+    &quot;source_audit_complete&quot;: true,
+    &quot;review_status&quot;: &quot;candidate&quot;,
+    &quot;database_updated&quot;: false
+  }
+}</pre></details></main><footer></footer></body></html>

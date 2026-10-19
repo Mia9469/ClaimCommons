@@ -1,0 +1,1396 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "Simple input–output dependencies explain neuronal activity",
+    "authors": [
+      "Christopher W. Lynn"
+    ],
+    "doi": "10.1038/s41567-026-03306-3",
+    "publication_year": 2026,
+    "venue": "Nature Physics",
+    "url": "https://doi.org/10.1038/s41567-026-03306-3"
+  },
+  "source": {
+    "filename": "2026-Nature-Physics-Input-Output-Dependencies-Neuronal-Activity.pdf",
+    "sha256": "480efd0595c039715543957c7fd3a48934076c21855c0d2244e7b4913b2b7caf",
+    "source_url": null,
+    "pdf_page_count": 10
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "results_sections_seen": [
+      "Minimal direct dependencies and toy logical controls",
+      "Optimal/complete input selection",
+      "CA1/visual/nematode population models",
+      "Sampled higher-order and lagged rates",
+      "Inferred weights/MI/marginalization robustness",
+      "Discussion",
+      "Methods maxentropy/gradients/entropy/greedy/neural data/complete correlations/ablation",
+      "Figures1–5",
+      "References1–70 and availability"
+    ],
+    "missing_material": [
+      "所有figure pixels",
+      "Supplementary Information/Figs1–8含重要cross-time/downsample/overfit/Ising推导未附",
+      "外部rawcode/data未读取；animal/recording-frame n和heldout选择protocol未明列"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "10页归档全文一次读取，Methods续页与所有figure captions均覆盖。",
+      "source Published online为xx xx xxxx placeholder；接受20Apr2026，非已核定最终publication date。",
+      "input是statistical predictor，empiricalQ与选取容差前提保留；不调用外部critique或自动cross-paper关系。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "固定经验输入分布Q(x)、binary output及〈y〉/〈yxᵢ〉约束时，最大conditional entropy模型为logistic(b+Σwᵢxᵢ)；这是约束后的最小统计模型，inputs未被确认是突触传入。",
+      "role": "result",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "独立形式/算法、各activity model结果或真实超容差/模型ablationnegative，保留对象与条件。"
+    },
+    {
+      "summary": "匹配同一分布约束下S_tot≥S_dir≥S_true且KL(P_true||P)=S_dir−S_true；S_dir小限制剩余conditional entropy，零熵极限为deterministic threshold function。",
+      "role": "result",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "独立形式/算法、各activity model结果或真实超容差/模型ablationnegative，保留对象与条件。"
+    },
+    {
+      "summary": "独立随机输入的AND/OR toy例direct模型接近true entropy，零错误线性可分极限精确；该文XOR例direct marginals不解释输出，展示框架可区分该分布的不可分逻辑。",
+      "role": "result",
+      "source_pages": [
+        2
+      ],
+      "decision": "include",
+      "reason": "独立形式/算法、各activity model结果或真实超容差/模型ablationnegative，保留对象与条件。"
+    },
+    {
+      "summary": "greedy逐步选降低S_dir最多的统计predictor；小coactivity预测误差的perturbative Δentropy近似将拟合数从O(nN)降为O(n)，但不是全组合global optimum保证。",
+      "role": "result",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "独立形式/算法、各activity model结果或真实超容差/模型ablationnegative，保留对象与条件。"
+    },
+    {
+      "summary": "complete模型定义为所有未选、正〈yxᵢ〉相关在2×Poisson standard error内预测；仅选至少一次coactive者并按此停止，n*依sample length和容差。",
+      "role": "result",
+      "source_pages": [
+        10
+      ],
+      "decision": "include",
+      "reason": "独立形式/算法、各activity model结果或真实超容差/模型ablationnegative，保留对象与条件。"
+    },
+    {
+      "summary": "CA1一个illustrative output用350/1484可能predictors约24%得到89%entropy reduction，并覆盖其剩余positive direct相关；等数random predictors仍有相关误差。",
+      "role": "result",
+      "source_pages": [
+        3
+      ],
+      "decision": "include",
+      "reason": "独立形式/算法、各activity model结果或真实超容差/模型ablationnegative，保留对象与条件。"
+    },
+    {
+      "summary": "同CA1记录全部1485outputs，median第一predictor解释17%entropy、15个约50%；median complete n*=214约14%population，模型entropy reduction>90%。",
+      "role": "result",
+      "source_pages": [
+        4
+      ],
+      "decision": "include",
+      "reason": "独立形式/算法、各activity model结果或真实超容差/模型ablationnegative，保留对象与条件。"
+    },
+    {
+      "summary": "mouse visual population11445中随机100outputs，natural-image条件median n*=108(<1%)、direct entropy解释约91%；same population spontaneous condition报告近似结果。",
+      "role": "result",
+      "source_pages": [
+        4
+      ],
+      "decision": "include",
+      "reason": "独立形式/算法、各activity model结果或真实超容差/模型ablationnegative，保留对象与条件。"
+    },
+    {
+      "summary": "C.elegans记录128outputs，median n*=5可覆盖其他direct相关而entropy reduction约62%，明显低于mouse>90%的报告范围。",
+      "role": "result",
+      "source_pages": [
+        4
+      ],
+      "decision": "include",
+      "reason": "独立形式/算法、各activity model结果或真实超容差/模型ablationnegative，保留对象与条件。"
+    },
+    {
+      "summary": "CA1 complete模型在2-error criterion内预测99.85%triplet、99.89%quadruplet、99.92%quintuplet rates；各output每order只随机取100组，仍有非零unexplained fraction。",
+      "role": "result",
+      "source_pages": [
+        5
+      ],
+      "decision": "include",
+      "reason": "独立形式/算法、各activity model结果或真实超容差/模型ablationnegative，保留对象与条件。"
+    },
+    {
+      "summary": "CA1等时模型对lag .1/1/10s rates分别99.6%/99.1%/99.0%在容差内预测，random inputs更差；这不说明整个network无需temporal integration。",
+      "role": "result",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "独立形式/算法、各activity model结果或真实超容差/模型ablationnegative，保留对象与条件。"
+    },
+    {
+      "summary": "拟合CA1 weights表现sparse、magnitude heavy-tailed/log-normal、正负较平衡且directional，所有bias<0；作者明言weights还可来自shared latent或extrasynaptic而非synaptic strength。",
+      "role": "result",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "独立形式/算法、各activity model结果或真实超容差/模型ablationnegative，保留对象与条件。"
+    },
+    {
+      "summary": "CA1 model direct MI随n*约linear，回归slope约.01bits/s/input、R=.91；与S_tot关系slope约.87，支持该模型中的冗余关联而非定向synaptic信息流测量。",
+      "role": "result",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "独立形式/算法、各activity model结果或真实超容差/模型ablationnegative，保留对象与条件。"
+    },
+    {
+      "summary": "100次随机mask/marginalization中，模型在丢弃近90%inputs前仍保持较多direct MI/预测性能，随后出现sharp loss；参数不refit，使用经验Q(x)对缺失input积分。",
+      "role": "result",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "独立形式/算法、各activity model结果或真实超容差/模型ablationnegative，保留对象与条件。"
+    },
+    {
+      "summary": "主文称downsampling/time consistency/average-neuron稳健性与Ising真实interaction恢复。",
+      "role": "unresolved_theory_or_supplement_result",
+      "source_pages": [
+        4,
+        7
+      ],
+      "decision": "defer",
+      "reason": "主要证据/assumptions在未提供supplement，不认证其完整证明或独立validation。"
+    },
+    {
+      "summary": "neuron简单机制、biophysical interactions/temporal/latent只占剩余10%的普遍因果解释及真正lesion robustness。",
+      "role": "mechanistic_interpretation",
+      "source_pages": [
+        1,
+        2,
+        6,
+        7
+      ],
+      "decision": "defer",
+      "reason": "同frame经验模型与entropy bounds不唯一识别所有生物输入/计算；保持retrieval问题而非因果定论。"
+    },
+    {
+      "summary": "connectome背景与全参考文献。",
+      "role": "background",
+      "source_pages": [
+        1,
+        7,
+        8
+      ],
+      "decision": "exclude",
+      "reason": "引用非本研究新connectomic/biological evidence。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "固定经验输入分布Q(x)、binary output及〈y〉/〈yxᵢ〉约束时，最大conditional entropy模型为logistic(b+Σwᵢxᵢ)；这是约束后的最小统计模型，inputs未被确认是突触传入。",
+      "claim_type": "conditional_statistical_model",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Maximum entropy Eqs2–3",
+          "design": "最大conditional entropy/logistic解析及greedy算法",
+          "comparator": "direct/complete vsrandom/no inputs、true/constraint entropy或sampled higher/lagged rates",
+          "measure": "固定经验输入分布Q(x)、binary output及〈y〉/〈yxᵢ〉约束时，最大conditional entropy模型为logistic(b+Σwᵢxᵢ)；这是约束后的最小统计模型，inputs未被确认是突触传入。",
+          "unit_of_analysis": "recorded neuron/model output及sampled correlation groups；非独立动物/突触",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "binary frames、fixed empirical Q与匹配moments；输入组合自身依赖保留。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "Maximum entropy Eqs2–3",
+            "figure": null,
+            "equation": "Maximum entropy Eqs2–3",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "固定经验输入分布Q(x)、binary output及〈y〉/〈yxᵢ〉约束时，最大conditional entropy模型为logistic(b+Σwᵢxᵢ)；这是约束后的最小统计模型，inputs未被确认是突触传入。",
+        "boundary": "binary frames、fixed empirical Q与匹配moments；输入组合自身依赖保留。",
+        "negative_result": null,
+        "non_inference": "binary frames、fixed empirical Q与匹配moments；输入组合自身依赖保留。",
+        "unresolved": "真实synaptic inputs/hidden causes、heldout generality、calcium时标与physical nonlinear computation未由此识别。",
+        "unresolved_attribution": "源文功能vssynapse caveat与本次源数据审计。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "等时direct statistical constraints在何种分布/采样条件下解释神经活动而不识别因果计算？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C3",
+        "C4",
+        "C5"
+      ],
+      "review_notes": [
+        "“variability explained”为entropy reduction，不是variance/FVE；instantaneous predictors不等于causal synaptic inputs。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "匹配同一分布约束下S_tot≥S_dir≥S_true且KL(P_true||P)=S_dir−S_true；S_dir小限制剩余conditional entropy，零熵极限为deterministic threshold function。",
+      "claim_type": "conditional_statistical_model",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Information in direct dependencies Eq4",
+          "design": "最大conditional entropy/logistic解析及greedy算法",
+          "comparator": "direct/complete vsrandom/no inputs、true/constraint entropy或sampled higher/lagged rates",
+          "measure": "匹配同一分布约束下S_tot≥S_dir≥S_true且KL(P_true||P)=S_dir−S_true；S_dir小限制剩余conditional entropy，零熵极限为deterministic threshold function。",
+          "unit_of_analysis": "recorded neuron/model output及sampled correlation groups；非独立动物/突触",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "共同Px/moments及support；理论/估计sample过程分开，不推真实spike机制无交互。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "Information in direct dependencies Eq4",
+            "figure": null,
+            "equation": "Information in direct dependencies Eq4",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "匹配同一分布约束下S_tot≥S_dir≥S_true且KL(P_true||P)=S_dir−S_true；S_dir小限制剩余conditional entropy，零熵极限为deterministic threshold function。",
+        "boundary": "共同Px/moments及support；理论/估计sample过程分开，不推真实spike机制无交互。",
+        "negative_result": null,
+        "non_inference": "共同Px/moments及support；理论/估计sample过程分开，不推真实spike机制无交互。",
+        "unresolved": "真实synaptic inputs/hidden causes、heldout generality、calcium时标与physical nonlinear computation未由此识别。",
+        "unresolved_attribution": "源文功能vssynapse caveat与本次源数据审计。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "等时direct statistical constraints在何种分布/采样条件下解释神经活动而不识别因果计算？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C3",
+        "C4",
+        "C5"
+      ],
+      "review_notes": [
+        "“variability explained”为entropy reduction，不是variance/FVE；instantaneous predictors不等于causal synaptic inputs。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "独立随机输入的AND/OR toy例direct模型接近true entropy，零错误线性可分极限精确；该文XOR例direct marginals不解释输出，展示框架可区分该分布的不可分逻辑。",
+      "claim_type": "conditional_statistical_model",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Fig1e–g",
+          "design": "最大conditional entropy/logistic解析及greedy算法",
+          "comparator": "direct/complete vsrandom/no inputs、true/constraint entropy或sampled higher/lagged rates",
+          "measure": "独立随机输入的AND/OR toy例direct模型接近true entropy，零错误线性可分极限精确；该文XOR例direct marginals不解释输出，展示框架可区分该分布的不可分逻辑。",
+          "unit_of_analysis": "recorded neuron/model output及sampled correlation groups；非独立动物/突触",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "特定随机逻辑输入分布/错误率；不能推广XOR在任意偏置/相关inputs的边际性质。"
+          ],
+          "source_locator": {
+            "pdf_page": 2,
+            "section": "Fig1e–g",
+            "figure": "Fig1e–g",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "独立随机输入的AND/OR toy例direct模型接近true entropy，零错误线性可分极限精确；该文XOR例direct marginals不解释输出，展示框架可区分该分布的不可分逻辑。",
+        "boundary": "特定随机逻辑输入分布/错误率；不能推广XOR在任意偏置/相关inputs的边际性质。",
+        "negative_result": "toy XOR的direct marginals无解释力，限该输入分布。",
+        "non_inference": "特定随机逻辑输入分布/错误率；不能推广XOR在任意偏置/相关inputs的边际性质。",
+        "unresolved": "真实synaptic inputs/hidden causes、heldout generality、calcium时标与physical nonlinear computation未由此识别。",
+        "unresolved_attribution": "源文功能vssynapse caveat与本次源数据审计。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "等时direct statistical constraints在何种分布/采样条件下解释神经活动而不识别因果计算？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C4",
+        "C5"
+      ],
+      "review_notes": [
+        "“variability explained”为entropy reduction，不是variance/FVE；instantaneous predictors不等于causal synaptic inputs。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "greedy逐步选降低S_dir最多的统计predictor；小coactivity预测误差的perturbative Δentropy近似将拟合数从O(nN)降为O(n)，但不是全组合global optimum保证。",
+      "claim_type": "conditional_statistical_model",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Greedy/Approximate change",
+          "design": "最大conditional entropy/logistic解析及greedy算法",
+          "comparator": "direct/complete vsrandom/no inputs、true/constraint entropy或sampled higher/lagged rates",
+          "measure": "greedy逐步选降低S_dir最多的统计predictor；小coactivity预测误差的perturbative Δentropy近似将拟合数从O(nN)降为O(n)，但不是全组合global optimum保证。",
+          "unit_of_analysis": "recorded neuron/model output及sampled correlation groups；非独立动物/突触",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "小误差近似与每步局部选择；O(n)为fit数非全部runtime或数据成本。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "Greedy/Approximate change",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "greedy逐步选降低S_dir最多的统计predictor；小coactivity预测误差的perturbative Δentropy近似将拟合数从O(nN)降为O(n)，但不是全组合global optimum保证。",
+        "boundary": "小误差近似与每步局部选择；O(n)为fit数非全部runtime或数据成本。",
+        "negative_result": null,
+        "non_inference": "小误差近似与每步局部选择；O(n)为fit数非全部runtime或数据成本。",
+        "unresolved": "真实synaptic inputs/hidden causes、heldout generality、calcium时标与physical nonlinear computation未由此识别。",
+        "unresolved_attribution": "源文功能vssynapse caveat与本次源数据审计。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "等时direct statistical constraints在何种分布/采样条件下解释神经活动而不识别因果计算？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C5"
+      ],
+      "review_notes": [
+        "“variability explained”为entropy reduction，不是variance/FVE；instantaneous predictors不等于causal synaptic inputs。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "complete模型定义为所有未选、正〈yxᵢ〉相关在2×Poisson standard error内预测；仅选至少一次coactive者并按此停止，n*依sample length和容差。",
+      "claim_type": "conditional_statistical_model",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Minimal set of inputs",
+          "design": "最大conditional entropy/logistic解析及greedy算法",
+          "comparator": "direct/complete vsrandom/no inputs、true/constraint entropy或sampled higher/lagged rates",
+          "measure": "complete模型定义为所有未选、正〈yxᵢ〉相关在2×Poisson standard error内预测；仅选至少一次coactive者并按此停止，n*依sample length和容差。",
+          "unit_of_analysis": "recorded neuron/model output及sampled correlation groups；非独立动物/突触",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "排除zero-coactivity candidates，Poisson error assumption；source未说明独立heldout selection/eval。"
+          ],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "Minimal set of inputs",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "complete模型定义为所有未选、正〈yxᵢ〉相关在2×Poisson standard error内预测；仅选至少一次coactive者并按此停止，n*依sample length和容差。",
+        "boundary": "排除zero-coactivity candidates，Poisson error assumption；source未说明独立heldout selection/eval。",
+        "negative_result": null,
+        "non_inference": "排除zero-coactivity candidates，Poisson error assumption；source未说明独立heldout selection/eval。",
+        "unresolved": "真实synaptic inputs/hidden causes、heldout generality、calcium时标与physical nonlinear computation未由此识别。",
+        "unresolved_attribution": "源文功能vssynapse caveat与本次源数据审计。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "等时direct statistical constraints在何种分布/采样条件下解释神经活动而不识别因果计算？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ],
+      "review_notes": [
+        "“variability explained”为entropy reduction，不是variance/FVE；instantaneous predictors不等于causal synaptic inputs。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "CA1一个illustrative output用350/1484可能predictors约24%得到89%entropy reduction，并覆盖其剩余positive direct相关；等数random predictors仍有相关误差。",
+      "claim_type": "activity_model_analysis",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Fig2",
+          "design": "重新分析既有binarized calcium recordings，equal-time statistical predictors",
+          "comparator": "direct/complete vsrandom/no inputs、true/constraint entropy或sampled higher/lagged rates",
+          "measure": "CA1一个illustrative output用350/1484可能predictors约24%得到89%entropy reduction，并覆盖其剩余positive direct相关；等数random predictors仍有相关误差。",
+          "unit_of_analysis": "recorded neuron/model output及sampled correlation groups；非独立动物/突触",
+          "sample_size_as_reported": "CA1 N1485，具体animal/frames L未报；alloutputs",
+          "uncertainty": null,
+          "assumptions": [
+            "一output示例非350独立inputs的因果干预或统计replicate。"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "Fig2",
+            "figure": "Fig2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "CA1一个illustrative output用350/1484可能predictors约24%得到89%entropy reduction，并覆盖其剩余positive direct相关；等数random predictors仍有相关误差。",
+        "boundary": "一output示例非350独立inputs的因果干预或统计replicate。",
+        "negative_result": null,
+        "non_inference": "一output示例非350独立inputs的因果干预或统计replicate。",
+        "unresolved": "真实synaptic inputs/hidden causes、heldout generality、calcium时标与physical nonlinear computation未由此识别。",
+        "unresolved_attribution": "源文功能vssynapse caveat与本次源数据审计。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "等时direct statistical constraints在何种分布/采样条件下解释神经活动而不识别因果计算？"
+      ],
+      "shared_evidence_with": [
+        "C7",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14"
+      ],
+      "review_notes": [
+        "“variability explained”为entropy reduction，不是variance/FVE；instantaneous predictors不等于causal synaptic inputs。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "同CA1记录全部1485outputs，median第一predictor解释17%entropy、15个约50%；median complete n*=214约14%population，模型entropy reduction>90%。",
+      "claim_type": "activity_model_analysis",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Fig3a",
+          "design": "重新分析既有binarized calcium recordings，equal-time statistical predictors",
+          "comparator": "direct/complete vsrandom/no inputs、true/constraint entropy或sampled higher/lagged rates",
+          "measure": "同CA1记录全部1485outputs，median第一predictor解释17%entropy、15个约50%；median complete n*=214约14%population，模型entropy reduction>90%。",
+          "unit_of_analysis": "recorded neuron/model output及sampled correlation groups；非独立动物/突触",
+          "sample_size_as_reported": "CA1 N1485，具体animal/frames L未报；alloutputs",
+          "uncertainty": "median/IQR overoutputs，非animal sampling uncertainty",
+          "assumptions": [
+            "neuron-level median/IQR，非1485独立动物；binary calcium sample period1/30s。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "Fig3a",
+            "figure": "Fig3a",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "同CA1记录全部1485outputs，median第一predictor解释17%entropy、15个约50%；median complete n*=214约14%population，模型entropy reduction>90%。",
+        "boundary": "neuron-level median/IQR，非1485独立动物；binary calcium sample period1/30s。",
+        "negative_result": null,
+        "non_inference": "neuron-level median/IQR，非1485独立动物；binary calcium sample period1/30s。",
+        "unresolved": "真实synaptic inputs/hidden causes、heldout generality、calcium时标与physical nonlinear computation未由此识别。",
+        "unresolved_attribution": "源文功能vssynapse caveat与本次源数据审计。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "等时direct statistical constraints在何种分布/采样条件下解释神经活动而不识别因果计算？"
+      ],
+      "shared_evidence_with": [
+        "C6",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14"
+      ],
+      "review_notes": [
+        "“variability explained”为entropy reduction，不是variance/FVE；instantaneous predictors不等于causal synaptic inputs。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "mouse visual population11445中随机100outputs，natural-image条件median n*=108(<1%)、direct entropy解释约91%；same population spontaneous condition报告近似结果。",
+      "claim_type": "activity_model_analysis",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Fig3b–c",
+          "design": "重新分析既有binarized calcium recordings，equal-time statistical predictors",
+          "comparator": "direct/complete vsrandom/no inputs、true/constraint entropy或sampled higher/lagged rates",
+          "measure": "mouse visual population11445中随机100outputs，natural-image条件median n*=108(<1%)、direct entropy解释约91%；same population spontaneous condition报告近似结果。",
+          "unit_of_analysis": "recorded neuron/model output及sampled correlation groups；非独立动物/突触",
+          "sample_size_as_reported": "visual N11445、random100outputs/condition，same population",
+          "uncertainty": "median/IQR overoutputs，非animal sampling uncertainty",
+          "assumptions": [
+            "visual100outputs，sample period2/3s；两条件非不同independent populations；不推全部11445已建模。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "Fig3b–c",
+            "figure": "Fig3b–c",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "mouse visual population11445中随机100outputs，natural-image条件median n*=108(<1%)、direct entropy解释约91%；same population spontaneous condition报告近似结果。",
+        "boundary": "visual100outputs，sample period2/3s；两条件非不同independent populations；不推全部11445已建模。",
+        "negative_result": null,
+        "non_inference": "visual100outputs，sample period2/3s；两条件非不同independent populations；不推全部11445已建模。",
+        "unresolved": "真实synaptic inputs/hidden causes、heldout generality、calcium时标与physical nonlinear computation未由此识别。",
+        "unresolved_attribution": "源文功能vssynapse caveat与本次源数据审计。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "等时direct statistical constraints在何种分布/采样条件下解释神经活动而不识别因果计算？"
+      ],
+      "shared_evidence_with": [
+        "C9"
+      ],
+      "review_notes": [
+        "“variability explained”为entropy reduction，不是variance/FVE；instantaneous predictors不等于causal synaptic inputs。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "C.elegans记录128outputs，median n*=5可覆盖其他direct相关而entropy reduction约62%，明显低于mouse>90%的报告范围。",
+      "claim_type": "activity_model_analysis",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Fig3d",
+          "design": "重新分析既有binarized calcium recordings，equal-time statistical predictors",
+          "comparator": "direct/complete vsrandom/no inputs、true/constraint entropy或sampled higher/lagged rates",
+          "measure": "C.elegans记录128outputs，median n*=5可覆盖其他direct相关而entropy reduction约62%，明显低于mouse>90%的报告范围。",
+          "unit_of_analysis": "recorded neuron/model output及sampled correlation groups；非独立动物/突触",
+          "sample_size_as_reported": "C.elegans N128，alloutputs；animal n未报",
+          "uncertainty": "median/IQR overoutputs，非animal sampling uncertainty",
+          "assumptions": [
+            "128记录neurons、sample period1/1.7s；animal独立n未报，remaining38%未归因具体机制。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "Fig3d",
+            "figure": "Fig3d",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "C.elegans记录128outputs，median n*=5可覆盖其他direct相关而entropy reduction约62%，明显低于mouse>90%的报告范围。",
+        "boundary": "128记录neurons、sample period1/1.7s；animal独立n未报，remaining38%未归因具体机制。",
+        "negative_result": null,
+        "non_inference": "128记录neurons、sample period1/1.7s；animal独立n未报，remaining38%未归因具体机制。",
+        "unresolved": "真实synaptic inputs/hidden causes、heldout generality、calcium时标与physical nonlinear computation未由此识别。",
+        "unresolved_attribution": "源文功能vssynapse caveat与本次源数据审计。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "等时direct statistical constraints在何种分布/采样条件下解释神经活动而不识别因果计算？"
+      ],
+      "shared_evidence_with": [
+        "C8"
+      ],
+      "review_notes": [
+        "“variability explained”为entropy reduction，不是variance/FVE；instantaneous predictors不等于causal synaptic inputs。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "CA1 complete模型在2-error criterion内预测99.85%triplet、99.89%quadruplet、99.92%quintuplet rates；各output每order只随机取100组，仍有非零unexplained fraction。",
+      "claim_type": "activity_model_analysis",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Fig4a–g",
+          "design": "重新分析既有binarized calcium recordings，equal-time statistical predictors",
+          "comparator": "direct/complete vsrandom/no inputs、true/constraint entropy或sampled higher/lagged rates",
+          "measure": "CA1 complete模型在2-error criterion内预测99.85%triplet、99.89%quadruplet、99.92%quintuplet rates；各output每order只随机取100组，仍有非零unexplained fraction。",
+          "unit_of_analysis": "recorded neuron/model output及sampled correlation groups；非独立动物/突触",
+          "sample_size_as_reported": "每output每order100random groups",
+          "uncertainty": "匹配容差two standard errors，依Poisson assumption；不是统计mechanism置信界",
+          "assumptions": [
+            "coactivity-rate数的fraction非全输入function tensor或entropy百分比；稀疏events/Poisson sampling限制。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "Fig4a–g",
+            "figure": "Fig4a–g",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "CA1 complete模型在2-error criterion内预测99.85%triplet、99.89%quadruplet、99.92%quintuplet rates；各output每order只随机取100组，仍有非零unexplained fraction。",
+        "boundary": "coactivity-rate数的fraction非全输入function tensor或entropy百分比；稀疏events/Poisson sampling限制。",
+        "negative_result": "CA1 sampled triplet/quad/quint仍有.15%/.11%/.08%超容差。",
+        "non_inference": "coactivity-rate数的fraction非全输入function tensor或entropy百分比；稀疏events/Poisson sampling限制。",
+        "unresolved": "真实synaptic inputs/hidden causes、heldout generality、calcium时标与physical nonlinear computation未由此识别。",
+        "unresolved_attribution": "源文功能vssynapse caveat与本次源数据审计。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "等时direct statistical constraints在何种分布/采样条件下解释神经活动而不识别因果计算？"
+      ],
+      "shared_evidence_with": [
+        "C6",
+        "C7",
+        "C11",
+        "C12",
+        "C13",
+        "C14"
+      ],
+      "review_notes": [
+        "“variability explained”为entropy reduction，不是variance/FVE；instantaneous predictors不等于causal synaptic inputs。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "CA1等时模型对lag .1/1/10s rates分别99.6%/99.1%/99.0%在容差内预测，random inputs更差；这不说明整个network无需temporal integration。",
+      "claim_type": "activity_model_analysis",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Fig4h–n",
+          "design": "重新分析既有binarized calcium recordings，equal-time statistical predictors",
+          "comparator": "direct/complete vsrandom/no inputs、true/constraint entropy或sampled higher/lagged rates",
+          "measure": "CA1等时模型对lag .1/1/10s rates分别99.6%/99.1%/99.0%在容差内预测，random inputs更差；这不说明整个network无需temporal integration。",
+          "unit_of_analysis": "recorded neuron/model output及sampled correlation groups；非独立动物/突触",
+          "sample_size_as_reported": null,
+          "uncertainty": "匹配容差two standard errors，依Poisson assumption；不是统计mechanism置信界",
+          "assumptions": [
+            "stationarity与实际input时间协变仍用于预测相关率；模型不生成独立真实network dynamics。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "Fig4h–n",
+            "figure": "Fig4h–n",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "CA1等时模型对lag .1/1/10s rates分别99.6%/99.1%/99.0%在容差内预测，random inputs更差；这不说明整个network无需temporal integration。",
+        "boundary": "stationarity与实际input时间协变仍用于预测相关率；模型不生成独立真实network dynamics。",
+        "negative_result": "lag rates仍有.4%/.9%/1.0%超容差。",
+        "non_inference": "stationarity与实际input时间协变仍用于预测相关率；模型不生成独立真实network dynamics。",
+        "unresolved": "真实synaptic inputs/hidden causes、heldout generality、calcium时标与physical nonlinear computation未由此识别。",
+        "unresolved_attribution": "源文功能vssynapse caveat与本次源数据审计。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "等时direct statistical constraints在何种分布/采样条件下解释神经活动而不识别因果计算？"
+      ],
+      "shared_evidence_with": [
+        "C6",
+        "C7",
+        "C10",
+        "C12",
+        "C13",
+        "C14"
+      ],
+      "review_notes": [
+        "“variability explained”为entropy reduction，不是variance/FVE；instantaneous predictors不等于causal synaptic inputs。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "拟合CA1 weights表现sparse、magnitude heavy-tailed/log-normal、正负较平衡且directional，所有bias<0；作者明言weights还可来自shared latent或extrasynaptic而非synaptic strength。",
+      "claim_type": "activity_model_analysis",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Fig5a–c",
+          "design": "重新分析既有binarized calcium recordings，equal-time statistical predictors",
+          "comparator": "direct/complete vsrandom/no inputs、true/constraint entropy或sampled higher/lagged rates",
+          "measure": "拟合CA1 weights表现sparse、magnitude heavy-tailed/log-normal、正负较平衡且directional，所有bias<0；作者明言weights还可来自shared latent或extrasynaptic而非synaptic strength。",
+          "unit_of_analysis": "recorded neuron/model output及sampled correlation groups；非独立动物/突触",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "functional statistical parameters，无解剖connectome配对；正负不直接定位兴奋/抑制synapses。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "Fig5a–c",
+            "figure": "Fig5a–c",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "拟合CA1 weights表现sparse、magnitude heavy-tailed/log-normal、正负较平衡且directional，所有bias<0；作者明言weights还可来自shared latent或extrasynaptic而非synaptic strength。",
+        "boundary": "functional statistical parameters，无解剖connectome配对；正负不直接定位兴奋/抑制synapses。",
+        "negative_result": null,
+        "non_inference": "functional statistical parameters，无解剖connectome配对；正负不直接定位兴奋/抑制synapses。",
+        "unresolved": "真实synaptic inputs/hidden causes、heldout generality、calcium时标与physical nonlinear computation未由此识别。",
+        "unresolved_attribution": "源文功能vssynapse caveat与本次源数据审计。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "等时direct statistical constraints在何种分布/采样条件下解释神经活动而不识别因果计算？"
+      ],
+      "shared_evidence_with": [
+        "C6",
+        "C7",
+        "C10",
+        "C11",
+        "C13",
+        "C14"
+      ],
+      "review_notes": [
+        "“variability explained”为entropy reduction，不是variance/FVE；instantaneous predictors不等于causal synaptic inputs。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C13",
+      "statement": "CA1 model direct MI随n*约linear，回归slope约.01bits/s/input、R=.91；与S_tot关系slope约.87，支持该模型中的冗余关联而非定向synaptic信息流测量。",
+      "claim_type": "activity_model_analysis",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Fig5d–e",
+          "design": "重新分析既有binarized calcium recordings，equal-time statistical predictors",
+          "comparator": "direct/complete vsrandom/no inputs、true/constraint entropy或sampled higher/lagged rates",
+          "measure": "CA1 model direct MI随n*约linear，回归slope约.01bits/s/input、R=.91；与S_tot关系slope约.87，支持该模型中的冗余关联而非定向synaptic信息流测量。",
+          "unit_of_analysis": "recorded neuron/model output及sampled correlation groups；非独立动物/突触",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "跨output回归与symmetric MI；平均slope非每个真实synapse的固定通信量。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "Fig5d–e",
+            "figure": "Fig5d–e",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "CA1 model direct MI随n*约linear，回归slope约.01bits/s/input、R=.91；与S_tot关系slope约.87，支持该模型中的冗余关联而非定向synaptic信息流测量。",
+        "boundary": "跨output回归与symmetric MI；平均slope非每个真实synapse的固定通信量。",
+        "negative_result": null,
+        "non_inference": "跨output回归与symmetric MI；平均slope非每个真实synapse的固定通信量。",
+        "unresolved": "真实synaptic inputs/hidden causes、heldout generality、calcium时标与physical nonlinear computation未由此识别。",
+        "unresolved_attribution": "源文功能vssynapse caveat与本次源数据审计。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "等时direct statistical constraints在何种分布/采样条件下解释神经活动而不识别因果计算？"
+      ],
+      "shared_evidence_with": [
+        "C6",
+        "C7",
+        "C10",
+        "C11",
+        "C12",
+        "C14"
+      ],
+      "review_notes": [
+        "“variability explained”为entropy reduction，不是variance/FVE；instantaneous predictors不等于causal synaptic inputs。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C14",
+      "statement": "100次随机mask/marginalization中，模型在丢弃近90%inputs前仍保持较多direct MI/预测性能，随后出现sharp loss；参数不refit，使用经验Q(x)对缺失input积分。",
+      "claim_type": "computational_ablation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Fig5f–h; Methods Eq5 PDF10",
+          "design": "固定模型经验条件分布marginalization，100随机realizations",
+          "comparator": "direct/complete vsrandom/no inputs、true/constraint entropy或sampled higher/lagged rates",
+          "measure": "100次随机mask/marginalization中，模型在丢弃近90%inputs前仍保持较多direct MI/预测性能，随后出现sharp loss；参数不refit，使用经验Q(x)对缺失input积分。",
+          "unit_of_analysis": "recorded neuron/model output及sampled correlation groups；非独立动物/突触",
+          "sample_size_as_reported": "100 computational mask realizations，其余n按记录",
+          "uncertainty": null,
+          "assumptions": [
+            "纯模型marginalization保留经验covariation，不是杀死细胞或重算生物network动态。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "Fig5f–h; Methods Eq5 PDF10",
+            "figure": "Fig5f–h; Methods Eq5 PDF10",
+            "equation": "(5)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "100次随机mask/marginalization中，模型在丢弃近90%inputs前仍保持较多direct MI/预测性能，随后出现sharp loss；参数不refit，使用经验Q(x)对缺失input积分。",
+        "boundary": "纯模型marginalization保留经验covariation，不是杀死细胞或重算生物network动态。",
+        "negative_result": "模型mask超过transition后信息与预测明显损失，非生物lesion结果。",
+        "non_inference": "纯模型marginalization保留经验covariation，不是杀死细胞或重算生物network动态。",
+        "unresolved": "真实synaptic inputs/hidden causes、heldout generality、calcium时标与physical nonlinear computation未由此识别。",
+        "unresolved_attribution": "源文功能vssynapse caveat与本次源数据审计。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "等时direct statistical constraints在何种分布/采样条件下解释神经活动而不识别因果计算？"
+      ],
+      "shared_evidence_with": [
+        "C6",
+        "C7",
+        "C10",
+        "C11",
+        "C12",
+        "C13"
+      ],
+      "review_notes": [
+        "“variability explained”为entropy reduction，不是variance/FVE；instantaneous predictors不等于causal synaptic inputs。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "完整10页，14条候选把maxentropy/logistic理论、greedy和complete定义、三recorded populations四条件的entropy/rate结果及marginalization分开。CA1>90%、visual约91%、worm62%为model entropy reduction，nonzero higher/lagged rates仍超容差；visual只100outputs。输入未确认synaptic，fixed empiricalQ/Poisson/选择评估范围与无明列heldout保留，weights与模型ablation不识别biological mechanism、necessity或实际lesion resilience。缺supplement与published placeholder均透明。",
+  "shared_evidence": [
+    {
+      "claim_id": "C1",
+      "with": [
+        "C2",
+        "C3",
+        "C4",
+        "C5"
+      ]
+    },
+    {
+      "claim_id": "C2",
+      "with": [
+        "C1",
+        "C3",
+        "C4",
+        "C5"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C1",
+        "C2",
+        "C4",
+        "C5"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C5"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C7",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C6",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C9"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C8"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "with": [
+        "C6",
+        "C7",
+        "C11",
+        "C12",
+        "C13",
+        "C14"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "with": [
+        "C6",
+        "C7",
+        "C10",
+        "C12",
+        "C13",
+        "C14"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "with": [
+        "C6",
+        "C7",
+        "C10",
+        "C11",
+        "C13",
+        "C14"
+      ]
+    },
+    {
+      "claim_id": "C13",
+      "with": [
+        "C6",
+        "C7",
+        "C10",
+        "C11",
+        "C12",
+        "C14"
+      ]
+    },
+    {
+      "claim_id": "C14",
+      "with": [
+        "C6",
+        "C7",
+        "C10",
+        "C11",
+        "C12",
+        "C13"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": "C1",
+        "issue": "二次audit核对entropy/rate/units、empirical input distribution、selection与Poisson容差；functional fit与biophysical因果分开。",
+        "suggested_correction": "保持reported模型结果和限制，不转换为synaptic proof。",
+        "pdf_page": 9,
+        "resolved": true
+      },
+      {
+        "claim_id": "C2",
+        "issue": "二次audit核对entropy/rate/units、empirical input distribution、selection与Poisson容差；functional fit与biophysical因果分开。",
+        "suggested_correction": "保持reported模型结果和限制，不转换为synaptic proof。",
+        "pdf_page": 9,
+        "resolved": true
+      },
+      {
+        "claim_id": "C3",
+        "issue": "二次audit核对entropy/rate/units、empirical input distribution、selection与Poisson容差；functional fit与biophysical因果分开。",
+        "suggested_correction": "保持reported模型结果和限制，不转换为synaptic proof。",
+        "pdf_page": 2,
+        "resolved": true
+      },
+      {
+        "claim_id": "C4",
+        "issue": "二次audit核对entropy/rate/units、empirical input distribution、selection与Poisson容差；functional fit与biophysical因果分开。",
+        "suggested_correction": "保持reported模型结果和限制，不转换为synaptic proof。",
+        "pdf_page": 9,
+        "resolved": true
+      },
+      {
+        "claim_id": "C5",
+        "issue": "二次audit核对entropy/rate/units、empirical input distribution、selection与Poisson容差；functional fit与biophysical因果分开。",
+        "suggested_correction": "保持reported模型结果和限制，不转换为synaptic proof。",
+        "pdf_page": 10,
+        "resolved": true
+      },
+      {
+        "claim_id": "C6",
+        "issue": "二次audit核对entropy/rate/units、empirical input distribution、selection与Poisson容差；functional fit与biophysical因果分开。",
+        "suggested_correction": "保持reported模型结果和限制，不转换为synaptic proof。",
+        "pdf_page": 3,
+        "resolved": true
+      },
+      {
+        "claim_id": "C7",
+        "issue": "二次audit核对entropy/rate/units、empirical input distribution、selection与Poisson容差；functional fit与biophysical因果分开。",
+        "suggested_correction": "保持reported模型结果和限制，不转换为synaptic proof。",
+        "pdf_page": 4,
+        "resolved": true
+      },
+      {
+        "claim_id": "C8",
+        "issue": "二次audit核对entropy/rate/units、empirical input distribution、selection与Poisson容差；functional fit与biophysical因果分开。",
+        "suggested_correction": "保持reported模型结果和限制，不转换为synaptic proof。",
+        "pdf_page": 4,
+        "resolved": true
+      },
+      {
+        "claim_id": "C9",
+        "issue": "二次audit核对entropy/rate/units、empirical input distribution、selection与Poisson容差；functional fit与biophysical因果分开。",
+        "suggested_correction": "保持reported模型结果和限制，不转换为synaptic proof。",
+        "pdf_page": 4,
+        "resolved": true
+      },
+      {
+        "claim_id": "C10",
+        "issue": "二次audit核对entropy/rate/units、empirical input distribution、selection与Poisson容差；functional fit与biophysical因果分开。",
+        "suggested_correction": "保持reported模型结果和限制，不转换为synaptic proof。",
+        "pdf_page": 5,
+        "resolved": true
+      },
+      {
+        "claim_id": "C11",
+        "issue": "二次audit核对entropy/rate/units、empirical input distribution、selection与Poisson容差；functional fit与biophysical因果分开。",
+        "suggested_correction": "保持reported模型结果和限制，不转换为synaptic proof。",
+        "pdf_page": 6,
+        "resolved": true
+      },
+      {
+        "claim_id": "C12",
+        "issue": "二次audit核对entropy/rate/units、empirical input distribution、selection与Poisson容差；functional fit与biophysical因果分开。",
+        "suggested_correction": "保持reported模型结果和限制，不转换为synaptic proof。",
+        "pdf_page": 6,
+        "resolved": true
+      },
+      {
+        "claim_id": "C13",
+        "issue": "二次audit核对entropy/rate/units、empirical input distribution、selection与Poisson容差；functional fit与biophysical因果分开。",
+        "suggested_correction": "保持reported模型结果和限制，不转换为synaptic proof。",
+        "pdf_page": 6,
+        "resolved": true
+      },
+      {
+        "claim_id": "C14",
+        "issue": "二次audit核对entropy/rate/units、empirical input distribution、selection与Poisson容差；functional fit与biophysical因果分开。",
+        "suggested_correction": "保持reported模型结果和限制，不转换为synaptic proof。",
+        "pdf_page": 7,
+        "resolved": true
+      },
+      {
+        "claim_id": "C5",
+        "issue": "input selection只考虑至少一次coactive，且fit/选择/停止/相关评估使用recording经验量；所给正文无独立heldout protocol。",
+        "suggested_correction": "限经验分布/model-fit结论；overfit控制仅引用未给supplement，不替作者保证generalization。",
+        "pdf_page": 10,
+        "resolved": false
+      },
+      {
+        "claim_id": "C10",
+        "issue": "Poisson error assumption用于temporally correlated/calcium samples；100groups/order不是全部higher-order distribution。",
+        "suggested_correction": "只报告容差内sampled rates，不作普遍higher-order缺失或比例entropy归因。",
+        "pdf_page": 5,
+        "resolved": false
+      },
+      {
+        "claim_id": "C11",
+        "issue": "lag相关预测依赖所观测input时序，模型只有output conditional无lag不等于input process无dynamics。",
+        "suggested_correction": "保留instantaneous conditional predictors，不能推生物记忆/时序机制无必要。",
+        "pdf_page": 6,
+        "resolved": true
+      },
+      {
+        "claim_id": "C14",
+        "issue": "ablation积分依empirical Q(x)，不refit/no circuit changes，恢复缺input关联与真实neuronal deletion不是同实验。",
+        "suggested_correction": "仅model marginalization robustness，human/animal/physical resistance未验证。",
+        "pdf_page": 10,
+        "resolved": true
+      },
+      {
+        "claim_id": "C12",
+        "issue": "functional weights可reflect latent shared effects/extrasynaptic，正负与anatomical excitatory/inhibitory不能逐边相等。",
+        "suggested_correction": "不声称真实synaptic strengths或structural network已恢复。",
+        "pdf_page": 6,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "published date placeholder；article主文示例和theoreticalentropy hierarchy涉及理想population constraints与有限估计混用范围。",
+        "suggested_correction": "保持未核定version date与条件，不补publication年月或true S entropy测量。",
+        "pdf_page": 1,
+        "resolved": false
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T11:32:37.227387Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "480efd0595c039715543957c7fd3a48934076c21855c0d2244e7b4913b2b7caf",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

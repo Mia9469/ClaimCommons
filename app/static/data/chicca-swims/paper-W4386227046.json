@@ -1,0 +1,471 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "Synaptic Normalisation for On-Chip Learning in Analog CMOS Spiking Neural Networks",
+    "authors": [
+      "Michele Mastella",
+      "Hugh Greatorex",
+      "Madison Cotteret",
+      "Ella Janotte",
+      "Willian Soares Girão",
+      "Ole Richter",
+      "Elisabetta Chicca"
+    ],
+    "doi": "10.1145/3589737.3606007",
+    "publication_year": 2023,
+    "venue": "International Conference on Neuromorphic Systems (ICONS)",
+    "url": "https://doi.org/10.1145/3589737.3606007"
+  },
+  "source": {
+    "filename": "paper-W4386227046.pdf",
+    "sha256": "2effa27be45b08ab218453120af879def8973e94faf666a75627c1e44e7ea7fb",
+    "source_url": "https://www.db-thueringen.de/servlets/MCRFileNodeServlet/dbt_derivate_00068499/979-8-4007-0175-7_2023_34.pdf",
+    "pdf_page_count": 5
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "results_sections_seen": [
+      "3.1 Experimental Measurements",
+      "3.2 Network Simulation Result",
+      "Figure 1–4 captions",
+      "4 Conclusions"
+    ],
+    "missing_material": [
+      "图像像素未提供，仅评估正文与图注。"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "第1页为机构仓储封面，第2–5页为ICONS ’23正式会议论文，标题、作者和DOI与身份元数据一致。",
+      "全部所供文本，包括方法、图注、结论和参考文献，均已重新评估；未提供附录或补充材料。",
+      "背景文献与既有DPI、STDP电路原理未作为本文独立的新结果。",
+      "公式3–4的文本与正文描述存在权重补符号可能缺失的问题，机制提取以明确的正文描述为依据。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "设计并实现通过关闭突触的汇总电流调节DPI神经元增益的二值突触归一化电路。",
+      "role": "电路设计与机制",
+      "source_pages": [
+        3,
+        4,
+        5
+      ],
+      "decision": "include",
+      "reason": "电路结构与权重状态对增益的作用有明确描述，可独立评估。"
+    },
+    {
+      "summary": "两个学习突触、一个神经元的片上实验显示，另一突触增强后，同一输入引发的输出脉冲数减少。",
+      "role": "硬件实验结果",
+      "source_pages": [
+        4,
+        5
+      ],
+      "decision": "include",
+      "reason": "阶段III与VII提供同一PRE0输入在不同权重配置下的完整比较。"
+    },
+    {
+      "summary": "两个神经元、18个预编程突触的晶体管级仿真展示编码水平不同的重叠“O/C”图案可通过相对输出活动区分。",
+      "role": "仿真结果",
+      "source_pages": [
+        4,
+        5
+      ],
+      "decision": "include",
+      "reason": "输入、权重配置与输出判别方式均有报告，证据限于示例推理仿真。"
+    },
+    {
+      "summary": "报告不含DAC和OTA外围电路的实现面积为3060 µm²。",
+      "role": "实现指标",
+      "source_pages": [
+        2,
+        5
+      ],
+      "decision": "include",
+      "reason": "可作为作者报告的实现指标，不能据此确认面积优势或大规模扩展。"
+    },
+    {
+      "summary": "提出扩展至每个神经元数百个突触、支持模拟权重及其他学习规则。",
+      "role": "扩展性解释与未来工作",
+      "source_pages": [
+        5
+      ],
+      "decision": "exclude",
+      "reason": "未提供对应规模实现、模拟权重实验或其他学习规则验证。"
+    },
+    {
+      "summary": "将编码水平偏差与学习收敛联系起来，提出归一化的潜在学习收益。",
+      "role": "背景动机与潜在应用",
+      "source_pages": [
+        2,
+        3,
+        4
+      ],
+      "decision": "exclude",
+      "reason": "学习偏差论述引用既有工作；本文未比较网络在线学习或收敛性能。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "本文实现的二值突触CMOS归一化电路使关闭状态的突触向公共节点贡献步进电流，并用汇总电流调节DPI神经元增益；突触由关闭转为开启时，其贡献消失，从而降低神经元增益。",
+      "claim_type": "circuit_mechanism",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "电路结构与工作原理分析",
+          "design": "每个突触的归一化支路含两个pMOS晶体管；公共节点汇总电流并连接神经元增益支路，另有始终开启的偏置电流。",
+          "comparator": "二值突触关闭与开启，以及不同开启突触数量的配置",
+          "measure": "归一化电流与神经元增益的关系",
+          "unit_of_analysis": "突触归一化支路及神经元增益电路",
+          "sample_size_as_reported": "所实现电路包含2个学习突触和1个神经元；不是独立重复数量。",
+          "uncertainty": null,
+          "assumptions": [
+            "突触权重为二值。",
+            "每个突触的归一化支路仅在权重低时开启。",
+            "采用文中DPI神经元增益与放电响应关系。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "2.1.3 Synapse Normalisation",
+            "figure": "Figure 2（第3页）",
+            "equation": "2–4",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "电路将二值权重状态汇总为神经元增益调节信号。",
+        "boundary": "这是有效补偿机制，未证明输出脉冲率对开启突触数量完全不变；正文指出偏置电流会产生随开启权重数量增加的放电率项。",
+        "negative_result": null,
+        "non_inference": "不能直接推出精确除法归一化、学习无偏或一般网络性能改善。",
+        "unresolved": "补偿精度、有效参数范围与器件失配影响未量化。",
+        "unresolved_attribution": "所供文本未报告这些量的系统评估。"
+      },
+      "broad_directions": [
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "如何通过二值突触状态的电流汇总调节模拟脉冲神经元增益？"
+      ],
+      "shared_evidence_with": [
+        "C2"
+      ],
+      "review_notes": [
+        "公式3–4提取文本可能遗漏权重补符号；未据此编造确定的代数表达。",
+        "机制与功能实验相关，但不是两个独立重复。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "在XFAB 180 nm工艺实现的两个二值STDP突触、一个神经元电路中，仅突触0开启时的PRE0输入，与突触0和突触1均开启后的PRE0输入相比，后者引发更少的神经元输出脉冲，显示另一突触的增强伴随同一输入响应的减弱。",
+      "claim_type": "hardware_experiment",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "片上刺激、逻辑分析仪及示波器测量",
+          "design": "七阶段实验，通过PRE先于POST 10 ms的配对刺激依次增强两个突触；记录二值权重、Vnorm与Vmem。",
+          "comparator": "阶段III仅突触0开启，与阶段VII两个突触均开启；两阶段均施加PRE0输入。",
+          "measure": "输出脉冲数的相对变化、膜电位轨迹、归一化节点电压及权重状态",
+          "unit_of_analysis": "所展示电路在不同实验阶段的响应",
+          "sample_size_as_reported": "2个突触、1个神经元；展示一条七阶段轨迹，芯片数量及独立重复次数未报告。",
+          "uncertainty": "未报告具体脉冲数、效应量、误差或统计检验。",
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "3.1 Experimental Measurements",
+            "figure": "Figure 3（第4页）",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "硬件展示支持另一突触增强后，同一PRE0输入的响应通过所设计电路受到调节。",
+        "boundary": "证据限于两个突触、一个神经元的展示轨迹，实验阶段不是独立重复。",
+        "negative_result": null,
+        "non_inference": "没有关闭归一化的对照，不能独立量化归一化相对于其他电路因素的效应，也不能推出网络自主学习收益。",
+        "unresolved": "响应变化的大小、跨芯片重复性及器件间差异未报告。",
+        "unresolved_attribution": "本文硬件结果为小规模功能展示。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "另一二值突触增强后，同一输入诱发的神经元脉冲响应如何变化？"
+      ],
+      "shared_evidence_with": [
+        "C1"
+      ],
+      "review_notes": [
+        "突触增强由外部PRE/POST配对驱动。",
+        "阶段I和II无输出脉冲被作者归因于输入到达时权重为零，是实验条件说明，不另列为归一化的负结果。",
+        "未从未提供的图像像素估计脉冲数量。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "在两个神经元、每个神经元9个归一化突触的晶体管级SPICE仿真中，二值权重预编程为分别匹配8个活跃像素的“O”和5个活跃像素的“C”；当呈现完全包含于“O”的“C”图案时，匹配“C”的神经元比匹配“O”的神经元更活跃，作者据此报告可通过比较输出脉冲数或瞬时放电率区分这两个图案。",
+      "claim_type": "circuit_simulation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Cadence Virtuoso/Spectre晶体管级SPICE仿真",
+          "design": "3×3像素由9个电压发生器编码，活跃像素各产生一个脉冲；两个神经元权重预设匹配“O”和“C”，依次输入两图案。",
+          "comparator": "相同“C”输入下，匹配“C”与匹配“O”的两个神经元响应",
+          "measure": "膜电位轨迹及相对输出脉冲活动；正文提出脉冲数或瞬时放电率比较作为判别方式",
+          "unit_of_analysis": "一个模拟网络中两个神经元对两种确定性图案的响应",
+          "sample_size_as_reported": "2个神经元、18个突触、9个输入发生器、2种图案；独立仿真重复次数与随机种子未报告。",
+          "uncertainty": "未报告分类准确率、响应数值、误差或统计检验。",
+          "assumptions": [
+            "“C”的活跃像素完全包含于“O”的活跃像素。",
+            "二值权重预编程为匹配各自图案。",
+            "活跃像素采用单脉冲编码。",
+            "仿真使用晶体管模型。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "3.2 Network Simulation Result",
+            "figure": "Figure 4",
+            "equation": "4",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "示例仿真支持低编码水平图案对应神经元在该输入下具有更强的相对响应，并支持所测试图案的输出比较判别。",
+        "boundary": "证据限于两个预编程、相互重叠的图案；没有数据集级性能评估。",
+        "negative_result": null,
+        "non_inference": "不能认定网络已在线学会图案、普遍消除编码水平偏差或提高一般分类性能；无归一化时两个输出相同是正文推理，未明确报告独立对照仿真。",
+        "unresolved": "噪声、器件失配、更多图案与在线学习条件下的性能未评估。",
+        "unresolved_attribution": "本文将此仿真定位为归一化电路的潜在应用展示。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "突触归一化能否使预编程二值权重网络区分编码水平不同且相互重叠的输入图案？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "方法中的学习任务目标与结果中的预编程推理需区分。",
+        "正文列出的8Iw与5Iw未明确对应“C”输入时的电流比较，未将其提取为该比较的定量证据。",
+        "没有证据表明实际实现了独立的在线分类读出模块。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "本文报告其所实现CMOS归一化电路的面积为3060 µm²，该数值不包含DAC与OTA外围电路。",
+      "claim_type": "implementation_metric",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "实现面积报告",
+          "design": "XFAB 180 nm ASIC；Figure 1图注区分归一化块与包含外围支持电路的区域。",
+          "comparator": null,
+          "measure": "面积3060 µm²，排除DAC与OTA外围",
+          "unit_of_analysis": "作者报告的电路实现面积",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "4 Conclusions",
+            "figure": "Figure 1（第2页）",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提供了排除指定外围电路的实现面积指标。",
+        "boundary": "未给出每突触面积分解或完整系统面积。",
+        "negative_result": null,
+        "non_inference": "不能由该面积确认相对其他方案的优势或每个神经元数百个突触的扩展已获验证。",
+        "unresolved": "大规模连接下的面积、功耗与归一化精度未报告。",
+        "unresolved_attribution": "数百突触扩展属于作者判断，没有对应规模的实现或测试结果。"
+      },
+      "broad_directions": [
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "所实现模拟CMOS突触归一化电路的面积是多少？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "面积按作者报告保留，未通过版图或图像独立核验。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "已重新评估全部5页文本及4个图注。保留四项可独立评估的贡献：二值突触状态驱动的增益调节电路、两个突触一个神经元的片上响应比较、两个神经元18个预编程突触的“O/C”推理仿真，以及排除DAC和OTA的3060 µm²面积。证据支持小规模功能与示例推理，未验证在线学习收益、大规模扩展或跨器件重复性。公式权重符号与正文存在未能消除的文本歧义。",
+  "shared_evidence": [
+    {
+      "claim_id": "C1",
+      "with": [
+        "C2"
+      ]
+    },
+    {
+      "claim_id": "C2",
+      "with": [
+        "C1"
+      ]
+    }
+  ],
+  "audit": {
+    "initial_source_match_checks": [],
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": "C1",
+        "issue": "公式3–4的提取文本显示普通权重求和，与关闭突触贡献归一化电流的正文不一致。",
+        "suggested_correction": "机制按正文与实验描述提取，保留符号提取可能受损的说明；原公式符号无法凭所供文本确认。",
+        "pdf_page": 4,
+        "resolved": false
+      },
+      {
+        "claim_id": "C2",
+        "issue": "原命题将响应改变直接归因为归一化，但实验未提供关闭归一化的对照。",
+        "suggested_correction": "命题明确阶段III与VII的观察比较，将机制归因限定为对所设计电路的功能支持。",
+        "pdf_page": 5,
+        "resolved": true
+      },
+      {
+        "claim_id": "C2",
+        "issue": "电路组成、七个实验阶段与独立实验重复必须区分。",
+        "suggested_correction": "注明2个突触、1个神经元为组成数量；独立芯片数与重复次数未报告。",
+        "pdf_page": 4,
+        "resolved": true
+      },
+      {
+        "claim_id": "C3",
+        "issue": "方法提出学习任务，但结果明确采用预编程权重。",
+        "suggested_correction": "限定为预编程权重的推理仿真，不提取在线学习成果。",
+        "pdf_page": 5,
+        "resolved": true
+      },
+      {
+        "claim_id": "C3",
+        "issue": "无归一化时两个输出相同属于正文解释，不能当作已报告的独立对照仿真或实际负结果。",
+        "suggested_correction": "仅保留实际报告的相对响应，并在非推论栏说明对照证据范围。",
+        "pdf_page": 5,
+        "resolved": true
+      },
+      {
+        "claim_id": "C3",
+        "issue": "正文末尾8Iw与5Iw的输入电流数值没有清楚限定输入条件。",
+        "suggested_correction": "不将这些数值用于“C”输入下两个神经元的定量比较。",
+        "pdf_page": 5,
+        "resolved": true
+      },
+      {
+        "claim_id": "C4",
+        "issue": "实现面积不包含DAC和OTA，且不能证明数百突触扩展已实现。",
+        "suggested_correction": "保留面积排除条件，将扩展性置于未验证范围。",
+        "pdf_page": 5,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "草稿包含请求schema之外的source_check与review字段。",
+        "suggested_correction": "删除额外字段，将必要的核查说明保留在review_notes和audit_findings中。",
+        "pdf_page": null,
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T05:11:39.981297Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "signed_in_chatgpt_codex",
+    "authentication": "existing_ChatGPT_login",
+    "provider_api_key_used": false,
+    "model": "account_default_GPT",
+    "source_sha256": "2effa27be45b08ab218453120af879def8973e94faf666a75627c1e44e7ea7fb",
+    "requests": [
+      {
+        "phase": "extraction",
+        "seconds": 83.09,
+        "usage": {
+          "input_tokens": 19101,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 3826,
+          "reasoning_output_tokens": 35
+        },
+        "backend": "signed_in_chatgpt_codex",
+        "tools_used": false
+      },
+      {
+        "phase": "source_audit",
+        "seconds": 85.82,
+        "usage": {
+          "input_tokens": 22817,
+          "cached_input_tokens": 12032,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 4391,
+          "reasoning_output_tokens": 0
+        },
+        "backend": "signed_in_chatgpt_codex",
+        "tools_used": false
+      }
+    ],
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

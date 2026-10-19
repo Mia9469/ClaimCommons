@@ -1,0 +1,1161 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "preprint",
+  "paper": {
+    "title": "Hierarchical Multiscale Structure-Function Coupling for Brain Connectome Integration",
+    "authors": [
+      "Jianwei Chen",
+      "Zhengyang Miao",
+      "Wenjie Cai",
+      "Jiaxue Tang",
+      "B Liu",
+      "Yunfan Zhang"
+    ],
+    "doi": null,
+    "publication_year": 2026,
+    "venue": "arXiv (Cornell University)",
+    "url": "https://arxiv.org/pdf/2603.20680"
+  },
+  "source": {
+    "filename": "paper-W7140346309--Hierarchical-Multiscale-Structure-Function-Coupling-for-Brain-Connectome-Integration.pdf",
+    "sha256": "e558e3487fe76a0d728c76dad062efbe34c07d830e6aca6d4a9ee4d05be07b8d",
+    "source_url": "https://arxiv.org/pdf/2603.20680",
+    "pdf_page_count": 15
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "results_sections_seen": [
+      "Introduction/related work",
+      "PMPool",
+      "AHCM",
+      "CgC-Loss and two-stage training",
+      "Datasets/Implementation",
+      "Tables1–6",
+      "Ablations and sensitivity",
+      "Figures6–8 interpretability",
+      "Conclusion/References"
+    ],
+    "missing_material": [
+      "图像像素未阅。"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "完整阅读15页arXiv:2603.20680v1，2026-03-21。",
+      "Medical Image Analysis样式标题与占位投稿日期不构成正式期刊版本证明。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "三组件与两阶段训练",
+      "role": "result",
+      "source_pages": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "decision": "include",
+      "reason": "方法命题与生物真实性分开；目标/对齐细节保留未解。"
+    },
+    {
+      "summary": "四队列脑龄、两认知量尺和ADNI分类",
+      "role": "result",
+      "source_pages": [
+        7,
+        8,
+        9
+      ],
+      "decision": "include",
+      "reason": "按受试者和各队列五折结果记录，不称外部验证。"
+    },
+    {
+      "summary": "组件、编码器、entmax、池化率/层数/权重对照",
+      "role": "result",
+      "source_pages": [
+        9,
+        10,
+        11
+      ],
+      "decision": "include",
+      "reason": "纳入更多层级变差和NKI RMSE非最佳的实际负边界。"
+    },
+    {
+      "summary": "跨任务和年龄/疾病的多尺度图",
+      "role": "interpretation",
+      "source_pages": [
+        10,
+        11,
+        12,
+        13
+      ],
+      "decision": "include",
+      "reason": "只作学得权重图的描述，不当成生物机制证明。"
+    },
+    {
+      "summary": "引言及完整书目中的既有神经机制与方法",
+      "role": "review_synthesis",
+      "source_pages": [
+        1,
+        2,
+        3,
+        13,
+        14,
+        15
+      ],
+      "decision": "exclude",
+      "reason": "背景引用不是本文新实验或跨论文自动支持关系。"
+    },
+    {
+      "summary": "动态耦合与更广疾病",
+      "role": "hypothesis",
+      "source_pages": [
+        13
+      ],
+      "decision": "include",
+      "reason": "明确尚未验证的未来方向。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "PMPool 以节点度和 GCN 表征选择原型 ROI，再用稀疏软分配与模块度/防坍缩目标将各模态图池化为个体化社区图。",
+      "claim_type": "method_description",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "原型选择、entmax软分配和模块度优化",
+          "design": "多队列各自五折内部交叉验证，配对结构/功能图输入",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "受试者的SC/FC图与ROI",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": null,
+            "figure": null,
+            "equation": "(1)–(7)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "PMPool 以节点度和 GCN 表征选择原型 ROI，再用稀疏软分配与模块度/防坍缩目标将各模态图池化为个体化社区图。",
+        "boundary": "输入依赖预设ROI图谱；所学社区是模型优化结果，不是无图谱或已验证解剖模块。",
+        "negative_result": null,
+        "non_inference": "模块度目标不能证明发现了真实生物社区。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "可学习的层级跨模态表征何时提高预测，何时受深度或目标约束？",
+        "任务attention是否能通过独立证据获得生物学解释效度？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "AHCM 同时建模 SC/FC 的同层双向注意力和相邻层跨层注意力，并用跨层偏置增强用于预测的多尺度表征。",
+      "claim_type": "method_description",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "对比对齐与层级attention",
+          "design": "多队列各自五折内部交叉验证，配对结构/功能图输入",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": null,
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": null,
+            "figure": null,
+            "equation": "(8)–(10)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "AHCM 同时建模 SC/FC 的同层双向注意力和相邻层跨层注意力，并用跨层偏置增强用于预测的多尺度表征。",
+        "boundary": "attention权重来自任务训练；共享相似矩阵不自动等于生理耦合或因果传递。",
+        "negative_result": null,
+        "non_inference": "不能由权重方向推断结构对功能的必要性。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "可学习的层级跨模态表征何时提高预测，何时受深度或目标约束？",
+        "任务attention是否能通过独立证据获得生物学解释效度？"
+      ],
+      "shared_evidence_with": [
+        "C1"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "CgC-Loss 按学习到的耦合强度加权 SC 与 FC 分配的双向 KL 距离，令跨模态一致性参与社区学习。",
+      "claim_type": "method_description",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "耦合加权分配正则化",
+          "design": "多队列各自五折内部交叉验证，配对结构/功能图输入",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": null,
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": null,
+            "figure": null,
+            "equation": "(11)–(12)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "CgC-Loss 按学习到的耦合强度加权 SC 与 FC 分配的双向 KL 距离，令跨模态一致性参与社区学习。",
+        "boundary": "两个模态各自原型选择后的社区列对应和对比损失在最终目标中的权重未充分交代。",
+        "negative_result": null,
+        "non_inference": "优化一致性不是独立验证结构和功能具有该对应机制。",
+        "unresolved": "完整损失及社区列对齐细节待澄清。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "可学习的层级跨模态表征何时提高预测，何时受深度或目标约束？",
+        "任务attention是否能通过独立证据获得生物学解释效度？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "五折内部验证中，HiM-SFC 在 HCPYA、NKI、UKB 的脑龄 MAE 分别为2.77、12.86、5.35，为所列表格最低平均 MAE。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "SC/FC监督脑龄预测与11模型比较",
+          "design": "多队列各自五折内部交叉验证，配对结构/功能图输入",
+          "comparator": null,
+          "measure": "MAE(mean,std):2.77(.17)、12.86(.69)、5.35(.08)",
+          "unit_of_analysis": "受试者；折为内部训练/测试划分而非独立研究",
+          "sample_size_as_reported": "HCPYA241，NKI196，UKB3000受试者；5折",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": null,
+            "figure": "Table 1",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "五折内部验证中，HiM-SFC 在 HCPYA、NKI、UKB 的脑龄 MAE 分别为2.77、12.86、5.35，为所列表格最低平均 MAE。",
+        "boundary": "各数据集分别训练/调参；未展示跨数据集训练后外部验证或显著性比较。",
+        "negative_result": null,
+        "non_inference": "不能称泛化到所有年龄分布或临床脑龄异常。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "可学习的层级跨模态表征何时提高预测，何时受深度或目标约束？",
+        "任务attention是否能通过独立证据获得生物学解释效度？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "HiM-SFC 并非在所有脑龄指标最优：NKI 的 RMSE 为16.92，而 Cross-GNN 为16.62，后者表中平均值更低。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "同一Table1比较",
+          "design": "多队列各自五折内部交叉验证，配对结构/功能图输入",
+          "comparator": null,
+          "measure": "RMSE16.92(.59) vs16.62(1.85)",
+          "unit_of_analysis": "同一受试者数据的模型比较",
+          "sample_size_as_reported": "NKI196；5折",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": null,
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "HiM-SFC 并非在所有脑龄指标最优：NKI 的 RMSE 为16.92，而 Cross-GNN 为16.62，后者表中平均值更低。",
+        "boundary": "均值排序不意味着已统计证明Cross-GNN优越。",
+        "negative_result": "NKI RMSE未超过所有基线。",
+        "non_inference": "不能将总体MAE优势扩大为所有指标一致胜出。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "可学习的层级跨模态表征何时提高预测，何时受深度或目标约束？",
+        "任务attention是否能通过独立证据获得生物学解释效度？"
+      ],
+      "shared_evidence_with": [
+        "C4"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "认知分数内部预测中，HCPYA MMSE 的 MAE/RMSE 为1.01/1.25，UKB fluid intelligence 为1.66/2.07，在表中均低于所列基线。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "认知分数监督回归",
+          "design": "多队列各自五折内部交叉验证，配对结构/功能图输入",
+          "comparator": null,
+          "measure": "MAE/RMSE均值(标准差)：1.01(.24)/1.25(.25)；1.66(.04)/2.07(.05)",
+          "unit_of_analysis": "受试者而不是两个认知分数的共同量尺",
+          "sample_size_as_reported": "HCPYA241、UKB3000；5折",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": null,
+            "figure": "Table 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "认知分数内部预测中，HCPYA MMSE 的 MAE/RMSE 为1.01/1.25，UKB fluid intelligence 为1.66/2.07，在表中均低于所列基线。",
+        "boundary": "MMSE23–30与fluid0–13不同终点；未报告常数预测器、独立验证或模型差异检验。",
+        "negative_result": null,
+        "non_inference": "不能直接比较两个量尺误差或把预测关联视为认知机制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "可学习的层级跨模态表征何时提高预测，何时受深度或目标约束？",
+        "任务attention是否能通过独立证据获得生物学解释效度？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "ADNI3 的72名健康对照和67名痴呆患者内部分类中，HiM-SFC 报告ACC0.78、AUC0.79、敏感度0.69和特异度0.81。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "SC/FC疾病分类",
+          "design": "多队列各自五折内部交叉验证，配对结构/功能图输入",
+          "comparator": null,
+          "measure": "mean(std)：ACC.78(.07)、AUC.79(.10)、Sen.69(.10)、Spec.81(.13)",
+          "unit_of_analysis": "受试者与内部折",
+          "sample_size_as_reported": "139受试者=72HC+67dementia；5折",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": null,
+            "figure": "Table 3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "ADNI3 的72名健康对照和67名痴呆患者内部分类中，HiM-SFC 报告ACC0.78、AUC0.79、敏感度0.69和特异度0.81。",
+        "boundary": "选取同时有高质量多模态MRI者；无临床前瞻验证或独立站点测试。",
+        "negative_result": null,
+        "non_inference": "不能作为诊断阈值、因果疾病生物标志物或现实筛查效能。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "可学习的层级跨模态表征何时提高预测，何时受深度或目标约束？",
+        "任务attention是否能通过独立证据获得生物学解释效度？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "在 HCPYA/ADNI 的组件消融中，去除 PMPool、AHCM 或 CgC-Loss 均使报告均值变差，其中去除 AHCM 退化最大。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "单组件移除对照",
+          "design": "多队列各自五折内部交叉验证，配对结构/功能图输入",
+          "comparator": null,
+          "measure": "HCP MAE全1.01、无PMPool2.02、无AHCM2.63、无CgC1.17；ADNI ACC.78/.72/.70/.76",
+          "unit_of_analysis": "同一队列和划分的模型版本",
+          "sample_size_as_reported": "HCPYA241、ADNI139；5折",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": null,
+            "figure": "Table 4",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在 HCPYA/ADNI 的组件消融中，去除 PMPool、AHCM 或 CgC-Loss 均使报告均值变差，其中去除 AHCM 退化最大。",
+        "boundary": "架构、容量和优化可能共同变化；未进行统计差异检验。",
+        "negative_result": null,
+        "non_inference": "不证明AHCM在生物脑中必要，消融也非独立数据复现。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "可学习的层级跨模态表征何时提高预测，何时受深度或目标约束？",
+        "任务attention是否能通过独立证据获得生物学解释效度？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C6",
+        "C7"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "层级深度敏感性实验中，单个 PMPool 层级表现最佳，增加到2或3层级会降低 HCPYA 和 ADNI 性能。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "层级数/池化率/正则化权重扫描",
+          "design": "多队列各自五折内部交叉验证，配对结构/功能图输入",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "同一模型任务的超参数配置",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": null,
+            "figure": "Fig. 5",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "层级深度敏感性实验中，单个 PMPool 层级表现最佳，增加到2或3层级会降低 HCPYA 和 ADNI 性能。",
+        "boundary": "r=.12、CgC权重.11在所测配置最优；作者将下降归于over-smoothing，未单独验证机制。",
+        "negative_result": "更多层级并不持续提高预测。",
+        "non_inference": "不说明真实脑层级越少越好或这些超参数普遍最优。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "可学习的层级跨模态表征何时提高预测，何时受深度或目标约束？",
+        "任务attention是否能通过独立证据获得生物学解释效度？"
+      ],
+      "shared_evidence_with": [
+        "C8"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "entmax 替代 softmax 在 HCPYA/ADNI 的所报均值上改善预测，HCP MAE由1.17降至1.01，ADNI ACC由0.76升至0.78。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "稀疏归一化替换对照",
+          "design": "多队列各自五折内部交叉验证，配对结构/功能图输入",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "同一队列的归一化版本",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": null,
+            "figure": "Table 6",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "entmax 替代 softmax 在 HCPYA/ADNI 的所报均值上改善预测，HCP MAE由1.17降至1.01，ADNI ACC由0.76升至0.78。",
+        "boundary": "折间标准差不小且未检验差异；稀疏性抑制假连接的解释未被独立实验确认。",
+        "negative_result": null,
+        "non_inference": "较好任务性能不证明注意力图更真实或已除去噪声机制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "可学习的层级跨模态表征何时提高预测，何时受深度或目标约束？",
+        "任务attention是否能通过独立证据获得生物学解释效度？"
+      ],
+      "shared_evidence_with": [
+        "C6",
+        "C7"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "在该框架内替换 GIN、GraphSAGE、GCN 编码器时，GCN 报告的 HCPYA 和 ADNI 均值最佳，但相对 GraphSAGE 的提升较小。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "编码器替换",
+          "design": "多队列各自五折内部交叉验证，配对结构/功能图输入",
+          "comparator": null,
+          "measure": "HCP MAE1.01 vs1.05；ADNI ACC.78 vs.77",
+          "unit_of_analysis": "同框架的GNN版本",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": null,
+            "figure": "Table 5",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在该框架内替换 GIN、GraphSAGE、GCN 编码器时，GCN 报告的 HCPYA 和 ADNI 均值最佳，但相对 GraphSAGE 的提升较小。",
+        "boundary": "未报告显著性、等容量/等计算预算对照。",
+        "negative_result": null,
+        "non_inference": "不能给出GCN在所有脑数据上普遍优越的结论。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "可学习的层级跨模态表征何时提高预测，何时受深度或目标约束？",
+        "任务attention是否能通过独立证据获得生物学解释效度？"
+      ],
+      "shared_evidence_with": [
+        "C6",
+        "C7"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "模型的年龄与疾病任务注意力图在区域和社区尺度呈不同分布，top50%区域重叠主要涉及视觉和 DMN 等网络；作者把它解释为生物学上合理的任务特征。",
+      "claim_type": "interpretation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "跨任务attention平均、社区汇总和Yeo投影",
+          "design": "多队列各自五折内部交叉验证，配对结构/功能图输入",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "UKB/ADNI训练和测试折中受试者的模型图",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": null,
+            "figure": "Fig. 6",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "模型的年龄与疾病任务注意力图在区域和社区尺度呈不同分布，top50%区域重叠主要涉及视觉和 DMN 等网络；作者把它解释为生物学上合理的任务特征。",
+        "boundary": "权重为学得相似性而非直接SC–FC相关或神经传递；分组图混合训练/测试输出且未报告统计空模型。",
+        "negative_result": null,
+        "non_inference": "重叠既不构成独立复现，也不证明共同疾病/衰老机制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "可学习的层级跨模态表征何时提高预测，何时受深度或目标约束？",
+        "任务attention是否能通过独立证据获得生物学解释效度？"
+      ],
+      "shared_evidence_with": [
+        "C4",
+        "C7"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C13",
+      "statement": "UKB40–50岁900人与60–70岁1058人的模型差异图，在区域与模块尺度的top20% ROI重叠超过50%，呈现内侧额叶、外侧颞叶和后部等差异。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "横断面年龄分组、min-max差异图与top-k重叠",
+          "design": "多队列各自五折内部交叉验证，配对结构/功能图输入",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "横断面受试者与同模型映射",
+          "sample_size_as_reported": "900与1058受试者；top20%=100/500ROI",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": null,
+            "figure": "Fig. 7",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "UKB40–50岁900人与60–70岁1058人的模型差异图，在区域与模块尺度的top20% ROI重叠超过50%，呈现内侧额叶、外侧颞叶和后部等差异。",
+        "boundary": "差异为归一化模型权重，无调整混杂/方向/不确定性或空间null检验报告。",
+        "negative_result": null,
+        "non_inference": "不是同个体纵向衰老轨迹或结构导致功能改变。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "可学习的层级跨模态表征何时提高预测，何时受深度或目标约束？",
+        "任务attention是否能通过独立证据获得生物学解释效度？"
+      ],
+      "shared_evidence_with": [
+        "C4",
+        "C12"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C14",
+      "statement": "ADNI 健康/痴呆组的区域与模块差异图在top30% ROI仍重叠超过50%，突出内侧额叶、后内侧和外侧颞叶，并投影至视觉、FPN与DMN。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "疾病分组模型图与跨尺度重叠",
+          "design": "多队列各自五折内部交叉验证，配对结构/功能图输入",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "同一疾病分类队列的模型映射",
+          "sample_size_as_reported": "72HC、67dementia；top30%=150/500ROI",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": null,
+            "figure": "Fig. 8",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "ADNI 健康/痴呆组的区域与模块差异图在top30% ROI仍重叠超过50%，突出内侧额叶、后内侧和外侧颞叶，并投影至视觉、FPN与DMN。",
+        "boundary": "分组平均和归一化图不是独立疾病效应估计；没有病例级外部解释性验证。",
+        "negative_result": null,
+        "non_inference": "不能推出这些模块是疾病因果靶点或特异必要通路。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "可学习的层级跨模态表征何时提高预测，何时受深度或目标约束？",
+        "任务attention是否能通过独立证据获得生物学解释效度？"
+      ],
+      "shared_evidence_with": [
+        "C7",
+        "C12"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C15",
+      "statement": "动态建模层级耦合并用于更广疾病机制探索，是作者提出的未来方向，当前工作只使用静态预处理 SC/FC 图。",
+      "claim_type": "hypothesis",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "HiM-SFC图学习",
+          "design": "多队列各自五折内部交叉验证，配对结构/功能图输入",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "后续模型路线",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": null,
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "动态建模层级耦合并用于更广疾病机制探索，是作者提出的未来方向，当前工作只使用静态预处理 SC/FC 图。",
+        "boundary": "FC只保留正连接中top20%；负连接和动态状态未被当前模型评估。",
+        "negative_result": null,
+        "non_inference": "未证明静态任务权重足以识别动态神经机制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "可学习的层级跨模态表征何时提高预测，何时受深度或目标约束？",
+        "任务attention是否能通过独立证据获得生物学解释效度？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "15页arXiv v1完整覆盖，提取15项方法、预测、负边界和解释候选。四队列均为分别训练的内部五折评估，不是临床或跨队列外部验证。模型组件消融、稀疏归一化、编码器与深度扫描均纳入；NKI RMSE非最佳和深层级退化直接限制总体胜出说法。attention脑图仅是任务相关模型输出，未唯一识别衰老或痴呆机制。",
+  "shared_evidence": [
+    {
+      "claim_id": "C2",
+      "with": [
+        "C1"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C1",
+        "C2"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C4"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C6",
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C8"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "with": [
+        "C6",
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "with": [
+        "C6",
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "with": [
+        "C4",
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C13",
+      "with": [
+        "C4",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C14",
+      "with": [
+        "C7",
+        "C12"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": "C5",
+        "issue": "摘要/结论称一致超过所有方法，但NKI RMSE16.92高于Cross-GNN16.62。",
+        "suggested_correction": "限制总体优势并显式保留该非最佳指标。",
+        "pdf_page": 8,
+        "resolved": true
+      },
+      {
+        "claim_id": "C6",
+        "issue": "正文给IMG-GCN UKB MAE1.84而Table2为2.04；不宜用正文数字计算优势。",
+        "suggested_correction": "候选以表格原始比较为准并保留差异。",
+        "pdf_page": 9,
+        "resolved": false
+      },
+      {
+        "claim_id": "C4",
+        "issue": "超参数逐数据集调优，未报告嵌套选择及独立外部测试；跨队列分别训练不是跨队列泛化。",
+        "suggested_correction": "只声称内部五折结果，保留选择和外部验证缺口。",
+        "pdf_page": 7,
+        "resolved": false
+      },
+      {
+        "claim_id": "C3",
+        "issue": "InfoNCE提及但Algorithm1/最终总损失没有其系数；独立原型社区列KL对应规则不明确。",
+        "suggested_correction": "不补猜实现，等待完整模型说明。",
+        "pdf_page": 6,
+        "resolved": false
+      },
+      {
+        "claim_id": "C12",
+        "issue": "解释图使用训练与测试折平均、归一化和先验图谱投影，缺统计null/混杂控制。",
+        "suggested_correction": "仅描述模型输出，降格机制与生物特异性推断。",
+        "pdf_page": 12,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "源为arXiv v1，期刊抬头和日期占位不证明已接受/发表；部分年龄范围22–35/21–35和40–69/40–70存在表述差异。",
+        "suggested_correction": "保留实际所读版本与范围表述差异，不强行修订索引出版身份。",
+        "pdf_page": 1,
+        "resolved": false
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T11:49:54.245070Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "e558e3487fe76a0d728c76dad062efbe34c07d830e6aca6d4a9ee4d05be07b8d",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

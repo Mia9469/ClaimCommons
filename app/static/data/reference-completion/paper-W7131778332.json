@@ -1,0 +1,2305 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "review",
+  "paper": {
+    "title": "Generative models of cell dynamics: from Neural ODEs to flow matching",
+    "authors": [
+      "Till Richter",
+      "Weixu Wang",
+      "Alessandro Palma",
+      "Fabian J. Theis"
+    ],
+    "doi": "10.1038/s42003-026-09758-w",
+    "publication_year": 2026,
+    "venue": "Communications Biology",
+    "url": "https://doi.org/10.1038/s42003-026-09758-w"
+  },
+  "source": {
+    "filename": "paper-W7131778332--Generative-models-of-cell-dynamics-from-Neural-ODEs-to-flow-matching.pdf",
+    "sha256": "774b8e04e491ba5544f9452f469d185b3df912fd69a8846103cfb563af899953",
+    "source_url": "https://www.nature.com/articles/s42003-026-09758-w_reference.pdf?error=cookies_not_supported&code=30cd1c26-60ab-4dd5-9fd8-21f6d53a173d",
+    "pdf_page_count": 31
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31
+    ],
+    "results_sections_seen": [
+      "1 Introduction: Dynamical perspectives in single-cell biology",
+      "1 Temporal versus observational data",
+      "1 Configuration space and challenges of pseudotime",
+      "1 Phase space and mechanistic modeling",
+      "2 Mathematical foundations of Neural ODEs",
+      "2 Applications: Trajectory Inference; Cell differentiation and mechanistic modeling; GRN inference and causality; Representation learning and dimensionality reduction",
+      "3 Optimal transport approaches",
+      "3 Continuous normalizing flows and ODE-based generative models",
+      "3 Flow matching and simulation-free approaches",
+      "3 Stochasticity and noise in single-cell dynamics",
+      "4 Challenges: causal identification; generalization beyond interpolation; confounding and heterogeneous data",
+      "5 Conclusion and Outlook",
+      "Tables 1-3; textual captions of Figures 1-5",
+      "Appendices A-C; References [1]-[82]; appended figure text on PDF pages 27-31"
+    ],
+    "missing_material": [
+      "图像像素未提供，不能核查图形或视觉定量信息。",
+      "被引研究原文及其补充材料不在本次来源中，均未读取。"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "本分块只含指定paper-W7131778332；31页87273字符分成6个约18000字符以内输出完整评估，未以摘要替代正文。",
+      "封面为Communications Biology未经最终编辑的Article in Press；Received 30 April 2025，Accepted 16 February 2026，保留此版范围，不以最终出版稿替换。",
+      "封面题名、四位作者及DOI与索引一致；正文大小写差异不构成身份不符。索引work_type=article，本文内容与作者贡献明确为综述，输出review。",
+      "正文第2-17页，附录第18页，参考文献第19-26页，图内文本第27-31页；locators按真实1-based PDF页序，而非印刷页码。",
+      "这是叙述性综述，无本文原始队列、实验、独立重复或结果节；图数、方法条目和文献数不是n。",
+      "第二轮在保留的全部源文上下文中逐条核对贡献、对象、条件、证据和结论；未重新打开PDF，未读额外文献或调用模型服务。",
+      "20条review_synthesis、1条interpretation、2条hypothesis；未捏造result或实验negative_result。",
+      "所有quote为null，英文引用词总计0；方法名和术语保留原语言。",
+      "共享证据标记同一综述段落的复用，不构成独立复制或跨论文支持/矛盾；relations为空。",
+      "文本审计及来源数据检查不是科学复现，所有记录均为human_checked:false的candidate。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "对于破坏性 scRNA-seq，时间分辨数据通常是不同采样时点的互不相同细胞，因此跨时点动态建模针对群体分布而非同一细胞的实测轨迹；真实采样时间与从表达相似性推断的 pseudotime 不能互换。",
+      "role": "review_synthesis",
+      "source_pages": [
+        4,
+        5,
+        12
+      ],
+      "decision": "include",
+      "reason": "保留完整可独立判断命题，分别标明假设、证据性质与不可推论范围。"
+    },
+    {
+      "summary": "在细胞状态可用连续微分方程描述的前提下，Neural ODE 以神经网络 f_theta 参数化状态导数，从初始状态经数值积分生成时间依赖预测，并用观测与积分预测的差异训练；网络的导数输出本身不是下一时点的细胞状态。",
+      "role": "review_synthesis",
+      "source_pages": [
+        7,
+        8
+      ],
+      "decision": "include",
+      "reason": "保留完整可独立判断命题，分别标明假设、证据性质与不可推论范围。"
+    },
+    {
+      "summary": "综述将 RNA velocity 的剪接动力学速率估计与连续向量场建模区分开：局部变化率不等于完整连续轨迹，采用基因独立速率估计的方案不能自动表达基因间调控耦合；Neural ODE 为联合学习耦合动态提供了路线。",
+      "role": "review_synthesis",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "保留完整可独立判断命题，分别标明假设、证据性质与不可推论范围。"
+    },
+    {
+      "summary": "LatentVelo、scTour 等综述示例把 Neural ODE 用于编码器学习的低维表示，编码器权重随建模过程学习；这条路线改变动力学的表示空间，而不是要求直接在全部原始基因坐标中求解。",
+      "role": "review_synthesis",
+      "source_pages": [
+        11
+      ],
+      "decision": "include",
+      "reason": "保留完整可独立判断命题，分别标明假设、证据性质与不可推论范围。"
+    },
+    {
+      "summary": "C-NODE、PathReg 和 PHOENIX 在综述中代表用稀疏约束或生物动力学先验提高 Neural ODE 可解释性的路线：稀疏约束限制输入输出依赖，PHOENIX 被表2归纳为使用 Hill-Langmuir kinetics；这些都是归纳偏置，不是观测唯一确定的机制。",
+      "role": "review_synthesis",
+      "source_pages": [
+        9,
+        11
+      ],
+      "decision": "include",
+      "reason": "保留完整可独立判断命题，分别标明假设、证据性质与不可推论范围。"
+    },
+    {
+      "summary": "RegVelo 在综述中被描述为统一 RNA velocity 与 GRN 推断、允许引入既有调控知识的框架，面向调控关系和扰动模拟预测；本文没有给出足以量化其优势的比较对象、独立样本和误差统计。",
+      "role": "review_synthesis",
+      "source_pages": [
+        6,
+        10
+      ],
+      "decision": "include",
+      "reason": "保留完整可独立判断命题，分别标明假设、证据性质与不可推论范围。"
+    },
+    {
+      "summary": "FLeCS 在主文中被描述为用耦合 ODE 推断调控作用强度和 mRNA half-lives 的基因网络动力学模型；这是联合表述调控相互作用与转录动力学的路线，不是本文独立证明的因果网络恢复。",
+      "role": "review_synthesis",
+      "source_pages": [
+        10,
+        11
+      ],
+      "decision": "include",
+      "reason": "保留完整可独立判断命题，分别标明假设、证据性质与不可推论范围。"
+    },
+    {
+      "summary": "观测拟合和稀疏正则化不足以证明真实基因因果调控：综述指出支配动力学系统的非可识别性、未观测混杂、间接作用及反馈仍会妨碍解释；受控扰动和领域先验是额外信息，不是拟合成功的自动产物。",
+      "role": "review_synthesis",
+      "source_pages": [
+        9,
+        10,
+        15
+      ],
+      "decision": "include",
+      "reason": "保留完整可独立判断命题，分别标明假设、证据性质与不可推论范围。"
+    },
+    {
+      "summary": "对不同实验时点细胞群体快照进行离散 optimal transport 可以推断跨时点输运计划，但计划本身不提供唯一连续向量场；连续插值还需速度假设或动力学模型，输运配对不能等同实测细胞历史。",
+      "role": "review_synthesis",
+      "source_pages": [
+        12,
+        13
+      ],
+      "decision": "include",
+      "reason": "保留完整可独立判断命题，分别标明假设、证据性质与不可推论范围。"
+    },
+    {
+      "summary": "连续 normalizing flow 路线将 Neural ODE 的分布变换与 OT 正则化结合，使轨迹既匹配观测时间的边缘分布又受位移或能量代价约束；TrajectoryNet 是综述所列示例，本文没有统一性能或计算成本实验。",
+      "role": "review_synthesis",
+      "source_pages": [
+        13
+      ],
+      "decision": "include",
+      "reason": "保留完整可独立判断命题，分别标明假设、证据性质与不可推论范围。"
+    },
+    {
+      "summary": "Action Matching 被综述归纳为从时间边缘样本学习动态的路线，其最优向量场表示为 action 函数的梯度，并导出基于动能最小化的可处理目标；该描述不是本文提出或证明的新最优性定理。",
+      "role": "review_synthesis",
+      "source_pages": [
+        13
+      ],
+      "decision": "include",
+      "reason": "保留完整可独立判断命题，分别标明假设、证据性质与不可推论范围。"
+    },
+    {
+      "summary": "MIOFlow 所代表的几何感知路线在近似 Euclidean 的 geodesic autoencoder 潜在空间中，对所学轨迹加入 2-Wasserstein 距离相关约束，将流形几何纳入跨快照连续动态建模；本文未独立比较其误差。",
+      "role": "review_synthesis",
+      "source_pages": [
+        13
+      ],
+      "decision": "include",
+      "reason": "保留完整可独立判断命题，分别标明假设、证据性质与不可推论范围。"
+    },
+    {
+      "summary": "本文介绍的 mini-batch OT 型 Flow Matching 在相邻时间样本的配对间构造直线路径，并回归路径上的向量场，以避免训练时反复积分 ODE；适用输入是离散群体快照，不要求实测连续单细胞轨迹。",
+      "role": "review_synthesis",
+      "source_pages": [
+        13,
+        14
+      ],
+      "decision": "include",
+      "reason": "保留完整可独立判断命题，分别标明假设、证据性质与不可推论范围。"
+    },
+    {
+      "summary": "综述区分 Neural ODE 的平均轨迹描述与 Neural SDE 的随机波动描述，并把 Schrodinger Bridge 解释为在给定参考过程下，以熵准则连接两观测分布的随机过程路线；随机性及参考过程必须显式进入模型。",
+      "role": "review_synthesis",
+      "source_pages": [
+        13,
+        15
+      ],
+      "decision": "include",
+      "reason": "保留完整可独立判断命题，分别标明假设、证据性质与不可推论范围。"
+    },
+    {
+      "summary": "综述中的 [SF]2M 联合 score matching 与 flow matching 处理 Schrodinger Bridge，使训练不依赖完整轨迹模拟，面向高维细胞分布间的随机动态；本文未报告其精度、成本或生物验证数据。",
+      "role": "review_synthesis",
+      "source_pages": [
+        14,
+        15
+      ],
+      "decision": "include",
+      "reason": "保留完整可独立判断命题，分别标明假设、证据性质与不可推论范围。"
+    },
+    {
+      "summary": "GENOT 被综述描述为将 Flow Matching 用于 unbalanced Gromov-Wasserstein 问题，从而处理多模态单细胞数据与发展轨迹映射；这是方法范围说明，不是本文验证的多组学机制或跨模态识别正确性。",
+      "role": "review_synthesis",
+      "source_pages": [
+        14,
+        15
+      ],
+      "decision": "include",
+      "reason": "保留完整可独立判断命题，分别标明假设、证据性质与不可推论范围。"
+    },
+    {
+      "summary": "Wasserstein Lagrangian Flows 被综述归纳为用熵正则化求解输运、服务大规模细胞轨迹建模的路线；计算效率改善在本文只有定性转述，没有基线、运行规模或测得速度倍率。",
+      "role": "review_synthesis",
+      "source_pages": [
+        15
+      ],
+      "decision": "include",
+      "reason": "保留完整可独立判断命题，分别标明假设、证据性质与不可推论范围。"
+    },
+    {
+      "summary": "Metric Flow Matching 被综述描述为引入度量的 Flow Matching 变体，目标是让动态插值更忠实于数据几何；本文没有提供可量化改善的几何指标、对照实验或误差分布。",
+      "role": "review_synthesis",
+      "source_pages": [
+        15
+      ],
+      "decision": "include",
+      "reason": "保留完整可独立判断命题，分别标明假设、证据性质与不可推论范围。"
+    },
+    {
+      "summary": "综述指出细胞群体动态不仅涉及状态输运，还可纳入增殖和死亡引起的群体增长变化；TIGON 被表2列为非平衡输运的群体动态示例，但本文没有实测或验证任何生长死亡率。",
+      "role": "review_synthesis",
+      "source_pages": [
+        11,
+        13,
+        15
+      ],
+      "decision": "include",
+      "reason": "保留完整可独立判断命题，分别标明假设、证据性质与不可推论范围。"
+    },
+    {
+      "summary": "综述把 Neural ODE 及相关连续时间扩展的用途归纳到不规则医疗时间序列、药代动力学、心脏动态及反事实治疗建模，并列举 Neural CDE、LHM、LNODE、Neural ODE-PK 和 TE-CDE 等路线；这不是本文开展的临床验证。",
+      "role": "review_synthesis",
+      "source_pages": [
+        12,
+        16
+      ],
+      "decision": "include",
+      "reason": "保留完整可独立判断命题，分别标明假设、证据性质与不可推论范围。"
+    },
+    {
+      "summary": "作者认为，扰动预测和未来细胞状态预测的评估应超出训练区间插值，检验模型是否捕捉支配动态；缺少真实规律的 ground truth 及多种 out-of-distribution 定义，使这种评估仍未得到本文的实验解决。",
+      "role": "interpretation",
+      "source_pages": [
+        15,
+        16
+      ],
+      "decision": "include",
+      "reason": "保留完整可独立判断命题，分别标明假设、证据性质与不可推论范围。"
+    },
+    {
+      "summary": "作者展望，将 optimal transport、经典动力学与调控生物学先验结合，可能改善细胞动态的稳健学习和机制解释，并支持更可信的 in-silico 扰动预测；本文未验证这种组合足以识别因果或稳健外推。",
+      "role": "hypothesis",
+      "source_pages": [
+        16,
+        17
+      ],
+      "decision": "include",
+      "reason": "保留完整可独立判断命题，分别标明假设、证据性质与不可推论范围。"
+    },
+    {
+      "summary": "作者把大规模细胞动态模型列为未来方向，认为 Neural ODE 等连续动力学方法可能补充目前偏静态的单细胞 foundation models；本文没有构建或评测这种细胞动态基础模型。",
+      "role": "hypothesis",
+      "source_pages": [
+        17
+      ],
+      "decision": "include",
+      "reason": "保留完整可独立判断命题，分别标明假设、证据性质与不可推论范围。"
+    },
+    {
+      "summary": "配置空间、phase space、Waddington landscape背景及Table 1经典ODE方法清单。",
+      "role": "background",
+      "source_pages": [
+        3,
+        4,
+        5,
+        6,
+        27
+      ],
+      "decision": "exclude",
+      "reason": "全部评估；相关采样和速度限制已归入C1/C3/C8。背景清单不是各方法的独立性能实验。"
+    },
+    {
+      "summary": "通用逼近及ODE到SCM的数学背景。",
+      "role": "background",
+      "source_pages": [
+        8,
+        9
+      ],
+      "decision": "exclude",
+      "reason": "不提取成新定理；本文未给精确函数域、逼近误差或完整平衡/稳定性/干预条件。框架和识别边界分别纳入C2/C8。"
+    },
+    {
+      "summary": "第4节第三项挑战：随机性、潜在影响、异质和多组学整合。",
+      "role": "review_synthesis",
+      "source_pages": [
+        15,
+        16
+      ],
+      "decision": "include",
+      "reason": "以C4/C8/C14/C20的边界和未解决问题保留，不重复包装为实验阴性结果。"
+    },
+    {
+      "summary": "Appendix A-C：利益冲突、致谢、资助及作者贡献。",
+      "role": "administrative",
+      "source_pages": [
+        18
+      ],
+      "decision": "exclude",
+      "reason": "全部评估，不是科学效应命题；作者贡献明确为文献综合，支持review分类。"
+    },
+    {
+      "summary": "参考文献[1]-[82]及其方法注释。",
+      "role": "bibliographic_background",
+      "source_pages": [
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26
+      ],
+      "decision": "exclude",
+      "reason": "全部评估，未读取被引研究；注释不转成本论文原始结果。FLeCS与LNODE源内差异已在审计披露。"
+    },
+    {
+      "summary": "末尾五页Fig. 1-5图内OCR，与主文图注对应。",
+      "role": "illustration",
+      "source_pages": [
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "decision": "exclude",
+      "reason": "全部文字已评估，但有乱码和只在图内列出的名称；不从未提供的像素补造结果，不把图示重复当独立证据。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "对于破坏性 scRNA-seq，时间分辨数据通常是不同采样时点的互不相同细胞，因此跨时点动态建模针对群体分布而非同一细胞的实测轨迹；真实采样时间与从表达相似性推断的 pseudotime 不能互换。",
+      "claim_type": "data_and_time_semantics",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "采样性质的叙述性综述",
+          "design": "说明破坏性测序不能直接跟踪同一细胞",
+          "comparator": null,
+          "measure": "观测单位与采样时间含义",
+          "unit_of_analysis": "采样设计和群体快照；非本文独立实验",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "标准RNA测序破坏被测细胞"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "1 Introduction / Temporal versus observational data",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "时间标签及适用条件比較",
+          "design": "区分真实实验时间与非同步群体排序",
+          "comparator": "real time 与 pseudotime",
+          "measure": "时间语义",
+          "unit_of_analysis": "方法和采样设计；无本文实验重复",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "1 / Temporal versus observational data",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "群体分布演化的概念说明",
+          "design": "将跨时点群体快照视为输运分布",
+          "comparator": null,
+          "measure": "时间是否具有物理意义",
+          "unit_of_analysis": "群体分布而非已配对的同一细胞",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "已知采样间隔才赋予实时时间物理含义"
+          ],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "3 / Optimal transport approaches",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "综述区分了群体动态与单细胞纵向实测。",
+        "boundary": "限于所述破坏性测序与采样设计。",
+        "negative_result": null,
+        "non_inference": "不能把输运配对或拟合轨迹视为实测祖先后代关系。",
+        "unresolved": "从未配对快照恢复真实细胞历史需要额外信息。",
+        "unresolved_attribution": "源文关于采样和动态推断的限制"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "快照中的哪些时间信息是实测，哪些只是推断？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "只依据本篇综述所供文字；被引论文未读取，不能视为本文新做的实验或独立复现。",
+        "本文未报告此记录的实际独立n或统计不确定性，均保留null。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "在细胞状态可用连续微分方程描述的前提下，Neural ODE 以神经网络 f_theta 参数化状态导数，从初始状态经数值积分生成时间依赖预测，并用观测与积分预测的差异训练；网络的导数输出本身不是下一时点的细胞状态。",
+      "claim_type": "continuous_dynamics_framework",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "Neural ODE 框架示意",
+          "design": "初始表达向量、导数网络与数值求解器的流程",
+          "comparator": null,
+          "measure": "导数与状态轨迹",
+          "unit_of_analysis": "数学状态向量和流程；非生物重复",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "一阶ODE示例"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "2 Theoretical foundations",
+            "figure": "Fig. 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "方程与训练目标的综述性说明",
+          "design": "f_theta近似向量场，ODE-Solve积分，示例MSE比较预测与观测",
+          "comparator": "概念上区别于离散时间RNN；无头对头统计",
+          "measure": "导数、积分状态及观测损失",
+          "unit_of_analysis": "状态和时间点；非独立实验单位",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "连续演化可由ODE描述",
+            "给定初始状态与数值求解器",
+            "观测及表示的时间含义须明确"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "2 / Mathematical foundations",
+            "figure": null,
+            "equation": "(1)-(3)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "说明了细胞表达动态的连续时间参数化及训练过程。",
+        "boundary": "这是方法框架，不是本文新定理；高维、有限数据和计算约束仍存在。",
+        "negative_result": null,
+        "non_inference": "拟合良好不证明真实调控机制、因果边或临床用途。",
+        "unresolved": "有限数据下可靠学习高维向量场仍具挑战。",
+        "unresolved_attribution": "第2节实践限制"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "Neural ODE 如何区分导数输出、积分状态与观测损失？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "只依据本篇综述所供文字；被引论文未读取，不能视为本文新做的实验或独立复现。",
+        "本文未报告此记录的实际独立n或统计不确定性，均保留null。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "综述将 RNA velocity 的剪接动力学速率估计与连续向量场建模区分开：局部变化率不等于完整连续轨迹，采用基因独立速率估计的方案不能自动表达基因间调控耦合；Neural ODE 为联合学习耦合动态提供了路线。",
+      "claim_type": "velocity_vs_coupled_dynamics",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "速度估计与耦合动态的文献综合",
+          "design": "比较剪接速率、向量场重建与联合动态建模",
+          "comparator": "采用基因独立估计的RNA velocity路线与耦合Neural ODE",
+          "measure": "局部速度、连续转换和基因耦合",
+          "unit_of_analysis": "方法假设；无本文独立细胞或重复",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "限制针对文中讨论的独立基因估计，不概括一切RNA velocity方法"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "1 / Phase space and mechanistic modeling",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "明确了速度、连续轨迹和调控耦合的不同建模目标。",
+        "boundary": "源文也介绍Dynamo等连续向量场重建方法；并非所有传统方法都没有连续场。",
+        "negative_result": null,
+        "non_inference": "允许耦合不表示已识别真实调控网络或证明性能更好。",
+        "unresolved": "速率模型假设对真实调控恢复的影响还需验证。",
+        "unresolved_attribution": "源文关于机制建模的挑战"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "局部RNA velocity何时足以支持连续且耦合的细胞动态？"
+      ],
+      "shared_evidence_with": [
+        "C6"
+      ],
+      "review_notes": [
+        "只依据本篇综述所供文字；被引论文未读取，不能视为本文新做的实验或独立复现。",
+        "本文未报告此记录的实际独立n或统计不确定性，均保留null。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "LatentVelo、scTour 等综述示例把 Neural ODE 用于编码器学习的低维表示，编码器权重随建模过程学习；这条路线改变动力学的表示空间，而不是要求直接在全部原始基因坐标中求解。",
+      "claim_type": "latent_dynamics_representation",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "潜在表示路线综合",
+          "design": "由编码器转换表达数据，在学习表示中建模",
+          "comparator": "原始表达空间与潜在空间的概念比较；无统一基准",
+          "measure": "学习表示及其时间依赖动态",
+          "unit_of_analysis": "方法结构；无本文独立样本",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "表示需保留相关动态信息"
+          ],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "2 / Representation learning and dimensionality reduction",
+            "figure": "Table 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "归纳了表示学习与Neural ODE联合使用的路线。",
+        "boundary": "未在本文报告其误差改善、批次效果或独立n。",
+        "negative_result": null,
+        "non_inference": "低维表示或良好重构不证明机制可识别或批次效应完全消失。",
+        "unresolved": "如何兼顾降维、异质数据与可解释性仍具挑战。",
+        "unresolved_attribution": "第4节"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "联合学习表示怎样保留细胞动态与机制信息？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "只依据本篇综述所供文字；被引论文未读取，不能视为本文新做的实验或独立复现。",
+        "本文未报告此记录的实际独立n或统计不确定性，均保留null。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "C-NODE、PathReg 和 PHOENIX 在综述中代表用稀疏约束或生物动力学先验提高 Neural ODE 可解释性的路线：稀疏约束限制输入输出依赖，PHOENIX 被表2归纳为使用 Hill-Langmuir kinetics；这些都是归纳偏置，不是观测唯一确定的机制。",
+      "claim_type": "structured_mechanistic_modeling",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "可解释动态模型的文献综合",
+          "design": "正则化输入输出连接，或约束动态函数形式",
+          "comparator": "无此类结构约束的灵活向量场为概念参照",
+          "measure": "依赖稀疏性与模型结构",
+          "unit_of_analysis": "方法假设；无原始实验",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "简单或稀疏连接是先验偏好"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "2 / Cell differentiation and mechanistic modeling",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "方法表中的约束分类",
+          "design": "列出C-NODE、PathReg、PHOENIX等技术路线",
+          "comparator": null,
+          "measure": "稀疏性或Hill-Langmuir kinetics",
+          "unit_of_analysis": "方法条目；不是独立重复",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "生物先验须适合所研究系统"
+          ],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "2 / Methodological overview",
+            "figure": "Table 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "综述展示结构约束与生物先验如何纳入动态模型。",
+        "boundary": "本文未做统一消融或量化效应。",
+        "negative_result": null,
+        "non_inference": "稀疏图及生物形状约束不等于真实因果网络或唯一动态规律。",
+        "unresolved": "哪些约束能改善规律识别而非仅拟合仍待检验。",
+        "unresolved_attribution": "源文关于非可识别性与泛化的讨论"
+      },
+      "broad_directions": [
+        "methods-causal",
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "稀疏和生物先验怎样改变可解释性而不冒充因果证据？"
+      ],
+      "shared_evidence_with": [
+        "C8"
+      ],
+      "review_notes": [
+        "只依据本篇综述所供文字；被引论文未读取，不能视为本文新做的实验或独立复现。",
+        "本文未报告此记录的实际独立n或统计不确定性，均保留null。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "RegVelo 在综述中被描述为统一 RNA velocity 与 GRN 推断、允许引入既有调控知识的框架，面向调控关系和扰动模拟预测；本文没有给出足以量化其优势的比较对象、独立样本和误差统计。",
+      "claim_type": "regulation_informed_velocity",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "联合速度与网络的综述",
+          "design": "以RegVelo为耦合建模示例",
+          "comparator": "独立基因速率估计的概念参照",
+          "measure": "基因耦合与向量场",
+          "unit_of_analysis": "方法设计；非独立实验",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "1 / Phase space and mechanistic modeling",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "RegVelo用途的文献转述",
+          "design": "联合调控网络和速度，并纳入调控先验",
+          "comparator": null,
+          "measure": "调控关系及扰动预测；优势只作定性转述",
+          "unit_of_analysis": "综述方法报告；被引研究n未在本文给出",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "先验网络会约束推断"
+          ],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "2 / GRN inference and causality",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "综述将RegVelo归纳为速度与GRN联合建模路线。",
+        "boundary": "原文称预测更好，但没有足以独立评估优势的完整比较和统计。",
+        "negative_result": null,
+        "non_inference": "不能把这种定性表述升级为本文验证的性能、扰动因果效应或生物机制。",
+        "unresolved": "具体对照及干预条件下的优势仍需核验。",
+        "unresolved_attribution": "综述缺少比较细节"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "调控先验和RNA velocity联合建模在何种条件下支持扰动预测？"
+      ],
+      "shared_evidence_with": [
+        "C3"
+      ],
+      "review_notes": [
+        "只依据本篇综述所供文字；被引论文未读取，不能视为本文新做的实验或独立复现。",
+        "本文未报告此记录的实际独立n或统计不确定性，均保留null。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "FLeCS 在主文中被描述为用耦合 ODE 推断调控作用强度和 mRNA half-lives 的基因网络动力学模型；这是联合表述调控相互作用与转录动力学的路线，不是本文独立证明的因果网络恢复。",
+      "claim_type": "coupled_regulatory_kinetics",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "网络与扰动证据的文献综合",
+          "design": "以FLeCS为耦合ODE示例",
+          "comparator": null,
+          "measure": "调控强度和mRNA half-lives",
+          "unit_of_analysis": "模型参数；无本文干预样本",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "受控扰动对区分因果与相关重要"
+          ],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "2 / GRN inference and causality",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "FLeCS方法续文",
+          "design": "主文以[61]说明动力学参数的联合推断",
+          "comparator": null,
+          "measure": "调控强度与转录本寿命",
+          "unit_of_analysis": "综述模型；独立细胞、供体和重复未给出",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "2 / GRN inference and causality",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "综述描述可联合表达调控强度与转录本寿命的动力学框架。",
+        "boundary": "没有本文参数识别实验；Table 1的FLeCS引用编号与主文不一致。",
+        "negative_result": null,
+        "non_inference": "模型参数不能自动视为真实因果效应或经生物验证的半衰期。",
+        "unresolved": "FLeCS表1引文编号需要人工核对。",
+        "unresolved_attribution": "表1为[14]，主文为[61]，参考文献标题不同"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "耦合ODE中的调控强度与转录本寿命如何获得可识别证据？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "只依据本篇综述所供文字；被引论文未读取，不能视为本文新做的实验或独立复现。",
+        "本文未报告此记录的实际独立n或统计不确定性，均保留null。",
+        "保留主文可确认描述，不擅自修正表1引文。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "观测拟合和稀疏正则化不足以证明真实基因因果调控：综述指出支配动力学系统的非可识别性、未观测混杂、间接作用及反馈仍会妨碍解释；受控扰动和领域先验是额外信息，不是拟合成功的自动产物。",
+      "claim_type": "causal_identifiability_boundary",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "非可识别性与稀疏先验综合",
+          "design": "讨论相同观测可能对应不同动态规律",
+          "comparator": "纯观测拟合与加入稀疏假设",
+          "measure": "规律及依赖结构的可识别性",
+          "unit_of_analysis": "模型与识别条件；非因果实验",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "稀疏因果连接是一项假设"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "2 / Cell differentiation and mechanistic modeling",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "干预证据作用的综述",
+          "design": "以敲除和药物处理说明受控信息的重要性",
+          "comparator": "观察数据与受控扰动数据",
+          "measure": "因果相互作用与相关的区别",
+          "unit_of_analysis": "研究设计类别；无本文干预n",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "干预与模型须适合具体识别问题"
+          ],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "2 / GRN inference and causality",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "因果解释困难综合",
+          "design": "列出间接作用、反馈和隐藏混杂",
+          "comparator": null,
+          "measure": "真实调控与伪相关的区别",
+          "unit_of_analysis": "识别问题；无原始独立实验",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 15,
+            "section": "4 Challenges / First challenge",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "明确区分模型依赖结构与真实因果关系。",
+        "boundary": "本文没有一般充分识别定理；ODE/SCM形式表述不能替代完整条件。",
+        "negative_result": null,
+        "non_inference": "不能从Granger时间方向性、稀疏连接或数学图结构直接断言真实机制。",
+        "unresolved": "直接/间接调控、反馈和隐藏混杂的可靠分离尚未解决。",
+        "unresolved_attribution": "作者第4节的明确挑战"
+      },
+      "broad_directions": [
+        "methods-causal",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "什么干预与假设才能从观测动态识别基因因果调控？"
+      ],
+      "shared_evidence_with": [
+        "C5"
+      ],
+      "review_notes": [
+        "只依据本篇综述所供文字；被引论文未读取，不能视为本文新做的实验或独立复现。",
+        "本文未报告此记录的实际独立n或统计不确定性，均保留null。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "对不同实验时点细胞群体快照进行离散 optimal transport 可以推断跨时点输运计划，但计划本身不提供唯一连续向量场；连续插值还需速度假设或动力学模型，输运配对不能等同实测细胞历史。",
+      "claim_type": "discrete_transport_boundary",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "时间快照OT方法的综述",
+          "design": "将不同群体分布联系起来",
+          "comparator": null,
+          "measure": "群体匹配和祖先后代推断",
+          "unit_of_analysis": "群体快照与计划；非实测细胞谱系",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "时间语义由采样设计确定"
+          ],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "3 / Optimal transport approaches",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "离散计划与连续场比较",
+          "design": "列举Waddington-OT、moslin、moscot和JKONet等路线",
+          "comparator": "离散OT与Neural ODE连续动态路线",
+          "measure": "输运计划与连续向量场",
+          "unit_of_analysis": "方法类别；无本文比较实验",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "文中涉及跨时点线性速度假设；不是测得的速度"
+          ],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "3 / Optimal transport approaches",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "归纳了离散OT的用途和连续动态缺口。",
+        "boundary": "推断祖先后代关系仍取决于模型、谱系等额外信息及设计。",
+        "negative_result": null,
+        "non_inference": "最优输运计划不证明真实路径、机制或因果关系。",
+        "unresolved": "怎样用先验约束连续路径而不制造唯一性仍需研究。",
+        "unresolved_attribution": "第3节"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "离散输运计划还缺少什么才能支持连续细胞动态？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "只依据本篇综述所供文字；被引论文未读取，不能视为本文新做的实验或独立复现。",
+        "本文未报告此记录的实际独立n或统计不确定性，均保留null。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "连续 normalizing flow 路线将 Neural ODE 的分布变换与 OT 正则化结合，使轨迹既匹配观测时间的边缘分布又受位移或能量代价约束；TrajectoryNet 是综述所列示例，本文没有统一性能或计算成本实验。",
+      "claim_type": "transport_regularized_continuous_flows",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "CNF与OT正则化综合",
+          "design": "积分分布变换并约束边缘与位移/能量",
+          "comparator": "无输运约束的分布拟合作为概念参照",
+          "measure": "时间边缘匹配与轨迹代价",
+          "unit_of_analysis": "模型目标和群体分布；无独立实验",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "最优代价不意味着唯一生物路径"
+          ],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "3 / Continuous normalizing flows and ODE-based generative models",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "解释了在连续流中引入输运正则化的动机。",
+        "boundary": "具体损失与约束随方法而异；本文未量化改善。",
+        "negative_result": null,
+        "non_inference": "代价最小和边缘匹配不证明真实轨迹、调控机制或未来外推。",
+        "unresolved": "代价与实际生物动态的对应需验证。",
+        "unresolved_attribution": "源文动态规律及泛化挑战"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "连续分布流如何同时约束时间边缘和轨迹代价？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "只依据本篇综述所供文字；被引论文未读取，不能视为本文新做的实验或独立复现。",
+        "本文未报告此记录的实际独立n或统计不确定性，均保留null。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "Action Matching 被综述归纳为从时间边缘样本学习动态的路线，其最优向量场表示为 action 函数的梯度，并导出基于动能最小化的可处理目标；该描述不是本文提出或证明的新最优性定理。",
+      "claim_type": "action_based_dynamic_objective",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "Action Matching目标的文献转述",
+          "design": "用action梯度表示匹配时间边缘的场",
+          "comparator": null,
+          "measure": "时间边缘与动能目标",
+          "unit_of_analysis": "方法目标函数；无本文样本",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "综述未列完整推导和适用条件，不扩展成一般定理"
+          ],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "3 / Continuous normalizing flows and ODE-based generative models",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "描述了基于action与动能的动态学习目标。",
+        "boundary": "未提供本文完整证明、实验n或效应量。",
+        "negative_result": null,
+        "non_inference": "不能认为动能最小的拟合场就是细胞真实规律。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "如何将时间边缘匹配转化为基于action的动态目标？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "只依据本篇综述所供文字；被引论文未读取，不能视为本文新做的实验或独立复现。",
+        "本文未报告此记录的实际独立n或统计不确定性，均保留null。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "MIOFlow 所代表的几何感知路线在近似 Euclidean 的 geodesic autoencoder 潜在空间中，对所学轨迹加入 2-Wasserstein 距离相关约束，将流形几何纳入跨快照连续动态建模；本文未独立比较其误差。",
+      "claim_type": "geometry_aware_latent_transport",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "流形几何与OT的综合",
+          "design": "在几何感知编码空间施加轨迹距离约束",
+          "comparator": "未经这种表示约束的路线仅为概念参照",
+          "measure": "潜在路径几何与2-Wasserstein约束",
+          "unit_of_analysis": "表示和目标；非独立生物或模拟重复",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "潜在空间对geodesic的近似需有效"
+          ],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "3 / Continuous normalizing flows and ODE-based generative models",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "归纳用流形表示影响输运路径的技术路线。",
+        "boundary": "依赖表示和距离假设；本文无统一误差或不确定性。",
+        "negative_result": null,
+        "non_inference": "几何平滑和较好插值不证明真实谱系、机制或未来外推。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "流形几何如何约束快照间的连续细胞输运？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "只依据本篇综述所供文字；被引论文未读取，不能视为本文新做的实验或独立复现。",
+        "本文未报告此记录的实际独立n或统计不确定性，均保留null。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C13",
+      "statement": "本文介绍的 mini-batch OT 型 Flow Matching 在相邻时间样本的配对间构造直线路径，并回归路径上的向量场，以避免训练时反复积分 ODE；适用输入是离散群体快照，不要求实测连续单细胞轨迹。",
+      "claim_type": "simulation_free_vector_field_training",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "OT型Flow Matching训练说明",
+          "design": "mini-batch OT配对后沿构造路径匹配向量场",
+          "comparator": "训练中通过ODE积分拟合分布的路线",
+          "measure": "向量场回归和训练积分需求",
+          "unit_of_analysis": "训练流程与群体快照；无计时实验或独立运行数",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "仅指本文介绍的OT配对变体",
+            "构造直线不是已观测路径"
+          ],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "3 / Flow matching and simulation-free approaches",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "免积分训练及数据适用条件说明",
+          "design": "群体快照产生所学向量场",
+          "comparator": null,
+          "measure": "训练流程与动态场输出",
+          "unit_of_analysis": "方法示意；非独立验证",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "免模拟范围限定为训练"
+          ],
+          "source_locator": {
+            "pdf_page": 14,
+            "section": "3 / Flow matching and simulation-free approaches",
+            "figure": "Fig. 5",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "说明以向量场回归替代训练中的昂贵ODE积分。",
+        "boundary": "本文未提供速度倍率、准确率或配对真实性；直线是构造选择。",
+        "negative_result": null,
+        "non_inference": "simulation-free不表示全部推断无需求解，也不证明路径就是细胞经历。",
+        "unresolved": "构造路径与真实流形的对应需要额外约束。",
+        "unresolved_attribution": "源文后续几何与随机扩展"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "如何不积分训练轨迹而学习群体连续向量场？"
+      ],
+      "shared_evidence_with": [
+        "C15"
+      ],
+      "review_notes": [
+        "只依据本篇综述所供文字；被引论文未读取，不能视为本文新做的实验或独立复现。",
+        "本文未报告此记录的实际独立n或统计不确定性，均保留null。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C14",
+      "statement": "综述区分 Neural ODE 的平均轨迹描述与 Neural SDE 的随机波动描述，并把 Schrodinger Bridge 解释为在给定参考过程下，以熵准则连接两观测分布的随机过程路线；随机性及参考过程必须显式进入模型。",
+      "claim_type": "stochastic_population_dynamics",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "Neural SDE与随机桥综述",
+          "design": "连接分布并相对参考过程约束熵",
+          "comparator": "确定性轨迹与随机过程模型",
+          "measure": "随机路径和相对熵",
+          "unit_of_analysis": "分布与随机过程；无本文实验",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "需指定参考过程和动态假设"
+          ],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "3 / Continuous normalizing flows and ODE-based generative models",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "随机性和噪声的综合",
+          "design": "比较平均轨迹与随机动态路线",
+          "comparator": "Neural ODE与Neural SDE",
+          "measure": "表达波动与随机分化的模型描述",
+          "unit_of_analysis": "模型类别；无本文细胞、供体或种子数",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "内在随机性和实验伪影不能仅凭拟合自动分离"
+          ],
+          "source_locator": {
+            "pdf_page": 15,
+            "section": "3 / Stochasticity and noise in single-cell dynamics",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "说明随机过程建模相对于平均轨迹建模的用途。",
+        "boundary": "最可能随机路径依赖参考过程与目标，本文没有独立验证。",
+        "negative_result": null,
+        "non_inference": "合成路径不证明真实随机轨迹或自动区分内在和测量噪声。",
+        "unresolved": "如何识别随机性、噪声和潜在影响仍有困难。",
+        "unresolved_attribution": "第3及第4节"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "何时需要随机过程而非确定性平均轨迹？"
+      ],
+      "shared_evidence_with": [
+        "C15",
+        "C19"
+      ],
+      "review_notes": [
+        "只依据本篇综述所供文字；被引论文未读取，不能视为本文新做的实验或独立复现。",
+        "本文未报告此记录的实际独立n或统计不确定性，均保留null。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C15",
+      "statement": "综述中的 [SF]2M 联合 score matching 与 flow matching 处理 Schrodinger Bridge，使训练不依赖完整轨迹模拟，面向高维细胞分布间的随机动态；本文未报告其精度、成本或生物验证数据。",
+      "claim_type": "simulation_free_stochastic_bridge",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "[SF]2M用途的文献转述",
+          "design": "组合score与flow matching学习随机桥",
+          "comparator": "需完整轨迹模拟的训练路线为概念参照",
+          "measure": "训练模拟需求与高维随机连接",
+          "unit_of_analysis": "训练流程；无本文实验或运行n",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "免模拟只指训练",
+            "随机桥依赖具体目标与过程"
+          ],
+          "source_locator": {
+            "pdf_page": 14,
+            "section": "3 / Flow matching and simulation-free approaches",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "随机桥与流模型综合",
+          "design": "列举Neural LSB与[SF]2M",
+          "comparator": null,
+          "measure": "随机分化模式的模型表达",
+          "unit_of_analysis": "方法描述；无复现实验",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 15,
+            "section": "3 / Stochasticity and noise in single-cell dynamics",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "归纳了免完整轨迹模拟训练的随机桥路线。",
+        "boundary": "未量化高维性能或计算效率。",
+        "negative_result": null,
+        "non_inference": "随机模式输出不是独立生物实证，免训练模拟不等于免推断求解。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "score与flow matching如何共同学习随机细胞分布桥？"
+      ],
+      "shared_evidence_with": [
+        "C13",
+        "C14"
+      ],
+      "review_notes": [
+        "只依据本篇综述所供文字；被引论文未读取，不能视为本文新做的实验或独立复现。",
+        "本文未报告此记录的实际独立n或统计不确定性，均保留null。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C16",
+      "statement": "GENOT 被综述描述为将 Flow Matching 用于 unbalanced Gromov-Wasserstein 问题，从而处理多模态单细胞数据与发展轨迹映射；这是方法范围说明，不是本文验证的多组学机制或跨模态识别正确性。",
+      "claim_type": "multimodal_unbalanced_transport",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "GENOT范围的文献转述",
+          "design": "扩展到非平衡跨空间输运",
+          "comparator": "标准Flow Matching的扩展关系；无头对头实验",
+          "measure": "不同模态或空间间的输运",
+          "unit_of_analysis": "模型结构；无本文配对细胞或供体n",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "空间关系和非平衡目标须明确"
+          ],
+          "source_locator": {
+            "pdf_page": 14,
+            "section": "3 / Flow matching and simulation-free approaches",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "GENOT用途续文",
+          "design": "说明多模态和发展轨迹用途",
+          "comparator": null,
+          "measure": "多模态映射范围",
+          "unit_of_analysis": "方法用途；无本文独立新数据",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 15,
+            "section": "3 / Flow matching and simulation-free approaches",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "归纳跨模态及非平衡输运的生成式路线。",
+        "boundary": "本文未提供准确率、独立n或机制验证。",
+        "negative_result": null,
+        "non_inference": "非平衡权重不自动等于实测生长死亡率；映射不证明调控机制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "不同模态与质量不守恒分布如何进行生成式输运？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "只依据本篇综述所供文字；被引论文未读取，不能视为本文新做的实验或独立复现。",
+        "本文未报告此记录的实际独立n或统计不确定性，均保留null。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C17",
+      "statement": "Wasserstein Lagrangian Flows 被综述归纳为用熵正则化求解输运、服务大规模细胞轨迹建模的路线；计算效率改善在本文只有定性转述，没有基线、运行规模或测得速度倍率。",
+      "claim_type": "regularized_transport_computation",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "WLF计算路线的文献转述",
+          "design": "带熵正则化的动态输运求解",
+          "comparator": null,
+          "measure": "输运求解及定性效率描述",
+          "unit_of_analysis": "方法报告；无设备、种子或运行数",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "具体求解设置需由方法规定"
+          ],
+          "source_locator": {
+            "pdf_page": 15,
+            "section": "3 / Flow matching and simulation-free approaches",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "综述将WLF列为关注动态输运计算效率的路线。",
+        "boundary": "没有本文测得的速度、配置或误差比较。",
+        "negative_result": null,
+        "non_inference": "不能补造倍率、规模上限或相对他法的普遍优势。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "熵正则化的动态输运计算收益怎样评估？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "只依据本篇综述所供文字；被引论文未读取，不能视为本文新做的实验或独立复现。",
+        "本文未报告此记录的实际独立n或统计不确定性，均保留null。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C18",
+      "statement": "Metric Flow Matching 被综述描述为引入度量的 Flow Matching 变体，目标是让动态插值更忠实于数据几何；本文没有提供可量化改善的几何指标、对照实验或误差分布。",
+      "claim_type": "metric_aware_flow_geometry",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "MFM目标的文献归纳",
+          "design": "以metric-based flow matching影响路径几何",
+          "comparator": "一般Flow Matching框架为概念参照；无具体量化基线",
+          "measure": "几何忠实性",
+          "unit_of_analysis": "方法目标；无本文独立样本或运行数",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "所选度量须有意义，不认定为真实生物距离"
+          ],
+          "source_locator": {
+            "pdf_page": 15,
+            "section": "3 / Flow matching and simulation-free approaches",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "归纳了通过度量改变流匹配几何的路线。",
+        "boundary": "改善是定性转述而不是独立验证。",
+        "negative_result": null,
+        "non_inference": "几何忠实不等于真实谱系、因果机制或普遍精度优势。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "选择度量如何改变Flow Matching路径几何？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "只依据本篇综述所供文字；被引论文未读取，不能视为本文新做的实验或独立复现。",
+        "本文未报告此记录的实际独立n或统计不确定性，均保留null。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C19",
+      "statement": "综述指出细胞群体动态不仅涉及状态输运，还可纳入增殖和死亡引起的群体增长变化；TIGON 被表2列为非平衡输运的群体动态示例，但本文没有实测或验证任何生长死亡率。",
+      "claim_type": "population_growth_and_loss",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "TIGON方法分类",
+          "design": "将群体动态与非平衡输运联系",
+          "comparator": null,
+          "measure": "非平衡群体动力学",
+          "unit_of_analysis": "方法条目；非独立重复",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "2 / Methodological overview",
+            "figure": "Table 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "群体增长的文献转述",
+          "design": "说明OT路线也可近似增长",
+          "comparator": null,
+          "measure": "群体增长的模型表达",
+          "unit_of_analysis": "模型；无独立n",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "3 / Continuous normalizing flows and ODE-based generative models",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "增长死亡与动态的综合",
+          "design": "讨论模型纳入发展中增长和死亡",
+          "comparator": "只建状态变化、不建质量变化的概念参照",
+          "measure": "群体质量及状态变化",
+          "unit_of_analysis": "模型类别；无本文细胞计数或重复",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "模型质量变化须与真实增长及采样比例区分"
+          ],
+          "source_locator": {
+            "pdf_page": 15,
+            "section": "3 / Stochasticity and noise in single-cell dynamics",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "归纳了联合表达状态与群体增减的建模目标。",
+        "boundary": "不能将所有列举方法等同为同一随机模型；本文无增长率验证。",
+        "negative_result": null,
+        "non_inference": "模型增长参数或输运质量变化不自动等于真实增殖死亡率。",
+        "unresolved": "生物增减与采样差异的分离需额外设计。",
+        "unresolved_attribution": "本文没有提供相应识别证据"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "状态输运与群体增长死亡怎样区分并联合建模？"
+      ],
+      "shared_evidence_with": [
+        "C14"
+      ],
+      "review_notes": [
+        "只依据本篇综述所供文字；被引论文未读取，不能视为本文新做的实验或独立复现。",
+        "本文未报告此记录的实际独立n或统计不确定性，均保留null。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C20",
+      "statement": "综述把 Neural ODE 及相关连续时间扩展的用途归纳到不规则医疗时间序列、药代动力学、心脏动态及反事实治疗建模，并列举 Neural CDE、LHM、LNODE、Neural ODE-PK 和 TE-CDE 等路线；这不是本文开展的临床验证。",
+      "claim_type": "computational_health_applications",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "应用表与正文综合",
+          "design": "列举监测、药物反应和生物系统的方法用途",
+          "comparator": null,
+          "measure": "任务范围及专家知识或反事实模型用途",
+          "unit_of_analysis": "应用类别；无本文患者、动物或队列n",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "框架需适合数据与任务",
+            "反事实解释依赖因果假设和研究设计"
+          ],
+          "source_locator": {
+            "pdf_page": 16,
+            "section": "4 Challenges / Beyond single-cell genomics",
+            "figure": "Table 3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "跨领域概念示意",
+          "design": "图注区分数据流形与支配动态规律，并列药代和医疗用途",
+          "comparator": null,
+          "measure": "模型类型及应用范围",
+          "unit_of_analysis": "概念图；非独立样本",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "3 Dynamic modeling from time-resolved datasets",
+            "figure": "Fig. 4",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "综述说明连续时间动态框架有超出单细胞的应用范围。",
+        "boundary": "表3称LNODE用于心衰进展，参考文献[74]标题只直接说明全心电机械模拟；仅保留较宽心脏动态范围。",
+        "negative_result": null,
+        "non_inference": "方法清单不能证明临床收益、治疗因果效应、安全性或生物验证。",
+        "unresolved": "异质数据整合与机制解释仍有挑战；具体LNODE归类待核对。",
+        "unresolved_attribution": "第4节及源内表格和参考标题的范围差异"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "连续时间模型如何适配医疗、药代及反事实任务？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "只依据本篇综述所供文字；被引论文未读取，不能视为本文新做的实验或独立复现。",
+        "本文未报告此记录的实际独立n或统计不确定性，均保留null。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C21",
+      "statement": "作者认为，扰动预测和未来细胞状态预测的评估应超出训练区间插值，检验模型是否捕捉支配动态；缺少真实规律的 ground truth 及多种 out-of-distribution 定义，使这种评估仍未得到本文的实验解决。",
+      "claim_type": "evaluation_scope_interpretation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "作者对泛化目标的论述",
+          "design": "以扰动和未来状态说明插值不足",
+          "comparator": "训练范围内插值与范围外动态预测",
+          "measure": "是否掌握规律而非过拟合",
+          "unit_of_analysis": "评价原则；无本文比较实验",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 15,
+            "section": "4 Challenges / Second challenge",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "OOD评估限制与建议",
+          "design": "强调缺少ground truth及多种OOD定义",
+          "comparator": null,
+          "measure": "稳健外推评价目标",
+          "unit_of_analysis": "研究问题；非结果",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 16,
+            "section": "4 Challenges / Second challenge continued",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者提出按目标任务检验泛化的原则。",
+        "boundary": "这是方法学判断，不是某模型已泛化的证明。",
+        "negative_result": null,
+        "non_inference": "插值误差或模拟预测输出不能证明模型掌握真实规律。",
+        "unresolved": "合适OOD定义与真实规律评价指标尚未确定。",
+        "unresolved_attribution": "作者第4节的未解决问题"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "怎样区分插值拟合与扰动或未来状态的规律泛化？"
+      ],
+      "shared_evidence_with": [
+        "C22"
+      ],
+      "review_notes": [
+        "只依据本篇综述所供文字；被引论文未读取，不能视为本文新做的实验或独立复现。",
+        "本文未报告此记录的实际独立n或统计不确定性，均保留null。",
+        "不将评价建议标为原创结果。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C22",
+      "statement": "作者展望，将 optimal transport、经典动力学与调控生物学先验结合，可能改善细胞动态的稳健学习和机制解释，并支持更可信的 in-silico 扰动预测；本文未验证这种组合足以识别因果或稳健外推。",
+      "claim_type": "hybrid_modeling_outlook",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "联合范式的作者展望",
+          "design": "提出综合OT、经典动态与生物先验",
+          "comparator": null,
+          "measure": "预期的优化、稳健性与解释性",
+          "unit_of_analysis": "研究设想；无实现或实验",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "需有效优化与合适先验",
+            "因果识别还需额外干预及条件"
+          ],
+          "source_locator": {
+            "pdf_page": 16,
+            "section": "5 Conclusion and Outlook",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "因果动态与模拟预测展望",
+          "design": "设想可靠规律支持生物读出预测",
+          "comparator": null,
+          "measure": "预期机制理解与in-silico预测",
+          "unit_of_analysis": "研究方向；非已验证结果",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 17,
+            "section": "5 Conclusion and Outlook",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提出综合建模优势的未来假设。",
+        "boundary": "未给完整联合算法、实验或充分识别条件。",
+        "negative_result": null,
+        "non_inference": "有潜力不能改写成已识别机制、已准确预测扰动或已生物验证。",
+        "unresolved": "什么组合和数据能改善因果与OOD能力仍待检验。",
+        "unresolved_attribution": "作者第5节前瞻论述"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "联合OT、动态建模和生物先验能否改善机制解释及扰动外推？"
+      ],
+      "shared_evidence_with": [
+        "C21"
+      ],
+      "review_notes": [
+        "只依据本篇综述所供文字；被引论文未读取，不能视为本文新做的实验或独立复现。",
+        "本文未报告此记录的实际独立n或统计不确定性，均保留null。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C23",
+      "statement": "作者把大规模细胞动态模型列为未来方向，认为 Neural ODE 等连续动力学方法可能补充目前偏静态的单细胞 foundation models；本文没有构建或评测这种细胞动态基础模型。",
+      "claim_type": "dynamic_foundation_model_outlook",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "动态基础模型的作者展望",
+          "design": "通过动态世界模型类比提出细胞动态方向",
+          "comparator": "当前偏静态的单细胞基础模型仅为论述参照",
+          "measure": "潜在的大规模动态表征与生成",
+          "unit_of_analysis": "研究设想；无规模、样本或评测n",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "跨领域类比不能作为细胞模型验证证据"
+          ],
+          "source_locator": {
+            "pdf_page": 17,
+            "section": "5 Conclusion and Outlook",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提出从静态表征走向细胞动态基础模型的方向。",
+        "boundary": "无实现、预训练方案或生物实验。",
+        "negative_result": null,
+        "non_inference": "视频世界模型能力不证明细胞动态或机制正确性，也不建立跨论文支持。",
+        "unresolved": "所需时间数据、训练任务及验证标准待设计。",
+        "unresolved_attribution": "作者第5节未来语气"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "representation-coding",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "细胞动态基础模型需要什么时间数据和评价目标？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "只依据本篇综述所供文字；被引论文未读取，不能视为本文新做的实验或独立复现。",
+        "本文未报告此记录的实际独立n或统计不确定性，均保留null。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "该文是2026年接受、未经最终编辑的Communications Biology综述，题名、作者与DOI和分配条目一致。已评估31页全部所供文本、五张图的主文图注、三张方法表、附录声明、82条参考文献及末尾图OCR。主线是区分破坏性快照、真实时间与pseudotime，说明Neural ODE向量场框架，并综合调控先验、潜在表示、离散OT、连续normalizing flow、Flow Matching和随机桥。提取20条review_synthesis、1条interpretation、2条hypothesis，没有本文原创实验或可独立确认的实际阴性结果。每条保留对象、条件、读出、未报告独立n与统计边界，区分拟合、因果识别和未来外推。第二轮源内审计限定免模拟训练、OT直线路径及非平衡质量的含义，避免补造生物机制、性能倍率或临床验证。FLeCS表1引文、LNODE表3任务范围与图OCR仍需人工核对，显式记录而不强行修正。未查看像素、未提供补充材料或被引原文；未建立跨论文关系、未更新数据库，均为未人工核查的候选。",
+  "shared_evidence": [
+    {
+      "claim_id": "C3",
+      "with": [
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C8"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C3"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C5"
+      ]
+    },
+    {
+      "claim_id": "C13",
+      "with": [
+        "C15"
+      ]
+    },
+    {
+      "claim_id": "C14",
+      "with": [
+        "C15",
+        "C19"
+      ]
+    },
+    {
+      "claim_id": "C15",
+      "with": [
+        "C13",
+        "C14"
+      ]
+    },
+    {
+      "claim_id": "C19",
+      "with": [
+        "C14"
+      ]
+    },
+    {
+      "claim_id": "C21",
+      "with": [
+        "C22"
+      ]
+    },
+    {
+      "claim_id": "C22",
+      "with": [
+        "C21"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": null,
+        "issue": "索引work_type=article，但正文和Appendix C明确为综述。",
+        "suggested_correction": "输出review，保留论文身份，不把被引实验当作本论文独立实验。",
+        "pdf_page": 18,
+        "resolved": true
+      },
+      {
+        "claim_id": "C7",
+        "issue": "Table 1的FLeCS标[14]，主文为[61]；参考文献[14]题名为D-CODE，[61]为基因网络动态模型。",
+        "suggested_correction": "保留可直接确认的主文方法描述，披露引文编号差异；人工核对，原PDF和共享元数据不改。",
+        "pdf_page": 4,
+        "resolved": false
+      },
+      {
+        "claim_id": "C20",
+        "issue": "Table 3称LNODE用于心衰进展，[74]题名却为全心电机械模拟；源文未给判断具体疾病进展任务的证据。",
+        "suggested_correction": "只提取可确认的心脏动态宽范围，不断言疾病预测或临床疗效；具体归类待人工核对。",
+        "pdf_page": 16,
+        "resolved": false
+      },
+      {
+        "claim_id": null,
+        "issue": "末尾图内OCR包含Ce&&s、ODEYSolve及乱码方法名，有些方法只见于图中文字。",
+        "suggested_correction": "优先完整主文和图注，未提供像素则不补造图的结果、方法细节或性能。",
+        "pdf_page": 29,
+        "resolved": false
+      },
+      {
+        "claim_id": "C6",
+        "issue": "RegVelo预测更好的转述没有完整比较对象、独立n或统计。",
+        "suggested_correction": "保留联合框架及定性转述边界，不独立提取量化优越性或生物验证。",
+        "pdf_page": 10,
+        "resolved": true
+      },
+      {
+        "claim_id": "C8",
+        "issue": "时间方向性和ODE/SCM形式表述不能自动提供因果识别，源文另讨论非可识别性、混杂和反馈。",
+        "suggested_correction": "保留识别的额外假设与干预信息，将模型结构和真实因果关系分离。",
+        "pdf_page": 15,
+        "resolved": true
+      },
+      {
+        "claim_id": "C13",
+        "issue": "mini-batch OT与直线仅为本文介绍的构造；免模拟可能误扩展到推断全过程。",
+        "suggested_correction": "限定为该OT型训练方案，不推断所有Flow Matching使用OT直线或推断免求解。",
+        "pdf_page": 14,
+        "resolved": true
+      },
+      {
+        "claim_id": "C19",
+        "issue": "增长死亡与随机动态相邻讨论，不足以断言所有方法使用同一随机过程或非平衡质量是真实生长率。",
+        "suggested_correction": "只提取状态与质量变化的模型目标，未报告增长率和验证不补造。",
+        "pdf_page": 15,
+        "resolved": true
+      },
+      {
+        "claim_id": "C22",
+        "issue": "稳健因果学习、模拟扰动和大规模模型是展望而非结果。",
+        "suggested_correction": "C22/C23使用hypothesis，C21用interpretation，明确未在本文验证。",
+        "pdf_page": 17,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "同一综述段落被多条记录复用，实际独立n和统计未报告；不能用方法清单补全机制与性能推论。",
+        "suggested_correction": "n与uncertainty均null，negative_result均null；保持共享证据而无跨论文关系。",
+        "pdf_page": null,
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T14:54:54.989407Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "774b8e04e491ba5544f9452f469d185b3df912fd69a8846103cfb563af899953",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

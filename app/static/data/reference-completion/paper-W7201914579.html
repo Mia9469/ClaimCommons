@@ -1,0 +1,292 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SJEPA: Learning Elegant Latent Dynamics with Hybrid Symbolic-Neural Predictors</title><style>body{max-width:940px;margin:40px auto;padding:0 24px;background:#fffdf7;color:#12372f;font:16px/1.8 Georgia,serif}h1{font-size:26px;line-height:1.4}h2{font-size:20px;line-height:1.5}h3{font-size:16px}article{padding:26px 0;border-top:1px solid #bec4b8}small{color:#68766e}dl{display:grid;grid-template-columns:120px 1fr;gap:8px 20px}dt{font-weight:bold}dd{margin:0}li{padding:8px 0}p,dd{overflow-wrap:anywhere}.note{background:#eef2e2;padding:14px;border-left:3px solid #738968}summary{cursor:pointer}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.7 monospace}@media(max-width:600px){body{margin:24px auto;padding:0 18px}dl{grid-template-columns:1fr;gap:3px}dd{margin-bottom:12px}}@media print{body{margin:0;background:white}details{display:block}}</style><link rel="stylesheet" href="../../commons-v02.css?v=20261020-1"><link rel="stylesheet" href="../../examples.css?v=20260928-2"><link rel="stylesheet" href="../../site.css?v=20261020-1"><script defer src="../../site.js?v=20261020-1"></script><script defer src="../../report-ui.js?v=20261020-1"></script></head><body class="portal-page report-page" data-cc-report-shell="1" data-page="library" data-site-prefix="../../" data-library-paper="paper-W7201914579" data-report-language="zh" data-claim-records="{&quot;C1&quot;:&quot;structured-paper-W7201914579-1&quot;,&quot;C2&quot;:&quot;structured-paper-W7201914579-2&quot;,&quot;C3&quot;:&quot;structured-paper-W7201914579-3&quot;,&quot;C4&quot;:&quot;structured-paper-W7201914579-4&quot;,&quot;C5&quot;:&quot;structured-paper-W7201914579-5&quot;,&quot;C6&quot;:&quot;structured-paper-W7201914579-6&quot;,&quot;C7&quot;:&quot;structured-paper-W7201914579-7&quot;,&quot;C8&quot;:&quot;structured-paper-W7201914579-8&quot;,&quot;C9&quot;:&quot;structured-paper-W7201914579-9&quot;,&quot;C10&quot;:&quot;structured-paper-W7201914579-10&quot;,&quot;C11&quot;:&quot;structured-paper-W7201914579-11&quot;,&quot;C12&quot;:&quot;structured-paper-W7201914579-12&quot;,&quot;C13&quot;:&quot;structured-paper-W7201914579-13&quot;,&quot;C14&quot;:&quot;structured-paper-W7201914579-14&quot;,&quot;C15&quot;:&quot;structured-paper-W7201914579-15&quot;,&quot;C16&quot;:&quot;structured-paper-W7201914579-16&quot;,&quot;C17&quot;:&quot;structured-paper-W7201914579-17&quot;,&quot;C18&quot;:&quot;structured-paper-W7201914579-18&quot;,&quot;C19&quot;:&quot;structured-paper-W7201914579-19&quot;,&quot;C20&quot;:&quot;structured-paper-W7201914579-20&quot;}"><header></header><main id="report-content"><div id="report-tools"></div><small>CLAIM COMMONS / 阅读报告</small><h1>SJEPA: Learning Elegant Latent Dynamics with Hybrid Symbolic-Neural Predictors</h1><p class="note">AI 文本提取候选，尚待人工核对。图像像素未读取；PDF 页码指文件中的页序。</p><p>完整42页含所有A–E附录与proofs。20条候选覆盖相对operator复杂度、坐标/分解nonidentifiability、共同前提collapse theorem、conditional residual shrinkage/rollout/MAP及两个合成摆实验。joint比post-hoc简洁并有较低clipped rollout，仍不及Neural JEPA accuracy且物理affine对齐更差；collapse诊断非matched RIB-only；Rcorr分配收益伴随one-step/OOD trade-off。实际3seeds固定合成数据，不证明真实世界物理law、Bayesian calibration或control收益，compute预算与引用问题保留。</p><a href="https://arxiv.org/pdf/2608.04060" rel="noreferrer">查看所读原文版本 ↗</a><details><summary>贡献清单与处理决定</summary><ul><li><b>SJEPA将representation admissibility与operator complexity分开，以固定grammar/primitive weights、latent scale、correction class和数据分布定义最简adequate dynamics；该复杂度不是物理系统坐标不变量。</b><br>include · 独立且保留联合条件的理论/方法、各控制实验读出或明确尚未验证扩展。</li><li><b>若同一encoder的context→target关系精确成立，任意bijection h与conjugate predictor h∘F∘h⁻¹仍精确预测；因此prediction alone不唯一识别latent coordinates，symbolic complexity可变化。</b><br>include · 独立且保留联合条件的理论/方法、各控制实验读出或明确尚未验证扩展。</li><li><b>无representation约束时，若encoder含constant map、predictor含对全部side-info保持z₀的fixed point且达到最小operator penalty，所有项非负且d(z₀,z₀)=0，则collapsed tuple是全局minimizer。</b><br>include · 独立且保留联合条件的理论/方法、各控制实验读出或明确尚未验证扩展。</li><li><b>symbolic F与correction c可通过(F+r,c−r)保持相同预测，只要两函数仍在各自class；预测风险不能唯一确定mechanism allocation，penalties只添加建模偏好。</b><br>include · 独立且保留联合条件的理论/方法、各控制实验读出或明确尚未验证扩展。</li><li><b>固定encoders和symbolic F、所有square-integrable corrections及λ&gt;0时，squared error加λE||c||²的最优c=(E[ZT|ZC,ε]−F)/(1+λ)，正则只缩小剩余条件均值。</b><br>include · 独立且保留联合条件的理论/方法、各控制实验读出或明确尚未验证扩展。</li><li><b>若learned transition对相同actions均L-Lipschitz且全部相关states上一步误差uniform≤δ，rollout递推eₕ₊₁≤δ+Leₕ；短一步均值误差和symbolic简洁本身不保证long-horizon stability。</b><br>include · 独立且保留联合条件的理论/方法、各控制实验读出或明确尚未验证扩展。</li><li><b>条件独立Gaussian transitions、固定Σ=σ²I&gt;0、proper complexity prior与extrema存在时，MAP等价最小squared risk/(2σ²)+γΩ−log coefficient prior。</b><br>include · 独立且保留联合条件的理论/方法、各控制实验读出或明确尚未验证扩展。</li><li><b>GP correction及finite candidate Bayesian averaging提供结构/系数/残差uncertainty，但posterior依prior/kernel且只条件于筛选candidate set；encoders仍point estimates。</b><br>include · 独立且保留联合条件的理论/方法、各控制实验读出或明确尚未验证扩展。</li><li><b>action-conditioned symbolic/neural predictor可求local Jacobians用于external planner；forward Euler的完整state Jacobian为I+ΔtJvectorfield，不应混同连续时间稳定判据。</b><br>include · 独立且保留联合条件的理论/方法、各控制实验读出或明确尚未验证扩展。</li><li><b>Exp1 joint symbolic SJEPA的weighted complexity4.67±2.49低于post-hoc26.00±3.24；三seeds均选跨z₁/z₂的oscillator-like项，但坐标不同不能逐项比较coefficients或称真实摆变量。</b><br>include · 独立且保留联合条件的理论/方法、各控制实验读出或明确尚未验证扩展。</li><li><b>Exp1 joint相比post-hoc的clipped physical rollout MSE：test0.467±0.222对1.229±0.709，OOD3.435±1.394对9.262±4.021；OOD divergence0.017±0.024对0.178±0.143。</b><br>include · 独立且保留联合条件的理论/方法、各控制实验读出或明确尚未验证扩展。</li><li><b>同Exp1 Neural JEPA的test rollout0.180±0.066、OOD2.376±1.433、OOD divergence0，比joint symbolic的reported数值更好；简洁性收益未同时超越flexible neural预测。</b><br>include · 独立且保留联合条件的理论/方法、各控制实验读出或明确尚未验证扩展。</li><li><b>Exp1 joint的test affine-state probe R²0.293±0.154低于Neural/post-hoc0.814±0.063，affine one-step state MSE0.647±0.141也较高；简单latent dynamics不保证简单物理对齐。</b><br>include · 独立且保留联合条件的理论/方法、各控制实验读出或明确尚未验证扩展。</li><li><b>去掉RIB及rollout监督的one-step诊断在3seeds产生zero vector field/identity transition，std0.0137±0.0023、trace约6.53×10⁻⁴及极低latent MSE；constant nonzero control更接近完全collapse。</b><br>include · 独立且保留联合条件的理论/方法、各控制实验读出或明确尚未验证扩展。</li><li><b>Exp2直接使用z=(q,p)并提供output-specific完整grammar后，3seeds选三项且系数p0.9830±0.0005、−sin(q)0.9553±0.0010、−p|p|0.3724±0.0007，接近true1/−1/−0.4。</b><br>include · 独立且保留联合条件的理论/方法、各控制实验读出或明确尚未验证扩展。</li><li><b>incomplete grammar缺drag时regularised hybrid将test/OOD rollout降至0.0671±0.0034/0.1045±0.0031，相比incomplete symbolic1.280±0.008/1.274±0.006明显更低。</b><br>include · 独立且保留联合条件的理论/方法、各控制实验读出或明确尚未验证扩展。</li><li><b>匹配两hybrid只改变Rcorr时，regularised保留p0.9581、−sin coefficient0.7942；unregularised缩至0.3324/0.1718；ρcorr从0.555变0.0627，抑制correction接管可符号表达部分。</b><br>include · 独立且保留联合条件的理论/方法、各控制实验读出或明确尚未验证扩展。</li><li><b>training scalar calibration后的regularised correction在heldout total p-residual R²=.9937、isolated drag R²=.9011，比unregularised .9532/.1885更对齐；total residual含symbolic coefficient误差而不只遗漏drag。</b><br>include · 独立且保留联合条件的理论/方法、各控制实验读出或明确尚未验证扩展。</li><li><b>Rcorr并非无条件accuracy提升：regularised one-step state MSE2.474×10⁻⁵及OOD rollout.1045高于unregularised1.888×10⁻⁵/.0778，但test rollout.0671低于.0879。</b><br>include · 独立且保留联合条件的理论/方法、各控制实验读出或明确尚未验证扩展。</li><li><b>AppendixE的Bayesian rollout要求一条trajectory保留同一sampled structure/coefficients/GP，只逐步重采transition noise，以区分model epistemic与aleatoric variation。</b><br>include · 独立且保留联合条件的理论/方法、各控制实验读出或明确尚未验证扩展。</li><li><b>penalised objective与constrained optimisation在convex/Slater下的背景关系，但SJEPA非convex无global equivalence/最简模型恢复保证。</b><br>include · 作为所有operator compression理论/训练命题的适用边界，不作独立新convergence theorem。</li><li><b>foundation visual/world-model、causal scientific laws、posterior calibration/sample-efficient planning/control获益。</b><br>defer · 作者明示future work，不能从两个合成摆实验推出。</li><li><b>相关JEPA、SINDy、Koopman、IB背景文献。</b><br>exclude · 全部评估，背景及引用不是本文新实验/独立复现。</li></ul></details><article><small>C1 / 直接结果 · conditional_theory_or_formulation</small><h2>SJEPA将representation admissibility与operator complexity分开，以固定grammar/primitive weights、latent scale、correction class和数据分布定义最简adequate dynamics；该复杂度不是物理系统坐标不变量。</h2><h3>Evidence</h3><p>4.1–4.3; AppendixA</p><dl><dt>设计 / 对照</dt><dd>解析推导/作者扩展formulation，全部proof/assumptions已读；原/变换坐标、固定/可变函数class、相应条件模型</dd><dt>独立单位与 n</dt><dd>数学对象与假设，无新实验单位；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 8 · 4.1–4.3; AppendixA</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>SJEPA将representation admissibility与operator complexity分开，以固定grammar/primitive weights、latent scale、correction class和数据分布定义最简adequate dynamics；该复杂度不是物理系统坐标不变量。</dd><dt>适用边界</dt><dd>固定prediction tolerance及informative/noncollapsed尺度约束；不等于无条件最短方程</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>固定prediction tolerance及informative/noncollapsed尺度约束；不等于无条件最短方程</dd><dt>未解决</dt><dd>更广真实数据/视觉、pretrained encoders、matched budgets、Bayesian calibration及control utility未验证。</dd></dl><h3>相关问题</h3><ul><li>怎样在非塌缩预测坐标中获得简洁动力学并控制符号/神经残差分配？</li></ul></article><article><small>C2 / 直接结果 · conditional_theory_or_formulation</small><h2>若同一encoder的context→target关系精确成立，任意bijection h与conjugate predictor h∘F∘h⁻¹仍精确预测；因此prediction alone不唯一识别latent coordinates，symbolic complexity可变化。</h2><h3>Evidence</h3><p>Prop4.4; ProofB1.1 PDF30</p><dl><dt>设计 / 对照</dt><dd>解析推导/作者扩展formulation，全部proof/assumptions已读；原/变换坐标、固定/可变函数class、相应条件模型</dd><dt>独立单位与 n</dt><dd>数学对象与假设，无新实验单位；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 8 · Prop4.4; ProofB1.1 PDF30</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>若同一encoder的context→target关系精确成立，任意bijection h与conjugate predictor h∘F∘h⁻¹仍精确预测；因此prediction alone不唯一识别latent coordinates，symbolic complexity可变化。</dd><dt>适用边界</dt><dd>h双射、原关系almost surely、转换函数可表达；不保证finite模型类闭合或物理变量恢复</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>h双射、原关系almost surely、转换函数可表达；不保证finite模型类闭合或物理变量恢复</dd><dt>未解决</dt><dd>更广真实数据/视觉、pretrained encoders、matched budgets、Bayesian calibration及control utility未验证。</dd></dl><h3>相关问题</h3><ul><li>怎样在非塌缩预测坐标中获得简洁动力学并控制符号/神经残差分配？</li></ul></article><article><small>C3 / 直接结果 · conditional_theory_or_formulation</small><h2>无representation约束时，若encoder含constant map、predictor含对全部side-info保持z₀的fixed point且达到最小operator penalty，所有项非负且d(z₀,z₀)=0，则collapsed tuple是全局minimizer。</h2><h3>Evidence</h3><p>Prop4.5; ProofB1.2</p><dl><dt>设计 / 对照</dt><dd>解析推导/作者扩展formulation，全部proof/assumptions已读；原/变换坐标、固定/可变函数class、相应条件模型</dd><dt>独立单位与 n</dt><dd>数学对象与假设，无新实验单位；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 9 · Prop4.5; ProofB1.2</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>无representation约束时，若encoder含constant map、predictor含对全部side-info保持z₀的fixed point且达到最小operator penalty，所有项非负且d(z₀,z₀)=0，则collapsed tuple是全局minimizer。</dd><dt>适用边界</dt><dd>共同条件缺一不可；只证明存在最优degenerate解，不保证任意训练都到该解</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>共同条件缺一不可；只证明存在最优degenerate解，不保证任意训练都到该解</dd><dt>未解决</dt><dd>更广真实数据/视觉、pretrained encoders、matched budgets、Bayesian calibration及control utility未验证。</dd></dl><h3>相关问题</h3><ul><li>怎样在非塌缩预测坐标中获得简洁动力学并控制符号/神经残差分配？</li></ul></article><article><small>C4 / 直接结果 · conditional_theory_or_formulation</small><h2>symbolic F与correction c可通过(F+r,c−r)保持相同预测，只要两函数仍在各自class；预测风险不能唯一确定mechanism allocation，penalties只添加建模偏好。</h2><h3>Evidence</h3><p>Prop4.6; B2.1</p><dl><dt>设计 / 对照</dt><dd>解析推导/作者扩展formulation，全部proof/assumptions已读；原/变换坐标、固定/可变函数class、相应条件模型</dd><dt>独立单位与 n</dt><dd>数学对象与假设，无新实验单位；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 9 · Prop4.6; B2.1</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>symbolic F与correction c可通过(F+r,c−r)保持相同预测，只要两函数仍在各自class；预测风险不能唯一确定mechanism allocation，penalties只添加建模偏好。</dd><dt>适用边界</dt><dd>函数class允许对应r转移；不推出任意物理/因果分解的identifiability</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>函数class允许对应r转移；不推出任意物理/因果分解的identifiability</dd><dt>未解决</dt><dd>更广真实数据/视觉、pretrained encoders、matched budgets、Bayesian calibration及control utility未验证。</dd></dl><h3>相关问题</h3><ul><li>怎样在非塌缩预测坐标中获得简洁动力学并控制符号/神经残差分配？</li></ul></article><article><small>C5 / 直接结果 · conditional_theory_or_formulation</small><h2>固定encoders和symbolic F、所有square-integrable corrections及λ&gt;0时，squared error加λE||c||²的最优c=(E[ZT|ZC,ε]−F)/(1+λ)，正则只缩小剩余条件均值。</h2><h3>Evidence</h3><p>Prop4.7; B2.2 PDF30</p><dl><dt>设计 / 对照</dt><dd>解析推导/作者扩展formulation，全部proof/assumptions已读；原/变换坐标、固定/可变函数class、相应条件模型</dd><dt>独立单位与 n</dt><dd>数学对象与假设，无新实验单位；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 10 · Prop4.7; B2.2 PDF30</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>固定encoders和symbolic F、所有square-integrable corrections及λ&gt;0时，squared error加λE||c||²的最优c=(E[ZT|ZC,ε]−F)/(1+λ)，正则只缩小剩余条件均值。</dd><dt>适用边界</dt><dd>F/坐标固定、有限二阶矩、无额外parameter-capacity penalty；不直接套joint有限网络训练</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>F/坐标固定、有限二阶矩、无额外parameter-capacity penalty；不直接套joint有限网络训练</dd><dt>未解决</dt><dd>更广真实数据/视觉、pretrained encoders、matched budgets、Bayesian calibration及control utility未验证。</dd></dl><h3>相关问题</h3><ul><li>怎样在非塌缩预测坐标中获得简洁动力学并控制符号/神经残差分配？</li></ul></article><article><small>C6 / 直接结果 · conditional_theory_or_formulation</small><h2>若learned transition对相同actions均L-Lipschitz且全部相关states上一步误差uniform≤δ，rollout递推eₕ₊₁≤δ+Leₕ；短一步均值误差和symbolic简洁本身不保证long-horizon stability。</h2><h3>Evidence</h3><p>Prop4.8; B3.1 PDF31</p><dl><dt>设计 / 对照</dt><dd>解析推导/作者扩展formulation，全部proof/assumptions已读；原/变换坐标、固定/可变函数class、相应条件模型</dd><dt>独立单位与 n</dt><dd>数学对象与假设，无新实验单位；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 10 · Prop4.8; B3.1 PDF31</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>若learned transition对相同actions均L-Lipschitz且全部相关states上一步误差uniform≤δ，rollout递推eₕ₊₁≤δ+Leₕ；短一步均值误差和symbolic简洁本身不保证long-horizon stability。</dd><dt>适用边界</dt><dd>uniform bound非empirical MSE；同conditioning、覆盖真实/预测访问states；L可≥1</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>uniform bound非empirical MSE；同conditioning、覆盖真实/预测访问states；L可≥1</dd><dt>未解决</dt><dd>更广真实数据/视觉、pretrained encoders、matched budgets、Bayesian calibration及control utility未验证。</dd></dl><h3>相关问题</h3><ul><li>怎样在非塌缩预测坐标中获得简洁动力学并控制符号/神经残差分配？</li></ul></article><article><small>C7 / 直接结果 · conditional_theory_or_formulation</small><h2>条件独立Gaussian transitions、固定Σ=σ²I&gt;0、proper complexity prior与extrema存在时，MAP等价最小squared risk/(2σ²)+γΩ−log coefficient prior。</h2><h3>Evidence</h3><p>Theorem6.1; B3.2</p><dl><dt>设计 / 对照</dt><dd>解析推导/作者扩展formulation，全部proof/assumptions已读；原/变换坐标、固定/可变函数class、相应条件模型</dd><dt>独立单位与 n</dt><dd>数学对象与假设，无新实验单位；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 13 · Theorem6.1; B3.2</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>条件独立Gaussian transitions、固定Σ=σ²I&gt;0、proper complexity prior与extrema存在时，MAP等价最小squared risk/(2σ²)+γΩ−log coefficient prior。</dd><dt>适用边界</dt><dd>所有Gaussian/independence/fixed covariance/proper prior条件保留，非joint非凸constrained objective等价定理</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>所有Gaussian/independence/fixed covariance/proper prior条件保留，非joint非凸constrained objective等价定理</dd><dt>未解决</dt><dd>更广真实数据/视觉、pretrained encoders、matched budgets、Bayesian calibration及control utility未验证。</dd></dl><h3>相关问题</h3><ul><li>怎样在非塌缩预测坐标中获得简洁动力学并控制符号/神经残差分配？</li></ul></article><article><small>C8 / 假说 / 预测 · conditional_theory_or_formulation</small><h2>GP correction及finite candidate Bayesian averaging提供结构/系数/残差uncertainty，但posterior依prior/kernel且只条件于筛选candidate set；encoders仍point estimates。</h2><h3>Evidence</h3><p>6.2; AppendixE1–E2</p><dl><dt>设计 / 对照</dt><dd>解析推导/作者扩展formulation，全部proof/assumptions已读；原/变换坐标、固定/可变函数class、相应条件模型</dd><dt>独立单位与 n</dt><dd>数学对象与假设，无新实验单位；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 40 · 6.2; AppendixE1–E2</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>GP correction及finite candidate Bayesian averaging提供结构/系数/残差uncertainty，但posterior依prior/kernel且只条件于筛选candidate set；encoders仍point estimates。</dd><dt>适用边界</dt><dd>候选生成/evidence split分开、proper priors/positive covariance；未评估posterior calibration或fullgrammar精确posterior</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>候选生成/evidence split分开、proper priors/positive covariance；未评估posterior calibration或fullgrammar精确posterior</dd><dt>未解决</dt><dd>更广真实数据/视觉、pretrained encoders、matched budgets、Bayesian calibration及control utility未验证。</dd></dl><h3>相关问题</h3><ul><li>怎样在非塌缩预测坐标中获得简洁动力学并控制符号/神经残差分配？</li></ul></article><article><small>C9 / 直接结果 · conditional_theory_or_formulation</small><h2>action-conditioned symbolic/neural predictor可求local Jacobians用于external planner；forward Euler的完整state Jacobian为I+ΔtJvectorfield，不应混同连续时间稳定判据。</h2><h3>Evidence</h3><p>7; Eqs39–45</p><dl><dt>设计 / 对照</dt><dd>解析推导/作者扩展formulation，全部proof/assumptions已读；原/变换坐标、固定/可变函数class、相应条件模型</dd><dt>独立单位与 n</dt><dd>数学对象与假设，无新实验单位；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 15 · 7; Eqs39–45</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>action-conditioned symbolic/neural predictor可求local Jacobians用于external planner；forward Euler的完整state Jacobian为I+ΔtJvectorfield，不应混同连续时间稳定判据。</dd><dt>适用边界</dt><dd>differentiability/local equilibrium及small perturbation；无新control实验，不保证global controllability/stability或sample efficiency</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>differentiability/local equilibrium及small perturbation；无新control实验，不保证global controllability/stability或sample efficiency</dd><dt>未解决</dt><dd>更广真实数据/视觉、pretrained encoders、matched budgets、Bayesian calibration及control utility未验证。</dd></dl><h3>相关问题</h3><ul><li>怎样在非塌缩预测坐标中获得简洁动力学并控制符号/神经残差分配？</li></ul></article><article><small>C10 / 直接结果 · controlled_simulation_result</small><h2>Exp1 joint symbolic SJEPA的weighted complexity4.67±2.49低于post-hoc26.00±3.24；三seeds均选跨z₁/z₂的oscillator-like项，但坐标不同不能逐项比较coefficients或称真实摆变量。</h2><h3>Evidence</h3><p>Table4; D5.1 PDF37</p><dl><dt>设计 / 对照</dt><dd>RK4 synthetic pendulum，Δt∈{.025,.04,.06}，prediction+10-step train rollout/validation selection；joint/post-hoc/neural、collapse controls、complete/incomplete grammar或λc有无</dd><dt>独立单位与 n</dt><dd>model optimization seed与共享simulated trajectories，非生物或真实世界replication；每experiment300train/80validation/80test/80OOD trajectories，各100transitions；3optimization seeds7/19/37固定data seeds；rollout80steps/60trajectories</dd><dt>不确定性</dt><dd>主表means±SD over3seeds，无显著性检验；rollout clipped，不代表dataset sampling uncertainty</dd><dt>原文位置</dt><dd>PDF 18 · Table4; D5.1 PDF37</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>Exp1 joint symbolic SJEPA的weighted complexity4.67±2.49低于post-hoc26.00±3.24；三seeds均选跨z₁/z₂的oscillator-like项，但坐标不同不能逐项比较coefficients或称真实摆变量。</dd><dt>适用边界</dt><dd>noisy32D含原q/p线性可恢复特征，2Dlatent/有限固定library；joint训练预算更大</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>noisy32D含原q/p线性可恢复特征，2Dlatent/有限固定library；joint训练预算更大</dd><dt>未解决</dt><dd>更广真实数据/视觉、pretrained encoders、matched budgets、Bayesian calibration及control utility未验证。</dd></dl><h3>相关问题</h3><ul><li>怎样在非塌缩预测坐标中获得简洁动力学并控制符号/神经残差分配？</li></ul></article><article><small>C11 / 直接结果 · controlled_simulation_result</small><h2>Exp1 joint相比post-hoc的clipped physical rollout MSE：test0.467±0.222对1.229±0.709，OOD3.435±1.394对9.262±4.021；OOD divergence0.017±0.024对0.178±0.143。</h2><h3>Evidence</h3><p>Table4; Figure2; D3</p><dl><dt>设计 / 对照</dt><dd>RK4 synthetic pendulum，Δt∈{.025,.04,.06}，prediction+10-step train rollout/validation selection；joint/post-hoc/neural、collapse controls、complete/incomplete grammar或λc有无</dd><dt>独立单位与 n</dt><dd>model optimization seed与共享simulated trajectories，非生物或真实世界replication；每experiment300train/80validation/80test/80OOD trajectories，各100transitions；3optimization seeds7/19/37固定data seeds；rollout80steps/60trajectories</dd><dt>不确定性</dt><dd>主表means±SD over3seeds，无显著性检验；rollout clipped，不代表dataset sampling uncertainty</dd><dt>原文位置</dt><dd>PDF 18 · Table4; Figure2; D3</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>Exp1 joint相比post-hoc的clipped physical rollout MSE：test0.467±0.222对1.229±0.709，OOD3.435±1.394对9.262±4.021；OOD divergence0.017±0.024对0.178±0.143。</dd><dt>适用边界</dt><dd>training-fitted affine alignment，80steps/60trajectories；diverged/missing error置100，不是未裁剪误差</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>training-fitted affine alignment，80steps/60trajectories；diverged/missing error置100，不是未裁剪误差</dd><dt>未解决</dt><dd>更广真实数据/视觉、pretrained encoders、matched budgets、Bayesian calibration及control utility未验证。</dd></dl><h3>相关问题</h3><ul><li>怎样在非塌缩预测坐标中获得简洁动力学并控制符号/神经残差分配？</li></ul></article><article><small>C12 / 直接结果 · controlled_simulation_result</small><h2>同Exp1 Neural JEPA的test rollout0.180±0.066、OOD2.376±1.433、OOD divergence0，比joint symbolic的reported数值更好；简洁性收益未同时超越flexible neural预测。</h2><h3>Evidence</h3><p>Table4</p><dl><dt>设计 / 对照</dt><dd>RK4 synthetic pendulum，Δt∈{.025,.04,.06}，prediction+10-step train rollout/validation selection；joint/post-hoc/neural、collapse controls、complete/incomplete grammar或λc有无</dd><dt>独立单位与 n</dt><dd>model optimization seed与共享simulated trajectories，非生物或真实世界replication；每experiment300train/80validation/80test/80OOD trajectories，各100transitions；3optimization seeds7/19/37固定data seeds；rollout80steps/60trajectories</dd><dt>不确定性</dt><dd>主表means±SD over3seeds，无显著性检验；rollout clipped，不代表dataset sampling uncertainty</dd><dt>原文位置</dt><dd>PDF 18 · Table4</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>同Exp1 Neural JEPA的test rollout0.180±0.066、OOD2.376±1.433、OOD divergence0，比joint symbolic的reported数值更好；简洁性收益未同时超越flexible neural预测。</dd><dt>适用边界</dt><dd>只为固定合成摆协议的数值比较，3seeds非显著性结论</dd><dt>实际负结果</dt><dd>joint symbolic未在reported physical rollout/divergence优于Neural JEPA。</dd><dt>不能推出</dt><dd>只为固定合成摆协议的数值比较，3seeds非显著性结论</dd><dt>未解决</dt><dd>更广真实数据/视觉、pretrained encoders、matched budgets、Bayesian calibration及control utility未验证。</dd></dl><h3>相关问题</h3><ul><li>怎样在非塌缩预测坐标中获得简洁动力学并控制符号/神经残差分配？</li></ul></article><article><small>C13 / 直接结果 · controlled_simulation_result</small><h2>Exp1 joint的test affine-state probe R²0.293±0.154低于Neural/post-hoc0.814±0.063，affine one-step state MSE0.647±0.141也较高；简单latent dynamics不保证简单物理对齐。</h2><h3>Evidence</h3><p>Table12</p><dl><dt>设计 / 对照</dt><dd>RK4 synthetic pendulum，Δt∈{.025,.04,.06}，prediction+10-step train rollout/validation selection；joint/post-hoc/neural、collapse controls、complete/incomplete grammar或λc有无</dd><dt>独立单位与 n</dt><dd>model optimization seed与共享simulated trajectories，非生物或真实世界replication；每experiment300train/80validation/80test/80OOD trajectories，各100transitions；3optimization seeds7/19/37固定data seeds；rollout80steps/60trajectories</dd><dt>不确定性</dt><dd>主表means±SD over3seeds，无显著性检验；rollout clipped，不代表dataset sampling uncertainty</dd><dt>原文位置</dt><dd>PDF 38 · Table12</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>Exp1 joint的test affine-state probe R²0.293±0.154低于Neural/post-hoc0.814±0.063，affine one-step state MSE0.647±0.141也较高；简单latent dynamics不保证简单物理对齐。</dd><dt>适用边界</dt><dd>affine probe训练集拟合；非证明完全无state信息或unique nonlinear coordinates</dd><dt>实际负结果</dt><dd>joint符号坐标affine probe更低且aligned one-step error更高。</dd><dt>不能推出</dt><dd>affine probe训练集拟合；非证明完全无state信息或unique nonlinear coordinates</dd><dt>未解决</dt><dd>更广真实数据/视觉、pretrained encoders、matched budgets、Bayesian calibration及control utility未验证。</dd></dl><h3>相关问题</h3><ul><li>怎样在非塌缩预测坐标中获得简洁动力学并控制符号/神经残差分配？</li></ul></article><article><small>C14 / 直接结果 · controlled_simulation_result</small><h2>去掉RIB及rollout监督的one-step诊断在3seeds产生zero vector field/identity transition，std0.0137±0.0023、trace约6.53×10⁻⁴及极低latent MSE；constant nonzero control更接近完全collapse。</h2><h3>Evidence</h3><p>Table5; Figure2; D2–D3</p><dl><dt>设计 / 对照</dt><dd>RK4 synthetic pendulum，Δt∈{.025,.04,.06}，prediction+10-step train rollout/validation selection；joint/post-hoc/neural、collapse controls、complete/incomplete grammar或λc有无</dd><dt>独立单位与 n</dt><dd>model optimization seed与共享simulated trajectories，非生物或真实世界replication；每experiment300train/80validation/80test/80OOD trajectories，各100transitions；3optimization seeds7/19/37固定data seeds；rollout80steps/60trajectories</dd><dt>不确定性</dt><dd>主表means±SD over3seeds，无显著性检验；rollout clipped，不代表dataset sampling uncertainty</dd><dt>原文位置</dt><dd>PDF 19 · Table5; Figure2; D2–D3</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>去掉RIB及rollout监督的one-step诊断在3seeds产生zero vector field/identity transition，std0.0137±0.0023、trace约6.53×10⁻⁴及极低latent MSE；constant nonzero control更接近完全collapse。</dd><dt>适用边界</dt><dd>同时移除两个目标，非only-RIB matched ablation；effective rank或非零affine probe不能代替absolute variance</dd><dt>实际负结果</dt><dd>one-step诊断出现near-collapse而非有效operator discovery。</dd><dt>不能推出</dt><dd>同时移除两个目标，非only-RIB matched ablation；effective rank或非零affine probe不能代替absolute variance</dd><dt>未解决</dt><dd>更广真实数据/视觉、pretrained encoders、matched budgets、Bayesian calibration及control utility未验证。</dd></dl><h3>相关问题</h3><ul><li>怎样在非塌缩预测坐标中获得简洁动力学并控制符号/神经残差分配？</li></ul></article><article><small>C15 / 直接结果 · controlled_simulation_result</small><h2>Exp2直接使用z=(q,p)并提供output-specific完整grammar后，3seeds选三项且系数p0.9830±0.0005、−sin(q)0.9553±0.0010、−p|p|0.3724±0.0007，接近true1/−1/−0.4。</h2><h3>Evidence</h3><p>Table6; D5.3 PDF38</p><dl><dt>设计 / 对照</dt><dd>RK4 synthetic pendulum，Δt∈{.025,.04,.06}，prediction+10-step train rollout/validation selection；joint/post-hoc/neural、collapse controls、complete/incomplete grammar或λc有无</dd><dt>独立单位与 n</dt><dd>model optimization seed与共享simulated trajectories，非生物或真实世界replication；每experiment300train/80validation/80test/80OOD trajectories，各100transitions；3optimization seeds7/19/37固定data seeds；rollout80steps/60trajectories</dd><dt>不确定性</dt><dd>主表means±SD over3seeds，无显著性检验；rollout clipped，不代表dataset sampling uncertainty</dd><dt>原文位置</dt><dd>PDF 20 · Table6; D5.3 PDF38</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>Exp2直接使用z=(q,p)并提供output-specific完整grammar后，3seeds选三项且系数p0.9830±0.0005、−sin(q)0.9553±0.0010、−p|p|0.3724±0.0007，接近true1/−1/−0.4。</dd><dt>适用边界</dt><dd>known state、手工限定候选3terms与固定simulator；不是unrestricted未知物理定律发现</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>known state、手工限定候选3terms与固定simulator；不是unrestricted未知物理定律发现</dd><dt>未解决</dt><dd>更广真实数据/视觉、pretrained encoders、matched budgets、Bayesian calibration及control utility未验证。</dd></dl><h3>相关问题</h3><ul><li>怎样在非塌缩预测坐标中获得简洁动力学并控制符号/神经残差分配？</li></ul></article><article><small>C16 / 直接结果 · controlled_simulation_result</small><h2>incomplete grammar缺drag时regularised hybrid将test/OOD rollout降至0.0671±0.0034/0.1045±0.0031，相比incomplete symbolic1.280±0.008/1.274±0.006明显更低。</h2><h3>Evidence</h3><p>Table6</p><dl><dt>设计 / 对照</dt><dd>RK4 synthetic pendulum，Δt∈{.025,.04,.06}，prediction+10-step train rollout/validation selection；joint/post-hoc/neural、collapse controls、complete/incomplete grammar或λc有无</dd><dt>独立单位与 n</dt><dd>model optimization seed与共享simulated trajectories，非生物或真实世界replication；每experiment300train/80validation/80test/80OOD trajectories，各100transitions；3optimization seeds7/19/37固定data seeds；rollout80steps/60trajectories</dd><dt>不确定性</dt><dd>主表means±SD over3seeds，无显著性检验；rollout clipped，不代表dataset sampling uncertainty</dd><dt>原文位置</dt><dd>PDF 20 · Table6</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>incomplete grammar缺drag时regularised hybrid将test/OOD rollout降至0.0671±0.0034/0.1045±0.0031，相比incomplete symbolic1.280±0.008/1.274±0.006明显更低。</dd><dt>适用边界</dt><dd>same known-state摆及bounded finite correction；latent one-step不替代rollout，未推其他动力系统</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>same known-state摆及bounded finite correction；latent one-step不替代rollout，未推其他动力系统</dd><dt>未解决</dt><dd>更广真实数据/视觉、pretrained encoders、matched budgets、Bayesian calibration及control utility未验证。</dd></dl><h3>相关问题</h3><ul><li>怎样在非塌缩预测坐标中获得简洁动力学并控制符号/神经残差分配？</li></ul></article><article><small>C17 / 直接结果 · controlled_simulation_result</small><h2>匹配两hybrid只改变Rcorr时，regularised保留p0.9581、−sin coefficient0.7942；unregularised缩至0.3324/0.1718；ρcorr从0.555变0.0627，抑制correction接管可符号表达部分。</h2><h3>Evidence</h3><p>Table6–7; D5.3</p><dl><dt>设计 / 对照</dt><dd>RK4 synthetic pendulum，Δt∈{.025,.04,.06}，prediction+10-step train rollout/validation selection；joint/post-hoc/neural、collapse controls、complete/incomplete grammar或λc有无</dd><dt>独立单位与 n</dt><dd>model optimization seed与共享simulated trajectories，非生物或真实世界replication；每experiment300train/80validation/80test/80OOD trajectories，各100transitions；3optimization seeds7/19/37固定data seeds；rollout80steps/60trajectories</dd><dt>不确定性</dt><dd>主表means±SD over3seeds，无显著性检验；rollout clipped，不代表dataset sampling uncertainty</dd><dt>原文位置</dt><dd>PDF 21 · Table6–7; D5.3</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>匹配两hybrid只改变Rcorr时，regularised保留p0.9581、−sin coefficient0.7942；unregularised缩至0.3324/0.1718；ρcorr从0.555变0.0627，抑制correction接管可符号表达部分。</dd><dt>适用边界</dt><dd>ρ为非正交normalized energy ratio，不是总dynamics的additive百分比；机制已事先设定</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>ρ为非正交normalized energy ratio，不是总dynamics的additive百分比；机制已事先设定</dd><dt>未解决</dt><dd>更广真实数据/视觉、pretrained encoders、matched budgets、Bayesian calibration及control utility未验证。</dd></dl><h3>相关问题</h3><ul><li>怎样在非塌缩预测坐标中获得简洁动力学并控制符号/神经残差分配？</li></ul></article><article><small>C18 / 直接结果 · controlled_simulation_result</small><h2>training scalar calibration后的regularised correction在heldout total p-residual R²=.9937、isolated drag R²=.9011，比unregularised .9532/.1885更对齐；total residual含symbolic coefficient误差而不只遗漏drag。</h2><h3>Evidence</h3><p>Table7; Figures3b/4b; D3,D5.4</p><dl><dt>设计 / 对照</dt><dd>RK4 synthetic pendulum，Δt∈{.025,.04,.06}，prediction+10-step train rollout/validation selection；joint/post-hoc/neural、collapse controls、complete/incomplete grammar或λc有无</dd><dt>独立单位与 n</dt><dd>model optimization seed与共享simulated trajectories，非生物或真实世界replication；每experiment300train/80validation/80test/80OOD trajectories，各100transitions；3optimization seeds7/19/37固定data seeds；rollout80steps/60trajectories</dd><dt>不确定性</dt><dd>主表means±SD over3seeds，无显著性检验；rollout clipped，不代表dataset sampling uncertainty</dd><dt>原文位置</dt><dd>PDF 21 · Table7; Figures3b/4b; D3,D5.4</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>training scalar calibration后的regularised correction在heldout total p-residual R²=.9937、isolated drag R²=.9011，比unregularised .9532/.1885更对齐；total residual含symbolic coefficient误差而不只遗漏drag。</dd><dt>适用边界</dt><dd>calibration只用train，但依赖已知true vector field；相关/校准不证明一般mechanism identifiability</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>calibration只用train，但依赖已知true vector field；相关/校准不证明一般mechanism identifiability</dd><dt>未解决</dt><dd>更广真实数据/视觉、pretrained encoders、matched budgets、Bayesian calibration及control utility未验证。</dd></dl><h3>相关问题</h3><ul><li>怎样在非塌缩预测坐标中获得简洁动力学并控制符号/神经残差分配？</li></ul></article><article><small>C19 / 直接结果 · controlled_simulation_result</small><h2>Rcorr并非无条件accuracy提升：regularised one-step state MSE2.474×10⁻⁵及OOD rollout.1045高于unregularised1.888×10⁻⁵/.0778，但test rollout.0671低于.0879。</h2><h3>Evidence</h3><p>Table6; 8.3</p><dl><dt>设计 / 对照</dt><dd>RK4 synthetic pendulum，Δt∈{.025,.04,.06}，prediction+10-step train rollout/validation selection；joint/post-hoc/neural、collapse controls、complete/incomplete grammar或λc有无</dd><dt>独立单位与 n</dt><dd>model optimization seed与共享simulated trajectories，非生物或真实世界replication；每experiment300train/80validation/80test/80OOD trajectories，各100transitions；3optimization seeds7/19/37固定data seeds；rollout80steps/60trajectories</dd><dt>不确定性</dt><dd>主表means±SD over3seeds，无显著性检验；rollout clipped，不代表dataset sampling uncertainty</dd><dt>原文位置</dt><dd>PDF 21 · Table6; 8.3</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>Rcorr并非无条件accuracy提升：regularised one-step state MSE2.474×10⁻⁵及OOD rollout.1045高于unregularised1.888×10⁻⁵/.0778，但test rollout.0671低于.0879。</dd><dt>适用边界</dt><dd>3seed mean/SD只描述trade-off，未做独立statistical superiority检验</dd><dt>实际负结果</dt><dd>regularised在one-step/OOD两个reported指标比unregularised差。</dd><dt>不能推出</dt><dd>3seed mean/SD只描述trade-off，未做独立statistical superiority检验</dd><dt>未解决</dt><dd>更广真实数据/视觉、pretrained encoders、matched budgets、Bayesian calibration及control utility未验证。</dd></dl><h3>相关问题</h3><ul><li>怎样在非塌缩预测坐标中获得简洁动力学并控制符号/神经残差分配？</li></ul></article><article><small>C20 / 假说 / 预测 · bayesian_rollout_formulation</small><h2>AppendixE的Bayesian rollout要求一条trajectory保留同一sampled structure/coefficients/GP，只逐步重采transition noise，以区分model epistemic与aleatoric variation。</h2><h3>Evidence</h3><p>AppendixE3 Eqs103–105</p><dl><dt>设计 / 对照</dt><dd>解析推导/作者扩展formulation，全部proof/assumptions已读；joint/post-hoc/neural、collapse controls、complete/incomplete grammar或λc有无</dd><dt>独立单位与 n</dt><dd>数学对象与假设，无新实验单位；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 42 · AppendixE3 Eqs103–105</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>AppendixE的Bayesian rollout要求一条trajectory保留同一sampled structure/coefficients/GP，只逐步重采transition noise，以区分model epistemic与aleatoric variation。</dd><dt>适用边界</dt><dd>条件Bayesian模型程序，无新posterior calibration/decision-quality验证；不自动给long-horizon coverage</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>条件Bayesian模型程序，无新posterior calibration/decision-quality验证；不自动给long-horizon coverage</dd><dt>未解决</dt><dd>更广真实数据/视觉、pretrained encoders、matched budgets、Bayesian calibration及control utility未验证。</dd></dl><h3>相关问题</h3><ul><li>怎样在非塌缩预测坐标中获得简洁动力学并控制符号/神经残差分配？</li></ul></article><details><summary>核对记录与来源信息</summary><pre>{
+  &quot;coverage&quot;: {
+    &quot;pdf_pages_read&quot;: [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42
+    ],
+    &quot;results_sections_seen&quot;: [
+      &quot;1–3 Framework/related works&quot;,
+      &quot;4.1–4.7 complexity/nonidentifiability/collapse/allocation/rollout&quot;,
+      &quot;5 training modes/objectives&quot;,
+      &quot;6 Bayesian/MAP/GP&quot;,
+      &quot;7 control formulation&quot;,
+      &quot;8 experiments1–2 and scope&quot;,
+      &quot;9 Discussion;10 Conclusion&quot;,
+      &quot;References&quot;,
+      &quot;AppendixA objectives/constraints&quot;,
+      &quot;AppendixB all proofs&quot;,
+      &quot;AppendixC symbolic optimisation&quot;,
+      &quot;AppendixD protocol/hyperparameters/per-seed/additional results&quot;,
+      &quot;AppendixE Bayesian inference/rollouts&quot;,
+      &quot;Figures1–4; Tables1–12&quot;
+    ],
+    &quot;missing_material&quot;: [
+      &quot;图像像素&quot;,
+      &quot;未提供可执行代码/原始seed输出，不声称复现实验&quot;
+    ],
+    &quot;text_pass_complete&quot;: true,
+    &quot;notes&quot;: [
+      &quot;arXiv2608.04060v1，4Aug2026；首页写23Jul2026草稿日期。&quot;,
+      &quot;42页全文含A–E全部附录/证明/表/图注一次评估。&quot;,
+      &quot;formal proof、controlled synthetic experiment与未测试Bayesian/control扩展分开；第二次审计使用完整源上下文。&quot;
+    ],
+    &quot;reading_mode&quot;: &quot;text_only&quot;,
+    &quot;figure_images_read&quot;: false,
+    &quot;scientific_verification&quot;: false,
+    &quot;source_pdf_offline&quot;: true,
+    &quot;archived_page_text_used&quot;: true
+  },
+  &quot;audit&quot;: {
+    &quot;source_match_checks&quot;: [],
+    &quot;model_findings&quot;: [
+      {
+        &quot;claim_id&quot;: &quot;C1&quot;,
+        &quot;issue&quot;: &quot;二次来源核对：数学共同假设、固定data/seed单位、coordinate-dependent MSE、clipped rollout与真实negative已区分。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留当前scope，不转成物理因果唯一性或广泛JEPA性能保证。&quot;,
+        &quot;pdf_page&quot;: 8,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C2&quot;,
+        &quot;issue&quot;: &quot;二次来源核对：数学共同假设、固定data/seed单位、coordinate-dependent MSE、clipped rollout与真实negative已区分。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留当前scope，不转成物理因果唯一性或广泛JEPA性能保证。&quot;,
+        &quot;pdf_page&quot;: 8,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C3&quot;,
+        &quot;issue&quot;: &quot;二次来源核对：数学共同假设、固定data/seed单位、coordinate-dependent MSE、clipped rollout与真实negative已区分。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留当前scope，不转成物理因果唯一性或广泛JEPA性能保证。&quot;,
+        &quot;pdf_page&quot;: 9,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C4&quot;,
+        &quot;issue&quot;: &quot;二次来源核对：数学共同假设、固定data/seed单位、coordinate-dependent MSE、clipped rollout与真实negative已区分。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留当前scope，不转成物理因果唯一性或广泛JEPA性能保证。&quot;,
+        &quot;pdf_page&quot;: 9,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C5&quot;,
+        &quot;issue&quot;: &quot;二次来源核对：数学共同假设、固定data/seed单位、coordinate-dependent MSE、clipped rollout与真实negative已区分。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留当前scope，不转成物理因果唯一性或广泛JEPA性能保证。&quot;,
+        &quot;pdf_page&quot;: 10,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C6&quot;,
+        &quot;issue&quot;: &quot;二次来源核对：数学共同假设、固定data/seed单位、coordinate-dependent MSE、clipped rollout与真实negative已区分。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留当前scope，不转成物理因果唯一性或广泛JEPA性能保证。&quot;,
+        &quot;pdf_page&quot;: 10,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C7&quot;,
+        &quot;issue&quot;: &quot;二次来源核对：数学共同假设、固定data/seed单位、coordinate-dependent MSE、clipped rollout与真实negative已区分。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留当前scope，不转成物理因果唯一性或广泛JEPA性能保证。&quot;,
+        &quot;pdf_page&quot;: 13,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C8&quot;,
+        &quot;issue&quot;: &quot;二次来源核对：数学共同假设、固定data/seed单位、coordinate-dependent MSE、clipped rollout与真实negative已区分。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留当前scope，不转成物理因果唯一性或广泛JEPA性能保证。&quot;,
+        &quot;pdf_page&quot;: 40,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C9&quot;,
+        &quot;issue&quot;: &quot;二次来源核对：数学共同假设、固定data/seed单位、coordinate-dependent MSE、clipped rollout与真实negative已区分。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留当前scope，不转成物理因果唯一性或广泛JEPA性能保证。&quot;,
+        &quot;pdf_page&quot;: 15,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C10&quot;,
+        &quot;issue&quot;: &quot;二次来源核对：数学共同假设、固定data/seed单位、coordinate-dependent MSE、clipped rollout与真实negative已区分。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留当前scope，不转成物理因果唯一性或广泛JEPA性能保证。&quot;,
+        &quot;pdf_page&quot;: 18,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C11&quot;,
+        &quot;issue&quot;: &quot;二次来源核对：数学共同假设、固定data/seed单位、coordinate-dependent MSE、clipped rollout与真实negative已区分。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留当前scope，不转成物理因果唯一性或广泛JEPA性能保证。&quot;,
+        &quot;pdf_page&quot;: 18,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C12&quot;,
+        &quot;issue&quot;: &quot;二次来源核对：数学共同假设、固定data/seed单位、coordinate-dependent MSE、clipped rollout与真实negative已区分。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留当前scope，不转成物理因果唯一性或广泛JEPA性能保证。&quot;,
+        &quot;pdf_page&quot;: 18,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C13&quot;,
+        &quot;issue&quot;: &quot;二次来源核对：数学共同假设、固定data/seed单位、coordinate-dependent MSE、clipped rollout与真实negative已区分。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留当前scope，不转成物理因果唯一性或广泛JEPA性能保证。&quot;,
+        &quot;pdf_page&quot;: 38,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C14&quot;,
+        &quot;issue&quot;: &quot;二次来源核对：数学共同假设、固定data/seed单位、coordinate-dependent MSE、clipped rollout与真实negative已区分。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留当前scope，不转成物理因果唯一性或广泛JEPA性能保证。&quot;,
+        &quot;pdf_page&quot;: 19,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C15&quot;,
+        &quot;issue&quot;: &quot;二次来源核对：数学共同假设、固定data/seed单位、coordinate-dependent MSE、clipped rollout与真实negative已区分。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留当前scope，不转成物理因果唯一性或广泛JEPA性能保证。&quot;,
+        &quot;pdf_page&quot;: 20,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C16&quot;,
+        &quot;issue&quot;: &quot;二次来源核对：数学共同假设、固定data/seed单位、coordinate-dependent MSE、clipped rollout与真实negative已区分。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留当前scope，不转成物理因果唯一性或广泛JEPA性能保证。&quot;,
+        &quot;pdf_page&quot;: 20,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C17&quot;,
+        &quot;issue&quot;: &quot;二次来源核对：数学共同假设、固定data/seed单位、coordinate-dependent MSE、clipped rollout与真实negative已区分。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留当前scope，不转成物理因果唯一性或广泛JEPA性能保证。&quot;,
+        &quot;pdf_page&quot;: 21,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C18&quot;,
+        &quot;issue&quot;: &quot;二次来源核对：数学共同假设、固定data/seed单位、coordinate-dependent MSE、clipped rollout与真实negative已区分。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留当前scope，不转成物理因果唯一性或广泛JEPA性能保证。&quot;,
+        &quot;pdf_page&quot;: 21,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C19&quot;,
+        &quot;issue&quot;: &quot;二次来源核对：数学共同假设、固定data/seed单位、coordinate-dependent MSE、clipped rollout与真实negative已区分。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留当前scope，不转成物理因果唯一性或广泛JEPA性能保证。&quot;,
+        &quot;pdf_page&quot;: 21,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C20&quot;,
+        &quot;issue&quot;: &quot;二次来源核对：数学共同假设、固定data/seed单位、coordinate-dependent MSE、clipped rollout与真实negative已区分。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留当前scope，不转成物理因果唯一性或广泛JEPA性能保证。&quot;,
+        &quot;pdf_page&quot;: 42,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C14&quot;,
+        &quot;issue&quot;: &quot;正文/figure有“remove RIB”简写，但实际同时去掉RIB与rollout supervision且diagnostic免noncollapse selection。&quot;,
+        &quot;suggested_correction&quot;: &quot;只证明collapse shortcut可达，不当only-RIB necessity matched ablation。&quot;,
+        &quot;pdf_page&quot;: 17,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C11&quot;,
+        &quot;issue&quot;: &quot;joint四cycles每65+85epochs，post-hoc65epochs，Neural continuation90；学习率也不同，compute预算不匹配。&quot;,
+        &quot;suggested_correction&quot;: &quot;效果限于本文协议，不能唯一归因operator penalty而不考虑optimisation budget。&quot;,
+        &quot;pdf_page&quot;: 35,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C13&quot;,
+        &quot;issue&quot;: &quot;latent MSE不同坐标且target构造EMA/context不同；affine probe下降、clipped physical rollout同时存在。&quot;,
+        &quot;suggested_correction&quot;: &quot;分别报告，不做coordinate-invariant或pure physical-law claim。&quot;,
+        &quot;pdf_page&quot;: 36,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C17&quot;,
+        &quot;issue&quot;: &quot;ρcorr不是additive fraction，components可相互抵消且以vector field而非Euler identity/Δt归一。&quot;,
+        &quot;suggested_correction&quot;: &quot;仅称normalized energy ratio，不能解释6.27%实际机制占比。&quot;,
+        &quot;pdf_page&quot;: 29,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C7&quot;,
+        &quot;issue&quot;: &quot;MAP等价基于固定proper Gaussian模型，不支持nonconvex scalarisation或penalty weights保证globally simplest law。&quot;,
+        &quot;suggested_correction&quot;: &quot;保持所有条件；convex Slater背景不延伸本算法。&quot;,
+        &quot;pdf_page&quot;: 33,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C8&quot;,
+        &quot;issue&quot;: &quot;Bayesian/control/foundation encoders无实验；finite candidate weights非全grammar exact posterior，point encoder uncertainty未平均。&quot;,
+        &quot;suggested_correction&quot;: &quot;hypothesis/formulation标记；不说calibrated或已控制真实系统。&quot;,
+        &quot;pdf_page&quot;: 24,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;Related works称C-JEPA但Posner2026a参考实际与2026b重复Mechanistic World Models题名/链接。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留bibliography/background归属问题，不自动建立跨paper关系。&quot;,
+        &quot;pdf_page&quot;: 27,
+        &quot;resolved&quot;: false
+      }
+    ],
+    &quot;needs_human_review&quot;: true
+  },
+  &quot;source&quot;: {
+    &quot;filename&quot;: &quot;paper-W7201914579--SJEPA-Learning-Elegant-Latent-Dynamics-with-Hybrid-Symbolic-Neural-Predictors.pdf&quot;,
+    &quot;sha256&quot;: &quot;7add71d78c7c3d5a62cfe70efead744f9d9a8915e7037d5e7e054366eee94866&quot;,
+    &quot;source_url&quot;: &quot;https://arxiv.org/pdf/2608.04060&quot;,
+    &quot;pdf_page_count&quot;: 42
+  },
+  &quot;provenance&quot;: {
+    &quot;created_at&quot;: &quot;2026-10-07T11:14:01.552572Z&quot;,
+    &quot;workflow&quot;: &quot;claim-commons-pdf-v1&quot;,
+    &quot;prompt_version&quot;: &quot;claim-commons-chatgpt-pdf-2026-10-07.1&quot;,
+    &quot;backend&quot;: &quot;authorized_parallel_GPT&quot;,
+    &quot;model&quot;: &quot;inherited_account_GPT&quot;,
+    &quot;provider_api_key_used&quot;: false,
+    &quot;source_sha256&quot;: &quot;7add71d78c7c3d5a62cfe70efead744f9d9a8915e7037d5e7e054366eee94866&quot;,
+    &quot;source_audit_complete&quot;: true,
+    &quot;review_status&quot;: &quot;candidate&quot;,
+    &quot;database_updated&quot;: false
+  }
+}</pre></details></main><footer></footer></body></html>

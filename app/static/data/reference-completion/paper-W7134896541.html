@@ -1,0 +1,183 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Learned adaptive properties for mitigation of weight perturbations in embedded spiking networks</title><style>body{max-width:940px;margin:40px auto;padding:0 24px;background:#fffdf7;color:#12372f;font:16px/1.8 Georgia,serif}h1{font-size:26px;line-height:1.4}h2{font-size:20px;line-height:1.5}h3{font-size:16px}article{padding:26px 0;border-top:1px solid #bec4b8}small{color:#68766e}dl{display:grid;grid-template-columns:120px 1fr;gap:8px 20px}dt{font-weight:bold}dd{margin:0}li{padding:8px 0}p,dd{overflow-wrap:anywhere}.note{background:#eef2e2;padding:14px;border-left:3px solid #738968}summary{cursor:pointer}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.7 monospace}@media(max-width:600px){body{margin:24px auto;padding:0 18px}dl{grid-template-columns:1fr;gap:3px}dd{margin-bottom:12px}}@media print{body{margin:0;background:white}details{display:block}}</style><link rel="stylesheet" href="../../commons-v02.css?v=20261020-1"><link rel="stylesheet" href="../../examples.css?v=20260928-2"><link rel="stylesheet" href="../../site.css?v=20261020-1"><script defer src="../../site.js?v=20261020-1"></script><script defer src="../../report-ui.js?v=20261020-1"></script></head><body class="portal-page report-page" data-cc-report-shell="1" data-page="library" data-site-prefix="../../" data-library-paper="paper-W7134896541" data-report-language="zh" data-claim-records="{&quot;C1&quot;:&quot;structured-paper-W7134896541-1&quot;,&quot;C2&quot;:&quot;structured-paper-W7134896541-2&quot;,&quot;C3&quot;:&quot;structured-paper-W7134896541-3&quot;,&quot;C4&quot;:&quot;structured-paper-W7134896541-4&quot;,&quot;C5&quot;:&quot;structured-paper-W7134896541-5&quot;,&quot;C6&quot;:&quot;structured-paper-W7134896541-6&quot;,&quot;C7&quot;:&quot;structured-paper-W7134896541-7&quot;,&quot;C8&quot;:&quot;structured-paper-W7134896541-8&quot;,&quot;C9&quot;:&quot;structured-paper-W7134896541-9&quot;,&quot;C10&quot;:&quot;structured-paper-W7134896541-10&quot;,&quot;C11&quot;:&quot;structured-paper-W7134896541-11&quot;,&quot;C12&quot;:&quot;structured-paper-W7134896541-12&quot;,&quot;C13&quot;:&quot;structured-paper-W7134896541-13&quot;}"><header></header><main id="report-content"><div id="report-tools"></div><small>CLAIM COMMONS / 阅读报告</small><h1>Learned adaptive properties for mitigation of weight perturbations in embedded spiking networks</h1><p class="note">AI 文本提取候选，尚待人工核对。图像像素未读取；PDF 页码指文件中的页序。</p><p>本正式研究论文（2026-03-11，16页）提出以全局扰动context乘可学习的局部投影来调节LIF阈值或时间常数。模型先训练理想任务，再在扰动条件下共同优化权重和适应投影；推断期适应不需重写突触权重。主要性能证据为CIFAR-10/Gaussian相对权重扰动仿真，以及经验SONOS辐射模型驱动的Small Object Tracking仿真。循环模型获益，所测试前馈模型未获相同改善；Sham控制未显示单凭额外参数的收益。循环Context在采样网格中没有作者观察到的低扰动性能代价。参数分布分析、50个代表trial的二维PCA及图注支持分布式适应和循环类别轨迹恢复的描述，但不能独立确定因果机制。所报任务性能平均于10次独立网络初始化，不是器件、动物或神经元重复。时间常数/逆数及快慢方向、跟踪误差MSE/像素单位、TID等级数、图5轴、图3A方向和优化器存在六项原文待核歧义，均未猜测补正。动力系统解释、低开销硬件路线和生物漂移补偿分别作为解释或假设保留；没有本文芯片能耗/面积测量或生物学验证。全部正文、图表说明、声明和参考文献已读；未读像素或独立补充文件。输出为13条待人工审核候选，无跨论文关系，不代表科学验证。</p><a href="https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2026.1766765/pdf" rel="noreferrer">查看所读原文版本 ↗</a><details><summary>贡献清单与处理决定</summary><ul><li><b>全局扰动context与可学习神经元/通道投影结合，在部署时调节LIF阈值或时间常数。图1至3、表1和式1至5说明构造。</b><br>include · C1保留方法贡献、训练与推断阶段的区别，不把示意电路当作实测硬件。</li><li><b>Gaussian模型和经验SONOS模型的权重扰动分布不同；图4及式6定义测试环境。</b><br>include · 作为C2至C5、C10的联合条件和证据设计保留，不另包装成本文独立器件实验。</li><li><b>Gaussian CIFAR-10中循环网络的两种context适应提高扰动下准确率。</b><br>include · C2，比较的是同类架构的Context与Perturbed，而非独立生物实验。</li><li><b>所测试前馈网络未获相应性能恢复；Perturbed前馈网络在测试c大于0.3时准确率不超过50%。</b><br>include · C3保留实际阴性结果，限定具体架构和训练设置。</li><li><b>循环Context网络在所采样网格内以更高最大扰动训练并未损失固定测试水平的性能。</b><br>include · C4单独保留训练鲁棒性与低扰动性能的权衡命题；并非无限范围保证。</li><li><b>不在训练中暴露权重扰动的Sham虽有额外适应参数，性能仍与Base大致相当。</b><br>include · C5是参数数量控制的实际阴性结果，不等同于统计等效检验。</li><li><b>循环网络的阈值适应投影零中心，未检出跨训练扰动水平的分布差异。</b><br>include · C6保留检验与未显著结果，避免误称总阈值为零或已证明等效。</li><li><b>时间常数相关投影偏离零并随低/高训练扰动水平有所不同。</b><br>include · C7可保留报告的检验；快慢方向和物理变量解释另行待核D1。</li><li><b>前馈网络的二维PCA轨迹未显示Context相对Perturbed恢复类别相关结构。</b><br>include · C8保留表示层面的实际阴性结果，与准确率使用共享模型而非独立复现。</li><li><b>循环Context网络的PCA轨迹恢复较平滑、类别相关且跨扰动较稳定的最终位置。</b><br>include · C9是文字及图注支持的描述性潜在动力学结果，不宣称完整状态空间相同。</li><li><b>经验SONOS辐射模型中的SOT仿真比较：Context较无适应模型维持更低误差至更高TID。</b><br>include · C10保留600 krad等作者报告范围；MSE/像素单位与等级数分别待核D2、D3。</li><li><b>作者以context重塑循环网络状态空间流、修复任务轨迹解释性能改善。</b><br>include · C11明确为动力系统解释；未进行吸引子分析、唯一机制识别或隔离循环连接的因果检验。</li><li><b>利用剂量计等全局测量和可调CMOS LIF实现低开销适应部署。</b><br>include · C12为工程可行性提议，本文没有芯片、面积、功耗、实时闭环或辐照部署实测。</li><li><b>将global context补偿联系到生物表示漂移、预测误差或记忆距离。</b><br>include · C13为生物学外推假设；本文无动物、人体或细胞验证，不把所引文献当作本研究证据。</li><li><b>图6图注的逆时间常数/加速与式5和正文的时间常数/减速冲突。</b><br>defer · D1：可保留投影分布统计，不能确定快慢方向或把报告均值变成可靠物理时间常数。</li><li><b>图3A对降低阈值、FI曲线左移和平均活动下降的文字解释不协调。</b><br>defer · D5：未提供像素且不查代码，不自动反转原句；不提取确定的单神经元活动方向结论。</li><li><b>图1电路构想、图2架构、图3 FI示意、图4扰动定义和表1至2控制设计的其他说明。</b><br>exclude · 已纳入相应方法和联合条件；不因每张图增加重复候选，不把同一模拟定义当作独立验证。</li><li><b>引言中的已有工作、作者/经费/可用性/AI声明、出版者声明与参考文献。</b><br>exclude · 已逐页阅读；不属于本文新增研究结果，不以参考文献构造跨论文关系。</li></ul></details><article><small>C1 / 直接结果 · computational_method</small><h2>本文构造并训练了context-adaptive LIF网络：以表征权重扰动程度的全局标量c乘可学习的神经元/通道投影p，调节spiking threshold或membrane time constant；权重与p在离线适应训练阶段共同优化，推断时可改变神经元参数而不重写突触权重。</h2><h3>Evidence</h3><p>LIF动力学及context适应规则的数学定义</p><dl><dt>设计 / 对照</dt><dd>比较阈值适应和时间常数适应；式4给出vth=vthbase+pc，式5以τm=τmbase+pc定义时间常数分支。图2以卷积通道描述投影，正文称神经元特异。；Base/Perturbed不具适应项；Sham/Context具有适应项。</dd><dt>独立单位与 n</dt><dd>网络内LIF单元/卷积通道及其学习投影；未报告参数总数。；未报告 / 不适用</dd><dt>不确定性</dt><dd>没有形式化鲁棒性定理；图6的逆时间常数表述与式5存在D1歧义。</dd><dt>原文位置</dt><dd>PDF 6 · Figure 2; Table 1</dd></dl><p>分阶段网络训练及四种控制设计</p><dl><dt>设计 / 对照</dt><dd>所有模型先以Base设置训练100 epochs，再按Base/Perturbed/Sham/Context设置训练100 epochs；后两者同时学习权重和适应投影。；表2的有/无扰动与有/无适应两因素设计。</dd><dt>独立单位与 n</dt><dd>独立初始化的网络；新增投影不是独立实验对象。；任务性能按10次独立初始化平均；这是后续任务评估的重复数，而非规则本身的n。</dd><dt>不确定性</dt><dd>无独立硬件实现；优化器名称/引用另有D6歧义。</dd><dt>原文位置</dt><dd>PDF 8 · Table 2</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>提供利用全局扰动context调节局部神经元参数的可训练计算构造。</dd><dt>适用边界</dt><dd>具体实现为本文的LIF卷积前馈/循环架构，context在实验中由模拟强度提供。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>未证明任意漂移均可补偿，未实测模拟芯片闭环，更未证明生物神经元采用相同机制。</dd><dt>未解决</dt><dd>通道/神经元参数共享粒度、时间常数实际实现及context测量误差的影响需进一步核对或测试。</dd></dl><h3>相关问题</h3><ul><li>全局扰动context如何通过可学习神经元参数实现不重写权重的推断期适应？</li></ul></article><article><small>C2 / 直接结果 · simulation_performance</small><h2>在CIFAR-10的Gaussian相对权重扰动仿真中，所测试循环SNN的阈值Context和时间常数Context模型均比同类Perturbed模型保持更高的扰动下top-1准确率；这种改善要求训练时同时暴露权重扰动并学习context适应项。</h2><h3>Evidence</h3><p>循环卷积SNN的训练/测试扰动网格比较</p><dl><dt>设计 / 对照</dt><dd>权重按wperturbed=w+c|w|ϕ扰动，ϕ为独立标准正态；逐trial重抽并在trial的32个时间步内固定。Gaussian context在[0,1]取10个离散水平，训练最大强度与测试强度交叉评估。；相同循环拓扑下有扰动但无适应的Perturbed；Base提供理想训练参考。</dd><dt>独立单位与 n</dt><dd>独立初始化并训练的网络；测试图像和时间步是其内的测量对象。；10次独立初始化平均；训练/测试图像总数未在所供文字中报告。</dd><dt>不确定性</dt><dd>结果及图注定性报告准确率改善，未给此比较的精确效应值、置信区间或统计检验。</dd><dt>原文位置</dt><dd>PDF 9 · Figure 5</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>在测试设置内，学习context适应比仅以扰动权重训练更能保留循环网络分类性能。</dd><dt>适用边界</dt><dd>限于所采样Gaussian扰动和CIFAR-10循环架构；未从图像估算恢复幅度。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不证明完全恢复理想准确率，也不是实体芯片辐射实验或任意任务的保证。</dd><dt>未解决</dt><dd>对context误差、扰动相关性、其他架构和训练范围之外的性能仍未知。</dd></dl><h3>相关问题</h3><ul><li>学习神经元context适应能否提高循环SNN对Gaussian权重漂移的分类鲁棒性？</li></ul></article><article><small>C3 / 直接结果 · simulation_negative_result</small><h2>在本文CIFAR-10/Gaussian设置的前馈卷积SNN中，阈值或时间常数context适应均未明显改善Perturbed模型的分类性能；作者报告无适应的Perturbed前馈模型在测试扰动c&gt;0.3时未超过50%准确率，即使增加训练扰动强度也不能获得循环网络式的恢复。</h2><h3>Evidence</h3><p>前馈架构的Gaussian权重扰动训练/测试比较</p><dl><dt>设计 / 对照</dt><dd>使用与图5循环比较相同的任务和Gaussian扰动定义；逐模型训练最大扰动与测试扰动交叉评估。；前馈Context的两种适应分别与前馈Perturbed比较，并参考Base/Sham和循环结果。</dd><dt>独立单位与 n</dt><dd>独立初始化的前馈网络，非单个神经元或时间步。；性能平均于10次独立初始化；测试图像总数未报告。</dd><dt>不确定性</dt><dd>50%界值是正文对Perturbed模型的报告，不扩大到全部适应模型；未给context收益的精确统计量。</dd><dt>原文位置</dt><dd>PDF 9 · Figure 5, feedforward panels</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>未报告 / 不适用</dd><dt>适用边界</dt><dd>阴性结果仅适用于所测试前馈架构、context机制、Gaussian范围与训练方式。</dd><dt>实际负结果</dt><dd>本文未观察到前馈模型从这两种context适应中获得明显分类性能恢复。</dd><dt>不能推出</dt><dd>不证明所有前馈网络都不可能利用context，也不证明循环连接是唯一因果解释。</dd><dt>未解决</dt><dd>匹配归一化、时间常数及其他训练超参数后的架构差异尚未隔离。</dd></dl><h3>相关问题</h3><ul><li>哪些架构条件限制context适应补偿前馈SNN中的权重扰动？</li></ul></article><article><small>C4 / 直接结果 · simulation_training_boundary</small><h2>在所采样的CIFAR-10/Gaussian循环Context训练—测试网格中，作者报告提高训练允许的最大扰动强度并未降低任一固定测试扰动水平的准确率，同时使模型更能耐受较高测试扰动；因此本文未观察到这类Context模型以低扰动性能换取高扰动鲁棒性的权衡。</h2><h3>Evidence</h3><p>最大训练扰动水平与测试扰动水平的交叉扫描</p><dl><dt>设计 / 对照</dt><dd>按2.7节对10个Gaussian context水平进行训练最大值和测试值的所有成对组合，3.1节讨论循环Context结果。；同一适应类型、同一测试扰动下以不同最大扰动训练的循环网络。</dd><dt>独立单位与 n</dt><dd>各训练条件下独立初始化的网络；网格点不是新增独立被试。；每类性能指标平均于10次独立初始化；不把100种训练/测试组合视作100次独立复现。</dd><dt>不确定性</dt><dd>定性未见下降；未报告等效界限或支持单调性的置信区间。</dd><dt>原文位置</dt><dd>PDF 9 · Figure 5, recurrent Context panels</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>所测范围内，扩大训练扰动范围可提高容忍度而没有作者可见的低扰动性能损失。</dd><dt>适用边界</dt><dd>这是有限网格的经验观察，不是任意噪声强度的单调性定理。</dd><dt>实际负结果</dt><dd>没有观察到上述循环Context设置中的低扰动性能代价。</dd><dt>不能推出</dt><dd>不能宣称代价精确为零，也不能推广为前馈Perturbed模型或其他扰动模型均无权衡。</dd><dt>未解决</dt><dd>更高未训练扰动、其他数据集和更细网格的权衡未知。</dd></dl><h3>相关问题</h3><ul><li>context适应能否缓解扰动感知训练在理想性能与鲁棒性之间的权衡？</li></ul></article><article><small>C5 / 直接结果 · simulation_control_negative_result</small><h2>在CIFAR-10/Gaussian比较中，前馈和循环Sham模型虽然学习额外的context适应投影，但训练阶段不暴露权重扰动，其性能与相应Base模型大致相当；额外参数而不配合扰动训练本身未显示出整体性能提升。</h2><h3>Evidence</h3><p>Sham与Base控制比较</p><dl><dt>设计 / 对照</dt><dd>表2定义Sham为有适应但训练无扰动，Base为两者均无；图5比较阈值和时间常数Sham在两类架构中的表现。；匹配架构的Base，与训练时同时有扰动和适应的Context形成对照。</dd><dt>独立单位与 n</dt><dd>独立初始化的模型，不是新增参数的数量。；性能平均于10次独立初始化；额外参数数目和测试集总n未报告。</dd><dt>不确定性</dt><dd>原文为大致相当/没有整体提升，未报告统计等效检验。</dd><dt>原文位置</dt><dd>PDF 9 · Figure 5, Sham panels; Table 2 on PDF page 8</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>控制比较与适应收益需要扰动训练而非仅增加自由参数的解释相符。</dd><dt>适用边界</dt><dd>仅针对本文的Sham构造及训练流程，不是参数数量的全面因果消融。</dd><dt>实际负结果</dt><dd>Sham未显示超过Base的整体性能收益。</dd><dt>不能推出</dt><dd>不能证明Sham与Base严格等效，也不能排除其他参数化方式或优化流程的收益。</dd><dt>未解决</dt><dd>改变Sham的context输入统计或参数容量是否产生不同效果未知。</dd></dl><h3>相关问题</h3><ul><li>context适应的收益是否仅来自额外训练参数，还是依赖扰动暴露？</li></ul></article><article><small>C6 / 直接结果 · simulation_parameter_distribution</small><h2>在Gaussian扰动训练后的循环阈值Context网络中，所学阈值适应投影分布未显著偏离零均值，且作者未检出不同最大训练扰动水平之间的分布差异；这一结果针对阈值的适应部分，而非基值为1的总spiking threshold。</h2><h3>Evidence</h3><p>适应投影的单样本t-test和跨训练水平Kolmogorov–Smirnov比较</p><dl><dt>设计 / 对照</dt><dd>检查训练完成的循环阈值Context网络投影向量，比较不同最大Gaussian训练扰动水平。；投影均值相对零，以及不同训练水平的投影分布。</dd><dt>独立单位与 n</dt><dd>网络内投影向量元素/神经元或通道参数，嵌套于训练网络；独立观测单位如何定义未说明。；参数分布检验使用的投影元素数、网络数及自由度均未报告；性能的10次初始化不能直接充当此检验的n。</dd><dt>不确定性</dt><dd>t-test p&gt;0.05；跨水平KS p&gt;0.05；两者均注明Bonferroni校正。未给精确p值、效应区间或等效检验。</dd><dt>原文位置</dt><dd>PDF 10 · Figure 6, top</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>阈值适应呈分布式正负调节，而非数据明确支持的统一同向偏移。</dd><dt>适用边界</dt><dd>检验单位与依赖结构未交代，统计解释限于作者报告。</dd><dt>实际负结果</dt><dd>没有检出非零均值或跨训练水平分布差异。</dd><dt>不能推出</dt><dd>不证明总阈值为零、不证明兴奋与抑制精确抵消，也不证明不同水平等效。</dd><dt>未解决</dt><dd>参数共享、统计独立性和检验功效尚需核对。</dd></dl><h3>相关问题</h3><ul><li>鲁棒循环网络学习的阈值context投影是否表现为统一均值偏移？</li></ul></article><article><small>C7 / 直接结果 · simulation_parameter_distribution</small><h2>本文循环时间常数Context网络的适应投影在各Gaussian训练水平下均被报告为显著偏离零，低最大训练扰动c≤0.2与高水平c≥0.8之间存在分布差异；但正文、式5和图6对τm或其逆数及加速/减速方向不一致，不能据此确定网络或单元总体变快还是变慢。</h2><h3>Evidence</h3><p>时间常数相关适应投影的t-test及Kolmogorov–Smirnov比较</p><dl><dt>设计 / 对照</dt><dd>比较训练完成的循环时间常数Context网络在不同最大Gaussian扰动训练水平下的投影分布。；各水平投影相对零；低水平c≤0.2相对高水平c≥0.8。</dd><dt>独立单位与 n</dt><dd>训练网络内投影元素；元素数、参数相关性和网络级聚合方式不明。；没有给本统计分析的独立观测数；不把其他性能指标的10次初始化或每个参数当作独立重复。</dd><dt>不确定性</dt><dd>t-test报告mean=0.386 frames、p&lt;0.05并Bonferroni校正；KS低/高水平比较p≤0.001并Bonferroni校正，c=0.1与c=1.0所报均值分别0.389、0.41 frames。原文均值标签及frames单位按报告保留，不转成确定物理τm或逆τm。</dd><dt>原文位置</dt><dd>PDF 10 · Figure 6, bottom</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>作者报告时间常数相关适应投影的非零成分及跨低/高训练扰动分布差异。</dd><dt>适用边界</dt><dd>统计单位未充分说明，变量/单位和方向存在源内冲突。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不从这些均值推算实际膜时间常数、速度变化百分比或全网平均减速/加速。</dd><dt>未解决</dt><dd>需要确认实现调节τm还是其逆数，并澄清投影均值的单位和独立统计单位。</dd></dl><h3>相关问题</h3><ul><li>扰动感知训练如何改变循环网络时间常数相关context投影的分布？</li></ul></article><article><small>C8 / 直接结果 · simulation_representation_negative_result</small><h2>对本文CIFAR-10前馈网络的倒数第二激活层膜电位做二维PCA轨迹可视化时，Perturbed和两种Context模型的轨迹表现相似；文字描述未显示Context恢复类别分离的轨迹结构，这与前馈性能比较的未见恢复相符。</h2><h3>Evidence</h3><p>倒数第二激活层亚阈值膜电位的per-trial PCA</p><dl><dt>设计 / 对照</dt><dd>使用最大Gaussian训练扰动1的Perturbed/Context网络，在c=0、0.2、1下推断；为5个CIFAR-10类别的共50幅代表图像记录每幅32步轨迹。；前馈Base、Perturbed、阈值Context和时间常数Context。</dd><dt>独立单位与 n</dt><dd>选取的图像trial及其嵌套的32个时间步，属于训练网络中的描述性轨迹。；共50幅图像/代表trial，来自5类，每幅32步；不是每类50幅，不是1600个独立重复；PCA实际使用的独立网络数未报。</dd><dt>不确定性</dt><dd>只有文字与图注的描述性可视化，无轨迹分离度、效应区间或统计检验。</dd><dt>原文位置</dt><dd>PDF 11 · Figure 7</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>未报告 / 不适用</dd><dt>适用边界</dt><dd>限于代表图像及二维PCA文字描述，没有直接查看图像像素。</dd><dt>实际负结果</dt><dd>未报告前馈Context相对Perturbed恢复该二维类别轨迹结构。</dd><dt>不能推出</dt><dd>不证明全部高维表示无类别信息，不将未见线性分离当作完整分类不可能性定理。</dd><dt>未解决</dt><dd>统一坐标对齐、完整高维分离和各网络重复的稳定性未知。</dd></dl><h3>相关问题</h3><ul><li>context适应是否恢复受扰前馈网络的类别相关潜在轨迹？</li></ul></article><article><small>C9 / 直接结果 · simulation_latent_dynamics</small><h2>本文循环SNN的CIFAR-10膜电位PCA文字描述显示：权重扰动使同一类别的最终轨迹位置随扰动水平改变，而阈值和时间常数Context均恢复较平滑、类别相关且跨扰动较稳定的轨迹；适应模型的PC终点幅度仍大于Base，因此恢复不是潜在状态逐点等同于理想网络。</h2><h3>Evidence</h3><p>循环网络倒数第二激活层亚阈值膜电位的per-trial PCA</p><dl><dt>设计 / 对照</dt><dd>与前馈分析相同的5类共50幅代表图像、每幅32步和c=0、0.2、1；Perturbed/Context训练最大Gaussian扰动为1。；循环Base、Perturbed、阈值Context与时间常数Context。</dd><dt>独立单位与 n</dt><dd>图像trial的网络活动轨迹，32个时间步嵌套在trial中。；共50幅代表图像/轨迹、5类、每轨迹32步；独立网络重复在此分析中未报。</dd><dt>不确定性</dt><dd>没有轨迹距离、平滑度、类别分离统计或不确定性区间；不从未供图像读取数值。</dd><dt>原文位置</dt><dd>PDF 12 · Figure 8</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>两种context适应均与循环网络任务相关轨迹的描述性恢复相联系。</dd><dt>适用边界</dt><dd>是选取刺激的二维投影观察，且适应终点幅度与Base不同。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不证明全流形精确恢复、真实吸引子存在或轨迹变化唯一导致准确率改善。</dd><dt>未解决</dt><dd>高维动力学、可重复定量轨迹指标及因果机制需进一步分析。</dd></dl><h3>相关问题</h3><ul><li>context适应能否让循环网络在权重扰动后维持类别相关的潜在轨迹？</li></ul></article><article><small>C10 / 直接结果 · simulation_device_informed_performance</small><h2>在以经验SONOS电导响应参数化的电离辐射权重扰动仿真和Small Object Tracking任务中，Context模型比无适应训练模型维持低误差至更高TID：作者把其600 krad以内误差称为亚像素、最高测试剂量处称为小于2像素，而Perturbed模型只在约100 krad以内保持低剂量容忍；这些数值不是本文实体硬件辐照结果，且MSE/像素单位歧义必须保留。</h2><h3>Evidence</h3><p>经验SONOS TID响应模型驱动的SOT仿真</p><dl><dt>设计 / 对照</dt><dd>权重误差用依赖权重和TID的Gaussian均值及方差描述，依据本文所述已有器件表征参数化；TID同时充当context。视频为单像素物体运动的100步序列，逐步预测(x,y)。；无辐射感知训练的device-agnostic模型；跨TID训练但无context适应的Perturbed模型；Context模型。</dd><dt>独立单位与 n</dt><dd>独立初始化的仿真网络；视频、帧和(x,y)预测嵌套于网络评估，非本文辐照器件重复。；任务性能平均于10次独立初始化；每视频100步。训练/测试视频数量、本研究新测器件数量均未报告，后者不能凭所引先前器件数据补填。</dd><dt>不确定性</dt><dd>作者报告Context在600 krad以内亚像素且最高测试水平低于2像素；Perturbed约至100 krad低误差。未给精确MSE、置信区间或统计比较；D2阻止把像素文字转换为确定坐标误差。</dd><dt>原文位置</dt><dd>PDF 13 · Figure 9; Figure 4 on PDF page 7</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>器件信息驱动的仿真中，context适应使跟踪误差在更宽剂量范围内维持较低。</dd><dt>适用边界</dt><dd>特定SONOS扰动模型和SOT任务，性能单位及剂量网格需核对。</dd><dt>实际负结果</dt><dd>无辐射感知训练模型在非零TID下迅速恶化；仅Perturbed训练未达到Context所报的高剂量容忍。</dd><dt>不能推出</dt><dd>不证明芯片在600/1000 krad辐照下实际存活或达到此误差，不称为硬件或航天部署验证。</dd><dt>未解决</dt><dd>真实硬件、测量context误差、其他辐射效应和正确MSE单位的验证仍缺失。</dd></dl><h3>相关问题</h3><ul><li>器件辐射模型提供的全局context能否改善SNN的时间序列跟踪鲁棒性？</li></ul></article><article><small>C11 / 解释 · dynamical_mechanism_interpretation</small><h2>作者把循环Context网络的扰动下性能与类别轨迹恢复解释为context-dependent modulation重塑状态空间流、修复任务相关动力学，而不只是统一改变单元偏置；这是与仿真和PCA观察相符的动力系统解释，尚未识别唯一机制或证明吸引子结构。</h2><h3>Evidence</h3><p>性能、参数投影和PCA描述的综合解释</p><dl><dt>设计 / 对照</dt><dd>循环与前馈结果相异；两种单元适应产生不同参数分布，却在循环模型显示相似性能和类别轨迹恢复。；Base/Perturbed/Context及所测试前馈/循环架构。</dd><dt>独立单位与 n</dt><dd>上述仿真网络与其活动轨迹；解释没有新增独立样本。；沿用性能10次初始化与PCA共50个代表trial；不能相加为新的n。</dd><dt>不确定性</dt><dd>未给直接动力系统辨识、吸引子证明、因果干预或竞争机制的排除检验。</dd><dt>原文位置</dt><dd>PDF 13 · Figures 5; 8</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>动力学重映射提供对性能和潜在轨迹共同恢复的合理解释框架。</dd><dt>适用边界</dt><dd>解释而非已确定的独立机制结果；基于低维描述和非单因素架构比较。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>未证明context修复的唯一因果机制、真实吸引子或适应对循环连接的普遍必要性。</dd><dt>未解决</dt><dd>需直接流场分析、受控架构消融及机制辨识区分替代解释。</dd></dl><h3>相关问题</h3><ul><li>扰动补偿是否通过重塑任务相关状态空间动力学实现？</li></ul></article><article><small>C12 / 假说 / 预测 · engineering_feasibility_hypothesis</small><h2>作者提出在模拟权重与CMOS LIF结合的边缘系统中，以剂量计等测得的全局context调节局部阈值或时间常数，可能用小幅电路修改实现运行时补偿而减少反复重写权重的需要；本文仅给出构想和仿真，未测得相应面积、功耗或真实部署收益。</h2><h3>Evidence</h3><p>示意电路与工程兼容性讨论</p><dl><dt>设计 / 对照</dt><dd>图1B示意可调LIF电路，图1C以外部环境测量提供context；讨论将所提参数调节联系到已有模拟LIF实现。；需要权重重写或附加转换电路的设计方向，未做本文器件级实测比较。</dd><dt>独立单位与 n</dt><dd>拟议电路/系统设计；不是制造芯片样本。；未报告 / 不适用</dd><dt>不确定性</dt><dd>无本文硬件样本和直接测量，实际硬件开销及context测量成本未知。</dd><dt>原文位置</dt><dd>PDF 14 · Figure 1B-C on PDF page 2</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>提出把全局环境测量与局部可调神经元参数结合的硬件—算法协同路线。</dd><dt>适用边界</dt><dd>为工程假设，仿真与示意图不是制造、辐照或能耗证据。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不声称实现了节能比例、硬件面积仅小幅增加或实体芯片稳定运行。</dd><dt>未解决</dt><dd>电路实现、传感开销、噪声耦合、面积、功耗和辐照部署需独立验证。</dd></dl><h3>相关问题</h3><ul><li>能否以低硬件开销部署全局context调节的神经形态扰动补偿？</li></ul></article><article><small>C13 / 假说 / 预测 · biological_generalization_hypothesis</small><h2>作者提出，类似本文的全局context调节可能参与生物系统对representational drift的补偿，而prediction errors或记忆表示距离可能提供长时间尺度的context；这是从计算模型及讨论延伸的生物学假设，并非本文对真实脑机制的验证。</h2><h3>Evidence</h3><p>对全局context来源和表示漂移补偿的讨论性外推</p><dl><dt>设计 / 对照</dt><dd>将模拟权重扰动中的网络适应与生物表示漂移联系，并列出预测误差、记忆距离和多室/神经调质等可能路径。；没有本文生物实验对照；讨论列举的候选机制尚未在本研究区分。</dd><dt>独立单位与 n</dt><dd>理论类比，无生物独立实验单位。；未报告 / 不适用</dd><dt>不确定性</dt><dd>未在生物系统测试context来源、漂移补偿、细胞作用或因果通路。</dd><dt>原文位置</dt><dd>PDF 14 · 4 Discussion</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>提出可进一步检验的context来源与漂移补偿假设。</dd><dt>适用边界</dt><dd>生物学类比而非机制发现；本文模型不含详细树突或神经调质实现。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不推断脑内存在同样的全局标量、真实预测误差因果驱动补偿或相同的阈值/时间常数调节。</dd><dt>未解决</dt><dd>真实context信号、细胞与回路机制、因果必要性和充分性均待实验确定。</dd></dl><h3>相关问题</h3><ul><li>生物系统补偿表示漂移时是否利用预测误差等全局context调节神经元动态？</li></ul></article><details><summary>核对记录与来源信息</summary><pre>{
+  &quot;coverage&quot;: {
+    &quot;pdf_pages_read&quot;: [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16
+    ],
+    &quot;results_sections_seen&quot;: [
+      &quot;3.1 Gaussian perturbation models&quot;,
+      &quot;3.2 Mechanisms of adaptation&quot;,
+      &quot;3.2.1 Learned adaptive parameters&quot;,
+      &quot;3.2.2 Latent space analysis&quot;,
+      &quot;3.3 Device perturbation models&quot;,
+      &quot;4 Discussion&quot;
+    ],
+    &quot;missing_material&quot;: [
+      &quot;未提供图像像素或任何独立补充文件；可用性声明泛指 article/supplementary material，不能据此推断补充文件的实际内容。&quot;
+    ],
+    &quot;text_pass_complete&quot;: true,
+    &quot;notes&quot;: [
+      &quot;按1至16的PDF文件页序评估全部 supplied text，包括图1至9的全部图注、表1至2、方法、讨论、声明和参考文献。所供16页未见独立附录。全文通过六个不截断的约17500字符输出读入，第二遍审计使用保留的来源上下文，不重新打开PDF。&quot;,
+      &quot;第1页明确标为Original Research，正式发表于2026-03-11；标题、DOI 10.3389/fnins.2026.1766765、作者顺序和2026年份与分配条目一致，不替换为其他版本。索引作者S. Agarwal在源首页为Sapan Agarwal；输出仍保留索引作者形式，并记录这一缩写差异。&quot;,
+      &quot;实质结果为Gaussian权重扰动下的CIFAR-10仿真，以及经验SONOS辐射扰动模型下的Small Object Tracking仿真；摘要的概括不等于本文展示了两任务乘两扰动源的全部组合。&quot;,
+      &quot;第2.6.1节报告任务性能平均于10次独立网络初始化。它不是10个硬件器件、动物或被试；测试集样本总数、参数分布检验的观测数、PCA所用网络重复数均未明确报告。&quot;,
+      &quot;保留原文六项待核歧义D1至D6：时间常数与逆时间常数/快慢方向、跟踪误差MSE与像素单位、TID等级数、图5训练测试轴、图3A阈值方向、优化器描述。它们不构成来源身份不匹配，也不通过猜测修复。&quot;,
+      &quot;全部source_locator.quote为null；没有用参考文献建立跨论文支持、矛盾或复现关系。候选来源内审计不等于科学验证或人工审核。&quot;
+    ],
+    &quot;reading_mode&quot;: &quot;text_only&quot;,
+    &quot;figure_images_read&quot;: false,
+    &quot;scientific_verification&quot;: false,
+    &quot;source_pdf_offline&quot;: false,
+    &quot;archived_page_text_used&quot;: false
+  },
+  &quot;audit&quot;: {
+    &quot;source_match_checks&quot;: [],
+    &quot;model_findings&quot;: [
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;来源身份审计：第1页正式版本、标题、DOI和年份匹配；索引S. Agarwal与原文Sapan Agarwal为直接明确的缩写差异。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留分配索引作者字段；在coverage notes记录来源全名，不强改索引或查询其他版本。&quot;,
+        &quot;pdf_page&quot;: 1,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C1&quot;,
+        &quot;issue&quot;: &quot;第二遍来源审计区分适应训练与推断：模型在后100 epochs仍共同学习权重和p，不能将运行时不重写权重写成整个流程无需训练/冻结权重。&quot;,
+        &quot;suggested_correction&quot;: &quot;C1明确两阶段训练和运行时参数调节。&quot;,
+        &quot;pdf_page&quot;: 8,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C6&quot;,
+        &quot;issue&quot;: &quot;正文把零中心对象称为阈值电压，但式4的总阈值有基值1；图6描述adaptive projection vectors。&quot;,
+        &quot;suggested_correction&quot;: &quot;限定为阈值适应投影，而非完整阈值为零；保留p&gt;0.05为未检出，不写成等效或严格零。&quot;,
+        &quot;pdf_page&quot;: 10,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C7&quot;,
+        &quot;issue&quot;: &quot;paper-W7134896541:D1：式5与正文称调节τm且正向投影减速，图6图注称调节逆时间常数且加速；均值的frames标签也无法据此确定为τm或逆τm的物理量。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留参数统计为作者报告；不确定快/慢方向、不计算实际τm或速度，交由来源澄清。&quot;,
+        &quot;pdf_page&quot;: 10,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C10&quot;,
+        &quot;issue&quot;: &quot;paper-W7134896541:D2：方法定义跟踪损失和性能为MSE，结果和图9却把它描述为亚像素或小于2像素；MSE与像素量纲不一致。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留作者文字范围与单位歧义，不换算RMSE、坐标位移或精确MSE。&quot;,
+        &quot;pdf_page&quot;: 13,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C10&quot;,
+        &quot;issue&quot;: &quot;paper-W7134896541:D3：方法同时称TID有10个水平、0至1000 krad且100 krad步长；含两端时这些描述不能同时成立。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留剂量上限和正文的100/600 krad范围，不推定实际等级列表或改为11。&quot;,
+        &quot;pdf_page&quot;: 7,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C2&quot;,
+        &quot;issue&quot;: &quot;paper-W7134896541:D4：图5图注称纵轴最大训练扰动、横轴测试扰动，3.1正文首段将两轴反过来。&quot;,
+        &quot;suggested_correction&quot;: &quot;仅以2.7的交叉评估设计和3.1叙述提取，不根据未供像素确定轴或读取数值。&quot;,
+        &quot;pdf_page&quot;: 9,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C1&quot;,
+        &quot;issue&quot;: &quot;paper-W7134896541:D5：图3A把降低阈值、FI曲线左移与平均活动下降联结；该文字方向描述不能无条件采用。&quot;,
+        &quot;suggested_correction&quot;: &quot;不提取降低阈值必然降低活动的确定命题，也不擅自反转原句；保留待核。&quot;,
+        &quot;pdf_page&quot;: 7,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C1&quot;,
+        &quot;issue&quot;: &quot;paper-W7134896541:D6：2.6.2称采用SGD加momentum，却引用Kingma/Ba；参考文献该条为Adam。&quot;,
+        &quot;suggested_correction&quot;: &quot;不凭引用推定实际优化器是Adam，也不从正文恢复未供实现；作为复现信息歧义保留。&quot;,
+        &quot;pdf_page&quot;: 8,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C3&quot;,
+        &quot;issue&quot;: &quot;第二遍审计发现前馈和循环架构不仅差在循环连接：batch normalization使用和基准τm不同。&quot;,
+        &quot;suggested_correction&quot;: &quot;C3及C11不将架构差异认作循环连接的唯一因果效应，也不推广所有前馈网络。&quot;,
+        &quot;pdf_page&quot;: 4,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C7&quot;,
+        &quot;issue&quot;: &quot;参数分布检验未给观测数或网络内依赖处理；任务性能的10次初始化不能填充每项统计检验的n。&quot;,
+        &quot;suggested_correction&quot;: &quot;C6、C7报告真实分析对象和缺失的独立单位，不估算神经元数、自由度或置信区间。&quot;,
+        &quot;pdf_page&quot;: 10,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C9&quot;,
+        &quot;issue&quot;: &quot;PCA选取50幅图像共5类，每幅32步；这不是每类50幅或1600个独立重复，且per-trial PCA对齐不明确。&quot;,
+        &quot;suggested_correction&quot;: &quot;C8、C9限定描述性二维轨迹，保留选取刺激范围，不证明完整流形或吸引子。&quot;,
+        &quot;pdf_page&quot;: 11,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C10&quot;,
+        &quot;issue&quot;: &quot;SONOS辐射响应来自本文引用的已有器件参数；本研究结果是模型仿真而非自己完成的器件辐照。摘要的跨任务概括也不提供完整二乘二实验矩阵。&quot;,
+        &quot;suggested_correction&quot;: &quot;C10限定经验器件模型，C12另标工程假设；不造硬件n或两种适应在SOT的独立曲线。&quot;,
+        &quot;pdf_page&quot;: 13,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C11&quot;,
+        &quot;issue&quot;: &quot;动力学重映射属于作者对PCA与性能的解释；真实状态空间流和吸引子未被直接辨识。&quot;,
+        &quot;suggested_correction&quot;: &quot;role保持interpretation；不宣称已证实唯一机制。&quot;,
+        &quot;pdf_page&quot;: 13,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C13&quot;,
+        &quot;issue&quot;: &quot;讨论的生物context、预测误差与表示漂移由模型类比和引用背景提出；本文没有生物验证。&quot;,
+        &quot;suggested_correction&quot;: &quot;role保持hypothesis，独立于仿真结果和动力学解释，不建立跨论文支持/复现边。&quot;,
+        &quot;pdf_page&quot;: 14,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;已在保留的全16页上下文中逐项进行第二遍来源审计，检查全部13个命题的对象、条件、比较、读出、单位、n、阴性与非推论，并评估图1至9、表1至2是否遗漏贡献。&quot;,
+        &quot;suggested_correction&quot;: &quot;所有候选保持text-only、human_checked:false；D1至D6留作来源歧义，其他重复/范围问题已在草稿中限定。&quot;,
+        &quot;pdf_page&quot;: null,
+        &quot;resolved&quot;: true
+      }
+    ],
+    &quot;needs_human_review&quot;: true
+  },
+  &quot;source&quot;: {
+    &quot;filename&quot;: &quot;paper-W7134896541--Learned-adaptive-properties-for-mitigation-of-weight-perturbations-in-embedded-spiking-networks.pdf&quot;,
+    &quot;sha256&quot;: &quot;8ee1353c86612f468e3ccdb9ab3e7efb061e08b5d5f746a7cff2ad835050444f&quot;,
+    &quot;source_url&quot;: &quot;https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2026.1766765/pdf&quot;,
+    &quot;pdf_page_count&quot;: 16
+  },
+  &quot;provenance&quot;: {
+    &quot;created_at&quot;: &quot;2026-10-07T15:20:38.349159Z&quot;,
+    &quot;workflow&quot;: &quot;claim-commons-pdf-v1&quot;,
+    &quot;prompt_version&quot;: &quot;claim-commons-chatgpt-pdf-2026-10-07.1&quot;,
+    &quot;backend&quot;: &quot;authorized_parallel_GPT&quot;,
+    &quot;model&quot;: &quot;inherited_account_GPT&quot;,
+    &quot;provider_api_key_used&quot;: false,
+    &quot;source_sha256&quot;: &quot;8ee1353c86612f468e3ccdb9ab3e7efb061e08b5d5f746a7cff2ad835050444f&quot;,
+    &quot;source_audit_complete&quot;: true,
+    &quot;review_status&quot;: &quot;candidate&quot;,
+    &quot;database_updated&quot;: false
+  }
+}</pre></details></main><footer></footer></body></html>

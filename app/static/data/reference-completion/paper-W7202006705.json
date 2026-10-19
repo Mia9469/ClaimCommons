@@ -1,0 +1,1793 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "preprint",
+  "paper": {
+    "title": "Effective pruning of task-trained recurrent neural networks using noisy fluctuations and connection rescaling",
+    "authors": [
+      "Sanjith Senthil",
+      "Rishidev Chaudhuri"
+    ],
+    "doi": null,
+    "publication_year": 2026,
+    "venue": "arXiv (Cornell University)",
+    "url": "https://arxiv.org/pdf/2608.05464"
+  },
+  "source": {
+    "filename": "paper-W7202006705--Effective-pruning-of-task-trained-recurrent-neural-networks-using-noisy-fluctuations-and-connec.pdf",
+    "sha256": "7a715f9fd66620fd445b0cf39b9d3cb4b13c3c442ef95e45e6a9a12613fb52e3",
+    "source_url": "https://arxiv.org/pdf/2608.05464",
+    "pdf_page_count": 19
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "results_sections_seen": [
+      "The noise-prune algorithm",
+      "Noise-prune preserves function in task-trained recurrent neural networks",
+      "Probabilistic pruning and rescaling of retained connections is essential to good performance",
+      "Optimal rescaling is lower than predicted by theory",
+      "Figures 1–5文字说明及图注",
+      "Methods及Table 1；噪声幅度鲁棒性与中心化消融",
+      "随文Supplementary Information：Table S2（任务规格）、Table S3（84项比较，含续页）、Table S4（18项限幅比较）"
+    ],
+    "missing_material": [
+      "未提供Figure 1–5的图像像素；未读取原始代码、数据、网络权重及未随文提供的其他材料。"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "全19页以5个不超过18000字符的连续文本窗口读取，包括第13–14页参考文献、第15页附加信息及第16–19页随文补充信息；无输出截断。",
+      "第1页身份为Sanjith Senthil与Rishidev Chaudhuri，arXiv:2608.05464v1 [q-bio.NC]，2026-08-05；题名、作者与索引一致。保留预印本版本，不替换为后续发表事实；DOI未给。",
+      "文本/图注阅读不等于图像阅读、科学复现或人工核验；所有结果保持候选状态。",
+      "二次源文审计使用已保留的全部页文及草稿，重点复核贡献覆盖、显著性表、度量定义、独立单位、联合消融、机制措辞及共享证据；没有重开PDF。",
+      "正文对补充表的引用比实际随文表号少1：实际第16页Table S2为任务规格，第17–18页Table S3为方法比较，第19页Table S4为限幅比较；定位采用实际PDF页和印出表号。",
+      "源文正文与附表的部分P值概括、80%L-NP确定性比较及sign-test一致性说法冲突，已在相关候选及审计中明示；不将这些结果内部冲突伪装为来源身份不一致。",
+      "全部引文quote为null；英文逐字引用预算为0。只有同文共享证据标记，relations为空。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "8任务×3训练网络的基线训练状态与统一任务保持测量定义。",
+      "role": "supporting_design",
+      "source_pages": [
+        3,
+        8,
+        9,
+        12,
+        16
+      ],
+      "decision": "include",
+      "reason": "作为C1–C7比较的条件及独立单位保留；Table 1不是8个新剪枝结论，Table S2只提供任务规格。"
+    },
+    {
+      "summary": "完整S-NP及L-NP相对于幅值剪枝的任务保留优势。",
+      "role": "result",
+      "source_pages": [
+        3,
+        4,
+        17,
+        18
+      ],
+      "decision": "include",
+      "reason": "C1；逐点表值修正正文过强P阈值，保留源内差异。"
+    },
+    {
+      "summary": "noise-prune与一次性recurrent-OBS的低比例无差异/高比例优势边界。",
+      "role": "result",
+      "source_pages": [
+        4,
+        8,
+        11,
+        12,
+        17,
+        18
+      ],
+      "decision": "include",
+      "reason": "C2；限定OBS实现及60%时S-NP/L-NP的不同结论。"
+    },
+    {
+      "summary": "完整L-NP与S-NP未检出任务保留差异。",
+      "role": "result",
+      "source_pages": [
+        4,
+        17,
+        18
+      ],
+      "decision": "include",
+      "reason": "C3；负结果独立可评估，不解释为等效证明。"
+    },
+    {
+      "summary": "随机删去一半循环边造成严重任务保持损失。",
+      "role": "result",
+      "source_pages": [
+        4,
+        17
+      ],
+      "decision": "include",
+      "reason": "C4；结构无关控制，不把归一化保留率直接当chance准确率。"
+    },
+    {
+      "summary": "联合移除概率采样和重缩放的性能损失。",
+      "role": "result",
+      "source_pages": [
+        4,
+        5,
+        17,
+        18
+      ],
+      "decision": "include",
+      "reason": "C5；不拆分为两个没有独立因子消融的必要性命题。"
+    },
+    {
+      "summary": "S-NP确定性评分相对于权重幅值的实测优势。",
+      "role": "result",
+      "source_pages": [
+        5,
+        17,
+        18
+      ],
+      "decision": "include",
+      "reason": "C6；与联合采样重缩放收益分开。"
+    },
+    {
+      "summary": "L-NP确定性版50–70%无显著差异，但80%表值与正文冲突。",
+      "role": "result",
+      "source_pages": [
+        5,
+        17,
+        18
+      ],
+      "decision": "include",
+      "reason": "C7；保留实际负结果及显著差异，80%方向不猜测。"
+    },
+    {
+      "summary": "80%剪枝候选逆概率放大分布的重尾。",
+      "role": "result",
+      "source_pages": [
+        5,
+        6
+      ],
+      "decision": "include",
+      "reason": "C8；区分候选极值与实际存活权重，n=72为嵌套实现。"
+    },
+    {
+      "summary": "未限幅noise-prune提升循环连接谱横坐标。",
+      "role": "result",
+      "source_pages": [
+        6,
+        12
+      ],
+      "decision": "include",
+      "reason": "C9；局部线性诊断与非线性全局稳定性分开。"
+    },
+    {
+      "summary": "放大限幅的非单调任务性能及经验中间峰值。",
+      "role": "result",
+      "source_pages": [
+        6,
+        7,
+        11,
+        12,
+        19
+      ],
+      "decision": "include",
+      "reason": "C10；保留跨剪枝比例平均的单位、18项检验族及期望保持的代价。"
+    },
+    {
+      "summary": "S-NP高评分边集合对0.75–1.5×σ_nat的鲁棒性。",
+      "role": "result",
+      "source_pages": [
+        10
+      ],
+      "decision": "include",
+      "reason": "C11；保留方法段实际检查，不外推为任务性能等效。"
+    },
+    {
+      "summary": "conditional与rollout-mean中心化的定性消融。",
+      "role": "result",
+      "source_pages": [
+        10
+      ],
+      "decision": "include",
+      "reason": "C12；不虚构独立n、效应量或统计负结果。"
+    },
+    {
+      "summary": "补偿与稳定性折中解释限幅收益。",
+      "role": "interpretation",
+      "source_pages": [
+        6,
+        7,
+        12
+      ],
+      "decision": "include",
+      "reason": "C13；机制解释与已测谱诊断、性能干预分开，并保留共享证据。"
+    },
+    {
+      "summary": "有限重缩放与homeostatic调节、spine命运的生物对应。",
+      "role": "hypothesis",
+      "source_pages": [
+        7,
+        8
+      ],
+      "decision": "include",
+      "reason": "C14；不包装为生物学机制验证。"
+    },
+    {
+      "summary": "noise-prune原始保留概率、边权期望恒等式，以及受限网络类的谱保留保证。",
+      "role": "cited_background",
+      "source_pages": [
+        2,
+        8,
+        9,
+        10
+      ],
+      "decision": "exclude",
+      "reason": "来自既有算法及理论，不作为本研究新定理；保证需保留线性或rectified-linear、对称、对角占优及渐近范围，不转移到本研究非线性有向任务网络。"
+    },
+    {
+      "summary": "多轮OBS可能更好、较弱但更普遍的noise-prune理论保证。",
+      "role": "future_work",
+      "source_pages": [
+        8
+      ],
+      "decision": "exclude",
+      "reason": "没有独立实证或新定理；作为C2及推广边界的未解方向，不增加重复猜想记录。"
+    },
+    {
+      "summary": "参考文献、AI使用声明、资助、作者贡献与利益冲突。",
+      "role": "nonresearch_metadata",
+      "source_pages": [
+        13,
+        14,
+        15
+      ],
+      "decision": "exclude",
+      "reason": "全部阅读但不提取为独立科学结果，不使用其他论文作为证据。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "在8种Mod-Cog认知任务训练的24个512单元tanh CTRNN中，仅对循环权重一次性剪除50–80%、且不重训练时，带随机采样和逆保留概率重缩放的S-NP及L-NP均比按权重幅值剪枝保留更多任务准确率；80%剪枝时保留率分别为0.382±0.063、0.378±0.067，而幅值剪枝为0.087±0.013（均值±s.e.m.）。",
+      "claim_type": "simulation_method_comparison",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "任务训练CTRNN剪枝模拟",
+          "design": "对同一已训练网络施加配对剪枝方法比较；使用未剪枝网络自身准确率归一化。",
+          "comparator": "S-NP rescale、L-NP rescale相对于magnitude pruning",
+          "measure": "50%剪枝：S-NP 0.917±0.014，L-NP 0.913±0.021，magnitude 0.748±0.031；80%剪枝：S-NP 0.382±0.063，L-NP 0.378±0.067，magnitude 0.087±0.013。",
+          "unit_of_analysis": "训练网络；网络内剪枝重复先平均，网络嵌套于8种任务。",
+          "sample_size_as_reported": "n=24个训练网络（8任务×3独立训练种子）；随机剪枝每网络3种子先平均，不能计为72个独立网络。",
+          "uncertainty": "源文报告均值±s.e.m.，种子先在各网络内平均；不报告置信区间。",
+          "assumptions": [
+            "8种Mod-Cog任务，每任务3个独立初始化及训练顺序的网络；每网络H=512，tanh激活，dt=10 ms，τ=100 ms。",
+            "仅剪除无自连接的Wrec非对角权重，输入及读出权重不变；一次性剪枝后不重训练。",
+            "task retention为剪枝后post-fixation sequence accuracy除以该网络未剪枝准确率；准确率按有效时间步×试次位置计算，不是整条序列全部正确的比例。",
+            "剪枝比例50%、60%、70%、80%；随机方法每网络3个剪枝种子，先在网络内平均；同任务使用固定128个评估批次。",
+            "24个训练网络为配对分析单位，来自8任务×3训练种子；512单元、261632条可剪边、25000个校准状态、评估位置及剪枝种子不是额外独立网络样本。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "Results — Noise-prune preserves function in task-trained recurrent neural networks",
+            "figure": "Figure 1（图注在PDF第3页）",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "配对统计比较",
+          "design": "对同一已训练网络施加配对剪枝方法比较；使用未剪枝网络自身准确率归一化。",
+          "comparator": "Magnitude vs L-NP rescale / S-NP rescale，50%、60%、70%",
+          "measure": "L-NP的Wilcoxon P_Holm分别为1.79×10^-4、1.12×10^-5、1.00×10^-5；S-NP分别为8.38×10^-5、1.00×10^-5、1.00×10^-5。",
+          "unit_of_analysis": "训练网络；网络内剪枝重复先平均，网络嵌套于8种任务。",
+          "sample_size_as_reported": "n=24个训练网络（8任务×3独立训练种子）；随机剪枝每网络3种子先平均，不能计为72个独立网络。",
+          "uncertainty": "配对双侧Wilcoxon signed-rank；84项比较族Holm校正；另列Holm校正exact binomial sign test。",
+          "assumptions": [
+            "8种Mod-Cog任务，每任务3个独立初始化及训练顺序的网络；每网络H=512，tanh激活，dt=10 ms，τ=100 ms。",
+            "仅剪除无自连接的Wrec非对角权重，输入及读出权重不变；一次性剪枝后不重训练。",
+            "task retention为剪枝后post-fixation sequence accuracy除以该网络未剪枝准确率；准确率按有效时间步×试次位置计算，不是整条序列全部正确的比例。",
+            "剪枝比例50%、60%、70%、80%；随机方法每网络3个剪枝种子，先在网络内平均；同任务使用固定128个评估批次。",
+            "24个训练网络为配对分析单位，来自8任务×3训练种子；512单元、261632条可剪边、25000个校准状态、评估位置及剪枝种子不是额外独立网络样本。"
+          ],
+          "source_locator": {
+            "pdf_page": 17,
+            "section": "Supplementary Table S3 — Full pairwise task-retention comparisons",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "配对统计比较",
+          "design": "对同一已训练网络施加配对剪枝方法比较；使用未剪枝网络自身准确率归一化。",
+          "comparator": "Magnitude vs L-NP rescale / S-NP rescale，80%",
+          "measure": "两种noise-prune的Wilcoxon及sign-test P_Holm均为1.00×10^-5。",
+          "unit_of_analysis": "训练网络；网络内剪枝重复先平均，网络嵌套于8种任务。",
+          "sample_size_as_reported": "n=24个训练网络（8任务×3独立训练种子）；随机剪枝每网络3种子先平均，不能计为72个独立网络。",
+          "uncertainty": "配对双侧Wilcoxon signed-rank；84项比较族Holm校正；另列Holm校正exact binomial sign test。",
+          "assumptions": [
+            "8种Mod-Cog任务，每任务3个独立初始化及训练顺序的网络；每网络H=512，tanh激活，dt=10 ms，τ=100 ms。",
+            "仅剪除无自连接的Wrec非对角权重，输入及读出权重不变；一次性剪枝后不重训练。",
+            "task retention为剪枝后post-fixation sequence accuracy除以该网络未剪枝准确率；准确率按有效时间步×试次位置计算，不是整条序列全部正确的比例。",
+            "剪枝比例50%、60%、70%、80%；随机方法每网络3个剪枝种子，先在网络内平均；同任务使用固定128个评估批次。",
+            "24个训练网络为配对分析单位，来自8任务×3训练种子；512单元、261632条可剪边、25000个校准状态、评估位置及剪枝种子不是额外独立网络样本。"
+          ],
+          "source_locator": {
+            "pdf_page": 18,
+            "section": "Supplementary Table S3 — continued",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "两种noise-prune在所测试剪枝比例下均优于幅值剪枝。",
+        "boundary": "结论为跨此8任务网络套件的汇总比较，不证明每个任务都具有相同效应；未剪枝网络并非均达满分。",
+        "negative_result": null,
+        "non_inference": "不证明活体脑内有效性、节能幅度或其他网络规模上的普遍优势。",
+        "unresolved": "未检验其他规模、任务套件及剪枝后重训练情形。",
+        "unresolved_attribution": "源文讨论的推广边界。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "利用噪声协方差及重缩放能否比权重幅值更好地保留循环网络任务功能？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7"
+      ],
+      "review_notes": [
+        "正文称所有noise-prune与幅值比较P<10^-4，但附表第17页L-NP在50%剪枝时为1.79×10^-4；保留表值及内部差异，不静默采用更强阈值。",
+        "Table 1（第9页）说明8任务各3个训练网络；各任务未剪枝准确率均值从0.6020至0.9544。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "在同一24个512单元、8任务tanh CTRNN的一次性循环权重剪枝且不重训练比较中，S-NP和L-NP在50%剪枝时与recurrent-OBS未检出任务保留率差异；60%时仅S-NP显著更好，70–80%时两种noise-prune均优于该固定Hessian、一次补偿的recurrent-OBS实现。",
+      "claim_type": "simulation_comparator_boundary",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "配对任务保留模拟",
+          "design": "对同一已训练网络施加配对剪枝方法比较；使用未剪枝网络自身准确率归一化。",
+          "comparator": "sample-and-rescale S-NP / L-NP vs recurrent-OBS",
+          "measure": "50%时OBS 0.930±0.016、S-NP 0.917±0.014、L-NP 0.913±0.021；80%时OBS 0.137±0.025、S-NP 0.382±0.063、L-NP 0.378±0.067。",
+          "unit_of_analysis": "训练网络；网络内剪枝重复先平均，网络嵌套于8种任务。",
+          "sample_size_as_reported": "n=24个训练网络（8任务×3独立训练种子）；随机剪枝每网络3种子先平均，不能计为72个独立网络。",
+          "uncertainty": "均值±网络间s.e.m.；OBS基线不在每次删权重后重新估计Hessian。",
+          "assumptions": [
+            "8种Mod-Cog任务，每任务3个独立初始化及训练顺序的网络；每网络H=512，tanh激活，dt=10 ms，τ=100 ms。",
+            "仅剪除无自连接的Wrec非对角权重，输入及读出权重不变；一次性剪枝后不重训练。",
+            "task retention为剪枝后post-fixation sequence accuracy除以该网络未剪枝准确率；准确率按有效时间步×试次位置计算，不是整条序列全部正确的比例。",
+            "剪枝比例50%、60%、70%、80%；随机方法每网络3个剪枝种子，先在网络内平均；同任务使用固定128个评估批次。",
+            "24个训练网络为配对分析单位，来自8任务×3训练种子；512单元、261632条可剪边、25000个校准状态、评估位置及剪枝种子不是额外独立网络样本。",
+            "OBS把循环映射视为单层，使用25000个任务校准状态、阻尼λ=10^-3的二阶矩估计，一次性选择及补偿；不是完整迭代OBS。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "Results — Noise-prune preserves function in task-trained recurrent neural networks",
+            "figure": "Figure 1",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "配对Wilcoxon及sign test",
+          "design": "对同一已训练网络施加配对剪枝方法比较；使用未剪枝网络自身准确率归一化。",
+          "comparator": "recurrent OBS vs L-NP rescale / S-NP rescale",
+          "measure": "50%：两者Wilcoxon P_Holm=1.000；60%：L-NP 0.323、S-NP 0.00857；70%：L-NP 0.00554、S-NP 0.00192。",
+          "unit_of_analysis": "训练网络；网络内剪枝重复先平均，网络嵌套于8种任务。",
+          "sample_size_as_reported": "n=24个训练网络（8任务×3独立训练种子）；随机剪枝每网络3种子先平均，不能计为72个独立网络。",
+          "uncertainty": "配对双侧Wilcoxon signed-rank；84项比较族Holm校正；另列Holm校正exact binomial sign test。",
+          "assumptions": [
+            "8种Mod-Cog任务，每任务3个独立初始化及训练顺序的网络；每网络H=512，tanh激活，dt=10 ms，τ=100 ms。",
+            "仅剪除无自连接的Wrec非对角权重，输入及读出权重不变；一次性剪枝后不重训练。",
+            "task retention为剪枝后post-fixation sequence accuracy除以该网络未剪枝准确率；准确率按有效时间步×试次位置计算，不是整条序列全部正确的比例。",
+            "剪枝比例50%、60%、70%、80%；随机方法每网络3个剪枝种子，先在网络内平均；同任务使用固定128个评估批次。",
+            "24个训练网络为配对分析单位，来自8任务×3训练种子；512单元、261632条可剪边、25000个校准状态、评估位置及剪枝种子不是额外独立网络样本。"
+          ],
+          "source_locator": {
+            "pdf_page": 17,
+            "section": "Supplementary Table S3 — Full pairwise task-retention comparisons",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "配对Wilcoxon及sign test",
+          "design": "对同一已训练网络施加配对剪枝方法比较；使用未剪枝网络自身准确率归一化。",
+          "comparator": "recurrent OBS vs L-NP rescale / S-NP rescale，80%",
+          "measure": "两者Wilcoxon及sign-test P_Holm均为1.00×10^-5。",
+          "unit_of_analysis": "训练网络；网络内剪枝重复先平均，网络嵌套于8种任务。",
+          "sample_size_as_reported": "n=24个训练网络（8任务×3独立训练种子）；随机剪枝每网络3种子先平均，不能计为72个独立网络。",
+          "uncertainty": "配对双侧Wilcoxon signed-rank；84项比较族Holm校正；另列Holm校正exact binomial sign test。",
+          "assumptions": [
+            "8种Mod-Cog任务，每任务3个独立初始化及训练顺序的网络；每网络H=512，tanh激活，dt=10 ms，τ=100 ms。",
+            "仅剪除无自连接的Wrec非对角权重，输入及读出权重不变；一次性剪枝后不重训练。",
+            "task retention为剪枝后post-fixation sequence accuracy除以该网络未剪枝准确率；准确率按有效时间步×试次位置计算，不是整条序列全部正确的比例。",
+            "剪枝比例50%、60%、70%、80%；随机方法每网络3个剪枝种子，先在网络内平均；同任务使用固定128个评估批次。",
+            "24个训练网络为配对分析单位，来自8任务×3训练种子；512单元、261632条可剪边、25000个校准状态、评估位置及剪枝种子不是额外独立网络样本。"
+          ],
+          "source_locator": {
+            "pdf_page": 18,
+            "section": "Supplementary Table S3 — continued",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "较高剪枝比例时，noise-prune优于本研究的一次性recurrent-OBS基线。",
+        "boundary": "低比例时不具有一致显著优势；OBS对比仅限此处固定二阶信息的一次性实现。",
+        "negative_result": "50%时两种noise-prune、60%时L-NP与OBS均未检出显著差异。",
+        "non_inference": "不显著不等于等效；不证明noise-prune优于重新估计Hessian的迭代OBS，也不证明实际运行时间更短。",
+        "unresolved": "多轮Hessian重估和剪枝可能改善OBS，未在本文比较。",
+        "unresolved_attribution": "作者在Discussion第8页提出的后续比较。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "局部噪声剪枝能否匹配或超过非局部二阶循环活动保留基线？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "在8种Mod-Cog任务的24个512单元tanh CTRNN中，带采样与重缩放的L-NP和S-NP在50%、60%、70%、80%一次性循环剪枝后的任务保留率比较均未检出显著差异，附表各比例的Wilcoxon及sign-test P_Holm均为1.000；这支持此套件中的近似可用性，但不建立两方法等效。",
+      "claim_type": "simulation_null_comparison",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "配对方法比较",
+          "design": "对同一已训练网络施加配对剪枝方法比较；使用未剪枝网络自身准确率归一化。",
+          "comparator": "L-NP rescale vs S-NP rescale，50%、60%、70%",
+          "measure": "各比例Wilcoxon P_Holm=1.000，sign-test P_Holm=1.000。",
+          "unit_of_analysis": "训练网络；网络内剪枝重复先平均，网络嵌套于8种任务。",
+          "sample_size_as_reported": "n=24个训练网络（8任务×3独立训练种子）；随机剪枝每网络3种子先平均，不能计为72个独立网络。",
+          "uncertainty": "配对双侧Wilcoxon signed-rank；84项比较族Holm校正；另列Holm校正exact binomial sign test。",
+          "assumptions": [
+            "8种Mod-Cog任务，每任务3个独立初始化及训练顺序的网络；每网络H=512，tanh激活，dt=10 ms，τ=100 ms。",
+            "仅剪除无自连接的Wrec非对角权重，输入及读出权重不变；一次性剪枝后不重训练。",
+            "task retention为剪枝后post-fixation sequence accuracy除以该网络未剪枝准确率；准确率按有效时间步×试次位置计算，不是整条序列全部正确的比例。",
+            "剪枝比例50%、60%、70%、80%；随机方法每网络3个剪枝种子，先在网络内平均；同任务使用固定128个评估批次。",
+            "24个训练网络为配对分析单位，来自8任务×3训练种子；512单元、261632条可剪边、25000个校准状态、评估位置及剪枝种子不是额外独立网络样本。",
+            "L-NP在原点线性化；原线性算子不稳定时增加对角泄漏δ以构造Hurwitz算子，因此所得协方差并非原始非线性系统的精确协方差。"
+          ],
+          "source_locator": {
+            "pdf_page": 17,
+            "section": "Supplementary Table S3 — Full pairwise task-retention comparisons",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "配对方法比较",
+          "design": "对同一已训练网络施加配对剪枝方法比较；使用未剪枝网络自身准确率归一化。",
+          "comparator": "L-NP rescale vs S-NP rescale，80%",
+          "measure": "Wilcoxon P_Holm=1.000，sign-test P_Holm=1.000。",
+          "unit_of_analysis": "训练网络；网络内剪枝重复先平均，网络嵌套于8种任务。",
+          "sample_size_as_reported": "n=24个训练网络（8任务×3独立训练种子）；随机剪枝每网络3种子先平均，不能计为72个独立网络。",
+          "uncertainty": "配对双侧Wilcoxon signed-rank；84项比较族Holm校正；另列Holm校正exact binomial sign test。",
+          "assumptions": [
+            "8种Mod-Cog任务，每任务3个独立初始化及训练顺序的网络；每网络H=512，tanh激活，dt=10 ms，τ=100 ms。",
+            "仅剪除无自连接的Wrec非对角权重，输入及读出权重不变；一次性剪枝后不重训练。",
+            "task retention为剪枝后post-fixation sequence accuracy除以该网络未剪枝准确率；准确率按有效时间步×试次位置计算，不是整条序列全部正确的比例。",
+            "剪枝比例50%、60%、70%、80%；随机方法每网络3个剪枝种子，先在网络内平均；同任务使用固定128个评估批次。",
+            "24个训练网络为配对分析单位，来自8任务×3训练种子；512单元、261632条可剪边、25000个校准状态、评估位置及剪枝种子不是额外独立网络样本。"
+          ],
+          "source_locator": {
+            "pdf_page": 18,
+            "section": "Supplementary Table S3 — continued",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "本套件未检出完整L-NP和S-NP任务保留率的差异。",
+        "boundary": "L-NP包含稳定化对角移位；结论不能移用于不带采样和重缩放的版本。",
+        "negative_result": "四个剪枝比例下两完整变体的差异检验均不显著。",
+        "non_inference": "未做等效性或非劣效性检验；不能由P=1推断效应恰为零或线性模型与原非线性动力学一致。",
+        "unresolved": "其他任务、规模和稳定化参数下是否仍近似可用未知。",
+        "unresolved_attribution": "本研究的外推边界。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "原点线性化的噪声协方差近似能否在采样重缩放剪枝中保留任务表现？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C4",
+        "C5",
+        "C6",
+        "C7"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "在8种Mod-Cog任务训练的24个512单元tanh CTRNN中，无重训练地随机剪除50%的循环连接后，任务保留率已低于0.110，并显著低于同一网络上的幅值剪枝、recurrent-OBS以及两种完整noise-prune；因此仅保留任意一半循环连接不足以保留该套件的原任务表现。",
+      "claim_type": "simulation_negative_control",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "结构无关随机剪枝控制",
+          "design": "对同一已训练网络施加配对剪枝方法比较；使用未剪枝网络自身准确率归一化。",
+          "comparator": "random pruning vs magnitude、recurrent-OBS、L-NP rescale、S-NP rescale",
+          "measure": "50%随机剪枝的任务保留率<0.110。",
+          "unit_of_analysis": "训练网络；网络内剪枝重复先平均，网络嵌套于8种任务。",
+          "sample_size_as_reported": "n=24个训练网络（8任务×3独立训练种子）；随机剪枝每网络3种子先平均，不能计为72个独立网络。",
+          "uncertainty": "正文仅给<0.110；未单独提供该点均值±s.e.m.的数值。",
+          "assumptions": [
+            "8种Mod-Cog任务，每任务3个独立初始化及训练顺序的网络；每网络H=512，tanh激活，dt=10 ms，τ=100 ms。",
+            "仅剪除无自连接的Wrec非对角权重，输入及读出权重不变；一次性剪枝后不重训练。",
+            "task retention为剪枝后post-fixation sequence accuracy除以该网络未剪枝准确率；准确率按有效时间步×试次位置计算，不是整条序列全部正确的比例。",
+            "剪枝比例50%、60%、70%、80%；随机方法每网络3个剪枝种子，先在网络内平均；同任务使用固定128个评估批次。",
+            "24个训练网络为配对分析单位，来自8任务×3训练种子；512单元、261632条可剪边、25000个校准状态、评估位置及剪枝种子不是额外独立网络样本。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "Results — Noise-prune preserves function in task-trained recurrent neural networks",
+            "figure": "Figure 1",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "配对控制比较",
+          "design": "对同一已训练网络施加配对剪枝方法比较；使用未剪枝网络自身准确率归一化。",
+          "comparator": "50%：Random vs Magnitude / recurrent OBS / L-NP rescale / S-NP rescale",
+          "measure": "四个比较的Wilcoxon及sign-test P_Holm均为1.00×10^-5。",
+          "unit_of_analysis": "训练网络；网络内剪枝重复先平均，网络嵌套于8种任务。",
+          "sample_size_as_reported": "n=24个训练网络（8任务×3独立训练种子）；随机剪枝每网络3种子先平均，不能计为72个独立网络。",
+          "uncertainty": "配对双侧Wilcoxon signed-rank；84项比较族Holm校正；另列Holm校正exact binomial sign test。",
+          "assumptions": [
+            "8种Mod-Cog任务，每任务3个独立初始化及训练顺序的网络；每网络H=512，tanh激活，dt=10 ms，τ=100 ms。",
+            "仅剪除无自连接的Wrec非对角权重，输入及读出权重不变；一次性剪枝后不重训练。",
+            "task retention为剪枝后post-fixation sequence accuracy除以该网络未剪枝准确率；准确率按有效时间步×试次位置计算，不是整条序列全部正确的比例。",
+            "剪枝比例50%、60%、70%、80%；随机方法每网络3个剪枝种子，先在网络内平均；同任务使用固定128个评估批次。",
+            "24个训练网络为配对分析单位，来自8任务×3训练种子；512单元、261632条可剪边、25000个校准状态、评估位置及剪枝种子不是额外独立网络样本。"
+          ],
+          "source_locator": {
+            "pdf_page": 17,
+            "section": "Supplementary Table S3 — Full pairwise task-retention comparisons",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "无结构的随机删边对这些已训练网络造成强烈功能损失。",
+        "boundary": "此结论限于训练后一次性删循环连接而不补偿或重训练的控制。",
+        "negative_result": "50%随机剪枝不能维持未剪枝网络的任务准确率。",
+        "non_inference": "正文称近chance，但此比值不是原始准确率；未提供独立机会水平计算，不能将0.110当作所有任务的统一chance基线。",
+        "unresolved": "重训练或不同任务的随机剪枝容忍度未在此比较。",
+        "unresolved_attribution": "本研究的实验范围。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "已训练循环网络能否承受无结构的随机循环删边？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C5",
+        "C6",
+        "C7"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "在24个512单元、8任务tanh CTRNN中，60–80%一次性循环剪枝且不重训练时，将噪声分数用于随机保留并重缩放存活权重，比使用相同分数确定性保留top-k且不改变存活权重更能维持任务表现；这一联合消融对S-NP及L-NP均成立，但不能辨认采样和重缩放各自独立的贡献。",
+      "claim_type": "joint_ablation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "联合去除随机采样和重缩放",
+          "design": "对同一已训练网络施加配对剪枝方法比较；使用未剪枝网络自身准确率归一化。",
+          "comparator": "同一协方差评分的rescale版 vs deterministic无重缩放版",
+          "measure": "两种变体在60–80%均显著降低保留率；正文未给各消融点完整效应量。",
+          "unit_of_analysis": "训练网络；网络内剪枝重复先平均，网络嵌套于8种任务。",
+          "sample_size_as_reported": "n=24个训练网络（8任务×3独立训练种子）；随机剪枝每网络3种子先平均，不能计为72个独立网络。",
+          "uncertainty": "仅保留源文的定性效应方向及附表检验，不从图像推测效应量。",
+          "assumptions": [
+            "8种Mod-Cog任务，每任务3个独立初始化及训练顺序的网络；每网络H=512，tanh激活，dt=10 ms，τ=100 ms。",
+            "仅剪除无自连接的Wrec非对角权重，输入及读出权重不变；一次性剪枝后不重训练。",
+            "task retention为剪枝后post-fixation sequence accuracy除以该网络未剪枝准确率；准确率按有效时间步×试次位置计算，不是整条序列全部正确的比例。",
+            "剪枝比例50%、60%、70%、80%；随机方法每网络3个剪枝种子，先在网络内平均；同任务使用固定128个评估批次。",
+            "24个训练网络为配对分析单位，来自8任务×3训练种子；512单元、261632条可剪边、25000个校准状态、评估位置及剪枝种子不是额外独立网络样本。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "Results — Probabilistic pruning and rescaling of retained connections is essential to good performance",
+            "figure": "Figure 2（图注第4页）",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "配对联合消融检验",
+          "design": "对同一已训练网络施加配对剪枝方法比较；使用未剪枝网络自身准确率归一化。",
+          "comparator": "L-NP deterministic vs rescale（50–70%）；S-NP deterministic vs rescale（50–60%）",
+          "measure": "60%、70%时L-NP的Wilcoxon P_Holm均1.00×10^-5；60%时S-NP为1.12×10^-5。50%时L-NP为0.0143而sign为0.139；S-NP为0.0702而sign为0.295。S-NP在70%的行见第18页续表。",
+          "unit_of_analysis": "训练网络；网络内剪枝重复先平均，网络嵌套于8种任务。",
+          "sample_size_as_reported": "n=24个训练网络（8任务×3独立训练种子）；随机剪枝每网络3种子先平均，不能计为72个独立网络。",
+          "uncertainty": "配对双侧Wilcoxon signed-rank；84项比较族Holm校正；另列Holm校正exact binomial sign test。",
+          "assumptions": [
+            "8种Mod-Cog任务，每任务3个独立初始化及训练顺序的网络；每网络H=512，tanh激活，dt=10 ms，τ=100 ms。",
+            "仅剪除无自连接的Wrec非对角权重，输入及读出权重不变；一次性剪枝后不重训练。",
+            "task retention为剪枝后post-fixation sequence accuracy除以该网络未剪枝准确率；准确率按有效时间步×试次位置计算，不是整条序列全部正确的比例。",
+            "剪枝比例50%、60%、70%、80%；随机方法每网络3个剪枝种子，先在网络内平均；同任务使用固定128个评估批次。",
+            "24个训练网络为配对分析单位，来自8任务×3训练种子；512单元、261632条可剪边、25000个校准状态、评估位置及剪枝种子不是额外独立网络样本。"
+          ],
+          "source_locator": {
+            "pdf_page": 17,
+            "section": "Supplementary Table S3 — Full pairwise task-retention comparisons",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "配对联合消融检验",
+          "design": "对同一已训练网络施加配对剪枝方法比较；使用未剪枝网络自身准确率归一化。",
+          "comparator": "S-NP deterministic vs rescale（70%）；两种变体deterministic vs rescale（80%）",
+          "measure": "70% S-NP、80% L-NP及S-NP的Wilcoxon及sign-test P_Holm均为1.00×10^-5。",
+          "unit_of_analysis": "训练网络；网络内剪枝重复先平均，网络嵌套于8种任务。",
+          "sample_size_as_reported": "n=24个训练网络（8任务×3独立训练种子）；随机剪枝每网络3种子先平均，不能计为72个独立网络。",
+          "uncertainty": "配对双侧Wilcoxon signed-rank；84项比较族Holm校正；另列Holm校正exact binomial sign test。",
+          "assumptions": [
+            "8种Mod-Cog任务，每任务3个独立初始化及训练顺序的网络；每网络H=512，tanh激活，dt=10 ms，τ=100 ms。",
+            "仅剪除无自连接的Wrec非对角权重，输入及读出权重不变；一次性剪枝后不重训练。",
+            "task retention为剪枝后post-fixation sequence accuracy除以该网络未剪枝准确率；准确率按有效时间步×试次位置计算，不是整条序列全部正确的比例。",
+            "剪枝比例50%、60%、70%、80%；随机方法每网络3个剪枝种子，先在网络内平均；同任务使用固定128个评估批次。",
+            "24个训练网络为配对分析单位，来自8任务×3训练种子；512单元、261632条可剪边、25000个校准状态、评估位置及剪枝种子不是额外独立网络样本。"
+          ],
+          "source_locator": {
+            "pdf_page": 18,
+            "section": "Supplementary Table S3 — continued",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "较高剪枝比例下，完整采样重缩放方案的任务表现优于联合移除这两个步骤。",
+        "boundary": "该消融同时改变两步骤；50%时结果不支持所有版本均有跨检验一致的显著优势。",
+        "negative_result": "50%时S-NP联合消融差异未达显著；L-NP的Wilcoxon显著但sign不显著。",
+        "non_inference": "不能分别宣称随机采样单独必要、重缩放单独必要，亦不能据此识别生物学补偿机制。",
+        "unresolved": "采样×重缩放的独立因子实验未提供。",
+        "unresolved_attribution": "联合消融设计所保留的未知项。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "噪声剪枝的任务保持收益来自评分本身，还是采样与权重补偿的联合步骤？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C6",
+        "C7"
+      ],
+      "review_notes": [
+        "以附表为准，60–80%相关Wilcoxon P_Holm≤1.12×10^-5；不沿用正文严格小于号。",
+        "50% L-NP的signed-rank与sign-test结论不同，故不接受正文的全域稳健性概括。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "在8任务、24个512单元tanh CTRNN中，无重训练的一次性50–80%循环剪枝采用S-NP噪声模拟得到的分数进行确定性top-k保留、且不重缩放权重，仍比按权重幅值保留top-k具有更高任务保留率；因此S-NP评分在脱离采样重缩放步骤后仍有实测用途。",
+      "claim_type": "simulation_score_ablation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "评分来源对比",
+          "design": "对同一已训练网络施加配对剪枝方法比较；使用未剪枝网络自身准确率归一化。",
+          "comparator": "S-NP deterministic vs magnitude pruning",
+          "measure": "正文报告50–80%全部比较S-NP deterministic较好；不提供完整逐点效应量。",
+          "unit_of_analysis": "训练网络；网络内剪枝重复先平均，网络嵌套于8种任务。",
+          "sample_size_as_reported": "n=24个训练网络（8任务×3独立训练种子）；随机剪枝每网络3种子先平均，不能计为72个独立网络。",
+          "uncertainty": "正文给P<0.002；补充表报告逐点校正P。",
+          "assumptions": [
+            "8种Mod-Cog任务，每任务3个独立初始化及训练顺序的网络；每网络H=512，tanh激活，dt=10 ms，τ=100 ms。",
+            "仅剪除无自连接的Wrec非对角权重，输入及读出权重不变；一次性剪枝后不重训练。",
+            "task retention为剪枝后post-fixation sequence accuracy除以该网络未剪枝准确率；准确率按有效时间步×试次位置计算，不是整条序列全部正确的比例。",
+            "剪枝比例50%、60%、70%、80%；随机方法每网络3个剪枝种子，先在网络内平均；同任务使用固定128个评估批次。",
+            "24个训练网络为配对分析单位，来自8任务×3训练种子；512单元、261632条可剪边、25000个校准状态、评估位置及剪枝种子不是额外独立网络样本。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "Results — Probabilistic pruning and rescaling of retained connections is essential to good performance",
+            "figure": "Figure 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "配对评分比较",
+          "design": "对同一已训练网络施加配对剪枝方法比较；使用未剪枝网络自身准确率归一化。",
+          "comparator": "Magnitude vs S-NP deterministic，50%、60%、70%",
+          "measure": "Wilcoxon P_Holm分别0.00137、3.25×10^-5、1.12×10^-5；sign-test分别0.0371、1.34×10^-4、1.34×10^-4。",
+          "unit_of_analysis": "训练网络；网络内剪枝重复先平均，网络嵌套于8种任务。",
+          "sample_size_as_reported": "n=24个训练网络（8任务×3独立训练种子）；随机剪枝每网络3种子先平均，不能计为72个独立网络。",
+          "uncertainty": "配对双侧Wilcoxon signed-rank；84项比较族Holm校正；另列Holm校正exact binomial sign test。",
+          "assumptions": [
+            "8种Mod-Cog任务，每任务3个独立初始化及训练顺序的网络；每网络H=512，tanh激活，dt=10 ms，τ=100 ms。",
+            "仅剪除无自连接的Wrec非对角权重，输入及读出权重不变；一次性剪枝后不重训练。",
+            "task retention为剪枝后post-fixation sequence accuracy除以该网络未剪枝准确率；准确率按有效时间步×试次位置计算，不是整条序列全部正确的比例。",
+            "剪枝比例50%、60%、70%、80%；随机方法每网络3个剪枝种子，先在网络内平均；同任务使用固定128个评估批次。",
+            "24个训练网络为配对分析单位，来自8任务×3训练种子；512单元、261632条可剪边、25000个校准状态、评估位置及剪枝种子不是额外独立网络样本。"
+          ],
+          "source_locator": {
+            "pdf_page": 17,
+            "section": "Supplementary Table S3 — Full pairwise task-retention comparisons",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "配对评分比较",
+          "design": "对同一已训练网络施加配对剪枝方法比较；使用未剪枝网络自身准确率归一化。",
+          "comparator": "Magnitude vs S-NP deterministic，80%",
+          "measure": "Wilcoxon P_Holm=2.00×10^-5；sign-test P_Holm=2.24×10^-5。",
+          "unit_of_analysis": "训练网络；网络内剪枝重复先平均，网络嵌套于8种任务。",
+          "sample_size_as_reported": "n=24个训练网络（8任务×3独立训练种子）；随机剪枝每网络3种子先平均，不能计为72个独立网络。",
+          "uncertainty": "配对双侧Wilcoxon signed-rank；84项比较族Holm校正；另列Holm校正exact binomial sign test。",
+          "assumptions": [
+            "8种Mod-Cog任务，每任务3个独立初始化及训练顺序的网络；每网络H=512，tanh激活，dt=10 ms，τ=100 ms。",
+            "仅剪除无自连接的Wrec非对角权重，输入及读出权重不变；一次性剪枝后不重训练。",
+            "task retention为剪枝后post-fixation sequence accuracy除以该网络未剪枝准确率；准确率按有效时间步×试次位置计算，不是整条序列全部正确的比例。",
+            "剪枝比例50%、60%、70%、80%；随机方法每网络3个剪枝种子，先在网络内平均；同任务使用固定128个评估批次。",
+            "24个训练网络为配对分析单位，来自8任务×3训练种子；512单元、261632条可剪边、25000个校准状态、评估位置及剪枝种子不是额外独立网络样本。"
+          ],
+          "source_locator": {
+            "pdf_page": 18,
+            "section": "Supplementary Table S3 — continued",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "S-NP评分相对于原始权重幅值提供了额外的任务保持信息。",
+        "boundary": "结果仅对本研究S-NP评分及指定任务套件成立；与完整采样重缩放版本相比仍有损失。",
+        "negative_result": null,
+        "non_inference": "不证明噪声分数是连接真实因果重要性的无偏估计，也不能移用于L-NP确定性评分。",
+        "unresolved": "评分收益能否与权重分布及任务驱动协方差因素分离未检验。",
+        "unresolved_attribution": "方法对比的未分离因素。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "不用随机采样和重缩放时，噪声协方差评分是否仍优于权重幅值？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C7"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "对8任务、24个512单元tanh CTRNN进行一次性循环剪枝时，L-NP确定性无重缩放版与幅值剪枝在50%、60%、70%的任务保留率比较未检出差异，但随文Table S3在80%给出显著差异（Wilcoxon P_Holm=0.00849，sign-test P_Holm=0.00642）；这与正文称全部比较不显著相冲突，表中又未提供差异方向。",
+      "claim_type": "simulation_null_boundary_with_source_conflict",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "确定性评分的配对比较",
+          "design": "对同一已训练网络施加配对剪枝方法比较；使用未剪枝网络自身准确率归一化。",
+          "comparator": "Magnitude vs L-NP deterministic，50%、60%、70%",
+          "measure": "Wilcoxon P_Holm分别0.0885、1.000、1.000；sign-test分别0.139、1.000、1.000。",
+          "unit_of_analysis": "训练网络；网络内剪枝重复先平均，网络嵌套于8种任务。",
+          "sample_size_as_reported": "n=24个训练网络（8任务×3独立训练种子）；随机剪枝每网络3种子先平均，不能计为72个独立网络。",
+          "uncertainty": "配对双侧Wilcoxon signed-rank；84项比较族Holm校正；另列Holm校正exact binomial sign test。",
+          "assumptions": [
+            "8种Mod-Cog任务，每任务3个独立初始化及训练顺序的网络；每网络H=512，tanh激活，dt=10 ms，τ=100 ms。",
+            "仅剪除无自连接的Wrec非对角权重，输入及读出权重不变；一次性剪枝后不重训练。",
+            "task retention为剪枝后post-fixation sequence accuracy除以该网络未剪枝准确率；准确率按有效时间步×试次位置计算，不是整条序列全部正确的比例。",
+            "剪枝比例50%、60%、70%、80%；随机方法每网络3个剪枝种子，先在网络内平均；同任务使用固定128个评估批次。",
+            "24个训练网络为配对分析单位，来自8任务×3训练种子；512单元、261632条可剪边、25000个校准状态、评估位置及剪枝种子不是额外独立网络样本。"
+          ],
+          "source_locator": {
+            "pdf_page": 17,
+            "section": "Supplementary Table S3 — Full pairwise task-retention comparisons",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "确定性评分的配对比较",
+          "design": "对同一已训练网络施加配对剪枝方法比较；使用未剪枝网络自身准确率归一化。",
+          "comparator": "Magnitude vs L-NP deterministic，80%",
+          "measure": "Wilcoxon P_Holm=0.00849，sign-test P_Holm=0.00642，两个显著性列均标记显著。",
+          "unit_of_analysis": "训练网络；网络内剪枝重复先平均，网络嵌套于8种任务。",
+          "sample_size_as_reported": "n=24个训练网络（8任务×3独立训练种子）；随机剪枝每网络3种子先平均，不能计为72个独立网络。",
+          "uncertainty": "表未给差异的符号、均值或置信区间；不能据显著性反推哪一方法更好。",
+          "assumptions": [
+            "8种Mod-Cog任务，每任务3个独立初始化及训练顺序的网络；每网络H=512，tanh激活，dt=10 ms，τ=100 ms。",
+            "仅剪除无自连接的Wrec非对角权重，输入及读出权重不变；一次性剪枝后不重训练。",
+            "task retention为剪枝后post-fixation sequence accuracy除以该网络未剪枝准确率；准确率按有效时间步×试次位置计算，不是整条序列全部正确的比例。",
+            "剪枝比例50%、60%、70%、80%；随机方法每网络3个剪枝种子，先在网络内平均；同任务使用固定128个评估批次。",
+            "24个训练网络为配对分析单位，来自8任务×3训练种子；512单元、261632条可剪边、25000个校准状态、评估位置及剪枝种子不是额外独立网络样本。"
+          ],
+          "source_locator": {
+            "pdf_page": 18,
+            "section": "Supplementary Table S3 — continued",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "正文与随文附表核对",
+          "design": "源文内部结果核对；不调用外部版本或读取图像。",
+          "comparator": "正文全比例不显著概括 vs 第18页80%显著行",
+          "measure": "正文称L-NP确定性版对幅值剪枝全部P>0.08；80%附表不符合该说法。",
+          "unit_of_analysis": "训练网络；网络内剪枝重复先平均，网络嵌套于8种任务。",
+          "sample_size_as_reported": "n=24个训练网络（8任务×3独立训练种子）；随机剪枝每网络3种子先平均，不能计为72个独立网络。",
+          "uncertainty": "保留两处原始说法，不自行决定哪一处应更正。",
+          "assumptions": [
+            "8种Mod-Cog任务，每任务3个独立初始化及训练顺序的网络；每网络H=512，tanh激活，dt=10 ms，τ=100 ms。",
+            "仅剪除无自连接的Wrec非对角权重，输入及读出权重不变；一次性剪枝后不重训练。",
+            "task retention为剪枝后post-fixation sequence accuracy除以该网络未剪枝准确率；准确率按有效时间步×试次位置计算，不是整条序列全部正确的比例。",
+            "剪枝比例50%、60%、70%、80%；随机方法每网络3个剪枝种子，先在网络内平均；同任务使用固定128个评估批次。",
+            "24个训练网络为配对分析单位，来自8任务×3训练种子；512单元、261632条可剪边、25000个校准状态、评估位置及剪枝种子不是额外独立网络样本。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "Results — Probabilistic pruning and rescaling of retained connections is essential to good performance",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "可支持50–70%未检出差异，以及80%附表报告差异。",
+        "boundary": "源内矛盾使全剪枝范围的统一方向结论无法确定。",
+        "negative_result": "50–70%L-NP确定性版对幅值剪枝未显示显著差异。",
+        "non_inference": "不显著不等于等效；不能将80%差异解释为L-NP胜出或落后，不能复述正文的全比例无差异结论。",
+        "unresolved": "80%时的实际效应方向及正文与附表哪一处有误需作者或原始结果澄清。",
+        "unresolved_attribution": "源文内部差异；本提取未读取原始代码、数据或图像。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "线性化噪声评分在确定性剪枝中是否稳定优于幅值基线？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6"
+      ],
+      "review_notes": [
+        "这是带内部冲突边界的源文结果，不是本文发布的勘误；role保留result，而非correction。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "在8种Mod-Cog任务训练的24个512单元tanh CTRNN的80%循环剪枝条件下，原始noise-prune对候选边计算的逆保留概率放大系数呈重尾：L-NP与S-NP的中位数分别为6.21±0.10和5.92±0.03，99.9百分位分别约3.20×10^3和3.11×10^3，候选最大值达到1.82×10^8和2.16×10^8；最大候选系数并不表示多数实际存活边经历了该放大。",
+      "claim_type": "simulation_candidate_weight_distribution",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "候选边1/p_ij分布统计",
+          "design": "先计算全部正保留概率候选边的放大系数，再汇总网络与剪枝种子；不是只统计实际存活边。",
+          "comparator": "L-NP与S-NP，80%剪枝、未加放大上限",
+          "measure": "中位数L-NP 6.21±0.10、S-NP 5.92±0.03；99.9百分位L-NP 3.20×10^3±5.27×10^1、S-NP 3.11×10^3±2.87×10^1；最大候选1.82×10^8、2.16×10^8。",
+          "unit_of_analysis": "边级候选放大分布；摘要按网络×剪枝种子汇总，种子嵌套于网络。",
+          "sample_size_as_reported": "正文及图注报告n=72个网络×剪枝种子实现，由24个训练网络×3剪枝种子组成；不是72个独立训练网络。",
+          "uncertainty": "中位数及99.9百分位为源文所报跨网络和运行的均值±s.e.m.（n=72）；未按独立网络重新估计不确定性。",
+          "assumptions": [
+            "8种Mod-Cog任务，每任务3个独立初始化及训练顺序的网络；每网络H=512，tanh激活，dt=10 ms，τ=100 ms。",
+            "仅剪除无自连接的Wrec非对角权重，输入及读出权重不变；一次性剪枝后不重训练。",
+            "task retention为剪枝后post-fixation sequence accuracy除以该网络未剪枝准确率；准确率按有效时间步×试次位置计算，不是整条序列全部正确的比例。",
+            "剪枝比例50%、60%、70%、80%；随机方法每网络3个剪枝种子，先在网络内平均；同任务使用固定128个评估批次。",
+            "24个训练网络为配对分析单位，来自8任务×3训练种子；512单元、261632条可剪边、25000个校准状态、评估位置及剪枝种子不是额外独立网络样本。",
+            "候选放大系数是1/p_ij；极大系数对应极小保留概率，往往不会在某次实现中被采到。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "Results — Optimal rescaling is lower than predicted by theory",
+            "figure": "Figure 3（图注第5页）",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "原始逆概率重缩放产生少量极大候选系数，构成限制放大的动机。",
+        "boundary": "只涉及80%剪枝及候选系数分布；72是嵌套实现数，非独立网络数。",
+        "negative_result": null,
+        "non_inference": "不证明实际网络通常含有10^8倍存活权重，也不证明生物突触具有这一分布或极值。",
+        "unresolved": "候选重尾对实际运行风险的贡献未通过独立尾部操控实验定量识别。",
+        "unresolved_attribution": "源文诊断的测量范围。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "逆保留概率补偿会产生多大候选放大尾部，如何区分候选极值与实际存活边？"
+      ],
+      "shared_evidence_with": [
+        "C9",
+        "C10",
+        "C13",
+        "C14"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "在24个任务训练、512单元tanh CTRNN中，原始采样重缩放noise-prune随剪枝比例增加提高循环连接矩阵的spectral abscissa；80%剪枝时L-NP和S-NP分别达到2.18±0.08、2.10±0.07，其他剪枝方法保持较低值。此诊断说明原点线性化的潜在稳定性代价，而不是tanh网络状态发散或全局动力学失稳的证明。",
+      "claim_type": "simulation_dynamical_diagnostic",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "循环矩阵谱诊断",
+          "design": "对同一已训练网络施加配对剪枝方法比较；使用未剪枝网络自身准确率归一化。",
+          "comparator": "L-NP / S-NP rescale vs random、magnitude、recurrent-OBS及两种deterministic noise-prune",
+          "measure": "80%剪枝a(Wrec)：L-NP 2.18±0.08，S-NP 2.10±0.07；其他方法仅给定性较低描述。",
+          "unit_of_analysis": "训练网络；网络内剪枝重复先平均，网络嵌套于8种任务。",
+          "sample_size_as_reported": "n=24个训练网络（8任务×3独立训练种子）；随机剪枝每网络3种子先平均，不能计为72个独立网络。",
+          "uncertainty": "均值±s.e.m.，n=24训练网络；没有提供该诊断的方法间P值或其他方法逐点数值。",
+          "assumptions": [
+            "8种Mod-Cog任务，每任务3个独立初始化及训练顺序的网络；每网络H=512，tanh激活，dt=10 ms，τ=100 ms。",
+            "仅剪除无自连接的Wrec非对角权重，输入及读出权重不变；一次性剪枝后不重训练。",
+            "task retention为剪枝后post-fixation sequence accuracy除以该网络未剪枝准确率；准确率按有效时间步×试次位置计算，不是整条序列全部正确的比例。",
+            "剪枝比例50%、60%、70%、80%；随机方法每网络3个剪枝种子，先在网络内平均；同任务使用固定128个评估批次。",
+            "24个训练网络为配对分析单位，来自8任务×3训练种子；512单元、261632条可剪边、25000个校准状态、评估位置及剪枝种子不是额外独立网络样本。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "Results — Optimal rescaling is lower than predicted by theory",
+            "figure": "Figure 4",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "原点线性化稳定性判据",
+          "design": "以连接矩阵特征值作局部线性诊断；不构成全局稳定性定理。",
+          "comparator": "A=Wrec-I的原点局部增长或衰减",
+          "measure": "a(Wrec)=max Re(λ_i)；a(Wrec)<1对应A为Hurwitz，超过1意味着原点存在增长模态；tanh仍使状态有界。",
+          "unit_of_analysis": "网络连接矩阵的最大特征值实部。",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "原点处tanh'(0)=1，A=Wrec-I；时间常数只改变时间尺度。",
+            "a(Wrec)是连接矩阵指标，不是非线性任务轨迹全部状态的稳定性测量。"
+          ],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "Methods — Evaluation pipeline",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "未限幅采样重缩放提高此局部线性谱诊断，提示强放大的潜在动态代价。",
+        "boundary": "只对原点线性化作判断；该原点不必是带偏置、任务输入下实际轨迹的稳态。",
+        "negative_result": null,
+        "non_inference": "不能推出非线性状态无界发散，也不能从此诊断独立识别任务性能变化的因果机制。",
+        "unresolved": "限幅是否确实通过改善该谱诊断而提升性能，本文未给限幅谱中介实验。",
+        "unresolved_attribution": "作者稳定性解释仍未被单独检验。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "逆概率重缩放如何影响循环网络的局部线性谱诊断？"
+      ],
+      "shared_evidence_with": [
+        "C8",
+        "C10",
+        "C13"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "在8任务、24个512单元tanh CTRNN的一次性50–80%循环剪枝中，按全部候选边1/p分布的中间百分位限制存活边放大可提高跨比例平均任务保留率：L-NP在q=60时从未限幅的0.668±0.041提高到0.691±0.038，S-NP在q=50时从0.676±0.038提高到0.730±0.032；经验最优补偿因此低于原始保持边权期望的1/p规则。",
+      "claim_type": "simulation_parameter_intervention",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "候选放大系数的百分位限幅扫描",
+          "design": "对同一已训练网络施加配对剪枝方法比较；使用未剪枝网络自身准确率归一化。",
+          "comparator": "L-NP q=60 / S-NP q=50 vs 各自q=100未限幅版",
+          "measure": "L-NP：0.668±0.041→0.691±0.038；S-NP：0.676±0.038→0.730±0.032（均值±s.e.m.，先在网络内平均3种子及4剪枝比例）。",
+          "unit_of_analysis": "训练网络；网络内剪枝重复先平均，网络嵌套于8种任务。",
+          "sample_size_as_reported": "n=24个训练网络（8任务×3独立训练种子）；随机剪枝每网络3种子先平均，不能计为72个独立网络。",
+          "uncertainty": "峰值与未限幅Wilcoxon P_Holm：L-NP 6.53×10^-5，S-NP 8.34×10^-6；18项限幅比较族。",
+          "assumptions": [
+            "8种Mod-Cog任务，每任务3个独立初始化及训练顺序的网络；每网络H=512，tanh激活，dt=10 ms，τ=100 ms。",
+            "仅剪除无自连接的Wrec非对角权重，输入及读出权重不变；一次性剪枝后不重训练。",
+            "task retention为剪枝后post-fixation sequence accuracy除以该网络未剪枝准确率；准确率按有效时间步×试次位置计算，不是整条序列全部正确的比例。",
+            "剪枝比例50%、60%、70%、80%；随机方法每网络3个剪枝种子，先在网络内平均；同任务使用固定128个评估批次。",
+            "24个训练网络为配对分析单位，来自8任务×3训练种子；512单元、261632条可剪边、25000个校准状态、评估位置及剪枝种子不是额外独立网络样本。",
+            "Rq取所有正保留概率候选边的1/p百分位，而不是实际存活边百分位；q=10至100，q=100为原始未限幅规则。",
+            "限幅会让受影响边补偿不足，牺牲这些边在采样下的精确权重期望；不违反或推翻原规则的期望恒等式。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "Results — Optimal rescaling is lower than predicted by theory",
+            "figure": "Figure 5（图注第7页）",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "配对限幅统计比较",
+          "design": "先平均各网络/比例内3剪枝种子，再在各网络内平均4剪枝比例；24个网络配对检验，18项比较Holm校正。",
+          "comparator": "q=60 L-NP / q=50 S-NP vs q=100",
+          "measure": "L-NP：Wilcoxon P_Holm=6.53×10^-5，sign P_Holm=0.00618；S-NP：8.34×10^-6，2.51×10^-4。",
+          "unit_of_analysis": "训练网络；网络内剪枝重复先平均，网络嵌套于8种任务。",
+          "sample_size_as_reported": "n=24个训练网络（8任务×3独立训练种子）；随机剪枝每网络3种子先平均，不能计为72个独立网络。",
+          "uncertainty": "两个峰值比较均获signed-rank及sign-test显著支持；未提供独立网络集的超参数验证。",
+          "assumptions": [
+            "8种Mod-Cog任务，每任务3个独立初始化及训练顺序的网络；每网络H=512，tanh激活，dt=10 ms，τ=100 ms。",
+            "仅剪除无自连接的Wrec非对角权重，输入及读出权重不变；一次性剪枝后不重训练。",
+            "task retention为剪枝后post-fixation sequence accuracy除以该网络未剪枝准确率；准确率按有效时间步×试次位置计算，不是整条序列全部正确的比例。",
+            "剪枝比例50%、60%、70%、80%；随机方法每网络3个剪枝种子，先在网络内平均；同任务使用固定128个评估批次。",
+            "24个训练网络为配对分析单位，来自8任务×3训练种子；512单元、261632条可剪边、25000个校准状态、评估位置及剪枝种子不是额外独立网络样本。"
+          ],
+          "source_locator": {
+            "pdf_page": 19,
+            "section": "Supplementary Table S4 — Variance-capped versus uncapped rescale comparisons",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在本套件的扫描中，中间限幅优于原始全量逆概率补偿，性能随q非单调。",
+        "boundary": "q=60及50是本网络套件和扫描网格的经验峰值，不是独立验证过的普遍最优常数。",
+        "negative_result": null,
+        "non_inference": "不证明每个任务或每个剪枝比例都改善，不证明精确期望保留原则在数学上失效，也不证明改善由谱稳定性介导。",
+        "unresolved": "其他网络、任务及独立调参验证；限幅阈值是否可完全由局部信息获得。",
+        "unresolved_attribution": "前者为本设计外推边界；局部性限制由实现范围保留。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "保持边权期望的完整补偿是否最有利于有限非线性循环网络的任务保持？"
+      ],
+      "shared_evidence_with": [
+        "C8",
+        "C9",
+        "C13",
+        "C14"
+      ],
+      "review_notes": [
+        "不从Figure 5的图像位置读出数值；均值及检验只来自正文和随文表。",
+        "第8页讨论称经验有效放大约5–10，但未为每个峰值q给出逐网络阈值，不将此写作严格通用阈值。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "在S-NP的噪声强度方法检查中，把注入噪声标准差从0.75倍改变至1.5倍网络自然电压变异尺度σ_nat，保留概率评分最高50%的边集合重叠超过95%；该结果只说明高评分边排序对这一噪声范围较稳健，不说明任务性能在整个范围等效。",
+      "claim_type": "simulation_scoring_robustness",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "噪声强度扰动与top-50%评分边集合重叠",
+          "design": "σ_nat由无外加噪声的任务电压轨迹各单元方差平均后开方确定；在任务输入下加噪声估计协方差。",
+          "comparator": "σ在0.75–1.5×σ_nat之间变化",
+          "measure": "top-50%采样概率边集合重叠>95%。",
+          "unit_of_analysis": "不同噪声强度下的高评分边集合及其重叠；不是单边独立生物样本。",
+          "sample_size_as_reported": "主体套件为24网络；本强度鲁棒性检查的网络数及每强度重复数未单独报告。M=25000为协方差校准状态数，不是独立网络样本数。",
+          "uncertainty": "只报告集合重叠>95%；无效应量分布、置信区间或显著性检验。",
+          "assumptions": [
+            "σ_nat是任务驱动自然电压变异尺度，注入噪声加到每步的firing rates上。",
+            "S-NP使用任务输入和按rollout均值中心化的噪声活动协方差；不将此当作完全剥离任务驱动的纯噪声协方差。"
+          ],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "Methods — Simulation noise-prune",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "指定强度范围内，高评分连接集合变化较小。",
+        "boundary": "仅测top-50%评分集合，不涵盖尾部保留概率、实际采样边或最终任务表现。",
+        "negative_result": null,
+        "non_inference": "不能将>95%集合重叠等同于噪声幅度任意变化都不影响任务保留率。",
+        "unresolved": "强度范围之外、各任务分层效应及最终性能敏感性未报告。",
+        "unresolved_attribution": "源文方法检查未提供相应数据。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "噪声注入强度对剪枝重要性排序有多敏感？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "本方法检查未明确独立n，保留未报告而不借用主实验n=24作为其确定样本量。",
+        "与中心化消融虽在同一方法节，源文未说明两检查复用相同实际模拟证据，故不建立C11/C12共享证据关系，也不宣称独立复现。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "在S-NP协方差估计的中心化方法消融中，作者报告逐时刻减去无噪声参考轨迹的conditional centering与每次rollout减去自身均值得到非常相似的任务保持结果；后续实验使用rollout均值中心化，但源文未给这一消融的定量效应、独立样本数或等效性检验。",
+      "claim_type": "qualitative_simulation_ablation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "协方差中心化方法消融",
+          "design": "conditional方法需同时运行无噪声参考及有噪声轨迹；主方法分别减去各rollout均值，再合并末时刻跨试次状态估计协方差。",
+          "comparator": "conditional centering vs trajectory/rollout-mean centering",
+          "measure": "任务保持结果被定性报告为非常相似；没有表格、逐点数值或P值。",
+          "unit_of_analysis": "中心化方法下的网络任务保持结果；实际独立重复单位未单独说明。",
+          "sample_size_as_reported": "该消融网络/重复数未单独报告；主方法每个协方差估计积累M=25000末时刻状态。",
+          "uncertainty": "仅定性比较，不能补写置信区间、误差条或无显著差异。",
+          "assumptions": [
+            "逐rollout均值中心化并不严格减去每个时刻的任务驱动参考，conditional方法对噪声诱发扰动的分离更直接。",
+            "两次模拟带来额外计算需求是方法描述，不是计时基准。"
+          ],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "Methods — Simulation noise-prune",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在作者报告的消融中，较简易中心化具有相近的定性任务保持效果。",
+        "boundary": "证据为定性报告，精确设计规模和逐点效应未提供。",
+        "negative_result": null,
+        "non_inference": "不能宣称两种方法统计等效、严格分离纯噪声协方差，或已量化计算加速。",
+        "unresolved": "需要消融原始数值、独立重复数及噪声/任务成分的更细分解。",
+        "unresolved_attribution": "源文未给定量消融材料。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "协方差中心化是否需要无噪声参考轨迹才能维持噪声剪枝性能？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C13",
+      "statement": "作者把候选放大重尾、原始noise-prune较大的谱横坐标，以及中间限幅改善任务表现联系起来，解释为有限非线性循环网络中权重补偿与动力学稳定性之间的折中；这是对同一组模拟诊断的机制解释，尚未单独识别稳定性改善为限幅性能收益的因果中介。",
+      "claim_type": "mechanistic_interpretation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "作者对结果的机制解释",
+          "design": "综合Results及Figures 3–5；没有新增独立机制操控或生物实验。",
+          "comparator": "未限幅逆概率重缩放 vs 限幅重缩放",
+          "measure": "过强放大可能增加动态代价；中间限幅仍补偿删边并取得更高任务保持。",
+          "unit_of_analysis": "原网络套件的性能和谱诊断；解释复用C8–C10证据。",
+          "sample_size_as_reported": "复用24个训练网络；候选边分布另汇总24×3=72嵌套实现，非新增独立样本。",
+          "uncertainty": "机制关系为作者推测性解释，无中介效应估计。",
+          "assumptions": [
+            "a(Wrec)仅诊断原点线性化；tanh动力学仍有界。",
+            "本文没有给出限幅版本的谱变化与任务改善之间的独立因果分解。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "Discussion",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "补偿与稳定性折中是源文提出的合理解释框架。",
+        "boundary": "解释建立在同一模拟套件的诊断上，非新增验证。",
+        "negative_result": null,
+        "non_inference": "不能宣布谱稳定性已被识别为性能收益的必要或充分机制。",
+        "unresolved": "需隔离放大尾部、谱变化与任务表现的独立干预。",
+        "unresolved_attribution": "作者Discussion使用可能性归因；本文保留解释而非已验证机制。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "限幅剪枝的性能收益是否由权重补偿与动力学稳定性的折中介导？"
+      ],
+      "shared_evidence_with": [
+        "C8",
+        "C9",
+        "C10",
+        "C14"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C14",
+      "statement": "作者提出生物学假设：noise-prune中存活连接的重缩放可能对应维持总突触权重的homeostatic机制，并可能关联小spine消失或增强稳定的现象；经验上把放大限制在约5–10倍可增加该规则的生物合理性，但本文只有任务训练网络模拟，没有验证脑内采用此算法或此机制。",
+      "claim_type": "biological_correspondence_hypothesis",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "对既有生物现象的概念类比",
+          "design": "讨论性假设；对引用背景的类比不是本论文独立生物实验。",
+          "comparator": "noise-prune权重补偿与homeostatic调节、小spine命运",
+          "measure": "作者提出机制对应的可能性；无本研究动物、细胞或突触数据。",
+          "unit_of_analysis": null,
+          "sample_size_as_reported": null,
+          "uncertainty": "没有生物效应量、统计检验或机制识别。",
+          "assumptions": [
+            "不把参考文献中的观察归为本研究结果。",
+            "噪声规则的连接评分可由权重和两端活动计算，但整个实现还使用任务输入、总体密度调节、可选全局top-k以及候选放大分布阈值。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "Discussion",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "生物合理性的参数解释",
+          "design": "对限幅结果的生物学解释，没有生物对照测量。",
+          "comparator": "未限幅的极大候选放大 vs 讨论中约5–10的适度放大",
+          "measure": "作者描述有限放大可使规则更接近homeostatic调节的合理范围。",
+          "unit_of_analysis": null,
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "约5–10来自讨论文字，不是本文测得的生物突触补偿范围，也不是每任务的严格最优常数。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Discussion",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "本文提出可检验的生物剪枝与稳态补偿对应假设。",
+        "boundary": "实证仅为CTRNN任务保持及参数模拟；无生物验证。",
+        "negative_result": null,
+        "non_inference": "不能由计算成功推断真实突触以噪声协方差、随机保留和逆概率补偿实施剪枝；也不能称全流程已证明完全局部。",
+        "unresolved": "需在生物系统检验局部协方差、保留概率及有限补偿之间的对应。",
+        "unresolved_attribution": "作者Discussion第7–8页的假设。"
+      },
+      "broad_directions": [
+        "learning-memory",
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "生物突触剪枝是否结合局部噪声协方差与有限homeostatic补偿？"
+      ],
+      "shared_evidence_with": [
+        "C8",
+        "C10",
+        "C13"
+      ],
+      "review_notes": [
+        "保留假设地位，不把既有homeostatic或spine文献当作本研究新实验；不建立任何跨论文support/contradiction/replication链接。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "本文为Sanjith Senthil与Rishidev Chaudhuri的arXiv:2608.05464v1预印本（2026-08-05），不是生物实验或综述。全19页正文、图注、参考文献及随文补充表均已做文本评估，并在保留页文的上下文中完成第二次源文审计。研究在8种Mod-Cog任务×3独立训练种子的24个H=512 tanh CTRNN上，只对循环非对角权重进行一次性50–80%剪枝、不重训练。完整S-NP及L-NP优于幅值剪枝；相对于一次性recurrent-OBS，低比例下多数比较未检出差异、高比例下占优。采样与重缩放的联合步骤在60–80%剪枝时有效，不能由联合消融分别推断两步骤的必要性。S-NP确定性评分仍优于幅值评分；L-NP确定性版的80%结果正文与表冲突，差异方向无法由文本确定。候选逆概率放大系数呈重尾，未限幅noise-prune提高原点线性谱诊断；中间百分位限幅改善跨比例平均任务保留率，但最优q为套件内经验峰值，稳定性介导仍属解释。方法段另报告高评分边对噪声强度的集合鲁棒性及中心化定性消融，未给这些检查的独立n或完整效应量。生物稳态补偿及spine命运对应仅为假设。正文的全域P阈值、全比较检验一致性及补充表引用存在内部差异，逐项保留；这些差异不改变题名/作者/版本匹配。24个网络是主配对分析单位，3个剪枝种子、72个嵌套实现、25000校准状态及多个图不是独立复现。未读取图像、未复现计算、未使用外部论文支持或建立跨论文关系；所有14条记录为human_checked:false候选，未更新数据库。",
+  "shared_evidence": [
+    {
+      "claim_id": "C1",
+      "with": [
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C2",
+      "with": [
+        "C1",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C1",
+        "C2",
+        "C4",
+        "C5",
+        "C6",
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C5",
+        "C6",
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C6",
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C9",
+        "C10",
+        "C13",
+        "C14"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C8",
+        "C10",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "with": [
+        "C8",
+        "C9",
+        "C13",
+        "C14"
+      ]
+    },
+    {
+      "claim_id": "C13",
+      "with": [
+        "C8",
+        "C9",
+        "C10",
+        "C14"
+      ]
+    },
+    {
+      "claim_id": "C14",
+      "with": [
+        "C8",
+        "C10",
+        "C13"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": "C1",
+        "issue": "W7202006705-I1：正文第4页称两noise-prune相对于magnitude的全部比较P<10^-4，但第17页Table S3在50% L-NP rescale比较报告1.79×10^-4。",
+        "suggested_correction": "采用具体附表数值，保留显著优势但不保留错误的全域P阈值；待作者/原始结果核对源内差异。",
+        "pdf_page": 17,
+        "resolved": false
+      },
+      {
+        "claim_id": "C7",
+        "issue": "W7202006705-I2：正文第5页称L-NP确定性版对magnitude全部P>0.08；第18页80%行却给Wilcoxon 0.00849、sign 0.00642且均标显著。",
+        "suggested_correction": "只肯定50–70%未检出差异；80%保留附表显著差异而不猜方向。需要原始效应或作者澄清，不能自行统一正文和表。",
+        "pdf_page": 18,
+        "resolved": false
+      },
+      {
+        "claim_id": "C5",
+        "issue": "W7202006705-I3：第12页称sign test与signed-rank对所有报告任务比较一致；随文表在50% L-NP deterministic/rescale（0.0143 vs 0.139）、70% Random/Magnitude（0.0316 vs 0.139）等比较给不同显著性；第19页L-NP q=50也为0.0287 vs 0.192。",
+        "suggested_correction": "不宣称全比较跨检验一致；限于两检验确实均显著的60–80%联合消融及峰值限幅比较。其他表内分歧可见，待作者澄清概括范围。",
+        "pdf_page": 12,
+        "resolved": false
+      },
+      {
+        "claim_id": null,
+        "issue": "正文补充表交叉引用与第16–19页实际Table S2/S3/S4编号不一致。",
+        "suggested_correction": "所有定位使用随文实际表号及1-based PDF页，不臆造未提供的Table S1。",
+        "pdf_page": 16,
+        "resolved": true
+      },
+      {
+        "claim_id": "C5",
+        "issue": "正文使用P<1.12×10^-5，但第17页S-NP在60%联合消融恰为1.12×10^-5。",
+        "suggested_correction": "候选中使用具体值或≤，不采用严格小于。",
+        "pdf_page": 17,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "sequence accuracy容易误读为整序列成功率；n=72及M=25000容易误读为独立样本。",
+        "suggested_correction": "依据第12页定义明确有效时间步×试次正确比例及网络内平均；C8保留n=72为嵌套实现，C11–C12不把校准状态当实验n。",
+        "pdf_page": 12,
+        "resolved": true
+      },
+      {
+        "claim_id": "C9",
+        "issue": "连接谱横坐标升高不等于非线性状态发散或全局失稳。",
+        "suggested_correction": "限定到A=Wrec-I的原点局部线性诊断，明确tanh有界及未证实因果中介。",
+        "pdf_page": 12,
+        "resolved": true
+      },
+      {
+        "claim_id": "C14",
+        "issue": "生物合理性及homeostatic对应是讨论性解释；整个实现含总体密度和候选分布调节。",
+        "suggested_correction": "以hypothesis记录，无生物n或独立验证；不宣称全实现完全局部。",
+        "pdf_page": 8,
+        "resolved": true
+      },
+      {
+        "claim_id": "C1",
+        "issue": "二次保留上下文审计发现草稿将80% S-NP vs magnitude的sign-test P错带为其他行的数值。",
+        "suggested_correction": "依第18页Table S3实际80%行，改为两noise-prune的Wilcoxon及sign-test P_Holm均1.00×10^-5；同时校正C5在第17–18页续表的70%行定位。",
+        "pdf_page": 18,
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T14:54:17.638275Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "7a715f9fd66620fd445b0cf39b9d3cb4b13c3c442ef95e45e6a9a12613fb52e3",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

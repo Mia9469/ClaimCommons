@@ -1,0 +1,142 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Neuromodulation supports robust rhythmic pattern transitions in degenerate central pattern generators with fixed connectivity</title><style>body{max-width:940px;margin:40px auto;padding:0 24px;background:#fffdf7;color:#12372f;font:16px/1.8 Georgia,serif}h1{font-size:26px;line-height:1.4}h2{font-size:20px;line-height:1.5}h3{font-size:16px}article{padding:26px 0;border-top:1px solid #bec4b8}small{color:#68766e}dl{display:grid;grid-template-columns:120px 1fr;gap:8px 20px}dt{font-weight:bold}dd{margin:0}li{padding:8px 0}p,dd{overflow-wrap:anywhere}.note{background:#eef2e2;padding:14px;border-left:3px solid #738968}summary{cursor:pointer}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.7 monospace}@media(max-width:600px){body{margin:24px auto;padding:0 18px}dl{grid-template-columns:1fr;gap:3px}dd{margin-bottom:12px}}@media print{body{margin:0;background:white}details{display:block}}</style><link rel="stylesheet" href="../../commons-v02.css?v=20261020-1"><link rel="stylesheet" href="../../examples.css?v=20260928-2"><link rel="stylesheet" href="../../site.css?v=20261020-1"><script defer src="../../site.js?v=20261020-1"></script><script defer src="../../report-ui.js?v=20261020-1"></script></head><body class="portal-page report-page" data-cc-report-shell="1" data-page="library" data-site-prefix="../../" data-library-paper="paper-W7153671613" data-report-language="zh" data-claim-records="{&quot;C1&quot;:&quot;structured-paper-W7153671613-1&quot;,&quot;C2&quot;:&quot;structured-paper-W7153671613-2&quot;,&quot;C3&quot;:&quot;structured-paper-W7153671613-3&quot;,&quot;C4&quot;:&quot;structured-paper-W7153671613-4&quot;,&quot;C5&quot;:&quot;structured-paper-W7153671613-5&quot;,&quot;C6&quot;:&quot;structured-paper-W7153671613-6&quot;,&quot;C7&quot;:&quot;structured-paper-W7153671613-7&quot;,&quot;C8&quot;:&quot;structured-paper-W7153671613-8&quot;,&quot;C9&quot;:&quot;structured-paper-W7153671613-9&quot;,&quot;C10&quot;:&quot;structured-paper-W7153671613-10&quot;,&quot;C11&quot;:&quot;structured-paper-W7153671613-11&quot;}"><header></header><main id="report-content"><div id="report-tools"></div><small>CLAIM COMMONS / 阅读报告</small><h1>Neuromodulation supports robust rhythmic pattern transitions in degenerate central pattern generators with fixed connectivity</h1><p class="note">AI 文本提取候选，尚待人工核对。图像像素未读取；PDF 页码指文件中的页序。</p><p>全部8页已评估，源为2026-04-09 arXiv v1。本文提出固定connectome的三层神经调制CPG，把DIC反馈增益控制整合到STG模型。非对称结构在20次不同初值仿真中持续相位切换；对称结构可分别形成目标节律，并在200个抽样退化网络、最高五倍电导变化下报告gallop→trot相位切换。20次初始化、200参数网络和6/8神经元结构是不同分析单位。对称性论证的k维余维/连通性、异质参数Γ等变性及具体系统存在/稳定的衔接仍需澄清；没有整个Θdeg的全称收敛证明。规模、多模型、CMOS低功耗与真实机器人均是未验证假设/未来工作。图像像素、外链代码及其他版本未阅读，所有记录保持候选与human_checked:false，不建立跨论文关系。</p><a href="https://arxiv.org/pdf/2604.08312" rel="noreferrer">查看所读原文版本 ↗</a><details><summary>贡献清单与处理决定</summary><ul><li><b>固定connectome、三层神经调制CPG及两种投影组织</b><br>include · C1；完整与约化节点数区分。</li><li><b>单投影对指定gallop的对称性障碍</b><br>include · C2；源文维数及等变前提存在未决，不确认为全称不可能性。</li><li><b>双投影gallop及trot的形式对称相容性</b><br>include · C3；存在性形式条件与具体模型稳定性分开。</li><li><b>DIC三反馈增益、自适应电导调制与网络整合</b><br>include · C4；控制器来自前作，本文贡献限于结构化网络整合。</li><li><b>非对称结构20次初值仿真中的步态失败及trot同类文字报告</b><br>include · C5；真实数值负结果，不扩成普遍机制定理。</li><li><b>对称结构分别维持gallop/trot的静态轨迹</b><br>include · C6；与200网络切换证据部分共享且不额外算重复。</li><li><b>200个退化网络、最高五倍电导变化的gallop→trot切换</b><br>include · C7；限定采样集合、方向和相位输出。</li><li><b>投影对称、多活动模式与适宜抑制强度的联合设计原则</b><br>include · C8；0.8只是所测值，无工作区间扫描。</li><li><b>跨神经元模型的控制原则推广</b><br>include · C9；其他模型尚未实现。</li><li><b>扩展更大CPG和更复杂步态的模块化假设</b><br>include · C10；小网络结果不代表规模实证。</li><li><b>模拟偏置控制、CMOS实现和四足机器人迁移路线</b><br>include · C11；功耗与机器人验证明确属于未来工作。</li><li><b>源文Theorem 1及DIC/退化模型构造的既有来源</b><br>exclude · 作为方法与假设保留，不新增跨论文support/replication关系。</li><li><b>Definition 2的所有Θdeg及有界瞬态收敛要求</b><br>exclude · 是目标定义；200抽样仿真未构成覆盖整个集合的证明。</li><li><b>完整控制律、工作区间、理论维数/异质性细节及外链代码</b><br>defer · 供给正文不足，保留明确问题，不访问外部资料补证。</li><li><b>真实生物因果机制、纳瓦级实测、速度/力控制及机器人表现</b><br>exclude · 没有本研究测量；相关前景分别标为假设/未决而非结果。</li><li><b>资助、AI语言润色说明、代码可用声明和参考文献</b><br>exclude · 已覆盖；源文内容视为数据，不执行链接或指令。</li></ul></details><article><small>C1 / 直接结果 · fixed_connectome_control_architecture</small><h2>本文提出三层固定连接CPG：神经调制输入选择投影层神经元的bursting或tonic firing状态，投影层通过抑制连接驱动四个运动神经元；对称方案每种步态用一对half-center神经元编码，不通过结构重连或突触可塑性切换步态。</h2><h3>Evidence</h3><p>模块化网络控制架构设计</p><dl><dt>设计 / 对照</dt><dd>比较每种步态单投影神经元与双神经元half-center组织；通过内在活动模式选步态；非对称完整结构4运动+2投影；对称完整结构4运动+4投影</dd><dt>独立单位与 n</dt><dd>设计模型；6/8个神经元不是独立实验样本；结构为4个运动神经元及2或4个投影神经元；架构本身无统计n</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 3 · Fig. 2；Fig. 3图注在第5页</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>提供固定connectome下通过内在动态状态选择节律的架构。</dd><dt>适用边界</dt><dd>是生物物理模型的设计及仿真，不是动物/机器人实验。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能把设计类比视为真实生物CPG机制证明，也不宣称6/8神经元构成独立重复。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>在不重连突触的条件下如何通过神经元活动模式选择CPG步态？</li></ul></article><article><small>C2 / 解释 · claimed_topological_obstruction_with_open_assumptions</small><h2>对gallop激活后约化的五节点单投影结构，作者令Γ=Z2×Z2、K=⟨(1 2)(3 4)⟩、H=Γ，并以LK={u=v}使Fix(K)\LK分为u&gt;v与u&lt;v、H交换两分支为由，主张该拓扑不支持所指定gallop周期轨道；这一分支论证对k维节点及异质参数的适用范围未在源文闭合。</h2><h3>Evidence</h3><p>H/K周期轨道对称判据的拓扑应用</p><dl><dt>设计 / 对照</dt><dd>四个运动节点及一个活跃gallop投影节点；丢弃tonic投影输出后约化；指定gallop同步/半周期交换要求与该拓扑的对称群</dd><dt>独立单位与 n</dt><dd>一个约化拓扑的理论论证，不是统计样本；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 4 · Fig. 3左；图注在第5页</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>保留作者对单投影结构提出的指定步态障碍及其论证路径。</dd><dt>适用边界</dt><dd>源推导把u=v称余维1并使用u&gt;v；在已定义的k维状态下存在适用性疑问。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能认定所有非对称CPG或实际多维STG模型都被该推导证明绝不可能产生gallop；仿真失败也不补成全称证明。</dd><dt>未解决</dt><dd>须澄清k维状态的余维/连通性以及异质参数向量场的Γ等变性。</dd></dl><h3>相关问题</h3><ul><li>单投影拓扑的对称性障碍在什么节点维数和参数条件下成立？</li></ul></article><article><small>C3 / 解释 · symmetric_projection_orbit_compatibility</small><h2>对gallop约化后的六节点双投影结构，作者仍取Γ=Z2×Z2、K=⟨(1 2)(3 4)⟩、H=Γ，得到Fix(K)坐标(u,v,w,z)和LK={u=v,w=z}，据去除LK后连通而认为满足四项H/K条件；trot以对角同步子群作类似处理。这支持目标轨道的形式对称相容性，而非所用STG参数下稳定性的单独证明。</h2><h3>Evidence</h3><p>对称群、固定子空间与H/K判据的拓扑分析</p><dl><dt>设计 / 对照</dt><dd>四运动节点+两个活跃gallop投影节点；a交换同对左右，b交换前后及投影；五节点单投影约化结构与六节点双投影约化结构</dd><dt>独立单位与 n</dt><dd>两个约化拓扑的分析；不是实际完整网络节点数或独立n；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 4 · Fig. 3右；图注在第5页</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>支持所列群论条件下双投影结构与指定gallop/trot对称性相容。</dd><dt>适用边界</dt><dd>存在性判据不能替代所选动力学的轨道构造、稳定分析或控制收敛证明。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能由图结构直接推出每组异质参数均有稳定轨道，或已经证明所有退化网络的有界时间切换。</dd><dt>未解决</dt><dd>异质参数破坏严格等变性时如何应用此形式分析未说明。</dd></dl><h3>相关问题</h3><ul><li>双投影half-center拓扑为何与目标步态的空间和时空对称相容？</li></ul></article><article><small>C4 / 直接结果 · network_integration_of_adaptive_DIC_control</small><h2>本文将单神经元DIC自适应控制整合进CPG网络：在阈值Vth用3×p敏感性矩阵把离子最大电导映射到fast/slow/ultraslow三种反馈增益，步态逻辑设定目标增益，状态依赖控制再调节一部分最大电导以选择tonic或bursting。</h2><h3>Evidence</h3><p>DIC反馈增益参数化及MRAC思想的状态依赖调制</p><dl><dt>设计 / 对照</dt><dd>7种离子通道的单室STG模型中，将既有单神经元控制器用于结构化CPG；实际与目标DIC增益；没有本文中新控制器对所有基线的定量比较</dd><dt>独立单位与 n</dt><dd>控制器/模型设计；3维增益和7通道不是独立样本；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 5 · Fig. 4（第6页）</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>给出低维目标空间控制异质高维电导模型的网络级整合方法。</dd><dt>适用边界</dt><dd>单神经元DIC控制框架来自本文明确引用的前作；本文主张的扩展是网络整合。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>本文未给出覆盖整个退化参数连续集合的控制收敛证明，也未实测电路控制功耗。</dd><dt>未解决</dt><dd>所供正文未给出完整自适应律、受控通道子集和全局可达/收敛条件。</dd></dl><h3>相关问题</h3><ul><li>怎样用DIC反馈增益而不是统一电导增量控制退化CPG中的活动模式？</li></ul></article><article><small>C5 / 直接结果 · asymmetric_architecture_simulation_failure</small><h2>在非对称单神经元/步态投影结构的STG仿真中，激活gallop投影后运动层持续相位切换、不能维持规则步态；该失败在20次不同初值仿真中仍出现，初始V均匀取自−65至−55 mV，正文还报告trot出现同类现象。</h2><h3>Evidence</h3><p>电压轨迹与跨初值相位模式的数值仿真</p><dl><dt>设计 / 对照</dt><dd>完整非对称结构4运动+2投影，按gallop编码激活；改变初始膜电位；规则目标步态与实际持续相位切换；不同初始化；对称结构另见Fig. 6</dd><dt>独立单位与 n</dt><dd>同一结构的初始化仿真运行，不是20个动物或20个独立制造网络；20次不同初始条件仿真；V(0)均匀分布−65至−55 mV；trot重复数未单独报告</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 6 · Fig. 5（图注在第7页）</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>提供所测非对称设计未形成规则目标步态的实际数值负结果。</dd><dt>适用边界</dt><dd>20次是初值重复；trot同类结果只有文字报告且未明确另有20次。</dd><dt>实际负结果</dt><dd>所测非对称结构出现持续相位切换，未收敛到规则步态。</dd><dt>不能推出</dt><dd>不能从有限初始化证明所有参数、所有非对称拓扑或所有初值都不可能；与对称结构同时改变神经元数，不能唯一归因于对称性。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>所测试单投影CPG能否在不同初值下维持gallop/trot相位模式？</li></ul></article><article><small>C6 / 直接结果 · symmetric_static_gait_generation</small><h2>在对称half-center投影结构的所示STG仿真中，分别激活gallop或trot编码神经元时，四运动神经元产生相应且持续的节律；Fig. 6上部展示的是不进行步态切换的两种电压轨迹。</h2><h3>Evidence</h3><p>固定结构下的单步态电压轨迹仿真</p><dl><dt>设计 / 对照</dt><dd>完整对称结构4运动+4投影，分别选择gallop或trot编码；两种激活模式；与非对称结构的失败对照并非只改变一个因素</dd><dt>独立单位与 n</dt><dd>所示模型轨迹；每种固定步态独立运行次数未报告；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 6 · Fig. 6上部（图注在第7页）</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>支持对称设计在所示参数下生成两种目标输出模式。</dd><dt>适用边界</dt><dd>没有单独给出该不切换展示的独立重复数或稳定性谱。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能把静态示例当作额外200次独立切换重复或证明动物步态/力学稳定。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>对称投影结构能否分别生成两种目标CPG相位模式？</li></ul></article><article><small>C7 / 直接结果 · robust_transition_in_sampled_degenerate_networks</small><h2>在固定连接和突触强度、最大突触电导0.8 mS/cm²的200个退化STG模型网络中，离子电导跨神经元变化可达五倍；将gallop编码从bursting切到tonic并激活trot编码后，正文报告全部200个网络保持目标gallop→trot定性相位过渡。</h2><h3>Evidence</h3><p>不同最大离子电导的网络群体数值仿真</p><dl><dt>设计 / 对照</dt><dd>用源文所引算法生成200个退化网络；固定connectome及突触强度后神经调制切换；切换前gallop与切换后trot；不同电导网络；没有相同拓扑的开环调制性能基线</dd><dt>独立单位与 n</dt><dd>200个不同参数网络仿真实例；不是生物个体、独立硬件芯片或神经元n；200个网络；电导变化最高五倍；每网络独立随机种子/初值重复数未报告</dd><dt>不确定性</dt><dd>Fig. 6实线为网络群体均值，阴影为min-max而非置信区间；无统计显著性或数值切换时间界</dd><dt>原文位置</dt><dd>PDF 6 · Fig. 6下部（图注在第7页）</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>支持该抽样网络群体内固定connectome的gallop→trot相位切换。</dd><dt>适用边界</dt><dd>只测试所选STG模型、采样集合、连接强度及方向；未给出通用有界瞬态时间。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能把200个成功仿真等同于Definition 2对所有Θdeg的全称收敛证明，也不能推定反向/其他步态、真实动物、机器人或CMOS已验证。</dd><dt>未解决</dt><dd>未测试的退化参数、初值范围、扰动和切换时间分布仍未知。</dd></dl><h3>相关问题</h3><ul><li>固定连接CPG能否在大电导差异的抽样退化网络中稳定完成gallop到trot切换？</li></ul></article><article><small>C8 / 解释 · joint_architectural_design_principles</small><h2>作者归纳该固定连接架构的三项联合设计要求：步态投影须具有目标对称结构、单神经元须可在tonic与bursting间调节、抑制耦合须足以锁定运动层而不过强以致完全抑制；0.8 mS/cm²仅为本文群体仿真的一个可工作值。</h2><h3>Evidence</h3><p>综合形式对称分析、DIC控制和数值示例</p><dl><dt>设计 / 对照</dt><dd>以三项联合要求概括本文架构，不做连续突触强度扫描；概念上的耦合过弱/适宜/过强条件；无给定阈值对照数据</dd><dt>独立单位与 n</dt><dd>同一理论/仿真材料的综合，不是新独立实验；已报告200个网络见C7，不再作为额外样本</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 6 · Fig. 3-6的设计综合</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>提出可用于此架构的联合设计指导。</dd><dt>适用边界</dt><dd>突触强度工作区间及通用充分性未推导/扫描；对称必要性有维数及等变前提疑问。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能断言三项条件已构成任意神经元/参数下的充分稳定性定理，也不能将未测试过弱/过强情形当作实测负结果。</dd><dt>未解决</dt><dd>通用工作范围与完整稳定/可达条件仍待建立。</dd></dl><h3>相关问题</h3><ul><li>稳健固定连接CPG的拓扑、单元动态和耦合设计需要哪些联合条件？</li></ul></article><article><small>C9 / 假说 / 预测 · model_generality_proposal</small><h2>作者假设该神经调制架构可推广到其他能通过参数调节在tonic与bursting间转换的神经元模型；本文只实现STG七通道模型，其他模型的增益参数化、可控性和步态切换尚未被测试。</h2><h3>Evidence</h3><p>从定性活动模式与反馈结构提出模型迁移假设</p><dl><dt>设计 / 对照</dt><dd>将当前STG模型的控制原则外推到具备多活动模式的模型；已示STG与未实现的其他神经元模型；没有额外模型数据</dd><dt>独立单位与 n</dt><dd>理论设计外推，不是独立仿真数据集；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 6 · VI. Design principles / VIII. Conclusions and future work</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>明确提出有条件的模型普适性研究方向。</dd><dt>适用边界</dt><dd>验证仅限当前生物物理STG实现。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不把model-agnostic叙述当作多模型实证或任意模型的定理。</dd><dt>未解决</dt><dd>其他模型的控制律、稳定性和实际转换需验证。</dd></dl><h3>相关问题</h3><ul><li>该控制原则能否迁移到不同神经元模型？</li></ul></article><article><small>C10 / 假说 / 预测 · modular_scalability_hypothesis</small><h2>作者假设可通过添加局部神经调制模块，在不改变核心控制架构的前提下扩展到更大CPG和更复杂步态；本文演示仅包括四运动神经元的gallop/trot，未测量网络扩展后的性能。</h2><h3>Evidence</h3><p>基于局部反馈与模块化组织的扩展推测</p><dl><dt>设计 / 对照</dt><dd>提出添加模块而非重新设计核心控制器；当前两步态小网络与未实现的大规模/复杂步态网络</dd><dt>独立单位与 n</dt><dd>设计推测；无大规模网络运行；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 7 · VIII. Conclusions and future work</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>给出模块化扩展的可检验假设。</dd><dt>适用边界</dt><dd>未报告扩展规模、复杂步态结果、计算开销或耦合干扰。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能说本文已经实证规模扩展性或任意步态控制。</dd><dt>未解决</dt><dd>跨模块干扰与新增步态的对称/稳定条件尚待测试。</dd></dl><h3>相关问题</h3><ul><li>添加神经调制模块能否保持固定连接CPG的控制性能？</li></ul></article><article><small>C11 / 假说 / 预测 · neuromorphic_translation_hypothesis</small><h2>作者提出把目标反馈增益映射到bias currents、以模拟控制环调节少数电导参数，从而将当前架构迁移到mixed-feedback/CMOS神经形态控制器；低功耗分析、控制简化和真实四足机器人验证被明确列为未来工作。</h2><h3>Evidence</h3><p>从可控/不可控电导分解提出电路映射方案</p><dl><dt>设计 / 对照</dt><dd>将电导调制类比为偏置电流，拟构建模拟控制环；当前生物物理数值模型与尚未实现的神经形态硬件/机器人</dd><dt>独立单位与 n</dt><dd>硬件实施设想，不是制造器件或动物实验；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 7 · VIII. Conclusions and future work</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>提出从模型参数控制到神经形态电路的具体映射路线。</dd><dt>适用边界</dt><dd>真实硬件、纳瓦级功耗、机器人运行均未在本文测量。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能将引用的低功耗电路背景或制造失配类比当作本架构的实测能耗/可靠性验证。</dd><dt>未解决</dt><dd>电路功耗、闭环稳定性及真实四足运动测试需后续实现。</dd></dl><h3>相关问题</h3><ul><li>DIC目标增益能否映射到低功耗神经形态硬件的偏置控制？</li></ul></article><details><summary>核对记录与来源信息</summary><pre>{
+  &quot;coverage&quot;: {
+    &quot;pdf_pages_read&quot;: [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    &quot;results_sections_seen&quot;: [
+      &quot;I. Introduction&quot;,
+      &quot;II. Problem formulation及Definition 1-2&quot;,
+      &quot;III. Proposed architecture&quot;,
+      &quot;IV. Symmetry-based existence of gaits / A-C及Theorem 1&quot;,
+      &quot;V. Neuronal implementation / A-B&quot;,
+      &quot;VI. Design principles&quot;,
+      &quot;VII. Robust gait control / A-B&quot;,
+      &quot;VIII. Conclusions and future work&quot;,
+      &quot;Fig. 1-6完整供给图注&quot;,
+      &quot;Acknowledgment / Code availability / References&quot;
+    ],
+    &quot;missing_material&quot;: [
+      &quot;图像像素未提供&quot;,
+      &quot;外链代码/数据未提供或打开&quot;,
+      &quot;没有供给补充文件或更后版本&quot;
+    ],
+    &quot;text_pass_complete&quot;: true,
+    &quot;notes&quot;: [
+      &quot;已完整评估8页文字、公式转录、全部图注及参考文献；没有供给附录，未重新打开PDF。&quot;,
+      &quot;源首页明确arXiv:2604.08312v1 [math.DS]，日期9 Apr 2026；不是替代后续发表版本，也不推定会议接受状态。&quot;,
+      &quot;题名和4名作者与指定索引一致，DOI保持null。&quot;,
+      &quot;第二遍审计在保留的全页上下文中核对理论前提、源文维数定义、模型角色、n、比较和负结果。&quot;,
+      &quot;20次初始化仿真与200个电导参数网络为不同证据集合；6/8完整节点和5/6约化节点不是实验重复。&quot;,
+      &quot;引用的H/K定理、既有DIC控制器及退化网络生成算法不是本文新增独立实验。&quot;,
+      &quot;第3页所谓投影强度变化与固定connectome应区分为活动依赖抑制输出和固定耦合规则；不推定突触可塑性或结构重连。&quot;,
+      &quot;源文k维节点的余维/连通分支论证和异质参数的Γ等变适用性保留为未决，不能因200个仿真成功强行判定理论完备。&quot;,
+      &quot;所有quote为null，英文逐字引文总数为0；定位为真实1-based PDF页序。&quot;
+    ],
+    &quot;reading_mode&quot;: &quot;text_only&quot;,
+    &quot;figure_images_read&quot;: false,
+    &quot;scientific_verification&quot;: false,
+    &quot;source_pdf_offline&quot;: false,
+    &quot;archived_page_text_used&quot;: false
+  },
+  &quot;audit&quot;: {
+    &quot;source_match_checks&quot;: [],
+    &quot;model_findings&quot;: [
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;源为arXiv:2604.08312v1，9 Apr 2026；无更后版本内容。&quot;,
+        &quot;suggested_correction&quot;: &quot;保持preprint及v1范围，不引用后续发表或会议接受事实。&quot;,
+        &quot;pdf_page&quot;: 1,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C2&quot;,
+        &quot;issue&quot;: &quot;源文把u、v定义为k维，却把u=v写为余维1并将其补集分为u&gt;v/u&lt;v；k&gt;1时该标量排序/连通性论证未说明。&quot;,
+        &quot;suggested_correction&quot;: &quot;人工澄清标量约化假设或修订多维证明；候选只保留带未决前提的作者主张。&quot;,
+        &quot;pdf_page&quot;: 4,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C3&quot;,
+        &quot;issue&quot;: &quot;仅图自同构不能自动保证任意异质θ的向量场Γ等变，源文未解释与退化群体的衔接。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留Γ等变为联合前提，并请求理论适用范围澄清；不以数值结果替代证明。&quot;,
+        &quot;pdf_page&quot;: 4,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C3&quot;,
+        &quot;issue&quot;: &quot;源文将对称轨道存在条件与具体STG稳定节律叙述接近，二者不能无条件等同。&quot;,
+        &quot;suggested_correction&quot;: &quot;记录为形式对称相容性，具体稳定/切换分别按C6/C7的仿真证据。&quot;,
+        &quot;pdf_page&quot;: 4,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C4&quot;,
+        &quot;issue&quot;: &quot;正文给出增益映射和目标，但没有完整自适应律、受控通道列表或全局收敛条件。&quot;,
+        &quot;suggested_correction&quot;: &quot;记录为方法整合及有限仿真，不推定完整控制证明；实施细节待后续材料。&quot;,
+        &quot;pdf_page&quot;: 5,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C5&quot;,
+        &quot;issue&quot;: &quot;20次为不同初值仿真；四运动神经元不是n，trot的20次未单独报告。&quot;,
+        &quot;suggested_correction&quot;: &quot;只把20用于正文明确的失败重复，并保留trot的n未知。&quot;,
+        &quot;pdf_page&quot;: 6,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C7&quot;,
+        &quot;issue&quot;: &quot;200参数网络只覆盖抽样退化集合；min-max阴影不是CI，未给通用有界瞬态时间。&quot;,
+        &quot;suggested_correction&quot;: &quot;限于200网络的定性相位切换，不称所有参数上的Definition 2已证明。&quot;,
+        &quot;pdf_page&quot;: 6,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C8&quot;,
+        &quot;issue&quot;: &quot;耦合过弱/过强是设计推断，无正文扫描结果。&quot;,
+        &quot;suggested_correction&quot;: &quot;不写成实际负结果，不虚构阈值区间。&quot;,
+        &quot;pdf_page&quot;: 6,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C11&quot;,
+        &quot;issue&quot;: &quot;mixed-feedback/CMOS、低功耗和真实机器人为未来实施，不是完成的验证。&quot;,
+        &quot;suggested_correction&quot;: &quot;标为hypothesis，明确所有硬件/机器人读出未测。&quot;,
+        &quot;pdf_page&quot;: 7,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;图像像素和外链代码/数据不在供给页文中。&quot;,
+        &quot;suggested_correction&quot;: &quot;仅以全部页文、公式转录与图注作文本覆盖，不声称读过外链材料。&quot;,
+        &quot;pdf_page&quot;: 8,
+        &quot;resolved&quot;: false
+      }
+    ],
+    &quot;needs_human_review&quot;: true
+  },
+  &quot;source&quot;: {
+    &quot;filename&quot;: &quot;paper-W7153671613--Neuromodulation-supports-robust-rhythmic-pattern-transitions-in-degenerate-central-pattern-gene.pdf&quot;,
+    &quot;sha256&quot;: &quot;09231e59c899aceb7b55cbf0a3a414eead701aa47a3989d827366195dd926f43&quot;,
+    &quot;source_url&quot;: &quot;https://arxiv.org/pdf/2604.08312&quot;,
+    &quot;pdf_page_count&quot;: 8
+  },
+  &quot;provenance&quot;: {
+    &quot;created_at&quot;: &quot;2026-10-07T13:29:59.649488Z&quot;,
+    &quot;workflow&quot;: &quot;claim-commons-pdf-v1&quot;,
+    &quot;prompt_version&quot;: &quot;claim-commons-chatgpt-pdf-2026-10-07.1&quot;,
+    &quot;backend&quot;: &quot;authorized_parallel_GPT&quot;,
+    &quot;model&quot;: &quot;inherited_account_GPT&quot;,
+    &quot;provider_api_key_used&quot;: false,
+    &quot;source_sha256&quot;: &quot;09231e59c899aceb7b55cbf0a3a414eead701aa47a3989d827366195dd926f43&quot;,
+    &quot;source_audit_complete&quot;: true,
+    &quot;review_status&quot;: &quot;candidate&quot;,
+    &quot;database_updated&quot;: false
+  }
+}</pre></details></main><footer></footer></body></html>

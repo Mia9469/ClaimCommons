@@ -1,0 +1,917 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "Spike-based Q-learning in a non-von Neumann architecture",
+    "authors": [
+      "Donghyuk Shin",
+      "Hyeongcheol Jo",
+      "Hyeseung Jang",
+      "Yoo Ho Jeong",
+      "YeonJoo Jeong",
+      "Joon Young Kwak",
+      "Jongkil Park",
+      "Suyoun Lee",
+      "Inho Kim",
+      "Jong-Keuk Park",
+      "Seongsik Park",
+      "Hyun Jae Jang",
+      "Hyung-Min Lee",
+      "Jaewook Kim"
+    ],
+    "doi": "10.3389/fnins.2026.1738140",
+    "publication_year": 2026,
+    "venue": "Frontiers in Neuroscience",
+    "url": "https://doi.org/10.3389/fnins.2026.1738140"
+  },
+  "source": {
+    "filename": "paper-W7130513081--Spike-based-Q-learning-in-a-non-von-Neumann-architecture.pdf",
+    "sha256": "67cd1caee004e5676024cc207deef692e7a752b41c92fc064c8bb0aa3d003c1b",
+    "source_url": "https://public-pages-files-2025.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2026.1738140/pdf",
+    "pdf_page_count": 11
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "results_sections_seen": [
+      "2 Proposed spike-based Q-learning architecture; Figures 1–3",
+      "3 Cart-pole simulation; Figure 4",
+      "3 bit-width comparison; Figure 5; Tables 2–4",
+      "4 Discussion"
+    ],
+    "missing_material": [
+      "图像像素；未供应的补充全文/原始数据未读取"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "所有供应页文字（含方法/附录/图表文字和参考文献）已完整评估，未采样代替全文。",
+      "逐条第二审计以已读源比较真实单位、条件、统计与推断范围；不等于实验复现。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "该架构用固定状态—动作连接和局部 up/down counter 保存 Q 值，结合状态及动作群、独立最大 Q 群、延迟和资格迹实现脉冲形式的局部更新。",
+      "role": "result",
+      "source_pages": [
+        3
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "奖励/惩罚、下一状态折扣项和旧 Q 项通过脉冲频率与有限 α 窗口驱动加减计数，构成量化的 Q 更新实现。",
+      "role": "result",
+      "source_pages": [
+        5
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "在本文离散化 CartPole 中，3-bit 架构的平均成绩在 100 episodes 内达到 200 分，即平衡 4 秒。",
+      "role": "result",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "3-bit 方案学习达到最高分的进度约比传统 Q-learning 晚 40 episodes，而 4-bit 和 5-bit 约在 50 episodes 达到 200 分。",
+      "role": "result",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "2-bit 方案未达到 200 分平均上限，且所报 Tukey 比较显示传统 Q-learning 与 2-bit 的成绩差异显著。",
+      "role": "result",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "传统 Q-learning 与 3/4/5-bit 方案的 Tukey 检验未发现显著成绩差异，但这不是统计等效证明。",
+      "role": "result",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "位宽实验同时改变状态频率、延迟、α 窗宽、奖惩脉冲频率、资格迹窗口及惩罚范围，不能把表现差异唯一归因于位数。",
+      "role": "interpretation",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "本文在高层 MATLAB 中验证架构，局部计数与固定线路有望减少地址译码和数据搬运，但没有提供实体芯片能耗或面积的比较测量。",
+      "role": "interpretation",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "作者提出全局调制与局部资格迹类似生物学习，但本研究并未验证实际神经元或神经调质回路执行该 Q-learning 机制。",
+      "role": "hypothesis",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "扩展到大状态—动作空间仍面临突触数 p×q 增长、稀疏经验导致收敛变慢及泛化问题；大规模模拟与相似状态更新被留作未来研究。",
+      "role": "interpretation",
+      "source_pages": [
+        10
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "关于布线时延不会显著影响学习的论证是基于低频脉冲与工艺时延估算，而非实测多芯片鲁棒性。",
+      "role": "interpretation",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "完整图注、实现参数和奖励信号文字冲突已评估",
+      "role": "result",
+      "source_pages": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "decision": "include",
+      "reason": "不把笔误或单次轨迹当额外独立结果"
+    },
+    {
+      "summary": "芯片制造、能耗、面积和大规模性能",
+      "role": "hypothesis",
+      "source_pages": [
+        9,
+        10
+      ],
+      "decision": "defer",
+      "reason": "本文没有这些测量；不能用设计承诺替代实验"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "该架构用固定状态—动作连接和局部 up/down counter 保存 Q 值，结合状态及动作群、独立最大 Q 群、延迟和资格迹实现脉冲形式的局部更新。",
+      "claim_type": "computational",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "高层 MATLAB 脉冲 Q-learning 仿真与电路结构设计",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "提出的 p 状态、q 动作电路",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "状态与动作采用离散 one-hot 表示，连接固定；并非任意网络上的通用路由。"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "Section 2; Figures 1–3",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "该架构用固定状态—动作连接和局部 up/down counter 保存 Q 值，结合状态及动作群、独立最大 Q 群、延迟和资格迹实现脉冲形式的局部更新。",
+        "boundary": "状态与动作采用离散 one-hot 表示，连接固定；并非任意网络上的通用路由。",
+        "negative_result": null,
+        "non_inference": "仿真成功不等于实测硬件能效、通用强化学习性能或生物回路验证；同一仿真比较不是独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "局部存储强化学习架构",
+        "低精度学习的条件与硬件代价",
+        "有限窗口脉冲更新误差"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，该架构用固定状态—动作连接和局部 up/down counter 保存 Q 值，结合状态及动作群、独立最大 Q 群、延迟和资格迹实现脉冲形式的局部更新。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "奖励/惩罚、下一状态折扣项和旧 Q 项通过脉冲频率与有限 α 窗口驱动加减计数，构成量化的 Q 更新实现。",
+      "claim_type": "computational",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "高层 MATLAB 脉冲 Q-learning 仿真与电路结构设计",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "局部资格迹门控的计数器更新",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "有限窗口、整数计数及 OR 门的同时脉冲处理可能影响算术精度；未证明每次更新精确等于实数 Q-learning。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "Section 2; Figure 3",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "奖励/惩罚、下一状态折扣项和旧 Q 项通过脉冲频率与有限 α 窗口驱动加减计数，构成量化的 Q 更新实现。",
+        "boundary": "有限窗口、整数计数及 OR 门的同时脉冲处理可能影响算术精度；未证明每次更新精确等于实数 Q-learning。",
+        "negative_result": null,
+        "non_inference": "仿真成功不等于实测硬件能效、通用强化学习性能或生物回路验证；同一仿真比较不是独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "局部存储强化学习架构",
+        "低精度学习的条件与硬件代价",
+        "有限窗口脉冲更新误差"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，奖励/惩罚、下一状态折扣项和旧 Q 项通过脉冲频率与有限 α 窗口驱动加减计数，构成量化的 Q 更新实现。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "在本文离散化 CartPole 中，3-bit 架构的平均成绩在 100 episodes 内达到 200 分，即平衡 4 秒。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "高层 MATLAB 脉冲 Q-learning 仿真与电路结构设计",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "独立仿真运行",
+          "sample_size_as_reported": "10 次运行",
+          "uncertainty": "Figure 5 阴影为跨运行标准差；曲线按每 20 episodes 平均。",
+          "assumptions": [
+            "19 个离散状态、2 个动作、38 个 Q 突触；不是标准更长时限或一般连续状态控制的保证。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "Section 3; Figure 5",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在本文离散化 CartPole 中，3-bit 架构的平均成绩在 100 episodes 内达到 200 分，即平衡 4 秒。",
+        "boundary": "19 个离散状态、2 个动作、38 个 Q 突触；不是标准更长时限或一般连续状态控制的保证。",
+        "negative_result": null,
+        "non_inference": "仿真成功不等于实测硬件能效、通用强化学习性能或生物回路验证；同一仿真比较不是独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "局部存储强化学习架构",
+        "低精度学习的条件与硬件代价",
+        "有限窗口脉冲更新误差"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，在本文离散化 CartPole 中，3-bit 架构的平均成绩在 100 episodes 内达到 200 分，即平衡 4 秒。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "3-bit 方案学习达到最高分的进度约比传统 Q-learning 晚 40 episodes，而 4-bit 和 5-bit 约在 50 episodes 达到 200 分。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "高层 MATLAB 脉冲 Q-learning 仿真与电路结构设计",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "独立仿真运行；非生物个体或实体芯片",
+          "sample_size_as_reported": "每组 10 次运行",
+          "uncertainty": null,
+          "assumptions": [
+            "属于图文报告的学习进度，不是每个种子均相同，也不代表精确收敛定理。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Figure 5; bit-width comparison",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "3-bit 方案学习达到最高分的进度约比传统 Q-learning 晚 40 episodes，而 4-bit 和 5-bit 约在 50 episodes 达到 200 分。",
+        "boundary": "属于图文报告的学习进度，不是每个种子均相同，也不代表精确收敛定理。",
+        "negative_result": null,
+        "non_inference": "仿真成功不等于实测硬件能效、通用强化学习性能或生物回路验证；同一仿真比较不是独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "局部存储强化学习架构",
+        "低精度学习的条件与硬件代价",
+        "有限窗口脉冲更新误差"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，3-bit 方案学习达到最高分的进度约比传统 Q-learning 晚 40 episodes，而 4-bit 和 5-bit 约在 50 episodes 达到 200 分。是否成立？"
+      ],
+      "shared_evidence_with": [
+        "C3"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "2-bit 方案未达到 200 分平均上限，且所报 Tukey 比较显示传统 Q-learning 与 2-bit 的成绩差异显著。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "高层 MATLAB 脉冲 Q-learning 仿真与电路结构设计",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "独立仿真运行；非生物个体或实体芯片",
+          "sample_size_as_reported": "每组 10 次运行",
+          "uncertainty": "总体 ANOVA F(4,45)=60.0544，p<0.0001；传统减 2-bit 差 143.1677，区间 [110.2889,176.0465]，p<0.0001。",
+          "assumptions": [
+            "统计表所分析的具体成绩汇总方式未充分说明。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Tables 3–4; Figure 5",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "2-bit 方案未达到 200 分平均上限，且所报 Tukey 比较显示传统 Q-learning 与 2-bit 的成绩差异显著。",
+        "boundary": "统计表所分析的具体成绩汇总方式未充分说明。",
+        "negative_result": "2-bit 平均学习表现失败于本任务目标。",
+        "non_inference": "仿真成功不等于实测硬件能效、通用强化学习性能或生物回路验证；同一仿真比较不是独立复制。",
+        "unresolved": "ANOVA/Tukey 的成绩聚合终点与曲线之间对应尚不明确。",
+        "unresolved_attribution": "源文或本次审计"
+      },
+      "broad_directions": [
+        "局部存储强化学习架构",
+        "低精度学习的条件与硬件代价",
+        "有限窗口脉冲更新误差"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，2-bit 方案未达到 200 分平均上限，且所报 Tukey 比较显示传统 Q-learning 与 2-bit 的成绩差异显著。是否成立？"
+      ],
+      "shared_evidence_with": [
+        "C3",
+        "C4"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "传统 Q-learning 与 3/4/5-bit 方案的 Tukey 检验未发现显著成绩差异，但这不是统计等效证明。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "高层 MATLAB 脉冲 Q-learning 仿真与电路结构设计",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "独立仿真运行；非生物个体或实体芯片",
+          "sample_size_as_reported": "每组 10 次运行",
+          "uncertainty": "传统减 3-bit 差 5.7375、区间 [-27.1413,38.6163]、p=0.9874；4/5-bit 所报 p=1。",
+          "assumptions": [
+            "区间宽且 3-bit 学习速度较慢；未做预设等效界检验。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Table 4",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "传统 Q-learning 与 3/4/5-bit 方案的 Tukey 检验未发现显著成绩差异，但这不是统计等效证明。",
+        "boundary": "区间宽且 3-bit 学习速度较慢；未做预设等效界检验。",
+        "negative_result": "这些比较未达显著，而非已证差异为零。",
+        "non_inference": "仿真成功不等于实测硬件能效、通用强化学习性能或生物回路验证；同一仿真比较不是独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "局部存储强化学习架构",
+        "低精度学习的条件与硬件代价",
+        "有限窗口脉冲更新误差"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，传统 Q-learning 与 3/4/5-bit 方案的 Tukey 检验未发现显著成绩差异，但这不是统计等效证明。是否成立？"
+      ],
+      "shared_evidence_with": [
+        "C3",
+        "C4",
+        "C5"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "位宽实验同时改变状态频率、延迟、α 窗宽、奖惩脉冲频率、资格迹窗口及惩罚范围，不能把表现差异唯一归因于位数。",
+      "claim_type": "computational",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "高层 MATLAB 脉冲 Q-learning 仿真与电路结构设计",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "2–5-bit 配置对照",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "不是仅改变量化位宽、其余完全固定的消融。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Table 2",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "位宽实验同时改变状态频率、延迟、α 窗宽、奖惩脉冲频率、资格迹窗口及惩罚范围，不能把表现差异唯一归因于位数。",
+        "boundary": "不是仅改变量化位宽、其余完全固定的消融。",
+        "negative_result": null,
+        "non_inference": "仿真成功不等于实测硬件能效、通用强化学习性能或生物回路验证；同一仿真比较不是独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "局部存储强化学习架构",
+        "低精度学习的条件与硬件代价",
+        "有限窗口脉冲更新误差"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，位宽实验同时改变状态频率、延迟、α 窗宽、奖惩脉冲频率、资格迹窗口及惩罚范围，不能把表现差异唯一归因于位数。是否成立？"
+      ],
+      "shared_evidence_with": [
+        "C3",
+        "C4",
+        "C5",
+        "C6"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "本文在高层 MATLAB 中验证架构，局部计数与固定线路有望减少地址译码和数据搬运，但没有提供实体芯片能耗或面积的比较测量。",
+      "claim_type": "computational",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "高层 MATLAB 脉冲 Q-learning 仿真与电路结构设计",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "架构分析和软件仿真",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "固定线网新增布线面积，专用局部电路与共享引擎存在不同代价。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "Discussion: comparison with Loihi",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "本文在高层 MATLAB 中验证架构，局部计数与固定线路有望减少地址译码和数据搬运，但没有提供实体芯片能耗或面积的比较测量。",
+        "boundary": "固定线网新增布线面积，专用局部电路与共享引擎存在不同代价。",
+        "negative_result": null,
+        "non_inference": "仿真成功不等于实测硬件能效、通用强化学习性能或生物回路验证；同一仿真比较不是独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "局部存储强化学习架构",
+        "低精度学习的条件与硬件代价",
+        "有限窗口脉冲更新误差"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，本文在高层 MATLAB 中验证架构，局部计数与固定线路有望减少地址译码和数据搬运，但没有提供实体芯片能耗或面积的比较测量。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "作者提出全局调制与局部资格迹类似生物学习，但本研究并未验证实际神经元或神经调质回路执行该 Q-learning 机制。",
+      "claim_type": "computational",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "高层 MATLAB 脉冲 Q-learning 仿真与电路结构设计",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "设计与引用文献的类比",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "STDP/奖励调制类比是解释，不是生物必要性或机制唯一性证据。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "Discussion: biological learning analogy",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者提出全局调制与局部资格迹类似生物学习，但本研究并未验证实际神经元或神经调质回路执行该 Q-learning 机制。",
+        "boundary": "STDP/奖励调制类比是解释，不是生物必要性或机制唯一性证据。",
+        "negative_result": null,
+        "non_inference": "仿真成功不等于实测硬件能效、通用强化学习性能或生物回路验证；同一仿真比较不是独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "局部存储强化学习架构",
+        "低精度学习的条件与硬件代价",
+        "有限窗口脉冲更新误差"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，作者提出全局调制与局部资格迹类似生物学习，但本研究并未验证实际神经元或神经调质回路执行该 Q-learning 机制。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "扩展到大状态—动作空间仍面临突触数 p×q 增长、稀疏经验导致收敛变慢及泛化问题；大规模模拟与相似状态更新被留作未来研究。",
+      "claim_type": "computational",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "高层 MATLAB 脉冲 Q-learning 仿真与电路结构设计",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "作者列出的规模边界",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "尚无大规模扩展实验；不能把局部存储解释为所有瓶颈消失。"
+          ],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "Discussion: large-scale Q-learning",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "扩展到大状态—动作空间仍面临突触数 p×q 增长、稀疏经验导致收敛变慢及泛化问题；大规模模拟与相似状态更新被留作未来研究。",
+        "boundary": "尚无大规模扩展实验；不能把局部存储解释为所有瓶颈消失。",
+        "negative_result": null,
+        "non_inference": "仿真成功不等于实测硬件能效、通用强化学习性能或生物回路验证；同一仿真比较不是独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "局部存储强化学习架构",
+        "低精度学习的条件与硬件代价",
+        "有限窗口脉冲更新误差"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，扩展到大状态—动作空间仍面临突触数 p×q 增长、稀疏经验导致收敛变慢及泛化问题；大规模模拟与相似状态更新被留作未来研究。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "关于布线时延不会显著影响学习的论证是基于低频脉冲与工艺时延估算，而非实测多芯片鲁棒性。",
+      "claim_type": "computational",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "高层 MATLAB 脉冲 Q-learning 仿真与电路结构设计",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "工艺资料与时序估算",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "最大更新频率 10 kHz、1% 时序变化约 1 μs；文中 2 ns/mm 与约 555 mm 换算不严格一致。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "Discussion: propagation delay",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "关于布线时延不会显著影响学习的论证是基于低频脉冲与工艺时延估算，而非实测多芯片鲁棒性。",
+        "boundary": "最大更新频率 10 kHz、1% 时序变化约 1 μs；文中 2 ns/mm 与约 555 mm 换算不严格一致。",
+        "negative_result": null,
+        "non_inference": "仿真成功不等于实测硬件能效、通用强化学习性能或生物回路验证；同一仿真比较不是独立复制。",
+        "unresolved": "不同到达时间如何影响窗口内实际脉冲计数仍待硬件测量。",
+        "unresolved_attribution": "源文或本次审计"
+      },
+      "broad_directions": [
+        "局部存储强化学习架构",
+        "低精度学习的条件与硬件代价",
+        "有限窗口脉冲更新误差"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，关于布线时延不会显著影响学习的论证是基于低频脉冲与工艺时延估算，而非实测多芯片鲁棒性。是否成立？"
+      ],
+      "shared_evidence_with": [
+        "C8",
+        "C10"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "全文 11 页（含图表、参数、讨论及参考文献）已评估。论文提出局部计数器的脉冲 Q-learning 架构并在小型离散 CartPole 上仿真。保留 2-bit 失败与 3-bit 较慢学习的边界，不将不显著比较当等效；位宽配置存在共变、方法/图注有冲突、硬件规模与能效仅为推论。第二审计逐条区分设计、仿真、作者解释与未经验证的生物类比。",
+  "shared_evidence": [
+    {
+      "claim_id": "C4",
+      "with": [
+        "C3"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C3",
+        "C4"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C3",
+        "C4",
+        "C5"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C3",
+        "C4",
+        "C5",
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "with": [
+        "C8",
+        "C10"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": null,
+        "issue": "索引作者缺失且将 Hyeseung Jang 写作 Hanwool Jang。",
+        "suggested_correction": "仅从第 1 页补充实际 14 位作者；共享元数据未修改。",
+        "pdf_page": 1,
+        "resolved": true
+      },
+      {
+        "claim_id": "C2",
+        "issue": "方法文字将正奖励激活信号也写为 P；与 R/P 定义及其他图文不一致。",
+        "suggested_correction": "按正奖励 R、负惩罚 P 的明确结构理解，保留文字笔误。",
+        "pdf_page": 4,
+        "resolved": true
+      },
+      {
+        "claim_id": "C3",
+        "issue": "episode 30 失败时间正文 1.44 s 与 Figure 4 图注 1.94 s 不一致。",
+        "suggested_correction": "不以该冲突值构建定量命题。",
+        "pdf_page": 7,
+        "resolved": false
+      },
+      {
+        "claim_id": "C5",
+        "issue": "统计汇总终点未明确。",
+        "suggested_correction": "保留实际 F、p 和组间区间，不猜测终点。",
+        "pdf_page": 8,
+        "resolved": false
+      },
+      {
+        "claim_id": "C6",
+        "issue": "不显著被描述为类似性能可能混同等效。",
+        "suggested_correction": "仅陈述未发现显著差异并保留宽区间。",
+        "pdf_page": 8,
+        "resolved": true
+      },
+      {
+        "claim_id": "C11",
+        "issue": "2 ns/mm 下 1 μs 对应约 500 mm 而非 555 mm，工艺与多芯片结论也未实测。",
+        "suggested_correction": "保留估算性质与换算差异，不宣称已验证规模鲁棒性。",
+        "pdf_page": 9,
+        "resolved": false
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T12:29:16.112583Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "67cd1caee004e5676024cc207deef692e7a752b41c92fc064c8bb0aa3d003c1b",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

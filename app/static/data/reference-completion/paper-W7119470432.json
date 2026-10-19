@@ -1,0 +1,965 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "Project MA: A Deterministic, Energy-Constrained Framework for Probabilistic Cognitive Modeling",
+    "authors": [
+      "Arjun Jayesh"
+    ],
+    "doi": "10.5281/zenodo.18181494",
+    "publication_year": 2026,
+    "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+    "url": "https://doi.org/10.5281/zenodo.18181493"
+  },
+  "source": {
+    "filename": "paper-W7119470432--Project-MA-A-Deterministic-Energy-Constrained-Framework-for-Probabilistic-Cognitive-Modeling.pdf",
+    "sha256": "0fe2d98ea4e0be14e3eb7123e877cc5eec03bc02feb78ed326abbf848b6639b0",
+    "source_url": "https://zenodo.org/records/18181494/files/Project-MA_Deterministic-Energy-Constrained-Cognitive-Architecture_v1.0.pdf",
+    "pdf_page_count": 9
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "results_sections_seen": [
+      "System Architecture 3; MA-Neuron Model 4",
+      "Cognitive Metrics 5; Learning and Plasticity 6; Execution Phases 7",
+      "Experimental Methodology 8; Tables 2–3",
+      "Results 9.1–9.3; Figures 1–3",
+      "Limitations; Ethical and Scientific Scope"
+    ],
+    "missing_material": [
+      "Figures 1–3 的图像像素",
+      "被提及的源码、CSV、绘图脚本、Docker 配置与详细实验轨迹未供应"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "全部 9 页供文、三个图说明和参考文献已完整阅读；日期 January 8, 2026。标题作者与索引吻合，但文内 preprint DOI 为 18181494，索引为 18181493；两 DOI 的版本/概念关系未核实。",
+      "第二审计核对固定种子、模型单位、内部队列/能量规则、结构计数与认知外推。源码、CSV 和 Docker 未供应且未访问，重放并非已独立复现。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "Project MA 定义具有能量、历史不确定性、新奇压力、置信度及短/长时记忆状态的代理单元，并通过集中事件队列、Meta-Regulator 与 Wake/Dream 模式运行。",
+      "role": "result",
+      "source_pages": [
+        3
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "不确定性由历史激活落入五个 bins 的归一化 Shannon entropy 定义，新奇压力按 λ=0.10 衰减并以 α=0.15 累积相对历史均值的偏差。",
+      "role": "result",
+      "source_pages": [
+        4
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "规则在单元放电时统一增强所有出边 0.05、收到显著输入却不放电时统一减弱出边 0.0005，并删除权重<0.01 的边。",
+      "role": "result",
+      "source_pages": [
+        4
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "作者以共享 seeded RNG 和确定性顺序队列设计可重放运行，所有实验使用 seed 2026。",
+      "role": "result",
+      "source_pages": [
+        5
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "Dream 模式加入 U(−0.25,0.25) 噪声并在置信度>0.7 时更新 bias，作者将此设计解释为记忆巩固。",
+      "role": "interpretation",
+      "source_pages": [
+        5
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "模型每动作扣除基础/放电能量，低于阈值进入 Coma 并重置 STM 和不确定性，作为代谢约束设计。",
+      "role": "result",
+      "source_pages": [
+        3
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "N=1000 的 overload 示例中，队列在 step 180 前接近零，之后增长，历史平均 entropy 同时从约 0.50 降到 0.40。",
+      "role": "result",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "同连接密度参数的 N=100/500/1000 比较报告平均活动约 1/15/1 Hz，显示所给三配置的非单调尺度关系。",
+      "role": "result",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "N=500 的 500 步比较中，启用塑性的连接数与固定拓扑对照近乎平行稳定，没有图文所称的快速退化或失控增长。",
+      "role": "result",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "作者把中规模活动、overload 下熵降低和结构稳定解释为自组织、工作记忆及 cognitive tunneling，但这些功能归因未由行为指标测试。",
+      "role": "hypothesis",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "该框架未提供语义 grounding、readout 分类任务或全局收敛证明；目标导向行为仍为未来研究，不是已经实现 AGI、意识或可靠现实智能。",
+      "role": "interpretation",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "三项模型示例：过载、规模与固定拓扑对照",
+      "role": "result",
+      "source_pages": [
+        6,
+        7,
+        8
+      ],
+      "decision": "include",
+      "reason": "完整覆盖所报曲线与边界；固定种子不是统计 ensemble"
+    },
+    {
+      "summary": "代谢、探索、Dream、memory 和 hallucination 的规则命名",
+      "role": "interpretation",
+      "source_pages": [
+        3,
+        4,
+        5
+      ],
+      "decision": "context",
+      "reason": "人为内部变量及功能设想，不是已测得认知状态"
+    },
+    {
+      "summary": "源码、重放与跨平台一致性",
+      "role": "result",
+      "source_pages": [
+        3,
+        5,
+        9
+      ],
+      "decision": "defer",
+      "reason": "被提及开放工件未供应，不能当独立复现已经完成"
+    },
+    {
+      "summary": "目标行为、认知任务、真实代谢及大规模上界",
+      "role": "hypothesis",
+      "source_pages": [
+        7,
+        8
+      ],
+      "decision": "defer",
+      "reason": "未测试；不制造失败数或生物验证"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "Project MA 定义具有能量、历史不确定性、新奇压力、置信度及短/长时记忆状态的代理单元，并通过集中事件队列、Meta-Regulator 与 Wake/Dream 模式运行。",
+      "claim_type": "computational",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Rust v1.0 Hardened 代理式动态网络的规则定义和固定种子模拟示例",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "提出的代理架构",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "B_i、置信度/causal impact 的完整定义和若干决策函数未给；因此并非已完整形式化的纯局部生物模型。"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "State Definitions; System Architecture pages 2–4",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "Project MA 定义具有能量、历史不确定性、新奇压力、置信度及短/长时记忆状态的代理单元，并通过集中事件队列、Meta-Regulator 与 Wake/Dream 模式运行。",
+        "boundary": "B_i、置信度/causal impact 的完整定义和若干决策函数未给；因此并非已完整形式化的纯局部生物模型。",
+        "negative_result": null,
+        "non_inference": "浮点网络的统计和结构行为不证明真实代谢、记忆、智能、情感或自然神经机制；同种子重放和同一轨迹的多个指标不是独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "能量/历史统计约束的代理网络",
+        "动态拓扑与事件调度",
+        "模型可重放性和认知指标的区分"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，Project MA 定义具有能量、历史不确定性、新奇压力、置信度及短/长时记忆状态的代理单元，并通过集中事件队列、Meta-Regulator 与 Wake/Dream 模式运行。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "不确定性由历史激活落入五个 bins 的归一化 Shannon entropy 定义，新奇压力按 λ=0.10 衰减并以 α=0.15 累积相对历史均值的偏差。",
+      "claim_type": "computational",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Rust v1.0 Hardened 代理式动态网络的规则定义和固定种子模拟示例",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "MA-Neuron 的人为指标定义",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "在有效概率分布下 entropy/log₂5 在 [0,1]；不是 variational free energy、预测误差或被验证的主观不确定性。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "Equations 4–7",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "不确定性由历史激活落入五个 bins 的归一化 Shannon entropy 定义，新奇压力按 λ=0.10 衰减并以 α=0.15 累积相对历史均值的偏差。",
+        "boundary": "在有效概率分布下 entropy/log₂5 在 [0,1]；不是 variational free energy、预测误差或被验证的主观不确定性。",
+        "negative_result": null,
+        "non_inference": "浮点网络的统计和结构行为不证明真实代谢、记忆、智能、情感或自然神经机制；同种子重放和同一轨迹的多个指标不是独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "能量/历史统计约束的代理网络",
+        "动态拓扑与事件调度",
+        "模型可重放性和认知指标的区分"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，不确定性由历史激活落入五个 bins 的归一化 Shannon entropy 定义，新奇压力按 λ=0.10 衰减并以 α=0.15 累积相对历史均值的偏差。是否成立？"
+      ],
+      "shared_evidence_with": [
+        "C1"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "规则在单元放电时统一增强所有出边 0.05、收到显著输入却不放电时统一减弱出边 0.0005，并删除权重<0.01 的边。",
+      "claim_type": "computational",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Rust v1.0 Hardened 代理式动态网络的规则定义和固定种子模拟示例",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "出边更新与结构修剪规则",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "没有显式 pre-post coincidence、竞争或每节点度上限；称 Hebbian/heterosynaptic 是模型类比，阈值修剪本身不保证 O(N) 总边数。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "Learning and Plasticity; equations 9–10",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "规则在单元放电时统一增强所有出边 0.05、收到显著输入却不放电时统一减弱出边 0.0005，并删除权重<0.01 的边。",
+        "boundary": "没有显式 pre-post coincidence、竞争或每节点度上限；称 Hebbian/heterosynaptic 是模型类比，阈值修剪本身不保证 O(N) 总边数。",
+        "negative_result": null,
+        "non_inference": "浮点网络的统计和结构行为不证明真实代谢、记忆、智能、情感或自然神经机制；同种子重放和同一轨迹的多个指标不是独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "能量/历史统计约束的代理网络",
+        "动态拓扑与事件调度",
+        "模型可重放性和认知指标的区分"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，规则在单元放电时统一增强所有出边 0.05、收到显著输入却不放电时统一减弱出边 0.0005，并删除权重<0.01 的边。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "作者以共享 seeded RNG 和确定性顺序队列设计可重放运行，所有实验使用 seed 2026。",
+      "claim_type": "computational",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Rust v1.0 Hardened 代理式动态网络的规则定义和固定种子模拟示例",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "同配置下的伪随机模拟",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "同环境/事件顺序/依赖版本是必要条件；StdRng、ChaCha20 的描述和跨平台浮点运算未实际验证，不能称所有平台必然 bit-identical。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "Experimental Methodology; Reproducibility Note",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者以共享 seeded RNG 和确定性顺序队列设计可重放运行，所有实验使用 seed 2026。",
+        "boundary": "同环境/事件顺序/依赖版本是必要条件；StdRng、ChaCha20 的描述和跨平台浮点运算未实际验证，不能称所有平台必然 bit-identical。",
+        "negative_result": null,
+        "non_inference": "浮点网络的统计和结构行为不证明真实代谢、记忆、智能、情感或自然神经机制；同种子重放和同一轨迹的多个指标不是独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "能量/历史统计约束的代理网络",
+        "动态拓扑与事件调度",
+        "模型可重放性和认知指标的区分"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，作者以共享 seeded RNG 和确定性顺序队列设计可重放运行，所有实验使用 seed 2026。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "Dream 模式加入 U(−0.25,0.25) 噪声并在置信度>0.7 时更新 bias，作者将此设计解释为记忆巩固。",
+      "claim_type": "computational",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "Rust v1.0 Hardened 代理式动态网络的规则定义和固定种子模拟示例",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "人为执行模式规则",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "没有记忆任务、检索/遗忘曲线或和无 Dream 的对照；不能把命名当已观察到记忆巩固。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "Execution Phases 7.2; equation 11",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "Dream 模式加入 U(−0.25,0.25) 噪声并在置信度>0.7 时更新 bias，作者将此设计解释为记忆巩固。",
+        "boundary": "没有记忆任务、检索/遗忘曲线或和无 Dream 的对照；不能把命名当已观察到记忆巩固。",
+        "negative_result": null,
+        "non_inference": "浮点网络的统计和结构行为不证明真实代谢、记忆、智能、情感或自然神经机制；同种子重放和同一轨迹的多个指标不是独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "能量/历史统计约束的代理网络",
+        "动态拓扑与事件调度",
+        "模型可重放性和认知指标的区分"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，Dream 模式加入 U(−0.25,0.25) 噪声并在置信度>0.7 时更新 bias，作者将此设计解释为记忆巩固。是否成立？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "模型每动作扣除基础/放电能量，低于阈值进入 Coma 并重置 STM 和不确定性，作为代谢约束设计。",
+      "claim_type": "computational",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Rust v1.0 Hardened 代理式动态网络的规则定义和固定种子模拟示例",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "能量变量与阈值状态规则",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "供文未给 E 恢复/补充和 nonnegative 约束的完整规则；重置 STM 不自行证明能量恢复或所有单元永不永久静默。"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "Metabolic Constraints; equation 3",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "模型每动作扣除基础/放电能量，低于阈值进入 Coma 并重置 STM 和不确定性，作为代谢约束设计。",
+        "boundary": "供文未给 E 恢复/补充和 nonnegative 约束的完整规则；重置 STM 不自行证明能量恢复或所有单元永不永久静默。",
+        "negative_result": null,
+        "non_inference": "浮点网络的统计和结构行为不证明真实代谢、记忆、智能、情感或自然神经机制；同种子重放和同一轨迹的多个指标不是独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "能量/历史统计约束的代理网络",
+        "动态拓扑与事件调度",
+        "模型可重放性和认知指标的区分"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，模型每动作扣除基础/放电能量，低于阈值进入 Coma 并重置 STM 和不确定性，作为代谢约束设计。是否成立？"
+      ],
+      "shared_evidence_with": [
+        "C1"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "N=1000 的 overload 示例中，队列在 step 180 前接近零，之后增长，历史平均 entropy 同时从约 0.50 降到 0.40。",
+      "claim_type": "computational",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Rust v1.0 Hardened 代理式动态网络的规则定义和固定种子模拟示例",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "逐步增加 input injection 的模型轨迹",
+          "sample_size_as_reported": "所有实验使用一个固定 seed 2026；无独立种子 ensemble",
+          "uncertainty": "图文定性/近似值；无统计误差或转变阈值拟合。",
+          "assumptions": [
+            "队列规则 Qlimit=3N、丢弃旧信号；源文未显示实际达到上限时的全过程，不能称数学相变或实测认知 stress。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "Experiment 1; Figure 1",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "N=1000 的 overload 示例中，队列在 step 180 前接近零，之后增长，历史平均 entropy 同时从约 0.50 降到 0.40。",
+        "boundary": "队列规则 Qlimit=3N、丢弃旧信号；源文未显示实际达到上限时的全过程，不能称数学相变或实测认知 stress。",
+        "negative_result": "overload 后队列不再保持近零。",
+        "non_inference": "浮点网络的统计和结构行为不证明真实代谢、记忆、智能、情感或自然神经机制；同种子重放和同一轨迹的多个指标不是独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "能量/历史统计约束的代理网络",
+        "动态拓扑与事件调度",
+        "模型可重放性和认知指标的区分"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，N=1000 的 overload 示例中，队列在 step 180 前接近零，之后增长，历史平均 entropy 同时从约 0.50 降到 0.40。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "同连接密度参数的 N=100/500/1000 比较报告平均活动约 1/15/1 Hz，显示所给三配置的非单调尺度关系。",
+      "claim_type": "computational",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Rust v1.0 Hardened 代理式动态网络的规则定义和固定种子模拟示例",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "三个网络规模配置",
+          "sample_size_as_reported": "单一固定 RNG seed；未给独立重复",
+          "uncertainty": null,
+          "assumptions": [
+            "事件驱动模型的 Hz 时间换算未说明；固定密度下度数随 N 变化，三点不足以识别临界密度或普遍 Goldilocks zone。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "Experiment 2; Figure 2",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "同连接密度参数的 N=100/500/1000 比较报告平均活动约 1/15/1 Hz，显示所给三配置的非单调尺度关系。",
+        "boundary": "事件驱动模型的 Hz 时间换算未说明；固定密度下度数随 N 变化，三点不足以识别临界密度或普遍 Goldilocks zone。",
+        "negative_result": null,
+        "non_inference": "浮点网络的统计和结构行为不证明真实代谢、记忆、智能、情感或自然神经机制；同种子重放和同一轨迹的多个指标不是独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "能量/历史统计约束的代理网络",
+        "动态拓扑与事件调度",
+        "模型可重放性和认知指标的区分"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，同连接密度参数的 N=100/500/1000 比较报告平均活动约 1/15/1 Hz，显示所给三配置的非单调尺度关系。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "N=500 的 500 步比较中，启用塑性的连接数与固定拓扑对照近乎平行稳定，没有图文所称的快速退化或失控增长。",
+      "claim_type": "computational",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Rust v1.0 Hardened 代理式动态网络的规则定义和固定种子模拟示例",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "全塑性与固定拓扑配置",
+          "sample_size_as_reported": "固定 seed 的两配置，500 步",
+          "uncertainty": null,
+          "assumptions": [
+            "只测连接数，不测记忆保留/任务能力；不是单独关闭 LTD 的消融，不能唯一证实其保持稀疏性。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Experiment 3; Figure 3; text page 7",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "N=500 的 500 步比较中，启用塑性的连接数与固定拓扑对照近乎平行稳定，没有图文所称的快速退化或失控增长。",
+        "boundary": "只测连接数，不测记忆保留/任务能力；不是单独关闭 LTD 的消融，不能唯一证实其保持稀疏性。",
+        "negative_result": "本观测窗口未见快速连接数退化或失控增长。",
+        "non_inference": "浮点网络的统计和结构行为不证明真实代谢、记忆、智能、情感或自然神经机制；同种子重放和同一轨迹的多个指标不是独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "能量/历史统计约束的代理网络",
+        "动态拓扑与事件调度",
+        "模型可重放性和认知指标的区分"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，N=500 的 500 步比较中，启用塑性的连接数与固定拓扑对照近乎平行稳定，没有图文所称的快速退化或失控增长。是否成立？"
+      ],
+      "shared_evidence_with": [
+        "C3"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "作者把中规模活动、overload 下熵降低和结构稳定解释为自组织、工作记忆及 cognitive tunneling，但这些功能归因未由行为指标测试。",
+      "claim_type": "computational",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "Rust v1.0 Hardened 代理式动态网络的规则定义和固定种子模拟示例",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "模型统计的认知解释",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "没有明确外部驱动停止对照、记忆读出或生物 stress 数据；自然认知类比不是这些曲线的唯一解释。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "Discussion; Figures 1–3",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者把中规模活动、overload 下熵降低和结构稳定解释为自组织、工作记忆及 cognitive tunneling，但这些功能归因未由行为指标测试。",
+        "boundary": "没有明确外部驱动停止对照、记忆读出或生物 stress 数据；自然认知类比不是这些曲线的唯一解释。",
+        "negative_result": null,
+        "non_inference": "浮点网络的统计和结构行为不证明真实代谢、记忆、智能、情感或自然神经机制；同种子重放和同一轨迹的多个指标不是独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "能量/历史统计约束的代理网络",
+        "动态拓扑与事件调度",
+        "模型可重放性和认知指标的区分"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，作者把中规模活动、overload 下熵降低和结构稳定解释为自组织、工作记忆及 cognitive tunneling，但这些功能归因未由行为指标测试。是否成立？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C5",
+        "C7",
+        "C8",
+        "C9"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "该框架未提供语义 grounding、readout 分类任务或全局收敛证明；目标导向行为仍为未来研究，不是已经实现 AGI、意识或可靠现实智能。",
+      "claim_type": "computational",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "Rust v1.0 Hardened 代理式动态网络的规则定义和固定种子模拟示例",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "作者明确的范围与未完成验证",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "MNIST 不可竞争是当前功能缺失说明，而不是运行后的负 benchmark；N>100,000 的瓶颈是预期，未测试。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Limitations; Conclusion; Ethical and Scientific Scope",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "该框架未提供语义 grounding、readout 分类任务或全局收敛证明；目标导向行为仍为未来研究，不是已经实现 AGI、意识或可靠现实智能。",
+        "boundary": "MNIST 不可竞争是当前功能缺失说明，而不是运行后的负 benchmark；N>100,000 的瓶颈是预期，未测试。",
+        "negative_result": null,
+        "non_inference": "浮点网络的统计和结构行为不证明真实代谢、记忆、智能、情感或自然神经机制；同种子重放和同一轨迹的多个指标不是独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "能量/历史统计约束的代理网络",
+        "动态拓扑与事件调度",
+        "模型可重放性和认知指标的区分"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，该框架未提供语义 grounding、readout 分类任务或全局收敛证明；目标导向行为仍为未来研究，不是已经实现 AGI、意识或可靠现实智能。是否成立？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C5",
+        "C7",
+        "C8",
+        "C9",
+        "C10"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "9 页完整文本、三张结果图说明和参考文献已评估。Project MA 是代理网络与执行规则的探索模型，所有示例使用固定 seed 2026；报告 overload 后熵下降、中规模活动较高和短期连接计数稳定。第二审计区分指标定义与自由能/认知解释、同种子可重放与独立重复、结构计数与记忆/学习能力，保留 O(N) 无证明、能量恢复与 determinism 细节缺失，以及源 DOI 和索引 DOI 的版本关系未决。",
+  "shared_evidence": [
+    {
+      "claim_id": "C2",
+      "with": [
+        "C1"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C1",
+        "C2"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C1"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C3"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "with": [
+        "C2",
+        "C5",
+        "C7",
+        "C8",
+        "C9"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "with": [
+        "C1",
+        "C5",
+        "C7",
+        "C8",
+        "C9",
+        "C10"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": null,
+        "issue": "索引 DOI 10.5281/zenodo.18181493 与第 9 页 preprint DOI 10.5281/zenodo.18181494 不同。",
+        "suggested_correction": "标题、作者、年份吻合同一作品；本 wrapper 采用明确源 DOI，同时保留索引/版本关系未核实，不臆造 concept DOI 关系。",
+        "pdf_page": 9,
+        "resolved": false
+      },
+      {
+        "claim_id": "C1",
+        "issue": "状态 tuple 包含 B_i 但表 1 未定义，多个置信/因果函数只给名称。",
+        "suggested_correction": "不宣称完整行为机制已经由供文唯一指定。",
+        "pdf_page": 3,
+        "resolved": false
+      },
+      {
+        "claim_id": "C2",
+        "issue": "Shannon 历史熵被联系到 Active Inference/Free Energy Principle。",
+        "suggested_correction": "仅作为简化类比；没有 generative model 或 variational free-energy 等价推导。",
+        "pdf_page": 2,
+        "resolved": true
+      },
+      {
+        "claim_id": "C3",
+        "issue": "删除低权重边直接被称确保 O(N) 而非 O(N²)。",
+        "suggested_correction": "无度数/总边上界，阈值本身不能推出该复杂度保证。",
+        "pdf_page": 4,
+        "resolved": true
+      },
+      {
+        "claim_id": "C4",
+        "issue": "跨任意平台严格相同轨迹被视为必然。",
+        "suggested_correction": "需要软件版本、事件排序及数值环境控制；未读取实现或运行复现。",
+        "pdf_page": 5,
+        "resolved": false
+      },
+      {
+        "claim_id": "C6",
+        "issue": "Coma reset 被称确保无 permanent dead neuron，但无能量补充规则。",
+        "suggested_correction": "将恢复性质留作未决，而不是已证定理或真实代谢测量。",
+        "pdf_page": 3,
+        "resolved": false
+      },
+      {
+        "claim_id": "C7",
+        "issue": "队列限长/丢弃可避免 explosion 与 overload 曲线 linear explosion 的语言混用。",
+        "suggested_correction": "只描述观测窗口内增长，不推断队列无界或规则已失效；截断状态记录缺失。",
+        "pdf_page": 6,
+        "resolved": false
+      },
+      {
+        "claim_id": "C8",
+        "issue": "N=500 被称 critical density 和 self-sustaining resonance。",
+        "suggested_correction": "N 是规模而非密度；无高分辨扫描、输入停止控制、重复不确定性或 Hz 时间基础。",
+        "pdf_page": 7,
+        "resolved": true
+      },
+      {
+        "claim_id": "C9",
+        "issue": "稳定连接数被用于验证记忆保留及特定 LTD 因果效力。",
+        "suggested_correction": "无记忆测量或 LTD-only 消融；全塑性对固定拓扑不分离各组件。",
+        "pdf_page": 8,
+        "resolved": true
+      },
+      {
+        "claim_id": "C11",
+        "issue": "尚无 readout 被误读为 MNIST 实验失败或全面模型不可行。",
+        "suggested_correction": "仅记录功能/证据缺失，区分实际 negative 与未测试。",
+        "pdf_page": 8,
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T12:48:44.692936Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "0fe2d98ea4e0be14e3eb7123e877cc5eec03bc02feb78ed326abbf848b6639b0",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

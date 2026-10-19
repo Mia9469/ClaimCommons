@@ -1,0 +1,757 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "preprint",
+  "paper": {
+    "title": "A Comparison of Temporal Encoders for Neuromorphic Keyword Spotting with Few Neurons",
+    "authors": [
+      "Mattias Nilsson",
+      "Ton Juny Pina",
+      "Lyes Khacef",
+      "Foteini Liwicki",
+      "Elisabetta Chicca",
+      "Fredrik Sandin"
+    ],
+    "doi": "10.1109/ijcnn54540.2023.10191938",
+    "publication_year": 2023,
+    "venue": null,
+    "url": "https://doi.org/10.1109/ijcnn54540.2023.10191938"
+  },
+  "source": {
+    "filename": "paper-W4385488660.pdf",
+    "sha256": "b67bce962ee910bf468e893ab399a2cac43982c2290cf17da944a8da05b40f01",
+    "source_url": "https://arxiv.org/pdf/2301.09962",
+    "pdf_page_count": 7
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "results_sections_seen": [
+      "III.A. Permutation Importance of Neurons",
+      "III.B. Linear Classification",
+      "III.C. Classification with Few Neurons",
+      "IV. CONCLUSION",
+      "Figures 1–8 and Table I"
+    ],
+    "missing_material": [
+      "未提供图像像素。",
+      "未报告随机种子、独立模拟重复次数、置换重复次数或准确率均值的重复计算方案。"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "实际文档为arXiv:2301.09962v1，日期为2023年1月24日；标题和作者符合身份元数据，但当前文本不是已核实的会议正式版本。",
+      "已评估全部提供正文、图表说明及参考文献；未提供附录或补充材料。",
+      "研究采用软件模拟和逻辑回归，没有报告本研究的硬件部署或功耗测量。",
+      "第2页先报告测试224、训练226条每数字样本，随后报告训练224、测试226；第5页训练总数444与后一种构成一致。该内部不一致无法由提供文本消除。",
+      "分析样本主要是单条数字发声；神经元数、通道数及随机异质电路数量均不是独立实验重复数。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "在共同的共振峰脉冲输入和逻辑回归读出流程中比较TDE、单层E–I和双层E–I编码器。",
+      "role": "研究设计",
+      "source_pages": [
+        2,
+        3,
+        4
+      ],
+      "decision": "exclude",
+      "reason": "作为结果的共同条件保留；编码器基本机制来自既有工作，不另列为新机制发现。"
+    },
+    {
+      "summary": "联合分类器中，部分TDE和第二层E–I特征具有高于共振峰通道的置换重要性。",
+      "role": "result",
+      "source_pages": [
+        4
+      ],
+      "decision": "include",
+      "reason": "具有独立读出和明确比较对象。"
+    },
+    {
+      "summary": "编码器与前层旁路联合读出达到100%训练准确率，共振峰基线为79%–96%。",
+      "role": "result",
+      "source_pages": [
+        4,
+        5
+      ],
+      "decision": "include",
+      "reason": "完整比较明确，需保留旁路读出及特征数量差异。"
+    },
+    {
+      "summary": "单神经元测试中编码器未显示相对单共振峰通道的明确准确率优势，第二层E–I也无系统改善。",
+      "role": "result",
+      "source_pages": [
+        5
+      ],
+      "decision": "include",
+      "reason": "实际报告的负面比较结果，不构成统计等效证明。"
+    },
+    {
+      "summary": "单神经元分类的正确预测中，真阳性和真阴性的份额较均衡。",
+      "role": "result",
+      "source_pages": [
+        5
+      ],
+      "decision": "include",
+      "reason": "可与准确率比较分别判断，不能直接解释为错误率相等。"
+    },
+    {
+      "summary": "所选TDE神经元对几乎所有关键词每条发声产生的平均脉冲数比其他比较通道多约100个。",
+      "role": "result",
+      "source_pages": [
+        5
+      ],
+      "decision": "include",
+      "reason": "独立的活动量读出，不等同于实测能耗。"
+    },
+    {
+      "summary": "四个关键词中增加读出数量至最多10个略改善分类，但编码器子集未显示相对共振峰子集的明确优势。",
+      "role": "result",
+      "source_pages": [
+        5,
+        6
+      ],
+      "decision": "include",
+      "reason": "检验有限读出数量的效果；特征选择是否使用独立验证数据未说明。"
+    },
+    {
+      "summary": "作者提出学习针对关键词优化的异质权重和时间常数可能改善未知发声分类。",
+      "role": "hypothesis",
+      "source_pages": [
+        5
+      ],
+      "decision": "include",
+      "reason": "明确保留为未检验的优化假说。"
+    },
+    {
+      "summary": "图1给出架构，图2给出发声示例，图3和图4介绍既有编码器原理，表I列出参数。",
+      "role": "示例与方法",
+      "source_pages": [
+        2,
+        3,
+        4
+      ],
+      "decision": "exclude",
+      "reason": "不含独立的新机制验证；发声示例不是额外重复实验。"
+    },
+    {
+      "summary": "引用另一研究中4、16和36个神经元的关键词识别准确率作背景比较。",
+      "role": "引用背景",
+      "source_pages": [
+        5
+      ],
+      "decision": "exclude",
+      "reason": "不是本研究新结果，未建立完全匹配的任务、读出和指标比较。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "在TIDIGITS发声级脉冲计数的联合逻辑回归分类器中，测试集置换分析显示，图5展示的one、two和three关键词中，高重要性TDE及第二层E–I神经元子集的置换重要性约为共振峰输入通道的3–4倍。",
+      "claim_type": "特征重要性比较",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "逐特征置换重要性分析",
+          "design": "使用全部层特征拟合训练集分类器，在测试集随机置换单个特征并计算模型分数下降。",
+          "comparator": "共振峰输入通道的置换重要性",
+          "measure": "随机置换单个脉冲计数特征造成的模型分数下降",
+          "unit_of_analysis": "单条发声为分类样本；单个通道或模拟神经元为被置换的特征",
+          "sample_size_as_reported": "32个输入通道、180个TDE神经元、174个第一层E–I神经元和156个第二层E–I神经元；图5展示3个关键词。第2页后文给出每关键词测试样本226+10×23条，但前文划分数字相反。",
+          "uncertainty": "未报告置换重复次数、置信区间或显著性检验。",
+          "assumptions": [
+            "重要性以联合分类器及其同时存在的其他特征为条件。",
+            "模拟采用文中拓扑及表I参数。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "III.A",
+            "figure": "Fig. 5",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "部分编码器特征在该联合分类器中具有较高置换重要性。",
+        "boundary": "比较针对高重要性子集；图5仅展示三个关键词。",
+        "negative_result": null,
+        "non_inference": "不能据此认定编码器整体优于共振峰、特征具有独立信息量或存在因果机制。",
+        "unresolved": "该重要性排序对置换随机性、模拟实例及相关特征是否稳健未报告。",
+        "unresolved_attribution": "提取审计识别的限制。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "哪些时序编码脉冲计数特征对联合关键词分类器的预测贡献最大？"
+      ],
+      "shared_evidence_with": [
+        "C5"
+      ],
+      "review_notes": [
+        "C5后续特征选择依赖置换重要性；这不是独立重复验证。",
+        "神经元数量不代表独立实验次数。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "在TIDIGITS的11个数字关键词逐一对其余训练分类中，逻辑回归联合读取共振峰输入与编码器及前层输出的发声级脉冲计数时，单层TDE、单层E–I和双层E–I架构均达到100%训练准确率；仅使用共振峰输入时，不同关键词的平均训练准确率为79%–96%。",
+      "claim_type": "训练集分类性能",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Nengo及Brian 2/teili模拟，采用LIBLINEAR求解的L2正则化逻辑回归",
+          "design": "对11个数字关键词分别进行一对其余二分类；编码器分类器同时读取前层旁路特征。",
+          "comparator": "仅使用32个共振峰通道的逻辑回归",
+          "measure": "训练集平均分类准确率",
+          "unit_of_analysis": "单条数字发声",
+          "sample_size_as_reported": "第5页报告训练集共444条发声；第2页后文构成为224条关键词及10×22条非关键词。四种架构分别读取32、212、206和362个通道或神经元。",
+          "uncertainty": "未报告均值的重复计算方案、置信区间或显著性检验。",
+          "assumptions": [
+            "每个1 ms时间箱在32个频带中选取四个最高幅度共振峰并生成脉冲。",
+            "分类输入为整条发声的脉冲计数。",
+            "TDE参数由Speech Commands数字发声的网格搜索确定。",
+            "E–I突触权重和时间常数采用表I参数及50%高斯失配。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "III.B（始于第4页）",
+            "figure": "Fig. 6（第4页）",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "编码器特征与旁路输入的组合支持该训练集完全分类。",
+        "boundary": "结果限于训练集，且编码器架构的读出特征数高于共振峰基线；样本划分数字存在内部不一致。",
+        "negative_result": null,
+        "non_inference": "不能归因于编码器输出单独实现完全分类，也不能推断未知样本准确率。",
+        "unresolved": "增加特征数量和时序编码各自对训练可分性的贡献未被分离。",
+        "unresolved_attribution": "提取审计识别的限制。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "时序编码特征与输入旁路联合读出能否改善数字发声训练集的线性可分性？"
+      ],
+      "shared_evidence_with": [
+        "C6"
+      ],
+      "review_notes": [
+        "保留第5页明确的444条训练发声，不自行修正第2页矛盾。",
+        "训练和单神经元测试使用不同读出规模，不能直接解释为同一分类器的训练—测试差距。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "在TIDIGITS的11个数字关键词测试中，各层按训练准确率选出的单个TDE或E–I神经元，以发声级脉冲计数进行逻辑回归分类时，相对同样按训练准确率选出的单个共振峰通道未显示明确准确率改善；第二层E–I也未显示系统改善。",
+      "claim_type": "单神经元测试性能比较",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "按训练准确率选择各层单个特征，随后进行逻辑回归测试分类",
+          "design": "比较单共振峰通道、单TDE神经元、单第一层E–I神经元和单第二层E–I神经元。",
+          "comparator": "单共振峰通道；第二层E–I同时与其他层比较",
+          "measure": "测试集平均分类准确率",
+          "unit_of_analysis": "单条数字发声；每个分类器只读取一个特征",
+          "sample_size_as_reported": "11个关键词；第2页后文给出每关键词测试集226条正例及10×23条负例，前文划分数字与此相反。",
+          "uncertainty": "未报告准确率置信区间、显著性检验或独立模拟重复数。",
+          "assumptions": [
+            "单个读出特征根据训练准确率选择。",
+            "结果限于文中参数、网络拓扑和发声级脉冲计数读出。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "III.C",
+            "figure": "Fig. 7a",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": null,
+        "boundary": "作者报告定性趋势，没有统计等效或显著性分析。",
+        "negative_result": "单个编码器神经元未显示相对单共振峰通道的明确测试优势，增加E–I深度未显示系统改善。",
+        "non_inference": "不能认定方法等效，也不能将此结论扩展至经训练的编码器或其他读出方式。",
+        "unresolved": "参数学习或其他读出方式是否改变该比较尚未检验。",
+        "unresolved_attribution": "作者提出参数优化方向；读出及统计限制由提取审计识别。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "单个时序编码神经元能否比单个共振峰通道更准确地识别未知数字发声？"
+      ],
+      "shared_evidence_with": [
+        "C4",
+        "C5",
+        "C6",
+        "C7"
+      ],
+      "review_notes": [
+        "图2展示相关发声分类示例，不是独立验证。",
+        "不同关键词不等于独立模拟重复。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "对TIDIGITS单神经元关键词分类中所选的通道或神经元，几乎所有关键词的每条关键词发声平均脉冲数，TDE比共振峰通道及两层E–I神经元多约100个。",
+      "claim_type": "脉冲活动量比较",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "统计所选单通道或单神经元的发声级脉冲数",
+          "design": "对图7单神经元分类使用的特征，统计各关键词发声的平均脉冲数。",
+          "comparator": "共振峰通道、第一层E–I神经元和第二层E–I神经元",
+          "measure": "每条关键词发声的平均脉冲数",
+          "unit_of_analysis": "单条关键词发声中所选通道或神经元的脉冲数",
+          "sample_size_as_reported": "11个关键词；图7b计数统计的具体发声数未单独报告。",
+          "uncertainty": "图7b误差棒表示标准差，未提供数值或独立模拟重复数。",
+          "assumptions": [
+            "比较限于文中参数和单神经元选择结果。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "III.C",
+            "figure": "Fig. 7b",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在该设置下，所选TDE神经元通常产生更多脉冲。",
+        "boundary": "约100个是作者的数量级描述，且仅适用于几乎所有关键词和所选单通道。",
+        "negative_result": null,
+        "non_inference": "没有本研究硬件功耗测量，不能换算能耗差异或判断整个架构的能效。",
+        "unresolved": "调节参数能否减少脉冲数并维持分类表现尚未检验。",
+        "unresolved_attribution": "作者指出脉冲数可通过参数调节优化；准确率与活动量权衡尚未测试。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "不同时间编码器的所选单神经元处理关键词发声时产生多少脉冲？"
+      ],
+      "shared_evidence_with": [
+        "C3",
+        "C7"
+      ],
+      "review_notes": [
+        "图7中的活动量和准确率是同一选择流程的不同读出，不是独立重复。",
+        "标准差未被说明为模拟种子或硬件设备之间的变异。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "在TIDIGITS测试集的one、four、seven和eight关键词中，各层首个读出特征按训练准确率选择，其余按置换重要性选择，读出数量增加至最多10个时，分类准确率相对单通道略有改善，但TDE和E–I特征子集相对共振峰通道子集未显示明确优势。",
+      "claim_type": "有限读出数量下的性能比较",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "逐步增加读出特征数量的逻辑回归分类",
+          "design": "分别比较共振峰、TDE及两层E–I的特征子集；首个特征按最高训练分数选择，后续特征按最高置换重要性选择。",
+          "comparator": "单通道读出及对应读出数量的共振峰通道子集",
+          "measure": "测试集平均分类准确率随读出特征数的变化",
+          "unit_of_analysis": "单条数字发声",
+          "sample_size_as_reported": "4个关键词，最多10个读出通道或神经元；第2页后文给出每关键词456条测试发声，但前文划分数字不同。",
+          "uncertainty": "未报告置信区间、显著性检验或独立重复次数。",
+          "assumptions": [
+            "后续特征选择依据置换重要性。",
+            "文中明确描述的置换重要性在测试集计算；图8选择流程没有说明独立验证集。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "III.C（正文第5页）",
+            "figure": "Fig. 8",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "增加所选读出特征数略改善相对单通道的分类表现。",
+        "boundary": "仅展示四个关键词和最多10个特征；特征选择可能涉及测试集重要性。",
+        "negative_result": "编码器特征子集未显示相对共振峰子集的明确测试准确率优势。",
+        "non_inference": "不能确认这是完全独立于测试数据选择的泛化估计，也不能推广至全部关键词或任意网络规模。",
+        "unresolved": "使用独立验证集选择特征后，报告趋势是否保持尚不清楚。",
+        "unresolved_attribution": "提取审计根据重要性计算与特征选择描述识别的评估限制。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "读出特征增加到少量神经元时，时序编码特征子集能否优于共振峰通道子集？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C3",
+        "C6"
+      ],
+      "review_notes": [
+        "与C3共享首个神经元的选择流程，与C1共享置换重要性依据。",
+        "未根据缺失图像像素推算具体准确率。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "作者提出，对TDE及E–I编码器学习针对各关键词优化的异质权重和时间常数，可能提高未知发声的分类准确率；本研究没有训练并检验这些编码器参数。",
+      "claim_type": "参数学习与泛化假说",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "根据固定参数模拟结果提出优化方向",
+          "design": null,
+          "comparator": "当前TDE采用统一参数，E–I参数从固定均值的高斯分布抽样",
+          "measure": "拟改善未知发声分类准确率，优化后的效果未测量",
+          "unit_of_analysis": null,
+          "sample_size_as_reported": null,
+          "uncertainty": "没有参数学习对照或异质性消融实验。",
+          "assumptions": [
+            "任务优化的异质参数可能形成关键词相关时空特征敏感性。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "III.C; IV",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": null,
+        "boundary": "这是作者提出的待验证解释和优化方案。",
+        "negative_result": null,
+        "non_inference": "不能认定异质性不足已被证明是测试性能受限的原因，或参数学习必然提高准确率。",
+        "unresolved": "学习针对关键词优化的异质权重和时间常数能否改善独立测试准确率？",
+        "unresolved_attribution": "作者提出的后续研究方向。"
+      },
+      "broad_directions": [
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "学习异质时间常数和突触权重能否改善时序编码器对未知关键词发声的分类？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C3",
+        "C5"
+      ],
+      "review_notes": [
+        "这些共享结果仅是提出假说的依据，没有直接检验假说。",
+        "当前E–I模拟已有随机异质性；建议是针对任务优化异质参数，而非首次引入异质性。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "在TIDIGITS的11个数字关键词单通道测试分类中，图7a报告真阳性和真阴性在全部正确分类中的份额较均衡，比较涵盖所选共振峰通道、TDE神经元及两层E–I神经元。",
+      "claim_type": "正确预测构成",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "分解单通道测试分类中正确预测的类别构成",
+          "design": "各层选择训练准确率最高的单个特征后，统计测试集真阳性和真阴性的份额。",
+          "comparator": "同一分类器正确预测中的真阳性份额与真阴性份额",
+          "measure": "真阳性与真阴性占全部正确分类的份额",
+          "unit_of_analysis": "单条数字发声的测试预测",
+          "sample_size_as_reported": "11个关键词；第2页后文给出每关键词226条正例和230条负例，但前文划分数字相反。",
+          "uncertainty": "仅报告定性均衡描述，未给出份额数值或不确定性。",
+          "assumptions": [
+            "读出特征根据训练准确率选择。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "III.C",
+            "figure": "Fig. 7a",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "正确预测由真阳性和真阴性较均衡地构成。",
+        "boundary": "报告对象是正确预测的构成，不是直接计算的假阳性率或假阴性率。",
+        "negative_result": null,
+        "non_inference": "不能仅凭该构成认定两类错误率相同或已证明错误没有类别偏向。",
+        "unresolved": "具体混淆矩阵、两类错误率及其不确定性未报告。",
+        "unresolved_attribution": "提取审计识别的指标解释限制。"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "单通道关键词分类的正确预测由真阳性和真阴性如何构成？"
+      ],
+      "shared_evidence_with": [
+        "C3",
+        "C4"
+      ],
+      "review_notes": [
+        "与C3共享图7a分类结果，与C4共享图7所选通道；没有增加独立样本或重复。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "第二遍已核对全部7页正文、图表说明和参考文献。实际文档为同名arXiv v1预印本。编码器与前层旁路联合读出达到100%训练准确率，但单个及最多10个读出特征的测试比较未显示相对共振峰的明确优势。部分编码器特征具有较高置换重要性；所选TDE神经元通常产生更多脉冲。正确预测的类别构成另列为独立读出，不推断错误率相等。异质参数学习保留为未检验假说。样本划分矛盾、重复方案缺失和特征选择可能涉及测试集仍是未解决的来源限制。",
+  "shared_evidence": [
+    {
+      "claim_id": "C1",
+      "with": [
+        "C5"
+      ]
+    },
+    {
+      "claim_id": "C2",
+      "with": [
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C4",
+        "C5",
+        "C6",
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C3",
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C1",
+        "C3",
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C2",
+        "C3",
+        "C5"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C3",
+        "C4"
+      ]
+    }
+  ],
+  "audit": {
+    "initial_source_match_checks": [],
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": null,
+        "issue": "身份元数据主体为会议论文，而实际提供文档是arXiv v1预印本。",
+        "suggested_correction": "保留标题和作者身份一致，document_type标为preprint，提取范围限定为当前版本。",
+        "pdf_page": 1,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "第2页训练和测试样本数量前后互换，无法核实实际划分。",
+        "suggested_correction": "明确保留矛盾；训练结果采用第5页明确的444条表述，测试构成注明仅来自第2页后文。",
+        "pdf_page": 2,
+        "resolved": false
+      },
+      {
+        "claim_id": "C2",
+        "issue": "编码器100%训练准确率包含共振峰及前层旁路读出，且特征数不同。",
+        "suggested_correction": "完整说明联合读出和特征数量，避免归因于编码器输出单独作用。",
+        "pdf_page": 4,
+        "resolved": true
+      },
+      {
+        "claim_id": "C3",
+        "issue": "草稿将单神经元准确率比较与正确预测构成合并，二者可分别判断。",
+        "suggested_correction": "将正确预测构成拆分为C7，并保留共享图7a证据。",
+        "pdf_page": 5,
+        "resolved": true
+      },
+      {
+        "claim_id": "C7",
+        "issue": "真阳性和真阴性占正确预测的份额不能直接证明两类错误率相同。",
+        "suggested_correction": "只报告正确预测构成，将错误率解释列为不支持的推断。",
+        "pdf_page": 5,
+        "resolved": true
+      },
+      {
+        "claim_id": "C4",
+        "issue": "脉冲数量没有对应本研究硬件能耗测量。",
+        "suggested_correction": "保留脉冲活动量比较，不换算功耗或认定整个系统能效。",
+        "pdf_page": 5,
+        "resolved": true
+      },
+      {
+        "claim_id": "C5",
+        "issue": "置换重要性明确在测试集计算，而后续特征选择也依赖置换重要性；独立验证流程未说明。",
+        "suggested_correction": "保留报告趋势并标明潜在测试集参与选择，实际选择数据来源仍待澄清。",
+        "pdf_page": 4,
+        "resolved": false
+      },
+      {
+        "claim_id": "C6",
+        "issue": "现有E–I模拟已经包含随机异质性，不能把作者建议解释为尚未引入任何异质性。",
+        "suggested_correction": "将假说限定为学习针对任务优化的异质参数分布。",
+        "pdf_page": 5,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "草稿将共同方法背景也列作共享证据，并含有请求模式之外的source_check和review字段。",
+        "suggested_correction": "移除额外字段；共享关系仅保留同一图7结果、置换选择依据及优化假说所依据的已有结果。",
+        "pdf_page": null,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "准确率均值的计算方案、独立模拟重复数及多数不确定性未报告。",
+        "suggested_correction": "明确记录未报告，不把神经元、关键词或图数量当作独立重复。",
+        "pdf_page": 5,
+        "resolved": false
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T05:33:39.410811Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "signed_in_chatgpt_codex",
+    "authentication": "existing_ChatGPT_login",
+    "provider_api_key_used": false,
+    "model": "account_default_GPT",
+    "source_sha256": "b67bce962ee910bf468e893ab399a2cac43982c2290cf17da944a8da05b40f01",
+    "requests": [
+      {
+        "phase": "extraction",
+        "seconds": 131.03,
+        "usage": {
+          "input_tokens": 21436,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 5728,
+          "reasoning_output_tokens": 29
+        },
+        "backend": "signed_in_chatgpt_codex",
+        "tools_used": false
+      },
+      {
+        "phase": "source_audit",
+        "seconds": 125.79,
+        "usage": {
+          "input_tokens": 27034,
+          "cached_input_tokens": 12032,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 7063,
+          "reasoning_output_tokens": 73
+        },
+        "backend": "signed_in_chatgpt_codex",
+        "tools_used": false
+      }
+    ],
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

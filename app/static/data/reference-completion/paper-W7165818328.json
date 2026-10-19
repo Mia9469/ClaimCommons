@@ -1,0 +1,2684 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "preprint",
+  "paper": {
+    "title": "Design and Development of a Neuromorphic Silicon Suite: PVT Sensing, Stochastic LIF Inference, On-Chip STDP Learning, and Crossbar Programming",
+    "authors": [
+      "Poornima Kumaresan",
+      "Santhosh Sivasubramani"
+    ],
+    "doi": null,
+    "publication_year": 2026,
+    "venue": "arXiv (Cornell University)",
+    "url": "https://arxiv.org/pdf/2606.22635"
+  },
+  "source": {
+    "filename": "paper-W7165818328--Design-and-Development-of-a-Neuromorphic-Silicon-Suite-PVT-Sensing-Stochastic-LIF-Inference-On-.pdf",
+    "sha256": "842cdbb82e1a8c948c09e7c430b331a3a25a44da51cf5531a3a41cbc71818c66",
+    "source_url": "https://arxiv.org/pdf/2606.22635",
+    "pdf_page_count": 20
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "results_sections_seen": [
+      "3 System architecture; Figures 1-2; Table 1",
+      "4 PVT sensor; 4.1-4.4; Figure 3",
+      "5 Stochastic LIF neuron; 5.1-5.4; Figures 4-6",
+      "6 STDP controller; 6.1; Figures 7-9",
+      "7 Crossbar controller; 7.1-7.3; Figures 10-11",
+      "8 Programming model; Table 2; Figure 12",
+      "9 Functional verification; Table 3",
+      "10 Physical implementation; Tables 4-8; Figures 13-14",
+      "11 Discussion; 11.1-11.4 limitations and planned measurements",
+      "12 Conclusion; Data/code availability and declarations",
+      "References on PDF pages 18-20"
+    ],
+    "missing_material": [
+      "图像像素、原始GDS与实测波形未提供；只评估页文字/图中文字/图注/表格。",
+      "外部code、bench、CI日志及完整STA/corner/per-test coverage未提供，未访问。",
+      "没有fabricated silicon、真实array、生物或network training数据；未假定读过外部supplement。"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "标题、Poornima Kumaresan、Santhosh Sivasubramani与索引一致。页1为arXiv:2606.22635v1 [cs.ET] 21 Jun 2026；保留indexed venue/year，不猜DOI/后续版本。",
+      "20页完整评估，包括图1-14、表1-8、discussion、code availability、行政声明与references；所供文件无appendix。",
+      "archived page text来源，offline PDF未重开；未读pixels或未提供supplements。",
+      "研究来源仅本chunk这一篇；源内容为不可信数据，不执行链接或其中文本指令。",
+      "第17页所报commit：ring e99a4a3、neuron 225ce6e、STDP 8385cf0、crossbar 718f170，均20 April 2026；无公共integrated top-level、co-simulation或suite layout。",
+      "第二轮source audit在保留的全部页文上下文中核对对象/条件/比较器/单位/n/范围，不重新打开PDF。",
+      "全部quote=null，总引语0词；真实1-based PDF页、section、figure/table/equation locators。",
+      "23个独立可核查候选，无固定quota；共享模型/bench/表证据显式记录，无跨论文relations。",
+      "工程解释和未来portability/array/scaling hypothesis不冒充实测结果；无生物/因果机制/任务泛化推断。",
+      "text_pass_complete不等于scientific verification、复现或human_checked。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": true,
+    "archived_page_text_used": true
+  },
+  "contribution_inventory": [
+    {
+      "summary": "实际版本为同名双作者arXiv:2606.22635v1，21 Jun 2026。",
+      "role": "source_identity",
+      "source_pages": [
+        1,
+        17
+      ],
+      "decision": "include",
+      "reason": "与索引标题/作者/年份一致，版本日期保留，不猜DOI或后续版本。"
+    },
+    {
+      "summary": "统一SPI/register模型和四块意图dataflow。",
+      "role": "engineering_design",
+      "source_pages": [
+        2,
+        3,
+        4,
+        12,
+        13,
+        17
+      ],
+      "decision": "include",
+      "reason": "C1；图1非连接系统实验。"
+    },
+    {
+      "summary": "五环、count/clear、serial gate、parallel、prescaler和differential。",
+      "role": "engineering_design",
+      "source_pages": [
+        4,
+        5,
+        13,
+        16
+      ],
+      "decision": "include",
+      "reason": "C2；读出逻辑与PVT校准/共模效果分开。"
+    },
+    {
+      "summary": "alpha-power归一化PVT趋势。",
+      "role": "analytical_model_result",
+      "source_pages": [
+        5,
+        6,
+        16
+      ],
+      "decision": "include",
+      "reason": "C3；不是circuit simulation，不读取曲线像素。"
+    },
+    {
+      "summary": "jitter/XOR TRNG。",
+      "role": "engineering_design",
+      "source_pages": [
+        5,
+        13
+      ],
+      "decision": "include",
+      "reason": "C4；接口设计，无物理熵统计。"
+    },
+    {
+      "summary": "频率界限/停振health告警。",
+      "role": "engineering_design",
+      "source_pages": [
+        5,
+        13
+      ],
+      "decision": "include",
+      "reason": "C5；不归因已测老化。"
+    },
+    {
+      "summary": "LFSR-LUT概率和膜轨迹。",
+      "role": "rtl_simulation_result",
+      "source_pages": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "decision": "include",
+      "reason": "C6-C7；period/cycles/spikes非独立n。"
+    },
+    {
+      "summary": "threshold和host-driven weight-rate扫描。",
+      "role": "rtl_simulation_result",
+      "source_pages": [
+        7,
+        8
+      ],
+      "decision": "include",
+      "reason": "C8-C9保留不同条件，图6b threshold0x06不同于默认0x80。"
+    },
+    {
+      "summary": "refractory与每cycle膜更新。",
+      "role": "engineering_design",
+      "source_pages": [
+        7,
+        12,
+        16
+      ],
+      "decision": "include",
+      "reason": "C7、C10；不重复生成latency候选。"
+    },
+    {
+      "summary": "pair-based STDP、rate scaling和默认表形状。",
+      "role": "engineering_design_and_characterization",
+      "source_pages": [
+        7,
+        9,
+        10,
+        12,
+        13,
+        16
+      ],
+      "decision": "include",
+      "reason": "C11；有效时间戳、enable、≤3窗口等联合条件完整保留。"
+    },
+    {
+      "summary": "低位alias和zero LTD不可达。",
+      "role": "design_boundary",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "C12；源直接说明限制，不捏造任务负结果。"
+    },
+    {
+      "summary": "reward/eligibility gate及anti-Hebbian sign。",
+      "role": "engineering_design",
+      "source_pages": [
+        9,
+        10,
+        12,
+        13
+      ],
+      "decision": "include",
+      "reason": "C13-C14；不误作trace-weighted或网络性能。"
+    },
+    {
+      "summary": "crossbar FSM/width/ADC四位capture。",
+      "role": "engineering_design",
+      "source_pages": [
+        11,
+        12,
+        13,
+        16
+      ],
+      "decision": "include",
+      "reason": "C15；地址空间不是测量n，nibble复制不增分辨率。"
+    },
+    {
+      "summary": "sweep/zero-step/timeout/abort guard。",
+      "role": "engineering_guard_result",
+      "source_pages": [
+        11,
+        13,
+        16
+      ],
+      "decision": "include",
+      "reason": "C16；不猜每guard用例数。"
+    },
+    {
+      "summary": "compliance、half-select、pulse train。",
+      "role": "engineering_design",
+      "source_pages": [
+        11,
+        12,
+        13
+      ],
+      "decision": "include",
+      "reason": "C17-C19可分别核查，不升级为实际器件保护/抑扰/闭环。"
+    },
+    {
+      "summary": "99定向用例与三个同步block gate复跑。",
+      "role": "reported_verification_result",
+      "source_pages": [
+        4,
+        13,
+        14
+      ],
+      "decision": "include",
+      "reason": "C20；sensor例外和共享bench保留。"
+    },
+    {
+      "summary": "单tile area/utilisation/DRC-LVS/layout。",
+      "role": "physical_design_flow_result",
+      "source_pages": [
+        14,
+        15,
+        17
+      ],
+      "decision": "include",
+      "reason": "C21；target density、cell area与footprint分开。"
+    },
+    {
+      "summary": "CTS/STA margin与default-activity power。",
+      "role": "flow_result",
+      "source_pages": [
+        14,
+        16
+      ],
+      "decision": "include",
+      "reason": "C22-C23独立命题；没有routed parasitic timing或实测energy。"
+    },
+    {
+      "summary": "表8operation latency。",
+      "role": "design_latency",
+      "source_pages": [
+        16
+      ],
+      "decision": "include",
+      "reason": "已映射C2、C7、C10、C11、C15、C16；SPI为16 serial-clock periods，不换成16个50MHz周期。"
+    },
+    {
+      "summary": "统一配置可减少integration rework的实践价值。",
+      "role": "interpretation",
+      "source_pages": [
+        2,
+        17
+      ],
+      "decision": "include",
+      "reason": "作为C1正面含义和总结中的作者解释，未测开发耗时，不另立实测命题。"
+    },
+    {
+      "summary": "跨节点port、多instance tiling、扩大数据通路和接真实memory。",
+      "role": "hypothesis",
+      "source_pages": [
+        17
+      ],
+      "decision": "defer",
+      "reason": "11.4为未来扩展，无跨节点/array证据；留在unresolved/科学问题，不当作已验证泛化。"
+    },
+    {
+      "summary": "未来silicon频率、PVT/异步裕量、每event energy测量。",
+      "role": "planned_validation",
+      "source_pages": [
+        5,
+        16,
+        17
+      ],
+      "decision": "defer",
+      "reason": "作者下一阶段计划；是来源证据边界，非本chunk来源提取延期。"
+    },
+    {
+      "summary": "相关工作、表6-7定性对比与references。",
+      "role": "background_or_qualitative_positioning",
+      "source_pages": [
+        1,
+        2,
+        3,
+        15,
+        16,
+        18,
+        19,
+        20
+      ],
+      "decision": "exclude",
+      "reason": "不是本文独立数据；不读取被引论文、不建立跨论文链接。"
+    },
+    {
+      "summary": "Code availability、contributions、funding与声明。",
+      "role": "administrative_and_reproducibility_metadata",
+      "source_pages": [
+        17
+      ],
+      "decision": "include",
+      "reason": "保留commit和无公共integrated top-level范围；不生成行政科学命题或访问仓库。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "四个分别实现的SkyWater 130 nm模块使用相同Mode-0 SPI slave设计、16-bit帧和16项寄存器访问模式；异步输入经同步器采样，非选中时隔离输出，提供统一配置接口，但四模块未连接为已验证的端到端系统。",
+      "claim_type": "engineering_design",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "RTL接口结构描述",
+          "design": "RW、7-bit地址和8-bit数据组成16-bit帧，MSB first；每块实例化同一slave设计。",
+          "comparator": "四块接口约定之间的比较，不是集成成本或任务基准。",
+          "measure": "帧格式、同步与输出使能约定",
+          "unit_of_analysis": "四个模块中的接口实例",
+          "sample_size_as_reported": "4个不同模块；没有集成系统重复。",
+          "uncertainty": null,
+          "assumptions": [
+            "Mode 0；系统目标50 MHz；SPI时钟异步。",
+            "同步器引入固定延迟，实际metastability margin未建立。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "3.2 Shared serial interface",
+            "figure": "Figure 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "寄存器映射核对",
+          "design": "CTRL均为0x00；三个可编程模块STATUS在0x07，sensor在0x06。",
+          "comparator": "统一访问方式与不同字段功能。",
+          "measure": "地址布局和host配置次序",
+          "unit_of_analysis": "四个寄存器映射",
+          "sample_size_as_reported": "4个映射，不是独立实验重复。",
+          "uncertainty": null,
+          "assumptions": [
+            "无联合netlist。"
+          ],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "8 Programming model and register maps",
+            "figure": "Figure 12",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "给出可复用的同接口配置模型。",
+        "boundary": "图1与第17页明确是意图数据流，各块单独实现和验证。",
+        "negative_result": null,
+        "non_inference": "不能推断完整suite已工作、开发成本降低多少或同步器消除了全部异步风险。",
+        "unresolved": "实际联合通信和异步裕量待验证。",
+        "unresolved_attribution": "作者11.2与Data and code availability。"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "统一寄存器协议的设计兼容性与完整系统验证有何区别？"
+      ],
+      "shared_evidence_with": [
+        "C18"
+      ],
+      "review_notes": [
+        "新意是同节点、同接口和同验证流程的工程集合，不是新算法。",
+        "共享同模块设计、表征或汇总表的证据重用，不增加独立n，不是支持/矛盾/复制链接。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "PVT sensor设计包含7、11、15、21、31级五个可选ring oscillator，以三级同步后的边沿驱动16-bit计数器；并行边沿触发锁存/清零、串行自动gate、prescaler和双环差分模式提供可配读出，但逻辑仿真以clock divider代替物理振荡环。",
+      "claim_type": "engineering_design",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "sensor结构/读出设计",
+          "design": "并行clear只响应上升沿，串行gate为16-bit；raw和synchronised信号可输出。",
+          "comparator": "环长度、并行/串行和分频配置，而非真实PVT校准对照。",
+          "measure": "count、measurement-done与overflow状态",
+          "unit_of_analysis": "一个sensor设计的环/窗口配置",
+          "sample_size_as_reported": "5个环长度；29是整个sensor用例数，非芯片/环境重复。",
+          "uncertainty": null,
+          "assumptions": [
+            "prescaler可选/8、/16、/32、/64。",
+            "差分读取beat frequency；共模抑制是用途，未量化。",
+            "P、V、T分离需per-corner校准。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "4; 4.3 Differential and prescaled readout; 4.4",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "传感逻辑定向验证范围",
+          "design": "RTL用clock divider替代ring检查counter/readout，sensor gate-level另行处理。",
+          "comparator": "替代逻辑模型与真实振荡行为的证据范围。",
+          "measure": "计数和边沿控制断言",
+          "unit_of_analysis": "定向用例",
+          "sample_size_as_reported": "sensor共29用例；逐项覆盖未列。",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "9 Functional verification",
+            "figure": "Table 3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "配置窗口时延表",
+          "design": "gate可设1-65535系统周期。",
+          "comparator": "配置窗口长度。",
+          "measure": "50 MHz下20 ns至约1.31 ms",
+          "unit_of_analysis": "设计窗口",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "周期换算以20 ns为前提。"
+          ],
+          "source_locator": {
+            "pdf_page": 16,
+            "section": "10 operation timing",
+            "figure": "Table 8",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提供多环计数与统一接口读出。",
+        "boundary": "差分用途未证明实际环境下能唯一识别目标变量。",
+        "negative_result": null,
+        "non_inference": "不能推断已测绝对频率、温度精度、共模抑制量或独立识别P、V、T。",
+        "unresolved": "硅片校准、实际量程和误差未报告。",
+        "unresolved_attribution": "作者第5页校准说明与11.2、11.3。"
+      },
+      "broad_directions": [
+        "methods-causal",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "多环频率码在哪些校准条件下能区分工艺、供电和温度？"
+      ],
+      "shared_evidence_with": [
+        "C4",
+        "C5",
+        "C7",
+        "C10",
+        "C11",
+        "C15",
+        "C16",
+        "C20"
+      ],
+      "review_notes": [
+        "环数量不是独立n；divider仿真不验证真实ring。",
+        "共享同模块设计、表征或汇总表的证据重用，不增加独立n，不是支持/矛盾/复制链接。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "alpha-power stage-delay解析模型展示7、11、15级代表性ring oscillator的归一化频率对供电和温度的单调依赖；图3不是电路仿真或硅片测量，不能确定绝对PVT响应或校准精度。",
+      "claim_type": "analytical_model_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "alpha-power延迟解析趋势",
+          "design": "电压扫描为室温，温度扫描VDD=1.2 V；分别以7级环在1.8 V和冷端归一化。",
+          "comparator": "同一模型不同供电、温度及环长度。",
+          "measure": "normalised frequency的单调趋势",
+          "unit_of_analysis": "解析曲线/环长度",
+          "sample_size_as_reported": "3个代表性长度；没有独立器件或seed数。",
+          "uncertainty": null,
+          "assumptions": [
+            "接受作者解析模型；完整参数未提供。",
+            "只读文本/图注，不读取曲线像素。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "4 modelled response",
+            "figure": "Figure 3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "模型层级范围说明",
+          "design": "作者明确图3是analytical trend，不是circuit simulation。",
+          "comparator": null,
+          "measure": "模型证据层级",
+          "unit_of_analysis": "一个解析模型",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 16,
+            "section": "11.2 Limitations",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "给出计数器拟解析的模型趋势。",
+        "boundary": "仅三种长度、归一化量与指定条件。",
+        "negative_result": null,
+        "non_inference": "不能推断实测温漂、绝对频率、传感精度或PVT变量识别。",
+        "unresolved": "模型参数与硅片对照未提供。",
+        "unresolved_attribution": "作者11.2、11.3。"
+      },
+      "broad_directions": [
+        "methods-causal",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "解析振荡器趋势能否在实物上支持可校准PVT读出？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "文字只支持单调依赖，未从未读像素猜斜率、具体方向或误差。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "sensor复用环组，以两条选定环的phase jitter采样和XOR网络形成可寄存器使能、读出的TRNG设计；论文没有硅片熵率或随机性统计，因此这里只成立为熵源接口设计。",
+      "claim_type": "engineering_design",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "jitter-XOR熵源结构描述",
+          "design": "环组同时服务频率计数与相位采样，控制寄存器使能、数据寄存器读位。",
+          "comparator": "复用环组相对于另设熵源的设计思路；无定量面积消融。",
+          "measure": "TRNG路径与寄存器接口",
+          "unit_of_analysis": "一个sensor中的熵源设计",
+          "sample_size_as_reported": "选2个环；独立芯片数、bit数、统计测试数未报告。",
+          "uncertainty": null,
+          "assumptions": [
+            "熵依赖真实相位jitter；divider逻辑仿真不是物理熵测量。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "4.1 On-chip entropy",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提供供随机计算或LFSR seed使用的位流接口。",
+        "boundary": "接口存在不表示位流通过熵、偏置和相关性检验。",
+        "negative_result": null,
+        "non_inference": "不能推断真随机、密码安全、无偏独立或给定熵率。",
+        "unresolved": "物理熵质量和PVT影响未量化。",
+        "unresolved_attribution": "本次源审计：4.1未提供统计；11.2振荡行为待测。"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "复用PVT环的jitter位流是否在不同工作角下具有足够可验证的熵？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C5"
+      ],
+      "review_notes": [
+        "TRNG保留为源术语，不升级为随机性实验结论。",
+        "共享同模块设计、表征或汇总表的证据重用，不增加独立n，不是支持/矛盾/复制链接。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "sensor健康逻辑把频率计数与可编程上下界比较，越界或oscillator stall时产生告警；这建立频漂监测设计，而没有验证实际老化的特异性或寿命预测。",
+      "claim_type": "engineering_design",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "界限比较/状态设计",
+          "design": "host配置lower/upper bounds并读取health status，复用PVT count。",
+          "comparator": "界内与界外/停振条件，而非老化/未老化器件实验。",
+          "measure": "alert flag",
+          "unit_of_analysis": "一个监测逻辑",
+          "sample_size_as_reported": "老化芯片数、寿命和环境重复未报告。",
+          "uncertainty": null,
+          "assumptions": [
+            "频漂也受供电、温度、工艺影响；没有老化量转换校准。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "4.2 Health and aging monitor",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提供越界与停振报警接口。",
+        "boundary": "码值异常不能唯一归因于老化。",
+        "negative_result": null,
+        "non_inference": "不能推断已测老化、已排除PVT混杂或已知误报/漏报率。",
+        "unresolved": "老化校准与诊断性能未给出。",
+        "unresolved_attribution": "本次源审计：4.2提出用途但没有老化测量。"
+      },
+      "broad_directions": [
+        "methods-causal",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "频率阈值健康告警能否区分老化与PVT环境漂移？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C4"
+      ],
+      "review_notes": [
+        "老化解释与确定性比较器能力分开。",
+        "共享同模块设计、表征或汇总表的证据重用，不增加独立n，不是支持/矛盾/复制链接。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "最大长度多项式配置的16-bit Fibonacci LFSR RTL模型中，图6a报告由高三位选择的八个LUT档位之stochastic-fire概率与LUT/256一致；这是周期状态下的构造性检查，不是物理真随机或普遍独立性证明。",
+      "claim_type": "rtl_simulation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "LFSR/LUT概率RTL表征",
+          "design": "LFSR[15:13]选择LUT，LFSR[7:0]与activation比较，中间位不参与。",
+          "comparator": "模拟各档位触发概率与activation/256。",
+          "measure": "P(stochastic fire)",
+          "unit_of_analysis": "周期中的状态/档位",
+          "sample_size_as_reported": "最大长度周期65535状态、8个LUT档位；seed和独立重复数未报告。",
+          "uncertainty": null,
+          "assumptions": [
+            "使用最大长度多项式，任意可写多项式不保证该周期。",
+            "全零guard回到非零state；LFSR为pseudorandom source。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "5.4 Simulated dynamics",
+            "figure": "Figure 6(a)",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "激活规则定义",
+          "design": "低八位值小于所选LUT则触发；polynomial与seed可写。",
+          "comparator": null,
+          "measure": "触发谓词",
+          "unit_of_analysis": "一个配置模型",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "5.1; 5.2 Activation and integration",
+            "figure": null,
+            "equation": "Equation 2",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "特定周期配置实现所编程分档概率。",
+        "boundary": "没有任意多项式、短窗或多seed统计。",
+        "negative_result": null,
+        "non_inference": "不能推断事件独立、真随机、密码安全或sampling任务正确。",
+        "unresolved": "有限窗偏差、相关性和seed泛化未量化。",
+        "unresolved_attribution": "本次审计：5.4/图6未报告这些统计。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "有限LFSR的概率一致性与随机事件独立性怎样区分？"
+      ],
+      "shared_evidence_with": [
+        "C7",
+        "C8",
+        "C9",
+        "C10"
+      ],
+      "review_notes": [
+        "65535是状态周期而非独立n；图6a是by-construction检查。",
+        "共享同模块设计、表征或汇总表的证据重用，不增加独立n，不是支持/矛盾/复制链接。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "最大长度LFSR配置的RTL神经元轨迹展示stochastic event累加、达到上字节阈值后发放并清零；图5a以0x80阈值（膜码0x8000）显示1200周期中的3个spike，与饱和积分、无事件时leak的设计相符。",
+      "claim_type": "rtl_simulation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "RTL膜动态轨迹",
+          "design": "默认配置下16-bit膜积分，上字节达阈值则spike/reset。",
+          "comparator": "同轨迹积分阶段与reset，而非生物或其他电路对照。",
+          "measure": "membrane code、spike时序",
+          "unit_of_analysis": "一条仿真轨迹",
+          "sample_size_as_reported": "图中文字3 spikes / 1200 cycles；独立重复未报告。",
+          "uncertainty": null,
+          "assumptions": [
+            "最大长度polynomial；0x80为上字节阈值。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "5.4 Simulated dynamics",
+            "figure": "Figure 5(a)",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "积分/触发规则",
+          "design": "事件或外部spike时饱和加输入，否则按leak向零衰减；双向饱和防wrap。",
+          "comparator": null,
+          "measure": "膜更新和高字节触发",
+          "unit_of_analysis": "一个数字datapath",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "free-running输入为activation，host-driven为四位权重。",
+            "不是生物电位单位。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "5.2 Activation and integration",
+            "figure": null,
+            "equation": "Equations 3-4",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "膜更新时延",
+          "design": "每系统周期一次更新。",
+          "comparator": null,
+          "measure": "1 cycle / 20 ns",
+          "unit_of_analysis": "一次逻辑更新",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "50MHz；更新时延不是spike间隔。"
+          ],
+          "source_locator": {
+            "pdf_page": 16,
+            "section": "10 operation timing",
+            "figure": "Table 8",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "支持该配置的积分、发放和reset。",
+        "boundary": "码值/cycle/事件数属于同一RTL时间轨迹。",
+        "negative_result": null,
+        "non_inference": "不能推断生物验证、真实spike能耗、网络计算或神经因果机制。",
+        "unresolved": "物理波形和配置泛化未给出。",
+        "unresolved_attribution": "作者11.2、11.3。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "有限数字膜状态是否产生预期的阈值发放与reset动态？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C6",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C15",
+        "C16"
+      ],
+      "review_notes": [
+        "3个spike和1200周期不是独立样本。",
+        "共享同模块设计、表征或汇总表的证据重用，不增加独立n，不是支持/矛盾/复制链接。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "图5b所示RTL配置中，阈值寄存器升高时平均firing rate单调下降；这支持该扫描内的excitability控制，但不证明全部leak、LUT和refractory设置下同样成立。",
+      "claim_type": "rtl_simulation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "阈值扫描",
+          "design": "作者图5配置框架中比较不同threshold。",
+          "comparator": "同模型不同阈值。",
+          "measure": "mean firing rate单调下降",
+          "unit_of_analysis": "阈值配置点",
+          "sample_size_as_reported": "横轴0x20至0xE0；每点采样时长、seed和重复数未报告。",
+          "uncertainty": null,
+          "assumptions": [
+            "只对展示配置/范围成立；不从曲线像素猜各点rate。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "5.4 Simulated dynamics",
+            "figure": "Figure 5(b)",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "阈值提供配置内的单调rate调节。",
+        "boundary": "未联合扫描全部leak/LUT/refractory。",
+        "negative_result": null,
+        "non_inference": "不能推断普遍单调性、任务性能或实际silicon曲线。",
+        "unresolved": "物理rate和重复性待测。",
+        "unresolved_attribution": "作者11.3计划rate measurement；图5无重复统计。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "阈值对发放率的单调控制在什么其他参数条件下成立？"
+      ],
+      "shared_evidence_with": [
+        "C6",
+        "C7",
+        "C9",
+        "C10"
+      ],
+      "review_notes": [
+        "多配置点和轨迹事件不增加独立重复；与图5a共享模型。",
+        "共享同模块设计、表征或汇总表的证据重用，不增加独立n，不是支持/矛盾/复制链接。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "host-driven RTL扫描图6b将阈值降至0x06（默认0x80），输出spike rate随四位input-weight code单调增加；该结果不能替代默认阈值或完整网络任务验证。",
+      "claim_type": "rtl_simulation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "host-mode输入输出扫描",
+          "design": "四位并行权重零扩展后驱动integrator；阈值0x06。",
+          "comparator": "同模型不同weight code。",
+          "measure": "output rate单调增加",
+          "unit_of_analysis": "输入配置点",
+          "sample_size_as_reported": "4-bit为编码宽度；每点周期/seed/重复未报告。",
+          "uncertainty": null,
+          "assumptions": [
+            "最大长度polynomial；reduced threshold不同于图5默认0x80。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "5.4 Simulated dynamics",
+            "figure": "Figure 6(b)",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "模式输入定义",
+          "design": "host-driven采用ui_in[7:4]权重，free-running采用activation level。",
+          "comparator": null,
+          "measure": "输入来源",
+          "unit_of_analysis": "同一neuron模式",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "5.2 Activation and integration",
+            "figure": null,
+            "equation": "Equation 3",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "支持低阈值配置中的权重到rate传递。",
+        "boundary": "没有证明默认0x80或所有threshold/leak配置的传递。",
+        "negative_result": null,
+        "non_inference": "不能推断线性精度、分类准确率、泛化或生物刺激响应。",
+        "unresolved": "其他配置的传递范围与不确定性未报告。",
+        "unresolved_attribution": "本次源审计：图6b限定reduced threshold。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "权重到发放率的传递是否依赖降低阈值的配置选择？"
+      ],
+      "shared_evidence_with": [
+        "C6",
+        "C7",
+        "C8",
+        "C10"
+      ],
+      "review_notes": [
+        "不猜rate点值；四位编码不等于16个器件/生物样本。",
+        "共享同模块设计、表征或汇总表的证据重用，不增加独立n，不是支持/矛盾/复制链接。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "LIF设计在spike后支持0-7个系统周期的可编程refractory hold，期间抑制发放并保持膜状态，50MHz对应0-140ns；这是一项数字控制能力，不是生物refractory或网络稳定性测量。",
+      "claim_type": "engineering_design",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "refractory状态定义",
+          "design": "CTRL配置长度、STATUS报告状态；spike后进入hold。",
+          "comparator": "不同hold长度的设计选项。",
+          "measure": "抑制发放/膜hold",
+          "unit_of_analysis": "一个neuron控制逻辑",
+          "sample_size_as_reported": "0-7cycle范围；专属重复数未报告。",
+          "uncertainty": null,
+          "assumptions": [
+            "refractory期间不继续普通membrane更新。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "5.3 Refractory period",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "确定性hold时延",
+          "design": "按系统周期列出范围。",
+          "comparator": null,
+          "measure": "0-7cycles / 0-140ns",
+          "unit_of_analysis": "一个控制间隔",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "50MHz；不是实测时间。"
+          ],
+          "source_locator": {
+            "pdf_page": 16,
+            "section": "10 operation timing",
+            "figure": "Table 8",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提供发放间隔约束的可配控制。",
+        "boundary": "无跨设置的网络任务或统计。",
+        "negative_result": null,
+        "non_inference": "不能推断稳定性、去相关或生物时间尺度等价。",
+        "unresolved": "与leak/LUT/threshold的联合动态未系统展示。",
+        "unresolved_attribution": "本次审计：5.3为设计说明；11.2物理行为待测。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "有限周期hold如何约束发放间隔而不证明网络性能？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C11",
+        "C15",
+        "C16"
+      ],
+      "review_notes": [
+        "不从最大hold猜未报告的最大firing rate。",
+        "共享同模块设计、表征或汇总表的证据重用，不增加独立n，不是支持/矛盾/复制链接。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "STDP控制器对有效八位pre/post timestamp计算tpost-tpre，在预定|delta t|≤3窗口内用符号和四档幅值索引八项可写LUT，再按两位learning-rate field右移；默认表为近时序强potentiation、较弱depression的不对称更新，compute为三周期。",
+      "claim_type": "engineering_design_and_characterization",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "timestamp/LUT更新规则",
+          "design": "外部timestamp clock驱动八位计数；有效pre/post均到齐、learning enable后由FSM计算。",
+          "comparator": "两种spike顺序和四档rate（/8、/4、/2、原值）。",
+          "measure": "基础更新符号/幅度",
+          "unit_of_analysis": "一个datapath的表项配置",
+          "sample_size_as_reported": "8项LUT；22为全controller用例数，非学习重复。",
+          "uncertainty": null,
+          "assumptions": [
+            "delta t=0归potentiation；magnitude与rate只用低两位。",
+            "窗口应≤3；不得补写timestamp rollover处理。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "6 On-chip STDP learning controller",
+            "figure": "Figure 7",
+            "equation": "Equation 6",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "默认表形状说明",
+          "design": "图9为可写LUT的不对称形状，虚线为guide to the eye。",
+          "comparator": "LTP与LTD表项。",
+          "measure": "programmed weight change",
+          "unit_of_analysis": "同一LUT的可达项",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "不从曲线像素猜幅度；不是新生物规则。"
+          ],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "6 default plasticity curve",
+            "figure": "Figure 9",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "compute时延",
+          "design": "基础更新计算3周期。",
+          "comparator": null,
+          "measure": "3cycles / 60ns",
+          "unit_of_analysis": "一次逻辑compute",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "50MHz；不含物理synapse写入。"
+          ],
+          "source_locator": {
+            "pdf_page": 16,
+            "section": "10 operation timing",
+            "figure": "Table 8",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "实现可编程时序依赖数字更新和确定compute时延。",
+        "boundary": "四档幅值/索引窗口有限；timestamp wrap细节未提供。",
+        "negative_result": null,
+        "non_inference": "不能推断物理突触已写入、网络学会任务、算法新颖或生物STDP验证。",
+        "unresolved": "rollover配对、真实memory写入与训练表现未给出。",
+        "unresolved_attribution": "本次审计：第6节为规则；11.2真实array未建立。"
+      },
+      "broad_directions": [
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "有限timestamp和八项LUT在哪些窗口内能表示非对称STDP？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C7",
+        "C10",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16"
+      ],
+      "review_notes": [
+        "默认表与规则是同一controller证据；三周期仅为控制计算。",
+        "共享同模块设计、表征或汇总表的证据重用，不增加独立n，不是支持/矛盾/复制链接。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "STDP仅用|delta t|低两位索引幅值，窗口设为>3会使较大时差混叠至既有表项；delta t=0归potentiation使depression半表零幅值项不可达。这是明确的设计边界，不是独立负向学习实验。",
+      "claim_type": "design_boundary",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "索引/可达性分析",
+          "design": "sign选择LTP/LTD半表，low-two-bit magnitude选择其内地址。",
+          "comparator": "预定≤3与>3窗口、zero与negative-difference分支。",
+          "measure": "index alias与zero LTD不可达",
+          "unit_of_analysis": "一个索引设计的逻辑条件",
+          "sample_size_as_reported": "4个magnitude bins；negative可达1-3；失败试验n未给出。",
+          "uncertainty": null,
+          "assumptions": [
+            "使用源明确的低两位规则；>3为超设计意图设置。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "6 On-chip STDP learning controller",
+            "figure": null,
+            "equation": "Equation 6",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "明确限制可用编程范围与表项可达性。",
+        "boundary": "八个physical entries不等于双侧各四个可达时差。",
+        "negative_result": null,
+        "non_inference": "不能声称宽窗口已支持，或把逻辑限制说成实际训练失败统计。",
+        "unresolved": "超范围专属仿真与wrap后行为未展示。",
+        "unresolved_attribution": "本次审计：第9页直接说明alias，未给额外失败数据。"
+      },
+      "broad_directions": [
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "STDP低位索引在哪些设置下混叠或留下不可达表项？"
+      ],
+      "shared_evidence_with": [
+        "C11",
+        "C13",
+        "C14"
+      ],
+      "review_notes": [
+        "negative_result为空；源限定与未实施失败实验分开。",
+        "共享同模块设计、表征或汇总表的证据重用，不增加独立n，不是支持/矛盾/复制链接。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C13",
+      "statement": "reward/eligibility模式以衰减trace记录近期spike pair，仅在reward与有效trace同时成立时提交基础STDP更新；图8明确是门控base update，而不是用衰减trace幅度相乘的更新。",
+      "claim_type": "engineering_design",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "trace/reward gate结构",
+          "design": "可编程leaky counter持trace，reward gate释放base update。",
+          "comparator": "reward在trace eligible期间或失效之后到达的设计情形。",
+          "measure": "committed base delta w的释放条件",
+          "unit_of_analysis": "一个控制器的条件序列",
+          "sample_size_as_reported": "图8为条件示意；seed、独立学习实验、延迟扫描n未报告。",
+          "uncertainty": null,
+          "assumptions": [
+            "启用相应reward gate/trace模式。",
+            "正文/图注称trace non-zero/eligible，数值threshold未给出。",
+            "不以像素量化eligibility寿命。"
+          ],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "6.1 Three-factor extensions",
+            "figure": "Figure 8",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "寄存器控制模式说明",
+          "design": "trace enable/decay与reward gate可配。",
+          "comparator": null,
+          "measure": "延迟reward的门控路径",
+          "unit_of_analysis": "同一trace状态",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "6.1 Three-factor extensions",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "可在短期eligibility内将奖励作用于基础更新。",
+        "boundary": "trace失效后的reward不提交为设计条件，非任务失败测量。",
+        "negative_result": null,
+        "non_inference": "不能推断完整RL、长延迟credit assignment或trace连续幅度缩放。",
+        "unresolved": "延迟范围、收敛与reward-noise鲁棒性未测量。",
+        "unresolved_attribution": "本次审计：6.1和图8没有任务数据。"
+      },
+      "broad_directions": [
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "eligibility gate与连续trace-weighted三因子更新有何不同？"
+      ],
+      "shared_evidence_with": [
+        "C11",
+        "C12",
+        "C14"
+      ],
+      "review_notes": [
+        "这是既有规则的数字实现；不捏造学习负结果。",
+        "共享同模块设计、表征或汇总表的证据重用，不增加独立n，不是支持/矛盾/复制链接。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C14",
+      "statement": "anti-Hebbian模式反转基础STDP更新符号、交换potentiation与depression极性；本文没有证明该模式在网络中产生decorrelation或竞争学习性能提升。",
+      "claim_type": "engineering_design",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "可配polarity inversion",
+          "design": "base update经过sign select，再进入reward/trace gate。",
+          "comparator": "模式关闭与开启的符号约定。",
+          "measure": "更新极性",
+          "unit_of_analysis": "同一controller模式位",
+          "sample_size_as_reported": "专属重复/网络n未报告；22是全controller用例。",
+          "uncertainty": null,
+          "assumptions": [
+            "启用reward gate时仍受reward/trace条件约束。"
+          ],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "6.1 Three-factor extensions",
+            "figure": "Figure 8(a)",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "模式用途说明",
+          "design": "anti-Hebbian select为register bit；作者提出去相关/竞争用途。",
+          "comparator": null,
+          "measure": "接口能力而非网络效果",
+          "unit_of_analysis": "一个数字模式",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "6.1 Three-factor extensions",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提供同datapath极性切换。",
+        "boundary": "符号反转与群体去相关是不同命题。",
+        "negative_result": null,
+        "non_inference": "不能推断去相关、竞争性feature learning或生物机理。",
+        "unresolved": "网络作用和模式特异验证未单列。",
+        "unresolved_attribution": "本次源审计：6.1未提供网络实验。"
+      },
+      "broad_directions": [
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "数字符号反转何时才能产生网络级去相关？"
+      ],
+      "shared_evidence_with": [
+        "C11",
+        "C12",
+        "C13"
+      ],
+      "review_notes": [
+        "用途解释与实现结果分开。",
+        "共享同模块设计、表征或汇总表的证据重用，不增加独立n，不是支持/矛盾/复制链接。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C15",
+      "statement": "crossbar controller为8×8地址空间定义read/set/reset/forming七态序列，pulse为1-511周期，read跳过pulse；外部ADC handshake捕获四位读数并复制nibble至八位register。它是数字外围设计，不是工作的64-device阵列。",
+      "claim_type": "engineering_design",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "FSM与外部接口定义",
+          "design": "3-bit row/col，9-bit width；8-bit DAC code低两位专用输出，full code在register；ADC capture 4bit。",
+          "comparator": "read与三类programming序列。",
+          "measure": "address enable、pulse、sense、op_done",
+          "unit_of_analysis": "controller操作配置",
+          "sample_size_as_reported": "8×8为地址空间；30为全controller用例；实际器件/阵列n未报告。",
+          "uncertainty": null,
+          "assumptions": [
+            "需要外部DAC/ADC与analogue front end。",
+            "nibble replication不增加ADC到8bit精度。"
+          ],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "7 Memristive crossbar programming controller",
+            "figure": "Figure 10",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "SET时序说明",
+          "design": "setup、pulse、sense、report；read跳过pulse。",
+          "comparator": "SET与READ阶段。",
+          "measure": "数字控制时序",
+          "unit_of_analysis": "状态转换",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "不是实际电阻/电流曲线。"
+          ],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "7 operation timing",
+            "figure": "Figure 11",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "pulse设计时延",
+          "design": "1-511系统周期。",
+          "comparator": null,
+          "measure": "20ns至约10.2us",
+          "unit_of_analysis": "一个逻辑pulse",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "50MHz；不含模拟响应。"
+          ],
+          "source_locator": {
+            "pdf_page": 16,
+            "section": "10 operation timing",
+            "figure": "Table 8",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提供地址、模式、脉宽与sense handshake。",
+        "boundary": "真实波形、器件切换和converter特性没有建立。",
+        "negative_result": null,
+        "non_inference": "不能推断真实array已写/读/forming、8bit ADC精度或任何生物验证。",
+        "unresolved": "前端和目标器件特异时序需验证。",
+        "unresolved_attribution": "作者11.2、11.4。"
+      },
+      "broad_directions": [
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "数字controller与模拟前端共同决定怎样的真实crossbar分辨率和脉冲？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C7",
+        "C10",
+        "C11",
+        "C16",
+        "C17",
+        "C18",
+        "C19"
+      ],
+      "review_notes": [
+        "64个地址不是64个被测器件；DAC寄存器与低两位pin差别保留。",
+        "共享同模块设计、表征或汇总表的证据重用，不增加独立n，不是支持/矛盾/复制链接。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C16",
+      "statement": "crossbar零sweep increment时终止扫描，ADC无响应时256-cycle timeout标记错误，abort可回idle清输出；这些guard约束数字控制等待，而不建立器件层安全或实测故障恢复。",
+      "claim_type": "engineering_guard_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "扫描/timeout/abort规则",
+          "design": "start/end/increment定义code扫描；零步进guard防无进展循环；ADC等待有限。",
+          "comparator": "有效/零步进、有/无ADC响应、正常/abort分支。",
+          "measure": "终止、error、idle与清输出",
+          "unit_of_analysis": "controller条件分支",
+          "sample_size_as_reported": "30为全controller用例；各guard专属n未列。",
+          "uncertainty": null,
+          "assumptions": [
+            "数字清输出不保证实物立即去能。"
+          ],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "7 Memristive crossbar programming controller",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "定向验证范围",
+          "design": "作者明确例举zero-increment sweep guard及全部操作模式。",
+          "comparator": "bench预定断言。",
+          "measure": "作者报告测试通过",
+          "unit_of_analysis": "定向测试用例",
+          "sample_size_as_reported": "全block30，不是每guard重复n。",
+          "uncertainty": null,
+          "assumptions": [
+            "逐项覆盖/原始日志未提供。"
+          ],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "9 Functional verification",
+            "figure": "Table 3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "timeout设计换算",
+          "design": "等待256系统周期。",
+          "comparator": null,
+          "measure": "256cycles / 5.12us",
+          "unit_of_analysis": "等待窗口",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "50MHz。"
+          ],
+          "source_locator": {
+            "pdf_page": 16,
+            "section": "10 operation timing",
+            "figure": "Table 8",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所定义条件有有限停止/报错。",
+        "boundary": "没有实物故障注入或恢复研究。",
+        "negative_result": null,
+        "non_inference": "不能推断全故障覆盖、无损器件、安全保证或任意ADC延迟下均正确。",
+        "unresolved": "外围响应和abort后电气恢复未给出。",
+        "unresolved_attribution": "第9节无逐test报告，11.2真实array未建立。"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "数字guard排除哪些卡死而留下哪些外围故障未验证？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C7",
+        "C10",
+        "C11",
+        "C15",
+        "C17",
+        "C18",
+        "C19",
+        "C20"
+      ],
+      "review_notes": [
+        "guard预期停止不包装为器件编程失败实验。",
+        "共享同模块设计、表征或汇总表的证据重用，不增加独立n，不是支持/矛盾/复制链接。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C17",
+      "statement": "compliance模式在set/forming pulse中比较sensed-current输入与可配阈值，越界后终止pulse并记录compliance-hit；本文没有测量真实current overshoot或filament损伤抑制。",
+      "claim_type": "engineering_design",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "compliance比较/终止设计",
+          "design": "host配置阈值并使能，controller响应电流条件。",
+          "comparator": "阈值未越界/越界分支。",
+          "measure": "pulse abort与hit状态",
+          "unit_of_analysis": "一个数字比较逻辑",
+          "sample_size_as_reported": "实际电流/独立compliance实验n未给；30是全block用例。",
+          "uncertainty": null,
+          "assumptions": [
+            "源仅指定set/forming；不泛化所有操作。",
+            "sensing及模拟响应尚未验证。"
+          ],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "7.1 Compliance limiting",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "control/status映射",
+          "design": "CTRL含compliance enable，STATUS bit7为hit。",
+          "comparator": null,
+          "measure": "使能/状态接口",
+          "unit_of_analysis": "register field",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "8 Programming model",
+            "figure": "Table 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提供可编程数字compliance路径。",
+        "boundary": "电流单位、带宽、比较延迟和外部关断未量化。",
+        "negative_result": null,
+        "non_inference": "不能推断恒流精度、无overshoot、filament被保护或目标阻态已实现。",
+        "unresolved": "真实限流及前端时延待测。",
+        "unresolved_attribution": "作者11.2、11.4；7.1为控制机制。"
+      },
+      "broad_directions": [
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "数字compliance终止能否在实际前端延迟下限制器件电流？"
+      ],
+      "shared_evidence_with": [
+        "C15",
+        "C16",
+        "C18",
+        "C19"
+      ],
+      "review_notes": [
+        "器件保护是设计目的，不当作已识别材料机制。",
+        "共享同模块设计、表征或汇总表的证据重用，不增加独立n，不是支持/矛盾/复制链接。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C18",
+      "statement": "crossbar提供可寄存器配置的中间bias code用于half-select（V/2）控制，对未选中线设偏置以限制sneak-path/disturbance；未给阵列电流或误写测量，故仅成立为偏置接口能力。",
+      "claim_type": "engineering_design",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "half-select控制描述",
+          "design": "未选中线用中间DAC bias code，可写/readback。",
+          "comparator": "选中/未选中线约定，没有真实array有无bias对照。",
+          "measure": "bias code配置",
+          "unit_of_analysis": "一个bias设计",
+          "sample_size_as_reported": "阵列数、漏电/误写试验n未报告。",
+          "uncertainty": null,
+          "assumptions": [
+            "需要模拟bias驱动；V/2名称不保证物理电压恰为一半。"
+          ],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "7.2 Half-select biasing",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "bias寄存器图",
+          "design": "crossbar 0x0F为V/2。",
+          "comparator": null,
+          "measure": "寄存器接口",
+          "unit_of_analysis": "一个field",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "8 Programming model",
+            "figure": "Figure 12",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "给出可配half-select字段。",
+        "boundary": "没有真实电压、电流、disturbance量化。",
+        "negative_result": null,
+        "non_inference": "不能推断漏电降低、误写消除或阵列可扩展性。",
+        "unresolved": "偏置精度及目标器件抑扰效果待验证。",
+        "unresolved_attribution": "作者11.2、11.4；7.2无器件数据。"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "half-select code在什么前端与器件条件下真正降低sneak-path和写扰动？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C15",
+        "C16",
+        "C17",
+        "C19"
+      ],
+      "review_notes": [
+        "寄存器存在不等于array实验。",
+        "共享同模块设计、表征或汇总表的证据重用，不增加独立n，不是支持/矛盾/复制链接。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C19",
+      "statement": "crossbar通过repeat count、inter-pulse gap和per-pulse width配置pulse train，以只读register计数发出pulse，并可abort；未证明闭环write-verify收敛或目标conductance精度。",
+      "claim_type": "engineering_design",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "pulse-train配置",
+          "design": "FSM gap支持多脉冲，host配置repeat/gap/width并读pulse count。",
+          "comparator": "单次/重复pulse和正常/abort设计配置。",
+          "measure": "pulse序列、计数、中止",
+          "unit_of_analysis": "一个controller序列",
+          "sample_size_as_reported": "repeat最大值、gap编码范围与专属重复n未给；实物编程n未报告。",
+          "uncertainty": null,
+          "assumptions": [
+            "逻辑发出count不证明pulse到达器件。",
+            "没有按verify误差自适应调pulse的算法结果。"
+          ],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "7.3 Pulse-train programming",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "gap state图注",
+          "design": "图10说明七态包含inter-pulse gap。",
+          "comparator": null,
+          "measure": "状态结构",
+          "unit_of_analysis": "同一FSM",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "7 controller FSM",
+            "figure": "Figure 10",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提供可配pulse train和中止/计数。",
+        "boundary": "源提及incremental pulse-and-verify作为标准实践，未给闭环效果。",
+        "negative_result": null,
+        "non_inference": "不能推断目标阻态、精度、endurance或write-verify收敛。",
+        "unresolved": "目标器件反馈策略和精确范围未给出。",
+        "unresolved_attribution": "本次审计：7.3无这些数据；11.2、11.4真实array待验证。"
+      },
+      "broad_directions": [
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "可编程pulse train还需要哪些反馈证据才成为精确闭环编程？"
+      ],
+      "shared_evidence_with": [
+        "C15",
+        "C16",
+        "C17",
+        "C18"
+      ],
+      "review_notes": [
+        "pulse数/状态数不是独立器件样本。",
+        "共享同模块设计、表征或汇总表的证据重用，不增加独立n，不是支持/矛盾/复制链接。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C20",
+      "statement": "作者报告99个定向cocotb用例全通过：sensor29、neuron18、STDP22、crossbar30；三个同步块以同bench做gate-level复跑，sensor因物理ring为组合反馈而用divider作RTL替代，不能声称99用例均验证了真实环振荡。",
+      "claim_type": "reported_verification_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "定向RTL及gate-level复跑",
+          "design": "cocotb2.0.1/Icarus Verilog覆盖reset、register、integration、timestamp/plasticity、crossbar模式和sensor count/edge。",
+          "comparator": "RTL与三个同步implemented netlist的同bench断言。",
+          "measure": "作者报告全部pass",
+          "unit_of_analysis": "定向用例与同bench复跑",
+          "sample_size_as_reported": "99=29+18+22+30；复跑不增加99独立实验或芯片。",
+          "uncertainty": "逐test coverage、原始日志、统计重复与置信区间未提供。",
+          "assumptions": [
+            "sensor gate-level单独处理，不能套三个同步块的yes。",
+            "选定corner conditions非穷举或物理PVT。"
+          ],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "9 Functional verification",
+            "figure": "Table 3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "支持作者报告的所选逻辑断言一致性。",
+        "boundary": "同bench共享设计/断言，sensor替代不建立物理频率/jitter/entropy。",
+        "negative_result": null,
+        "non_inference": "不能推断99次独立科学重复、零硬件故障、全corner或silicon验证。",
+        "unresolved": "coverage/logs和实物行为不在供给文本中。",
+        "unresolved_attribution": "作者11.2称CI产出报告但此处未重现。"
+      },
+      "broad_directions": [
+        "methods-causal",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "定向逻辑验证能支持哪些功能边界而不能替代哪些物理和覆盖证据？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C16"
+      ],
+      "review_notes": [
+        "没有运行源提及的软件测试或外部仓库；只读论文报告。",
+        "共享同模块设计、表征或汇总表的证据重用，不增加独立n，不是支持/矛盾/复制链接。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C21",
+      "statement": "四块各自实现为约161×112 um单tile：sensor/neuron/STDP/crossbar的post-synthesis cell area为9951/10593/9854/9253 um²，placed utilisation为66/70/65/61%；作者报告DRC/LVS通过和各自routed layout，不是集成suite版图或已测silicon。",
+      "claim_type": "physical_design_flow_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "标准单元综合/实现",
+          "design": "sky130_fd_sc_hd、Yosys/OpenROAD/OpenLane；每块单tile，density target60%。",
+          "comparator": "四个不同设计，非重复或跨节点性能基准。",
+          "measure": "cell area、utilisation、cells/FFs",
+          "unit_of_analysis": "四个block实现",
+          "sample_size_as_reported": "4个设计；cells859/917/833/840，FFs219/208/212/198；组件数不是独立n。",
+          "uncertainty": null,
+          "assumptions": [
+            "target60%不等于achieved utilisation。",
+            "cell area不等于tile footprint或routed die area。"
+          ],
+          "source_locator": {
+            "pdf_page": 14,
+            "section": "10 Physical implementation and results",
+            "figure": "Tables 4-5",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "布局图注与输出说明",
+          "design": "各块harden为单tile，图14是GDSII layout renders。",
+          "comparator": "单块layout而非suite layout。",
+          "measure": "作者报告DRC/LVS clean及layout输出",
+          "unit_of_analysis": "四个tile",
+          "sample_size_as_reported": "4块；无silicon样片n。",
+          "uncertainty": null,
+          "assumptions": [
+            "只读图注，不看GDS/像素。"
+          ],
+          "source_locator": {
+            "pdf_page": 15,
+            "section": "10 implementation summary",
+            "figure": "Figures 13-14",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "源报告各块满足单tile的几何/面积目标。",
+        "boundary": "tapeout提交不等于fabricated measurement。",
+        "negative_result": null,
+        "non_inference": "不能推断完整suite集成、良率或跨节点面积优势。",
+        "unresolved": "实物、联合layout、良率未给出。",
+        "unresolved_attribution": "作者11.2与Data and code availability。"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "各自单tile实现怎样区别于完整suite集成与真实面积效率？"
+      ],
+      "shared_evidence_with": [
+        "C22",
+        "C23"
+      ],
+      "review_notes": [
+        "39651 um²总和不是单个集成tile；表6-7仅为定性定位。",
+        "共享同模块设计、表征或汇总表的证据重用，不增加独立n，不是支持/矛盾/复制链接。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C22",
+      "statement": "50MHz约束下placement/CTS/STA报告sensor/neuron/STDP/crossbar的setup/hold slack分别为+15.7/+0.33、+14.3/+0.35、+16.5/+0.34、+15.9/+0.33ns；11.2明确不包含routed parasitic-extracted timing，不能当作全角落或silicon最高频率验证。",
+      "claim_type": "static_timing_flow_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "OpenSTA时序摘要",
+          "design": "20ns system period下四块worst-case setup/hold。",
+          "comparator": "相对50MHz约束的margin。",
+          "measure": "setup/hold slack(ns)",
+          "unit_of_analysis": "四个design的STA结果",
+          "sample_size_as_reported": "4块；corner设置与独立实现重复未重现。",
+          "uncertainty": null,
+          "assumptions": [
+            "受所用cell models与STA约束限定。"
+          ],
+          "source_locator": {
+            "pdf_page": 14,
+            "section": "10 Physical implementation and results",
+            "figure": "Table 5",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "报告阶段限定",
+          "design": "timing来自synthesis/placement/CTS，不含routed parasitic-extracted sign-off。",
+          "comparator": null,
+          "measure": "已报/未报阶段",
+          "unit_of_analysis": "报告范围",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 16,
+            "section": "11.2 Limitations",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "报告STA范围内满足50MHz并有正margin。",
+        "boundary": "没有完整corner、timing report或寄生后sign-off。",
+        "negative_result": null,
+        "non_inference": "不能推断全PVT保证、真实最高频率、metastability margin或实物可靠性。",
+        "unresolved": "布线寄生和实物时序待验证。",
+        "unresolved_attribution": "作者11.2。"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "CTS正slack在多大程度上预示寄生后与真实PVT的时序闭合？"
+      ],
+      "shared_evidence_with": [
+        "C21",
+        "C23"
+      ],
+      "review_notes": [
+        "采用11.2限制约束摘要/第10节的宽泛措辞；slack不是统计CI。",
+        "共享同模块设计、表征或汇总表的证据重用，不增加独立n，不是支持/矛盾/复制链接。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C23",
+      "statement": "表5默认switching activity下估计sensor/neuron/STDP/crossbar功率为675/701/678/644uW；四块pre-silicon估计合计2698uW不是连接suite的实测功耗，也不建立每spike或operation能耗。",
+      "claim_type": "power_estimation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "默认活动功率模型",
+          "design": "50MHz标准单元flow，不是activity-annotated trace或供电测量。",
+          "comparator": "四个block估计，非竞争系统同条件benchmark。",
+          "measure": "estimated power(uW)",
+          "unit_of_analysis": "四个design估计",
+          "sample_size_as_reported": "4块；无芯片/workload重复或统计不确定性。",
+          "uncertainty": null,
+          "assumptions": [
+            "依赖default switching activity；无完整任务与外部array能耗。"
+          ],
+          "source_locator": {
+            "pdf_page": 14,
+            "section": "10 Physical implementation and results",
+            "figure": "Table 5",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "power/energy范围限定",
+          "design": "default activity估计不同于实测；energy per operation/spike留待测量。",
+          "comparator": null,
+          "measure": "功率估计与未测event energy",
+          "unit_of_analysis": "报告范围",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 16,
+            "section": "11.2; 11.3 Toward silicon characterisation",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提供假设明确的模块功率尺度。",
+        "boundary": "真实稀疏事件/clock gating/模拟前端不同；四块未联合仿真。",
+        "negative_result": null,
+        "non_inference": "不能推断实测energy、效率纪录、battery续航或节能比。",
+        "unresolved": "活动标注估计与物理energy per event待测。",
+        "unresolved_attribution": "作者11.2、11.3。"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "默认活动功率与实际spiking/programming任务能耗有多大差异？"
+      ],
+      "shared_evidence_with": [
+        "C21",
+        "C22"
+      ],
+      "review_notes": [
+        "与area/STA共享四design flow；不由power和任意rate臆造energy。",
+        "共享同模块设计、表征或汇总表的证据重用，不增加独立n，不是支持/矛盾/复制链接。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "这篇arXiv v1工程预印本介绍SkyWater 130 nm的四个单tile模块：PVT sensor、stochastic LIF、STDP和crossbar controller。新意在统一SPI/register、同节点实现及同验证流程，不是新算法、性能纪录或完整端到端硬件。20页、全部图表/限制/参考文献已评估，形成23个候选，分开设计、RTL参数扫描、定向验证和实现flow。最大长度LFSR下LUT概率符合构造，所示threshold扫描降率，host-driven weight扫描在0x06低阈值升率；默认STDP形状来自可写表。STDP窗口应≤3，否则低位索引alias，zero LTD不可达；trace是gate，不是幅度乘子。crossbar只建立数字序列/guard/compliance/half-select/train能力，8×8为地址空间，ADC实际四位且复制nibble不增精度。作者报告99用例通过，三个同步块同bench gate复跑，sensor用divider代真实环。面积9951/10593/9854/9253 um²、utilisation66/70/65/61%，CTS/STA下50MHz有正slack，未包含routed parasitic-extracted timing。675/701/678/644uW为默认活动功率估计，不是实测或每event energy。解析PVT、TRNG/老化用途、物理array效果及跨节点扩展均有未验证范围，无silicon、生物、网络任务或臆造负结果。全部仍为human_checked:false的候选，未更新数据库。",
+  "shared_evidence": [
+    {
+      "claim_id": "C1",
+      "with": [
+        "C18"
+      ]
+    },
+    {
+      "claim_id": "C2",
+      "with": [
+        "C4",
+        "C5",
+        "C7",
+        "C10",
+        "C11",
+        "C15",
+        "C16",
+        "C20"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C2",
+        "C5"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C2",
+        "C4"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C7",
+        "C8",
+        "C9",
+        "C10"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C2",
+        "C6",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C15",
+        "C16"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C6",
+        "C7",
+        "C9",
+        "C10"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C6",
+        "C7",
+        "C8",
+        "C10"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "with": [
+        "C2",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C11",
+        "C15",
+        "C16"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "with": [
+        "C2",
+        "C7",
+        "C10",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "with": [
+        "C11",
+        "C13",
+        "C14"
+      ]
+    },
+    {
+      "claim_id": "C13",
+      "with": [
+        "C11",
+        "C12",
+        "C14"
+      ]
+    },
+    {
+      "claim_id": "C14",
+      "with": [
+        "C11",
+        "C12",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C15",
+      "with": [
+        "C2",
+        "C7",
+        "C10",
+        "C11",
+        "C16",
+        "C17",
+        "C18",
+        "C19"
+      ]
+    },
+    {
+      "claim_id": "C16",
+      "with": [
+        "C2",
+        "C7",
+        "C10",
+        "C11",
+        "C15",
+        "C17",
+        "C18",
+        "C19",
+        "C20"
+      ]
+    },
+    {
+      "claim_id": "C17",
+      "with": [
+        "C15",
+        "C16",
+        "C18",
+        "C19"
+      ]
+    },
+    {
+      "claim_id": "C18",
+      "with": [
+        "C1",
+        "C15",
+        "C16",
+        "C17",
+        "C19"
+      ]
+    },
+    {
+      "claim_id": "C19",
+      "with": [
+        "C15",
+        "C16",
+        "C17",
+        "C18"
+      ]
+    },
+    {
+      "claim_id": "C20",
+      "with": [
+        "C2",
+        "C16"
+      ]
+    },
+    {
+      "claim_id": "C21",
+      "with": [
+        "C22",
+        "C23"
+      ]
+    },
+    {
+      "claim_id": "C22",
+      "with": [
+        "C21",
+        "C23"
+      ]
+    },
+    {
+      "claim_id": "C23",
+      "with": [
+        "C21",
+        "C22"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": null,
+        "issue": "实际版本需与索引核对，不能替换成后续出版。",
+        "suggested_correction": "标题/作者/年份相符，保留arXiv v1日期和四实现commit。",
+        "pdf_page": 1,
+        "resolved": true
+      },
+      {
+        "claim_id": "C1",
+        "issue": "意图dataflow与同步器风险措辞易被过度推广。",
+        "suggested_correction": "按图1、11.2和第17页限为分别实现/统一接口，不声称消除真实metastability。",
+        "pdf_page": 16,
+        "resolved": true
+      },
+      {
+        "claim_id": "C3",
+        "issue": "图3解析模型易误作电路仿真或测量，像素未供。",
+        "suggested_correction": "只保留文本单调依赖与归一化条件，不猜斜率/方向/误差。",
+        "pdf_page": 16,
+        "resolved": true
+      },
+      {
+        "claim_id": "C6",
+        "issue": "65535状态易被当独立n或真随机证据。",
+        "suggested_correction": "记录deterministic period与构造检查，seed/短窗统计未知。",
+        "pdf_page": 8,
+        "resolved": true
+      },
+      {
+        "claim_id": "C9",
+        "issue": "图6b threshold0x06易与默认0x80混同。",
+        "suggested_correction": "扫描条件分开，不拼成同配置结果。",
+        "pdf_page": 8,
+        "resolved": true
+      },
+      {
+        "claim_id": "C12",
+        "issue": "八表项容易被误作双侧完整窗口。",
+        "suggested_correction": "记录低两位alias及zero LTD不可达；不补wrap算法。",
+        "pdf_page": 9,
+        "resolved": true
+      },
+      {
+        "claim_id": "C13",
+        "issue": "trace gate易被误作trace amplitude乘法。",
+        "suggested_correction": "图8明确committed是base update gated，不连续缩放。",
+        "pdf_page": 10,
+        "resolved": true
+      },
+      {
+        "claim_id": "C15",
+        "issue": "八位register易被误称八位ADC。",
+        "suggested_correction": "实际capture4bit，nibble复制不增精度；外部converter依赖保留。",
+        "pdf_page": 11,
+        "resolved": true
+      },
+      {
+        "claim_id": "C19",
+        "issue": "pulse-and-verify背景易被升级为已测闭环。",
+        "suggested_correction": "仅记录train/gap/count/abort，不声称目标conductance收敛。",
+        "pdf_page": 12,
+        "resolved": true
+      },
+      {
+        "claim_id": "C20",
+        "issue": "摘要宽泛RTL/gate-level措辞掩盖sensor例外与共享bench。",
+        "suggested_correction": "第9节三个同步block复跑，sensor divider替代；99为用例非独立重复。",
+        "pdf_page": 13,
+        "resolved": true
+      },
+      {
+        "claim_id": "C21",
+        "issue": "density target、utilisation和面积/版图容易混淆。",
+        "suggested_correction": "分别记录60%目标、achieved util、cell area、footprint和layout render。",
+        "pdf_page": 14,
+        "resolved": true
+      },
+      {
+        "claim_id": "C22",
+        "issue": "sign-off措辞容易误读为寄生提取后timing。",
+        "suggested_correction": "以11.2显式范围限定CTS/STA，未报告routed parasitic-extracted timing。",
+        "pdf_page": 16,
+        "resolved": true
+      },
+      {
+        "claim_id": "C23",
+        "issue": "power可能被当measured或每spike energy。",
+        "suggested_correction": "保留默认activity估计，不用未报rate合成energy。",
+        "pdf_page": 14,
+        "resolved": true
+      },
+      {
+        "claim_id": "C4",
+        "issue": "实际熵/随机性统计缺失。",
+        "suggested_correction": "保持TRNG接口设计；熵质量需人类后续物理证据。",
+        "pdf_page": 5,
+        "resolved": false
+      },
+      {
+        "claim_id": "C5",
+        "issue": "老化特异性和PVT混杂缺校准。",
+        "suggested_correction": "保持报警与老化归因分开。",
+        "pdf_page": 5,
+        "resolved": false
+      },
+      {
+        "claim_id": "C11",
+        "issue": "timestamp rollover和独立network training证据缺失。",
+        "suggested_correction": "不补处理算法、n和任务性能。",
+        "pdf_page": 9,
+        "resolved": false
+      },
+      {
+        "claim_id": "C17",
+        "issue": "array前端、compliance和half-select/train物理效果未建立。",
+        "suggested_correction": "C15-C19限定数字能力，保留待验证的实际效果。",
+        "pdf_page": 16,
+        "resolved": false
+      },
+      {
+        "claim_id": null,
+        "issue": "完整STA/corners/per-test coverage虽称由CI产出，未包含在源页。",
+        "suggested_correction": "记missing material，不访问code/supplement或猜角落/覆盖率。",
+        "pdf_page": 16,
+        "resolved": false
+      },
+      {
+        "claim_id": null,
+        "issue": "没有本文silicon、生物或network任务的实际负结果。",
+        "suggested_correction": "negative_result为空；alias/guard/late-reward放设计条件与boundary，不发明失败统计。",
+        "pdf_page": 16,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "第二轮必须核对全文贡献与范围，非摘要shortcut。",
+        "suggested_correction": "在保留上下文复核4-10节、图1-14、表1-8、11.2、第17-20页，分离设计/RTL/flow/解释/未来hypothesis。",
+        "pdf_page": 20,
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T16:05:24.779620Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "842cdbb82e1a8c948c09e7c430b331a3a25a44da51cf5531a3a41cbc71818c66",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

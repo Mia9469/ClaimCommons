@@ -1,0 +1,783 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "Spiking Neural Network Learning Algorithms For Neuromorphic Hardware Efficiency",
+    "authors": [
+      "Ashish Sharma",
+      "Saraswati B",
+      "Dr. S Subburam",
+      "Dr. V Malsoru",
+      "V. Senthil Kumaran",
+      "Sudhakar Polasi"
+    ],
+    "doi": "10.51483/ijaiml.6.4s.2026.756-763",
+    "publication_year": 2026,
+    "venue": "International Journal of Artificial Intelligence and Machine Learning",
+    "url": "https://doi.org/10.51483/ijaiml.6.4s.2026.756-763"
+  },
+  "source": {
+    "filename": "paper-W7167843792--Spiking-Neural-Network-Learning-Algorithms-For-Neuromorphic-Hardware-Efficiency.pdf",
+    "sha256": "fada87a43bf297471943feff1a846ed72d9136c821e0fe4d8cb5c878a0176496",
+    "source_url": "https://www.svedbergopen.com/index.php/ijaiml/article/download/510/394",
+    "pdf_page_count": 8
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "results_sections_seen": [
+      "3. Methodology；Figure 1；Equation (1)；Algorithm 1",
+      "4. Results and Discussion；Table 1；Figure 2",
+      "5. Conclusion；Declaration Statement；References"
+    ],
+    "missing_material": [
+      "图像像素未提供",
+      "未提供代码、原始测量、模拟器名称及物理芯片测试数据"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "全部8页正文、表格文本、图注及参考文献均已评估；没有提供附录。",
+      "来源标题、六位作者及Vol.6 No.4s 2026与索引一致；作者头衔和标点差异保留在来源说明，不改变索引。来源页眉没有直接列出本论文DOI，未以参考文献DOI替代。",
+      "结果是Python神经形态模拟系统上的N-MNIST比较，不是实测芯片能耗。",
+      "PDF第7页结论出现98.4%准确率和42.6%功耗下降，并转向结构剪枝；与第6页Table 1及本篇方法不一致，不能合并为同一证据。",
+      "第二轮审计在保留全文的上下文中逐项对照方法、表格、图注和结论；不重新打开PDF，不声称科学复现。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "LIF、surrogate gradient及spike sparsity正则的硬件感知训练流程",
+      "role": "result",
+      "source_pages": [
+        3,
+        4,
+        5
+      ],
+      "decision": "include",
+      "reason": "给出膜电位更新式和Algorithm 1；仅作为方法构造，不宣称收敛或新颖性已独立证实。"
+    },
+    {
+      "summary": "N-MNIST下spike数量变化",
+      "role": "result",
+      "source_pages": [
+        5,
+        6
+      ],
+      "decision": "include",
+      "reason": "Table 1提供明确基线和823对1420的比较。"
+    },
+    {
+      "summary": "routing latency变化",
+      "role": "result",
+      "source_pages": [
+        5,
+        6
+      ],
+      "decision": "include",
+      "reason": "Table 1独立列出8.4 ms对14.5 ms；不能将延迟下降比例称为吞吐加速倍数。"
+    },
+    {
+      "summary": "动态能耗变化",
+      "role": "result",
+      "source_pages": [
+        5,
+        6
+      ],
+      "decision": "include",
+      "reason": "Table 1给出2.50对3.85 microjoule；保留模拟范围和精度代价。"
+    },
+    {
+      "summary": "片上内存占用变化",
+      "role": "result",
+      "source_pages": [
+        5,
+        6
+      ],
+      "decision": "include",
+      "reason": "Table 1独立列出2.9 MB对4.2 MB。"
+    },
+    {
+      "summary": "分类准确率下降",
+      "role": "result",
+      "source_pages": [
+        5,
+        6
+      ],
+      "decision": "include",
+      "reason": "明确负向读出，97.4%低于98.2%，差0.8个百分点。"
+    },
+    {
+      "summary": "稀疏惩罚引出的accuracy-energy折衷",
+      "role": "interpretation",
+      "source_pages": [
+        4,
+        6
+      ],
+      "decision": "include",
+      "reason": "Figure 2文字描述可以支撑作者解释；没有完整扫参数据，不能证明全局Pareto最优或因果机制。"
+    },
+    {
+      "summary": "按芯片温度调节spike threshold的编译器建议",
+      "role": "hypothesis",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "仅作为未来方向，不当作已实施控制或实测结果。"
+    },
+    {
+      "summary": "结论段98.4%准确率、42.6%功耗下降及结构剪枝部署主张",
+      "role": "result",
+      "source_pages": [
+        6,
+        7
+      ],
+      "decision": "defer",
+      "reason": "issue_id=paper-W7167843792:conclusion-metric-conflict；与Table 1和前述训练流程冲突，来源文本不足以判定正确版本。"
+    },
+    {
+      "summary": "学习算法分类、已有硬件应用及参考文献研究",
+      "role": "review_synthesis",
+      "source_pages": [
+        2,
+        3,
+        7,
+        8
+      ],
+      "decision": "exclude",
+      "reason": "背景叙述而非本篇独立的新实验；不把被引工作或应用愿景计作本篇结果。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "本文给出的硬件感知SNN训练流程在离散LIF膜电位更新和阈值发放机制下，用平滑surrogate gradient反向传播，并把任务损失与spike sparsity惩罚共同用于权重更新；该构造旨在兼顾分类与减少发放，但文中没有给出收敛或硬件效率的理论保证。",
+      "claim_type": "method_construction",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "LIF递推式与训练伪代码",
+          "design": "Algorithm 1逐样本编码、逐时步更新膜电位和重置，再计算任务损失与稀疏惩罚并更新W。",
+          "comparator": null,
+          "measure": "算法组成及权重更新流程",
+          "unit_of_analysis": "算法定义，不是独立实验",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "二元spike输入",
+            "固定发放阈值和膜电位衰减系数",
+            "用Gaussian或linear平滑近似替代发放阶跃函数导数"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "3. Methodology；Algorithm 1续见第5页",
+            "figure": "Figure 1",
+            "equation": "(1)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "给出任务损失与spike稀疏性联合优化的训练流程。",
+        "boundary": "未明确稀疏惩罚的具体函数或系数，硬件编译和映射实现细节有限。",
+        "negative_result": null,
+        "non_inference": "算法描述本身不证明收敛、跨芯片兼容或生物学习机制。",
+        "unresolved": "具体正则化参数与实现细节是否足以复现性能。",
+        "unresolved_attribution": "没有分离训练规则、稀疏正则和编译映射各自的贡献。"
+      },
+      "broad_directions": [
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "如何在LIF SNN训练中联合控制分类损失和spike稀疏性？"
+      ],
+      "shared_evidence_with": [
+        "C7"
+      ],
+      "review_notes": [
+        "方法构造与性能验证分开。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "在本文N-MNIST模拟比较中，2312-512-10全连接SNN采用硬件感知稀疏训练后，报告的平均spikes/sample为823，而无稀疏约束的转换式基线为1420，表列下降42.04%；此比较同时伴随准确率从98.2%降至97.4%。",
+      "claim_type": "simulation_comparison",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Python神经形态模拟系统上的N-MNIST比较",
+          "design": "窗口30 time-steps，每步1.0 ms；alpha=0.95，阈值1.0 V，初始Adam学习率0.0005，网络2312-512-10。",
+          "comparator": "无spike sparsity约束的转换式SNN",
+          "measure": "平均spikes/sample：1420对823；表列下降42.04%",
+          "unit_of_analysis": "样本上的spike计数；框架级汇总",
+          "sample_size_as_reported": "数据集60,000训练图像、10,000测试图像；独立训练重复和seed数量未报告",
+          "uncertainty": "未报告方差、置信区间或显著性检验",
+          "assumptions": [
+            "两配置使用文述相同模拟窗口和网络规模",
+            "结果仅依据提供的模拟文本和Table 1"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "4. Results and Discussion；实验设置见第5页",
+            "figure": "Table 1",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "该配置报告较少spike事件。",
+        "boundary": "单一数据集和固定窗口，基线训练方式同时变化。",
+        "negative_result": "同一表中准确率下降0.8个百分点。",
+        "non_inference": "不能将10,000测试图像视为10,000个独立训练重复，也不能由spike下降单独识别能耗机制。",
+        "unresolved": "重复训练时spike下降是否稳定。",
+        "unresolved_attribution": "未提供仅改变正则化的匹配消融。"
+      },
+      "broad_directions": [
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "硬件感知稀疏训练在固定N-MNIST窗口下能减少多少spike活动？"
+      ],
+      "shared_evidence_with": [
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7"
+      ],
+      "review_notes": [
+        "与其他性能指标来自同一比较，不是独立复制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "在同一N-MNIST、30个1 ms时步的SNN模拟配置比较中，硬件优化框架的routing latency报告为8.4 ms，无稀疏约束转换式基线为14.5 ms；Table 1将其列为42.06%的延迟改善，而未提供独立物理芯片时延测试。",
+      "claim_type": "simulation_comparison",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "模拟框架性能表比较",
+          "design": "与分类和spike计数共用2312-512-10网络及固定30时步设置。",
+          "comparator": "无稀疏约束的转换式SNN",
+          "measure": "routing latency：14.5 ms对8.4 ms；表列42.06%",
+          "unit_of_analysis": "框架级路由延迟汇总，计时边界未说明",
+          "sample_size_as_reported": "N-MNIST含10,000测试样本；独立计时重复数未报告",
+          "uncertainty": "未给出重复计时分布",
+          "assumptions": [
+            "采用文中模拟和映射限制",
+            "路由延迟不等同于30 ms完整模拟窗口或端到端部署时延"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "4. Results and Discussion",
+            "figure": "Table 1",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "优化配置报告更低routing latency。",
+        "boundary": "没有标准物理芯片测试台，实际计时流程不清楚。",
+        "negative_result": null,
+        "non_inference": "42.06%是表列延迟改善，不是吞吐量增加42.06%或路由完全无拥塞的证据。",
+        "unresolved": "实测芯片和其他输入负载的延迟变化。",
+        "unresolved_attribution": "spike密度和编译映射对延迟的作用未独立区分。"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "稀疏SNN配置是否降低神经形态映射中的routing latency？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C4",
+        "C5",
+        "C6",
+        "C7"
+      ],
+      "review_notes": [
+        "不采纳正文中由spike减少推断不存在路由问题的绝对表述。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "在本文N-MNIST模拟的硬件优化SNN与无稀疏约束转换式基线比较中，Table 1报告dynamic energy consumption从3.85降至2.50 microjoule，表列节约35.06%，同时分类准确率从98.2%降至97.4%；供给文本没有交代能量计量窗口或物理测量方法。",
+      "claim_type": "simulation_comparison",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "模拟框架的动态能耗汇总比较",
+          "design": "2312-512-10网络，固定30个1 ms时步，与其余指标共用同一实验设置。",
+          "comparator": "无稀疏约束的转换式SNN",
+          "measure": "dynamic energy：3.85对2.50 microjoule；35.06%节约；accuracy：98.2%对97.4%",
+          "unit_of_analysis": "模型配置级能量汇总；未说明是否按单样本、窗口或整套任务计量",
+          "sample_size_as_reported": "数据集60,000训练、10,000测试图像；能量测量独立重复数未报告",
+          "uncertainty": "能量估计误差或置信区间未报告",
+          "assumptions": [
+            "依赖文述模拟系统和典型数字硬件限制",
+            "不把microjoule误读为功率或默认每次推理能量"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "4. Results and Discussion",
+            "figure": "Table 1",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "同一模拟配置下动态能耗读出较低。",
+        "boundary": "能量估计器、芯片型号和计量窗口缺失。",
+        "negative_result": "伴随0.8个百分点的准确率下降。",
+        "non_inference": "不能断言实测35.06%功率节约、sub-milliwatt运行或云与边缘普遍适用。",
+        "unresolved": "实际设备总能耗及静态能耗是否有同样改善。",
+        "unresolved_attribution": "不能单由共变识别spike稀疏性为全部能耗下降的原因。"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "在保持较高分类准确率的同时，硬件感知SNN模拟能减少多少动态能量？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C3",
+        "C5",
+        "C6",
+        "C7"
+      ],
+      "review_notes": [
+        "采用结果表35.06%，不采用矛盾结论段的42.6%功耗下降。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "在本文同一N-MNIST模拟配置比较中，硬件优化SNN的on-chip memory footprint报告为2.9 MB，而无稀疏约束转换式基线为4.2 MB，表列压缩30.95%；本文未说明该占用由哪些权重、状态或路由存储组成。",
+      "claim_type": "simulation_comparison",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Table 1存储占用比较",
+          "design": "共用2312-512-10网络与30时步模拟设置。",
+          "comparator": "无稀疏约束的转换式SNN",
+          "measure": "on-chip memory footprint：4.2 MB对2.9 MB；30.95%",
+          "unit_of_analysis": "模型映射配置，不是芯片样品",
+          "sample_size_as_reported": "两个框架配置；独立映射或硬件重复数未报告",
+          "uncertainty": "未报告估计误差",
+          "assumptions": [
+            "接受来源所用MB口径，存储构成和位宽不明"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "4. Results and Discussion",
+            "figure": "Table 1",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "优化配置报告更低片上存储占用。",
+        "boundary": "未报告位宽、压缩表示及编译器分配细节。",
+        "negative_result": null,
+        "non_inference": "不能据此推断晶片面积、制造成本或参数数目等比例减少。",
+        "unresolved": "存储下降的具体构成与跨硬件可复现性。",
+        "unresolved_attribution": "固定网络规模下为何片上占用变化，正文未给定量分解。"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "硬件感知SNN部署能否降低片上存储占用，以及下降来自何种表示？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C3",
+        "C4",
+        "C6"
+      ],
+      "review_notes": [
+        "不将存储占用减少等同于文末另述的结构剪枝结果。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "在本文N-MNIST模拟比较中，硬件优化稀疏SNN报告97.4%的分类准确率，低于无稀疏约束转换式基线的98.2%，下降0.8个百分点；作者将这一代价描述为较小，但没有统计等效性或非劣性检验。",
+      "claim_type": "accuracy_tradeoff",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "N-MNIST分类评估",
+          "design": "网络2312-512-10；窗口30时步，步长1 ms。",
+          "comparator": "转换式无稀疏约束SNN",
+          "measure": "classification accuracy：98.2%对97.4%",
+          "unit_of_analysis": "测试样本分类；模型训练为更高层独立单位",
+          "sample_size_as_reported": "数据集10,000测试图像；训练seed和重复数未报告",
+          "uncertainty": "无置信区间、显著性或等效性分析",
+          "assumptions": [
+            "表列准确率按本文任务评估口径解释",
+            "0.8为百分点差，不是相对误差率"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "4. Results and Discussion",
+            "figure": "Table 1",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "优化配置仍报告97.4%准确率。",
+        "boundary": "只有单一数据集和配置。",
+        "negative_result": "相对基线准确率实际下降0.8个百分点。",
+        "non_inference": "不能由作者的maintained标签推出精度相等、无显著损失或生物视觉有效性。",
+        "unresolved": "独立训练重复和更复杂任务的精度代价。",
+        "unresolved_attribution": "训练范式和稀疏约束共同变化，不能单独归因于稀疏正则。"
+      },
+      "broad_directions": [
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "稀疏SNN的资源节约是否伴随可观测分类精度下降？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C7"
+      ],
+      "review_notes": [
+        "不采用第7页无对应实验支持的98.4%。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "作者依据spike惩罚设计、Table 1及Figure 2文字，将N-MNIST硬件感知SNN的较低动态能量和较低分类准确率解释为稀疏发放引出的accuracy-energy折衷；提供文本只支持该模拟中的折衷解释，不能证明完整Pareto前沿或spike减少到能量下降的独立因果机制。",
+      "claim_type": "algorithm_hardware_interpretation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "结果表与图注的联合解释",
+          "design": "Figure 2文字描述随惩罚增加的accuracy-energy变化，未提供完整扫参表或像素。",
+          "comparator": "高spike基线与优化稀疏配置",
+          "measure": "文字描述的准确率与能量折衷；Table 1的两配置数值",
+          "unit_of_analysis": "同一模拟比较及其图注，不是独立实验",
+          "sample_size_as_reported": "惩罚扫描点数与独立重复未报告",
+          "uncertainty": "未给出前沿误差或优化性证明",
+          "assumptions": [
+            "惩罚项影响发放密度",
+            "仅使用Figure 2文字而非图形读数"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "4. Results and Discussion",
+            "figure": "Figure 2；Table 1",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "支持以精度代价换取资源节约的作者解释。",
+        "boundary": "没有充分扫参信息、匹配消融或物理芯片测量。",
+        "negative_result": "所报告优化点的准确率低于基线。",
+        "non_inference": "不得把Pareto optimal措辞升级为已证全局最优，也不能推出零拥塞。",
+        "unresolved": "折衷曲线在其他惩罚系数、窗口和任务上的形状。",
+        "unresolved_attribution": "spike数、映射和存储改动共享证据，因果贡献未分离。"
+      },
+      "broad_directions": [
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "稀疏发放约束如何改变SNN分类精度与动态能量的折衷？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C6"
+      ],
+      "review_notes": [
+        "图注与结果表不是独立重复证据。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "作者提出未来可让编译工具链依据芯片温度动态调节spike threshold，以改善边缘实时SNN效率；本文没有实现或评估这种温度闭环策略，因此这是一项待验证设计假设。",
+      "claim_type": "future_design_hypothesis",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "讨论段未来工作建议",
+          "design": null,
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "设计建议；无温度控制实验",
+          "sample_size_as_reported": null,
+          "uncertainty": "性能方向和幅度未验证",
+          "assumptions": [
+            "温度可被工具链利用并据此调节阈值",
+            "阈值变化的精度与能效代价仍需评估"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "4. Results and Discussion",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提出温度感知阈值控制的研发方向。",
+        "boundary": "目前只有固定模拟窗口与阈值设置。",
+        "negative_result": null,
+        "non_inference": "不意味着已展示温度适应、热稳定性或实时节能。",
+        "unresolved": "温度反馈是否提升总能效而不损害分类。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "温度感知spike threshold控制能否改善边缘SNN的精度-能效折衷？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "假设不与已测性能合并。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "这篇8页2026年研究论文提出LIF、surrogate gradient和spike sparsity联合训练流程，并在固定30个1 ms时步、2312-512-10网络的N-MNIST模拟中报告五项指标：spikes/sample 1420到823，routing latency 14.5到8.4 ms，dynamic energy 3.85到2.50 microjoule，on-chip memory 4.2到2.9 MB，accuracy 98.2%到97.4%。资源节约有明确精度代价，均来自同一框架比较；60,000训练和10,000测试图像不替代独立训练或硬件重复。保留方法、五项可独立评估的指标、accuracy-energy解释及温度感知阈值假设共8条候选。正文与图注均已审计，没有图像像素、物理芯片测试或未提供补充材料。第7页结论的98.4%、42.6%及结构剪枝描述与方法结果冲突，已单独延后而不猜测正确数值。所有记录仅为AI候选，需人工审核；没有跨论文关系。",
+  "shared_evidence": [
+    {
+      "claim_id": "C1",
+      "with": [
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C2",
+      "with": [
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C2",
+        "C4",
+        "C5",
+        "C6",
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C2",
+        "C3",
+        "C5",
+        "C6",
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C2",
+        "C3",
+        "C4",
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C6"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": null,
+        "issue": "paper-W7167843792:conclusion-metric-conflict：第7页98.4%准确率和42.6%功耗下降与第6页97.4%和35.06%动态能量下降矛盾，且结论突然描述结构剪枝。",
+        "suggested_correction": "结果记录以Table 1为限；结论数字及剪枝主张延后，需原作者或人工核对，不强行修正来源。",
+        "pdf_page": 7,
+        "resolved": false
+      },
+      {
+        "claim_id": "C4",
+        "issue": "正文混用energy和power，并把模拟收益外推到sub-milliwatt实物设备。",
+        "suggested_correction": "只保留microjoule动态能量数值；计量窗口及物理测量均未报告，不宣称功率或实物部署。",
+        "pdf_page": 6,
+        "resolved": true
+      },
+      {
+        "claim_id": "C6",
+        "issue": "表中-0.8 maintained可能掩盖精度负向变化。",
+        "suggested_correction": "明确写为下降0.8个百分点；不推断等效性或统计显著性。",
+        "pdf_page": 6,
+        "resolved": true
+      },
+      {
+        "claim_id": "C3",
+        "issue": "正文由spike减少推断不存在路由问题，表中speedup与延迟下降概念混淆。",
+        "suggested_correction": "保存8.4对14.5 ms和表列延迟改善，不宣称零拥塞或吞吐加速比例。",
+        "pdf_page": 6,
+        "resolved": true
+      },
+      {
+        "claim_id": "C7",
+        "issue": "Figure 2的Pareto最优与资源因果表述缺少扫参数据和独立消融。",
+        "suggested_correction": "降为作者interpretation，保留待验证范围。",
+        "pdf_page": 6,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "未报告模拟器名称、能量模型、独立seed或实验重复；数据集样本数不是重复运行数。",
+        "suggested_correction": "所有候选保留实际分析单位和未报告项，交人工评估可复现性。",
+        "pdf_page": 5,
+        "resolved": false
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T13:21:30.329726Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "fada87a43bf297471943feff1a846ed72d9136c821e0fe4d8cb5c878a0176496",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

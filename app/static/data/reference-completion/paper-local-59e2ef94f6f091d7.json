@@ -1,0 +1,1654 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "Theory of neuronal perturbome in cortical networks",
+    "authors": [
+      "Sadra Sadeh",
+      "Claudia Clopath"
+    ],
+    "doi": "10.1073/pnas.2004568117",
+    "publication_year": 2020,
+    "venue": "Proceedings of the National Academy of Sciences",
+    "url": "https://doi.org/10.1073/pnas.2004568117"
+  },
+  "source": {
+    "filename": "2020-PNAS-Neuronal-Perturbome-Cortical-Networks.pdf",
+    "sha256": "92c4a013f41fbe79c64acdbb6d101276e57938d108d7b1dbcc876acd17233673",
+    "source_url": null,
+    "pdf_page_count": 11
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "results_sections_seen": [
+      "Results: E-I perturbations and toy/random analytic circuits",
+      "Results: RF large-scale visual networks; connectivity g/α/η; feature-S/A index",
+      "Results: motif/time analysis; RF individual/joint features",
+      "Results: spiking, sparse and realistic inhibition variants; I perturbations; multiple-neuron synergy",
+      "Results: natural-image gain, angular discriminability, decoder/noise",
+      "Discussion; Methods main rate/weight/influence equations; References1-44",
+      "Figs.1-6 all supplied captions"
+    ],
+    "missing_material": [
+      "主图像素未读取",
+      "SI Appendix完整Methods、Eq15/21/80/88、FiguresS1-S10等未附",
+      "完整network realizations/seeds、spiking variants与decoder/stat细节未在main页文提供",
+      "原始代码与生物数据未进行独立复现"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "11页全部archived text分10个有界片段通读，包含Methods、全部主图caption和references。",
+      "原始生物实验仅被引用，不是本paper new data。主要模拟nodes/pairs/images按真实层级报告，不当biological repeats。",
+      "正文引用的SI Appendix equations与S1-S10等未附，仅使用main text能直接读到的结果描述，full proof/seed/decoder details不宣称读全。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "在线性或已固定工作点的linearized network中，作者用A=(I−W)⁻¹描述single-neuron input perturbation的稳态传播，functional influence按响应变化δr/输入扰动δp定义；不能直接等同单条W连接。",
+      "role": "result",
+      "source_pages": [
+        2
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "2E+1I toy model在α=1、g=2的perfect balance下，higher-order正负贡献抵消，E1→E2 influence等于direct weight J；g=2反映该模型2:1群体设定。",
+      "role": "result",
+      "source_pages": [
+        2
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "toy model中固定α=1增大g只产生divisive reduction而不反转E→E influence；g=2、J>0且有效稳态条件下，α>1+1/(2J)使所示ψ分子变负，可产生net suppressive influence。",
+      "role": "result",
+      "source_pages": [
+        2
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "NE=NI的random network在α=g=1时平均E→E influence匹配平均J，虽pairwise异质并允许E-only subnetwork在无I时不稳定；偏离平衡后g/α改变的方向与toy结果相似。",
+      "role": "result",
+      "source_pages": [
+        3
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "RF相似性调权的visual rate network中，中等response/RF similarity的E pairs平均net suppression且较相似时更负，而极高相似的少数pairs平均amplification，形成非单调influence曲线。",
+      "role": "result",
+      "source_pages": [
+        4
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "在所测试RF-network族中，单独增加inhibition dominance或使inhibitory connectivity更宽均不足以得到高Feature-S/A index；strong且functionally specific E→I/I→E组合可给出中等抑制和高相似放大的目标模式。",
+      "role": "result",
+      "source_pages": [
+        5
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "finite motif分析中W一次项只有feature amplification，二次E→I→E等项产生suppression，三次项可再amplify；strong-EI rate动态的高相似amp早出现，中等similarity suppression逐步增强，weakEI不出现同样演变。",
+      "role": "result",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "模拟按单RF特征分析时，spatial-phase差异与suppression关系最强；PO差异中等范围更相似更suppressed，但极小PO差异可转向amplification，故单一orientation指标可能掩盖RF相似性。",
+      "role": "result",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "控制PO同时的spatial phase/SF差异后，模型PO非单调dependence在小dPH/dSF时增强、在大差异时消失；按每个influencer或influencee平均还可见preferred-SF bandpass依赖。",
+      "role": "result",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "balanced spiking model的influence较噪、需更长模拟才可靠，但仍可出现关键feature-S/A；以membrane Vm计算时suppression更清楚，提示测量readout改变可见性。",
+      "role": "result",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "sparse E–E版本平均S/A形状可保持，却出现pair influence双峰：directly connected pairs主要amplify，unconnected pairs更多polysynaptic suppression；因此只采连接pair会偏向amp。",
+      "role": "result",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "把E/I数量改为80/20时原influence曲线先改变，增强I→E/I→I weights补偿后恢复；把I time constant设为E的2倍或一半也可保持主要稳态模式。",
+      "role": "result",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "较宽tuning/较不elongated的I RF可容许原模式，但降低I相关连接的RF/response specificity更易破坏模式，尤其E→I仍需sharp；intrinsic tuning宽不等于blanket connectivity。",
+      "role": "result",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "I single-cell perturbation平均更suppressive，但中等positive correlation区没有显著negative slope、高相似的E-style amplification缺失；其瞬态整体shape也未见显著变化，区别于E perturbation。",
+      "role": "result",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "双E输入perturbation在两influencer均与target中等RF相似时有更强feature suppression；作者定义的synergy index平均为正且A/B高度相似时更突出。",
+      "role": "result",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "strong-specific EI rate networks对natural images压低small feedforward projections、保留或增强large projections，population response gain呈sigmoid-like；weakEI或非特异增强inhibition均未恢复同样曲线。",
+      "role": "result",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "600-image模拟中strongEI输出population vectors的normalised angular discriminability高于feedforward input，weakEI较低，支持所测模型表征更易区分image pairs。",
+      "role": "result",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "以每张目标image及半数nontarget训练、其余nontarget测试的decoder中，strongEI population优于feedforward及weakEI；增加所测noise降低各条件accuracy，但strongEI仍较robust。",
+      "role": "result",
+      "source_pages": [
+        10
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "作者预测在体更精细RF/phase测量、较高时间分辨率及multiple-cell perturbation可检验早amp晚sup、直接/间接连接和EI specificity，尚未在本研究实施这些神经干预。",
+      "role": "hypothesis",
+      "source_pages": [
+        10
+      ],
+      "decision": "include",
+      "reason": "独立可评估的综述结论/框架；不与被引原论文重复计独立证据。"
+    },
+    {
+      "summary": "真实皮层connectome的唯一反推、所有cortical networks必要/充分定理、human cognition优越性、模型提升即动物vision提升、未附SI的完整formal证明",
+      "role": "unsupported_inference_or_missing_proof",
+      "source_pages": [
+        1,
+        2,
+        5,
+        8,
+        9,
+        10,
+        11
+      ],
+      "decision": "defer",
+      "reason": "source本篇只有models/main分析；多条件假设、SI与独立biological tests未附，不扩张为泛化机制事实。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "在线性或已固定工作点的linearized network中，作者用A=(I−W)⁻¹描述single-neuron input perturbation的稳态传播，functional influence按响应变化δr/输入扰动δp定义；不能直接等同单条W连接。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "解析linear response与rate模拟",
+          "design": "在线性或已固定工作点的linearized network中，作者用A=(I−W)⁻¹描述single-neuron input perturbation的稳态传播，functional influence按响应变化δr/输入扰动δp定义；不能直接等同单条W连接。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "理想weight matrix及simulated nodes，无动物实验",
+          "sample_size_as_reported": null,
+          "uncertainty": "本综述未给该条被引结果的完整样本及统计量。",
+          "assumptions": [
+            "须存在稳定/有限steady response且I−W可逆；Methods的rate方程含rectifier，跨active-set的大扰动不能无条件套同一W线性化；完整假设在未附SI。"
+          ],
+          "source_locator": {
+            "pdf_page": 2,
+            "section": "Perturbations in E-I Networks; Methods",
+            "figure": null,
+            "equation": "A=(I−W)^−1; ψ=δr/δp",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在线性或已固定工作点的linearized network中，作者用A=(I−W)⁻¹描述single-neuron input perturbation的稳态传播，functional influence按响应变化δr/输入扰动δp定义；不能直接等同单条W连接。",
+        "boundary": "须存在稳定/有限steady response且I−W可逆；Methods的rate方程含rectifier，跨active-set的大扰动不能无条件套同一W线性化；完整假设在未附SI。",
+        "negative_result": null,
+        "non_inference": "解析/模拟结果限于报告的model conditions；节点/pairs/images不是animal n，也不是biological validation或cross-paper replication。",
+        "unresolved": "SI全文未附，不能核实所有线性化/稳定与收敛条件。",
+        "unresolved_attribution": "综述作者的限制、开放问题或源文审计"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "为何perturbome不等同monosynaptic connectome？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "2E+1I toy model在α=1、g=2的perfect balance下，higher-order正负贡献抵消，E1→E2 influence等于direct weight J；g=2反映该模型2:1群体设定。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "toy weight-matrix解析及rate模拟",
+          "design": "2E+1I toy model在α=1、g=2的perfect balance下，higher-order正负贡献抵消，E1→E2 influence等于direct weight J；g=2反映该模型2:1群体设定。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "3node toy，不是3只动物",
+          "sample_size_as_reported": "2 excitatory+1 inhibitory subpopulations；Fig1E示例J=.5。",
+          "uncertainty": "本综述未给该条被引结果的完整样本及统计量。",
+          "assumptions": [
+            "只在该parameterized linear/stationary setup；不能将g=2当所有生物E/I perfect balance。"
+          ],
+          "source_locator": {
+            "pdf_page": 2,
+            "section": "Perturbations",
+            "figure": "Fig.1D-E",
+            "equation": "ψ=[J+gJ²(1−α)]/[1+J(g−2)+2J²g(α−1)]",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "2E+1I toy model在α=1、g=2的perfect balance下，higher-order正负贡献抵消，E1→E2 influence等于direct weight J；g=2反映该模型2:1群体设定。",
+        "boundary": "只在该parameterized linear/stationary setup；不能将g=2当所有生物E/I perfect balance。",
+        "negative_result": null,
+        "non_inference": "解析/模拟结果限于报告的model conditions；节点/pairs/images不是animal n，也不是biological validation或cross-paper replication。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "哪些joint balance条件使net influence匹配direct excitation？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C3",
+        "C4"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "toy model中固定α=1增大g只产生divisive reduction而不反转E→E influence；g=2、J>0且有效稳态条件下，α>1+1/(2J)使所示ψ分子变负，可产生net suppressive influence。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "所示ψ公式条件分析与模拟对照",
+          "design": "toy model中固定α=1增大g只产生divisive reduction而不反转E→E influence；g=2、J>0且有效稳态条件下，α>1+1/(2J)使所示ψ分子变负，可产生net suppressive influence。",
+          "comparator": "增加I输出g与增加E→I α",
+          "measure": null,
+          "unit_of_analysis": "parameterized3node circuit",
+          "sample_size_as_reported": null,
+          "uncertainty": "本综述未给该条被引结果的完整样本及统计量。",
+          "assumptions": [
+            "稳定/有效分母、J>0及固定g=2是joint条件；强抑制不一概等于抑制性E→E影响，不能推biological必要性。"
+          ],
+          "source_locator": {
+            "pdf_page": 2,
+            "section": "Perturbations",
+            "figure": "Fig.1E",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "toy model中固定α=1增大g只产生divisive reduction而不反转E→E influence；g=2、J>0且有效稳态条件下，α>1+1/(2J)使所示ψ分子变负，可产生net suppressive influence。",
+        "boundary": "稳定/有效分母、J>0及固定g=2是joint条件；强抑制不一概等于抑制性E→E影响，不能推biological必要性。",
+        "negative_result": "仅增g的所测toy设置未产生negative E→E influence。",
+        "non_inference": "解析/模拟结果限于报告的model conditions；节点/pairs/images不是animal n，也不是biological validation或cross-paper replication。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "强inhibition与strong E→I为什么有不同的functional sign作用？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "NE=NI的random network在α=g=1时平均E→E influence匹配平均J，虽pairwise异质并允许E-only subnetwork在无I时不稳定；偏离平衡后g/α改变的方向与toy结果相似。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "random-weight rate simulations与matrix/平均解析comparison",
+          "design": "NE=NI的random network在α=g=1时平均E→E influence匹配平均J，虽pairwise异质并允许E-only subnetwork在无I时不稳定；偏离平衡后g/α改变的方向与toy结果相似。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "model cells/pairs，非1000独立biological samples",
+          "sample_size_as_reported": "NE=NI=500；balance示例J=.001，sweepJ及Fig1I J=.002；network-realization/seed次数未列。",
+          "uncertainty": "本综述未给该条被引结果的完整样本及统计量。",
+          "assumptions": [
+            "说的是所述random模型平均，不是所有individual pair都ψ=J；E-only不稳定不等于完整E-I系统不稳定。"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "Perturbations",
+            "figure": "Fig.1H-I",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "NE=NI的random network在α=g=1时平均E→E influence匹配平均J，虽pairwise异质并允许E-only subnetwork在无I时不稳定；偏离平衡后g/α改变的方向与toy结果相似。",
+        "boundary": "说的是所述random模型平均，不是所有individual pair都ψ=J；E-only不稳定不等于完整E-I系统不稳定。",
+        "negative_result": null,
+        "non_inference": "解析/模拟结果限于报告的model conditions；节点/pairs/images不是animal n，也不是biological validation或cross-paper replication。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "toy balance结论在所测试large random network怎样表现？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "RF相似性调权的visual rate network中，中等response/RF similarity的E pairs平均net suppression且较相似时更负，而极高相似的少数pairs平均amplification，形成非单调influence曲线。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Gabor RF、Wij∝exp(ηCCij)及input perturbation模拟",
+          "design": "RF相似性调权的visual rate network中，中等response/RF similarity的E pairs平均net suppression且较相似时更负，而极高相似的少数pairs平均amplification，形成非单调influence曲线。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "800 model nodes及dependent pairs；seed n未列",
+          "sample_size_as_reported": "NE=NI400；JEE=.0025、JEI=.005(α2)、JIE=JII−.005(g2)，η all2、τ10。",
+          "uncertainty": "本综述未给该条被引结果的完整样本及统计量。",
+          "assumptions": [
+            "RF/weight family、operating regime及normalisation特定；这是解释既有V1观测的模型结果，不是本文新增在体实验。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "Single-Neuron Perturbations",
+            "figure": "Fig.2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "RF相似性调权的visual rate network中，中等response/RF similarity的E pairs平均net suppression且较相似时更负，而极高相似的少数pairs平均amplification，形成非单调influence曲线。",
+        "boundary": "RF/weight family、operating regime及normalisation特定；这是解释既有V1观测的模型结果，不是本文新增在体实验。",
+        "negative_result": null,
+        "non_inference": "解析/模拟结果限于报告的model conditions；节点/pairs/images不是animal n，也不是biological validation或cross-paper replication。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "为何E–E specificity可与feature suppression并存？"
+      ],
+      "shared_evidence_with": [
+        "C6",
+        "C7",
+        "C16"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "在所测试RF-network族中，单独增加inhibition dominance或使inhibitory connectivity更宽均不足以得到高Feature-S/A index；strong且functionally specific E→I/I→E组合可给出中等抑制和高相似放大的目标模式。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "g/α/η参数sweep与Feature-S/A metric",
+          "design": "在所测试RF-network族中，单独增加inhibition dominance或使inhibitory connectivity更宽均不足以得到高Feature-S/A index；strong且functionally specific E→I/I→E组合可给出中等抑制和高相似放大的目标模式。",
+          "comparator": "g-only、broader-inhibition、strong-specific E-I",
+          "measure": null,
+          "unit_of_analysis": "同模型族的参数conditions，无biological replicates",
+          "sample_size_as_reported": null,
+          "uncertainty": "本综述未给该条被引结果的完整样本及统计量。",
+          "assumptions": [
+            "必要/充分仅限定作者模型族/指标/参数范围；未排除其他cortical机制，高g/α也可能压弱high-similarity amplification。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "Cortical Connectivity",
+            "figure": "Fig.3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在所测试RF-network族中，单独增加inhibition dominance或使inhibitory connectivity更宽均不足以得到高Feature-S/A index；strong且functionally specific E→I/I→E组合可给出中等抑制和高相似放大的目标模式。",
+        "boundary": "必要/充分仅限定作者模型族/指标/参数范围；未排除其他cortical机制，高g/α也可能压弱high-similarity amplification。",
+        "negative_result": "g-only或broad-inhibition-only设置未产生所需高Feature-S/A模式。",
+        "non_inference": "解析/模拟结果限于报告的model conditions；节点/pairs/images不是animal n，也不是biological validation或cross-paper replication。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "哪些被测试connectivity条件不足以解释双重S/A模式？"
+      ],
+      "shared_evidence_with": [
+        "C5",
+        "C16"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "finite motif分析中W一次项只有feature amplification，二次E→I→E等项产生suppression，三次项可再amplify；strong-EI rate动态的高相似amp早出现，中等similarity suppression逐步增强，weakEI不出现同样演变。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "W^n finite阶数分析及time-window平均rate influence",
+          "design": "finite motif分析中W一次项只有feature amplification，二次E→I→E等项产生suppression，三次项可再amplify；strong-EI rate动态的高相似amp早出现，中等similarity suppression逐步增强，weakEI不出现同样演变。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "matrix motifs与同network中的pairs/time windows",
+          "sample_size_as_reported": "reference NE=NI400；Fig4A JEE.0014、α=g2；Fig4B/C η3、α2vs1；seed n未列。",
+          "uncertainty": "本综述未给该条被引结果的完整样本及统计量。",
+          "assumptions": [
+            "完整resolvent与有限W^n不同；不能声称任意stable continuous dynamics的Neumann series均收敛；时间结果需τ/working state，不是weight-only operator独自推所有瞬态。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "Contribution of Motifs",
+            "figure": "Fig.4",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "finite motif分析中W一次项只有feature amplification，二次E→I→E等项产生suppression，三次项可再amplify；strong-EI rate动态的高相似amp早出现，中等similarity suppression逐步增强，weakEI不出现同样演变。",
+        "boundary": "完整resolvent与有限W^n不同；不能声称任意stable continuous dynamics的Neumann series均收敛；时间结果需τ/working state，不是weight-only operator独自推所有瞬态。",
+        "negative_result": "weak E→I对照没有同样suppression随时间建立的模式。",
+        "non_inference": "解析/模拟结果限于报告的model conditions；节点/pairs/images不是animal n，也不是biological validation或cross-paper replication。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "polysynaptic motifs怎样改变functional influence的符号和时序？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C5",
+        "C6",
+        "C14"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "模拟按单RF特征分析时，spatial-phase差异与suppression关系最强；PO差异中等范围更相似更suppressed，但极小PO差异可转向amplification，故单一orientation指标可能掩盖RF相似性。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "model RF feature分层influence",
+          "design": "模拟按单RF特征分析时，spatial-phase差异与suppression关系最强；PO差异中等范围更相似更suppressed，但极小PO差异可转向amplification，故单一orientation指标可能掩盖RF相似性。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "同800 reference model nodes及dependent pairs",
+          "sample_size_as_reported": null,
+          "uncertainty": "本综述未给该条被引结果的完整样本及统计量。",
+          "assumptions": [
+            "spatial phase相关属模型预测，本文未在动物测；精细PO采样发现amp的建议是future实验，不是已有数据缺失=negative。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "Influence vs Individual RF Features",
+            "figure": "Fig.5A-B",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "模拟按单RF特征分析时，spatial-phase差异与suppression关系最强；PO差异中等范围更相似更suppressed，但极小PO差异可转向amplification，故单一orientation指标可能掩盖RF相似性。",
+        "boundary": "spatial phase相关属模型预测，本文未在动物测；精细PO采样发现amp的建议是future实验，不是已有数据缺失=negative。",
+        "negative_result": null,
+        "non_inference": "解析/模拟结果限于报告的model conditions；节点/pairs/images不是animal n，也不是biological validation或cross-paper replication。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "单一orientation或phase指标怎样影响观察到的influence？"
+      ],
+      "shared_evidence_with": [
+        "C5",
+        "C9"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "控制PO同时的spatial phase/SF差异后，模型PO非单调dependence在小dPH/dSF时增强、在大差异时消失；按每个influencer或influencee平均还可见preferred-SF bandpass依赖。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "joint RF-feature条件分析，正文叙述SI S4",
+          "design": "控制PO同时的spatial phase/SF差异后，模型PO非单调dependence在小dPH/dSF时增强、在大差异时消失；按每个influencer或influencee平均还可见preferred-SF bandpass依赖。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "model nodes/pairs及条件均值",
+          "sample_size_as_reported": null,
+          "uncertainty": "本综述未给该条被引结果的完整样本及统计量。",
+          "assumptions": [
+            "marginal dSF曲线噪声大不是没有SF作用的证明；SI图/完整stats未附，不补p/效应量。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "Interaction of Individual Features",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "控制PO同时的spatial phase/SF差异后，模型PO非单调dependence在小dPH/dSF时增强、在大差异时消失；按每个influencer或influencee平均还可见preferred-SF bandpass依赖。",
+        "boundary": "marginal dSF曲线噪声大不是没有SF作用的证明；SI图/完整stats未附，不补p/效应量。",
+        "negative_result": null,
+        "non_inference": "解析/模拟结果限于报告的model conditions；节点/pairs/images不是animal n，也不是biological validation或cross-paper replication。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "共同RF特征条件是否改变orientation-specific influence？"
+      ],
+      "shared_evidence_with": [
+        "C8"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "balanced spiking model的influence较噪、需更长模拟才可靠，但仍可出现关键feature-S/A；以membrane Vm计算时suppression更清楚，提示测量readout改变可见性。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "spiking/Vm模拟敏感性比较，正文叙述SI S5",
+          "design": "balanced spiking model的influence较噪、需更长模拟才可靠，但仍可出现关键feature-S/A；以membrane Vm计算时suppression更清楚，提示测量readout改变可见性。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "simulated spikes/Vm；同模型节点，不是生物cells",
+          "sample_size_as_reported": null,
+          "uncertainty": "本综述未给该条被引结果的完整样本及统计量。",
+          "assumptions": [
+            "spiking n/seed/具体时长在未附SI，不能猜；多noise需更长平均并非动物trial要求已证明。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "Different Levels of Realism: Spiking",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "balanced spiking model的influence较噪、需更长模拟才可靠，但仍可出现关键feature-S/A；以membrane Vm计算时suppression更清楚，提示测量readout改变可见性。",
+        "boundary": "spiking n/seed/具体时长在未附SI，不能猜；多noise需更长平均并非动物trial要求已证明。",
+        "negative_result": null,
+        "non_inference": "解析/模拟结果限于报告的model conditions；节点/pairs/images不是animal n，也不是biological validation或cross-paper replication。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "rate-model influence在spiking与Vm readout如何表现？"
+      ],
+      "shared_evidence_with": [
+        "C5"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "sparse E–E版本平均S/A形状可保持，却出现pair influence双峰：directly connected pairs主要amplify，unconnected pairs更多polysynaptic suppression；因此只采连接pair会偏向amp。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "sparsity与connected/unconnected model pair分层，SI S6正文",
+          "design": "sparse E–E版本平均S/A形状可保持，却出现pair influence双峰：directly connected pairs主要amplify，unconnected pairs更多polysynaptic suppression；因此只采连接pair会偏向amp。",
+          "comparator": "dense/sparse及direct connection存在/缺失",
+          "measure": null,
+          "unit_of_analysis": "same model dependent pairs；connectivity/seeds完整n未附",
+          "sample_size_as_reported": null,
+          "uncertainty": "本综述未给该条被引结果的完整样本及统计量。",
+          "assumptions": [
+            "unconnected指无direct E-E synapse，不是没有所有pathways；实验采样偏差是模型预测，未实测parent V1连接。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "Networks with Sparse Connectivity",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "sparse E–E版本平均S/A形状可保持，却出现pair influence双峰：directly connected pairs主要amplify，unconnected pairs更多polysynaptic suppression；因此只采连接pair会偏向amp。",
+        "boundary": "unconnected指无direct E-E synapse，不是没有所有pathways；实验采样偏差是模型预测，未实测parent V1连接。",
+        "negative_result": null,
+        "non_inference": "解析/模拟结果限于报告的model conditions；节点/pairs/images不是animal n，也不是biological validation或cross-paper replication。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "直接连接取样如何偏置single-neuron influence解释？"
+      ],
+      "shared_evidence_with": [
+        "C5",
+        "C7"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "把E/I数量改为80/20时原influence曲线先改变，增强I→E/I→I weights补偿后恢复；把I time constant设为E的2倍或一半也可保持主要稳态模式。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "population ratio+weight联合敏感性对照及timescale对照",
+          "design": "把E/I数量改为80/20时原influence曲线先改变，增强I→E/I→I weights补偿后恢复；把I time constant设为E的2倍或一半也可保持主要稳态模式。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "model connectivity/τ conditions，不是animal年龄组",
+          "sample_size_as_reported": "ratio E80%/I20%；core n400/400仅reference，变体total/seed完整值未附。",
+          "uncertainty": "本综述未给该条被引结果的完整样本及统计量。",
+          "assumptions": [
+            "population fraction和weight补偿是联合条件，不能说80/20自然就保留S/A；稳态相似不保证全部transient时间一致。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "More Realistic Inhibition",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "把E/I数量改为80/20时原influence曲线先改变，增强I→E/I→I weights补偿后恢复；把I time constant设为E的2倍或一半也可保持主要稳态模式。",
+        "boundary": "population fraction和weight补偿是联合条件，不能说80/20自然就保留S/A；稳态相似不保证全部transient时间一致。",
+        "negative_result": null,
+        "non_inference": "解析/模拟结果限于报告的model conditions；节点/pairs/images不是animal n，也不是biological validation或cross-paper replication。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "EI数量和feedback strength怎样联合决定S/A？"
+      ],
+      "shared_evidence_with": [
+        "C5",
+        "C7"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C13",
+      "statement": "较宽tuning/较不elongated的I RF可容许原模式，但降低I相关连接的RF/response specificity更易破坏模式，尤其E→I仍需sharp；intrinsic tuning宽不等于blanket connectivity。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "broader I RF与broader inhibitory weights两类对照",
+          "design": "较宽tuning/较不elongated的I RF可容许原模式，但降低I相关连接的RF/response specificity更易破坏模式，尤其E→I仍需sharp；intrinsic tuning宽不等于blanket connectivity。",
+          "comparator": "I RF宽度变化与η connectivity specificity变化",
+          "measure": null,
+          "unit_of_analysis": "parameterized RF/network conditions",
+          "sample_size_as_reported": null,
+          "uncertainty": "本综述未给该条被引结果的完整样本及统计量。",
+          "assumptions": [
+            "仅所测RF分布范围/weights；不证明每个I细胞或全部interneuron types必须等同E tuning。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "More Realistic Inhibition",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "较宽tuning/较不elongated的I RF可容许原模式，但降低I相关连接的RF/response specificity更易破坏模式，尤其E→I仍需sharp；intrinsic tuning宽不等于blanket connectivity。",
+        "boundary": "仅所测RF分布范围/weights；不证明每个I细胞或全部interneuron types必须等同E tuning。",
+        "negative_result": null,
+        "non_inference": "解析/模拟结果限于报告的model conditions；节点/pairs/images不是animal n，也不是biological validation或cross-paper replication。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "inhibitory broad tuning与broad connectivity为何不能混为一谈？"
+      ],
+      "shared_evidence_with": [
+        "C6",
+        "C12"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C14",
+      "statement": "I single-cell perturbation平均更suppressive，但中等positive correlation区没有显著negative slope、高相似的E-style amplification缺失；其瞬态整体shape也未见显著变化，区别于E perturbation。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "I/E influencer对照，SI S8正文描述",
+          "design": "I single-cell perturbation平均更suppressive，但中等positive correlation区没有显著negative slope、高相似的E-style amplification缺失；其瞬态整体shape也未见显著变化，区别于E perturbation。",
+          "comparator": "E与I influencer、不同correlation regime与time windows",
+          "measure": null,
+          "unit_of_analysis": "same models与dependent influence pairs；n/p详情未附SI",
+          "sample_size_as_reported": null,
+          "uncertainty": "本综述未给该条被引结果的完整样本及统计量。",
+          "assumptions": [
+            "平均抑制不等于全部correlation regimes feature suppression；作者的not significant只有模型内报告，未给完整统计不能补。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Inhibitory Single-Neuron Influence",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "I single-cell perturbation平均更suppressive，但中等positive correlation区没有显著negative slope、高相似的E-style amplification缺失；其瞬态整体shape也未见显著变化，区别于E perturbation。",
+        "boundary": "平均抑制不等于全部correlation regimes feature suppression；作者的not significant只有模型内报告，未给完整统计不能补。",
+        "negative_result": "I influence中间positive-correlation无显著negative slope；未见E式高相似amp及明显瞬态shape改变。",
+        "non_inference": "解析/模拟结果限于报告的model conditions；节点/pairs/images不是animal n，也不是biological validation或cross-paper replication。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "I与E perturbation的影响模式是否相同？"
+      ],
+      "shared_evidence_with": [
+        "C7",
+        "C5"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C15",
+      "statement": "双E输入perturbation在两influencer均与target中等RF相似时有更强feature suppression；作者定义的synergy index平均为正且A/B高度相似时更突出。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "double-cell perturbations与作者ABC-triplet synergy metric",
+          "design": "双E输入perturbation在两influencer均与target中等RF相似时有更强feature suppression；作者定义的synergy index平均为正且A/B高度相似时更突出。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "model triplets/target averages；未附SI定义和independent realization n",
+          "sample_size_as_reported": null,
+          "uncertainty": "本综述未给该条被引结果的完整样本及统计量。",
+          "assumptions": [
+            "synergy是该normalised metric，不直接等同生物cooperation或一般超线性定理；rectified operating regime与SI细节不能省略。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Multiple-Neuron Perturbations",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "双E输入perturbation在两influencer均与target中等RF相似时有更强feature suppression；作者定义的synergy index平均为正且A/B高度相似时更突出。",
+        "boundary": "synergy是该normalised metric，不直接等同生物cooperation或一般超线性定理；rectified operating regime与SI细节不能省略。",
+        "negative_result": null,
+        "non_inference": "解析/模拟结果限于报告的model conditions；节点/pairs/images不是animal n，也不是biological validation或cross-paper replication。",
+        "unresolved": "完整index公式/参数及在体multiple-neuron检验未提供。",
+        "unresolved_attribution": "综述作者的限制、开放问题或源文审计"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "双细胞perturbation怎样揭示模型higher-order interaction？"
+      ],
+      "shared_evidence_with": [
+        "C5",
+        "C7"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C16",
+      "statement": "strong-specific EI rate networks对natural images压低small feedforward projections、保留或增强large projections，population response gain呈sigmoid-like；weakEI或非特异增强inhibition均未恢复同样曲线。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "image→Gabor projections→recurrent population response",
+          "design": "strong-specific EI rate networks对natural images压低small feedforward projections、保留或增强large projections，population response gain呈sigmoid-like；weakEI或非特异增强inhibition均未恢复同样曲线。",
+          "comparator": "strong/weakEI及g-only/broad-I对照",
+          "measure": null,
+          "unit_of_analysis": "images/model population，gain来自不同model neurons的output/input",
+          "sample_size_as_reported": "ensemble600 natural images；core visual reference NE=NI400，network seed n未列。",
+          "uncertainty": "本综述未给该条被引结果的完整样本及统计量。",
+          "assumptions": [
+            "个体neurons模型无该sigmoid intrinsic transfer；population gain仅对非零input定义，weak projections被称noise是作者功能解释，不是独立实验噪声检测。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "Functional Consequences",
+            "figure": "Fig.6B-G",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "strong-specific EI rate networks对natural images压低small feedforward projections、保留或增强large projections，population response gain呈sigmoid-like；weakEI或非特异增强inhibition均未恢复同样曲线。",
+        "boundary": "个体neurons模型无该sigmoid intrinsic transfer；population gain仅对非零input定义，weak projections被称noise是作者功能解释，不是独立实验噪声检测。",
+        "negative_result": "weakEI和非特异inhibition未产生目标sigmoid-like population gain。",
+        "non_inference": "解析/模拟结果限于报告的model conditions；节点/pairs/images不是animal n，也不是biological validation或cross-paper replication。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "recurrent EI能否让population出现intrinsic单细胞所无的gain非线性？"
+      ],
+      "shared_evidence_with": [
+        "C5",
+        "C6",
+        "C17",
+        "C18"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C17",
+      "statement": "600-image模拟中strongEI输出population vectors的normalised angular discriminability高于feedforward input，weakEI较低，支持所测模型表征更易区分image pairs。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "population-vector angle/90° comparison",
+          "design": "600-image模拟中strongEI输出population vectors的normalised angular discriminability高于feedforward input，weakEI较低，支持所测模型表征更易区分image pairs。",
+          "comparator": "feedforward、strongEI、weakEI",
+          "measure": null,
+          "unit_of_analysis": "same model activity及dependent image pairs",
+          "sample_size_as_reported": "600 images；image pairs非独立新增stimuli。",
+          "uncertainty": "本综述未给该条被引结果的完整样本及统计量。",
+          "assumptions": [
+            "角度读数不是独立information-theoretic capacity或动物visual-performance实验；正文对nonspecific/specific大小的解释存在措辞疑点。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "Functional Consequences",
+            "figure": "Fig.6H",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "600-image模拟中strongEI输出population vectors的normalised angular discriminability高于feedforward input，weakEI较低，支持所测模型表征更易区分image pairs。",
+        "boundary": "角度读数不是独立information-theoretic capacity或动物visual-performance实验；正文对nonspecific/specific大小的解释存在措辞疑点。",
+        "negative_result": null,
+        "non_inference": "解析/模拟结果限于报告的model conditions；节点/pairs/images不是animal n，也不是biological validation或cross-paper replication。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "EI模式怎样改变模拟自然图像的population区分度？"
+      ],
+      "shared_evidence_with": [
+        "C16",
+        "C18"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C18",
+      "statement": "以每张目标image及半数nontarget训练、其余nontarget测试的decoder中，strongEI population优于feedforward及weakEI；增加所测noise降低各条件accuracy，但strongEI仍较robust。",
+      "claim_type": "result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "target-v-other decoder与heldout negatives/noise comparison",
+          "design": "以每张目标image及半数nontarget训练、其余nontarget测试的decoder中，strongEI population优于feedforward及weakEI；增加所测noise降低各条件accuracy，但strongEI仍较robust。",
+          "comparator": "strongEI/weakEI/feedforward和noise levels",
+          "measure": null,
+          "unit_of_analysis": "target-specific decoders与shared image ensemble/model",
+          "sample_size_as_reported": "600 natural images，nontarget半集train/半集test；decoder类型/独立seed/统计详情在未附SI。",
+          "uncertainty": "本综述未给该条被引结果的完整样本及统计量。",
+          "assumptions": [
+            "heldout的是other images，不是每个target从未训练或动物感知；主文只称significant，不从图像猜accuracy/P/effect size。"
+          ],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "Functional Consequences",
+            "figure": "Fig.6I-K",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "以每张目标image及半数nontarget训练、其余nontarget测试的decoder中，strongEI population优于feedforward及weakEI；增加所测noise降低各条件accuracy，但strongEI仍较robust。",
+        "boundary": "heldout的是other images，不是每个target从未训练或动物感知；主文只称significant，不从图像猜accuracy/P/effect size。",
+        "negative_result": null,
+        "non_inference": "解析/模拟结果限于报告的model conditions；节点/pairs/images不是animal n，也不是biological validation或cross-paper replication。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "model EI表征是否改善目标图像的downstream discrimination？"
+      ],
+      "shared_evidence_with": [
+        "C16",
+        "C17"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C19",
+      "statement": "作者预测在体更精细RF/phase测量、较高时间分辨率及multiple-cell perturbation可检验早amp晚sup、直接/间接连接和EI specificity，尚未在本研究实施这些神经干预。",
+      "claim_type": "hypothesis",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "解析/模拟形成的可检验预测",
+          "design": "作者预测在体更精细RF/phase测量、较高时间分辨率及multiple-cell perturbation可检验早amp晚sup、直接/间接连接和EI specificity，尚未在本研究实施这些神经干预。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "尚未实施的biological tests",
+          "sample_size_as_reported": null,
+          "uncertainty": "本综述未给该条被引结果的完整样本及统计量。",
+          "assumptions": [
+            "既有V1引用的一致性不是本篇独立replication；模型族拟合实验模式不唯一恢复真实connectome，更不证明human cognition差异。"
+          ],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "Discussion",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者预测在体更精细RF/phase测量、较高时间分辨率及multiple-cell perturbation可检验早amp晚sup、直接/间接连接和EI specificity，尚未在本研究实施这些神经干预。",
+        "boundary": "既有V1引用的一致性不是本篇独立replication；模型族拟合实验模式不唯一恢复真实connectome，更不证明human cognition差异。",
+        "negative_result": null,
+        "non_inference": "未测试prediction不记阴性或已验证mechanism。",
+        "unresolved": "完整SI与targeted in-vivo EI/voltage实验需补证。",
+        "unresolved_attribution": "综述作者的限制、开放问题或源文审计"
+      },
+      "broad_directions": [
+        "methods-causal",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "如何实验检验perturbome模型而不把匹配当因果识别？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C8",
+        "C7",
+        "C11",
+        "C18"
+      ],
+      "review_notes": [
+        "第二次源文复核：核对实际对象/单位、条件、阴性与未检验区别，并保留文献或模型证据身份。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "11页计算/理论研究用输入perturbations及RF-specific recurrent EI模型解释中等相似抑制与高相似放大，保留g-only/broad-I不足、I perturb差异和多个realism对照。解析resolvent限定linear/工作点与有效稳态，人口比例与weight补偿等joint条件未拆散。natural-image angular/decoder优势是模型结果，不是动物感知validation；SI缺失的完整推导、参数/seed及synergy定义不补写。候选保留未来在体检验和解释疑点，无自动跨论文科学关系。",
+  "shared_evidence": [
+    {
+      "claim_id": "C2",
+      "with": [
+        "C1",
+        "C3",
+        "C4"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C1",
+        "C2"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C1",
+        "C2",
+        "C3"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C6",
+        "C7",
+        "C16"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C5",
+        "C16"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C1",
+        "C5",
+        "C6",
+        "C14"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C5",
+        "C9"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C8"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "with": [
+        "C5"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "with": [
+        "C5",
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "with": [
+        "C5",
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C13",
+      "with": [
+        "C6",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C14",
+      "with": [
+        "C7",
+        "C5"
+      ]
+    },
+    {
+      "claim_id": "C15",
+      "with": [
+        "C5",
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C16",
+      "with": [
+        "C5",
+        "C6",
+        "C17",
+        "C18"
+      ]
+    },
+    {
+      "claim_id": "C17",
+      "with": [
+        "C16",
+        "C18"
+      ]
+    },
+    {
+      "claim_id": "C18",
+      "with": [
+        "C16",
+        "C17"
+      ]
+    },
+    {
+      "claim_id": "C19",
+      "with": [
+        "C1",
+        "C8",
+        "C7",
+        "C11",
+        "C18"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": null,
+        "pdf_page": 1,
+        "issue": "题名、Sadra Sadeh/Claudia Clopath及完整PNAS DOI与indexed identity一致；2020正式article。",
+        "suggested_correction": "按supplied11页，不替换已有V1原实验为本篇。",
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "pdf_page": 11,
+        "issue": "Methods明确τdr/dt=−r+[Wr+s]+，wij=Jexp(ηCCij)+ζ，ψ按δr/输入δp而非target与influencer活动比。",
+        "suggested_correction": "所有computational evidence使用真实input perturbation/rectifier与模型单位。",
+        "resolved": true
+      },
+      {
+        "claim_id": "C1",
+        "pdf_page": 2,
+        "issue": "resolvent适用于linear/linearized regime，详细assumptions Eq15在未附SI；nonlinear threshold crossing未由主文公式无条件覆盖。",
+        "suggested_correction": "保持稳定/可逆与fixed-operating-regime条件；不冒称已核全proof。",
+        "resolved": true
+      },
+      {
+        "claim_id": "C2",
+        "pdf_page": 3,
+        "issue": "small2E1I平衡g2，而large NE=NI平衡g1；不可互换。",
+        "suggested_correction": "把群体比例与g/α作为joint设定。",
+        "resolved": true
+      },
+      {
+        "claim_id": "C4",
+        "pdf_page": 3,
+        "issue": "random heterogeneity存在pair variance，perfect-balance ψ=J是所测mean比较。",
+        "suggested_correction": "不得把mean等价说成每个pair equal或完整network生物必要性。",
+        "resolved": true
+      },
+      {
+        "claim_id": "C6",
+        "pdf_page": 5,
+        "issue": "作者necessary/sufficient源于此RF weight-family的sweep/指标，没有排除其他真实皮层机制。",
+        "suggested_correction": "仅限定所研究model-family，不称普适connectome识别定理。",
+        "resolved": true
+      },
+      {
+        "claim_id": "C7",
+        "pdf_page": 5,
+        "issue": "W^n finite motifs和(I−W)^−1不是无条件同一convergent expansion。",
+        "suggested_correction": "保留有限阶分析，不补一般强network级数收敛证明。",
+        "resolved": true
+      },
+      {
+        "claim_id": "C9",
+        "pdf_page": 7,
+        "issue": "正文dSF marginal结果noisy并提旧实验无显著关联，却model per-neuron SF bandpass另有结果。",
+        "suggested_correction": "不将旧实验negative当本篇new experiment，也不据marginal noisy写SF无作用。",
+        "resolved": true
+      },
+      {
+        "claim_id": "C10",
+        "pdf_page": 7,
+        "issue": "spiking、sparse及realistic variants多数full参数/seed/stat只在SI。",
+        "suggested_correction": "不猜spiking人数/seed、曲线P或变体总node数。",
+        "resolved": true
+      },
+      {
+        "claim_id": "C12",
+        "pdf_page": 7,
+        "issue": "80/20比率初始改变模式，weight补偿才restore，tau变体仅支持所测形状。",
+        "suggested_correction": "不拆掉compensation条件或声称所有time dynamics invariant。",
+        "resolved": true
+      },
+      {
+        "claim_id": "C13",
+        "pdf_page": 8,
+        "issue": "broadI RF仍可容许S/A，但broadweight connectivity更敏感，两个操作不等价。",
+        "suggested_correction": "保留所测contrast与E→I sharp条件。",
+        "resolved": true
+      },
+      {
+        "claim_id": "C14",
+        "pdf_page": 8,
+        "issue": "I perturb的not-significant slopes/time shapes在正文未给P/n，fullSI缺失。",
+        "suggested_correction": "如实报告model negative/缺数值，不编p或动物验证。",
+        "resolved": true
+      },
+      {
+        "claim_id": "C15",
+        "pdf_page": 8,
+        "issue": "synergy指标公式在未附SI，正文仅概括normalised interaction。",
+        "suggested_correction": "保持model-defined metric，不推一般超线性定理或生物协作。",
+        "resolved": false
+      },
+      {
+        "claim_id": "C16",
+        "pdf_page": 10,
+        "issue": "Methods单细胞为rectified rate方程，而作者population sigmoid不指intrinsic logistic neuron。",
+        "suggested_correction": "明确population output/input profile，不忽略阈值/active-set。",
+        "resolved": true
+      },
+      {
+        "claim_id": "C17",
+        "pdf_page": 9,
+        "issue": "正文关于nonspecific component小于specific却distance较小的解释措辞难以与区分度直觉一致。",
+        "suggested_correction": "只保留Fig6H报告angular metric的model comparison，解释具体措辞待确认。",
+        "resolved": false
+      },
+      {
+        "claim_id": "C18",
+        "pdf_page": 9,
+        "issue": "600images decoder训练目标与半组negative，test其余negative；不能当全新target分类。",
+        "suggested_correction": "保留exactsplit、unknowndecoder/stat及非biological性质。",
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "pdf_page": 3,
+        "issue": "main正文和caption对SI analytic equation引用88/80不同；SI全文未附。",
+        "suggested_correction": "不强制确认SI equation remapping；source locator用实际mainPDF页。",
+        "resolved": false
+      },
+      {
+        "claim_id": null,
+        "pdf_page": 10,
+        "issue": "human strongest E→I及cognitive复杂度讨论来自背景文献/推测，不是本模型biological数据。",
+        "suggested_correction": "不另生成human species superior-cognition已证实记录。",
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T11:35:18.009150Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "92c4a013f41fbe79c64acdbb6d101276e57938d108d7b1dbcc876acd17233673",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

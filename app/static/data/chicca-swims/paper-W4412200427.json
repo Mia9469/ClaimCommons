@@ -1,0 +1,1942 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "A neuromorphic processor with on-chip learning for beyond-CMOS device integration",
+    "authors": [
+      "Hugh Greatorex",
+      "Ole Richter",
+      "Michele Mastella",
+      "Madison Cotteret",
+      "Philipp Klein",
+      "Maxime Fabre",
+      "Arianna Rubino",
+      "Willian Soares Girão",
+      "Jun-Ren Chen",
+      "Martin Ziegler",
+      "Laura Bégon‐Lours",
+      "Giacomo Indiveri",
+      "Elisabetta Chicca"
+    ],
+    "doi": "10.1038/s41467-025-61576-6",
+    "publication_year": 2025,
+    "venue": "Nature Communications",
+    "url": "https://doi.org/10.1038/s41467-025-61576-6"
+  },
+  "source": {
+    "filename": "paper-W4412200427.pdf",
+    "sha256": "7dd326aa5acdbaacc79fc559b6cc6c6bccaa3b52bf82e231f174246debbeeb1c",
+    "source_url": "https://www.nature.com/articles/s41467-025-61576-6.pdf?error=cookies_not_supported&code=eb4153b1-fd33-4c7c-b025-33b67cb3e5f4",
+    "pdf_page_count": 14
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "results_sections_seen": [
+      "Results: Neural circuits, Learning circuits, Memristive interfacing/requirements, Power, On-chip SNN",
+      "Discussion",
+      "Methods: Chip/Neuron/Synapse/Learning/Device circuits and VSA",
+      "Tables 1–2 and all Figures 1–8 captions",
+      "Data/Code statements, References"
+    ],
+    "missing_material": [
+      "所有图像像素未提供。",
+      "文中引用Supplementary Material、A3/A4、图S1–S5及补充表1等未随所供14页提供。",
+      "原始芯片测试、代码仓库内容和完整器件模型参数未随页提供；真实忆阻器尚未集成。"
+    ],
+    "text_pass_complete": true,
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "notes": [
+      "PDF为Nature Communications 16:6424（2025）正式文章，题名与导入元数据一致。",
+      "完整14页含方法、图注、两表、参考文献与附加信息均已读。",
+      "硅测量、后布局/器件模型仿真、设计支持与作者解释分别标记；图像未读取，未做科学复现。"
+    ]
+  },
+  "contribution_inventory": [
+    {
+      "summary": "TEXEL制造、180神经元和可塑/静态突触容量",
+      "role": "result",
+      "source_pages": [
+        2,
+        3,
+        9,
+        10
+      ],
+      "decision": "include",
+      "reason": "已制造的是CMOS芯片，不是已共集成忆阻器阵列。"
+    },
+    {
+      "summary": "神经元FI异质性、阶跃适应和泊松突触输入",
+      "role": "result",
+      "source_pages": [
+        2,
+        3,
+        4
+      ],
+      "decision": "include",
+      "reason": "区分全芯片FI和单元轨迹，不猜统计重复。"
+    },
+    {
+      "summary": "BiCaLL CMOS实现、暂态权重、可配置STDP和SRDP",
+      "role": "result",
+      "source_pages": [
+        3,
+        6,
+        10,
+        11
+      ],
+      "decision": "include",
+      "reason": "算法背景与片上实现分开，保留图3硅测标题及术语差异。"
+    },
+    {
+      "summary": "差分接口、RC后布局读出和兼容需求",
+      "role": "result",
+      "source_pages": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        11
+      ],
+      "decision": "include",
+      "reason": "仿真/设计协议而非实物忆阻验证。"
+    },
+    {
+      "summary": "VCM模型循环变异的高低态分离",
+      "role": "result",
+      "source_pages": [
+        7,
+        12
+      ],
+      "decision": "include",
+      "reason": "3分钟模拟协议，不能当长期真实器件可靠性。"
+    },
+    {
+      "summary": "读优先互斥与模式可配置访问",
+      "role": "result",
+      "source_pages": [
+        8,
+        11
+      ],
+      "decision": "include",
+      "reason": "提取正文设计规则，实测补充波形未提供。"
+    },
+    {
+      "summary": "静态功耗及80Hz表列事件能量",
+      "role": "result",
+      "source_pages": [
+        7,
+        8,
+        10
+      ],
+      "decision": "include",
+      "reason": "CMOS测量；事件表值供电归属留待核查。"
+    },
+    {
+      "summary": "全CMOS一次学习与二集合成员查询",
+      "role": "result",
+      "source_pages": [
+        7,
+        8,
+        9,
+        12
+      ],
+      "decision": "include",
+      "reason": "2000维向量/bundling在片外，查询共用同一网络。"
+    },
+    {
+      "summary": "通用器件接口的面积/灵活性折中",
+      "role": "interpretation",
+      "source_pages": [
+        8,
+        9,
+        10
+      ],
+      "decision": "include",
+      "reason": "作为作者设计解释，无接口移除匹配对照。"
+    },
+    {
+      "summary": "共集成忆阻器后的学习、能耗、保持与耐久性",
+      "role": "result",
+      "source_pages": [
+        2,
+        7,
+        8
+      ],
+      "decision": "defer",
+      "reason": "作者明确器件尚未集成。"
+    },
+    {
+      "summary": "读写实验全部波形、预充/连续模式与补充图S1–S5",
+      "role": "result",
+      "source_pages": [
+        3,
+        8,
+        9,
+        11,
+        14
+      ],
+      "decision": "defer",
+      "reason": "引用的Supplementary Material未随页面提供。"
+    },
+    {
+      "summary": "动态各块功耗、synaptic energy曲线的精确数值",
+      "role": "result",
+      "source_pages": [
+        8
+      ],
+      "decision": "defer",
+      "reason": "仅图6曲线/分块图承载的数值无法从缺失像素核查。"
+    },
+    {
+      "summary": "长期漂移鲁棒、NVM多态密度优势及高级语义/类比推理",
+      "role": "interpretation",
+      "source_pages": [
+        4,
+        8,
+        9
+      ],
+      "decision": "defer",
+      "reason": "有限模拟或未来设想，无实物长期漂移或复杂任务证明。"
+    },
+    {
+      "summary": "既有CMOS/忆阻系统、生物学习规则、VSA原理和其他芯片基准",
+      "role": "background",
+      "source_pages": [
+        1,
+        2,
+        7,
+        10,
+        12,
+        13,
+        14
+      ],
+      "decision": "exclude",
+      "reason": "引用不能当本篇独立新结果或匹配性能对照。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "TEXEL已以X-FAB 180 nm工艺制造为9×7.5 mm的混合信号芯片，包含2个各90神经元的核心；每神经元有54个可塑突触和4个静态突触，并为后续双器件差分BEOL集成预留接口，但本文尚未集成忆阻器。",
+      "claim_type": "fabricated_cmos_architecture",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "制造芯片版图与封装/裸片说明",
+          "design": "在180nm CMOS上实现神经元、突触及未来器件接口。",
+          "comparator": null,
+          "measure": "裸片尺寸、架构容量",
+          "unit_of_analysis": "一个TEXEL设计",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "接口数量是集成容量，不是已存在忆阻器的数量。"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "Results: TEXEL chip",
+            "figure": "Figure 1",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "突触规模说明",
+          "design": "每神经元54塑性加4静态突触。",
+          "comparator": null,
+          "measure": "每神经元突触扇入",
+          "unit_of_analysis": "芯片架构",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "Methods: Synaptic circuits",
+            "figure": "Table 2; Figure 1b",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "已制造带本地学习和器件接口的CMOS平台。",
+        "boundary": "芯片规格不是独立试验n；表2约19k器件表示可容纳数量。",
+        "negative_result": null,
+        "non_inference": "不能称已经制造完整共集成CMOS-忆阻SNN或验证器件断电存储。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "怎样在已制造CMOS SNN上预留双器件本地可塑性接口？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "text_only",
+          "not_scientifically_verified",
+          "measured_cmos_only"
+        ]
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "对TEXEL全部神经元施加扫描DC电流后，实测FI曲线出现神经元间离散及核心平均响应差异；作者分别归于单元器件失配与核心偏置电路失配。",
+      "claim_type": "measured_silicon_transfer_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "DC输入扫描和全神经元发放率测量",
+          "design": "增加共同DC输入并记录各神经元与核心平均响应。",
+          "comparator": "两个核心及各神经元",
+          "measure": "FI曲线及响应离散",
+          "unit_of_analysis": "单个神经元的FI曲线，嵌套在核心/同一芯片",
+          "sample_size_as_reported": "芯片180神经元；独立芯片数量未报告",
+          "uncertainty": null,
+          "assumptions": [
+            "失配归因来自作者电路解释，未单独扰动偏置隔离验证。"
+          ],
+          "source_locator": {
+            "pdf_page": 2,
+            "section": "Results: Neural circuits",
+            "figure": "Figure 2a",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "记录芯片神经元传递函数及异质性。",
+        "boundary": "没有正文均方差、跨芯片统计或校准前后对照。",
+        "negative_result": null,
+        "non_inference": "不能证明失配已被消除或异质性必然改善本芯片学习。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "TEXEL神经元的电流-发放响应是否在单元和核心间一致？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "text_only",
+          "not_scientifically_verified",
+          "measured_cmos_only"
+        ]
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "在TEXEL单神经元DC阶跃实测中，发放率初始升高后逐渐衰减到稳定状态，同时膜电位与脉冲时间被记录，支持所示神经元的发放频率适应功能。",
+      "claim_type": "measured_silicon_adaptation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "DC阶跃膜电位/脉冲测量",
+          "design": "向一个硅神经元施加阶跃电流。",
+          "comparator": null,
+          "measure": "瞬时发放率初始峰与衰减、膜电位",
+          "unit_of_analysis": "单神经元响应轨迹",
+          "sample_size_as_reported": "单神经元示例；独立重复数未报告",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "Results: Neural circuits",
+            "figure": "Figure 2b,c",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所示芯片单元具有适应响应。",
+        "boundary": "只给示例轨迹；没有正文适应时间常数分布或跨芯片重复。",
+        "negative_result": null,
+        "non_inference": "不证明任意偏置下都有相同适应或复制生物离子机制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "TEXEL的适应模块在阶跃输入后能否使发放率衰减？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "text_only",
+          "not_scientifically_verified",
+          "measured_cmos_only"
+        ]
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "图2d展示TEXEL神经元经静态兴奋性突触接受所标20、40、60、80 Hz泊松输入时的膜电位及突触前/后脉冲，作为事件驱动突触到神经元通路的实测演示。",
+      "claim_type": "measured_silicon_input_path_demonstration",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "静态兴奋突触泊松刺激与膜电位记录",
+          "design": "展示多种输入率下的一神经元响应。",
+          "comparator": "所示不同泊松输入率",
+          "measure": "膜电位与前/后脉冲轨迹",
+          "unit_of_analysis": "单个神经元的输入/响应示例",
+          "sample_size_as_reported": "单神经元；独立试验数量未报告",
+          "uncertainty": null,
+          "assumptions": [
+            "输入率文字可读，不从缺失像素补算输出发放率。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "Results: Neural circuits",
+            "figure": "Figure 2d",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "保留静态事件输入通路的功能演示。",
+        "boundary": "没有正文输出率、增益、时延或统计量。",
+        "negative_result": null,
+        "non_inference": "不据图示断言精确输入输出频率律或所有频率下可靠发放。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "事件型静态突触输入能否驱动TEXEL神经元响应？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "text_only",
+          "not_scientifically_verified",
+          "measured_cmos_only"
+        ]
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "TEXEL每个可塑突触以CMOS实现BiCaLL本地学习：突触前与突触后活动迹控制增减权重，慢Ca2+活动迹限定学习区间，模拟电容权重经双稳态刷新成为高/低两态；学习规则与各迹阈值和时间动态可由偏置配置。",
+      "claim_type": "implemented_local_learning_architecture",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "BiCaLL的CMOS局部实现说明",
+          "design": "权重更新依赖本地事件与三个活动迹，不需要全局误差反传。",
+          "comparator": null,
+          "measure": "局部更新、门控和双稳态存储",
+          "unit_of_analysis": "一可塑突触及其神经元共享控制",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "活动迹是模拟电路变量，不是生物钙的直接测量。",
+            "BiCaLL算法引自[44]，本篇贡献为芯片实现与验证。"
+          ],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "Methods: Learning circuits",
+            "figure": "Figure 3e",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "慢迹门控与偏置说明",
+          "design": "规定活动迹上/下界内允许更新并设置双稳态漂移。",
+          "comparator": null,
+          "measure": "可配置迹时间动态、阈值和刷新速度",
+          "unit_of_analysis": "可塑突触控制",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "Methods: Learning circuits",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "给出可调整的片上本地学习机制。",
+        "boundary": "二态为片上CMOS权重；非已集成的忆阻长期存储。",
+        "negative_result": null,
+        "non_inference": "不证明完整网络的长期容量、泛化或避免所有灾难性遗忘。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "learning-memory",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "如何用本地活动迹和双稳态存储实现片上脉冲学习？"
+      ],
+      "shared_evidence_with": [
+        "C6",
+        "C7",
+        "C8"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "text_only",
+          "not_scientifically_verified",
+          "measured_cmos_only"
+        ]
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "在所示TEXEL单突触实测中，只有突触前活动时权重不变；加入突触后活动并使相关活动迹超过阈值后，模拟权重出现暂时抑制，但双稳态电路使其最终稳定回高态。",
+      "claim_type": "measured_silicon_weight_dynamics_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "突触前/后刺激与活动迹/权重时间记录",
+          "design": "比较同一演示中有无突触后活动的时段。",
+          "comparator": "仅突触前脉冲的时段",
+          "measure": "模拟权重下降与高态恢复",
+          "unit_of_analysis": "一塑性突触/神经元轨迹",
+          "sample_size_as_reported": "单突触示例；独立重复数未报告",
+          "uncertainty": null,
+          "assumptions": [
+            "此处暂时下降是学习权重轨迹，不等同于所有生物短时突触抑制。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "Results: Learning circuits",
+            "figure": "Figure 3a",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "门控更新可出现暂时下降而不巩固为低态。",
+        "boundary": "这条轨迹不能给出跨阈值转移概率或全部突触行为。",
+        "negative_result": "所示仅突触前刺激时权重保持不变。",
+        "non_inference": "不把模拟暂时下降称为已发生永久LTD或忆阻器状态变化。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "learning-memory",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "本地更新与双稳态刷新何时产生暂时而非长期权重变化？"
+      ],
+      "shared_evidence_with": [
+        "C5",
+        "C7",
+        "C8"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "text_only",
+          "not_scientifically_verified",
+          "measured_cmos_only"
+        ]
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "TEXEL学习电路的突触前/后时间差扫描可产生可配置STDP曲线；在图3c的偏置条件下，正Δt区的抑制分支被关闭，区别于图3b启用全部增减分支的曲线，Δt按本文定义为tpre−tpost。",
+      "claim_type": "measured_silicon_stdp_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "脉冲对时间差扫描及偏置调节",
+          "design": "测模拟权重变化，比较全部分支和关闭正Δt抑制条件。",
+          "comparator": "图3b全部分支启用的偏置配置",
+          "measure": "Δw随Δt的曲线及抑制区域",
+          "unit_of_analysis": "同一突触的时间差/偏置扫描",
+          "sample_size_as_reported": "图注称单塑性突触硅测量；重复n未报告",
+          "uncertainty": null,
+          "assumptions": [
+            "时间差符号遵循tpre−tpost，不套用相反常用定义。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "Results: Learning circuits",
+            "figure": "Figure 3b,c",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "学习曲线形态可通过偏置改变。",
+        "boundary": "正文用in-silico措辞，结果开头与图3明确标硅测量；缺少补充方法不完全消除术语歧义。",
+        "negative_result": null,
+        "non_inference": "不等同生物STDP复现，也不推断任意曲线或所有单元可同等配置。",
+        "unresolved": "STDP段落in-silico措辞与图3硅测量标题的术语差异。",
+        "unresolved_attribution": "正文页3与图注页6；按图注保留硅测结果，需人工确认实验细节。"
+      },
+      "broad_directions": [
+        "learning-memory",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "模拟偏置能否改变TEXEL局部STDP的抑制区域？"
+      ],
+      "shared_evidence_with": [
+        "C5",
+        "C6",
+        "C8"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "text_only",
+          "not_scientifically_verified",
+          "measured_cmos_only",
+          "measurement_terminology_ambiguity"
+        ]
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "在TEXEL的所报告泊松突触前/后发放率扫描中，两侧活动较高时最终高权重概率较高，活动较低时更倾向低态，表明同一片上本地学习电路对输入率统计也敏感。",
+      "claim_type": "measured_silicon_srdp_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "突触前/后泊松率扫描",
+          "design": "统计突触保持/落入高低态的概率图。",
+          "comparator": "所测试较低发放率组合",
+          "measure": "高/低权重概率",
+          "unit_of_analysis": "单突触的率组合及状态测试",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "结论只限扫描范围；慢迹还可在活动边界外停止学习。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "Results: Learning circuits",
+            "figure": "Figure 3d",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所示学习电路兼具脉冲率依赖。",
+        "boundary": "正文不提供重复次数、概率数值、CI或每个率组合的详细统计。",
+        "negative_result": null,
+        "non_inference": "不推断任意高率都增权或STDP/SRDP为两次独立芯片复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "局部学习的最终权重状态是否随前/后活动率组合变化？"
+      ],
+      "shared_evidence_with": [
+        "C5",
+        "C6",
+        "C7"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "text_only",
+          "not_scientifically_verified",
+          "measured_cmos_only"
+        ]
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "TEXEL的每塑性突触设计差分双器件接口，可接两或三端忆阻器，以互补高低阻态编码二值权重，端电压最高5 V；正文还报告10 ns–100 ms读写脉宽、连续读和预充模式作为可配置接口功能。",
+      "claim_type": "proposed_device_interface_architecture",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "BEOL接点、驱动和正常化接口设计",
+          "design": "两器件互补写入，差分读出后送DPI；支持外部端接调试。",
+          "comparator": null,
+          "measure": "接口端数、电压、差分存储/读出流程",
+          "unit_of_analysis": "一塑性突触的两器件预留接口",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "每器件端的0–5V与表1跨器件可正负写压不同，不能要求外加负电源。"
+          ],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "Methods: Memristive device integration",
+            "figure": "Figure 8a,b,c",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "可配置协议范围说明",
+          "design": "作者给出读写脉宽、连续读和预充的设计支持。",
+          "comparator": null,
+          "measure": "10ns–100ms及模式支持",
+          "unit_of_analysis": "接口配置",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "模式详述引用未提供的Supplementary A4。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Discussion",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提供兼容不同器件协议的设计空间。",
+        "boundary": "忆阻器未集成；协议范围为设计报告，补充材料及全范围测量不可核查。",
+        "negative_result": null,
+        "non_inference": "不能宣称所有器件均已兼容或全范围已有实测验证。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "双器件差分接口怎样为不同忆阻技术提供可配置访问？"
+      ],
+      "shared_evidence_with": [
+        "C10",
+        "C11",
+        "C12",
+        "C13"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "text_only",
+          "not_scientifically_verified",
+          "device_model_simulation_not_integration"
+        ]
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "在500 μs读脉冲、norm_bias=200 nA的后布局RC器件模型仿真中，差分接口在正器件电导小于负器件时输出近零，正器件电导更高时输出可驱动DPI；高低导态比越大，正常化电流越接近bias值。",
+      "claim_type": "post_layout_circuit_simulation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Spectre后布局RC差分器件扫描",
+          "design": "图4b固定Rpos=1GΩ、C=100fF并扫描Rneg。",
+          "comparator": "相反电导顺序与不同电导比",
+          "measure": "Inorm与DPI后突触电流",
+          "unit_of_analysis": "一差分突触的模拟参数/轨迹",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "固定读脉宽和偏置；器件建模为并联RC。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "Results: Memristive device interfacing circuits",
+            "figure": "Figure 4a,b",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "差分和归一化在模型中区分二值状态并调整电流尺度。",
+        "boundary": "没有实际器件、分布器件测量或完整阵列验证。",
+        "negative_result": null,
+        "non_inference": "不证明任意噪声/漂移/接触寄生下仍保持区分。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "正常化差分接口能否将器件电导状态转换为可用突触电流？"
+      ],
+      "shared_evidence_with": [
+        "C9",
+        "C11",
+        "C12"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "text_only",
+          "not_scientifically_verified",
+          "device_model_simulation_not_integration"
+        ]
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "基于固定500 μs读脉冲、200 nA bias的兼容性仿真，表1给出TEXEL器件需求摘要：Ron上限10 GΩ、Gon/Goff下限10、总电容上限10 pF、单器件面积上限114 μm²，读压0–5 V、set/reset器件电压范围−5至5 V。",
+      "claim_type": "simulation_derived_device_requirements",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "RC器件特性后布局扫描并提取需求界限",
+          "design": "以正常化输出相对bias的50%作为兼容判定阈值。",
+          "comparator": null,
+          "measure": "阻值、开关比、电容及接口规格",
+          "unit_of_analysis": "器件参数扫描与设计边界",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "表1下行来自图4二维扫描；50%是电流判定尺度，不是统计置信区间。",
+            "表列电压/面积包含接口物理设计约束。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "Results: Memristive device requirements",
+            "figure": "Table 1",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "给出该配置下的器件筛选需求。",
+        "boundary": "这些摘要上/下限受联合特性和读协议制约；不能保证所有极值同时满足即兼容。",
+        "negative_result": null,
+        "non_inference": "不证明已与满足表值的真实器件成功集成。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "在限定读协议下哪些器件参数范围可满足接口电流判据？"
+      ],
+      "shared_evidence_with": [
+        "C9",
+        "C10"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "text_only",
+          "not_scientifically_verified",
+          "device_model_simulation_not_integration"
+        ]
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "在含循环间变异的VCM紧凑模型仿真中，差分突触以1循环/秒进行高低态互补切换、2次读/秒运行3分钟；对应高低权重的DPI积分电荷分布没有重叠，只有高态读出显著后突触电流。",
+      "claim_type": "compact_device_circuit_simulation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Spectre接口与VCM紧凑器件联合仿真",
+          "design": "循环切换差分两器件并积分读出后突触电流。",
+          "comparator": "模型高态与低态",
+          "measure": "DPI突触电荷分布及高低态分离",
+          "unit_of_analysis": "同一差分模拟突触的循环读出",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "循环间变异由紧凑模型生成；不是实际器件样本。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "Results: VCM model simulations",
+            "figure": "Figure 5a,b",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "运行时长和循环/读取协议说明",
+          "design": "norm_bias=200nA，3min，1cycle/s，2reads/s。",
+          "comparator": null,
+          "measure": "仿真运行协议",
+          "unit_of_analysis": "一模拟突触运行",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "不把从时长算出的次数冒充文中直接报告的独立n。"
+          ],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "Methods: Memristive device simulations",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "模型内二值读出对所模拟循环变异保持分离。",
+        "boundary": "仅一种紧凑模型和配置；无真实器件老化、断电保持或温度实验。",
+        "negative_result": null,
+        "non_inference": "不等于真实器件零错误概率或长期可靠性验证。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "模型器件循环变异是否使差分读出高低态电荷分布重叠？"
+      ],
+      "shared_evidence_with": [
+        "C9",
+        "C10"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "text_only",
+          "not_scientifically_verified",
+          "device_model_simulation_not_integration"
+        ]
+      }
+    },
+    {
+      "id": "C13",
+      "statement": "TEXEL每塑性突触的控制器设计读写互斥，并在同时出现命令时优先完成读操作、随后执行写脉冲，以避免共用端口的读写冲突。",
+      "claim_type": "proposed_read_write_arbitration",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "突触级互斥控制逻辑说明",
+          "design": "读与写共用器件端口，读优先排程。",
+          "comparator": "同时读写命令",
+          "measure": "访问顺序和互斥",
+          "unit_of_analysis": "单突触控制器",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "详细波形/控制图引用未提供的Supplementary Fig. S3。"
+          ],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "Methods: Memristive device integration",
+            "figure": "Figure 8b",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "明确给出在线学习访问冲突的处理策略。",
+        "boundary": "结果开头称接口读写实验验证，但所供正文未包含完整互斥波形或阵列并发数据。",
+        "negative_result": null,
+        "non_inference": "不把设计规则当作无冲突并发读写的实物证明。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "读写共端器件怎样在事件学习中处理并发访问？"
+      ],
+      "shared_evidence_with": [
+        "C9"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "text_only",
+          "not_scientifically_verified",
+          "device_model_simulation_not_integration"
+        ]
+      }
+    },
+    {
+      "id": "C14",
+      "statement": "对尚未集成忆阻器的TEXEL CMOS芯片，在神经元不发放且突触未受刺激的静态条件下测得总静态功耗27.4 μW；供电测量将数字、模拟和padframe贡献分开。",
+      "claim_type": "measured_silicon_static_power_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "femtoampere SMU供电功耗测量",
+          "design": "分别测芯片三组隔离供电。",
+          "comparator": null,
+          "measure": "静态功耗27.4μW",
+          "unit_of_analysis": "一个CMOS芯片的供电测量",
+          "sample_size_as_reported": null,
+          "uncertainty": "图6误差条为测量不确定性；正文未给27.4μW的数值不确定性",
+          "assumptions": [
+            "不含未来忆阻器读写和切换能量。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "Results: Power measurements",
+            "figure": "Figure 6g",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "静态测试状态图注",
+          "design": "神经元inactive、突触unstimulated。",
+          "comparator": null,
+          "measure": "静态状态条件",
+          "unit_of_analysis": "同一静态功耗测试",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Results: Power measurements",
+            "figure": "Figure 6g",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "给出静息CMOS芯片静态功耗。",
+        "boundary": "非学习、任务或完整系统的平均功耗；分块精确比例只在未提供像素中。",
+        "negative_result": null,
+        "non_inference": "不能当作集成忆阻器后全系统功耗或与其他任务均值直接相比。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "未刺激TEXEL CMOS芯片的静态功耗是多少？"
+      ],
+      "shared_evidence_with": [
+        "C15"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "text_only",
+          "not_scientifically_verified",
+          "measured_cmos_only"
+        ]
+      }
+    },
+    {
+      "id": "C15",
+      "statement": "表2将TEXEL神经元事件能耗列为25.9 pJ、80 Hz条件；本篇功耗测量来自未集成忆阻器的CMOS芯片，神经发放动态测试关闭学习电路，且模拟/数字/padframe供电分别报告。",
+      "claim_type": "source_reported_silicon_energy_metric",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "所报告神经事件能耗指标",
+          "design": "在80Hz条件报告25.9pJ。",
+          "comparator": null,
+          "measure": "每神经事件能耗",
+          "unit_of_analysis": "芯片事件功耗测量",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "表2列标题将Energy/spike与NeuOp并列；不把它与外部pJ/MAC混为同一单位。"
+          ],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "Table 2: silicon-verified chip comparison",
+            "figure": "Table 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "动态供电功耗与发放率扫描条件",
+          "design": "增加所有神经元DC偏置以调节全局发放，学习关闭。",
+          "comparator": null,
+          "measure": "功耗/事件能量随发放率的测量",
+          "unit_of_analysis": "同一芯片供电测试",
+          "sample_size_as_reported": null,
+          "uncertainty": "图6误差条为测量不确定性，正文无该表值数值误差",
+          "assumptions": [
+            "忆阻器未集成，因此没有器件能耗。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "Results: Power measurements",
+            "figure": "Figure 6a–d",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "保留作者在80Hz列出的事件能耗。",
+        "boundary": "表2未在文本明确25.9pJ涵盖哪些隔离供电；图6d专指模拟供电。",
+        "negative_result": null,
+        "non_inference": "不称完整芯片/系统每事件能耗，也不推导对其他芯片的倍数节能。",
+        "unresolved": "25.9pJ表值的隔离供电归属未在所供正文明确。",
+        "unresolved_attribution": "表2页10与图6页8仅给分供电描述；需要图像/原始测量细节确认。"
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "TEXEL的每事件能耗指标需要哪些工作状态与供电范围说明？"
+      ],
+      "shared_evidence_with": [
+        "C14"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "text_only",
+          "not_scientifically_verified",
+          "measured_cmos_only",
+          "energy_metric_supply_scope_unclear"
+        ]
+      }
+    },
+    {
+      "id": "C16",
+      "statement": "在TEXEL全CMOS片上学习演示中，芯片外生成并打包2000维稀疏块码的车辆/颜色集合向量，映射到两组各40个神经元、每个使用50突触；教师诱发突触后脉冲与模式输入配对的一次学习使部分初始低态权重变为高态。",
+      "claim_type": "measured_on_chip_learning_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "教师驱动的一次本地学习和前后权重矩阵读出",
+          "design": "原子向量L=20每块1个1；集合生成和bundling在芯片外完成。",
+          "comparator": "学习前全低权重矩阵",
+          "measure": "输入模式相关权重增强",
+          "unit_of_analysis": "一个网络学习前后读出",
+          "sample_size_as_reported": "80神经元，两组40；2000维编码是表征维度，不是独立试验n",
+          "uncertainty": null,
+          "assumptions": [
+            "每个1映射单个突触前事件；教师由静态兴奋突触提供。",
+            "忆阻器未集成，权重在CMOS中更新存储。"
+          ],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "Methods: On-chip spiking neural network",
+            "figure": "Figure 7b–e",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "展示该集合模式的片上一次学习与权重改变。",
+        "boundary": "未报告多个独立网络/学习重复、容量曲线或训练成功率。",
+        "negative_result": null,
+        "non_inference": "不称2000维VSA生成/打包都在芯片上实现或忆阻器完成学习。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "learning-memory",
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "本地STDP能否在一次教师配对后写入稀疏集合模式？"
+      ],
+      "shared_evidence_with": [
+        "C17"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "text_only",
+          "not_scientifically_verified",
+          "measured_cmos_only"
+        ]
+      }
+    },
+    {
+      "id": "C17",
+      "statement": "在上述TEXEL集合网络学习后关闭可塑性，再提交已存车辆/颜色的原子向量，对应40神经元类别群产生响应；提交不属任一已存集合的查询时未产生响应，支持所示二集合成员查询。",
+      "claim_type": "measured_on_chip_membership_inference",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "学习后冻结权重的集合查询",
+          "design": "把单个原子向量同时呈现给两群并记录群体发放。",
+          "comparator": "另一类别及不在两集合中的对象",
+          "measure": "类别群响应和未存查询不响应",
+          "unit_of_analysis": "与C16相同的已学习网络及查询向量",
+          "sample_size_as_reported": "80神经元网络；未报告独立重复n",
+          "uncertainty": null,
+          "assumptions": [
+            "输入向量编码、随机生成与集合打包在芯片外。",
+            "学习后关闭可塑性。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "Results: On-chip spiking neural network",
+            "figure": "Figure 7f–i",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所示模式支持类别集合成员的区分。",
+        "boundary": "无误差率、对大词汇库的容量测试或跨随机向量统计。",
+        "negative_result": "所示不属任何已存集合的查询没有网络响应。",
+        "non_inference": "不证明通用语义/类比推理、独立动物记忆机制或复杂组合任务。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "learning-memory",
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "冻结后的片上集合记忆能否选择性响应成员而拒绝未存对象？"
+      ],
+      "shared_evidence_with": [
+        "C16"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "text_only",
+          "not_scientifically_verified",
+          "measured_cmos_only"
+        ]
+      }
+    },
+    {
+      "id": "C18",
+      "statement": "作者将TEXEL定位为兼容性研究平台而非密度最优加速器：通用电平转换、差分正常化和调试访问带来随突触数增长的面积开销，未来选择特定器件后可删除冗余接口；表2列其核心44.98 mm²、含I/O总面积67.5 mm²。",
+      "claim_type": "architecture_tradeoff_interpretation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "通用接口的面积开销解释",
+          "design": "分析每突触接口和多器件调试能力的设计负担。",
+          "comparator": "针对单一器件优化的未来设计",
+          "measure": "接口面积来源与密度/灵活性折中",
+          "unit_of_analysis": "芯片版图架构",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "没有移除接口的匹配硅设计对照。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "Discussion",
+            "figure": "Table 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "版图面积报告",
+          "design": "列出核心和总面积。",
+          "comparator": null,
+          "measure": "44.98mm²核心、67.5mm²总面积",
+          "unit_of_analysis": "TEXEL版图",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "Table 2: chip comparison",
+            "figure": "Table 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "给出为何此平台优先兼容性而牺牲面积效率的解释。",
+        "boundary": "跨表芯片的工艺、神经元、任务与MAC/事件指标不同。",
+        "negative_result": null,
+        "non_inference": "不证明未来改版的密度/功耗改进已实现或TEXEL在全部指标优于同类芯片。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "通用器件接入平台在灵活性与面积效率之间如何取舍？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "text_only",
+          "not_scientifically_verified"
+        ]
+      }
+    }
+  ],
+  "reading_summary": "完整评估14页后保留18项候选命题，覆盖CMOS制造与规模、神经响应、片上学习、差分器件接口和仿真兼容性、静态/表列事件功耗、一次学习与集合查询，以及面积折中。忆阻器未实际集成；VCM无重叠只在模型中，完整补充材料未提供。27.4μW为静态CMOS功耗，25.9pJ@80Hz的供电覆盖范围需人工确认；VSA仅有限二集合演示，向量生成/打包在片外。所有记录为候选来源忠实提取，不保证科学真实性。",
+  "shared_evidence": [
+    {
+      "claim_id": "C5",
+      "with": [
+        "C6",
+        "C7",
+        "C8"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C5",
+        "C7",
+        "C8"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C5",
+        "C6",
+        "C8"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C5",
+        "C6",
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C10",
+        "C11",
+        "C12",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "with": [
+        "C9",
+        "C11",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "with": [
+        "C9",
+        "C10"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "with": [
+        "C9",
+        "C10"
+      ]
+    },
+    {
+      "claim_id": "C13",
+      "with": [
+        "C9"
+      ]
+    },
+    {
+      "claim_id": "C14",
+      "with": [
+        "C15"
+      ]
+    },
+    {
+      "claim_id": "C15",
+      "with": [
+        "C14"
+      ]
+    },
+    {
+      "claim_id": "C16",
+      "with": [
+        "C17"
+      ]
+    },
+    {
+      "claim_id": "C17",
+      "with": [
+        "C16"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [
+      {
+        "claim_id": "C1",
+        "pdf_page": 3,
+        "section": "Results: TEXEL chip",
+        "figure": "Figure 1",
+        "equation": null,
+        "page_exists": true,
+        "quote": null,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "scope": "第二遍仅核对所供文本与图注；不含图像核查或科学复现。"
+      },
+      {
+        "claim_id": "C1",
+        "pdf_page": 10,
+        "section": "Methods: Synaptic circuits",
+        "figure": "Table 2; Figure 1b",
+        "equation": null,
+        "page_exists": true,
+        "quote": null,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "scope": "第二遍仅核对所供文本与图注；不含图像核查或科学复现。"
+      },
+      {
+        "claim_id": "C2",
+        "pdf_page": 2,
+        "section": "Results: Neural circuits",
+        "figure": "Figure 2a",
+        "equation": null,
+        "page_exists": true,
+        "quote": null,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "scope": "第二遍仅核对所供文本与图注；不含图像核查或科学复现。"
+      },
+      {
+        "claim_id": "C3",
+        "pdf_page": 3,
+        "section": "Results: Neural circuits",
+        "figure": "Figure 2b,c",
+        "equation": null,
+        "page_exists": true,
+        "quote": null,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "scope": "第二遍仅核对所供文本与图注；不含图像核查或科学复现。"
+      },
+      {
+        "claim_id": "C4",
+        "pdf_page": 4,
+        "section": "Results: Neural circuits",
+        "figure": "Figure 2d",
+        "equation": null,
+        "page_exists": true,
+        "quote": null,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "scope": "第二遍仅核对所供文本与图注；不含图像核查或科学复现。"
+      },
+      {
+        "claim_id": "C5",
+        "pdf_page": 10,
+        "section": "Methods: Learning circuits",
+        "figure": "Figure 3e",
+        "equation": null,
+        "page_exists": true,
+        "quote": null,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "scope": "第二遍仅核对所供文本与图注；不含图像核查或科学复现。"
+      },
+      {
+        "claim_id": "C5",
+        "pdf_page": 11,
+        "section": "Methods: Learning circuits",
+        "figure": null,
+        "equation": null,
+        "page_exists": true,
+        "quote": null,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "scope": "第二遍仅核对所供文本与图注；不含图像核查或科学复现。"
+      },
+      {
+        "claim_id": "C6",
+        "pdf_page": 6,
+        "section": "Results: Learning circuits",
+        "figure": "Figure 3a",
+        "equation": null,
+        "page_exists": true,
+        "quote": null,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "scope": "第二遍仅核对所供文本与图注；不含图像核查或科学复现。"
+      },
+      {
+        "claim_id": "C7",
+        "pdf_page": 6,
+        "section": "Results: Learning circuits",
+        "figure": "Figure 3b,c",
+        "equation": null,
+        "page_exists": true,
+        "quote": null,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "scope": "第二遍仅核对所供文本与图注；不含图像核查或科学复现。"
+      },
+      {
+        "claim_id": "C8",
+        "pdf_page": 6,
+        "section": "Results: Learning circuits",
+        "figure": "Figure 3d",
+        "equation": null,
+        "page_exists": true,
+        "quote": null,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "scope": "第二遍仅核对所供文本与图注；不含图像核查或科学复现。"
+      },
+      {
+        "claim_id": "C9",
+        "pdf_page": 11,
+        "section": "Methods: Memristive device integration",
+        "figure": "Figure 8a,b,c",
+        "equation": null,
+        "page_exists": true,
+        "quote": null,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "scope": "第二遍仅核对所供文本与图注；不含图像核查或科学复现。"
+      },
+      {
+        "claim_id": "C9",
+        "pdf_page": 8,
+        "section": "Discussion",
+        "figure": null,
+        "equation": null,
+        "page_exists": true,
+        "quote": null,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "scope": "第二遍仅核对所供文本与图注；不含图像核查或科学复现。"
+      },
+      {
+        "claim_id": "C10",
+        "pdf_page": 6,
+        "section": "Results: Memristive device interfacing circuits",
+        "figure": "Figure 4a,b",
+        "equation": null,
+        "page_exists": true,
+        "quote": null,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "scope": "第二遍仅核对所供文本与图注；不含图像核查或科学复现。"
+      },
+      {
+        "claim_id": "C11",
+        "pdf_page": 7,
+        "section": "Results: Memristive device requirements",
+        "figure": "Table 1",
+        "equation": null,
+        "page_exists": true,
+        "quote": null,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "scope": "第二遍仅核对所供文本与图注；不含图像核查或科学复现。"
+      },
+      {
+        "claim_id": "C12",
+        "pdf_page": 7,
+        "section": "Results: VCM model simulations",
+        "figure": "Figure 5a,b",
+        "equation": null,
+        "page_exists": true,
+        "quote": null,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "scope": "第二遍仅核对所供文本与图注；不含图像核查或科学复现。"
+      },
+      {
+        "claim_id": "C12",
+        "pdf_page": 12,
+        "section": "Methods: Memristive device simulations",
+        "figure": null,
+        "equation": null,
+        "page_exists": true,
+        "quote": null,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "scope": "第二遍仅核对所供文本与图注；不含图像核查或科学复现。"
+      },
+      {
+        "claim_id": "C13",
+        "pdf_page": 11,
+        "section": "Methods: Memristive device integration",
+        "figure": "Figure 8b",
+        "equation": null,
+        "page_exists": true,
+        "quote": null,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "scope": "第二遍仅核对所供文本与图注；不含图像核查或科学复现。"
+      },
+      {
+        "claim_id": "C14",
+        "pdf_page": 7,
+        "section": "Results: Power measurements",
+        "figure": "Figure 6g",
+        "equation": null,
+        "page_exists": true,
+        "quote": null,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "scope": "第二遍仅核对所供文本与图注；不含图像核查或科学复现。"
+      },
+      {
+        "claim_id": "C14",
+        "pdf_page": 8,
+        "section": "Results: Power measurements",
+        "figure": "Figure 6g",
+        "equation": null,
+        "page_exists": true,
+        "quote": null,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "scope": "第二遍仅核对所供文本与图注；不含图像核查或科学复现。"
+      },
+      {
+        "claim_id": "C15",
+        "pdf_page": 10,
+        "section": "Table 2: silicon-verified chip comparison",
+        "figure": "Table 2",
+        "equation": null,
+        "page_exists": true,
+        "quote": null,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "scope": "第二遍仅核对所供文本与图注；不含图像核查或科学复现。"
+      },
+      {
+        "claim_id": "C15",
+        "pdf_page": 7,
+        "section": "Results: Power measurements",
+        "figure": "Figure 6a–d",
+        "equation": null,
+        "page_exists": true,
+        "quote": null,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "scope": "第二遍仅核对所供文本与图注；不含图像核查或科学复现。"
+      },
+      {
+        "claim_id": "C16",
+        "pdf_page": 12,
+        "section": "Methods: On-chip spiking neural network",
+        "figure": "Figure 7b–e",
+        "equation": null,
+        "page_exists": true,
+        "quote": null,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "scope": "第二遍仅核对所供文本与图注；不含图像核查或科学复现。"
+      },
+      {
+        "claim_id": "C17",
+        "pdf_page": 9,
+        "section": "Results: On-chip spiking neural network",
+        "figure": "Figure 7f–i",
+        "equation": null,
+        "page_exists": true,
+        "quote": null,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "scope": "第二遍仅核对所供文本与图注；不含图像核查或科学复现。"
+      },
+      {
+        "claim_id": "C18",
+        "pdf_page": 9,
+        "section": "Discussion",
+        "figure": "Table 2",
+        "equation": null,
+        "page_exists": true,
+        "quote": null,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "scope": "第二遍仅核对所供文本与图注；不含图像核查或科学复现。"
+      },
+      {
+        "claim_id": "C18",
+        "pdf_page": 10,
+        "section": "Table 2: chip comparison",
+        "figure": "Table 2",
+        "equation": null,
+        "page_exists": true,
+        "quote": null,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "scope": "第二遍仅核对所供文本与图注；不含图像核查或科学复现。"
+      }
+    ],
+    "model_findings": [
+      {
+        "claim_id": null,
+        "issue": "器件未集成却表2列器件数量/比较，易误认为完整混合硅验证。",
+        "pdf_page": 2,
+        "resolved": true,
+        "suggested_correction": "表列约19k为接口容量，实测仅CMOS，器件结果标仿真。"
+      },
+      {
+        "claim_id": "C7",
+        "issue": "STDP正文in-silico与图3Silicon measurements描述有术语差异。",
+        "pdf_page": 6,
+        "resolved": false,
+        "suggested_correction": "以明确图注和结果开头保留硅测标签，人工确认原始实验方法。"
+      },
+      {
+        "claim_id": "C11",
+        "issue": "50%兼容阈值不是置信水平；二维模拟给联合条件而非任意极值组合保证。",
+        "pdf_page": 7,
+        "resolved": true,
+        "suggested_correction": "保留读协议与联合约束，不做统计或矩形范围外推。"
+      },
+      {
+        "claim_id": "C15",
+        "issue": "表2的25.9pJ供电覆盖范围未在所供文字明确。",
+        "pdf_page": 10,
+        "resolved": false,
+        "suggested_correction": "不作为完整芯片事件能量或计算节能倍数。"
+      },
+      {
+        "claim_id": null,
+        "issue": "补充图/表承载读写控制、模式、布局及更多学习信息，正文不足以独立核查全部。",
+        "pdf_page": 11,
+        "resolved": false,
+        "suggested_correction": "相关实测细节暂缓，不标记补充材料已读。"
+      },
+      {
+        "claim_id": "C17",
+        "issue": "有限成员查询不等于通用语义推理，VSA生成和打包也在片外。",
+        "pdf_page": 12,
+        "resolved": true,
+        "suggested_correction": "限定任务、共享网络和片外步骤。"
+      },
+      {
+        "claim_id": null,
+        "issue": "图像和原始数据缺失，重复数/模型循环的独立性与不确定性不完整。",
+        "pdf_page": 8,
+        "resolved": false,
+        "suggested_correction": "保留人工审核，不能报告科学复现。"
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T07:17:46.107Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "7dd326aa5acdbaacc79fc559b6cc6c6bccaa3b52bf82e231f174246debbeeb1c",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

@@ -1,0 +1,162 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>A swap-adversarial framework for improving domain generalization in electrocorticography-based Parkinson&#x27;s disease classification</title><style>body{max-width:940px;margin:40px auto;padding:0 24px;background:#fffdf7;color:#12372f;font:16px/1.8 Georgia,serif}h1{font-size:26px;line-height:1.4}h2{font-size:20px;line-height:1.5}h3{font-size:16px}article{padding:26px 0;border-top:1px solid #bec4b8}small{color:#68766e}dl{display:grid;grid-template-columns:120px 1fr;gap:8px 20px}dt{font-weight:bold}dd{margin:0}li{padding:8px 0}p,dd{overflow-wrap:anywhere}.note{background:#eef2e2;padding:14px;border-left:3px solid #738968}summary{cursor:pointer}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.7 monospace}@media(max-width:600px){body{margin:24px auto;padding:0 18px}dl{grid-template-columns:1fr;gap:3px}dd{margin-bottom:12px}}@media print{body{margin:0;background:white}details{display:block}}</style><link rel="stylesheet" href="../../commons-v02.css?v=20261020-1"><link rel="stylesheet" href="../../examples.css?v=20260928-2"><link rel="stylesheet" href="../../site.css?v=20261020-1"><script defer src="../../site.js?v=20261020-1"></script><script defer src="../../report-ui.js?v=20261020-1"></script></head><body class="portal-page report-page" data-cc-report-shell="1" data-page="library" data-site-prefix="../../" data-library-paper="paper-W7128745269" data-report-language="zh" data-claim-records="{&quot;C1&quot;:&quot;structured-paper-W7128745269-1&quot;,&quot;C2&quot;:&quot;structured-paper-W7128745269-2&quot;,&quot;C3&quot;:&quot;structured-paper-W7128745269-3&quot;,&quot;C4&quot;:&quot;structured-paper-W7128745269-4&quot;,&quot;C5&quot;:&quot;structured-paper-W7128745269-5&quot;,&quot;C6&quot;:&quot;structured-paper-W7128745269-6&quot;,&quot;C7&quot;:&quot;structured-paper-W7128745269-7&quot;,&quot;C8&quot;:&quot;structured-paper-W7128745269-8&quot;,&quot;C9&quot;:&quot;structured-paper-W7128745269-9&quot;,&quot;C10&quot;:&quot;structured-paper-W7128745269-10&quot;,&quot;C11&quot;:&quot;structured-paper-W7128745269-11&quot;,&quot;C12&quot;:&quot;structured-paper-W7128745269-12&quot;}"><header></header><main id="report-content"><div id="report-tools"></div><small>CLAIM COMMONS / 阅读报告</small><h1>A swap-adversarial framework for improving domain generalization in electrocorticography-based Parkinson&#x27;s disease classification</h1><p class="note">AI 文本提取候选，尚待人工核对。图像像素未读取；PDF 页码指文件中的页序。</p><p>SAF在有限鼠ECoG刺激前后分类和人类EEG PD/HC跨域任务改善部分指标。保留非健康鼠标签、不同任务非直接跨模态、单组件退化、precision例外、n层级与目标/熵符号及预处理矛盾。</p><a href="https://arxiv.org/pdf/2602.10528" rel="noreferrer">查看所读原文版本 ↗</a><details><summary>贡献清单与处理决定</summary><ul><li><b>MOCOP将既有6-OHDA大鼠记录构造成刺激前后ECoG二分类，采用15共同通道与非重叠6秒窗口，提出公开benchmark。</b><br>include · 可独立判断的贡献及边界</li><li><b>SAF把预处理、同类别对应通道跨主体交换和DAL结合，ISBCS每通道内时间顺序保留但替换原样本、不增加数据数量。</b><br>include · 可独立判断的贡献及边界</li><li><b>DAL使用domain classifier/GRL及预测熵代理，以降低主体可识别性而非直接严格估计真实MI。</b><br>include · 可独立判断的贡献及边界</li><li><b>无线/有线ECoG和UI/UNM EEG的PSD及t-SNE显示录制域、主体及类别的分布差异。</b><br>include · 可独立判断的贡献及边界</li><li><b>同录制域LOSO中，SAF报告无线macroaccuracy69.20±9.23%、有线58.32±3.28%，高于表列基线。</b><br>include · 可独立判断的贡献及边界</li><li><b>无线→有线和有线→无线SAF macroaccuracy分别64.18±4.64%和69.90±6.67%，表中accuracy/recall/F1最高，但无线→有线precision不是最高。</b><br>include · 可独立判断的贡献及边界</li><li><b>ECoG比较中作者报告96个方案×指标×基线检验有78个p&lt;.05，但检验统计的是重复训练而非独立动物队列。</b><br>include · 可独立判断的贡献及边界</li><li><b>ISBCS+DAL组合在四ECoG设置的表6指标最好，但单组件效果取决于域，单独DAL在无线LOSO与无线→有线会退步。</b><br>include · 可独立判断的贡献及边界</li><li><b>交换后的feature t-SNE更混合，作者报告主体间/内F统计由24.48降到0.99。</b><br>include · 可独立判断的贡献及边界</li><li><b>人类EEG跨数据集任务中，UI→UNM和UNM→UI SAF macroaccuracy为73.34±7.81%与82.19±4.92%，F1为72.36±9.17%与82.15±4.95%。</b><br>include · 可独立判断的贡献及边界</li><li><b>EEG比较48项中47项在作者Wilcoxon检验p&lt;.05，迁移方向UNM→UI较好但可同时受样本规模与目标可分性影响。</b><br>include · 可独立判断的贡献及边界</li><li><b>作者提出把SAF扩到其他BCI任务和backbone，并自动学习λ参数；目前仅所设EEGNet和两类病相关任务评估。</b><br>include · 可独立判断的贡献及边界</li><li><b>预处理ASR整段录制后切窗；对heldout recording是否校准须声明，不能自动断言未访问target任何数据。</b><br>unresolved · 无label访问不等于zero目标信息</li><li><b>λ由validation grid选择、p=.5，Fig4双方向参数扫描未报告独立validation/test区别。</b><br>boundary · 不造自动最优或独立generalization theorem</li><li><b>数据/code末页明确Zenodo/GitHub，但前文upon publication不一致，仅报告来源状态未访问外部。</b><br>unresolved · 不修改共享manifest</li><li><b>cross-session抽象声称未见独立split/results；参考/原动物study不是新实验。</b><br>unresolved · 未报告不当阴性</li></ul></details><article><small>C1 / 直接结果 · electrophysiological_generalization</small><h2>MOCOP将既有6-OHDA大鼠记录构造成刺激前后ECoG二分类，采用15共同通道与非重叠6秒窗口，提出公开benchmark。</h2><h3>Evidence</h3><p>既有实验数据二次标准化</p><dl><dt>设计 / 对照</dt><dd>11诱导、7记录、1噪声排除、6保留；3wireless7天/3wired12天；刺激前 vs连续刺激一周后的神经状态</dd><dt>独立单位与 n</dt><dd>动物/人类参与者与训练seed分层；窗口非独立个体；6只大鼠；不是窗口数或10seed只动物</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 14 · Table1</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>MOCOP将既有6-OHDA大鼠记录构造成刺激前后ECoG二分类，采用15共同通道与非重叠6秒窗口，提出公开benchmark。</dd><dt>适用边界</dt><dd>所有保留鼠为病变模型；刺激后“normal”不是健康对照或疾病治愈。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不是人类ECoG早期PD诊断、治疗必要性或新动物实验独立复现。</dd><dt>未解决</dt><dd>一周无线记录与一周后标签时间划分不充分；Table1 Rat4 78/114与“约30%更多”口径不同。</dd></dl><h3>相关问题</h3><ul><li>跨主体/采集域增广是否改善有限电生理数据分类而非证明疾病机制？</li></ul></article><article><small>C2 / 解释 · electrophysiological_generalization</small><h2>SAF把预处理、同类别对应通道跨主体交换和DAL结合，ISBCS每通道内时间顺序保留但替换原样本、不增加数据数量。</h2><h3>Evidence</h3><p>同类channel-wise增广</p><dl><dt>设计 / 对照</dt><dd>Bernoulli p=.5；每通道独立主体置换，仅source训练；原同主体样本</dd><dt>独立单位与 n</dt><dd>动物/人类参与者与训练seed分层；窗口非独立个体；训练source主体；不新增生物个体</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 11 · Eq2/Fig3</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>SAF把预处理、同类别对应通道跨主体交换和DAL结合，ISBCS每通道内时间顺序保留但替换原样本、不增加数据数量。</dd><dt>适用边界</dt><dd>对应index/脑区为假定功能对应；交换破坏原跨通道联合关系。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>“counterfactual”不是已识别因果反事实；同类标签不保证全部生物真实动态。</dd><dt>未解决</dt><dd>图谱24 rat corticopontine/25人类motor map不足直接确认每跨主体电极功能一致。</dd></dl><h3>相关问题</h3><ul><li>跨主体/采集域增广是否改善有限电生理数据分类而非证明疾病机制？</li></ul></article><article><small>C3 / 解释 · electrophysiological_generalization</small><h2>DAL使用domain classifier/GRL及预测熵代理，以降低主体可识别性而非直接严格估计真实MI。</h2><h3>Evidence</h3><p>对抗训练和条件熵代理</p><dl><dt>设计 / 对照</dt><dd>EEGNet；λMI/GRL由validation选择；task-only feature学习</dd><dt>独立单位与 n</dt><dd>动物/人类参与者与训练seed分层；窗口非独立个体；优化器运行，非新个体</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 12 · Eq4–8</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>DAL使用domain classifier/GRL及预测熵代理，以降低主体可识别性而非直接严格估计真实MI。</dd><dt>适用边界</dt><dd>领域分类器近似posterior、不平衡主体先验使uniform未必真posterior；减少domain可识别不证明保留全部临床特征。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>没有严格MI/唯一域不变性或泛化保证。</dd><dt>未解决</dt><dd>Eq7是正H且文字要maximize，Eq8正λ加到最小化loss却会minimize H，优化符号与目标不一致。</dd></dl><h3>相关问题</h3><ul><li>跨主体/采集域增广是否改善有限电生理数据分类而非证明疾病机制？</li></ul></article><article><small>C4 / 直接结果 · electrophysiological_generalization</small><h2>无线/有线ECoG和UI/UNM EEG的PSD及t-SNE显示录制域、主体及类别的分布差异。</h2><h3>Evidence</h3><p>PSD/t-SNE/silhouette/CV描述</p><dl><dt>设计 / 对照</dt><dd>无线有线采样硬件及不同动物；EEG机构/药物等；采集域/主体/类别</dd><dt>独立单位与 n</dt><dd>动物/人类参与者与训练seed分层；窗口非独立个体；6鼠；UI28人/UNM52人</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 16 · Fig5–12</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>无线/有线ECoG和UI/UNM EEG的PSD及t-SNE显示录制域、主体及类别的分布差异。</dd><dt>适用边界</dt><dd>硬件与不同动物无法拆开，t-SNE空间和窗口非独立观测。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不是疾病特异神经标志或治疗因果；视觉聚类不证明高维真实距离。</dd><dt>未解决</dt><dd>UNM极端PSD按IQR剔除，但是否仅描述或训练也排除及数量未明。</dd></dl><h3>相关问题</h3><ul><li>跨主体/采集域增广是否改善有限电生理数据分类而非证明疾病机制？</li></ul></article><article><small>C5 / 直接结果 · electrophysiological_generalization</small><h2>同录制域LOSO中，SAF报告无线macroaccuracy69.20±9.23%、有线58.32±3.28%，高于表列基线。</h2><h3>Evidence</h3><p>LOSO模型比较</p><dl><dt>设计 / 对照</dt><dd>每域3鼠，1测试2训练/validation；同预处理；EEGNet及五基线</dd><dt>独立单位与 n</dt><dd>动物/人类参与者与训练seed分层；窗口非独立个体；6鼠；10独立训练seeds</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 25 · Table5</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>同录制域LOSO中，SAF报告无线macroaccuracy69.20±9.23%、有线58.32±3.28%，高于表列基线。</dd><dt>适用边界</dt><dd>无线F1 65.18±12.38、有线48.02±4.58，仍较有限性能/高变异；seed不是新外部动物。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能作成熟诊断或预测所有动物/人的PD状态。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>跨主体/采集域增广是否改善有限电生理数据分类而非证明疾病机制？</li></ul></article><article><small>C6 / 直接结果 · electrophysiological_generalization</small><h2>无线→有线和有线→无线SAF macroaccuracy分别64.18±4.64%和69.90±6.67%，表中accuracy/recall/F1最高，但无线→有线precision不是最高。</h2><h3>Evidence</h3><p>两采集域迁移</p><dl><dt>设计 / 对照</dt><dd>source3鼠→另3鼠；15共同通道/downsample512Hz；多基线</dd><dt>独立单位与 n</dt><dd>动物/人类参与者与训练seed分层；窗口非独立个体；6鼠及10训练seeds</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 25 · Table5</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>无线→有线和有线→无线SAF macroaccuracy分别64.18±4.64%和69.90±6.67%，表中accuracy/recall/F1最高，但无线→有线precision不是最高。</dd><dt>适用边界</dt><dd>方向不对称，测试域与动物同时变化；没有ECoG→EEG直接模型转移。</dd><dt>实际负结果</dt><dd>无线→有线EEG-DG precision66.19高于SAF59.83；“all metrics优于所有”不成立。</dd><dt>不能推出</dt><dd>未报告 / 不适用</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>跨主体/采集域增广是否改善有限电生理数据分类而非证明疾病机制？</li></ul></article><article><small>C7 / 直接结果 · electrophysiological_generalization</small><h2>ECoG比较中作者报告96个方案×指标×基线检验有78个p&lt;.05，但检验统计的是重复训练而非独立动物队列。</h2><h3>Evidence</h3><p>Wilcoxon signed-rank</p><dl><dt>设计 / 对照</dt><dd>4设置×4metrics×6baselines；SAF与每基线</dd><dt>独立单位与 n</dt><dd>动物/人类参与者与训练seed分层；窗口非独立个体；10训练seeds；生物仅6鼠</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 26 · Significance summary</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>ECoG比较中作者报告96个方案×指标×基线检验有78个p&lt;.05，但检验统计的是重复训练而非独立动物队列。</dd><dt>适用边界</dt><dd>没有多重校正说明，指标共享预测，比较非独立。</dd><dt>实际负结果</dt><dd>18/96未显著，不能称所有比较稳定胜出。</dd><dt>不能推出</dt><dd>不将78项当独立复现。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>跨主体/采集域增广是否改善有限电生理数据分类而非证明疾病机制？</li></ul></article><article><small>C8 / 直接结果 · electrophysiological_generalization</small><h2>ISBCS+DAL组合在四ECoG设置的表6指标最好，但单组件效果取决于域，单独DAL在无线LOSO与无线→有线会退步。</h2><h3>Evidence</h3><p>组件增删</p><dl><dt>设计 / 对照</dt><dd>同EEGNet及预处理；DAL-only、ISBCS-only、baseline、组合</dd><dt>独立单位与 n</dt><dd>动物/人类参与者与训练seed分层；窗口非独立个体；6鼠；10seeds</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 26 · Table6</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>ISBCS+DAL组合在四ECoG设置的表6指标最好，但单组件效果取决于域，单独DAL在无线LOSO与无线→有线会退步。</dd><dt>适用边界</dt><dd>组合优势不唯一识别机制；联合调参条件未完全等同固定模块。</dd><dt>实际负结果</dt><dd>无线LOSO DAL53.72&lt;baseline57.89；无线→有线DAL50.00&lt;50.24；无线LOSO ISBCS F1 49.15&lt;baseline50.94。</dd><dt>不能推出</dt><dd>正文“either alone all settings improves”与表冲突。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>跨主体/采集域增广是否改善有限电生理数据分类而非证明疾病机制？</li></ul></article><article><small>C9 / 直接结果 · electrophysiological_generalization</small><h2>交换后的feature t-SNE更混合，作者报告主体间/内F统计由24.48降到0.99。</h2><h3>Evidence</h3><p>特征可视化及F描述</p><dl><dt>设计 / 对照</dt><dd>原数据 vs增广；subject separation</dd><dt>独立单位与 n</dt><dd>动物/人类参与者与训练seed分层；窗口非独立个体；主体/窗口单位及分析重复未充分给出</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 27 · Fig13</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>交换后的feature t-SNE更混合，作者报告主体间/内F统计由24.48降到0.99。</dd><dt>适用边界</dt><dd>F接近1、无df/p和embedding细节不证明主体信息完全消除；混合样本本来含多主体。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不是严格I(Z;S)=0或所有task信息保留证明。</dd><dt>未解决</dt><dd>是否F在t-SNE投影/原特征、如何配对混合主体标签未明确。</dd></dl><h3>相关问题</h3><ul><li>跨主体/采集域增广是否改善有限电生理数据分类而非证明疾病机制？</li></ul></article><article><small>C10 / 直接结果 · electrophysiological_generalization</small><h2>人类EEG跨数据集任务中，UI→UNM和UNM→UI SAF macroaccuracy为73.34±7.81%与82.19±4.92%，F1为72.36±9.17%与82.15±4.95%。</h2><h3>Evidence</h3><p>两现有dataset训练/测试</p><dl><dt>设计 / 对照</dt><dd>60共同电极；UI14PD14HC、UNM27PD25HC并含药物状态差异；同表六基线</dd><dt>独立单位与 n</dt><dd>动物/人类参与者与训练seed分层；窗口非独立个体；UI28及UNM52参与者；10trainingseeds</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 28 · Table7</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>人类EEG跨数据集任务中，UI→UNM和UNM→UI SAF macroaccuracy为73.34±7.81%与82.19±4.92%，F1为72.36±9.17%与82.15±4.95%。</dd><dt>适用边界</dt><dd>任务是PD/HC与大鼠刺激前后不同；代表软件方法复用而非物种/模态直接转移或临床前瞻。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不建立人类ECoG临床用途或早期无症状筛查。</dd><dt>未解决</dt><dd>重复药物记录及subject分割/窗口处理须明确；ASR在EEG的实际使用前后矛盾。</dd></dl><h3>相关问题</h3><ul><li>跨主体/采集域增广是否改善有限电生理数据分类而非证明疾病机制？</li></ul></article><article><small>C11 / 直接结果 · electrophysiological_generalization</small><h2>EEG比较48项中47项在作者Wilcoxon检验p&lt;.05，迁移方向UNM→UI较好但可同时受样本规模与目标可分性影响。</h2><h3>Evidence</h3><p>paired seed test</p><dl><dt>设计 / 对照</dt><dd>2方向×4metrics×6基线；baseline各模型</dd><dt>独立单位与 n</dt><dd>动物/人类参与者与训练seed分层；窗口非独立个体；80原始participants合计；10seeds共享数据</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 28 · EEG significance</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>EEG比较48项中47项在作者Wilcoxon检验p&lt;.05，迁移方向UNM→UI较好但可同时受样本规模与目标可分性影响。</dd><dt>适用边界</dt><dd>算法重复统计不能补充独立临床样本；无多重校正或前瞻external队列。</dd><dt>实际负结果</dt><dd>1/48不显著；方向原因并未通过样本数匹配消融独立识别。</dd><dt>不能推出</dt><dd>未报告 / 不适用</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>跨主体/采集域增广是否改善有限电生理数据分类而非证明疾病机制？</li></ul></article><article><small>C12 / 假说 / 预测 · electrophysiological_generalization</small><h2>作者提出把SAF扩到其他BCI任务和backbone，并自动学习λ参数；目前仅所设EEGNet和两类病相关任务评估。</h2><h3>Evidence</h3><p>未来扩展</p><dl><dt>设计 / 对照</dt><dd>emotion/其他neurological tasks、deep Transformers；未实际扩展模型</dd><dt>独立单位与 n</dt><dd>动物/人类参与者与训练seed分层；窗口非独立个体；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 29 · None</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>作者提出的可检验假说。</dd><dt>适用边界</dt><dd>超参数敏感性及架构适用仍待试验，不能称通用统一所有神经信号框架。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>没有独立跨session结果或真实闭环临床设备评估。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>跨主体/采集域增广是否改善有限电生理数据分类而非证明疾病机制？</li></ul></article><details><summary>核对记录与来源信息</summary><pre>{
+  &quot;coverage&quot;: {
+    &quot;pdf_pages_read&quot;: [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39
+    ],
+    &quot;results_sections_seen&quot;: [
+      &quot;MOCOP construction&quot;,
+      &quot;EEG datasets&quot;,
+      &quot;ISBCS/DAL&quot;,
+      &quot;PSD/tSNE/CV distributions&quot;,
+      &quot;LOSO&quot;,
+      &quot;Wired/wireless transfer&quot;,
+      &quot;Ablations&quot;,
+      &quot;EEG cross-dataset&quot;,
+      &quot;Statistics/limitations&quot;
+    ],
+    &quot;missing_material&quot;: [
+      &quot;图像像素未读取&quot;,
+      &quot;跨session独立结果未报告&quot;,
+      &quot;完整split/ASR/MI实现细节未提供&quot;
+    ],
+    &quot;text_pass_complete&quot;: true,
+    &quot;notes&quot;: &quot;arXiv2602.10528v2 2026-06-30；39页13图7表65参考全评估；既有动物/人数据二次建模。&quot;,
+    &quot;reading_mode&quot;: &quot;text_only&quot;,
+    &quot;figure_images_read&quot;: false,
+    &quot;scientific_verification&quot;: false,
+    &quot;source_pdf_offline&quot;: false,
+    &quot;archived_page_text_used&quot;: false
+  },
+  &quot;audit&quot;: {
+    &quot;source_match_checks&quot;: [],
+    &quot;model_findings&quot;: [
+      {
+        &quot;claim_id&quot;: &quot;C1&quot;,
+        &quot;issue&quot;: &quot;刺激后仍为6-OHDA同鼠，称normal不等健康或PD治愈。&quot;,
+        &quot;pdf_page&quot;: 14,
+        &quot;suggested_correction&quot;: null,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C3&quot;,
+        &quot;issue&quot;: &quot;正entropy项与最小化loss方向矛盾，实际实现符号需澄清。&quot;,
+        &quot;pdf_page&quot;: 13,
+        &quot;suggested_correction&quot;: null,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C8&quot;,
+        &quot;issue&quot;: &quot;DAL-only两设置下降，ISBCS一F1也下降，正文全面改善不符。&quot;,
+        &quot;pdf_page&quot;: 26,
+        &quot;suggested_correction&quot;: &quot;保留实际负对照&quot;,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C10&quot;,
+        &quot;issue&quot;: &quot;18页EEG未用ASR，23页称两数据默认ASR，source-data处理矛盾。&quot;,
+        &quot;pdf_page&quot;: 23,
+        &quot;suggested_correction&quot;: null,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C7&quot;,
+        &quot;issue&quot;: &quot;大量Wilcoxon comparisons未说multiple校正；seeds不是动物/人独立n。&quot;,
+        &quot;pdf_page&quot;: 26,
+        &quot;suggested_correction&quot;: null,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C6&quot;,
+        &quot;issue&quot;: &quot;precision例外否定all metrics best及摘要all settings概括。&quot;,
+        &quot;pdf_page&quot;: 25,
+        &quot;suggested_correction&quot;: &quot;限定优势&quot;,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C9&quot;,
+        &quot;issue&quot;: &quot;F=.99不证明无主体信息，缺df/p及投影单位。&quot;,
+        &quot;pdf_page&quot;: 27,
+        &quot;suggested_correction&quot;: null,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;Table1 Rat4 114对78增长46.2%而文称30%；分割8:1:1与LOSO/source validation细节未完整。&quot;,
+        &quot;pdf_page&quot;: 15,
+        &quot;suggested_correction&quot;: null,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;GroupDRO错引10为另一rats论文；首次/跨session和数据公开版本叙述需保留未解决。&quot;,
+        &quot;pdf_page&quot;: 22,
+        &quot;suggested_correction&quot;: null,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;Source title differs in wording from indexed title: A swap-adversarial framework for improving domain generalization in electrocorticography-based Parkinson’s disease classification&quot;,
+        &quot;suggested_correction&quot;: &quot;Retain actual supplied-version identity; curator to reconcile metadata.&quot;,
+        &quot;pdf_page&quot;: 1,
+        &quot;resolved&quot;: false
+      }
+    ],
+    &quot;needs_human_review&quot;: true
+  },
+  &quot;source&quot;: {
+    &quot;filename&quot;: &quot;paper-W7128745269--A-swap-adversarial-framework-for-improving-domain-generalization-in-electrocorticography-based-.pdf&quot;,
+    &quot;sha256&quot;: &quot;7895b252d130c2db0fdd75abe00b9f753de1ac1a6305ee9bd36068992c63ec32&quot;,
+    &quot;source_url&quot;: &quot;https://arxiv.org/pdf/2602.10528&quot;,
+    &quot;pdf_page_count&quot;: 39
+  },
+  &quot;provenance&quot;: {
+    &quot;created_at&quot;: &quot;2026-10-07T12:16:38.315081Z&quot;,
+    &quot;workflow&quot;: &quot;claim-commons-pdf-v1&quot;,
+    &quot;prompt_version&quot;: &quot;claim-commons-chatgpt-pdf-2026-10-07.1&quot;,
+    &quot;backend&quot;: &quot;authorized_parallel_GPT&quot;,
+    &quot;model&quot;: &quot;inherited_account_GPT&quot;,
+    &quot;provider_api_key_used&quot;: false,
+    &quot;source_sha256&quot;: &quot;7895b252d130c2db0fdd75abe00b9f753de1ac1a6305ee9bd36068992c63ec32&quot;,
+    &quot;source_audit_complete&quot;: true,
+    &quot;review_status&quot;: &quot;candidate&quot;,
+    &quot;database_updated&quot;: false
+  }
+}</pre></details></main><footer></footer></body></html>

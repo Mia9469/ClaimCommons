@@ -1,0 +1,494 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "A robust sound perception model suitable for neuromorphic implementation",
+    "authors": [
+      "Martin Coath",
+      "Sadique Sheik",
+      "Elisabetta Chicca",
+      "Giacomo Indiveri",
+      "Susan L. Denham",
+      "Thomas Wennekers"
+    ],
+    "doi": "10.3389/fnins.2013.00278",
+    "publication_year": 2014,
+    "venue": "Frontiers in Neuroscience",
+    "url": "https://doi.org/10.3389/fnins.2013.00278"
+  },
+  "source": {
+    "filename": "paper-W2000398997.pdf",
+    "sha256": "56bdca2418d265c43c7cb6fe6319323a9d1b949eaff3d6e3b2673082c53f052e",
+    "source_url": "https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2013.00278/pdf",
+    "pdf_page_count": 10
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "results_sections_seen": [
+      "3.1 FM sweeps",
+      "3.2 Formant tracks",
+      "3.3 Predicted patterns of learning"
+    ],
+    "missing_material": [
+      "图像像素与原始硬件／模拟数据、代码未读取",
+      "被引用的先前论文及实验未独立重读"
+    ],
+    "text_pass_complete": true,
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "notes": [
+      "首次输出中间段截断后，补读PDF第5、6页。完整供给文本现已评估。"
+    ]
+  },
+  "contribution_inventory": [
+    {
+      "summary": "在32通道模拟／数字混合神经形态硬件网络中，经合成FM扫频暴露训练后，作者报告网络响应在所测OU噪声条件下仍携带扫频类别信息。",
+      "role": "result",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "按硬件响应、信息峰、软件表征、分类表现、解析预测和参数边界分别判断。"
+    },
+    {
+      "summary": "在图8的硬件扫频结果中，SSI的最大值常在、但并非总在训练扫频速度处；响应的信息峰不能直接当作响应幅度的调谐峰。",
+      "role": "result",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "按硬件响应、信息峰、软件表征、分类表现、解析预测和参数边界分别判断。"
+    },
+    {
+      "summary": "在软件模拟中，用七类英语词的简化共振峰轨迹训练／探测网络时，作者报告无噪声下“Two”和“Four”的训练类别SSI接近log₂7≈2.8 bit，并观察到响应也包含其他类别信息。",
+      "role": "result",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "按硬件响应、信息峰、软件表征、分类表现、解析预测和参数边界分别判断。"
+    },
+    {
+      "summary": "表1报告的软件关键词二分类AUC在展示的四个训练词、四种呈现速率与四组噪声条件中为0.76–0.98；即使存在噪声和时间变形，所报告值仍高于0.5。",
+      "role": "result",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "按硬件响应、信息峰、软件表征、分类表现、解析预测和参数边界分别判断。"
+    },
+    {
+      "summary": "作者用带距离依赖传播延迟和STDP时间偏移的刺激相关近似，计算理想化网络暴露于自然声学表示后的连接图案；与简单模式的硬件比较使用了既往Sheik等的结果。",
+      "role": "hypothesis",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "按硬件响应、信息峰、软件表征、分类表现、解析预测和参数边界分别判断。"
+    },
+    {
+      "summary": "对Weddell海豹叫声的分析预测中，改变通道传播时间参数ν会改变被表示的动态相关；作者描述最长ν条件捕获很少动态特征，且所需延迟范围超出现有硬件。",
+      "role": "hypothesis",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "按硬件响应、信息峰、软件表征、分类表现、解析预测和参数边界分别判断。"
+    },
+    {
+      "summary": "SSI定义来自已有信息论方法；不是本文发明的新度量。",
+      "role": "background",
+      "source_pages": [
+        3,
+        4
+      ],
+      "decision": "exclude",
+      "reason": "本文贡献是将该度量应用于所研究的网络。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "在32通道模拟／数字混合神经形态硬件网络中，经合成FM扫频暴露训练后，作者报告网络响应在所测OU噪声条件下仍携带扫频类别信息。",
+      "claim_type": "hardware_measurement",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "记录B2硅神经元输出并计算刺激特异性信息SSI。",
+          "design": "同一硬件设置由三块脉冲芯片及AER映射器构成；训练30次、3秒；随后按扫频速度和噪声条件探测。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "刺激呈现／输出响应；芯片数量不是独立系统重复数。",
+          "sample_size_as_reported": "10种扫频速度；每速度、每噪声条件100次探测。",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "3.1 FM sweeps",
+            "figure": "Fig. 8",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在所测合成刺激和噪声范围内观察到信息性响应。",
+        "boundary": "OU噪声参数σ为噪声标准差／注入电流幅度；最高实验条件σ=0.45；延迟由受限的硬件时间常数实现。",
+        "negative_result": null,
+        "non_inference": "不是自然语音硬件识别、跨设备泛化或生物听觉机制验证。",
+        "unresolved": "独立硬件重复、精确SSI数值及误差需要原始记录与图像核查。",
+        "unresolved_attribution": "提取者依据原文范围与未复核内容提出；不是新增实验。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "文字及图注核对；未读取图像像素，未重跑硬件或仿真。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "在图8的硬件扫频结果中，SSI的最大值常在、但并非总在训练扫频速度处；响应的信息峰不能直接当作响应幅度的调谐峰。",
+      "claim_type": "response_analysis",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "对相同硬件探测响应的SSI峰位置进行分析。",
+          "design": "比较暴露扫频速度与SSI最高位置。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "同C1的条件性响应数据。",
+          "sample_size_as_reported": "与C1共享探测数据，不新增独立重复。",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "3.1 FM sweeps",
+            "figure": "Fig. 8",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "区分信息性与响应最大值，保留部分条件峰位不重合的结果。",
+        "boundary": "限于图8所示训练／探测组合；未从像素重新提取峰位。",
+        "negative_result": "SSI最高位置并不在所有展示条件下对应训练速度。",
+        "non_inference": "不能推广为所有神经调谐曲线均有这种峰位关系。",
+        "unresolved": "哪些具体条件发生峰位偏离，需要原始图或数据。",
+        "unresolved_attribution": "提取者依据原文范围与未复核内容提出；不是新增实验。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [],
+      "shared_evidence_with": [
+        "C1"
+      ],
+      "review_notes": [
+        "文字及图注核对；未读取图像像素，未重跑硬件或仿真。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "在软件模拟中，用七类英语词的简化共振峰轨迹训练／探测网络时，作者报告无噪声下“Two”和“Four”的训练类别SSI接近log₂7≈2.8 bit，并观察到响应也包含其他类别信息。",
+      "claim_type": "software_simulation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "从网络B2输出计算SSI；软件延迟由排队结构实现。",
+          "design": "一个男性说话者每词三个样本；LPC提取前两个共振峰并压为32×25二值输入；探测时关闭学习、随机连续呈现。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "声音样本的简化表示及重复探测；不是独立说话者。",
+          "sample_size_as_reported": "7类×3个样本；每种刺激探测50次。",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "3.2 Formant tracks",
+            "figure": "Fig. 9",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所示无噪声条件中训练类别SSI接近理论上限，其他类别也有信息。",
+        "boundary": "模拟及简化的元音共振峰轨迹；训练叙述为20次重复（5秒），没有复核实现代码。",
+        "negative_result": null,
+        "non_inference": "不是完整原始语音、未知说话者或硬件实验的性能验证。",
+        "unresolved": "独立模拟初始化、精确SSI曲线值及跨说话者表现未得到本记录验证。",
+        "unresolved_attribution": "提取者依据原文范围与未复核内容提出；不是新增实验。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "文字及图注核对；未读取图像像素，未重跑硬件或仿真。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "表1报告的软件关键词二分类AUC在展示的四个训练词、四种呈现速率与四组噪声条件中为0.76–0.98；即使存在噪声和时间变形，所报告值仍高于0.5。",
+      "claim_type": "software_comparison",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "将暴露词作为目标类，按总输出脉冲数计算作者报告的ROC／AUC。",
+          "design": "呈现速率为正常每秒4词的60%、100%、150%、200%；表中给出And、Of、Yes、Four的结果。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "模拟探测条件／刺激样本；与C3共享来源及网络协议。",
+          "sample_size_as_reported": "一个说话者，7词各3个样本；每样本探测50次；表展示4类的64个条件格。",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "3.2 Formant tracks",
+            "figure": "Table 1; Fig. 10",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "保留表中AUC范围及条件变化下的分类表现。",
+        "boundary": "作者报告值，未复核ROC代码；正文按σ=0–0.45定义噪声比，而表的σ标记含百分号。",
+        "negative_result": "所示噪声增加伴随一些条件下AUC下降，例如And正常速率0.97降至0.86。",
+        "non_inference": "不证明跨说话者、真实声学环境或现有硬件已达相同AUC。",
+        "unresolved": "ROC定义段混用FPR/TPR和P/N文字释义；实际计算口径与表中噪声单位需核查。",
+        "unresolved_attribution": "提取者依据原文范围与未复核内容提出；不是新增实验。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [],
+      "shared_evidence_with": [
+        "C3"
+      ],
+      "review_notes": [
+        "文字及图注核对；未读取图像像素，未重跑硬件或仿真。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "作者用带距离依赖传播延迟和STDP时间偏移的刺激相关近似，计算理想化网络暴露于自然声学表示后的连接图案；与简单模式的硬件比较使用了既往Sheik等的结果。",
+      "claim_type": "analytical_model",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "根据跨通道、跨时间活动相关近似预测突触连接。",
+          "design": "传播时差随通道距离和ν变化；用简单声学模式对照既往硬件连接图。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "条件性连接预测及引用的既往硬件结果。",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "2.1.5 Learning predictions; 3.3",
+            "figure": "Figs. 6–7,11",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "给出在所述理想化规则下可检查的连接预测，并与既往简单模式比较。",
+        "boundary": "相关近似不是完整噪声网络动力学；图11硬件证据为复用，未重新实施。",
+        "negative_result": null,
+        "non_inference": "不构成本论文新做的独立硬件重复，也不保证任意声音在硬件中可学得。",
+        "unresolved": "复杂声音的实际训练、预测精度和更长延迟的硬件实现待验证。",
+        "unresolved_attribution": "提取者依据原文范围与未复核内容提出；不是新增实验。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "文字及图注核对；未读取图像像素，未重跑硬件或仿真。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "对Weddell海豹叫声的分析预测中，改变通道传播时间参数ν会改变被表示的动态相关；作者描述最长ν条件捕获很少动态特征，且所需延迟范围超出现有硬件。",
+      "claim_type": "model_parameter_comparison",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "对同一声学表示计算四个传播参数条件下的连接图案。",
+          "design": "比较同一海豹叫声、不同ν下的理想化连接预测。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "预测矩阵／参数条件，不是动物或硬件重复。",
+          "sample_size_as_reported": "图13四个示例参数条件。",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "3.3 Predicted patterns of learning",
+            "figure": "Figs. 12–13",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "预测显示内部传播时间尺度影响表示的特征。",
+        "boundary": "图像像素未检查；正文给出定性图案解释；不是海豹叫声在芯片中的识别测试。",
+        "negative_result": "最长ν预测条件捕获较少动态特征。",
+        "non_inference": "不证明该硬件已能可靠处理自然动物叫声。",
+        "unresolved": "扩展硬件延迟范围后能否实现这些预测仍待检验。",
+        "unresolved_attribution": "提取者依据原文范围与未复核内容提出；不是新增实验。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [],
+      "shared_evidence_with": [
+        "C5"
+      ],
+      "review_notes": [
+        "文字及图注核对；未读取图像像素，未重跑硬件或仿真。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "阅读全文后区分了硬件合成FM刺激、软件简化共振峰词刺激，以及自然叫声的理想化连接预测。保留噪声和呈现速率下的报告结果及现有硬件延迟范围限制。记录ROC定义文字与噪声单位的歧义，不把预测、既往实验或图示当作新硬件验证。",
+  "shared_evidence": [
+    {
+      "claim_id": "C2",
+      "with": [
+        "C1"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C3"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C5"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": "C4",
+        "issue": "ROC定义段混用FPR/TPR，P/N文字释义有歧义；噪声σ定义与表中百分号需核对。",
+        "suggested_correction": "保留作者报告值，不认证未复核代码的计算正确性。",
+        "pdf_page": 4,
+        "resolved": false
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T06:30:30.135436+00:00",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "current_conversation_GPT",
+    "model": "current_Codex_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "56bdca2418d265c43c7cb6fe6319323a9d1b949eaff3d6e3b2673082c53f052e",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

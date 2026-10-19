@@ -1,0 +1,354 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "Odour Localization in Neuromorphic Systems",
+    "authors": [
+      "Thorben Schoepe",
+      "Damien Drix",
+      "Franz Marcus Schüffny",
+      "Rebecca Miko",
+      "Samuel Sutton",
+      "Elisabetta Chicca",
+      "Michael Schmuker"
+    ],
+    "doi": "10.1109/iscas58744.2024.10558186",
+    "publication_year": 2024,
+    "venue": "IEEE International Symposium on Circuits and Systems proceedings",
+    "url": "https://doi.org/10.1109/iscas58744.2024.10558186"
+  },
+  "source": {
+    "filename": "paper-W4400235063.pdf",
+    "sha256": "cb80542befb1da45fc3f9944d097aefb4a3a20aad8de35648ae78b07af54a7fd",
+    "source_url": "https://uhra.herts.ac.uk/id/eprint/14545/1/ISCAS2024_OdorDetection.pdf",
+    "pdf_page_count": 4
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "results_sections_seen": [
+      "II. Hardware and Software",
+      "III. Neural Network",
+      "IV. Experiments and Results",
+      "V. Conclusions",
+      "Figures 1–5 captions"
+    ],
+    "missing_material": [],
+    "text_pass_complete": true,
+    "notes": [
+      "所供四页文本标题与身份元数据一致；未显示作者、DOI或版本标记，无法独立核实出版版本。",
+      "全部所供正文、图注和参考文献均已评估；未提供图像像素。",
+      "模拟传感器信号先被记录，再由计算机转换为事件并传入SpiNNaker；未展示在线闭环机器人导航。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "构建由传感器事件层、自抑制起始滤波层和两个相反连接方向的TDE组成的气味方向解码网络，并部署于SpiNNaker。",
+      "role": "方法与硬件实现",
+      "source_pages": [
+        1,
+        2,
+        3
+      ],
+      "decision": "include",
+      "reason": "网络结构和硬件执行均有明确描述；既有TDE与电子鼻处理方法不作为本论文原创。"
+    },
+    {
+      "summary": "左右两个方向各8次、共16次手动气味喷团试验全部正确解码方向，所报告双侧到达时间差覆盖小于0.05秒至0.24秒。",
+      "role": "实验结果",
+      "source_pages": [
+        3,
+        4
+      ],
+      "decision": "include",
+      "reason": "正确性与时间差范围来自同一组试验，合并为完整性能命题。"
+    },
+    {
+      "summary": "Figure 4示例中，Kalman滤波二阶导数的气味瞬态比原始MOX信号更陡、更快。",
+      "role": "输入处理示例",
+      "source_pages": [
+        1,
+        3
+      ],
+      "decision": "exclude",
+      "reason": "作为输入处理的描述性证据保留；方法来自既有工作，且未提供独立定量性能比较。"
+    },
+    {
+      "summary": "TDE跨感官适用性可能提示动物共有机制，并可作为通用神经形态感官滤波模块。",
+      "role": "机制假说与应用建议",
+      "source_pages": [
+        3
+      ],
+      "decision": "defer",
+      "reason": "动物机制未检验，跨感官论据来自引用的既有研究。"
+    },
+    {
+      "summary": "在机器人上检验气味门控趋风导航。",
+      "role": "未来研究方向",
+      "source_pages": [
+        3
+      ],
+      "decision": "defer",
+      "reason": "作者明确列为未来工作，未提供机器人实验。"
+    },
+    {
+      "summary": "首个完全事件驱动的神经形态气味定位系统。",
+      "role": "优先权主张",
+      "source_pages": [
+        1
+      ],
+      "decision": "exclude",
+      "reason": "所供文本不足以独立验证文献优先权；实际实验读出为左右喷团方向。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "该研究在SpiNNaker上实现了双电子鼻气味喷团方向解码网络：左右传感器事件经自抑制起始滤波层提取喷团对应事件串的首个脉冲，再送入连接方向相反的两个Time Difference Encoder，以双侧事件的先后顺序产生方向选择性输出。",
+      "claim_type": "method_implementation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "三层脉冲神经网络结构与SpiNNaker实现",
+          "design": "左右传感器事件层分别一对一投射到起始滤波神经元；首个脉冲触发强自抑制；滤波输出传入右到左和左到右连接的两个TDE。",
+          "comparator": null,
+          "measure": "起始滤波脉冲及两个方向选择性TDE的输出脉冲",
+          "unit_of_analysis": "网络模块及其事件响应",
+          "sample_size_as_reported": "两个方向选择性TDE；方法描述使用四节点、72个ARM核的SpiNNaker机器",
+          "uncertainty": null,
+          "assumptions": [
+            "连续传感器事件产生的兴奋不足以克服起始滤波神经元的自抑制。",
+            "同一喷团在两侧产生可配对的起始事件，间隔处于TDE可响应的时间范围。"
+          ],
+          "source_locator": {
+            "pdf_page": 2,
+            "section": "II-B; III-A; III-B",
+            "figure": "Figures 2–3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "真实MOX记录转换为事件后输入硬件网络",
+          "design": "两块电子鼻板各含四种MOX传感器；计算机对记录的模拟信号进行二阶导数估计、constant-acceleration Kalman滤波和deadband采样，将OFF事件输入SpiNN-3。",
+          "comparator": null,
+          "measure": "传感器事件、起始滤波脉冲和TDE脉冲",
+          "unit_of_analysis": "记录的传感器信号及对应网络响应",
+          "sample_size_as_reported": "两块电子鼻板，每板四种MOX传感器；气味实验使用S1L与S1R通道",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "IV. Experiments and Results",
+            "figure": "Figures 4–5",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提供了将双侧MOX事件时序接入神经形态方向解码网络的具体实现。",
+        "boundary": "信号记录后的事件转换在计算机上进行；TDE与电子鼻处理方法沿用既有工作。",
+        "negative_result": null,
+        "non_inference": "不能据此推断起始滤波相对其他方案的性能优势、系统功耗优势或动物中的同源机制。",
+        "unresolved": "起始滤波与TDE各自对解码性能的贡献缺少消融比较。",
+        "unresolved_attribution": "提取者依据所供证据范围识别的问题，并非作者明确提出的结论。"
+      },
+      "broad_directions": [
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "如何利用双侧气味事件的到达顺序，在神经形态硬件上编码气味喷团方向？"
+      ],
+      "shared_evidence_with": [
+        "C2"
+      ],
+      "review_notes": [
+        "TDE基本原理来自既有模型；本记录主张其在气味解码网络中的实现。",
+        "处理器核数、传感器数和TDE数均不代表独立实验重复。",
+        "未报告完整神经元参数、事件阈值数值、功耗或处理延迟。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "在小风扇距双电子鼻约30厘米、手动向风扇提供lime mixture短喷团的实验中，将记录信号转换为OFF事件并输入SpiNN-3方向解码网络后，网络在风扇位于左侧和右侧各8次、共16次试验中全部正确判断喷团方向；这些试验报告的双侧到达时间差覆盖小于0.05秒至0.24秒。",
+      "claim_type": "experimental_performance",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "双电子鼻采集、记录后事件转换及SpiNNaker方向解码",
+          "design": "风扇分别置于传感器右侧和左侧，手动提供短喷团，使用对lime mixture敏感的S1L与S1R通道。",
+          "comparator": "右到左与左到右两种已知刺激方向；无其他算法或组件消融比较",
+          "measure": "TDE输出方向与刺激方向的一致性；双侧到达时间差",
+          "unit_of_analysis": "单次气味喷团方向试验",
+          "sample_size_as_reported": "每个方向8次，共16次试验",
+          "uncertainty": "报告16次全部正确；未报告置信区间或其他不确定性估计。",
+          "assumptions": [
+            "风扇放置与实验操作提供正确方向标签。",
+            "两个传感器通道的配对事件对应同一喷团。"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "IV. Experiments and Results",
+            "figure": "Figure 5；图注在PDF第4页",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "该装置下的16次试验均正确解码喷团方向，并覆盖所报告的时间差范围。",
+        "boundary": "证据限于一种lime mixture、约30厘米风扇装置、两个方向和记录后输入网络的流程；时间差范围不是独立测定的性能极限。",
+        "negative_result": null,
+        "non_inference": "不能推断自然湍流环境中的总体成功率、源位置或距离估计能力、跨气味泛化能力或闭环机器人寻源能力。",
+        "unresolved": "机器人上的气味门控趋风导航性能仍待检验。",
+        "unresolved_attribution": "作者在V. Conclusions中明确列为未来机器人实现的研究目标。"
+      },
+      "broad_directions": [
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "双MOX传感器的事件到达时间差能否支持神经形态网络判断气味喷团从左侧还是右侧到达？"
+      ],
+      "shared_evidence_with": [
+        "C1"
+      ],
+      "review_notes": [
+        "正确性与时间差覆盖共享同一组16次试验，不构成独立重复验证。",
+        "未报告独立装置数、实验日期、随机化、盲法或跨批次重复。",
+        "无图像像素，不能逐次独立核查Figure 5中的响应。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "第二遍已核对全部四页文本、五幅图注及参考文献。保留两项完整命题：SpiNNaker上的双侧事件方向解码网络实现，以及左右各8次喷团试验全部正确的装置内结果。时间差覆盖与正确性共享同一组试验。证据不支持源位置估计、自然环境泛化、闭环机器人导航或动物机制；Figure 5行位置描述存在未能核实的不一致。",
+  "shared_evidence": [
+    {
+      "claim_id": "C1",
+      "with": [
+        "C2"
+      ]
+    },
+    {
+      "claim_id": "C2",
+      "with": [
+        "C1"
+      ]
+    }
+  ],
+  "audit": {
+    "initial_source_match_checks": [],
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": "C1",
+        "issue": "“完全事件驱动”可能被误读为模拟采集至机器人控制均在线完成。",
+        "suggested_correction": "明确计算机对记录信号进行事件转换，SpiNNaker执行事件输入的方向解码。",
+        "pdf_page": 3,
+        "resolved": true
+      },
+      {
+        "claim_id": "C2",
+        "issue": "source localization的表述宽于实际验证的喷团方向读出。",
+        "suggested_correction": "限定为左右喷团方向判断，不表述为源位置、距离或机器人寻源成功。",
+        "pdf_page": 3,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "跨感官TDE应用与动物共有机制不能作为本论文的独立实验发现。",
+        "suggested_correction": "将既有跨感官结果排除出新贡献，动物机制保留为未检验假说。",
+        "pdf_page": 3,
+        "resolved": true
+      },
+      {
+        "claim_id": "C2",
+        "issue": "正文将起始滤波列置于传感器事件列上方、TDE置于顶部；Figure 5图注却称起始滤波为Top row，行位置描述不完全一致。",
+        "suggested_correction": "不依据行位置重建或逐次验证输出；保留正文明确报告的16次正确结果。图中具体布局仍无法核实。",
+        "pdf_page": 4,
+        "resolved": false
+      },
+      {
+        "claim_id": "C2",
+        "issue": "所报告时间差范围可能被误读为系统完整有效范围或分辨率。",
+        "suggested_correction": "明确该范围仅为成功试验中报告的时间差覆盖，未测定范围外失败边界或最小分辨率。",
+        "pdf_page": 3,
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T05:02:12.423689Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "signed_in_chatgpt_codex",
+    "authentication": "existing_ChatGPT_login",
+    "provider_api_key_used": false,
+    "model": "account_default_GPT",
+    "source_sha256": "cb80542befb1da45fc3f9944d097aefb4a3a20aad8de35648ae78b07af54a7fd",
+    "requests": [
+      {
+        "phase": "extraction",
+        "seconds": 68.27,
+        "usage": {
+          "input_tokens": 18097,
+          "cached_input_tokens": 12032,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2952,
+          "reasoning_output_tokens": 26
+        },
+        "backend": "signed_in_chatgpt_codex",
+        "tools_used": false
+      },
+      {
+        "phase": "source_audit",
+        "seconds": 63.4,
+        "usage": {
+          "input_tokens": 20957,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 3111,
+          "reasoning_output_tokens": 25
+        },
+        "backend": "signed_in_chatgpt_codex",
+        "tools_used": false
+      }
+    ],
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

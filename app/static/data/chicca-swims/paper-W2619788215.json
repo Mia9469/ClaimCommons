@@ -1,0 +1,562 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "Towards bioinspired close-loop local motor control: A simulated approach supporting neuromorphic implementations",
+    "authors": [
+      "Fernando Perez‐Peña",
+      "Juan Antonio Lenero-Bardallo",
+      "Alejandro Linares-Barranco",
+      "Elisabetta Chicca"
+    ],
+    "doi": "10.1109/iscas.2017.8050808",
+    "publication_year": 2017,
+    "venue": "IEEE International Symposium on Circuits and Systems proceedings",
+    "url": "https://doi.org/10.1109/iscas.2017.8050808"
+  },
+  "source": {
+    "filename": "paper-W2619788215.pdf",
+    "sha256": "06d8f8ec9357931c00a042ae1cbd61ae33141c6c2b2b3852b30b3d9242bd7b7d",
+    "source_url": "https://idus.us.es/server/api/core/bitstreams/c59dde8b-698d-46a8-b94b-f47684978c93/content",
+    "pdf_page_count": 4
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "results_sections_seen": [
+      "III. RESULTS",
+      "Fig. 2 caption: Test I and Test II",
+      "IV. DISCUSSION AND CONCLUSION"
+    ],
+    "missing_material": [
+      "图像像素未提供。",
+      "未提供仿真代码、完整连接参数或逐次重复结果。"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "标题、作者及研究主题与身份元数据一致；所供四页文本未标明预印本或修订版本。",
+      "已评估全部正文、公式、图注、致谢及参考文献；没有供应的附录或补充材料。",
+      "实际验证限于Brian中的单个DC电机模型位置控制，实体硬件属于后续计划。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "构建四个LIF控制群体，通过PFM驱动和编码器反馈进行单电机闭环位置控制仿真。",
+      "role": "方法与仿真可行性结果",
+      "source_pages": [
+        2,
+        3,
+        4
+      ],
+      "decision": "include",
+      "reason": "结构、实现和位置响应均有正文证据。"
+    },
+    {
+      "summary": "报告12 V下电机模型的PFM脉宽—转角线性标定关系。",
+      "role": "标定结果",
+      "source_pages": [
+        3
+      ],
+      "decision": "include",
+      "reason": "提供明确关系式，但测试范围及不确定性未报告。"
+    },
+    {
+      "summary": "测试100 Hz至50 Hz参考切换的响应。",
+      "role": "动态控制结果",
+      "source_pages": [
+        3,
+        4
+      ],
+      "decision": "include",
+      "reason": "参考、时长、方向及首段到达角度明确。"
+    },
+    {
+      "summary": "对初始100 Hz参考进行10次网络重启仿真，报告误差均值和标准差。",
+      "role": "重复仿真误差结果",
+      "source_pages": [
+        4
+      ],
+      "decision": "include",
+      "reason": "与单条参考切换轨迹具有不同分析单位，可独立评估。"
+    },
+    {
+      "summary": "报告十个角度参考及其对应到达角度。",
+      "role": "参考范围测试结果",
+      "source_pages": [
+        4
+      ],
+      "decision": "include",
+      "reason": "图注提供完整成对数值。"
+    },
+    {
+      "summary": "将振荡、参考更新和误差分别归因于交叉连接及随机抑制。",
+      "role": "机制解释",
+      "source_pages": [
+        2,
+        4
+      ],
+      "decision": "defer",
+      "reason": "没有连接消融或受控随机性比较，不能作为已证实的因果机制。"
+    },
+    {
+      "summary": "提出低功耗、紧凑、多自由度扩展、学习适应和神经假体应用展望。",
+      "role": "应用展望",
+      "source_pages": [
+        1,
+        4
+      ],
+      "decision": "exclude",
+      "reason": "未提供对应硬件、功耗、扩展或应用实验。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "在Brian软件仿真中，四个各含30个LIF神经元的控制群体通过双向alpha motoneuron的PFM输出和编码器驱动的spindle反馈，对单个DC电机模型产生闭环位置控制响应。",
+      "claim_type": "computational_method",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "LIF网络、电机动力学与编码器通道联合仿真",
+          "design": "两个motoneuron群体分别驱动顺时针和逆时针运动；两个spindle群体提供反馈；参考频率和方向输入设定命令。",
+          "comparator": null,
+          "measure": "电机角度轨迹及双向PFM信号",
+          "unit_of_analysis": "单个模拟电机及其控制网络",
+          "sample_size_as_reported": "四个控制群体，每群30个神经元。",
+          "uncertainty": null,
+          "assumptions": [
+            "电机采用Maxon Model 310007厂商参数及文中电气、机械方程。",
+            "群体内使用局部随机递归连接。",
+            "位置反馈步长由0.72度增至2.16度。",
+            "PFM幅度为12 V，所选脉宽为100 μs；正文另注明每个群体神经元对应3.3 μs。"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "III. RESULTS",
+            "figure": null,
+            "equation": "2–4",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "闭环位置控制测试",
+          "design": "参考切换及多个角度参考测试。",
+          "comparator": "参考位置",
+          "measure": "模拟到达角度及位置响应",
+          "unit_of_analysis": "控制轨迹或参考条件",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "采用正文所述网络和反馈配置。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "III. RESULTS",
+            "figure": "Fig. 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "该网络在指定软件模型中实现了位置反馈控制响应。",
+        "boundary": "验证限于单电机模型，且主动降低了反馈分辨率。",
+        "negative_result": null,
+        "non_inference": "不能据此认定实体硬件、低功耗、低延迟、多自由度扩展或神经假体适用性已获验证。",
+        "unresolved": "实体硬件表现、完整参数下的可复现性及速度控制表现未给出。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "LIF脉冲网络能否通过PFM驱动和编码器反馈控制单个DC电机模型的位置？"
+      ],
+      "shared_evidence_with": [
+        "C3",
+        "C5"
+      ],
+      "review_notes": [
+        "120个控制神经元是网络规模，不是独立实验重复。",
+        "参考输入不应被误计为第五个已报告30神经元的控制群体。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "对指定DC电机模型，在PFM幅度固定为12 V的脉宽测试中，作者报告Angle＝0.02×pulse width，其中角度单位为度、脉宽单位为μs，并选择100 μs作为后续驱动脉宽。",
+      "claim_type": "simulation_calibration",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "改变PFM脉宽的电机模型测试",
+          "design": "固定幅度为12 V，测试一组脉宽。",
+          "comparator": "不同PFM脉宽条件",
+          "measure": "脉宽与到达角度的关系",
+          "unit_of_analysis": "脉宽测试条件",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "使用指定电机模型及参数。",
+            "测试范围、拟合方法和脉冲序列细节未报告。"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "III. RESULTS",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "报告了该仿真配置的脉宽—转角标定关系。",
+        "boundary": "限于指定模型和12 V条件，适用脉宽范围未知。",
+        "negative_result": null,
+        "non_inference": "不能推广为实际电机或任意PFM输入下的普遍线性规律。",
+        "unresolved": "标定残差、测试数量及硬件一致性未报告。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "固定电压下PFM脉宽如何影响DC电机模型的转角？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "后续控制测试使用该标定配置，但不构成对标定关系的独立重复验证。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "在顺时针方向输入保持不变、参考先为100 Hz持续3秒再为50 Hz持续2秒的闭环仿真中，作者描述电机在参考附近振荡并随参考变化调整位置；首段179.28度目标对应报告到达172.05度。",
+      "claim_type": "simulation_dynamic_response",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "两阶段参考输入闭环仿真",
+          "design": "100 Hz对应179.28度目标，随后50 Hz对应73.44度目标；总时长5秒。",
+          "comparator": "参考位置及参考切换前后条件",
+          "measure": "位置轨迹和首段到达角度",
+          "unit_of_analysis": "一次五秒控制轨迹",
+          "sample_size_as_reported": "图2a展示一条测试轨迹。",
+          "uncertainty": "原报首段误差4.35%，与所给目标和到达角度按目标归一化的计算不一致。",
+          "assumptions": [
+            "采用正文所述闭环配置。",
+            "振荡和位置调整依据正文描述，未读取图像像素。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "III. RESULTS and Fig. 2 caption",
+            "figure": "Fig. 2a",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "该轨迹显示方向命令不变时对位置参考下降的调节响应。",
+        "boundary": "第二阶段最终角度、误差、稳定时间和振荡幅度未报告。",
+        "negative_result": "首段报告到达位置偏离目标，且正文描述存在参考附近振荡。",
+        "non_inference": "没有扰动测试或控制器基线比较，不能推断鲁棒性或性能优势。",
+        "unresolved": "百分比误差计算口径和动态响应精度尚不明确。",
+        "unresolved_attribution": "交叉连接导致振荡和参考更新的解释未经消融验证。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "参考频率下降而方向输入不变时，闭环脉冲控制器如何调整电机位置？"
+      ],
+      "shared_evidence_with": [
+        "C1"
+      ],
+      "review_notes": [
+        "保留原报角度；不把4.35%视为已核实的误差量。",
+        "该轨迹与10次重启统计不是同一分析单位。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "对初始100 Hz、179.28度位置参考的三秒条件进行10次网络重启仿真后，作者报告位置误差均值为17.45度、标准差为2.92度。",
+      "claim_type": "simulation_repeat_variability",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "网络重启重复仿真",
+          "design": "每次重启网络后重复参考切换测试的前三秒条件。",
+          "comparator": "179.28度标定目标",
+          "measure": "平均角度误差17.45度及标准差2.92度",
+          "unit_of_analysis": "一次网络重启后的三秒仿真",
+          "sample_size_as_reported": "10次仿真。",
+          "uncertainty": "标准差2.92度；原报平均百分比误差10.56%，其分母及计算方式未说明。",
+          "assumptions": [
+            "随机种子、重初始化细节和误差取样规则未报告。",
+            "重复范围仅为初始三秒条件。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "III. RESULTS",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "给出了固定参考条件下重启仿真的误差均值和变异。",
+        "boundary": "统计不覆盖第二阶段或其他角度参考。",
+        "negative_result": "重复仿真的平均位置误差非零。",
+        "non_inference": "10次软件仿真不能视为10台设备或10次物理实验，也不能单独证明随机抑制的因果作用。",
+        "unresolved": "百分比误差口径、逐次结果及重启独立性未明确。",
+        "unresolved_attribution": "误差归因于随机抑制是作者解释，缺少受控比较。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "网络重启后，固定位置参考下的控制误差有多大变异？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "17.45度除以179.28度约为9.73%，与原报10.56%不一致。",
+        "相同配置和参考条件不等于与单条轨迹共享同一组观测。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "在十个各持续5秒的角度参考仿真中，参考[7,32.4,62.64,95.04,125.28,157.68,190,222.48,259.2,289.44]度分别对应报告到达[10.16,35.56,63.78,123.19,106.20,178.52,173.53,194.91,228.7,275.73]度；所有报告到达角度均偏离对应参考，且到达角度不随参考严格单调增加。",
+      "claim_type": "simulation_reference_range",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "多个位置参考的闭环仿真",
+          "design": "测试十个角度参考，每个测试持续5秒。",
+          "comparator": "每个参考角度与对应到达角度",
+          "measure": "十组成对参考及到达角度",
+          "unit_of_analysis": "一个角度参考条件",
+          "sample_size_as_reported": "10个参考条件；每条件重复次数未报告。",
+          "uncertainty": null,
+          "assumptions": [
+            "配对顺序依据图2图注。",
+            "初始位置、条件间重启方式及到达角度采样规则未报告。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "Fig. 2 caption",
+            "figure": "Fig. 2b",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "控制器在十个位置参考条件下产生了可比较的角度输出。",
+        "boundary": "各参考条件缺少重复统计和不确定性。",
+        "negative_result": "报告输出均有位置偏差，部分相邻参考增大时到达角度反而下降。",
+        "non_inference": "不能将十个参考条件视为独立重复，也不能据此认定全角度范围的稳定精度。",
+        "unresolved": "不同参考下的误差分布及非单调表现来源未确定。",
+        "unresolved_attribution": "现有信息不能区分网络随机性、初始化差异或其他模型因素的贡献。"
+      },
+      "broad_directions": [
+        "methods-causal",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "闭环脉冲控制器的到达位置如何随目标角度变化？"
+      ],
+      "shared_evidence_with": [
+        "C1"
+      ],
+      "review_notes": [
+        "数值来自图注，没有根据缺失图像估读。",
+        "非单调性是对报告数值的直接比较，不是机制证据。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "第二遍核对了所供四页全部文本、公式、图注及参考文献。论文支持指定软件模型中的LIF闭环单电机位置控制，报告脉宽标定、参考切换响应、10次重启误差统计和十个角度参考输出。已拆分不同分析单位，并收紧共享证据关系。结果存在位置偏差和振荡；两处百分比与给定角度数值不一致，计算口径仍未解决。硬件、功耗、扰动鲁棒性、多自由度扩展及学习适应未获验证。",
+  "shared_evidence": [
+    {
+      "claim_id": "C1",
+      "with": [
+        "C3",
+        "C5"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C1"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C1"
+      ]
+    }
+  ],
+  "audit": {
+    "initial_source_match_checks": [],
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": "C3",
+        "issue": "179.28度与172.05度相差7.23度，以目标归一化约为4.03%，不等于原报4.35%。",
+        "suggested_correction": "已保留原报角度并标注百分比口径问题；源文数值不一致仍需作者核实。",
+        "pdf_page": 4,
+        "resolved": false
+      },
+      {
+        "claim_id": "C4",
+        "issue": "17.45度除以179.28度约为9.73%，不等于原报10.56%。",
+        "suggested_correction": "使用角度误差均值和标准差，将原报百分比保留为未核实信息。",
+        "pdf_page": 4,
+        "resolved": false
+      },
+      {
+        "claim_id": "C4",
+        "issue": "草稿把单条五秒轨迹和10次三秒重启统计合并，掩盖了不同分析单位。",
+        "suggested_correction": "已拆分为C3和C4，并保留各自条件及重复范围。",
+        "pdf_page": 4,
+        "resolved": true
+      },
+      {
+        "claim_id": "C4",
+        "issue": "网络重启后的误差变异不能单独确认随机抑制的因果机制。",
+        "suggested_correction": "已将机制归因列为未经受控比较验证的作者解释。",
+        "pdf_page": 4,
+        "resolved": true
+      },
+      {
+        "claim_id": "C1",
+        "issue": "硬件、功耗、扩展及应用表述超出实际软件验证范围。",
+        "suggested_correction": "已将结果限定为单电机软件位置控制。",
+        "pdf_page": 4,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "草稿为全部记录互设共享证据关系，但同一方法体系不等于同一组结果证据。",
+        "suggested_correction": "仅保留C1与其直接引用的C3、C5测试之间的共享证据；没有建立复制或支持关系。",
+        "pdf_page": 4,
+        "resolved": true
+      },
+      {
+        "claim_id": "C1",
+        "issue": "草稿未保留100 μs总脉宽旁的每神经元3.3 μs说明。",
+        "suggested_correction": "已补入原文说明，不推断其未报告的聚合实现细节。",
+        "pdf_page": 3,
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T05:07:11.664390Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "signed_in_chatgpt_codex",
+    "authentication": "existing_ChatGPT_login",
+    "provider_api_key_used": false,
+    "model": "account_default_GPT",
+    "source_sha256": "06d8f8ec9357931c00a042ae1cbd61ae33141c6c2b2b3852b30b3d9242bd7b7d",
+    "requests": [
+      {
+        "phase": "extraction",
+        "seconds": 99.35,
+        "usage": {
+          "input_tokens": 19232,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 4413,
+          "reasoning_output_tokens": 110
+        },
+        "backend": "signed_in_chatgpt_codex",
+        "tools_used": false
+      },
+      {
+        "phase": "source_audit",
+        "seconds": 85.27,
+        "usage": {
+          "input_tokens": 23446,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 4773,
+          "reasoning_output_tokens": 52
+        },
+        "backend": "signed_in_chatgpt_codex",
+        "tools_used": false
+      }
+    ],
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

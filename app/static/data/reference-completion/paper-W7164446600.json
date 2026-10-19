@@ -1,0 +1,4028 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "review",
+  "paper": {
+    "title": "Machine Learning Methods for Studying Latent Neural Activity Dynamics",
+    "authors": [
+      "Shufeng Kong",
+      "Fumei Deng",
+      "Xinyi Dong",
+      "Caihua Liu",
+      "Weiwei Chen",
+      "Yingheng Wang",
+      "Daniel Cao",
+      "Azahara Oliva",
+      "Antonio Fernández-Ruiz",
+      "Carla Gomes"
+    ],
+    "doi": null,
+    "publication_year": 2026,
+    "venue": "arXiv (Cornell University)",
+    "url": "https://arxiv.org/pdf/2606.10530"
+  },
+  "source": {
+    "filename": "paper-W7164446600--Machine-Learning-Methods-for-Studying-Latent-Neural-Activity-Dynamics.pdf",
+    "sha256": "4577f1a6b3767babffbda9a8184420d15effeb1f964c8f0d8aa79adcbbc3f661",
+    "source_url": "https://arxiv.org/pdf/2606.10530",
+    "pdf_page_count": 11
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "results_sections_seen": [
+      "Abstract; 1 Introduction",
+      "2 Taxonomy and Preliminaries",
+      "3.1 Probabilistic and Linear State-Space Models",
+      "3.2 Deep Sequential Generative Models",
+      "3.3 Continuous & Switching Dynamics",
+      "4.1 Probabilistic Generative Models",
+      "4.2 Deep Representation Learning Models",
+      "4.3 Subspace Identification and Alignment",
+      "5.1 Disentangled Dynamic Modeling",
+      "5.2 Representation Alignment and Geometry",
+      "5.3 Generative and Foundation Models",
+      "6.1 Standardized Benchmarks",
+      "6.2 Large-Scale Public Datasets",
+      "7 Discussion and Open Challenges",
+      "8 Conclusion",
+      "Figure 1 taxonomy and caption",
+      "Acknowledgements and References",
+      "Appendix A Comparison of Representative Methods",
+      "Table 1 and caption",
+      "Appendix B Extended Discussion of Open Challenges",
+      "Appendix C Mapping Subspace and Discriminative Methods to the Unified Framework",
+      "Appendix D Relation to Prior Surveys",
+      "Appendix E Additional Method Classes and Recording Modalities"
+    ],
+    "missing_material": [
+      "图像像素未提供，未检查图形布局或图中未进入文本的内容。",
+      "所引原始研究全文、原数据及未提供的外部材料未读取；不把综述引文视为独立源审计。"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "完整读取 87,008 字符的 11 页 supplied page text；输出窗口依次为 0–17500、17500–35000、35000–52500、52500–70000、70000–87173，额外字符来自页标记。包括参考文献、所有提供的图表文字和附录 A–E。",
+      "文档身份：标题和 arXiv 编号与分配条目一致，首页明确为 arXiv:2606.10530v1 [cs.LG], 9 Jun 2026。载体是预印本，文档性质是综述；未替换为后续版本。",
+      "索引作者为 Shufeng Kong; Fumei Deng; Xinyi Dong; Caihua Liu; Weiwei Chen (349099); Yingheng Wang。首页源作者另含 Daniel Cao; Azahara Oliva; Antonio Fernández-Ruiz; Carla Gomes。输出仅据首页补齐十人，并移除 Weiwei Chen 的索引数字后缀；原索引差异保留于本注记和审计。",
+      "无本文独立研究实验、原始生物学验证或统一重分析。方法与边界记录用 review_synthesis，四条未来路线用 hypothesis；negative_result 全部为 null，未虚构实际阴性结果。",
+      "第二次源审计在完整保留的 supplied text 上进行，逐条复核对象、比较、假设、读数、独立单位、n、页码和外推边界；不是重新打开 PDF 或软件测试。",
+      "附录 A 明确不比较跨数据集的单一分数；表 1 中破折号表示某些判别或解码模型没有显式观测似然。",
+      "所有 source_locator.quote 均为 null；正文模型名和术语不充作逐字引文。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "C1：本文以潜状态演化 f、观测映射 g 和训练目标为比较轴，将神经群体潜变量方法组织为单脑区动态、多脑区通信和行为对齐三条互补主线；这一分类针对群体记录推断，并不涵盖全部脑动力学建模。",
+      "role": "review_synthesis",
+      "source_pages": [
+        2,
+        3,
+        10
+      ],
+      "decision": "include",
+      "reason": "可独立判断的方法比较、资源概括或适用边界；仅保留本文综述层面的证据。"
+    },
+    {
+      "summary": "C2：统一生成框架对 CCA/RRR 与 CEBRA 只能作结构层面的映射：CCA/RRR 可视为没有显式动态先验的静态低秩观测几何估计，而 CEBRA 以辅助标签和 InfoNCE 训练编码器，不规定显式观测概率密度。",
+      "role": "review_synthesis",
+      "source_pages": [
+        10,
+        11
+      ],
+      "decision": "include",
+      "reason": "可独立判断的方法比较、资源概括或适用边界；仅保留本文综述层面的证据。"
+    },
+    {
+      "summary": "C3：GPFA 以 Gaussian Process 潜轨迹先验、线性观测映射和 Gaussian 噪声提取平滑群体轨迹；本文将采用 Poisson 观测的 vLGP、分离刺激锁定信号与内部噪声的 SNP-GPFA，以及以 GP 表示非线性调谐的 P-GPLVM 归为针对不同观测或映射限制的扩展。",
+      "role": "review_synthesis",
+      "source_pages": [
+        2
+      ],
+      "decision": "include",
+      "reason": "可独立判断的方法比较、资源概括或适用边界；仅保留本文综述层面的证据。"
+    },
+    {
+      "summary": "C4：与只用 GP 核约束时间平滑性的 GPFA 不同，LDS 用显式线性状态转移和外部输入描述潜动态；PLDS 在该线性动态骨架上采用指数链接的 Poisson 观测，以描述群体脉冲计数。",
+      "role": "review_synthesis",
+      "source_pages": [
+        2
+      ],
+      "decision": "include",
+      "reason": "可独立判断的方法比较、资源概括或适用边界；仅保留本文综述层面的证据。"
+    },
+    {
+      "summary": "C5：LFADS 通过 Sequential VAE 推断 generator RNN 的初始条件；NDT 则用时间自注意力和掩码脉冲重建学习神经表征，构成不显式依赖循环连接的替代路线。本文将 NDT 的较快推理和潜动态恢复归于所引工作，而非本综述的配对实验。",
+      "role": "review_synthesis",
+      "source_pages": [
+        3
+      ],
+      "decision": "include",
+      "reason": "可独立判断的方法比较、资源概括或适用边界；仅保留本文综述层面的证据。"
+    },
+    {
+      "summary": "C6：本文将 AutoLFADS 概括为在 LFADS 路线上结合 Population-Based Training 与 Coordinated Dropout，以自动搜索训练超参数、减少专家手工调参需求的框架。",
+      "role": "review_synthesis",
+      "source_pages": [
+        3
+      ],
+      "decision": "include",
+      "reason": "可独立判断的方法比较、资源概括或适用边界；仅保留本文综述层面的证据。"
+    },
+    {
+      "summary": "C7：对于带膜时间常数的 leaky RNN，本文把 DASC 的 dynamically aligned skip connections 描述为缓解长时程训练中梯度不稳定的设计，而不是改变潜状态观测模型的统一方案。",
+      "role": "review_synthesis",
+      "source_pages": [
+        3
+      ],
+      "decision": "include",
+      "reason": "可独立判断的方法比较、资源概括或适用边界；仅保留本文综述层面的证据。"
+    },
+    {
+      "summary": "C8：本文将 SLRNN 与 LINT 的可解释性路线归纳为约束 RNN 循环连接的低秩结构：SLRNN 用于随机潜动态推断并分析固定点和流场，LINT 在行为相关建模中以低秩连接约束提取计算结构。",
+      "role": "review_synthesis",
+      "source_pages": [
+        3,
+        5
+      ],
+      "decision": "include",
+      "reason": "可独立判断的方法比较、资源概括或适用边界；仅保留本文综述层面的证据。"
+    },
+    {
+      "summary": "C9：PLNDE/ODIN 用 Neural ODE 表示连续时间确定性潜演化；FINDR 将连续时间建模扩展到带 drift 和 diffusion 的 Neural SDE，以显式表示潜动态的随机性，并在综述中被描述为可展示流场与吸引子。",
+      "role": "review_synthesis",
+      "source_pages": [
+        3,
+        4
+      ],
+      "decision": "include",
+      "reason": "可独立判断的方法比较、资源概括或适用边界；仅保留本文综述层面的证据。"
+    },
+    {
+      "summary": "C10：LangevinFlow 在 Sequential VAE 中以欠阻尼 Langevin 动态结合确定性势场、阻尼和随机影响，并用局部耦合振子势能参数化及 Transformer decoder 表达神经时空动态。",
+      "role": "review_synthesis",
+      "source_pages": [
+        3
+      ],
+      "decision": "include",
+      "reason": "可独立判断的方法比较、资源概括或适用边界；仅保留本文综述层面的证据。"
+    },
+    {
+      "summary": "C11：rSLDS/gpSLDS 以不同局部线性模式及其切换近似全局非线性潜动态；rSLDS 的离散模式转移可依赖连续潜状态历史，而 gpSLDS 通过分区加权的 GP 核描述线性片段之间的组织。",
+      "role": "review_synthesis",
+      "source_pages": [
+        4
+      ],
+      "decision": "include",
+      "reason": "可独立判断的方法比较、资源概括或适用边界；仅保留本文综述层面的证据。"
+    },
+    {
+      "summary": "C12：本文将 DynCL 描述为用 InfoNCE 而非生成重建损失，并通过可微的稳定线性矩阵组学习切换动态的对比学习路线；综述提及的可辨识性和较低计算负担未在本文给出完整证明或配对测量。",
+      "role": "review_synthesis",
+      "source_pages": [
+        4
+      ],
+      "decision": "include",
+      "reason": "可独立判断的方法比较、资源概括或适用边界；仅保留本文综述层面的证据。"
+    },
+    {
+      "summary": "C13：在多脑区 GP 模型中，潜变量可分为 across-area shared 与 within-area private 成分；DLAG/mDLAG 在共享动态的协方差中显式表示区域间时延，以区分共有变化、本地变化及延迟相关关系。",
+      "role": "review_synthesis",
+      "source_pages": [
+        4
+      ],
+      "decision": "include",
+      "reason": "可独立判断的方法比较、资源概括或适用边界；仅保留本文综述层面的证据。"
+    },
+    {
+      "summary": "C14：相对于把脑区间关系表示为简单时间平移的延迟模型，本文把 MRM-GP 的复值核描述为表达频率特异相位延迟的扩展，用于不易由单一时间偏移概括的跨区关系。",
+      "role": "review_synthesis",
+      "source_pages": [
+        4
+      ],
+      "decision": "include",
+      "reason": "可独立判断的方法比较、资源概括或适用边界；仅保留本文综述层面的证据。"
+    },
+    {
+      "summary": "C15：本文把 ADM 的 Markov Gaussian Process 与时变转移矩阵概括为跟踪单个试次内非平稳脑区通信及通信延迟变化的路线，而非假定所有时刻共享固定交互结构。",
+      "role": "review_synthesis",
+      "source_pages": [
+        4,
+        11
+      ],
+      "decision": "include",
+      "reason": "可独立判断的方法比较、资源概括或适用边界；仅保留本文综述层面的证据。"
+    },
+    {
+      "summary": "C16：本文将 MR-SDS 和 mp-srSLDS 归为状态依赖的多脑区通信模型：离散潜模式对通信通道或转移稳定性进行门控，以描述非静态的群体交互。",
+      "role": "review_synthesis",
+      "source_pages": [
+        4
+      ],
+      "decision": "include",
+      "reason": "可独立判断的方法比较、资源概括或适用边界；仅保留本文综述层面的证据。"
+    },
+    {
+      "summary": "C17：MR-LFADS 的 Sender–Receiver 结构以来源脑区的潜状态作为目标脑区的 forcing input，并将目标 log firing-rate intensity 分为局部潜动态、群体耦合和脉冲历史三个相加成分，以描述有向非线性统计影响。",
+      "role": "review_synthesis",
+      "source_pages": [
+        4
+      ],
+      "decision": "include",
+      "reason": "可独立判断的方法比较、资源概括或适用边界；仅保留本文综述层面的证据。"
+    },
+    {
+      "summary": "C18：本文将 GLM-Transformer 描述为融合 self-attention 与 GLM 解释结构的跨脑区模型，旨在在表达时间或试次相关交互的同时保留对个体神经元动态因素的结构化说明。",
+      "role": "review_synthesis",
+      "source_pages": [
+        4
+      ],
+      "decision": "include",
+      "reason": "可独立判断的方法比较、资源概括或适用边界；仅保留本文综述层面的证据。"
+    },
+    {
+      "summary": "C19：MtM 以 Multi-task Masking 学习神经时空表示，本文将其用于应对记录环境变化并支持跨 session、跨个体迁移的路线归入多脑区深表示学习，而非提供本文新的迁移效果测量。",
+      "role": "review_synthesis",
+      "source_pages": [
+        4
+      ],
+      "decision": "include",
+      "reason": "可独立判断的方法比较、资源概括或适用边界；仅保留本文综述层面的证据。"
+    },
+    {
+      "summary": "C20：mRNN 以多脑区递归动力学表示群体交互；FORCE/full-FORCE 训练递归连接以匹配目标动态。本文特别区分后者的计算机制建模用途与从记录中直接推断潜状态的任务。",
+      "role": "review_synthesis",
+      "source_pages": [
+        4,
+        5
+      ],
+      "decision": "include",
+      "reason": "可独立判断的方法比较、资源概括或适用边界；仅保留本文综述层面的证据。"
+    },
+    {
+      "summary": "C21：SPLICE 通过层级 subspace pooling 表示局部变换不变性；MARBLE 以 Local Flow Fields 和对比学习处理局部坐标旋转，使潜动态表示面向流形几何而非某一记录基底。",
+      "role": "review_synthesis",
+      "source_pages": [
+        5
+      ],
+      "decision": "include",
+      "reason": "可独立判断的方法比较、资源概括或适用边界；仅保留本文综述层面的证据。"
+    },
+    {
+      "summary": "C22：在 communication subspace 分析中，CCA 寻找源与目标群体的最大相关维度，RRR 在低秩约束下优化目标预测；Structured SNN + RRR 再将该回归目标嵌入带 E/I 等约束的脉冲网络训练。",
+      "role": "review_synthesis",
+      "source_pages": [
+        5
+      ],
+      "decision": "include",
+      "reason": "可独立判断的方法比较、资源概括或适用边界；仅保留本文综述层面的证据。"
+    },
+    {
+      "summary": "C23：CREIMBO 通过 session-specific 观测因子和由共享动态字典组成的潜状态转移，把不同记录视图中的动态表述为共享 motifs 在时间上的不同组合。",
+      "role": "review_synthesis",
+      "source_pages": [
+        5
+      ],
+      "decision": "include",
+      "reason": "可独立判断的方法比较、资源概括或适用边界；仅保留本文综述层面的证据。"
+    },
+    {
+      "summary": "C24：PSID 通过把未来行为投影到过去神经活动所张成的子空间，优先识别行为相关的线性潜动态；IPSID 再显式纳入外部 sensorimotor inputs，以区分内在动态和输入驱动部分。",
+      "role": "review_synthesis",
+      "source_pages": [
+        5
+      ],
+      "decision": "include",
+      "reason": "可独立判断的方法比较、资源概括或适用边界；仅保留本文综述层面的证据。"
+    },
+    {
+      "summary": "C25：DPAD 以双目标 RNN 将潜空间划分为行为对齐和相对目标行为的残余维度，并通过训练目标优先表达行为信息、限制残余维度编码该目标信息。",
+      "role": "review_synthesis",
+      "source_pages": [
+        5
+      ],
+      "decision": "include",
+      "reason": "可独立判断的方法比较、资源概括或适用边界；仅保留本文综述层面的证据。"
+    },
+    {
+      "summary": "C26：BRAID 的行为相关非线性潜演化显式分开内部动态项和外部控制输入项，并结合 forward prediction 目标；本文将其视为区分输入驱动与内部残余动态的设计，但没有提供干预证据来证明因果结构被唯一识别。",
+      "role": "review_synthesis",
+      "source_pages": [
+        5
+      ],
+      "decision": "include",
+      "reason": "可独立判断的方法比较、资源概括或适用边界；仅保留本文综述层面的证据。"
+    },
+    {
+      "summary": "C27：SRNN 用 switching recurrent dynamics 对行为相关活动作时间模式分解，本文以 planning 与 execution 说明潜离散模式的可能解释，而非报告本文对这些认知状态的独立测量。",
+      "role": "review_synthesis",
+      "source_pages": [
+        5
+      ],
+      "decision": "include",
+      "reason": "可独立判断的方法比较、资源概括或适用边界；仅保留本文综述层面的证据。"
+    },
+    {
+      "summary": "C28：CEBRA 用行为标签或时间关系定义对比样本，并以 InfoNCE 使相关神经时点靠近、其他样本分离；本文将这种监督几何目标用于解释同任务不同动物之间的表征对齐，包括记录神经元集合不同的情形。",
+      "role": "review_synthesis",
+      "source_pages": [
+        5,
+        6
+      ],
+      "decision": "include",
+      "reason": "可独立判断的方法比较、资源概括或适用边界；仅保留本文综述层面的证据。"
+    },
+    {
+      "summary": "C29：本文把 GLUE 的 Manifold Capacity 描述为联系神经流形几何与信息编码效率的比较度量，用于比较不同群体对相同信息的表示，而不是本综述给出的统一实测容量排名。",
+      "role": "review_synthesis",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "可独立判断的方法比较、资源概括或适用边界；仅保留本文综述层面的证据。"
+    },
+    {
+      "summary": "C30：NLA 以可微 time-warping 和对比目标处理跨 trial 时间抖动；SABLE 则以无监督 domain adaptation 和 gradient reversal 抑制 session-specific 信息，分别针对时间错位与记录分布漂移。",
+      "role": "review_synthesis",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "可独立判断的方法比较、资源概括或适用边界；仅保留本文综述层面的证据。"
+    },
+    {
+      "summary": "C31：LDNS 先把神经脉冲压缩到连续潜空间再以 diffusion 生成潜轨迹；BeNeDiff 将行为条件用于 video diffusion，以生成的视频说明潜变量与行为的关联。两者的生成对象及解释用途不同。",
+      "role": "review_synthesis",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "可独立判断的方法比较、资源概括或适用边界；仅保留本文综述层面的证据。"
+    },
+    {
+      "summary": "C32：GNOCCHI 以 auxiliary encoder 提取神经活动的潜代码并以 MMD 正则化，再据此进行 conditional diffusion；score-matching 与数据重建目标共同约束生成，本文将其定位为无监督行为关联潜因子学习路线。",
+      "role": "review_synthesis",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "可独立判断的方法比较、资源概括或适用边界；仅保留本文综述层面的证据。"
+    },
+    {
+      "summary": "C33：Masked VAE 通过随机遮蔽 spike bins，把降维和条件缺失值推断结合在同一训练框架中，以学习神经及相关变量的联合统计结构。",
+      "role": "review_synthesis",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "可独立判断的方法比较、资源概括或适用边界；仅保留本文综述层面的证据。"
+    },
+    {
+      "summary": "C34：本文将 Multiscale Dynamical Model 描述为以层级 EM 联合离散 spikes 与连续 LFP、识别跨时间尺度共享潜状态的路线，分别关联毫秒和秒级过程。",
+      "role": "review_synthesis",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "可独立判断的方法比较、资源概括或适用边界；仅保留本文综述层面的证据。"
+    },
+    {
+      "summary": "C35：EAG 以连续潜空间中的 energy-based autoregressive Transformer 建模神经群体动态，使用 Energy Score 而非显式似然；本文所示评分依赖生成分布的独立样本及 0<α<2 条件，以保留 trial-to-trial 随机性并避免 diffusion 的迭代采样路线。",
+      "role": "review_synthesis",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "可独立判断的方法比较、资源概括或适用边界；仅保留本文综述层面的证据。"
+    },
+    {
+      "summary": "C36：POYO 以 neuron ID embedding 和 spike time 编码结合 cross-attention 处理跨动物不同神经元集合；NEDS 则通过多任务掩码联合 neural 与 behavioral tokens，统一编码和解码，并面向有限新个体数据的 fine-tuning。",
+      "role": "review_synthesis",
+      "source_pages": [
+        6,
+        7
+      ],
+      "decision": "include",
+      "reason": "可独立判断的方法比较、资源概括或适用边界；仅保留本文综述层面的证据。"
+    },
+    {
+      "summary": "C37：POSSM 保留 POYO 风格的 single-spike tokenization 和 cross-attention，并用现代 recurrent state-space backbone 替代重型 Transformer 主干；本文报告该设计最多 9 倍推理加速，但未在本综述提供匹配硬件、输入规模或原始重复数据。",
+      "role": "review_synthesis",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "可独立判断的方法比较、资源概括或适用边界；仅保留本文综述层面的证据。"
+    },
+    {
+      "summary": "C38：NLB 用标准化 held-out test sets 改善临时自定义评估的可比性；Area2-Bump、DMFC-RSG 与 Jenkins-Maze 分别面向躯体感觉扰动、非运动时间动态及规模/效率问题。本文附录明确只比较建模假设，不把不同数据、划分和预处理下的分数排成统一榜单。",
+      "role": "review_synthesis",
+      "source_pages": [
+        7,
+        10
+      ],
+      "decision": "include",
+      "reason": "可独立判断的方法比较、资源概括或适用边界；仅保留本文综述层面的证据。"
+    },
+    {
+      "summary": "C39：本文把 IBL 和 Allen Brain Observatory 作为不同模态的基础模型级数据资源：IBL 的综述描述包括 139 只小鼠、279 个脑区及超过 600,000 个神经元，Allen 2-Photon 描述为超过 63,000 个神经元；这些是语料覆盖计数而非本文实验的独立重复。",
+      "role": "review_synthesis",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "可独立判断的方法比较、资源概括或适用边界；仅保留本文综述层面的证据。"
+    },
+    {
+      "summary": "C40：CRCNS 的任务特异资源可用于不同动态问题：M1/PMd Reach 的多目标伸手记录适合连续运动动态，hc-11 的海马空间导航及 place-cell 模式适合状态切换问题；本文同时指出常见 head-fixed 简化任务对自由活动自然行为的覆盖有限。",
+      "role": "review_synthesis",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "可独立判断的方法比较、资源概括或适用边界；仅保留本文综述层面的证据。"
+    },
+    {
+      "summary": "C41：本文指出深潜模型可能存在旋转或仿射重参数化歧义：在观测映射相应变换且似然保持的情形下，不同潜轴可拟合同样数据，因此数据拟合本身不使潜轴与单一生物机制一一对应。",
+      "role": "review_synthesis",
+      "source_pages": [
+        7,
+        10
+      ],
+      "decision": "include",
+      "reason": "可独立判断的方法比较、资源概括或适用边界；仅保留本文综述层面的证据。"
+    },
+    {
+      "summary": "C42：本文指出观察性通信子空间和标准 LVM 难以区分直接因果影响与未观测 common drive；自然演化的良好拟合也不保证能预测刺激、损伤等干预响应。",
+      "role": "review_synthesis",
+      "source_pages": [
+        7,
+        10
+      ],
+      "decision": "include",
+      "reason": "可独立判断的方法比较、资源概括或适用边界；仅保留本文综述层面的证据。"
+    },
+    {
+      "summary": "C43：本文将动物、脑区差异及 electrode drift 导致的 neural code 非统一性列为跨个体 zero-shot transfer 的障碍；大规模预训练不自动建立稳定通用的脉冲语义或消除校准需求。",
+      "role": "review_synthesis",
+      "source_pages": [
+        7,
+        10
+      ],
+      "decision": "include",
+      "reason": "可独立判断的方法比较、资源概括或适用边界；仅保留本文综述层面的证据。"
+    },
+    {
+      "summary": "C44：本文指出概率模型和 Transformer 的计算成本限制毫秒级闭环 BCI；附录以序列长度的立方级概率推断和平方级注意力开销说明典型瓶颈，但没有证明所有模型均具相同复杂度或给出统一硬件延迟。",
+      "role": "review_synthesis",
+      "source_pages": [
+        7,
+        10
+      ],
+      "decision": "include",
+      "reason": "可独立判断的方法比较、资源概括或适用边界；仅保留本文综述层面的证据。"
+    },
+    {
+      "summary": "C45：作者提出利用 iVAE 的辅助行为或刺激变量以及强归纳偏置约束潜空间，作为改进统计可辨识性与解释性的候选路线；本综述没有证明这些约束即可使潜因素具有唯一生物学意义。",
+      "role": "hypothesis",
+      "source_pages": [
+        10
+      ],
+      "decision": "include",
+      "reason": "可独立审视的未来研究路线，与已综述方法和当前限制分开；本文未验证。"
+    },
+    {
+      "summary": "C46：作者提出以 Causal Representation Learning 和生成式 Digital Twins 预测干预反事实，再由刺激或损伤实验检验预测，作为从观察性通信模型走向因果回路分析的未来路线。",
+      "role": "hypothesis",
+      "source_pages": [
+        10
+      ],
+      "decision": "include",
+      "reason": "可独立审视的未来研究路线，与已综述方法和当前限制分开；本文未验证。"
+    },
+    {
+      "summary": "C47：作者建议把神经动态表示为相对流形，并结合 geometric alignment、In-Context Learning 和推断时校准 prompts，以改善新个体或新记录场景的适配；本文未检验这一组合是否实现通用 zero-shot decoder。",
+      "role": "hypothesis",
+      "source_pages": [
+        10
+      ],
+      "decision": "include",
+      "reason": "可独立审视的未来研究路线，与已综述方法和当前限制分开；本文未验证。"
+    },
+    {
+      "summary": "C48：作者建议用 Knowledge Distillation 将高成本 teacher 潜模型压缩为轻量 State Space Models 或 Spiking Neural Networks，以探索低功耗闭环解码，同时将 POSSM 视为相关效率路线的早期例子，而非本综述已验证的蒸馏结果。",
+      "role": "hypothesis",
+      "source_pages": [
+        10
+      ],
+      "decision": "include",
+      "reason": "可独立审视的未来研究路线，与已综述方法和当前限制分开；本文未验证。"
+    },
+    {
+      "summary": "C49：本文的三主线不是方法全覆盖：附录另列 normalizing flows 的精确似然及可逆几何表示、显式功能连接图和 topological data analysis，并说明纯 behavior/stimulus→neural encoding（如 BEAST）不属于本综述主要的解码与联合编码–解码范围。",
+      "role": "review_synthesis",
+      "source_pages": [
+        10,
+        11
+      ],
+      "decision": "include",
+      "reason": "可独立判断的方法比较、资源概括或适用边界；仅保留本文综述层面的证据。"
+    },
+    {
+      "summary": "C50：附录指出若干被综述方法主要在 spike trains 上验证，并将 DLAG/mDLAG 用于非 Gaussian intracranial LFP 时可能出现的数值不稳定列为模态边界及改进动机；本文没有报告该不稳定的发生率或失败实验。",
+      "role": "review_synthesis",
+      "source_pages": [
+        11
+      ],
+      "decision": "include",
+      "reason": "可独立判断的方法比较、资源概括或适用边界；仅保留本文综述层面的证据。"
+    },
+    {
+      "summary": "CTDS 对 Dale’s Law 和 E/I 列约束的精确符号实现。",
+      "role": "review_synthesis",
+      "source_pages": [
+        2
+      ],
+      "decision": "defer",
+      "reason": "源文本一面称区分兴奋/抑制群体，一面笼统称列非负，未给出完整抑制符号约定；不重建或猜测算法。"
+    },
+    {
+      "summary": "式 7 势能归一化与式 19 Manifold Capacity 的精确可复算表达。",
+      "role": "review_synthesis",
+      "source_pages": [
+        3,
+        6
+      ],
+      "decision": "exclude",
+      "reason": "未提供足够符号定义或清晰表达；保留定性设计和度量用途，不擅自补公式。"
+    },
+    {
+      "summary": "本文宣称首次连接三主线的历史首创性。",
+      "role": "interpretation",
+      "source_pages": [
+        10
+      ],
+      "decision": "exclude",
+      "reason": "这是作者定位，单篇 supplied source 不能证明领域首创性。"
+    },
+    {
+      "summary": "参考文献、资助、机构和项目网址。",
+      "role": "other",
+      "source_pages": [
+        1,
+        7,
+        8,
+        9
+      ],
+      "decision": "exclude",
+      "reason": "已读以确认身份及归因，但不是独立科学命题；不访问外部链接。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "本文以潜状态演化 f、观测映射 g 和训练目标为比较轴，将神经群体潜变量方法组织为单脑区动态、多脑区通信和行为对齐三条互补主线；这一分类针对群体记录推断，并不涵盖全部脑动力学建模。",
+      "claim_type": "方法比较与范围综合",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "对所引模型的叙述性综述和建模假设比较",
+          "design": "本文不开展独立实验，也不在统一数据和划分下重新训练或定量比较模型。",
+          "comparator": null,
+          "measure": "模型结构、观测假设、目标函数或适用范围；非本文新测量的性能读数。",
+          "unit_of_analysis": "被综述的方法或方法类别；不是独立动物、试次、神经元或仿真重复。",
+          "sample_size_as_reported": null,
+          "uncertainty": "本文没有给出此比较的配对效应量、统计不确定性或独立重复数。",
+          "assumptions": [
+            "神经观测由潜状态和观测过程描述；低维流形是建模假设，不是所有神经记录的已证事实。",
+            "外部输入、过程噪声和历史依赖协变量可按具体模型纳入。"
+          ],
+          "source_locator": {
+            "pdf_page": 2,
+            "section": "2.1–2.2 Taxonomy and Preliminaries",
+            "figure": null,
+            "equation": "1–2",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "对所引模型的叙述性综述和建模假设比较",
+          "design": "本文不开展独立实验，也不在统一数据和划分下重新训练或定量比较模型。",
+          "comparator": null,
+          "measure": "模型结构、观测假设、目标函数或适用范围；非本文新测量的性能读数。",
+          "unit_of_analysis": "被综述的方法或方法类别；不是独立动物、试次、神经元或仿真重复。",
+          "sample_size_as_reported": null,
+          "uncertainty": "本文没有给出此比较的配对效应量、统计不确定性或独立重复数。",
+          "assumptions": [
+            "神经观测由潜状态和观测过程描述；低维流形是建模假设，不是所有神经记录的已证事实。",
+            "外部输入、过程噪声和历史依赖协变量可按具体模型纳入。"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "Figure 1 taxonomy",
+            "figure": "Figure 1",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "对所引模型的叙述性综述和建模假设比较",
+          "design": "本文不开展独立实验，也不在统一数据和划分下重新训练或定量比较模型。",
+          "comparator": null,
+          "measure": "模型结构、观测假设、目标函数或适用范围；非本文新测量的性能读数。",
+          "unit_of_analysis": "被综述的方法或方法类别；不是独立动物、试次、神经元或仿真重复。",
+          "sample_size_as_reported": null,
+          "uncertainty": "本文没有给出此比较的配对效应量、统计不确定性或独立重复数。",
+          "assumptions": [
+            "神经观测由潜状态和观测过程描述；低维流形是建模假设，不是所有神经记录的已证事实。",
+            "外部输入、过程噪声和历史依赖协变量可按具体模型纳入。"
+          ],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "Appendix D Relation to Prior Surveys",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "建立贯穿三个问题域的结构化方法分类。",
+        "boundary": "这是作者的综述组织框架；未证明分类完备或其历史首创性。",
+        "negative_result": null,
+        "non_inference": "不能据此宣称本文实施了独立实验、统一基准比较或生物学机制验证。",
+        "unresolved": null,
+        "unresolved_attribution": "经验性表述归于被综述研究；本输出没有读取或独立核验那些原始论文。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "如何在同一比较框架下定位单区动力学、跨区通信与行为对齐方法？"
+      ],
+      "shared_evidence_with": [
+        "C2"
+      ],
+      "review_notes": [
+        "候选综述记录；不将引用研究计作本文独立实验，未建立跨论文关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "统一生成框架对 CCA/RRR 与 CEBRA 只能作结构层面的映射：CCA/RRR 可视为没有显式动态先验的静态低秩观测几何估计，而 CEBRA 以辅助标签和 InfoNCE 训练编码器，不规定显式观测概率密度。",
+      "claim_type": "方法比较与范围综合",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "对所引模型的叙述性综述和建模假设比较",
+          "design": "本文不开展独立实验，也不在统一数据和划分下重新训练或定量比较模型。",
+          "comparator": "显式状态空间或深生成模型与静态子空间、判别对齐方法。",
+          "measure": "是否具有动态先验、观测似然以及生成或判别目标。",
+          "unit_of_analysis": "被综述的方法或方法类别；不是独立动物、试次、神经元或仿真重复。",
+          "sample_size_as_reported": null,
+          "uncertainty": "本文没有给出此比较的配对效应量、统计不确定性或独立重复数。",
+          "assumptions": [
+            "结论限于本文对相关模型的描述；所引研究的完整识别条件和实验细节未在本文重现。"
+          ],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "Appendix C Mapping Subspace and Discriminative Methods to the Unified Framework",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "对所引模型的叙述性综述和建模假设比较",
+          "design": "本文不开展独立实验，也不在统一数据和划分下重新训练或定量比较模型。",
+          "comparator": "显式状态空间或深生成模型与静态子空间、判别对齐方法。",
+          "measure": "是否具有动态先验、观测似然以及生成或判别目标。",
+          "unit_of_analysis": "被综述的方法或方法类别；不是独立动物、试次、神经元或仿真重复。",
+          "sample_size_as_reported": null,
+          "uncertainty": "本文没有给出此比较的配对效应量、统计不确定性或独立重复数。",
+          "assumptions": [
+            "结论限于本文对相关模型的描述；所引研究的完整识别条件和实验细节未在本文重现。"
+          ],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "Appendix A representative-method comparison",
+            "figure": "Table 1",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "统一比较不意味着所有模型共享同一概率生成语义。",
+        "boundary": "这是综述中的方法层面概括，不是原研究结果的独立复现。",
+        "negative_result": null,
+        "non_inference": "不能将 CCA、RRR 或 CEBRA 强行解释为具有显式观测似然的生成模型。",
+        "unresolved": null,
+        "unresolved_attribution": "经验性表述归于被综述研究；本输出没有读取或独立核验那些原始论文。"
+      },
+      "broad_directions": [
+        "methods-causal",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "生成框架能以什么受限意义覆盖静态和判别式神经表征方法？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C22",
+        "C28"
+      ],
+      "review_notes": [
+        "候选综述记录；不将引用研究计作本文独立实验，未建立跨论文关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "GPFA 以 Gaussian Process 潜轨迹先验、线性观测映射和 Gaussian 噪声提取平滑群体轨迹；本文将采用 Poisson 观测的 vLGP、分离刺激锁定信号与内部噪声的 SNP-GPFA，以及以 GP 表示非线性调谐的 P-GPLVM 归为针对不同观测或映射限制的扩展。",
+      "claim_type": "方法比较与范围综合",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "对所引模型的叙述性综述和建模假设比较",
+          "design": "本文不开展独立实验，也不在统一数据和划分下重新训练或定量比较模型。",
+          "comparator": "Gaussian/线性 GPFA 与非 Gaussian 噪声、信号噪声分解或非线性映射扩展。",
+          "measure": "模型结构、观测假设、目标函数或适用范围；非本文新测量的性能读数。",
+          "unit_of_analysis": "被综述的方法或方法类别；不是独立动物、试次、神经元或仿真重复。",
+          "sample_size_as_reported": null,
+          "uncertainty": "本文没有给出此比较的配对效应量、统计不确定性或独立重复数。",
+          "assumptions": [
+            "基本 GPFA 假设潜轨迹 GP 先验和线性 Gaussian 观测；扩展模型改变其中部分假设。"
+          ],
+          "source_locator": {
+            "pdf_page": 2,
+            "section": "3.1 Gaussian Process-based Models",
+            "figure": null,
+            "equation": "3",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "GP 先验、观测分布和观测非线性是可分别选择的建模维度。",
+        "boundary": "这是综述中的方法层面概括，不是原研究结果的独立复现。",
+        "negative_result": null,
+        "non_inference": "不能据此宣称本文实施了独立实验、统一基准比较或生物学机制验证。",
+        "unresolved": null,
+        "unresolved_attribution": "经验性表述归于被综述研究；本输出没有读取或独立核验那些原始论文。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "平滑潜轨迹模型如何适应离散脉冲、内部噪声及非线性调谐？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "候选综述记录；不将引用研究计作本文独立实验，未建立跨论文关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "与只用 GP 核约束时间平滑性的 GPFA 不同，LDS 用显式线性状态转移和外部输入描述潜动态；PLDS 在该线性动态骨架上采用指数链接的 Poisson 观测，以描述群体脉冲计数。",
+      "claim_type": "方法比较与范围综合",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "对所引模型的叙述性综述和建模假设比较",
+          "design": "本文不开展独立实验，也不在统一数据和划分下重新训练或定量比较模型。",
+          "comparator": "GP 潜轨迹平滑先验与显式线性状态演化；Gaussian 与 Poisson 观测。",
+          "measure": "模型结构、观测假设、目标函数或适用范围；非本文新测量的性能读数。",
+          "unit_of_analysis": "被综述的方法或方法类别；不是独立动物、试次、神经元或仿真重复。",
+          "sample_size_as_reported": null,
+          "uncertainty": "本文没有给出此比较的配对效应量、统计不确定性或独立重复数。",
+          "assumptions": [
+            "LDS 的潜状态演化在线性模型和噪声假设下成立；PLDS 的观测条件均值经指数链接产生。"
+          ],
+          "source_locator": {
+            "pdf_page": 2,
+            "section": "3.1 Linear Dynamical Systems",
+            "figure": null,
+            "equation": "4–5",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "显式状态演化与脉冲观测可以在同一模型中区分。",
+        "boundary": "线性动态不等于生物学完整性；本文的 CTDS 符号说明不足以重建 E/I 连接约束。",
+        "negative_result": null,
+        "non_inference": "不能据此宣称本文实施了独立实验、统一基准比较或生物学机制验证。",
+        "unresolved": null,
+        "unresolved_attribution": "经验性表述归于被综述研究；本输出没有读取或独立核验那些原始论文。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "如何同时表达线性潜动态和离散脉冲观测？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "候选综述记录；不将引用研究计作本文独立实验，未建立跨论文关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "LFADS 通过 Sequential VAE 推断 generator RNN 的初始条件；NDT 则用时间自注意力和掩码脉冲重建学习神经表征，构成不显式依赖循环连接的替代路线。本文将 NDT 的较快推理和潜动态恢复归于所引工作，而非本综述的配对实验。",
+      "claim_type": "方法比较与范围综合",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "对所引模型的叙述性综述和建模假设比较",
+          "design": "本文不开展独立实验，也不在统一数据和划分下重新训练或定量比较模型。",
+          "comparator": "generator RNN 的 LFADS 与自注意力掩码建模的 NDT。",
+          "measure": "动态表示方式、训练目标及综述报告的相对推理速度。",
+          "unit_of_analysis": "被综述的方法或方法类别；不是独立动物、试次、神经元或仿真重复。",
+          "sample_size_as_reported": null,
+          "uncertainty": "本文没有给出此比较的配对效应量、统计不确定性或独立重复数。",
+          "assumptions": [
+            "结论限于本文对相关模型的描述；所引研究的完整识别条件和实验细节未在本文重现。"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "3.2 RNN-Based Variational Autoencoders; Transformer-Based Models",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "显式循环架构并非本文所述潜动态建模的唯一实现。",
+        "boundary": "未报告匹配硬件、数据、潜维数、延迟值或独立重复，不能给出统一速度排序。",
+        "negative_result": null,
+        "non_inference": "NDT 的重建成功不识别真实脑回路，也不证明所有任务都无需递归动态结构。",
+        "unresolved": null,
+        "unresolved_attribution": "经验性表述归于被综述研究；本输出没有读取或独立核验那些原始论文。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "显式 RNN 和掩码 Transformer 在潜动态建模中有哪些不同假设？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "候选综述记录；不将引用研究计作本文独立实验，未建立跨论文关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "本文将 AutoLFADS 概括为在 LFADS 路线上结合 Population-Based Training 与 Coordinated Dropout，以自动搜索训练超参数、减少专家手工调参需求的框架。",
+      "claim_type": "方法比较与范围综合",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "对所引模型的叙述性综述和建模假设比较",
+          "design": "本文不开展独立实验，也不在统一数据和划分下重新训练或定量比较模型。",
+          "comparator": "需要手工选择训练超参数的 LFADS 工作流程。",
+          "measure": "训练超参数搜索与正则化方式。",
+          "unit_of_analysis": "被综述的方法或方法类别；不是独立动物、试次、神经元或仿真重复。",
+          "sample_size_as_reported": null,
+          "uncertainty": "本文没有给出此比较的配对效应量、统计不确定性或独立重复数。",
+          "assumptions": [
+            "结论限于本文对相关模型的描述；所引研究的完整识别条件和实验细节未在本文重现。"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "3.2 RNN-Based Variational Autoencoders",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "训练流程自动化与潜动态模型本身是不同设计层次。",
+        "boundary": "这是综述中的方法层面概括，不是原研究结果的独立复现。",
+        "negative_result": null,
+        "non_inference": "未在本文量化节省的人工时间、搜索成本，也不能推断完全无需专家或所有架构自动最优。",
+        "unresolved": null,
+        "unresolved_attribution": "经验性表述归于被综述研究；本输出没有读取或独立核验那些原始论文。"
+      },
+      "broad_directions": [
+        "methods-causal",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "自动超参数搜索如何降低潜动态模型的手工调参负担？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "候选综述记录；不将引用研究计作本文独立实验，未建立跨论文关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "对于带膜时间常数的 leaky RNN，本文把 DASC 的 dynamically aligned skip connections 描述为缓解长时程训练中梯度不稳定的设计，而不是改变潜状态观测模型的统一方案。",
+      "claim_type": "方法比较与范围综合",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "对所引模型的叙述性综述和建模假设比较",
+          "design": "本文不开展独立实验，也不在统一数据和划分下重新训练或定量比较模型。",
+          "comparator": "不采用该 skip connection 的 leaky RNN 训练。",
+          "measure": "长时程任务训练中的梯度传播设计。",
+          "unit_of_analysis": "被综述的方法或方法类别；不是独立动物、试次、神经元或仿真重复。",
+          "sample_size_as_reported": null,
+          "uncertainty": "本文没有给出此比较的配对效应量、统计不确定性或独立重复数。",
+          "assumptions": [
+            "结论限于本文对相关模型的描述；所引研究的完整识别条件和实验细节未在本文重现。"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "3.2 RNN-Based Variational Autoencoders",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "针对带泄漏递归模型的训练稳定性提出结构化连接路线。",
+        "boundary": "综述未给出梯度统计、任务配对结果或训练种子数。",
+        "negative_result": null,
+        "non_inference": "不能宣称所有梯度不稳定均被消除或该训练设计已由生物系统实现。",
+        "unresolved": null,
+        "unresolved_attribution": "经验性表述归于被综述研究；本输出没有读取或独立核验那些原始论文。"
+      },
+      "broad_directions": [
+        "methods-causal",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "带膜时间常数的 RNN 如何改善长时程依赖的梯度传播？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "候选综述记录；不将引用研究计作本文独立实验，未建立跨论文关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "本文将 SLRNN 与 LINT 的可解释性路线归纳为约束 RNN 循环连接的低秩结构：SLRNN 用于随机潜动态推断并分析固定点和流场，LINT 在行为相关建模中以低秩连接约束提取计算结构。",
+      "claim_type": "方法比较与范围综合",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "对所引模型的叙述性综述和建模假设比较",
+          "design": "本文不开展独立实验，也不在统一数据和划分下重新训练或定量比较模型。",
+          "comparator": "不受低秩结构约束的递归模型。",
+          "measure": "模型结构、观测假设、目标函数或适用范围；非本文新测量的性能读数。",
+          "unit_of_analysis": "被综述的方法或方法类别；不是独立动物、试次、神经元或仿真重复。",
+          "sample_size_as_reported": null,
+          "uncertainty": "本文没有给出此比较的配对效应量、统计不确定性或独立重复数。",
+          "assumptions": [
+            "低秩循环连接是特定模型假设；随机过程和行为目标仍依具体方法定义。"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "3.2 Stochastic Low-Rank RNN",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "对所引模型的叙述性综述和建模假设比较",
+          "design": "本文不开展独立实验，也不在统一数据和划分下重新训练或定量比较模型。",
+          "comparator": "不受低秩结构约束的递归模型。",
+          "measure": "模型结构、观测假设、目标函数或适用范围；非本文新测量的性能读数。",
+          "unit_of_analysis": "被综述的方法或方法类别；不是独立动物、试次、神经元或仿真重复。",
+          "sample_size_as_reported": null,
+          "uncertainty": "本文没有给出此比较的配对效应量、统计不确定性或独立重复数。",
+          "assumptions": [
+            "低秩循环连接是特定模型假设；随机过程和行为目标仍依具体方法定义。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "5.1 Non-linear & RNN-based Disentanglement",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "低秩限制为动力学结构解释提供模型层面的约束。",
+        "boundary": "这是综述中的方法层面概括，不是原研究结果的独立复现。",
+        "negative_result": null,
+        "non_inference": "可分析固定点或低秩因素不意味着识别了真实神经元连接或唯一生物机制。",
+        "unresolved": null,
+        "unresolved_attribution": "经验性表述归于被综述研究；本输出没有读取或独立核验那些原始论文。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "低秩循环连接怎样帮助解释潜动态的计算结构？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "候选综述记录；不将引用研究计作本文独立实验，未建立跨论文关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "PLNDE/ODIN 用 Neural ODE 表示连续时间确定性潜演化；FINDR 将连续时间建模扩展到带 drift 和 diffusion 的 Neural SDE，以显式表示潜动态的随机性，并在综述中被描述为可展示流场与吸引子。",
+      "claim_type": "方法比较与范围综合",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "对所引模型的叙述性综述和建模假设比较",
+          "design": "本文不开展独立实验，也不在统一数据和划分下重新训练或定量比较模型。",
+          "comparator": "连续时间确定性 ODE 与随机 SDE 潜动态。",
+          "measure": "模型结构、观测假设、目标函数或适用范围；非本文新测量的性能读数。",
+          "unit_of_analysis": "被综述的方法或方法类别；不是独立动物、试次、神经元或仿真重复。",
+          "sample_size_as_reported": null,
+          "uncertainty": "本文没有给出此比较的配对效应量、统计不确定性或独立重复数。",
+          "assumptions": [
+            "确定性模型采用微分方程动态；随机模型额外规定 diffusion/noise 过程。",
+            "ODE/SDE 数值求解仍涉及算法误差；连续时间参数化不等于没有离散化误差。"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "3.3 Continuous-Time Neural ODEs & SDEs",
+            "figure": null,
+            "equation": "6",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "对所引模型的叙述性综述和建模假设比较",
+          "design": "本文不开展独立实验，也不在统一数据和划分下重新训练或定量比较模型。",
+          "comparator": "连续时间确定性 ODE 与随机 SDE 潜动态。",
+          "measure": "模型结构、观测假设、目标函数或适用范围；非本文新测量的性能读数。",
+          "unit_of_analysis": "被综述的方法或方法类别；不是独立动物、试次、神经元或仿真重复。",
+          "sample_size_as_reported": null,
+          "uncertainty": "本文没有给出此比较的配对效应量、统计不确定性或独立重复数。",
+          "assumptions": [
+            "确定性模型采用微分方程动态；随机模型额外规定 diffusion/noise 过程。",
+            "ODE/SDE 数值求解仍涉及算法误差；连续时间参数化不等于没有离散化误差。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "3.3 Continuous-Time Neural ODEs & SDEs continuation",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "连续时间模型可以分别参数化确定性演化与随机影响。",
+        "boundary": "这是综述中的方法层面概括，不是原研究结果的独立复现。",
+        "negative_result": null,
+        "non_inference": "模型中的 drift/diffusion 分解不能自动识别真实噪声来源或任务相关机制。",
+        "unresolved": null,
+        "unresolved_attribution": "经验性表述归于被综述研究；本输出没有读取或独立核验那些原始论文。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "如何在连续时间潜模型中区分确定性流与随机性？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "候选综述记录；不将引用研究计作本文独立实验，未建立跨论文关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "LangevinFlow 在 Sequential VAE 中以欠阻尼 Langevin 动态结合确定性势场、阻尼和随机影响，并用局部耦合振子势能参数化及 Transformer decoder 表达神经时空动态。",
+      "claim_type": "方法比较与范围综合",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "对所引模型的叙述性综述和建模假设比较",
+          "design": "本文不开展独立实验，也不在统一数据和划分下重新训练或定量比较模型。",
+          "comparator": "不显式引入该 Langevin 物理先验的连续时间潜模型。",
+          "measure": "模型结构、观测假设、目标函数或适用范围；非本文新测量的性能读数。",
+          "unit_of_analysis": "被综述的方法或方法类别；不是独立动物、试次、神经元或仿真重复。",
+          "sample_size_as_reported": null,
+          "uncertainty": "本文没有给出此比较的配对效应量、统计不确定性或独立重复数。",
+          "assumptions": [
+            "欠阻尼 Langevin 形式、势场、阻尼与噪声项是模型先验，不是直接测得的神经物理参数。"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "3.3 Continuous-Time Neural ODEs & SDEs: LangevinFlow",
+            "figure": null,
+            "equation": "7",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "物理形式的潜动态先验可与深观测映射组合。",
+        "boundary": "仅保留文字中明确的建模结构；不从排版不充分的势函数式推断未定义参数或精确归一化。",
+        "negative_result": null,
+        "non_inference": "不能将潜模型的质量、阻尼、温度等量等同于实测生物参数。",
+        "unresolved": null,
+        "unresolved_attribution": "经验性表述归于被综述研究；本输出没有读取或独立核验那些原始论文。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "具有振子势场的 Langevin 先验如何表达神经时空潜动态？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "候选综述记录；不将引用研究计作本文独立实验，未建立跨论文关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "rSLDS/gpSLDS 以不同局部线性模式及其切换近似全局非线性潜动态；rSLDS 的离散模式转移可依赖连续潜状态历史，而 gpSLDS 通过分区加权的 GP 核描述线性片段之间的组织。",
+      "claim_type": "方法比较与范围综合",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "对所引模型的叙述性综述和建模假设比较",
+          "design": "本文不开展独立实验，也不在统一数据和划分下重新训练或定量比较模型。",
+          "comparator": "单一线性动态与分模式的局部线性动态。",
+          "measure": "模型结构、观测假设、目标函数或适用范围；非本文新测量的性能读数。",
+          "unit_of_analysis": "被综述的方法或方法类别；不是独立动物、试次、神经元或仿真重复。",
+          "sample_size_as_reported": null,
+          "uncertainty": "本文没有给出此比较的配对效应量、统计不确定性或独立重复数。",
+          "assumptions": [
+            "局部模式内线性；模式分配或转移须依具体模型规定。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "3.3 Switching Linear Dynamical Systems; 4.1 Switching and Nonlinear State-Space Models",
+            "figure": null,
+            "equation": "8, 10–11",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "模式内线性和状态依赖切换可共同表达非线性动态。",
+        "boundary": "式 8 属于核分区描述，不能作为所有 rSLDS 的共同通式；模式标签也不是直接测得的认知状态。",
+        "negative_result": null,
+        "non_inference": "不能据此宣称本文实施了独立实验、统一基准比较或生物学机制验证。",
+        "unresolved": null,
+        "unresolved_attribution": "经验性表述归于被综述研究；本输出没有读取或独立核验那些原始论文。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "状态依赖的模式切换怎样组织局部线性潜动态？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "候选综述记录；不将引用研究计作本文独立实验，未建立跨论文关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "本文将 DynCL 描述为用 InfoNCE 而非生成重建损失，并通过可微的稳定线性矩阵组学习切换动态的对比学习路线；综述提及的可辨识性和较低计算负担未在本文给出完整证明或配对测量。",
+      "claim_type": "方法比较与范围综合",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "对所引模型的叙述性综述和建模假设比较",
+          "design": "本文不开展独立实验，也不在统一数据和划分下重新训练或定量比较模型。",
+          "comparator": "依赖重建目标的生成式 RNN 路线。",
+          "measure": "对比目标及切换动态参数化。",
+          "unit_of_analysis": "被综述的方法或方法类别；不是独立动物、试次、神经元或仿真重复。",
+          "sample_size_as_reported": null,
+          "uncertainty": "本文没有给出此比较的配对效应量、统计不确定性或独立重复数。",
+          "assumptions": [
+            "结论限于本文对相关模型的描述；所引研究的完整识别条件和实验细节未在本文重现。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "3.3 Switching Linear Dynamical Systems: DynCL",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "切换动态学习可以采用对比而非重建目标。",
+        "boundary": "本文没有展开该路线的完整可辨识性条件、定理或开销数值。",
+        "negative_result": null,
+        "non_inference": "不能无条件声称恢复真实动力学、唯一潜轴或在所有数据上效率更高。",
+        "unresolved": null,
+        "unresolved_attribution": "经验性表述归于被综述研究；本输出没有读取或独立核验那些原始论文。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "对比学习能以哪些建模结构学习切换潜动态？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "候选综述记录；不将引用研究计作本文独立实验，未建立跨论文关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C13",
+      "statement": "在多脑区 GP 模型中，潜变量可分为 across-area shared 与 within-area private 成分；DLAG/mDLAG 在共享动态的协方差中显式表示区域间时延，以区分共有变化、本地变化及延迟相关关系。",
+      "claim_type": "方法比较与范围综合",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "对所引模型的叙述性综述和建模假设比较",
+          "design": "本文不开展独立实验，也不在统一数据和划分下重新训练或定量比较模型。",
+          "comparator": "未分解 shared/private 成分或未显式建模时延的群体模型。",
+          "measure": "模型结构、观测假设、目标函数或适用范围；非本文新测量的性能读数。",
+          "unit_of_analysis": "被综述的方法或方法类别；不是独立动物、试次、神经元或仿真重复。",
+          "sample_size_as_reported": null,
+          "uncertainty": "本文没有给出此比较的配对效应量、统计不确定性或独立重复数。",
+          "assumptions": [
+            "共享和私有潜成分及多输出 GP 协方差是模型结构假设。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "4.1 Linear and Gaussian Process Models",
+            "figure": null,
+            "equation": "9",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "共享/私有潜分解和显式时延提供跨区统计交互描述。",
+        "boundary": "这是综述中的方法层面概括，不是原研究结果的独立复现。",
+        "negative_result": null,
+        "non_inference": "延迟或有向功能相关不等于直接突触传导或干预意义上的因果连接。",
+        "unresolved": null,
+        "unresolved_attribution": "经验性表述归于被综述研究；本输出没有读取或独立核验那些原始论文。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "如何分离脑区共有变化、本地变化及区域间时延？"
+      ],
+      "shared_evidence_with": [
+        "C14",
+        "C15"
+      ],
+      "review_notes": [
+        "候选综述记录；不将引用研究计作本文独立实验，未建立跨论文关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C14",
+      "statement": "相对于把脑区间关系表示为简单时间平移的延迟模型，本文把 MRM-GP 的复值核描述为表达频率特异相位延迟的扩展，用于不易由单一时间偏移概括的跨区关系。",
+      "claim_type": "方法比较与范围综合",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "对所引模型的叙述性综述和建模假设比较",
+          "design": "本文不开展独立实验，也不在统一数据和划分下重新训练或定量比较模型。",
+          "comparator": "以简单时间平移表示跨区延迟的模型。",
+          "measure": "频率相关的相位延迟参数化。",
+          "unit_of_analysis": "被综述的方法或方法类别；不是独立动物、试次、神经元或仿真重复。",
+          "sample_size_as_reported": null,
+          "uncertainty": "本文没有给出此比较的配对效应量、统计不确定性或独立重复数。",
+          "assumptions": [
+            "复值协方差核用于表征频率相关相位关系；本文不提供参数恢复的完整条件。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "4.1 Linear and Gaussian Process Models: MRM-GP",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "相位关系与固定时移不是相同建模假设。",
+        "boundary": "这是综述中的方法层面概括，不是原研究结果的独立复现。",
+        "negative_result": null,
+        "non_inference": "频率相位关系不证明特定突触路径或直接因果影响。",
+        "unresolved": null,
+        "unresolved_attribution": "经验性表述归于被综述研究；本输出没有读取或独立核验那些原始论文。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "频率特异相位关系如何超越单一跨区时延表示？"
+      ],
+      "shared_evidence_with": [
+        "C13",
+        "C15"
+      ],
+      "review_notes": [
+        "候选综述记录；不将引用研究计作本文独立实验，未建立跨论文关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C15",
+      "statement": "本文把 ADM 的 Markov Gaussian Process 与时变转移矩阵概括为跟踪单个试次内非平稳脑区通信及通信延迟变化的路线，而非假定所有时刻共享固定交互结构。",
+      "claim_type": "方法比较与范围综合",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "对所引模型的叙述性综述和建模假设比较",
+          "design": "本文不开展独立实验，也不在统一数据和划分下重新训练或定量比较模型。",
+          "comparator": "时间不变的跨区 GP 交互结构。",
+          "measure": "随时间变化的潜状态转移及通信描述。",
+          "unit_of_analysis": "被综述的方法或方法类别；不是独立动物、试次、神经元或仿真重复。",
+          "sample_size_as_reported": null,
+          "uncertainty": "本文没有给出此比较的配对效应量、统计不确定性或独立重复数。",
+          "assumptions": [
+            "采用 Markov GP 动态和时变转移；模型识别依赖观察与推断假设。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "4.1 Linear and Gaussian Process Models: ADM",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "对所引模型的叙述性综述和建模假设比较",
+          "design": "本文不开展独立实验，也不在统一数据和划分下重新训练或定量比较模型。",
+          "comparator": "时间不变的跨区 GP 交互结构。",
+          "measure": "随时间变化的潜状态转移及通信描述。",
+          "unit_of_analysis": "被综述的方法或方法类别；不是独立动物、试次、神经元或仿真重复。",
+          "sample_size_as_reported": null,
+          "uncertainty": "本文没有给出此比较的配对效应量、统计不确定性或独立重复数。",
+          "assumptions": [
+            "采用 Markov GP 动态和时变转移；模型识别依赖观察与推断假设。"
+          ],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "Appendix A representative-method comparison",
+            "figure": "Table 1",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "跨区通信参数可在模型中随试次内时间变化。",
+        "boundary": "这是综述中的方法层面概括，不是原研究结果的独立复现。",
+        "negative_result": null,
+        "non_inference": "拟合的时变延迟不能自行排除共同驱动或确认真实传导时间。",
+        "unresolved": null,
+        "unresolved_attribution": "经验性表述归于被综述研究；本输出没有读取或独立核验那些原始论文。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "如何表征单个试次内不断变化的脑区通信？"
+      ],
+      "shared_evidence_with": [
+        "C13",
+        "C14"
+      ],
+      "review_notes": [
+        "候选综述记录；不将引用研究计作本文独立实验，未建立跨论文关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C16",
+      "statement": "本文将 MR-SDS 和 mp-srSLDS 归为状态依赖的多脑区通信模型：离散潜模式对通信通道或转移稳定性进行门控，以描述非静态的群体交互。",
+      "claim_type": "方法比较与范围综合",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "对所引模型的叙述性综述和建模假设比较",
+          "design": "本文不开展独立实验，也不在统一数据和划分下重新训练或定量比较模型。",
+          "comparator": "不区分内部潜模式的静态或固定跨区交互。",
+          "measure": "模型结构、观测假设、目标函数或适用范围；非本文新测量的性能读数。",
+          "unit_of_analysis": "被综述的方法或方法类别；不是独立动物、试次、神经元或仿真重复。",
+          "sample_size_as_reported": null,
+          "uncertainty": "本文没有给出此比较的配对效应量、统计不确定性或独立重复数。",
+          "assumptions": [
+            "离散模式与连续潜状态共同定义生成过程；不同模型的门控和 stickiness 机制不同。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "4.1 Switching and Nonlinear State-Space Models",
+            "figure": null,
+            "equation": "10–11",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "通信结构可以随推断的潜模式切换。",
+        "boundary": "这是综述中的方法层面概括，不是原研究结果的独立复现。",
+        "negative_result": null,
+        "non_inference": "模式与注意、规划等认知标签的对应不构成直接行为或生物机制识别。",
+        "unresolved": null,
+        "unresolved_attribution": "经验性表述归于被综述研究；本输出没有读取或独立核验那些原始论文。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "内部状态怎样在模型中门控跨脑区通信？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "候选综述记录；不将引用研究计作本文独立实验，未建立跨论文关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C17",
+      "statement": "MR-LFADS 的 Sender–Receiver 结构以来源脑区的潜状态作为目标脑区的 forcing input，并将目标 log firing-rate intensity 分为局部潜动态、群体耦合和脉冲历史三个相加成分，以描述有向非线性统计影响。",
+      "claim_type": "方法比较与范围综合",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "对所引模型的叙述性综述和建模假设比较",
+          "design": "本文不开展独立实验，也不在统一数据和划分下重新训练或定量比较模型。",
+          "comparator": "不显式区分局部、耦合与历史成分的非线性跨区模型。",
+          "measure": "目标 log intensity 的组件化建模。",
+          "unit_of_analysis": "被综述的方法或方法类别；不是独立动物、试次、神经元或仿真重复。",
+          "sample_size_as_reported": null,
+          "uncertainty": "本文没有给出此比较的配对效应量、统计不确定性或独立重复数。",
+          "assumptions": [
+            "log intensity 的相加分解和来源潜状态驱动目标是模型假设。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "4.2 Sequential and Transformer VAEs: MR-LFADS",
+            "figure": null,
+            "equation": "12",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "局部动态、来源耦合与历史效应可在模型结构中区分。",
+        "boundary": "这是综述中的方法层面概括，不是原研究结果的独立复现。",
+        "negative_result": null,
+        "non_inference": "forcing input 是拟合架构角色，不等于已验证的真实外部干预或突触因果连接。",
+        "unresolved": null,
+        "unresolved_attribution": "经验性表述归于被综述研究；本输出没有读取或独立核验那些原始论文。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "如何区分跨区耦合、局部动态和神经元历史效应？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "候选综述记录；不将引用研究计作本文独立实验，未建立跨论文关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C18",
+      "statement": "本文将 GLM-Transformer 描述为融合 self-attention 与 GLM 解释结构的跨脑区模型，旨在在表达时间或试次相关交互的同时保留对个体神经元动态因素的结构化说明。",
+      "claim_type": "方法比较与范围综合",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "对所引模型的叙述性综述和建模假设比较",
+          "design": "本文不开展独立实验，也不在统一数据和划分下重新训练或定量比较模型。",
+          "comparator": "缺乏相同 GLM 解释结构的一般深表示模型。",
+          "measure": "self-attention 与 GLM 结构的组合。",
+          "unit_of_analysis": "被综述的方法或方法类别；不是独立动物、试次、神经元或仿真重复。",
+          "sample_size_as_reported": null,
+          "uncertainty": "本文没有给出此比较的配对效应量、统计不确定性或独立重复数。",
+          "assumptions": [
+            "结论限于本文对相关模型的描述；所引研究的完整识别条件和实验细节未在本文重现。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "4.2 Sequential and Transformer VAEs: GLM-Transformer",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "表达复杂交互和保留统计解释结构可以在架构层面结合。",
+        "boundary": "这是综述中的方法层面概括，不是原研究结果的独立复现。",
+        "negative_result": null,
+        "non_inference": "可解释组件或注意力权重不能自动解释为真实回路因果机制。",
+        "unresolved": null,
+        "unresolved_attribution": "经验性表述归于被综述研究；本输出没有读取或独立核验那些原始论文。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "跨脑区深模型怎样兼顾非线性表示与个体神经元因素解释？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "候选综述记录；不将引用研究计作本文独立实验，未建立跨论文关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C19",
+      "statement": "MtM 以 Multi-task Masking 学习神经时空表示，本文将其用于应对记录环境变化并支持跨 session、跨个体迁移的路线归入多脑区深表示学习，而非提供本文新的迁移效果测量。",
+      "claim_type": "方法比较与范围综合",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "对所引模型的叙述性综述和建模假设比较",
+          "design": "本文不开展独立实验，也不在统一数据和划分下重新训练或定量比较模型。",
+          "comparator": "局限于单一记录场景的表征训练。",
+          "measure": "多任务掩码目标与迁移适用目标。",
+          "unit_of_analysis": "被综述的方法或方法类别；不是独立动物、试次、神经元或仿真重复。",
+          "sample_size_as_reported": null,
+          "uncertainty": "本文没有给出此比较的配对效应量、统计不确定性或独立重复数。",
+          "assumptions": [
+            "结论限于本文对相关模型的描述；所引研究的完整识别条件和实验细节未在本文重现。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "4.2 Sequential and Transformer VAEs: MtM",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "训练掩码目标可覆盖多个时空预测任务。",
+        "boundary": "本文未给出统一的迁移协议、未见个体样本数或迁移误差。",
+        "negative_result": null,
+        "non_inference": "多任务预训练不保证任意动物、脑区或任务的零样本解码。",
+        "unresolved": null,
+        "unresolved_attribution": "经验性表述归于被综述研究；本输出没有读取或独立核验那些原始论文。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "多任务掩码训练如何应对神经记录环境变化？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "候选综述记录；不将引用研究计作本文独立实验，未建立跨论文关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C20",
+      "statement": "mRNN 以多脑区递归动力学表示群体交互；FORCE/full-FORCE 训练递归连接以匹配目标动态。本文特别区分后者的计算机制建模用途与从记录中直接推断潜状态的任务。",
+      "claim_type": "方法比较与范围综合",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "对所引模型的叙述性综述和建模假设比较",
+          "design": "本文不开展独立实验，也不在统一数据和划分下重新训练或定量比较模型。",
+          "comparator": "训练网络复现目标动态与从观察记录进行潜状态推断。",
+          "measure": "模型结构、观测假设、目标函数或适用范围；非本文新测量的性能读数。",
+          "unit_of_analysis": "被综述的方法或方法类别；不是独立动物、试次、神经元或仿真重复。",
+          "sample_size_as_reported": null,
+          "uncertainty": "本文没有给出此比较的配对效应量、统计不确定性或独立重复数。",
+          "assumptions": [
+            "结论限于本文对相关模型的描述；所引研究的完整识别条件和实验细节未在本文重现。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "4.2 Network and Geometric Dynamics",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "对所引模型的叙述性综述和建模假设比较",
+          "design": "本文不开展独立实验，也不在统一数据和划分下重新训练或定量比较模型。",
+          "comparator": "训练网络复现目标动态与从观察记录进行潜状态推断。",
+          "measure": "模型结构、观测假设、目标函数或适用范围；非本文新测量的性能读数。",
+          "unit_of_analysis": "被综述的方法或方法类别；不是独立动物、试次、神经元或仿真重复。",
+          "sample_size_as_reported": null,
+          "uncertainty": "本文没有给出此比较的配对效应量、统计不确定性或独立重复数。",
+          "assumptions": [
+            "结论限于本文对相关模型的描述；所引研究的完整识别条件和实验细节未在本文重现。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "4.2 Network and Geometric Dynamics continuation",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "机制模拟工具与潜变量推断工具并非同一分析任务。",
+        "boundary": "这是综述中的方法层面概括，不是原研究结果的独立复现。",
+        "negative_result": null,
+        "non_inference": "训练网络能重现目标轨迹不证明其连接等于真实脑回路。",
+        "unresolved": null,
+        "unresolved_attribution": "经验性表述归于被综述研究；本输出没有读取或独立核验那些原始论文。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "目标动态训练与潜状态推断有哪些不同的证据要求？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "候选综述记录；不将引用研究计作本文独立实验，未建立跨论文关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C21",
+      "statement": "SPLICE 通过层级 subspace pooling 表示局部变换不变性；MARBLE 以 Local Flow Fields 和对比学习处理局部坐标旋转，使潜动态表示面向流形几何而非某一记录基底。",
+      "claim_type": "方法比较与范围综合",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "对所引模型的叙述性综述和建模假设比较",
+          "design": "本文不开展独立实验，也不在统一数据和划分下重新训练或定量比较模型。",
+          "comparator": "对记录基底或局部相位、旋转变化敏感的表示。",
+          "measure": "局部变换不变性与潜流场几何。",
+          "unit_of_analysis": "被综述的方法或方法类别；不是独立动物、试次、神经元或仿真重复。",
+          "sample_size_as_reported": null,
+          "uncertainty": "本文没有给出此比较的配对效应量、统计不确定性或独立重复数。",
+          "assumptions": [
+            "SPLICE 的 pooling 和 MARBLE 的局部流场/旋转不变目标各有适用变换范围。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "4.2 Network and Geometric Dynamics",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "几何不变性是一条不同于仅优化时间预测的方法轴。",
+        "boundary": "这是综述中的方法层面概括，不是原研究结果的独立复现。",
+        "negative_result": null,
+        "non_inference": "坐标不变性不等于统计可辨识性、生物学唯一性或任意跨任务泛化。",
+        "unresolved": null,
+        "unresolved_attribution": "经验性表述归于被综述研究；本输出没有读取或独立核验那些原始论文。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "如何使潜动态表示减少对记录坐标基底的依赖？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "候选综述记录；不将引用研究计作本文独立实验，未建立跨论文关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C22",
+      "statement": "在 communication subspace 分析中，CCA 寻找源与目标群体的最大相关维度，RRR 在低秩约束下优化目标预测；Structured SNN + RRR 再将该回归目标嵌入带 E/I 等约束的脉冲网络训练。",
+      "claim_type": "方法比较与范围综合",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "对所引模型的叙述性综述和建模假设比较",
+          "design": "本文不开展独立实验，也不在统一数据和划分下重新训练或定量比较模型。",
+          "comparator": "相关最大化、秩约束预测及带结构约束的脉冲网络目标。",
+          "measure": "相关性、预测误差和线性映射秩；本文未提供相应数值。",
+          "unit_of_analysis": "被综述的方法或方法类别；不是独立动物、试次、神经元或仿真重复。",
+          "sample_size_as_reported": null,
+          "uncertainty": "本文没有给出此比较的配对效应量、统计不确定性或独立重复数。",
+          "assumptions": [
+            "RRR 的映射受 rank=m 约束；m 是模型秩，不是样本数。",
+            "带 E/I 结构的 SNN 是建模限制，而非已验证的真实回路。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "4.3 Communication Subspace Analysis",
+            "figure": null,
+            "equation": "13",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "通信子空间的定义随目标和结构约束而变。",
+        "boundary": "这是综述中的方法层面概括，不是原研究结果的独立复现。",
+        "negative_result": null,
+        "non_inference": "低秩预测或最大相关不能区分共同输入与直接因果通信。",
+        "unresolved": null,
+        "unresolved_attribution": "经验性表述归于被综述研究；本输出没有读取或独立核验那些原始论文。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "相关与预测目标怎样定义不同的跨区通信子空间？"
+      ],
+      "shared_evidence_with": [
+        "C2"
+      ],
+      "review_notes": [
+        "候选综述记录；不将引用研究计作本文独立实验，未建立跨论文关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C23",
+      "statement": "CREIMBO 通过 session-specific 观测因子和由共享动态字典组成的潜状态转移，把不同记录视图中的动态表述为共享 motifs 在时间上的不同组合。",
+      "claim_type": "方法比较与范围综合",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "对所引模型的叙述性综述和建模假设比较",
+          "design": "本文不开展独立实验，也不在统一数据和划分下重新训练或定量比较模型。",
+          "comparator": "不共享动态字典、分别拟合各 session 的表示。",
+          "measure": "共享动态字典和 session/time-specific 组合系数。",
+          "unit_of_analysis": "被综述的方法或方法类别；不是独立动物、试次、神经元或仿真重复。",
+          "sample_size_as_reported": null,
+          "uncertainty": "本文没有给出此比较的配对效应量、统计不确定性或独立重复数。",
+          "assumptions": [
+            "观测映射与潜转移分解按模型规定；共享动态库及其组合系数是拟合假设。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "4.3 Multi-View Alignment",
+            "figure": null,
+            "equation": "14–15",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "共享动态与记录特异观测可以在字典模型中分离。",
+        "boundary": "这是综述中的方法层面概括，不是原研究结果的独立复现。",
+        "negative_result": null,
+        "non_inference": "跨 session 字典元素不自动对应真实固定子回路或其唯一组成。",
+        "unresolved": null,
+        "unresolved_attribution": "经验性表述归于被综述研究；本输出没有读取或独立核验那些原始论文。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "如何在多个记录视图中学习共享动态 motifs？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "候选综述记录；不将引用研究计作本文独立实验，未建立跨论文关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C24",
+      "statement": "PSID 通过把未来行为投影到过去神经活动所张成的子空间，优先识别行为相关的线性潜动态；IPSID 再显式纳入外部 sensorimotor inputs，以区分内在动态和输入驱动部分。",
+      "claim_type": "方法比较与范围综合",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "对所引模型的叙述性综述和建模假设比较",
+          "design": "本文不开展独立实验，也不在统一数据和划分下重新训练或定量比较模型。",
+          "comparator": "仅最大化神经活动方差的表征；不显式考虑外部输入的行为相关识别。",
+          "measure": "未来行为预测的投影与内在/输入驱动分解。",
+          "unit_of_analysis": "被综述的方法或方法类别；不是独立动物、试次、神经元或仿真重复。",
+          "sample_size_as_reported": null,
+          "uncertainty": "本文没有给出此比较的配对效应量、统计不确定性或独立重复数。",
+          "assumptions": [
+            "行为相关/残余分解相对于所测目标行为定义；线性投影与输入模型受各方法假设约束。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "5.1 Linear Subspace Disentanglement",
+            "figure": null,
+            "equation": "16",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "行为预测目标和输入变量可改变潜状态分解。",
+        "boundary": "这是综述中的方法层面概括，不是原研究结果的独立复现。",
+        "negative_result": null,
+        "non_inference": "对目标行为无预测信息的残余并非对所有行为无关；输入驱动分解不自动证明真实因果机制。",
+        "unresolved": null,
+        "unresolved_attribution": "经验性表述归于被综述研究；本输出没有读取或独立核验那些原始论文。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "behavior-cognition",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "如何优先识别行为相关动态并区分外部输入贡献？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "候选综述记录；不将引用研究计作本文独立实验，未建立跨论文关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C25",
+      "statement": "DPAD 以双目标 RNN 将潜空间划分为行为对齐和相对目标行为的残余维度，并通过训练目标优先表达行为信息、限制残余维度编码该目标信息。",
+      "claim_type": "方法比较与范围综合",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "对所引模型的叙述性综述和建模假设比较",
+          "design": "本文不开展独立实验，也不在统一数据和划分下重新训练或定量比较模型。",
+          "comparator": "不优先区分行为信息和神经残余的非线性模型。",
+          "measure": "潜空间分区与行为/神经预测目标。",
+          "unit_of_analysis": "被综述的方法或方法类别；不是独立动物、试次、神经元或仿真重复。",
+          "sample_size_as_reported": null,
+          "uncertainty": "本文没有给出此比较的配对效应量、统计不确定性或独立重复数。",
+          "assumptions": [
+            "分解依赖所测行为、网络结构和目标函数；正交或无信息性是模型目标而非普遍生物事实。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "5.1 Non-linear & RNN-based Disentanglement: DPAD",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "非线性表征可围绕目标行为优先分解。",
+        "boundary": "这是综述中的方法层面概括，不是原研究结果的独立复现。",
+        "negative_result": null,
+        "non_inference": "行为相关潜轴不能单独识别行为因果神经元或证明残余对其他行为无关。",
+        "unresolved": null,
+        "unresolved_attribution": "经验性表述归于被综述研究；本输出没有读取或独立核验那些原始论文。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "非线性潜模型如何优先分离目标行为信息？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "候选综述记录；不将引用研究计作本文独立实验，未建立跨论文关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C26",
+      "statement": "BRAID 的行为相关非线性潜演化显式分开内部动态项和外部控制输入项，并结合 forward prediction 目标；本文将其视为区分输入驱动与内部残余动态的设计，但没有提供干预证据来证明因果结构被唯一识别。",
+      "claim_type": "方法比较与范围综合",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "对所引模型的叙述性综述和建模假设比较",
+          "design": "本文不开展独立实验，也不在统一数据和划分下重新训练或定量比较模型。",
+          "comparator": "未显式分解外部控制输入的行为潜动态模型。",
+          "measure": "内部动态、输入映射与 forward prediction 目标。",
+          "unit_of_analysis": "被综述的方法或方法类别；不是独立动物、试次、神经元或仿真重复。",
+          "sample_size_as_reported": null,
+          "uncertainty": "本文没有给出此比较的配对效应量、统计不确定性或独立重复数。",
+          "assumptions": [
+            "所测输入 ut 与内部行为潜状态通过文中相加形式进入动态；完整识别条件未在本文展开。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "5.1 Non-linear & RNN-based Disentanglement: BRAID",
+            "figure": null,
+            "equation": "17",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "外部输入的影响可作为单独模型项表示。",
+        "boundary": "这是综述中的方法层面概括，不是原研究结果的独立复现。",
+        "negative_result": null,
+        "non_inference": "纳入输入或改善前向预测不等于排除混杂、识别全部因果结构或验证反事实干预。",
+        "unresolved": null,
+        "unresolved_attribution": "经验性表述归于被综述研究；本输出没有读取或独立核验那些原始论文。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "behavior-cognition",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "非线性行为潜模型怎样分开外部输入与内部演化？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "候选综述记录；不将引用研究计作本文独立实验，未建立跨论文关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C27",
+      "statement": "SRNN 用 switching recurrent dynamics 对行为相关活动作时间模式分解，本文以 planning 与 execution 说明潜离散模式的可能解释，而非报告本文对这些认知状态的独立测量。",
+      "claim_type": "方法比较与范围综合",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "对所引模型的叙述性综述和建模假设比较",
+          "design": "本文不开展独立实验，也不在统一数据和划分下重新训练或定量比较模型。",
+          "comparator": "不切换的单一递归潜动态。",
+          "measure": "离散模式切换及其潜认知标签。",
+          "unit_of_analysis": "被综述的方法或方法类别；不是独立动物、试次、神经元或仿真重复。",
+          "sample_size_as_reported": null,
+          "uncertainty": "本文没有给出此比较的配对效应量、统计不确定性或独立重复数。",
+          "assumptions": [
+            "结论限于本文对相关模型的描述；所引研究的完整识别条件和实验细节未在本文重现。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "5.1 Non-linear & RNN-based Disentanglement: SRNN",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "时间模式分解不同于仅按行为信息分配连续潜维度。",
+        "boundary": "这是综述中的方法层面概括，不是原研究结果的独立复现。",
+        "negative_result": null,
+        "non_inference": "模式标签是解释，不是模式已与特定认知过程一一对应的证明。",
+        "unresolved": null,
+        "unresolved_attribution": "经验性表述归于被综述研究；本输出没有读取或独立核验那些原始论文。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "切换递归模型怎样表达任务过程中的不同动态模式？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "候选综述记录；不将引用研究计作本文独立实验，未建立跨论文关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C28",
+      "statement": "CEBRA 用行为标签或时间关系定义对比样本，并以 InfoNCE 使相关神经时点靠近、其他样本分离；本文将这种监督几何目标用于解释同任务不同动物之间的表征对齐，包括记录神经元集合不同的情形。",
+      "claim_type": "方法比较与范围综合",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "对所引模型的叙述性综述和建模假设比较",
+          "design": "本文不开展独立实验，也不在统一数据和划分下重新训练或定量比较模型。",
+          "comparator": "以生成重建而非对比样本几何为主要目标的模型。",
+          "measure": "模型结构、观测假设、目标函数或适用范围；非本文新测量的性能读数。",
+          "unit_of_analysis": "被综述的方法或方法类别；不是独立动物、试次、神经元或仿真重复。",
+          "sample_size_as_reported": null,
+          "uncertainty": "本文没有给出此比较的配对效应量、统计不确定性或独立重复数。",
+          "assumptions": [
+            "正负对的定义依赖行为标签、时间关系及训练采样；对齐限于合适的辅助条件。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "5.2 Contrastive Learning & Geometric Structure",
+            "figure": null,
+            "equation": "18",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "对所引模型的叙述性综述和建模假设比较",
+          "design": "本文不开展独立实验，也不在统一数据和划分下重新训练或定量比较模型。",
+          "comparator": "以生成重建而非对比样本几何为主要目标的模型。",
+          "measure": "模型结构、观测假设、目标函数或适用范围；非本文新测量的性能读数。",
+          "unit_of_analysis": "被综述的方法或方法类别；不是独立动物、试次、神经元或仿真重复。",
+          "sample_size_as_reported": null,
+          "uncertainty": "本文没有给出此比较的配对效应量、统计不确定性或独立重复数。",
+          "assumptions": [
+            "正负对的定义依赖行为标签、时间关系及训练采样；对齐限于合适的辅助条件。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "5.2 Contrastive Learning & Geometric Structure continuation",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "辅助行为条件可塑造用于跨个体比较的潜几何。",
+        "boundary": "本文未报告配对动物数、对齐误差或完整可辨识性条件。",
+        "negative_result": null,
+        "non_inference": "潜几何对齐不能证明任意跨任务零样本迁移或真实脑机制等同。",
+        "unresolved": null,
+        "unresolved_attribution": "经验性表述归于被综述研究；本输出没有读取或独立核验那些原始论文。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "behavior-cognition",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "行为条件对比学习怎样对齐不同动物的神经潜表征？"
+      ],
+      "shared_evidence_with": [
+        "C2"
+      ],
+      "review_notes": [
+        "候选综述记录；不将引用研究计作本文独立实验，未建立跨论文关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C29",
+      "statement": "本文把 GLUE 的 Manifold Capacity 描述为联系神经流形几何与信息编码效率的比较度量，用于比较不同群体对相同信息的表示，而不是本综述给出的统一实测容量排名。",
+      "claim_type": "方法比较与范围综合",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "对所引模型的叙述性综述和建模假设比较",
+          "design": "本文不开展独立实验，也不在统一数据和划分下重新训练或定量比较模型。",
+          "comparator": "不同神经群体对相同信息的表示。",
+          "measure": "Manifold Capacity；文中未完整定义式中几何符号或给出容量数值。",
+          "unit_of_analysis": "被综述的方法或方法类别；不是独立动物、试次、神经元或仿真重复。",
+          "sample_size_as_reported": null,
+          "uncertainty": "本文没有给出此比较的配对效应量、统计不确定性或独立重复数。",
+          "assumptions": [
+            "结论限于本文对相关模型的描述；所引研究的完整识别条件和实验细节未在本文重现。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "5.2 Contrastive Learning & Geometric Structure: GLUE",
+            "figure": null,
+            "equation": "19",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "几何量可以作为比较编码效率的分析轴。",
+        "boundary": "式 19 的符号定义和计算条件不足以从本文单独复算容量。",
+        "negative_result": null,
+        "non_inference": "不能推出普遍最优编码、真实生物容量或跨数据集可直接比较的数值。",
+        "unresolved": null,
+        "unresolved_attribution": "经验性表述归于被综述研究；本输出没有读取或独立核验那些原始论文。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "流形几何怎样用于比较同一信息的编码效率？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "候选综述记录；不将引用研究计作本文独立实验，未建立跨论文关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C30",
+      "statement": "NLA 以可微 time-warping 和对比目标处理跨 trial 时间抖动；SABLE 则以无监督 domain adaptation 和 gradient reversal 抑制 session-specific 信息，分别针对时间错位与记录分布漂移。",
+      "claim_type": "方法比较与范围综合",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "对所引模型的叙述性综述和建模假设比较",
+          "design": "本文不开展独立实验，也不在统一数据和划分下重新训练或定量比较模型。",
+          "comparator": "时间 misalignment 与跨 session distribution shift。",
+          "measure": "时间形变与 domain-invariant 编码训练目标。",
+          "unit_of_analysis": "被综述的方法或方法类别；不是独立动物、试次、神经元或仿真重复。",
+          "sample_size_as_reported": null,
+          "uncertainty": "本文没有给出此比较的配对效应量、统计不确定性或独立重复数。",
+          "assumptions": [
+            "可微时间配准和域对抗训练各自依赖可对齐的任务/记录结构。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "5.2 Cross-Scenario Consistency Alignment",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "时间错位和记录域漂移需要不同对齐约束。",
+        "boundary": "这是综述中的方法层面概括，不是原研究结果的独立复现。",
+        "negative_result": null,
+        "non_inference": "移除 session 信息不保证所有被移除成分均为伪迹，也不保证跨域完全稳定。",
+        "unresolved": null,
+        "unresolved_attribution": "经验性表述归于被综述研究；本输出没有读取或独立核验那些原始论文。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "behavior-cognition",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "时间抖动与跨 session 分布漂移如何分别处理？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "候选综述记录；不将引用研究计作本文独立实验，未建立跨论文关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C31",
+      "statement": "LDNS 先把神经脉冲压缩到连续潜空间再以 diffusion 生成潜轨迹；BeNeDiff 将行为条件用于 video diffusion，以生成的视频说明潜变量与行为的关联。两者的生成对象及解释用途不同。",
+      "claim_type": "方法比较与范围综合",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "对所引模型的叙述性综述和建模假设比较",
+          "design": "本文不开展独立实验，也不在统一数据和划分下重新训练或定量比较模型。",
+          "comparator": "生成神经潜轨迹与生成条件行为视频。",
+          "measure": "生成对象、条件变量及 classifier-free guidance。",
+          "unit_of_analysis": "被综述的方法或方法类别；不是独立动物、试次、神经元或仿真重复。",
+          "sample_size_as_reported": null,
+          "uncertainty": "本文没有给出此比较的配对效应量、统计不确定性或独立重复数。",
+          "assumptions": [
+            "条件生成受学习到的潜分布、行为条件和 guidance 设定约束。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "5.3 Deep Generative Models",
+            "figure": null,
+            "equation": "20",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "生成神经活动与可视化潜变量行为关联是不同用途。",
+        "boundary": "这是综述中的方法层面概括，不是原研究结果的独立复现。",
+        "negative_result": null,
+        "non_inference": "生成轨迹或视频不等于实际动物行为、真实反事实干预或独立生物验证。",
+        "unresolved": null,
+        "unresolved_attribution": "经验性表述归于被综述研究；本输出没有读取或独立核验那些原始论文。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "behavior-cognition",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "潜扩散怎样分别用于神经活动生成和行为关联可视化？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "候选综述记录；不将引用研究计作本文独立实验，未建立跨论文关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C32",
+      "statement": "GNOCCHI 以 auxiliary encoder 提取神经活动的潜代码并以 MMD 正则化，再据此进行 conditional diffusion；score-matching 与数据重建目标共同约束生成，本文将其定位为无监督行为关联潜因子学习路线。",
+      "claim_type": "方法比较与范围综合",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "对所引模型的叙述性综述和建模假设比较",
+          "design": "本文不开展独立实验，也不在统一数据和划分下重新训练或定量比较模型。",
+          "comparator": "不采用该辅助代码、MMD 和联合重建约束的生成模型。",
+          "measure": "score loss、reconstruction loss 和代码分布正则化。",
+          "unit_of_analysis": "被综述的方法或方法类别；不是独立动物、试次、神经元或仿真重复。",
+          "sample_size_as_reported": null,
+          "uncertainty": "本文没有给出此比较的配对效应量、统计不确定性或独立重复数。",
+          "assumptions": [
+            "辅助潜代码的分布受 MMD 约束；行为含义仍需独立解释或验证。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "5.3 Deep Generative Models: GNOCCHI",
+            "figure": null,
+            "equation": "21",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "生成保真度与潜代码结构可通过联合目标约束。",
+        "boundary": "这是综述中的方法层面概括，不是原研究结果的独立复现。",
+        "negative_result": null,
+        "non_inference": "无监督 disentanglement 不保证每个潜因子对应唯一行为或生物原因。",
+        "unresolved": null,
+        "unresolved_attribution": "经验性表述归于被综述研究；本输出没有读取或独立核验那些原始论文。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "条件扩散如何联合约束生成质量和潜代码结构？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "候选综述记录；不将引用研究计作本文独立实验，未建立跨论文关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C33",
+      "statement": "Masked VAE 通过随机遮蔽 spike bins，把降维和条件缺失值推断结合在同一训练框架中，以学习神经及相关变量的联合统计结构。",
+      "claim_type": "方法比较与范围综合",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "对所引模型的叙述性综述和建模假设比较",
+          "design": "本文不开展独立实验，也不在统一数据和划分下重新训练或定量比较模型。",
+          "comparator": "只针对完整观测训练的降维模型。",
+          "measure": "掩码条件推断和联合统计建模。",
+          "unit_of_analysis": "被综述的方法或方法类别；不是独立动物、试次、神经元或仿真重复。",
+          "sample_size_as_reported": null,
+          "uncertainty": "本文没有给出此比较的配对效应量、统计不确定性或独立重复数。",
+          "assumptions": [
+            "随机 masking 的训练分布和模型联合分布限定其适用缺失模式。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "5.3 Deep Generative Models: Masked VAE",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "缺失值推断可成为潜表征学习目标的一部分。",
+        "boundary": "这是综述中的方法层面概括，不是原研究结果的独立复现。",
+        "negative_result": null,
+        "non_inference": "随机掩码重建不保证对任意真实缺失机制或新场景都无偏。",
+        "unresolved": null,
+        "unresolved_attribution": "经验性表述归于被综述研究；本输出没有读取或独立核验那些原始论文。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "掩码训练如何统一潜降维与条件缺失值推断？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "候选综述记录；不将引用研究计作本文独立实验，未建立跨论文关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C34",
+      "statement": "本文将 Multiscale Dynamical Model 描述为以层级 EM 联合离散 spikes 与连续 LFP、识别跨时间尺度共享潜状态的路线，分别关联毫秒和秒级过程。",
+      "claim_type": "方法比较与范围综合",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "对所引模型的叙述性综述和建模假设比较",
+          "design": "本文不开展独立实验，也不在统一数据和划分下重新训练或定量比较模型。",
+          "comparator": "单一模态或单一时间尺度的潜动态模型。",
+          "measure": "spikes/LFP 的共享潜状态与层级 EM 推断。",
+          "unit_of_analysis": "被综述的方法或方法类别；不是独立动物、试次、神经元或仿真重复。",
+          "sample_size_as_reported": null,
+          "uncertainty": "本文没有给出此比较的配对效应量、统计不确定性或独立重复数。",
+          "assumptions": [
+            "离散脉冲与连续 LFP 采用不同观测类型；时间尺度和共享潜层须按模型规定。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "5.3 Deep Generative Models: Multiscale Dynamical Model",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "不同数据模态和时间尺度可以通过共享潜过程联合建模。",
+        "boundary": "这是综述中的方法层面概括，不是原研究结果的独立复现。",
+        "negative_result": null,
+        "non_inference": "共享潜状态不证明 LFP 与脉冲对应同一独立生物发生源。",
+        "unresolved": null,
+        "unresolved_attribution": "经验性表述归于被综述研究；本输出没有读取或独立核验那些原始论文。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "如何联合离散脉冲与连续 LFP 的多尺度潜动态？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "候选综述记录；不将引用研究计作本文独立实验，未建立跨论文关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C35",
+      "statement": "EAG 以连续潜空间中的 energy-based autoregressive Transformer 建模神经群体动态，使用 Energy Score 而非显式似然；本文所示评分依赖生成分布的独立样本及 0<α<2 条件，以保留 trial-to-trial 随机性并避免 diffusion 的迭代采样路线。",
+      "claim_type": "方法比较与范围综合",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "对所引模型的叙述性综述和建模假设比较",
+          "design": "本文不开展独立实验，也不在统一数据和划分下重新训练或定量比较模型。",
+          "comparator": "依赖迭代采样的 diffusion 生成路线。",
+          "measure": "Energy Score 和自回归采样结构；本文未给出实际延迟比较。",
+          "unit_of_analysis": "被综述的方法或方法类别；不是独立动物、试次、神经元或仿真重复。",
+          "sample_size_as_reported": null,
+          "uncertainty": "本文没有给出此比较的配对效应量、统计不确定性或独立重复数。",
+          "assumptions": [
+            "式中 z1、z2、z 是模型生成分布的独立样本，α 位于 (0,2)。",
+            "这些模型样本不是独立动物或实验重复；本文未展开 strict propriety 的完整数学条件。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "5.3 Energy-Based & Autoregressive Models",
+            "figure": null,
+            "equation": "22",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "显式似然之外可用能量评分约束随机生成分布。",
+        "boundary": "这是综述中的方法层面概括，不是原研究结果的独立复现。",
+        "negative_result": null,
+        "non_inference": "评分规则的性质不保证有限数据下恢复真实分布，也不建立实际实时部署性能。",
+        "unresolved": null,
+        "unresolved_attribution": "经验性表述归于被综述研究；本输出没有读取或独立核验那些原始论文。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "无显式似然的自回归生成如何约束神经活动随机分布？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "候选综述记录；不将引用研究计作本文独立实验，未建立跨论文关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C36",
+      "statement": "POYO 以 neuron ID embedding 和 spike time 编码结合 cross-attention 处理跨动物不同神经元集合；NEDS 则通过多任务掩码联合 neural 与 behavioral tokens，统一编码和解码，并面向有限新个体数据的 fine-tuning。",
+      "claim_type": "方法比较与范围综合",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "对所引模型的叙述性综述和建模假设比较",
+          "design": "本文不开展独立实验，也不在统一数据和划分下重新训练或定量比较模型。",
+          "comparator": "固定单个被试的神经元输入与单向编码/解码任务。",
+          "measure": "单元/时间 tokenization、联合模态训练和新个体适配设计。",
+          "unit_of_analysis": "被综述的方法或方法类别；不是独立动物、试次、神经元或仿真重复。",
+          "sample_size_as_reported": null,
+          "uncertainty": "本文没有给出此比较的配对效应量、统计不确定性或独立重复数。",
+          "assumptions": [
+            "结论限于本文对相关模型的描述；所引研究的完整识别条件和实验细节未在本文重现。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "5.3 Neuro-Foundation Models",
+            "figure": null,
+            "equation": "23",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "对所引模型的叙述性综述和建模假设比较",
+          "design": "本文不开展独立实验，也不在统一数据和划分下重新训练或定量比较模型。",
+          "comparator": "固定单个被试的神经元输入与单向编码/解码任务。",
+          "measure": "单元/时间 tokenization、联合模态训练和新个体适配设计。",
+          "unit_of_analysis": "被综述的方法或方法类别；不是独立动物、试次、神经元或仿真重复。",
+          "sample_size_as_reported": null,
+          "uncertainty": "本文没有给出此比较的配对效应量、统计不确定性或独立重复数。",
+          "assumptions": [
+            "结论限于本文对相关模型的描述；所引研究的完整识别条件和实验细节未在本文重现。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "5.3 Neuro-Foundation Models continuation",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "结构化 token 和多模态目标可支持跨记录集合的建模与适配。",
+        "boundary": "本文未给出少样本量、跨被试误差或所有任务的零样本结果。",
+        "negative_result": null,
+        "non_inference": "跨个体训练或 fine-tuning 不能被改写为任意个体无校准的 zero-shot 解码。",
+        "unresolved": null,
+        "unresolved_attribution": "经验性表述归于被综述研究；本输出没有读取或独立核验那些原始论文。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "behavior-cognition",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "神经基础模型怎样处理不同单元集合并联合编码和解码？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "候选综述记录；不将引用研究计作本文独立实验，未建立跨论文关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C37",
+      "statement": "POSSM 保留 POYO 风格的 single-spike tokenization 和 cross-attention，并用现代 recurrent state-space backbone 替代重型 Transformer 主干；本文报告该设计最多 9 倍推理加速，但未在本综述提供匹配硬件、输入规模或原始重复数据。",
+      "claim_type": "方法比较与范围综合",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "对所引模型的叙述性综述和建模假设比较",
+          "design": "本文不开展独立实验，也不在统一数据和划分下重新训练或定量比较模型。",
+          "comparator": "文中所述重型 Transformer backbone；未给出具体基线版本与配对条件。",
+          "measure": "推理速度比，原文报告上限为 9×，未报告实际毫秒延迟。",
+          "unit_of_analysis": "被综述的方法或方法类别；不是独立动物、试次、神经元或仿真重复。",
+          "sample_size_as_reported": null,
+          "uncertainty": "本文没有给出此比较的配对效应量、统计不确定性或独立重复数。",
+          "assumptions": [
+            "结论限于本文对相关模型的描述；所引研究的完整识别条件和实验细节未在本文重现。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "5.3 Neuro-Foundation Models: POSSM",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "混合 state-space 设计被综述作为降低推理负担的路线。",
+        "boundary": "9× 是所引研究的报告上限，不是综述新实验或平均效果；独立 n 与误差未提供。",
+        "negative_result": null,
+        "non_inference": "不能外推为已完成临床、植入硬件或任意规模实时部署验证。",
+        "unresolved": null,
+        "unresolved_attribution": "经验性表述归于被综述研究；本输出没有读取或独立核验那些原始论文。"
+      },
+      "broad_directions": [
+        "methods-causal",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "混合 state-space 主干能以什么证据降低神经解码延迟？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "候选综述记录；不将引用研究计作本文独立实验，未建立跨论文关系。",
+        "保留报告的上限措辞，没有将其转成普适或平均性能。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C38",
+      "statement": "NLB 用标准化 held-out test sets 改善临时自定义评估的可比性；Area2-Bump、DMFC-RSG 与 Jenkins-Maze 分别面向躯体感觉扰动、非运动时间动态及规模/效率问题。本文附录明确只比较建模假设，不把不同数据、划分和预处理下的分数排成统一榜单。",
+      "claim_type": "方法比较与范围综合",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "对所引模型的叙述性综述和建模假设比较",
+          "design": "本文不开展独立实验，也不在统一数据和划分下重新训练或定量比较模型。",
+          "comparator": "ad-hoc 自定义数据划分与标准 held-out 评估；不同任务的 benchmark。",
+          "measure": "评估协议和任务覆盖；没有在本文重新计算 benchmark 分数。",
+          "unit_of_analysis": "benchmark、任务与评估协议；不是实验独立 n。",
+          "sample_size_as_reported": null,
+          "uncertainty": "本文没有给出此比较的配对效应量、统计不确定性或独立重复数。",
+          "assumptions": [
+            "结论限于本文对相关模型的描述；所引研究的完整识别条件和实验细节未在本文重现。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "6.1 Standardized Benchmarks",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "对所引模型的叙述性综述和建模假设比较",
+          "design": "本文不开展独立实验，也不在统一数据和划分下重新训练或定量比较模型。",
+          "comparator": "ad-hoc 自定义数据划分与标准 held-out 评估；不同任务的 benchmark。",
+          "measure": "评估协议和任务覆盖；没有在本文重新计算 benchmark 分数。",
+          "unit_of_analysis": "benchmark、任务与评估协议；不是实验独立 n。",
+          "sample_size_as_reported": null,
+          "uncertainty": "本文没有给出此比较的配对效应量、统计不确定性或独立重复数。",
+          "assumptions": [
+            "结论限于本文对相关模型的描述；所引研究的完整识别条件和实验细节未在本文重现。"
+          ],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "Appendix A Comparison of Representative Methods",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "比较需匹配任务、划分和预处理，且不同 benchmark 检查不同能力。",
+        "boundary": "这是综述中的方法层面概括，不是原研究结果的独立复现。",
+        "negative_result": null,
+        "non_inference": "本文表 1 不是性能排行榜；不能从结构表推出某模型总体更优。",
+        "unresolved": null,
+        "unresolved_attribution": "经验性表述归于被综述研究；本输出没有读取或独立核验那些原始论文。"
+      },
+      "broad_directions": [
+        "methods-causal",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "神经潜动态模型在何种匹配条件下才可定量比较？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "候选综述记录；不将引用研究计作本文独立实验，未建立跨论文关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C39",
+      "statement": "本文把 IBL 和 Allen Brain Observatory 作为不同模态的基础模型级数据资源：IBL 的综述描述包括 139 只小鼠、279 个脑区及超过 600,000 个神经元，Allen 2-Photon 描述为超过 63,000 个神经元；这些是语料覆盖计数而非本文实验的独立重复。",
+      "claim_type": "方法比较与范围综合",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "叙述性综述对公开数据资源覆盖及计数的汇总。",
+          "design": "本文不开展独立实验，也不在统一数据和划分下重新训练或定量比较模型。",
+          "comparator": "Neuropixels 与 calcium/2-Photon 记录资源的覆盖和用途。",
+          "measure": "公开数据的动物数、脑区覆盖和神经元计数，不含本文新的效果估计。",
+          "unit_of_analysis": "IBL 小鼠、脑区和神经元及 Allen 2-Photon 神经元；记录可能有层级或嵌套关系。",
+          "sample_size_as_reported": "综述报告 IBL: 139 mice，279 brain regions，>600,000 neurons；Allen 2-Photon: >63,000 neurons。未报告本文独立实验 n。",
+          "uncertainty": "这些计数从本文转录；未核验原数据 release、动物内嵌套、独立性或合并规则。",
+          "assumptions": [
+            "结论限于本文对相关模型的描述；所引研究的完整识别条件和实验细节未在本文重现。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "6.2 Foundation-Scale Corpora",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "数据覆盖规模与模态可用于资源定位。",
+        "boundary": "这是综述中的方法层面概括，不是原研究结果的独立复现。",
+        "negative_result": null,
+        "non_inference": "神经元数、脑区数不能代替独立动物数；亦不能合并为统一统计 n。",
+        "unresolved": null,
+        "unresolved_attribution": "经验性表述归于被综述研究；本输出没有读取或独立核验那些原始论文。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "大规模神经语料的覆盖计数有哪些不同分析单位？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "候选综述记录；不将引用研究计作本文独立实验，未建立跨论文关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C40",
+      "statement": "CRCNS 的任务特异资源可用于不同动态问题：M1/PMd Reach 的多目标伸手记录适合连续运动动态，hc-11 的海马空间导航及 place-cell 模式适合状态切换问题；本文同时指出常见 head-fixed 简化任务对自由活动自然行为的覆盖有限。",
+      "claim_type": "方法比较与范围综合",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "任务、记录模态和模型适用问题的综述映射。",
+          "design": "本文不开展独立实验，也不在统一数据和划分下重新训练或定量比较模型。",
+          "comparator": "连续伸手动态、空间导航状态模式与自然自由行为。",
+          "measure": "任务生态有效性和动态分析用途。",
+          "unit_of_analysis": "数据集与任务设计，未报告独立动物或 trial n。",
+          "sample_size_as_reported": null,
+          "uncertainty": "本文没有给出此比较的配对效应量、统计不确定性或独立重复数。",
+          "assumptions": [
+            "结论限于本文对相关模型的描述；所引研究的完整识别条件和实验细节未在本文重现。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "6.2 Task-Specific Repositories",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "任务特异语料检查的潜动态问题不同。",
+        "boundary": "这是用途建议与覆盖边界，未在本文检验某模型的任务适配效果。",
+        "negative_result": null,
+        "non_inference": "简化任务上的性能不能自动外推到自由活动和自然行为。",
+        "unresolved": null,
+        "unresolved_attribution": "经验性表述归于被综述研究；本输出没有读取或独立核验那些原始论文。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "不同神经数据集覆盖哪些动态问题，哪些自然行为仍未覆盖？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "候选综述记录；不将引用研究计作本文独立实验，未建立跨论文关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C41",
+      "statement": "本文指出深潜模型可能存在旋转或仿射重参数化歧义：在观测映射相应变换且似然保持的情形下，不同潜轴可拟合同样数据，因此数据拟合本身不使潜轴与单一生物机制一一对应。",
+      "claim_type": "方法比较与范围综合",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "综述中的统计识别与解释限制分析。",
+          "design": "本文不开展独立实验，也不在统一数据和划分下重新训练或定量比较模型。",
+          "comparator": "相同观测拟合下的不同潜坐标或生物解释。",
+          "measure": "参数/表征可辨识性而非本文实验效果。",
+          "unit_of_analysis": "被综述的方法或方法类别；不是独立动物、试次、神经元或仿真重复。",
+          "sample_size_as_reported": null,
+          "uncertainty": "本文没有给出此比较的配对效应量、统计不确定性或独立重复数。",
+          "assumptions": [
+            "等价性要求模型观测映射等部分允许相应重参数化；不能推为任何约束模型在任意变换下都等价。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "7 Identifiability and Interpretability",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "综述中的统计识别与解释限制分析。",
+          "design": "本文不开展独立实验，也不在统一数据和划分下重新训练或定量比较模型。",
+          "comparator": "相同观测拟合下的不同潜坐标或生物解释。",
+          "measure": "参数/表征可辨识性而非本文实验效果。",
+          "unit_of_analysis": "被综述的方法或方法类别；不是独立动物、试次、神经元或仿真重复。",
+          "sample_size_as_reported": null,
+          "uncertainty": "本文没有给出此比较的配对效应量、统计不确定性或独立重复数。",
+          "assumptions": [
+            "等价性要求模型观测映射等部分允许相应重参数化；不能推为任何约束模型在任意变换下都等价。"
+          ],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "Appendix B Identifiability and Interpretability",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "拟合质量与生物学唯一解释是不同要求。",
+        "boundary": "这是综述中的方法层面概括，不是原研究结果的独立复现。",
+        "negative_result": null,
+        "non_inference": "不能仅凭高似然或潜轴分离断言识别 planning/execution 等机制。",
+        "unresolved": null,
+        "unresolved_attribution": "经验性表述归于被综述研究；本输出没有读取或独立核验那些原始论文。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "methods-causal",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "潜坐标重参数化何时妨碍生物机制解释？"
+      ],
+      "shared_evidence_with": [
+        "C45"
+      ],
+      "review_notes": [
+        "候选综述记录；不将引用研究计作本文独立实验，未建立跨论文关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C42",
+      "statement": "本文指出观察性通信子空间和标准 LVM 难以区分直接因果影响与未观测 common drive；自然演化的良好拟合也不保证能预测刺激、损伤等干预响应。",
+      "claim_type": "方法比较与范围综合",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "对观察性模型因果推断能力的综述限制分析。",
+          "design": "本文不开展独立实验，也不在统一数据和划分下重新训练或定量比较模型。",
+          "comparator": "直接影响与第三来源共同输入；自然观测与干预响应。",
+          "measure": "因果可区分性及干预预测能力。",
+          "unit_of_analysis": "被综述的方法或方法类别；不是独立动物、试次、神经元或仿真重复。",
+          "sample_size_as_reported": null,
+          "uncertainty": "本文没有给出此比较的配对效应量、统计不确定性或独立重复数。",
+          "assumptions": [
+            "观察数据可能存在未测共同输入；文中未给出可排除它的完整设计。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "7 From Correlation to Causal Circuits",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "对观察性模型因果推断能力的综述限制分析。",
+          "design": "本文不开展独立实验，也不在统一数据和划分下重新训练或定量比较模型。",
+          "comparator": "直接影响与第三来源共同输入；自然观测与干预响应。",
+          "measure": "因果可区分性及干预预测能力。",
+          "unit_of_analysis": "被综述的方法或方法类别；不是独立动物、试次、神经元或仿真重复。",
+          "sample_size_as_reported": null,
+          "uncertainty": "本文没有给出此比较的配对效应量、统计不确定性或独立重复数。",
+          "assumptions": [
+            "观察数据可能存在未测共同输入；文中未给出可排除它的完整设计。"
+          ],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "Appendix B From Correlation to Causal Circuits",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "通信统计描述与干预因果识别应分开评价。",
+        "boundary": "这是综述中的方法层面概括，不是原研究结果的独立复现。",
+        "negative_result": null,
+        "non_inference": "有向预测、时间先后、子空间共享或生成保真度都不能单独证明直接因果回路。",
+        "unresolved": null,
+        "unresolved_attribution": "经验性表述归于被综述研究；本输出没有读取或独立核验那些原始论文。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "如何区分直接跨区影响和未观测共同驱动？"
+      ],
+      "shared_evidence_with": [
+        "C46"
+      ],
+      "review_notes": [
+        "候选综述记录；不将引用研究计作本文独立实验，未建立跨论文关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C43",
+      "statement": "本文将动物、脑区差异及 electrode drift 导致的 neural code 非统一性列为跨个体 zero-shot transfer 的障碍；大规模预训练不自动建立稳定通用的脉冲语义或消除校准需求。",
+      "claim_type": "方法比较与范围综合",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "跨个体和跨记录场景泛化限制的综述。",
+          "design": "本文不开展独立实验，也不在统一数据和划分下重新训练或定量比较模型。",
+          "comparator": "统一词汇假设与记录对象、位置及日期依赖的神经编码。",
+          "measure": "zero-shot transfer 的可用性和校准需求。",
+          "unit_of_analysis": "被综述的方法或方法类别；不是独立动物、试次、神经元或仿真重复。",
+          "sample_size_as_reported": null,
+          "uncertainty": "本文没有给出此比较的配对效应量、统计不确定性或独立重复数。",
+          "assumptions": [
+            "结论限于本文对相关模型的描述；所引研究的完整识别条件和实验细节未在本文重现。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "7 Generalization and the Universal Neural Grammar",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "跨个体和跨记录场景泛化限制的综述。",
+          "design": "本文不开展独立实验，也不在统一数据和划分下重新训练或定量比较模型。",
+          "comparator": "统一词汇假设与记录对象、位置及日期依赖的神经编码。",
+          "measure": "zero-shot transfer 的可用性和校准需求。",
+          "unit_of_analysis": "被综述的方法或方法类别；不是独立动物、试次、神经元或仿真重复。",
+          "sample_size_as_reported": null,
+          "uncertainty": "本文没有给出此比较的配对效应量、统计不确定性或独立重复数。",
+          "assumptions": [
+            "结论限于本文对相关模型的描述；所引研究的完整识别条件和实验细节未在本文重现。"
+          ],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "Appendix B Generalization and the Universal Neural Grammar",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "泛化目标需考虑神经代码的场景依赖。",
+        "boundary": "这是综述中的方法层面概括，不是原研究结果的独立复现。",
+        "negative_result": null,
+        "non_inference": "本文没有对任意模型展示统一零样本失败实验；这一限制也不能抹去特定任务迁移结果。",
+        "unresolved": null,
+        "unresolved_attribution": "经验性表述归于被综述研究；本输出没有读取或独立核验那些原始论文。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "神经代码的个体和记录漂移怎样限制零样本迁移？"
+      ],
+      "shared_evidence_with": [
+        "C47"
+      ],
+      "review_notes": [
+        "候选综述记录；不将引用研究计作本文独立实验，未建立跨论文关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C44",
+      "statement": "本文指出概率模型和 Transformer 的计算成本限制毫秒级闭环 BCI；附录以序列长度的立方级概率推断和平方级注意力开销说明典型瓶颈，但没有证明所有模型均具相同复杂度或给出统一硬件延迟。",
+      "claim_type": "方法比较与范围综合",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "实时推断资源约束与复杂度的综述。",
+          "design": "本文不开展独立实验，也不在统一数据和划分下重新训练或定量比较模型。",
+          "comparator": "高成本模型推断与毫秒级闭环反馈要求。",
+          "measure": "典型序列计算开销及部署延迟约束；没有配对实测。",
+          "unit_of_analysis": "被综述的方法或方法类别；不是独立动物、试次、神经元或仿真重复。",
+          "sample_size_as_reported": null,
+          "uncertainty": "本文没有给出此比较的配对效应量、统计不确定性或独立重复数。",
+          "assumptions": [
+            "所述平方/立方复杂度依算法和实现；不能替代稀疏、近似或 state-space 方法的实际复杂度。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "7 Computational Efficiency",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "实时推断资源约束与复杂度的综述。",
+          "design": "本文不开展独立实验，也不在统一数据和划分下重新训练或定量比较模型。",
+          "comparator": "高成本模型推断与毫秒级闭环反馈要求。",
+          "measure": "典型序列计算开销及部署延迟约束；没有配对实测。",
+          "unit_of_analysis": "被综述的方法或方法类别；不是独立动物、试次、神经元或仿真重复。",
+          "sample_size_as_reported": null,
+          "uncertainty": "本文没有给出此比较的配对效应量、统计不确定性或独立重复数。",
+          "assumptions": [
+            "所述平方/立方复杂度依算法和实现；不能替代稀疏、近似或 state-space 方法的实际复杂度。"
+          ],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "Appendix B Computational Efficiency",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "计算复杂度与闭环延迟是模型选择的独立约束。",
+        "boundary": "这是综述中的方法层面概括，不是原研究结果的独立复现。",
+        "negative_result": null,
+        "non_inference": "不能从渐近复杂度推导具体耗电量、实际毫秒数或临床可用性。",
+        "unresolved": null,
+        "unresolved_attribution": "经验性表述归于被综述研究；本输出没有读取或独立核验那些原始论文。"
+      },
+      "broad_directions": [
+        "methods-causal",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "哪些计算约束妨碍潜模型进入毫秒级闭环解码？"
+      ],
+      "shared_evidence_with": [
+        "C48"
+      ],
+      "review_notes": [
+        "候选综述记录；不将引用研究计作本文独立实验，未建立跨论文关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C45",
+      "statement": "作者提出利用 iVAE 的辅助行为或刺激变量以及强归纳偏置约束潜空间，作为改进统计可辨识性与解释性的候选路线；本综述没有证明这些约束即可使潜因素具有唯一生物学意义。",
+      "claim_type": "未来方法路线",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "基于综述限制提出的方法研究建议。",
+          "design": "未来路线提案；本文没有开展该建议的验证实验或完整定理证明。",
+          "comparator": "缺少辅助变量或强约束的纯无监督潜建模。",
+          "measure": "预期改进统计可辨识性；未进行本文测量。",
+          "unit_of_analysis": "被综述的方法或方法类别；不是独立动物、试次、神经元或仿真重复。",
+          "sample_size_as_reported": null,
+          "uncertainty": "本文没有给出此比较的配对效应量、统计不确定性或独立重复数。",
+          "assumptions": [
+            "结论限于本文对相关模型的描述；所引研究的完整识别条件和实验细节未在本文重现。"
+          ],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "Appendix B Identifiability and Interpretability: Future Avenues",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": null,
+        "boundary": "iVAE 相关保证依赖原研究条件；本文没有完整列出，不能补造联合假设。",
+        "negative_result": null,
+        "non_inference": "统计约束不等于生物学唯一性已被证明。",
+        "unresolved": "具体辅助变量和约束在何种任务、模型和真实记录中足以改善识别仍需检验。",
+        "unresolved_attribution": "经验性表述归于被综述研究；本输出没有读取或独立核验那些原始论文。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "methods-causal",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "哪些辅助变量和约束能改善潜因素可辨识性而不夸大生物解释？"
+      ],
+      "shared_evidence_with": [
+        "C41"
+      ],
+      "review_notes": [
+        "候选综述记录；不将引用研究计作本文独立实验，未建立跨论文关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C46",
+      "statement": "作者提出以 Causal Representation Learning 和生成式 Digital Twins 预测干预反事实，再由刺激或损伤实验检验预测，作为从观察性通信模型走向因果回路分析的未来路线。",
+      "claim_type": "未来方法路线",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "因果验证研究路线提案。",
+          "design": "提出未来干预预测与物理实验校验；本文未实施。",
+          "comparator": "仅拟合自然观测的潜模型。",
+          "measure": "未来预期的干预响应预测；无本文结果。",
+          "unit_of_analysis": "被综述的方法或方法类别；不是独立动物、试次、神经元或仿真重复。",
+          "sample_size_as_reported": null,
+          "uncertainty": "本文没有给出此比较的配对效应量、统计不确定性或独立重复数。",
+          "assumptions": [
+            "结论限于本文对相关模型的描述；所引研究的完整识别条件和实验细节未在本文重现。"
+          ],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "Appendix B From Correlation to Causal Circuits: Future Avenues",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": null,
+        "boundary": "生成式反事实依赖模型正确性和识别条件，不能自行替代干预实验。",
+        "negative_result": null,
+        "non_inference": "本文并没有展示 optogenetic 干预预测准确性或真实 Digital Twin 因果验证。",
+        "unresolved": "如何设计独立干预测试以区分真实因果模型与拟合良好的生成模型？",
+        "unresolved_attribution": "经验性表述归于被综述研究；本输出没有读取或独立核验那些原始论文。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "如何用独立干预结果检验神经 Digital Twin 的反事实预测？"
+      ],
+      "shared_evidence_with": [
+        "C42"
+      ],
+      "review_notes": [
+        "候选综述记录；不将引用研究计作本文独立实验，未建立跨论文关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C47",
+      "statement": "作者建议把神经动态表示为相对流形，并结合 geometric alignment、In-Context Learning 和推断时校准 prompts，以改善新个体或新记录场景的适配；本文未检验这一组合是否实现通用 zero-shot decoder。",
+      "claim_type": "未来方法路线",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "跨场景泛化研究路线提案。",
+          "design": "未来模型组合与校准方案；无本文直接实验。",
+          "comparator": "直接依赖绝对 firing rates 或固定个体词汇的模型。",
+          "measure": "预期泛化与动态适配能力；未测量。",
+          "unit_of_analysis": "被综述的方法或方法类别；不是独立动物、试次、神经元或仿真重复。",
+          "sample_size_as_reported": null,
+          "uncertainty": "本文没有给出此比较的配对效应量、统计不确定性或独立重复数。",
+          "assumptions": [
+            "结论限于本文对相关模型的描述；所引研究的完整识别条件和实验细节未在本文重现。"
+          ],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "Appendix B Generalization and the Universal Neural Grammar: Future Avenues",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": null,
+        "boundary": "校准和 in-context 适配不能无条件称为不使用新个体信息的零样本迁移。",
+        "negative_result": null,
+        "non_inference": "本文未建立统一神经语法或保证跨任意动物、脑区和任务的解码。",
+        "unresolved": "适配所需信息量、任务条件和未见个体误差仍待验证。",
+        "unresolved_attribution": "经验性表述归于被综述研究；本输出没有读取或独立核验那些原始论文。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "相对流形与推断时校准能在什么条件下改善新个体适配？"
+      ],
+      "shared_evidence_with": [
+        "C43"
+      ],
+      "review_notes": [
+        "候选综述记录；不将引用研究计作本文独立实验，未建立跨论文关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C48",
+      "statement": "作者建议用 Knowledge Distillation 将高成本 teacher 潜模型压缩为轻量 State Space Models 或 Spiking Neural Networks，以探索低功耗闭环解码，同时将 POSSM 视为相关效率路线的早期例子，而非本综述已验证的蒸馏结果。",
+      "claim_type": "未来方法路线",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "低资源神经解码研究路线提案。",
+          "design": "未来蒸馏和硬件适配方案；无本文蒸馏或植入测试。",
+          "comparator": "大型 teacher 模型与候选轻量 student 架构。",
+          "measure": "拟考察推断质量、延迟与功耗；本文未测量。",
+          "unit_of_analysis": "被综述的方法或方法类别；不是独立动物、试次、神经元或仿真重复。",
+          "sample_size_as_reported": null,
+          "uncertainty": "本文没有给出此比较的配对效应量、统计不确定性或独立重复数。",
+          "assumptions": [
+            "结论限于本文对相关模型的描述；所引研究的完整识别条件和实验细节未在本文重现。"
+          ],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "Appendix B Computational Efficiency: Future Avenues",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": null,
+        "boundary": "是否保持精度、节能和满足植入约束依架构、硬件及任务而定。",
+        "negative_result": null,
+        "non_inference": "POSSM 的速度报道不等于蒸馏、低功耗植入或临床效果已经验证。",
+        "unresolved": "何种蒸馏与硬件组合能在控制精度损失的同时满足闭环功耗及延迟预算？",
+        "unresolved_attribution": "经验性表述归于被综述研究；本输出没有读取或独立核验那些原始论文。"
+      },
+      "broad_directions": [
+        "methods-causal",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "怎样评估轻量 student 在神经解码中的精度、延迟与功耗权衡？"
+      ],
+      "shared_evidence_with": [
+        "C44"
+      ],
+      "review_notes": [
+        "候选综述记录；不将引用研究计作本文独立实验，未建立跨论文关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C49",
+      "statement": "本文的三主线不是方法全覆盖：附录另列 normalizing flows 的精确似然及可逆几何表示、显式功能连接图和 topological data analysis，并说明纯 behavior/stimulus→neural encoding（如 BEAST）不属于本综述主要的解码与联合编码–解码范围。",
+      "claim_type": "方法比较与范围综合",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "对所引模型的叙述性综述和建模假设比较",
+          "design": "本文不开展独立实验，也不在统一数据和划分下重新训练或定量比较模型。",
+          "comparator": "主要潜子空间/生成路线与流、图、拓扑或纯编码替代路线。",
+          "measure": "方法及任务覆盖边界。",
+          "unit_of_analysis": "被综述的方法或方法类别；不是独立动物、试次、神经元或仿真重复。",
+          "sample_size_as_reported": null,
+          "uncertainty": "本文没有给出此比较的配对效应量、统计不确定性或独立重复数。",
+          "assumptions": [
+            "结论限于本文对相关模型的描述；所引研究的完整识别条件和实验细节未在本文重现。"
+          ],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "Appendix E Additional Method Classes and Recording Modalities",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "对所引模型的叙述性综述和建模假设比较",
+          "design": "本文不开展独立实验，也不在统一数据和划分下重新训练或定量比较模型。",
+          "comparator": "主要潜子空间/生成路线与流、图、拓扑或纯编码替代路线。",
+          "measure": "方法及任务覆盖边界。",
+          "unit_of_analysis": "被综述的方法或方法类别；不是独立动物、试次、神经元或仿真重复。",
+          "sample_size_as_reported": null,
+          "uncertainty": "本文没有给出此比较的配对效应量、统计不确定性或独立重复数。",
+          "assumptions": [
+            "结论限于本文对相关模型的描述；所引研究的完整识别条件和实验细节未在本文重现。"
+          ],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "Appendix E continuation",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "范围声明可防止把分类误读为穷尽所有建模路径。",
+        "boundary": "这是综述中的方法层面概括，不是原研究结果的独立复现。",
+        "negative_result": null,
+        "non_inference": "作者关于首次连接三主线的定位不能由本文自己验证；未覆盖的路线不意味着性能较差。",
+        "unresolved": null,
+        "unresolved_attribution": "经验性表述归于被综述研究；本输出没有读取或独立核验那些原始论文。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "潜变量综述未覆盖哪些替代方法和纯编码任务？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "候选综述记录；不将引用研究计作本文独立实验，未建立跨论文关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C50",
+      "statement": "附录指出若干被综述方法主要在 spike trains 上验证，并将 DLAG/mDLAG 用于非 Gaussian intracranial LFP 时可能出现的数值不稳定列为模态边界及改进动机；本文没有报告该不稳定的发生率或失败实验。",
+      "claim_type": "方法比较与范围综合",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "综述对观测模态不匹配风险的限定。",
+          "design": "本文不开展独立实验，也不在统一数据和划分下重新训练或定量比较模型。",
+          "comparator": "spike-train 验证与非 Gaussian intracranial LFP 应用。",
+          "measure": "潜在数值稳定性风险；未报告本文 failure rate。",
+          "unit_of_analysis": "被综述的方法或方法类别；不是独立动物、试次、神经元或仿真重复。",
+          "sample_size_as_reported": null,
+          "uncertainty": "本文没有给出此比较的配对效应量、统计不确定性或独立重复数。",
+          "assumptions": [
+            "数值风险依赖实际 LFP 分布、模型观测假设和推断实现。"
+          ],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "Appendix E Additional Method Classes and Recording Modalities continuation",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "观测模态和分布假设会限制方法迁移。",
+        "boundary": "原文使用可能性表述，没有本文的实际阴性结果或普遍失败结论。",
+        "negative_result": null,
+        "non_inference": "不能改写为 DLAG/mDLAG 对所有 LFP 都失败或另一方法已经解决全部模态问题。",
+        "unresolved": null,
+        "unresolved_attribution": "经验性表述归于被综述研究；本输出没有读取或独立核验那些原始论文。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "methods-causal",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "从脉冲到非 Gaussian LFP 的迁移需要哪些观测与稳定性检查？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "候选综述记录；不将引用研究计作本文独立实验，未建立跨论文关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "这份 arXiv:2606.10530v1（9 Jun 2026）是神经群体潜变量方法综述，不是作者自己的实验报告。全部 11 页 supplied text 已读，包括图 1、表 1、参考文献及附录 A–E。综述按 f、g 和训练目标比较单脑区动态、跨脑区通信及行为对齐路线，涵盖 GP/LDS、递归和 Transformer、ODE/SDE 与 switching、共享/私有和时延模型、通信子空间、行为优先解耦、对比及几何对齐、扩散/能量生成和神经基础模型。数据部分区分 benchmark 评估条件、基础语料与任务资源；数十万神经元是覆盖规模，不是独立动物 n。附录明确不提供跨条件性能榜单，也承认纯编码、流、图、拓扑及 LFP 模态边界。候选将可辨识性、共同驱动、迁移和计算约束分别与四项未来建议区分；实际阴性结果未在本文测量，全部留 null。最多 9× 加速只保留综述归因和上限，未外推临床验证。源标题与分配身份一致，十人作者据首页补齐并保留原索引差异；CTDS 抑制连接符号说明不充分，作为明确待核查事项。二次源审计没有读取图像、原研究或外部补充，没有建立跨论文关系；所有记录仍为 AI 候选并需人审。",
+  "shared_evidence": [
+    {
+      "claim_id": "C1",
+      "with": [
+        "C2"
+      ]
+    },
+    {
+      "claim_id": "C2",
+      "with": [
+        "C1",
+        "C22",
+        "C28"
+      ]
+    },
+    {
+      "claim_id": "C13",
+      "with": [
+        "C14",
+        "C15"
+      ]
+    },
+    {
+      "claim_id": "C14",
+      "with": [
+        "C13",
+        "C15"
+      ]
+    },
+    {
+      "claim_id": "C15",
+      "with": [
+        "C13",
+        "C14"
+      ]
+    },
+    {
+      "claim_id": "C22",
+      "with": [
+        "C2"
+      ]
+    },
+    {
+      "claim_id": "C28",
+      "with": [
+        "C2"
+      ]
+    },
+    {
+      "claim_id": "C41",
+      "with": [
+        "C45"
+      ]
+    },
+    {
+      "claim_id": "C42",
+      "with": [
+        "C46"
+      ]
+    },
+    {
+      "claim_id": "C43",
+      "with": [
+        "C47"
+      ]
+    },
+    {
+      "claim_id": "C44",
+      "with": [
+        "C48"
+      ]
+    },
+    {
+      "claim_id": "C45",
+      "with": [
+        "C41"
+      ]
+    },
+    {
+      "claim_id": "C46",
+      "with": [
+        "C42"
+      ]
+    },
+    {
+      "claim_id": "C47",
+      "with": [
+        "C43"
+      ]
+    },
+    {
+      "claim_id": "C48",
+      "with": [
+        "C44"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": null,
+        "issue": "索引作者只列六人且含数字消歧后缀，首页源作者明确为十人。",
+        "suggested_correction": "据首页补齐十名作者；原索引名单和差异保留于 coverage.notes，不修改分配文件。",
+        "pdf_page": 1,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "work_type=preprint 容易掩盖本文是综述而非原创实验。",
+        "suggested_correction": "document_type=review，保留 arXiv v1 日期；全部经验性方法描述标 review_synthesis，未来方案单独标 hypothesis。",
+        "pdf_page": 1,
+        "resolved": true
+      },
+      {
+        "claim_id": "C4",
+        "issue": "CTDS 的非负列表述与 E/I 区分缺少完整符号约定。",
+        "suggested_correction": "deferred issue paper-W7164446600:ctds-sign-convention；不提取精确 Dale 符号算法，需人工核查源文描述。",
+        "pdf_page": 2,
+        "resolved": false
+      },
+      {
+        "claim_id": "C9",
+        "issue": "连续时间模型防止离散化误差的措辞过强。",
+        "suggested_correction": "仅述连续时间参数化，并明确数值求解仍有误差，未提取零误差断言。",
+        "pdf_page": 3,
+        "resolved": true
+      },
+      {
+        "claim_id": "C11",
+        "issue": "式 8 的核分区描述与 rSLDS 的一般模式切换在段落中混用。",
+        "suggested_correction": "分别保留局部线性/历史依赖切换及 gpSLDS 核分区；不把式 8 当作所有 rSLDS 的通式。",
+        "pdf_page": 4,
+        "resolved": true
+      },
+      {
+        "claim_id": "C26",
+        "issue": "BRAID 段落用 resolve causal structure 与 causally drive；本文并未呈现干预验证或完整识别条件。",
+        "suggested_correction": "提取显式输入与内部动态分解，因果唯一性列入 non_inference；和第 7 节观察性限制保持一致。",
+        "pdf_page": 5,
+        "resolved": true
+      },
+      {
+        "claim_id": "C29",
+        "issue": "Manifold Capacity 式 19 缺少 Ψ、R、D 的完整定义。",
+        "suggested_correction": "不复写公式或计算数值；保留度量用途并声明无法从本文单独复算。",
+        "pdf_page": 6,
+        "resolved": true
+      },
+      {
+        "claim_id": "C35",
+        "issue": "Energy Score 的独立生成样本易被误当作独立实验重复，且不能省略 α 条件。",
+        "suggested_correction": "保留 z1/z2/z 的独立模型样本及 0<α<2；未扩展为完整无条件统计保证。",
+        "pdf_page": 6,
+        "resolved": true
+      },
+      {
+        "claim_id": "C37",
+        "issue": "最多 9× 推理加速未给出匹配条件、基线版本、独立 n 或误差，clinical deployment 是外推措辞。",
+        "suggested_correction": "保留 up-to 上限作为综述归因，明确比较信息不足，不宣称临床或植入验证。",
+        "pdf_page": 6,
+        "resolved": true
+      },
+      {
+        "claim_id": "C39",
+        "issue": "139 mice、279 regions、>600,000 neurons 和 >63,000 neurons 属不同层级及不同语料。",
+        "suggested_correction": "逐类标注分析单位，绝不合并为统一独立样本量。",
+        "pdf_page": 7,
+        "resolved": true
+      },
+      {
+        "claim_id": "C41",
+        "issue": "仿射潜变换同似然的概括需观测映射等允许补偿变换，不能推广至全部受约束模型。",
+        "suggested_correction": "写明联合重参数化条件，并把生物唯一性留为未建立。",
+        "pdf_page": 10,
+        "resolved": true
+      },
+      {
+        "claim_id": "C50",
+        "issue": "非 Gaussian LFP 的 can be numerically unstable 是可能边界，不是本文失败实验。",
+        "suggested_correction": "negative_result=null；保留条件风险，不猜失败率或普遍不适用。",
+        "pdf_page": 11,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "方法引用与综述表格不是独立复制证据；四条 future avenues 未在本文实施。",
+        "suggested_correction": "仅建立同源 shared_evidence_with，relations 保持为空；未来方案不标 result。",
+        "pdf_page": 10,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "第二次 retained-context 审计已覆盖每个候选与全部 11 页：包括图表说明、基准、资源计数、限制和附录。",
+        "suggested_correction": "保留候选、人审未完成及 text-only 范围；没有因未提供图像或原研究全文而声称科学验证。",
+        "pdf_page": null,
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T14:48:13.707993Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "4577f1a6b3767babffbda9a8184420d15effeb1f964c8f0d8aa79adcbbc3f661",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

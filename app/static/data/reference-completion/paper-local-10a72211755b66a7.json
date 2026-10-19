@@ -1,0 +1,732 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "Neuromorphic computing paradigms enhance robustness through spiking neural networks",
+    "authors": [
+      "Jianhao Ding",
+      "Zhaofei Yu",
+      "Jian K. Liu",
+      "Tiejun Huang"
+    ],
+    "doi": "10.1038/s41467-025-65197-x",
+    "publication_year": 2025,
+    "venue": "Nature Communications",
+    "url": "https://doi.org/10.1038/s41467-025-65197-x"
+  },
+  "source": {
+    "filename": "2025-Nature-Communications-Neuromorphic-Robustness-Spiking-Networks.pdf",
+    "sha256": "05d22c3e0d6e5220c7e9c1f6fe25b0198a3151eda43dea49ffbf232bcb5c4dbc",
+    "source_url": null,
+    "pdf_page_count": 17
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17
+    ],
+    "results_sections_seen": [
+      "Results: temporal encoding",
+      "Results: training algorithms",
+      "Results: early exiting decoding",
+      "Results: fused encoding",
+      "Discussion",
+      "Methods: models/coding/training/attacks/robustness/energy"
+    ],
+    "missing_material": [
+      "所有图像像素未读取",
+      "Supplementary Figures S1–S15和Table S1完整文件未供应；仅正文指引可评估",
+      "原始代码、数据和硬件未检查"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "所有供应页文字（含方法/附录/图表文字和参考文献）已完整评估，未采样代替全文。",
+      "逐条第二审计以已读源比较真实单位、条件、统计与推断范围；不等于实验复现。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "共享转换权重的 MNIST ANN/SNN 比较中，current 或 Poisson 编码的 SNN 在模拟早期有有限攻击后优势，但随模拟时间延长准确率下降到受攻击 ANN 的水平。",
+      "role": "result",
+      "source_pages": [
+        4
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "MNIST 的 RateSynE 将较大像素值的信息较早送入 SNN，而 RateSynS 的背景扰动较早到达；在该任务的分离扰动比较中，RateSynE 更有利于在背景扰动累积之前分类。",
+      "role": "result",
+      "source_pages": [
+        4
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "FashionMNIST 10ms 实验中，Temp-BP 在所比较编码和 FGSM 强度下比 Act-BP 与转换 SNN 更鲁棒；RateSynE 配合直接训练在ε=.5时仍约有20%准确率，而 current/Poisson 接近0。",
+      "role": "result",
+      "source_pages": [
+        5
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "FashionMNIST 的双组模型攻击转移比较表明，所用 Act-BP/Temp-BP SNN 能生成有效的迁移攻击，且其对 ANN 的攻击比 ANN 对 SNN 的迁移攻击更有效。",
+      "role": "result",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "FashionMNIST 中 TTFS 解码比率解码具有更高的所测攻击后准确率，配合 TTFS 输入编码还可改善；其只依据较早首次输出脉冲决策，较晚活动不再改变该次分类。",
+      "role": "result",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "TTFS 解码按较短有效决策时长截断模拟，在所比较 Poisson、RateSynE 和 TTFS 输入条件下降低了每图像的估计突触操作数；TTFS 输入自身的稀疏性也影响该节省。",
+      "role": "result",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "CIFAR-10 单一编码比较显示，Poisson 的重复推断表现被报告为最不稳定，current 在干净数据准确率更高，TTFS 的所测攻击后表现较好，呈现编码间权衡。",
+      "role": "result",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "CIFAR-10 的 current/RateSynE/TTFS 通道融合在所测四种范数 PGD 迁移攻击下提高平均准确率，配合 TTFS 解码和 Temp-BP 的完整配置攻击后表现超过同骨干 ANN 的两倍。",
+      "role": "result",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "采用32bit、65nm CMOS文献参数并计入融合首层的 MAC 后，融合编码+TTFS解码 SNN 的模型估算能耗和能量延迟积分别比 ANN 低5.6倍和8.2倍。",
+      "role": "result",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "二维FGSM方向上的损失较平缓及方向差分较小支持作者的优化景观解释",
+      "role": "interpretation",
+      "source_pages": [
+        6,
+        14
+      ],
+      "decision": "include",
+      "reason": "作为训练/解码命题的共享诊断，不单独声称全局平坦极小值或鲁棒性因果定理"
+    },
+    {
+      "summary": "生物同步、视网膜时序及安全关键应用讨论",
+      "role": "hypothesis",
+      "source_pages": [
+        9,
+        10
+      ],
+      "decision": "exclude",
+      "reason": "类比或应用展望，不是本研究生物/临床/物理部署实验"
+    },
+    {
+      "summary": "ImageNet-100及补充消融/白盒结果",
+      "role": "result",
+      "source_pages": [
+        13
+      ],
+      "decision": "defer",
+      "reason": "TableS1和S图完整数据未供应，不能重建额外数值"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "共享转换权重的 MNIST ANN/SNN 比较中，current 或 Poisson 编码的 SNN 在模拟早期有有限攻击后优势，但随模拟时间延长准确率下降到受攻击 ANN 的水平。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "ANN-to-SNN转换；MNIST；30ms；FGSM",
+          "design": null,
+          "comparator": null,
+          "measure": "time accumulated accuracy",
+          "unit_of_analysis": "图像测试样本与训练/攻击模型",
+          "sample_size_as_reported": "准确率在Methods中为5个攻击模型的平均；被测训练重复数未明确",
+          "uncertainty": null,
+          "assumptions": [
+            "FGSM默认ε=.1；三层784–100–10网络；早期优势不是整个模拟期保证。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "Figure 2D; Results temporal encoding",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "共享转换权重的 MNIST ANN/SNN 比较中，current 或 Poisson 编码的 SNN 在模拟早期有有限攻击后优势，但随模拟时间延长准确率下降到受攻击 ANN 的水平。",
+        "boundary": "FGSM默认ε=.1；三层784–100–10网络；早期优势不是整个模拟期保证。",
+        "negative_result": "current/Poisson的早期优势在后期没有持续。",
+        "non_inference": "这些模型实验不是生物神经回路机制验证；指定攻击下的准确率不证明普适或认证鲁棒性。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "SNN时序编码与对抗鲁棒性",
+        "早退解码与训练方法",
+        "能耗估算的适用范围"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，共享转换权重的 MNIST ANN/SNN 比较中，current 或 Poisson 编码的 SNN 在模拟早期有有限攻击后优势，但随模拟时间延长准确率下降到受攻击 ANN 的水平。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "MNIST 的 RateSynE 将较大像素值的信息较早送入 SNN，而 RateSynS 的背景扰动较早到达；在该任务的分离扰动比较中，RateSynE 更有利于在背景扰动累积之前分类。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "相同转换权重，RateSynS/RateSynE，前景/背景扰动消融",
+          "design": null,
+          "comparator": null,
+          "measure": "编码扰动时间分布与累计准确率",
+          "unit_of_analysis": "图像测试样本与训练/攻击模型",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "前景/背景以像素 .2 阈值划分；只证明所构造静态图像编码及攻击的结果，不能把高亮像素普遍等同任务关键信息。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "Figure 2B–F; Methods encoding and background mask",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "MNIST 的 RateSynE 将较大像素值的信息较早送入 SNN，而 RateSynS 的背景扰动较早到达；在该任务的分离扰动比较中，RateSynE 更有利于在背景扰动累积之前分类。",
+        "boundary": "前景/背景以像素 .2 阈值划分；只证明所构造静态图像编码及攻击的结果，不能把高亮像素普遍等同任务关键信息。",
+        "negative_result": "去除背景扰动后RateSynE后期下降消失；RateSynS受攻击准确率未超过受攻击ANN。",
+        "non_inference": "这些模型实验不是生物神经回路机制验证；指定攻击下的准确率不证明普适或认证鲁棒性。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "SNN时序编码与对抗鲁棒性",
+        "早退解码与训练方法",
+        "能耗估算的适用范围"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，MNIST 的 RateSynE 将较大像素值的信息较早送入 SNN，而 RateSynS 的背景扰动较早到达；在该任务的分离扰动比较中，RateSynE 更有利于在背景扰动累积之前分类。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "FashionMNIST 10ms 实验中，Temp-BP 在所比较编码和 FGSM 强度下比 Act-BP 与转换 SNN 更鲁棒；RateSynE 配合直接训练在ε=.5时仍约有20%准确率，而 current/Poisson 接近0。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "784–500–10网络；100epoch；Act-BP/Temp-BP/CVT",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "图像测试样本与训练/攻击模型",
+          "sample_size_as_reported": "主准确率为5攻击模型平均；独立被测训练种子数未明确",
+          "uncertainty": null,
+          "assumptions": [
+            "比较两种具体BP实现；不能推及所有代理梯度、所有训练预算或强自适应攻击。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "Figure 3B–C; Architectures and training approaches",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "FashionMNIST 10ms 实验中，Temp-BP 在所比较编码和 FGSM 强度下比 Act-BP 与转换 SNN 更鲁棒；RateSynE 配合直接训练在ε=.5时仍约有20%准确率，而 current/Poisson 接近0。",
+        "boundary": "比较两种具体BP实现；不能推及所有代理梯度、所有训练预算或强自适应攻击。",
+        "negative_result": null,
+        "non_inference": "这些模型实验不是生物神经回路机制验证；指定攻击下的准确率不证明普适或认证鲁棒性。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "SNN时序编码与对抗鲁棒性",
+        "早退解码与训练方法",
+        "能耗估算的适用范围"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，FashionMNIST 10ms 实验中，Temp-BP 在所比较编码和 FGSM 强度下比 Act-BP 与转换 SNN 更鲁棒；RateSynE 配合直接训练在ε=.5时仍约有20%准确率，而 current/Poisson 接近0。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "FashionMNIST 的双组模型攻击转移比较表明，所用 Act-BP/Temp-BP SNN 能生成有效的迁移攻击，且其对 ANN 的攻击比 ANN 对 SNN 的迁移攻击更有效。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "白盒及跨组黑盒PGD-l∞ ε=.05；代理/时序梯度",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "两组训练模型之间的有向攻击",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "本比较依赖特定梯度估计与网络；不说明无梯度屏蔽，BIM-l2补充图未供应。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "Figure 3D; Attack methods",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "FashionMNIST 的双组模型攻击转移比较表明，所用 Act-BP/Temp-BP SNN 能生成有效的迁移攻击，且其对 ANN 的攻击比 ANN 对 SNN 的迁移攻击更有效。",
+        "boundary": "本比较依赖特定梯度估计与网络；不说明无梯度屏蔽，BIM-l2补充图未供应。",
+        "negative_result": null,
+        "non_inference": "这些模型实验不是生物神经回路机制验证；指定攻击下的准确率不证明普适或认证鲁棒性。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "SNN时序编码与对抗鲁棒性",
+        "早退解码与训练方法",
+        "能耗估算的适用范围"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，FashionMNIST 的双组模型攻击转移比较表明，所用 Act-BP/Temp-BP SNN 能生成有效的迁移攻击，且其对 ANN 的攻击比 ANN 对 SNN 的迁移攻击更有效。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "FashionMNIST 中 TTFS 解码比率解码具有更高的所测攻击后准确率，配合 TTFS 输入编码还可改善；其只依据较早首次输出脉冲决策，较晚活动不再改变该次分类。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "10ms点LIF网络，FGSM，编码/解码/训练比较",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "图像测试样本与训练/攻击模型",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "首次脉冲读出改变目标及训练梯度，不是只在保持其他条件完全相同下检验单一生物机制。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "Figure 4A–E; Equations 2,13",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "FashionMNIST 中 TTFS 解码比率解码具有更高的所测攻击后准确率，配合 TTFS 输入编码还可改善；其只依据较早首次输出脉冲决策，较晚活动不再改变该次分类。",
+        "boundary": "首次脉冲读出改变目标及训练梯度，不是只在保持其他条件完全相同下检验单一生物机制。",
+        "negative_result": null,
+        "non_inference": "这些模型实验不是生物神经回路机制验证；指定攻击下的准确率不证明普适或认证鲁棒性。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "SNN时序编码与对抗鲁棒性",
+        "早退解码与训练方法",
+        "能耗估算的适用范围"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，FashionMNIST 中 TTFS 解码比率解码具有更高的所测攻击后准确率，配合 TTFS 输入编码还可改善；其只依据较早首次输出脉冲决策，较晚活动不再改变该次分类。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "TTFS 解码按较短有效决策时长截断模拟，在所比较 Poisson、RateSynE 和 TTFS 输入条件下降低了每图像的估计突触操作数；TTFS 输入自身的稀疏性也影响该节省。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "脉冲计数和SOP=ξ·FLOP估算",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "图像模拟及其层操作计数",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "突触操作数是计算代理；尚无本研究硬件功耗测量。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "Figure 4F; Energy efficiency Equation 33",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "TTFS 解码按较短有效决策时长截断模拟，在所比较 Poisson、RateSynE 和 TTFS 输入条件下降低了每图像的估计突触操作数；TTFS 输入自身的稀疏性也影响该节省。",
+        "boundary": "突触操作数是计算代理；尚无本研究硬件功耗测量。",
+        "negative_result": null,
+        "non_inference": "这些模型实验不是生物神经回路机制验证；指定攻击下的准确率不证明普适或认证鲁棒性。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "SNN时序编码与对抗鲁棒性",
+        "早退解码与训练方法",
+        "能耗估算的适用范围"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，TTFS 解码按较短有效决策时长截断模拟，在所比较 Poisson、RateSynE 和 TTFS 输入条件下降低了每图像的估计突触操作数；TTFS 输入自身的稀疏性也影响该节省。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "CIFAR-10 单一编码比较显示，Poisson 的重复推断表现被报告为最不稳定，current 在干净数据准确率更高，TTFS 的所测攻击后表现较好，呈现编码间权衡。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "ResNet18；每图像重复随机编码推断",
+          "design": null,
+          "comparator": null,
+          "measure": "干净准确率、稳定性指标、四类攻击后准确率",
+          "unit_of_analysis": "同一图像上的重复模拟",
+          "sample_size_as_reported": "50次推断不是50个独立训练或数据样本",
+          "uncertainty": null,
+          "assumptions": [
+            "源文稳定性文字指多次正确一致性，但Equation27为跨重复的平均正确比例；不据此计算50次全部正确概率。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Figure 5C–D; Robustness analysis Equation 27",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "CIFAR-10 单一编码比较显示，Poisson 的重复推断表现被报告为最不稳定，current 在干净数据准确率更高，TTFS 的所测攻击后表现较好，呈现编码间权衡。",
+        "boundary": "源文稳定性文字指多次正确一致性，但Equation27为跨重复的平均正确比例；不据此计算50次全部正确概率。",
+        "negative_result": null,
+        "non_inference": "这些模型实验不是生物神经回路机制验证；指定攻击下的准确率不证明普适或认证鲁棒性。",
+        "unresolved": "稳定性定义的文字和公式不完全一致。",
+        "unresolved_attribution": "源文或本次审计"
+      },
+      "broad_directions": [
+        "SNN时序编码与对抗鲁棒性",
+        "早退解码与训练方法",
+        "能耗估算的适用范围"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，CIFAR-10 单一编码比较显示，Poisson 的重复推断表现被报告为最不稳定，current 在干净数据准确率更高，TTFS 的所测攻击后表现较好，呈现编码间权衡。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "CIFAR-10 的 current/RateSynE/TTFS 通道融合在所测四种范数 PGD 迁移攻击下提高平均准确率，配合 TTFS 解码和 Temp-BP 的完整配置攻击后表现超过同骨干 ANN 的两倍。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "ResNet18；10ms；来自另一个随机种子的ANN攻击；40步PGD",
+          "design": null,
+          "comparator": null,
+          "measure": "四类指定迁移攻击的准确率；未经认证",
+          "unit_of_analysis": "图像测试样本，共享5攻击模型",
+          "sample_size_as_reported": "CIFAR-10 10,000测试图像；主准确率5攻击模型平均",
+          "uncertainty": null,
+          "assumptions": [
+            "PGD l0 k10、l1 ε20、l2 ε2.5、l∞ ε.1；融合把首层通道扩大3倍，非完全相同参数数量；4.3与4.0百分比改善为正文报告均值。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "Figure 5E–F; Attack methods",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "CIFAR-10 的 current/RateSynE/TTFS 通道融合在所测四种范数 PGD 迁移攻击下提高平均准确率，配合 TTFS 解码和 Temp-BP 的完整配置攻击后表现超过同骨干 ANN 的两倍。",
+        "boundary": "PGD l0 k10、l1 ε20、l2 ε2.5、l∞ ε.1；融合把首层通道扩大3倍，非完全相同参数数量；4.3与4.0百分比改善为正文报告均值。",
+        "negative_result": "真实物理贴纸、激光、所有自适应攻击或长期模拟未测试。",
+        "non_inference": "这些模型实验不是生物神经回路机制验证；指定攻击下的准确率不证明普适或认证鲁棒性。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "SNN时序编码与对抗鲁棒性",
+        "早退解码与训练方法",
+        "能耗估算的适用范围"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，CIFAR-10 的 current/RateSynE/TTFS 通道融合在所测四种范数 PGD 迁移攻击下提高平均准确率，配合 TTFS 解码和 Temp-BP 的完整配置攻击后表现超过同骨干 ANN 的两倍。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "采用32bit、65nm CMOS文献参数并计入融合首层的 MAC 后，融合编码+TTFS解码 SNN 的模型估算能耗和能量延迟积分别比 ANN 低5.6倍和8.2倍。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "逐层AC/MAC、SRAM读取/泄漏及处理延迟模型",
+          "design": null,
+          "comparator": null,
+          "measure": "估算能耗/EDP",
+          "unit_of_analysis": "估算网络推断操作",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "AC .1pJ、MAC3.1pJ等选定参数；延迟模型不含脉冲稀疏带来的硬件专属延迟效应；不是实测芯片或端到端部署数据。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "Figure 5G; Methods Energy efficiency; Table 2",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "采用32bit、65nm CMOS文献参数并计入融合首层的 MAC 后，融合编码+TTFS解码 SNN 的模型估算能耗和能量延迟积分别比 ANN 低5.6倍和8.2倍。",
+        "boundary": "AC .1pJ、MAC3.1pJ等选定参数；延迟模型不含脉冲稀疏带来的硬件专属延迟效应；不是实测芯片或端到端部署数据。",
+        "negative_result": null,
+        "non_inference": "这些模型实验不是生物神经回路机制验证；指定攻击下的准确率不证明普适或认证鲁棒性。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "SNN时序编码与对抗鲁棒性",
+        "早退解码与训练方法",
+        "能耗估算的适用范围"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，采用32bit、65nm CMOS文献参数并计入融合首层的 MAC 后，融合编码+TTFS解码 SNN 的模型估算能耗和能量延迟积分别比 ANN 低5.6倍和8.2倍。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "全文17页显示编码时序、早退解码和直接时序训练能在指定MNIST/FashionMNIST/CIFAR-10攻击协议中改善SNN表现，并有有限/消失优势及编码权衡。融合完整配置的两倍表现限于主要ANN迁移攻击；节能为模型估算。统计重复单位、白盒范围、稳定性定义和未供应补充材料均已审计。",
+  "shared_evidence": [],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": "C7",
+        "issue": "稳定性文字和Eq27不一致",
+        "suggested_correction": "只保留源文指标表现，不写为50次全部正确概率",
+        "pdf_page": 14,
+        "resolved": false
+      },
+      {
+        "claim_id": "C8",
+        "issue": "主要评估为ANN生成的黑盒迁移攻击，不是全面自适应白盒防御证明",
+        "suggested_correction": "记录攻击来源/预算和未测范围",
+        "pdf_page": 13,
+        "resolved": true
+      },
+      {
+        "claim_id": "C8",
+        "issue": "融合首层通道扩大",
+        "suggested_correction": "不将同架构写成同参数量公平比较",
+        "pdf_page": 8,
+        "resolved": true
+      },
+      {
+        "claim_id": "C9",
+        "issue": "节能与EDP是模型估计",
+        "suggested_correction": "明确65nm32bit参数、MAC首层及非实测边界",
+        "pdf_page": 15,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "完整补充材料和图像像素缺失",
+        "suggested_correction": "未供应材料列入coverage，无猜测图中数值",
+        "pdf_page": 17,
+        "resolved": false
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T11:13:59.668730Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "05d22c3e0d6e5220c7e9c1f6fe25b0198a3151eda43dea49ffbf232bcb5c4dbc",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

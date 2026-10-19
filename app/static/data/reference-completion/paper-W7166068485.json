@@ -1,0 +1,755 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "preprint",
+  "paper": {
+    "title": "HERO-SNN: A Homeostatic Eligibility-based Reward- Optimised Spiking Neural Network for Spatiotemporal Brain Representation: An EEG Case Study",
+    "authors": [
+      "Maryam Doborjeh",
+      "Zohreh Doborjeh",
+      "Nikola Kasabov",
+      "Alexander Sumich",
+      "Nadja Heym",
+      "Tony Burgess"
+    ],
+    "doi": "10.21203/rs.3.rs-10012975/v1",
+    "publication_year": 2026,
+    "venue": "Research Square",
+    "url": "https://doi.org/10.21203/rs.3.rs-10012975/v1"
+  },
+  "source": {
+    "filename": "paper-W7166068485--HERO-SNN-A-Homeostatic-Eligibility-based-Reward-Optimised-Spiking-Neural-Network-for-Spatiotemp.pdf",
+    "sha256": "62f02893fdac9649b14291400f7a93c7c926b88a8842069f1a6c3e25ddc80994",
+    "source_url": "https://assets-eu.researchsquare.com/files/rs-10012975/v1_covered_03f749bc-7a31-4eec-83d6-b96bf359bd13.pdf?c=1782467866",
+    "pdf_page_count": 14
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "results_sections_seen": [
+      "2.1-2.4方法与验证",
+      "3.1 Dataset",
+      "3.2 Experiment and Results：Fig.3-6/正文Fig.7，Table I",
+      "3.3 Parameter Optimisation：Table II",
+      "4 Summary；声明、数据/代码可用性与参考文献"
+    ],
+    "missing_material": [
+      "图像像素未提供，未读图中数值或空间区域。",
+      "未提供EEG原始数据或HERO-SNN运行代码。",
+      "未提供独立补充材料；所供14页无附录。"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "已以4段不超过17,500字符的输出评估全部14页，包括封面、全部方法、正文、图表文字、声明及参考文献。",
+      "封面DOI、六位作者和题名与指定来源匹配；Research Square v1，posted 2026-06-26；封面Research Article标签不等同已同行评审。",
+      "仅已存页文本；原PDF离线，未重新打开。",
+      "第二次源内审计在保留的全文上下文中逐条核对算法符号、表值、单位、共享证据、贡献遗漏及外推；不是独立科学验证。",
+      "英文证据引用全部为null；关系为空；保留候选及human_checked:false。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": true,
+    "archived_page_text_used": true
+  },
+  "contribution_inventory": [
+    {
+      "summary": "NeuCube基础编码、LIF、STDP和deSNN背景。",
+      "role": "background",
+      "source_pages": [
+        3,
+        4,
+        5
+      ],
+      "decision": "exclude",
+      "reason": "既有方法；不把引文或继承算法计为本篇新贡献。"
+    },
+    {
+      "summary": "训练标签置信度差与局部资格迹对储备池内部权重的重放更新。",
+      "role": "result",
+      "source_pages": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "decision": "include",
+      "reason": "C1；完整保留零/负反馈及资格迹条件。"
+    },
+    {
+      "summary": "逐神经元阈值负反馈、约3脉冲目标及适应输出。",
+      "role": "result",
+      "source_pages": [
+        7,
+        8,
+        10,
+        11,
+        12
+      ],
+      "decision": "include",
+      "reason": "C2；设定目标与实际稳定性效果分开。"
+    },
+    {
+      "summary": "细化后局部连接变化和正/负权重分布。",
+      "role": "result",
+      "source_pages": [
+        9,
+        10
+      ],
+      "decision": "include",
+      "reason": "C3；文本定性结果与未见全局一致变化保留，不读像素。"
+    },
+    {
+      "summary": "144训练片段重放时资格突触数逐步减少。",
+      "role": "result",
+      "source_pages": [
+        10,
+        11
+      ],
+      "decision": "include",
+      "reason": "C4；减少趋势不当作收敛证明。"
+    },
+    {
+      "summary": "HERO-SNN对STDP+deSNN及CNN/LSTM的分类比较。",
+      "role": "result",
+      "source_pages": [
+        8,
+        9,
+        11,
+        12
+      ],
+      "decision": "include",
+      "reason": "C5-C6；共同样本和实验明确共享，表值和不一致均保留。"
+    },
+    {
+      "summary": "改进分类意味着更具判别力/可解释性或homeostasis导致稳定性。",
+      "role": "interpretation",
+      "source_pages": [
+        2,
+        9,
+        10,
+        11,
+        12
+      ],
+      "decision": "exclude",
+      "reason": "分类改善与连接示意只提供间接依据；作为相关记录的解释边界，不重复构造直接机制/可解释性验证。"
+    },
+    {
+      "summary": "向fMRI等其他时空数据扩展。",
+      "role": "hypothesis",
+      "source_pages": [
+        12
+      ],
+      "decision": "include",
+      "reason": "C7；明确尚未实施的外推。"
+    },
+    {
+      "summary": "EEG原始采集研究、已有治疗或神经科学研究的结果。",
+      "role": "background",
+      "source_pages": [
+        8,
+        13,
+        14
+      ],
+      "decision": "exclude",
+      "reason": "引用背景和复用数据来源不是本篇新独立实验；声明与参考文献全读但不新增科学结论。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "HERO-SNN在NeuCube的STDP储备池与deSNN原型分类之后，仅重放有标签训练样本，以真实类与预测类置信度之差O及带衰减的局部前/后突触共同脉冲资格迹e，按Delta w=eta O e更新内部储备池突触；预测正确时O=0，误分类时O为负。",
+      "claim_type": "algorithm_design",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "三阶段算法与资格迹/置信度更新规则",
+          "design": "训练样本重放；临时输出原型与已存deSNN原型的脉冲相似度形成类置信度。",
+          "comparator": "传统STDP+deSNN在无监督训练后固定储备池内部权重。",
+          "measure": "类置信度差、局部资格迹及内部突触更新。",
+          "unit_of_analysis": "模拟突触与训练样本；不是生物突触测量。",
+          "sample_size_as_reported": "独立人员共23人，H+ 14人、H- 9人；训练12人（7+5）、测试11人（7+4）；每人12个相关片段，训练144片段、测试132片段，总276片段。1,471个模拟神经元及64通道不是独立人员或重复实验。",
+          "uncertainty": null,
+          "assumptions": [
+            "标签已知且只在训练重放时使用。",
+            "资格迹由衰减项与同时间步前/后突触脉冲乘积组成。",
+            "置信度以储存的训练原型响应归一化。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "2.3.1-2.3.4",
+            "figure": null,
+            "equation": "(7)-(12)；(12)在PDF第7页",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提出让任务反馈改变内部连接而非只改变读出层的训练算法。",
+        "boundary": "公式为算法定义而非收敛或生物实现证明。",
+        "negative_result": null,
+        "non_inference": "活动资格不等于因果信用分配；置信度差不是外部环境奖励；不据此认定实现完整reinforcement learning或正负双向更新。",
+        "unresolved": "在通常非负学习率与非负资格迹下，所给O只为零或负，与文字所称可加强或削弱权重的对应关系未解释。",
+        "unresolved_attribution": "PDF第6-7页公式及其文字表述。"
+      },
+      "broad_directions": [
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "如何把分类反馈传回脉冲储备池内部连接？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6"
+      ],
+      "review_notes": [
+        "奖励信号符号按原式保留；不将作者的双向调节叙述强行写成数学保证。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "HERO-SNN采用逐神经元发放阈值负反馈：观测发放率高于目标则提高阈值，低于目标则降低阈值；本EEG实例把每512时间点片段的目标设为约3个脉冲，并展示细化前后的神经元特异性阈值改变。",
+      "claim_type": "homeostatic_control_design",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "发放率误差驱动阈值适应及文字图注",
+          "design": "阈值调整与突触可塑性分别实施；设置最低脉冲约束及最大发放分数。",
+          "comparator": null,
+          "measure": "观测发放率减目标发放率、神经元阈值。",
+          "unit_of_analysis": "模拟神经元；不是在体细胞或独立实验。",
+          "sample_size_as_reported": "储备池1,471个模拟神经元；片段512时间点；目标0.006乘512约3脉冲。",
+          "uncertainty": "未报告发放稳定性的数值分布、置信区间或无homeostasis消融。",
+          "assumptions": [
+            "阈值适应率为正；提高阈值降低LIF兴奋性。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "2.3.5",
+            "figure": null,
+            "equation": "(13)-(18)；阈值方向说明续于PDF第8页",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "阈值适应图注及参数表",
+          "design": null,
+          "comparator": null,
+          "measure": "细化前后逐神经元阈值变化；阈值适应率0.02见PDF第12页Table II。",
+          "unit_of_analysis": "同一模拟储备池内神经元。",
+          "sample_size_as_reported": "独立人员共23人，H+ 14人、H- 9人；训练12人（7+5）、测试11人（7+4）；每人12个相关片段，训练144片段、测试132片段，总276片段。1,471个模拟神经元及64通道不是独立人员或重复实验。",
+          "uncertainty": "无图像像素；只依据图注，未给逐神经元阈值数值。",
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "3.2；3.3",
+            "figure": "正文称Fig.7(a)，实际所供图注标Fig.6(a)",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "给出控制兴奋性的局部负反馈设计，并报告该设计的阈值适应输出。",
+        "boundary": "约3脉冲是设定目标，不是所有神经元达标的实测结论。",
+        "negative_result": null,
+        "non_inference": "没有独立证明它防止失稳、避免静默或导致性能增益；不能称生物homeostasis验证。",
+        "unresolved": "Table II把最大6脉冲的计算同时写为0.012乘250，与512时间点长度和数值不相容；不能猜测实际运行上限。",
+        "unresolved_attribution": "PDF第12页Table II；PDF第10-11页目标设定及图注。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "分类反馈细化时如何以阈值负反馈约束脉冲活动？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C3",
+        "C4",
+        "C5",
+        "C6"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "在本眼闭H+/H- EEG的1,471神经元NeuCube储备池中，STDP+deSNN后应用HERO-SNN训练重放，作者报告连接变化集中于局部区域，影响正、负权重，而未观察到整个网络连接强度一致增加或一致减少。",
+      "claim_type": "reservoir_connectivity_observation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "细化前后连接示意及权重直方图的正文/图注比较",
+          "design": "同一训练数据与储备池在STDP及任务细化两个阶段比较。",
+          "comparator": "未做任务细化的STDP储备池。",
+          "measure": "局部连接变化及正/负权重分布；图示于PDF第10页。",
+          "unit_of_analysis": "同一模拟网络的突触；非独立神经生物学样本。",
+          "sample_size_as_reported": "独立人员共23人，H+ 14人、H- 9人；训练12人（7+5）、测试11人（7+4）；每人12个相关片段，训练144片段、测试132片段，总276片段。1,471个模拟神经元及64通道不是独立人员或重复实验。",
+          "uncertainty": "未提供局部变化量、统计检验或独立网络重复次数。",
+          "assumptions": [
+            "按正文与图注描述，不评估图像像素。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "3.2",
+            "figure": "Fig.5(a-c)；Fig.6权重直方图，PDF第10页",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者报告任务细化改变既有网络的局部连接，且涉及兴奋性与抑制性权重。",
+        "boundary": "图示/定性比较；储备池变化与EEG脑网络变化不同。",
+        "negative_result": "正文未观察到全网连接强度一致性增加或一致性减少；这不是零整体均值差的统计检验。",
+        "non_inference": "不据局部变化认定突触具有因果任务相关性、特定脑区机制或真实脑连接重塑。",
+        "unresolved": "加强/削弱权重的定性说明与更新式符号问题尚未协调；没有直接表示质量指标。",
+        "unresolved_attribution": "PDF第9-10页正文、Fig.5及权重直方图。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "任务反馈是否局部重组已学习的EEG脉冲储备池连接？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C4",
+        "C5",
+        "C6"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "本HERO-SNN EEG实验的144个训练片段在任务细化阶段重放时，所供图注报告被更新的资格突触数量逐步减少；作者将其解释为网络表示趋于稳定，但未给资格突触数值序列或独立稳定性检验。",
+      "claim_type": "eligibility_dynamics",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "训练重放期间资格突触计数图注",
+          "design": "细化阶段按训练片段顺序记录更新突触数。",
+          "comparator": null,
+          "measure": "每次样本呈现的eligible synapses数量。",
+          "unit_of_analysis": "同一训练过程的重复时间/样本观测，不是144个独立网络重复。",
+          "sample_size_as_reported": "144个训练片段，来自12名训练参与者；重复训练次数未报告。",
+          "uncertainty": "文本仅描述逐步减少，无数值轨迹、误差条或显著性检验。",
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "3.2",
+            "figure": "正文称Fig.7(b)，图注标Fig.6(b)",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "文本图注报告资格突触参与数在训练重放过程中减少。",
+        "boundary": "该趋势限于展示的重放过程。",
+        "negative_result": null,
+        "non_inference": "减少资格突触数不证明数学收敛、表示稳定性、泛化或homeostasis的独立因果作用。",
+        "unresolved": "缺乏资格计数原始数据、随机重复和组件消融。",
+        "unresolved_attribution": "PDF第11页资格突触图注。"
+      },
+      "broad_directions": [
+        "learning-memory",
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "任务细化重放过程中有资格的突触参与范围如何变化？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C5",
+        "C6"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "对来自不同于训练集的11名参与者的132个眼闭H+/H- EEG测试片段，Table I报告HERO-SNN总准确率91.30%、F1=0.91，STDP+deSNN基线总准确率84.62%、F1=0.85；这些表值高于基线，但不支持正文所写的11%提升数值。",
+      "claim_type": "classification_comparison",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "人员分离的训练/测试分类及参数搜索",
+          "design": "23人各选3秒EEG，切12个不重叠250ms片段；训练12人144片段，测试11人132片段；只训练样本用于细化。",
+          "comparator": "STDP+deSNN，无任务感知细化。",
+          "measure": "总准确率、F1及类准确率；HERO-SNN H+92.86%、H-88.89%，基线85.71%、83.33%。",
+          "unit_of_analysis": "指标按EEG片段报告；可独立人员测试单位11人，片段嵌套在人内。",
+          "sample_size_as_reported": "独立人员共23人，H+ 14人、H- 9人；训练12人（7+5）、测试11人（7+4）；每人12个相关片段，训练144片段、测试132片段，总276片段。1,471个模拟神经元及64通道不是独立人员或重复实验。",
+          "uncertainty": "无置信区间、误差、显著性检验、独立随机重复次数；grid search交叉验证是否与最终测试严格嵌套未交代。",
+          "assumptions": [
+            "仅同一Havening数据集的眼闭EEG、一次所描述的人员分离训练/测试配置；重复划分、随机初始化及独立复现实验次数未报告；片段不是独立参与者。",
+            "64通道，每片段512时间点；人员间无训练/测试重叠按作者说明。"
+          ],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "3.2；Table I",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所报表格准确率和F1在这一配置下均高于无细化基线。",
+        "boundary": "只保留表中估计，未确认统计显著或一般化优势。",
+        "negative_result": null,
+        "non_inference": "不证明Havening的临床疗效、生物机制或三个新增组件各自贡献；没有单组件消融。",
+        "unresolved": "正文11%与表值不符；总/分类准确率与所列测试样本数的聚合方式不明确，不能反推混淆矩阵或成功片段数。",
+        "unresolved_attribution": "PDF第2、11、12页提升叙述；第11页Table I及第8-9页样本划分。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "在人员分离的Havening EEG分类中内部任务细化是否优于固定STDP储备池？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C6"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "在文中所述144训练片段/132测试片段、人员分离的H+/H- EEG比较中，Table I报告HERO-SNN准确率91.30%、F1=0.91，高于经grid search调整的CNN（83.64%、0.83）和LSTM（69.05%、0.74）；LSTM表内的总体与分类准确率存在未澄清不一致。",
+      "claim_type": "architecture_comparison",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "CNN/LSTM与HERO-SNN在共同EEG划分上的表格比较",
+          "design": "CNN Adam训练30 epochs、batch32；LSTM Adam训练80 epochs、batch12；作者称均grid search调参。",
+          "comparator": "CNN与LSTM。",
+          "measure": "总准确率及F1；CNN类准确率H+85.29%、H-80.95%；LSTM H+65.48%、H-61.65%。",
+          "unit_of_analysis": "EEG片段分类、参与者分离；训练更新步数不是独立重复。",
+          "sample_size_as_reported": "独立人员共23人，H+ 14人、H- 9人；训练12人（7+5）、测试11人（7+4）；每人12个相关片段，训练144片段、测试132片段，总276片段。1,471个模拟神经元及64通道不是独立人员或重复实验。",
+          "uncertainty": "无误差区间、显著性、独立训练种子数；调参预算、公平性与nested validation未充分说明。",
+          "assumptions": [
+            "仅同一Havening数据集的眼闭EEG、一次所描述的人员分离训练/测试配置；重复划分、随机初始化及独立复现实验次数未报告；片段不是独立参与者。",
+            "表中所有模型被描述为同一划分，未额外假设计算预算一致。"
+          ],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "3.2；Table I",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在所报单一比较表内HERO-SNN准确率及F1高于两种基线。",
+        "boundary": "文本数值比较，不是广泛state-of-the-art或跨数据集结论。",
+        "negative_result": null,
+        "non_inference": "不推断普遍架构优势、能耗、样本效率或训练计算优势。",
+        "unresolved": "LSTM总准确率69.05%高于两个分类准确率65.48%和61.65%；若定义与聚合一致则无法形成加权总体，但源文未说明不同定义。",
+        "unresolved_attribution": "PDF第11页Table I。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "HERO-SNN在该人员分离EEG任务上与CNN和LSTM的分类表现如何比较？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "作者提出HERO-SNN的训练反馈、局部资格迹和阈值适应框架可扩展至fMRI等其他时空数据；本预印本只给Havening眼闭EEG实例，没有提供fMRI验证。",
+      "claim_type": "cross_modality_extension",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "总结中的扩展建议",
+          "design": "由EEG实例提出的应用方向，非新的fMRI实验。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": null,
+          "sample_size_as_reported": null,
+          "uncertainty": "未提供fMRI数据、模型比较或验证样本。",
+          "assumptions": [
+            "其他数据需可编码为适用于该储备池的时空脉冲表示。"
+          ],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "4 Summary",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提出可检验的跨模态应用方向。",
+        "boundary": "尚未验证；本源仅EEG。",
+        "negative_result": null,
+        "non_inference": "不能登记为已经提升fMRI分类性能或已证实跨模态通用性。",
+        "unresolved": "fMRI时间尺度、空间映射与任务反馈的适配和效果。",
+        "unresolved_attribution": "作者，PDF第12页Summary。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "该任务感知脉冲细化框架能否适用于fMRI等其他时空数据？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "Research Square v1预印本（2026-06-26），全部14页文字与图表说明已评估。HERO-SNN在既有NeuCube/STDP+deSNN之后，用训练标签产生的类置信度差、局部资格迹与阈值负反馈细化内部网络。EEG来自23名Havening参与者，仅眼闭数据；每人12片段，训练12人144片段、测试11人132片段。登记7个候选，涵盖算法/阈值设计、局部权重与资格参与变化、两类性能比较及fMRI扩展假设。Table I报告91.30%对84.62%，并高于CNN/LSTM，但正文11%、指标聚合、LSTM分项数值、权重更新符号、最大脉冲参数与图号均有待澄清。没有置信区间、独立重复或组件消融，不能据此判定生物机制、治疗效果、数学收敛或跨模态通用性。审计限于已供文本，未读像素或原PDF，所有记录待人工核查。",
+  "shared_evidence": [
+    {
+      "claim_id": "C1",
+      "with": [
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C2",
+      "with": [
+        "C1",
+        "C3",
+        "C4",
+        "C5",
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C1",
+        "C2",
+        "C4",
+        "C5",
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C5",
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": "C5",
+        "issue": "源文反复称11%准确率提升，但Table I的91.30%与84.62%相减仅6.68个百分点。",
+        "suggested_correction": "候选保留表值并显式披露；6.68为表值算术而非新实验，待作者确认11%的定义。",
+        "pdf_page": 11,
+        "resolved": false
+      },
+      {
+        "claim_id": "C1",
+        "issue": "O=p_true-p_pred在正确时0、错误时负，非负资格迹与正学习率下不保证文字所说的双向权重更新。",
+        "suggested_correction": "保留原规则及符号，避免写成已证明增强/削弱机制；请核查代码或作者解释。",
+        "pdf_page": 6,
+        "resolved": false
+      },
+      {
+        "claim_id": "C2",
+        "issue": "Table II把最大脉冲数列为6，计算却为0.012乘250；所报片段长度为512。",
+        "suggested_correction": "保留源内冲突，不擅改实际参数；约3脉冲仅登记目标。",
+        "pdf_page": 12,
+        "resolved": false
+      },
+      {
+        "claim_id": "C4",
+        "issue": "正文把阈值/资格图称Fig.7，PDF第11页图注却重复Fig.6编号。",
+        "suggested_correction": "定位保留实际PDF页及两种编号，避免混淆PDF第10页权重直方图。",
+        "pdf_page": 11,
+        "resolved": false
+      },
+      {
+        "claim_id": "C6",
+        "issue": "LSTM总体准确率高于其两个分类准确率；多个表格百分比与所述测试样本数的聚合规则不透明。",
+        "suggested_correction": "按源表值报告且不反推混淆矩阵，需作者澄清指标定义。",
+        "pdf_page": 11,
+        "resolved": false
+      },
+      {
+        "claim_id": null,
+        "issue": "276片段、144/132划分容易被误作独立人员样本或精确50:50。",
+        "suggested_correction": "已在相关证据标明23人，训练12、测试11；重复片段不是独立人员；50-50为作者标签非完全等分。",
+        "pdf_page": 8,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "正文和公式中有变量字符丢失、公式交叉引用编号不一致（如阈值更新称Equation16）。",
+        "suggested_correction": "只用可辨识变量与清楚的方向说明；保留真实PDF页/公式标签，不重建损坏的编码公式。",
+        "pdf_page": 8,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "方法、连接图、阈值/资格图与性能比较来自共同数据和训练过程，不是独立复现。",
+        "suggested_correction": "已把C1-C6关联为共享源内证据；不给跨文献支持或复现关系。",
+        "pdf_page": 11,
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T13:29:02.461647Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "62f02893fdac9649b14291400f7a93c7c926b88a8842069f1a6c3e25ddc80994",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

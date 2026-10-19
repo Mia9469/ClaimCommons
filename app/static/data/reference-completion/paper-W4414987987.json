@@ -1,0 +1,1837 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "Higher-order neuromorphic Ising machines—autoencoders and Fowler-Nordheim annealers are all you need for scalability",
+    "authors": [
+      "Faiek Ahsan",
+      "Saptarshi Maiti",
+      "Zihao Chen",
+      "Jakob Kaiser",
+      "Ankita Nandi",
+      "Madhuvanthi Srivatsav"
+    ],
+    "doi": "10.1038/s41467-026-71937-4",
+    "publication_year": 2026,
+    "venue": "Nature Communications",
+    "url": "https://doi.org/10.1038/s41467-026-71937-4"
+  },
+  "source": {
+    "filename": "paper-W4414987987--Higher-order-neuromorphic-Ising-machines-autoencoders-and-Fowler-Nordheim-annealers-are-all-you.pdf",
+    "sha256": "cf7c9de239b4458eb9298ca714eea308b56f57453a05cc0a3a28d605b4df473d",
+    "source_url": "https://www.nature.com/articles/s41467-026-71937-4_reference.pdf?error=cookies_not_supported&code=b5e0591a-7abc-4808-ab93-235b889ae768",
+    "pdf_page_count": 48
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48
+    ],
+    "results_sections_seen": [
+      "1 Architecture/higher-order Hamiltonian",
+      "2.1 small3R3X",
+      "2.2 MAX-CUT",
+      "2.3 CPU MAX-SAT",
+      "2.4 FPGA MAX3SAT/kRkX/unsatisfiable",
+      "3 Discussion/sparse vs dense/guarantees/analog mapping",
+      "4.1–4.7 resource/algebra/SA/FN/PCA/FPGA/TTS",
+      "4.8–4.9 availability",
+      "References1–82",
+      "Table1 and Figures1–4 all captions and supplied figure text",
+      "Acknowledgements/contributions/interests"
+    ],
+    "missing_material": [
+      "所有figure pixels",
+      "SI SectionsS1–S17、TablesS1–S5等未附",
+      "外部repo instance-wise TTS/ITS、estimated power与code未读取"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "48页一次按PDF顺序完整评估，包括重复图text与全部长caption。",
+      "源版本为Nature Communications Article in Press，非最终编辑版。",
+      "理论保证保留联合sampling/ergodicity/depth/schedule条件；TTS优化不满足其充分条件。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "对bipolar spins和一致clause states Tk=∏sᵢᴴ，单spin flip的精确能量差为ΔEᵢ=2∑HₖᵢJₖTₖ；这使higher-order能量更新可用相邻clause聚合而非重算全部monomials。",
+      "role": "result",
+      "source_pages": [
+        22
+      ],
+      "decision": "include",
+      "reason": "独立algebra/architecture条件、各实验范围或作者明确mapping假说。"
+    },
+    {
+      "summary": "decoder按spin-flip parity toggle clause；只有单事件或同色spins绝不共现于同clause时，parity可化为简单sum；spin readout从clause唯一恢复还需GF(2) rank(H)=N，否则应直接累计flips。",
+      "role": "result",
+      "source_pages": [
+        25
+      ],
+      "decision": "include",
+      "reason": "独立algebra/architecture条件、各实验范围或作者明确mapping假说。"
+    },
+    {
+      "summary": "“autoencoder”指固定H/J构成的clause↔spin encoder/decoder及stochastic update架构，不是对数据集训练的神经生成模型；M>N才使spin层为降维bottleneck。",
+      "role": "result",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "独立algebra/architecture条件、各实验范围或作者明确mapping假说。"
+    },
+    {
+      "summary": "作者将FN的τ₀/log(1+t/C)快期约1/t、慢期约1/log(t)与模拟退火渐近收敛联系；保证还需正确Markov/Metropolis映射、不可约/非周期及冷却系数不小于landscape barrier。",
+      "role": "interpretation",
+      "source_pages": [
+        18
+      ],
+      "decision": "include",
+      "reason": "独立algebra/architecture条件、各实验范围或作者明确mapping假说。"
+    },
+    {
+      "summary": "资源优势依赖monomial sparsity：fixed q/p下sparse encoder约Nq、decoderMp；dense p-body仍O(Nᵖ)，phase-transition kSAT的M常数还随order变化，不能把order-independent措辞泛化所有输入。",
+      "role": "result",
+      "source_pages": [
+        17
+      ],
+      "decision": "include",
+      "reason": "独立algebra/architecture条件、各实验范围或作者明确mapping假说。"
+    },
+    {
+      "summary": "在10实例/每order的MAX3/5/7/9/11SAT和指定quadratization映射中，变量及互连比随order快速增长，direct higher-order避免该比较中的auxiliary/precision开销。",
+      "role": "result",
+      "source_pages": [
+        21
+      ],
+      "decision": "include",
+      "reason": "独立algebra/architecture条件、各实验范围或作者明确mapping假说。"
+    },
+    {
+      "summary": "同initial spins和annealer的10-variable/10-clause 3R3X例中，higher-order轨迹较快到ground state，而quadratized NeuroSA有较长随机游走；PCA仅为这一小例的低维展示。",
+      "role": "result",
+      "source_pages": [
+        10
+      ],
+      "decision": "include",
+      "reason": "独立algebra/architecture条件、各实验范围或作者明确mapping假说。"
+    },
+    {
+      "summary": "G15的800nodes/4661edges被DSATUR分7colors；CPU colored更新在早期有更大cut jumps，晚期colored/uncolored均到文中3050cut SOTA且约5×10⁵iterations偏移不再扩大。",
+      "role": "result",
+      "source_pages": [
+        11
+      ],
+      "decision": "include",
+      "reason": "独立algebra/architecture条件、各实验范围或作者明确mapping假说。"
+    },
+    {
+      "summary": "100MHz/16-bit FN digital emulation的FPGA在G4/G11/G15达文中SOTA，报告best cuts/TTS优于部分NeuroSA结果且与dSBM相近或部分更好；对照主要取既有报道。",
+      "role": "result",
+      "source_pages": [
+        12
+      ],
+      "decision": "include",
+      "reason": "独立algebra/architecture条件、各实验范围或作者明确mapping假说。"
+    },
+    {
+      "summary": "CPU慢退火下MAX3SAT尺寸20/100/175/250，higher-order解分布更贴近全满足；250-variable未color偶尔不满，而GC保持full satisfiability；SO更难达到高质量。",
+      "role": "result",
+      "source_pages": [
+        12
+      ],
+      "decision": "include",
+      "reason": "独立algebra/architecture条件、各实验范围或作者明确mapping假说。"
+    },
+    {
+      "summary": "独立调优ITS中GC随规模增大比HO单flip约低一个数量级，HO/GC比SO更低；但SO在N>约100无法可靠估计ITS，不能为未估计范围补出量化speedup。",
+      "role": "result",
+      "source_pages": [
+        13
+      ],
+      "decision": "include",
+      "reason": "独立algebra/architecture条件、各实验范围或作者明确mapping假说。"
+    },
+    {
+      "summary": "MAX5SAT与MAX7SAT各一个实例、五次独立run、10⁸iterations都报告满足>99%clauses，展示这些higher-order实例可执行，但不证明一般order或full satisfaction。",
+      "role": "result",
+      "source_pages": [
+        14
+      ],
+      "decision": "include",
+      "reason": "独立algebra/architecture条件、各实验范围或作者明确mapping假说。"
+    },
+    {
+      "summary": "FPGA MAX3SAT固定320µs/每run下，较慢八种FN schedules提高median satisfaction并缩小observed range；延长冷却改善质量同时需更长达到指定质量runtime。",
+      "role": "result",
+      "source_pages": [
+        14
+      ],
+      "decision": "include",
+      "reason": "独立algebra/architecture条件、各实验范围或作者明确mapping假说。"
+    },
+    {
+      "summary": "N250最快schedule报告runtime99 median0.89µs；相同16-bit规则FPGA相对Intel Ultra9上Python约2.5×10³–3×10³倍快，但FPGA计core cycles排除DMA/noise-generation等overhead。",
+      "role": "result",
+      "source_pages": [
+        15
+      ],
+      "decision": "include",
+      "reason": "独立algebra/architecture条件、各实验范围或作者明确mapping假说。"
+    },
+    {
+      "summary": "ITS/TTS按独立restarts模型估计Psuccess并以0.99为target，再取共享budget grid的跨instance median最小值；该指标不是观测mean first-hit walltime。",
+      "role": "result",
+      "source_pages": [
+        28
+      ],
+      "decision": "include",
+      "reason": "独立algebra/architecture条件、各实验范围或作者明确mapping假说。"
+    },
+    {
+      "summary": "3R3X优化median TTS拟合α=0.0254(6)，N定义为2Nspin，作者与reported p-bit α=.0206作比较；有限planted随机实例大多在FN高温约1/t区即收敛。",
+      "role": "result",
+      "source_pages": [
+        15
+      ],
+      "decision": "include",
+      "reason": "独立algebra/architecture条件、各实验范围或作者明确mapping假说。"
+    },
+    {
+      "summary": "5R5X/7R7X的α分别0.1581(108)/0.2339(249)，两者N=Nspin；更高order在所测范围TTS scaling更差，资源直接embedding不等于求解时间恒定/多项式。",
+      "role": "result",
+      "source_pages": [
+        16
+      ],
+      "decision": "include",
+      "reason": "独立algebra/architecture条件、各实验范围或作者明确mapping假说。"
+    },
+    {
+      "summary": "unsatisfiable SATLIB的N100–250，每size四实例十FPGA runs取best满足率；作者称最大例达clauses−1，若unsat身份正确此值是上界，但原instance-wise数值/证明未附。",
+      "role": "result",
+      "source_pages": [
+        16
+      ],
+      "decision": "include",
+      "reason": "独立algebra/architecture条件、各实验范围或作者明确mapping假说。"
+    },
+    {
+      "summary": "作者建议用ON/OFF IF与coarse integration windows降低spurious clause flips，并提出dendritic/FeFET映射，但本文没有重benchmark这些analog robustness或nanodendritic硬件收益。",
+      "role": "hypothesis",
+      "source_pages": [
+        20
+      ],
+      "decision": "include",
+      "reason": "独立algebra/architecture条件、各实验范围或作者明确mapping假说。"
+    },
+    {
+      "summary": "能耗/analog noise robustness/physical FN-device最终加速与生物树突作用。",
+      "role": "hypothesis_or_missing_evidence",
+      "source_pages": [
+        9,
+        19,
+        20,
+        21,
+        29
+      ],
+      "decision": "defer",
+      "reason": "本工作数字emulation；robustness明确不重测，power仅外部repo，不能填能耗effect。"
+    },
+    {
+      "summary": "背景solver及参考文献1–82。",
+      "role": "background",
+      "source_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39
+      ],
+      "decision": "exclude",
+      "reason": "完整评估，引用文章不是新增实验/独立复现；外部数据不声称已读。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "对bipolar spins和一致clause states Tk=∏sᵢᴴ，单spin flip的精确能量差为ΔEᵢ=2∑HₖᵢJₖTₖ；这使higher-order能量更新可用相邻clause聚合而非重算全部monomials。",
+      "claim_type": "theory_or_architecture",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "4.2 Eqs7–14",
+          "design": "有限Hamiltonian、binary H、J weights、其余spins固定；初始clause/spin一致",
+          "comparator": "单flip能量/理想SA或所述resource模型",
+          "measure": "对bipolar spins和一致clause states Tk=∏sᵢᴴ，单spin flip的精确能量差为ΔEᵢ=2∑HₖᵢJₖTₖ；这使higher-order能量更新可用相邻clause聚合而非重算全部monomials。",
+          "unit_of_analysis": "形式模型/architecture条件",
+          "sample_size_as_reported": "代数构造，无实验n",
+          "uncertainty": null,
+          "assumptions": [
+            "有限Hamiltonian、binary H、J weights、其余spins固定；初始clause/spin一致"
+          ],
+          "source_locator": {
+            "pdf_page": 22,
+            "section": "4.2 Eqs7–14",
+            "figure": null,
+            "equation": "(11)–(14)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "对bipolar spins和一致clause states Tk=∏sᵢᴴ，单spin flip的精确能量差为ΔEᵢ=2∑HₖᵢJₖTₖ；这使higher-order能量更新可用相邻clause聚合而非重算全部monomials。",
+        "boundary": "不证明任意并行翻转均为同一单spin能量差。",
+        "negative_result": null,
+        "non_inference": "不证明任意并行翻转均为同一单spin能量差。",
+        "unresolved": "sampler推导/precision的理论适用性、缺SI原始结果、end-to-end latency及analog robustness待核对。",
+        "unresolved_attribution": "作者限制与第二次来源推导审计。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "直接higher-order embedding与有条件FN退火怎样影响资源、有限时间质量及求解可靠性？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6"
+      ],
+      "review_notes": [
+        "Article in Press未编辑版本；理想渐近保证、CPU/FPGA实测与未来analog/树突mapping分开。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "decoder按spin-flip parity toggle clause；只有单事件或同色spins绝不共现于同clause时，parity可化为简单sum；spin readout从clause唯一恢复还需GF(2) rank(H)=N，否则应直接累计flips。",
+      "claim_type": "theory_or_architecture",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "4.3 Eqs21–23",
+          "design": "asynchronous arbiter或clause-conflict有效coloring、无spurious clause errors、可靠readout",
+          "comparator": "单flip能量/理想SA或所述resource模型",
+          "measure": "decoder按spin-flip parity toggle clause；只有单事件或同色spins绝不共现于同clause时，parity可化为简单sum；spin readout从clause唯一恢复还需GF(2) rank(H)=N，否则应直接累计flips。",
+          "unit_of_analysis": "形式模型/architecture条件",
+          "sample_size_as_reported": "算法构造，无实验n",
+          "uncertainty": null,
+          "assumptions": [
+            "asynchronous arbiter或clause-conflict有效coloring、无spurious clause errors、可靠readout"
+          ],
+          "source_locator": {
+            "pdf_page": 25,
+            "section": "4.3 Eqs21–23",
+            "figure": null,
+            "equation": "(21)–(23)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "decoder按spin-flip parity toggle clause；只有单事件或同色spins绝不共现于同clause时，parity可化为简单sum；spin readout从clause唯一恢复还需GF(2) rank(H)=N，否则应直接累计flips。",
+        "boundary": "不能去掉同步/一致性/full-rank条件后仍宣称无歧义映射。",
+        "negative_result": null,
+        "non_inference": "不能去掉同步/一致性/full-rank条件后仍宣称无歧义映射。",
+        "unresolved": "sampler推导/precision的理论适用性、缺SI原始结果、end-to-end latency及analog robustness待核对。",
+        "unresolved_attribution": "作者限制与第二次来源推导审计。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "直接higher-order embedding与有条件FN退火怎样影响资源、有限时间质量及求解可靠性？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C3",
+        "C4",
+        "C5",
+        "C6"
+      ],
+      "review_notes": [
+        "Article in Press未编辑版本；理想渐近保证、CPU/FPGA实测与未来analog/树突mapping分开。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "“autoencoder”指固定H/J构成的clause↔spin encoder/decoder及stochastic update架构，不是对数据集训练的神经生成模型；M>N才使spin层为降维bottleneck。",
+      "claim_type": "theory_or_architecture",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Architecture; 4.3 PDF23–25",
+          "design": "固定问题embedding、N/M clause/spin dimensions",
+          "comparator": "单flip能量/理想SA或所述resource模型",
+          "measure": "“autoencoder”指固定H/J构成的clause↔spin encoder/decoder及stochastic update架构，不是对数据集训练的神经生成模型；M>N才使spin层为降维bottleneck。",
+          "unit_of_analysis": "形式模型/architecture条件",
+          "sample_size_as_reported": "算法构造",
+          "uncertainty": null,
+          "assumptions": [
+            "固定问题embedding、N/M clause/spin dimensions"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "Architecture; 4.3 PDF23–25",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "“autoencoder”指固定H/J构成的clause↔spin encoder/decoder及stochastic update架构，不是对数据集训练的神经生成模型；M>N才使spin层为降维bottleneck。",
+        "boundary": "不把所有Hamiltonian都假定N<M或生物脑学会该算法。",
+        "negative_result": null,
+        "non_inference": "不把所有Hamiltonian都假定N<M或生物脑学会该算法。",
+        "unresolved": "sampler推导/precision的理论适用性、缺SI原始结果、end-to-end latency及analog robustness待核对。",
+        "unresolved_attribution": "作者限制与第二次来源推导审计。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "直接higher-order embedding与有条件FN退火怎样影响资源、有限时间质量及求解可靠性？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C4",
+        "C5",
+        "C6"
+      ],
+      "review_notes": [
+        "Article in Press未编辑版本；理想渐近保证、CPU/FPGA实测与未来analog/树突mapping分开。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "作者将FN的τ₀/log(1+t/C)快期约1/t、慢期约1/log(t)与模拟退火渐近收敛联系；保证还需正确Markov/Metropolis映射、不可约/非周期及冷却系数不小于landscape barrier。",
+      "claim_type": "theory_or_architecture",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "Discussion; 4.4 Eq24 PDF26",
+          "design": "理想annealing chain和足够慢的depth-dependent schedule；TTS参数未按Hajek充分条件选",
+          "comparator": "单flip能量/理想SA或所述resource模型",
+          "measure": "作者将FN的τ₀/log(1+t/C)快期约1/t、慢期约1/log(t)与模拟退火渐近收敛联系；保证还需正确Markov/Metropolis映射、不可约/非周期及冷却系数不小于landscape barrier。",
+          "unit_of_analysis": "形式模型/architecture条件",
+          "sample_size_as_reported": "理论转用，非finite-run实验n",
+          "uncertainty": null,
+          "assumptions": [
+            "理想annealing chain和足够慢的depth-dependent schedule；TTS参数未按Hajek充分条件选"
+          ],
+          "source_locator": {
+            "pdf_page": 18,
+            "section": "Discussion; 4.4 Eq24 PDF26",
+            "figure": null,
+            "equation": "(24)及Hajek条件",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者将FN的τ₀/log(1+t/C)快期约1/t、慢期约1/log(t)与模拟退火渐近收敛联系；保证还需正确Markov/Metropolis映射、不可约/非周期及冷却系数不小于landscape barrier。",
+        "boundary": "源文threshold推导有能量factor/分布疑点；不能视硬件有限时间全局保证。",
+        "negative_result": null,
+        "non_inference": "源文threshold推导有能量factor/分布疑点；不能视硬件有限时间全局保证。",
+        "unresolved": "sampler推导/precision的理论适用性、缺SI原始结果、end-to-end latency及analog robustness待核对。",
+        "unresolved_attribution": "作者限制与第二次来源推导审计。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "直接higher-order embedding与有条件FN退火怎样影响资源、有限时间质量及求解可靠性？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C5",
+        "C6"
+      ],
+      "review_notes": [
+        "Article in Press未编辑版本；理想渐近保证、CPU/FPGA实测与未来analog/树突mapping分开。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "资源优势依赖monomial sparsity：fixed q/p下sparse encoder约Nq、decoderMp；dense p-body仍O(Nᵖ)，phase-transition kSAT的M常数还随order变化，不能把order-independent措辞泛化所有输入。",
+      "claim_type": "theory_or_architecture",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Discussion resources PDF16–18",
+          "design": "q-sparse hypergraph、fixed order/neighbor bounds；reconfigurable capacity固定",
+          "comparator": "单flip能量/理想SA或所述resource模型",
+          "measure": "资源优势依赖monomial sparsity：fixed q/p下sparse encoder约Nq、decoderMp；dense p-body仍O(Nᵖ)，phase-transition kSAT的M常数还随order变化，不能把order-independent措辞泛化所有输入。",
+          "unit_of_analysis": "形式模型/architecture条件",
+          "sample_size_as_reported": "资源计数条件，无生物/实验n",
+          "uncertainty": null,
+          "assumptions": [
+            "q-sparse hypergraph、fixed order/neighbor bounds；reconfigurable capacity固定"
+          ],
+          "source_locator": {
+            "pdf_page": 17,
+            "section": "Discussion resources PDF16–18",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "资源优势依赖monomial sparsity：fixed q/p下sparse encoder约Nq、decoderMp；dense p-body仍O(Nᵖ)，phase-transition kSAT的M常数还随order变化，不能把order-independent措辞泛化所有输入。",
+        "boundary": "O(N²)全预配置仍可能prohibitive，时间复杂度与互连资源不是同一量。",
+        "negative_result": null,
+        "non_inference": "O(N²)全预配置仍可能prohibitive，时间复杂度与互连资源不是同一量。",
+        "unresolved": "sampler推导/precision的理论适用性、缺SI原始结果、end-to-end latency及analog robustness待核对。",
+        "unresolved_attribution": "作者限制与第二次来源推导审计。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "直接higher-order embedding与有条件FN退火怎样影响资源、有限时间质量及求解可靠性？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C6"
+      ],
+      "review_notes": [
+        "Article in Press未编辑版本；理想渐近保证、CPU/FPGA实测与未来analog/树突mapping分开。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "在10实例/每order的MAX3/5/7/9/11SAT和指定quadratization映射中，变量及互连比随order快速增长，direct higher-order避免该比较中的auxiliary/precision开销。",
+      "claim_type": "theory_or_architecture",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "4.1; Fig.1b PDF41",
+          "design": "特定Chancellor gadget，不同order使用不同N/M；非所有quadratization下界",
+          "comparator": "单flip能量/理想SA或所述resource模型",
+          "measure": "在10实例/每order的MAX3/5/7/9/11SAT和指定quadratization映射中，变量及互连比随order快速增长，direct higher-order避免该比较中的auxiliary/precision开销。",
+          "unit_of_analysis": "形式模型/architecture条件",
+          "sample_size_as_reported": "每order10instances",
+          "uncertainty": null,
+          "assumptions": [
+            "特定Chancellor gadget，不同order使用不同N/M；非所有quadratization下界"
+          ],
+          "source_locator": {
+            "pdf_page": 21,
+            "section": "4.1; Fig.1b PDF41",
+            "figure": "4.1; Fig.1b PDF41",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在10实例/每order的MAX3/5/7/9/11SAT和指定quadratization映射中，变量及互连比随order快速增长，direct higher-order避免该比较中的auxiliary/precision开销。",
+        "boundary": "不证明任何二次化都必须同样指数开销；source auxiliary计数措辞有矛盾。",
+        "negative_result": null,
+        "non_inference": "不证明任何二次化都必须同样指数开销；source auxiliary计数措辞有矛盾。",
+        "unresolved": "sampler推导/precision的理论适用性、缺SI原始结果、end-to-end latency及analog robustness待核对。",
+        "unresolved_attribution": "作者限制与第二次来源推导审计。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "直接higher-order embedding与有条件FN退火怎样影响资源、有限时间质量及求解可靠性？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5"
+      ],
+      "review_notes": [
+        "Article in Press未编辑版本；理想渐近保证、CPU/FPGA实测与未来analog/树突mapping分开。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "同initial spins和annealer的10-variable/10-clause 3R3X例中，higher-order轨迹较快到ground state，而quadratized NeuroSA有较长随机游走；PCA仅为这一小例的低维展示。",
+      "claim_type": "benchmark_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "2.1; Fig.1h PDF41",
+          "design": "HO10latent、SO20neurons；moving-window rates/3PC",
+          "comparator": "HO/GC/SO、precision/platform、schedule或literature baseline",
+          "measure": "同initial spins和annealer的10-variable/10-clause 3R3X例中，higher-order轨迹较快到ground state，而quadratized NeuroSA有较长随机游走；PCA仅为这一小例的低维展示。",
+          "unit_of_analysis": "problem instances及嵌套random restarts，设备为同FPGA/CPU",
+          "sample_size_as_reported": "1个小instance；独立trajectory repeats未报",
+          "uncertainty": null,
+          "assumptions": [
+            "HO10latent、SO20neurons；moving-window rates/3PC"
+          ],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "2.1; Fig.1h PDF41",
+            "figure": "2.1; Fig.1h PDF41",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "同initial spins和annealer的10-variable/10-clause 3R3X例中，higher-order轨迹较快到ground state，而quadratized NeuroSA有较长随机游走；PCA仅为这一小例的低维展示。",
+        "boundary": "3R3X本身可Gaussian elimination求解，不能由视觉轨迹推一般NP-hard加速。",
+        "negative_result": null,
+        "non_inference": "3R3X本身可Gaussian elimination求解，不能由视觉轨迹推一般NP-hard加速。",
+        "unresolved": "sampler推导/precision的理论适用性、缺SI原始结果、end-to-end latency及analog robustness待核对。",
+        "unresolved_attribution": "作者限制与第二次来源推导审计。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "直接higher-order embedding与有条件FN退火怎样影响资源、有限时间质量及求解可靠性？"
+      ],
+      "shared_evidence_with": [
+        "C8",
+        "C9"
+      ],
+      "review_notes": [
+        "Article in Press未编辑版本；理想渐近保证、CPU/FPGA实测与未来analog/树突mapping分开。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "G15的800nodes/4661edges被DSATUR分7colors；CPU colored更新在早期有更大cut jumps，晚期colored/uncolored均到文中3050cut SOTA且约5×10⁵iterations偏移不再扩大。",
+      "claim_type": "benchmark_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "2.2; Fig.2 PDF42",
+          "design": "同clause中spins不同色；多个independent flips/step",
+          "comparator": "HO/GC/SO、precision/platform、schedule或literature baseline",
+          "measure": "G15的800nodes/4661edges被DSATUR分7colors；CPU colored更新在早期有更大cut jumps，晚期colored/uncolored均到文中3050cut SOTA且约5×10⁵iterations偏移不再扩大。",
+          "unit_of_analysis": "problem instances及嵌套random restarts，设备为同FPGA/CPU",
+          "sample_size_as_reported": "G15单graph例；trajectory独立重复数未给",
+          "uncertainty": null,
+          "assumptions": [
+            "同clause中spins不同色；多个independent flips/step"
+          ],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "2.2; Fig.2 PDF42",
+            "figure": "2.2; Fig.2 PDF42",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "G15的800nodes/4661edges被DSATUR分7colors；CPU colored更新在早期有更大cut jumps，晚期colored/uncolored均到文中3050cut SOTA且约5×10⁵iterations偏移不再扩大。",
+        "boundary": "SOTA是已知最好非已知ground state；colored iteration含多spin不能等同单flip成本。",
+        "negative_result": null,
+        "non_inference": "SOTA是已知最好非已知ground state；colored iteration含多spin不能等同单flip成本。",
+        "unresolved": "sampler推导/precision的理论适用性、缺SI原始结果、end-to-end latency及analog robustness待核对。",
+        "unresolved_attribution": "作者限制与第二次来源推导审计。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "直接higher-order embedding与有条件FN退火怎样影响资源、有限时间质量及求解可靠性？"
+      ],
+      "shared_evidence_with": [
+        "C7",
+        "C9"
+      ],
+      "review_notes": [
+        "Article in Press未编辑版本；理想渐近保证、CPU/FPGA实测与未来analog/树突mapping分开。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "100MHz/16-bit FN digital emulation的FPGA在G4/G11/G15达文中SOTA，报告best cuts/TTS优于部分NeuroSA结果且与dSBM相近或部分更好；对照主要取既有报道。",
+      "claim_type": "benchmark_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "2.2; Fig.2c",
+          "design": "RFSoC XCZU48DR；CPU主体多64-bit、FPGA16-bit；benchmark metric口径不同",
+          "comparator": "HO/GC/SO、precision/platform、schedule或literature baseline",
+          "measure": "100MHz/16-bit FN digital emulation的FPGA在G4/G11/G15达文中SOTA，报告best cuts/TTS优于部分NeuroSA结果且与dSBM相近或部分更好；对照主要取既有报道。",
+          "unit_of_analysis": "problem instances及嵌套random restarts，设备为同FPGA/CPU",
+          "sample_size_as_reported": "3个Gset instances；各方法原始run counts见未提供SI",
+          "uncertainty": null,
+          "assumptions": [
+            "RFSoC XCZU48DR；CPU主体多64-bit、FPGA16-bit；benchmark metric口径不同"
+          ],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "2.2; Fig.2c",
+            "figure": "2.2; Fig.2c",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "100MHz/16-bit FN digital emulation的FPGA在G4/G11/G15达文中SOTA，报告best cuts/TTS优于部分NeuroSA结果且与dSBM相近或部分更好；对照主要取既有报道。",
+        "boundary": "不是所有MAX-CUT或同硬件/precision公平head-to-head，也不证明真实最优解。",
+        "negative_result": null,
+        "non_inference": "不是所有MAX-CUT或同硬件/precision公平head-to-head，也不证明真实最优解。",
+        "unresolved": "sampler推导/precision的理论适用性、缺SI原始结果、end-to-end latency及analog robustness待核对。",
+        "unresolved_attribution": "作者限制与第二次来源推导审计。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "直接higher-order embedding与有条件FN退火怎样影响资源、有限时间质量及求解可靠性？"
+      ],
+      "shared_evidence_with": [
+        "C7",
+        "C8"
+      ],
+      "review_notes": [
+        "Article in Press未编辑版本；理想渐近保证、CPU/FPGA实测与未来analog/树突mapping分开。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "CPU慢退火下MAX3SAT尺寸20/100/175/250，higher-order解分布更贴近全满足；250-variable未color偶尔不满，而GC保持full satisfiability；SO更难达到高质量。",
+      "claim_type": "benchmark_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "2.3; Fig.3a–b PDF43",
+          "design": "这组固定慢schedule比较与调参ITS组分开；satisfiable SATLIB实例",
+          "comparator": "HO/GC/SO、precision/platform、schedule或literature baseline",
+          "measure": "CPU慢退火下MAX3SAT尺寸20/100/175/250，higher-order解分布更贴近全满足；250-variable未color偶尔不满，而GC保持full satisfiability；SO更难达到高质量。",
+          "unit_of_analysis": "problem instances及嵌套random restarts，设备为同FPGA/CPU",
+          "sample_size_as_reported": "每size前4instances，各100random-initial trials",
+          "uncertainty": "源文按各图定义PMF/range/IQR/binomial传播或fit SD；不互相等同",
+          "assumptions": [
+            "这组固定慢schedule比较与调参ITS组分开；satisfiable SATLIB实例"
+          ],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "2.3; Fig.3a–b PDF43",
+            "figure": "2.3; Fig.3a–b PDF43",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "CPU慢退火下MAX3SAT尺寸20/100/175/250，higher-order解分布更贴近全满足；250-variable未color偶尔不满，而GC保持full satisfiability；SO更难达到高质量。",
+        "boundary": "有限选定实例成功率非任意250-variable保证；PMF无额外统计显著性测试。",
+        "negative_result": "N250未color HO偶尔未全满足；SO高质量success下降。",
+        "non_inference": "有限选定实例成功率非任意250-variable保证；PMF无额外统计显著性测试。",
+        "unresolved": "sampler推导/precision的理论适用性、缺SI原始结果、end-to-end latency及analog robustness待核对。",
+        "unresolved_attribution": "作者限制与第二次来源推导审计。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "直接higher-order embedding与有条件FN退火怎样影响资源、有限时间质量及求解可靠性？"
+      ],
+      "shared_evidence_with": [
+        "C11",
+        "C12"
+      ],
+      "review_notes": [
+        "Article in Press未编辑版本；理想渐近保证、CPU/FPGA实测与未来analog/树突mapping分开。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "独立调优ITS中GC随规模增大比HO单flip约低一个数量级，HO/GC比SO更低；但SO在N>约100无法可靠估计ITS，不能为未估计范围补出量化speedup。",
+      "claim_type": "benchmark_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "2.3; Fig.3c",
+          "design": "各solver/size单独优化annealing；colored step多flip",
+          "comparator": "HO/GC/SO、precision/platform、schedule或literature baseline",
+          "measure": "独立调优ITS中GC随规模增大比HO单flip约低一个数量级，HO/GC比SO更低；但SO在N>约100无法可靠估计ITS，不能为未估计范围补出量化speedup。",
+          "unit_of_analysis": "problem instances及嵌套random restarts，设备为同FPGA/CPU",
+          "sample_size_as_reported": "每size前20instances；median/IQR",
+          "uncertainty": "源文按各图定义PMF/range/IQR/binomial传播或fit SD；不互相等同",
+          "assumptions": [
+            "各solver/size单独优化annealing；colored step多flip"
+          ],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "2.3; Fig.3c",
+            "figure": "2.3; Fig.3c",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "独立调优ITS中GC随规模增大比HO单flip约低一个数量级，HO/GC比SO更低；但SO在N>约100无法可靠估计ITS，不能为未估计范围补出量化speedup。",
+        "boundary": "缺失SO estimates是资源限制不是证实失败/无解，横轴iteration口径须保留。",
+        "negative_result": "N>约100的SO ITS无法可靠估计，非无解证明。",
+        "non_inference": "缺失SO estimates是资源限制不是证实失败/无解，横轴iteration口径须保留。",
+        "unresolved": "sampler推导/precision的理论适用性、缺SI原始结果、end-to-end latency及analog robustness待核对。",
+        "unresolved_attribution": "作者限制与第二次来源推导审计。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "直接higher-order embedding与有条件FN退火怎样影响资源、有限时间质量及求解可靠性？"
+      ],
+      "shared_evidence_with": [
+        "C10",
+        "C12"
+      ],
+      "review_notes": [
+        "Article in Press未编辑版本；理想渐近保证、CPU/FPGA实测与未来analog/树突mapping分开。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "MAX5SAT与MAX7SAT各一个实例、五次独立run、10⁸iterations都报告满足>99%clauses，展示这些higher-order实例可执行，但不证明一般order或full satisfaction。",
+      "claim_type": "benchmark_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "2.3; Fig.3d",
+          "design": "MAX5:250variables/5279clauses；MAX7:120/10535",
+          "comparator": "HO/GC/SO、precision/platform、schedule或literature baseline",
+          "measure": "MAX5SAT与MAX7SAT各一个实例、五次独立run、10⁸iterations都报告满足>99%clauses，展示这些higher-order实例可执行，但不证明一般order或full satisfaction。",
+          "unit_of_analysis": "problem instances及嵌套random restarts，设备为同FPGA/CPU",
+          "sample_size_as_reported": "每order1instance、5runs",
+          "uncertainty": null,
+          "assumptions": [
+            "MAX5:250variables/5279clauses；MAX7:120/10535"
+          ],
+          "source_locator": {
+            "pdf_page": 14,
+            "section": "2.3; Fig.3d",
+            "figure": "2.3; Fig.3d",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "MAX5SAT与MAX7SAT各一个实例、五次独立run、10⁸iterations都报告满足>99%clauses，展示这些higher-order实例可执行，但不证明一般order或full satisfaction。",
+        "boundary": ">99%不等于100%；不是所有high-order复杂度或泛化实证。",
+        "negative_result": null,
+        "non_inference": ">99%不等于100%；不是所有high-order复杂度或泛化实证。",
+        "unresolved": "sampler推导/precision的理论适用性、缺SI原始结果、end-to-end latency及analog robustness待核对。",
+        "unresolved_attribution": "作者限制与第二次来源推导审计。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "直接higher-order embedding与有条件FN退火怎样影响资源、有限时间质量及求解可靠性？"
+      ],
+      "shared_evidence_with": [
+        "C10",
+        "C11"
+      ],
+      "review_notes": [
+        "Article in Press未编辑版本；理想渐近保证、CPU/FPGA实测与未来analog/树突mapping分开。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C13",
+      "statement": "FPGA MAX3SAT固定320µs/每run下，较慢八种FN schedules提高median satisfaction并缩小observed range；延长冷却改善质量同时需更长达到指定质量runtime。",
+      "claim_type": "benchmark_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "2.4; Fig.4a–b PDF44",
+          "design": "同precision16-bit、target quality定义固定",
+          "comparator": "HO/GC/SO、precision/platform、schedule或literature baseline",
+          "measure": "FPGA MAX3SAT固定320µs/每run下，较慢八种FN schedules提高median satisfaction并缩小observed range；延长冷却改善质量同时需更长达到指定质量runtime。",
+          "unit_of_analysis": "problem instances及嵌套random restarts，设备为同FPGA/CPU",
+          "sample_size_as_reported": "size50/125/200/250各首1instance，每schedule100trials",
+          "uncertainty": "源文按各图定义PMF/range/IQR/binomial传播或fit SD；不互相等同",
+          "assumptions": [
+            "同precision16-bit、target quality定义固定"
+          ],
+          "source_locator": {
+            "pdf_page": 14,
+            "section": "2.4; Fig.4a–b PDF44",
+            "figure": "2.4; Fig.4a–b PDF44",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "FPGA MAX3SAT固定320µs/每run下，较慢八种FN schedules提高median satisfaction并缩小observed range；延长冷却改善质量同时需更长达到指定质量runtime。",
+        "boundary": "full range非CI；低成功率run被置timeout，median可能饱和于timeout。",
+        "negative_result": null,
+        "non_inference": "full range非CI；低成功率run被置timeout，median可能饱和于timeout。",
+        "unresolved": "sampler推导/precision的理论适用性、缺SI原始结果、end-to-end latency及analog robustness待核对。",
+        "unresolved_attribution": "作者限制与第二次来源推导审计。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "直接higher-order embedding与有条件FN退火怎样影响资源、有限时间质量及求解可靠性？"
+      ],
+      "shared_evidence_with": [
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18"
+      ],
+      "review_notes": [
+        "Article in Press未编辑版本；理想渐近保证、CPU/FPGA实测与未来analog/树突mapping分开。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C14",
+      "statement": "N250最快schedule报告runtime99 median0.89µs；相同16-bit规则FPGA相对Intel Ultra9上Python约2.5×10³–3×10³倍快，但FPGA计core cycles排除DMA/noise-generation等overhead。",
+      "claim_type": "benchmark_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "2.4; 4.6 PDF27–28",
+          "design": "100MHz/10ns core，CPU time.perf_counter wall timing，非optimized CPU baseline",
+          "comparator": "HO/GC/SO、precision/platform、schedule或literature baseline",
+          "measure": "N250最快schedule报告runtime99 median0.89µs；相同16-bit规则FPGA相对Intel Ultra9上Python约2.5×10³–3×10³倍快，但FPGA计core cycles排除DMA/noise-generation等overhead。",
+          "unit_of_analysis": "problem instances及嵌套random restarts，设备为同FPGA/CPU",
+          "sample_size_as_reported": "Fig4b各size首instance，100CPU/FPGA trials",
+          "uncertainty": null,
+          "assumptions": [
+            "100MHz/10ns core，CPU time.perf_counter wall timing，非optimized CPU baseline"
+          ],
+          "source_locator": {
+            "pdf_page": 15,
+            "section": "2.4; 4.6 PDF27–28",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "N250最快schedule报告runtime99 median0.89µs；相同16-bit规则FPGA相对Intel Ultra9上Python约2.5×10³–3×10³倍快，但FPGA计core cycles排除DMA/noise-generation等overhead。",
+        "boundary": "是99%质量非99%成功或global optimal；不能称端到端system-level speedup/能耗收益。",
+        "negative_result": null,
+        "non_inference": "是99%质量非99%成功或global optimal；不能称端到端system-level speedup/能耗收益。",
+        "unresolved": "sampler推导/precision的理论适用性、缺SI原始结果、end-to-end latency及analog robustness待核对。",
+        "unresolved_attribution": "作者限制与第二次来源推导审计。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "直接higher-order embedding与有条件FN退火怎样影响资源、有限时间质量及求解可靠性？"
+      ],
+      "shared_evidence_with": [
+        "C13",
+        "C15",
+        "C16",
+        "C17",
+        "C18"
+      ],
+      "review_notes": [
+        "Article in Press未编辑版本；理想渐近保证、CPU/FPGA实测与未来analog/树突mapping分开。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C15",
+      "statement": "ITS/TTS按独立restarts模型估计Psuccess并以0.99为target，再取共享budget grid的跨instance median最小值；该指标不是观测mean first-hit walltime。",
+      "claim_type": "benchmark_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "4.7 Eqs25–28",
+          "design": "独立random seeds/restarts、足够成功样本、固定quality及预算；部分大例Ns≫1不足",
+          "comparator": "HO/GC/SO、precision/platform、schedule或literature baseline",
+          "measure": "ITS/TTS按独立restarts模型估计Psuccess并以0.99为target，再取共享budget grid的跨instance median最小值；该指标不是观测mean first-hit walltime。",
+          "unit_of_analysis": "problem instances及嵌套random restarts，设备为同FPGA/CPU",
+          "sample_size_as_reported": "FPGA MAX3 TTS每size100instances；R具体随预算未全部列",
+          "uncertainty": "源文按各图定义PMF/range/IQR/binomial传播或fit SD；不互相等同",
+          "assumptions": [
+            "独立random seeds/restarts、足够成功样本、固定quality及预算；部分大例Ns≫1不足"
+          ],
+          "source_locator": {
+            "pdf_page": 28,
+            "section": "4.7 Eqs25–28",
+            "figure": null,
+            "equation": "(25)–(28)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "ITS/TTS按独立restarts模型估计Psuccess并以0.99为target，再取共享budget grid的跨instance median最小值；该指标不是观测mean first-hit walltime。",
+        "boundary": "small-success estimates存在资源限制；min-grid与best-of-runs/单run runtime不同。",
+        "negative_result": null,
+        "non_inference": "small-success estimates存在资源限制；min-grid与best-of-runs/单run runtime不同。",
+        "unresolved": "sampler推导/precision的理论适用性、缺SI原始结果、end-to-end latency及analog robustness待核对。",
+        "unresolved_attribution": "作者限制与第二次来源推导审计。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "直接higher-order embedding与有条件FN退火怎样影响资源、有限时间质量及求解可靠性？"
+      ],
+      "shared_evidence_with": [
+        "C13",
+        "C14",
+        "C16",
+        "C17",
+        "C18"
+      ],
+      "review_notes": [
+        "Article in Press未编辑版本；理想渐近保证、CPU/FPGA实测与未来analog/树突mapping分开。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C16",
+      "statement": "3R3X优化median TTS拟合α=0.0254(6)，N定义为2Nspin，作者与reported p-bit α=.0206作比较；有限planted随机实例大多在FN高温约1/t区即收敛。",
+      "claim_type": "benchmark_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "2.4; Table1 PDF40; Fig4d",
+          "design": "log10 TTS=αN+β；TTS优化schedule而非保证schedule",
+          "comparator": "HO/GC/SO、precision/platform、schedule或literature baseline",
+          "measure": "3R3X优化median TTS拟合α=0.0254(6)，N定义为2Nspin，作者与reported p-bit α=.0206作比较；有限planted随机实例大多在FN高温约1/t区即收敛。",
+          "unit_of_analysis": "problem instances及嵌套random restarts，设备为同FPGA/CPU",
+          "sample_size_as_reported": "每size100random instances；括号为least-squares fit SD",
+          "uncertainty": "源文按各图定义PMF/range/IQR/binomial传播或fit SD；不互相等同",
+          "assumptions": [
+            "log10 TTS=αN+β；TTS优化schedule而非保证schedule"
+          ],
+          "source_locator": {
+            "pdf_page": 15,
+            "section": "2.4; Table1 PDF40; Fig4d",
+            "figure": "2.4; Table1 PDF40; Fig4d",
+            "equation": "(5)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "3R3X优化median TTS拟合α=0.0254(6)，N定义为2Nspin，作者与reported p-bit α=.0206作比较；有限planted随机实例大多在FN高温约1/t区即收敛。",
+        "boundary": "不同来源算法/hardware与轴定义不自动构成统一speed或最坏NP-hard scaling。",
+        "negative_result": null,
+        "non_inference": "不同来源算法/hardware与轴定义不自动构成统一speed或最坏NP-hard scaling。",
+        "unresolved": "sampler推导/precision的理论适用性、缺SI原始结果、end-to-end latency及analog robustness待核对。",
+        "unresolved_attribution": "作者限制与第二次来源推导审计。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "直接higher-order embedding与有条件FN退火怎样影响资源、有限时间质量及求解可靠性？"
+      ],
+      "shared_evidence_with": [
+        "C13",
+        "C14",
+        "C15",
+        "C17",
+        "C18"
+      ],
+      "review_notes": [
+        "Article in Press未编辑版本；理想渐近保证、CPU/FPGA实测与未来analog/树突mapping分开。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C17",
+      "statement": "5R5X/7R7X的α分别0.1581(108)/0.2339(249)，两者N=Nspin；更高order在所测范围TTS scaling更差，资源直接embedding不等于求解时间恒定/多项式。",
+      "claim_type": "benchmark_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "2.4; Table1 PDF40; Fig4e",
+          "design": "有限random benchmark、同direct spin横轴；不与3R倍增N直接比斜率",
+          "comparator": "HO/GC/SO、precision/platform、schedule或literature baseline",
+          "measure": "5R5X/7R7X的α分别0.1581(108)/0.2339(249)，两者N=Nspin；更高order在所测范围TTS scaling更差，资源直接embedding不等于求解时间恒定/多项式。",
+          "unit_of_analysis": "problem instances及嵌套random restarts，设备为同FPGA/CPU",
+          "sample_size_as_reported": "每size100instances；拟合SD按原notation",
+          "uncertainty": "源文按各图定义PMF/range/IQR/binomial传播或fit SD；不互相等同",
+          "assumptions": [
+            "有限random benchmark、同direct spin横轴；不与3R倍增N直接比斜率"
+          ],
+          "source_locator": {
+            "pdf_page": 16,
+            "section": "2.4; Table1 PDF40; Fig4e",
+            "figure": "2.4; Table1 PDF40; Fig4e",
+            "equation": "(5)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "5R5X/7R7X的α分别0.1581(108)/0.2339(249)，两者N=Nspin；更高order在所测范围TTS scaling更差，资源直接embedding不等于求解时间恒定/多项式。",
+        "boundary": "不是任意p、任意分布或asymptotic complexity定理。",
+        "negative_result": "7R7X比5R5X在同spin横轴所测TTS scaling更差。",
+        "non_inference": "不是任意p、任意分布或asymptotic complexity定理。",
+        "unresolved": "sampler推导/precision的理论适用性、缺SI原始结果、end-to-end latency及analog robustness待核对。",
+        "unresolved_attribution": "作者限制与第二次来源推导审计。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "直接higher-order embedding与有条件FN退火怎样影响资源、有限时间质量及求解可靠性？"
+      ],
+      "shared_evidence_with": [
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C18"
+      ],
+      "review_notes": [
+        "Article in Press未编辑版本；理想渐近保证、CPU/FPGA实测与未来analog/树突mapping分开。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C18",
+      "statement": "unsatisfiable SATLIB的N100–250，每size四实例十FPGA runs取best满足率；作者称最大例达clauses−1，若unsat身份正确此值是上界，但原instance-wise数值/证明未附。",
+      "claim_type": "benchmark_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "2.4 Fig4f; Discussion PDF18; Methods PDF29",
+          "design": "更慢schedule、best-of10；不是100%sat测试",
+          "comparator": "HO/GC/SO、precision/platform、schedule或literature baseline",
+          "measure": "unsatisfiable SATLIB的N100–250，每size四实例十FPGA runs取best满足率；作者称最大例达clauses−1，若unsat身份正确此值是上界，但原instance-wise数值/证明未附。",
+          "unit_of_analysis": "problem instances及嵌套random restarts，设备为同FPGA/CPU",
+          "sample_size_as_reported": "每size4instances，每instance10runs",
+          "uncertainty": null,
+          "assumptions": [
+            "更慢schedule、best-of10；不是100%sat测试"
+          ],
+          "source_locator": {
+            "pdf_page": 16,
+            "section": "2.4 Fig4f; Discussion PDF18; Methods PDF29",
+            "figure": "2.4 Fig4f; Discussion PDF18; Methods PDF29",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "unsatisfiable SATLIB的N100–250，每size四实例十FPGA runs取best满足率；作者称最大例达clauses−1，若unsat身份正确此值是上界，但原instance-wise数值/证明未附。",
+        "boundary": "best quality非成功概率；未提供SI TableS5，不能扩展全部unsat或生成SAT certificate。",
+        "negative_result": null,
+        "non_inference": "best quality非成功概率；未提供SI TableS5，不能扩展全部unsat或生成SAT certificate。",
+        "unresolved": "sampler推导/precision的理论适用性、缺SI原始结果、end-to-end latency及analog robustness待核对。",
+        "unresolved_attribution": "作者限制与第二次来源推导审计。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "直接higher-order embedding与有条件FN退火怎样影响资源、有限时间质量及求解可靠性？"
+      ],
+      "shared_evidence_with": [
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17"
+      ],
+      "review_notes": [
+        "Article in Press未编辑版本；理想渐近保证、CPU/FPGA实测与未来analog/树突mapping分开。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C19",
+      "statement": "作者建议用ON/OFF IF与coarse integration windows降低spurious clause flips，并提出dendritic/FeFET映射，但本文没有重benchmark这些analog robustness或nanodendritic硬件收益。",
+      "claim_type": "hardware_mapping_hypothesis",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "Discussion PDF19–21",
+          "design": "窗口内累计总charge、threshold relative noise、可靠spin readout",
+          "comparator": "HO/GC/SO、precision/platform、schedule或literature baseline",
+          "measure": "作者建议用ON/OFF IF与coarse integration windows降低spurious clause flips，并提出dendritic/FeFET映射，但本文没有重benchmark这些analog robustness或nanodendritic硬件收益。",
+          "unit_of_analysis": "形式模型/architecture条件",
+          "sample_size_as_reported": "概念mapping，无新增analog/biological实验",
+          "uncertainty": null,
+          "assumptions": [
+            "窗口内累计总charge、threshold relative noise、可靠spin readout"
+          ],
+          "source_locator": {
+            "pdf_page": 20,
+            "section": "Discussion PDF19–21",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者建议用ON/OFF IF与coarse integration windows降低spurious clause flips，并提出dendritic/FeFET映射，但本文没有重benchmark这些analog robustness或nanodendritic硬件收益。",
+        "boundary": "FPGA数字pulse仿真不验证神经树突、实际FN-tunneling芯片或器件noise robustness。",
+        "negative_result": null,
+        "non_inference": "FPGA数字pulse仿真不验证神经树突、实际FN-tunneling芯片或器件noise robustness。",
+        "unresolved": "sampler推导/precision的理论适用性、缺SI原始结果、end-to-end latency及analog robustness待核对。",
+        "unresolved_attribution": "作者限制与第二次来源推导审计。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "直接higher-order embedding与有条件FN退火怎样影响资源、有限时间质量及求解可靠性？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "Article in Press未编辑版本；理想渐近保证、CPU/FPGA实测与未来analog/树突mapping分开。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "完整48页Article in Press，19条候选覆盖exact clause/spin代数与联合并行条件、稀疏/密集资源、CPU和FPGA各benchmarks、TTS定义及未来analog mapping。FN为数字emulation；TTS最优schedule不是保证schedule，理想SA转用仍有factor/noise/arbiter推导疑点。MAX-CUT SOTA非已知ground；MAX5/7仅各一例；N>100 SO缺可靠ITS；FPGAcore/Pythonwalltime加速不当端到端。缺SI/外部power数据、图色/引用问题保留，全部未经人工审查。",
+  "shared_evidence": [
+    {
+      "claim_id": "C1",
+      "with": [
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C2",
+      "with": [
+        "C1",
+        "C3",
+        "C4",
+        "C5",
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C1",
+        "C2",
+        "C4",
+        "C5",
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C5",
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C8",
+        "C9"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C7",
+        "C9"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C7",
+        "C8"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "with": [
+        "C11",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "with": [
+        "C10",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "with": [
+        "C10",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C13",
+      "with": [
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18"
+      ]
+    },
+    {
+      "claim_id": "C14",
+      "with": [
+        "C13",
+        "C15",
+        "C16",
+        "C17",
+        "C18"
+      ]
+    },
+    {
+      "claim_id": "C15",
+      "with": [
+        "C13",
+        "C14",
+        "C16",
+        "C17",
+        "C18"
+      ]
+    },
+    {
+      "claim_id": "C16",
+      "with": [
+        "C13",
+        "C14",
+        "C15",
+        "C17",
+        "C18"
+      ]
+    },
+    {
+      "claim_id": "C17",
+      "with": [
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C18"
+      ]
+    },
+    {
+      "claim_id": "C18",
+      "with": [
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": "C1",
+        "issue": "第二次核对source假设/instances/restarts/metrics，稀疏资源与求解时间、SOTA与已知最优、理想保证与TTS优化均区分。",
+        "suggested_correction": "保留当前联合条件与未知材料。",
+        "pdf_page": 22,
+        "resolved": true
+      },
+      {
+        "claim_id": "C2",
+        "issue": "第二次核对source假设/instances/restarts/metrics，稀疏资源与求解时间、SOTA与已知最优、理想保证与TTS优化均区分。",
+        "suggested_correction": "保留当前联合条件与未知材料。",
+        "pdf_page": 25,
+        "resolved": true
+      },
+      {
+        "claim_id": "C3",
+        "issue": "第二次核对source假设/instances/restarts/metrics，稀疏资源与求解时间、SOTA与已知最优、理想保证与TTS优化均区分。",
+        "suggested_correction": "保留当前联合条件与未知材料。",
+        "pdf_page": 6,
+        "resolved": true
+      },
+      {
+        "claim_id": "C4",
+        "issue": "第二次核对source假设/instances/restarts/metrics，稀疏资源与求解时间、SOTA与已知最优、理想保证与TTS优化均区分。",
+        "suggested_correction": "保留当前联合条件与未知材料。",
+        "pdf_page": 18,
+        "resolved": true
+      },
+      {
+        "claim_id": "C5",
+        "issue": "第二次核对source假设/instances/restarts/metrics，稀疏资源与求解时间、SOTA与已知最优、理想保证与TTS优化均区分。",
+        "suggested_correction": "保留当前联合条件与未知材料。",
+        "pdf_page": 17,
+        "resolved": true
+      },
+      {
+        "claim_id": "C6",
+        "issue": "第二次核对source假设/instances/restarts/metrics，稀疏资源与求解时间、SOTA与已知最优、理想保证与TTS优化均区分。",
+        "suggested_correction": "保留当前联合条件与未知材料。",
+        "pdf_page": 21,
+        "resolved": true
+      },
+      {
+        "claim_id": "C7",
+        "issue": "第二次核对source假设/instances/restarts/metrics，稀疏资源与求解时间、SOTA与已知最优、理想保证与TTS优化均区分。",
+        "suggested_correction": "保留当前联合条件与未知材料。",
+        "pdf_page": 10,
+        "resolved": true
+      },
+      {
+        "claim_id": "C8",
+        "issue": "第二次核对source假设/instances/restarts/metrics，稀疏资源与求解时间、SOTA与已知最优、理想保证与TTS优化均区分。",
+        "suggested_correction": "保留当前联合条件与未知材料。",
+        "pdf_page": 11,
+        "resolved": true
+      },
+      {
+        "claim_id": "C9",
+        "issue": "第二次核对source假设/instances/restarts/metrics，稀疏资源与求解时间、SOTA与已知最优、理想保证与TTS优化均区分。",
+        "suggested_correction": "保留当前联合条件与未知材料。",
+        "pdf_page": 12,
+        "resolved": true
+      },
+      {
+        "claim_id": "C10",
+        "issue": "第二次核对source假设/instances/restarts/metrics，稀疏资源与求解时间、SOTA与已知最优、理想保证与TTS优化均区分。",
+        "suggested_correction": "保留当前联合条件与未知材料。",
+        "pdf_page": 12,
+        "resolved": true
+      },
+      {
+        "claim_id": "C11",
+        "issue": "第二次核对source假设/instances/restarts/metrics，稀疏资源与求解时间、SOTA与已知最优、理想保证与TTS优化均区分。",
+        "suggested_correction": "保留当前联合条件与未知材料。",
+        "pdf_page": 13,
+        "resolved": true
+      },
+      {
+        "claim_id": "C12",
+        "issue": "第二次核对source假设/instances/restarts/metrics，稀疏资源与求解时间、SOTA与已知最优、理想保证与TTS优化均区分。",
+        "suggested_correction": "保留当前联合条件与未知材料。",
+        "pdf_page": 14,
+        "resolved": true
+      },
+      {
+        "claim_id": "C13",
+        "issue": "第二次核对source假设/instances/restarts/metrics，稀疏资源与求解时间、SOTA与已知最优、理想保证与TTS优化均区分。",
+        "suggested_correction": "保留当前联合条件与未知材料。",
+        "pdf_page": 14,
+        "resolved": true
+      },
+      {
+        "claim_id": "C14",
+        "issue": "第二次核对source假设/instances/restarts/metrics，稀疏资源与求解时间、SOTA与已知最优、理想保证与TTS优化均区分。",
+        "suggested_correction": "保留当前联合条件与未知材料。",
+        "pdf_page": 15,
+        "resolved": true
+      },
+      {
+        "claim_id": "C15",
+        "issue": "第二次核对source假设/instances/restarts/metrics，稀疏资源与求解时间、SOTA与已知最优、理想保证与TTS优化均区分。",
+        "suggested_correction": "保留当前联合条件与未知材料。",
+        "pdf_page": 28,
+        "resolved": true
+      },
+      {
+        "claim_id": "C16",
+        "issue": "第二次核对source假设/instances/restarts/metrics，稀疏资源与求解时间、SOTA与已知最优、理想保证与TTS优化均区分。",
+        "suggested_correction": "保留当前联合条件与未知材料。",
+        "pdf_page": 15,
+        "resolved": true
+      },
+      {
+        "claim_id": "C17",
+        "issue": "第二次核对source假设/instances/restarts/metrics，稀疏资源与求解时间、SOTA与已知最优、理想保证与TTS优化均区分。",
+        "suggested_correction": "保留当前联合条件与未知材料。",
+        "pdf_page": 16,
+        "resolved": true
+      },
+      {
+        "claim_id": "C18",
+        "issue": "第二次核对source假设/instances/restarts/metrics，稀疏资源与求解时间、SOTA与已知最优、理想保证与TTS优化均区分。",
+        "suggested_correction": "保留当前联合条件与未知材料。",
+        "pdf_page": 16,
+        "resolved": true
+      },
+      {
+        "claim_id": "C19",
+        "issue": "第二次核对source假设/instances/restarts/metrics，稀疏资源与求解时间、SOTA与已知最优、理想保证与TTS优化均区分。",
+        "suggested_correction": "保留当前联合条件与未知材料。",
+        "pdf_page": 20,
+        "resolved": true
+      },
+      {
+        "claim_id": "C4",
+        "issue": "ΔE=2ΣHJT后Eq16→17少显式factor2；B/ε的shifted log uniform又被直接称exponential，temperature/normalization未清楚对应。",
+        "suggested_correction": "作者isomorphism/guarantee作为有前提且未完全核定的解释，不补数学一致性或认证quantized chain。",
+        "pdf_page": 23,
+        "resolved": false
+      },
+      {
+        "claim_id": "C4",
+        "issue": "Bernoulli噪声只approximately单事件，硬件uniform选择active的rejection-free arbiter及graph-color block更新需要各自Markov/接受概率审计。",
+        "suggested_correction": "只有理想假设成立及够慢冷却才能转用保证；finite TTS参数明确未按Hajek选择。",
+        "pdf_page": 27,
+        "resolved": false
+      },
+      {
+        "claim_id": "C6",
+        "issue": "4.1说MAXkSAT每clause k auxiliary但MAX3例又1 auxiliary，gadget描述不一致。",
+        "suggested_correction": "仅保留指定gadget观测resource比，不称普遍二次化下界。",
+        "pdf_page": 22,
+        "resolved": false
+      },
+      {
+        "claim_id": "C14",
+        "issue": "FPGA runtime排除DMA/software noise overhead而CPU为Pythonwalltime。",
+        "suggested_correction": "限定core-vs-Python对照，不转成end-to-end普遍加速。",
+        "pdf_page": 28,
+        "resolved": true
+      },
+      {
+        "claim_id": "C13",
+        "issue": "Fig4b颜色CPU/FPGA正文和caption相反；4.4把unsat实验称Fig4d而主结果/caption为4f。",
+        "suggested_correction": "按文本platform/任务辨认，不依原颜色生成数据；图号问题保留。",
+        "pdf_page": 44,
+        "resolved": false
+      },
+      {
+        "claim_id": null,
+        "issue": "[73]noise-energy段落实际引用EPOS hadronization，非随机噪声能耗证据。",
+        "suggested_correction": "不以错配引用生成独立noise-energy效果。",
+        "pdf_page": 38,
+        "resolved": false
+      },
+      {
+        "claim_id": "C16",
+        "issue": "3R横轴2Nspin；5R/7R横轴Nspin，且TTS min-grid/优化schedule非worst-case asymptotic复杂度。",
+        "suggested_correction": "保留fit与notation，不直接跨order比较未经变换斜率。",
+        "pdf_page": 40,
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T11:07:44.370562Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "cf7c9de239b4458eb9298ca714eea308b56f57453a05cc0a3a28d605b4df473d",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

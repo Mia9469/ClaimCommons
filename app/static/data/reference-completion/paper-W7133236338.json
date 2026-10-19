@@ -1,0 +1,1525 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "Brain Inspired Probabilistic Occupancy Grid Mapping with Vector Symbolic Architectures",
+    "authors": [
+      "Shay Snyder",
+      "Andrew Capodieci",
+      "David Gorsich",
+      "Maryam Parsa"
+    ],
+    "doi": "10.1038/s44335-026-00052-w",
+    "publication_year": 2026,
+    "venue": "npj Unconventional Computing",
+    "url": "https://doi.org/10.1038/s44335-026-00052-w"
+  },
+  "source": {
+    "filename": "paper-W7133236338--Brain-Inspired-Probabilistic-Occupancy-Grid-Mapping-with-Vector-Symbolic-Architectures.pdf",
+    "sha256": "e1186e14002af794b39b3df13859df4ca9d387abd82f4accf44ad5a7e1faa242",
+    "source_url": "https://www.nature.com/articles/s44335-026-00052-w.pdf?error=cookies_not_supported&code=fd1d56a4-9a3b-41f2-abfd-1865de7456c7",
+    "pdf_page_count": 15
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "results_sections_seen": [
+      "Results: evaluation datasets, baselines and parameters; Tables 1-3",
+      "ToySim-Single-Agent; Figure 1 and Table 4",
+      "ToySim-Multi-Agent; Figure 2 and Table 5",
+      "Intel Map-Single-Agent; Figure 3 and Table 6",
+      "Intel Map-Multi-Agent; Figure 4 and Tables 7-8",
+      "EviLOG Dataset; Figure 5 and Table 9",
+      "Discussion: interpolation, nonuniform sampling, memory saturation and future work",
+      "Methods: OGM background and Vector Symbolic Probabilistic Computation; Figure 6 and Table 10",
+      "Methods: Initialization, Environmental Discretization and Encoding Point Clouds; Algorithm 1",
+      "Methods: Decoding, Vector Normalization, Similarity Evaluation, Non-linear Post-processing and Entropy Information Extraction; Figures 7-8 and Algorithm 2",
+      "Methods: Multi-Map Fusion; Algorithm 3",
+      "Data availability, Code availability, References, acknowledgements and publication declarations"
+    ],
+    "missing_material": [
+      "正文引用的 Supplementary Note: Ablation Study 及其 dense/sparse 消融结果未包含在这 15 页供给文本中。",
+      "仅提供页面文字与图表说明，未提供图像像素；不能独立量化图中插值、噪声或结构恢复程度。",
+      "数据和代码仅以链接列出，其实际内容、运行记录及未提供补充材料均未读取。"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "全部 15 个 PDF 文件顺序页均经完整分段阅读，包含所有供给的方法、公式、算法、图表说明、参考文献和末页声明；不存在被跳过的供给附录。",
+      "第 1 页标题、四名作者、DOI 和 npj Unconventional Computing (2026) 3:13 与分配条目一致；第 13 页记载 Received: 30 September 2024、Accepted: 7 January 2026。这是供给的期刊 Article，而不是用后续版本事实替换的预印本。",
+      "第二轮审计在保留的全篇来源上下文中逐项核对贡献、比较条件、统计单位、负结果和定位；没有重开原始 PDF，没有网络或跨论文证据调用。",
+      "表 1 列出五项单代理数据集设置，其中 dense/sparse 消融数据的正文结果未给出；表 2 的多代理设置不是额外的独立真实世界重复实验。",
+      "采样点、扫描、分区及代理数按来源分别记录，不当作独立环境或独立随机重复的 n；来源未报告重复运行数、置信区间或显著性检验。",
+      "所有引用 quote 为 null，原文直接引文总词数为 0。来源中的标题与技术术语保持原语言。",
+      "作者的约 45x/400x/5.5x/6x 总括性宣传不能取代按数据集、分辨率、硬件和计时口径限定的比较。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "以 SSP 编码坐标、按 tile 和类别增量 bundling 的 VSA-OGM 构造。",
+      "role": "result",
+      "source_pages": [
+        9,
+        10,
+        11
+      ],
+      "decision": "include",
+      "reason": "独立的方法性贡献，保留空间分块、二分类及标签预处理条件，形成 C1。"
+    },
+    {
+      "summary": "归一化、相似度、平方非线性、局部 Shannon entropy、softmax 和 signed difference 的解码流程。",
+      "role": "result",
+      "source_pages": [
+        11,
+        12,
+        13
+      ],
+      "decision": "include",
+      "reason": "作为作者提出的计算构造形成 C2；概率和为 1 不等于已实证校准，各组件收益不能凭缺失消融单独归因。"
+    },
+    {
+      "summary": "满足共同 axis basis、类别编码和全局 tile 划分时的多代理记忆融合。",
+      "role": "result",
+      "source_pages": [
+        13
+      ],
+      "decision": "include",
+      "reason": "三项共同条件联合保留，方法构造 C3 与其经验评估 C9/C10 分开。"
+    },
+    {
+      "summary": "ToySim 单代理的 AUC/NLL 与 BHM-Full、BHM-Diag 的比较。",
+      "role": "result",
+      "source_pages": [
+        2,
+        3
+      ],
+      "decision": "include",
+      "reason": "精度排序和概率损失是完整的同设置比较，形成 C4。"
+    },
+    {
+      "summary": "ToySim 未增广稀疏点区域的插值表现及 BHM 插值失败。",
+      "role": "result",
+      "source_pages": [
+        3
+      ],
+      "decision": "include",
+      "reason": "作者定性报告的正结果和实际失败形成 C5；未观测区域没有额外真值验证，不扩大为准确外推。"
+    },
+    {
+      "summary": "ToySim 单代理的 CPU/GPU 延迟与模型内存成本。",
+      "role": "result",
+      "source_pages": [
+        2,
+        3
+      ],
+      "decision": "include",
+      "reason": "资源成本可以独立于精度评估，形成 C6；相对 Diag 的内存增加保留。"
+    },
+    {
+      "summary": "ToySim 两代理地图的融合 AUC、NLL 与延迟。",
+      "role": "result",
+      "source_pages": [
+        2,
+        3,
+        4
+      ],
+      "decision": "include",
+      "reason": "形成 C9；两个代理不是两个独立环境，融合并未超过最佳代理 AUC。"
+    },
+    {
+      "summary": "Intel Map 单代理的分辨率限定精度比较与计算资源比较。",
+      "role": "result",
+      "source_pages": [
+        2,
+        4,
+        5
+      ],
+      "decision": "include",
+      "reason": "分别形成 C7/C8，按表 6 区分 0.1 m 和 0.2 m，并保留部分基线来源及计时不一致限制。"
+    },
+    {
+      "summary": "Intel Map 四空间分区融合及与 Fast-BHM/OHM 的来源内比较。",
+      "role": "result",
+      "source_pages": [
+        2,
+        4,
+        5,
+        6
+      ],
+      "decision": "include",
+      "reason": "形成 C10；保留四分区来自一条真实机器人数据记录，以及模型内存较 Fast-BHM 更大的边界。"
+    },
+    {
+      "summary": "密集走廊与稀疏房间等非均匀采样下的性能退化。",
+      "role": "result",
+      "source_pages": [
+        4,
+        5
+      ],
+      "decision": "include",
+      "reason": "作为作者明示的定性实际负结果形成 C11，不伪造区域效应量或受控消融。"
+    },
+    {
+      "summary": "点数增长造成 memory vector saturation、需扩维或增加 tile 的解释。",
+      "role": "interpretation",
+      "source_pages": [
+        2,
+        4,
+        8,
+        10
+      ],
+      "decision": "include",
+      "reason": "形成 C12，明确这是作者的容量限制解释，不是已识别唯一机制的因果实验。"
+    },
+    {
+      "summary": "EviLOG 中无神经预训练、较低帧延迟及参数量比较。",
+      "role": "result",
+      "source_pages": [
+        2,
+        6,
+        7
+      ],
+      "decision": "include",
+      "reason": "形成 C13，严格区分参数个数、内存 MB 和训练/推理时间，不声称等精度。"
+    },
+    {
+      "summary": "EviLOG 中已观测稀疏区域的插值与完全未观测区域的外推困难。",
+      "role": "result",
+      "source_pages": [
+        6,
+        7,
+        8
+      ],
+      "decision": "include",
+      "reason": "来源的定性比较形成 C14，神经网络外推优势与 VSA 的实测边界一起保留。"
+    },
+    {
+      "summary": "Supplementary Note: Ablation Study 对 entropy、半径、长度尺度、分块等因素的消融贡献。",
+      "role": "result",
+      "source_pages": [
+        2,
+        8,
+        12
+      ],
+      "decision": "defer",
+      "reason": "正文只概述存在消融，未供给补充数据、图表或可核对效应；登记 paper-W7133236338:missing-supplementary-ablation，不虚构消融候选。"
+    },
+    {
+      "summary": "低 NLL 或 softmax 足以证明概率估计已校准的解释。",
+      "role": "interpretation",
+      "source_pages": [
+        3,
+        12,
+        13
+      ],
+      "decision": "exclude",
+      "reason": "作为作者解释保留在 C2/C4 的边界和审计中；没有独立校准评估，不能另立为已验证校准结果。"
+    },
+    {
+      "summary": "跨设置约 45x/400x/5.5x/6x 的统一性能优势。",
+      "role": "interpretation",
+      "source_pages": [
+        1,
+        2,
+        4,
+        7,
+        8
+      ],
+      "decision": "exclude",
+      "reason": "没有统一汇总或等计时定义，且部分表文不一致；已以 C4/C6/C7/C8/C13 的可定位数值取代独立泛化记录。"
+    },
+    {
+      "summary": "Table 8 的 Covariance=True 可等同完整贝叶斯协方差建模。",
+      "role": "interpretation",
+      "source_pages": [
+        4,
+        6,
+        9,
+        10,
+        12
+      ],
+      "decision": "exclude",
+      "reason": "来源给出 SSP 空间相似性构造，但没有独立完整协方差矩阵、后验正确性或其等价性证明；不将该标签升级为形式结论。"
+    },
+    {
+      "summary": "生物记忆 chunking、place cells、sinc kernel 及既有 SSP 理论背景。",
+      "role": "review_synthesis",
+      "source_pages": [
+        1,
+        7,
+        9,
+        10,
+        14
+      ],
+      "decision": "exclude",
+      "reason": "这是引文背景和方法动机，不是本研究新的动物、神经元、生物机制或核估计优越性实验。"
+    },
+    {
+      "summary": "自适应信息论容量分配和 semantic 3D 扩展。",
+      "role": "hypothesis",
+      "source_pages": [
+        4,
+        8
+      ],
+      "decision": "exclude",
+      "reason": "仅是未来工作计划，未提供已实现算法或验证；作为 C12/C14 的 unresolved 问题保留，不混入结果或解释。"
+    },
+    {
+      "summary": "跨域鲁棒性、安全关键部署或低功耗神经形态实现的全面优势。",
+      "role": "hypothesis",
+      "source_pages": [
+        1,
+        2,
+        7,
+        8
+      ],
+      "decision": "exclude",
+      "reason": "没有专门域移、安全验证、能耗测量或神经形态硬件实验，不能从桌面延迟和预训练需求推断。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "作者提出的二维二分类 VSA-OGM 用共同 SSP 轴向量的 fractional binding 编码点坐标，并将每个点按最近 tile 中心及 occupied/empty 类别做加法 bundling；在每维 δ 个 tile、向量维数 d 的设置下，地图由 2δ² 个类别记忆向量增量表示，而不是为每个解码栅格单独存储完整统计分布。",
+      "claim_type": "computational_method",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Methods 的 SSP 坐标编码、Environmental Discretization 与 Algorithm 1。",
+          "design": "在全局坐标中编码每个带二元标签的点，寻找最近 tile 中心，将其位置向量加到对应类别的 memory vector。",
+          "comparator": "构造层面区别于逐栅格统计表示；此处不构成相对传统方法的独立性能试验。",
+          "measure": "记忆组织为 2δ² 个 d 维向量；单点编码和增量更新步骤。",
+          "unit_of_analysis": "空间 tile 的类别记忆向量及输入位置点。",
+          "sample_size_as_reported": null,
+          "uncertainty": "这是算法定义，未给出独立重复数、容量上界或完整后验正确性证明。",
+          "assumptions": [
+            "本研究的实验为二维 occupied/empty 二分类；点标签及全局坐标需由指定的输入预处理提供。",
+            "轴向量、长度尺度、向量维数和 tile 划分在系统初始化时指定。",
+            "各数据集的标签/插值预处理不同；ToySim 稀疏比较明确不加入射线中间增广点。"
+          ],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "Initialization; Environmental Discretization; Encoding Point Clouds",
+            "figure": "Figure 7; Algorithm 1",
+            "equation": "Equations 5-6",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提供可逐点累加的分块空间表示，是论文提出的方法性贡献。",
+        "boundary": "实际验证为二维、二类别并采用预处理的全局坐标；查询也可能使用预计算的 location-vector 矩阵。",
+        "negative_result": null,
+        "non_inference": "SSP 相似性和 Table 8 的 covariance 标签不证明完整贝叶斯协方差后验，也不证明神经生物学机制、能耗降低或已实现 3D。",
+        "unresolved": "数据密度、向量容量、tile 数和查询矩阵成本之间的系统性规模规律尚未由供给材料确定。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "连续空间坐标如何用可增量更新的向量符号表示构建概率占用地图？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C3",
+        "C12"
+      ],
+      "review_notes": [
+        "方法构造不是生物实验或概率后验等价性定理；Figure 7 只读文字说明。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "VSA-OGM 的解码先将 tile 记忆归一化并与位置 SSP 做点积，再对类别相似度做最大值归一化和平方、计算类别特异半径内的局部 Shannon entropy，最后以 softmax 形成和为 1 的 occupied/empty 两类输出，并用两类输出的 signed difference 及阈值 ρ 构成和分类占用地图。",
+      "claim_type": "decoding_method",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "四阶段解码定义、Algorithm 2、局部掩模、softmax 及 signed difference。",
+          "design": "对两类别的空间相似度图做同一处理链，局部 disk filter 可对两类别设置不同半径。",
+          "comparator": "未处理的 quasi-probability 表示；正文没有给出每个处理组件的独立定量消融。",
+          "measure": "局部类熵、归一化两类输出、两类输出之差与阈值判定。",
+          "unit_of_analysis": "解码栅格位置及其局部邻域的两类别相似度。",
+          "sample_size_as_reported": null,
+          "uncertainty": "未报告独立概率校准测试；Figure 8 的校准描述是流程说明而非校准误差数据。",
+          "assumptions": [
+            "使用来源定义的二类别记忆、位置向量、归一化和局部掩模。",
+            "各实验的长度尺度、tile 数和 disk radii 按 Table 3 设置。",
+            "softmax 归一化对应可定义的有限类熵输入；正文没有分析空记忆等退化数值情形。"
+          ],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "Similarity Evaluation; Non-linear Post-processing; Entropy Information Extraction",
+            "figure": "Figures 7-8; Algorithm 2",
+            "equation": "Equations 8-15",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "解码流程的文本及图注。",
+          "design": "展示 raw quasi-probability 至处理后占用图的组成步骤。",
+          "comparator": "原始 quasi-probability 图。",
+          "measure": "作者描述处理后类别更可分、图更清晰，未给出此图的独立效果量。",
+          "unit_of_analysis": "流程示意中的类别图。",
+          "sample_size_as_reported": null,
+          "uncertainty": "只读图注，未读像素，不能重新量化噪声或校准。",
+          "assumptions": [
+            "图注的定性描述不能代替缺失的 Supplementary Note 消融。"
+          ],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "Decoding figure caption",
+            "figure": "Figure 8",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "明确给出从向量相似度到归一化类别输出及占用图的计算流程。",
+        "boundary": "这是作者选择的二分类后处理方法，半径等组件参数的独立贡献未能从供给正文量化。",
+        "negative_result": null,
+        "non_inference": "softmax 输出和为 1 不保证概率校准、正确后验或普适精度；最大值归一化加平方的源文边界表述也未作为一般数学保证提取。",
+        "unresolved": "各非线性和 entropy 组件对误差、校准及噪声抑制的独立作用需缺失消融或额外验证。",
+        "unresolved_attribution": "正文给出整条处理链，不能从其结果单独识别 entropy 或某一非线性的因果收益。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "如何将向量相似度解码为占用类别输出，归一化与概率校准有何区别？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C4",
+        "C5",
+        "C7",
+        "C14"
+      ],
+      "review_notes": [
+        "算法的归一化性质与作者所称 calibrated 的经验含义分开；所有图像评价限于说明文字。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "在作者规定的共同轴基向量、相同类别数及 ψ 编码、以及同一全局参考系内相同每维 tile 数 δ 的联合条件下，VSA-OGM 将各代理对应 tile/类别的记忆向量相加，构造包含各代理观测的全局记忆集合；此条件化融合构造不要求为全局图重新进行神经网络预训练。",
+      "claim_type": "conditional_fusion_method",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Multi-Map Fusion 与 Algorithm 3 的对应 tile 记忆 bundling。",
+          "design": "初始化全局记忆集合，按代理和 tile 检查对应项并累加记忆；实验证例使用相同系统配置。",
+          "comparator": "各代理的独立局部记忆；不同编码或不匹配 tile 的融合没有实验比较。",
+          "measure": "构造出的全局 tile/类别记忆集合。",
+          "unit_of_analysis": "代理之间对应的 tile/类别 memory vector。",
+          "sample_size_as_reported": "Algorithm 3 指定 N≥2；经验示例的代理数分别为 2 和 4，不是此构造的独立重复 n。",
+          "uncertainty": "正文为构造说明，没有对任意代理数证明信息无损或误差界。",
+          "assumptions": [
+            "所有代理在所有空间维度使用相同 axis basis。",
+            "所有代理使用相同类别集合与相同 ψ 标签含义。",
+            "所有代理的 δ 及全局参考系 tile 对应一致。",
+            "正文实验的代理采用相同 d、length scale 和其他指定配置。"
+          ],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "Multi-Map Fusion",
+            "figure": "Algorithm 3",
+            "equation": "Equation 1",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "共同编码和地图划分下，可以用记忆向量加法实现条件化多代理融合。",
+        "boundary": "保留来源列出的全部共同条件；经验性能仅在本文两个多代理设置中评估。",
+        "negative_result": null,
+        "non_inference": "没有证明不同坐标、轴基或 tile 配置可直接融合，也未证明任意规模信息无损、重复观测去重或通信系统性能。",
+        "unresolved": "编码不一致、观测重叠、通信约束及大代理数下的融合误差尚未评估。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "多个机器人在什么共同编码与分块条件下可以直接合并向量符号地图？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C9",
+        "C10"
+      ],
+      "review_notes": [
+        "构造与经验验证分开，不将作者 if and only if 措辞升级为已给出证明的普适定理。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "在未加入射线中间增广点的 ToySim 单代理稀疏数据、80%/20% 训练验证划分下，VSA-OGM 的验证 AUC/NLL 为 0.93/0.33，BHM-Full 为 0.96/0.44，BHM-Diag 为 0.97/0.38：VSA-OGM 的排序指标较低而 NLL 较低，不能将这两种读数概括为所有精度指标均更优。",
+      "claim_type": "benchmark_accuracy",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "ToySim 仿真 LiDAR 数据上的同来源三方法比较。",
+          "design": "一个 10000 m² 仿真环境，360° LiDAR、20 m 范围、50 beams；80% 数据训练、20% 验证，不使用空闲射线点增广。",
+          "comparator": "BHM-Full 和 BHM-Diag。",
+          "measure": "VSA-OGM、Full、Diag 的 AUC 分别为 0.93、0.96、0.97，NLL 分别为 0.33、0.44、0.38。",
+          "unit_of_analysis": "同一仿真轨迹采集的带标签位置点；数据划分不是独立环境重复。",
+          "sample_size_as_reported": "4500 个点，90 次扫描、每扫描 50 点；60% occupied、40% empty。独立环境、随机种子或运行重复数未报告。",
+          "uncertainty": "未报告置信区间、重复方差或显著性检验。",
+          "assumptions": [
+            "VSA-OGM 使用 d=32000、l=1.0、δ=2、两类别 disk radius 均为 3 cells。",
+            "指标对应来源的固定 80%/20% 划分，不能推为未观测区域的真值检验。"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "ToySim-Single-Agent",
+            "figure": "Figure 1; Table 4",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "该设置下 VSA-OGM 获得三方法中最低的报告 NLL。",
+        "boundary": "其 AUC 同时低于两个 BHM 版本；结论限定一个稀疏仿真环境和指定超参数。",
+        "negative_result": "VSA-OGM 的 AUC 0.93 低于 BHM-Full 的 0.96 和 BHM-Diag 的 0.97。",
+        "non_inference": "NLL 较低不单独证明概率已校准，且没有统计显著性或跨环境总体优越性结论。",
+        "unresolved": "不同划分、环境、随机轴基及校准评估下的稳定性未报告。",
+        "unresolved_attribution": "作者将 AUC/NLL 分离解释为排序与校准差异并关联 softmax，但本文供给结果不能单独识别校准或 softmax 的因果作用。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "稀疏占用地图中排序准确率和概率损失是否呈现不同方法权衡？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C5",
+        "C6"
+      ],
+      "review_notes": [
+        "使用实际 AUC/NLL 数值，不把作者 comparable accuracy 措辞转写为等效性检验。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "作者在未对 ToySim 稀疏 LiDAR 点增广的比较中报告，调整 kernel width 仍未使 BHM-Full 或 BHM-Diag 将点间广泛空闲区域插值为 empty；相同数据下 VSA-OGM 生成较粗、较低频且较平滑的空闲区域表示，但本文没有为完全未采样区域给出额外定量真值验证。",
+      "claim_type": "qualitative_interpolation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "ToySim-Single-Agent 的插值描述及 Figure 1 图注。",
+          "design": "避免常见的射线中间随机点增广，以观察三方法对原始空间稀疏性的响应。",
+          "comparator": "具有 full 或 diagonal covariance 的 BHM，作者报告也尝试调整 kernel width。",
+          "measure": "来源定性描述：BHM 多数区域 unknown、随训练点呈尖锐高频峰；VSA-OGM 较粗平滑、空闲区域更广。",
+          "unit_of_analysis": "同一个仿真地图的稀疏点间区域；不是独立验证区域集合。",
+          "sample_size_as_reported": "与 C4 相同的 4500 点/90 扫描数据；kernel-width 尝试次数及独立重复数未给出。",
+          "uncertainty": "没有插值误差、未观测区域真值读数或图像重新分析；只依据作者文字。",
+          "assumptions": [
+            "与 C4 相同的 VSA-OGM 参数和 80%/20% 划分。",
+            "正文明确点间部分区域没有训练或测试数据。"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "ToySim-Single-Agent",
+            "figure": "Figure 1",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "来源报告 VSA-OGM 在该稀疏地图产生更广、较平滑的 empty 插值。",
+        "boundary": "结果是作者的定性地图观察，低频平滑伴随更少细节。",
+        "negative_result": "作者在该设置及其 kernel-width 调整下未得到能广泛插值空闲区域的 BHM 地图。",
+        "non_inference": "不能推断所有 BHM 配置必然失败，也不能以平滑地图证明未采样区域的真实占用准确或普适外推。",
+        "unresolved": "有完整空间真值时，不同区域的插值误差与细节损失如何权衡尚未在此定量给出。",
+        "unresolved_attribution": "当前比较不能将插值表现独立归因于 SSP、entropy、长度尺度或其他单一组件。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "缺少射线增广的稀疏观测下，占用地图插值范围与空间细节如何权衡？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C4",
+        "C6"
+      ],
+      "review_notes": [
+        "未查看 Figure 1 像素；没有把无验证点的区域说成经过准确率验证。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "在本文桌面工作站的 ToySim 单代理比较中，Table 4 报告 VSA-OGM 的 CPU/GPU 延迟为 0.04/0.005 s、模型大小 1.02 MB；BHM-Full 的 CPU 延迟为 6.5 s、模型 6400 MB，而 BHM-Diag 为 0.45/0.024 s、模型 0.04 MB。因此 VSA-OGM 相对 Full 降低延迟和表示内存，相对 Diag 降低延迟但增加表示内存。",
+      "claim_type": "benchmark_computational_cost",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "ToySim 单代理 CPU/GPU 计时和已学习模型大小对照。",
+          "design": "来源使用 Intel Xeon W-2295、128 GB RAM 和 RTX A5000 工作站；采用 C4 的数据及模型配置。",
+          "comparator": "BHM-Full 的可用 CPU 实现、BHM-Diag 的 CPU/GPU 实现。",
+          "measure": "Table 4 的延迟与模型 MB：VSA 0.04/0.005 s、1.02 MB；Full 6.5 s、6400 MB；Diag 0.45/0.024 s、0.04 MB。",
+          "unit_of_analysis": "来源所计时的 OGM 处理/生成过程与模型表示；不是独立环境重复。",
+          "sample_size_as_reported": "数据为 4500 点、90 scans；计时重复次数、预热安排及独立运行 n 未报告。",
+          "uncertainty": "未报告延迟离散程度；Full 无可用 GPU 对照。正文约 6400x 内存表述与 6400/1.02 的表值不能视为精确比值。",
+          "assumptions": [
+            "比较限于所用硬件和开源实现。",
+            "模型大小不等同含临时张量、预计算位置矩阵和输入在内的总峰值内存。"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "ToySim-Single-Agent",
+            "figure": "Table 4",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "报告的延迟均低于可比较的 BHM 实现，模型表示远小于 Full。",
+        "boundary": "比较依赖硬件、实现和模型内存定义，不能泛化为所有平台或端到端机器人速度。",
+        "negative_result": "VSA 模型 1.02 MB 大于 BHM-Diag 的 0.04 MB。",
+        "non_inference": "没有 BHM-Full GPU 速度结论，没有能耗或嵌入式部署测量，也没有同精度速度界。",
+        "unresolved": "统一计时与峰值内存测量、独立重复和其他硬件上的结果未给出。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "在保留或丢弃协方差的基线之间，向量占用地图的延迟与表示内存如何权衡？"
+      ],
+      "shared_evidence_with": [
+        "C4",
+        "C5"
+      ],
+      "review_notes": [
+        "精度和资源记录共享同一 ToySim 数据，不是互相独立复现；保留原始时间与 MB，未照抄有舍入差异的倍数。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "在 Intel Map 单代理数据的 Table 6 中，VSA-OGM 在 0.1 m 和 0.2 m 解码分辨率均报告 AUC/NLL=0.95/0.25；0.1 m 的 BHM-Full 为 AUC 0.96、BHM-Diag 为 0.96/0.25，0.2 m 的两个 BHM 版本均为 0.98/0.24。因此该真实地图上 VSA-OGM 达到报告的较高 AUC，但并未在这些 BHM 精度比较中胜出。",
+      "claim_type": "benchmark_accuracy",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "真实机器人 Intel Map 的单代理 OGM 基准表。",
+          "design": "同一 Seattle Intel Campus 数据；按 Table 6 分辨率区分实验，VSA 使用 d=32000、l=0.2 m、δ=8、两类 radius=1 cell。",
+          "comparator": "BHM-Full/BHM-Diag 的 0.1 m 和 0.2 m 表列设置。",
+          "measure": "VSA 两分辨率均 0.95/0.25；0.1 m Full AUC 0.96 且 NLL 未给出、Diag 0.96/0.25；0.2 m Full/Diag 均 0.98/0.24。",
+          "unit_of_analysis": "一份真实机器人地图的标记点/验证读数，非多环境重复。",
+          "sample_size_as_reported": "Table 1：1440 m²、910 scans、每扫描 421 points，58% occupied、42% empty；单代理验证划分比例在该段未单独重述，独立运行数未报告。",
+          "uncertainty": "没有置信区间、随机重复或精度等效性检验。",
+          "assumptions": [
+            "不把不同解码分辨率混为同一个比较。",
+            "BHM 行中的额外复现实验由 Table 6 注 a 标注，未标注行保留来源本身的报告范围。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "Intel Map-Single-Agent",
+            "figure": "Figure 3; Table 6",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "Table 6 汇集的其他传统方法精度。",
+          "design": "论文列出的原稿数值，部分空间分辨率、NLL 和其他参数未提供。",
+          "comparator": "OGM、I-GPOM、I-GPOM2、Fast-BHM、SBKM 的表列报告。",
+          "measure": "AUC：OGM 0.93、I-GPOM 0.94、I-GPOM2 0.97、Fast-BHM 0.95；0.2 m SBKM 两设置 AUC/NLL 分别 0.96/0.36 和 0.95/0.52。",
+          "unit_of_analysis": "来源内所汇总的 Intel Map 方法设置，不是额外独立数据集。",
+          "sample_size_as_reported": "本表未为每个原稿基线给出独立重复 n。",
+          "uncertainty": "缺少部分匹配参数及统计不确定性，不能判定显著性或严格等价。",
+          "assumptions": [
+            "仅使用本文呈现的基线汇总，不读取或建立外部论文证据关系。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "Intel Map comparison table",
+            "figure": "Table 6",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "VSA 在两种表列分辨率中均获得 AUC 0.95、NLL 0.25。",
+        "boundary": "一个真实地图且基线参数不完全匹配；多方法总体 comparable 是作者概括而非统计等效性。",
+        "negative_result": "0.2 m 下 VSA 的 AUC 低于两个 BHM 版本且 NLL 更高；0.1 m 下其 AUC 也较低。",
+        "non_inference": "不能推断真实世界普遍优于传统 OGM，或以缺失 NLL 填补某个基线结果。",
+        "unresolved": "匹配分辨率和统一实现下的多真实环境精度分布未给出。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "真实 LiDAR 地图中向量符号 OGM 的精度如何随解码分辨率及传统基线配置变化？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C8",
+        "C11",
+        "C12"
+      ],
+      "review_notes": [
+        "未根据其他多代理段的 20% 验证描述推填单代理段未单独给出的比例；表 6 数值以分辨率为索引。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "Intel Map 的 Table 6 报告，在 0.1 m 分辨率下 VSA-OGM 的 CPU/GPU 时间为 0.51/0.04 s，BHM-Full 的 CPU 时间为 22.35 s、BHM-Diag 为 8.11 s 且 GPU 因内存不足未测成；在 0.2 m 下相应时间为 VSA 0.26/0.02 s、Full CPU 11.8 s、Diag 2.11/0.11 s。VSA 模型 16.3 MB 小于 Full 的 6400 MB，但大于 Diag 的 0.04 MB。",
+      "claim_type": "benchmark_computational_cost",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Intel Map 单代理的分辨率限定 CPU/GPU 时间与模型内存。",
+          "design": "与 C7 共享数据、配置和 Intel Xeon W-2295/RTX A5000 工作站；来源明确报告 Diag 在 0.1 m 超出 24 GB GPU 容量。",
+          "comparator": "两个分辨率的 BHM-Full 与 BHM-Diag；Full 没有可工作的开源 GPU 实现。",
+          "measure": "0.1 m：VSA 0.51/0.04 s、Full CPU 22.35 s、Diag CPU 8.11 s；0.2 m：VSA 0.26/0.02 s、Full CPU 11.8 s、Diag 2.11/0.11 s；模型 MB 为 VSA 16.3、Full 6400、Diag 0.04。",
+          "unit_of_analysis": "每 point cloud 的处理及来源纳入的地图生成计时，和模型表示。",
+          "sample_size_as_reported": "数据为 910 scans、每扫描 421 points；计时独立重复次数未报告。",
+          "uncertainty": "表文中的约数和部分 timing 定义有差异，未给时间方差。GPU 内存失败是此实现/配置的观察，不是普适硬件下界。",
+          "assumptions": [
+            "对应空间分辨率和硬件下比较。",
+            "模型 MB 不是总峰值内存或能耗。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "Intel Map-Single-Agent",
+            "figure": "Table 6",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "来源中其他基线的运行时间汇总和作者计时口径说明。",
+          "design": "Table 6 汇集 OGM/I-GPOM/Fast-BHM/SBKM 原稿或指定补充实验结果。",
+          "comparator": "OGM 1.12 s，I-GPOM 15.35 s，I-GPOM2 17.17 s，Fast-BHM 0.46 s，SBKM 0.76 或 0.43 s 的 CPU 表值。",
+          "measure": "报告 CPU 时间；Table 6 注 b 明确 Fast-BHM/SBKM 原稿未说明是否同时包含点云处理和地图生成。",
+          "unit_of_analysis": "各方法原稿所报告的计时过程，定义不完全一致。",
+          "sample_size_as_reported": "原稿基线计时重复数未在供给表中给出。",
+          "uncertainty": "同表的 VSA 0.1 m CPU 0.51 s 大于 Fast-BHM 0.46 s；正文所谓较 Fast-BHM 快一个数量级不能从这些表值和不匹配计时范围直接成立。",
+          "assumptions": [
+            "不将不同 timing 范围或分辨率的原稿表值变为统一速度优越性。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "Intel Map-Single-Agent runtime qualifications",
+            "figure": "Table 6",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在可比的 BHM 配置下 VSA 报告较低时间，并相对 Full 节省模型表示内存。",
+        "boundary": "相对低内存 Diag 没有模型内存优势；其他原稿方法的计时范围不统一。",
+        "negative_result": "BHM-Diag 的 0.1 m GPU 实现在可用 24 GB 上因动态内存不足未能评估；VSA 模型内存高于 Diag。",
+        "non_inference": "无有效 Full GPU 比较，不能宣布 VSA 在所有精度匹配条件下均快于 Fast-BHM，或从延迟推断能源、安全性与嵌入式实时性。",
+        "unresolved": "Fast-BHM 计时范围及正文速度措辞与表值的差异需原始实现/报告澄清；本次不以猜测修补。",
+        "unresolved_attribution": "实现、分辨率、模型假设和地图生成成本均可能影响时间差，不能孤立归因为某一 VSA 组件。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "分辨率和计时口径匹配后，真实地图上的速度与内存优势是否仍成立？"
+      ],
+      "shared_evidence_with": [
+        "C7",
+        "C11",
+        "C12"
+      ],
+      "review_notes": [
+        "Table 6 是首要数值依据；保留源文自身不一致，不用摘要倍数覆盖不利比较。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "在同一 ToySim 环境内两个共同配置代理的同步训练与逐时间步融合中，Table 5 报告代理 1、代理 2 和融合图的 AUC/NLL 分别为 0.93/0.32、0.96/0.46、0.95/0.32，延迟分别为 0.005、0.005、0.006 s；融合图保持接近单代理的指标，但其 AUC 未超过最佳代理的 0.96。",
+      "claim_type": "multi_agent_fusion_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "两条不同代理轨迹的 ToySim 地图向量融合。",
+          "design": "每代理在 80% 数据上训练并逐时间步融合；共同 d=32000、l=1.0、δ=2、两类别 radius=3 cells。",
+          "comparator": "同一实验两个未融合的代理地图。",
+          "measure": "各代理与融合的 AUC/NLL 和 Table 5 latency。",
+          "unit_of_analysis": "同一仿真环境中的两个代理视角及一个融合图；不是两次独立环境重复。",
+          "sample_size_as_reported": "Table 2：2 agents、每代理 367 scans、每 scan 50 points；occupied 比例分别 48.9% 和 53.1%。独立环境或运行重复 n 未报告。",
+          "uncertainty": "没有融合损失的独立指标、误差条或统计检验。正文称融合约 5 ms，Table 5 列 6 ms，记录以表值为准。",
+          "assumptions": [
+            "满足 C3 的共同轴基、类别及全局 tile 条件。",
+            "比较指标来源于相同训练/验证流程，而非新独立数据集。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "ToySim-Multi-Agent",
+            "figure": "Figure 2; Table 5",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "共同配置下融合图获得 AUC 0.95、NLL 0.32，并报告毫秒级融合延迟。",
+        "boundary": "验证限于同一环境的两个代理视角，不能将代理数当重复 n。",
+        "negative_result": "融合 AUC 0.95 低于最佳代理 AUC 0.96。",
+        "non_inference": "不能从这些汇总指标证明逐点无信息损失、所有代理均改善或任意 N 的可扩展性。",
+        "unresolved": "重复观测、更多代理、通信和不同信息密度下的融合误差未给出。",
+        "unresolved_attribution": "作者的 negligible information loss 是对现有指标的解释，不是独立的信息保真测量。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "共同编码的两个机器人地图融合后，精度和延迟相对各自地图如何变化？"
+      ],
+      "shared_evidence_with": [
+        "C3"
+      ],
+      "review_notes": [
+        "Table 5 与 Figure 2 属于同一仿真实验；不建立外部复现关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "将一份 Intel Map 数据按 x-y 空间拆为四个代理分区后，VSA-OGM 在 20% 验证集上的分区 AUC 为 0.95、0.96、0.94、0.93，融合 AUC/NLL 为 0.95/0.37、融合延迟 0.03 s；Table 8 的融合 AUC 高于 Fast-BHM 的 0.936 和 OHM 的 0.92，但其 16.4 MB 模型也大于 Fast-BHM 的 0.04 MB。",
+      "claim_type": "partitioned_real_map_fusion_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Intel Map 的四空间分区 VSA 训练和地图融合。",
+          "design": "将单一真实数据划成四象限模拟多代理；共同 d=32000、l=0.2 m、δ=8、disk radii=1；报告 20% 验证结果。",
+          "comparator": "四个分区地图，以及本文汇集的 Fast-BHM/OHM 融合结果。",
+          "measure": "Table 7：四分区 NLL=0.45、0.39、0.42、0.37，各 latency=0.04 s；融合 AUC/NLL=0.95/0.37、latency=0.03 s。Table 8：Fast-BHM AUC=0.936、OHM=0.92；VSA/Fast-BHM model size=16.4/0.04 MB。",
+          "unit_of_analysis": "同一 Intel Map 序列的四个空间子集及其全局融合图。",
+          "sample_size_as_reported": "四分区分别 222、161、283、244 scans，均每 scan 421 points；不是四名独立机器人或四个独立环境的采集。重复运行数未报告。",
+          "uncertainty": "无误差条或显著性检验；Fast-BHM 的正文 0.94 是 Table 8 的 0.936 近似值。OHM 模型大小未给出。",
+          "assumptions": [
+            "满足 C3 的全局编码和 tile 对应条件。",
+            "外部基线只采用本文表中汇集的值，不擅自补足其独立 n 或其他指标。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "Intel Map-Multi-Agent",
+            "figure": "Figure 4; Tables 7-8",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "此空间分割实例得到 AUC 0.95 的全局图，表列 AUC 高于两个融合基线。",
+        "boundary": "这是一份数据的分区模拟，不是独立多机器人采集或跨环境复制。",
+        "negative_result": "VSA 的 16.4 MB 表示内存高于 Fast-BHM 的 0.04 MB，融合 AUC 也未超过最佳分区 0.96。",
+        "non_inference": "不能将小 AUC 差异宣布为统计显著，不证明无损融合、完整协方差等价或真实通信系统效果。",
+        "unresolved": "真实异步多机器人、更多地图及匹配参数基线下的差异尚未在供给文本评估。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "同一真实地图的空间分区融合，相对既有地图融合方法具有怎样的精度与内存权衡？"
+      ],
+      "shared_evidence_with": [
+        "C3"
+      ],
+      "review_notes": [
+        "Table 8 covariance 列只是作者标签，未用其证明协方差后验性质；不把四象限作为四个独立生物或机器人实验。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "作者在分析 Intel Map 地图与配置时报告，VSA-OGM 在密集走廊与稀疏房间并存等高度不均衡空间采样下出现性能退化，因此 ToySim 的稀疏区域插值表现不能直接推广为对任意非均匀观测密度稳健。",
+      "claim_type": "spatial_sampling_boundary",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Intel Map-Single-Agent 结果后的显式限制分析。",
+          "design": "作者结合地图和运行配置识别两项限制，其中一项为 dense hallways 与 sparse rooms 的不均衡采样。",
+          "comparator": "正文将此现象与 ToySim 中较好的稀疏插值相对照；不是独立控制采样密度的消融。",
+          "measure": "作者报告 performance degrades，未给区域特异 AUC、NLL 或效应量。",
+          "unit_of_analysis": "Intel Map 中不同采样密度的空间区域。",
+          "sample_size_as_reported": "底层为一份 910 scans 的 Intel Map；比较区域数、受控密度水平和独立重复数均未报告。",
+          "uncertainty": "仅为作者报告的定性观察，Figure 3 未读像素，不能独立复量化。",
+          "assumptions": [
+            "结论依附于本文的 VSA 配置与该真实地图。",
+            "不能以一份数据的区域差异识别单独因果因素。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "Intel Map-Single-Agent limitations, item 1",
+            "figure": "Figure 3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": null,
+        "boundary": "非均匀空间采样是作者明确承认的适用边界。",
+        "negative_result": "作者报告高度不均衡空间采样下的性能退化。",
+        "non_inference": "不能给出未报告的退化幅度、统计检验或密度因果阈值，也不能断言所有稀疏区域均失败。",
+        "unresolved": "局部密度补偿、重加权或自适应参数能否消除退化未由供给材料检验。",
+        "unresolved_attribution": "缺少密度隔离干预，geometry、标签分布、tile 划分与采样密度的贡献未区分。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "空间观测密度不均匀何时限制向量符号占用地图的插值表现？"
+      ],
+      "shared_evidence_with": [
+        "C7",
+        "C8",
+        "C12"
+      ],
+      "review_notes": [
+        "实际负结果与未测试的改进方向分开；不虚构正文未给出的消融。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "作者将点数增加数个数量级时的 VSA-OGM 容量限制解释为 memory vector saturation，并报告需增加每维 tile 数 δ 或向量维数 d 才能维持映射表现；本文的参数选择与该解释相符，但没有供给能独立识别饱和机制或普适容量阈值的受控结果。",
+      "claim_type": "capacity_limit_interpretation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "Intel Map 结果中第二项限制、Table 3 参数选择及 Environmental Discretization 构造。",
+          "design": "正文解释数据规模增大时选择更多 tile；ToySim 与 Intel Map 都用 d=32000，但 δ 分别为 2 和 8，其他配置和数据集也不同。",
+          "comparator": "不同数据量/环境及其选择的 tiling 配置，非单因素容量实验。",
+          "measure": "作者描述 memory saturation 与维持准确率所需的 δ/d 调整；未报告容量曲线、误差阈值或独立效应量。",
+          "unit_of_analysis": "一个 tile 类别记忆中累积的点表示及跨数据集配置。",
+          "sample_size_as_reported": "ToySim 单代理 4500 points；Intel Map 910 scans、每 scan 421 points。受控容量试验数、随机重复 n 未报告。",
+          "uncertainty": "缺失补充消融，不能定量核验饱和阈值；数据集、length scale 和 radii 同时改变。",
+          "assumptions": [
+            "解释针对有限维向量及本文 bundling/解码系统。",
+            "参数差异只作为描述性佐证，不充当唯一机制识别。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "Intel Map-Single-Agent limitations, item 2",
+            "figure": "Table 3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者指出增加 tiling 或 dimensionality 的容量管理路径。",
+        "boundary": "这是作者对有限容量现象的解释，不能等同完成的信息论尺度分析。",
+        "negative_result": "作者报告较大点数使固定容量记忆饱和、迫使增加 tile 的限制现象；未量化失败幅度。",
+        "non_inference": "没有确定饱和的唯一因果机制、普适阈值、保证恢复精度的维数公式或已验证自适应算法。",
+        "unresolved": "信息论驱动的自适应维数/分块分配被列为未来工作，尚无本文结果。",
+        "unresolved_attribution": "点数量、空间密度、类别分布、tile 配置及解码参数的独立影响无法从现有供给比较分离。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "有限维空间记忆的容量与采样点数、分块数及向量维数之间有什么关系？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C7",
+        "C8",
+        "C11"
+      ],
+      "review_notes": [
+        "role 明确为 interpretation；未把未来 information-theoretic allocation 计划当作已实现结果。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C13",
+      "statement": "在本文 EviLOG 比较中，VSA-OGM 无需神经网络预训练并报告每帧推理 55 ms、64K 参数；EviLOG-SmallNet 和 EviLOG-BaseNet 分别为 165/290 ms、76K/4.7M 参数，其 100 epochs、batch size 5 的训练分别耗时约 13/30 h。由于来源没有可直接对照的 AUC/NLL 精度结果，这些计算成本不能表述为已证明等精度的加速。",
+      "claim_type": "neural_baseline_computational_cost",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "同来源 EviLOG-BaseNet、缩小卷积特征数的 SmallNet 与 VSA-OGM 比较。",
+          "design": "EviLOG 仿真车辆 LiDAR；两神经网络采用相同 100 epochs、batch size 5 训练；SmallNet 卷积特征数缩小 8x。VSA 按 Table 3 d=32000、l=0.2、δ=1、两类 radii=3。",
+          "comparator": "EviLOG-SmallNet 和 EviLOG-BaseNet。",
+          "measure": "Table 9：参数 64K/76K/4.7M；推理 55/165/290 ms；神经训练约 13/30 h，VSA 不需这种预训练。",
+          "unit_of_analysis": "输入 point-cloud frame 的推理过程、各神经训练过程及参数数量。",
+          "sample_size_as_reported": "数据划分 10000 training、100 testing、1000 validation point clouds；Table 1 列每 scan 48000 points。计时重复次数、训练 seed 或独立运行 n 未报告。",
+          "uncertainty": "没有时间误差条。Table 9 的 290/55 并非精确 6x，正文约数不作为精确效果量。",
+          "assumptions": [
+            "使用本文工作站和实现。",
+            "EviLOG 真值 OGM 分辨率为 0.16 m，VSA 配置 l/解码相关设置为 Table 3 的 0.2；未证明同精度或完全匹配的输出设置。",
+            "VSA 仍需点标签启发式、初始化和在线记忆更新；无预训练不等于无数据处理。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "EviLOG Dataset; Discussion",
+            "figure": "Table 9",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "来源对 EviLOG 评价尺度及训练条件的说明。",
+          "design": "神经方法按整个空间、包括未标点区域的 KL-divergence 评估，作者因此未用 AUC/NLL 做直接定量对照。",
+          "comparator": "两种神经结构及 VSA 的评价域和指标。",
+          "measure": "无法形成本文 AUC/NLL 的匹配定量精度对照。",
+          "unit_of_analysis": "空间评价域与指标定义。",
+          "sample_size_as_reported": null,
+          "uncertainty": "没有供给可互换或共同评价的数值，不能填补缺口。",
+          "assumptions": [
+            "点云输入未附二类点标签与存在真值 OGM 两者不同；VSA 使用来源指明的点标记启发式。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "EviLOG Dataset",
+            "figure": "Table 9",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在报告实现中 VSA 的推理时间和参数数低于两个神经基线，且没有神经预训练阶段。",
+        "boundary": "无匹配定量精度、时间方差或完整分辨率控制；参数个数不是内存 MB。",
+        "negative_result": null,
+        "non_inference": "不能宣称等精度 6x 加速、普适跨域可靠性、能源节省或没有任何在线学习计算。",
+        "unresolved": "统一评价域、匹配输出网格、重复训练/计时和真实驾驶场景的公平对照尚缺。",
+        "unresolved_attribution": "结构、预训练、参数量、输出设置与不同解码计算的影响没有被独立分离。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "不依赖神经预训练的向量占用地图，在评价口径未匹配时能确认哪些计算成本优势？"
+      ],
+      "shared_evidence_with": [
+        "C14"
+      ],
+      "review_notes": [
+        "使用原始 ms/小时/参数数；未将来源约 6x 的措辞当精确比值，也未添加未报告的精度数据。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C14",
+      "statement": "作者对 EviLOG 地图的定性比较报告：VSA-OGM 在已观测但空间稀疏的区域可形成占用估计与插值，却在完全未观测区域表现困难；EviLOG 两种神经结构利用训练形成的先验，在直接观测之外恢复结构更有效。这一结论是来源的定性区域比较，不是供给了统一误差指标的精度证明。",
+      "claim_type": "qualitative_extrapolation_boundary",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "EviLOG Dataset 对三种地图的正文描述及 Figure 5 说明。",
+          "design": "比较输入点云与 VSA、EviLOG-SmallNet、EviLOG-BaseNet 的解码 OGM；区分稀疏已观测区域与完全无观测区域。",
+          "comparator": "两种具有 PointPillars backbone 和卷积层的训练神经结构，与不进行神经预训练的 VSA。",
+          "measure": "作者描述稀疏区域的 occupancy estimates/interpolation 与未观测区域的 extrapolation 困难；未给出区域定量误差。",
+          "unit_of_analysis": "EviLOG 示例帧的不同可观测空间区域。",
+          "sample_size_as_reported": "整体数据划分见 C13；该定性区域比较的实际展示/分析帧数、区域数及独立重复 n 未在文字中给出。",
+          "uncertainty": "Figure 5 仅供给文字说明，没有像素、共同 AUC/NLL 或统计不确定性。",
+          "assumptions": [
+            "VSA 使用 EviLOG 论文的点标签启发式；完全无观测不是普通稀疏观测。",
+            "神经网络先验解释来自作者的结构说明，不是独立消融识别。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "EviLOG Dataset",
+            "figure": "Figure 5",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "Discussion 对 observed-domain 与 extrapolation 边界的再次说明。",
+          "design": "作者总结 VSA 在道路及车辆周围已观测点的表示，同时承认极少信息域外的挑战。",
+          "comparator": "神经架构的训练先验依赖与 VSA 的环境假设选择。",
+          "measure": "定性域内/域外表现区别；没有独立新增实验。",
+          "unit_of_analysis": "与 Figure 5 相同类型的空间评价域。",
+          "sample_size_as_reported": null,
+          "uncertainty": "Discussion 不提供新的样本数或精度数据。",
+          "assumptions": [
+            "不把同一结果在 Discussion 重述计为独立复制。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Discussion",
+            "figure": "Figure 5",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "来源报告 VSA 对已观测稀疏区域的占用表达和插值能力。",
+        "boundary": "域内稀疏观测与完全无观测必须分开；神经方法可能以训练先验换取更强结构外推。",
+        "negative_result": "作者报告 VSA 在完全未观测区域的结构外推困难，神经结构在该方面更有效。",
+        "non_inference": "不能据此证明神经基线在所有位置准确率更高，或证明其存在域迁移失败、VSA 普遍跨域安全、动态障碍跟踪能力及 3D 泛化。",
+        "unresolved": "匹配区域真值的定量外推误差、不同域先验的代价及 semantic 3D 扩展尚未由供给来源验证。",
+        "unresolved_attribution": "作者把差异解释为先验依赖，但没有隔离先验、结构或其他配置的因果干预。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "占用地图中稀疏观测插值与完全未观测结构外推需要哪些不同的信息或先验？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C13"
+      ],
+      "review_notes": [
+        "实际外推困难与未经测试的域迁移风险严格分开；只读供给的文字及图注。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "供给来源为 Snyder、Capodieci、Gorsich 与 Parsa 的 2026 年 npj Unconventional Computing 研究论文，标题、DOI 和作者与分配条目一致；全部 15 页供给文字、图表说明、方法、算法、公式、参考文献和声明均已阅读并在保留上下文中完成第二轮源文审计。论文提出二维二分类 VSA-OGM：SSP 坐标编码、tile/类别记忆累加、entropy/softmax 解码及共同编码条件下的向量地图融合。ToySim 中 VSA 的 AUC 低于两个 BHM 版本而 NLL 更低，来源报告平滑稀疏插值；它相对 Full 节省延迟和模型内存，但相对 Diag 增加内存。Intel Map 的精度和时间依赖 0.1/0.2 m 分辨率，表列 VSA 精度未超过 BHM；Fast-BHM 原稿计时范围及正文速度措辞不能统一。两代理 ToySim 和四分区 Intel 融合产生较高 AUC，但没有独立证明无信息损失，四分区不是四次真实机器人实验。EviLOG 中 VSA 无神经预训练，报告 55 ms、64K 参数，相对两个神经基线计算成本较低；评价域/指标不匹配，不能宣称已证明等精度加速。正文实际边界包括非均匀采样退化与完全未观测区域外推困难；记忆饱和是作者的容量解释，未识别唯一机制。补充消融未供给，因此未提取独立组件收益；低 NLL、softmax 或 covariance 标签均不升级为校准或完整后验证明。形成 14 个中文候选，保留来源内共享证据；所有记录仍需人工审查，不代表独立复现、因果鉴定、生物验证或跨论文关系。",
+  "shared_evidence": [
+    {
+      "claim_id": "C1",
+      "with": [
+        "C2",
+        "C3",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C2",
+      "with": [
+        "C1",
+        "C4",
+        "C5",
+        "C7",
+        "C14"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C1",
+        "C9",
+        "C10"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C2",
+        "C5",
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C2",
+        "C4",
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C4",
+        "C5"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C2",
+        "C8",
+        "C11",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C7",
+        "C11",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C3"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "with": [
+        "C3"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "with": [
+        "C7",
+        "C8",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "with": [
+        "C1",
+        "C7",
+        "C8",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C13",
+      "with": [
+        "C14"
+      ]
+    },
+    {
+      "claim_id": "C14",
+      "with": [
+        "C2",
+        "C13"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": null,
+        "issue": "第二轮基于保留全篇来源核对身份、贡献覆盖、所有页码、角色、联合条件、比较口径及实际分析单位。",
+        "suggested_correction": "已保留 14 个独立可评估候选，源文标题/作者/DOI/年份一致，全部供给页覆盖；未建立跨论文关系。",
+        "pdf_page": 1,
+        "resolved": true
+      },
+      {
+        "claim_id": "C2",
+        "issue": "Figure 8 与正文将 softmax 后输出称为 calibrated/true probabilities，但没有独立校准评估；Equation 9 的 0-1 保证也没有一般条件论证。",
+        "suggested_correction": "只记录所提解码和 softmax 归一化构造，不推断校准、后验正确性或无条件的平方归一化边界。",
+        "pdf_page": 12,
+        "resolved": true
+      },
+      {
+        "claim_id": "C4",
+        "issue": "ToySim 的较低 NLL 与较低 AUC 是不同读数，不支持将 VSA 写成所有精度指标均更优。",
+        "suggested_correction": "保留 0.93/0.33 对 0.96/0.44、0.97/0.38，并将作者的校准/softmax解释与观测结果分开。",
+        "pdf_page": 3,
+        "resolved": true
+      },
+      {
+        "claim_id": "C5",
+        "issue": "ToySim 插值区域部分没有训练或测试数据，Figure 1 像素未供给。",
+        "suggested_correction": "作为作者的定性插值与 BHM 调参失败报告，不虚构未采样区域准确率。",
+        "pdf_page": 3,
+        "resolved": true
+      },
+      {
+        "claim_id": "C6",
+        "issue": "正文约 6400x 模型内存降低与 Table 4 的 6400 MB/1.02 MB 不形成精确相同比值。",
+        "suggested_correction": "保留表列 MB，不复述为精确倍数；同时保留 Diag 比 VSA 更省内存。",
+        "pdf_page": 3,
+        "resolved": true
+      },
+      {
+        "claim_id": "C7",
+        "issue": "Intel Map 的 0.1 m 与 0.2 m BHM 指标、计时不相同；混用会制造错误对照。",
+        "suggested_correction": "按 Table 6 分辨率分别记录指标与资源，未填补 0.1 m Full 的缺失 NLL。",
+        "pdf_page": 5,
+        "resolved": true
+      },
+      {
+        "claim_id": "C8",
+        "issue": "正文称较 Fast-BHM 低一个数量级延迟，但 Table 6 列 0.1 m VSA CPU 0.51 s 与 Fast-BHM 0.46 s；Fast-BHM/SBKM 是否包含地图生成未明。",
+        "suggested_correction": "保留源文差异和 timing 范围限制，不强行宣布 Fast-BHM 速度优势；需原始计时说明澄清。",
+        "pdf_page": 4,
+        "resolved": false
+      },
+      {
+        "claim_id": "C9",
+        "issue": "ToySim 融合正文称约 5 ms，Table 5 列 0.006 s；negligible information loss 没有独立损失测量。",
+        "suggested_correction": "以表列 6 ms 为记录，保留最佳代理 AUC 0.96 高于融合 0.95，不能声称无损。",
+        "pdf_page": 4,
+        "resolved": true
+      },
+      {
+        "claim_id": "C10",
+        "issue": "Intel Map 四代理是单一数据的四空间分区；Fast-BHM 正文 AUC 0.94 与表列 0.936 是精度不同的表述。",
+        "suggested_correction": "用 Table 8 的 0.936，明确四分区并非四个独立采集/环境，未推断显著性。",
+        "pdf_page": 6,
+        "resolved": true
+      },
+      {
+        "claim_id": "C1",
+        "issue": "Table 8 将 VSA covariance 标为 True，但供给方法为 SSP 相似性与后处理，没有完整概率协方差或后验等价性证明。",
+        "suggested_correction": "不将该标签提升为形式化后验性质；保留为人审解释问题。",
+        "pdf_page": 6,
+        "resolved": false
+      },
+      {
+        "claim_id": "C12",
+        "issue": "memory vector saturation 是作者的容量解释；跨数据集时除点数外，tiling、length scale、radii 也改变，缺少独立因果辨识。",
+        "suggested_correction": "角色为 interpretation，保留容量限制及未来自适应分配问题，不伪造独立机制验证。",
+        "pdf_page": 4,
+        "resolved": true
+      },
+      {
+        "claim_id": "C13",
+        "issue": "Table 9 的 EviLOG-BaseNet/VSA 推理 290/55 ms 不是精确 6x；64K 等数值是参数数量而非内存。",
+        "suggested_correction": "保留原始时间、训练条件和参数数量，不用摘要约数代替表值。",
+        "pdf_page": 7,
+        "resolved": true
+      },
+      {
+        "claim_id": "C13",
+        "issue": "EviLOG 表中输入点云未附标签与正文存在 ground-truth OGM 并不相同；来源未给共同 AUC/NLL 的定量精度对照。",
+        "suggested_correction": "区分点标签与地图真值，记录启发式点标签；不推断等精度、完全匹配分辨率或量化外推优势。",
+        "pdf_page": 6,
+        "resolved": true
+      },
+      {
+        "claim_id": "C14",
+        "issue": "神经架构依靠先验的解释及域迁移风险没有独立干预或域移实验。",
+        "suggested_correction": "只保留实际报告的域内/完全未观测定性差异，不把先验机制或域迁移失败当已识别因果结果。",
+        "pdf_page": 8,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "正文所引 Supplementary Note: Ablation Study 未供给，无法核对 dense/sparse 结果或各组件的独立影响。",
+        "suggested_correction": "延后这一贡献，登记 paper-W7133236338:missing-supplementary-ablation；不妨碍全部供给 15 页文本完成评估。",
+        "pdf_page": 2,
+        "resolved": false
+      },
+      {
+        "claim_id": null,
+        "issue": "数据扫描/点数、代理数和四空间分区容易被误当独立实验重复 n。",
+        "suggested_correction": "逐项列实际分析单位；全部计时重复、独立种子、跨环境统计 n 均保持未报告。",
+        "pdf_page": 2,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "所有结果均来自文本/说明；未读图像像素、链接代码数据和外部补充，不能声称独立科学验证。",
+        "suggested_correction": "保留 text_only、figure_images_read:false、scientific_verification:false 与 candidate/human_checked:false。",
+        "pdf_page": 15,
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T15:47:15.095357Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "e1186e14002af794b39b3df13859df4ca9d387abd82f4accf44ad5a7e1faa242",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

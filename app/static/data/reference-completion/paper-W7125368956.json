@@ -1,0 +1,993 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "An organic spiking artificial neuron with excitatory and inhibitory synapses: towards soft and flexible organic neuromorphic processing",
+    "authors": [
+      "Mohammad Javad Hosseini",
+      "Yi Yang",
+      "Simeon A. Bamford",
+      "Chiara Bartolozzi",
+      "G. Indiveri",
+      "Robert A. Nawrocki"
+    ],
+    "doi": "10.1038/s41528-025-00512-6",
+    "publication_year": 2026,
+    "venue": "npj Flexible Electronics",
+    "url": "https://doi.org/10.1038/s41528-025-00512-6"
+  },
+  "source": {
+    "filename": "paper-W7125368956--An-organic-spiking-artificial-neuron-with-excitatory-and-inhibitory-synapses-towards-soft-and-f.pdf",
+    "sha256": "4a8dd2d9f48e4e44f40a6a0830d8836f4330bc69341d11c0c7f8cf8dade06a44",
+    "source_url": "https://www.nature.com/articles/s41528-025-00512-6_reference.pdf?error=cookies_not_supported&code=aa149998-0bce-49a5-b31f-946b054c1164",
+    "pdf_page_count": 23
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+    ],
+    "results_sections_seen": [
+      "Fabrication",
+      "OFET/cap Table1",
+      "AH/PCS/power",
+      "Weight/time constants",
+      "Frequency response",
+      "Linearity/ISI",
+      "Arduino light feedback",
+      "Methods/3week observation",
+      "Discussion/future",
+      "All83references"
+    ],
+    "missing_material": [
+      "图像像素未阅；Fig1–5全部图注和Table1已阅。",
+      "单独supplement Table1、S1–S19、videos未提供；多数功能原始n/曲线未供。"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "23页Article in Press未编辑全文全部阅读；DOI10.1038/s41528-025-00512-6，接受2025-12-03、cite2026。",
+      "硬件神经样功能不作为生物验证；原件/配置/技术重复边界保留。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "互补电路/寄生cap与器件/弯曲变异",
+      "role": "result",
+      "source_pages": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "decision": "include",
+      "reason": "八devices非批次，n下降、功率增加及fracture边界不删。"
+    },
+    {
+      "summary": "PCS权重/时间常数、F–I、非线性/单域linearity/ISI",
+      "role": "result",
+      "source_pages": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "decision": "include",
+      "reason": "共同frequency/phase与先前configuration明确，不将全部响应线性化。"
+    },
+    {
+      "summary": "含Arduino/DAC的LED短时调权",
+      "role": "result",
+      "source_pages": [
+        14,
+        15
+      ],
+      "decision": "include",
+      "reason": "明确外部loop与无persistent learning。"
+    },
+    {
+      "summary": "长期uniformity、完整timeconstant/variability/benchmark",
+      "role": "result",
+      "source_pages": [
+        5,
+        6,
+        8,
+        10,
+        12
+      ],
+      "decision": "defer",
+      "reason": "关键supplement与原始统计未供，power不是单event/systemenergy。"
+    },
+    {
+      "summary": "first/全面优于OECT、生物相容/implant、printed/kHz",
+      "role": "hypothesis",
+      "source_pages": [
+        2,
+        3,
+        4,
+        14,
+        15
+      ],
+      "decision": "include",
+      "reason": "priority/head-to-head与生物安全无独立证据，仅路线。"
+    },
+    {
+      "summary": "工艺和全部83书目/版本",
+      "role": "interpretation",
+      "source_pages": [
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "decision": "include",
+      "reason": "in-press及工艺字段差异保留。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "该平台在同柔性玻璃上集成互补OFET、寄生/薄膜电容和AH soma，每neuron有两excitatory与两inhibitory PCS，展示同基底有机活性器件实现。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "shadow-mask fabrication和电路表征",
+          "design": "单chip器件、bias/frequency、同步与ISI、有限bent比较",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "芯片/电路，不是20独立制造批次",
+          "sample_size_as_reported": "芯片展示20neuron、20standalone OFET；实际各功能测试器件n未给",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": null,
+            "figure": "Fig. 2a–c",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "该平台在同柔性玻璃上集成互补OFET、寄生/薄膜电容和AH soma，每neuron有两excitatory与两inhibitory PCS，展示同基底有机活性器件实现。",
+        "boundary": "organic指活性半导体电路，仍含金属/无机介电；当前真空沉积/ALD非已完成印刷。",
+        "negative_result": null,
+        "non_inference": "不证明20neuron网络学习、产率或所有生物安全。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "互补OFET动态能否在明确偏置/时序/弯曲范围下实现神经样电路功能？",
+        "核心功耗、外部调权、长期制造与生物安全怎样独立评估？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "所列弯曲状态pOFET mobility .038→.105、nOFET .013→.006 cm²/Vs，显示弯曲对互补器件相反作用，不能一概称无性能变化。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "flat vs tension-bent I–V",
+          "design": "单chip器件、bias/frequency、同步与ISI、有限bent比较",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "器件技术样本",
+          "sample_size_as_reported": "flat变异八器件/单chip；bent代表数据n未给",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": null,
+            "figure": "Table 1/Fig. 1c–d",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所列弯曲状态pOFET mobility .038→.105、nOFET .013→.006 cm²/Vs，显示弯曲对互补器件相反作用，不能一概称无性能变化。",
+        "boundary": "flat SD.024/.021，threshold−.051→−.082/.081→.011V；无等效统计，不能由近均值称完全稳定。",
+        "negative_result": "n-type mobility下降，弯曲不是统一增益。",
+        "non_inference": "不确定strain形态/π stacking是唯一机制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "互补OFET动态能否在明确偏置/时序/弯曲范围下实现神经样电路功能？",
+        "核心功耗、外部调权、长期制造与生物安全怎样独立评估？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "八个寄生集成电容在1Hz约10–30pF、5kHz约1pF，测得频率相关色散；利用overlap capacitance可避免大nF电容限制架构速度。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "LCR frequency扫描与电路设计",
+          "design": "单chip器件、bias/frequency、同步与ISI、有限bent比较",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "电容器与频点",
+          "sample_size_as_reported": "八位置/同chip，1Hz–5kHz",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": null,
+            "figure": "Fig. 1e",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "八个寄生集成电容在1Hz约10–30pF、5kHz约1pF，测得频率相关色散；利用overlap capacitance可避免大nF电容限制架构速度。",
+        "boundary": "RC等效测量、界面/泄漏解释是作者推论，variance高频接近零不能证明全部介电本征无差异。",
+        "negative_result": null,
+        "non_inference": "不等于每个器件在任意动态下电容一致或速度已达到kHz。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "互补OFET动态能否在明确偏置/时序/弯曲范围下实现神经样电路功能？",
+        "核心功耗、外部调权、长期制造与生物安全怎样独立评估？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "AH soma在所测输入下从sub-nA约10Hz增到80nA约40Hz，超过100nA附近趋向约55Hz饱和，是非线性F–I而非全域线性。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "parameter analyzer恒流输入",
+          "design": "单chip器件、bias/frequency、同步与ISI、有限bent比较",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "选定电路的电流/频率",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": null,
+            "figure": "Fig. 2d",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "AH soma在所测输入下从sub-nA约10Hz增到80nA约40Hz，超过100nA附近趋向约55Hz饱和，是非线性F–I而非全域线性。",
+        "boundary": "正文称10→40为75%增幅不相容，保留原rate而不传播百分比。",
+        "negative_result": "输出随大输入饱和，不能无限线性增加。",
+        "non_inference": "不是生物细胞F–I或所有neurons的均值。",
+        "unresolved": "75%增幅的基准/转录需确认。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "互补OFET动态能否在明确偏置/时序/弯曲范围下实现神经样电路功能？",
+        "核心功耗、外部调权、长期制造与生物安全怎样独立评估？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "作者按平均供电VI估AH baseline功耗<10nW、频率增大功耗上升，弯曲电路更耗能；synaptic单元贡献被述为小于soma约一数量级。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "器件/电路供电VI预算",
+          "design": "单chip器件、bias/frequency、同步与ISI、有限bent比较",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "soma/PCS功率，非完整应用",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": null,
+            "figure": "Fig. 2d",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者按平均供电VI估AH baseline功耗<10nW、频率增大功耗上升，弯曲电路更耗能；synaptic单元贡献被述为小于soma约一数量级。",
+        "boundary": "未含传感器、Arduino、DAC/DAQ和LED；energy与power措辞不同，不给单spike能量或硬件benchmark。",
+        "negative_result": "弯曲未保持相同低功率，活动提升伴成本。",
+        "non_inference": "不能称整个反馈系统nW或已更节能于所有硅/OECT方案。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "互补OFET动态能否在明确偏置/时序/弯曲范围下实现神经样电路功能？",
+        "核心功耗、外部调权、长期制造与生物安全怎样独立评估？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "PCS gate bias调节输入幅度与时间常数，所述exc最大约65ms、inh约275–280ms，在测试弯曲条件下时间常数相对接近。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "bias-dependent synaptic current/time-constant表征",
+          "design": "单chip器件、bias/frequency、同步与ISI、有限bent比较",
+          "comparator": null,
+          "measure": "exc Vw6.5V；inh Vw.4V",
+          "unit_of_analysis": "电路/bias，不是生物突触",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": null,
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "PCS gate bias调节输入幅度与时间常数，所述exc最大约65ms、inh约275–280ms，在测试弯曲条件下时间常数相对接近。",
+        "boundary": "详细提取法/值在未供S13/14及旧文；不是统计等效，部分OFET实际偏置高于subthreshold。",
+        "negative_result": null,
+        "non_inference": "外部可调权重不等于固有塑性或persistent learning。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "互补OFET动态能否在明确偏置/时序/弯曲范围下实现神经样电路功能？",
+        "核心功耗、外部调权、长期制造与生物安全怎样独立评估？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "增加Vw使exc幅度减少、inh绝对幅度增加；弯曲增强exc却削弱inh，并可见电流反向overshoot。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "weight-bias和flat/bent对照",
+          "design": "单chip器件、bias/frequency、同步与ISI、有限bent比较",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "同类PCS电路/输入",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": null,
+            "figure": "Fig. 3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "增加Vw使exc幅度减少、inh绝对幅度增加；弯曲增强exc却削弱inh，并可见电流反向overshoot。",
+        "boundary": "opposing strain响应，不支持所有元件统一改善；overshoot机制未唯一识别。",
+        "negative_result": "inh弯曲幅度衰减及overshoot是实际非理想响应。",
+        "non_inference": "不证明植入环境或长期循环稳健。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "互补OFET动态能否在明确偏置/时序/弯曲范围下实现神经样电路功能？",
+        "核心功耗、外部调权、长期制造与生物安全怎样独立评估？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C6"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "presynaptic1–100Hz、5ms脉冲下，exc可令输出约0–60Hz增加，inh可由约60至0抑制，bias调整产生threshold/saturation样曲线。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "输入pulse-frequency与weight voltage扫描",
+          "design": "单chip器件、bias/frequency、同步与ISI、有限bent比较",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "电路及参数配置",
+          "sample_size_as_reported": "八Vw配置；各独立器件/重复n未报",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": null,
+            "figure": "Fig. 4a–b",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "presynaptic1–100Hz、5ms脉冲下，exc可令输出约0–60Hz增加，inh可由约60至0抑制，bias调整产生threshold/saturation样曲线。",
+        "boundary": "abstract linear特性不能覆盖此sigmoidal response；原数据在未供S15–18。",
+        "negative_result": "强inh条件能silence输出，非所有输入都有spike。",
+        "non_inference": "不能视为生物E/I平衡或神经任务学习。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "互补OFET动态能否在明确偏置/时序/弯曲范围下实现神经样电路功能？",
+        "核心功耗、外部调权、长期制造与生物安全怎样独立评估？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "固定10Hz和bias、两exc零相位同步输入时，单独.6/.66Hz与同时约1.26Hz输出近线性相加。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "单输入/同步双输入对照",
+          "design": "单chip器件、bias/frequency、同步与ISI、有限bent比较",
+          "comparator": null,
+          "measure": "双输入IQR1.25–1.27Hz；实际重复n未给",
+          "unit_of_analysis": "同电路的技术重复",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": null,
+            "figure": "Fig. 4c",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "固定10Hz和bias、两exc零相位同步输入时，单独.6/.66Hz与同时约1.26Hz输出近线性相加。",
+        "boundary": "仅选定frequency/phase；正文称采用dissertation较早configuration，不能默认全部是当前chip架构。",
+        "negative_result": null,
+        "non_inference": "不证明任意时序/饱和区/所有输入全线性。",
+        "unresolved": "早期configuration与当前co-integrated测试对应及重复数待核。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "互补OFET动态能否在明确偏置/时序/弯曲范围下实现神经样电路功能？",
+        "核心功耗、外部调权、长期制造与生物安全怎样独立评估？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "两各自subthreshold的25ms输入在较短间隔可触发输出，而约260.25ms时不再触发，展示限定窗口下的coincidence功能。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "双输入ISI操控",
+          "design": "单chip器件、bias/frequency、同步与ISI、有限bent比较",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "电路pulse pairs，n未给",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": null,
+            "figure": "Fig. 4d",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "两各自subthreshold的25ms输入在较短间隔可触发输出，而约260.25ms时不再触发，展示限定窗口下的coincidence功能。",
+        "boundary": "正文242.9ms反应减弱、260.25ms无spike；全dataset S19未供，不能精确全器件通用窗口。",
+        "negative_result": "延迟增大后失去触发，不是全异步输入均可相加。",
+        "non_inference": "不是脑中coincidence编码或learning验证。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "互补OFET动态能否在明确偏置/时序/弯曲范围下实现神经样电路功能？",
+        "核心功耗、外部调权、长期制造与生物安全怎样独立评估？"
+      ],
+      "shared_evidence_with": [
+        "C9"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "VEML7700+Arduino/DAC反馈根据光强临时调neuronal bias与spike频率控制LED，证明有机neuron可作为混合sensory loop的一环。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "ambient-light硬件闭环演示",
+          "design": "单chip器件、bias/frequency、同步与ISI、有限bent比较",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "neuron+数字外围/LED；独立loop n未给",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 14,
+            "section": null,
+            "figure": "Fig. 5",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "VEML7700+Arduino/DAC反馈根据光强临时调neuronal bias与spike频率控制LED，证明有机neuron可作为混合sensory loop的一环。",
+        "boundary": "外部processor读光并调权；dim/bright时输出改变，权重在稳态后复位。",
+        "negative_result": "本文明确无持久memory/long-term learning。",
+        "non_inference": "不证明纯organic自主学习或生物short-term plasticity的同一内在机制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "互补OFET动态能否在明确偏置/时序/弯曲范围下实现神经样电路功能？",
+        "核心功耗、外部调权、长期制造与生物安全怎样独立评估？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "机械测试的最小radius约205mm，是120µm玻璃破裂前的限制；三周测试未见明显降级不能代表小radius/多次弯折或长期可穿戴可靠性。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "有限tension bend与时间观察",
+          "design": "单chip器件、bias/frequency、同步与ISI、有限bent比较",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "玻璃/器件与有限观察时间",
+          "sample_size_as_reported": "七cycle为electrical测量，非七bending cycles；八devices单chip",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": null,
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "机械测试的最小radius约205mm，是120µm玻璃破裂前的限制；三周测试未见明显降级不能代表小radius/多次弯折或长期可穿戴可靠性。",
+        "boundary": "低于radius因fracture不能测，未给长期机械疲劳/批次统计。",
+        "negative_result": "更小radius受substrate fracture限制。",
+        "non_inference": "不能当伸展/生物soft tissue贴合或植入寿命证明。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "互补OFET动态能否在明确偏置/时序/弯曲范围下实现神经样电路功能？",
+        "核心功耗、外部调权、长期制造与生物安全怎样独立评估？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C13",
+      "statement": "更高分辨率、低电压、安全biointerface、kHz和印刷/implantable应用是作者未来路线，当前器件仅电路proof-of-concept。",
+      "claim_type": "hypothesis",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "制造/电压/生物转化方案",
+          "design": "单chip器件、bias/frequency、同步与ISI、有限bent比较",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "未来工艺/应用",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 15,
+            "section": null,
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "更高分辨率、低电压、安全biointerface、kHz和印刷/implantable应用是作者未来路线，当前器件仅电路proof-of-concept。",
+        "boundary": "已有shadow-mask footprint14×5mm/neuron，bias数V；无细胞毒性/生理组织或长期implant数据。",
+        "negative_result": null,
+        "non_inference": "biocompatible材料背景不等于该完整device已生物相容或临床安全。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "互补OFET动态能否在明确偏置/时序/弯曲范围下实现神经样电路功能？",
+        "核心功耗、外部调权、长期制造与生物安全怎样独立评估？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "完整23页未编辑Article in Press形成13候选。互补OFET/PCS/AH、bias和sigmoid响应、条件同步加和与ISI门控为主要硬件证据。p/n弯曲相反、功率变高、205mm玻璃限制和短期/同chip变异不隐藏。Arduino/DAC闭环只是临时调权且无persistent learning，priority、kHz/印刷/植入与生物相容性未验证；工艺/增幅/早期配置及缺supplement待核。",
+  "shared_evidence": [
+    {
+      "claim_id": "C7",
+      "with": [
+        "C2",
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "with": [
+        "C9"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": "C4",
+        "issue": "10Hz→40Hz称75%相对增加，基准不明；abstract linear与结果sigmoid不是同一范围。",
+        "suggested_correction": "保留rate和限定linearity条件，不传播百分比。",
+        "pdf_page": 8,
+        "resolved": false
+      },
+      {
+        "claim_id": "C7",
+        "issue": "bending uniformly improves与p/n amplitude/mobility相反响应、功率增加不同。",
+        "suggested_correction": "按元件/功能分开，不宣称完全无退化。",
+        "pdf_page": 11,
+        "resolved": true
+      },
+      {
+        "claim_id": "C11",
+        "issue": "Arduino调权临时复位，文中adaptive learning不等同固有persistent或纯organic学习。",
+        "suggested_correction": "显式标短时外部feedback及实际无长期memory。",
+        "pdf_page": 14,
+        "resolved": true
+      },
+      {
+        "claim_id": "C12",
+        "issue": "最小bend205mm且玻璃fracture；七cycle是电测、3周不是长期疲劳。",
+        "suggested_correction": "不扩展为ultraflexible/生物安全可靠。",
+        "pdf_page": 8,
+        "resolved": true
+      },
+      {
+        "claim_id": "C9",
+        "issue": "linearity/coincidence采用earlier dissertation配置，具体与当前芯片对应未明且独立n不报。",
+        "suggested_correction": "保持配置/重复缺口。",
+        "pdf_page": 11,
+        "resolved": false
+      },
+      {
+        "claim_id": null,
+        "issue": "Results Al2O3、Methods AlO2；Silane A175与图A174；TU1沉积顺序也不同字段，in-press仍未编辑。",
+        "suggested_correction": "不修共享源，保留工艺澄清需求。",
+        "pdf_page": 16,
+        "resolved": false
+      },
+      {
+        "claim_id": "C3",
+        "issue": "高频cap variance接近零不能单独确认本征uniform/排除measurement floor。",
+        "suggested_correction": "实测色散与作者机制解释分开。",
+        "pdf_page": 6,
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T12:59:10.926048Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "4a8dd2d9f48e4e44f40a6a0830d8836f4330bc69341d11c0c7f8cf8dade06a44",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

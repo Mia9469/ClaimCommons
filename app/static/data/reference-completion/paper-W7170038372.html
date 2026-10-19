@@ -1,0 +1,138 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Biologically Plausible Dopamine-Modulated STDP Model of Pavlovian Learning in Spiking Neural Networks</title><style>body{max-width:940px;margin:40px auto;padding:0 24px;background:#fffdf7;color:#12372f;font:16px/1.8 Georgia,serif}h1{font-size:26px;line-height:1.4}h2{font-size:20px;line-height:1.5}h3{font-size:16px}article{padding:26px 0;border-top:1px solid #bec4b8}small{color:#68766e}dl{display:grid;grid-template-columns:120px 1fr;gap:8px 20px}dt{font-weight:bold}dd{margin:0}li{padding:8px 0}p,dd{overflow-wrap:anywhere}.note{background:#eef2e2;padding:14px;border-left:3px solid #738968}summary{cursor:pointer}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.7 monospace}@media(max-width:600px){body{margin:24px auto;padding:0 18px}dl{grid-template-columns:1fr;gap:3px}dd{margin-bottom:12px}}@media print{body{margin:0;background:white}details{display:block}}</style><link rel="stylesheet" href="../../commons-v02.css?v=20261020-1"><link rel="stylesheet" href="../../examples.css?v=20260928-2"><link rel="stylesheet" href="../../site.css?v=20261020-1"><script defer src="../../site.js?v=20261020-1"></script><script defer src="../../report-ui.js?v=20261020-1"></script></head><body class="portal-page report-page" data-cc-report-shell="1" data-page="library" data-site-prefix="../../" data-library-paper="paper-W7170038372" data-report-language="zh" data-claim-records="{&quot;C1&quot;:&quot;structured-paper-W7170038372-1&quot;,&quot;C2&quot;:&quot;structured-paper-W7170038372-2&quot;,&quot;C3&quot;:&quot;structured-paper-W7170038372-3&quot;,&quot;C4&quot;:&quot;structured-paper-W7170038372-4&quot;,&quot;C5&quot;:&quot;structured-paper-W7170038372-5&quot;,&quot;C6&quot;:&quot;structured-paper-W7170038372-6&quot;,&quot;C7&quot;:&quot;structured-paper-W7170038372-7&quot;,&quot;C8&quot;:&quot;structured-paper-W7170038372-8&quot;,&quot;C9&quot;:&quot;structured-paper-W7170038372-9&quot;,&quot;C10&quot;:&quot;structured-paper-W7170038372-10&quot;,&quot;C11&quot;:&quot;structured-paper-W7170038372-11&quot;}"><header></header><main id="report-content"><div id="report-tools"></div><small>CLAIM COMMONS / 阅读报告</small><h1>Biologically Plausible Dopamine-Modulated STDP Model of Pavlovian Learning in Spiking Neural Networks</h1><p class="note">AI 文本提取候选，尚待人工核对。图像像素未读取；PDF 页码指文件中的页序。</p><p>本篇为2026年7月22日版本的bioRxiv预印本，标题与DOI匹配任务来源。完整读取19页正文、Methods、全部供给图注、文内补充S1、声明与参考文献，形成11个候选：现象学非线性DA-STDP构造、原规则重模拟基线、修改规则的中等DA选择性/高DA实际失败、连接结构、11独立模拟的有效窗口及非单调过渡区、递接训练扫描的两分支、S1原规则结构对照，并把机制解释与吸引盆地假设分开。2000神经元、11/939网络内刺激与N=11独立模拟严格区分；continuation重复数未知，跳变经过再训练而非即时微扰。作者提出0.04-0.70 µM有效范围，但这不是本篇生物实验确定的通用正常范围；声明全部为计算模拟。Eq.8-10符号/阈值与描述、Fig.5图注与r趋势存在未解决问题，已保留并限制所有结论。S1只读文字；未重开离线PDF、读取外部代码或建立跨论文关系。所有结果是human_checked:false候选而非科学复现。</p><a href="https://www.biorxiv.org/content/biorxiv/early/2026/07/22/2026.07.17.739276.full.pdf" rel="noreferrer">查看所读原文版本 ↗</a><details><summary>贡献清单与处理决定</summary><ul><li><b>双eligibility trace、DA二次调制与饱和构造（C1）。</b><br>include · 保留作者设想并标注方程一致性待解。</li><li><b>原规则固定配置的大范围DA学习及SDF分支变化（C2）。</b><br>include · 这是本篇重新模拟的基线，不与11独立网络范围混同。</li><li><b>修改规则0.50 µM的奖励刺激选择性（C3）。</b><br>include · 完整保留训练前后、奖励/非奖励比较与无奖励测试条件。</li><li><b>修改规则10 µM训练活动与测试失败（C4）。</b><br>include · 实际负结果不是非推断或假设。</li><li><b>修改规则连接组织的剂量比较（C5）。</b><br>include · 明确神经元层单位与r数值，不沿用错误的单调趋势。</li><li><b>N=11独立模拟的有效窗口、高/低DA边界（C6）。</b><br>include · 区别网络内试次与跨网络均值±SEM。</li><li><b>0.80-2.00 µM过渡区非单调且跨模拟不一致（C7）。</b><br>include · 与窗口均值共享Fig.6，不凭分布差异直接认定同网络多稳态。</li><li><b>递接训练状态的升降DA两分支与结构比较（C8）。</b><br>include · 保留阈值550、重复数未知与继续训练这一联合条件。</li><li><b>文内S1的原规则高DA结构对照（C9）。</b><br>include · 只声称已读供给图注而非像素，三示例剂量不扩大为全扫描。</li><li><b>高DA失去时间选择性导致内部组织主导（C10）。</b><br>include · 现象学解释，不是分子机制识别或独立生物验证。</li><li><b>高维交织吸引盆地解释跳转（C11）。</b><br>include · 与观察到的两分支结果区分，未做盆地分析。</li><li><b>按打印方程确认post-pre LTD→LTP与精确DA阈值。</b><br>defer · c_minus定义与二次系数乘积按字面似反向；原始DA与变换DA阈值含糊，等待实现/作者澄清。</li><li><b>Fig.5相关性随DA升高单调减弱。</b><br>defer · 正文r=-0.95比-0.87更负，与图注不一致；候选采用明确数值并披露冲突。</li><li><b>真实脑中正常DA窗口、特定受体/分子病理机制、经典双稳态证明及首次模型的全球优先权。</b><br>exclude · 本篇为模拟且无相关独立证据；仅供给来源不足以核定全球首次。</li><li><b>引用的生物塑性与此前条件化研究、文献表。</b><br>exclude · 不转写为本篇原创实验，不建立跨论文关系。</li></ul></details><article><small>C1 / 直接结果 · method</small><h2>本文提出现象学DA-modulated STDP扩展：把eligibility trace拆为pre-post与post-pre两个分量，并以饱和变换和DA的二次项调节权重更新，意图使升高DA把post-pre塑性从LTD偏向LTP，而非仅线性放大固定STDP窗口。</h2><h3>Evidence</h3><p>模型定义</p><dl><dt>设计 / 对照</dt><dd>两个trace及DA_tilde=2*tanh(0.51*DA)；更新采用两分量乘以不同二次系数。；原规则为单一trace和dw/dt=c*DA。</dd><dt>独立单位与 n</dt><dd>可塑性方程；不是独立实验单位。；tau_DA=200 ms、tau_C=1000 ms、tau_plus=tau_minus=20 ms；A_plus=0.1、A_minus=0.15。</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 14 · 4.2 DA-modulated STDP rule</dd></dl><p>更新系数说明</p><dl><dt>设计 / 对照</dt><dd>a1=0、a2=1、b1=1、b2=-1.5；作者意图描述低DA的post-pre LTD向高DA LTP转变。；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>现象学模型参数。；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 15 · 4.2 DA-modulated STDP rule</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>提供可与原乘法门控规则比较的非线性模型设想。</dd><dt>适用边界</dt><dd>这是作者所述意图，不是经本文新突触实验拟合或分子验证的规律。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>供给公式不能无歧义证明文字所述符号转换；不把受体饱和参数称为真实受体测量。</dd><dt>未解决</dt><dd>Eq.8使c_minus为负，而Eq.10的系数符号按字面似与文字的低DA LTD/高DA LTP相反；原始DA和DA_tilde的1.5临界量也需澄清。</dd></dl><h3>相关问题</h3><ul><li>非线性DA调制与饱和如何被纳入延迟奖励的三因子可塑性模型？</li></ul></article><article><small>C2 / 直接结果 · computational_result</small><h2>对一套固定初始网络和刺激序列的原始Izhikevich DA-STDP规则重新模拟时，作者报告0.02-100 µM奖励DA范围均可获得AUC&gt;0.9的刺激选择性；即使10 µM仍能辨别S0，但奖励刺激的SDF峰在约7-8 µM附近出现突降。</h2><h3>Evidence</h3><p>固定配置的DA扫描</p><dl><dt>设计 / 对照</dt><dd>Izhikevich随机递归网络共2000神经元（1600兴奋、400抑制），连接概率0.1；100个可重叠刺激群，每群50神经元（40兴奋、10抑制）。兴奋权重初值0.5、范围[0,4]，抑制权重固定-0.5。 Methods报告训练0-7000 s、测试7000-7200 s，步长1 ms；刺激间隔100-300 ms，只有S0在0-1000 ms随机延迟后获DA奖励，测试不再给DA。；0.50、1.30、10.00 µM示例及0.02-100 µM扫描；S0对非奖励刺激。</dd><dt>独立单位与 n</dt><dd>同一初始网络/刺激序列上的模拟条件及网络内重复刺激；神经元数不是独立网络重复。；主代表性扫描共用一套初始配置与刺激序列；Fig.2图注给出11次S0和939次非S0测试刺激，这些是网络内试次。</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 4 · Fig. 2</dd></dl><p>试次响应分布</p><dl><dt>设计 / 对照</dt><dd>Izhikevich随机递归网络共2000神经元（1600兴奋、400抑制），连接概率0.1；100个可重叠刺激群，每群50神经元（40兴奋、10抑制）。兴奋权重初值0.5、范围[0,4]，抑制权重固定-0.5。 Methods报告训练0-7000 s、测试7000-7200 s，步长1 ms；刺激间隔100-300 ms，只有S0在0-1000 ms随机延迟后获DA奖励，测试不再给DA。；奖励关联与非关联刺激。</dd><dt>独立单位与 n</dt><dd>同一初始网络/刺激序列上的模拟条件及网络内重复刺激；神经元数不是独立网络重复。；主代表性扫描共用一套初始配置与刺激序列；Fig.2图注给出11次S0和939次非S0测试刺激，这些是网络内试次。</dd><dt>不确定性</dt><dd>示例曲线非S0阴影为SD；扫描误差条来自网络内11/939试次，具体误差条类型未明确。</dd><dt>原文位置</dt><dd>PDF 5 · Fig. 2</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>该代表性配置显示原乘法规则在很宽DA范围仍能形成选择性。</dd><dt>适用边界</dt><dd>0.02-100的扫描结论不是11个独立网络都在全部剂量成功；SDF幅度变化不等于AUC失效。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能说真实脑组织在100 µM仍正常学习；不能把原论文引用的结果作为本篇新实验。</dd><dt>未解决</dt><dd>在极高DA范围跨独立网络的成功率未报告；7-8 µM分支变化未进一步识别机制。</dd></dl><h3>相关问题</h3><ul><li>仅乘法调制的STDP在代表性网络中会不会限制高DA下的条件化？</li></ul></article><article><small>C3 / 直接结果 · computational_result</small><h2>修改DA-STDP规则在奖励DA=0.50 µM的代表性网络中，训练前S0与非奖励刺激都只引起局部弱响应；训练后且不再给DA的测试中，S0招募多数网络神经元并产生较强同步burst，而非奖励刺激仍只有弱局部响应。</h2><h3>Evidence</h3><p>训练前后刺激响应比较</p><dl><dt>设计 / 对照</dt><dd>Izhikevich随机递归网络共2000神经元（1600兴奋、400抑制），连接概率0.1；100个可重叠刺激群，每群50神经元（40兴奋、10抑制）。兴奋权重初值0.5、范围[0,4]，抑制权重固定-0.5。 Methods报告训练0-7000 s、测试7000-7200 s，步长1 ms；刺激间隔100-300 ms，只有S0在0-1000 ms随机延迟后获DA奖励，测试不再给DA。；同规则的训练前/后与S0/非S0；原规则0.50 µM呈相似行为。</dd><dt>独立单位与 n</dt><dd>同一初始网络/刺激序列上的模拟条件及网络内重复刺激；神经元数不是独立网络重复。；主代表性扫描共用一套初始配置与刺激序列；Fig.2图注给出11次S0和939次非S0测试刺激，这些是网络内试次。</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 6 · Fig. 4A</dd></dl><p>代表性模拟图注</p><dl><dt>设计 / 对照</dt><dd>Izhikevich随机递归网络共2000神经元（1600兴奋、400抑制），连接概率0.1；100个可重叠刺激群，每群50神经元（40兴奋、10抑制）。兴奋权重初值0.5、范围[0,4]，抑制权重固定-0.5。 Methods报告训练0-7000 s、测试7000-7200 s，步长1 ms；刺激间隔100-300 ms，只有S0在0-1000 ms随机延迟后获DA奖励，测试不再给DA。；与Fig.2相同初始网络及刺激序列。</dd><dt>独立单位与 n</dt><dd>同一初始网络/刺激序列上的模拟条件及网络内重复刺激；神经元数不是独立网络重复。；主代表性扫描共用一套初始配置与刺激序列；Fig.2图注给出11次S0和939次非S0测试刺激，这些是网络内试次。</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 7 · Fig. 4A</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>在该剂量和配置中形成奖励关联刺激选择性。</dd><dt>适用边界</dt><dd>只有代表性条件的文本/图注描述，无神经元实测；Fig.4沿用Fig.2网络和刺激序列，未另报独立重复数。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>SDF增强不证明分子机制，也不能由此泛化所有剂量与初始网络。</dd><dt>未解决</dt><dd>此示例的精确响应幅度及独立网络间不确定性未在文字中给出。</dd></dl><h3>相关问题</h3><ul><li>非线性DA-STDP在中等DA下能否形成延迟奖励关联的刺激选择性？</li></ul></article><article><small>C4 / 直接结果 · computational_negative_result</small><h2>在奖励DA=10.00 µM的同配置比较中，修改规则的网络在训练时每次DA奖励后出现较长高频群体活动，但无DA测试时S0与非奖励刺激都只产生难以区分的弱局部响应；原乘法规则在该剂量仍保持刺激选择性。</h2><h3>Evidence</h3><p>高DA规则比较</p><dl><dt>设计 / 对照</dt><dd>Izhikevich随机递归网络共2000神经元（1600兴奋、400抑制），连接概率0.1；100个可重叠刺激群，每群50神经元（40兴奋、10抑制）。兴奋权重初值0.5、范围[0,4]，抑制权重固定-0.5。 Methods报告训练0-7000 s、测试7000-7200 s，步长1 ms；刺激间隔100-300 ms，只有S0在0-1000 ms随机延迟后获DA奖励，测试不再给DA。；修改规则10.00 µM与原规则同剂量。</dd><dt>独立单位与 n</dt><dd>同一初始网络/刺激序列上的模拟条件及网络内重复刺激；神经元数不是独立网络重复。；主代表性扫描共用一套初始配置与刺激序列；Fig.2图注给出11次S0和939次非S0测试刺激，这些是网络内试次。</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 7 · Figs. 4C and 2C</dd></dl><p>测试结果描述</p><dl><dt>设计 / 对照</dt><dd>Izhikevich随机递归网络共2000神经元（1600兴奋、400抑制），连接概率0.1；100个可重叠刺激群，每群50神经元（40兴奋、10抑制）。兴奋权重初值0.5、范围[0,4]，抑制权重固定-0.5。 Methods报告训练0-7000 s、测试7000-7200 s，步长1 ms；刺激间隔100-300 ms，只有S0在0-1000 ms随机延迟后获DA奖励，测试不再给DA。；修改规则中的S0对非S0。</dd><dt>独立单位与 n</dt><dd>同一初始网络/刺激序列上的模拟条件及网络内重复刺激；神经元数不是独立网络重复。；主代表性扫描共用一套初始配置与刺激序列；Fig.2图注给出11次S0和939次非S0测试刺激，这些是网络内试次。</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 8 · Fig. 4C</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>揭示高DA训练期强活动与测试期学习选择性可以分离。</dd><dt>适用边界</dt><dd>仅代表性网络/序列与该剂量；高频活动未直接等同疾病。</dd><dt>实际负结果</dt><dd>修改规则在该10 µM条件没有形成可区分的条件化测试响应。</dd><dt>不能推出</dt><dd>不能把DA奖励后的持续活动当作成功记忆，亦不能推断人体高DA的病理因果。</dd><dt>未解决</dt><dd>不同初始网络在10 µM失败的分布及公式/实现一致性需核对。</dd></dl><h3>相关问题</h3><ul><li>强DA奖励后的群体活动是否仍能产生选择性的条件化测试响应？</li></ul></article><article><small>C5 / 直接结果 · computational_structural_result</small><h2>修改规则的代表性网络在0.50 µM奖励DA下，于约1200 s形成入/出兴奋权重总和的负相关与S0聚集，并保持到所示3600 s；1.30 µM的S0群更分散波动，但报告Spearman r约-0.95，比0.50 µM的-0.87更负；10 µM时则缺少稳定feedforward组织，S0分散且相关性波动。</h2><h3>Evidence</h3><p>兴奋神经元权重组织分析</p><dl><dt>设计 / 对照</dt><dd>Izhikevich随机递归网络共2000神经元（1600兴奋、400抑制），连接概率0.1；100个可重叠刺激群，每群50神经元（40兴奋、10抑制）。兴奋权重初值0.5、范围[0,4]，抑制权重固定-0.5。 Methods报告训练0-7000 s、测试7000-7200 s，步长1 ms；刺激间隔100-300 ms，只有S0在0-1000 ms随机延迟后获DA奖励，测试不再给DA。；修改规则0.50、1.30、10.00 µM。</dd><dt>独立单位与 n</dt><dd>同一模拟网络的1600个兴奋神经元及结构快照；不是1600次独立实验。；主代表性扫描共用一套初始配置与刺激序列；Fig.2图注给出11次S0和939次非S0测试刺激，这些是网络内试次。</dd><dt>不确定性</dt><dd>报告r约-0.87和-0.95，没有相关系数置信区间或独立网络统计。</dd><dt>原文位置</dt><dd>PDF 8 · Fig. 5</dd></dl><p>结构图注核对</p><dl><dt>设计 / 对照</dt><dd>Izhikevich随机递归网络共2000神经元（1600兴奋、400抑制），连接概率0.1；100个可重叠刺激群，每群50神经元（40兴奋、10抑制）。兴奋权重初值0.5、范围[0,4]，抑制权重固定-0.5。 Methods报告训练0-7000 s、测试7000-7200 s，步长1 ms；刺激间隔100-300 ms，只有S0在0-1000 ms随机延迟后获DA奖励，测试不再给DA。；三种DA条件。</dd><dt>独立单位与 n</dt><dd>同一初始网络/刺激序列上的模拟条件及网络内重复刺激；神经元数不是独立网络重复。；主代表性扫描共用一套初始配置与刺激序列；Fig.2图注给出11次S0和939次非S0测试刺激，这些是网络内试次。</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 9 · Fig. 5</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>显示奖励条件化伴随可视化的兴奋连接组织差异。</dd><dt>适用边界</dt><dd>feedforward backbone是本文对权重总和负相关和S0聚集的结构解释，并非独立拓扑定理；快照截止3600 s不改变Methods的7000 s训练协议。</dd><dt>实际负结果</dt><dd>10 µM时没有形成稳定、紧密聚集的S0结构。</dd><dt>不能推出</dt><dd>不能说相关性幅度随DA单调减弱；入出总权重负相关不单独识别真实神经回路机制。</dd><dt>未解决</dt><dd>正文与Fig.5图注单调趋势冲突及结构统计的跨网络不确定性未解决。</dd></dl><h3>相关问题</h3><ul><li>奖励DA水平如何改变模拟条件化网络的兴奋连接组织？</li></ul></article><article><small>C6 / 直接结果 · computational_result</small><h2>在11次使用不同初始网络和刺激序列的独立模拟汇总中，作者把修改规则的稳健条件化范围报告为0.04-0.70 µM奖励DA，而原规则的强学习范围为0.03-4.00 µM；修改规则超过2.00 µM后S0与非奖励刺激响应不可分，原规则到10 µM仍有选择性。</h2><h3>Evidence</h3><p>独立网络模拟汇总</p><dl><dt>设计 / 对照</dt><dd>Izhikevich随机递归网络共2000神经元（1600兴奋、400抑制），连接概率0.1；100个可重叠刺激群，每群50神经元（40兴奋、10抑制）。兴奋权重初值0.5、范围[0,4]，抑制权重固定-0.5。 Methods报告训练0-7000 s、测试7000-7200 s，步长1 ms；刺激间隔100-300 ms，只有S0在0-1000 ms随机延迟后获DA奖励，测试不再给DA。；修改规则与原Izhikevich规则，在各自DA扫描中比较S0/非S0。</dd><dt>独立单位与 n</dt><dd>独立初始网络/刺激序列对应的模拟运行；网络内刺激不是额外独立网络。；N=11独立模拟，初始网络与刺激序列不同；各模拟先汇总重复刺激。</dd><dt>不确定性</dt><dd>跨11模拟的均值±SEM；每模拟内部先计算刺激呈现的均值与SD；未给AUC置信区间。</dd><dt>原文位置</dt><dd>PDF 9 · Fig. 6</dd></dl><p>汇总图注</p><dl><dt>设计 / 对照</dt><dd>Izhikevich随机递归网络共2000神经元（1600兴奋、400抑制），连接概率0.1；100个可重叠刺激群，每群50神经元（40兴奋、10抑制）。兴奋权重初值0.5、范围[0,4]，抑制权重固定-0.5。 Methods报告训练0-7000 s、测试7000-7200 s，步长1 ms；刺激间隔100-300 ms，只有S0在0-1000 ms随机延迟后获DA奖励，测试不再给DA。；两种规则与非奖励刺激。</dd><dt>独立单位与 n</dt><dd>独立模拟汇总。；同一N=11模拟汇总。</dd><dt>不确定性</dt><dd>图示为跨模拟汇总，未给逐网络AUC判据通过率。</dd><dt>原文位置</dt><dd>PDF 10 · Fig. 6</dd></dl><p>作者对低DA边界的定性说明</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；两种规则在低DA与中等DA下。</dd><dt>独立单位与 n</dt><dd>模型边界说明；该段未列失败点或额外重复。；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 12 · 3 Discussion</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>重复网络汇总支持修改规则具有较窄的有效DA范围。</dd><dt>适用边界</dt><dd>范围是本文选择的参数与SDF/AUC指标下的模型结果；原始代表性0.02-100扫描与汇总0.03-4强学习区间不是同一统计范围。</dd><dt>实际负结果</dt><dd>修改规则高于2 µM响应不可分；Discussion还定性报告过低DA两种规则均失败。</dd><dt>不能推出</dt><dd>0.04-0.70 µM不是新生物实验确立的通用正常范围；不声称精确倒U形或11次全部逐剂量成功。</dd><dt>未解决</dt><dd>各剂量网络级AUC分布、低DA失败点、两规则是否逐seed配对及系数稳健性未报告。</dd></dl><h3>相关问题</h3><ul><li>在独立网络配置中非线性DA-STDP是否产生有限的有效条件化剂量窗口？</li></ul></article><article><small>C7 / 直接结果 · computational_result</small><h2>同一11次独立模拟的汇总显示，修改规则在0.80 µM附近的学习响应骤降，随后在0.80-2.00 µM范围出现部分恢复再下降；这段非单调行为在不同模拟间有差异，不能概括为一条一致平滑的倒U曲线。</h2><h3>Evidence</h3><p>过渡剂量区的跨网络比较</p><dl><dt>设计 / 对照</dt><dd>Izhikevich随机递归网络共2000神经元（1600兴奋、400抑制），连接概率0.1；100个可重叠刺激群，每群50神经元（40兴奋、10抑制）。兴奋权重初值0.5、范围[0,4]，抑制权重固定-0.5。 Methods报告训练0-7000 s、测试7000-7200 s，步长1 ms；刺激间隔100-300 ms，只有S0在0-1000 ms随机延迟后获DA奖励，测试不再给DA。；修改规则0.04-0.70 µM稳健范围与0.80-2.00 µM过渡区。</dd><dt>独立单位与 n</dt><dd>独立模拟与其内部重复刺激的分层汇总。；N=11，与C6相同的独立模拟，不是新一批重复。</dd><dt>不确定性</dt><dd>主图跨模拟均值±SEM；inset保留每个模拟均值±网络内刺激SD。</dd><dt>原文位置</dt><dd>PDF 9 · Fig. 6B</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>保留了平均曲线掩盖的过渡区变异。</dd><dt>适用边界</dt><dd>确切部分恢复剂量点与逐网络数值未在供给文字列出。</dd><dt>实际负结果</dt><dd>0.80 µM附近未继续维持低剂量区的稳健响应。</dd><dt>不能推出</dt><dd>跨初始配置的不同响应本身不证明同一网络同时具有多个稳定吸引子。</dd><dt>未解决</dt><dd>状态占比和网络级分布未报告；需结合不同设计的continuation而不能仅凭Fig.6判定双稳态。</dd></dl><h3>相关问题</h3><ul><li>高DA过渡区的学习响应是否单调且跨网络一致？</li></ul></article><article><small>C8 / 直接结果 · computational_dynamics_result</small><h2>修改规则的sequential continuation把上一DA条件训练后的网络作为下一条件起点，DA从0.50升至1.50再降回0.50 µM；所示轨迹按SDF峰阈值550分成两条离散响应分支，上分支约持续至1.20 µM，下分支出现在约0.80-1.50 µM，并伴随不同连接组织。</h2><h3>Evidence</h3><p>递接初态的升/降DA扫描</p><dl><dt>设计 / 对照</dt><dd>Izhikevich随机递归网络共2000神经元（1600兴奋、400抑制），连接概率0.1；100个可重叠刺激群，每群50神经元（40兴奋、10抑制）。兴奋权重初值0.5、范围[0,4]，抑制权重固定-0.5。 每个DA调整后再次进行conditioning，并继承上一条件训练后的网络；不是重新随机初始化。；同一继承状态轨迹的上行与下行扫描及upper/lower分支。</dd><dt>独立单位与 n</dt><dd>带历史依赖的整条continuation轨迹；逐DA节点不独立。；所示升降扫描；独立continuation重复数、DA步长和每段训练时长未在该分析中明确报告，不能沿用Fig.6的N=11。</dd><dt>不确定性</dt><dd>曲线分支用piecewise spline作为展示；没有转变阈值置信区间。</dd><dt>原文位置</dt><dd>PDF 10 · Fig. 7A-B</dd></dl><p>代表分支的结构比较</p><dl><dt>设计 / 对照</dt><dd>Izhikevich随机递归网络共2000神经元（1600兴奋、400抑制），连接概率0.1；100个可重叠刺激群，每群50神经元（40兴奋、10抑制）。兴奋权重初值0.5、范围[0,4]，抑制权重固定-0.5。 Methods报告训练0-7000 s、测试7000-7200 s，步长1 ms；刺激间隔100-300 ms，只有S0在0-1000 ms随机延迟后获DA奖励，测试不再给DA。；u1/u2上分支对d1/d2下分支。</dd><dt>独立单位与 n</dt><dd>同一continuation中的被选状态快照。；4个选定状态点，不是4次独立网络实验。</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 11 · Fig. 7C</dd></dl><p>动力学范围限制</p><dl><dt>设计 / 对照</dt><dd>作者指出在过渡区内小DA改变也偶尔触发跳变，而且每次改变后都有继续训练。；经典低维系统的阈值持久吸引子双稳态。</dd><dt>独立单位与 n</dt><dd>历史依赖模拟轨迹。；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 12 · 3 Discussion</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>支持模型具有历史依赖的两分支、双稳态样行为。</dd><dt>适用边界</dt><dd>作者明确说不完全符合经典低维双稳态；分支划分用了固定SDF阈值，未做吸引子稳定性证明。</dd><dt>实际负结果</dt><dd>所示轨迹没有连续中间响应状态；也没有证明经典双稳态阈值保持。</dd><dt>不能推出</dt><dd>跳变不是未经训练的无穷小参数扰动的即时效应；不能称已识别稳定吸引子或疾病状态。</dd><dt>未解决</dt><dd>重复扫描稳健性、精确阈值、盆地结构与参数扰动/继续学习贡献未区分。</dd></dl><h3>相关问题</h3><ul><li>非线性DA-STDP的学习过渡区是否出现历史依赖的离散响应分支？</li></ul></article><article><small>C9 / 直接结果 · computational_structural_result</small><h2>文内补充Fig.S1的文字图注报告，使用与修改规则比较相同的网络和刺激序列时，原始三因子规则在0.50、1.30和10.00 µM奖励DA下仍表现入/出权重负相关及S0聚集；即使10 µM也保留这一结构特征。</h2><h3>Evidence</h3><p>供给补充图注的原规则结构对照</p><dl><dt>设计 / 对照</dt><dd>Izhikevich随机递归网络共2000神经元（1600兴奋、400抑制），连接概率0.1；100个可重叠刺激群，每群50神经元（40兴奋、10抑制）。兴奋权重初值0.5、范围[0,4]，抑制权重固定-0.5。 Methods报告训练0-7000 s、测试7000-7200 s，步长1 ms；刺激间隔100-300 ms，只有S0在0-1000 ms随机延迟后获DA奖励，测试不再给DA。；原规则的三剂量，及Fig.5修改规则10 µM的分散结构。</dd><dt>独立单位与 n</dt><dd>模拟网络中的兴奋神经元点与其结构快照。；同一代表性网络与刺激序列；图注未报告跨网络重复。</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 16 · Fig. S1</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>提供了原规则在高DA仍保留所述feedforward特征的源内结构对照。</dd><dt>适用边界</dt><dd>只读供给S1图注，未读图像像素；未给数值r或结构不确定性。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能外推整个0.02-100 µM扫描的逐剂量拓扑，也不能把正文引用的旧研究当作新增重复。</dd><dt>未解决</dt><dd>结构对照的跨独立网络统计未报告。</dd></dl><h3>相关问题</h3><ul><li>原乘法DA规则在高DA下是否保留奖励关联的连接组织？</li></ul></article><article><small>C10 / 解释 · mechanistic_interpretation</small><h2>作者把修改规则高DA下的学习失败与碎片化连接组织解释为LTD被抑制、塑性窗口丧失时间顺序选择性，使S0不再提供优先组织方向，网络转而更多受内部活动支配；这是一种现象学模型解释，不是已识别的受体或分子因果机制。</h2><h3>Evidence</h3><p>模型机制解释</p><dl><dt>设计 / 对照</dt><dd>把所设计的DA塑性窗口变化与高DA网络结果联系起来。；原规则保持LTP/LTD平衡，修改规则被描述为高DA偏向potentiation。</dd><dt>独立单位与 n</dt><dd>模型解释而非新增独立实验。；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 12 · 3 Discussion</dd></dl><p>被解释的模拟观察</p><dl><dt>设计 / 对照</dt><dd>Izhikevich随机递归网络共2000神经元（1600兴奋、400抑制），连接概率0.1；100个可重叠刺激群，每群50神经元（40兴奋、10抑制）。兴奋权重初值0.5、范围[0,4]，抑制权重固定-0.5。 Methods报告训练0-7000 s、测试7000-7200 s，步长1 ms；刺激间隔100-300 ms，只有S0在0-1000 ms随机延迟后获DA奖励，测试不再给DA。；修改规则10 µM与中等DA/原规则。</dd><dt>独立单位与 n</dt><dd>同一初始网络/刺激序列上的模拟条件及网络内重复刺激；神经元数不是独立网络重复。；主代表性扫描共用一套初始配置与刺激序列；Fig.2图注给出11次S0和939次非S0测试刺激，这些是网络内试次。</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 8 · Figs. 4C and 5C</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>提供与作者报告的模型结果相联系的可检验解释。</dd><dt>适用边界</dt><dd>Discussion明确称模型为phenomenological，系数不代表特定生化反应率；本篇无生物实验。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>未单独消融饱和与窗口变形，不能判定两者各自必要或充分；spike先后顺序不是分子因果识别。</dd><dt>未解决</dt><dd>公式符号、内部活动主导的直接量化及DA与ACh等其他机制的相互作用尚未建立。</dd></dl><h3>相关问题</h3><ul><li>模拟中塑性时间选择性变化可能如何影响奖励驱动的网络组织？</li></ul></article><article><small>C11 / 假说 / 预测 · dynamical_hypothesis</small><h2>作者推测过渡区内小DA变化后两分支跳转，可能来自高维递归网络中相互交织的吸引盆地；本文没有计算盆地或证明该假设，且每次DA改变之后仍继续训练。</h2><h3>Evidence</h3><p>吸引盆地假设</p><dl><dt>设计 / 对照</dt><dd>对continuation过渡区中非经典跳转提出高维盆地解释。；简单低维系统中保持状态直到临界阈值的图景。</dd><dt>独立单位与 n</dt><dd>未测量的高维动力学解释。；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 12 · 3 Discussion</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>提出解释非经典分支敏感性的动力学假设。</dd><dt>适用边界</dt><dd>只是作者推测，不是已证实多吸引子几何。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不证明瞬时参数扰动导致盆地切换，也不证明真实神经系统有相同盆地。</dd><dt>未解决</dt><dd>盆地结构、吸引子稳定性和重新训练的影响均未识别。</dd></dl><h3>相关问题</h3><ul><li>高维吸引盆地是否能解释DA条件化模型的分支敏感性？</li></ul></article><details><summary>核对记录与来源信息</summary><pre>{
+  &quot;coverage&quot;: {
+    &quot;pdf_pages_read&quot;: [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    &quot;results_sections_seen&quot;: [
+      &quot;2.1原DA-STDP及Fig.1-2&quot;,
+      &quot;2.2修改规则/Fig.3&quot;,
+      &quot;2.3修改规则学习/Fig.4&quot;,
+      &quot;2.4连接结构/Fig.5&quot;,
+      &quot;2.5 N=11跨模拟比较/Fig.6&quot;,
+      &quot;2.6 continuation/Fig.7&quot;,
+      &quot;3 Discussion&quot;,
+      &quot;4.1-4.5 Methods/Eqs.1-12&quot;,
+      &quot;文内Supplementary Fig.S1文字图注&quot;,
+      &quot;Declarations与References&quot;
+    ],
+    &quot;missing_material&quot;: [
+      &quot;所有图像像素未提供；链接Zenodo/GitHub仿真代码未供给且未读取。&quot;
+    ],
+    &quot;text_pass_complete&quot;: true,
+    &quot;notes&quot;: [
+      &quot;从source.text_path读取全部19页，分4个不超过18000字符的输出评估；包括Methods、文内S1图注、声明和参考文献，未重开离线PDF。&quot;,
+      &quot;源首页DOI 10.64898/2026.07.17.739276、版本posted July 22, 2026；非同行评议bioRxiv预印本。DOI中的July 17不代替版本发布日期。&quot;,
+      &quot;标题、两位作者及DOI与索引指向同一文献；首页将第一作者写作WooJun Park，索引为Woojun Park，局部输出按源保留大小写，原索引未修改。&quot;,
+      &quot;第二轮审计在保留全部源文本上下文中核对所有候选、图注、方程、分析单位、版本与范围；不代表代码运行、像素阅读或科学复现。&quot;,
+      &quot;2000是模拟神经元数；1600是结构图的兴奋神经元数；11/939是单网络内试次；N=11是Fig.6独立网络模拟，continuation重复数未报告。&quot;,
+      &quot;SDF先按网络内刺激计算均值/SD，再跨11网络汇总均值/SEM；没有猜测p值、AUC置信区间或效应统计。&quot;,
+      &quot;按Discussion限制两分支为bistability-like历史依赖行为；每次DA变化后继续conditioning，未判定经典双稳态或即时扰动因果。&quot;,
+      &quot;Methods明确仿真总7200 s、训练7000 s；Fig.5所述到3600 s的结构快照不被误写成总训练长度。&quot;,
+      &quot;Eq.8-10与文字的符号/阈值疑点、Fig.5图注与r数值的趋势冲突均保留；没有用猜测修订共享代码或强行宣称机制正确。&quot;,
+      &quot;引用文献中的DA-STDP生物实验属于背景；本文声明所有数据为计算模拟，无人体/动物实验，不建立跨论文支持或复制链接。&quot;
+    ],
+    &quot;reading_mode&quot;: &quot;text_only&quot;,
+    &quot;figure_images_read&quot;: false,
+    &quot;scientific_verification&quot;: false,
+    &quot;source_pdf_offline&quot;: true,
+    &quot;archived_page_text_used&quot;: true
+  },
+  &quot;audit&quot;: {
+    &quot;source_match_checks&quot;: [],
+    &quot;model_findings&quot;: [
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;PAV-VERSION：DOI日期部分与实际版本发布日期不同，第一作者WooJun/Woojun大小写不同。&quot;,
+        &quot;suggested_correction&quot;: &quot;按源保留2026-07-22版本及WooJun Park；标题/DOI一致，不视为错配文献。&quot;,
+        &quot;pdf_page&quot;: 1,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C1&quot;,
+        &quot;issue&quot;: &quot;PAV-EQ：Eq.8的c_minus为负，Eq.10使用b1=1、b2=-1.5，按字面所得post-pre调制符号似与文字低DA LTD/高DA LTP相反；1.5也未明确区分DA与DA_tilde。&quot;,
+        &quot;suggested_correction&quot;: &quot;所有记录保留作者所报告结果而不确认公式实现；需要原实现或作者澄清，不能猜测改号。&quot;,
+        &quot;pdf_page&quot;: 15,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C5&quot;,
+        &quot;issue&quot;: &quot;PAV-STRUCT：Fig.5图注称相关性随DA增加减弱，但正文1.30 µM r约-0.95比0.50 µM -0.87更负。&quot;,
+        &quot;suggested_correction&quot;: &quot;C5保留数值及S0分散，与图注冲突单独标注；待源澄清。&quot;,
+        &quot;pdf_page&quot;: 9,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;PAV-UNITS：2000神经元、11/939刺激试次、N=11独立模拟和continuation节点不可互换。&quot;,
+        &quot;suggested_correction&quot;: &quot;各记录显式区分层级；continuation不沿用N=11，SEM只赋予Fig.6跨网络汇总。&quot;,
+        &quot;pdf_page&quot;: 9,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;PAV-RANGE：原规则代表性0.02-100 µM选择性与11模拟0.03-4 µM强学习范围不是同一范围估计。&quot;,
+        &quot;suggested_correction&quot;: &quot;C2/C6分别保留设计与指标；不设所有网络共同阈值。&quot;,
+        &quot;pdf_page&quot;: 9,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;PAV-BISTABILITY：摘要称两稳定配置，Discussion明确不完全符合经典双稳态且每次DA改变后再次训练。&quot;,
+        &quot;suggested_correction&quot;: &quot;C8仅为两分支、历史依赖、双稳态样观察；C11的盆地解释单独为假设。&quot;,
+        &quot;pdf_page&quot;: 12,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;PAV-BIOLOGY：生物可信性、正常DA范围和疾病因果不能由现象学仿真等同于新生物验证。&quot;,
+        &quot;suggested_correction&quot;: &quot;C10为解释；记录无人体/动物实验、无分子路径识别和无两机制独立消融。&quot;,
+        &quot;pdf_page&quot;: 13,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C9&quot;,
+        &quot;issue&quot;: &quot;PAV-SUPPLEMENT：S1图注实际在供给PDF第16页，外部代码与图像不在供给文本。&quot;,
+        &quot;suggested_correction&quot;: &quot;纳入S1文字候选C9；未称读过像素、外部补充或代码。&quot;,
+        &quot;pdf_page&quot;: 16,
+        &quot;resolved&quot;: true
+      }
+    ],
+    &quot;needs_human_review&quot;: true
+  },
+  &quot;source&quot;: {
+    &quot;filename&quot;: &quot;paper-W7170038372--Biologically-Plausible-Dopamine-Modulated-STDP-Model-of-Pavlovian-Learning-in-Spiking-Neural-Ne.pdf&quot;,
+    &quot;sha256&quot;: &quot;3b22de68f737295d5bc184e939781577e07c3a235d2be0b8b6b045c8bb0db1e4&quot;,
+    &quot;source_url&quot;: &quot;https://www.biorxiv.org/content/biorxiv/early/2026/07/22/2026.07.17.739276.full.pdf&quot;,
+    &quot;pdf_page_count&quot;: 19
+  },
+  &quot;provenance&quot;: {
+    &quot;created_at&quot;: &quot;2026-10-07T13:49:44.544788Z&quot;,
+    &quot;workflow&quot;: &quot;claim-commons-pdf-v1&quot;,
+    &quot;prompt_version&quot;: &quot;claim-commons-chatgpt-pdf-2026-10-07.1&quot;,
+    &quot;backend&quot;: &quot;authorized_parallel_GPT&quot;,
+    &quot;model&quot;: &quot;inherited_account_GPT&quot;,
+    &quot;provider_api_key_used&quot;: false,
+    &quot;source_sha256&quot;: &quot;3b22de68f737295d5bc184e939781577e07c3a235d2be0b8b6b045c8bb0db1e4&quot;,
+    &quot;source_audit_complete&quot;: true,
+    &quot;review_status&quot;: &quot;candidate&quot;,
+    &quot;database_updated&quot;: false
+  }
+}</pre></details></main><footer></footer></body></html>

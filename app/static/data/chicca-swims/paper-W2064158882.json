@@ -1,0 +1,636 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "An approach to motor control for spike-based neuromorphic robotics",
+    "authors": [
+      "Fernando Perez‐Peña",
+      "Alejandro Linares-Barranco",
+      "Elisabetta Chicca"
+    ],
+    "doi": "10.1109/biocas.2014.6981779",
+    "publication_year": 2014,
+    "venue": "IEEE Biomedical Circuits and Systems Conference (BioCAS)",
+    "url": "https://doi.org/10.1109/biocas.2014.6981779"
+  },
+  "source": {
+    "filename": "paper-W2064158882.pdf",
+    "sha256": "bd251027d9af1cdf3af345f02d1d60d46cc97296fcb86a9da06fc570fd5e2dbe",
+    "source_url": "https://idus.us.es/server/api/core/bitstreams/17a9a9da-814c-454b-94e5-264cade42f91/content",
+    "pdf_page_count": 4
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "results_sections_seen": [
+      "III. NETWORK MODEL",
+      "IV. SIMULATION RESULTS",
+      "V. HARDWARE RESULTS",
+      "VI. DISCUSSION",
+      "Figures 1–5 captions"
+    ],
+    "missing_material": [
+      "图像像素未提供。",
+      "引用文献中的电路与既往实现细节未提供。"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "所供四页会议论文的题名、作者与身份元数据一致；未发现其他版本标识。",
+      "已评估全部正文、图注、致谢与参考文献；未将引用文献作为本文新结果。",
+      "本文的位置变量为命令推算的内部估计；达到目标率不能直接解释为实测关节达到目标位置。",
+      "未提供附录或补充材料正文。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "实现DV、GO、PPC三群开环脉冲控制网络及AER–FPGA–PFM电机接口。",
+      "role": "result",
+      "source_pages": [
+        1,
+        2,
+        3
+      ],
+      "decision": "include",
+      "reason": "结构、编码方式和硬件接口有明确实现描述。"
+    },
+    {
+      "summary": "通过NMDA样电压门控与短时程抑制实现目标输入和GO输入共同激活。",
+      "role": "result",
+      "source_pages": [
+        2,
+        3
+      ],
+      "decision": "include",
+      "reason": "设计说明和模拟、硬件响应支持所展示条件下的门控行为。"
+    },
+    {
+      "summary": "PPC达到目标输入率时，反馈抑制使DV停止放电。",
+      "role": "result",
+      "source_pages": [
+        2,
+        3
+      ],
+      "decision": "include",
+      "reason": "模拟图注明确报告，可与起始门控分别评估。"
+    },
+    {
+      "summary": "固定目标率时，提高GO输入率的增长斜率缩短内部到达时间。",
+      "role": "result",
+      "source_pages": [
+        3,
+        4
+      ],
+      "decision": "include",
+      "reason": "模拟与硬件均报告条件比较；硬件基线只报告在2秒内达到。"
+    },
+    {
+      "summary": "当前模型未保留原VITE算法的钟形GO输出速度轮廓。",
+      "role": "result",
+      "source_pages": [
+        3,
+        4
+      ],
+      "decision": "include",
+      "reason": "作者明确报告该输出差异，但没有同条件基线重现。"
+    },
+    {
+      "summary": "PFM可过滤少量随机脉冲，且方案可能改善平滑度、功耗或控制复杂度。",
+      "role": "interpretation",
+      "source_pages": [
+        1,
+        3,
+        4
+      ],
+      "decision": "defer",
+      "reason": "未报告噪声注入、运动学、功耗或经典控制器比较测试。"
+    },
+    {
+      "summary": "偏置调整可适配其他机器人，复制网络可控制多个自由度，并可扩展至闭环轨迹和刚度控制。",
+      "role": "hypothesis",
+      "source_pages": [
+        2,
+        4
+      ],
+      "decision": "defer",
+      "reason": "属于推广与后续工作，未展示相应验证。"
+    },
+    {
+      "summary": "恢复钟形GO输出会使网络受GO输入主导并丧失共同激活。",
+      "role": "interpretation",
+      "source_pages": [
+        4
+      ],
+      "decision": "defer",
+      "reason": "作者提出设计冲突，但未提供替代配置比较或证明。"
+    },
+    {
+      "summary": "皮层、基底节及NMDA/non-NMDA通道参与生物运动控制。",
+      "role": "background",
+      "source_pages": [
+        1,
+        2,
+        4
+      ],
+      "decision": "exclude",
+      "reason": "来自引用文献，本文未进行生物实验。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "本文实现了面向单个电机的DV–GO–PPC开环IF神经元网络：DV编码目标与估计当前位置的差异，GO实现门控和速度调节，PPC编码估计当前位置；三个VLSI芯片分别承载三个群，PPC输出通过AER送至FPGA展宽，形成直流电机的PFM驱动脉冲。",
+      "claim_type": "method_implementation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "网络设计与多芯片硬件实现",
+          "design": "在OWI 535机械臂平台上，每群使用60个IF神经元；一对一连接形成60套互不连接的三神经元网络。",
+          "comparator": null,
+          "measure": "网络连接、放电率编码及PPC至电机的脉冲驱动通路。",
+          "unit_of_analysis": "所描述的单电机控制实现及其三个神经元群。",
+          "sample_size_as_reported": "3个VLSI芯片，每群使用60个IF神经元；芯片总容量为4224个leaky IF神经元和16384个模拟AER突触；机械臂平台有5个自由度。",
+          "uncertainty": "未报告独立装置数、试验重复次数或统计不确定性。",
+          "assumptions": [
+            "位置通过放电率编码，当前位置由下行命令估计。",
+            "群大小和脉冲展宽时间需适配电机响应。",
+            "各群分别置于不同芯片以便参数调节。"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "V. HARDWARE RESULTS",
+            "figure": "Fig. 1（第2页）",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提供了从脉冲网络到直流电机驱动的具体开环实现。",
+        "boundary": "60套并行网络不是60次独立实验；五自由度平台不代表已验证五轴同时控制。",
+        "negative_result": null,
+        "non_inference": "不能据此确定实际定位精度、运动平滑度、功耗优势或跨平台适用性。",
+        "unresolved": "加入位置反馈后的控制性能及实际运动误差。",
+        "unresolved_attribution": "作者将编码器反馈和闭环控制列为后续工作；未报告实际运动误差。"
+      },
+      "broad_directions": [
+        "methods-causal",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "如何将放电率编码的开环位置命令转换为直流电机的PFM驱动？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C3"
+      ],
+      "review_notes": [
+        "芯片容量、实际使用神经元数和平台自由度均不等于独立试验样本量。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "在本文DV–GO–PPC网络的所示模拟和硬件配置中，先出现的非零GO输入在目标输入到来前不触发网络响应，两输入共同存在后产生响应；其设计使带短时程抑制的GO兴奋性输入将GO膜电位提升至NMDA阈值以上但不直接触发放电，再由DV的NMDA样输入触发GO放电。",
+      "claim_type": "network_gating_mechanism",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Brian模拟与突触设计说明",
+          "design": "每群一个神经元，一对一连接；非零GO输入先出现，25 spikes/s目标输入延后出现。",
+          "comparator": "仅有GO输入阶段与GO、目标输入共同存在阶段。",
+          "measure": "响应起始及各群放电率时间过程。",
+          "unit_of_analysis": "一个三神经元模拟网络的时间过程。",
+          "sample_size_as_reported": "每群1个神经元；运行次数和随机种子数未报告。",
+          "uncertainty": null,
+          "assumptions": [
+            "GO输入在所调参数下可提高膜电位而不直接触发放电。",
+            "短时程抑制限制增长的GO输入单独诱发放电。",
+            "DV至GO的NMDA样突触仅在GO膜电位高于固定阈值时产生输出电流。"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "IV. SIMULATION RESULTS；III. NETWORK MODEL",
+            "figure": "Figs. 2–3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "VLSI网络响应记录",
+          "design": "每群60个神经元，使用带短时程抑制的兴奋性连接和芯片NMDA样突触。",
+          "comparator": "目标输入出现前与出现后。",
+          "measure": "群平均放电率；正文报告目标输入出现前没有放电。",
+          "unit_of_analysis": "三个硬件神经元群的时间过程。",
+          "sample_size_as_reported": "每群60个IF神经元；独立重复次数未报告。",
+          "uncertainty": null,
+          "assumptions": [
+            "芯片偏置和突触参数处于所展示的门控工作配置。"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "V. HARDWARE RESULTS",
+            "figure": "Fig. 4（第4页）",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "响应与共同激活门控设计一致。",
+        "boundary": "展示的输入隔离比较主要为GO先于目标；目标单独输入的独立测试未报告。",
+        "negative_result": "所示条件下，目标输入到来前的GO输入没有触发网络响应。",
+        "non_inference": "没有突触消融，不能独立确定各机制的必要性，也不能证明生物基底节采用同一电路。",
+        "unresolved": "门控对偏置、器件失配和输入噪声的稳健范围。",
+        "unresolved_attribution": "所供文本未报告这些稳健性测试。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "NMDA样电压门控与短时程抑制如何实现目标和GO输入的共同激活？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C3",
+        "C5"
+      ],
+      "review_notes": [
+        "机制依据为设计说明及一致响应，没有独立干预验证。",
+        "仅有GO时无响应不表示DV在仅有目标输入时也不会放电。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "在目标输入固定为25 spikes/s的所展示比较中，提高GO输入放电率随时间增长的斜率，使模拟PPC达到目标率的时间从目标激活后的0.45秒缩短至0.3秒；硬件在目标及群配置不变时，基线报告在2秒内达到目标率，较高斜率条件报告1.8秒，作者将其描述为更快达到。",
+      "claim_type": "parameter_effect",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Brian模拟的GO斜率比较",
+          "design": "每群一个神经元，比较两种GO输入斜率，目标均为25 spikes/s。",
+          "comparator": "Fig. 2较低斜率与Fig. 3较高斜率。",
+          "measure": "目标激活至PPC达到目标率的时间：0.45秒与0.3秒。",
+          "unit_of_analysis": "两个展示条件的模拟放电率时间过程。",
+          "sample_size_as_reported": "每群1个神经元；每条件运行次数未报告。",
+          "uncertainty": "未报告斜率数值、误差条或置信区间。",
+          "assumptions": [
+            "目标输入保持相同。",
+            "以PPC目标率匹配作为内部到达读出。"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "IV. SIMULATION RESULTS",
+            "figure": "Figs. 2–3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "VLSI群平均放电率比较",
+          "design": "保持目标输入与神经元群配置相同，提高GO输入斜率。",
+          "comparator": "Fig. 4较低斜率与Fig. 5较高斜率。",
+          "measure": "PPC达到目标率：基线在2秒内，较高斜率为1.8秒。",
+          "unit_of_analysis": "同一硬件配置下两个输入条件的群平均时间过程。",
+          "sample_size_as_reported": "每群60个IF神经元；独立试验次数未报告。",
+          "uncertainty": "基线不是精确2秒；未报告统计不确定性或斜率数值。",
+          "assumptions": [
+            "目标输入为25 spikes/s。",
+            "群配置在比较中保持相同。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "Figs. 4–5 captions；比较说明见第3页V. HARDWARE RESULTS",
+            "figure": "Figs. 4–5",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "模拟给出更短到达时间；硬件正文也报告较高GO斜率达到更快。",
+        "boundary": "各实现只展示两种斜率；硬件图注数值不能单独给出精确缩短幅度。",
+        "negative_result": null,
+        "non_inference": "不能推断全范围单调关系，不能把内部到达时间解释为实测关节到达时间。",
+        "unresolved": "GO斜率与实际速度、定位误差和运动平滑度的定量关系。",
+        "unresolved_attribution": "所供文本未报告关节运动学或多斜率扫描。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "固定目标率时，GO输入斜率如何改变PPC达到目标率的时间？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C5"
+      ],
+      "review_notes": [
+        "模拟与硬件为两种实现的展示，不构成已报告的独立重复统计。",
+        "不将硬件时间写成精确的2秒降至1.8秒。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "作者报告，本文脉冲控制模型的GO输出不呈现原VITE算法所述的钟形速度轮廓。",
+      "claim_type": "output_profile_limitation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "模型输出轮廓的定性比较",
+          "design": "作者比较本文GO输出与引用的原VITE算法轮廓。",
+          "comparator": "原VITE算法所述钟形速度轮廓；未提供同条件重现基线。",
+          "measure": "GO输出放电率的时间轮廓是否为钟形。",
+          "unit_of_analysis": "本文模型的GO输出时间过程。",
+          "sample_size_as_reported": null,
+          "uncertainty": "未报告轮廓拟合或差异指标。",
+          "assumptions": [
+            "GO输出放电率作为与原算法速度轮廓对应的读出。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "VI. DISCUSSION（始于第3页）",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "明确识别当前模型相对原算法的输出轮廓差异。",
+        "boundary": "比较为定性陈述，未测量真实电机速度轮廓。",
+        "negative_result": "当前模型未保留原算法的钟形GO输出轮廓。",
+        "non_inference": "不能将作者关于恢复钟形轮廓会破坏共同激活的论述视为已证明的不可能性结论。",
+        "unresolved": "其他配置能否同时保留钟形输出和共同激活门控。",
+        "unresolved_attribution": "作者提出设计冲突，未提供替代配置比较或证明。"
+      },
+      "broad_directions": [
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "何种脉冲控制网络配置可同时产生钟形GO输出和共同激活门控？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "删除了与C3重复的GO斜率效应表述。",
+        "引用算法只作为作者的定性比较对象。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "在每群一个神经元的Brian模拟中，无论所展示的GO输入斜率较低或较高，PPC达到25 spikes/s目标输入率后，DV群均被完全抑制；该终止行为对应于所调节的PPC至DV抑制连接。",
+      "claim_type": "network_termination_response",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Brian模拟及抑制连接设计",
+          "design": "PPC以抑制性连接作用于DV，连接被调节为在PPC达到目标输入率时抑制DV；展示两种GO斜率。",
+          "comparator": "PPC达到目标率前后。",
+          "measure": "DV在目标率匹配后的完全抑制。",
+          "unit_of_analysis": "所展示模拟条件中的DV与PPC时间过程。",
+          "sample_size_as_reported": "每群1个神经元；运行次数未报告。",
+          "uncertainty": "未报告抑制量的统计估计或参数扫描。",
+          "assumptions": [
+            "PPC至DV抑制连接按目标率匹配进行调节。",
+            "目标输入为25 spikes/s。"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "III. NETWORK MODEL；IV. SIMULATION RESULTS",
+            "figure": "Figs. 2–3 captions",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "展示了内部估计达到目标率后DV活动关闭的终止行为。",
+        "boundary": "直接明确报告来自两幅模拟图注；硬件正文仅概括行为与模拟一致。",
+        "negative_result": null,
+        "non_inference": "不能据此证明电机已到位或停止，也不能证明抑制连接未经调参即可适用于任意目标。",
+        "unresolved": "目标率变化与器件失配下的终止精度。",
+        "unresolved_attribution": "所供文本未报告相应扫描或误差分析。"
+      },
+      "broad_directions": [
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "PPC至DV抑制如何在内部位置率达到目标率时终止差异信号？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C3"
+      ],
+      "review_notes": [
+        "从起始门控中拆分，因为目标率到达后的终止可独立评估。",
+        "共享模拟图不构成独立重复证据。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "已重新核对全部四页文本及五幅图注。本文实现单电机开环脉冲网络，展示共同激活门控、模拟中目标率匹配后的DV关闭，以及提高GO斜率缩短内部到达时间；当前GO输出未保留原VITE钟形轮廓。硬件基线仅报告在2秒内达到，不能计算精确缩短幅度。实际位置误差、运动平滑度、功耗、噪声稳健性和闭环性能未获所供文本的定量验证。",
+  "shared_evidence": [
+    {
+      "claim_id": "C1",
+      "with": [
+        "C2",
+        "C3"
+      ]
+    },
+    {
+      "claim_id": "C2",
+      "with": [
+        "C1",
+        "C3",
+        "C5"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C1",
+        "C2",
+        "C5"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C2",
+        "C3"
+      ]
+    }
+  ],
+  "audit": {
+    "initial_source_match_checks": [],
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": "C3",
+        "issue": "草稿将硬件基线在2秒内达到近似写成约2秒，容易产生精确缩短幅度。",
+        "suggested_correction": "保留在2秒内和1.8秒的原始精度；更快的方向依据正文，不计算精确差值。",
+        "pdf_page": 4,
+        "resolved": true
+      },
+      {
+        "claim_id": "C2",
+        "issue": "起始共同激活和目标到达后的DV终止合并，尽管可以分别评估。",
+        "suggested_correction": "将模拟中DV完全抑制拆为C5，保留与C2、C3的共享图证据。",
+        "pdf_page": 3,
+        "resolved": true
+      },
+      {
+        "claim_id": "C4",
+        "issue": "草稿重复C3的GO斜率效应，并将其关联为共享证据。",
+        "suggested_correction": "C4只保留钟形轮廓缺失；定性讨论与C3的时间比较不建立共享证据关系。",
+        "pdf_page": 4,
+        "resolved": true
+      },
+      {
+        "claim_id": "C1",
+        "issue": "芯片容量、60套并行网络和五自由度平台可能被误当作重复数或多轴验证。",
+        "suggested_correction": "分清容量、使用数量和平台属性，限定为单电机网络实现。",
+        "pdf_page": 3,
+        "resolved": true
+      },
+      {
+        "claim_id": "C3",
+        "issue": "达到目标的文字可能被解释为传感器测得的关节到位。",
+        "suggested_correction": "全部时间读出限定为PPC达到目标输入率。",
+        "pdf_page": 3,
+        "resolved": true
+      },
+      {
+        "claim_id": "C2",
+        "issue": "门控机制无消融验证，目标单独输入也无明确独立实验。",
+        "suggested_correction": "保留设计解释和GO先于目标的响应比较，限制必要性与生物对应推断。",
+        "pdf_page": 2,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "噪声过滤、平滑度、功耗优势、任意平台适配及闭环性能缺少对应测试。",
+        "suggested_correction": "保留为讨论解释或后续设想，不作为已验证结果。",
+        "pdf_page": 4,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "草稿包含请求模式之外的source_check和review字段。",
+        "suggested_correction": "删除额外字段，来源与审查信息归入规定字段。",
+        "pdf_page": null,
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T05:10:54.150152Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "signed_in_chatgpt_codex",
+    "authentication": "existing_ChatGPT_login",
+    "provider_api_key_used": false,
+    "model": "account_default_GPT",
+    "source_sha256": "bd251027d9af1cdf3af345f02d1d60d46cc97296fcb86a9da06fc570fd5e2dbe",
+    "requests": [
+      {
+        "phase": "extraction",
+        "seconds": 106.29,
+        "usage": {
+          "input_tokens": 19205,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 4660,
+          "reasoning_output_tokens": 38
+        },
+        "backend": "signed_in_chatgpt_codex",
+        "tools_used": false
+      },
+      {
+        "phase": "source_audit",
+        "seconds": 116.18,
+        "usage": {
+          "input_tokens": 23755,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 5592,
+          "reasoning_output_tokens": 57
+        },
+        "backend": "signed_in_chatgpt_codex",
+        "tools_used": false
+      }
+    ],
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

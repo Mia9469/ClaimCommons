@@ -1,0 +1,131 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>High precision mechanical hybrid control of industrial robots driven by multimodal perception fusion</title><style>body{max-width:940px;margin:40px auto;padding:0 24px;background:#fffdf7;color:#12372f;font:16px/1.8 Georgia,serif}h1{font-size:26px;line-height:1.4}h2{font-size:20px;line-height:1.5}h3{font-size:16px}article{padding:26px 0;border-top:1px solid #bec4b8}small{color:#68766e}dl{display:grid;grid-template-columns:120px 1fr;gap:8px 20px}dt{font-weight:bold}dd{margin:0}li{padding:8px 0}p,dd{overflow-wrap:anywhere}.note{background:#eef2e2;padding:14px;border-left:3px solid #738968}summary{cursor:pointer}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.7 monospace}@media(max-width:600px){body{margin:24px auto;padding:0 18px}dl{grid-template-columns:1fr;gap:3px}dd{margin-bottom:12px}}@media print{body{margin:0;background:white}details{display:block}}</style><link rel="stylesheet" href="../../commons-v02.css?v=20261020-1"><link rel="stylesheet" href="../../examples.css?v=20260928-2"><link rel="stylesheet" href="../../site.css?v=20261020-1"><script defer src="../../site.js?v=20261020-1"></script><script defer src="../../report-ui.js?v=20261020-1"></script></head><body class="portal-page report-page" data-cc-report-shell="1" data-page="library" data-site-prefix="../../" data-library-paper="paper-W7160374742" data-report-language="zh" data-claim-records="{&quot;C1&quot;:&quot;structured-paper-W7160374742-1&quot;,&quot;C2&quot;:&quot;structured-paper-W7160374742-2&quot;,&quot;C3&quot;:&quot;structured-paper-W7160374742-3&quot;,&quot;C4&quot;:&quot;structured-paper-W7160374742-4&quot;,&quot;C5&quot;:&quot;structured-paper-W7160374742-5&quot;,&quot;C6&quot;:&quot;structured-paper-W7160374742-6&quot;,&quot;C7&quot;:&quot;structured-paper-W7160374742-7&quot;,&quot;C8&quot;:&quot;structured-paper-W7160374742-8&quot;,&quot;C9&quot;:&quot;structured-paper-W7160374742-9&quot;}"><header></header><main id="report-content"><div id="report-tools"></div><small>CLAIM COMMONS / 阅读报告</small><h1>High precision mechanical hybrid control of industrial robots driven by multimodal perception fusion</h1><p class="note">AI 文本提取候选，尚待人工核对。图像像素未读取；PDF 页码指文件中的页序。</p><p>26页主文/全书目完成，9项强限定候选。真实可定位的是作者分类数值和HCM方案，不是已证亚毫米闭环控制。success/failure/五task/attack标签、task输入潜在泄漏、消融FNR/recall与配置、跨文献基线和传感器身份均有未解差异；Lyapunov仅条件未推导。物理precision、实时和工业稳定强主张暂缓，不虚构样本、轨迹或真机试验。</p><a href="https://link.springer.com/content/pdf/10.1186/s44147-026-01026-2.pdf?error=cookies_not_supported&amp;code=ac177482-88e9-4a85-9b00-593cbe0a29f1" rel="noreferrer">查看所读原文版本 ↗</a><details><summary>贡献清单与处理决定</summary><ul><li><b>多模态网络/PID+NN及一般预处理</b><br>include · 方法设想不当已测控制保证，实际inputs/target未明。</li><li><b>分类数/PR/ROC和组件表</b><br>include · 可定位的作者数值限于未澄清分类，不扩张物理precision。</li><li><b>亚毫米定位/实物扰动/实时与稳定性确证</b><br>defer · 无误差单位/robot/plant/重复/latency和Lyapunov推导；不能凭classification证明。</li><li><b>success/failure、五类和attack任务混合与label输入</b><br>defer · 目标、数据独立性和可能label leakage待澄清。</li><li><b>跨文献baseline和自称全胜</b><br>include · 表中反例与引用错配纳入，不支持受控优越性。</li><li><b>扩展、nomenclature、声明和全书目</b><br>include · 尚未工业benchmark/安全验证，背景非新结果。</li></ul></details><article><small>C1 / 假说 / 预测 · hypothesis</small><h2>作者提出CNN视觉、LSTM传感、拼接融合与PID+neural correction的HCM结构，但当前材料未建立该结构的机器人闭环实物性能。</h2><h3>Evidence</h3><p>结构和uPID+uNN方案</p><dl><dt>设计 / 对照</dt><dd>报告Kaggle模型/消融，物理闭环与标签任务不充分明晰；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>架构/控制律设想；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 13 · 未报告 / 不适用</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>作者提出CNN视觉、LSTM传感、拼接融合与PID+neural correction的HCM结构，但当前材料未建立该结构的机器人闭环实物性能。</dd><dt>适用边界</dt><dd>数据实际是预提取128embedding和force/proximity/temperature，摘要/讨论又称encoder/3D vision/laser tracker，实际使用范围不清。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>架构描述不证明亚毫米跟踪、扰动抑制或实物安全。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>分类标签是否可独立定义并避免输入标签泄漏？</li><li>物理轨迹误差、稳定证明与实时闭环需要什么独立证据？</li></ul></article><article><small>C2 / 假说 / 预测 · hypothesis</small><h2>正文给Min-Max、PCA及类别one-hot预处理和典型70/15/15划分，但没有样本数、PCA维数、序列长度或训练集内拟合标准化的完整说明。</h2><h3>Evidence</h3><p>数据预处理和分割方案</p><dl><dt>设计 / 对照</dt><dd>报告Kaggle模型/消融，物理闭环与标签任务不充分明晰；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>Kaggle记录/相关序列，实际n未知；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 8 · 未报告 / 不适用</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>正文给Min-Max、PCA及类别one-hot预处理和典型70/15/15划分，但没有样本数、PCA维数、序列长度或训练集内拟合标准化的完整说明。</dd><dt>适用边界</dt><dd>“typical”比例不是可核对实际划分；operation type可同时作输入和输出。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能推独立机器人、时间/工况或跨任务测试泛化。</dd><dt>未解决</dt><dd>实际target与输入、划分/标准化隔离未明。</dd></dl><h3>相关问题</h3><ul><li>分类标签是否可独立定义并避免输入标签泄漏？</li><li>物理轨迹误差、稳定证明与实时闭环需要什么独立证据？</li></ul></article><article><small>C3 / 直接结果 · empirical_or_theoretical_result</small><h2>Table1报告accuracy .9823、precision .9820、recall .9819、F1 .9821；这些是标签分类数值，不是米制机器人位置误差。</h2><h3>Evidence</h3><p>作者报告的分类评价</p><dl><dt>设计 / 对照</dt><dd>报告Kaggle模型/消融，物理闭环与标签任务不充分明晰；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>记录/标签，n与真实目标未说明；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 17 · Table 1/Fig. 3</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>Table1报告accuracy .9823、precision .9820、recall .9819、F1 .9821；这些是标签分类数值，不是米制机器人位置误差。</dd><dt>适用边界</dt><dd>正文success/failure、五任务class和attack/normal frames混用；无混淆计数/CI/seed。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能以98.23%分类证明sub-millimetre定位或无失败运行。</dd><dt>未解决</dt><dd>分类任务身份和完整测试分母待核。</dd></dl><h3>相关问题</h3><ul><li>分类标签是否可独立定义并避免输入标签泄漏？</li><li>物理轨迹误差、稳定证明与实时闭环需要什么独立证据？</li></ul></article><article><small>C4 / 直接结果 · empirical_or_theoretical_result</small><h2>Table2报告FNR .018和FPR .004，承认非零误分类，但不能把分类错误率直接解释为机器人碰撞、动作故障或闭环控制可靠性。</h2><h3>Evidence</h3><p>报告分类假阴/假阳</p><dl><dt>设计 / 对照</dt><dd>报告Kaggle模型/消融，物理闭环与标签任务不充分明晰；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>未明确二/多类标签；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 18 · Table 2/Fig. 4</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>Table2报告FNR .018和FPR .004，承认非零误分类，但不能把分类错误率直接解释为机器人碰撞、动作故障或闭环控制可靠性。</dd><dt>适用边界</dt><dd>定义为二类、结果又五类；FNR/FPR的averaging口径未给。</dd><dt>实际负结果</dt><dd>误分类率并非零，不支持perfect reliability。</dd><dt>不能推出</dt><dd>不是真实设备失效或安全风险概率。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>分类标签是否可独立定义并避免输入标签泄漏？</li><li>物理轨迹误差、稳定证明与实时闭环需要什么独立证据？</li></ul></article><article><small>C5 / 直接结果 · empirical_or_theoretical_result</small><h2>正文声称五类assemble/inspect/pick/place/weld的AP .9777–.9984和AUC&gt;.994，支持的仅是其未充分定义的分类曲线概括。</h2><h3>Evidence</h3><p>作者PR/ROC图文字描述</p><dl><dt>设计 / 对照</dt><dd>报告Kaggle模型/消融，物理闭环与标签任务不充分明晰；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>五任务类别，类别n与计数未给；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 19 · Figs. 8–9</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>正文声称五类assemble/inspect/pick/place/weld的AP .9777–.9984和AUC&gt;.994，支持的仅是其未充分定义的分类曲线概括。</dd><dt>适用边界</dt><dd>图像像素未阅，曲线没有原数据和不确定性；输入task type若同目标会构成泄漏。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不证明视觉/传感物理精度或闭环实时泛化。</dd><dt>未解决</dt><dd>必须澄清任务标签是否被作为模型输入。</dd></dl><h3>相关问题</h3><ul><li>分类标签是否可独立定义并避免输入标签泄漏？</li><li>物理轨迹误差、稳定证明与实时闭环需要什么独立证据？</li></ul></article><article><small>C6 / 直接结果 · empirical_or_theoretical_result</small><h2>Table4将full/CNN-only/LSTM-only/hybrid/PID的分类accuracy列为.9823/.85/.87/.90/.75，但对照不能直接确认物理控制模块的因果精度贡献。</h2><h3>Evidence</h3><p>作者组件消融表</p><dl><dt>设计 / 对照</dt><dd>报告Kaggle模型/消融，物理闭环与标签任务不充分明晰；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>未报n的模型配置，非确认的实物重复；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 22 · Table 4</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>Table4将full/CNN-only/LSTM-only/hybrid/PID的分类accuracy列为.9823/.85/.87/.90/.75，但对照不能直接确认物理控制模块的因果精度贡献。</dd><dt>适用边界</dt><dd>没有容量、训练、split或控制轨迹匹配；FNR多处不等于1−recall，正文去除CNN/LSTM与表标签亦反向。</dd><dt>实际负结果</dt><dd>所列PID/hybrid仅提供较低分类数，不是测得机器人定位失效。</dd><dt>不能推出</dt><dd>不称统计显著协同或模块必要性。</dd><dt>未解决</dt><dd>指标与configuration身份/averaging不一致。</dd></dl><h3>相关问题</h3><ul><li>分类标签是否可独立定义并避免输入标签泄漏？</li><li>物理轨迹误差、稳定证明与实时闭环需要什么独立证据？</li></ul></article><article><small>C7 / 解释 · interpretation</small><h2>文献比较表不足以支持“超过所有基线”：所列YOLO precision .998高于本方法.982，且基线引用/任务和百分数尺度不同。</h2><h3>Evidence</h3><p>Table3与参考40–43来源类型核对</p><dl><dt>设计 / 对照</dt><dd>报告Kaggle模型/消融，物理闭环与标签任务不充分明晰；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>跨文献数值，不是同一受控benchmark；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 21 · Table 3</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>文献比较表不足以支持“超过所有基线”：所列YOLO precision .998高于本方法.982，且基线引用/任务和百分数尺度不同。</dd><dt>适用边界</dt><dd>41实际为PPO机械臂避障，42gesture/federated平台，43autonomous driving，不直接对应所称YOLO/HMM/PCA同任务结果。</dd><dt>实际负结果</dt><dd>表中本方法precision并非数值最高。</dd><dt>不能推出</dt><dd>不能据跨文献数字证明整体优越或公平泛化。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>分类标签是否可独立定义并避免输入标签泄漏？</li><li>物理轨迹误差、稳定证明与实时闭环需要什么独立证据？</li></ul></article><article><small>C8 / 假说 / 预测 · hypothesis</small><h2>作者仅提出V=e²/2和Vdot≤0作为稳定条件，没有给plant动力学或使该不等式成立的实际NN更新/控制证明，故不能录为稳定性定理。</h2><h3>Evidence</h3><p>Lyapunov候选与条件</p><dl><dt>设计 / 对照</dt><dd>报告Kaggle模型/消融，物理闭环与标签任务不充分明晰；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>数学控制方案；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 15 · (20)–(25)</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>作者仅提出V=e²/2和Vdot≤0作为稳定条件，没有给plant动力学或使该不等式成立的实际NN更新/控制证明，故不能录为稳定性定理。</dd><dt>适用边界</dt><dd>Vdot≤0若成立仅非增，不自动保证e→0；正文未推出该条件或多关节误差形式。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能称PID+任意NN保证闭环渐近稳定。</dd><dt>未解决</dt><dd>约束实施/动力学与证明缺失。</dd></dl><h3>相关问题</h3><ul><li>分类标签是否可独立定义并避免输入标签泄漏？</li><li>物理轨迹误差、稳定证明与实时闭环需要什么独立证据？</li></ul></article><article><small>C9 / 假说 / 预测 · hypothesis</small><h2>adaptive fusion、edge/cloud、多机器人及代表性工业长期试验被列为未来工作；实际实时latency、噪声剂量和米制精度尚未给出。</h2><h3>Evidence</h3><p>部署/验证路线</p><dl><dt>设计 / 对照</dt><dd>报告Kaggle模型/消融，物理闭环与标签任务不充分明晰；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>未来实物/系统；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 23 · 未报告 / 不适用</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>adaptive fusion、edge/cloud、多机器人及代表性工业长期试验被列为未来工作；实际实时latency、噪声剂量和米制精度尚未给出。</dd><dt>适用边界</dt><dd>没有机器人型号、轨迹误差、任务重复数、实时开销或持续工况数据。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能把未测称实际negative失败，也不能以classification代替已实现亚毫米控制。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>分类标签是否可独立定义并避免输入标签泄漏？</li><li>物理轨迹误差、稳定证明与实时闭环需要什么独立证据？</li></ul></article><details><summary>核对记录与来源信息</summary><pre>{
+  &quot;coverage&quot;: {
+    &quot;pdf_pages_read&quot;: [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26
+    ],
+    &quot;results_sections_seen&quot;: [
+      &quot;Introduction/allrelatedwork&quot;,
+      &quot;Dataset/preprocessing/split&quot;,
+      &quot;CNN/LSTM/fusion&quot;,
+      &quot;PID/neural law/Lyapunov&quot;,
+      &quot;Classification metrics Tables1–2&quot;,
+      &quot;Five-task PR/ROC&quot;,
+      &quot;Comparison Table3&quot;,
+      &quot;Ablation Table4&quot;,
+      &quot;Limitations/future/nomenclature&quot;,
+      &quot;All43references&quot;
+    ],
+    &quot;missing_material&quot;: [
+      &quot;图像像素未阅；所有图1–9可用图注/正文描述已阅；Algorithm1仅标题无步骤文字。&quot;,
+      &quot;原样本数/计数、split、训练参数、物理机器人/轨迹和数据代码未供。&quot;
+    ],
+    &quot;text_pass_complete&quot;: true,
+    &quot;notes&quot;: [
+      &quot;全部26页文字一次完整阅读；DOI10.1186/s44147-026-01026-2，2026卷73:175。&quot;,
+      &quot;文题一致，但内部数据、任务和指标来源差异重大；候选只保留可定位的报告与未验证架构。&quot;
+    ],
+    &quot;reading_mode&quot;: &quot;text_only&quot;,
+    &quot;figure_images_read&quot;: false,
+    &quot;scientific_verification&quot;: false,
+    &quot;source_pdf_offline&quot;: false,
+    &quot;archived_page_text_used&quot;: false
+  },
+  &quot;audit&quot;: {
+    &quot;source_match_checks&quot;: [],
+    &quot;model_findings&quot;: [
+      {
+        &quot;claim_id&quot;: &quot;C3&quot;,
+        &quot;issue&quot;: &quot;数据记录标签是success/failure，nomenclature y为task/object；结果五task confusion，指标定义又attack/normal及car IDS/6G。&quot;,
+        &quot;suggested_correction&quot;: &quot;真实任务身份未解，仅作者报告值候选，不推工业精度。&quot;,
+        &quot;pdf_page&quot;: 16,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C5&quot;,
+        &quot;issue&quot;: &quot;task type one-hot为预处理输入，同时五task为预测目标；是否同标签未被排除。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留可能泄漏，须原设计/数据确认，不作已证泛化。&quot;,
+        &quot;pdf_page&quot;: 8,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C6&quot;,
+        &quot;issue&quot;: &quot;Table4 CNN-only recall.83 FNR.12、LSTM recall.84 FNR.10、PID recall.70 FNR.15与同口径定义不符；配置去除叙述反向。&quot;,
+        &quot;suggested_correction&quot;: &quot;指标/标签不可自行修补，待源计数/平均规则。&quot;,
+        &quot;pdf_page&quot;: 22,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C7&quot;,
+        &quot;issue&quot;: &quot;41非所称YOLO而PPO，42/43另任务，.998precision也大于.982。&quot;,
+        &quot;suggested_correction&quot;: &quot;排除公平同任务全胜命题，保留表文差异。&quot;,
+        &quot;pdf_page&quot;: 25,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C8&quot;,
+        &quot;issue&quot;: &quot;列Vdot条件不是导出Vdot或证明训练保证，非增不保证误差趋零。&quot;,
+        &quot;suggested_correction&quot;: &quot;作为未验证约束设想。&quot;,
+        &quot;pdf_page&quot;: 15,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C9&quot;,
+        &quot;issue&quot;: &quot;分类率没有米制position误差；encoder/laser来源与force/proximity/temp dataset不相同。&quot;,
+        &quot;suggested_correction&quot;: &quot;亚毫米、real-time和实物可靠性暂缓。&quot;,
+        &quot;pdf_page&quot;: 22,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;没有实际样本分母、raw counts、split隔离/PCAfit或训练模型细节；只给typical70/15/15和50epoch曲线描述。&quot;,
+        &quot;suggested_correction&quot;: &quot;数据和源身份核对前不作独立验证。&quot;,
+        &quot;pdf_page&quot;: 8,
+        &quot;resolved&quot;: false
+      }
+    ],
+    &quot;needs_human_review&quot;: true
+  },
+  &quot;source&quot;: {
+    &quot;filename&quot;: &quot;paper-W7160374742--High-precision-mechanical-hybrid-control-of-industrial-robots-driven-by-multimodal-perception-f.pdf&quot;,
+    &quot;sha256&quot;: &quot;1eac79d0677d0cdb9ed3eb900bba0770bd8c1982994ef6e60ec0384ec2135bd8&quot;,
+    &quot;source_url&quot;: &quot;https://link.springer.com/content/pdf/10.1186/s44147-026-01026-2.pdf?error=cookies_not_supported&amp;code=ac177482-88e9-4a85-9b00-593cbe0a29f1&quot;,
+    &quot;pdf_page_count&quot;: 26
+  },
+  &quot;provenance&quot;: {
+    &quot;created_at&quot;: &quot;2026-10-07T12:54:31.388446Z&quot;,
+    &quot;workflow&quot;: &quot;claim-commons-pdf-v1&quot;,
+    &quot;prompt_version&quot;: &quot;claim-commons-chatgpt-pdf-2026-10-07.1&quot;,
+    &quot;backend&quot;: &quot;authorized_parallel_GPT&quot;,
+    &quot;model&quot;: &quot;inherited_account_GPT&quot;,
+    &quot;provider_api_key_used&quot;: false,
+    &quot;source_sha256&quot;: &quot;1eac79d0677d0cdb9ed3eb900bba0770bd8c1982994ef6e60ec0384ec2135bd8&quot;,
+    &quot;source_audit_complete&quot;: true,
+    &quot;review_status&quot;: &quot;candidate&quot;,
+    &quot;database_updated&quot;: false
+  }
+}</pre></details></main><footer></footer></body></html>

@@ -1,0 +1,1685 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "preprint",
+  "paper": {
+    "title": "NeuroBRIDGE: Behavior-Conditioned Koopman Dynamics with Riemannian Alignment for Early Substance Use Initiation Prediction from Longitudinal Functional Connectome",
+    "authors": [
+      "Badhan Mazumder",
+      "Sir-Lord Wiafe",
+      "Vince D. Calhoun",
+      "Dong Hye Ye"
+    ],
+    "doi": null,
+    "publication_year": 2026,
+    "venue": "arXiv (Cornell University)",
+    "url": "https://arxiv.org/pdf/2603.29960"
+  },
+  "source": {
+    "filename": "paper-W7148178637--NeuroBRIDGE-Behavior-Conditioned-Koopman-Dynamics-with-Riemannian-Alignment-for-Early-Substance.pdf",
+    "sha256": "746b9e0785e263d63ad03fda44246e604271a8515e4d606e77525238699a4438",
+    "source_url": "https://arxiv.org/pdf/2603.29960",
+    "pdf_page_count": 5
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "results_sections_seen": [
+      "Abstract/Introduction and three stated contributions",
+      "2 Methodology",
+      "2.1.1 Riemannian Tangent-Space Embedding",
+      "2.1.2 Multi-Scale Heat-Kernel Tokens & Edge-Gated GNN Encoding",
+      "Figure 1 caption",
+      "2.2 Dual Temporal Fusion for Longitudinal Data",
+      "2.3.1 Neural Koopman Operator for Latent Dynamics",
+      "2.3.2 Joint Training Objective",
+      "3.1 Dataset and Pre-processing",
+      "3.2 Experimental Settings",
+      "3.3 Quantitative Evaluation",
+      "Table 1 all five baselines",
+      "Table 2 all eleven ablations",
+      "3.4 Qualitative Evaluation and Figure 2 caption",
+      "4 Conclusions",
+      "5 References"
+    ],
+    "missing_material": [
+      "未提供图像像素或原始影像/模型输出。",
+      "未报告每折类别数、家系/站点隔离、独立运行种子数、SD 计算基准或独立外部测试。",
+      "未提供输入 SPD 特征值检查、Phi 可逆性/条件数及完整实现。"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "五页所有提供文本、两个图注、两个完整表及参考文献均已评估；未提供附录/补充内容。",
+      "来源明确为 arXiv:2603.29960v1 [cs.CV]，2026-03-31；不替换成未提供后续版本或正式发表。",
+      "标题大小写/排版与索引一致，四位作者对应；doi null 保留。",
+      "第二轮源内审计在保留全文上下文中完成：复核所有表行、时间点、样本单位、模型解释来源及数学前提。",
+      "所有引用 quote 为 null；不引入跨论文支持、矛盾或复现关系。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "midpoint-anchored tangent 表示与 trace-free deflation",
+      "role": "result",
+      "source_pages": [
+        1,
+        2,
+        3
+      ],
+      "decision": "include",
+      "reason": "算法构造与必要 SPD 条件保留，scanner drift 的去除不作为已证事实。"
+    },
+    {
+      "summary": "heat-kernel tokens 和 geometry-guided edge gate",
+      "role": "result",
+      "source_pages": [
+        2,
+        3
+      ],
+      "decision": "include",
+      "reason": "联合图表示构造；独立组件效应分开记录。"
+    },
+    {
+      "summary": "dual-time self/cross attention",
+      "role": "result",
+      "source_pages": [
+        1,
+        3
+      ],
+      "decision": "include",
+      "reason": "明确 seed 包含两次已观察访视。"
+    },
+    {
+      "summary": "谱受限 CBCL-conditioned Koopman 与三项目标",
+      "role": "result",
+      "source_pages": [
+        1,
+        3
+      ],
+      "decision": "include",
+      "reason": "保留可逆性、有限 rollout、behavior input 和 residual 的联合条件。"
+    },
+    {
+      "summary": "ABCD 五基线预测比较",
+      "role": "result",
+      "source_pages": [
+        3,
+        4
+      ],
+      "decision": "include",
+      "reason": "一个完整 benchmark 命题保留五种比较对象和三类读数。"
+    },
+    {
+      "summary": "十一项组件删除实验",
+      "role": "result",
+      "source_pages": [
+        4
+      ],
+      "decision": "include",
+      "reason": "分别记录几何、midpoint、trace、tokens、gate、RBF、cross-time、Koopman、CBCL、Ldyn、Lproto，不用固定数量合并可独立评估的读数。"
+    },
+    {
+      "summary": "两类别 top 3% 模型边权分布",
+      "role": "result",
+      "source_pages": [
+        4
+      ],
+      "decision": "include",
+      "reason": "模型描述与生理机制解释分开。"
+    },
+    {
+      "summary": "控制中心偏移与神经发育风险解释",
+      "role": "interpretation",
+      "source_pages": [
+        4
+      ],
+      "decision": "include",
+      "reason": "仅作者解释，没有独立生理或因果验证。"
+    },
+    {
+      "summary": "稳定、临床可用、targeted prevention 等广泛结论",
+      "role": "interpretation",
+      "source_pages": [
+        1,
+        3,
+        4
+      ],
+      "decision": "exclude",
+      "reason": "未提供长期稳定性、校准、外部或前瞻干预数据；相关非推论已嵌入候选边界。"
+    },
+    {
+      "summary": "更多访视、多模态和替代 manifold architecture",
+      "role": "hypothesis",
+      "source_pages": [
+        4
+      ],
+      "decision": "exclude",
+      "reason": "作者后续计划，不是已完成结果或具体经证据支持假设。"
+    },
+    {
+      "summary": "nDTW/NeuroMark 数据流程和训练超参数",
+      "role": "other",
+      "source_pages": [
+        2,
+        3
+      ],
+      "decision": "exclude",
+      "reason": "作为方法和所有实验的必要上下文保留，不单独拆成科学发现。"
+    },
+    {
+      "summary": "参考文献",
+      "role": "other",
+      "source_pages": [
+        5
+      ],
+      "decision": "exclude",
+      "reason": "整页读取，但所引外部论文不作为新增本研究证据。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "NeuroBRIDGE 提出将每位受试者 baseline 和 year-2 的 FNC 对称化并加 ridge，在两矩阵均为 SPD 的条件下用 affine-invariant geodesic midpoint 作共同锚点，再经矩阵对数映射和 trace-free deflation 表示两次访视的各向异性变化。",
+      "claim_type": "methodological_construction",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "矩阵几何与表示构造",
+          "design": "每人两次 53×53 FNC；B 对称化后加 epsilon I，实验 epsilon=10^-3",
+          "comparator": "同一受试者 baseline/year-2 在共享 tangent coordinates；与 Euclidean 表示不同",
+          "measure": "midpoint A、principal logm 及去迹 Y",
+          "unit_of_analysis": "受试者内的矩阵；算法构造本身无独立实验 n",
+          "sample_size_as_reported": null,
+          "uncertainty": "本节未给出定理、数值误差或 SPD 验证结果",
+          "assumptions": [
+            "加 ridge 后两个输入必须严格正定，才能定义逆平方根和 principal matrix logarithm",
+            "单凭任意正 epsilon 并不保证任意 nDTW 输入已为 SPD",
+            "trace-free 操作只去掉各向同性模式，不直接证明 scanner drift 已移除"
+          ],
+          "source_locator": {
+            "pdf_page": 2,
+            "section": "2.1.1 Riemannian Tangent-Space Embedding",
+            "figure": null,
+            "equation": "(1)–(2)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提供 subject-anchored 的纵向几何表示方法。",
+        "boundary": "是一项算法构造；其经验作用另由组件消融评估。",
+        "negative_result": null,
+        "non_inference": "不能把 SPD 视为所有原始 FNC 天然具备的已检验性质，也不能据去迹操作断言已消除扫描仪混杂。",
+        "unresolved": "源未展示全部输入的特征值和 ridge 充分性。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "representation-coding",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "怎样为同一受试者两次 FNC 构造共享且几何一致的比较坐标？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "NeuroBRIDGE 在共享 tangent 表示上建立 kNN 图，通过多尺度 exp(-theta J) heat-kernel tokens 编码局部到全局上下文，并将学习的 edge gate 与 tangent-space Gaussian RBF 相乘后重加权两层 GCN，使距离较大的候选边在表示构造中受较小权重。",
+      "claim_type": "methodological_construction",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "图扩散 tokens 与几何/学习联合边加权",
+          "design": "实验 k=5，S=2，D0=D=96；两层 GCN",
+          "comparator": "未加 heat-kernel 或未加 gate/RBF 的组件变体另有消融",
+          "measure": "行特征、Gaussian kernel、sigmoid gate 与加权 adjacency",
+          "unit_of_analysis": "图节点为 53 ICNs；节点不是独立参与者",
+          "sample_size_as_reported": null,
+          "uncertainty": "未报告边真值或去伪边的独立验证",
+          "assumptions": [
+            "heat-kernel 的低通解释依赖其图 Laplacian 构造和适宜的扩散尺度",
+            "RBF 带宽为正且源称由邻居距离确定；具体算法未完整给出"
+          ],
+          "source_locator": {
+            "pdf_page": 2,
+            "section": "2.1.2 Multi-Scale Heat-Kernel Tokens & Edge-Gated GNN Encoding",
+            "figure": null,
+            "equation": "(3)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "第二层 GCN 生成节点表示",
+          "design": null,
+          "comparator": null,
+          "measure": "R^(tau)",
+          "unit_of_analysis": "受试者内 ICN 节点",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "2.1.2（续）",
+            "figure": null,
+            "equation": "(4)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提出局部/全局扩散和几何门控联合的节点表示。",
+        "boundary": "只说明模型如何加权，不等同实际伪连接被鉴别。",
+        "negative_result": null,
+        "non_inference": "不能推断较远的真实脑连接均属噪声，也不能把模型边权当直接的脑连接强度。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "多尺度扩散与几何门控能否改进纵向 connectome 的预测表示？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "NeuroBRIDGE 用共享投影和标量 gate 混合每次访视的 self-attention 与跨访视 cross-attention，再对两次访视池化向量进行学习加权，得到同时利用 baseline 和 year-2 的 subject-wise dynamics seed，而不是仅将两次向量拼接。",
+      "claim_type": "methodological_construction",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "双时间 self/cross attention 与混合池化",
+          "design": "两次访视互相查询；delta 为两项 softmax 权重",
+          "comparator": "简单拼接；具体效应由 Table 2 cross-time 消融比较",
+          "measure": "融合节点表示及 rseed",
+          "unit_of_analysis": "受试者及其访视/ICN；访视不是独立受试者",
+          "sample_size_as_reported": null,
+          "uncertainty": "方法定义未单独证明更准确",
+          "assumptions": [
+            "两次访视都在模型输入中",
+            "此 seed 已包含 year-2 信息"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "2.2 Dual Temporal Fusion for Longitudinal Data",
+            "figure": null,
+            "equation": "(5)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提供显式跨访视融合方法。",
+        "boundary": "模型利用两次已观察访视，不是只凭 baseline 预测尚未观察的 year-2 状态。",
+        "negative_result": null,
+        "non_inference": "attention 结构不能单独证明捕获真实发育因果轨迹。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "显式跨访视 attention 相比拼接能否保留有用纵向信息？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "NeuroBRIDGE 将共享 latent operator 写为 U=Phi diag(tanh chi) Phi^-1，并用两次 CBCL 的 MLP offsets 作条件输入进行 T=2 rollout；分类器联合预测 year-2 latent 与 observed-minus-predicted residual，通过加权 BCE、latent consistency 和 prototype-contrastive 三项损失学习 year-4 SUI。",
+      "claim_type": "conditional_latent_dynamics_method",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "带行为条件的有限步 latent 线性演化和联合目标",
+          "design": "每次访视 F=6 CBCL 特征；T=2；eta_dyn=0.25、eta_con=0.10",
+          "comparator": "与删除 Koopman/CBCL/各损失项的变体另行比较",
+          "measure": "r-hat^(2)、year-2 residual 与 SUI logit",
+          "unit_of_analysis": "参与者 latent；T=2 为模型步数，不是独立重复",
+          "sample_size_as_reported": null,
+          "uncertainty": "没有长时间行为驱动轨迹误差或生物动力学拟合验证",
+          "assumptions": [
+            "Phi 必须可逆",
+            "tanh 将 operator 特征值限制在 (-1,1)，但不能单凭此保证任意条件输入下的全程范数收缩",
+            "rollout seed 和 residual 使用已观察 year-2 数据",
+            "latent consistency 不等同真实神经状态的预测准确性"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "2.3 Koopman Dynamics with Behavioral Condition",
+            "figure": null,
+            "equation": "(6)–(7)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "组合行为条件、谱约束、latent deviation 和类别 shaping 的预测方法。",
+        "boundary": "仅两访视有限步建模；不是完整动力学定理或 baseline-only forecast。",
+        "negative_result": null,
+        "non_inference": "不能由 spectral bound 断言所有非正规瞬态/受驱动轨迹均稳定，更不能把 learned Koopman operator 认定为脑的真实生理生成机制。",
+        "unresolved": "Phi 可逆性/数值条件、受驱动稳定性和生理对应性未独立验证。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "CBCL 条件的 latent 演化与类别塑形怎样参与未来 SUI 预测？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "在 ABCD 的 7,168 名参与者（year-4 SUI 220 名）及所报告 5-fold CV 中，以 baseline/year-2 FNC 和 CBCL 预测 year-4 SUI 的 NeuroBRIDGE 取得 accuracy/sensitivity/specificity 84.71/86.36/84.66%，三项均高于表列 SPDNet、BrainNetCNN、BNT、EvolveGCN 和 RBGM；BNT 对应 79.02/74.42/79.16%。",
+      "claim_type": "predictive_benchmark",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "观察性队列上的模型基准比较",
+          "design": "baseline 9–10 岁及 year-2 11–12 岁 rs-fMRI/CBCL 作为输入，year-4 13–14 岁 SUI 标签；53 ICNs，nDTW FNC",
+          "comparator": "SPDNet：77.57 ± 0.0854 / 68.18 ± 0.1122 / 77.86 ± 0.0811；BrainNetCNN：76.53 ± 0.0932 / 68.64 ± 0.1213 / 76.78 ± 0.0866；BNT：79.02 ± 0.0794 / 74.42 ± 0.0976 / 79.16 ± 0.0754；EvolveGCN：74.68 ± 0.0989 / 67.27 ± 0.1281 / 74.91 ± 0.0891；RBGM：75.73 ± 0.0912 / 72.82 ± 0.1056 / 75.85 ± 0.0844（顺序 accuracy/sensitivity/specificity，表标注 %）",
+          "measure": "accuracy 84.71 ± 0.0692；sensitivity 86.36 ± 0.0514；specificity 84.66 ± 0.0658（均按表标注 % 原样）",
+          "unit_of_analysis": "主要观察单位为参与者，参与者来自多站点/可能有家系依赖；两个访视、53 ICNs、交叉验证折不是独立生物重复",
+          "sample_size_as_reported": "7168 名参与者，year-4 SUI 220 名；ABCD 21 个站点；5-fold CV（80:20）；每折人数、各类分配、随机种子与家系数未报告",
+          "uncertainty": "源表声明单位 %、Mean ± Standard Deviation；小数 SD 按原样保留，未说明其究竟跨折还是跨独立训练运行；没有置信区间或配对检验",
+          "assumptions": [
+            "超参数通过 5-fold CV 选择；未明确报告独立于模型选择的嵌套外层或最终测试集",
+            "各基线输入与优化公平性细节未完整披露"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "3.3 Quantitative Evaluation—Baselines",
+            "figure": "Table 1",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "样本与评估协议说明",
+          "design": "baseline 9–10 岁及 year-2 11–12 岁 rs-fMRI/CBCL 作为输入，year-4 13–14 岁 SUI 标签；53 ICNs，nDTW FNC",
+          "comparator": null,
+          "measure": "参与者、阳性标签、访视和 CV 设置",
+          "unit_of_analysis": "主要观察单位为参与者，参与者来自多站点/可能有家系依赖；两个访视、53 ICNs、交叉验证折不是独立生物重复",
+          "sample_size_as_reported": "7168 名参与者，year-4 SUI 220 名；ABCD 21 个站点；5-fold CV（80:20）；每折人数、各类分配、随机种子与家系数未报告",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "3.1 Dataset and Pre-processing；3.2 Experimental Settings",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "本队列/所给评估协议中表列预测指标较高。",
+        "boundary": "多站点样本不等同外部留站点验证；类高度不平衡；SD 单位按印刷值保留。",
+        "negative_result": null,
+        "non_inference": "未报告校准、AUROC/AUPRC、临床净获益或前瞻性干预有效性；不能据 accuracy 推出适合临床部署或存在因果脑标志。",
+        "unresolved": "需明确家系/站点隔离、嵌套调参及外部泛化。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "纵向几何表示、行为和 latent dynamics 的联合模型在该队列能否改善未来 SUI 分类？"
+      ],
+      "shared_evidence_with": [
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "在 ABCD baseline/year-2 FNC+CBCL 预测 year-4 SUI 的所报 5-fold CV 消融中，去除 Riemannian pipeline，改用 Euclidean 表示使accuracy 降至 75.27%（源报下降 9.44 pp）；完整模型对应 accuracy/sensitivity/specificity 84.71/86.36/84.66%。",
+      "claim_type": "component_ablation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "固定框架组件删除比较",
+          "design": "baseline 9–10 岁及 year-2 11–12 岁 rs-fMRI/CBCL 作为输入，year-4 13–14 岁 SUI 标签；53 ICNs，nDTW FNC",
+          "comparator": "完整 NeuroBRIDGE 对比 去除 Riemannian pipeline，改用 Euclidean 表示",
+          "measure": "删除变体 accuracy 75.27 ± 0.1183；sensitivity 75.91 ± 0.1025；specificity 75.24 ± 0.1241；完整模型 accuracy 84.71 ± 0.0692；sensitivity 86.36 ± 0.0514；specificity 84.66 ± 0.0658（均按表标注 % 原样）",
+          "unit_of_analysis": "主要观察单位为参与者，参与者来自多站点/可能有家系依赖；两个访视、53 ICNs、交叉验证折不是独立生物重复",
+          "sample_size_as_reported": "7168 名参与者，year-4 SUI 220 名；ABCD 21 个站点；5-fold CV（80:20）；每折人数、各类分配、随机种子与家系数未报告",
+          "uncertainty": "源表声明单位 %、Mean ± Standard Deviation；小数 SD 按原样保留，未说明其究竟跨折还是跨独立训练运行；没有置信区间或配对检验",
+          "assumptions": [
+            "全部组件比较共享 ABCD 样本与所述评估设置",
+            "源未完整报告每个变体是否重新调参或独立重复训练次数"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "3.3 Quantitative Evaluation—Ablations",
+            "figure": "Table 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "报告均值支持 几何 pipeline 在该配置下的预测贡献。",
+        "boundary": "属于同队列模型消融，不是独立样本复现；没有组件交互因子实验。",
+        "negative_result": "真实删除对照在所报指标上的性能下降；并非生物系统的功能缺失证明。",
+        "non_inference": "几何 pipeline 的整体删除同时改变多个步骤，不能单独归因于某一个映射。",
+        "unresolved": "SD 计算基准、配对不确定性与外部可重复性未报告。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "Riemannian 表示相对于 Euclidean 替代对 SUI 预测有多大影响？"
+      ],
+      "shared_evidence_with": [
+        "C5",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "在 ABCD baseline/year-2 FNC+CBCL 预测 year-4 SUI 的所报 5-fold CV 消融中，去除 midpoint anchor使accuracy 降至 82.58%，sensitivity/specificity 为 84.55/82.51%；完整模型对应 accuracy/sensitivity/specificity 84.71/86.36/84.66%。",
+      "claim_type": "component_ablation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "固定框架组件删除比较",
+          "design": "baseline 9–10 岁及 year-2 11–12 岁 rs-fMRI/CBCL 作为输入，year-4 13–14 岁 SUI 标签；53 ICNs，nDTW FNC",
+          "comparator": "完整 NeuroBRIDGE 对比 去除 midpoint anchor",
+          "measure": "删除变体 accuracy 82.58 ± 0.0745；sensitivity 84.55 ± 0.0608；specificity 82.51 ± 0.0816；完整模型 accuracy 84.71 ± 0.0692；sensitivity 86.36 ± 0.0514；specificity 84.66 ± 0.0658（均按表标注 % 原样）",
+          "unit_of_analysis": "主要观察单位为参与者，参与者来自多站点/可能有家系依赖；两个访视、53 ICNs、交叉验证折不是独立生物重复",
+          "sample_size_as_reported": "7168 名参与者，year-4 SUI 220 名；ABCD 21 个站点；5-fold CV（80:20）；每折人数、各类分配、随机种子与家系数未报告",
+          "uncertainty": "源表声明单位 %、Mean ± Standard Deviation；小数 SD 按原样保留，未说明其究竟跨折还是跨独立训练运行；没有置信区间或配对检验",
+          "assumptions": [
+            "全部组件比较共享 ABCD 样本与所述评估设置",
+            "源未完整报告每个变体是否重新调参或独立重复训练次数"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "3.3 Quantitative Evaluation—Ablations",
+            "figure": "Table 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "报告均值支持 midpoint anchor 在该配置下的预测贡献。",
+        "boundary": "属于同队列模型消融，不是独立样本复现；没有组件交互因子实验。",
+        "negative_result": "真实删除对照在所报指标上的性能下降；并非生物系统的功能缺失证明。",
+        "non_inference": "比较只支持该固定架构下的组件依赖，未确立锚点对所有数据都必要。",
+        "unresolved": "SD 计算基准、配对不确定性与外部可重复性未报告。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "共同 midpoint anchor 是否贡献该纵向模型的预测性能？"
+      ],
+      "shared_evidence_with": [
+        "C5",
+        "C6",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "在 ABCD baseline/year-2 FNC+CBCL 预测 year-4 SUI 的所报 5-fold CV 消融中，去除 trace-free deflation使accuracy 降至 83.84%，sensitivity/specificity 为 85.91/83.78%；完整模型对应 accuracy/sensitivity/specificity 84.71/86.36/84.66%。",
+      "claim_type": "component_ablation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "固定框架组件删除比较",
+          "design": "baseline 9–10 岁及 year-2 11–12 岁 rs-fMRI/CBCL 作为输入，year-4 13–14 岁 SUI 标签；53 ICNs，nDTW FNC",
+          "comparator": "完整 NeuroBRIDGE 对比 去除 trace-free deflation",
+          "measure": "删除变体 accuracy 83.84 ± 0.0712；sensitivity 85.91 ± 0.0549；specificity 83.78 ± 0.0794；完整模型 accuracy 84.71 ± 0.0692；sensitivity 86.36 ± 0.0514；specificity 84.66 ± 0.0658（均按表标注 % 原样）",
+          "unit_of_analysis": "主要观察单位为参与者，参与者来自多站点/可能有家系依赖；两个访视、53 ICNs、交叉验证折不是独立生物重复",
+          "sample_size_as_reported": "7168 名参与者，year-4 SUI 220 名；ABCD 21 个站点；5-fold CV（80:20）；每折人数、各类分配、随机种子与家系数未报告",
+          "uncertainty": "源表声明单位 %、Mean ± Standard Deviation；小数 SD 按原样保留，未说明其究竟跨折还是跨独立训练运行；没有置信区间或配对检验",
+          "assumptions": [
+            "全部组件比较共享 ABCD 样本与所述评估设置",
+            "源未完整报告每个变体是否重新调参或独立重复训练次数"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "3.3 Quantitative Evaluation—Ablations",
+            "figure": "Table 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "报告均值支持 trace-free deflation 在该配置下的预测贡献。",
+        "boundary": "属于同队列模型消融，不是独立样本复现；没有组件交互因子实验。",
+        "negative_result": "真实删除对照在所报指标上的性能下降；并非生物系统的功能缺失证明。",
+        "non_inference": "预测消融不是 scanner drift 被消除的直接证据。",
+        "unresolved": "SD 计算基准、配对不确定性与外部可重复性未报告。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "去除各向同性 trace 模式是否贡献预测？"
+      ],
+      "shared_evidence_with": [
+        "C5",
+        "C6",
+        "C7",
+        "C9",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "在 ABCD baseline/year-2 FNC+CBCL 预测 year-4 SUI 的所报 5-fold CV 消融中，去除 H-K tokens使accuracy 降至 80.08%（源报下降 4.63 pp）；完整模型对应 accuracy/sensitivity/specificity 84.71/86.36/84.66%。",
+      "claim_type": "component_ablation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "固定框架组件删除比较",
+          "design": "baseline 9–10 岁及 year-2 11–12 岁 rs-fMRI/CBCL 作为输入，year-4 13–14 岁 SUI 标签；53 ICNs，nDTW FNC",
+          "comparator": "完整 NeuroBRIDGE 对比 去除 H-K tokens",
+          "measure": "删除变体 accuracy 80.08 ± 0.0758；sensitivity 80.91 ± 0.0654；specificity 80.05 ± 0.0810；完整模型 accuracy 84.71 ± 0.0692；sensitivity 86.36 ± 0.0514；specificity 84.66 ± 0.0658（均按表标注 % 原样）",
+          "unit_of_analysis": "主要观察单位为参与者，参与者来自多站点/可能有家系依赖；两个访视、53 ICNs、交叉验证折不是独立生物重复",
+          "sample_size_as_reported": "7168 名参与者，year-4 SUI 220 名；ABCD 21 个站点；5-fold CV（80:20）；每折人数、各类分配、随机种子与家系数未报告",
+          "uncertainty": "源表声明单位 %、Mean ± Standard Deviation；小数 SD 按原样保留，未说明其究竟跨折还是跨独立训练运行；没有置信区间或配对检验",
+          "assumptions": [
+            "全部组件比较共享 ABCD 样本与所述评估设置",
+            "源未完整报告每个变体是否重新调参或独立重复训练次数"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "3.3 Quantitative Evaluation—Ablations",
+            "figure": "Table 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "报告均值支持 多尺度 heat-kernel tokens 在该配置下的预测贡献。",
+        "boundary": "属于同队列模型消融，不是独立样本复现；没有组件交互因子实验。",
+        "negative_result": "真实删除对照在所报指标上的性能下降；并非生物系统的功能缺失证明。",
+        "non_inference": "不能由此鉴定局部或全局哪一尺度是独立有效机制。",
+        "unresolved": "SD 计算基准、配对不确定性与外部可重复性未报告。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "多尺度图扩散 tokens 是否贡献未来 SUI 预测？"
+      ],
+      "shared_evidence_with": [
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "在 ABCD baseline/year-2 FNC+CBCL 预测 year-4 SUI 的所报 5-fold CV 消融中，去除 learned edge gate使accuracy 降至 82.71%（源报下降 2.00 pp）；完整模型对应 accuracy/sensitivity/specificity 84.71/86.36/84.66%。",
+      "claim_type": "component_ablation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "固定框架组件删除比较",
+          "design": "baseline 9–10 岁及 year-2 11–12 岁 rs-fMRI/CBCL 作为输入，year-4 13–14 岁 SUI 标签；53 ICNs，nDTW FNC",
+          "comparator": "完整 NeuroBRIDGE 对比 去除 learned edge gate",
+          "measure": "删除变体 accuracy 82.71 ± 0.0873；sensitivity 84.55 ± 0.0726；specificity 82.66 ± 0.0921；完整模型 accuracy 84.71 ± 0.0692；sensitivity 86.36 ± 0.0514；specificity 84.66 ± 0.0658（均按表标注 % 原样）",
+          "unit_of_analysis": "主要观察单位为参与者，参与者来自多站点/可能有家系依赖；两个访视、53 ICNs、交叉验证折不是独立生物重复",
+          "sample_size_as_reported": "7168 名参与者，year-4 SUI 220 名；ABCD 21 个站点；5-fold CV（80:20）；每折人数、各类分配、随机种子与家系数未报告",
+          "uncertainty": "源表声明单位 %、Mean ± Standard Deviation；小数 SD 按原样保留，未说明其究竟跨折还是跨独立训练运行；没有置信区间或配对检验",
+          "assumptions": [
+            "全部组件比较共享 ABCD 样本与所述评估设置",
+            "源未完整报告每个变体是否重新调参或独立重复训练次数"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "3.3 Quantitative Evaluation—Ablations",
+            "figure": "Table 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "报告均值支持 learned edge gate 在该配置下的预测贡献。",
+        "boundary": "属于同队列模型消融，不是独立样本复现；没有组件交互因子实验。",
+        "negative_result": "真实删除对照在所报指标上的性能下降；并非生物系统的功能缺失证明。",
+        "non_inference": "性能变化不证明被降权的边是伪连接。",
+        "unresolved": "SD 计算基准、配对不确定性与外部可重复性未报告。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "学习型 edge gate 是否有超出固定几何权重的贡献？"
+      ],
+      "shared_evidence_with": [
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "在 ABCD baseline/year-2 FNC+CBCL 预测 year-4 SUI 的所报 5-fold CV 消融中，去除 Gaussian RBF kernel使accuracy 降至 83.79%（源报下降 0.92 pp）；完整模型对应 accuracy/sensitivity/specificity 84.71/86.36/84.66%。",
+      "claim_type": "component_ablation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "固定框架组件删除比较",
+          "design": "baseline 9–10 岁及 year-2 11–12 岁 rs-fMRI/CBCL 作为输入，year-4 13–14 岁 SUI 标签；53 ICNs，nDTW FNC",
+          "comparator": "完整 NeuroBRIDGE 对比 去除 Gaussian RBF kernel",
+          "measure": "删除变体 accuracy 83.79 ± 0.0697；sensitivity 85.45 ± 0.0562；specificity 83.74 ± 0.0739；完整模型 accuracy 84.71 ± 0.0692；sensitivity 86.36 ± 0.0514；specificity 84.66 ± 0.0658（均按表标注 % 原样）",
+          "unit_of_analysis": "主要观察单位为参与者，参与者来自多站点/可能有家系依赖；两个访视、53 ICNs、交叉验证折不是独立生物重复",
+          "sample_size_as_reported": "7168 名参与者，year-4 SUI 220 名；ABCD 21 个站点；5-fold CV（80:20）；每折人数、各类分配、随机种子与家系数未报告",
+          "uncertainty": "源表声明单位 %、Mean ± Standard Deviation；小数 SD 按原样保留，未说明其究竟跨折还是跨独立训练运行；没有置信区间或配对检验",
+          "assumptions": [
+            "全部组件比较共享 ABCD 样本与所述评估设置",
+            "源未完整报告每个变体是否重新调参或独立重复训练次数"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "3.3 Quantitative Evaluation—Ablations",
+            "figure": "Table 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "报告均值支持 Gaussian RBF kernel 在该配置下的预测贡献。",
+        "boundary": "属于同队列模型消融，不是独立样本复现；没有组件交互因子实验。",
+        "negative_result": "真实删除对照在所报指标上的性能下降；并非生物系统的功能缺失证明。",
+        "non_inference": "未报告配对检验，不能仅凭均值认定小差异具有统计显著性。",
+        "unresolved": "SD 计算基准、配对不确定性与外部可重复性未报告。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "几何距离 RBF 是否贡献门控图表示？"
+      ],
+      "shared_evidence_with": [
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "在 ABCD baseline/year-2 FNC+CBCL 预测 year-4 SUI 的所报 5-fold CV 消融中，去除 cross-time attention，仅拼接访视表示使accuracy 降至 77.92%（源报下降 6.79 pp）；完整模型对应 accuracy/sensitivity/specificity 84.71/86.36/84.66%。",
+      "claim_type": "component_ablation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "固定框架组件删除比较",
+          "design": "baseline 9–10 岁及 year-2 11–12 岁 rs-fMRI/CBCL 作为输入，year-4 13–14 岁 SUI 标签；53 ICNs，nDTW FNC",
+          "comparator": "完整 NeuroBRIDGE 对比 去除 cross-time attention，仅拼接访视表示",
+          "measure": "删除变体 accuracy 77.92 ± 0.1046；sensitivity 78.64 ± 0.0932；specificity 77.89 ± 0.1105；完整模型 accuracy 84.71 ± 0.0692；sensitivity 86.36 ± 0.0514；specificity 84.66 ± 0.0658（均按表标注 % 原样）",
+          "unit_of_analysis": "主要观察单位为参与者，参与者来自多站点/可能有家系依赖；两个访视、53 ICNs、交叉验证折不是独立生物重复",
+          "sample_size_as_reported": "7168 名参与者，year-4 SUI 220 名；ABCD 21 个站点；5-fold CV（80:20）；每折人数、各类分配、随机种子与家系数未报告",
+          "uncertainty": "源表声明单位 %、Mean ± Standard Deviation；小数 SD 按原样保留，未说明其究竟跨折还是跨独立训练运行；没有置信区间或配对检验",
+          "assumptions": [
+            "全部组件比较共享 ABCD 样本与所述评估设置",
+            "源未完整报告每个变体是否重新调参或独立重复训练次数"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "3.3 Quantitative Evaluation—Ablations",
+            "figure": "Table 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "报告均值支持 cross-time attention 在该配置下的预测贡献。",
+        "boundary": "属于同队列模型消融，不是独立样本复现；没有组件交互因子实验。",
+        "negative_result": "真实删除对照在所报指标上的性能下降；并非生物系统的功能缺失证明。",
+        "non_inference": "架构删除并不识别真实神经发育时间机制。",
+        "unresolved": "SD 计算基准、配对不确定性与外部可重复性未报告。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "显式跨访视 attention 是否优于简单拼接？"
+      ],
+      "shared_evidence_with": [
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C13",
+        "C14",
+        "C15",
+        "C16"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C13",
+      "statement": "在 ABCD baseline/year-2 FNC+CBCL 预测 year-4 SUI 的所报 5-fold CV 消融中，去除 Koopman operator使accuracy 降至 79.69%（源报下降 5.02 pp）；完整模型对应 accuracy/sensitivity/specificity 84.71/86.36/84.66%。",
+      "claim_type": "component_ablation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "固定框架组件删除比较",
+          "design": "baseline 9–10 岁及 year-2 11–12 岁 rs-fMRI/CBCL 作为输入，year-4 13–14 岁 SUI 标签；53 ICNs，nDTW FNC",
+          "comparator": "完整 NeuroBRIDGE 对比 去除 Koopman operator",
+          "measure": "删除变体 accuracy 79.69 ± 0.0989；sensitivity 80.91 ± 0.0887；specificity 79.65 ± 0.1034；完整模型 accuracy 84.71 ± 0.0692；sensitivity 86.36 ± 0.0514；specificity 84.66 ± 0.0658（均按表标注 % 原样）",
+          "unit_of_analysis": "主要观察单位为参与者，参与者来自多站点/可能有家系依赖；两个访视、53 ICNs、交叉验证折不是独立生物重复",
+          "sample_size_as_reported": "7168 名参与者，year-4 SUI 220 名；ABCD 21 个站点；5-fold CV（80:20）；每折人数、各类分配、随机种子与家系数未报告",
+          "uncertainty": "源表声明单位 %、Mean ± Standard Deviation；小数 SD 按原样保留，未说明其究竟跨折还是跨独立训练运行；没有置信区间或配对检验",
+          "assumptions": [
+            "全部组件比较共享 ABCD 样本与所述评估设置",
+            "源未完整报告每个变体是否重新调参或独立重复训练次数"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "3.3 Quantitative Evaluation—Ablations",
+            "figure": "Table 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "报告均值支持 Koopman module 在该配置下的预测贡献。",
+        "boundary": "属于同队列模型消融，不是独立样本复现；没有组件交互因子实验。",
+        "negative_result": "真实删除对照在所报指标上的性能下降；并非生物系统的功能缺失证明。",
+        "non_inference": "预测组件作用不证明 learned operator 是真实脑动力学。",
+        "unresolved": "SD 计算基准、配对不确定性与外部可重复性未报告。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "条件 latent rollout 是否贡献 SUI 分类性能？"
+      ],
+      "shared_evidence_with": [
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12",
+        "C14",
+        "C15",
+        "C16"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C14",
+      "statement": "在 ABCD baseline/year-2 FNC+CBCL 预测 year-4 SUI 的所报 5-fold CV 消融中，去除 CBCL scores使accuracy 降至 82.13%（源报下降 2.58 pp），sensitivity 降至 77.73%；完整模型对应 accuracy/sensitivity/specificity 84.71/86.36/84.66%。",
+      "claim_type": "component_ablation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "固定框架组件删除比较",
+          "design": "baseline 9–10 岁及 year-2 11–12 岁 rs-fMRI/CBCL 作为输入，year-4 13–14 岁 SUI 标签；53 ICNs，nDTW FNC",
+          "comparator": "完整 NeuroBRIDGE 对比 去除 CBCL scores",
+          "measure": "删除变体 accuracy 82.13 ± 0.0882；sensitivity 77.73 ± 0.1281；specificity 82.27 ± 0.0798；完整模型 accuracy 84.71 ± 0.0692；sensitivity 86.36 ± 0.0514；specificity 84.66 ± 0.0658（均按表标注 % 原样）",
+          "unit_of_analysis": "主要观察单位为参与者，参与者来自多站点/可能有家系依赖；两个访视、53 ICNs、交叉验证折不是独立生物重复",
+          "sample_size_as_reported": "7168 名参与者，year-4 SUI 220 名；ABCD 21 个站点；5-fold CV（80:20）；每折人数、各类分配、随机种子与家系数未报告",
+          "uncertainty": "源表声明单位 %、Mean ± Standard Deviation；小数 SD 按原样保留，未说明其究竟跨折还是跨独立训练运行；没有置信区间或配对检验",
+          "assumptions": [
+            "全部组件比较共享 ABCD 样本与所述评估设置",
+            "源未完整报告每个变体是否重新调参或独立重复训练次数"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "3.3 Quantitative Evaluation—Ablations",
+            "figure": "Table 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "报告均值支持 CBCL 行为输入 在该配置下的预测贡献。",
+        "boundary": "属于同队列模型消融，不是独立样本复现；没有组件交互因子实验。",
+        "negative_result": "真实删除对照在所报指标上的性能下降；并非生物系统的功能缺失证明。",
+        "non_inference": "全局移除 CBCL 不能把贡献唯一归因于 Koopman offsets，也不能证明行为影响脑变化的因果效应。",
+        "unresolved": "SD 计算基准、配对不确定性与外部可重复性未报告。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "行为评分在纵向 FNC 之外是否贡献风险预测信息？"
+      ],
+      "shared_evidence_with": [
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C15",
+        "C16"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C15",
+      "statement": "在 ABCD baseline/year-2 FNC+CBCL 预测 year-4 SUI 的所报 5-fold CV 消融中，去除 dynamics-consistency loss Ldyn使accuracy 降至 83.08%（源报下降 1.63 pp）；完整模型对应 accuracy/sensitivity/specificity 84.71/86.36/84.66%。",
+      "claim_type": "component_ablation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "固定框架组件删除比较",
+          "design": "baseline 9–10 岁及 year-2 11–12 岁 rs-fMRI/CBCL 作为输入，year-4 13–14 岁 SUI 标签；53 ICNs，nDTW FNC",
+          "comparator": "完整 NeuroBRIDGE 对比 去除 dynamics-consistency loss Ldyn",
+          "measure": "删除变体 accuracy 83.08 ± 0.0675；sensitivity 84.09 ± 0.0583；specificity 83.05 ± 0.0718；完整模型 accuracy 84.71 ± 0.0692；sensitivity 86.36 ± 0.0514；specificity 84.66 ± 0.0658（均按表标注 % 原样）",
+          "unit_of_analysis": "主要观察单位为参与者，参与者来自多站点/可能有家系依赖；两个访视、53 ICNs、交叉验证折不是独立生物重复",
+          "sample_size_as_reported": "7168 名参与者，year-4 SUI 220 名；ABCD 21 个站点；5-fold CV（80:20）；每折人数、各类分配、随机种子与家系数未报告",
+          "uncertainty": "源表声明单位 %、Mean ± Standard Deviation；小数 SD 按原样保留，未说明其究竟跨折还是跨独立训练运行；没有置信区间或配对检验",
+          "assumptions": [
+            "全部组件比较共享 ABCD 样本与所述评估设置",
+            "源未完整报告每个变体是否重新调参或独立重复训练次数"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "3.3 Quantitative Evaluation—Ablations",
+            "figure": "Table 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "报告均值支持 latent dynamics consistency loss 在该配置下的预测贡献。",
+        "boundary": "属于同队列模型消融，不是独立样本复现；没有组件交互因子实验。",
+        "negative_result": "真实删除对照在所报指标上的性能下降；并非生物系统的功能缺失证明。",
+        "non_inference": "损失消融不能证明预测 latent 与真实脑轨迹一致。",
+        "unresolved": "SD 计算基准、配对不确定性与外部可重复性未报告。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "观测与 rollout latent 的 consistency 正则是否有预测收益？"
+      ],
+      "shared_evidence_with": [
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C16"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C16",
+      "statement": "在 ABCD baseline/year-2 FNC+CBCL 预测 year-4 SUI 的所报 5-fold CV 消融中，去除 prototype-contrastive loss Lproto使sensitivity 降至 71.36%（源报下降 15.0 pp），accuracy 为 79.52%；完整模型对应 accuracy/sensitivity/specificity 84.71/86.36/84.66%。",
+      "claim_type": "component_ablation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "固定框架组件删除比较",
+          "design": "baseline 9–10 岁及 year-2 11–12 岁 rs-fMRI/CBCL 作为输入，year-4 13–14 岁 SUI 标签；53 ICNs，nDTW FNC",
+          "comparator": "完整 NeuroBRIDGE 对比 去除 prototype-contrastive loss Lproto",
+          "measure": "删除变体 accuracy 79.52 ± 0.1985；sensitivity 71.36 ± 0.1291；specificity 79.78 ± 0.1612；完整模型 accuracy 84.71 ± 0.0692；sensitivity 86.36 ± 0.0514；specificity 84.66 ± 0.0658（均按表标注 % 原样）",
+          "unit_of_analysis": "主要观察单位为参与者，参与者来自多站点/可能有家系依赖；两个访视、53 ICNs、交叉验证折不是独立生物重复",
+          "sample_size_as_reported": "7168 名参与者，year-4 SUI 220 名；ABCD 21 个站点；5-fold CV（80:20）；每折人数、各类分配、随机种子与家系数未报告",
+          "uncertainty": "源表声明单位 %、Mean ± Standard Deviation；小数 SD 按原样保留，未说明其究竟跨折还是跨独立训练运行；没有置信区间或配对检验",
+          "assumptions": [
+            "全部组件比较共享 ABCD 样本与所述评估设置",
+            "源未完整报告每个变体是否重新调参或独立重复训练次数"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "3.3 Quantitative Evaluation—Ablations",
+            "figure": "Table 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "报告均值支持 prototype-contrastive loss 在该配置下的预测贡献。",
+        "boundary": "属于同队列模型消融，不是独立样本复现；没有组件交互因子实验。",
+        "negative_result": "真实删除对照在所报指标上的性能下降；并非生物系统的功能缺失证明。",
+        "non_inference": "单一不平衡队列的性能变化不能证明泛化、公平性或校准改善。",
+        "unresolved": "SD 计算基准、配对不确定性与外部可重复性未报告。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "prototype-contrastive 类别塑形是否提高少数 SUI 类的识别？"
+      ],
+      "shared_evidence_with": [
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C17",
+      "statement": "NeuroBRIDGE 将两访视的 learned gate-derived 边权按融合权重混合，在 SUI 与 non-SUI 类内取平均并保留最强 3% 边；该描述性图中 non-SUI 的 SMN/VSN 到 CON/DMN 边较分散，SUI 的高权重边更集中在 CON–DMN、CBN 及部分 SCN，感知到关联网络的边相对较弱。",
+      "claim_type": "model_edge_weight_group_description",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "模型边权导出、两访视加权与类别均值可视化",
+          "design": "baseline 9–10 岁及 year-2 11–12 岁 rs-fMRI/CBCL 作为输入，year-4 13–14 岁 SUI 标签；53 ICNs，nDTW FNC；每类保留 top 3% 边",
+          "comparator": "SUI 与 non-SUI 的 group-mean time-mixed learned edge weights",
+          "measure": "阈值后 learned gate-derived 边分布；非原始 FNC 连接强度",
+          "unit_of_analysis": "主要观察单位为参与者，参与者来自多站点/可能有家系依赖；两个访视、53 ICNs、交叉验证折不是独立生物重复",
+          "sample_size_as_reported": "7168 名参与者，year-4 SUI 220 名；ABCD 21 个站点；5-fold CV（80:20）；每折人数、各类分配、随机种子与家系数未报告",
+          "uncertainty": "未报告组差异统计检验、置信区间或受试者内变异",
+          "assumptions": [
+            "边权属于预测模型参数/输出",
+            "top 3% 阈值选择影响图模式",
+            "图注和正文已读取，但图像像素未提供"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "3.4 Qualitative Evaluation",
+            "figure": "Figure 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "模型解释图呈现不同类别的边权集中模式。",
+        "boundary": "仅 group mean 的定性描述，来源依赖与预测/消融同一队列。",
+        "negative_result": null,
+        "non_inference": "不能将 learned edge weight 直接当解剖连通性、fMRI 生理连接增强/减弱或因果风险通路。",
+        "unresolved": "边权模式在个体、站点、模型重复及替代阈值下的稳定性待评估。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "SUI 与 non-SUI 的预测模型解释权重分布在哪些网络间不同？"
+      ],
+      "shared_evidence_with": [
+        "C5",
+        "C18"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C18",
+      "statement": "作者将 SUI 模型边权更集中于 CON–DMN/CBN 且感知到关联网络边相对减少，解释为控制相关网络偏移和较少 sensory–associative integration，并认为与既有神经发育风险叙述一致；这一解释没有在本文得到因果或生理独立验证。",
+      "claim_type": "neurodevelopmental_network_interpretation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "对 Figure 2 模型边权的领域解释",
+          "design": "类平均的 top 3% time-mixed edges",
+          "comparator": "SUI 与 non-SUI 的模型边权模式",
+          "measure": "CON/DMN/CBN/感知网络的解释标签",
+          "unit_of_analysis": "主要观察单位为参与者，参与者来自多站点/可能有家系依赖；两个访视、53 ICNs、交叉验证折不是独立生物重复",
+          "sample_size_as_reported": "7168 名参与者，year-4 SUI 220 名；ABCD 21 个站点；5-fold CV（80:20）；每折人数、各类分配、随机种子与家系数未报告",
+          "uncertainty": "没有独立生物测量、统计网络差异或介入证据",
+          "assumptions": [
+            "既有文献仅为原作者解释背景，本任务未读取也不创建跨论文支持关系"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "3.4 Qualitative Evaluation（解释）",
+            "figure": "Figure 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提出预测边权模式的神经发育解释。",
+        "boundary": "解释与描述共用同一图，不是第二套实验。",
+        "negative_result": null,
+        "non_inference": "不能认定该网络模式导致 SUI、揭示机制或已建立可操作临床通路。",
+        "unresolved": "需控制混杂并用独立测量/验证区分生理解释与模型权重现象。",
+        "unresolved_attribution": "解释由本文作者提出。"
+      },
+      "broad_directions": [
+        "behavior-cognition",
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "预测解释图是否真正反映神经发育风险过程而非模型或混杂因素？"
+      ],
+      "shared_evidence_with": [
+        "C5",
+        "C17"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "NeuroBRIDGE 的 arXiv v1 提出 subject-midpoint Riemannian 表示、多尺度门控 GNN、dual-time attention 和 CBCL-conditioned latent Koopman 联合分类。ABCD 7168 名参与者中 year-4 SUI 为220名，模型输入为 baseline/year-2 的 FNC/CBCL；所报5折设置中三项分类指标优于五个基线。十一项删除消融分别显示组件依赖，全部共享同一队列证据，不构成独立复现。源表 SD 按印刷值与 % 单位声明保留，计算基准未明。top 3% 类平均模型边权提示类别模式，不能当作实际脑连接差异或因果通路。SPD 输入充分性、数值稳定性、家系/站点隔离和外部泛化待澄清；未提供临床校准、前瞻有效性或机制验证。五页全部文本、图注、表和参考文献已评估，候选未经人工核验。",
+  "shared_evidence": [
+    {
+      "claim_id": "C5",
+      "with": [
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C5",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C5",
+        "C6",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C5",
+        "C6",
+        "C7",
+        "C9",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "with": [
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "with": [
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "with": [
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C13",
+        "C14",
+        "C15",
+        "C16"
+      ]
+    },
+    {
+      "claim_id": "C13",
+      "with": [
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12",
+        "C14",
+        "C15",
+        "C16"
+      ]
+    },
+    {
+      "claim_id": "C14",
+      "with": [
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C15",
+        "C16"
+      ]
+    },
+    {
+      "claim_id": "C15",
+      "with": [
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C16"
+      ]
+    },
+    {
+      "claim_id": "C16",
+      "with": [
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15"
+      ]
+    },
+    {
+      "claim_id": "C17",
+      "with": [
+        "C5",
+        "C18"
+      ]
+    },
+    {
+      "claim_id": "C18",
+      "with": [
+        "C5",
+        "C17"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": null,
+        "issue": "版本属于 2026-03-31 arXiv v1，未提供后续正式版本。",
+        "suggested_correction": "身份一致但结论仅归于此版本，doi 保持 null。",
+        "pdf_page": 1,
+        "resolved": true
+      },
+      {
+        "claim_id": "C1",
+        "issue": "原文称任意小 ridge enforce SPD，但源未报告 nDTW 输入谱；仅 epsilon>0 不能保证任意对称矩阵严格正定。",
+        "suggested_correction": "方法命题明确以 ridge 后输入为 SPD 为联合条件；实际数值充分性需源数据确认。",
+        "pdf_page": 2,
+        "resolved": false
+      },
+      {
+        "claim_id": "C4",
+        "issue": "tanh 特征值界不能单独证明任意受驱动/non-normal latent 轨迹稳定，Phi^-1 也需要可逆性。",
+        "suggested_correction": "已保留有限步、可逆性、受驱动边界，不加入完整稳定性定理。",
+        "pdf_page": 3,
+        "resolved": true
+      },
+      {
+        "claim_id": "C4",
+        "issue": "融合 seed 和分类 residual 已使用 year-2 观测，不是 baseline-only 的 year-2 外推。",
+        "suggested_correction": "已准确记录预测目标为 year-4，避免未来 latent 无观测预测叙述。",
+        "pdf_page": 3,
+        "resolved": true
+      },
+      {
+        "claim_id": "C5",
+        "issue": "7168 participants、220 SUI、21 sites 与 5 CV folds 是不同层级；未知家系和站点依赖隔离。",
+        "suggested_correction": "单位字段明确受试者及可能依赖，折/节点/访视不计独立生物重复；需评估协议进一步澄清。",
+        "pdf_page": 3,
+        "resolved": false
+      },
+      {
+        "claim_id": "C5",
+        "issue": "表中单位 % 与 SD 的小数格式存在解释空间，且 SD 基准不明确。",
+        "suggested_correction": "完整保留所有表列 mean/SD 字符值和单位声明，不把 .0692 乘100或指定为某种 CI。",
+        "pdf_page": 4,
+        "resolved": false
+      },
+      {
+        "claim_id": null,
+        "issue": "十一项组件删除效应与五基线来自同一数据；多个 mean 差异没有配对显著性检验。",
+        "suggested_correction": "分别记录真实删除对照与共享证据，不写统计显著性、独立复现或因果生物必要性。",
+        "pdf_page": 4,
+        "resolved": true
+      },
+      {
+        "claim_id": "C17",
+        "issue": "Figure 2 为 learned gate-derived top 3% group means，不是原始 FNC 组间显著差异。",
+        "suggested_correction": "已区分模型权重描述 C17 与神经发育解释 C18。",
+        "pdf_page": 4,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "正文没有外部队列、前瞻预防试验、校准或独立生物验证。",
+        "suggested_correction": "不补造这些结果，记录非推论而非负结果；候选保留 human_checked:false。",
+        "pdf_page": 4,
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T13:15:52.086253Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "746b9e0785e263d63ad03fda44246e604271a8515e4d606e77525238699a4438",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

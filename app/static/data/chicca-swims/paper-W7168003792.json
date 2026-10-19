@@ -1,0 +1,456 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "other",
+  "paper": {
+    "title": "Efficient Neuromorphic Braille Discrimination in a Predictive-Coding-Inspired Spiking Network",
+    "authors": [
+      "Quentin Halbach",
+      "Simon F. Müller-Cleve",
+      "Jerónimo Zizumbo",
+      "Simeon A. Bamford",
+      "Elisabetta Chicca",
+      "Chiara Bartolozzi",
+      "Alessio Franci"
+    ],
+    "doi": null,
+    "publication_year": 2026,
+    "venue": "Open Repository and Bibliography (University of Liège)",
+    "url": "https://openalex.org/W7168003792"
+  },
+  "source": {
+    "filename": "paper-W7168003792.pdf",
+    "sha256": "f8a183cdc48137a3829d341fdad2ffc3e565e900a3f5ef8716ce3ccfd22acd46",
+    "source_url": "https://orbi.uliege.be/bitstream/2268/347132/1/ICNCE_2026_Abstract_orbi.pdf",
+    "pdf_page_count": 1
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1
+    ],
+    "results_sections_seen": [
+      "正文：架构与学习规则",
+      "正文：感受野形成、字母表泛化与复合模式响应",
+      "Figure 1(a–c)图注及提取的图中文字"
+    ],
+    "missing_material": [
+      "完整训练与推断方案、刺激样本数及独立重复数",
+      "分类性能、稀疏度、稳健性及统计不确定性的定量评估",
+      "对照模型规模的比较口径",
+      "硬件实现与能耗测量",
+      "图像像素"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "所供材料为一页会议摘要式研究文档，无独立结果章节或附录；不能据此确认是否属于海报。",
+      "实际标题与元数据标题不同，但作者及主题吻合，暂视为同一工作的标题变体；页面未提供可核实的年份或版本标识。",
+      "已评估全部所供正文、图注、图中文字及参考文献；图像像素未提供。",
+      "参考文献中的研究未作为本文的新结果。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "提出采用SA-like触觉输入、兴奋性与抑制性群体及calcium-based STDP的45神经元无监督网络。",
+      "role": "方法贡献",
+      "source_pages": [
+        1
+      ],
+      "decision": "include",
+      "reason": "架构组成及学习规则明确；硬件兼容性仅为作者主张。"
+    },
+    {
+      "summary": "简单点模式训练后形成与Braille点结构对齐的感受野。",
+      "role": "结果",
+      "source_pages": [
+        1
+      ],
+      "decision": "include",
+      "reason": "正文与Figure 1a提供学习后权重的定性描述。"
+    },
+    {
+      "summary": "未见完整字母训练的网络被报告可泛化至完整字母表，PCA展示未见模式的表征分离。",
+      "role": "结果",
+      "source_pages": [
+        1
+      ],
+      "decision": "include",
+      "reason": "正文与Figure 1b支持定性表征结果，未提供分类准确率或逐字母评估。"
+    },
+    {
+      "summary": "复合模式响应轨迹在单列成分表征间顺序转换，作者据此提出组合编码解释。",
+      "role": "结果及解释",
+      "source_pages": [
+        1
+      ],
+      "decision": "include",
+      "reason": "Figure 1c描述时间轨迹，可与表征分离分别判断，但不能确立因果机制。"
+    },
+    {
+      "summary": "感受野稳健且神经活动高度稀疏。",
+      "role": "定性性能主张",
+      "source_pages": [
+        1
+      ],
+      "decision": "defer",
+      "reason": "没有稀疏度指标、活动统计、扰动条件或稳健性比较。"
+    },
+    {
+      "summary": "网络规模小于先进模型的十分之一，并面向高效、硬件兼容的触觉处理。",
+      "role": "比较及应用主张",
+      "source_pages": [
+        1
+      ],
+      "decision": "defer",
+      "reason": "45个神经元的组成明确，但对照计数口径、匹配性能、硬件实现及能耗证据缺失；低功耗论述主要属于背景。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "本文提出用于触觉时空模式判别的45神经元无监督脉冲网络：15个输入神经元通过SA-like mechanoreceptor模型编码触觉信号，15个兴奋性Conductance-based LIF神经元与15个提供反馈竞争的抑制性神经元构成处理网络，学习采用calcium-based STDP。",
+      "claim_type": "method_architecture",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "架构与学习规则描述",
+          "design": "参数在作者称为生物学合理的范围内选择，以使增强与减弱平衡并匹配输入活动；作者称未按性能调参。",
+          "comparator": null,
+          "measure": "网络组成与学习规则",
+          "unit_of_analysis": "网络架构",
+          "sample_size_as_reported": "45个神经元：输入、兴奋性、抑制性各15个；独立网络重复数未报告。",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 1,
+            "section": "正文：架构、参数与网络规模",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "给出紧凑的触觉无监督脉冲学习架构。",
+        "boundary": "支持设计描述，不包含完整实现细节或验证。",
+        "negative_result": null,
+        "non_inference": "不能由架构描述推出硬件部署成功、生物机制成立或相对能效优势。",
+        "unresolved": "该学习规则在实际神经形态硬件上的实现与资源消耗如何？",
+        "unresolved_attribution": "提取者依据所供材料的验证缺口提出。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "calcium-based STDP与反馈竞争如何用于紧凑脉冲网络的触觉无监督学习？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "神经元数表示架构规模，不是独立实验样本量。",
+        "作者称其为predictive coding架构，本页未提供预测误差目标或相关方程。",
+        "参数选择原则是方法陈述，不构成生物学合理性的独立验证。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "该45神经元网络以简单点模式进行无监督训练后，作者报告输入层至兴奋性群体的突触权重形成与Braille点结构对齐的感受野。",
+      "claim_type": "learned_representation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "训练后突触权重展示",
+          "design": "用简单点模式训练，检查输入层至兴奋性群体的学习后权重。",
+          "comparator": null,
+          "measure": "感受野与Braille点结构的定性对齐",
+          "unit_of_analysis": "突触权重及其构成的兴奋性神经元感受野",
+          "sample_size_as_reported": "15个输入神经元、15个兴奋性神经元；训练样本数及独立重复数未报告。",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 1,
+            "section": "正文：训练结果；图注",
+            "figure": "Figure 1a",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者描述了学习后与Braille几何结构对应的感受野。",
+        "boundary": "限于所述简单点模式训练及学习后权重的定性展示。",
+        "negative_result": null,
+        "non_inference": "未证明对齐依赖某个特定机制，也未定量证明稳健性或跨训练重复的一致性。",
+        "unresolved": "感受野对初始化、参数变化和输入扰动是否稳定？",
+        "unresolved_attribution": "提取者依据缺失的对照和重复信息提出。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "简单触觉点模式的无监督学习能否形成与Braille几何结构对齐的感受野？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "未报告训练前权重对照、对齐指标或统计检验。",
+        "依据正文及图注，未独立检查权重图像。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "该网络仅以简单点模式训练、未观察完整字母时，作者报告其表征可泛化至完整Braille字母表；兴奋性群体平滑放电率的PCA投影定性展示未见模式的表征分离。",
+      "claim_type": "representation_generalization",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "兴奋性群体平滑放电率的PCA投影",
+          "design": "简单点模式训练后，对训练未见的Braille模式进行推断。",
+          "comparator": "训练模式与未见推断模式的活动表征",
+          "measure": "PCA空间中的定性表征分离",
+          "unit_of_analysis": "刺激模式对应的群体活动表征",
+          "sample_size_as_reported": "兴奋性群体含15个神经元；刺激样本数、试次数及独立训练重复数未报告。",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 1,
+            "section": "正文：泛化结果；图注",
+            "figure": "Figure 1b",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者报告未见字母的表征泛化，并以PCA展示定性分离。",
+        "boundary": "完整字母表覆盖来自正文陈述；所供文字未提供逐字母结果或分类评估。",
+        "negative_result": null,
+        "non_inference": "PCA分离不能直接推出可靠字母分类、判别准确率或相对监督模型的性能优势。",
+        "unresolved": "完整字母表的分类性能、混淆结构及跨试次稳定性如何？",
+        "unresolved_attribution": "提取者依据未报告的定量评估提出。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "仅学习简单触觉点模式的脉冲网络能否表征未见的完整Braille字母？"
+      ],
+      "shared_evidence_with": [
+        "C4"
+      ],
+      "review_notes": [
+        "定性PCA分离不等于经验证的分类性能。",
+        "Figure 1b与1c均分析兴奋性群体活动，不能计为独立重复验证。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "该网络对复合Braille模式的兴奋性群体响应在PCA时间轨迹中依次转换于单列成分的表征之间；作者将此解释为未见模式通过已学习成分的组合编码。",
+      "claim_type": "compositional_encoding",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "兴奋性群体活动的PCA时间轨迹分析",
+          "design": "观察列成分时间组合所诱发的群体响应。",
+          "comparator": "复合模式的响应轨迹与单列成分对应的表征",
+          "measure": "成分表征之间的顺序转换",
+          "unit_of_analysis": "复合刺激对应的群体活动时间轨迹",
+          "sample_size_as_reported": "兴奋性群体含15个神经元；复合模式数、轨迹数及独立重复数未报告。",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 1,
+            "section": "正文：复合模式响应；图注",
+            "figure": "Figure 1c",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所述轨迹与依次调用已学习成分的组合编码解释相符。",
+        "boundary": "限于描述的列组合响应及PCA轨迹。",
+        "negative_result": null,
+        "non_inference": "顺序轨迹未确立组合编码的因果机制，也未排除顺序感觉输入所诱发的响应解释。",
+        "unresolved": "已学习成分表征是否对复合模式泛化具有因果必要性？",
+        "unresolved_attribution": "提取者依据缺少机制干预及替代解释比较提出。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "未见复合Braille模式是否通过已学习列成分表征的顺序转换来编码？"
+      ],
+      "shared_evidence_with": [
+        "C3"
+      ],
+      "review_notes": [
+        "将轨迹现象与其直接对应的作者解释保留在一个记录中，未额外计作独立机制证明。",
+        "与C3共享群体活动及PCA分析背景；具体试次是否相同未报告。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "已复核全部所供一页文字，包括图注、图中文字及参考文献。保留四项命题：45神经元无监督网络设计、Braille对齐感受野、未见字母的定性表征泛化，以及基于顺序轨迹的组合编码解释。神经元数属于架构规模；独立重复、分类性能、统计不确定性和硬件能耗均未报告。完整字母表泛化属于作者正文陈述，组合编码尚非因果证明。未发现可提取的实际负结果；标题与元数据相近，但具体版本仍无法核实。",
+  "shared_evidence": [
+    {
+      "claim_id": "C3",
+      "with": [
+        "C4"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C3"
+      ]
+    }
+  ],
+  "audit": {
+    "initial_source_match_checks": [],
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": null,
+        "issue": "元数据与页面标题不同，页面未标明年份、具体版本或正式文档类别。",
+        "suggested_correction": "采用页面实际标题，将文档标为other，并保留会议摘要式材料及版本不明的说明。",
+        "pdf_page": 1,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "标题差异是否对应正式版本变化，无法由所供页面确定。",
+        "suggested_correction": null,
+        "pdf_page": 1,
+        "resolved": false
+      },
+      {
+        "claim_id": "C1",
+        "issue": "草稿把calcium-based规则表述为钙依赖规则，并采用偏向因果方法的方向标签。",
+        "suggested_correction": "保留原文calcium-based STDP术语，方向改为theory-ai与learning-memory。",
+        "pdf_page": 1,
+        "resolved": true
+      },
+      {
+        "claim_id": "C3",
+        "issue": "完整字母表泛化的正文陈述与PCA图注容易被扩大为已验证的字母分类成功。",
+        "suggested_correction": "明确区分作者报告的覆盖范围、定性表征分离与未报告的分类性能。",
+        "pdf_page": 1,
+        "resolved": true
+      },
+      {
+        "claim_id": "C4",
+        "issue": "顺序轨迹不足以确立组合编码的因果机制。",
+        "suggested_correction": "保留interpretation角色，并说明缺少干预及替代解释比较。",
+        "pdf_page": 1,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "神经元数量可能被误读为实验样本量，多个图面也可能被误计为独立重复。",
+        "suggested_correction": "将神经元数限定为架构规模，独立重复数记为未报告，并保留C3与C4的共享证据关系。",
+        "pdf_page": 1,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "网络规模比较、稀疏性、稳健性与硬件兼容性缺少充分评估；低功耗背景不能充当本文能效结果。",
+        "suggested_correction": "在贡献清单中暂缓相关性能主张，不生成独立已验证性能结论。",
+        "pdf_page": 1,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "草稿包含请求模式之外的source_check与review字段。",
+        "suggested_correction": "删除额外字段，将必要核查说明保留在review_notes和audit_findings中。",
+        "pdf_page": 1,
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T04:58:07.948804Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "signed_in_chatgpt_codex",
+    "authentication": "existing_ChatGPT_login",
+    "provider_api_key_used": false,
+    "model": "account_default_GPT",
+    "source_sha256": "f8a183cdc48137a3829d341fdad2ffc3e565e900a3f5ef8716ce3ccfd22acd46",
+    "requests": [
+      {
+        "phase": "extraction",
+        "seconds": 80.34,
+        "usage": {
+          "input_tokens": 14766,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 3558,
+          "reasoning_output_tokens": 88
+        },
+        "backend": "signed_in_chatgpt_codex",
+        "tools_used": false
+      },
+      {
+        "phase": "source_audit",
+        "seconds": 77.95,
+        "usage": {
+          "input_tokens": 18154,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 3961,
+          "reasoning_output_tokens": 30
+        },
+        "backend": "signed_in_chatgpt_codex",
+        "tools_used": false
+      }
+    ],
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

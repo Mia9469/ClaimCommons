@@ -1,0 +1,1515 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "Human-Autonomy Teaming in Robot Navigation Using Bioinspired Approach for Search and Rescue",
+    "authors": [
+      "Timothy Sellers",
+      "Tingjun Lei",
+      "Chaomin Luo",
+      "Erfu Yang",
+      "Zhuming Bi"
+    ],
+    "doi": "10.1109/thms.2026.3651248",
+    "publication_year": 2026,
+    "venue": "IEEE Transactions on Human-Machine Systems",
+    "url": "https://doi.org/10.1109/thms.2026.3651248"
+  },
+  "source": {
+    "filename": "paper-W7129061110--Human-Autonomy-Teaming-in-Robot-Navigation-Using-Bioinspired-Approach-for-Search-and-Rescue.pdf",
+    "sha256": "edb267b95a045950f88314e70f0ba5bf8d31a0cca8f0007e792dfc0fcb75e8a2",
+    "source_url": "https://strathprints.strath.ac.uk/95675/1/Sellers-etal-2026-Human-autonomy-teaming-in-robot-navigation.pdf",
+    "pdf_page_count": 10
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "results_sections_seen": [
+      "摘要与 I.B 的贡献陈述（不作为摘要式替代提取）",
+      "II.A-C：GVD、spatiotemporal graph 与 hybrid analysis",
+      "III.A-D：ACTS/NOP、jump search、RRT*-IPP、人工 SA 与经验",
+      "IV：BNN-AWS 局部导航",
+      "V：人工权重、局部/全局目标及切换的形式化",
+      "VI.A：全局路径与时间比较",
+      "VI.B：城市、多航点路径比较",
+      "VI.C：300/4500次迭代的路径偏置示例",
+      "VI.D：局部路径长度比较、动态避障及目标跟踪",
+      "主文 Fig.1-3 的可读图注、Table I-II 标题和周边说明、Algorithm 1 标题",
+      "VII：结论、真实 HITL 的未来工作；第10页结论续文及全部参考文献"
+    ],
+    "missing_material": [
+      "图像像素未提供、未读；主文图只能评估图注和正文描述。",
+      "主文 Table I、Table II 单元格及 Algorithm 1 步骤未出现在可读页文本中。",
+      "Supplementary Figs.4-15、Table III 及相关补充内容未包含在所供10页；未阅读或下载。",
+      "未提供完整参数/计时/重复运行协议、代码或后续真实 HITL 数据；不以被引用的文献填补。"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "逐页评估全部供给文本，共10页、83527原始页文本字符；连同页标记输出为5个至多18000字符片段，无截断。",
+      "第1页含源引用、完整标题、作者、DOI和收稿/修稿/接收日期；indexed 与 source 身份没有发现不一致。",
+      "第2-3页全部主文图注、贡献和相关工作已评估；第4-8页可读方法/方程已评估；第8-9页四个仿真结果小节已评估。",
+      "第10页含结论续文及参考文献，无供给附录或补充数据；全部参考文献只作背景识别。",
+      "第二遍审计使用保留的完整源文本上下文而非重新读取离线/在线 PDF；审计通过不表示独立复现或科学真伪认证。",
+      "未运行模型 API、Codex CLI、网络检索、软件测试或新代理；只作所授权的源数据读取、审计和 finalize。",
+      "无固定候选配额；方法、独立读出、解释与假设分别记录。未做跨论文支持、矛盾或复现关系。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "GVD 与 spatiotemporal graph 的混合图、节点类别及动态连通规则。",
+      "role": "result",
+      "source_pages": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "decision": "include",
+      "reason": "C1 记录方法定义；不把图的安全/连通性宣传当定理。"
+    },
+    {
+      "summary": "ACTS、人工航点/危险判断、NOP 距离/障碍权重及置信度成本调节。",
+      "role": "result",
+      "source_pages": [
+        3,
+        4,
+        5,
+        7,
+        8
+      ],
+      "decision": "include",
+      "reason": "C2 记录输入接口和规则；节点编号处置存在歧义，完整表格未提供。"
+    },
+    {
+      "summary": "Jump search 的直线连接、乘积式风险与 RRT*-IPP 切换。",
+      "role": "result",
+      "source_pages": [
+        5,
+        6,
+        8
+      ],
+      "decision": "include",
+      "reason": "C3 保留条件和参数缺口，不宣称概率校准或安全证明。"
+    },
+    {
+      "summary": "通行经验 L 的持续学习构想。",
+      "role": "method_proposal",
+      "source_pages": [
+        6
+      ],
+      "decision": "defer",
+      "reason": "只有经验日志概念，无学习更新、参数、比较或可独立评价结果；没有另造学习性能候选。"
+    },
+    {
+      "summary": "人工重点区的 Gaussian 权重、RRT* 偏置采样/重连、成本与信息代价目标。",
+      "role": "result",
+      "source_pages": [
+        6,
+        7,
+        8
+      ],
+      "decision": "include",
+      "reason": "C4 包括目标及共同条件；时间约束和信息代价解释的缺口另记。"
+    },
+    {
+      "summary": "BNN 活动场、AWS 局部窗口、曲率安全距离与航点修正及全局评分耦合。",
+      "role": "result",
+      "source_pages": [
+        7,
+        8
+      ],
+      "decision": "include",
+      "reason": "C5 是计算方法，不是神经生物实验或形式安全验证。"
+    },
+    {
+      "summary": "V 节的总代价、argmin/概率调制、人工置信度和曲率更新形式。",
+      "role": "method_formulation",
+      "source_pages": [
+        7,
+        8
+      ],
+      "decision": "include",
+      "reason": "分别并入 C2-C5；保留联合条件与记号缺口，没有独立定理或新增实验。"
+    },
+    {
+      "summary": "VI.A 的全局平均路径长度与平均规划时间，以及主文 Fig.3/Table II 的说明。",
+      "role": "result",
+      "source_pages": [
+        3,
+        4,
+        8
+      ],
+      "decision": "include",
+      "reason": "C6 和 C7 是不同读出，但共享同一仿真比较，重复数未报告。"
+    },
+    {
+      "summary": "VI.B 的城市、多航点路线与 Dijkstra 路径长度比较。",
+      "role": "result",
+      "source_pages": [
+        8,
+        9
+      ],
+      "decision": "include",
+      "reason": "C8 仅保存正文给出的 675.13 m 与 823.80 m 及场景界限。"
+    },
+    {
+      "summary": "VI.C 的 300/4500 次迭代路径对人工重点区的定性偏置。",
+      "role": "result",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "C9 不将迭代数作独立样本数，不宣称测得信息量或证明最优性。"
+    },
+    {
+      "summary": "VI.D 的七种局部路线长度及 APF 振荡/绕行描述。",
+      "role": "result",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "C10 保存所有正文给出的对照值，不猜训练配置、重复数或统计学结论。"
+    },
+    {
+      "summary": "VI.D 的静态/移动障碍、目标跟踪和人工活动场响应示例。",
+      "role": "result",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "C11 保存定性主文报告；活动图/轨迹图像未提供，失败率未报告。"
+    },
+    {
+      "summary": "性能改善源于人工指导、图结构与局部导航协同的解释。",
+      "role": "interpretation",
+      "source_pages": [
+        8,
+        9
+      ],
+      "decision": "include",
+      "reason": "C12 标注为归因解释，没有组件消融或机制因果识别。"
+    },
+    {
+      "summary": "节点建议减少低层操作并降低工作负荷的预期。",
+      "role": "hypothesis",
+      "source_pages": [
+        7,
+        9,
+        10
+      ],
+      "decision": "include",
+      "reason": "C13 是待验证的人因假设；结论明确实际 HITL 评估为后续工作。"
+    },
+    {
+      "summary": "校准信任、维持参与并防止自动化过度依赖的预期。",
+      "role": "hypothesis",
+      "source_pages": [
+        7,
+        9,
+        10
+      ],
+      "decision": "include",
+      "reason": "C14 是另一可独立评价的人因假设，与 C13 共享设计论证而非独立数据。"
+    },
+    {
+      "summary": "Fig.1 的流水线图注与 Fig.2 的人工节点/路线修正图注。",
+      "role": "method_description",
+      "source_pages": [
+        2,
+        3
+      ],
+      "decision": "include",
+      "reason": "作为 C1-C5 的流程上下文，不把图注拆成重复结果；未读取像素。"
+    },
+    {
+      "summary": "主文 Table I、Table II 和 Algorithm 1 的完整表格/伪代码内容。",
+      "role": "missing_source_material",
+      "source_pages": [
+        3,
+        4,
+        5
+      ],
+      "decision": "defer",
+      "reason": "所供文本仅有标题/周边说明，单元格与算法步骤不可读；只能使用正文中实际出现的内容。"
+    },
+    {
+      "summary": "Supplementary Figs.4-15 与 Table III 的图像、图注/表格及其他补充材料。",
+      "role": "missing_source_material",
+      "source_pages": [
+        1,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "decision": "defer",
+      "reason": "正文反复引用补充材料，但所供10页不含其内容；不宣称阅读或据此重建数据。"
+    },
+    {
+      "summary": "保留 RRT* 渐近最优性、near-optimal 路径、一般安全/鲁棒性保证。",
+      "role": "theoretical_assertion",
+      "source_pages": [
+        4,
+        6,
+        7,
+        8,
+        9
+      ],
+      "decision": "exclude",
+      "reason": "有相关措辞但无定理、充分条件、误差界或独立证明；相关局部报告和非推断界限已保留。"
+    },
+    {
+      "summary": "I 节的相关工作、SAR 现实意义及第10页参考文献。",
+      "role": "background",
+      "source_pages": [
+        1,
+        2,
+        3,
+        10
+      ],
+      "decision": "exclude",
+      "reason": "不是本文新增实验结果；不把引用文献变成跨论文支持/矛盾/复现关系。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "该研究提出全局导航的 hybrid graph：以 generalized Voronoi diagram（GVD）按几何距离划分环境，在区域内区分 super nodes、edge nodes 和 internal nodes，并用 spatiotemporal graph 的节点位置与距离阈值边更新表示环境及人工输入的变化；这是地图与规划接口设计，而非独立验证的安全或最优性定理。",
+      "claim_type": "method_design",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "GVD 与时变图的形式化构造",
+          "design": "定义几何分区、等距边界节点及节点类别，再以更新函数和交互距离决定节点/边的变化。",
+          "comparator": null,
+          "measure": "区域归属、节点位置、节点类别与边连通性",
+          "unit_of_analysis": "数学地图中的区域、节点及边，不是独立实验样本",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "须给定空间 X、几何 sites、距离度量 d，以及内部节点指标 f 和阈值 tau。",
+            "须给定更新函数 u 和交互距离 dint；正文未提供这些量的完整数值配置。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "II.A-C",
+            "figure": null,
+            "equation": "(1)-(2)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "时变节点与边规则",
+          "design": "正文给出 internal nodes、位置更新及按距离形成/消失边的规则。",
+          "comparator": null,
+          "measure": "节点更新与图的连通关系",
+          "unit_of_analysis": "同一 hybrid graph 的形式定义",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "LiDAR/camera 被列为可能的节点信息来源；本文实际仿真输入为图像和向量化障碍，不能当成传感器硬件验证。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "II.C",
+            "figure": null,
+            "equation": "(3)-(4)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "建立几何地图与动态规划之间的可解释接口。",
+        "boundary": "未单独比较 GVD、时变图或节点分类的增益。",
+        "negative_result": null,
+        "non_inference": "不能由此推出任意几何/度量下的全局连通性、碰撞安全证明或真实救援可靠性。",
+        "unresolved": "地图更新函数、阈值和复杂环境拓扑的充分条件未完整报告。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "如何把几何分区与环境变化共同编码为可由人工修正的导航图？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "Fig.1 的文字图注描述整个流水线；只读图注，不读取图像。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "所提出的 node optimization protocol（NOP）以 access control token set（ACTS）组织候选节点/边点，让人工航点和危险判断参与节点筛选，并将距离与障碍可行性权重以及操作员置信度加权的成本用于路线偏置；这些是人机输入如何进入规划器的设计规则，不是已测得的 situational awareness 或协作收益。",
+      "claim_type": "method_design",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "ACTS 与 NOP 人工指导节点筛选",
+          "design": "候选路线按距离、障碍邻近性和上下文评价；人工可以选择/拒绝节点并修改航点。",
+          "comparator": null,
+          "measure": "节点选择、航点顺序及距离/障碍评分",
+          "unit_of_analysis": "候选图节点与规划路线；没有报告真实参与者数据",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "需要人工或预设的偏好、风险标记及 wd、wo 权重。",
+            "式(5)被称为概率，但未展示归一化和参数估计；只作为所提评分规则记录。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "III.A",
+            "figure": "Fig.2 的说明及 Table I 的正文描述",
+            "equation": "(5)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "置信度加权成本",
+          "design": "用 H、Hthresh 和 kappa 定义权重 wh，并在遍历成本与人工重要性代价之间加权。",
+          "comparator": null,
+          "measure": "成本权重及路径对人工区域偏好的响应",
+          "unit_of_analysis": "数学规划权重；不是操作员置信度测量",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "置信度 H 的实测方式、量表和校准过程未报告。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "V",
+            "figure": null,
+            "equation": "(17)-(18)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "给出人工偏好/危险判断影响规划节点与成本的接口。",
+        "boundary": "节点示例只用于说明流程；Table I 单元格并未出现在所供文本中。",
+        "negative_result": null,
+        "non_inference": "不能把人工输入变量当成真实的人类认知测量，也不能断言减少了操作员负担或提升了信任。",
+        "unresolved": "评分归一化、权重设置、置信度采集及 ACTS 的完整条目需要额外材料。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "人工风险判断和航点偏好通过哪些变量进入节点选择与路径成本？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第4页与第5页对 n1、n5 等示例节点的处置描述不完全一致；不提取这些节点编号的确定操作结论。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "该 NOP 设计先尝试非相邻节点间的无障碍直线 jump search，按式(7)汇总潜在阻塞的乘积式风险分数，并在 Po 超过阈值 Tr 时转用 RRT*-informative path planning（RRT*-IPP）；它还提出记录每次通行经验，但没有提供可检验的学习更新法或已校准的概率安全保证。",
+      "claim_type": "algorithm_design",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "直线捷径、风险阈值与备选规划器",
+          "design": "检查直线连接，使用 Po=1-product(1-p(Ok)) 和预设 Tr 决定能否使用捷径。",
+          "comparator": null,
+          "measure": "候选直线的可行性、阻塞风险分数及规划器切换",
+          "unit_of_analysis": "候选路径段与潜在阻塞事件；未给出独立通行试验数",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "需要各潜在阻塞事件的 p(Ok) 与阈值 Tr。",
+            "将乘积式当作精确联合概率需额外的事件独立性等条件；正文没有明确给出或验证该条件。",
+            "学习经验 L(Psiij) 只有概念说明，没有更新或收敛结果。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "III.B",
+            "figure": null,
+            "equation": "(6)-(7)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "风险阈值切换条件",
+          "design": "式(19)明确给出 Po>Tr 时使用 RRT*-IPP。",
+          "comparator": null,
+          "measure": "切换判据",
+          "unit_of_analysis": "同一策略定义",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "等于阈值时的边界处理未说明。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "V",
+            "figure": null,
+            "equation": "(19)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提出轻量直线连接与更复杂采样规划之间的风险驱动切换。",
+        "boundary": "这是规则描述；未有独立的阈值校准、阻塞预测性能或学习效果比较。",
+        "negative_result": null,
+        "non_inference": "不能推断通行风险被准确估计、事件独立或经验日志已形成有效学习算法。",
+        "unresolved": "p(Ok) 的估计、事件相关性、Tr 的设定及经验利用方式未明确。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "怎样在直线捷径不可靠时切换到采样式局部连接？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "所提出的 HAT-based RRT*-IPP 把人工指定的重点区域引入采样和重连，并以遍历成本 C 与区域信息代价 I 的组合目标及 lambda 权衡规划 start-to-target 路线；正文同时写出任务时间约束，但没有证明该偏置规划保留 RRT* 的渐近最优性。",
+      "claim_type": "algorithm_design",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "重点区域偏置的 RRT* 采样与重连",
+          "design": "设定无障碍空间 F、重点状态 K 和人工指定 Gaussian 区域；在半径 r 内选择低成本连接并重连。",
+          "comparator": null,
+          "measure": "组合成本、路径是否经过人工重点区及任务时间约束",
+          "unit_of_analysis": "搜索树节点及其连接；算法迭代不是独立实验单位",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "需给定重点区域、Gaussian 的 mu/Sigma、重连半径 r、成本函数及 lambda。",
+            "式(8)提出 Tact<Tmax；式(11)的最终积分目标未展示如何独立执行该约束。",
+            "I 的符号与遍历成本 C 的含义并不完全清楚，不据此重建未提供的数值实现。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "III.C",
+            "figure": null,
+            "equation": "(8)-(11)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "整合后的总代价与节点选择",
+          "design": "式(14)-(15)把人工重要性项并入成本并选择低成本候选。",
+          "comparator": null,
+          "measure": "总代价与候选节点选择",
+          "unit_of_analysis": "所提算法目标的数学表述",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "式(15)使用 argmin，却被称为节点扩展概率；没有给出可归一化的概率分布。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "V",
+            "figure": null,
+            "equation": "(14)-(15)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提出通过人工先验偏置重点区域的 informative path planning。",
+        "boundary": "信息项表示预设的重要性/代价，不等于实际采集到的信息量。",
+        "negative_result": null,
+        "non_inference": "不能推断有严格最优性、严格任务时限保证、受害者发现率提升或信息论意义的信息增益测量。",
+        "unresolved": "偏置采样的支持条件、成本/信息项方向、时间约束执行及最优性证明尚不清楚。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "如何在路径成本与人工定义的重点区域覆盖之间建立采样规划目标？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "所提出的 BNN-adaptive window strategy（BNN-AWS）以地图位置上的人工神经活动场接收目标兴奋输入和障碍抑制输入，用移动感知窗口限制局部计算，并以障碍曲率相关的距离/半径与 ray tracing 调整航点；它是 bioinspired 局部导航构造，不是生物神经机制或严格碰撞安全性的验证。",
+      "claim_type": "method_design",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "BNN 活动场与 AWS 局部航点调整",
+          "design": "用含衰减、上下界、侧向权重与兴奋/抑制输入的 shunting 动态构成活动场，随机器人移动更新窗口并按曲率调整航点。",
+          "comparator": null,
+          "measure": "人工活动场、局部航点与规划曲率半径",
+          "unit_of_analysis": "地图位置上的人工计算节点；不是生物神经元或动物",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "rho、beta、eta 为正参数，外部输入表示目标/障碍；侧向权重和窗口参数未完整提供。",
+            "式(13)使用障碍曲率 psi 和安全距离 ds；文中另以速度/最大角速度定义最小转弯半径。",
+            "未说明零曲率、曲率符号变化及安全半径不等式如何在实现中被统一处理。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "IV",
+            "figure": null,
+            "equation": "(12)-(13)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "BNN 与全局选择/曲率更新的耦合规则",
+          "design": "活动 Delta 对节点评分作乘性调制，并以式(20)更新曲率相关半径。",
+          "comparator": null,
+          "measure": "调制节点评分与更新后的半径",
+          "unit_of_analysis": "模型状态与所提更新规则",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "式(16)左右使用同一 p(ni)，且未说明归一化；不把它当作已证明的概率映射。",
+            "alpha、gamma 的具体值和完整约束未报告。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "V",
+            "figure": null,
+            "equation": "(16),(20)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "给出局部动态场与局部窗口/曲率航点修正的组合。",
+        "boundary": "方法说明未提供完整窗口尺寸、参数表、硬件控制实验或安全证明。",
+        "negative_result": null,
+        "non_inference": "人工节点活动不是神经记录；不能推断生物有效性或任意障碍/速度下的无碰撞保证。",
+        "unresolved": "概率调制记号、曲率奇异点和参数配置需要澄清。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "人工神经活动场与局部窗口如何共同指导动态障碍下的航点调整？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "在 VI.A 所报告的全局导航 MATLAB 仿真比较中，整体 HAT/hybrid-graph/NOP 方法的平均路径长为 341 m，正文称其为所比较方法中最短的平均路径；A* 与 GBFS 分别为 350 m 和 506 m。该比较支持所报仿真设置中的路径缩短，而未给出独立重复次数或统计显著性。",
+      "claim_type": "simulation_comparison",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "全局路径规划算法比较",
+          "design": "在同一节的仿真比较中评价整体框架与 A*、GBFS、goal-biased RRT 和 variable-sampling-region RRT 类方法。",
+          "comparator": "A* 平均 350 m；GBFS 平均 506 m；VSR RRT* 的最短路径被描述为接近本方法，但其平均值未见于正文。",
+          "measure": "平均/最短路径长度及路径长度变异",
+          "unit_of_analysis": "按算法产生的仿真导航路径；平均值所对应的独立运行/种子数和地图数未报告",
+          "sample_size_as_reported": null,
+          "uncertainty": "正文给出 VSR RRT* 路径标准差 11.9 m；本方法、A*、GBFS 的对应 SD、CI 和显著性检验未完整提供。",
+          "assumptions": [
+            "所有报告的实验均为 MATLAB R2023b 仿真；硬件为 Intel Core i7 四核 CPU、16 GB RAM。",
+            "环境由灰度图和向量化障碍转换为成本地图/规划图，使用差动驱动机器人模型。",
+            "人工选择的节点、航点或优先区域是规划输入；未报告参与者招募或真实 HITL 实验。",
+            "数字直接来自第8页正文，不来自缺失的 Table II 单元格。",
+            "未给出匹配目标、航点约束和各对照参数的完整细节。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "VI.A",
+            "figure": "Fig.3 的主文图注；Table II 的正文结果叙述",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所报平均路径为 341 m，短于正文列明的 A* 和 GBFS。",
+        "boundary": "比较针对论文所用仿真任务；不能把所报平均值推广到所有室内/城市地图。",
+        "negative_result": null,
+        "non_inference": "没有重复数或显著性证据，不能断言统计学显著优势或把整体差异归因于单一组件。",
+        "unresolved": "每算法独立重复数、地图数、参数匹配和 Table II 完整数值未提供。",
+        "unresolved_attribution": "没有移除人工输入、GVD、NOP 或 BNN-AWS 的消融设计。"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "在所报全局导航设置中，整合人类先验的规划框架是否缩短平均路径？"
+      ],
+      "shared_evidence_with": [
+        "C7",
+        "C12"
+      ],
+      "review_notes": [
+        "C6 与 C7 使用同一 VI.A 比较，不是两次独立实验。",
+        "Fig.3 图注写 variable sampling region RRT，正文写 VSR RRT*；保留正文名称并标记对照版本歧义。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "在与路径长度比较共用的 VI.A MATLAB 仿真中，整体 HAT 导航方法的平均规划计算时间报告为 2.51 s，低于正文列明的 VSR RRT* 151 s 与 A* 335 s；这些值是算法比较指标，不是完整仿真每次 2-8 min 的运行时间，也不是实测救援响应时间。",
+      "claim_type": "simulation_comparison",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "全局规划算法计算时间比较",
+          "design": "同一硬件/软件条件下报告各规划器的最短/平均执行时间，并与路径长度一起比较。",
+          "comparator": "VSR RRT* 平均 151 s；A* 平均 335 s。",
+          "measure": "平均规划计算时间（s）",
+          "unit_of_analysis": "规划算法执行的仿真运行；独立重复数、计时范围和种子配置未报告",
+          "sample_size_as_reported": null,
+          "uncertainty": "正文称本方法计算时间变异较低，但具体 SD、CI 和检验未提供。",
+          "assumptions": [
+            "所有报告的实验均为 MATLAB R2023b 仿真；硬件为 Intel Core i7 四核 CPU、16 GB RAM。",
+            "环境由灰度图和向量化障碍转换为成本地图/规划图，使用差动驱动机器人模型。",
+            "人工选择的节点、航点或优先区域是规划输入；未报告参与者招募或真实 HITL 实验。",
+            "完整仿真典型运行时间 2-8 min 与本比较的平均规划时间为不同报告尺度。",
+            "没有完整计时协议，不能声称本方法比所有对照都最快。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "VI.A 及 VI 的仿真配置",
+            "figure": "Table II 的正文结果叙述",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "正文列明的本方法规划时间低于两个给出数值的对照。",
+        "boundary": "结论依赖特定 MATLAB 实现、桌面硬件及不完整的计时说明。",
+        "negative_result": null,
+        "non_inference": "不能把桌面规划时间当成现场传感、操作员输入、执行控制或完成救援的端到端延迟。",
+        "unresolved": "计时是否涵盖人工输入/图构建、重复数及各方法完整实现开销未报告。",
+        "unresolved_attribution": "与 C6 共用整体框架比较，未隔离人工节点或局部 BNN 对时间的因果作用。"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "人类指导的混合图规划在所报实现中需要多少计算时间？"
+      ],
+      "shared_evidence_with": [
+        "C6",
+        "C12"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "在 VI.B 的密集城市、多航点路径规划仿真示例中，结合 hybrid graph 与人工指定关键航点的路线长度报告为 675.13 m，而 Dijkstra 路线为 823.80 m；正文据此描述较少绕行，但没有报告该示例的独立重复数、完整多航点约束匹配或计算时间数值。",
+      "claim_type": "simulation_comparison",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "城市多航点导航仿真",
+          "design": "在建筑紧密、通道狭窄的城市地图上，以人工选定关键航点和图节点/边优化生成路线。",
+          "comparator": "Dijkstra 路径 823.80 m。",
+          "measure": "所示城市路径长度：本方法 675.13 m。",
+          "unit_of_analysis": "城市地图上的算法生成路线；未说明数值为单次结果还是重复汇总",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "所有报告的实验均为 MATLAB R2023b 仿真；硬件为 Intel Core i7 四核 CPU、16 GB RAM。",
+            "环境由灰度图和向量化障碍转换为成本地图/规划图，使用差动驱动机器人模型。",
+            "人工选择的节点、航点或优先区域是规划输入；未报告参与者招募或真实 HITL 实验。",
+            "Fig.13 为未提供的 Supplementary Material；这里只依据第9页结果文字。",
+            "是否以完全相同的航点、目标和约束运行 Dijkstra 未完整报告。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "VI.B",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "正文所示本方法城市路线短于 Dijkstra 路线。",
+        "boundary": "只支持所述城市示例；不具备未报告重复任务的统计概括能力。",
+        "negative_result": null,
+        "non_inference": "不能推断真实城市部署、更高救援成功率、所有多航点问题最优或独立验证的实时性。",
+        "unresolved": "地图/任务数量、独立种子数、约束匹配和具体计算时间未给出。",
+        "unresolved_attribution": "没有人工航点与图结构的独立消融。"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "人工选择关键航点是否能在拥挤城市仿真中减少绕行距离？"
+      ],
+      "shared_evidence_with": [
+        "C12"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "在 VI.C 的 HAT-based RRT*-IPP 路径示例中，正文描述 300 次迭代时已形成朝目标并利用人工重点区域的路线，4500 次迭代时路线更加贴近人工指定的高重要性区域；这是一组定性迭代状态比较，没有给出最优路径参照、数值成本或实际信息获取量。",
+      "claim_type": "simulation_qualitative",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "RRT*-IPP 的迭代路线示例",
+          "design": "文字比较算法在 300 与 4500 次迭代时的路径与人工指定重点区的关系。",
+          "comparator": "300 次迭代状态与 4500 次迭代状态。",
+          "measure": "对预设高重要性区域的路径偏置与路线细化（定性）",
+          "unit_of_analysis": "算法搜索的两个迭代状态；不是 300 或 4500 个独立样本",
+          "sample_size_as_reported": null,
+          "uncertainty": "无成本序列、重复轨迹、效应量、CI 或显著性统计。",
+          "assumptions": [
+            "所有报告的实验均为 MATLAB R2023b 仿真；硬件为 Intel Core i7 四核 CPU、16 GB RAM。",
+            "环境由灰度图和向量化障碍转换为成本地图/规划图，使用差动驱动机器人模型。",
+            "人工选择的节点、航点或优先区域是规划输入；未报告参与者招募或真实 HITL 实验。",
+            "正文使用 near optimal 的定性措辞，但没有真实最优解或误差界。",
+            "Fig.14(a)-(b) 为未提供的补充图，未检查其像素。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "VI.C",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "文字示例表明规划可随更多迭代呈现更强的人工重点区偏置。",
+        "boundary": "只有文字描述的两个迭代状态，无法量化变化大小或其重复性。",
+        "negative_result": null,
+        "non_inference": "不能把迭代数当样本数，不能推出收敛证明、近最优误差界或观测信息量增加。",
+        "unresolved": "独立运行次数、成本值、重点区覆盖指标及搜索结果的稳定性未报告。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "增加迭代后，人工区域先验如何改变 RRT*-IPP 路线的空间分布？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "在 VI.D 正文给出的局部导航路线比较中，BNN-AWS 的路径长度为 620.52 m，短于 A* 653.87 m、APF-DQN 655.33 m、APF 732.23 m、RRT 672.18 m、DQN 721.04 m 与 DDPG 660.46 m；该排序针对所描述的仿真路线，不代表多地图或重复试验的总体优势。",
+      "claim_type": "simulation_comparison",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "局部导航算法路线比较",
+          "design": "比较 BNN-AWS 与搜索、人工势场和强化学习类方法生成的局部路径。",
+          "comparator": "A*、APF-DQN、APF、RRT、DQN、DDPG；各路径值见声明。",
+          "measure": "各算法所报路线长度（m）与定性的绕行/振荡描述",
+          "unit_of_analysis": "算法在局部导航示例中生成的路线；未报告独立运行数，也未说明这些值是否为平均",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "所有报告的实验均为 MATLAB R2023b 仿真；硬件为 Intel Core i7 四核 CPU、16 GB RAM。",
+            "环境由灰度图和向量化障碍转换为成本地图/规划图，使用差动驱动机器人模型。",
+            "人工选择的节点、航点或优先区域是规划输入；未报告参与者招募或真实 HITL 实验。",
+            "只提取第9页正文数值；Fig.15(a) 的补充图像未提供。",
+            "各强化学习对照的训练次数、训练样本、种子及测试任务数量未在本文正文提供。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "VI.D",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "BNN-AWS 在正文列出的局部路线长度中最短。",
+        "boundary": "缺乏匹配参数、独立种子/任务数、误差条和完整对照训练设置。",
+        "negative_result": "正文描述 APF 在该比较中发生振荡并出现额外绕行；这是对照算法的定性不利表现，不是 BNN-AWS 的零效应或失败。",
+        "non_inference": "不能由路线长度推出学习样本效率、能耗、最优性或真实机器人安全性。",
+        "unresolved": "重复数、对照公平性、RL 训练与测试配置、碰撞和时间统计未报告。",
+        "unresolved_attribution": "没有 BNN 与 AWS 分开或移除某一组件的对照。"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "所报局部场景中，BNN-AWS 与势场、搜索及强化学习路线的长度如何比较？"
+      ],
+      "shared_evidence_with": [
+        "C12"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "对于 VI.D 的动态局部导航示例，正文报告 BNN-AWS 在跟踪目标时能够避开静态和移动障碍，并描述其人工神经活动场随障碍运动调整；这是文字所述的动态仿真能力，未给出碰撞率、跟踪误差、成功率或独立任务次数。",
+      "claim_type": "simulation_qualitative",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "动态障碍与目标跟踪仿真",
+          "design": "正文描述静态/移动障碍下的目标跟踪，以及人工活动场随障碍位置改变的响应。",
+          "comparator": null,
+          "measure": "动态避障和目标跟踪能力、人工活动变化（定性）",
+          "unit_of_analysis": "动态仿真的机器人轨迹与模型活动场；不是生物神经元或真实参与者",
+          "sample_size_as_reported": null,
+          "uncertainty": "未提供误差条、碰撞/成功计数、跟踪误差或重复试验统计。",
+          "assumptions": [
+            "所有报告的实验均为 MATLAB R2023b 仿真；硬件为 Intel Core i7 四核 CPU、16 GB RAM。",
+            "环境由灰度图和向量化障碍转换为成本地图/规划图，使用差动驱动机器人模型。",
+            "人工选择的节点、航点或优先区域是规划输入；未报告参与者招募或真实 HITL 实验。",
+            "Fig.15(b)-(d) 及所谓活动图均在未提供的 Supplementary Material 中；本记录只依据主文描述。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "VI.D",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "主文描述支持该框架在所示仿真中对动态障碍作出局部响应并跟踪目标。",
+        "boundary": "不能从未提供的活动图检查响应时序、活动分布或具体碰撞情况。",
+        "negative_result": null,
+        "non_inference": "未报告失败次数不等于零失败，也不等于鲁棒性界、真实障碍安全性或神经机制识别。",
+        "unresolved": "目标/障碍速度、任务次数、跟踪精度、响应延迟和失败情形未明确。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "局部活动场与窗口策略能否在目标跟踪时响应移动障碍？"
+      ],
+      "shared_evidence_with": [
+        "C12"
+      ],
+      "review_notes": [
+        "C10 与 C11 来自同一节但分别描述路径比较和动态示例；不把它们当作独立复现。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "作者把整体框架仿真中的短路径、低规划时间与较少绕行解释为人工节点/区域指导、hybrid graph、NOP 和局部 BNN-AWS 的协同作用；本文只比较整合方案与其他算法，没有将这些组件各自的因果贡献或交互效应分离出来。",
+      "claim_type": "component_attribution",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "对整体框架比较的作者解释",
+          "design": "作者将 VI.A 中的性能优势归于人工节点指导及节点/边自适应，而不是报告组件消融实验。",
+          "comparator": "整体框架与 A*、GBFS、RRT 类算法比较；不是同一框架逐项移除的对照。",
+          "measure": "已报告的路径长度及计算时间",
+          "unit_of_analysis": "复用 VI.A 的仿真比较，不增加独立样本",
+          "sample_size_as_reported": null,
+          "uncertainty": "组件独立效应或交互的置信区间/检验未报告。",
+          "assumptions": [
+            "所有报告的实验均为 MATLAB R2023b 仿真；硬件为 Intel Core i7 四核 CPU、16 GB RAM。",
+            "环境由灰度图和向量化障碍转换为成本地图/规划图，使用差动驱动机器人模型。",
+            "人工选择的节点、航点或优先区域是规划输入；未报告参与者招募或真实 HITL 实验。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "VI.A",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "其他示例与总括解释",
+          "design": "VI.B、VI.D 及结论把人工输入和计算规划的结合解释为适应性与效率的来源。",
+          "comparator": "Dijkstra 或局部导航算法；未给出组件级因果对照。",
+          "measure": "复用城市路径、局部路径与动态能力的报告",
+          "unit_of_analysis": "复用既有仿真路线和文字描述",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "所有报告的实验均为 MATLAB R2023b 仿真；硬件为 Intel Core i7 四核 CPU、16 GB RAM。",
+            "环境由灰度图和向量化障碍转换为成本地图/规划图，使用差动驱动机器人模型。",
+            "人工选择的节点、航点或优先区域是规划输入；未报告参与者招募或真实 HITL 实验。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "VI.B、VI.D、VII",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "该解释与报告的整体方案表现相容。",
+        "boundary": "解释依赖整体基线比较而非可分辨组件贡献的消融。",
+        "negative_result": null,
+        "non_inference": "不能据此宣称人工 situational awareness、BNN 神经机制或某一模块已被因果识别为性能增益来源。",
+        "unresolved": "分别移除人工输入、GVD、时变图、NOP、BNN 或 AWS 后会怎样尚未被检验。",
+        "unresolved_attribution": "单一组件作用与组件交互均未分离。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "整体导航优势究竟来自哪一模块，是否需要组件交互才能产生？"
+      ],
+      "shared_evidence_with": [
+        "C6",
+        "C7",
+        "C8",
+        "C10",
+        "C11"
+      ],
+      "review_notes": [
+        "这是作者归因解释，不是新的实验结果；复用的数值不算独立证据。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C13",
+      "statement": "作者提出待验证的人因假设：NOP 主动建议候选节点和路线，可减少操作员持续执行低层路径修正的需要，从而降低认知/操作负担并让其专注高层决策；所供论文未报告真实操作员的 workload 或行为数据，不能把这一假设写成已证实效应。",
+      "claim_type": "human_factor_prediction",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "人因设计论证",
+          "design": "III.D 将自动节点建议与减少低层干预联系起来；属于架构的预期作用。",
+          "comparator": null,
+          "measure": "操作员干预需求及认知/操作负担（拟评价，未测量）",
+          "unit_of_analysis": "预期评价对象是真实操作员/任务；本文没有报告相应样本",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "需有真实 HITL 任务、合适对照与工作负荷/干预度量才能检验。",
+            "人工定义航点仿真不等于人类负担实测。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "III.D",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "未来工作声明",
+          "design": "结论将直接 HITL 交互及操作员行为/表现数据收集列为下一阶段评估。",
+          "comparator": null,
+          "measure": "workload、行为与表现（未来评估）",
+          "unit_of_analysis": "未来操作员实验；本文无结果数据",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "正在进行的研究未在本文提供结果，不能计为已完成实验。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "VII",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "明确了人机协作架构拟检验的减负假设。",
+        "boundary": "只有论证与未来工作计划；无参与者数、量表、对照任务或效应量。",
+        "negative_result": null,
+        "non_inference": "不能声称工作负荷已经下降、建议已经减少实际操作次数或人类表现已提高。",
+        "unresolved": "负担是否下降以及在复杂场景下是否反而增加监督负担需要真实操作员验证。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "behavior-cognition",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "NOP 的路线建议会降低实际操作员的工作负荷和低层干预次数吗？"
+      ],
+      "shared_evidence_with": [
+        "C14"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C14",
+      "statement": "作者另提出待验证的人因假设：可靠且符合人工意图的 NOP 建议和按任务状态调整的自主性，可能促进 calibrated trust、维持操作员参与并避免过度依赖自动化；真实操作员的信任、teaming fluency 和反馈有效性仍属于后续评估而非本论文的实测结论。",
+      "claim_type": "human_factor_prediction",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "信任与适应性自主性的设计论证",
+          "design": "III.D 预期建议与人类意图一致可培养信任，并通过关键时刻的人类监督避免自动化过度依赖。",
+          "comparator": null,
+          "measure": "calibrated trust、参与和过度依赖（提出但未测量）",
+          "unit_of_analysis": "假设针对操作员-自主系统关系；无真实人类样本数据",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "建议可靠性、意图一致性和自主性调节均需实际交互与可操作化的测量。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "III.D",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "人机评估的未来工作界限",
+          "design": "结论称后续操作员研究将评价 trust、workload、teaming fluency 与反馈有效性。",
+          "comparator": null,
+          "measure": "信任、协作流畅性及人工反馈有效性（未来评估）",
+          "unit_of_analysis": "未来真实操作员任务；未提供已完成数据",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "仿真性能优势不能直接证实信任校准或协作质量。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "VII",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "区分了规划性能与尚需直接检验的人机信任机制。",
+        "boundary": "无信任量表、校准指标、过度依赖测量、参与者数或协作研究结果。",
+        "negative_result": null,
+        "non_inference": "不能推出信任已经被校准、过度依赖已被避免或系统获得了人因层面的可靠性认证。",
+        "unresolved": "实际任务中信任与能力是否匹配，以及自主性调节对人机协作的作用仍未检验。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "behavior-cognition",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "符合人工意图的导航建议能否改善信任校准而不导致过度依赖？"
+      ],
+      "shared_evidence_with": [
+        "C13"
+      ],
+      "review_notes": [
+        "与 C13 复用同一 III.D 论证和 VII 未来工作声明；两者是可分别评价的假设，不是两项独立人因实验。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "这是一篇2026年 IEEE Transactions on Human-Machine Systems 排版研究文章，提出用于 search and rescue 的 human-autonomy teaming 导航架构：GVD 与 spatiotemporal graph 构成全局地图，ACTS/NOP 将人工航点和风险判断接入节点选择，jump search 与 RRT*-IPP 按风险条件连接路线，BNN-AWS 负责局部动态导航。已完整评估所供10页文字、主文可读图注与全部参考文献，并在保留源文本上下文中完成第二次审计。整体框架在 VI.A 的平均路径报告为341 m、平均规划时间2.51 s；城市示例为675.13 m，对照 Dijkstra 为823.80 m；局部 BNN-AWS 路线620.52 m短于正文列明的六个对照。300/4500次迭代的重点区偏置以及动态避障/跟踪为定性描述，不能当最优性或成功率证明。独立仿真重复数、种子与任务规模未报告，缺失表格、算法步骤和补充图表均不作补猜。全部结果是 MATLAB 仿真，没有真实机器人救援、人类参与者或生物神经验证。作者把系统性能归于模块协同，但无组件消融；降低工作负荷和校准信任分别作为待验证假设，论文明确直接 HITL 人因评估是后续工作。候选仍须人工审阅，未写数据库。",
+  "shared_evidence": [
+    {
+      "claim_id": "C6",
+      "with": [
+        "C7",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C6",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "with": [
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "with": [
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "with": [
+        "C6",
+        "C7",
+        "C8",
+        "C10",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C13",
+      "with": [
+        "C14"
+      ]
+    },
+    {
+      "claim_id": "C14",
+      "with": [
+        "C13"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": null,
+        "issue": "源身份复核：所供稿为 IEEE 期刊排版的10页文章，第一页标题、五名作者及 DOI 与分配记录一致；文面载2026年引用，Received 2025-09-02、revised 2025-12-05、accepted 2025-12-30。",
+        "suggested_correction": "保留 indexed 年份2026；接收日期不替代出版年份。未见 preprint 版本标记，不补猜卷期/正式出版日。",
+        "pdf_page": 1,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "所供10页未包含正文引用的 Supplementary Figs.4-15、Table III 或附录数据。",
+        "suggested_correction": "只依据主文文字，不声称阅读补充图表、图像像素或未提供附录；材料检查留待人工。",
+        "pdf_page": 1,
+        "resolved": false
+      },
+      {
+        "claim_id": "C2",
+        "issue": "Table I 的单元格未被提取；第4页写 n1、n5 被拒绝，第5页又将其作为 jump-search 重规划例子。",
+        "suggested_correction": "不保存特定节点编号的确定处置结论；保留 ACTS/NOP 的一般设计并交人工核对表格。",
+        "pdf_page": 5,
+        "resolved": false
+      },
+      {
+        "claim_id": "C6",
+        "issue": "Table II 只有标题，无可读单元格；不能恢复全部对照最短/平均值及标准差。",
+        "suggested_correction": "C6、C7 仅保存第8页正文实际给出的数值，不从缺失表格猜测其余数字。",
+        "pdf_page": 4,
+        "resolved": false
+      },
+      {
+        "claim_id": "C2",
+        "issue": "Algorithm 1 只提取了标题，没有伪代码步骤。",
+        "suggested_correction": "将方法记录限定为可读正文和方程，完整实现核对留待额外材料。",
+        "pdf_page": 5,
+        "resolved": false
+      },
+      {
+        "claim_id": null,
+        "issue": "主文未报告各比较的独立仿真重复数、种子数、地图/任务数量或人类参与者样本量。",
+        "suggested_correction": "sample_size_as_reported 保持 null；区分算法路线、搜索迭代、人工地图节点和实际独立实验单位。",
+        "pdf_page": 8,
+        "resolved": true
+      },
+      {
+        "claim_id": "C9",
+        "issue": "300 与 4500 是 RRT*-IPP 迭代次数，不是独立样本，也不能单独证明 near optimal 或渐近最优性。",
+        "suggested_correction": "仅保留定性路径偏置；不写最优误差、收敛界或独立重复数。",
+        "pdf_page": 9,
+        "resolved": true
+      },
+      {
+        "claim_id": "C3",
+        "issue": "式(7)的乘积式联合阻塞量未明确事件独立性、相关性处理或 p(Ok) 估计方法。",
+        "suggested_correction": "作为作者的风险评分/切换规则保存，不作为经过校准的联合概率或安全保证。",
+        "pdf_page": 6,
+        "resolved": false
+      },
+      {
+        "claim_id": "C4",
+        "issue": "式(8)-(11)中的 C/I 方向与权重语义不够明确，任务时间约束如何在最终目标中执行也未展示。",
+        "suggested_correction": "保留人工重点区与组合目标的一般设计，不修写源方程或宣称严格约束满足。",
+        "pdf_page": 6,
+        "resolved": false
+      },
+      {
+        "claim_id": "C4",
+        "issue": "正文称偏置 RRT* 保留渐近最优性，但未提供采样支持条件、定理或证明。",
+        "suggested_correction": "不生成已证明的最优性记录；将最优性界限列为非推断与未决问题。",
+        "pdf_page": 6,
+        "resolved": false
+      },
+      {
+        "claim_id": null,
+        "issue": "式(5)未显示节点评分归一化；式(15)用 argmin 表示所谓概率；式(16)同一 p 在等式两侧且未区分更新前后。",
+        "suggested_correction": "C2/C4/C5 保留为设计规则及记号歧义，不能按它们重建已定义的概率分布。",
+        "pdf_page": 8,
+        "resolved": false
+      },
+      {
+        "claim_id": "C5",
+        "issue": "曲率安全半径的零曲率/符号边界、参数约束和无碰撞保证的充分条件未提供。",
+        "suggested_correction": "只记录曲率相关航点修正，不声称形式碰撞安全或任何曲率下的适用性。",
+        "pdf_page": 7,
+        "resolved": false
+      },
+      {
+        "claim_id": "C6",
+        "issue": "Fig.3 图注为 variable sampling region RRT，VI.A 正文为 VSR RRT*，对照具体变体命名不一致。",
+        "suggested_correction": "数值保留正文 VSR RRT* 的名称；具体变体/实现交人工核对，不能自行合并为同一版本。",
+        "pdf_page": 8,
+        "resolved": false
+      },
+      {
+        "claim_id": "C7",
+        "issue": "完整仿真典型运行时间2-8 min与平均规划比较时间2.51 s属于不同计时报告，不能混用。",
+        "suggested_correction": "明确秒数为 VI.A 的算法比较指标，不推断端到端救援或真实操作员响应时间。",
+        "pdf_page": 8,
+        "resolved": true
+      },
+      {
+        "claim_id": "C12",
+        "issue": "整体基线比较不足以分离人工输入、hybrid graph、NOP、BNN/AWS 的因果贡献。",
+        "suggested_correction": "作者协同归因仅作为 interpretation；不升级为机制或因果结果。",
+        "pdf_page": 8,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "III.D 对 workload/trust 的益处是设计论证；VII 明确把实际 HITL、行为/表现与人因评价列为下一阶段，未提供当前人类实验。",
+        "suggested_correction": "C13/C14 使用 hypothesis，实测人因样本/效应留空；不将 ongoing studies 当已完成证据。",
+        "pdf_page": 9,
+        "resolved": true
+      },
+      {
+        "claim_id": "C5",
+        "issue": "BNN 的 neuron/活动场为地图计算节点；没有生物神经记录或生物验证。",
+        "suggested_correction": "使用人工神经活动场、仿真节点等单位，不填写生物样本数或机械因果识别。",
+        "pdf_page": 7,
+        "resolved": true
+      },
+      {
+        "claim_id": "C10",
+        "issue": "APF 振荡为正文描述的实际对照不利表现；其余未报告失败不能变成零碰撞或零失败。",
+        "suggested_correction": "仅在 C10 的 negative_result 保留 APF 定性振荡，其他未报告负结果保持 null。",
+        "pdf_page": 9,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "第二次源内审计在已保留的全部10页文本上下文中逐一核对方法条件、结果数值、分析单位、角色、定位和证据共享；没有重新打开 PDF。",
+        "suggested_correction": "C6/C7 共享全局比较；C12 复用相关仿真；C13/C14 共享设计论证。所有引用 quote 为 null，原文引用词数为0；无跨论文关系。",
+        "pdf_page": 10,
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T14:22:48.457323Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "edb267b95a045950f88314e70f0ba5bf8d31a0cca8f0007e792dfc0fcb75e8a2",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

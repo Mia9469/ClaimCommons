@@ -1,0 +1,701 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "ED-BioRob: A Neuromorphic Robotic Arm With FPGA-Based Infrastructure for Bio-Inspired Spiking Motor Controllers",
+    "authors": [
+      "Alejandro Linares-Barranco",
+      "Fernando Perez‐Peña",
+      "Angel F. Jimenez-Fernandez",
+      "Elisabetta Chicca"
+    ],
+    "doi": "10.3389/fnbot.2020.590163",
+    "publication_year": 2020,
+    "venue": "Frontiers in Neurorobotics",
+    "url": "https://doi.org/10.3389/fnbot.2020.590163"
+  },
+  "source": {
+    "filename": "paper-W3107590884.pdf",
+    "sha256": "4809fad81f5b673be0782cf598313cfc4e4266632a3c534ed7d1654d7b88e463",
+    "source_url": "https://www.frontiersin.org/journals/neurorobotics/articles/10.3389/fnbot.2020.590163/pdf",
+    "pdf_page_count": 12
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "results_sections_seen": [
+      "2.1 Spike-Based PID Position Motor Controller",
+      "2.2 The ED-BioRob Robotic-Arm",
+      "3.1 Robot Characterization",
+      "3.2 Trajectory Planning",
+      "3.3 Dynap-SE Control of the Robot",
+      "4 Conclusions",
+      "Figures 1–9; Tables 1–4"
+    ],
+    "missing_material": [
+      "图像像素未提供",
+      "补充视频及其他补充材料内容未提供",
+      "链接中的硬件源代码未提供"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "所供文本为2020年11月30日发表的正式研究论文，标题、DOI及作者与身份元数据一致。",
+      "全部所供正文、公式、图表文字、声明及参考文献均已评估；无附录文本。",
+      "同一机器人上的重复运动不构成跨设备独立复现。",
+      "共享证据链接仅表示共同使用本文控制架构，不表示不同性能实验共享观测数据。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "增加编码器反馈积分模块，将既有速度sPID适配为四关节位置控制，并部署到双FPGA/AER基础设施。",
+      "role": "工程方法贡献",
+      "source_pages": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "decision": "include",
+      "reason": "新增位置反馈结构、硬件分工及实机应用均有明确说明。"
+    },
+    {
+      "summary": "表1给出四关节控制参数，并称配置目标为相同速度和精度。",
+      "role": "实现配置",
+      "source_pages": [
+        6,
+        9
+      ],
+      "decision": "exclude",
+      "reason": "作为实验条件保留；未提供优化对照或四关节等精度验证。"
+    },
+    {
+      "summary": "四关节单独扫描建立数字参考、脉冲频率、视频角度及传感器读数的对应关系，并发现传感器读数异常。",
+      "role": "实机表征结果",
+      "source_pages": [
+        6,
+        7
+      ],
+      "decision": "include",
+      "reason": "图5和表2提供独立可评估的表征结果。"
+    },
+    {
+      "summary": "关节2两个顺序测试范围的位置RMSE分别为1.61°和3.3°。",
+      "role": "定量性能结果",
+      "source_pages": [
+        7,
+        8
+      ],
+      "decision": "include",
+      "reason": "报告了测角方法、运动顺序及每位置重复次数。"
+    },
+    {
+      "summary": "四关节同步扫描的10次迭代显示关节1与2读数差异增加，报告2.39%增量误差和6.6°平均误差。",
+      "role": "轨迹性能与限制",
+      "source_pages": [
+        8,
+        9
+      ],
+      "decision": "include",
+      "reason": "同一实验的互补读数合并保留；误差计算定义未报告。"
+    },
+    {
+      "summary": "三关节四点循环运动出现持续振荡，目标点与到达点未重合。",
+      "role": "轨迹性能与负面结果",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "正文、图8及表4支持该条件下的运动演示及定位限制。"
+    },
+    {
+      "summary": "Dynap-SE四个芯片的Core 0群体活动经AER解码，为关节4提供位置参考。",
+      "role": "接口可行性结果",
+      "source_pages": [
+        9,
+        10
+      ],
+      "decision": "include",
+      "reason": "报告了具体接口修改、核心分配及实机演示。"
+    },
+    {
+      "summary": "摘要报告四自由度同时工作时整机电流低于1 A。",
+      "role": "未充分描述的性能报告",
+      "source_pages": [
+        1
+      ],
+      "decision": "defer",
+      "reason": "正文缺少测量方法、工况和比较数据，不能确认其归因或节能优势。"
+    },
+    {
+      "summary": "作者称本文为首个在脉冲域使用PFM控制机器人手臂的工作。",
+      "role": "优先权定位",
+      "source_pages": [
+        2
+      ],
+      "decision": "exclude",
+      "reason": "所供文本不足以独立核实优先权。"
+    },
+    {
+      "summary": "既有SSP模块、BioRob机械性能及未来学习控制和人机交互应用。",
+      "role": "背景方法与展望",
+      "source_pages": [
+        3,
+        4,
+        10
+      ],
+      "decision": "exclude",
+      "reason": "既有模块及机械性能不作为本文新增结果；学习控制和交互应用未测试。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "ED-BioRob在电机光学编码器反馈路径增加Integrate-and-Generate模块，将既有脉冲速度sPID适配为四个DC电机关节的位置闭环控制；sPID主体和位置反馈处理部署于Spartan-6，脉冲展宽及电机接口部署于Spartan-3，两板通过AER互联并以PFM驱动电机。",
+      "claim_type": "engineering_method",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "控制框图、硬件部署说明及实机应用",
+          "design": "四关节BioRob；双FPGA分别承担控制与接口功能；采用表1配置",
+          "comparator": "既有速度sPID结构；无性能对照实验",
+          "measure": "位置反馈架构、脉冲参考及PFM电机驱动",
+          "unit_of_analysis": "所述机器人控制系统及四个关节回路",
+          "sample_size_as_reported": "4个关节；2块FPGA平台；独立机器人设备数未报告",
+          "uncertainty": null,
+          "assumptions": [
+            "编码器事件经积分形成位置反馈",
+            "脉冲频率作为控制信息载体",
+            "控制参数针对该机器人配置"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "2.2 The ED-BioRob Robotic-Arm",
+            "figure": "Figure 4",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "实现了四关节脉冲位置控制基础设施。",
+        "boundary": "限于所述BioRob和双FPGA配置。",
+        "negative_result": null,
+        "non_inference": "未证明优于传统PID/PWM，亦未验证生物运动神经机制。",
+        "unresolved": "跨机器人、负载及参数配置的可迁移性未测试。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "如何将脉冲速度控制器适配为弹性机器人关节的位置闭环控制？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6"
+      ],
+      "review_notes": [
+        "新增贡献是位置反馈适配与系统集成；SSP基本模块来自既有工作。",
+        "共享链接表示共同的实现条件，不表示性能数据共享或独立复现。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "ED-BioRob四关节分别接受−500至500数字参考扫描时，视频测角给出的扫描端点为J1 −88.93°与91.06°、J2 −86.1°与88.6°、J3 −106.52°与96.64°、J4 −122.12°与109.64°；J3和J4传感器读数出现作者归因于home零位未对齐的溢出或下溢。",
+      "claim_type": "device_characterization",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "单关节阶梯扫描、视频测角及角度传感器记录",
+          "design": "从竖直home位置开始，每次仅驱动所选关节；数字参考每1 s增加50",
+          "comparator": "不同数字参考下的视频角度与传感器读数",
+          "measure": "关节角度、传感器角度及参考脉冲频率",
+          "unit_of_analysis": "各关节扫描中的位置读数",
+          "sample_size_as_reported": "4个关节；正文称20步；表2列11个参考值；独立重复次数未报告",
+          "uncertainty": null,
+          "assumptions": [
+            "home位置为竖直，相对角度定义为0°",
+            "使用本文控制配置"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "3.1 Robot Characterization",
+            "figure": "Figure 5; Table 2",
+            "equation": "11",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "建立了四关节参考输入与实测位置的对应关系。",
+        "boundary": "端点是扫描实测值，不能视为已验证的安全机械极限。",
+        "negative_result": "J3和J4角度传感器存在溢出或下溢读数。",
+        "non_inference": "未证明参考到角度的精确线性映射或全范围定位精度。",
+        "unresolved": "传感器对齐修正后的准确性未报告。",
+        "unresolved_attribution": "零位对齐及惯性解释未通过独立干预检验。"
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "脉冲参考与弹性机器人各关节实际角度及传感器读数如何对应？"
+      ],
+      "shared_evidence_with": [
+        "C1"
+      ],
+      "review_notes": [
+        "扫描步数、表格行数及关节数均不能转化为独立设备样本量。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "对ED-BioRob承受主要手臂重量的关节2，以18°间隔先测试0°至90°、再测试−90°至0°，两段之间不重置控制器或home位置；每个位置运行四次，视频离线测角得到两段位置控制RMSE分别为1.61°和3.3°。",
+      "claim_type": "position_control_performance",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "重复定位、录像及离线角度测量",
+          "design": "两个固定顺序的运动范围，每段六个参考位置，间隔18°",
+          "comparator": "目标角度与实测角度",
+          "measure": "两段RMSE；各位置均值和标准差",
+          "unit_of_analysis": "关节2在各目标位置的重复到达角度",
+          "sample_size_as_reported": "1个关节；每段6个参考位置；每位置4次",
+          "uncertainty": "正文称0°及±90°处标准差较高，未给数值；图6误差条统计含义不明确",
+          "assumptions": [
+            "视频离线测角用于验证位置传感器偏移和质量",
+            "使用本文控制配置"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "3.1 Robot Characterization",
+            "figure": "Figure 6",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "关节2在所测两段范围取得所报告的定位RMSE。",
+        "boundary": "固定测试顺序使运动范围与历史状态效应无法分离。",
+        "negative_result": null,
+        "non_inference": "3.3°不能推广为所有关节或轨迹的最差误差。",
+        "unresolved": "其他关节、负载及运动速度下的定位误差未系统报告。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "脉冲sPID在不同运动范围和历史状态下的关节定位误差是多少？"
+      ],
+      "shared_evidence_with": [
+        "C1"
+      ],
+      "review_notes": [
+        "保留正文明确的RMSE，不将图注误差条推定为置信区间。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "ED-BioRob四关节同步执行−200至200数字参考扫描的10次迭代时，图7文字描述关节1与2传感器读数之间的差异逐次增加，正文报告基于这两个传感器测量的增量误差为2.39%；同一实验另报告平均误差6.6°，关节4传感器仍出现内部计数器溢出。",
+      "claim_type": "trajectory_control_performance",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "同步参考扫描、关节传感器记录及末端轨迹表示",
+          "design": "四关节同时运动；数字参考−200至200，正文称单位步长；重复10次",
+          "comparator": "不同迭代的关节1与2读数差异；命令轨迹与实测轨迹",
+          "measure": "2.39%增量误差；6.6°平均误差；关节4计数器溢出",
+          "unit_of_analysis": "同一机器人上的轨迹迭代及关节位置时间序列",
+          "sample_size_as_reported": "10次迭代；4个同步运动关节",
+          "uncertainty": "未报告区间；两项误差指标的计算及聚合定义未给出",
+          "assumptions": [
+            "使用位置传感器表征运动",
+            "使用本文控制配置"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "3.2 Trajectory Planning，续见第9页",
+            "figure": "Figure 7; Table 3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "演示了四关节同步扫描及末端运动轨迹。",
+        "boundary": "仅限该扫描和10次迭代；增量误差定义不明确。",
+        "negative_result": "关节1与2读数差异随重复增加，且关节4传感器溢出。",
+        "non_inference": "不能据此确定各关节相对目标的独立漂移量，或将6.6°转换为末端厘米误差。",
+        "unresolved": "误差计算定义及传感器校正后的轨迹精度未报告。",
+        "unresolved_attribution": "作者提及位截断和环境限制，但未分别量化其贡献。"
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "多关节脉冲位置控制的重复扫描是否出现逐次增加的偏差？"
+      ],
+      "shared_evidence_with": [
+        "C1"
+      ],
+      "review_notes": [
+        "图7与表3属于同一实验，不构成独立复现。",
+        "保留数字参考范围，避免采用与公式和表3不一致的正文频率端点。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "ED-BioRob不使用基座关节、以关节2–4循环执行平面内四个目标点时，能够产生点间运动；但正文报告目标位置周围的小幅振荡持续超过1.5 s停顿，图8文字描述命令点与实际到达点未重合。",
+      "claim_type": "trajectory_control_limitation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "四点循环运动、关节读数及三维轨迹表示",
+          "design": "关节1不使用；关节2–4按表4数字参考循环运动；参数手动调整以快速响应",
+          "comparator": "命令点与实际到达点",
+          "measure": "振荡持续时间；到达点偏离；表4平均关节及坐标读数",
+          "unit_of_analysis": "四点序列中的轨迹段和到达位置",
+          "sample_size_as_reported": "图8叠加3次四点序列重复",
+          "uncertainty": "未报告振荡幅度、定位偏差数值或区间",
+          "assumptions": [
+            "机器人具有弹性关节",
+            "使用手动配置的sPID参数"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "3.2 Trajectory Planning",
+            "figure": "Figure 8; Table 4",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "演示了三关节四点循环运动。",
+        "boundary": "正文报告1.5 s点间停顿，图注报告0.25 Hz命令频率；二者的时序关系未说明。",
+        "negative_result": "所测条件下存在持续振荡和目标点到达偏差。",
+        "non_inference": "未证明精确轨迹跟踪或满足明确的稳定时间要求。",
+        "unresolved": "改变响应速度或重新调参能否消除偏差未测试。",
+        "unresolved_attribution": "弹性关节和快速响应调参的因果贡献未通过因素对照分离。"
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "弹性关节和sPID参数如何影响点间运动的振荡及到达精度？"
+      ],
+      "shared_evidence_with": [
+        "C1"
+      ],
+      "review_notes": [
+        "停顿时长与命令周期不是同一量，不能仅凭两处数值认定直接矛盾。",
+        "图注6.5 Hz为测量频率，不能推定为控制回路频率。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "修改Dynap-SE内部FPGA输出并在机器人控制器加入AER-Decoder后，四个芯片各自Core 0的神经元群体活动被合并为关节4的PFM位置参考，实机演示了不同群体活动驱动ED-BioRob关节4的位置改变。",
+      "claim_type": "neuromorphic_interface_demonstration",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Dynap-SE与机器人AER接口连接及实机演示",
+          "design": "使用四个芯片的Core 0产生关节4参考；测试不同群体活动",
+          "comparator": "不同群体活动对应的关节位置状态",
+          "measure": "关节4位置改变及软件界面显示的群体活动",
+          "unit_of_analysis": "一个关节的神经形态参考输入与位置演示",
+          "sample_size_as_reported": "4个芯片各使用1个Core 0；图9展示4个位置面板；神经元数及独立重复次数未报告",
+          "uncertainty": "未报告位置误差、活动频率数值或重复性统计",
+          "assumptions": [
+            "AER输出经解码后作为sPID位置参考",
+            "所需群体活动取决于控制器参数"
+          ],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "3.3 Dynap-SE Control of the Robot",
+            "figure": "Figure 9",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "支持Dynap-SE群体活动与实机脉冲关节控制接口的可行性。",
+        "boundary": "实验限于关节4；图9角度标注不一致，不能确认四个互异角度或130°终点。",
+        "negative_result": null,
+        "non_inference": "未演示四关节同时由Dynap-SE控制、神经学习或自主规划。",
+        "unresolved": "群体规模、活动到角度的映射精度及多关节扩展性能未报告。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "硅神经元群体活动能否作为实机关节脉冲位置控制器的参考输入？"
+      ],
+      "shared_evidence_with": [
+        "C1"
+      ],
+      "review_notes": [
+        "四个芯片和四个展示面板均不是独立实验重复。",
+        "其他核心可用于其他关节是架构容量说明，不是多关节控制结果。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "第二遍评估覆盖全部12页及图表文字，身份与正式发表版本一致。保留六项命题：双FPGA位置控制实现、四关节表征、关节2定位RMSE、同步扫描误差、四点运动振荡及Dynap-SE接口演示。修正了关节间差异与独立漂移的混淆，并区分停顿时长和命令频率。误差定义、部分统计标注和图9角度差异仍无法消解。电流报告缺少正文测量依据；学习控制和多关节神经形态控制未演示。补充材料、代码及图像像素均未评估。",
+  "shared_evidence": [
+    {
+      "claim_id": "C1",
+      "with": [
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C2",
+      "with": [
+        "C1"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C1"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C1"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C1"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C1"
+      ]
+    }
+  ],
+  "audit": {
+    "initial_source_match_checks": [],
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": "C1",
+        "issue": "草稿将双FPGA平台数量表述为2个平台，但未明确其为同一系统的组成部分。",
+        "suggested_correction": "明确为2块FPGA平台，不计作机器人设备数或独立重复。",
+        "pdf_page": 5,
+        "resolved": true
+      },
+      {
+        "claim_id": "C1",
+        "issue": "表1标题使用ED-Scorbot，与正文ED-BioRob名称不一致。",
+        "suggested_correction": "按正文上下文作为本文配置使用；保留名称差异，不能确认笔误来源。",
+        "pdf_page": 6,
+        "resolved": true
+      },
+      {
+        "claim_id": "C3",
+        "issue": "图6同时描述标准差和RMSE误差条，统计呈现含义不明确。",
+        "suggested_correction": "保留正文RMSE和每位置四次重复；误差条含义仍未解决。",
+        "pdf_page": 7,
+        "resolved": false
+      },
+      {
+        "claim_id": "C3",
+        "issue": "结论中的最差RMSE 3.3°容易被推广至所有关节及轨迹。",
+        "suggested_correction": "限定为关节2所测两个顺序范围中的较大RMSE。",
+        "pdf_page": 10,
+        "resolved": true
+      },
+      {
+        "claim_id": "C4",
+        "issue": "草稿将关节1与2之间差异增加表述为各关节逐次累积偏差，超出图注明确描述。",
+        "suggested_correction": "改为两关节传感器读数差异逐次增加，不推定各自相对目标的漂移量。",
+        "pdf_page": 8,
+        "resolved": true
+      },
+      {
+        "claim_id": "C4",
+        "issue": "正文扫描频率端点152.6 Kspikes/s与公式11和表3的305.17 Kspikes/s不一致。",
+        "suggested_correction": "命题采用数字参考范围；原文频率差异无法由所供文本消解。",
+        "pdf_page": 8,
+        "resolved": false
+      },
+      {
+        "claim_id": "C4",
+        "issue": "2.39%增量误差及6.6°平均误差缺少计算和聚合定义。",
+        "suggested_correction": "仅作为作者报告值保留，不转换为末端厘米误差或长期稳定性指标。",
+        "pdf_page": 9,
+        "resolved": false
+      },
+      {
+        "claim_id": "C5",
+        "issue": "草稿把1.5 s停顿和0.25 Hz命令频率直接视为时序不一致。",
+        "suggested_correction": "两者分别表示停顿和命令频率，改为时序关系未说明；不能直接认定矛盾。",
+        "pdf_page": 9,
+        "resolved": true
+      },
+      {
+        "claim_id": "C6",
+        "issue": "图9总述为0°至130°，但分图标签为0°、30°、90°、90°。",
+        "suggested_correction": "保留接口演示，不确认130°终点或四个互异角度；标签差异仍未解决。",
+        "pdf_page": 10,
+        "resolved": false
+      },
+      {
+        "claim_id": null,
+        "issue": "摘要报告整机电流低于1 A，但正文未提供测量方法或PWM比较。",
+        "suggested_correction": "在贡献清单暂缓该报告，不提取节能优势或脉冲信号导致低电流的因果结论。",
+        "pdf_page": 1,
+        "resolved": true
+      },
+      {
+        "claim_id": "C1",
+        "issue": "式1微分项写为Kp，式2为Kd；式10微分支路采用滤波形式。",
+        "suggested_correction": "不提取理想PID等价定理；保留工程实现命题。",
+        "pdf_page": 3,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "草稿包含不属于请求schema的source_check和review字段，且暗示执行了文本匹配检查。",
+        "suggested_correction": "删除这些字段；本次仅依据所供文本进行审计。",
+        "pdf_page": null,
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T06:35:12.443592Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "signed_in_chatgpt_codex",
+    "authentication": "existing_ChatGPT_login",
+    "provider_api_key_used": false,
+    "model": "account_default_GPT",
+    "source_sha256": "4809fad81f5b673be0782cf598313cfc4e4266632a3c534ed7d1654d7b88e463",
+    "requests": [
+      {
+        "phase": "extraction",
+        "seconds": 142.68,
+        "usage": {
+          "input_tokens": 26987,
+          "cached_input_tokens": 12032,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 5786,
+          "reasoning_output_tokens": 0
+        },
+        "backend": "signed_in_chatgpt_codex",
+        "tools_used": false
+      },
+      {
+        "phase": "source_audit",
+        "seconds": 133.38,
+        "usage": {
+          "input_tokens": 32655,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 6302,
+          "reasoning_output_tokens": 55
+        },
+        "backend": "signed_in_chatgpt_codex",
+        "tools_used": false
+      }
+    ],
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

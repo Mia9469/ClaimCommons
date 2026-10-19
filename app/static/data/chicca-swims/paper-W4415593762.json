@@ -1,0 +1,911 @@
+{
+  "document_type": "preprint",
+  "coverage": {
+    "results_sections_seen": [
+      "III Quantization analysis/Theorem 1",
+      "IV Reconstruction error/Theorems 2–4",
+      "V FRI/Theorem 5",
+      "VI Conclusion",
+      "Appendix A Lemma 1 proof",
+      "Appendix B Equation 47",
+      "Appendix C convergence",
+      "Appendix D boundedness",
+      "Appendix E Theorem 4",
+      "Figures 1–11; Table I; References"
+    ],
+    "missing_material": [
+      "全部图像像素。",
+      "仿真代码、随机种子和原始曲线未提供；未含2025期刊正式版。"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "来源13页arXiv v2，日期2024-05-01；导入记录为2025 IEEE Access，标题作者一致但版本不同。",
+      "完整读取全部五个附录；理论条件和数值实验分开。",
+      "无本研究硬件ADC测试或功耗测量。",
+      "表观频率单位、图8 5/8 dB冲突、式42误差命名及无限时间近似需人工确认。"
+    ],
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "BL步长规律和100组数值例",
+      "role": "theoretical/numerical",
+      "source_pages": [
+        4,
+        5,
+        6
+      ],
+      "decision": "include",
+      "reason": "限定α、κδ与恢复条件，类上界不等于实测峰值。"
+    },
+    {
+      "summary": "BL误差界、充分条件及偏置分支",
+      "role": "theoretical_result",
+      "source_pages": [
+        6,
+        7,
+        8,
+        9,
+        11,
+        12,
+        13
+      ],
+      "decision": "include",
+      "reason": "保留全部假设；附录近似不能升级独立验证。"
+    },
+    {
+      "summary": "固定与可变过采样以及12 bit数值比较",
+      "role": "numerical_result",
+      "source_pages": [
+        9,
+        10
+      ],
+      "decision": "include",
+      "reason": "三种配置分开；保留5/8 dB矛盾和低E失败区域。"
+    },
+    {
+      "summary": "FRI步长、低bit模拟与高bit边界",
+      "role": "theoretical/numerical",
+      "source_pages": [
+        10,
+        11
+      ],
+      "decision": "include",
+      "reason": "L与采样数/κ变化保留；无FRI MSE定理。"
+    },
+    {
+      "summary": "累积时间误差和附录近似范围",
+      "role": "theoretical_boundary",
+      "source_pages": [
+        11,
+        12,
+        13
+      ],
+      "decision": "include",
+      "reason": "是误差界解释的关键边界。"
+    },
+    {
+      "summary": "FRI误差界、真实硬件优势和普遍8 dB",
+      "role": "未支持推广",
+      "source_pages": [
+        1,
+        9,
+        11
+      ],
+      "decision": "defer",
+      "reason": "FRI界明确超范围，硬件未测，幅度矛盾未解决。"
+    },
+    {
+      "summary": "经典重建定理、先前IF-TEM低功耗及引用硬件",
+      "role": "背景",
+      "source_pages": [
+        1,
+        2,
+        3,
+        13
+      ],
+      "decision": "exclude",
+      "reason": "非本文新结果。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "对带宽[−Ω,Ω]、能量上界E的带限信号类，本文取c=√(EΩ/π)、b=αc且α>1固定，在κδ固定并满足r=κδΩ/[π(b−c)]<1时，IF-TEM的K级时间间隔量化步长为2κδ/[(α²−1)cK]，随E或Ω增大而缩小。",
+      "claim_type": "theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Theorem 1代数推导",
+          "design": "固定α、κδ、K并保证恢复条件",
+          "comparator": "经典幅值步长2c/K",
+          "measure": "时间间隔量化步长",
+          "unit_of_analysis": "信号类与采样参数",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "III.A",
+            "figure": "Figure 5; Table I",
+            "equation": "Equations 13–18; Theorem 1",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "给出条件性量化步长缩放。",
+        "boundary": "c为类幅度上界，不必等于每信号实测峰值；时间/幅值步长单位不同。",
+        "negative_result": null,
+        "non_inference": "不能对b固定或无恢复约束的情况外推，也不保证总体误差单调。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "IF-TEM量化步长怎样依赖信号类与偏置？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "本文用100组独立均匀随机sinc系数构造并归一化至E=1的带限信号，固定b=4c、κ=0.4、δ=0.075和12 bit，数值测试随所列频率5至50 Hz增加时，理论与信号相关的间隔动态范围均缩小。",
+      "claim_type": "numerical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "随机信号数值评估",
+          "design": "i=3，系数范围[−1,1]；E=1",
+          "comparator": "5–50频率设置",
+          "measure": "时间间隔动态范围",
+          "unit_of_analysis": "随机系数组与频率条件",
+          "sample_size_as_reported": "100组iid系数",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "III.B",
+            "figure": "Figure 5; Table I见页5",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "数值支持条件性范围缩小。",
+        "boundary": "Ω前文定义rad/s，数值段标Hz，换算口径需注意。",
+        "negative_result": null,
+        "non_inference": "不是硬件测试，也不直接证明同位数必然降低重建误差。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "条件性间隔缩放是否在数值信号中出现？"
+      ],
+      "shared_evidence_with": [
+        "C1"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "frequency_unit_ambiguity"
+        ]
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "本文Theorem 2在带限类c=√(EΩ/π)、b=αc和R=κδ√(Ω/(Eπ))/(α−1)<1下，采用iid均匀时间间隔量化误差，报告长时间平均平方误差上界为[R/(1−R)²][(α+1)/(α−1)][EΩ/(3π)]2^(−2N)。",
+      "claim_type": "theoretical_result_as_reported",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "重建算子误差界及附录A–D",
+          "design": "均匀iid间隔误差、稳定重建条件",
+          "comparator": "无量化及经典量化基准",
+          "measure": "期望长时间平均平方误差上界",
+          "unit_of_analysis": "随机量化噪声过程",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "IV.A Theorem 2",
+            "figure": null,
+            "equation": "Equations 27–31; Lemma 1; Theorem 2",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "给出含信号类和采样参数的上界。",
+        "boundary": "附录由有限窗近似和累积时间误差引入额外论证；非独立验证。",
+        "negative_result": null,
+        "non_inference": "不把上界当成实测MSE或无假设全局误差保证。",
+        "unresolved": "无限时域累积时间误差、算子稳定性与附录近似的严谨范围。",
+        "unresolved_attribution": "附录B–C处理累积误差时有随窗增长的量与有限窗近似。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "量化时间间隔的重建误差有何条件性上界？"
+      ],
+      "shared_evidence_with": [
+        "C12"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "proof_requires_human_review"
+        ]
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "本文Theorem 3比较相同位数与固定过采样率的经典幅值量化和IF-TEM时间量化，在各自iid均匀噪声模型及恢复条件下，给出[1/(2(1−R)²)][(α+1)/(α−1)]²≤1为IF-TEM报告误差上界低于经典量化基准的充分条件。",
+      "claim_type": "theoretical_comparison",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "误差界比较",
+          "design": "同K、同过采样；经典误差c²/(3K²OS)",
+          "comparator": "经典均匀采样和幅值量化",
+          "measure": "误差界与充分条件",
+          "unit_of_analysis": "理论采样模型",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "IV.B Theorem 3",
+            "figure": null,
+            "equation": "Equations 35–38",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提出特定参数下的界优势条件。",
+        "boundary": "充分非必要；沿用Theorem 2假设及附录待核查处。",
+        "negative_result": null,
+        "non_inference": "不能称所有信号、所有ADC或真实电路均优。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "何种参数条件允许IF-TEM误差界低于经典基准？"
+      ],
+      "shared_evidence_with": [
+        "C3",
+        "C5"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "bound_not_universal_performance"
+        ]
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "本文Theorem 4进一步以β=κδ√(Ω/(Eπ))表示偏置比条件，报告α≥3+β+√(β²+6β+6)为可选高偏置分支，并同时要求α>1和R<1；提高偏置也改变采样率，不能视作无成本改善。",
+      "claim_type": "theoretical_parameter_rule",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "充分条件的偏置重参数化",
+          "design": "相同信号类、位数及此前误差模型",
+          "comparator": "不满足所述条件的参数",
+          "measure": "偏置比条件",
+          "unit_of_analysis": "参数空间",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "IV.B Theorem 4；Appendix E见页13",
+            "figure": null,
+            "equation": "Equations 39,69–70",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者给出可调偏置的充分条件分支。",
+        "boundary": "附录E代数需人工审查；只报告原文，不宣称独立证明。",
+        "negative_result": null,
+        "non_inference": "不是必要条件，也不保证接近Nyquist或降低功耗。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "偏置比怎样影响理论误差优势与采样率？"
+      ],
+      "shared_evidence_with": [
+        "C4"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "proof_requires_human_review"
+        ]
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "本文固定过采样约4.4、8 bit、κ=0.4、α=10的带限数值比较报告IF-TEM误差低于经典采样，但同一图8正文称改善5 dB、图注称8 dB，精确优势幅度在所供版本中不一致。",
+      "claim_type": "numerical_comparison",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "数值重建比较",
+          "design": "E∈[2,10]、所列频率5–100 Hz；δ按条件选",
+          "comparator": "同位数/采样数经典方法",
+          "measure": "重建MSE差",
+          "unit_of_analysis": "模拟信号/参数条件",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "IV.B",
+            "figure": "Figure 8",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "该配置报告误差优势。",
+        "boundary": "5/8 dB冲突，未读图像像素。",
+        "negative_result": null,
+        "non_inference": "不能固定声称8 dB平均或推广到所有信号。",
+        "unresolved": "图8改善量究竟5还是8 dB。",
+        "unresolved_attribution": "正文与图注矛盾。"
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "固定采样率例子的实际优势幅度是多少？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "source_internal_inconsistency",
+          "simulation_not_hardware"
+        ]
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "本文另一组8 bit、κ=2、b=5c且可变过采样的带限数值实验中，E≤4时经典采样MSE较低，E>4且继续增加时IF-TEM才较低；优势依赖所选能量与采样参数，不是全范围成立。",
+      "claim_type": "numerical_comparison",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "可变过采样数值比较",
+          "design": "E∈[2,10]、频率5–100；δ按条件选",
+          "comparator": "经典幅值采样",
+          "measure": "MSE随能量变化",
+          "unit_of_analysis": "模拟条件",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "IV.B",
+            "figure": "Figure 9",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "较高能量区域出现IF-TEM优势。",
+        "boundary": "过采样同时变化；源文单位口径未完全明确。",
+        "negative_result": "E≤4时经典方法更低MSE。",
+        "non_inference": "不能把增能量的改善理解为固定资源的必然优势。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "IF-TEM在哪些能量条件下并不优于经典采样？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "simulation_not_hardware"
+        ]
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "本文12 bit带限数值实验在α=8、κ=0.6、δ∈(0.6,6)、两方法相同样本数且OS最高约6时，报告IF-TEM误差随频率/能量增加而下降，经典方法没有同样下降趋势。",
+      "claim_type": "numerical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "匹配位数/样本数模拟",
+          "design": "频率{5,10,20,50,80,100}、E∈[1,10]",
+          "comparator": "经典均匀采样",
+          "measure": "重建MSE趋势",
+          "unit_of_analysis": "参数条件",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "IV.B",
+            "figure": "Figure 10",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所选参数扫描呈不同误差趋势。",
+        "boundary": "阈值随条件选择，不是全部参数固定。",
+        "negative_result": null,
+        "non_inference": "不能从图注文字提取未给曲线数值或CI。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "匹配样本数时两种量化方法趋势是否不同？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "simulation_not_hardware"
+        ]
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "对周期FRI模型经有界SoS滤波后的输入，本文使用c=L·amax·||g||∞·||h||₁、b=αc且α>1固定；当κδ和K固定并满足至少2L+2采样的恢复条件时，时间间隔量化步长随脉冲数L增加而下降。",
+      "claim_type": "theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "幅值类上界与步长推导",
+          "design": "固定单脉冲上界、核范数与偏置比例",
+          "comparator": "经典幅值量化",
+          "measure": "时间量化步长",
+          "unit_of_analysis": "周期FRI信号类",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "V Theorem 5",
+            "figure": null,
+            "equation": "Equations 40–41; Theorem 5",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "给出FRI条件性步长缩放。",
+        "boundary": "增加L也增加所需样本数和总bit预算。",
+        "negative_result": null,
+        "non_inference": "不能称固定总bit预算自动改善，或已推得FRI重建误差界。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "FRI脉冲数如何影响量化步长？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "本文周期T=1的FRI数值比较采用L=3、4、8、随机幅值[−1,1]及网格随机延迟，两方法相同位数和约8L样本、同用OMP恢复；8 bit及以下时IF-TEM报告至少约5 dB较低误差，且所测增加L时误差下降。",
+      "claim_type": "numerical_comparison",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "随机周期FRI模拟",
+          "design": "b=10c、δ=30；L3/4用κ0.5，L8用κ2；SoS核、延迟网格0.05",
+          "comparator": "经典幅值采样",
+          "measure": "归一化重建误差",
+          "unit_of_analysis": "随机信号及条件",
+          "sample_size_as_reported": "正文500组随机幅值；独立运行定义未细述",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "V；结果续页11",
+            "figure": "Figure 11",
+            "equation": "Equation 42",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "特定周期FRI设置下报告误差优势。",
+        "boundary": "κ在L8改变；图阴影是SD不是CI；式42标MSE却写归一化L2范数比。",
+        "negative_result": null,
+        "non_inference": "不能唯一归因于L或当作非网格FRI/硬件结果。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "周期FRI数值实验何时显示误差优势？"
+      ],
+      "shared_evidence_with": [
+        "C9",
+        "C11"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "metric_definition_ambiguity",
+          "simulation_not_hardware"
+        ]
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "本文同一FRI数值比较在位数超过8时称两方法均近乎完美恢复，说明低位数量化优势并非在高位数下持续显著；本文明确未推导FRI量化重建MSE上界。",
+      "claim_type": "numerical_boundary",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "同一位数扫描的边界结果",
+          "design": "T=1、网格延迟、OMP",
+          "comparator": "IF-TEM与经典方法",
+          "measure": "高位数恢复误差",
+          "unit_of_analysis": "模拟位数条件",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "V",
+            "figure": "Figure 11",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "高位数两者都接近数值完全恢复。",
+        "boundary": "近乎完美无通用容差定义；FRI界明确超出范围。",
+        "negative_result": null,
+        "non_inference": "不能把数值效果当作FRI理论保证或任意信号精确恢复。",
+        "unresolved": "FRI量化重建误差界。",
+        "unresolved_attribution": "正文明确列为范围之外。"
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "高位数是否仍保持明显IF-TEM优势？"
+      ],
+      "shared_evidence_with": [
+        "C10"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "simulation_not_hardware"
+        ]
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "本文附录B在iid均匀间隔误差模型下写出重建时间误差方差随索引k按kΔ²/12增长；随后利用足够小量化步长和有限窗口近似得到局部误差表达，因此该累积误差处理不能直接解释成固定非零步长的无限时域误差一致有界。",
+      "claim_type": "theoretical_boundary",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "累积误差方差与近似论证",
+          "design": "时间戳由量化间隔累加",
+          "comparator": "局部间隔误差",
+          "measure": "时间戳方差和近似适用范围",
+          "unit_of_analysis": "随机过程",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "Appendix B–C",
+            "figure": null,
+            "equation": "Equations 54–60",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "揭示间隔量化的累积时间误差。",
+        "boundary": "原文称bounded但所写上界kΔ/2随k增长。",
+        "negative_result": null,
+        "non_inference": "不独立确认无限窗MSE证明；也不把有限窗近似视作严格无限时间保证。",
+        "unresolved": "固定步长、无限窗口下证明有效性及随机移位交叉项处理。",
+        "unresolved_attribution": "附录B用近似推协方差，附录C由窗口平均界推收敛，需人工数学审查。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "时间间隔误差累积如何限制误差界适用性？"
+      ],
+      "shared_evidence_with": [
+        "C3"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "proof_gap"
+        ]
+      }
+    }
+  ],
+  "reading_summary": "本文为量化时间编码的理论与数值研究：固定偏置比例等条件下，BL/FRI时间间隔步长下降；BL给出误差界和充分优势条件，FRI只数值验证重建误差。未实现硬件复测。图8的5/8 dB、误差指标命名、频率单位和累积时间误差证明仍需人工核查。",
+  "shared_evidence": [
+    {
+      "id": "SE1",
+      "claim_ids": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C12"
+      ],
+      "source_pages": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        11,
+        12,
+        13
+      ],
+      "description": "同一IF-TEM量化模型与误差证明链，后续条件依赖前述界及近似。",
+      "independence": "共享理论假设"
+    },
+    {
+      "id": "SE2",
+      "claim_ids": [
+        "C9",
+        "C10",
+        "C11"
+      ],
+      "source_pages": [
+        10,
+        11
+      ],
+      "description": "同周期FRI设置与Figure 11；位数/脉冲数扫描不是独立复现。",
+      "independence": "共享模拟"
+    }
+  ],
+  "audit": {
+    "source_match_checks": [
+      {
+        "check": "identity/version/full_text",
+        "status": "completed",
+        "details": "13页预印本含附录A–E与参考文献全部评估，保留2024来源与2025期刊身份区别。"
+      },
+      {
+        "check": "second_source_check",
+        "status": "completed",
+        "details": "回对五条定理的前提、采样数/总bit、图8冲突、图9失败区、FRI无误差界及附录累积近似。"
+      }
+    ],
+    "model_findings": [
+      {
+        "claim_id": "C6",
+        "issue": "图8图注8 dB与正文5 dB冲突。",
+        "pdf_page": 9,
+        "resolved": false,
+        "suggested_correction": "人工核图和最终版本，不统一猜值。"
+      },
+      {
+        "claim_id": "C10",
+        "issue": "式42称MSE却写归一化L2范数比，平方口径不明确。",
+        "pdf_page": 10,
+        "resolved": false,
+        "suggested_correction": null
+      },
+      {
+        "claim_id": "C12",
+        "issue": "kΔ²/12及kΔ/2随k增长，不是固定步长无限索引的一致界。",
+        "pdf_page": 12,
+        "resolved": false,
+        "suggested_correction": "人工核查无限窗口论证和近似条件。"
+      },
+      {
+        "claim_id": "C2",
+        "issue": "Ω定义rad/s而实验标Hz，换算未明确。",
+        "pdf_page": 6,
+        "resolved": false,
+        "suggested_correction": null
+      },
+      {
+        "claim_id": "C11",
+        "issue": "FRI重建误差界未推导。",
+        "pdf_page": 11,
+        "resolved": true,
+        "suggested_correction": "只记录数值结果和明确未解。"
+      }
+    ],
+    "needs_human_review": true
+  },
+  "format": "claim-commons-pdf-v1",
+  "paper": {
+    "title": "Time Encoding Quantization of Bandlimited and Finite-Rate-of-Innovation Signals",
+    "authors": [
+      "Hila Naaman",
+      "Neil Irwin Bernardo",
+      "Alejandro Cohen",
+      "Yonina C. Eldar"
+    ],
+    "doi": "10.1109/access.2025.3626162",
+    "publication_year": 2025,
+    "venue": "IEEE Access",
+    "url": "https://doi.org/10.1109/access.2025.3626162"
+  },
+  "source": {
+    "filename": "paper-W4415593762.pdf",
+    "sha256": "8eca25327bd6b0f5506cd616e7e39c27c112d69ae04438a3811d3fded0e20044",
+    "source_url": "https://www.weizmann.ac.il/math/yonina/sites/math.yonina/files/2110.01928v2_1.pdf",
+    "pdf_page_count": 13
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T07:11:42.472Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "8eca25327bd6b0f5506cd616e7e39c27c112d69ae04438a3811d3fded0e20044",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

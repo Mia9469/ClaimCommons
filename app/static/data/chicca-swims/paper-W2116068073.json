@@ -1,0 +1,431 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "Exploring olfactory sensory networks: Simulations and hardware emulation",
+    "authors": [
+      "Michael Beyeler",
+      "Fabio Stefanini",
+      "Henning Proske",
+      "C. Giovanni Galizia",
+      "Elisabetta Chicca"
+    ],
+    "doi": "10.1109/biocas.2010.5709623",
+    "publication_year": 2010,
+    "venue": null,
+    "url": "https://doi.org/10.1109/biocas.2010.5709623"
+  },
+  "source": {
+    "filename": "paper-W2116068073.pdf",
+    "sha256": "e092415694f550bef89a3412fa4629bfa9320aa5a9b125ed4ab1478a0d0dc5a8",
+    "source_url": "https://kops.uni-konstanz.de/server/api/core/bitstreams/44a45218-cf83-4d79-8488-27faec3e3070/content",
+    "pdf_page_count": 4
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "results_sections_seen": [
+      "III.A. Network transfer function",
+      "III.B. Odor pair separation",
+      "IV. Conclusions",
+      "图1—4图注",
+      "II.A—C. 模型与硬件实现"
+    ],
+    "missing_material": [
+      "图像像素未提供"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "身份与所供BioCAS 2010会议论文一致；首页出版说明为IEEE于2011年出版，未见预印本或修订版标识。",
+      "已评估全部四页文字、图注和参考文献；未提供附录或补充材料。",
+      "图2图注与第3页正文对两枚芯片承担的LN/PN角色描述相反。",
+      "未报告独立重复次数、具体抑制强度数值或角度效应量。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "以共享DoOR输入实现线性、Brian脉冲仿真和双芯片VLSI三种简化触角叶网络。",
+      "role": "方法实现",
+      "source_pages": [
+        1,
+        2,
+        3
+      ],
+      "decision": "include",
+      "reason": "输入处理、连接结构和硬件系统有具体描述，可评估实现范围。"
+    },
+    {
+      "summary": "脉冲仿真与VLSI的ORN—PN传递曲线在低活动非线性区之后呈宽范围线性响应，硬件变异较高。",
+      "role": "结果",
+      "source_pages": [
+        2,
+        3
+      ],
+      "decision": "include",
+      "reason": "III.A与图3报告输入输出活动及分箱统计。"
+    },
+    {
+      "summary": "全局前馈抑制增强使三种实现中的气味对活动向量平均夹角增大。",
+      "role": "结果",
+      "source_pages": [
+        3,
+        4
+      ],
+      "decision": "include",
+      "reason": "III.B与图4比较无抑制及两档增强抑制条件。"
+    },
+    {
+      "summary": "将脉冲实现的基线角度偏差归因于Poisson噪声，将硬件额外变异归因于器件失配。",
+      "role": "机制解释",
+      "source_pages": [
+        3,
+        4
+      ],
+      "decision": "defer",
+      "reason": "观察到的变异纳入结果；未报告隔离这些因素的干预或定量分解。"
+    },
+    {
+      "summary": "角度增大代表气味辨别改善，空间活动能够描述生物嗅觉系统对辨别的影响。",
+      "role": "解释与外推",
+      "source_pages": [
+        3,
+        4
+      ],
+      "decision": "defer",
+      "reason": "仅测量模型向量夹角，未测量行为、解码性能或空间与时间编码的相对贡献。"
+    },
+    {
+      "summary": "角度指标具有气味浓度独立性。",
+      "role": "指标性质解释",
+      "source_pages": [
+        4
+      ],
+      "decision": "defer",
+      "reason": "未测试浓度变化；向量正比例缩放下的角度不变不能直接证明真实浓度变化下的表示不变。"
+    },
+    {
+      "summary": "机器人实时气味识别、低功耗应用及未来时间动态研究。",
+      "role": "应用前景",
+      "source_pages": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "decision": "exclude",
+      "reason": "未报告机器人识别任务、系统功耗或时间动态研究结果；既有电路设计不作为本文新发现。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "作者使用包含137种气味和23个肾小球的同一DoOR输入矩阵，实现了线性模型、Brian脉冲仿真和双芯片VLSI简化触角叶网络；三者均采用ORN对对应PN的兴奋连接及由全部ORN驱动、抑制全部PN的全局前馈抑制，硬件通过AER传输输入并监测神经元脉冲活动。",
+      "claim_type": "方法实现",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "线性代数模型、漏积分发放神经元仿真及双芯片模拟神经形态电路",
+          "design": "三种实现共享筛选后的输入与简化连接结构；脉冲实现将输入矩阵转换为相应平均发放率的Poisson脉冲列。",
+          "comparator": "线性模型、Brian脉冲仿真与VLSI实现",
+          "measure": "网络组成、输入事件传输和活动监测",
+          "unit_of_analysis": "模型网络及双芯片硬件系统",
+          "sample_size_as_reported": "137种气味、23个肾小球；脉冲模型含23个ORN、23个PN及一个全局抑制神经元；硬件使用两枚芯片。",
+          "uncertainty": "未报告独立硬件系统数或重复次数；芯片LN/PN角色分配存在源文冲突。",
+          "assumptions": [
+            "排除少于7个数据点的气味及少于80个数据点的受体神经元。",
+            "约15%的缺失矩阵项以估计自发活动填补，全部输入作全局归一化。",
+            "采用一对一兴奋连接和单个全局抑制神经元的简化结构。",
+            "软件脉冲模型共享神经元动力学参数，以兴奋和抑制连接权重为两个调节参数。"
+          ],
+          "source_locator": {
+            "pdf_page": 2,
+            "section": "II. Methods；II.A—C，硬件描述续于第3页",
+            "figure": "图1、图2",
+            "equation": "1",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "报告了共享输入和简化结构的三种网络实现及可输入、监测事件的硬件系统。",
+        "boundary": "芯片容量不等于实际使用神经元数或独立实验样本数。",
+        "negative_result": null,
+        "non_inference": "不能据此认定机器人气味识别、功耗优势或部署鲁棒性已获验证。",
+        "unresolved": "两枚芯片的具体LN/PN角色分配，以及系统实时性能、功耗和鲁棒性的量化结果。",
+        "unresolved_attribution": "角色分配在正文与图2图注间冲突；应用性能未报告相应实验。"
+      },
+      "broad_directions": [
+        "methods-causal",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "共享输入的全局前馈抑制嗅觉网络如何以线性模型、脉冲仿真和神经形态硬件实现？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C3"
+      ],
+      "review_notes": [
+        "两枚芯片容量分别为128个神经元/4096个突触及2048个神经元/6144个突触，不能作为重复次数。",
+        "共享证据指输入处理、网络结构与实现系统，不表示独立复制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "在共享DoOR输入驱动的简化触角叶脉冲仿真和VLSI实现中，汇总全部气味的对应ORN输入与PN输出活动得到的速率传递曲线，在低于25 Hz的短非线性区之后呈宽范围线性响应；VLSI曲线的变异较高。",
+      "claim_type": "输入输出响应",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "对应ORN—PN活动散点及分箱均值、标准差",
+          "design": "汇总各气味和肾小球的输入输出活动；图3注明背景散点来自单次仿真运行，数据对应图4中间列的抑制条件。",
+          "comparator": "脉冲仿真与VLSI实现",
+          "measure": "ORN—PN速率传递曲线及分箱离散程度",
+          "unit_of_analysis": "气味×肾小球的对应ORN—PN活动对及其分箱",
+          "sample_size_as_reported": "输入含137种气味、23个肾小球；图3注明单次仿真运行，未另报有效活动对数、分箱数或独立硬件重复次数。",
+          "uncertainty": "图3报告分箱标准差，未给数值、置信区间或跨运行误差。",
+          "assumptions": [
+            "输入均值活动转换为Poisson脉冲列。",
+            "速率传递曲线用于表征输入输出关系，未直接分析脉冲时间结构。"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "III.A. Network transfer function",
+            "figure": "图3（第2页）",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "两种脉冲实现均呈宽范围线性传递特征，硬件活动的变异较高。",
+        "boundary": "未报告线性区上界、拟合指标或实现间等效性检验。",
+        "negative_result": null,
+        "non_inference": "与典型Drosophila PN活动范围相容不能证明生物传递机制已获验证；分箱标准差不是独立重复间误差。",
+        "unresolved": "器件失配对硬件变异的定量贡献。",
+        "unresolved_attribution": "作者提出器件失配解释，但未报告隔离或操纵失配的实验。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "简化触角叶脉冲网络的ORN—PN速率传递曲线在软件与硬件实现中如何变化？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C3"
+      ],
+      "review_notes": [
+        "图3与图4中间列共享原始活动数据。",
+        "保留变异观察，将器件失配归因限定为作者解释。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "对于共享的137种气味、23维活动输入，线性模型、脉冲仿真和VLSI实现均报告：相较无抑制，启用全局前馈抑制增大PN气味对活动向量的平均夹角，进一步增强抑制使角度分布继续向90°移动；无抑制时线性模型保持输入角度分布，脉冲仿真出现小幅偏差，VLSI偏差更大。",
+      "claim_type": "模型干预效应与实现间比较",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "计算全部可能气味对的活动向量夹角并比较分布",
+          "design": "三种实现分别比较无抑制、启用抑制及更强抑制三个条件。",
+          "comparator": "各实现内三个抑制条件，以及实现间分布趋势",
+          "measure": "气味对夹角分布及平均夹角的定性变化",
+          "unit_of_analysis": "共享气味向量的气味对",
+          "sample_size_as_reported": "137种气味、23维向量；报告计算全部可能气味对，未另报气味对数或独立重复次数。",
+          "uncertainty": "未报告抑制强度数值、平均角度数值、效应量、置信区间或统计检验。",
+          "assumptions": [
+            "采用全部ORN驱动并抑制全部PN的全局前馈结构。",
+            "夹角作为表示几何分离的代理指标。",
+            "三种实现共享筛选、缺失填补和归一化输入。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "III.B. Odor pair separation；IV. Conclusions",
+            "figure": "图4（第3页）",
+            "equation": "1（第2页）",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "增强全局前馈抑制在三种实现中均提高该输入集的几何表示分离程度。",
+        "boundary": "一致性限于所报告的分布趋势和三个抑制条件；气味对共享向量，不能作为独立实验重复。",
+        "negative_result": null,
+        "non_inference": "夹角增大不能直接证明行为辨别或分类准确率改善、生物触角叶采用该机制、真实浓度变化下的表示不变，或空间编码足以解释时间编码的作用。",
+        "unresolved": "该效应对真实浓度变化、时间结构、其他输入集及更广抑制强度范围的适用性。",
+        "unresolved_attribution": "这些条件未被直接测试；辨别改善与空间活动充分性为作者基于角度指标的解释。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "全局前馈抑制强度如何改变嗅觉活动向量间的夹角？",
+        "这一几何分离效应在共享输入的线性、脉冲与硬件实现中是否呈一致趋势？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2"
+      ],
+      "review_notes": [
+        "无抑制结果是比较基线，不是阴性发现。",
+        "Poisson噪声与器件失配是作者对基线偏差的解释，未被独立验证。",
+        "三种实现共享输入与结构；图4中间列与图3共享活动数据，不构成独立复制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "已复核全部四页文字、图注和参考文献。身份匹配的BioCAS 2010会议论文报告共享DoOR输入的三种简化触角叶实现、脉冲网络的速率传递特征，以及增强全局抑制带来的气味向量夹角增大。图3与图4中间列共享活动数据；各实现不能视为独立生物复制。辨别改善、浓度不变性和失配机制未获独立验证，机器人识别、功耗及时间动态结果未报告。正文与图注的芯片角色冲突仍未解决。",
+  "shared_evidence": [
+    {
+      "claim_id": "C1",
+      "with": [
+        "C2",
+        "C3"
+      ]
+    },
+    {
+      "claim_id": "C2",
+      "with": [
+        "C1",
+        "C3"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C1",
+        "C2"
+      ]
+    }
+  ],
+  "audit": {
+    "initial_source_match_checks": [],
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": "C1",
+        "issue": "图2图注将128神经元芯片分配给LN、2048神经元芯片分配给PN，第3页正文分配相反。",
+        "suggested_correction": "保留双芯片实现及容量，具体角色分配标记为源文冲突。",
+        "pdf_page": 3,
+        "resolved": false
+      },
+      {
+        "claim_id": "C2",
+        "issue": "草稿未明确图3数据对应图4中间列，容易遗漏两项结果共享原始活动证据。",
+        "suggested_correction": "补充抑制条件定位，明确C2与C3共享该条件的活动数据。",
+        "pdf_page": 2,
+        "resolved": true
+      },
+      {
+        "claim_id": "C2",
+        "issue": "器件失配归因缺少隔离因素的实验；分箱标准差不能解释为重复间不确定性。",
+        "suggested_correction": "保留较高变异观察，限定机制归因和误差含义。",
+        "pdf_page": 3,
+        "resolved": true
+      },
+      {
+        "claim_id": "C3",
+        "issue": "本文将向量夹角增大解释为辨别改善及空间活动的充分性，但未报告行为、解码或时间编码比较。",
+        "suggested_correction": "实证结论限定为模型几何分离，将外推纳入非推论范围。",
+        "pdf_page": 4,
+        "resolved": true
+      },
+      {
+        "claim_id": "C3",
+        "issue": "草稿遗漏正文关于角度指标浓度独立性的解释及其条件限制。",
+        "suggested_correction": "补入贡献清单；区别正比例缩放下角度不变与未测试的真实浓度不变性。",
+        "pdf_page": 4,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "草稿含目标schema未定义的source_check与review字段，并声称执行了文本匹配检查。",
+        "suggested_correction": "删除额外字段，仅保留基于所供文本的定位与审计记录。",
+        "pdf_page": null,
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T05:04:07.024861Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "signed_in_chatgpt_codex",
+    "authentication": "existing_ChatGPT_login",
+    "provider_api_key_used": false,
+    "model": "account_default_GPT",
+    "source_sha256": "e092415694f550bef89a3412fa4629bfa9320aa5a9b125ed4ab1478a0d0dc5a8",
+    "requests": [
+      {
+        "phase": "extraction",
+        "seconds": 87.55,
+        "usage": {
+          "input_tokens": 18653,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 3625,
+          "reasoning_output_tokens": 25
+        },
+        "backend": "signed_in_chatgpt_codex",
+        "tools_used": false
+      },
+      {
+        "phase": "source_audit",
+        "seconds": 78.97,
+        "usage": {
+          "input_tokens": 22173,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 4084,
+          "reasoning_output_tokens": 25
+        },
+        "backend": "signed_in_chatgpt_codex",
+        "tools_used": false
+      }
+    ],
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

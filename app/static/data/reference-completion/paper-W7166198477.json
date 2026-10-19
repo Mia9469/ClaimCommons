@@ -1,0 +1,1278 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "Coupled dual-channel memristors for hardware-native trustworthy Bayesian intelligence",
+    "authors": [
+      "Guowei Liu",
+      "Jiaqi Ding",
+      "Ziyu Wan",
+      "Jiakun Xue",
+      "Yu Zhang",
+      "Zhenqi Gong"
+    ],
+    "doi": "10.1038/s41467-026-74898-w",
+    "publication_year": 2026,
+    "venue": "Nature Communications",
+    "url": "https://doi.org/10.1038/s41467-026-74898-w"
+  },
+  "source": {
+    "filename": "paper-W7166198477--Coupled-dual-channel-memristors-for-hardware-native-trustworthy-Bayesian-intelligence.pdf",
+    "sha256": "730e51983dd0d07ef3f79c0ff9b1f9f822973e12811ac24e93eb0314dacee393",
+    "source_url": "https://www.nature.com/articles/s41467-026-74898-w_reference.pdf?error=cookies_not_supported&code=faaa3718-e94c-4b69-a9d3-30eca312fcd8",
+    "pdf_page_count": 30
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30
+    ],
+    "results_sections_seen": [
+      "SMstructure/controls/switching",
+      "Ionicdynamics",
+      "CDCMKCL/Gaussian/orthogonalcontrol",
+      "384statelibrary",
+      "SoftwareBNN/SM/DCmapping",
+      "OOD/selectiveaccuracy",
+      "Intermittentstability",
+      "Methods/limitations"
+    ],
+    "missing_material": [
+      "Supplementary1–33/code/source-data未供应",
+      "图像像素未读取",
+      "人体samples/split/seeds、物理energy/latency未给"
+    ],
+    "text_pass_complete": true,
+    "notes": "30页accepted未编辑稿全读，5图注59参考；physicaldevice+calibratedsoftware模拟。",
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "Ion-gel/ZnO单channel器件表现双极迟滞、连续电导调制及短时松弛，25随机cell的I–V与On/Off分布支持有限样本制造一致性。",
+      "role": "result",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "−4/+4V各400ms及±.1V读条件下，单channel经100program/erase循环保留状态窗口，但有cycle-to-cycle电导涨落。",
+      "role": "result",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "迟滞随较慢扫描扩大、constantbias响应有双时间尺度衰减，作者以EDL和iondiffusion解释verticalgating。",
+      "role": "interpretation",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "CDCM采用相反readbias将两正电导的输出相减，实现带符号effectiveweight；若jointGaussian且独立，差为Gaussian、variance为两variance之和。",
+      "role": "interpretation",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "同条件100erase–program–read样本的差电流分布报告μ=-.631nA、σ=.396nA，histogram/QQ在所用有限样本中近Gaussian。",
+      "role": "result",
+      "source_pages": [
+        10
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "在所测common-modeprogram扫幅中，Iout均值近稳定、σ升高；differential-modeoffset中μ可调而σ近稳定。",
+      "role": "result",
+      "source_pages": [
+        10
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "program参数遍历形成384余(μ,σ)条件点库，可覆盖所训练Bayesian输出层所需范围，但有限状态离散带来残余映射偏差。",
+      "role": "result",
+      "source_pages": [
+        13
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "选5activities的CMI子集上，off-chipBayes-by-Backprop 65epochs、100MC/input的软件BNN报告testaccuracy80.11%，ANN对照76.04%。",
+      "role": "result",
+      "source_pages": [
+        12
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "用CDCM实测state库校准的BNN模拟accuracy79.08%，接近software80.11%；受限SM映射模拟降到约45%。",
+      "role": "result",
+      "source_pages": [
+        13
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "未用于training的第6activity在所示t-SNE和uncertainty分布中较高不确定性，错误样本也较高。",
+      "role": "result",
+      "source_pages": [
+        13
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "不确定性<.6的选择子集条件准确率报告96.3%，高不确定性区域准确率较低。",
+      "role": "result",
+      "source_pages": [
+        13
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "21day间歇I–V及Gaussianstatistic测量据作者报告近稳定，但只证所检查条件可重复而非持续储存一状态21day。",
+      "role": "result",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "作者提出将解耦随机weight作为节省RNG及提高边缘可靠性的候选，但当前未给实测energy/latency或真实安全部署证据。",
+      "role": "hypothesis",
+      "source_pages": [
+        14
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "膜厚/photolithography30μmchannelgap及materials设备methods全读，scalarfootprint优势S18未有可审计面积值。",
+      "role": "result",
+      "source_pages": [
+        15,
+        16
+      ],
+      "decision": "unresolved",
+      "reason": "不猜2T2R硬件成本"
+    },
+    {
+      "summary": "Supplementary1–33/code/source-data实际未供给，仅入口，不能据authorclaim已验证。",
+      "role": "interpretation",
+      "source_pages": [
+        18,
+        24,
+        28,
+        29,
+        30
+      ],
+      "decision": "unresolved",
+      "reason": "main5图注全部读"
+    },
+    {
+      "summary": "fall/eldercare是概念示意，CMI训练activities并未列fall实验，不能临床推断。",
+      "role": "hypothesis",
+      "source_pages": [
+        5,
+        23
+      ],
+      "decision": "boundary",
+      "reason": "参考非新独立患者验证"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "Ion-gel/ZnO单channel器件表现双极迟滞、连续电导调制及短时松弛，25随机cell的I–V与On/Off分布支持有限样本制造一致性。",
+      "claim_type": "bayesian_memristive_hardware",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "薄膜/电气表征",
+          "design": "ZnO77nm、gel641nm；构成层control在S6",
+          "comparator": "组成control/随机cells",
+          "measure": "I–V/analogstate",
+          "unit_of_analysis": "器件/周期/条件重复及软件数据分层",
+          "sample_size_as_reported": "25单memristorcell，独立batch未报告",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "Half-device characterization",
+            "figure": "Fig2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "Ion-gel/ZnO单channel器件表现双极迟滞、连续电导调制及短时松弛，25随机cell的I–V与On/Off分布支持有限样本制造一致性。",
+        "boundary": "25为半器件cell而非完整BNN阵列/dual-device制造yield。",
+        "negative_result": null,
+        "non_inference": "没有人体或生物神经验证。",
+        "unresolved": "具体各层control/OnOff统计仅补材未供给。",
+        "unresolved_attribution": "来源局限及提取者来源复核"
+      },
+      "broad_directions": [
+        "neuromorphic-hardware",
+        "uncertainty-quantification",
+        "computational-efficiency"
+      ],
+      "scientific_questions": [
+        "双通道统计控制是否改善有限硬件状态映射及可靠拒识？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C12",
+        "C13"
+      ],
+      "review_notes": [
+        "全30页5图注59参考二次审计；25cell/3重复/100cycles/384condition与人体n分开；Gaussian独立条件、finite library与模拟/UQ临床未验证明确。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "−4/+4V各400ms及±.1V读条件下，单channel经100program/erase循环保留状态窗口，但有cycle-to-cycle电导涨落。",
+      "claim_type": "bayesian_memristive_hardware",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "循环脉冲测量",
+          "design": "宽.1–.5s/number调制、18program后18readonlystep",
+          "comparator": "HRS/LRS及pulseconditions",
+          "measure": "window/variability",
+          "unit_of_analysis": "器件/周期/条件重复及软件数据分层",
+          "sample_size_as_reported": "100循环；独立devicesn未给",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "Switching/endurance",
+            "figure": "Fig2f–g",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "−4/+4V各400ms及±.1V读条件下，单channel经100program/erase循环保留状态窗口，但有cycle-to-cycle电导涨落。",
+        "boundary": "慢编程与循环波动不同于固定状态高频读噪声随机采样。",
+        "negative_result": null,
+        "non_inference": "不能直接称低延迟/低能耗或所有Gaussianstates连续采样。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "neuromorphic-hardware",
+        "uncertainty-quantification",
+        "computational-efficiency"
+      ],
+      "scientific_questions": [
+        "双通道统计控制是否改善有限硬件状态映射及可靠拒识？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C12",
+        "C13"
+      ],
+      "review_notes": [
+        "全30页5图注59参考二次审计；25cell/3重复/100cycles/384condition与人体n分开；Gaussian独立条件、finite library与模拟/UQ临床未验证明确。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "迟滞随较慢扫描扩大、constantbias响应有双时间尺度衰减，作者以EDL和iondiffusion解释verticalgating。",
+      "claim_type": "bayesian_memristive_hardware",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "scan-rate/频率/transientcontrol",
+          "design": "0.1/1/2V应力及lateralgeometry",
+          "comparator": "不同速率/bias",
+          "measure": "hysteresisarea/currentdecay",
+          "unit_of_analysis": "器件/周期/条件重复及软件数据分层",
+          "sample_size_as_reported": "独立器件/重复n未明确",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Ionic mechanism",
+            "figure": "Fig3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "迟滞随较慢扫描扩大、constantbias响应有双时间尺度衰减，作者以EDL和iondiffusion解释verticalgating。",
+        "boundary": "动态支持离子参与，不能仅凭慢响应排除全部电子/trapping过程。",
+        "negative_result": null,
+        "non_inference": "未直接成像全部ion轨迹或唯一识别fast/slow分子机制。",
+        "unresolved": "双指数过程归属及lateralS12/13细节缺失。",
+        "unresolved_attribution": "来源局限及提取者来源复核"
+      },
+      "broad_directions": [
+        "neuromorphic-hardware",
+        "uncertainty-quantification",
+        "computational-efficiency"
+      ],
+      "scientific_questions": [
+        "双通道统计控制是否改善有限硬件状态映射及可靠拒识？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C12",
+        "C13"
+      ],
+      "review_notes": [
+        "全30页5图注59参考二次审计；25cell/3重复/100cycles/384condition与人体n分开；Gaussian独立条件、finite library与模拟/UQ临床未验证明确。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "CDCM采用相反readbias将两正电导的输出相减，实现带符号effectiveweight；若jointGaussian且独立，差为Gaussian、variance为两variance之和。",
+      "claim_type": "bayesian_memristive_hardware",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "KCL及条件性概率关系",
+          "design": "VR±.1V，sharedgate双通道、各自program",
+          "comparator": "singlechannel",
+          "measure": "effectiveμ/σ",
+          "unit_of_analysis": "器件/周期/条件重复及软件数据分层",
+          "sample_size_as_reported": "理论/器件示例",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "Differential architecture",
+            "figure": "Eq1–2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "CDCM采用相反readbias将两正电导的输出相减，实现带符号effectiveweight；若jointGaussian且独立，差为Gaussian、variance为两variance之和。",
+        "boundary": "独立性为附加条件；有covariance时Var差必须减2Cov，Gaussian近似不自动证明IID。",
+        "negative_result": null,
+        "non_inference": "gl/gr本身不取负，只有difference可负；不证明任意Gaussian无边界映射。",
+        "unresolved": "sharedgatechannel相关与时序自相关未报告。",
+        "unresolved_attribution": "来源局限及提取者来源复核"
+      },
+      "broad_directions": [
+        "neuromorphic-hardware",
+        "uncertainty-quantification",
+        "computational-efficiency"
+      ],
+      "scientific_questions": [
+        "双通道统计控制是否改善有限硬件状态映射及可靠拒识？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C5",
+        "C6",
+        "C7",
+        "C12",
+        "C13"
+      ],
+      "review_notes": [
+        "全30页5图注59参考二次审计；25cell/3重复/100cycles/384condition与人体n分开；Gaussian独立条件、finite library与模拟/UQ临床未验证明确。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "同条件100erase–program–read样本的差电流分布报告μ=-.631nA、σ=.396nA，histogram/QQ在所用有限样本中近Gaussian。",
+      "claim_type": "bayesian_memristive_hardware",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "currentdistribution及QQ",
+          "design": "同Vpl/Vpr−2V状态、erase4V",
+          "comparator": "理论normalquantiles",
+          "measure": "mean/std/QQ",
+          "unit_of_analysis": "器件/周期/条件重复及软件数据分层",
+          "sample_size_as_reported": "100循环，不是100独立cell；devicecount未标",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "Gaussian samples",
+            "figure": "Fig4b–d",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "同条件100erase–program–read样本的差电流分布报告μ=-.631nA、σ=.396nA，histogram/QQ在所用有限样本中近Gaussian。",
+        "boundary": "有限QQ拟合不证明精确normal、独立、高熵或random-bit质量。",
+        "negative_result": null,
+        "non_inference": "没有固定状态read-only同样统计的独立验证。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "neuromorphic-hardware",
+        "uncertainty-quantification",
+        "computational-efficiency"
+      ],
+      "scientific_questions": [
+        "双通道统计控制是否改善有限硬件状态映射及可靠拒识？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C6",
+        "C7",
+        "C12",
+        "C13"
+      ],
+      "review_notes": [
+        "全30页5图注59参考二次审计；25cell/3重复/100cycles/384condition与人体n分开；Gaussian独立条件、finite library与模拟/UQ临床未验证明确。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "在所测common-modeprogram扫幅中，Iout均值近稳定、σ升高；differential-modeoffset中μ可调而σ近稳定。",
+      "claim_type": "bayesian_memristive_hardware",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "programvoltage扫描",
+          "design": "每条件三重复，各100cycle；mean/std量测",
+          "comparator": "singlechannelμ/σ耦合",
+          "measure": "可调统计曲线",
+          "unit_of_analysis": "器件/周期/条件重复及软件数据分层",
+          "sample_size_as_reported": "3重复实验×100cycles/condition，独立器件数未标",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "Orthogonal control",
+            "figure": "Fig4e–j",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在所测common-modeprogram扫幅中，Iout均值近稳定、σ升高；differential-modeoffset中μ可调而σ近稳定。",
+        "boundary": "有限条件近解耦不是严格全rangeorthogonal；恒V差并不普遍推出恒G差。",
+        "negative_result": null,
+        "non_inference": "不能从range曲线证明任何任意N(μ,σ²)皆可生成。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "neuromorphic-hardware",
+        "uncertainty-quantification",
+        "computational-efficiency"
+      ],
+      "scientific_questions": [
+        "双通道统计控制是否改善有限硬件状态映射及可靠拒识？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C7",
+        "C12",
+        "C13"
+      ],
+      "review_notes": [
+        "全30页5图注59参考二次审计；25cell/3重复/100cycles/384condition与人体n分开；Gaussian独立条件、finite library与模拟/UQ临床未验证明确。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "program参数遍历形成384余(μ,σ)条件点库，可覆盖所训练Bayesian输出层所需范围，但有限状态离散带来残余映射偏差。",
+      "claim_type": "bayesian_memristive_hardware",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "实测条件库与softwareposterior映射",
+          "design": "每Vpair100cycles；10→5FC权重库",
+          "comparator": "SM线性受限库、idealposterior",
+          "measure": "可达statecoverage",
+          "unit_of_analysis": "器件/周期/条件重复及软件数据分层",
+          "sample_size_as_reported": "384余programconditions，非独立器件/参与者",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "Weight library",
+            "figure": "Fig5b",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "program参数遍历形成384余(μ,σ)条件点库，可覆盖所训练Bayesian输出层所需范围，但有限状态离散带来残余映射偏差。",
+        "boundary": "只可实现范围，非完整实数Gaussian参数平面；上游featurebackbone仍software。",
+        "negative_result": "finite library离散constraint有残余offset。",
+        "non_inference": "不证明全部BNN模型posterior精确映射或全硬件训练。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "neuromorphic-hardware",
+        "uncertainty-quantification",
+        "computational-efficiency"
+      ],
+      "scientific_questions": [
+        "双通道统计控制是否改善有限硬件状态映射及可靠拒识？"
+      ],
+      "shared_evidence_with": [
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C13"
+      ],
+      "review_notes": [
+        "全30页5图注59参考二次审计；25cell/3重复/100cycles/384condition与人体n分开；Gaussian独立条件、finite library与模拟/UQ临床未验证明确。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "选5activities的CMI子集上，off-chipBayes-by-Backprop 65epochs、100MC/input的软件BNN报告testaccuracy80.11%，ANN对照76.04%。",
+      "claim_type": "bayesian_memristive_hardware",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "multisensorsoftwaretraining",
+          "design": "339inputs经backbone10latent；5output；Gaussprior",
+          "comparator": "comparableANN",
+          "measure": "testaccuracy",
+          "unit_of_analysis": "器件/周期/条件重复及软件数据分层",
+          "sample_size_as_reported": "参与者、样本、independentseeds/splitn未提供",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "Software classifier baseline",
+            "figure": "Fig5",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "选5activities的CMI子集上，off-chipBayes-by-Backprop 65epochs、100MC/input的软件BNN报告testaccuracy80.11%，ANN对照76.04%。",
+        "boundary": "特定subset，不是所有activity/人体安全结果；100MC软件成本不同于一次ANN。",
+        "negative_result": null,
+        "non_inference": "无统计CI/独立重复，不能称显著优于全部ANN/已校准可信。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "neuromorphic-hardware",
+        "uncertainty-quantification",
+        "computational-efficiency"
+      ],
+      "scientific_questions": [
+        "双通道统计控制是否改善有限硬件状态映射及可靠拒识？"
+      ],
+      "shared_evidence_with": [
+        "C7",
+        "C9",
+        "C10",
+        "C11",
+        "C13"
+      ],
+      "review_notes": [
+        "全30页5图注59参考二次审计；25cell/3重复/100cycles/384condition与人体n分开；Gaussian独立条件、finite library与模拟/UQ临床未验证明确。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "用CDCM实测state库校准的BNN模拟accuracy79.08%，接近software80.11%；受限SM映射模拟降到约45%。",
+      "claim_type": "bayesian_memristive_hardware",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "设备characteristics驱动software模拟",
+          "design": "device-calibratedBayesianFC，softwarebackbone",
+          "comparator": "SM与idealBNN",
+          "measure": "accuracy",
+          "unit_of_analysis": "器件/周期/条件重复及软件数据分层",
+          "sample_size_as_reported": "CMIsubset测试n/seed未给",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "Calibrated hardware simulation",
+            "figure": "Fig5c–d",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "用CDCM实测state库校准的BNN模拟accuracy79.08%，接近software80.11%；受限SM映射模拟降到约45%。",
+        "boundary": "图5明确Bayesian层simulated；不是全实制推断array。5classnominalchance20%，45不宜称near-random。",
+        "negative_result": "SM映射下降明显，但仍不是数字意义的随机水平。",
+        "non_inference": "不能由模拟认定实际chipenergy/latency或安全决策。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "neuromorphic-hardware",
+        "uncertainty-quantification",
+        "computational-efficiency"
+      ],
+      "scientific_questions": [
+        "双通道统计控制是否改善有限硬件状态映射及可靠拒识？"
+      ],
+      "shared_evidence_with": [
+        "C7",
+        "C8",
+        "C10",
+        "C11",
+        "C13"
+      ],
+      "review_notes": [
+        "全30页5图注59参考二次审计；25cell/3重复/100cycles/384condition与人体n分开；Gaussian独立条件、finite library与模拟/UQ临床未验证明确。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "未用于training的第6activity在所示t-SNE和uncertainty分布中较高不确定性，错误样本也较高。",
+      "claim_type": "bayesian_memristive_hardware",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "heldoutactivity的模拟uncertainty",
+          "design": "只一种unseenactivity；totaluncertainty分解在S30",
+          "comparator": "knowncorrect/errors vsOOD",
+          "measure": "uncertaintyhistogram",
+          "unit_of_analysis": "器件/周期/条件重复及软件数据分层",
+          "sample_size_as_reported": "test/unknownsample及人n未提供",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "OOD analysis",
+            "figure": "Fig5e–f",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "未用于training的第6activity在所示t-SNE和uncertainty分布中较高不确定性，错误样本也较高。",
+        "boundary": "OOD的一例与projectedcluster非全部未来未知事件、真实fallalert或distributioncalibration。",
+        "negative_result": null,
+        "non_inference": "未报告AUROC/FPR/coverage/confusion足以证明可靠通用OODdetect。",
+        "unresolved": "活动names/participant-aware split和全部uncertainty公式在补材缺失。",
+        "unresolved_attribution": "来源局限及提取者来源复核"
+      },
+      "broad_directions": [
+        "neuromorphic-hardware",
+        "uncertainty-quantification",
+        "computational-efficiency"
+      ],
+      "scientific_questions": [
+        "双通道统计控制是否改善有限硬件状态映射及可靠拒识？"
+      ],
+      "shared_evidence_with": [
+        "C7",
+        "C8",
+        "C9",
+        "C11",
+        "C13"
+      ],
+      "review_notes": [
+        "全30页5图注59参考二次审计；25cell/3重复/100cycles/384condition与人体n分开；Gaussian独立条件、finite library与模拟/UQ临床未验证明确。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "不确定性<.6的选择子集条件准确率报告96.3%，高不确定性区域准确率较低。",
+      "claim_type": "bayesian_memristive_hardware",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "按uncertaintythreshold分层",
+          "design": "只保留低uncertainty预测",
+          "comparator": "overall79.08%",
+          "measure": "conditionalaccuracy",
+          "unit_of_analysis": "器件/周期/条件重复及软件数据分层",
+          "sample_size_as_reported": "被保留/被拒样本n及coverage未报告",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "Selective confidence",
+            "figure": "Fig5g",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "不确定性<.6的选择子集条件准确率报告96.3%，高不确定性区域准确率较低。",
+        "boundary": "不是总体96.3%、不是error-free或保密safetyguarantee；阈值选择可能在同测试分布。",
+        "negative_result": null,
+        "non_inference": "没有独立calibration/rejectionfalsepositive或humanhandoffstudy。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "neuromorphic-hardware",
+        "uncertainty-quantification",
+        "computational-efficiency"
+      ],
+      "scientific_questions": [
+        "双通道统计控制是否改善有限硬件状态映射及可靠拒识？"
+      ],
+      "shared_evidence_with": [
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C13"
+      ],
+      "review_notes": [
+        "全30页5图注59参考二次审计；25cell/3重复/100cycles/384condition与人体n分开；Gaussian独立条件、finite library与模拟/UQ临床未验证明确。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "21day间歇I–V及Gaussianstatistic测量据作者报告近稳定，但只证所检查条件可重复而非持续储存一状态21day。",
+      "claim_type": "bayesian_memristive_hardware",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "source-reportedintermittent测试",
+          "design": "S9/S17未供；循环/重新program可能介入",
+          "comparator": "测量days",
+          "measure": "I–V和Gaussian变化",
+          "unit_of_analysis": "器件/周期/条件重复及软件数据分层",
+          "sample_size_as_reported": "daywindow21；device/runsn未给",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "Long-term checks",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "21day间歇I–V及Gaussianstatistic测量据作者报告近稳定，但只证所检查条件可重复而非持续储存一状态21day。",
+        "boundary": "intermittentloop stability、readretention和single-state持续保存不同。",
+        "negative_result": null,
+        "non_inference": "不证明寿命、deviceaging、温度/湿度/大阵列干扰免疫。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "neuromorphic-hardware",
+        "uncertainty-quantification",
+        "computational-efficiency"
+      ],
+      "scientific_questions": [
+        "双通道统计控制是否改善有限硬件状态映射及可靠拒识？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C13"
+      ],
+      "review_notes": [
+        "全30页5图注59参考二次审计；25cell/3重复/100cycles/384condition与人体n分开；Gaussian独立条件、finite library与模拟/UQ临床未验证明确。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C13",
+      "statement": "作者提出将解耦随机weight作为节省RNG及提高边缘可靠性的候选，但当前未给实测energy/latency或真实安全部署证据。",
+      "claim_type": "bayesian_memristive_hardware",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "device-to-algorithm转化假说",
+          "design": "futurearray/端到端hardware",
+          "comparator": "数字RNG/2T2R仅概念对照",
+          "measure": "可扩展性",
+          "unit_of_analysis": "器件/周期/条件重复及软件数据分层",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 14,
+            "section": "Discussion/future",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者提出的可检验假说。",
+        "boundary": "任意Gaussian、structural symmetry和trustworthy是限定范围解释，不是完全解决可控/安全问题。",
+        "negative_result": null,
+        "non_inference": "没有energy/latency数字、人口临床/自主驾驶安全试验或BNN自动校准保证。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "neuromorphic-hardware",
+        "uncertainty-quantification",
+        "computational-efficiency"
+      ],
+      "scientific_questions": [
+        "双通道统计控制是否改善有限硬件状态映射及可靠拒识？"
+      ],
+      "shared_evidence_with": [
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11"
+      ],
+      "review_notes": [
+        "全30页5图注59参考二次审计；25cell/3重复/100cycles/384condition与人体n分开；Gaussian独立条件、finite library与模拟/UQ临床未验证明确。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "双channel提供有限range近独立调μ/σ和实验state库；CMI模拟维持约79%且未知活动较高UQ。保留covariance/IID、C2C与readnoise区别、finite mapping、selective96.3%及未实测整机节能/安全。",
+  "shared_evidence": [
+    {
+      "claim_id": "C1",
+      "with": [
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C12",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C2",
+      "with": [
+        "C1",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C12",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C1",
+        "C2",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C12",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C5",
+        "C6",
+        "C7",
+        "C12",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C6",
+        "C7",
+        "C12",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C7",
+        "C12",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C7",
+        "C9",
+        "C10",
+        "C11",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C7",
+        "C8",
+        "C10",
+        "C11",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "with": [
+        "C7",
+        "C8",
+        "C9",
+        "C11",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "with": [
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C13",
+      "with": [
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": "C4",
+        "issue": "Eq2独立Gaussvariance未处理sharedgatecovariance；时间/branch独立未报告。",
+        "pdf_page": 9,
+        "suggested_correction": null,
+        "resolved": false
+      },
+      {
+        "claim_id": "C5",
+        "issue": "Gaussian质量来自erase-program-read，未分离C2C与readonlynoise/时序IID；不能直接宣称fastcontinuousRNG。",
+        "pdf_page": 16,
+        "suggested_correction": null,
+        "resolved": false
+      },
+      {
+        "claim_id": "C6",
+        "issue": "有限range近解耦不证明任意Gaussian或exactorthogonality，constantVdifference不保证nonlinearGdifference。",
+        "pdf_page": 11,
+        "suggested_correction": null,
+        "resolved": false
+      },
+      {
+        "claim_id": "C9",
+        "issue": "图5明确模拟，不能当实制BNN全hardware；45%不是balanced5class随机20%。",
+        "pdf_page": 29,
+        "suggested_correction": "按实际sourcebenchmark限定",
+        "resolved": true
+      },
+      {
+        "claim_id": "C11",
+        "issue": "96.3为selectedconditionalaccuracy，没有coverage/OODfalsealarms/calibration保障。",
+        "pdf_page": 14,
+        "suggested_correction": null,
+        "resolved": false
+      },
+      {
+        "claim_id": "C12",
+        "issue": "21dayloop repeat不等single-stateretention。",
+        "pdf_page": 6,
+        "suggested_correction": null,
+        "resolved": false
+      },
+      {
+        "claim_id": null,
+        "issue": "Materials把bis(trifluoromethylsulfonyl)imide命名与EMIMMeSO4/methylsulfate符号混用，离子液身份需核查。",
+        "pdf_page": 15,
+        "suggested_correction": null,
+        "resolved": false
+      },
+      {
+        "claim_id": null,
+        "issue": "feature339/IMU含magnetometer与Methods6axis描述、twoactivityclasses句与5classcaption不一致；具体数据split/seeds未知。",
+        "pdf_page": 17,
+        "suggested_correction": null,
+        "resolved": false
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T12:44:32.400292Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "730e51983dd0d07ef3f79c0ff9b1f9f822973e12811ac24e93eb0314dacee393",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

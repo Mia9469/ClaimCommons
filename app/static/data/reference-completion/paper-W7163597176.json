@@ -1,0 +1,992 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "A Fiber Criterion for Representation Identifiability in Supervised Learning",
+    "authors": [
+      "Vasileios Sevetlidis"
+    ],
+    "doi": null,
+    "publication_year": 2026,
+    "venue": "arXiv (Cornell University)",
+    "url": "https://arxiv.org/pdf/2606.01092"
+  },
+  "source": {
+    "filename": "paper-W7163597176--A-Fiber-Criterion-for-Representation-Identifiability-in-Supervised-Learning.pdf",
+    "sha256": "7aaf87fd66094ebfeec39ac161673ba4f941f7f4163cefcb8145f96695a69ebf",
+    "source_url": "https://arxiv.org/pdf/2606.01092",
+    "pdf_page_count": 36
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36
+    ],
+    "results_sections_seen": [
+      "Definitions and preliminaries",
+      "Theorem 3.3",
+      "Propositions 3.4–3.6",
+      "Section 4",
+      "Appendix A",
+      "Appendix B.1–B.4 Tables 5–15",
+      "Appendix C.1–C.3 Tables 16–18"
+    ],
+    "missing_material": [
+      "图像像素；未供应的补充全文/原始数据未读取"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "所有供应页文字（含方法/附录/图表文字和参考文献）已完整评估，未采样代替全文。",
+      "逐条第二审计以已读源比较真实单位、条件、统计与推断范围；不等于实验复现。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "相对于指定可允许分解类与输入分布，一项表示性质可从预测器辨识，当且仅当它在预测映射的每个纤维上恒定，等价于该性质能下降为预测器等价类上的函数。",
+      "role": "result",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "同一几乎处处预测器给出相同总体风险，但相同标量风险并不保证同一预测器；因此标量风险可辨识性比预测器可辨识性要求更强。",
+      "role": "result",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "若模型类允许将可测辅助坐标 q 附加到表示且令任务头忽略 q，则复合预测器逐点不变；对该构造敏感的表示性质不能仅由监督预测辨识。",
+      "role": "result",
+      "source_pages": [
+        11
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "在任务头于相关表示像上单射的条件下，输入变换不变性可由预测器不变性推出；将该例表述为 P_X 几乎处处预测纤维上的可辨识性，还须控制变换后输入的支持。",
+      "role": "result",
+      "source_pages": [
+        10
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "限制可允许分解类、增加表示观测或规定规范选择规则可以缩小歧义，但选择规则得到的是预测器与该规则共同决定的表示性质，而非监督预测单独给出的性质。",
+      "role": "result",
+      "source_pages": [
+        12
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "CelebA 的冻结 Smiling 表示中逐一附加 39 个非目标属性并忽略新增坐标，使对应线性探针 AUC 均为 1、平均增量为 0.137，同时 Smiling 输出不变；随机或打乱属性坐标的平均增量接近零。",
+      "role": "result",
+      "source_pages": [
+        25
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "CIFAR-10 与 STL-10 中，附加被任务头忽略的变换嵌入提高变换探针准确率并增加四种变换的经验距离；等维随机坐标没有提高探针准确率。",
+      "role": "result",
+      "source_pages": [
+        29
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "在精确保持预测的 CIFAR-10/STL-10 构造中，表示维度和有效秩会变化，随机坐标也能显著增加有效秩；因此有效秩不是任务预测所唯一确定的量。",
+      "role": "result",
+      "source_pages": [
+        31
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "OfficeHome 与 PACS 中直接附加四维 one-hot 域标签可使域探针准确率从 .667±.009 和 .949±.002 升到 1，同时类预测逐点不变。",
+      "role": "result",
+      "source_pages": [
+        33
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "Waterbirds 中按同种子 ERM 的验证准确率和交叉熵选择约束模型后，瓶颈、VIB、AugInv、SupCon 的背景可读出、不变距离及有效秩仍有不同变化。",
+      "role": "result",
+      "source_pages": [
+        16
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "Waterbirds 对抗约束变体改变几何并降低有效秩，但在这组运行中背景探针平衡准确率仅比 ERM 低0.37个百分点，没有实质去除该探针所能解码的背景信息。",
+      "role": "result",
+      "source_pages": [
+        34
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "Waterbirds 的背景探针降低并不在所比较约束模型之间单调对应更高最差组准确率；例如 VIB 的背景探针较低但最差组均值较 ERM 低，而 AugInv 反向组合。",
+      "role": "result",
+      "source_pages": [
+        16
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "Colored-MNIST 与 CelebA 的近纤维筛选找到预测距离较小、但 CKA/Procrustes/探针等表示诊断不同的模型对；该证据仅支持近似等价下的差异。",
+      "role": "result",
+      "source_pages": [
+        35
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "相关工作和参考文献不是本研究新的验证",
+      "role": "review_synthesis",
+      "source_pages": [
+        18,
+        19,
+        20
+      ],
+      "decision": "exclude",
+      "reason": "不给被引研究重复生成本研究实验命题"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "相对于指定可允许分解类与输入分布，一项表示性质可从预测器辨识，当且仅当它在预测映射的每个纤维上恒定，等价于该性质能下降为预测器等价类上的函数。",
+      "claim_type": "theoretical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "商映射及纤维上的定义性证明",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "可允许表示—头分解",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "必须先固定模型类、表示性质及辅助结构；预测器等价采用 P_X 几乎处处等价，不保证分布支持之外的性质。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "Theorem 3.3",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "相对于指定可允许分解类与输入分布，一项表示性质可从预测器辨识，当且仅当它在预测映射的每个纤维上恒定，等价于该性质能下降为预测器等价类上的函数。",
+        "boundary": "必须先固定模型类、表示性质及辅助结构；预测器等价采用 P_X 几乎处处等价，不保证分布支持之外的性质。",
+        "negative_result": null,
+        "non_inference": "相关或模型吻合不唯一识别因果机制；共享观测不计独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "监督表示可辨识性",
+        "表示诊断与任务性能",
+        "模型类限制和附加观测"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，相对于指定可允许分解类与输入分布，一项表示性质可从预测器辨识，当且仅当它在预测映射的每个纤维上恒定，等价于该性质能下降为预测器等价类上的函数。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "同一几乎处处预测器给出相同总体风险，但相同标量风险并不保证同一预测器；因此标量风险可辨识性比预测器可辨识性要求更强。",
+      "claim_type": "theoretical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "非负损失的期望与等价关系",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "预测器和总体损失",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "总体期望使用同一数据分布和损失；不是有限样本优化或估计一致性的定理。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Definitions; risk versus predictor identifiability",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "同一几乎处处预测器给出相同总体风险，但相同标量风险并不保证同一预测器；因此标量风险可辨识性比预测器可辨识性要求更强。",
+        "boundary": "总体期望使用同一数据分布和损失；不是有限样本优化或估计一致性的定理。",
+        "negative_result": null,
+        "non_inference": "相关或模型吻合不唯一识别因果机制；共享观测不计独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "监督表示可辨识性",
+        "表示诊断与任务性能",
+        "模型类限制和附加观测"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，同一几乎处处预测器给出相同总体风险，但相同标量风险并不保证同一预测器；因此标量风险可辨识性比预测器可辨识性要求更强。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "若模型类允许将可测辅助坐标 q 附加到表示且令任务头忽略 q，则复合预测器逐点不变；对该构造敏感的表示性质不能仅由监督预测辨识。",
+      "claim_type": "theoretical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "h_q=(h,q), c_q(u,v)=c(u) 的代数构造",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "可允许表示—头分解",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "辅助信息必须在所选观测空间中可允许；该闭包条件不是所有固定宽度或固定架构模型类都满足。"
+          ],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "Proposition 3.4; Theorem 3.5",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "若模型类允许将可测辅助坐标 q 附加到表示且令任务头忽略 q，则复合预测器逐点不变；对该构造敏感的表示性质不能仅由监督预测辨识。",
+        "boundary": "辅助信息必须在所选观测空间中可允许；该闭包条件不是所有固定宽度或固定架构模型类都满足。",
+        "negative_result": null,
+        "non_inference": "相关或模型吻合不唯一识别因果机制；共享观测不计独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "监督表示可辨识性",
+        "表示诊断与任务性能",
+        "模型类限制和附加观测"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，若模型类允许将可测辅助坐标 q 附加到表示且令任务头忽略 q，则复合预测器逐点不变；对该构造敏感的表示性质不能仅由监督预测辨识。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "在任务头于相关表示像上单射的条件下，输入变换不变性可由预测器不变性推出；将该例表述为 P_X 几乎处处预测纤维上的可辨识性，还须控制变换后输入的支持。",
+      "claim_type": "theoretical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "单射性推理及源文假设审计",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "输入变换、表示与预测器",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "限定 h(X) 与 h(gX) 上的单射性；若 g 将输入映到 P_X 零测集，源文的几乎处处纤维定义不足以直接辨识变换性质。"
+          ],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "Positive Example 2",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在任务头于相关表示像上单射的条件下，输入变换不变性可由预测器不变性推出；将该例表述为 P_X 几乎处处预测纤维上的可辨识性，还须控制变换后输入的支持。",
+        "boundary": "限定 h(X) 与 h(gX) 上的单射性；若 g 将输入映到 P_X 零测集，源文的几乎处处纤维定义不足以直接辨识变换性质。",
+        "negative_result": null,
+        "non_inference": "相关或模型吻合不唯一识别因果机制；共享观测不计独立复制。",
+        "unresolved": "源文未明确给出 g#P_X 对 P_X 绝对连续或替代的点态等价假设；正例的一般性仍待澄清。",
+        "unresolved_attribution": "源文或本次审计"
+      },
+      "broad_directions": [
+        "监督表示可辨识性",
+        "表示诊断与任务性能",
+        "模型类限制和附加观测"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，在任务头于相关表示像上单射的条件下，输入变换不变性可由预测器不变性推出；将该例表述为 P_X 几乎处处预测纤维上的可辨识性，还须控制变换后输入的支持。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "限制可允许分解类、增加表示观测或规定规范选择规则可以缩小歧义，但选择规则得到的是预测器与该规则共同决定的表示性质，而非监督预测单独给出的性质。",
+      "claim_type": "theoretical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "限制纤维与规范选择映射",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "可允许类及附加观测",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "最小性、压缩、群不变／等变、语义可及性均须分别指定性质及结构，不能统一宣布全部不可辨识。"
+          ],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "Proposition 3.6; Table 1",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "限制可允许分解类、增加表示观测或规定规范选择规则可以缩小歧义，但选择规则得到的是预测器与该规则共同决定的表示性质，而非监督预测单独给出的性质。",
+        "boundary": "最小性、压缩、群不变／等变、语义可及性均须分别指定性质及结构，不能统一宣布全部不可辨识。",
+        "negative_result": null,
+        "non_inference": "相关或模型吻合不唯一识别因果机制；共享观测不计独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "监督表示可辨识性",
+        "表示诊断与任务性能",
+        "模型类限制和附加观测"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，限制可允许分解类、增加表示观测或规定规范选择规则可以缩小歧义，但选择规则得到的是预测器与该规则共同决定的表示性质，而非监督预测单独给出的性质。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "CelebA 的冻结 Smiling 表示中逐一附加 39 个非目标属性并忽略新增坐标，使对应线性探针 AUC 均为 1、平均增量为 0.137，同时 Smiling 输出不变；随机或打乱属性坐标的平均增量接近零。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "冻结 ResNet-18，显式属性附加，成对探针与随机/打乱对照",
+          "design": null,
+          "comparator": null,
+          "measure": "属性探针 AUC、Smiling损失/准确率/输出差异",
+          "unit_of_analysis": "相同测试图像与属性探针",
+          "sample_size_as_reported": "19,962 测试样本；39 属性不是39独立训练复制",
+          "uncertainty": "2000 成对bootstrap、2000置换；报告39/39通过FDR .05",
+          "assumptions": [
+            "直接附加已知标签，完美可读出是构造预期，不证明网络自行学习该属性或部署时能获得元数据。"
+          ],
+          "source_locator": {
+            "pdf_page": 25,
+            "section": "Appendix B.1 Tables 5–7; Figures 7–9",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "CelebA 的冻结 Smiling 表示中逐一附加 39 个非目标属性并忽略新增坐标，使对应线性探针 AUC 均为 1、平均增量为 0.137，同时 Smiling 输出不变；随机或打乱属性坐标的平均增量接近零。",
+        "boundary": "直接附加已知标签，完美可读出是构造预期，不证明网络自行学习该属性或部署时能获得元数据。",
+        "negative_result": "随机/打乱坐标未出现实质平均AUC提升。",
+        "non_inference": "相关或模型吻合不唯一识别因果机制；共享观测不计独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "监督表示可辨识性",
+        "表示诊断与任务性能",
+        "模型类限制和附加观测"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，CelebA 的冻结 Smiling 表示中逐一附加 39 个非目标属性并忽略新增坐标，使对应线性探针 AUC 均为 1、平均增量为 0.137，同时 Smiling 输出不变；随机或打乱属性坐标的平均增量接近零。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "CIFAR-10 与 STL-10 中，附加被任务头忽略的变换嵌入提高变换探针准确率并增加四种变换的经验距离；等维随机坐标没有提高探针准确率。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "冻结分类器、辅助变换嵌入及随机对照",
+          "design": null,
+          "comparator": null,
+          "measure": "变换探针和经验不变距离",
+          "unit_of_analysis": "两数据集中的配对图像诊断",
+          "sample_size_as_reported": null,
+          "uncertainty": "源文成对bootstrap与2000 sign-flip置换；统计检验衡量诊断变化而非证明输出相等",
+          "assumptions": [
+            "准确率分别 .5948→.7907、.5732→.7034；四种变换及选定归一化距离，不代表所有数学不变性。"
+          ],
+          "source_locator": {
+            "pdf_page": 29,
+            "section": "Appendix B.2 Tables 8–11; Figures 12,15",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "CIFAR-10 与 STL-10 中，附加被任务头忽略的变换嵌入提高变换探针准确率并增加四种变换的经验距离；等维随机坐标没有提高探针准确率。",
+        "boundary": "准确率分别 .5948→.7907、.5732→.7034；四种变换及选定归一化距离，不代表所有数学不变性。",
+        "negative_result": "随机对照未改善探针；打乱辅助特征仍含变换预测结构，不作为纯阴性对照。",
+        "non_inference": "相关或模型吻合不唯一识别因果机制；共享观测不计独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "监督表示可辨识性",
+        "表示诊断与任务性能",
+        "模型类限制和附加观测"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，CIFAR-10 与 STL-10 中，附加被任务头忽略的变换嵌入提高变换探针准确率并增加四种变换的经验距离；等维随机坐标没有提高探针准确率。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "在精确保持预测的 CIFAR-10/STL-10 构造中，表示维度和有效秩会变化，随机坐标也能显著增加有效秩；因此有效秩不是任务预测所唯一确定的量。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "附加颜色/边缘/变换/随机坐标，协方差有效秩",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "同一冻结表示上的几何诊断",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "有效秩仅为几何或粗压缩代理，不等于完整信息论压缩、语义或因果结构。"
+          ],
+          "source_locator": {
+            "pdf_page": 31,
+            "section": "Appendix B.2 Table 12",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在精确保持预测的 CIFAR-10/STL-10 构造中，表示维度和有效秩会变化，随机坐标也能显著增加有效秩；因此有效秩不是任务预测所唯一确定的量。",
+        "boundary": "有效秩仅为几何或粗压缩代理，不等于完整信息论压缩、语义或因果结构。",
+        "negative_result": null,
+        "non_inference": "相关或模型吻合不唯一识别因果机制；共享观测不计独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "监督表示可辨识性",
+        "表示诊断与任务性能",
+        "模型类限制和附加观测"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，在精确保持预测的 CIFAR-10/STL-10 构造中，表示维度和有效秩会变化，随机坐标也能显著增加有效秩；因此有效秩不是任务预测所唯一确定的量。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "OfficeHome 与 PACS 中直接附加四维 one-hot 域标签可使域探针准确率从 .667±.009 和 .949±.002 升到 1，同时类预测逐点不变。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "冻结 ResNet-18、域标签附加、配对bootstrap",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "训练随机种子及其共享测试样本",
+          "sample_size_as_reported": "每数据集3随机种子",
+          "uncertainty": "均值±SD；每种子的域探针增量bootstrap区间排除0",
+          "assumptions": [
+            "域标签是允许的旁信息；3种子为模型运行而非生物实验；有效秩仅略升且不证明域无关泛化。"
+          ],
+          "source_locator": {
+            "pdf_page": 33,
+            "section": "Appendix B.3 Tables 13–15",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "OfficeHome 与 PACS 中直接附加四维 one-hot 域标签可使域探针准确率从 .667±.009 和 .949±.002 升到 1，同时类预测逐点不变。",
+        "boundary": "域标签是允许的旁信息；3种子为模型运行而非生物实验；有效秩仅略升且不证明域无关泛化。",
+        "negative_result": null,
+        "non_inference": "相关或模型吻合不唯一识别因果机制；共享观测不计独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "监督表示可辨识性",
+        "表示诊断与任务性能",
+        "模型类限制和附加观测"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，OfficeHome 与 PACS 中直接附加四维 one-hot 域标签可使域探针准确率从 .667±.009 和 .949±.002 升到 1，同时类预测逐点不变。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "Waterbirds 中按同种子 ERM 的验证准确率和交叉熵选择约束模型后，瓶颈、VIB、AugInv、SupCon 的背景可读出、不变距离及有效秩仍有不同变化。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "ImageNet预训练ResNet-18，约束强度扫描及性能匹配",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "同种子成对模型运行",
+          "sample_size_as_reported": "10种子/方法；含Adv共60个选定模型",
+          "uncertainty": "主表均值±SD；未提供该比较的显著性检验",
+          "assumptions": [
+            "匹配容差准确率 .01、CE .05；相近损失/准确率不保证相同预测器或精确同纤维。"
+          ],
+          "source_locator": {
+            "pdf_page": 16,
+            "section": "Tables 3–4; Appendix C.1 Table 16",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "Waterbirds 中按同种子 ERM 的验证准确率和交叉熵选择约束模型后，瓶颈、VIB、AugInv、SupCon 的背景可读出、不变距离及有效秩仍有不同变化。",
+        "boundary": "匹配容差准确率 .01、CE .05；相近损失/准确率不保证相同预测器或精确同纤维。",
+        "negative_result": null,
+        "non_inference": "相关或模型吻合不唯一识别因果机制；共享观测不计独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "监督表示可辨识性",
+        "表示诊断与任务性能",
+        "模型类限制和附加观测"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，Waterbirds 中按同种子 ERM 的验证准确率和交叉熵选择约束模型后，瓶颈、VIB、AugInv、SupCon 的背景可读出、不变距离及有效秩仍有不同变化。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "Waterbirds 对抗约束变体改变几何并降低有效秩，但在这组运行中背景探针平衡准确率仅比 ERM 低0.37个百分点，没有实质去除该探针所能解码的背景信息。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "同种子性能匹配后的Adv与ERM比较",
+          "design": null,
+          "comparator": null,
+          "measure": "背景探针、有效秩和变换距离",
+          "unit_of_analysis": "成对训练种子",
+          "sample_size_as_reported": "10种子",
+          "uncertainty": "平均配对差 -.0037；未提供显著性检验",
+          "assumptions": [
+            "这是指定实现与线性探针上的实际有限效果，不是所有对抗目标无效。"
+          ],
+          "source_locator": {
+            "pdf_page": 34,
+            "section": "Appendix C.1 Table 16",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "Waterbirds 对抗约束变体改变几何并降低有效秩，但在这组运行中背景探针平衡准确率仅比 ERM 低0.37个百分点，没有实质去除该探针所能解码的背景信息。",
+        "boundary": "这是指定实现与线性探针上的实际有限效果，不是所有对抗目标无效。",
+        "negative_result": "该对抗实现未可靠去除背景线性可读性。",
+        "non_inference": "相关或模型吻合不唯一识别因果机制；共享观测不计独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "监督表示可辨识性",
+        "表示诊断与任务性能",
+        "模型类限制和附加观测"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，Waterbirds 对抗约束变体改变几何并降低有效秩，但在这组运行中背景探针平衡准确率仅比 ERM 低0.37个百分点，没有实质去除该探针所能解码的背景信息。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "Waterbirds 的背景探针降低并不在所比较约束模型之间单调对应更高最差组准确率；例如 VIB 的背景探针较低但最差组均值较 ERM 低，而 AugInv 反向组合。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "约束方法的描述性多指标比较",
+          "design": null,
+          "comparator": null,
+          "measure": "背景平衡准确率与最差组准确率",
+          "unit_of_analysis": "10种子的每方法聚合结果",
+          "sample_size_as_reported": "10种子/方法",
+          "uncertainty": "均值±SD：VIB最差组54.5±7.8，ERM59.0±11.7，AugInv63.1±11.9；未报告差异显著性",
+          "assumptions": [
+            "只陈述所报告均值的非单调关系，不据此声称统计显著退化或背景信息对鲁棒性的因果作用。"
+          ],
+          "source_locator": {
+            "pdf_page": 16,
+            "section": "Tables 3–4",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "Waterbirds 的背景探针降低并不在所比较约束模型之间单调对应更高最差组准确率；例如 VIB 的背景探针较低但最差组均值较 ERM 低，而 AugInv 反向组合。",
+        "boundary": "只陈述所报告均值的非单调关系，不据此声称统计显著退化或背景信息对鲁棒性的因果作用。",
+        "negative_result": "所选模型不存在探针改善即最差组改善的单调对应。",
+        "non_inference": "相关或模型吻合不唯一识别因果机制；共享观测不计独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "监督表示可辨识性",
+        "表示诊断与任务性能",
+        "模型类限制和附加观测"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，Waterbirds 的背景探针降低并不在所比较约束模型之间单调对应更高最差组准确率；例如 VIB 的背景探针较低但最差组均值较 ERM 低，而 AugInv 反向组合。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C13",
+      "statement": "Colored-MNIST 与 CelebA 的近纤维筛选找到预测距离较小、但 CKA/Procrustes/探针等表示诊断不同的模型对；该证据仅支持近似等价下的差异。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "同种子模型库、标量阈值及分歧/KL成对筛选",
+          "design": null,
+          "comparator": null,
+          "measure": "预测分歧、对称KL、CKA、Procrustes、探针和holonomy",
+          "unit_of_analysis": "共享模型库内的模型对",
+          "sample_size_as_reported": "Colored-MNIST库50模型，选25；CelebA库25模型，选13",
+          "uncertainty": "全库/选定模型对分别132/8、96/21；模型对非独立样本",
+          "assumptions": [
+            "不等于完全相同预测器；holonomy在CelebA较弱，部分Colored-MNIST零半径行高于数值底噪。"
+          ],
+          "source_locator": {
+            "pdf_page": 35,
+            "section": "Appendix C.3 Tables 17–18; Figure 17",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "Colored-MNIST 与 CelebA 的近纤维筛选找到预测距离较小、但 CKA/Procrustes/探针等表示诊断不同的模型对；该证据仅支持近似等价下的差异。",
+        "boundary": "不等于完全相同预测器；holonomy在CelebA较弱，部分Colored-MNIST零半径行高于数值底噪。",
+        "negative_result": null,
+        "non_inference": "相关或模型吻合不唯一识别因果机制；共享观测不计独立复制。",
+        "unresolved": "部分零半径holonomy异常；未供应原始数值/代码供独立定位。",
+        "unresolved_attribution": "源文或本次审计"
+      },
+      "broad_directions": [
+        "监督表示可辨识性",
+        "表示诊断与任务性能",
+        "模型类限制和附加观测"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，Colored-MNIST 与 CelebA 的近纤维筛选找到预测距离较小、但 CKA/Procrustes/探针等表示诊断不同的模型对；该证据仅支持近似等价下的差异。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "理论以纤维恒定性给出可辨识性准则，构造性旁信息附加说明部分诊断不由监督预测唯一确定。CelebA、CIFAR-10/STL-10、OfficeHome/PACS为同一代数构造的诊断实例；Waterbirds及近纤维实验仅为匹配或近似预测证据。全文36页含附录与对照均已评估；单射正例的支持条件和holonomy数值问题保留待解。",
+  "shared_evidence": [],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": "C4",
+        "issue": "正例与P_X几乎处处纤维定义之间可能缺少变换支持条件",
+        "suggested_correction": "将正例写成条件性命题，记录g#P_X支持要求待作者澄清",
+        "pdf_page": 10,
+        "resolved": false
+      },
+      {
+        "claim_id": "C6",
+        "issue": "属性数量及成对测试样本不是独立复制",
+        "suggested_correction": "以19962测试样本及同一冻结分类器界定单位",
+        "pdf_page": 25,
+        "resolved": true
+      },
+      {
+        "claim_id": "C7",
+        "issue": "变换打乱特征仍有预测结构",
+        "suggested_correction": "不把该控制视为实际纯阴性",
+        "pdf_page": 28,
+        "resolved": true
+      },
+      {
+        "claim_id": "C10",
+        "issue": "监督性能匹配不是精确预测器相等",
+        "suggested_correction": "保留容差和近似证据类别",
+        "pdf_page": 34,
+        "resolved": true
+      },
+      {
+        "claim_id": "C12",
+        "issue": "均值变化不是显著差异或因果效应",
+        "suggested_correction": "不宣称方法显著胜负",
+        "pdf_page": 16,
+        "resolved": true
+      },
+      {
+        "claim_id": "C13",
+        "issue": "holonomy零半径行超出数值底噪",
+        "suggested_correction": "保留异常及次要证据地位",
+        "pdf_page": 36,
+        "resolved": false
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T11:12:24.294597Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "7aaf87fd66094ebfeec39ac161673ba4f941f7f4163cefcb8145f96695a69ebf",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

@@ -1,0 +1,918 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "preprint",
+  "paper": {
+    "title": "Layer-specific wide-field calcium imaging of neocortical activity",
+    "authors": [
+      "Dayra A Lorenzo",
+      "Yasir Gallero-Salas",
+      "Matteo Panzeri",
+      "Anna-Sophia Wahl",
+      "Ariel Gilad",
+      "Christopher M Lewis",
+      "Fritjof Helmchen"
+    ],
+    "doi": "10.7554/elife.109521",
+    "publication_year": 2026,
+    "venue": "eLife",
+    "url": "https://doi.org/10.7554/elife.109521"
+  },
+  "source": {
+    "filename": "paper-W7165519243--Layer-specific-wide-field-calcium-imaging-of-neocortical-activity.pdf",
+    "sha256": "0e47bf70fbc210b853cdf8dadcb6e01e622e7a81288a755bd03cde14aa575572",
+    "source_url": "https://elifesciences.org/reviewed-preprints/109521.pdf",
+    "pdf_page_count": 34
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34
+    ],
+    "results_sections_seen": [
+      "Results全五小节",
+      "Figures1–7及所有providedfigure supplements",
+      "Discussion全部source局限",
+      "Methods全animals/surgery/mapping/hemodynamic/scattering/MC/stats",
+      "References、Peerreviews1–3"
+    ],
+    "missing_material": [
+      "图像像素",
+      "原数据和analysis code",
+      "L6single-whisker结果（未供应）",
+      "somatic/neuritic sourcegroundtruth（未测试）"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "34页全部供给text完整一次read，含review和supp图注。",
+      "26male1–4monthmice总study，各assay实际独立n不同。",
+      "supptext读过不等于读pixels；Reststate与truequietwake未完全匹配。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": true,
+    "archived_page_text_used": true
+  },
+  "contribution_inventory": [
+    {
+      "summary": "作者由Allen CCF构建L2/3、L5、L6的depth-dependent top-view maps，deep maps因curvature更收缩；加入sensory landmarks后在示例中减少使用L2/3 atlas对L5/L6 lateral regions的错配。",
+      "role": "result",
+      "source_pages": [
+        3
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "三种GCaMP6f triple-transgenic lines经intact-skull widefield可记录相应标记群体的sensory-evoked及awake signals，包括Ntsr1 L6群体；这不等于optically sectioned deep-soma imaging。",
+      "role": "result",
+      "source_pages": [
+        3
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "3只WT鼠中，fiber quasi-point source从0.2mm深到1.0mm时peak intensity下降82±3%（SEM），提示经cortex/skull的depth-dependent信号损失。",
+      "role": "result",
+      "source_pages": [
+        5
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "同3只WT鼠的quasi-point光源FWHM由0.2mm深的0.27±0.03mm增至1mm深的1.01±0.18mm；adapted Monte Carlo也呈更深更blur的趋势。",
+      "role": "result",
+      "source_pages": [
+        5
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "layer-depth kernels的Lucy–Richardson deconvolution使single-whisker maps的FWHM在L2/3和L5均变窄；source的p<0.001来自重复trial配对，不能当大动物样本验证。",
+      "role": "result",
+      "source_pages": [
+        10
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "dual470/405nm controls中，L2/3 sensory maps纠正前后未见明显差异、connectivity matrices高度相关；这只支持所测small L2/3 controls，不能证明所有层/状态没有hemodynamic confounding。",
+      "role": "result",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "三layer-targeted cohort rawresting signals均有高global cross-region correlation；global mean regression后显示较强regional segregation及anticorrelation。",
+      "role": "result",
+      "source_pages": [
+        10
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "GMR后的cohort-averageFC矩阵在L2/3、L5、L6之间相似，Mantel–Spearman分别约0.96、0.93、0.93；这为relative pattern相似，不是功能严格等效或同一neuronal computation。",
+      "role": "result",
+      "source_pages": [
+        15
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "source的GMR-FC对比报告region-specific小差异：L2/3 visual到medial/frontal较高而somatomotor较低；RD和M2的差异pair数量较多，和DMN解释相容但机制/行为意义未测试。",
+      "role": "result",
+      "source_pages": [
+        14
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "correspondence withexternal anatomicaltracing",
+      "role": "interpretation",
+      "source_pages": [
+        15,
+        22
+      ],
+      "decision": "include",
+      "reason": "source21/27/21mice为被引Allen资料；targetvolumes不分layer，不作本篇独立experiment"
+    },
+    {
+      "summary": "bodymovementtracking及quiet/active状态",
+      "role": "unresolved",
+      "source_pages": [
+        20,
+        33
+      ],
+      "decision": "defer",
+      "reason": "没有state proportions或matched quiet-statecohort比较"
+    },
+    {
+      "summary": "L6 single-whisker/deconvolution generality",
+      "role": "unresolved",
+      "source_pages": [
+        33
+      ],
+      "decision": "defer",
+      "reason": "未呈现，不能猜阴性或成功"
+    },
+    {
+      "summary": "Reviewer1–3针对signal origins/registration及hemodynamics疑问",
+      "role": "audit_context",
+      "source_pages": [
+        31,
+        32,
+        33,
+        34
+      ],
+      "decision": "include",
+      "reason": "含在full source；未把reviewer anecdote当本文实验"
+    },
+    {
+      "summary": "References、Methods代码placeholder及future redindicators",
+      "role": "context",
+      "source_pages": [
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34
+      ],
+      "decision": "exclude",
+      "reason": "未来路径/引用非新数据"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "作者由Allen CCF构建L2/3、L5、L6的depth-dependent top-view maps，deep maps因curvature更收缩；加入sensory landmarks后在示例中减少使用L2/3 atlas对L5/L6 lateral regions的错配。",
+      "claim_type": "imaging_method_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "wide-field measurement/analysis或光源实验",
+          "design": "按GCaMP line、sensory/anesthesia/awake和depth条件",
+          "comparator": "原map/atlas、depth、corrected或cohort comparison",
+          "measure": "atlasalignment",
+          "unit_of_analysis": "独立mouse；sessions/trials/regions/photons另注明",
+          "sample_size_as_reported": "各transgenic群体；registration数量本文未独立给出",
+          "uncertainty": null,
+          "assumptions": [
+            "genetic layer specificity不等于光学depth sectioning"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "Anatomical/registration",
+            "figure": "Figures1/2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者由Allen CCF构建L2/3、L5、L6的depth-dependent top-view maps，deep maps因curvature更收缩；加入sensory landmarks后在示例中减少使用L2/3 atlas对L5/L6 lateral regions的错配。",
+        "boundary": "仅示例、缺quantitative groundtruth；若signals来自superficial neurites而非deep soma，depth atlas假设未确认。",
+        "negative_result": null,
+        "non_inference": "不能由surface signals证明deep somatic独占来源、真实layer connectivity必要性或跨层因果信息流。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "representation-coding",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "layer-targeted widefield signals的注册、光散射和FC比较可支持到什么范围？"
+      ],
+      "shared_evidence_with": [
+        "C2"
+      ],
+      "review_notes": [
+        "第二次source audit：mouse n与trial/session/nodal matrix/photon样本分开；Mantel相关≠无confound/等效。somata/neurites来源未确认，genotype、state与depth混杂保留。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "三种GCaMP6f triple-transgenic lines经intact-skull widefield可记录相应标记群体的sensory-evoked及awake signals，包括Ntsr1 L6群体；这不等于optically sectioned deep-soma imaging。",
+      "claim_type": "imaging_method_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "wide-field measurement/analysis或光源实验",
+          "design": "按GCaMP line、sensory/anesthesia/awake和depth条件",
+          "comparator": "原map/atlas、depth、corrected或cohort comparison",
+          "measure": "ΔF/F响应",
+          "unit_of_analysis": "独立mouse；sessions/trials/regions/photons另注明",
+          "sample_size_as_reported": "全study26male mice；20transgenic(8L2/3,6L5,6L6)，mapping示例10trials",
+          "uncertainty": null,
+          "assumptions": [
+            "genetic layer specificity不等于光学depth sectioning"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "Sensory-evoked maps",
+            "figure": "Figure2第6页",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "三种GCaMP6f triple-transgenic lines经intact-skull widefield可记录相应标记群体的sensory-evoked及awake signals，包括Ntsr1 L6群体；这不等于optically sectioned deep-soma imaging。",
+        "boundary": "genotype/layer-targeted populations非全部该层细胞；深群体浅层axon/dendrite贡献尚未量化。",
+        "negative_result": null,
+        "non_inference": "不能由surface signals证明deep somatic独占来源、真实layer connectivity必要性或跨层因果信息流。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "representation-coding",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "layer-targeted widefield signals的注册、光散射和FC比较可支持到什么范围？"
+      ],
+      "shared_evidence_with": [
+        "C1"
+      ],
+      "review_notes": [
+        "第二次source audit：mouse n与trial/session/nodal matrix/photon样本分开；Mantel相关≠无confound/等效。somata/neurites来源未确认，genotype、state与depth混杂保留。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "3只WT鼠中，fiber quasi-point source从0.2mm深到1.0mm时peak intensity下降82±3%（SEM），提示经cortex/skull的depth-dependent信号损失。",
+      "claim_type": "imaging_method_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "wide-field measurement/analysis或光源实验",
+          "design": "按GCaMP line、sensory/anesthesia/awake和depth条件",
+          "comparator": "原map/atlas、depth、corrected或cohort comparison",
+          "measure": "peak intensity",
+          "unit_of_analysis": "独立mouse；sessions/trials/regions/photons另注明",
+          "sample_size_as_reported": "3WT mice，paired depths",
+          "uncertainty": "82±3% SEM",
+          "assumptions": [
+            "genetic layer specificity不等于光学depth sectioning"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "Light scattering",
+            "figure": "Figure3第8页",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "3只WT鼠中，fiber quasi-point source从0.2mm深到1.0mm时peak intensity下降82±3%（SEM），提示经cortex/skull的depth-dependent信号损失。",
+        "boundary": "fiber upward light非神经Ca源；fiber路径/血管/个体skull条件限制推广。",
+        "negative_result": null,
+        "non_inference": "不能由surface signals证明deep somatic独占来源、真实layer connectivity必要性或跨层因果信息流。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "representation-coding",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "layer-targeted widefield signals的注册、光散射和FC比较可支持到什么范围？"
+      ],
+      "shared_evidence_with": [
+        "C4",
+        "C5"
+      ],
+      "review_notes": [
+        "第二次source audit：mouse n与trial/session/nodal matrix/photon样本分开；Mantel相关≠无confound/等效。somata/neurites来源未确认，genotype、state与depth混杂保留。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "同3只WT鼠的quasi-point光源FWHM由0.2mm深的0.27±0.03mm增至1mm深的1.01±0.18mm；adapted Monte Carlo也呈更深更blur的趋势。",
+      "claim_type": "imaging_method_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "wide-field measurement/analysis或光源实验",
+          "design": "按GCaMP line、sensory/anesthesia/awake和depth条件",
+          "comparator": "原map/atlas、depth、corrected或cohort comparison",
+          "measure": "radial FWHM",
+          "unit_of_analysis": "独立mouse；sessions/trials/regions/photons另注明",
+          "sample_size_as_reported": "3mice；simulation500000photons非独立biological n",
+          "uncertainty": "mean±SEM",
+          "assumptions": [
+            "genetic layer specificity不等于光学depth sectioning"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "Light scattering",
+            "figure": "Figure3G；supp第9页",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "同3只WT鼠的quasi-point光源FWHM由0.2mm深的0.27±0.03mm增至1mm深的1.01±0.18mm；adapted Monte Carlo也呈更深更blur的趋势。",
+        "boundary": "MC opticalparameters调到measurement，非完全independent prediction；空间kernel取layer均值，非全厚度/neurite混合解。",
+        "negative_result": null,
+        "non_inference": "不能由surface signals证明deep somatic独占来源、真实layer connectivity必要性或跨层因果信息流。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "representation-coding",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "layer-targeted widefield signals的注册、光散射和FC比较可支持到什么范围？"
+      ],
+      "shared_evidence_with": [
+        "C3",
+        "C5"
+      ],
+      "review_notes": [
+        "第二次source audit：mouse n与trial/session/nodal matrix/photon样本分开；Mantel相关≠无confound/等效。somata/neurites来源未确认，genotype、state与depth混杂保留。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "layer-depth kernels的Lucy–Richardson deconvolution使single-whisker maps的FWHM在L2/3和L5均变窄；source的p<0.001来自重复trial配对，不能当大动物样本验证。",
+      "claim_type": "imaging_method_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "wide-field measurement/analysis或光源实验",
+          "design": "按GCaMP line、sensory/anesthesia/awake和depth条件",
+          "comparator": "原map/atlas、depth、corrected或cohort comparison",
+          "measure": "map FWHM",
+          "unit_of_analysis": "独立mouse；sessions/trials/regions/photons另注明",
+          "sample_size_as_reported": "L2/3=2mice,510trials/17sessions；L5=2mice,360trials",
+          "uncertainty": "作者trial-level p<0.001",
+          "assumptions": [
+            "genetic layer specificity不等于光学depth sectioning"
+          ],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "Single-whisker/deconvolution",
+            "figure": "Figure4第11页",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "layer-depth kernels的Lucy–Richardson deconvolution使single-whisker maps的FWHM在L2/3和L5均变窄；source的p<0.001来自重复trial配对，不能当大动物样本验证。",
+        "boundary": "Wilcoxon signed-rank；trial嵌套animals，未给animal-level效应检验；L6 single-whisker未呈现。",
+        "negative_result": null,
+        "non_inference": "不能由surface signals证明deep somatic独占来源、真实layer connectivity必要性或跨层因果信息流。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "representation-coding",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "layer-targeted widefield signals的注册、光散射和FC比较可支持到什么范围？"
+      ],
+      "shared_evidence_with": [
+        "C3",
+        "C4"
+      ],
+      "review_notes": [
+        "第二次source audit：mouse n与trial/session/nodal matrix/photon样本分开；Mantel相关≠无confound/等效。somata/neurites来源未确认，genotype、state与depth混杂保留。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "dual470/405nm controls中，L2/3 sensory maps纠正前后未见明显差异、connectivity matrices高度相关；这只支持所测small L2/3 controls，不能证明所有层/状态没有hemodynamic confounding。",
+      "claim_type": "imaging_method_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "wide-field measurement/analysis或光源实验",
+          "design": "按GCaMP line、sensory/anesthesia/awake和depth条件",
+          "comparator": "原map/atlas、depth、corrected或cohort comparison",
+          "measure": "map及matrix similarity",
+          "unit_of_analysis": "独立mouse；sessions/trials/regions/photons另注明",
+          "sample_size_as_reported": "2L2/3mice总controls；caption多为1mouse示例，20stimtrials",
+          "uncertainty": "Mantel500permutations",
+          "assumptions": [
+            "genetic layer specificity不等于光学depth sectioning"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "Hemodynamic controls",
+            "figure": "Supplements第7/13/16页",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "dual470/405nm controls中，L2/3 sensory maps纠正前后未见明显差异、connectivity matrices高度相关；这只支持所测small L2/3 controls，不能证明所有层/状态没有hemodynamic confounding。",
+        "boundary": "Mantel相关显著不是matrix difference不显著；awake rawr0.77、GMRr0.90不能作equivalence。",
+        "negative_result": "展示的2L2/3 mice平均sensory maps未观察明显校正差异。",
+        "non_inference": "不能由surface signals证明deep somatic独占来源、真实layer connectivity必要性或跨层因果信息流。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "representation-coding",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "layer-targeted widefield signals的注册、光散射和FC比较可支持到什么范围？"
+      ],
+      "shared_evidence_with": [
+        "C7",
+        "C8",
+        "C9"
+      ],
+      "review_notes": [
+        "第二次source audit：mouse n与trial/session/nodal matrix/photon样本分开；Mantel相关≠无confound/等效。somata/neurites来源未确认，genotype、state与depth混杂保留。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "三layer-targeted cohort rawresting signals均有高global cross-region correlation；global mean regression后显示较强regional segregation及anticorrelation。",
+      "claim_type": "imaging_method_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "wide-field measurement/analysis或光源实验",
+          "design": "按GCaMP line、sensory/anesthesia/awake和depth条件",
+          "comparator": "原map/atlas、depth、corrected或cohort comparison",
+          "measure": "Spearman FC及GMR residuals",
+          "unit_of_analysis": "独立mouse；sessions/trials/regions/photons另注明",
+          "sample_size_as_reported": "每cohort6mice、200–300×10strials/mouse；26leftregions",
+          "uncertainty": null,
+          "assumptions": [
+            "genetic layer specificity不等于光学depth sectioning"
+          ],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "Resting-state assessment",
+            "figure": "Figures5/6",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "三layer-targeted cohort rawresting signals均有高global cross-region correlation；global mean regression后显示较强regional segregation及anticorrelation。",
+        "boundary": "headfixed passive非经验证相同quiet/rest状态；GMR可改变/诱发anticorrelation，不能解读为inhibitory coupling。",
+        "negative_result": null,
+        "non_inference": "不能由surface signals证明deep somatic独占来源、真实layer connectivity必要性或跨层因果信息流。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "representation-coding",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "layer-targeted widefield signals的注册、光散射和FC比较可支持到什么范围？"
+      ],
+      "shared_evidence_with": [
+        "C8",
+        "C9"
+      ],
+      "review_notes": [
+        "第二次source audit：mouse n与trial/session/nodal matrix/photon样本分开；Mantel相关≠无confound/等效。somata/neurites来源未确认，genotype、state与depth混杂保留。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "GMR后的cohort-averageFC矩阵在L2/3、L5、L6之间相似，Mantel–Spearman分别约0.96、0.93、0.93；这为relative pattern相似，不是功能严格等效或同一neuronal computation。",
+      "claim_type": "imaging_method_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "wide-field measurement/analysis或光源实验",
+          "design": "按GCaMP line、sensory/anesthesia/awake和depth条件",
+          "comparator": "原map/atlas、depth、corrected或cohort comparison",
+          "measure": "matrix similarity",
+          "unit_of_analysis": "独立mouse；sessions/trials/regions/photons另注明",
+          "sample_size_as_reported": "6mice/cohort；500Mantelpermutations",
+          "uncertainty": "Mantelp<0.001",
+          "assumptions": [
+            "genetic layer specificity不等于光学depth sectioning"
+          ],
+          "source_locator": {
+            "pdf_page": 15,
+            "section": "FC/anatomical comparison",
+            "figure": "Figure6A",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "GMR后的cohort-averageFC矩阵在L2/3、L5、L6之间相似，Mantel–Spearman分别约0.96、0.93、0.93；这为relative pattern相似，不是功能严格等效或同一neuronal computation。",
+        "boundary": "mean matrices/region-pairs不是独立subjects；anatomicaltracing来自外部source且targets不分层，不能确认causal信息flow。",
+        "negative_result": null,
+        "non_inference": "不能由surface signals证明deep somatic独占来源、真实layer connectivity必要性或跨层因果信息流。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "representation-coding",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "layer-targeted widefield signals的注册、光散射和FC比较可支持到什么范围？"
+      ],
+      "shared_evidence_with": [
+        "C7",
+        "C9"
+      ],
+      "review_notes": [
+        "第二次source audit：mouse n与trial/session/nodal matrix/photon样本分开；Mantel相关≠无confound/等效。somata/neurites来源未确认，genotype、state与depth混杂保留。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "source的GMR-FC对比报告region-specific小差异：L2/3 visual到medial/frontal较高而somatomotor较低；RD和M2的差异pair数量较多，和DMN解释相容但机制/行为意义未测试。",
+      "claim_type": "imaging_method_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "wide-field measurement/analysis或光源实验",
+          "design": "按GCaMP line、sensory/anesthesia/awake和depth条件",
+          "comparator": "原map/atlas、depth、corrected或cohort comparison",
+          "measure": "FC magnitude contrasts",
+          "unit_of_analysis": "独立mouse；sessions/trials/regions/photons另注明",
+          "sample_size_as_reported": "6mice/cohort；分析另报n10/12/10且单位未解释",
+          "uncertainty": "FDR-p<0.001作者报告",
+          "assumptions": [
+            "genetic layer specificity不等于光学depth sectioning"
+          ],
+          "source_locator": {
+            "pdf_page": 14,
+            "section": "Layer FC differences",
+            "figure": "Figure7第17页",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "source的GMR-FC对比报告region-specific小差异：L2/3 visual到medial/frontal较高而somatomotor较低；RD和M2的差异pair数量较多，和DMN解释相容但机制/行为意义未测试。",
+        "boundary": "FDR adjustedp<0.001/10000permutations；differentgenotypes、SNR、midlinecurvature及movement/arousal未充分控制。",
+        "negative_result": null,
+        "non_inference": "不能由surface signals证明deep somatic独占来源、真实layer connectivity必要性或跨层因果信息流。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "representation-coding",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "layer-targeted widefield signals的注册、光散射和FC比较可支持到什么范围？"
+      ],
+      "shared_evidence_with": [
+        "C7",
+        "C8"
+      ],
+      "review_notes": [
+        "第二次source audit：mouse n与trial/session/nodal matrix/photon样本分开；Mantel相关≠无confound/等效。somata/neurites来源未确认，genotype、state与depth混杂保留。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "完整34页v1。depthatlas、fiberPSF与deconvolution提供技术候选，n3WT深度衰减/blur及各n2whiskermice的trial变化具体保留。layer-targeted cohorts平均FC相似但少量region差异，未证明deep somatic來源或causal连接。hemodynamic控制、state、试次独立性及方法window/n不一致待人审。所有候选unreviewed。",
+  "shared_evidence": [
+    {
+      "claim_id": "C1",
+      "with": [
+        "C2"
+      ]
+    },
+    {
+      "claim_id": "C2",
+      "with": [
+        "C1"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C4",
+        "C5"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C3",
+        "C5"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C3",
+        "C4"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C7",
+        "C8",
+        "C9"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C8",
+        "C9"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C7",
+        "C9"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C7",
+        "C8"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": null,
+        "issue": "actualReviewed Preprint v1，2026-06-22，sourceversion10.7554/eLife.109521.1。",
+        "pdf_page": 1,
+        "suggested_correction": "text-only候选保留version",
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "关键somatic signal来源假设未test，publicassessment/reviews反复指出superficial dendriticplexus可主导。",
+        "pdf_page": 31,
+        "suggested_correction": "各claim仅layer-targetedpopulations，不称deep somaexclusive",
+        "resolved": true
+      },
+      {
+        "claim_id": "C5",
+        "issue": "n510/360trials来自各2mice，不是独立动物n；统计p可能受到嵌套/重复结构影响。",
+        "pdf_page": 11,
+        "suggested_correction": "animal/trial units保留",
+        "resolved": true
+      },
+      {
+        "claim_id": "C6",
+        "issue": "hemodynamiccontrols仅L2/3，总2mice；r高且p显著不是没有confounding检验。",
+        "pdf_page": 22,
+        "suggested_correction": "不推广deepgroups/noeffect",
+        "resolved": true
+      },
+      {
+        "claim_id": "C9",
+        "issue": "FCdifference分析n10/12/10与6mice/cohort关系未解释。",
+        "pdf_page": 14,
+        "suggested_correction": "独立单元及permutationscheme待核对",
+        "resolved": false
+      },
+      {
+        "claim_id": null,
+        "issue": "restbaseline Methods写15thpercentile和10min/12000frames，而主resttrials10s；control用10thpercentile；mappingwindow正文1s/caption0.5s。",
+        "pdf_page": 23,
+        "suggested_correction": "time/base/window不一致需原analysis确认",
+        "resolved": false
+      },
+      {
+        "claim_id": "C5",
+        "issue": "kerneldepth正文0.2–0.4mm,n6profiles，Methods0.2–0.3mm,n3，实际fibersteps0.2mm。",
+        "pdf_page": 24,
+        "suggested_correction": "深度/单位混杂待核对",
+        "resolved": false
+      },
+      {
+        "claim_id": null,
+        "issue": "MC notebookavailability在Methods为省略号，background subtraction括注未清理。",
+        "pdf_page": 23,
+        "suggested_correction": "代码未读取，保持unresolved",
+        "resolved": false
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T11:26:16.298787Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "0e47bf70fbc210b853cdf8dadcb6e01e622e7a81288a755bd03cde14aa575572",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

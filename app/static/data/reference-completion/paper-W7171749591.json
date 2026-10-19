@@ -1,0 +1,1664 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "preprint",
+  "paper": {
+    "title": "Beyond ICA: Identifiability by Symmetry Breaking",
+    "authors": [
+      "Pengzhou Wu"
+    ],
+    "doi": null,
+    "publication_year": 2026,
+    "venue": "arXiv (Cornell University)",
+    "url": "https://arxiv.org/pdf/2607.23182"
+  },
+  "source": {
+    "filename": "paper-W7171749591--Beyond-ICA-Identifiability-by-Symmetry-Breaking.pdf",
+    "sha256": "5685978cc358aa4853ab2ee3ed4f3ec37b6e372313fe703280c2aab956441297",
+    "source_url": "https://arxiv.org/pdf/2607.23182",
+    "pdf_page_count": 44
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44
+    ],
+    "results_sections_seen": [
+      "Main definitions/conditions、Theorems4/5/8、Props3/6/9/10、Cor11",
+      "AppendixA全部proofs",
+      "B–J terminology、Gaussian independence、globalPI、symmetry/DD proof",
+      "K–M全部反例与logical relations",
+      "N labelled iVAE(iv)",
+      "O finite-order symmetry、P未证明范围",
+      "Q Theorems31/32及proofs",
+      "R/S discussion/comparison、44references"
+    ],
+    "missing_material": [
+      "图像像素",
+      "正文声明省略的torsion localisation/广义family证明",
+      "经验training/finite-sample数据（本文未做）"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "44页供给text完整一次读，所有appendix proof、tables和figure文字评估。",
+      "square reduced PWA branch invertible；global noninjectivity与local branch invertibility不同。",
+      "数学candidate不是训练/生物/causal实验验证；源存在genericity、labelled group和boundary语义待人审。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "相同observable law加双侧global PI可建立唯一branch–component parameter/weight匹配，并推出GMM component数、branch数及chamber结构一致。",
+      "role": "result",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "若PWA–GMM pair满足PI且其output自身为GMM，则decoder退化为global affine representative；严格多branch GMM self-map不能同时满足PI。",
+      "role": "result",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "Theorem5在双侧global PI和truth SB下识别latent GMM到某global affine bijection α，并匹配component权重；不必有observed domain labels、decoder continuity或global injectivity。",
+      "role": "result",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "Theorem8在双侧PI、truth USB与truth MST联合条件下，存在同一global affine α使α(Z')同law于Z且f=g∘α−1（按a.e. branch-domain equality）。",
+      "role": "result",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "MID结论使estimator posterior为truth posterior经α−1 pushforward，P_X-almost everywhere成立；global非injective decoder允许posterior有多个latent codes。",
+      "role": "result",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "作者Proposition10在MID基础上再加truth global injectivity，给出z=α(g−1(x))的pointwise恢复；该层是唯一使用global injectivity的主结果。",
+      "role": "result",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "双侧DD可将Theorem5或8的affine ambiguity缩为permutation×invertible diagonal scale加translation；DD不仅是diagonal covariances，还要求一对component的variance-ratio跨latent维度互异。",
+      "role": "result",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "JST仅排除固定每component的共同symmetry，MST还排除equal-weight component permutations；distinct weights加JST才推出MST。",
+      "role": "result",
+      "source_pages": [
+        25
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "MST的明确充分条件把阻止component permutation的DW或distinct covariance determinants，与消除共同stabilizer的full-affine-span means或two-component generic position组合。",
+      "role": "result",
+      "source_pages": [
+        26
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "fold f=|x|可使½N(1,1)+½N(3,4)与½N(−1,1)+½N(3,4)产生相同observable law，双侧PI/MST均成立却无affine latent link；因此SB不能从该LID充分条件中删除。",
+      "role": "result",
+      "source_pages": [
+        33
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "USB不保证weak injectivity，weak injectivity也不保证SB：附录给出continuous/discontinuous USB且所有nonempty chambers多active的maps，以及continuous弱injective却co-toggling的map。",
+      "role": "result",
+      "source_pages": [
+        35
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "global map injectivity只自动给chamber-wise PI，不给global PI；附录两branch x与x+10、component means相差10的例子仍发生隐藏跨branch参数碰撞。",
+      "role": "result",
+      "source_pages": [
+        23
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "PI、OD/TOD的维数计算及MST充分条件支持指定无约束参数空间的measure-zero坏集论述；连续PWA的SB/USB genericity没有同等完整保证。",
+      "role": "result",
+      "source_pages": [
+        37
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "观察component labels且Gaussian iVAE(iv)的2d natural-parameter differences满秩时，附录证明component-preserving共同symmetry为identity；这应解释为labelled admissible group，而非不加限定的marginal MST。",
+      "role": "interpretation",
+      "source_pages": [
+        39
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "shared latent GMM下，双侧PI加truth DW、OD和JST可替代USB路线推出f=g；DW保持component身份，OD使branch匹配跨components一致，JST消除剩余差异。",
+      "role": "result",
+      "source_pages": [
+        41
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "shared latent GMM下，双侧PI加truth transporter-orbit disjointness TOD与MST也可推出f=g，而不需USB或distinct weights。",
+      "role": "result",
+      "source_pages": [
+        41
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "任意irredundant nondegenerate finite GMM若有非trivial affine self-symmetry，则存在非trivial finite-order symmetry；作者用component permutation及compact stabilizer论证。",
+      "role": "result",
+      "source_pages": [
+        39
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "Main proofs A、Gaussian linear independence D及matching lemmas",
+      "role": "proof",
+      "source_pages": [
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "decision": "include",
+      "reason": "逐页评估，证明不是独立replication"
+    },
+    {
+      "summary": "USB必要性、global PI完整必要性及更广泛family theory",
+      "role": "conjecture",
+      "source_pages": [
+        9,
+        40,
+        43
+      ],
+      "decision": "defer",
+      "reason": "PI完整necessity主文明确conjecture；Table5除Gaussian行未证明"
+    },
+    {
+      "summary": "causal discovery/Intact-VAE应用",
+      "role": "hypothesis",
+      "source_pages": [
+        9,
+        10
+      ],
+      "decision": "defer",
+      "reason": "prospects，不是已证明causal identification或实验"
+    },
+    {
+      "summary": "相关工作comparison与novelty-first主张",
+      "role": "context",
+      "source_pages": [
+        1,
+        2,
+        3,
+        22,
+        43,
+        44
+      ],
+      "decision": "exclude",
+      "reason": "作者定位，不作外部最新性认证"
+    },
+    {
+      "summary": "不消除null-boundary bookkeeping",
+      "role": "unresolved",
+      "source_pages": [
+        4,
+        13,
+        20,
+        21
+      ],
+      "decision": "defer",
+      "reason": "pointwise every-x加强需要compatible representative"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "相同observable law加双侧global PI可建立唯一branch–component parameter/weight匹配，并推出GMM component数、branch数及chamber结构一致。",
+      "claim_type": "theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "解析proof/explicit counterexample",
+          "design": "source-defined PWA–GMM class",
+          "comparator": "具有相同observable law的候选pair",
+          "measure": "identifiability/symmetry结论",
+          "unit_of_analysis": "数学对象，非数据样本或模拟trial",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "truth与estimator均为Rd→Rd reduced PWA，finite full-dimensional polyhedral branch domains且每branch affine可逆",
+            "latent是positive-weight、positive-definite covariance、distinct-component finite GMM",
+            "observable laws完全相同，不是finite-sample近似相同",
+            "PWA map equality按null-boundary convention",
+            "两pair的全局parameter injectivity"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "Lemma2 / Proposition3；AppendixA14–16",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "相同observable law加双侧global PI可建立唯一branch–component parameter/weight匹配，并推出GMM component数、branch数及chamber结构一致。",
+        "boundary": "无PI时仅active-branch-count相等，不保证global branch计数或拼接；a.e.范围。",
+        "negative_result": null,
+        "non_inference": "不提供训练收敛、估计误差、样本复杂度或真实因果识别保证。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "何种symmetry/boundary联合条件可将无监督PWA-GMM的分布、机制和posterior识别到global affine ambiguity？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7"
+      ],
+      "review_notes": [
+        "第二次来源审计保留square/invertible branch、nondegenerate finite GMM、exact law equality及global PI等联合假设。数学反例是明确边界，不是统计n；a.e.与everywhere分开，conjecture/heuristic/omitted proof不提升为定理。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "若PWA–GMM pair满足PI且其output自身为GMM，则decoder退化为global affine representative；严格多branch GMM self-map不能同时满足PI。",
+      "claim_type": "theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "解析proof/explicit counterexample",
+          "design": "source-defined PWA–GMM class",
+          "comparator": "具有相同observable law的候选pair",
+          "measure": "identifiability/symmetry结论",
+          "unit_of_analysis": "数学对象，非数据样本或模拟trial",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "truth与estimator均为Rd→Rd reduced PWA，finite full-dimensional polyhedral branch domains且每branch affine可逆",
+            "latent是positive-weight、positive-definite covariance、distinct-component finite GMM",
+            "observable laws完全相同，不是finite-sample近似相同",
+            "PWA map equality按null-boundary convention",
+            "estimator pair PI；output为nondegenerate irred GMM"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "Theorem4 / AppendixA16",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "若PWA–GMM pair满足PI且其output自身为GMM，则decoder退化为global affine representative；严格多branch GMM self-map不能同时满足PI。",
+        "boundary": "不适用任意非Gaussian prior或drop PI的map。",
+        "negative_result": null,
+        "non_inference": "不提供训练收敛、估计误差、样本复杂度或真实因果识别保证。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "何种symmetry/boundary联合条件可将无监督PWA-GMM的分布、机制和posterior识别到global affine ambiguity？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7"
+      ],
+      "review_notes": [
+        "第二次来源审计保留square/invertible branch、nondegenerate finite GMM、exact law equality及global PI等联合假设。数学反例是明确边界，不是统计n；a.e.与everywhere分开，conjecture/heuristic/omitted proof不提升为定理。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "Theorem5在双侧global PI和truth SB下识别latent GMM到某global affine bijection α，并匹配component权重；不必有observed domain labels、decoder continuity或global injectivity。",
+      "claim_type": "theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "解析proof/explicit counterexample",
+          "design": "source-defined PWA–GMM class",
+          "comparator": "具有相同observable law的候选pair",
+          "measure": "identifiability/symmetry结论",
+          "unit_of_analysis": "数学对象，非数据样本或模拟trial",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "truth与estimator均为Rd→Rd reduced PWA，finite full-dimensional polyhedral branch domains且每branch affine可逆",
+            "latent是positive-weight、positive-definite covariance、distinct-component finite GMM",
+            "observable laws完全相同，不是finite-sample近似相同",
+            "PWA map equality按null-boundary convention",
+            "truth SB：global-affine或至少一个unique entering/leaving branch boundary",
+            "PI both sides"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "Theorem5 / AppendixA16–17",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "Theorem5在双侧global PI和truth SB下识别latent GMM到某global affine bijection α，并匹配component权重；不必有observed domain labels、decoder continuity或global injectivity。",
+        "boundary": "仅LID，不推出所有decoder branches或canonical α；branch rule仍逐段可逆。",
+        "negative_result": null,
+        "non_inference": "不提供训练收敛、估计误差、样本复杂度或真实因果识别保证。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "何种symmetry/boundary联合条件可将无监督PWA-GMM的分布、机制和posterior识别到global affine ambiguity？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C4",
+        "C5",
+        "C6",
+        "C7"
+      ],
+      "review_notes": [
+        "第二次来源审计保留square/invertible branch、nondegenerate finite GMM、exact law equality及global PI等联合假设。数学反例是明确边界，不是统计n；a.e.与everywhere分开，conjecture/heuristic/omitted proof不提升为定理。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "Theorem8在双侧PI、truth USB与truth MST联合条件下，存在同一global affine α使α(Z')同law于Z且f=g∘α−1（按a.e. branch-domain equality）。",
+      "claim_type": "theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "解析proof/explicit counterexample",
+          "design": "source-defined PWA–GMM class",
+          "comparator": "具有相同observable law的候选pair",
+          "measure": "identifiability/symmetry结论",
+          "unit_of_analysis": "数学对象，非数据样本或模拟trial",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "truth与estimator均为Rd→Rd reduced PWA，finite full-dimensional polyhedral branch domains且每branch affine可逆",
+            "latent是positive-weight、positive-definite covariance、distinct-component finite GMM",
+            "observable laws完全相同，不是finite-sample近似相同",
+            "PWA map equality按null-boundary convention",
+            "PI both",
+            "truth USB每branch有unique boundary witness",
+            "truth marginal GMM所有affine self-symmetries只有Id"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Theorem8 / AppendixA19–20",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "Theorem8在双侧PI、truth USB与truth MST联合条件下，存在同一global affine α使α(Z')同law于Z且f=g∘α−1（按a.e. branch-domain equality）。",
+        "boundary": "不是每branch不同α；不要求global injectivity，但不能省任何联合条件。",
+        "negative_result": null,
+        "non_inference": "不提供训练收敛、估计误差、样本复杂度或真实因果识别保证。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "何种symmetry/boundary联合条件可将无监督PWA-GMM的分布、机制和posterior识别到global affine ambiguity？"
+      ],
+      "shared_evidence_with": [
+        "C15",
+        "C16"
+      ],
+      "review_notes": [
+        "第二次来源审计保留square/invertible branch、nondegenerate finite GMM、exact law equality及global PI等联合假设。数学反例是明确边界，不是统计n；a.e.与everywhere分开，conjecture/heuristic/omitted proof不提升为定理。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "MID结论使estimator posterior为truth posterior经α−1 pushforward，P_X-almost everywhere成立；global非injective decoder允许posterior有多个latent codes。",
+      "claim_type": "theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "解析proof/explicit counterexample",
+          "design": "source-defined PWA–GMM class",
+          "comparator": "具有相同observable law的候选pair",
+          "measure": "identifiability/symmetry结论",
+          "unit_of_analysis": "数学对象，非数据样本或模拟trial",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "truth与estimator均为Rd→Rd reduced PWA，finite full-dimensional polyhedral branch domains且每branch affine可逆",
+            "latent是positive-weight、positive-definite covariance、distinct-component finite GMM",
+            "observable laws完全相同，不是finite-sample近似相同",
+            "PWA map equality按null-boundary convention",
+            "Theorem8全部联合条件",
+            "regular conditional posterior kernels"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "Proposition9 / proof20",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "MID结论使estimator posterior为truth posterior经α−1 pushforward，P_X-almost everywhere成立；global非injective decoder允许posterior有多个latent codes。",
+        "boundary": "posterior只定义到P_X-null sets，不是唯一single-code恢复。",
+        "negative_result": null,
+        "non_inference": "不提供训练收敛、估计误差、样本复杂度或真实因果识别保证。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "何种symmetry/boundary联合条件可将无监督PWA-GMM的分布、机制和posterior识别到global affine ambiguity？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C6",
+        "C7"
+      ],
+      "review_notes": [
+        "第二次来源审计保留square/invertible branch、nondegenerate finite GMM、exact law equality及global PI等联合假设。数学反例是明确边界，不是统计n；a.e.与everywhere分开，conjecture/heuristic/omitted proof不提升为定理。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "作者Proposition10在MID基础上再加truth global injectivity，给出z=α(g−1(x))的pointwise恢复；该层是唯一使用global injectivity的主结果。",
+      "claim_type": "theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "解析proof/explicit counterexample",
+          "design": "source-defined PWA–GMM class",
+          "comparator": "具有相同observable law的候选pair",
+          "measure": "identifiability/symmetry结论",
+          "unit_of_analysis": "数学对象，非数据样本或模拟trial",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "truth与estimator均为Rd→Rd reduced PWA，finite full-dimensional polyhedral branch domains且每branch affine可逆",
+            "latent是positive-weight、positive-definite covariance、distinct-component finite GMM",
+            "observable laws完全相同，不是finite-sample近似相同",
+            "PWA map equality按null-boundary convention",
+            "Theorem8条件",
+            "truth global injectivity；需compatible boundary representative"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "Proposition10 / proof21",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者Proposition10在MID基础上再加truth global injectivity，给出z=α(g−1(x))的pointwise恢复；该层是唯一使用global injectivity的主结果。",
+        "boundary": "正文声称every x，但MID只a.e. equality，exceptional boundary assignment需另核对。",
+        "negative_result": null,
+        "non_inference": "不提供训练收敛、估计误差、样本复杂度或真实因果识别保证。",
+        "unresolved": "null-boundary equality本身不保证任意boundary x的g injectivity及反函数，证明没有单独处理该处。",
+        "unresolved_attribution": "来源局限及提取者来源复核"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "何种symmetry/boundary联合条件可将无监督PWA-GMM的分布、机制和posterior识别到global affine ambiguity？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C7"
+      ],
+      "review_notes": [
+        "第二次来源审计保留square/invertible branch、nondegenerate finite GMM、exact law equality及global PI等联合假设。数学反例是明确边界，不是统计n；a.e.与everywhere分开，conjecture/heuristic/omitted proof不提升为定理。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "双侧DD可将Theorem5或8的affine ambiguity缩为permutation×invertible diagonal scale加translation；DD不仅是diagonal covariances，还要求一对component的variance-ratio跨latent维度互异。",
+      "claim_type": "theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "解析proof/explicit counterexample",
+          "design": "source-defined PWA–GMM class",
+          "comparator": "具有相同observable law的候选pair",
+          "measure": "identifiability/symmetry结论",
+          "unit_of_analysis": "数学对象，非数据样本或模拟trial",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "truth与estimator均为Rd→Rd reduced PWA，finite full-dimensional polyhedral branch domains且每branch affine可逆",
+            "latent是positive-weight、positive-definite covariance、distinct-component finite GMM",
+            "observable laws完全相同，不是finite-sample近似相同",
+            "PWA map equality按null-boundary convention",
+            "Theorem5或8联合条件",
+            "truth和estimator covariances全diagonal",
+            "存在component pair使variance-ratio按维度pairwise distinct"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "Corollary11 / AppendixJ26–28",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "双侧DD可将Theorem5或8的affine ambiguity缩为permutation×invertible diagonal scale加translation；DD不仅是diagonal covariances，还要求一对component的variance-ratio跨latent维度互异。",
+        "boundary": "是conditional-on-mixture coordinate independence，不是unconditional independence；不能只给diagonal就保证。",
+        "negative_result": null,
+        "non_inference": "不提供训练收敛、估计误差、样本复杂度或真实因果识别保证。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "何种symmetry/boundary联合条件可将无监督PWA-GMM的分布、机制和posterior识别到global affine ambiguity？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6"
+      ],
+      "review_notes": [
+        "第二次来源审计保留square/invertible branch、nondegenerate finite GMM、exact law equality及global PI等联合假设。数学反例是明确边界，不是统计n；a.e.与everywhere分开，conjecture/heuristic/omitted proof不提升为定理。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "JST仅排除固定每component的共同symmetry，MST还排除equal-weight component permutations；distinct weights加JST才推出MST。",
+      "claim_type": "theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "解析proof/explicit counterexample",
+          "design": "source-defined PWA–GMM class",
+          "comparator": "具有相同observable law的候选pair",
+          "measure": "identifiability/symmetry结论",
+          "unit_of_analysis": "数学对象，非数据样本或模拟trial",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "truth与estimator均为Rd→Rd reduced PWA，finite full-dimensional polyhedral branch domains且每branch affine可逆",
+            "latent是positive-weight、positive-definite covariance、distinct-component finite GMM",
+            "observable laws完全相同，不是finite-sample近似相同",
+            "PWA map equality按null-boundary convention",
+            "比较component-preserving group与整个mixture group",
+            "DW为distinct component weights"
+          ],
+          "source_locator": {
+            "pdf_page": 25,
+            "section": "Proposition20 / ExamplesG.1,K5",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "JST仅排除固定每component的共同symmetry，MST还排除equal-weight component permutations；distinct weights加JST才推出MST。",
+        "boundary": "equal-weight symmetric mixture可JST true但MST false；两者不能互换。",
+        "negative_result": "equal-weight反射/交换例中JST成立仍有nontrivial marginal symmetry。",
+        "non_inference": "不提供训练收敛、估计误差、样本复杂度或真实因果识别保证。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "何种symmetry/boundary联合条件可将无监督PWA-GMM的分布、机制和posterior识别到global affine ambiguity？"
+      ],
+      "shared_evidence_with": [
+        "C9",
+        "C14",
+        "C17"
+      ],
+      "review_notes": [
+        "第二次来源审计保留square/invertible branch、nondegenerate finite GMM、exact law equality及global PI等联合假设。数学反例是明确边界，不是统计n；a.e.与everywhere分开，conjecture/heuristic/omitted proof不提升为定理。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "MST的明确充分条件把阻止component permutation的DW或distinct covariance determinants，与消除共同stabilizer的full-affine-span means或two-component generic position组合。",
+      "claim_type": "theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "解析proof/explicit counterexample",
+          "design": "source-defined PWA–GMM class",
+          "comparator": "具有相同observable law的候选pair",
+          "measure": "identifiability/symmetry结论",
+          "unit_of_analysis": "数学对象，非数据样本或模拟trial",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "truth与estimator均为Rd→Rd reduced PWA，finite full-dimensional polyhedral branch domains且每branch affine可逆",
+            "latent是positive-weight、positive-definite covariance、distinct-component finite GMM",
+            "observable laws完全相同，不是finite-sample近似相同",
+            "PWA map equality按null-boundary convention",
+            "DW或all covariance determinants distinct",
+            "means差分span Rd（需K≥d+1），或whitened Σ2 simple spectrum且whitened mean-difference在eigenbasis各coordinate非零"
+          ],
+          "source_locator": {
+            "pdf_page": 26,
+            "section": "Theorem23 / AppendixI",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "MST的明确充分条件把阻止component permutation的DW或distinct covariance determinants，与消除共同stabilizer的full-affine-span means或two-component generic position组合。",
+        "boundary": "只means丰富或只distinct weights不够；K≥2的genericity是指定参数空间结论。",
+        "negative_result": null,
+        "non_inference": "不提供训练收敛、估计误差、样本复杂度或真实因果识别保证。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "何种symmetry/boundary联合条件可将无监督PWA-GMM的分布、机制和posterior识别到global affine ambiguity？"
+      ],
+      "shared_evidence_with": [
+        "C8",
+        "C14",
+        "C17"
+      ],
+      "review_notes": [
+        "第二次来源审计保留square/invertible branch、nondegenerate finite GMM、exact law equality及global PI等联合假设。数学反例是明确边界，不是统计n；a.e.与everywhere分开，conjecture/heuristic/omitted proof不提升为定理。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "fold f=|x|可使½N(1,1)+½N(3,4)与½N(−1,1)+½N(3,4)产生相同observable law，双侧PI/MST均成立却无affine latent link；因此SB不能从该LID充分条件中删除。",
+      "claim_type": "theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "解析proof/explicit counterexample",
+          "design": "source-defined PWA–GMM class",
+          "comparator": "具有相同observable law的候选pair",
+          "measure": "identifiability/symmetry结论",
+          "unit_of_analysis": "数学对象，非数据样本或模拟trial",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "truth与estimator均为Rd→Rd reduced PWA，finite full-dimensional polyhedral branch domains且每branch affine可逆",
+            "latent是positive-weight、positive-definite covariance、distinct-component finite GMM",
+            "observable laws完全相同，不是finite-sample近似相同",
+            "PWA map equality按null-boundary convention",
+            "所构造一维两component mixtures、方差1/4",
+            "fold两branch同时toggle，SB失败"
+          ],
+          "source_locator": {
+            "pdf_page": 33,
+            "section": "Proposition25 / Example4",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "fold f=|x|可使½N(1,1)+½N(3,4)与½N(−1,1)+½N(3,4)产生相同observable law，双侧PI/MST均成立却无affine latent link；因此SB不能从该LID充分条件中删除。",
+        "boundary": "反例展示删SB会失败，不证明每个不满足SB的pair都不可识别。",
+        "negative_result": "该明确counterexample LID不成立。",
+        "non_inference": "不提供训练收敛、估计误差、样本复杂度或真实因果识别保证。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "何种symmetry/boundary联合条件可将无监督PWA-GMM的分布、机制和posterior识别到global affine ambiguity？"
+      ],
+      "shared_evidence_with": [
+        "C11",
+        "C12",
+        "C13"
+      ],
+      "review_notes": [
+        "第二次来源审计保留square/invertible branch、nondegenerate finite GMM、exact law equality及global PI等联合假设。数学反例是明确边界，不是统计n；a.e.与everywhere分开，conjecture/heuristic/omitted proof不提升为定理。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "USB不保证weak injectivity，weak injectivity也不保证SB：附录给出continuous/discontinuous USB且所有nonempty chambers多active的maps，以及continuous弱injective却co-toggling的map。",
+      "claim_type": "theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "解析proof/explicit counterexample",
+          "design": "source-defined PWA–GMM class",
+          "comparator": "具有相同observable law的候选pair",
+          "measure": "identifiability/symmetry结论",
+          "unit_of_analysis": "数学对象，非数据样本或模拟trial",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "truth与estimator均为Rd→Rd reduced PWA，finite full-dimensional polyhedral branch domains且每branch affine可逆",
+            "latent是positive-weight、positive-definite covariance、distinct-component finite GMM",
+            "observable laws完全相同，不是finite-sample近似相同",
+            "PWA map equality按null-boundary convention",
+            "弱injectivity定义为非空open observation区域内unique preimage",
+            "source explicit piecewise constructions"
+          ],
+          "source_locator": {
+            "pdf_page": 35,
+            "section": "AppendixL / Figures6–8",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "USB不保证weak injectivity，weak injectivity也不保证SB：附录给出continuous/discontinuous USB且所有nonempty chambers多active的maps，以及continuous弱injective却co-toggling的map。",
+        "boundary": "global injectivity⇒USB⇒SB，但不能反向；具体boundary代表仍为null convention。",
+        "negative_result": "所述maps没有1-active chamber，或虽有1-active tails但SB失败。",
+        "non_inference": "不提供训练收敛、估计误差、样本复杂度或真实因果识别保证。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "何种symmetry/boundary联合条件可将无监督PWA-GMM的分布、机制和posterior识别到global affine ambiguity？"
+      ],
+      "shared_evidence_with": [
+        "C10",
+        "C12",
+        "C13"
+      ],
+      "review_notes": [
+        "第二次来源审计保留square/invertible branch、nondegenerate finite GMM、exact law equality及global PI等联合假设。数学反例是明确边界，不是统计n；a.e.与everywhere分开，conjecture/heuristic/omitted proof不提升为定理。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "global map injectivity只自动给chamber-wise PI，不给global PI；附录两branch x与x+10、component means相差10的例子仍发生隐藏跨branch参数碰撞。",
+      "claim_type": "theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "解析proof/explicit counterexample",
+          "design": "source-defined PWA–GMM class",
+          "comparator": "具有相同observable law的候选pair",
+          "measure": "identifiability/symmetry结论",
+          "unit_of_analysis": "数学对象，非数据样本或模拟trial",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "truth与estimator均为Rd→Rd reduced PWA，finite full-dimensional polyhedral branch domains且每branch affine可逆",
+            "latent是positive-weight、positive-definite covariance、distinct-component finite GMM",
+            "observable laws完全相同，不是finite-sample近似相同",
+            "PWA map equality按null-boundary convention",
+            "injective reduced PWA例",
+            "irred equal-variance components的means相差10"
+          ],
+          "source_locator": {
+            "pdf_page": 23,
+            "section": "Proposition18 / AppendixM",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "global map injectivity只自动给chamber-wise PI，不给global PI；附录两branch x与x+10、component means相差10的例子仍发生隐藏跨branch参数碰撞。",
+        "boundary": "不能用injectivity替代global parameter condition，不能将chamber matching当global gluing。",
+        "negative_result": "该injective例global PI失败。",
+        "non_inference": "不提供训练收敛、估计误差、样本复杂度或真实因果识别保证。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "何种symmetry/boundary联合条件可将无监督PWA-GMM的分布、机制和posterior识别到global affine ambiguity？"
+      ],
+      "shared_evidence_with": [
+        "C10",
+        "C11",
+        "C13"
+      ],
+      "review_notes": [
+        "第二次来源审计保留square/invertible branch、nondegenerate finite GMM、exact law equality及global PI等联合假设。数学反例是明确边界，不是统计n；a.e.与everywhere分开，conjecture/heuristic/omitted proof不提升为定理。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C13",
+      "statement": "PI、OD/TOD的维数计算及MST充分条件支持指定无约束参数空间的measure-zero坏集论述；连续PWA的SB/USB genericity没有同等完整保证。",
+      "claim_type": "theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "解析proof/explicit counterexample",
+          "design": "source-defined PWA–GMM class",
+          "comparator": "具有相同observable law的候选pair",
+          "measure": "identifiability/symmetry结论",
+          "unit_of_analysis": "数学对象，非数据样本或模拟trial",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "truth与estimator均为Rd→Rd reduced PWA，finite full-dimensional polyhedral branch domains且每branch affine可逆",
+            "latent是positive-weight、positive-definite covariance、distinct-component finite GMM",
+            "observable laws完全相同，不是finite-sample近似相同",
+            "PWA map equality按null-boundary convention",
+            "无约束affine/mixture参数generic选择",
+            "continuous subspace与noncontinuous参数空间分开"
+          ],
+          "source_locator": {
+            "pdf_page": 37,
+            "section": "AppendixL.7；F/I",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "PI、OD/TOD的维数计算及MST充分条件支持指定无约束参数空间的measure-zero坏集论述；连续PWA的SB/USB genericity没有同等完整保证。",
+        "boundary": "主结论all conditions generic与附录continuous case positive-measure failure及no proof存在范围张力。",
+        "negative_result": null,
+        "non_inference": "不提供训练收敛、估计误差、样本复杂度或真实因果识别保证。",
+        "unresolved": "continuous decoder genericity明确open；random active-independence和failure probability讨论为heuristic，不能当定理。",
+        "unresolved_attribution": "来源局限及提取者来源复核"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "何种symmetry/boundary联合条件可将无监督PWA-GMM的分布、机制和posterior识别到global affine ambiguity？"
+      ],
+      "shared_evidence_with": [
+        "C10",
+        "C11",
+        "C12"
+      ],
+      "review_notes": [
+        "第二次来源审计保留square/invertible branch、nondegenerate finite GMM、exact law equality及global PI等联合假设。数学反例是明确边界，不是统计n；a.e.与everywhere分开，conjecture/heuristic/omitted proof不提升为定理。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C14",
+      "statement": "观察component labels且Gaussian iVAE(iv)的2d natural-parameter differences满秩时，附录证明component-preserving共同symmetry为identity；这应解释为labelled admissible group，而非不加限定的marginal MST。",
+      "claim_type": "theoretical_result",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "解析proof/explicit counterexample",
+          "design": "source-defined PWA–GMM class",
+          "comparator": "具有相同observable law的候选pair",
+          "measure": "identifiability/symmetry结论",
+          "unit_of_analysis": "数学对象，非数据样本或模拟trial",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "truth与estimator均为Rd→Rd reduced PWA，finite full-dimensional polyhedral branch domains且每branch affine可逆",
+            "latent是positive-weight、positive-definite covariance、distinct-component finite GMM",
+            "observable laws完全相同，不是finite-sample近似相同",
+            "PWA map equality按null-boundary convention",
+            "K>2d、每component diagonal covariance",
+            "observed domain labels禁止component swaps",
+            "2d×2d parameter-difference matrix full rank"
+          ],
+          "source_locator": {
+            "pdf_page": 39,
+            "section": "Proposition29 / AppendixN",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "观察component labels且Gaussian iVAE(iv)的2d natural-parameter differences满秩时，附录证明component-preserving共同symmetry为identity；这应解释为labelled admissible group，而非不加限定的marginal MST。",
+        "boundary": "labels约束不是plain unlabeled Gmix定义的一部分；不可据此宣称本文完整条件strictly weaker than iVAE。",
+        "negative_result": null,
+        "non_inference": "不提供训练收敛、估计误差、样本复杂度或真实因果识别保证。",
+        "unresolved": "Proposition29沿用MST名称与此前plain marginal定义可能混淆，需人审核对。",
+        "unresolved_attribution": "来源局限及提取者来源复核"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "何种symmetry/boundary联合条件可将无监督PWA-GMM的分布、机制和posterior识别到global affine ambiguity？"
+      ],
+      "shared_evidence_with": [
+        "C8",
+        "C9",
+        "C17"
+      ],
+      "review_notes": [
+        "第二次来源审计保留square/invertible branch、nondegenerate finite GMM、exact law equality及global PI等联合假设。数学反例是明确边界，不是统计n；a.e.与everywhere分开，conjecture/heuristic/omitted proof不提升为定理。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C15",
+      "statement": "shared latent GMM下，双侧PI加truth DW、OD和JST可替代USB路线推出f=g；DW保持component身份，OD使branch匹配跨components一致，JST消除剩余差异。",
+      "claim_type": "theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "解析proof/explicit counterexample",
+          "design": "source-defined PWA–GMM class",
+          "comparator": "具有相同observable law的候选pair",
+          "measure": "identifiability/symmetry结论",
+          "unit_of_analysis": "数学对象，非数据样本或模拟trial",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "truth与estimator均为Rd→Rd reduced PWA，finite full-dimensional polyhedral branch domains且每branch affine可逆",
+            "latent是positive-weight、positive-definite covariance、distinct-component finite GMM",
+            "observable laws完全相同，不是finite-sample近似相同",
+            "PWA map equality按null-boundary convention",
+            "shared latent law p",
+            "PI both",
+            "truth cross-component orbit disjointness OD",
+            "p distinct weights DW和joint symmetry triviality JST"
+          ],
+          "source_locator": {
+            "pdf_page": 41,
+            "section": "Theorem31",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "shared latent GMM下，双侧PI加truth DW、OD和JST可替代USB路线推出f=g；DW保持component身份，OD使branch匹配跨components一致，JST消除剩余差异。",
+        "boundary": "没有shared prior/LID reduction不能直接当general two-prior MID；各assumption联合。",
+        "negative_result": null,
+        "non_inference": "不提供训练收敛、估计误差、样本复杂度或真实因果识别保证。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "何种symmetry/boundary联合条件可将无监督PWA-GMM的分布、机制和posterior识别到global affine ambiguity？"
+      ],
+      "shared_evidence_with": [
+        "C16",
+        "C4"
+      ],
+      "review_notes": [
+        "第二次来源审计保留square/invertible branch、nondegenerate finite GMM、exact law equality及global PI等联合假设。数学反例是明确边界，不是统计n；a.e.与everywhere分开，conjecture/heuristic/omitted proof不提升为定理。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C16",
+      "statement": "shared latent GMM下，双侧PI加truth transporter-orbit disjointness TOD与MST也可推出f=g，而不需USB或distinct weights。",
+      "claim_type": "theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "解析proof/explicit counterexample",
+          "design": "source-defined PWA–GMM class",
+          "comparator": "具有相同observable law的候选pair",
+          "measure": "identifiability/symmetry结论",
+          "unit_of_analysis": "数学对象，非数据样本或模拟trial",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "truth与estimator均为Rd→Rd reduced PWA，finite full-dimensional polyhedral branch domains且每branch affine可逆",
+            "latent是positive-weight、positive-definite covariance、distinct-component finite GMM",
+            "observable laws完全相同，不是finite-sample近似相同",
+            "PWA map equality按null-boundary convention",
+            "shared latent p",
+            "PI both",
+            "truth TOD对不同branches及全部component quadruples的transporter orbits disjoint",
+            "p MST"
+          ],
+          "source_locator": {
+            "pdf_page": 41,
+            "section": "Theorem32 / proof42",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "shared latent GMM下，双侧PI加truth transporter-orbit disjointness TOD与MST也可推出f=g，而不需USB或distinct weights。",
+        "boundary": "更强orbit condition换掉geometry/DW；不是任意无boundary map都识别。",
+        "negative_result": null,
+        "non_inference": "不提供训练收敛、估计误差、样本复杂度或真实因果识别保证。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "何种symmetry/boundary联合条件可将无监督PWA-GMM的分布、机制和posterior识别到global affine ambiguity？"
+      ],
+      "shared_evidence_with": [
+        "C15",
+        "C4"
+      ],
+      "review_notes": [
+        "第二次来源审计保留square/invertible branch、nondegenerate finite GMM、exact law equality及global PI等联合假设。数学反例是明确边界，不是统计n；a.e.与everywhere分开，conjecture/heuristic/omitted proof不提升为定理。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C17",
+      "statement": "任意irredundant nondegenerate finite GMM若有非trivial affine self-symmetry，则存在非trivial finite-order symmetry；作者用component permutation及compact stabilizer论证。",
+      "claim_type": "theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "解析proof/explicit counterexample",
+          "design": "source-defined PWA–GMM class",
+          "comparator": "具有相同observable law的候选pair",
+          "measure": "identifiability/symmetry结论",
+          "unit_of_analysis": "数学对象，非数据样本或模拟trial",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "truth与estimator均为Rd→Rd reduced PWA，finite full-dimensional polyhedral branch domains且每branch affine可逆",
+            "latent是positive-weight、positive-definite covariance、distinct-component finite GMM",
+            "observable laws完全相同，不是finite-sample近似相同",
+            "PWA map equality按null-boundary convention",
+            "finite nondegenerate irredundant GMM",
+            "存在nontrivial affine self-symmetry"
+          ],
+          "source_locator": {
+            "pdf_page": 39,
+            "section": "Proposition30 / proof40",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "任意irredundant nondegenerate finite GMM若有非trivial affine self-symmetry，则存在非trivial finite-order symmetry；作者用component permutation及compact stabilizer论证。",
+        "boundary": "将torsion局部化为law-preserving严格PWA的完整construction正文省略；Table5其他families没有在本文证明。",
+        "negative_result": null,
+        "non_inference": "不提供训练收敛、估计误差、样本复杂度或真实因果识别保证。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "何种symmetry/boundary联合条件可将无监督PWA-GMM的分布、机制和posterior识别到global affine ambiguity？"
+      ],
+      "shared_evidence_with": [
+        "C8",
+        "C9",
+        "C14"
+      ],
+      "review_notes": [
+        "第二次来源审计保留square/invertible branch、nondegenerate finite GMM、exact law equality及global PI等联合假设。数学反例是明确边界，不是统计n；a.e.与everywhere分开，conjecture/heuristic/omitted proof不提升为定理。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "完整44页v1理论审计。分别提取law、map、posterior、pointwise与DD ICA-form层级，以及MST条件、orbit替代路线和关键counterexamples；所有联合assumptions保留。Genericity对continuous maps、Prop29 labelled-vs-marginal MST、pointwise null boundaries和完整necessity仍有未解决问题。没有学习收敛、有限样本或因果应用验证。全部未人审候选。",
+  "shared_evidence": [
+    {
+      "claim_id": "C1",
+      "with": [
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C2",
+      "with": [
+        "C1",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C1",
+        "C2",
+        "C4",
+        "C5",
+        "C6",
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C15",
+        "C16"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C6",
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C9",
+        "C14",
+        "C17"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C8",
+        "C14",
+        "C17"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "with": [
+        "C11",
+        "C12",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "with": [
+        "C10",
+        "C12",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "with": [
+        "C10",
+        "C11",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C13",
+      "with": [
+        "C10",
+        "C11",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C14",
+      "with": [
+        "C8",
+        "C9",
+        "C17"
+      ]
+    },
+    {
+      "claim_id": "C15",
+      "with": [
+        "C16",
+        "C4"
+      ]
+    },
+    {
+      "claim_id": "C16",
+      "with": [
+        "C15",
+        "C4"
+      ]
+    },
+    {
+      "claim_id": "C17",
+      "with": [
+        "C8",
+        "C9",
+        "C14"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": null,
+        "issue": "actual arXiv2607.23182v1，2026-07-25，纯理论，无经验训练实验。",
+        "pdf_page": 1,
+        "suggested_correction": "preprint；sample_size null",
+        "resolved": true
+      },
+      {
+        "claim_id": "C6",
+        "issue": "MID Def3.3只a.e. branch-domain equality，Prop10声称every x及g global injectivity；proof直接用pointwise f=g∘α−1。",
+        "pdf_page": 21,
+        "suggested_correction": "保留exceptional boundary疑问，不将all-x保证当无条件确认",
+        "resolved": false
+      },
+      {
+        "claim_id": "C13",
+        "issue": "Conclusion all assumptions generic/随机独立参数几乎必然 vs AppendixL.7 continuous SB positive-measure failure、no genericity proof。",
+        "pdf_page": 37,
+        "suggested_correction": "限制参数空间和heuristic状态",
+        "resolved": false
+      },
+      {
+        "claim_id": "C14",
+        "issue": "observed-label group与plain marginal MST定义不同；Prop29把label preservation当mixture symmetry自动条件。",
+        "pdf_page": 39,
+        "suggested_correction": "仅提共同component-preserving symmetry，标记术语冲突",
+        "resolved": false
+      },
+      {
+        "claim_id": null,
+        "issue": "Main说三条件structurally necessary，但PI完整necessity仍conjecture，torsion localised construction省略，generalEF结果未证明。",
+        "pdf_page": 9,
+        "suggested_correction": "不标完整iff theorem",
+        "resolved": true
+      },
+      {
+        "claim_id": "C7",
+        "issue": "diagonal component covariances不能等同unconditional coordinate independence；DD有distinct-ratio条件且双侧要求。",
+        "pdf_page": 27,
+        "suggested_correction": "完整保留DD",
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "PI estimator侧仍要求，不能称全部truth-only或任意learned generator均满足。",
+        "pdf_page": 8,
+        "suggested_correction": "explicit both-sided interaction condition",
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T11:03:46.538096Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "5685978cc358aa4853ab2ee3ed4f3ec37b6e372313fe703280c2aab956441297",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

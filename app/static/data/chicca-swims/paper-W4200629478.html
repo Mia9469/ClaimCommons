@@ -1,0 +1,428 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hybrid SNN-ANN: Energy-Efficient Classification and Object Detection for Event-Based Vision</title><style>body{max-width:940px;margin:40px auto;padding:0 24px;background:#fffdf7;color:#12372f;font:16px/1.8 Georgia,serif}h1{font-size:26px;line-height:1.4}h2{font-size:20px;line-height:1.5}h3{font-size:16px}article{padding:26px 0;border-top:1px solid #bec4b8}small{color:#68766e}dl{display:grid;grid-template-columns:120px 1fr;gap:8px 20px}dt{font-weight:bold}dd{margin:0}li{padding:8px 0}p,dd{overflow-wrap:anywhere}.note{background:#eef2e2;padding:14px;border-left:3px solid #738968}summary{cursor:pointer}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.7 monospace}@media(max-width:600px){body{margin:24px auto;padding:0 18px}dl{grid-template-columns:1fr;gap:3px}dd{margin-bottom:12px}}@media print{body{margin:0;background:white}details{display:block}}</style><link rel="stylesheet" href="../../commons-v02.css?v=20261020-1"><link rel="stylesheet" href="../../examples.css?v=20260928-2"><link rel="stylesheet" href="../../site.css?v=20261020-1"><script defer src="../../site.js?v=20261020-1"></script><script defer src="../../report-ui.js?v=20261020-1"></script></head><body class="portal-page report-page" data-cc-report-shell="1" data-page="library" data-site-prefix="../../" data-library-paper="paper-W4200629478" data-report-language="zh" data-claim-records="{&quot;C1&quot;:&quot;structured-paper-W4200629478-1&quot;,&quot;C2&quot;:&quot;structured-paper-W4200629478-2&quot;,&quot;C3&quot;:&quot;structured-paper-W4200629478-3&quot;,&quot;C4&quot;:&quot;structured-paper-W4200629478-4&quot;,&quot;C5&quot;:&quot;structured-paper-W4200629478-5&quot;,&quot;C6&quot;:&quot;structured-paper-W4200629478-6&quot;,&quot;C7&quot;:&quot;structured-paper-W4200629478-7&quot;,&quot;C8&quot;:&quot;structured-paper-W4200629478-8&quot;,&quot;C9&quot;:&quot;structured-paper-W4200629478-9&quot;,&quot;C10&quot;:&quot;structured-paper-W4200629478-10&quot;,&quot;C11&quot;:&quot;structured-paper-W4200629478-11&quot;,&quot;C12&quot;:&quot;structured-paper-W4200629478-12&quot;,&quot;C13&quot;:&quot;structured-paper-W4200629478-13&quot;,&quot;C14&quot;:&quot;structured-paper-W4200629478-14&quot;,&quot;C15&quot;:&quot;structured-paper-W4200629478-15&quot;,&quot;C16&quot;:&quot;structured-paper-W4200629478-16&quot;,&quot;C17&quot;:&quot;structured-paper-W4200629478-17&quot;,&quot;C18&quot;:&quot;structured-paper-W4200629478-18&quot;,&quot;C19&quot;:&quot;structured-paper-W4200629478-19&quot;,&quot;C20&quot;:&quot;structured-paper-W4200629478-20&quot;,&quot;C21&quot;:&quot;structured-paper-W4200629478-21&quot;,&quot;C22&quot;:&quot;structured-paper-W4200629478-22&quot;,&quot;C23&quot;:&quot;structured-paper-W4200629478-23&quot;,&quot;C24&quot;:&quot;structured-paper-W4200629478-24&quot;}"><header></header><main id="report-content"><div id="report-tools"></div><small>CLAIM COMMONS / 阅读报告</small><h1>Hybrid SNN-ANN: Energy-Efficient Classification and Object Detection for Event-Based Vision</h1><p class="note">AI 文本提取候选，尚待人工核对。图像像素未读取；PDF 页码指文件中的页序。</p><p>完整评估26页后生成24项候选命题，涵盖混合网络方法、分类与检测的资源/精度折中、端到端与冻结骨干迁移、SSD先验搜索、代理梯度比较和实际训练失败/负向干预。运算次数不是焦耳；检测为单场景随机划分，参数规模不完全匹配。冻结骨干的划分标注不一致，部分误差定义需人工确认；没有图像像素、芯片功耗测量或科学复现。所有引用基准只作本文条件性比较，不自动建立跨文支持或复制关系。</p><a href="https://arxiv.org/pdf/2112.03423" rel="noreferrer">查看所读原文版本 ↗</a><details><summary>贡献清单与处理决定</summary><ul><li><b>端到端SNN骨干/累积/ANN头和联合参数学习</b><br>include · 方法架构与部署设想分开。</li><li><b>运算与输出带宽代理模型及稀疏正则项</b><br>include · 仅资源代理，不称实测功耗。</li><li><b>N-MNIST最佳/小网络和三骨干相对ANN折中</b><br>include · 各可独立比较保留不同准确率代价。</li><li><b>N-CARS两骨干折中、转换基准边界与失败基线</b><br>include · 不隐去较低准确率和2/4失败排除。</li><li><b>shapes90/30检测性能、带宽与端到端迁移</b><br>include · 限定单场景随机划分，保留四次均值误差。</li><li><b>冻结骨干迁移实验</b><br>include · 支持特征可迁移，但划分正文/图注不一致。</li><li><b>几何SSD先验优化、mAP改善和运行耗时</b><br>include · 区分提出目标、2次性能比较、单次耗时。</li><li><b>代理梯度子集比较</b><br>include · 验证子集选择而非全局最佳代理。</li><li><b>稳态损失、随机膜电位初始化及训练不收敛</b><br>include · 实质负向观察，不把缺测量写成负结果。</li><li><b>额外输出层L1正则项的独立带宽收益</b><br>defer · 提供公式但无隔离该项的数值消融。</li><li><b>多秒时序、硬件双处理器部署、稳定循环反向传播</b><br>defer · 未完成的长序列/硬件收益验证。</li><li><b>事件相机优点、既有网络/代理函数和外部芯片能耗</b><br>exclude · 引用背景不记为本篇新测量。</li></ul></details><article><small>C1 / 直接结果 · proposed_trainable_architecture</small><h2>本文提出用可训练LIF SNN直接处理事件相机输入，经时间区间脉冲累积后交给ANN分类/SSD检测头，并结合代理梯度与普通反向传播端到端训练权重、阈值和膜/突触泄漏参数，不需要先训练ANN再转换为SNN。</h2><h3>Evidence</h3><p>混合网络与联合训练方法</p><dl><dt>设计 / 对照</dt><dd>SNN按1ms步骤展开并用延迟连接，最后层脉冲在读出区间累积成密集特征。；ANN先训练后转换的路线</dd><dt>独立单位与 n</dt><dd>一种混合网络架构；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 5 · Figures 1–2</dd></dl><p>联合代理梯度训练规则</p><dl><dt>设计 / 对照</dt><dd>按层共享阈值、膜泄漏和突触泄漏参数与权重一起优化。；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>混合网络的一层参数；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 17 · Appendix D.1 Training with surrogate gradients</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>定义事件特征到同步任务的联合学习接口。</dd><dt>适用边界</dt><dd>ANN头同步、输入仿真仍离散化；没有本篇芯片实现。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不证明零时序量化或端到端全异步执行已实测。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>怎样联合训练脉冲骨干和同步视觉任务头？</li></ul></article><article><small>C2 / 直接结果 · proposed_efficiency_evaluation_method</small><h2>本文以SNN突触更新次数与ANN multiply-add次数评估计算成本，并只把SNN末层连接到ANN；按每事件49 bit（6.125 Byte）的编码假设估算传输带宽，L1脉冲损失用于鼓励稀疏计算与通信。</h2><h3>Evidence</h3><p>运算与通信计数模型</p><dl><dt>设计 / 对照</dt><dd>事件包含32bit时间、16bit空间位置、1bit极性。；密集ANN张量传输与多层SNN输出接口</dd><dt>独立单位与 n</dt><dd>计算模型及输出接口；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 6 · 3.5 Bandwidth</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>提供可对照的资源代理指标。</dd><dt>适用边界</dt><dd>事件字节模型不含实际总线封装/路由开销；未给额外输出L1项的独立消融数值。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>运算减少倍数不能直接当作实测节能倍数或系统延迟收益。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>哪些假设决定混合网络的运算与带宽代理指标？</li></ul></article><article><small>C3 / 直接结果 · comparative_classification_simulation_result</small><h2>在N-MNIST测试集中，g=16、Nl=3、nout=1的混合DenseNet达到99.10±0.09%准确率、94±17 MOps；文中转换式SNN对照为99.56±0.01%、460±38 MOps，显示计算较少但准确率较低，混合模型输出带宽约0.250±0.044 MEv/s。</h2><h3>Evidence</h3><p>同数据集分类结果与引用转换式SNN基准比较</p><dl><dt>设计 / 对照</dt><dd>60,000训练、10,000测试样本，混合模型504,025参数。；[33]转换式SNN（319,890参数）</dd><dt>独立单位与 n</dt><dd>一次训练初始化后在同一测试集的评估；6个不同权重初始化训练重复；某个DenseSep配置排除1次不收敛后只报告5次</dd><dt>不确定性</dt><dd>±按原文为均值误差，不是95%置信区间</dd><dt>原文位置</dt><dd>PDF 7 · Figure 4a</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>该混合配置以较低运算数换取小幅准确率差。</dd><dt>适用边界</dt><dd>网络参数与训练方式不同；对照数字来自引用工作。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不是匹配硬件焦耳比较，也未建立跨论文复制关系。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>混合DenseNet相对转换式SNN的准确率/计算折中如何？</li></ul></article><article><small>C4 / 直接结果 · classification_simulation_result</small><h2>同一N-MNIST任务中，64,875参数的最小混合DenseNet（g=8、Nl=2、nout=1）达到99.06±0.03%准确率、15.9±2.5 MOps和0.144±0.034 MEv/s输出事件率。</h2><h3>Evidence</h3><p>小规模混合模型测试</p><dl><dt>设计 / 对照</dt><dd>固定同一N-MNIST训练/测试流程评估较小骨干。；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>一次随机初始化的训练与测试；6个不同权重初始化训练重复；某个DenseSep配置排除1次不收敛后只报告5次</dd><dt>不确定性</dt><dd>±按原文为均值误差，不是95%置信区间</dd><dt>原文位置</dt><dd>PDF 7 · Figure 4a</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>较小配置仍达到约99%测试准确率且计算较少。</dd><dt>适用边界</dt><dd>仅该结构和N-MNIST；没有测功耗或新数据测试。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不证明模型规模越小越优或跨任务保持同样性能。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>较小混合DenseNet能达到怎样的N-MNIST资源/准确率组合？</li></ul></article><article><small>C5 / 直接结果 · comparative_architecture_simulation_result</small><h2>在N-MNIST的多配置骨干平均比较中，混合DenseNet相对ANN-ANN的运算次数约减少56倍，准确率约提高0.2个百分点；该倍数为架构配置上的计算成本代理比较。</h2><h3>Evidence</h3><p>按骨干汇总多个配置的相对表现</p><dl><dt>设计 / 对照</dt><dd>对每个骨干的g、Nl、nout配置平均后比较。；对应DenseNet ANN-ANN配置平均</dd><dt>独立单位与 n</dt><dd>训练配置均值及随机初始化重复；6个不同权重初始化训练重复；某个DenseSep配置排除1次不收敛后只报告5次</dd><dt>不确定性</dt><dd>正文给约值，图4按6次均值误差报告</dd><dt>原文位置</dt><dd>PDF 8 · Figure 4b</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>保留该骨干的计算/准确率折中。</dd><dt>适用边界</dt><dd>汇总平均不是每一架构都精确达到此比值；超参数只在一个DenseNet验证集配置优化。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能读成专用硬件实测能耗的固定倍数。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>混合DenseNet在N-MNIST的同类ANN对照中有何资源/准确率折中？</li></ul></article><article><small>C6 / 直接结果 · comparative_architecture_simulation_result</small><h2>在N-MNIST的多配置骨干平均比较中，混合VGG相对ANN-ANN的运算次数约减少65倍，准确率约降低0.4个百分点；该倍数为架构配置上的计算成本代理比较。</h2><h3>Evidence</h3><p>按骨干汇总多个配置的相对表现</p><dl><dt>设计 / 对照</dt><dd>对每个骨干的g、Nl、nout配置平均后比较。；对应VGG ANN-ANN配置平均</dd><dt>独立单位与 n</dt><dd>训练配置均值及随机初始化重复；6个不同权重初始化训练重复；某个DenseSep配置排除1次不收敛后只报告5次</dd><dt>不确定性</dt><dd>正文给约值，图4按6次均值误差报告</dd><dt>原文位置</dt><dd>PDF 8 · Figure 4b</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>保留该骨干的计算/准确率折中。</dd><dt>适用边界</dt><dd>汇总平均不是每一架构都精确达到此比值；超参数只在一个DenseNet验证集配置优化。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能读成专用硬件实测能耗的固定倍数。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>混合VGG在N-MNIST的同类ANN对照中有何资源/准确率折中？</li></ul></article><article><small>C7 / 直接结果 · comparative_architecture_simulation_result</small><h2>在N-MNIST的多配置骨干平均比较中，混合DenseSep相对ANN-ANN的运算次数约减少28倍，准确率约降低0.2个百分点；该倍数为架构配置上的计算成本代理比较。</h2><h3>Evidence</h3><p>按骨干汇总多个配置的相对表现</p><dl><dt>设计 / 对照</dt><dd>对每个骨干的g、Nl、nout配置平均后比较。；对应DenseSep ANN-ANN配置平均</dd><dt>独立单位与 n</dt><dd>训练配置均值及随机初始化重复；6个不同权重初始化训练重复；某个DenseSep配置排除1次不收敛后只报告5次</dd><dt>不确定性</dt><dd>正文给约值，图4按6次均值误差报告</dd><dt>原文位置</dt><dd>PDF 8 · Figure 4b</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>保留该骨干的计算/准确率折中。</dd><dt>适用边界</dt><dd>汇总平均不是每一架构都精确达到此比值；超参数只在一个DenseNet验证集配置优化。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能读成专用硬件实测能耗的固定倍数。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>混合DenseSep在N-MNIST的同类ANN对照中有何资源/准确率折中？</li></ul></article><article><small>C8 / 直接结果 · comparative_classification_simulation_result</small><h2>在N-CARS的100ms车/背景分类中，混合VGG相对对应ANN配置平均运算改善约110倍，准确率约高0.75个百分点。</h2><h3>Evidence</h3><p>固定g=16的骨干对照</p><dl><dt>设计 / 对照</dt><dd>沿用N-MNIST网络类型和训练流程。；VGG ANN-ANN</dd><dt>独立单位与 n</dt><dd>模型配置及随机初始化重复；图6每配置4次</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 8 · Figure 6b</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>VGG在该任务报告计算优势并伴随准确率提高。</dd><dt>适用边界</dt><dd>仅100ms二分类与固定g配置，正文不给精确准确率/CI。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不等于110倍实测节能或广泛场景识别保证。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>混合VGG在N-CARS是否同时改善运算代理与准确率？</li></ul></article><article><small>C9 / 直接结果 · comparative_classification_simulation_result</small><h2>在同一N-CARS比较中，混合DenseSep相对对应ANN运算改善约15倍，但准确率约低1.5个百分点，说明较高ANN计算效率的骨干仍存在不同的混合化折中。</h2><h3>Evidence</h3><p>DenseSep混合与ANN对照</p><dl><dt>设计 / 对照</dt><dd>同任务、g=16配置。；DenseSep ANN-ANN</dd><dt>独立单位与 n</dt><dd>模型配置的训练重复；图6每配置4次</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 8 · Figure 6b</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>计算次数下降但准确率有损失。</dd><dt>适用边界</dt><dd>不提供该差异的精确统计检验；不能推广为所有深度可分离架构。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不是能耗实测，也不证明DenseSep总是不宜脉冲化。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>已高效的DenseSep脉冲化后是否仍有精度代价？</li></ul></article><article><small>C10 / 直接结果 · comparative_simulation_boundary_result</small><h2>在N-CARS中，本文混合网络未达到引用[33]转换式SNN的准确率，运算/能量代理需求相近且参数约为对照两倍；因此本篇并未在该任务达到准确率最优。</h2><h3>Evidence</h3><p>同任务与引用转换方案比较</p><dl><dt>设计 / 对照</dt><dd>比较准确率、运算代理及参数规模。；[33]转换式SNN</dd><dt>独立单位与 n</dt><dd>所报告最佳/代表配置的跨方案比较；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 8 · Figure 6a</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>明确保留对现有转换基准的性能边界。</dd><dt>适用边界</dt><dd>正文不提供此比较的完整精确数字；没有匹配硬件比较。</dd><dt>实际负结果</dt><dd>N-CARS准确率不及[33]转换式SNN。</dd><dt>不能推出</dt><dd>不能用摘要优势断言在全部任务优于转换式SNN。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>混合网络在N-CARS相对转换式SNN的边界在哪里？</li></ul></article><article><small>C11 / 直接结果 · object_detection_simulation_result</small><h2>在shapes_translation-90随机90/10%划分中，预训练混合DenseSep报告mAP=87.37±0.51%、1398.9±2.3 MOps和11.0 MB/s接口带宽；表1对应ANN DenseSep为64.54±0.18%、7841 MOps和1210 MB/s。</h2><h3>Evidence</h3><p>单场景随机划分的检测测试</p><dl><dt>设计 / 对照</dt><dd>N-MNIST预训练混合骨干后训练检测网络。；表1 ANN DenseSep（不是正文另述的常规SSD基准）</dd><dt>独立单位与 n</dt><dd>训练重复及共享场景测试样本；每配置4次训练；Table 1/2报告均值与均值误差</dd><dt>不确定性</dt><dd>±按原文为均值误差，不是95%置信区间</dd><dt>原文位置</dt><dd>PDF 21 · Table 1; Figure 5b</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>保留该特定混合/ANN配置的检测与资源结果。</dd><dt>适用边界</dt><dd>ANN参数238,344与混合409,553不同；正文称另一常规SSD准确率更高，不能与此表混同。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不证明在新场景、遮挡、多类自然图像或实测功耗上同等优势。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>预训练混合DenseSep在单场景90/10划分上有何检测/资源结果？</li></ul></article><article><small>C12 / 直接结果 · object_detection_simulation_result</small><h2>在shapes_translation-30随机30/70%划分中，从头训练混合DenseNet报告mAP=82.0±1.0%、2790±50 MOps和2.68 MB/s；表2对应ANN DenseNet为54.20±0.64%、14690 MOps和864 MB/s。</h2><h3>Evidence</h3><p>较少训练数据的随机划分检测比较</p><dl><dt>设计 / 对照</dt><dd>用30%同场景样本训练，剩余测试。；表2 ANN DenseNet</dd><dt>独立单位与 n</dt><dd>训练重复及共享场景测试样本；每配置4次训练；Table 1/2报告均值与均值误差</dd><dt>不确定性</dt><dd>±按原文为均值误差，不是95%置信区间</dd><dt>原文位置</dt><dd>PDF 21 · Table 2; Figure 5a</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>较少训练样本下该混合配置仍取得所报告检测表现。</dd><dt>适用边界</dt><dd>模型参数744,939与ANN151,040不同；不是等参数控制。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能当作70%独立新场景测试或普适低样本泛化。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>混合DenseNet在单场景30/70划分上的检测/计算折中如何？</li></ul></article><article><small>C13 / 直接结果 · transfer_learning_simulation_result</small><h2>在shapes_translation-90上，以N-MNIST骨干初始化后端到端训练使DenseSep mAP从85.57±0.58升至87.37±0.51%，VGG从83.78±0.44升至86.70±0.36%；DenseNet从86.98±0.69到87.09±0.20%，差别很小而非普遍明显提升。</h2><h3>Evidence</h3><p>预训练与从头训练对照</p><dl><dt>设计 / 对照</dt><dd>同骨干类型分别用N-MNIST或随机权重初始化。；随机初始化/从头训练</dd><dt>独立单位与 n</dt><dd>每条件训练重复；每配置4次训练；Table 1/2报告均值与均值误差</dd><dt>不确定性</dt><dd>±按原文为均值误差，不是95%置信区间</dd><dt>原文位置</dt><dd>PDF 21 · Table 1</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>迁移初始化对不同骨干表现的收益不一。</dd><dt>适用边界</dt><dd>无统计显著性；不能由微小DenseNet均值差断言已确认改善。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不证明预训练始终更优或独立新场景泛化。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>N-MNIST初始化在90/10检测划分上对不同骨干有何影响？</li></ul></article><article><small>C14 / 直接结果 · transfer_learning_simulation_result</small><h2>在shapes_translation-30上，预训练使DenseSep mAP由79.4±1.2到81.74±0.61%，VGG由58±19到76.66±0.58%；DenseNet由82.0±1.0到81.76±0.53%，与从头训练相当而非提升。</h2><h3>Evidence</h3><p>预训练初始化的少数据对照</p><dl><dt>设计 / 对照</dt><dd>同任务30/70划分比较随机和N-MNIST初始化。；从头训练</dd><dt>独立单位与 n</dt><dd>每条件训练重复；每配置4次训练；Table 1/2报告均值与均值误差</dd><dt>不确定性</dt><dd>±按原文为均值误差，不是95%置信区间</dd><dt>原文位置</dt><dd>PDF 21 · Table 2</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>少数据迁移收益依赖骨干。</dd><dt>适用边界</dt><dd>从头VGG4次之一未充分收敛，58±19不应隐去该稳定性问题。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不证明迁移学习普遍提升所有模型。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>少数据检测中哪些骨干从迁移初始化获益？</li></ul></article><article><small>C15 / 直接结果 · frozen_backbone_transfer_result</small><h2>在只训练ANN头并冻结SNN骨干的shapes_translation实验中，N-MNIST预训练特征比随机骨干特征取得更高mAP；但正文标为-90划分，图12说明标为-30，具体划分未统一。</h2><h3>Evidence</h3><p>冻结骨干只训练检测头的迁移对照</p><dl><dt>设计 / 对照</dt><dd>两个骨干初始化条件保持SNN固定。；随机且冻结的SNN骨干</dd><dt>独立单位与 n</dt><dd>训练重复；2次训练，报告均值和均值误差</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 23 · Figure 12</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>已有特征对该检测任务有可迁移信息。</dd><dt>适用边界</dt><dd>缺失像素具体数值；分割标注矛盾未解。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不证明跨自然场景或通用事件表征。</dd><dt>未解决</dt><dd>正文I.1和图12的-90/-30标注不一致。</dd></dl><h3>相关问题</h3><ul><li>冻结的N-MNIST脉冲特征是否比随机特征更有利于检测？</li></ul></article><article><small>C16 / 直接结果 · proposed_prior_box_optimization_method</small><h2>本文提出不训练检测网络即可优化SSD先验框：以训练标注与先验框的最大IoU均值及超过匹配阈值的先验比例组成1:2目标，受感受野90%大小上限和单调尺度约束，随机搜索2000组尺寸/宽高比参数。</h2><h3>Evidence</h3><p>基于标注几何的先验框随机搜索</p><dl><dt>设计 / 对照</dt><dd>用训练框匹配质量评价2000组，不依赖网络预测损失。；默认SSD先验框</dd><dt>独立单位与 n</dt><dd>一组先验框超参数；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 18 · Listing 1</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>提出独立于完整网络训练的先验搜索。</dd><dt>适用边界</dt><dd>搜索本身2000个候选不是2000次模型验证。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不证明IoU代理在任意数据集保证提高mAP。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>能否仅用训练标注的几何匹配设计SSD先验框？</li></ul></article><article><small>C17 / 直接结果 · prior_box_comparative_simulation_result</small><h2>在shapes_translation-90的混合DenseNet实验中，使用上述优化先验框使mAP由约0.81到0.88，即平均提高0.07（7个百分点），结果按2次训练平均。</h2><h3>Evidence</h3><p>优化先验框与默认框的检测训练对照</p><dl><dt>设计 / 对照</dt><dd>用相同骨干比较框配置。；默认SSD先验框</dd><dt>独立单位与 n</dt><dd>训练重复；2次训练平均</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 19 · Figure 9</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>给定任务中先验框优化提高检测mAP。</dd><dt>适用边界</dt><dd>仅两个重复，无原文不确定性或显著性。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能写成相对7%提升或已独立复制的通用技巧。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>几何先验框优化在该单场景检测任务上是否提高mAP？</li></ul></article><article><small>C18 / 直接结果 · optimization_runtime_result</small><h2>该SSD先验搜索2000组参数约耗时1.67小时，而单次50轮网络训练约7.8小时；因此本实验的独立几何搜索成本低于一次完整训练成本。</h2><h3>Evidence</h3><p>搜索与训练耗时记录</p><dl><dt>设计 / 对照</dt><dd>比较完整2000候选搜索和单次50epoch训练。；一次50epoch训练</dd><dt>独立单位与 n</dt><dd>一次搜索流程/一次训练；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 18 · Figure 9</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>所示搜索可减少完整训练调参的时间需求。</dd><dt>适用边界</dt><dd>不同任务/硬件运行环境不明确；不能视为严格计算复杂度结论。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不证明固定加速倍数适用于所有网络。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>独立几何搜索的时间成本相对完整训练有多大？</li></ul></article><article><small>C19 / 直接结果 · surrogate_gradient_simulation_comparison</small><h2>在1800样本、4类别N-MNIST子集的混合DenseNet代理梯度比较中，DIET三角梯度缩放1得到最高验证准确率；陡度10的sigmoid运算更少但准确率较低，作者因此选择DIET。</h2><h3>Evidence</h3><p>固定中等骨干的代理函数比较</p><dl><dt>设计 / 对照</dt><dd>g=16、nout=2、Nl=2、Nb=2；用验证而非测试准确率选择。；sigmoid等其他代理梯度</dd><dt>独立单位与 n</dt><dd>代理梯度条件；1800样本、4类子集；训练重复数未报告</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 16 · Figure 8</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>该子任务上的精度/成本折中支持所选代理。</dd><dt>适用边界</dt><dd>没有数值效应或重复统计，不能推广到全部数据/架构。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不证明DIET代理普遍最好。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>代理梯度形状怎样影响固定混合网络的精度/成本折中？</li></ul></article><article><small>C20 / 直接结果 · actual_negative_training_intervention</small><h2>为解决低初始活动导致训练不启动的问题，作者加入目标发放率的稳态损失，但实验未见改善；所示单层分析认为，当代理梯度为零时该损失也无法产生权重更新。</h2><h3>Evidence</h3><p>目标活动正则项干预与单层更新分析</p><dl><dt>设计 / 对照</dt><dd>加入二次发放率目标损失。；不含该稳态项的训练流程</dd><dt>独立单位与 n</dt><dd>训练干预条件；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 20 · Appendix K. Regularization for homeostasis</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>报告一次未有效的训练干预而非成功方法。</dd><dt>适用边界</dt><dd>未给失败率、重复数、目标发放率或精度数值。</dd><dt>实际负结果</dt><dd>本篇尝试的稳态正则项未带来观察到的改善。</dd><dt>不能推出</dt><dd>不证明任何稳态机制都无法缓解静默训练。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>目标发放率损失能否救活代理梯度为零的静默初始化？</li></ul></article><article><small>C21 / 直接结果 · actual_negative_initialization_result</small><h2>作者尝试按式15随机初始化膜电位，并分别在随机或零初始膜电位条件下验证，发现验证表现经常较差，最终在训练、验证、测试均采用V0=0。</h2><h3>Evidence</h3><p>随机膜电位初始化对照</p><dl><dt>设计 / 对照</dt><dd>训练时从所定义正态分布抽取V0，并比较两种验证初始条件。；默认V0=0</dd><dt>独立单位与 n</dt><dd>初始化/验证条件；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 22 · Appendix L. Membrane potential initialization</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>记录随机初始状态的负向经验结果。</dd><dt>适用边界</dt><dd>未给任务特定数字、重复数或显著性。</dd><dt>实际负结果</dt><dd>所尝试的随机初始化经常降低验证表现。</dd><dt>不能推出</dt><dd>不能推断所有随机初值/数据增强都会恶化训练。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>随机初始膜电位是否改善该混合网络的验证表现？</li></ul></article><article><small>C22 / 直接结果 · actual_negative_training_stability_result</small><h2>N-MNIST的一个DenseSep配置中，一次训练未收敛并成为明显离群值，作者排除该次后只报告5次而非通常6次结果；因此该配置汇总不涵盖所有初始化失败。</h2><h3>Evidence</h3><p>训练重复与排除报告</p><dl><dt>设计 / 对照</dt><dd>不同权重种子通常重复6次。；同配置其他成功训练</dd><dt>独立单位与 n</dt><dd>一次训练初始化；该配置6次中1次排除，报告5次</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 7 · Figure 4</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>明确报告混合训练的稳定性限制。</dd><dt>适用边界</dt><dd>未指明该配置完整参数或失败准确率。</dd><dt>实际负结果</dt><dd>一个DenseSep训练重复未收敛且被排除。</dd><dt>不能推出</dt><dd>不能由保留的平均性能估计无条件部署成功率。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>N-MNIST重复训练的汇总是否排除了不收敛初始化？</li></ul></article><article><small>C23 / 直接结果 · actual_negative_baseline_stability_result</small><h2>在N-CARS基线SNN的4次运行中，2次未超过随机水平并被排除验证；这限制了只比较保留基线运行的准确率/运算结论。</h2><h3>Evidence</h3><p>基线训练重复失败报告</p><dl><dt>设计 / 对照</dt><dd>4次同结构纯SNN基线运行。；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>一次基线SNN训练；4次中2次未超过随机水平</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 8 · Figure 6</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>保留纯SNN基线的实际失败率信息。</dd><dt>适用边界</dt><dd>只说明这4次运行，不是总体概率估计。</dd><dt>实际负结果</dt><dd>2/4个纯SNN基线运行未超过随机水平且被排除。</dd><dt>不能推出</dt><dd>不能把剩余2次性能视为全部基线运行的无条件表现。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>N-CARS纯SNN基线汇总受训练失败排除怎样影响？</li></ul></article><article><small>C24 / 直接结果 · actual_negative_detection_training_stability_result</small><h2>在shapes_translation-30从头训练VGG的4次重复中，一次未充分收敛；正文以此解释大波动，表2汇总mAP为58±19%，低于预训练VGG的76.66±0.58%。</h2><h3>Evidence</h3><p>检测训练重复失败与汇总</p><dl><dt>设计 / 对照</dt><dd>比较从头与预训练VGG，并记录从头未充分收敛的一次。；预训练VGG</dd><dt>独立单位与 n</dt><dd>一次模型训练；4次中1次未充分收敛</dd><dt>不确定性</dt><dd>正文称高标准差，表2统一称均值误差；不猜测19的另一统计定义</dd><dt>原文位置</dt><dd>PDF 9 · Figure 5a; Table 2</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>训练稳定性影响该小数据检测配置的汇总。</dd><dt>适用边界</dt><dd>未报告剔除；此处保留4次及失败而不自行重算。</dd><dt>实际负结果</dt><dd>一个从头VGG训练重复未充分收敛。</dd><dt>不能推出</dt><dd>不将均值差单独归因于预训练特征更好，稳定性也可能贡献。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>少数据VGG检测的性能波动是否包含未收敛重复？</li></ul></article><details><summary>核对记录与来源信息</summary><pre>{
+  &quot;coverage&quot;: {
+    &quot;pdf_pages_read&quot;: [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26
+    ],
+    &quot;results_sections_seen&quot;: [
+      &quot;3 Methods&quot;,
+      &quot;4.1 N-MNIST&quot;,
+      &quot;4.2 N-CARS&quot;,
+      &quot;4.3–4.5 shapes_translation&quot;,
+      &quot;Appendices A–N including negative interventions&quot;,
+      &quot;Tables 1–6, Listings, all figure captions&quot;,
+      &quot;References&quot;
+    ],
+    &quot;missing_material&quot;: [
+      &quot;所有图像像素未提供，图示内未报告的具体数值不估计。&quot;,
+      &quot;训练代码、完整数据标注及硬件实测能耗未随页提供。&quot;
+    ],
+    &quot;text_pass_complete&quot;: true,
+    &quot;reading_mode&quot;: &quot;text_only&quot;,
+    &quot;figure_images_read&quot;: false,
+    &quot;scientific_verification&quot;: false,
+    &quot;notes&quot;: [
+      &quot;源为arXiv:2112.03423v1，2021-12-06；导入元数据保留会议出版DOI，不替代本版。&quot;,
+      &quot;完整26页含所有附录、失败干预、表格及图注均已读。&quot;,
+      &quot;效率数字基于运算代理及6.125字节/事件假设；不声明实测节能。&quot;
+    ]
+  },
+  &quot;audit&quot;: {
+    &quot;source_match_checks&quot;: [
+      {
+        &quot;claim_id&quot;: &quot;C1&quot;,
+        &quot;pdf_page&quot;: 5,
+        &quot;section&quot;: &quot;3.1–3.3 Methods; D.1 Training with surrogate gradients&quot;,
+        &quot;figure&quot;: &quot;Figures 1–2&quot;,
+        &quot;equation&quot;: null,
+        &quot;page_exists&quot;: true,
+        &quot;quote&quot;: null,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;scope&quot;: &quot;第二遍仅核对所供文本与图注；不含图像核查或科学复现。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C1&quot;,
+        &quot;pdf_page&quot;: 17,
+        &quot;section&quot;: &quot;Appendix D.1 Training with surrogate gradients&quot;,
+        &quot;figure&quot;: null,
+        &quot;equation&quot;: &quot;Equation 11&quot;,
+        &quot;page_exists&quot;: true,
+        &quot;quote&quot;: null,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;scope&quot;: &quot;第二遍仅核对所供文本与图注；不含图像核查或科学复现。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C2&quot;,
+        &quot;pdf_page&quot;: 6,
+        &quot;section&quot;: &quot;3.5 Bandwidth&quot;,
+        &quot;figure&quot;: null,
+        &quot;equation&quot;: null,
+        &quot;page_exists&quot;: true,
+        &quot;quote&quot;: null,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;scope&quot;: &quot;第二遍仅核对所供文本与图注；不含图像核查或科学复现。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C3&quot;,
+        &quot;pdf_page&quot;: 7,
+        &quot;section&quot;: &quot;4.1 Classification on N-MNIST&quot;,
+        &quot;figure&quot;: &quot;Figure 4a&quot;,
+        &quot;equation&quot;: null,
+        &quot;page_exists&quot;: true,
+        &quot;quote&quot;: null,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;scope&quot;: &quot;第二遍仅核对所供文本与图注；不含图像核查或科学复现。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C4&quot;,
+        &quot;pdf_page&quot;: 7,
+        &quot;section&quot;: &quot;4.1 Classification on N-MNIST&quot;,
+        &quot;figure&quot;: &quot;Figure 4a&quot;,
+        &quot;equation&quot;: null,
+        &quot;page_exists&quot;: true,
+        &quot;quote&quot;: null,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;scope&quot;: &quot;第二遍仅核对所供文本与图注；不含图像核查或科学复现。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C5&quot;,
+        &quot;pdf_page&quot;: 8,
+        &quot;section&quot;: &quot;4.1 Classification on N-MNIST&quot;,
+        &quot;figure&quot;: &quot;Figure 4b&quot;,
+        &quot;equation&quot;: null,
+        &quot;page_exists&quot;: true,
+        &quot;quote&quot;: null,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;scope&quot;: &quot;第二遍仅核对所供文本与图注；不含图像核查或科学复现。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C6&quot;,
+        &quot;pdf_page&quot;: 8,
+        &quot;section&quot;: &quot;4.1 Classification on N-MNIST&quot;,
+        &quot;figure&quot;: &quot;Figure 4b&quot;,
+        &quot;equation&quot;: null,
+        &quot;page_exists&quot;: true,
+        &quot;quote&quot;: null,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;scope&quot;: &quot;第二遍仅核对所供文本与图注；不含图像核查或科学复现。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C7&quot;,
+        &quot;pdf_page&quot;: 8,
+        &quot;section&quot;: &quot;4.1 Classification on N-MNIST&quot;,
+        &quot;figure&quot;: &quot;Figure 4b&quot;,
+        &quot;equation&quot;: null,
+        &quot;page_exists&quot;: true,
+        &quot;quote&quot;: null,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;scope&quot;: &quot;第二遍仅核对所供文本与图注；不含图像核查或科学复现。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C8&quot;,
+        &quot;pdf_page&quot;: 8,
+        &quot;section&quot;: &quot;4.2 Classification on N-CARS&quot;,
+        &quot;figure&quot;: &quot;Figure 6b&quot;,
+        &quot;equation&quot;: null,
+        &quot;page_exists&quot;: true,
+        &quot;quote&quot;: null,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;scope&quot;: &quot;第二遍仅核对所供文本与图注；不含图像核查或科学复现。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C9&quot;,
+        &quot;pdf_page&quot;: 8,
+        &quot;section&quot;: &quot;4.2 Classification on N-CARS&quot;,
+        &quot;figure&quot;: &quot;Figure 6b&quot;,
+        &quot;equation&quot;: null,
+        &quot;page_exists&quot;: true,
+        &quot;quote&quot;: null,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;scope&quot;: &quot;第二遍仅核对所供文本与图注；不含图像核查或科学复现。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C10&quot;,
+        &quot;pdf_page&quot;: 8,
+        &quot;section&quot;: &quot;4.2 Classification on N-CARS; Appendix B&quot;,
+        &quot;figure&quot;: &quot;Figure 6a&quot;,
+        &quot;equation&quot;: null,
+        &quot;page_exists&quot;: true,
+        &quot;quote&quot;: null,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;scope&quot;: &quot;第二遍仅核对所供文本与图注；不含图像核查或科学复现。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C11&quot;,
+        &quot;pdf_page&quot;: 21,
+        &quot;section&quot;: &quot;Appendix J. shapes_translation Details&quot;,
+        &quot;figure&quot;: &quot;Table 1; Figure 5b&quot;,
+        &quot;equation&quot;: null,
+        &quot;page_exists&quot;: true,
+        &quot;quote&quot;: null,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;scope&quot;: &quot;第二遍仅核对所供文本与图注；不含图像核查或科学复现。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C12&quot;,
+        &quot;pdf_page&quot;: 21,
+        &quot;section&quot;: &quot;Appendix J. shapes_translation Details&quot;,
+        &quot;figure&quot;: &quot;Table 2; Figure 5a&quot;,
+        &quot;equation&quot;: null,
+        &quot;page_exists&quot;: true,
+        &quot;quote&quot;: null,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;scope&quot;: &quot;第二遍仅核对所供文本与图注；不含图像核查或科学复现。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C13&quot;,
+        &quot;pdf_page&quot;: 21,
+        &quot;section&quot;: &quot;Appendix J; 4.4 Results on shapes_translation-90&quot;,
+        &quot;figure&quot;: &quot;Table 1&quot;,
+        &quot;equation&quot;: null,
+        &quot;page_exists&quot;: true,
+        &quot;quote&quot;: null,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;scope&quot;: &quot;第二遍仅核对所供文本与图注；不含图像核查或科学复现。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C14&quot;,
+        &quot;pdf_page&quot;: 21,
+        &quot;section&quot;: &quot;Appendix J; 4.5 Results on shapes_translation-30&quot;,
+        &quot;figure&quot;: &quot;Table 2&quot;,
+        &quot;equation&quot;: null,
+        &quot;page_exists&quot;: true,
+        &quot;quote&quot;: null,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;scope&quot;: &quot;第二遍仅核对所供文本与图注；不含图像核查或科学复现。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C15&quot;,
+        &quot;pdf_page&quot;: 23,
+        &quot;section&quot;: &quot;Appendix I.1 Object detection performance without finetuning&quot;,
+        &quot;figure&quot;: &quot;Figure 12&quot;,
+        &quot;equation&quot;: null,
+        &quot;page_exists&quot;: true,
+        &quot;quote&quot;: null,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;scope&quot;: &quot;第二遍仅核对所供文本与图注；不含图像核查或科学复现。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C16&quot;,
+        &quot;pdf_page&quot;: 18,
+        &quot;section&quot;: &quot;Appendix H. Optimizing SSD prior boxes&quot;,
+        &quot;figure&quot;: &quot;Listing 1&quot;,
+        &quot;equation&quot;: &quot;Equation 12&quot;,
+        &quot;page_exists&quot;: true,
+        &quot;quote&quot;: null,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;scope&quot;: &quot;第二遍仅核对所供文本与图注；不含图像核查或科学复现。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C17&quot;,
+        &quot;pdf_page&quot;: 19,
+        &quot;section&quot;: &quot;Appendix H. Optimizing SSD prior boxes&quot;,
+        &quot;figure&quot;: &quot;Figure 9&quot;,
+        &quot;equation&quot;: null,
+        &quot;page_exists&quot;: true,
+        &quot;quote&quot;: null,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;scope&quot;: &quot;第二遍仅核对所供文本与图注；不含图像核查或科学复现。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C18&quot;,
+        &quot;pdf_page&quot;: 18,
+        &quot;section&quot;: &quot;Appendix H. Optimizing SSD prior boxes&quot;,
+        &quot;figure&quot;: &quot;Figure 9&quot;,
+        &quot;equation&quot;: null,
+        &quot;page_exists&quot;: true,
+        &quot;quote&quot;: null,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;scope&quot;: &quot;第二遍仅核对所供文本与图注；不含图像核查或科学复现。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C19&quot;,
+        &quot;pdf_page&quot;: 16,
+        &quot;section&quot;: &quot;Appendix D. Surrogate gradients&quot;,
+        &quot;figure&quot;: &quot;Figure 8&quot;,
+        &quot;equation&quot;: null,
+        &quot;page_exists&quot;: true,
+        &quot;quote&quot;: null,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;scope&quot;: &quot;第二遍仅核对所供文本与图注；不含图像核查或科学复现。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C20&quot;,
+        &quot;pdf_page&quot;: 20,
+        &quot;section&quot;: &quot;Appendix K. Regularization for homeostasis&quot;,
+        &quot;figure&quot;: null,
+        &quot;equation&quot;: &quot;Equations 13–14&quot;,
+        &quot;page_exists&quot;: true,
+        &quot;quote&quot;: null,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;scope&quot;: &quot;第二遍仅核对所供文本与图注；不含图像核查或科学复现。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C21&quot;,
+        &quot;pdf_page&quot;: 22,
+        &quot;section&quot;: &quot;Appendix L. Membrane potential initialization&quot;,
+        &quot;figure&quot;: null,
+        &quot;equation&quot;: &quot;Equation 15&quot;,
+        &quot;page_exists&quot;: true,
+        &quot;quote&quot;: null,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;scope&quot;: &quot;第二遍仅核对所供文本与图注；不含图像核查或科学复现。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C22&quot;,
+        &quot;pdf_page&quot;: 7,
+        &quot;section&quot;: &quot;4.1 Classification on N-MNIST&quot;,
+        &quot;figure&quot;: &quot;Figure 4&quot;,
+        &quot;equation&quot;: null,
+        &quot;page_exists&quot;: true,
+        &quot;quote&quot;: null,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;scope&quot;: &quot;第二遍仅核对所供文本与图注；不含图像核查或科学复现。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C23&quot;,
+        &quot;pdf_page&quot;: 8,
+        &quot;section&quot;: &quot;4.2 Classification on N-CARS&quot;,
+        &quot;figure&quot;: &quot;Figure 6&quot;,
+        &quot;equation&quot;: null,
+        &quot;page_exists&quot;: true,
+        &quot;quote&quot;: null,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;scope&quot;: &quot;第二遍仅核对所供文本与图注；不含图像核查或科学复现。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C24&quot;,
+        &quot;pdf_page&quot;: 9,
+        &quot;section&quot;: &quot;4.5 Results on shapes_translation-30&quot;,
+        &quot;figure&quot;: &quot;Figure 5a; Table 2&quot;,
+        &quot;equation&quot;: null,
+        &quot;page_exists&quot;: true,
+        &quot;quote&quot;: null,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;scope&quot;: &quot;第二遍仅核对所供文本与图注；不含图像核查或科学复现。&quot;
+      }
+    ],
+    &quot;model_findings&quot;: [
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;作者能量措辞基于运算次数，不能当硬件实测节能。&quot;,
+        &quot;pdf_page&quot;: 14,
+        &quot;resolved&quot;: true,
+        &quot;suggested_correction&quot;: &quot;所有命题使用计算成本代理，写入专用硬件和固定开销假设。&quot;
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;同场景随机划分及无遮挡限制检测外推。&quot;,
+        &quot;pdf_page&quot;: 19,
+        &quot;resolved&quot;: true,
+        &quot;suggested_correction&quot;: &quot;限定到该单场景数据，不称独立新场景验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C15&quot;,
+        &quot;issue&quot;: &quot;冻结骨干正文称shapes90而图12称shapes30。&quot;,
+        &quot;pdf_page&quot;: 23,
+        &quot;resolved&quot;: false,
+        &quot;suggested_correction&quot;: &quot;保持结果方向，不指定已统一划分。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C24&quot;,
+        &quot;issue&quot;: &quot;VGG波动正文称标准差，表2标统一均值误差。&quot;,
+        &quot;pdf_page&quot;: 21,
+        &quot;resolved&quot;: false,
+        &quot;suggested_correction&quot;: &quot;沿原文报告58±19并保留统计定义差异。&quot;
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;常规SSD的更高mAP叙述与表中ANN骨干对照不是可直接互换的基准。&quot;,
+        &quot;pdf_page&quot;: 9,
+        &quot;resolved&quot;: true,
+        &quot;suggested_correction&quot;: &quot;明确每个比较的基准，不把表1/2和未量化的常规SSD合并。&quot;
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;非收敛/随机水平运行被部分排除，汇总不代表全部初始化。&quot;,
+        &quot;pdf_page&quot;: 7,
+        &quot;resolved&quot;: true,
+        &quot;suggested_correction&quot;: &quot;另保留C22/C23失败记录。&quot;
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;缺少图像、独立带宽正则消融和功耗测量。&quot;,
+        &quot;pdf_page&quot;: 22,
+        &quot;resolved&quot;: false,
+        &quot;suggested_correction&quot;: &quot;额外正则项收益暂缓，人工审阅原始数据。&quot;
+      }
+    ],
+    &quot;needs_human_review&quot;: true
+  },
+  &quot;source&quot;: {
+    &quot;filename&quot;: &quot;paper-W4200629478.pdf&quot;,
+    &quot;sha256&quot;: &quot;c687db13f3e6cc483432af95f06e02812c1b895b78fb2d9cddfe8fbe87157f82&quot;,
+    &quot;source_url&quot;: &quot;https://arxiv.org/pdf/2112.03423&quot;,
+    &quot;pdf_page_count&quot;: 26
+  },
+  &quot;provenance&quot;: {
+    &quot;created_at&quot;: &quot;2026-10-07T07:04:29.094Z&quot;,
+    &quot;workflow&quot;: &quot;claim-commons-pdf-v1&quot;,
+    &quot;prompt_version&quot;: &quot;claim-commons-chatgpt-pdf-2026-10-07.1&quot;,
+    &quot;backend&quot;: &quot;authorized_parallel_GPT&quot;,
+    &quot;model&quot;: &quot;inherited_GPT&quot;,
+    &quot;provider_api_key_used&quot;: false,
+    &quot;source_sha256&quot;: &quot;c687db13f3e6cc483432af95f06e02812c1b895b78fb2d9cddfe8fbe87157f82&quot;,
+    &quot;source_audit_complete&quot;: true,
+    &quot;review_status&quot;: &quot;candidate&quot;,
+    &quot;database_updated&quot;: false
+  }
+}</pre></details></main><footer></footer></body></html>

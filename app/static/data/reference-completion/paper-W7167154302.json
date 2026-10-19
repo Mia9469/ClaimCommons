@@ -1,0 +1,2236 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "preprint",
+  "paper": {
+    "title": "Diffusing Blame: Task-Dependent Credit Assignment in Biologically Plausible Dual-Stream Networks",
+    "authors": [
+      "Yutaro Yamada",
+      "Luca Grillotti",
+      "Rujikorn Charakorn",
+      "Sebastian Risi",
+      "David Ha",
+      "Robert Tjarko Lange"
+    ],
+    "doi": null,
+    "publication_year": 2026,
+    "venue": "arXiv (Cornell University)",
+    "url": "https://arxiv.org/pdf/2606.31700"
+  },
+  "source": {
+    "filename": "paper-W7167154302--Diffusing-Blame-Task-Dependent-Credit-Assignment-in-Biologically-Plausible-Dual-Stream-Networks.pdf",
+    "sha256": "71a0e9d15fb920b4c9e2bde608021338cc4fddd0380f870b5ad7ff74e334349e",
+    "source_url": "https://arxiv.org/pdf/2606.31700",
+    "pdf_page_count": 10
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "results_sections_seen": [
+      "Abstract / Introduction",
+      "Related Work",
+      "Method: Dual-Stream Architecture / Error Diffusion Update Rule",
+      "Classification-Specific Innovations",
+      "RL Extension: ED-PPO",
+      "Experimental Protocol",
+      "Classification: Main Comparison",
+      "Classification: Cross-Task Ablation Reversal",
+      "Reinforcement Learning: Cross-Domain Generalization",
+      "DFA Across Domains",
+      "Post-hoc Analysis: Surrogate gradient attenuation / Emergent E/I balance / Implicit sparsity",
+      "Figures 1–6 / Table 1",
+      "Discussion / Limitations / Future Work / Conclusion",
+      "Acknowledgement / References"
+    ],
+    "missing_material": [
+      "供给材料只有页文本和图注/可提取标注，没有图像像素，未从曲线外观读取数值或排名。",
+      "没有供给实现代码、原始seed数据、超参数附件或补充材料；10页中无附录。"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "真实版本为arXiv:2606.31700v1 [cs.LG]，2026年6月30日，10页预印本；标题与索引一致，DOI保持null。",
+      "索引首作者为Y Yamada，来源首页明确写Yutaro Yamada；输出作者按来源扩展为Yutaro Yamada，保留此索引与来源差异，其余作者一致。",
+      "全部页文本按约18000字符分块读取，包括所有图注、表1、讨论与参考文献；在保留源文上下文中完成第二次命题级审计。",
+      "实际实验为图像分类和模拟RL，独立重复单位为随机训练seed；参数、图像、环境步数和训练epoch不自动计作独立n。",
+      "Dale符号解释、RL激活函数、Craftax数值、方差概括和不可恢复的floor说法存在源文内部问题，按原处限定记录，不强行统一。",
+      "图4仅能提取诊断方法和重复/区间定义，不能从供给文字确定路由比较排名。",
+      "全部quote为null，英文直接引用0词；无跨论文支持、矛盾或重复关系；不读取离线PDF。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": true,
+    "archived_page_text_used": true
+  },
+  "contribution_inventory": [
+    {
+      "summary": "沿用双流四非负权重与固定同流正/跨流负结构，约4倍参数开销，偏置不受非负限制。",
+      "role": "method",
+      "source_pages": [
+        2,
+        3
+      ],
+      "decision": "include",
+      "reason": "C1保留确切结构，不无条件接受其Dale合规性表述。"
+    },
+    {
+      "summary": "多输出modulo error routing与局部更新R、U及ΔW。",
+      "role": "method",
+      "source_pages": [
+        2,
+        3
+      ],
+      "decision": "include",
+      "reason": "C2保留构造、全局误差信号与无需转置权重的范围。"
+    },
+    {
+      "summary": "分类中的逐类mini-batch误差中心化。",
+      "role": "method",
+      "source_pages": [
+        3,
+        4
+      ],
+      "decision": "include",
+      "reason": "C3为可独立评估的多类误差定义；不当生物机制。"
+    },
+    {
+      "summary": "分类分层sigmoid widths。",
+      "role": "method",
+      "source_pages": [
+        3
+      ],
+      "decision": "include",
+      "reason": "C4保留α与激活条件，性能效果由消融另外记录。"
+    },
+    {
+      "summary": "隐藏层3:1、输出层对称的非负初始化。",
+      "role": "method",
+      "source_pages": [
+        4
+      ],
+      "decision": "include",
+      "reason": "C5与误差中心化/宽度分开，联合配置仍保持。"
+    },
+    {
+      "summary": "将ED嵌入PPO，policy vector路由、value scalar广播。",
+      "role": "method",
+      "source_pages": [
+        4,
+        6,
+        7
+      ],
+      "decision": "include",
+      "reason": "C6记录隐藏层替代的边界及激活描述冲突，不推断整个优化没有输出梯度。"
+    },
+    {
+      "summary": "MNIST和CIFAR-10六变体分类比较。",
+      "role": "result",
+      "source_pages": [
+        4,
+        6
+      ],
+      "decision": "include",
+      "reason": "C7、C8按任务分开；与同一seed数据的消融及跨域解释保持共享证据。"
+    },
+    {
+      "summary": "MNIST消融：宽度大幅影响、中心化小影响、对称初始化报告均值不变。",
+      "role": "result",
+      "source_pages": [
+        4,
+        5,
+        6
+      ],
+      "decision": "include",
+      "reason": "C9保留实际数值，不将25.3%称作10类任务随机准确率。"
+    },
+    {
+      "summary": "CIFAR-10消融：中心化影响最大，4/5seeds坍塌，宽度与初始化亦降低表现。",
+      "role": "result",
+      "source_pages": [
+        5,
+        6
+      ],
+      "decision": "include",
+      "reason": "C10；透明纠正表1表头差值方向与负数不一致。"
+    },
+    {
+      "summary": "任务间消融重要性逆转与类相似度/误差偏置的解释。",
+      "role": "interpretation",
+      "source_pages": [
+        5,
+        6,
+        7
+      ],
+      "decision": "include",
+      "reason": "C11区分实测排序与未经识别的瓶颈机制。"
+    },
+    {
+      "summary": "HalfCheetah、Ant、Humanoid和Craftax的算法比较。",
+      "role": "result",
+      "source_pages": [
+        5,
+        6,
+        7
+      ],
+      "decision": "include",
+      "reason": "C12–C15各自保留比较、末次reward、seed和实际不显著结果。"
+    },
+    {
+      "summary": "DFA在分类与Craftax的不同相对表现。",
+      "role": "interpretation",
+      "source_pages": [
+        5,
+        7
+      ],
+      "decision": "include",
+      "reason": "C16仅为这些任务的算法排序解释，不推断随机反馈必然失败。"
+    },
+    {
+      "summary": "CIFAR-10局部gated error的层间约25倍衰减及学习率补偿。",
+      "role": "result",
+      "source_pages": [
+        5,
+        8
+      ],
+      "decision": "include",
+      "reason": "C17不将不同层的局部代理量误写为同一反传误差的传输测量。"
+    },
+    {
+      "summary": "CIFAR-10 E/I权重比从非对称初始化变化。",
+      "role": "result",
+      "source_pages": [
+        5,
+        8
+      ],
+      "decision": "include",
+      "reason": "C18保留各层数值；不把前三卷积层趋势外推全深度。"
+    },
+    {
+      "summary": "floor权重的总比例、FC跨流/同流差异与卷积范围。",
+      "role": "result",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "C19为正floor上的非零权重，不是已物理剪枝。"
+    },
+    {
+      "summary": "低泛化差距、受限容量和信用分配的未决解释。",
+      "role": "interpretation",
+      "source_pages": [
+        5,
+        7
+      ],
+      "decision": "include",
+      "reason": "C20不识别唯一原因或把4倍参数当公平容量比较。"
+    },
+    {
+      "summary": "权重E/I变化与生物自组织/稳态的类比。",
+      "role": "interpretation",
+      "source_pages": [
+        5,
+        7,
+        8
+      ],
+      "decision": "include",
+      "reason": "C21没有生物验证或因果机制识别。"
+    },
+    {
+      "summary": "非负synaptic magnitudes在模拟/光子/神经形态硬件上的可能优势。",
+      "role": "hypothesis",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "C22保留仍需减法/差分电路，无器件或功耗数据。"
+    },
+    {
+      "summary": "利用floor集中进行结构化压缩的设想。",
+      "role": "hypothesis",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "C23不沿用不可恢复的错误前提；无压缩实验。"
+    },
+    {
+      "summary": "双流结构改善持续或开放式学习、减少遗忘的猜想。",
+      "role": "hypothesis",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "C24未测试顺序任务或lifelong benchmark。"
+    },
+    {
+      "summary": "兴奋放大/抑制不足的解释性归因接口设想。",
+      "role": "hypothesis",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "C25不把可追踪表示等价于正确机制归因。"
+    },
+    {
+      "summary": "四种路由的ED/BP policy-trunk更新方向余弦诊断。",
+      "role": "method",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "C26记录定义、5seed和min-max区间。"
+    },
+    {
+      "summary": "图4路由之间的定量优劣或排名。",
+      "role": "result",
+      "source_pages": [
+        7
+      ],
+      "decision": "defer",
+      "reason": "issue paper-W7167154302:Fig4-routing-ranking：文字/图注无排名或曲线数值；未提供像素，不能推断。"
+    },
+    {
+      "summary": "learned output projections、richer routing与hybrid activations缩小差距的未来建议。",
+      "role": "hypothesis",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "纳入C2、C17、C26未决问题；没有比较结果，避免另造重复性能命题。"
+    },
+    {
+      "summary": "引用背景、优先权描述、AI辅助声明和参考文献。",
+      "role": "background",
+      "source_pages": [
+        1,
+        2,
+        4,
+        9,
+        10
+      ],
+      "decision": "exclude",
+      "reason": "已通读但不是本文新的独立结果；不建立跨论文关系或核查优先权。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "论文沿用双流网络：每层有Wpp、Wnp、Wnn、Wpn四个非负权重块，同流输入取正、跨流输入取负，偏置不要求非负；这使同宽网络约有四倍参数开销。作者称该结构满足Dale’s principle，但所列公式中每个流同时存在正、负出向路径，其严格单神经元符号一致性仍需澄清。",
+      "claim_type": "dual_stream_construction",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "双流前向结构的定义。",
+          "design": "形式化构造与同宽参数比较，非生物实验。",
+          "comparator": "同宽非受限单流网络（文中约32M对8M）。",
+          "measure": "非负权重块、固定连接符号和参数数量。",
+          "unit_of_analysis": "权重块、网络层与结构；不是独立实验重复。",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "所有权重矩阵逐元素非负；bp、bn可为有符号偏置。",
+            "按p_i=φ(pWpp−nWnp+bp)、n_i=φ(nWnn−pWpn+bn)理解文字公式。"
+          ],
+          "source_locator": {
+            "pdf_page": 2,
+            "section": "Method: Dual-Stream Architecture",
+            "figure": "Figure 1 (p.3)",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "给出固定符号、非负幅度的双流构造。",
+        "boundary": "同宽参数未匹配；严格Dale解释不由非负幅度自动成立。",
+        "negative_result": null,
+        "non_inference": "不是所有可学习参数都非负，也没有验证生物神经元或证明每单元出向同号。",
+        "unresolved": "是否存在未说明的细胞/路径解释能消除符号矛盾？",
+        "unresolved_attribution": "首页Dale定义与第2页两条前向公式的出向符号存在张力。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "固定同流正、跨流负的双流构造如何与单神经元Dale符号约束对应？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C22"
+      ],
+      "review_notes": [
+        "结构沿用既有ED，不把背景架构当作首次发明。",
+        "保留作者主张和公式的差别，不强行写成严格Dale合规事实。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "论文把ED扩展到多输出：hidden unit i固定接收r(i)=i mod C对应的输出误差，以R=SM^T、Up=φ′(Zp)⊙R和ΔWpp∝Ap^TUp构造更新，并对双流使用相应符号；该路由不用前向权重转置或随机反馈矩阵，但仍依赖全局输出误差。",
+      "claim_type": "modulo_error_routing_method",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "确定性输出通道路由及局部更新公式。",
+          "design": "mini-batch误差S与固定one-hot路由M的构造。",
+          "comparator": "DFA的固定随机反馈矩阵；不是本文证明其性能劣于ED。",
+          "measure": "更新信号的代数依赖与路由规则。",
+          "unit_of_analysis": "hidden unit/conv channel、输出维度和局部权重更新。",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "局部更新需突触前活动、突触后激活导数和被广播的输出误差。",
+            "C由分类类别、离散动作logits或连续策略分布参数维度确定。"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "Method: Error Diffusion Update Rule",
+            "figure": "Figure 1",
+            "equation": "(1)–(3)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "构造多输出ED而不运送转置权重或随机反馈矩阵。",
+        "boundary": "只是粗粒度输出关联信用分配；不是与BP梯度恒等。",
+        "negative_result": null,
+        "non_inference": "无权重转置不等于全局误差信号已由生物机制实现，也不表示全部PPO计算没有梯度。",
+        "unresolved": "更丰富路由或learned projections是否改善困难任务，本文未给比较结果。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "确定性一输出通道对一hidden unit的路由能提供何种信用分配？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C3",
+        "C6",
+        "C26"
+      ],
+      "review_notes": [
+        "不存在生物实现、数学收敛或梯度等价性证明。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "在10类MNIST/CIFAR-10分类中，论文使用独立sigmoid输出的one-vs-all误差，并逐类减去mini-batch均值，使每类中心化误差信号在batch内和为零；输出负流接收相反符号，隐藏全连接单元与卷积通道接收路由副本。",
+      "claim_type": "batch_centered_error_method",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "逐类mini-batch误差中心化。",
+          "design": "Eb,c=1[yb=c]−ŷb,c；每类减去B个样本的均值。",
+          "comparator": "未中心化的原始one-vs-all误差。",
+          "measure": "每个类别batch内误差零均值；性能另由消融评估。",
+          "unit_of_analysis": "mini-batch类别通道，不是独立实验n。",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "此创新仅用于分类；RL不采用该batch-centering。",
+            "每样本有1目标类和9非目标类，使用独立sigmoid而非softmax。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "Method: Batch-centered class error signals (starts p.3)",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "给出抑制类别整体误差偏置的明确运算。",
+        "boundary": "zero-mean为batch内代数性质，并非总体无偏或生物误差信号。",
+        "negative_result": null,
+        "non_inference": "不从构造本身推出更好准确率或已识别类不平衡的唯一因果机制。",
+        "unresolved": "对不同任务的性能贡献由C9、C10限定。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "逐类batch误差中心化对多类ED学习何时重要？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C9",
+        "C10"
+      ],
+      "review_notes": [
+        "中心化与双流符号联合保留，没有把反号负流省略。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "分类网络的ED局部更新被sigmoid导数门控，论文为CIFAR-10卷积层设α=3.0、全连接及输出层设α=6.0，MNIST只用α=6.0全连接设置；这些分层widths是分类专用配置，不声称转移到RL。",
+      "claim_type": "classification_activation_method",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "层类型专用sigmoid非线性φ(z)=1/(1+exp(−2z/α))。",
+          "design": "对分类层采用不同widths。",
+          "comparator": "均匀α=1.0的消融配置。",
+          "measure": "激活宽度与局部导数门控；准确率见消融。",
+          "unit_of_analysis": "分类网络层类型。",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "导数门控与非线性设置共同构成方法。",
+            "更宽可改变饱和范围，但不意味着在所有z上导数都更大。"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "Method: Layer-specific sigmoid widths",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "明确分类的分层激活设置。",
+        "boundary": "无同一公式下全输入范围更大导数的保证；RL激活另有源文冲突。",
+        "negative_result": null,
+        "non_inference": "不把width设置视为梯度消失的普适解法。",
+        "unresolved": "效应是否来自饱和范围、尺度或其他优化因素尚未识别。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "不同层的sigmoid width如何影响ED局部误差门控？"
+      ],
+      "shared_evidence_with": [
+        "C9",
+        "C10",
+        "C17"
+      ],
+      "review_notes": [
+        "避免将源文‘larger derivatives’写成全范围数学不等式。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "分类双流网络的隐藏权重从[0,1)非负均匀分布并按fan-in平方根缩放，同流块乘1.5、跨流块乘0.5，形成期望3:1尺度比；最终输出层保持1:1对称初始化，不能把3:1设置推广到所有层或RL。",
+      "claim_type": "asymmetric_initialization_method",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "层限定的非负非对称初始化。",
+          "design": "卷积和FC隐藏层设置3:1期望尺度比，末FC输出层对称。",
+          "comparator": "对称初始化消融。",
+          "measure": "初始化权重尺度和E/I块比。",
+          "unit_of_analysis": "权重分布与网络层。",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "3:1是初始化期望尺度比，不是实测神经元数量比或每个样本活动比。",
+            "RL使用单独初始化/训练管线。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "Method: Asymmetric E/I initialization",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "明确隐藏与输出层不同初始化规则。",
+        "boundary": "不说明RL也使用分类非对称创新。",
+        "negative_result": null,
+        "non_inference": "不推断该参数比等同生物E/I平衡或必然避免不稳定。",
+        "unresolved": "对性能的任务特异作用由消融评估，而不是初始化规则本身证明。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "双流隐藏层的非对称初始化与输出层对称设置如何共同影响学习？"
+      ],
+      "shared_evidence_with": [
+        "C9",
+        "C10",
+        "C18"
+      ],
+      "review_notes": [
+        "期望权重尺度不等同于生理E/I量。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "ED-PPO保留PPO目标的输出层误差信号，用通道路由替代policy隐藏层反传、用广播更新scalar value网络，并将非负权重在优化后钳位；但方法节称RL采用width-scaled sigmoid，讨论称ReLU和RMS normalization，供给文本不能确定实际RL激活配置。",
+      "claim_type": "ed_ppo_integration_method",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "双流policy/value MLP中的ED更新替代。",
+          "design": "p0=n0=x，可选stream normalization；权重以绝对Gaussian初始化并钳位非负。",
+          "comparator": "BP-PPO、DFA-PPO；另有允许权重为负的ED-PPO变体。",
+          "measure": "输出误差到隐藏层的路由、value广播和权重约束。",
+          "unit_of_analysis": "policy/value网络与隐藏参数更新。",
+          "sample_size_as_reported": null,
+          "uncertainty": "RL激活/normalization描述内部不一致。",
+          "assumptions": [
+            "PPO目标仍供应output-level error，不把ED解释为无任何输出梯度。",
+            "分类三个稳定创新未用于RL；实际激活描述冲突保留。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "Method: RL Extension: ED-PPO",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "讨论中的RL配置陈述。",
+          "design": "声称采用ReLU及RMS normalization、无需分类sigmoid widths和batch-centering。",
+          "comparator": "第4页width-scaled sigmoid描述。",
+          "measure": "配置描述一致性。",
+          "unit_of_analysis": "同一RL管线，不能作为两个独立实验。",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "没有代码或补充材料来判定哪处描述准确。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "Discussion: Summary (continued p.7)",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "说明把ED整合到policy和value学习的结构方式。",
+        "boundary": "实际激活和规范化不可唯一恢复；PPO优化并非全程无梯度。",
+        "negative_result": null,
+        "non_inference": "不把描述冲突自行修成ReLU或sigmoid，也不推断真实生物学习可执行该目标。",
+        "unresolved": "实际RL激活、normalization与输出误差实现需源代码或作者澄清。",
+        "unresolved_attribution": "第4页方法与第6–7页讨论的配置不一致。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "如何在PPO中替代隐藏层信用分配，同时保留输出误差与非负权重约束？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C12",
+        "C13",
+        "C14",
+        "C15"
+      ],
+      "review_notes": [
+        "真实版本为v1，不能用未提供的后续版本填补配置。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "训练250 epochs、每变体5 seeds的MNIST比较中，全配置ED测试准确率为96.7±0.1%，高于seed ED的50.4±9.8%，但低于DFA的97.6%；这验证所述配置能学习此10类任务，不识别非负约束的单独代价。",
+      "claim_type": "mnist_classification_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "MNIST六变体训练比较。",
+          "design": "全配置ED、seed ED、DFA及三项单独移除的变体。",
+          "comparator": "seed ED无三项分类创新；DFA固定随机反馈且不受同一非负约束。",
+          "measure": "测试准确率：ED96.7±0.1%，seed ED50.4±9.8%，DFA97.6%。",
+          "unit_of_analysis": "随机训练seed；测试图像是同一评估集，不当独立方法重复。",
+          "sample_size_as_reported": "每任务每变体5个随机训练seeds；6变体×2任务共60次运行，各250 epochs。测试图像数量未在所供文本报告。",
+          "uncertainty": "图2误差条为5 seeds间±1标准差；消融差值未给置信区间或显著性检验。",
+          "assumptions": [
+            "同宽双流约4倍参数，比较不只改变符号约束。",
+            "均值±SD不等同于效应显著性检验。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "Results: Classification: Main Comparison",
+            "figure": "Figure 2 (p.6)",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "全配置相对seed ED有较高MNIST准确率。",
+        "boundary": "DFA均值仍高0.9个百分点；未报告此差异检验。",
+        "negative_result": "全配置ED未达到DFA报告的准确率。",
+        "non_inference": "不把差距直接归因为Dale约束，更没有生物学习验证。",
+        "unresolved": "控制容量和优化条件后性能差距如何变化？",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "非负双流ED在MNIST上相对seed ED与DFA的准确率边界是什么？"
+      ],
+      "shared_evidence_with": [
+        "C9",
+        "C11",
+        "C16"
+      ],
+      "review_notes": [
+        "5seeds为独立重复；60是跨任务、跨变体总运行数。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "同一250-epoch、5-seed协议下，CIFAR-10全配置ED测试准确率为61.7±0.7%，高于seed ED的11.6±2.2%，低于DFA的69.1%；相对DFA的均值差距从MNIST的0.9扩大到7.4个百分点，约62%不等同于与传统梯度法具有竞争力。",
+      "claim_type": "cifar_classification_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "CIFAR-10六变体分类比较。",
+          "design": "非负双流ED卷积分类管线与seed ED、DFA。",
+          "comparator": "seed ED11.6±2.2%；DFA69.1%。",
+          "measure": "全配置61.7±0.7%及ED-DFA均值差7.4个百分点。",
+          "unit_of_analysis": "随机训练seed，非32M权重作为n。",
+          "sample_size_as_reported": "每任务每变体5个随机训练seeds；6变体×2任务共60次运行，各250 epochs。测试图像数量未在所供文本报告。",
+          "uncertainty": "图2误差条为5 seeds间±1标准差；消融差值未给置信区间或显著性检验。",
+          "assumptions": [
+            "参数数与结构未匹配，不能仅由差距识别符号约束成本。",
+            "未读取Fujita等被引外部结果，不作为独立支持。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "Results: Classification: Main Comparison",
+            "figure": "Figure 2 (p.6)",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所述ED卷积配置在CIFAR-10学习高于seed ED。",
+        "boundary": "均值低于DFA；未提供标准BP分类的同协议对照。",
+        "negative_result": "全配置未达到DFA准确率。",
+        "non_inference": "不把作者优先权或‘competitive’表述升级为本文证实的通用竞争力。",
+        "unresolved": "更难任务上的容量、信用分配与优化成本如何分别评估？",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "CIFAR-10上ED的准确率提升及相对DFA缺口有何范围？"
+      ],
+      "shared_evidence_with": [
+        "C10",
+        "C11",
+        "C16",
+        "C20"
+      ],
+      "review_notes": [
+        "不猜测训练/测试图像数或DFA未报告的SD。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "MNIST单项消融中，全配置96.7%变为uniform width的25.3%（−71.4个百分点），去中心化为96.4%（−0.3个百分点），对称初始化仍报告96.7%；此结果说明这些设置在当前联合配置中的敏感性不同，不证明初始化完全无作用。",
+      "claim_type": "mnist_component_ablation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "每次去掉一种分类创新的消融。",
+          "design": "其余配置保留；seed ED另为三项同时移除。",
+          "comparator": "全配置96.7%；uniform width25.3%；no MCE96.4%；sym init96.7%。",
+          "measure": "准确率与消融减全配置的百分点差。",
+          "unit_of_analysis": "随机训练seed。",
+          "sample_size_as_reported": "每任务每变体5个随机训练seeds；6变体×2任务共60次运行，各250 epochs。测试图像数量未在所供文本报告。",
+          "uncertainty": "图2误差条为5 seeds间±1标准差；消融差值未给置信区间或显著性检验。",
+          "assumptions": [
+            "表1负数实际对应消融−全配置，与表头相反；用文字和图2数值明确方向。",
+            "相同一位小数均值不是统计等价性或普适无作用。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "Results: Cross-Task Ablation Reversal: MNIST",
+            "figure": "Table 1; Figure 2 (p.6)",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "width设置在该任务的单项消融损失最大。",
+        "boundary": "只在所述联合配置、报告精度和250 epochs下。",
+        "negative_result": "uniform width显著降低报告均值；对称初始化在报告精度下未见均值变化。",
+        "non_inference": "25.3%不是10类任务10%随机准确率；不把均值相同视为已证无效。",
+        "unresolved": "width作用是否来自特定优化或饱和配置仍需分解。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "MNIST上三种ED分类设置的单项消融敏感性如何排序？"
+      ],
+      "shared_evidence_with": [
+        "C3",
+        "C4",
+        "C5",
+        "C7",
+        "C11"
+      ],
+      "review_notes": [
+        "源文用catastrophic/near-chance描述，但候选只保留数值及真实比较。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "CIFAR-10单项消融中，全配置61.7%去掉batch-centered error后为13.8%（−47.9个百分点，5seeds中4个坍塌），uniform width为46.6%（−15.1个百分点），对称初始化为56.2%（−5.5个百分点）；中心化的敏感性在这个联合配置中最大。",
+      "claim_type": "cifar_component_ablation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "CIFAR-10单项移除消融。",
+          "design": "每个变体只去掉一项创新，其余保留。",
+          "comparator": "全配置61.7%对no MCE13.8%、uniform46.6%、sym init56.2%。",
+          "measure": "测试准确率、百分点损失、4/5seeds坍塌。",
+          "unit_of_analysis": "随机训练seed；4/5为训练运行，不是图像比例。",
+          "sample_size_as_reported": "每任务每变体5个随机训练seeds；6变体×2任务共60次运行，各250 epochs。测试图像数量未在所供文本报告。",
+          "uncertainty": "图2误差条为5 seeds间±1标准差；消融差值未给置信区间或显著性检验。",
+          "assumptions": [
+            "百分点差按消融−全配置；不是表头写的全配置−消融。",
+            "‘坍塌’定量阈值未给，按源文报告，不猜每seed值。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "Results: Cross-Task Ablation Reversal: CIFAR-10",
+            "figure": "Table 1; Figure 2 (p.6)",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "三项移除均降低报告均值，中心化损失最大。",
+        "boundary": "单项消融不识别所有交互效应或唯一信用分配机制。",
+        "negative_result": "no MCE出现4/5运行坍塌及准确率下降；其他两项也下降。",
+        "non_inference": "不将4/5转成一般失败概率，不宣称三创新必要充分。",
+        "unresolved": "多因素交互、稳定性和超参数依赖尚未系统分解。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "CIFAR-10上中心化为何比sigmoid width和初始化更敏感？"
+      ],
+      "shared_evidence_with": [
+        "C3",
+        "C4",
+        "C5",
+        "C8",
+        "C11"
+      ],
+      "review_notes": [
+        "没有把均值差补成未报告的p值。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "作者把MNIST中width最敏感、CIFAR-10中误差中心化最敏感的消融排序逆转解释为任务相关的信用分配瓶颈，并提出特征分离度、类间相似性和one-vs-all误差偏置可能参与；排序是实测，具体瓶颈机制尚未被独立识别。",
+      "claim_type": "task_dependent_bottleneck_interpretation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "跨任务消融比较及作者解释。",
+          "design": "相同三种移除因素在两个分类任务比较。",
+          "comparator": "MNIST最大损失来自width；CIFAR-10最大损失来自MCE。",
+          "measure": "消融敏感性排序和相关解释。",
+          "unit_of_analysis": "两个基准的变体seed结果；不作为跨研究重复。",
+          "sample_size_as_reported": "每任务每变体5个随机训练seeds；6变体×2任务共60次运行，各250 epochs。测试图像数量未在所供文本报告。",
+          "uncertainty": "图2误差条为5 seeds间±1标准差；消融差值未给置信区间或显著性检验。",
+          "assumptions": [
+            "解释依赖所述架构与联合配置。",
+            "没有独立操纵类相似性或测量所假设误差瓶颈来唯一识别机制。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "Results: Interpretation",
+            "figure": "Table 1; Figure 2 (p.6)",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "单基准评价不能反映这里观测到的全部组件敏感性。",
+        "boundary": "从两个任务概括，不能将所有任务难度视作唯一变量。",
+        "negative_result": null,
+        "non_inference": "类相似性与导数消失的机制解释不是独立因果证明。",
+        "unresolved": "需控制任务属性、容量及优化以分离瓶颈。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "任务之间的消融排序逆转是否反映不同信用分配瓶颈？"
+      ],
+      "shared_evidence_with": [
+        "C7",
+        "C8",
+        "C9",
+        "C10"
+      ],
+      "review_notes": [
+        "解释与实测消融分开；不建立跨论文机制支持。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "HalfCheetah末次评估中，ED-PPO平均reward为5494±691，高于BP-PPO的3520±485（p<0.001）、non-Dalean ED-PPO的3498±1703（p=0.028）及ES（p=0.003）；DFA-PPO为5581±359，论文描述ED与之匹配，未给等价性检验。",
+      "claim_type": "halfcheetah_rl_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Brax HalfCheetah的PPO/DFA/ED/ES比较。",
+          "design": "每算法5seeds，报告末次检查点reward。",
+          "comparator": "BP-PPO、non-Dalean ED-PPO、ES、DFA-PPO。",
+          "measure": "episode reward：5494±691、3520±485、3498±1703、DFA5581±359；ES均值未给。",
+          "unit_of_analysis": "随机训练seed。",
+          "sample_size_as_reported": "每算法每环境5个随机训练seeds；不是环境步数、episode数或参数数作为独立n。",
+          "uncertainty": "均值及±1标准差跨5 seeds；末次评估检查点episode reward；Welch t检验α=0.05，未说明多重比较校正。",
+          "assumptions": [
+            "p值仅绑定源文明确比较；不视为多任务整体优势。",
+            "RL实际激活配置存在C6所记冲突。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "Results: Reinforcement Learning: Cross-Domain Generalization",
+            "figure": "Figure 3 (p.6)",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "ED-PPO在所述HalfCheetah比较中高于BP、非受限ED与ES。",
+        "boundary": "DFA均值相近而非统计等价；仅末次评估和5seeds。",
+        "negative_result": null,
+        "non_inference": "不将仿真reward改写为生物运动学验证或各环境普遍优势。",
+        "unresolved": "配置澄清、更多seed和固定资源比较是否保持优势？",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "HalfCheetah末次reward中ED-PPO相对各算法的优势有何统计边界？"
+      ],
+      "shared_evidence_with": [
+        "C6"
+      ],
+      "review_notes": [
+        "报告SD为seed间离散，不是CI；未猜测ES均值。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C13",
+      "statement": "Ant末次评估中，ED-PPO为6891±835，BP-PPO为6740±1781，non-Dalean ED-PPO为7616±2031；源文描述ED与两种PPO均相当，非受限ED较BP的更高均值也不显著，ED明确显著超过的仅是ES（p=0.004）。",
+      "claim_type": "ant_rl_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Brax Ant算法比较。",
+          "design": "末次检查点跨5seeds评估。",
+          "comparator": "BP-PPO、non-Dalean ED-PPO、ES；DFA为图3比较曲线之一但未给Ant数值。",
+          "measure": "episode reward均值±SD及ED-ES Welch检验。",
+          "unit_of_analysis": "随机训练seed。",
+          "sample_size_as_reported": "每算法每环境5个随机训练seeds；不是环境步数、episode数或参数数作为独立n。",
+          "uncertainty": "均值及±1标准差跨5 seeds；末次评估检查点episode reward；Welch t检验α=0.05，未说明多重比较校正。",
+          "assumptions": [
+            "‘相当’不等同等价检验通过。",
+            "不从图3像素推测DFA或ES缺失均值。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "Results: Reinforcement Learning: Cross-Domain Generalization",
+            "figure": "Figure 3 (p.6)",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "ED可在Ant获得与所述PPO方法相近的均值。",
+        "boundary": "只有ED相对ES的p值明确；其他差异不显著不能证明同效。",
+        "negative_result": "non-Dalean ED较BP的均值提高未达到源文所述显著性。",
+        "non_inference": "不能概括ED在Ant优于BP或所有随机反馈方法。",
+        "unresolved": "高seed离散下的资源匹配效果与可靠性仍需评估。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "Ant上ED与BP及非受限ED的均值差异和不显著结果如何区分？"
+      ],
+      "shared_evidence_with": [
+        "C6"
+      ],
+      "review_notes": [
+        "环境步数数亿不是独立重复n。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C14",
+      "statement": "Humanoid末次评估中，ED-PPO为6670±2592，低于BP-PPO的8478±3252和non-Dalean ED-PPO的9804±1144；源文称非受限ED与BP相当，并未报告ED对两者的精确p值。这里两种ED的SD都不支持‘比BP方差更高’的统一概括。",
+      "claim_type": "humanoid_rl_boundary",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Brax Humanoid三种PPO变体比较。",
+          "design": "末次检查点跨5seedsreward。",
+          "comparator": "BP8478±3252；non-Dalean ED9804±1144；ED6670±2592。",
+          "measure": "episode reward均值与seed SD。",
+          "unit_of_analysis": "随机训练seed。",
+          "sample_size_as_reported": "每算法每环境5个随机训练seeds；不是环境步数、episode数或参数数作为独立n。",
+          "uncertainty": "均值及±1标准差跨5 seeds；末次评估检查点episode reward；Welch t检验α=0.05，未说明多重比较校正。",
+          "assumptions": [
+            "ED均值较低不自动说明显著。",
+            "非受限ED与BP相当是源文描述，未报告等价性或完整p值。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "Results: Reinforcement Learning: Cross-Domain Generalization",
+            "figure": "Figure 3 (p.6)",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "保留具体均值、离散及非受限ED/BP的源文相当描述。",
+        "boundary": "5seeds且ED差异检验数字未报告。",
+        "negative_result": "ED均值未达到BP或non-Dalean ED；ED的SD并非在此环境更高。",
+        "non_inference": "不从均值识别符号约束成本，也不套用全环境高方差结论。",
+        "unresolved": "需澄清方差泛化陈述与具体环境数据的冲突。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "Humanoid上的平均表现与seed离散是否支持ED可靠性的统一结论？"
+      ],
+      "shared_evidence_with": [
+        "C6"
+      ],
+      "review_notes": [
+        "源文第7页all environments的高方差说法与这里的SD不一致；不自行改数据。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C15",
+      "statement": "Craftax主结果段报告ED-PPO为20.9±2.9、DFA-PPO为19.8±1.5，并称ED低于BP及non-Dalean ED但与后者差异不显著；另一段又写ED=23.0、BP=27.0。精确ED分数和‘差4.0’的检验归属在此v1无法唯一确定。",
+      "claim_type": "craftax_rl_result_with_source_conflict",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Craftax末次检查点reward比较的主结果陈述。",
+          "design": "每算法5seeds，ED、BP、non-Dalean ED和DFA。",
+          "comparator": "BP及non-Dalean ED；DFA19.8±1.5。",
+          "measure": "ED20.9±2.9；与non-Dalean ED的差距不显著。",
+          "unit_of_analysis": "随机训练seed。",
+          "sample_size_as_reported": "每算法每环境5个随机训练seeds；不是环境步数、episode数或参数数作为独立n。",
+          "uncertainty": "均值及±1标准差跨5 seeds；末次评估检查点episode reward；Welch t检验α=0.05，未说明多重比较校正。",
+          "assumptions": [
+            "保留主结果原处数值；不把non-Dalean ED对DFA的p=0.010赋予受限ED。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "Results: Reinforcement Learning: Cross-Domain Generalization",
+            "figure": "Figure 5 (p.7)",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "同页跨域总结及限制段的不同分数。",
+          "design": "DFA Across Domains写ED23.0、BP27.0；讨论写ED相对BP差4.0，另段出现p=0.002。",
+          "comparator": "主段ED20.9±2.9与另一段ED23.0。",
+          "measure": "版本内数值与比较归属一致性。",
+          "unit_of_analysis": "同一Craftax实验陈述，不是独立重复。",
+          "sample_size_as_reported": "每算法每环境5个随机训练seeds；不是环境步数、episode数或参数数作为独立n。",
+          "uncertainty": "23.0与差4.0未能同主段20.9唯一对齐；p=0.002的对象不够清楚。",
+          "assumptions": [
+            "不选择有利数值，也不混合不同段落生成新差值。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "Discussion: Limitations; DFA Across Domains (p.5)",
+            "figure": "Figure 5",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "保留Craftax可学习及相对BP均值不足的任务边界。",
+        "boundary": "精确ED最终分数、BP差值及相应p值有内部冲突。",
+        "negative_result": "源文报告ED低于BP；与non-Dalean ED的Craftax差异不显著。",
+        "non_inference": "不声称ED显著优于DFA；不把未显著当等价，更不把差4.0/p=0.002任意归入某对比。",
+        "unresolved": "原seed结果或作者澄清才能确定Craftax数值与检验归属。",
+        "unresolved_attribution": "同一v1的ED20.9与23.0、BP差4.0和p=0.002对象未能一致。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "Craftax开放式探索中ED-PPO的性能边界及其来源数值不确定性是什么？"
+      ],
+      "shared_evidence_with": [
+        "C6",
+        "C16"
+      ],
+      "review_notes": [
+        "不从未供给曲线像素判读终点；源文冲突是数据审计事项，不是跨论文矛盾。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C16",
+      "statement": "作者以DFA在MNIST/CIFAR-10准确率较高、在Craftax则均值低于所述BP与ED方法的模式，解释反馈/信用分配方法的表现依赖任务域；这些比较不能证明随机反馈在复杂RL必然失败或确定差距的时间信用分配原因。",
+      "claim_type": "dfa_cross_domain_interpretation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "跨分类与Craftax的算法表现解释。",
+          "design": "综合不同数据域，非统一单变量实验。",
+          "comparator": "DFA分类97.6%/69.1%；Craftax DFA19.8±1.5；ED Craftax有C15所记冲突。",
+          "measure": "基准间方法相对排序。",
+          "unit_of_analysis": "各任务算法seed结果，不能把几个任务当独立机制复制。",
+          "sample_size_as_reported": "各算法/任务5seeds。",
+          "uncertainty": "Craftax non-Dalean ED对DFA p=0.010；其他ED-DFA Craftax检验未明确。",
+          "assumptions": [
+            "不同任务、优化管线与约束共同变化。",
+            "DFA在分类中并非同一非负约束网络。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "Results: DFA Across Domains",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "具体任务中方法的相对排序并不恒定。",
+        "boundary": "仅这些任务；Craftax部分数值冲突保留。",
+        "negative_result": null,
+        "non_inference": "不能把DFA相对低reward当作普适不能学习，或证明粗路由/随机反馈的唯一机制。",
+        "unresolved": "哪些任务属性、结构或误差路由驱动排序变化？",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "分类表现强的方法为何不一定在开放式RL保持相对优势？"
+      ],
+      "shared_evidence_with": [
+        "C7",
+        "C8",
+        "C15"
+      ],
+      "review_notes": [
+        "这不是新增独立实验，而是同一数据的跨域解释。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C17",
+      "statement": "CIFAR-10的post-hoc分析报告局部gated-error代理幅值从输出层6.6×10^-3到第一隐藏层2.7×10^-4，约衰减25倍，epoch 3已可见该模式；早层3.0×、输出0.5×学习率倍率被描述为部分补偿，未证明其可替代分层sigmoid widths。",
+      "claim_type": "local_surrogate_attenuation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "逐层局部surrogate/gated-error诊断。",
+          "design": "图6a对epoch 3和250的CIFAR-10配置作层间分析。",
+          "comparator": "输出层与第一隐藏层；不是同一误差沿BP链逐层传播的测量。",
+          "measure": "局部幅值6.6e-3对2.7e-4及约25倍比。",
+          "unit_of_analysis": "网络层的局部更新量；层不是独立实验n。",
+          "sample_size_as_reported": "分类协议每变体5 seeds，但图6及这些post-hoc汇总的具体运行数和聚合方式未报告。",
+          "uncertainty": "未给各诊断数值seed SD/CI；学习率补偿没有独立量化比较。",
+          "assumptions": [
+            "局部量受激活导数和路由共同影响。",
+            "尺度衰减不是独立因果干预。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "Post-hoc Analysis: Surrogate gradient attenuation",
+            "figure": "Figure 6a (p.8)",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "当前配置显示明显层间代理误差信号尺度差。",
+        "boundary": "诊断聚合与统计不明，补偿描述未量化。",
+        "negative_result": null,
+        "non_inference": "不据此证明学习困难仅由导数衰减引起或层间25倍误差传输。",
+        "unresolved": "更丰富路由、hybrid activations和容量控制能否分别改变该模式？",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "ED局部gated-error幅值随层的变化如何关联分类学习困难？"
+      ],
+      "shared_evidence_with": [
+        "C4",
+        "C20"
+      ],
+      "review_notes": [
+        "图6只提供文本标注与图注，不从曲线外观补值。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C18",
+      "statement": "CIFAR-10训练后的权重E/I比在前三卷积层为1.03、0.90、0.81，源文将其描述为从隐藏层3:1初始化趋向近均衡；图6文字还标注FC1=1.08、FC2=1.65、FC3=1.50，所以不能把卷积层的抑制增强趋势概括为所有更深层均单调增强。",
+      "claim_type": "weight_ratio_dynamics_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "图6b及正文的训练前后权重比分析。",
+          "design": "CIFAR-10训练250 epochs；隐藏层初始化3:1、输出层初始对称。",
+          "comparator": "初始化与训练后；卷积层与FC层。",
+          "measure": "conv1/2/3=1.03/0.90/0.81；fc1/2/3=1.08/1.65/1.50。",
+          "unit_of_analysis": "权重块比与网络层，不是细胞数量或独立生物样本。",
+          "sample_size_as_reported": "分类协议每变体5 seeds，但图6及这些post-hoc汇总的具体运行数和聚合方式未报告。",
+          "uncertainty": "权重比未给seed SD/CI或活动读出。",
+          "assumptions": [
+            "E/I定义为权重级比例，非放电、细胞数及突触强度联合生理指标。",
+            "图6的层标签/数值属于所供页文本，未读取像素。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Figure 6b and Post-hoc Analysis (p.5)",
+            "figure": "Figure 6b",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "当前网络权重比从非对称初值发生层特异变化。",
+        "boundary": "近均衡不是全部层达到1:1；FC并非同一单调趋势。",
+        "negative_result": null,
+        "non_inference": "不能推断生物回路E/I稳态或神经元兴奋/抑制身份已验证。",
+        "unresolved": "权重比与功能活动/训练可重复性如何对应？",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "双流权重比随训练与层类型如何变化，能否表示功能性E/I平衡？"
+      ],
+      "shared_evidence_with": [
+        "C5",
+        "C21"
+      ],
+      "review_notes": [
+        "保留输出层不同初始化；不将所有层写成初始3:1。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C19",
+      "statement": "分类训练后37.3%的权重达到10^-4正floor；跨流抑制FC连接的floor比例最高达68.8%，同流兴奋连接为26–49%，卷积层约从不足1%到18%。这显示权重集中于下限且有结构差异，不等同于真正零权重剪枝或不可恢复删除。",
+      "claim_type": "weight_floor_distribution_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "post-hoc权重floor比例诊断。",
+          "design": "非负分类更新后权重钳位floor=1e-4。",
+          "comparator": "跨流FC、同流FC及卷积层。",
+          "measure": "总体37.3%；跨流FC最高68.8%；同流26–49%；卷积<1%至18%。",
+          "unit_of_analysis": "权重/路径类型；权重数量不是独立训练n。",
+          "sample_size_as_reported": "分类协议每变体5 seeds，但图6及这些post-hoc汇总的具体运行数和聚合方式未报告。",
+          "uncertainty": "未给比例的seed离散或各路径分母。",
+          "assumptions": [
+            "下限是正数1e-4，达到floor不是已删连接。",
+            "源文未提供floor权重后续不能增长的冻结规则。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "Post-hoc Analysis: Implicit sparsity",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "floor集中在不同路径和层中程度不同。",
+        "boundary": "为计算网络的权重分布，实际有效容量或推理加速未测。",
+        "negative_result": null,
+        "non_inference": "不把floor比例自动解释为真实稀疏率、死亡突触或不可逆剪枝。",
+        "unresolved": "floor集中如何改变函数容量，是否可安全转换为结构剪枝？",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "非负钳位如何造成不同双流路径的权重floor集中？"
+      ],
+      "shared_evidence_with": [
+        "C20",
+        "C23"
+      ],
+      "review_notes": [
+        "正文‘pruned’按达到floor记录，不生成未执行的零化事实。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C20",
+      "statement": "作者用CIFAR-10约0.98%的训练/测试泛化差距说明结果与欠拟合相容，同时指出约32M名义参数中37.3%处于floor，因而表现局限可能来自受限有效容量，也可能来自信用分配质量；本文未分离两种原因。",
+      "claim_type": "capacity_credit_assignment_interpretation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "泛化差距、参数规模和floor分布的联合解释。",
+          "design": "post-hoc解释，而非容量或路由的受控分离实验。",
+          "comparator": "名义参数规模与受约束的有效容量概念。",
+          "measure": "generalization gap0.98%；约32M参数；37.3%floor。",
+          "unit_of_analysis": "模型与既有训练诊断。",
+          "sample_size_as_reported": "分类协议每变体5 seeds，但图6及这些post-hoc汇总的具体运行数和聚合方式未报告。",
+          "uncertainty": "泛化差距及容量解释未给CI；有效容量未独立测量。",
+          "assumptions": [
+            "低gap只与欠拟合相容，不能唯一确定原因。",
+            "floor是正下限，不必然删除连接；名义参数不等于函数容量。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "Post-hoc Analysis: Surrogate gradient attenuation",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "明确限制原因仍有容量与信用分配两类解释。",
+        "boundary": "post-hoc，没有控制实验区分两者。",
+        "negative_result": null,
+        "non_inference": "不宣称已识别唯一瓶颈，也不把未测容量下降量具体化。",
+        "unresolved": "匹配有效容量、路由和激活后，准确率局限由何者解释？",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "ED分类局限来自信用分配还是约束下的有效容量，如何分离？"
+      ],
+      "shared_evidence_with": [
+        "C8",
+        "C17",
+        "C19"
+      ],
+      "review_notes": [
+        "0.98%按源文差距报告，不猜测训练准确率或计算新效应。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C21",
+      "statement": "作者把权重E/I比趋近均衡、路径floor集中和任务特异组件敏感性类比为内部调节或homeostatic self-organization；这些观察仅来自计算权重，未测生物细胞、放电或稳态干预，不能视为生物自组织机制的验证。",
+      "claim_type": "biological_analogy_interpretation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "计算诊断与生物稳态的讨论类比。",
+          "design": "从图6及消融推演解释，不是生物实验。",
+          "comparator": "非对称初始比与训练后权重比；没有生物对照。",
+          "measure": "权重级E/I比及floor分布；细胞数/放电无测量。",
+          "unit_of_analysis": "模型权重与路径。",
+          "sample_size_as_reported": "分类协议每变体5 seeds，但图6及这些post-hoc汇总的具体运行数和聚合方式未报告。",
+          "uncertainty": null,
+          "assumptions": [
+            "源文承认权重比只是间接proxy。",
+            "严格Dale符号解释本身存在C1所述未决问题。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "Discussion: Implications for biological plausibility research",
+            "figure": "Figure 6 (p.8)",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提出计算调节现象与生物组织的解释性联系。",
+        "boundary": "只有计算proxy，缺生理和因果干预证据。",
+        "negative_result": null,
+        "non_inference": "不说已发现神经稳态机制、实现完整生物学习或辨识兴奋/抑制回路因果。",
+        "unresolved": "权重变化是否对应活动级平衡与真实稳态机制？",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "计算权重的E/I变化能否与生物稳态建立可检验而非类比性的联系？"
+      ],
+      "shared_evidence_with": [
+        "C18",
+        "C19"
+      ],
+      "review_notes": [
+        "生物引用只作作者类比背景，不作跨论文支持链接。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C22",
+      "statement": "作者提出非负synaptic magnitudes与固定符号路由可能适合模拟、光子或神经形态器件；该结构仍需负贡献的减法或差分实现，本文没有器件、能耗、面积或硬件学习实验来确认优势。",
+      "claim_type": "hardware_compatibility_hypothesis",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "Future Work中的硬件兼容性推测。",
+          "design": "由非负幅度与固定符号结构提出可能实现。",
+          "comparator": "任意正负synaptic weights；没有实际器件对照。",
+          "measure": "未测硬件能耗、速度、面积或可靠性。",
+          "unit_of_analysis": "拟议硬件表示与路径结构。",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "负贡献仍由符号结构和减法/差分电路实现。",
+            "物理非负器件可能匹配幅度表示，但整体开销未测。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Discussion: Future Work",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提出可检验的非负幅度硬件实现方向。",
+        "boundary": "无本论文硬件验证。",
+        "negative_result": null,
+        "non_inference": "不能宣称减少能耗、删除全部负电路或实现Dale生物合规。",
+        "unresolved": "整体器件实现与四倍参数开销下是否实际获益？",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "非负权重幅度加固定符号路由是否降低真实硬件实现成本？"
+      ],
+      "shared_evidence_with": [
+        "C1"
+      ],
+      "review_notes": [
+        "被引光子DFA不是本文的器件实验证据。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C23",
+      "statement": "作者建议利用分类权重在floor上的集中进行结构化稀疏推理或模型压缩，但本文未执行压缩及速度/准确率对照；‘受抑权重不能恢复’不能由每次更新后非负钳位推出，不能作为已证实的自动剪枝机制。",
+      "claim_type": "compression_hypothesis_with_floor_boundary",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "观察到floor比例后提出的压缩方向。",
+          "design": "Future Work提议structured sparsity kernels，非压缩实验。",
+          "comparator": "未压缩网络；没有执行后比较。",
+          "measure": "floor比例作为动机；压缩率、延迟、准确率变化未给。",
+          "unit_of_analysis": "拟议压缩模型与weight-floor分布。",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "达到正floor不等同置零或冻结；后续正向更新原则上仍可提高权重。",
+            "源文未说明不可恢复的附加实现规则。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Discussion: Future Work",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提出利用权重分布作压缩的待检验方案。",
+        "boundary": "无压缩后保真或性能结果。",
+        "negative_result": null,
+        "non_inference": "不能称免费压缩或不可逆自然剪枝已成立。",
+        "unresolved": "怎样将floor权重转换成可恢复/可冻结的明确稀疏规则并评估损失？",
+        "unresolved_attribution": "第8页不可恢复说法缺少由所述钳位方法推出的依据。"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "floor集中是否能转换为保持准确率的结构化压缩？"
+      ],
+      "shared_evidence_with": [
+        "C19"
+      ],
+      "review_notes": [
+        "源文方法clamp与不可恢复的描述不一致；保留疑点而不改共享实现。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C24",
+      "statement": "作者猜测专门的抑制路径和避免任意权重符号翻转可能抑制大更新与表示覆盖，从而有利于持续或开放式学习；但本文未评估顺序任务或lifelong RL，Craftax并不构成灾难性遗忘的直接检验。",
+      "claim_type": "continual_learning_hypothesis",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "Future Work中的持续学习猜想。",
+          "design": "依据双流结构推测稳定性，建议未来顺序任务评价。",
+          "comparator": "无顺序任务的遗忘对照。",
+          "measure": "遗忘、表示覆盖和lifelong收益均未测。",
+          "unit_of_analysis": "拟议的序列任务学习过程。",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "抑制大更新与遗忘减少的机制尚未验证。",
+            "开放式单环境reward不是连续多任务记忆保持读出。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Discussion: Future Work",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提出持续学习的可检验结构假说。",
+        "boundary": "没有序列记忆或遗忘实验。",
+        "negative_result": null,
+        "non_inference": "不能声称结构已减轻遗忘或识别表示覆盖机制。",
+        "unresolved": "在控制容量、任务序列和优化后是否改善记忆保持？",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "专用双流路径是否能减少连续任务中的灾难性遗忘？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "hypothesis不是本文结果；不据Craftax任务名生成学习记忆成功结论。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C25",
+      "statement": "作者提出把计算分为兴奋‘放大’与抑制‘压低’路径可能提供错误归因接口，以追踪过度放大或抑制不足；本文未提供归因正确性、忠实度或与saliency的比较，不能宣称已实现机制解释。",
+      "claim_type": "interpretability_hypothesis",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "Future Work中的路径级可解释性设想。",
+          "design": "根据双流结构提出可能追踪错误来源。",
+          "comparator": "标准网络saliency仅为概念对照，无测试。",
+          "measure": "归因性能与机制正确性未测。",
+          "unit_of_analysis": "拟议模型错误归因和两类计算路径。",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "路径贡献可计算不等于真实因果解释。",
+            "严格兴奋/抑制身份仍受C1所述符号解释疑点限制。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Discussion: Future Work",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提出双流路径归因的研究方向。",
+        "boundary": "没有干预或归因验证。",
+        "negative_result": null,
+        "non_inference": "不推断比saliency更正确、已经机制化归因或生物机制辨识。",
+        "unresolved": "通过路径干预、反事实和忠实度评价能否验证该接口？",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "双流路径贡献能否形成经干预验证的忠实错误归因？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "作者的潜在mechanistic attribution保留为待测假设。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C26",
+      "statement": "论文用ED局部更新与BP梯度在policy trunk参数上的余弦相似度，诊断Ant、Humanoid、HalfCheetah中的modulo、random_sparse、scalar_broadcast和random_dense四种误差路由；图4均值来自5seeds、阴影为seed min–max，不是SD，供给文字没有可提取的路由排名。",
+      "claim_type": "routing_direction_diagnostic_method",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "ED/BP参数更新方向的cosine诊断。",
+          "design": "四路由在三环境PPO训练中比较；caption限制为policy trunk参数。",
+          "comparator": "modulo一输出/hidden unit；random_sparse随机一输出；scalar_broadcast同一归一化误差和；random_dense归一化稠密随机反馈。",
+          "measure": "cosine similarity，较高表示局部方向更接近BP。",
+          "unit_of_analysis": "seed训练轨迹和policy-trunk参数方向；检查点不是独立重复。",
+          "sample_size_as_reported": "每路由/环境5seeds，图4均值与min–max。",
+          "uncertainty": "图4阴影是seed最小—最大范围；无文字数值、显著性或排名。",
+          "assumptions": [
+            "caption的排除范围写为excluding the policy，未细化实现界限，不能自行补为特定head参数。",
+            "不读取像素或曲线外观。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "Figure 4 caption",
+            "figure": "Figure 4",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提供检验局部更新方向与BP接近程度的诊断设计。",
+        "boundary": "方向相似不是收敛、性能或生物有效性等价；具体排名延后。",
+        "negative_result": null,
+        "non_inference": "不能声称modulo优于其他路由、标量广播失败或余弦证明完整梯度一致。",
+        "unresolved": "需可读曲线数据或数值总结判断比较；learned projections与hybrid routing仍为未测后续方向。",
+        "unresolved_attribution": "caption中参数排除范围未明确解释。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "误差路由的局部更新方向与BP梯度相似性如何诊断，其性能含义是什么？"
+      ],
+      "shared_evidence_with": [
+        "C2"
+      ],
+      "review_notes": [
+        "方法可提取，图4比较结果因无像素与数值不提取；这不阻止其余供给文本完成。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "本来源为2026年6月30日arXiv v1预印本，10页供给文本全部完成。提取26条候选：7条方法构造/诊断、11条计算结果、4条解释、4条假设。ED的modulo routing和分类三个稳定设置在MNIST/CIFAR-10产生不同消融敏感性；全配置为96.7±0.1%和61.7±0.7%，仍低于DFA。RL效果依环境而异，HalfCheetah比较有明确优势，Ant未普遍优于PPO，Humanoid和Craftax存在边界。post-hoc包含局部代理误差衰减、层特异权重比及正floor集中，不能据此证明生物稳态或唯一信用分配机制。保留Dale连接符号、RL激活、Craftax数值与方差概括的源文冲突；floor不可恢复说法没有所述clamp依据。图4只提取文字可支持的诊断方法，不猜路由排名。硬件、压缩、持续学习和机制归因均为未验证方向。独立n为训练seed，post-hoc汇总细节不明。作者首名据来源补全并披露索引缩写；候选保持human_checked:false，无像素阅读或科学复现。",
+  "shared_evidence": [
+    {
+      "claim_id": "C1",
+      "with": [
+        "C2",
+        "C22"
+      ]
+    },
+    {
+      "claim_id": "C2",
+      "with": [
+        "C1",
+        "C3",
+        "C6",
+        "C26"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C2",
+        "C9",
+        "C10"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C9",
+        "C10",
+        "C17"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C9",
+        "C10",
+        "C18"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C2",
+        "C12",
+        "C13",
+        "C14",
+        "C15"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C9",
+        "C11",
+        "C16"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C10",
+        "C11",
+        "C16",
+        "C20"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C3",
+        "C4",
+        "C5",
+        "C7",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "with": [
+        "C3",
+        "C4",
+        "C5",
+        "C8",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "with": [
+        "C7",
+        "C8",
+        "C9",
+        "C10"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "with": [
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C13",
+      "with": [
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C14",
+      "with": [
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C15",
+      "with": [
+        "C6",
+        "C16"
+      ]
+    },
+    {
+      "claim_id": "C16",
+      "with": [
+        "C7",
+        "C8",
+        "C15"
+      ]
+    },
+    {
+      "claim_id": "C17",
+      "with": [
+        "C4",
+        "C20"
+      ]
+    },
+    {
+      "claim_id": "C18",
+      "with": [
+        "C5",
+        "C21"
+      ]
+    },
+    {
+      "claim_id": "C19",
+      "with": [
+        "C20",
+        "C23"
+      ]
+    },
+    {
+      "claim_id": "C20",
+      "with": [
+        "C8",
+        "C17",
+        "C19"
+      ]
+    },
+    {
+      "claim_id": "C21",
+      "with": [
+        "C18",
+        "C19"
+      ]
+    },
+    {
+      "claim_id": "C22",
+      "with": [
+        "C1"
+      ]
+    },
+    {
+      "claim_id": "C23",
+      "with": [
+        "C19"
+      ]
+    },
+    {
+      "claim_id": "C26",
+      "with": [
+        "C2"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": null,
+        "issue": "来源为arXiv:2606.31700v1，2026年6月30日；标题一致；索引首作者缩写Y Yamada可由来源明确扩展为Yutaro Yamada。",
+        "suggested_correction": "仅补全作者名，保留索引缩写差异和v1范围，不假设后续出版或DOI。",
+        "pdf_page": 1,
+        "resolved": true
+      },
+      {
+        "claim_id": "C1",
+        "issue": "作者定义Dale为单神经元全部出向同号，但双流公式让同一流具有正同流和负跨流出向路径；所有可学习参数非负的说法也不包括可有符号偏置。",
+        "suggested_correction": "保留非负synaptic magnitudes与固定路径符号的构造，不无条件写成严格Dale神经元约束；待作者/实现澄清。",
+        "pdf_page": 2,
+        "resolved": false
+      },
+      {
+        "claim_id": "C6",
+        "issue": "RL方法写width-scaled sigmoid，而讨论写ReLU和RMS normalization；没有供给代码判定。",
+        "suggested_correction": "记录两处来源，不选择其中之一当作确定实际配置。",
+        "pdf_page": 4,
+        "resolved": false
+      },
+      {
+        "claim_id": "C9",
+        "issue": "表1表头写proposed minus ablation，数值却为负且说明negative是loss；图2和正文支持消融减全配置。",
+        "suggested_correction": "透明按消融−全配置解释负差，保留原数值并记录源文表头错误。",
+        "pdf_page": 5,
+        "resolved": true
+      },
+      {
+        "claim_id": "C9",
+        "issue": "10类MNIST的25.3%被源文称near-chance，但未提供其他随机基准定义。",
+        "suggested_correction": "只保留25.3%和−71.4个百分点，不把它当10%随机性能。",
+        "pdf_page": 4,
+        "resolved": true
+      },
+      {
+        "claim_id": "C15",
+        "issue": "Craftax ED在主结果为20.9±2.9，另一总结段为23.0；BP27.0、差4.0和p=0.002的比较归属不能与各段唯一对齐。",
+        "suggested_correction": "保留逐处数值和 qualitative boundary，精确分数/差值/p归属延后澄清；不把non-Dalean对DFA p=0.010赋给ED。",
+        "pdf_page": 5,
+        "resolved": false
+      },
+      {
+        "claim_id": "C14",
+        "issue": "讨论称ED-PPO在所有环境比BP方差更高，与Ant和Humanoid报告的SD不符；non-Dalean在Humanoid也更低。",
+        "suggested_correction": "仅保留逐环境离散；统一方差结论待原seed数据/作者核查。",
+        "pdf_page": 7,
+        "resolved": false
+      },
+      {
+        "claim_id": "C17",
+        "issue": "局部gated-error层间尺度差不是同一反传误差的传输测量；post-hoc的seed汇总细节未报告。",
+        "suggested_correction": "明确代理量、网络层单位和未给汇总n，不补CI或因果归因。",
+        "pdf_page": 5,
+        "resolved": true
+      },
+      {
+        "claim_id": "C18",
+        "issue": "前三卷积层E/I比随深度下降，但FC标注有1.08、1.65、1.50，不能把全网写成单调抑制增强。",
+        "suggested_correction": "保留层限定趋势与完整文本标注，生理E/I与计算权重比分开。",
+        "pdf_page": 8,
+        "resolved": true
+      },
+      {
+        "claim_id": "C23",
+        "issue": "正floor及非负clamp不等于连接被删或不可恢复；Future Work缺不可恢复的附加规则。",
+        "suggested_correction": "只记达到floor比例，压缩为假设；不可恢复机制延后，不采用其确定性说法。",
+        "pdf_page": 8,
+        "resolved": false
+      },
+      {
+        "claim_id": "C26",
+        "issue": "图4没有供给比较数值或排名；阴影明确是min–max；排除的policy参数边界表述不清。",
+        "suggested_correction": "仅提取方法和5seeds，不推读曲线，不发明路由优劣或SD。",
+        "pdf_page": 7,
+        "resolved": false
+      },
+      {
+        "claim_id": null,
+        "issue": "未来硬件、持续学习、解释性和压缩均无对应验证；生物homeostasis仅类比。",
+        "suggested_correction": "分别保留hypothesis/interpretation；所有未测负结果为null。",
+        "pdf_page": 8,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "第二次保留上下文源文审计覆盖全部10页、所有6图注及表1，核对全部26候选的比较、seed单位、数值、角色、共享证据和零引文。",
+        "suggested_correction": null,
+        "pdf_page": null,
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T13:54:32.242094Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "71a0e9d15fb920b4c9e2bde608021338cc4fddd0380f870b5ad7ff74e334349e",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

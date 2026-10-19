@@ -1,0 +1,1011 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "Topological Sensitivity in Connectome-Constrained Neural Networks",
+    "authors": [
+      "Nalin Dhiman"
+    ],
+    "doi": null,
+    "publication_year": 2026,
+    "venue": "arXiv (Cornell University)",
+    "url": "https://arxiv.org/pdf/2604.04033"
+  },
+  "source": {
+    "filename": "paper-W7152330348--Topological-Sensitivity-in-Connectome-Constrained-Neural-Networks.pdf",
+    "sha256": "b64331d113bb958cbc2cab4a0c47ac676cdd3c53b1ef1e393898e443eedee8ed",
+    "source_url": "https://arxiv.org/pdf/2604.04033",
+    "pdf_page_count": 17
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17
+    ],
+    "results_sections_seen": [
+      "Methods 4.1–4.5; Tables 1–2",
+      "Results 6.1–6.5; Figures 3–6",
+      "Control Analysis 7",
+      "Mechanism Analysis 8; Table 3",
+      "Limitations 10"
+    ],
+    "missing_material": [
+      "图像像素；未供应的补充全文/原始数据未读取"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "17 页供文全部阅读，包括全部图表、控制阶段、限制与参考文献；arXiv:2604.04033v1，5 Apr 2026。",
+      "逐条第二审计区分训练种子、重连样本、重复基线、训练批结果与因果/一般性解释。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "研究保持 45,669 节点、1,513,231 有向边和 12,380 自环，比较实际连接组、朴素随机及保入/出度重连图，并保持循环核心 734 可训练及 2959 固定参数。",
+      "role": "result",
+      "source_pages": [
+        5
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "从连接组训练过的 checkpoint 初始化并采用弱随机零模型时，连接组在 5 步的损失、平均绝对活动和耗时均更低。",
+      "role": "result",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "弱对照下 10 步仍出现较低损失、活动和耗时，但这些结果继承相同初始化和零模型混杂。",
+      "role": "result",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "改为共享从头随机初始化后，朴素随机减连接组的损失差在 5 和 10 步都约 −0.0020，原有早期损失优势未保持。",
+      "role": "result",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "使用保度数零模型后，5 步损失差 +0.0003、活动差 −0.0106，10 步分别 −0.0018、−0.0087，连接组不再具有较低活动优势。",
+      "role": "result",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "五张独立重连图与三种种子的 5 步集合中，控制减连接组平均损失差 +0.0017、活动差 −0.0108，再次未恢复弱对照的大优势。",
+      "role": "result",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "训练前连接组和保度数控制的活动分别为 0.5682±0.0059 和 0.5774±0.0062，梯度范数为 9.75±4.21 和 8.96±3.96，未见很大的初始尺度差。",
+      "role": "result",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "保度数集合中连接组耗时 122.75±2.17 s、控制 133.47±7.05 s，仍保留约 10.72 s 的实现时间差。",
+      "role": "result",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "弱对照的描述性分析显示连接组节点与边使用更分散：节点 Gini 0.4319 vs 0.4694，边使用 Gini 0.7786 vs 0.8232。",
+      "role": "result",
+      "source_pages": [
+        12
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "弱对照的时序摘要虽显示较低总活动及节点方差，却没有一致地显示更平滑的逐时刻动力学。",
+      "role": "result",
+      "source_pages": [
+        11
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "small-world 与 ring-lattice 控制在可比分析完成前变为非有限值，不能用于证明这些结构比连接组差。",
+      "role": "result",
+      "source_pages": [
+        13
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "本文支持初始化和零模型可改变短期拓扑优势判断，但不支持所有任务或长训练下连接组拓扑没有作用。",
+      "role": "interpretation",
+      "source_pages": [
+        13
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "top-10% 节点与边份额以及总活动摘要",
+      "role": "result",
+      "source_pages": [
+        11,
+        12
+      ],
+      "decision": "include",
+      "reason": "与 Gini 来自同一弱对照；不拆成额外独立重复"
+    },
+    {
+      "summary": "长训练、独立测试泛化、能耗和生物验证",
+      "role": "result",
+      "source_pages": [
+        6,
+        11,
+        13
+      ],
+      "decision": "defer",
+      "reason": "没有测量；不从短期训练及 runtime 外推"
+    },
+    {
+      "summary": "保度数交换和初始活动尺度控制",
+      "role": "result",
+      "source_pages": [
+        5,
+        9,
+        13
+      ],
+      "decision": "include",
+      "reason": "重要控制同时保留不完全混合及未控谱性质边界"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "研究保持 45,669 节点、1,513,231 有向边和 12,380 自环，比较实际连接组、朴素随机及保入/出度重连图，并保持循环核心 734 可训练及 2959 固定参数。",
+      "claim_type": "computational",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "flyvis MovingEdge 方向解码的匹配优化步数图拓扑对照",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "同一 flyvis 节点/参数共享架构",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "另有相同线性 decoder；734 不是整个含 decoder 模型总参数。重连保持 metadata 并不完全分离参数共享影响。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "Table 1; Methods 4.1–4.2",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "研究保持 45,669 节点、1,513,231 有向边和 12,380 自环，比较实际连接组、朴素随机及保入/出度重连图，并保持循环核心 734 可训练及 2959 固定参数。",
+        "boundary": "另有相同线性 decoder；734 不是整个含 decoder 模型总参数。重连保持 metadata 并不完全分离参数共享影响。",
+        "negative_result": null,
+        "non_inference": "软件图模型的训练差异不证明自然连接组机制、代谢效率或所有拓扑无效；同一基线重复配对及同一输出多指标不是独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "连接组与合适随机零模型",
+        "初始化和参数共享的混杂",
+        "短期训练与长期泛化的区别"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，研究保持 45,669 节点、1,513,231 有向边和 12,380 自环，比较实际连接组、朴素随机及保入/出度重连图，并保持循环核心 734 可训练及 2959 固定参数。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "从连接组训练过的 checkpoint 初始化并采用弱随机零模型时，连接组在 5 步的损失、平均绝对活动和耗时均更低。",
+      "claim_type": "computational",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "flyvis MovingEdge 方向解码的匹配优化步数图拓扑对照",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "三种训练种子的匹配比较",
+          "sample_size_as_reported": "3 个种子",
+          "uncertainty": "5 步损失 0.514 vs 0.698；活动 0.656 vs 1.861；耗时 252 vs 309 s。",
+          "assumptions": [
+            "checkpoint 已适配连接组，零模型不保度数，因此不是孤立拓扑优势。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "Results 6.1; Figures 3–4",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "从连接组训练过的 checkpoint 初始化并采用弱随机零模型时，连接组在 5 步的损失、平均绝对活动和耗时均更低。",
+        "boundary": "checkpoint 已适配连接组，零模型不保度数，因此不是孤立拓扑优势。",
+        "negative_result": null,
+        "non_inference": "软件图模型的训练差异不证明自然连接组机制、代谢效率或所有拓扑无效；同一基线重复配对及同一输出多指标不是独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "连接组与合适随机零模型",
+        "初始化和参数共享的混杂",
+        "短期训练与长期泛化的区别"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，从连接组训练过的 checkpoint 初始化并采用弱随机零模型时，连接组在 5 步的损失、平均绝对活动和耗时均更低。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "弱对照下 10 步仍出现较低损失、活动和耗时，但这些结果继承相同初始化和零模型混杂。",
+      "claim_type": "computational",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "flyvis MovingEdge 方向解码的匹配优化步数图拓扑对照",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "固定图模型的训练运行/重连图；非独立果蝇个体",
+          "sample_size_as_reported": "3 个种子",
+          "uncertainty": "10 步损失 0.499 vs 0.557，活动 0.740 vs 1.379，耗时约 546 vs 645 s。",
+          "assumptions": [
+            "只在固定训练批的短期训练报告，未测最终收敛或测试泛化。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "Results 6.1; Table 2",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "弱对照下 10 步仍出现较低损失、活动和耗时，但这些结果继承相同初始化和零模型混杂。",
+        "boundary": "只在固定训练批的短期训练报告，未测最终收敛或测试泛化。",
+        "negative_result": null,
+        "non_inference": "软件图模型的训练差异不证明自然连接组机制、代谢效率或所有拓扑无效；同一基线重复配对及同一输出多指标不是独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "连接组与合适随机零模型",
+        "初始化和参数共享的混杂",
+        "短期训练与长期泛化的区别"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，弱对照下 10 步仍出现较低损失、活动和耗时，但这些结果继承相同初始化和零模型混杂。是否成立？"
+      ],
+      "shared_evidence_with": [
+        "C2"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "改为共享从头随机初始化后，朴素随机减连接组的损失差在 5 和 10 步都约 −0.0020，原有早期损失优势未保持。",
+      "claim_type": "computational",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "flyvis MovingEdge 方向解码的匹配优化步数图拓扑对照",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "固定图模型的训练运行/重连图；非独立果蝇个体",
+          "sample_size_as_reported": "3 个种子",
+          "uncertainty": null,
+          "assumptions": [
+            "这是接近零的描述性差异，不是预设统计等效；仍有活动和实现耗时差异。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Results 6.2; Table 2",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "改为共享从头随机初始化后，朴素随机减连接组的损失差在 5 和 10 步都约 −0.0020，原有早期损失优势未保持。",
+        "boundary": "这是接近零的描述性差异，不是预设统计等效；仍有活动和实现耗时差异。",
+        "negative_result": "原先 checkpoint 条件的连接组损失优势在本对照下消失。",
+        "non_inference": "软件图模型的训练差异不证明自然连接组机制、代谢效率或所有拓扑无效；同一基线重复配对及同一输出多指标不是独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "连接组与合适随机零模型",
+        "初始化和参数共享的混杂",
+        "短期训练与长期泛化的区别"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，改为共享从头随机初始化后，朴素随机减连接组的损失差在 5 和 10 步都约 −0.0020，原有早期损失优势未保持。是否成立？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C3"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "使用保度数零模型后，5 步损失差 +0.0003、活动差 −0.0106，10 步分别 −0.0018、−0.0087，连接组不再具有较低活动优势。",
+      "claim_type": "computational",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "flyvis MovingEdge 方向解码的匹配优化步数图拓扑对照",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "固定图模型的训练运行/重连图；非独立果蝇个体",
+          "sample_size_as_reported": "3 个种子",
+          "uncertainty": null,
+          "assumptions": [
+            "差值为 control minus connectome；控制活动略低，不应称严格相等或统计零效应。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "Results 6.3; Table 2",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "使用保度数零模型后，5 步损失差 +0.0003、活动差 −0.0106，10 步分别 −0.0018、−0.0087，连接组不再具有较低活动优势。",
+        "boundary": "差值为 control minus connectome；控制活动略低，不应称严格相等或统计零效应。",
+        "negative_result": "较低活动的连接组优势未保持且方向略反转。",
+        "non_inference": "软件图模型的训练差异不证明自然连接组机制、代谢效率或所有拓扑无效；同一基线重复配对及同一输出多指标不是独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "连接组与合适随机零模型",
+        "初始化和参数共享的混杂",
+        "短期训练与长期泛化的区别"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，使用保度数零模型后，5 步损失差 +0.0003、活动差 −0.0106，10 步分别 −0.0018、−0.0087，连接组不再具有较低活动优势。是否成立？"
+      ],
+      "shared_evidence_with": [
+        "C4"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "五张独立重连图与三种种子的 5 步集合中，控制减连接组平均损失差 +0.0017、活动差 −0.0108，再次未恢复弱对照的大优势。",
+      "claim_type": "computational",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "flyvis MovingEdge 方向解码的匹配优化步数图拓扑对照",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "重连图×训练种子配对",
+          "sample_size_as_reported": "5 张图×3 种子=15 配对，基线仅 3 种子",
+          "uncertainty": "连接组/控制损失 0.5155±0.0067/0.5172±0.0061；活动 0.5453±0.0185/0.5346±0.0147，±为 SD。",
+          "assumptions": [
+            "重复使用连接组基线，15 配对不是 15 个独立连接组；不能由小差值直接认定等效。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "Results 6.4; Figure 5; Table 2",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "五张独立重连图与三种种子的 5 步集合中，控制减连接组平均损失差 +0.0017、活动差 −0.0108，再次未恢复弱对照的大优势。",
+        "boundary": "重复使用连接组基线，15 配对不是 15 个独立连接组；不能由小差值直接认定等效。",
+        "negative_result": null,
+        "non_inference": "软件图模型的训练差异不证明自然连接组机制、代谢效率或所有拓扑无效；同一基线重复配对及同一输出多指标不是独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "连接组与合适随机零模型",
+        "初始化和参数共享的混杂",
+        "短期训练与长期泛化的区别"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，五张独立重连图与三种种子的 5 步集合中，控制减连接组平均损失差 +0.0017、活动差 −0.0108，再次未恢复弱对照的大优势。是否成立？"
+      ],
+      "shared_evidence_with": [
+        "C4",
+        "C5"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "训练前连接组和保度数控制的活动分别为 0.5682±0.0059 和 0.5774±0.0062，梯度范数为 9.75±4.21 和 8.96±3.96，未见很大的初始尺度差。",
+      "claim_type": "computational",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "flyvis MovingEdge 方向解码的匹配优化步数图拓扑对照",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "共享初始化诊断",
+          "sample_size_as_reported": null,
+          "uncertainty": "源文将活动差描述为约 1.64%。",
+          "assumptions": [
+            "描述性尺度相近不意味着所有动力学性质匹配；谱半径未控制，未报告该差异的正式等效检验。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "Results 6.5; Control Analysis 7.5",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "训练前连接组和保度数控制的活动分别为 0.5682±0.0059 和 0.5774±0.0062，梯度范数为 9.75±4.21 和 8.96±3.96，未见很大的初始尺度差。",
+        "boundary": "描述性尺度相近不意味着所有动力学性质匹配；谱半径未控制，未报告该差异的正式等效检验。",
+        "negative_result": null,
+        "non_inference": "软件图模型的训练差异不证明自然连接组机制、代谢效率或所有拓扑无效；同一基线重复配对及同一输出多指标不是独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "连接组与合适随机零模型",
+        "初始化和参数共享的混杂",
+        "短期训练与长期泛化的区别"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，训练前连接组和保度数控制的活动分别为 0.5682±0.0059 和 0.5774±0.0062，梯度范数为 9.75±4.21 和 8.96±3.96，未见很大的初始尺度差。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "保度数集合中连接组耗时 122.75±2.17 s、控制 133.47±7.05 s，仍保留约 10.72 s 的实现时间差。",
+      "claim_type": "computational",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "flyvis MovingEdge 方向解码的匹配优化步数图拓扑对照",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "软件运行计时的配对",
+          "sample_size_as_reported": "5 图×3 种子配对",
+          "uncertainty": "±为 SD；单保度数控制 5/10 步差 +8.38/+3.98 s。",
+          "assumptions": [
+            "未分离邻接排序、内存局部性、参数访问等实现因素；不是能耗或纯拓扑效率证据。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "Results 6.4; runtime interpretation 7.6",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "保度数集合中连接组耗时 122.75±2.17 s、控制 133.47±7.05 s，仍保留约 10.72 s 的实现时间差。",
+        "boundary": "未分离邻接排序、内存局部性、参数访问等实现因素；不是能耗或纯拓扑效率证据。",
+        "negative_result": null,
+        "non_inference": "软件图模型的训练差异不证明自然连接组机制、代谢效率或所有拓扑无效；同一基线重复配对及同一输出多指标不是独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "连接组与合适随机零模型",
+        "初始化和参数共享的混杂",
+        "短期训练与长期泛化的区别"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，保度数集合中连接组耗时 122.75±2.17 s、控制 133.47±7.05 s，仍保留约 10.72 s 的实现时间差。是否成立？"
+      ],
+      "shared_evidence_with": [
+        "C5",
+        "C6"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "弱对照的描述性分析显示连接组节点与边使用更分散：节点 Gini 0.4319 vs 0.4694，边使用 Gini 0.7786 vs 0.8232。",
+      "claim_type": "computational",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "flyvis MovingEdge 方向解码的匹配优化步数图拓扑对照",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "弱对照训练输出的节点/边统计",
+          "sample_size_as_reported": null,
+          "uncertainty": "对应 SD 节点 0.0372/0.0033，边 0.0080/0.0025。",
+          "assumptions": [
+            "边使用是 |w|×E|h| 代理，非真实生物突触流量；没有在严格控制下检验该机制的因果优势。"
+          ],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "Table 3; Mechanism Analysis 8",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "弱对照的描述性分析显示连接组节点与边使用更分散：节点 Gini 0.4319 vs 0.4694，边使用 Gini 0.7786 vs 0.8232。",
+        "boundary": "边使用是 |w|×E|h| 代理，非真实生物突触流量；没有在严格控制下检验该机制的因果优势。",
+        "negative_result": null,
+        "non_inference": "软件图模型的训练差异不证明自然连接组机制、代谢效率或所有拓扑无效；同一基线重复配对及同一输出多指标不是独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "连接组与合适随机零模型",
+        "初始化和参数共享的混杂",
+        "短期训练与长期泛化的区别"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，弱对照的描述性分析显示连接组节点与边使用更分散：节点 Gini 0.4319 vs 0.4694，边使用 Gini 0.7786 vs 0.8232。是否成立？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C3"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "弱对照的时序摘要虽显示较低总活动及节点方差，却没有一致地显示更平滑的逐时刻动力学。",
+      "claim_type": "computational",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "flyvis MovingEdge 方向解码的匹配优化步数图拓扑对照",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "同一弱对照的时间摘要",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "只为描述性边界，不推广为自然视觉动力学。"
+          ],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "Mechanism Analysis 8",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "弱对照的时序摘要虽显示较低总活动及节点方差，却没有一致地显示更平滑的逐时刻动力学。",
+        "boundary": "只为描述性边界，不推广为自然视觉动力学。",
+        "negative_result": "平滑动力学的普遍优势没有在该摘要中成立。",
+        "non_inference": "软件图模型的训练差异不证明自然连接组机制、代谢效率或所有拓扑无效；同一基线重复配对及同一输出多指标不是独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "连接组与合适随机零模型",
+        "初始化和参数共享的混杂",
+        "短期训练与长期泛化的区别"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，弱对照的时序摘要虽显示较低总活动及节点方差，却没有一致地显示更平滑的逐时刻动力学。是否成立？"
+      ],
+      "shared_evidence_with": [
+        "C9"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "small-world 与 ring-lattice 控制在可比分析完成前变为非有限值，不能用于证明这些结构比连接组差。",
+      "claim_type": "computational",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "flyvis MovingEdge 方向解码的匹配优化步数图拓扑对照",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "失败的结构化零模型运行",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "这是实际运行失败，不是可控任务性能负结果。"
+          ],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "Limitations item 7",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "small-world 与 ring-lattice 控制在可比分析完成前变为非有限值，不能用于证明这些结构比连接组差。",
+        "boundary": "这是实际运行失败，不是可控任务性能负结果。",
+        "negative_result": "这些控制未产生可解释的有限比较结果。",
+        "non_inference": "软件图模型的训练差异不证明自然连接组机制、代谢效率或所有拓扑无效；同一基线重复配对及同一输出多指标不是独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "连接组与合适随机零模型",
+        "初始化和参数共享的混杂",
+        "短期训练与长期泛化的区别"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，small-world 与 ring-lattice 控制在可比分析完成前变为非有限值，不能用于证明这些结构比连接组差。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "本文支持初始化和零模型可改变短期拓扑优势判断，但不支持所有任务或长训练下连接组拓扑没有作用。",
+      "claim_type": "computational",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "flyvis MovingEdge 方向解码的匹配优化步数图拓扑对照",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "控制梯度的有限结论",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "12 stimuli×269 frames 的训练批，5/10 次 Adam 更新；重连仅 250,000 次交换、仍与原图相关，未匹配谱、空间与高阶结构。"
+          ],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "Limitations 1–8; Conclusion",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "本文支持初始化和零模型可改变短期拓扑优势判断，但不支持所有任务或长训练下连接组拓扑没有作用。",
+        "boundary": "12 stimuli×269 frames 的训练批，5/10 次 Adam 更新；重连仅 250,000 次交换、仍与原图相关，未匹配谱、空间与高阶结构。",
+        "negative_result": null,
+        "non_inference": "软件图模型的训练差异不证明自然连接组机制、代谢效率或所有拓扑无效；同一基线重复配对及同一输出多指标不是独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "连接组与合适随机零模型",
+        "初始化和参数共享的混杂",
+        "短期训练与长期泛化的区别"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，本文支持初始化和零模型可改变短期拓扑优势判断，但不支持所有任务或长训练下连接组拓扑没有作用。是否成立？"
+      ],
+      "shared_evidence_with": [
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C11"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "17 页完整文本全部评估。核心贡献是在相同 flyvis 参数共享下逐步加强初始化与零模型对照；原先短期损失和活动优势不再保持。第二审计保留全部控制、反转和结构化控制非有限失败，区分图样本/种子/重复基线、SD/未给 CI、训练批和测试泛化。描述性弱对照机制及 runtime 均不构成纯拓扑或生物能效因果证据。",
+  "shared_evidence": [
+    {
+      "claim_id": "C3",
+      "with": [
+        "C2"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C2",
+        "C3"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C4"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C4",
+        "C5"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C5",
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C2",
+        "C3"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "with": [
+        "C9"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "with": [
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C11"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": "C6",
+        "issue": "15 sample-seed combinations 中连接组基线按图重复。",
+        "suggested_correction": "明确真实单位为 5 图×3 种子，非 15 独立连接组/动物；不把 ± 误称 CI。",
+        "pdf_page": 9,
+        "resolved": true
+      },
+      {
+        "claim_id": "C6",
+        "issue": "方法称报告 bootstrap CI，但供文结果未列具体区间或依赖处理。",
+        "suggested_correction": "只保留已给平均差与 SD；统计等效及依赖处理未决。",
+        "pdf_page": 7,
+        "resolved": false
+      },
+      {
+        "claim_id": "C4",
+        "issue": "优势 disappears 的语言可能被读成严格无效。",
+        "suggested_correction": "表述为本协议未保持且差近零，不增加未报告 p 或等效检验。",
+        "pdf_page": 8,
+        "resolved": true
+      },
+      {
+        "claim_id": "C8",
+        "issue": "共享随机初始+naive 10 步耗时差为 369.59 s，不能将全部阶段统称差异小。",
+        "suggested_correction": "只把 degree-preserving 的 3.98/10.72 s 描述为较小残差，保留实现依赖。",
+        "pdf_page": 9,
+        "resolved": true
+      },
+      {
+        "claim_id": "C9",
+        "issue": "节点/边大量条目可能被计成独立实验。",
+        "suggested_correction": "明确共同训练输出、代理量和弱对照来源。",
+        "pdf_page": 12,
+        "resolved": true
+      },
+      {
+        "claim_id": "C12",
+        "issue": "双边交换预算与 metadata 语义仍保留部分原图和参数共享结构。",
+        "suggested_correction": "范围收缩到本固定实现和短期任务；未排除所有高阶拓扑影响。",
+        "pdf_page": 13,
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T12:35:23.412140Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "b64331d113bb958cbc2cab4a0c47ac676cdd3c53b1ef1e393898e443eedee8ed",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

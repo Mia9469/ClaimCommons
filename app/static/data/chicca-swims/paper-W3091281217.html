@@ -1,0 +1,111 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Live Demonstration: Neuromorphic Sensory Integration for Combining Sound Source Localization and Collision Avoidance</title><style>body{max-width:940px;margin:40px auto;padding:0 24px;background:#fffdf7;color:#12372f;font:16px/1.8 Georgia,serif}h1{font-size:26px;line-height:1.4}h2{font-size:20px;line-height:1.5}h3{font-size:16px}article{padding:26px 0;border-top:1px solid #bec4b8}small{color:#68766e}dl{display:grid;grid-template-columns:120px 1fr;gap:8px 20px}dt{font-weight:bold}dd{margin:0}li{padding:8px 0}p,dd{overflow-wrap:anywhere}.note{background:#eef2e2;padding:14px;border-left:3px solid #738968}summary{cursor:pointer}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.7 monospace}@media(max-width:600px){body{margin:24px auto;padding:0 18px}dl{grid-template-columns:1fr;gap:3px}dd{margin-bottom:12px}}@media print{body{margin:0;background:white}details{display:block}}</style><link rel="stylesheet" href="../../commons-v02.css?v=20261020-1"><link rel="stylesheet" href="../../examples.css?v=20260928-2"><link rel="stylesheet" href="../../site.css?v=20261020-1"><script defer src="../../site.js?v=20261020-1"></script><script defer src="../../report-ui.js?v=20261020-1"></script></head><body class="portal-page report-page" data-cc-report-shell="1" data-page="library" data-site-prefix="../../" data-library-paper="paper-W3091281217" data-report-language="zh" data-claim-records="{&quot;C1&quot;:&quot;structured-paper-W3091281217-1&quot;}"><header></header><main id="report-content"><div id="report-tools"></div><small>CLAIM COMMONS / 阅读报告</small><h1>Live Demonstration: Neuromorphic Sensory Integration for Combining Sound Source Localization and Collision Avoidance</h1><p class="note">AI 文本提取候选，尚待人工核对。图像像素未读取；PDF 页码指文件中的页序。</p><p>第二遍已核对全部供应的单页文本、图注及草稿。文档身份一致，属于现场演示说明；可保留一项闭环神经形态感觉整合系统的实现命题。实时性能未获本篇定量验证，离线较短路径结果归于既往论文，访客交互是预期演示流程。</p><a href="https://idus.us.es/server/api/core/bitstreams/909d9381-d275-420d-ad81-263832fac683/content" rel="noreferrer">查看所读原文版本 ↗</a><details><summary>贡献清单与处理决定</summary><ul><li><b>描述由事件视觉、双耳听觉、SpiNNaker脉冲神经网络及pan-tilt执行机构组成的闭环感觉整合演示系统。</b><br>include · 正文给出硬件组成、网络信息流及朝向控制连接，支持限定于实现描述的命题。</li><li><b>宣称系统能够实时选择最接近声源的无障碍朝向。</b><br>defer · 摘要和正文宣称该能力，但未提供响应延迟、朝向误差、避障成功率或具体测试记录。</li><li><b>离线轮式机器人测试中，网络能够选择绕过障碍物朝向声源的较短路径。</b><br>exclude · 明确归于参考文献[1]，不能作为本篇独立产生的新结果。</li><li><b>图1图注描述不含pan-tilt单元的硬件设置及红色朝向点、蓝色Optical Flow点的显示界面。</b><br>include · 并入系统实现命题的证据，不另立重复命题或性能验证。</li><li><b>访客通过改变声源位置、挥手或移动物体模拟障碍物，与朝向显示及pan-tilt运动交互。</b><br>exclude · 属于拟开展的访客体验，未报告实际交互实验结果。</li></ul></details><article><small>C1 / 直接结果 · system_implementation</small><h2>本篇描述了一个闭环神经形态感觉整合演示系统：128×128像素eDVS和64通道双耳NAS分别向SpiNN-3上的Optical Flow编码网络与声源方向网络提供输入，两网络接入选择朝向的感觉整合网络，朝向信息再经head direction cell网络控制承载传感器的pan-tilt单元。</h2><h3>Evidence</h3><p>硬件配置与脉冲神经网络信息流的文字说明</p><dl><dt>设计 / 对照</dt><dd>eDVS及基于Xilinx Artix-7 FPGA的NAS通过spinnaker-link连接SpiNN-3；双耳麦克风提供NAS输入，整合后的朝向信息用于pan-tilt控制。；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>文中描述的演示系统及组成模块；未报告实验分析单位；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 1 · Abstract; I. INTRODUCTION; II. DEMONSTRATION SETUP</dd></dl><p>硬件与显示界面的图注描述</p><dl><dt>设计 / 对照</dt><dd>图1图注说明硬件展示不含pan-tilt单元，界面以红点表示朝向、蓝点表示Optical Flow。；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>演示硬件及显示界面；不是独立实验重复；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 1 · Fig. 1</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>所供文本支持多传感器脉冲网络演示系统的组成、信息流及闭环执行机构连接描述。</dd><dt>适用边界</dt><dd>证据限于单页演示说明与图注；未提供图像像素，图注明确硬件展示不含pan-tilt单元。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能据此确证实时响应性能、避障成功率、路径最优性、移动机器人实际碰撞避免，或相对单模态系统的优势。</dd><dt>未解决</dt><dd>该闭环系统的朝向误差、响应延迟及不同声源和障碍物条件下的避障表现未被量化。</dd></dl><h3>相关问题</h3><ul><li>事件视觉与双耳听觉的脉冲网络输出如何整合为控制pan-tilt朝向的闭环信号？</li></ul></article><details><summary>核对记录与来源信息</summary><pre>{
+  &quot;coverage&quot;: {
+    &quot;pdf_pages_read&quot;: [
+      1
+    ],
+    &quot;results_sections_seen&quot;: [
+      &quot;I. INTRODUCTION&quot;,
+      &quot;II. DEMONSTRATION SETUP&quot;,
+      &quot;III. VISITOR EXPERIENCE&quot;,
+      &quot;Fig. 1 caption&quot;
+    ],
+    &quot;missing_material&quot;: [
+      &quot;参考文献[1]的全文及其离线机器人测试数据未提供&quot;,
+      &quot;本篇未提供闭环性能的定量测试数据、实验重复或统计分析&quot;,
+      &quot;图1像素未提供&quot;
+    ],
+    &quot;text_pass_complete&quot;: true,
+    &quot;notes&quot;: [
+      &quot;实际文档为2020年单页现场演示说明；标题和作者与身份元数据一致。&quot;,
+      &quot;文档没有独立结果章节；已评估全部供应正文、摘要、图注及参考文献。&quot;,
+      &quot;访客体验以将来时描述演示交互，不能作为已完成测试的记录。&quot;,
+      &quot;conference-paper是出版载体分类，与现场演示说明性质并不矛盾；不构成身份误配。&quot;,
+      &quot;未读取引用论文或任何未提供的补充材料。&quot;
+    ],
+    &quot;reading_mode&quot;: &quot;text_only&quot;,
+    &quot;figure_images_read&quot;: false,
+    &quot;scientific_verification&quot;: false
+  },
+  &quot;audit&quot;: {
+    &quot;initial_source_match_checks&quot;: [],
+    &quot;source_match_checks&quot;: [],
+    &quot;model_findings&quot;: [
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;草稿将conference-paper元数据与现场演示说明性质的差别表述为分类问题，容易暗示身份误配。&quot;,
+        &quot;suggested_correction&quot;: &quot;说明出版载体与内容类型兼容；保持identity_consistent为true，并以other标记现场演示说明。&quot;,
+        &quot;pdf_page&quot;: 1,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C1&quot;,
+        &quot;issue&quot;: &quot;实时避障及最接近声源朝向是作者宣称，但本篇未提供可独立评估的性能测试。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留架构实现命题，将性能主张暂缓并明确证据边界。&quot;,
+        &quot;pdf_page&quot;: 1,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;离线轮式机器人较短路径结果属于参考文献[1]，访客体验属于预期演示流程。&quot;,
+        &quot;suggested_correction&quot;: &quot;在贡献清单中分别标记为既往结果和预期流程，不纳入本篇新实验结果。&quot;,
+        &quot;pdf_page&quot;: 1,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C1&quot;,
+        &quot;issue&quot;: &quot;草稿包含请求输出模式以外的source_check和review字段。&quot;,
+        &quot;suggested_correction&quot;: &quot;删除额外字段，保留模式内的证据定位与review_notes。&quot;,
+        &quot;pdf_page&quot;: 1,
+        &quot;resolved&quot;: true
+      }
+    ],
+    &quot;needs_human_review&quot;: true
+  },
+  &quot;source&quot;: {
+    &quot;filename&quot;: &quot;paper-W3091281217.pdf&quot;,
+    &quot;sha256&quot;: &quot;ca0e7e82ff181bd91200639021cb31adf82d9b13381464d3da65685eb448a25a&quot;,
+    &quot;source_url&quot;: &quot;https://idus.us.es/server/api/core/bitstreams/909d9381-d275-420d-ad81-263832fac683/content&quot;,
+    &quot;pdf_page_count&quot;: 1
+  },
+  &quot;provenance&quot;: {
+    &quot;created_at&quot;: &quot;2026-10-07T04:52:45.994823Z&quot;,
+    &quot;workflow&quot;: &quot;claim-commons-pdf-v1&quot;,
+    &quot;prompt_version&quot;: &quot;claim-commons-chatgpt-pdf-2026-10-07.1&quot;,
+    &quot;backend&quot;: &quot;signed_in_chatgpt_codex&quot;,
+    &quot;authentication&quot;: &quot;existing_ChatGPT_login&quot;,
+    &quot;provider_api_key_used&quot;: false,
+    &quot;model&quot;: &quot;account_default_GPT&quot;,
+    &quot;source_sha256&quot;: &quot;ca0e7e82ff181bd91200639021cb31adf82d9b13381464d3da65685eb448a25a&quot;,
+    &quot;requests&quot;: [
+      {
+        &quot;phase&quot;: &quot;extraction&quot;,
+        &quot;seconds&quot;: 44.78,
+        &quot;usage&quot;: {
+          &quot;input_tokens&quot;: 14783,
+          &quot;cached_input_tokens&quot;: 0,
+          &quot;cache_write_input_tokens&quot;: 0,
+          &quot;output_tokens&quot;: 1749,
+          &quot;reasoning_output_tokens&quot;: 0
+        },
+        &quot;backend&quot;: &quot;signed_in_chatgpt_codex&quot;,
+        &quot;tools_used&quot;: false
+      },
+      {
+        &quot;phase&quot;: &quot;source_audit&quot;,
+        &quot;seconds&quot;: 50.9,
+        &quot;usage&quot;: {
+          &quot;input_tokens&quot;: 16501,
+          &quot;cached_input_tokens&quot;: 0,
+          &quot;cache_write_input_tokens&quot;: 0,
+          &quot;output_tokens&quot;: 2118,
+          &quot;reasoning_output_tokens&quot;: 28
+        },
+        &quot;backend&quot;: &quot;signed_in_chatgpt_codex&quot;,
+        &quot;tools_used&quot;: false
+      }
+    ],
+    &quot;source_audit_complete&quot;: true,
+    &quot;review_status&quot;: &quot;candidate&quot;,
+    &quot;database_updated&quot;: false
+  }
+}</pre></details></main><footer></footer></body></html>

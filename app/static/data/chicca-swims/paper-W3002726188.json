@@ -1,0 +1,633 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "Simulation of integrate-and-fire neuron circuits using HfO2-based ferroelectric field effect transistors",
+    "authors": [
+      "Bharathwaj Suresh",
+      "Martin Bertele",
+      "Evelyn T. Breyer",
+      "Philipp H. Klein",
+      "Halid Mulaosmanovic",
+      "Thomas Mikolajick",
+      "Stefan Slesazeck",
+      "Elisabetta Chicca"
+    ],
+    "doi": "10.1109/icecs46596.2019.8965004",
+    "publication_year": 2019,
+    "venue": "IEEE International Conference on Electronics, Circuits and Systems (ICECS)",
+    "url": "https://doi.org/10.1109/icecs46596.2019.8965004"
+  },
+  "source": {
+    "filename": "paper-W3002726188.pdf",
+    "sha256": "c7cfd38d405f8ff6a22778fe6cfc33db1f3393a3c0c7af4028bc7837109968d7",
+    "source_url": "https://tud.qucosa.de/api/qucosa%3A77196/attachment/ATT-0/",
+    "pdf_page_count": 5
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "results_sections_seen": [
+      "III. Integrate-and-Fire Neuron Circuits：A–D",
+      "IV.A. 2 transistor circuit",
+      "IV.B. 7 transistor circuit",
+      "IV.C. Leaky integration",
+      "V. Conclusions",
+      "Figures 1–7 captions",
+      "Table I"
+    ],
+    "missing_material": [
+      "图1–7的图像像素未提供。",
+      "FeFET模型所依据的单器件校准数据、拟合误差及模型参数数值未提供。"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "实际文档为会议论文的自存档接受稿；封面注明2019年会议及2020年IEEE数字图书馆出版信息，标题、作者及DOI与身份元数据一致。",
+      "全部所供文本及参考文献均已评估；未提供附录或补充材料。",
+      "本文电路结果来自SPICE仿真；正文中的experiments不构成实物电路实验的证据。",
+      "图6仅提供文字说明，无法读取偏置扫描的数值范围、曲线或误差。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "设计以FeFET累积极化状态替代膜积分电容的2T与7T神经元核心，并给出器件尺寸。",
+      "role": "电路设计贡献",
+      "source_pages": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "decision": "include",
+      "reason": "结构、尺寸及工作原理有正文、图1–2说明和表I支持；晶体管计数仅指核心。"
+    },
+    {
+      "summary": "2T电路在Vbp=0.85 V时累积八个程序脉冲后发放，改变Vbp可改变发放所需脉冲数。",
+      "role": "仿真结果",
+      "source_pages": [
+        3,
+        4,
+        5
+      ],
+      "decision": "include",
+      "reason": "正文、图4及图6a说明支持；未提供图6像素，不能补充扫描范围或效应方向。"
+    },
+    {
+      "summary": "7T电路在Vbn=0.25 V时累积十一个程序脉冲后发放，增加Vbn使发放需要更多程序脉冲。",
+      "role": "仿真结果",
+      "source_pages": [
+        3,
+        4,
+        5
+      ],
+      "decision": "include",
+      "reason": "正文、图5及图6b说明支持，并给出同一电路模型内的电流竞争解释。"
+    },
+    {
+      "summary": "附加脉冲生成器在所示输入条件下将发放输出限定于读阶段。",
+      "role": "电路设计与仿真结果",
+      "source_pages": [
+        3,
+        4,
+        5
+      ],
+      "decision": "include",
+      "reason": "图3说明、逻辑描述及图4–5支持输出相位门控。"
+    },
+    {
+      "summary": "7T电路的90 µs间隔阶段从0 V改为−0.7 V后，原本在十一个程序脉冲后出现的输出消失。",
+      "role": "比较仿真结果",
+      "source_pages": [
+        4,
+        5
+      ],
+      "decision": "include",
+      "reason": "图7说明及正文明确给出完整比较。"
+    },
+    {
+      "summary": "7T结构增加一个偏置调节参数。",
+      "role": "设计解释",
+      "source_pages": [
+        3,
+        4,
+        5
+      ],
+      "decision": "include",
+      "reason": "结构描述支持Vbp与Vbn的不同作用；并入核心设计记录，不另立重复命题，也不推断调节性能优势。"
+    },
+    {
+      "summary": "泄漏可推广到2T电路，并可通过负偏置幅度调节。",
+      "role": "推广解释",
+      "source_pages": [
+        5
+      ],
+      "decision": "defer",
+      "reason": "本文未展示2T泄漏或泄漏电压扫描；可调泄漏的实验依据来自引用文献。"
+    },
+    {
+      "summary": "通过输出反馈自动复位、通过自发极化回退实现泄漏及构建全铁电神经网络。",
+      "role": "未来方案",
+      "source_pages": [
+        4,
+        5
+      ],
+      "decision": "defer",
+      "reason": "属于拟议实现与后续研究，本文未验证。"
+    },
+    {
+      "summary": "相对传统电容神经元降低面积和功耗、提高网络集成密度。",
+      "role": "应用动机与预期",
+      "source_pages": [
+        2,
+        5
+      ],
+      "decision": "exclude",
+      "reason": "未提供完整电路面积、能耗或匹配基线比较。"
+    },
+    {
+      "summary": "Preisach方程、FeFET累积极化反转及既有单器件实验。",
+      "role": "模型基础与引用背景",
+      "source_pages": [
+        2,
+        3,
+        5
+      ],
+      "decision": "exclude",
+      "reason": "是采用的模型及既有研究，不能提取为本文的新理论或新实验结果。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "本文设计的2T与7T神经元核心以HfO2-based FeFET的累积极化状态保存输入积分量，替代专用膜积分电容；2T通过pMOS偏置Vbp调节电流平衡，7T通过Vbp限制电流并通过Vbn设定竞争支路电流，发放实现均另接脉冲生成器并使用外部复位。",
+      "claim_type": "circuit_design",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "电路结构、工作原理和器件尺寸描述",
+          "design": "2T核心为串联nFeFET与pMOS；7T核心基于迟滞Winner-take-all结构，其中一个输入晶体管替换为nFeFET。表I给出两种核心的晶体管尺寸。",
+          "comparator": null,
+          "measure": "积分状态存储元件、核心组成及偏置作用",
+          "unit_of_analysis": "电路拓扑",
+          "sample_size_as_reported": "两种核心设计；非独立器件或实验样本数",
+          "uncertainty": null,
+          "assumptions": [
+            "FeFET使用铁电电容连接nFET栅极的Preisach模型。",
+            "2T和7T计数不包含附加脉冲生成器。",
+            "所示操作使用外部负电压复位。"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "III.A–B；7T描述续于第4页",
+            "figure": "Figures 1–3; Table I",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "给出两种以FeFET状态实现积分的神经元核心设计。",
+        "boundary": "属于电路设计及模型仿真；7T的额外偏置作用由结构描述支持。",
+        "negative_result": null,
+        "non_inference": "不能将核心计数当作完整神经元晶体管数，不能由取消膜积分电容推断不存在任何电容或量化面积、功耗优势。",
+        "unresolved": "集成自动复位及完整电路的面积、能耗和器件变异表现。",
+        "unresolved_attribution": "自动复位明确列为后续研究；其余指标未报告。"
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "FeFET累积极化状态能否替代膜积分电容实现积分发放电路？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C3",
+        "C4"
+      ],
+      "review_notes": [
+        "结构贡献与后续功能仿真使用同一组电路，不能计为独立复现。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "在采用28SLP-based FeFET技术模型、1 V供电的2T核心及附加脉冲生成器SPICE仿真中，FeFET从HVT初态接受2 V、0.1 µs程序脉冲；Vbp=0.85 V时，八个程序脉冲后的0.2 V读阶段产生1 V输出脉冲，改变Vbp可改变触发发放所需的程序脉冲数。",
+      "claim_type": "simulation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "SPICE瞬态仿真及偏置变化分析",
+          "design": "程序脉冲后接0.2 V、9.7 µs读阶段及0 V、9.9 µs间隔；发放后外加−4 V、10 µs复位脉冲，间隔1 ms后继续输入。",
+          "comparator": "不同累积程序脉冲数及不同Vbp条件",
+          "measure": "N1节点电压、输出电压及发放所需程序脉冲数",
+          "unit_of_analysis": "2T电路在给定偏置和输入序列下的仿真轨迹",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "FeFET初始处于HVT状态。",
+            "FeFET模型被描述为依据单器件实验数据调整。",
+            "N1电压需低于附加脉冲生成器的检测阈值。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "IV.A. 2 transistor circuit",
+            "figure": "Figure 4; Figure 6a caption on PDF page 5",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "给定条件下实现累积输入后发放，并通过Vbp调节发放脉冲计数。",
+        "boundary": "八脉冲阈值限于所述模型、偏置及输入时序。",
+        "negative_result": null,
+        "non_inference": "不能推断实物可靠性、生物时间尺度匹配或低功耗优势；仅凭图6说明不能确定Vbp效应方向。",
+        "unresolved": "偏置调节范围、器件变异及统计不确定性。",
+        "unresolved_attribution": "所供文本未给出这些定量信息，图6像素未提供。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "2T FeFET电路的pMOS偏置如何改变触发发放所需的输入脉冲数？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C4"
+      ],
+      "review_notes": [
+        "八个程序脉冲是输入计数，不是八次独立实验。",
+        "未报告仿真重复次数或随机种子。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "在采用28SLP-based FeFET技术模型、1 V供电的7T核心及附加脉冲生成器SPICE仿真中，Vbn=0.25 V时，施加九个程序脉冲后读阶段N1电压逐渐下降，十一个2 V程序脉冲后产生1 V输出；提高Vbn增加T6支路电流，使FeFET需要降至更低阈值电压、累积更多程序脉冲才能发放。",
+      "claim_type": "simulation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "SPICE瞬态仿真、偏置变化分析及电路工作原理解释",
+          "design": "FeFET从HVT初态接受2 V、0.1 µs程序脉冲、0.2 V、9.7 µs读阶段及0 V、9.9 µs间隔；采用外部−4 V、10 µs复位。",
+          "comparator": "不同累积程序脉冲数及更高Vbn条件",
+          "measure": "N1节点电压、输出电压及触发发放所需程序脉冲数",
+          "unit_of_analysis": "7T电路在各偏置和输入序列下的仿真轨迹",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "程序脉冲使FeFET累积切换至LVT方向。",
+            "HVT初态下T6支路电流大于T1支路电流。",
+            "N1电压需达到附加脉冲生成器的检测条件。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "IV.B. 7 transistor circuit",
+            "figure": "Figure 5; Figure 6b caption on PDF page 5",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "7T核心实现积分发放，增加Vbn提高发放所需的输入脉冲计数。",
+        "boundary": "十一个脉冲的阈值限于Vbn=0.25 V及所述模型和时序；电流竞争解释属于同一模型。",
+        "negative_result": null,
+        "non_inference": "不能把2T的八脉冲与7T的十一个脉冲当作性能优劣的匹配比较，也不能认定机制已由独立实物实验验证。",
+        "unresolved": "调节范围、器件变异及完整电路能耗。",
+        "unresolved_attribution": "本文未报告相关定量分析，图6像素未提供。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "7T FeFET电路的竞争支路偏置如何控制积分发放阈值？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C4"
+      ],
+      "review_notes": [
+        "电流竞争说明与发放阈值结果保留为同一模型内命题，不另建独立机制证据。",
+        "十一个脉冲不是独立实验样本数。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "本文附加脉冲生成器结合Vin与N1状态，在所示2T和7T SPICE输入序列中，当Vin处于0.2 V读阶段且N1低于检测阈值时产生1 V输出脉冲，避免2 V程序脉冲引起的N1变化触发发放输出。",
+      "claim_type": "circuit_function",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "逻辑电路分析及配套SPICE瞬态仿真",
+          "design": "NOR结构和反相器结合输入阶段与N1阈值检测；连接2T或7T核心，使用程序与读阶段交替的输入。",
+          "comparator": "所示序列中的程序阶段与读阶段",
+          "measure": "输出脉冲出现的阶段及输出电压",
+          "unit_of_analysis": "脉冲生成器连接各核心后的相位依赖输出轨迹",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "采用文中逻辑结构和反相器切换阈值。",
+            "所示神经元中不会出现逻辑描述中的Vin与N1同时为高的另一输出条件。",
+            "外部负复位脉冲结束发放。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "III.C. Spike generator circuit",
+            "figure": "Figure 3 caption on PDF page 3; Figures 4–5",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所示电路和输入序列支持读阶段输出门控。",
+        "boundary": "该功能限于正文描述的输入状态和连接方式；逻辑本身还描述了所示电路不会出现的另一输出条件。",
+        "negative_result": null,
+        "non_inference": "不能认为N1内部电压变化被消除；没有移除脉冲生成器的匹配对照或噪声误触发率测试。",
+        "unresolved": "器件延迟、噪声及异常输入下的门控可靠性。",
+        "unresolved_attribution": "本文未测试这些条件。"
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "如何通过输入相位与节点阈值门控区分FeFET程序操作和有效发放输出？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "review_notes": [
+        "图4–5同时支持核心发放与输出门控，不能计为独立重复。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "在7T FeFET电路SPICE比较中，每个2 V、0.1 µs程序脉冲和0.2 V、9.7 µs读阶段后设置90 µs泄漏阶段：该阶段为0 V时第十一个程序脉冲后发放，改为−0.7 V时十一个脉冲后无输出；文中模型解释为负偏置累积反转极化，使FeFET阈值电压返回HVT方向。",
+      "claim_type": "comparative_simulation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "两种泄漏偏置条件的SPICE比较",
+          "design": "保持程序与读阶段相同，比较每对程序—读操作后的90 µs阶段施加0 V或−0.7 V。",
+          "comparator": "Vleak=0 V与Vleak=−0.7 V",
+          "measure": "十一个程序脉冲后是否出现输出",
+          "unit_of_analysis": "各泄漏偏置条件下的7T输入—输出仿真轨迹",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "FeFET模型支持负栅压驱动的累积擦除与极化反转。",
+            "比较采用图7所述输入时序。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "IV.C. Leaky integration",
+            "figure": "Figure 7",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "主动负偏置在所示模型中削弱输入累积，并阻止对照条件下出现的发放。",
+        "boundary": "仅展示7T电路的两个泄漏偏置条件，泄漏依赖外加负电压。",
+        "negative_result": "−0.7 V、90 µs泄漏阶段条件下，所示十一个程序脉冲未产生输出。",
+        "non_inference": "不能推断永不发放、已知泄漏时间常数、连续可调范围或无外部驱动的自发泄漏。",
+        "unresolved": "更长输入序列、泄漏电压扫描及2T泄漏实现。",
+        "unresolved_attribution": "本文未展示这些分析；可调泄漏的实验支持引用自文献[13]。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "程序—读操作之间的负栅偏置如何影响FeFET神经元的输入累积与发放？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "图7的两个条件构成模型内比较，未报告独立重复或随机种子。",
+        "图7的0 V阶段为90 µs，不能与图5的一般9.9 µs间隔轨迹混为同一证据。",
+        "未把引用文献的器件实验算作本文实验。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "二次核查覆盖全部五页、图1–7说明、表I及参考文献。身份一致的会议接受稿支持两种FeFET积分核心设计、各自的偏置可调发放、所示输入下的读阶段输出门控，以及7T主动负偏置泄漏比较。已补充7T额外偏置作用，限定门控逻辑条件，并区分图7与一般输入时序。本文没有实物电路验证、统计重复或面积功耗对照；模型校准材料及图像像素未提供。自动复位、自发泄漏、2T泄漏推广和网络扩展仍未验证。",
+  "shared_evidence": [
+    {
+      "claim_id": "C1",
+      "with": [
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    {
+      "claim_id": "C2",
+      "with": [
+        "C1",
+        "C4"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C1",
+        "C4"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C1",
+        "C2",
+        "C3"
+      ]
+    }
+  ],
+  "audit": {
+    "initial_source_match_checks": [],
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": null,
+        "issue": "实际PDF为自存档接受稿，不能默认是最终出版排版版本。",
+        "suggested_correction": "保留接受稿身份，并区分2019年会议与封面所载2020年数字图书馆出版信息。",
+        "pdf_page": 1,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "草稿missing_material为空，但图像像素及模型校准材料未提供。",
+        "suggested_correction": "明确这些证据范围限制，同时保留全部所供文本已读完的标记。",
+        "pdf_page": 2,
+        "resolved": true
+      },
+      {
+        "claim_id": "C1",
+        "issue": "2T和7T是核心计数；7T额外偏置参数的结构贡献应保留。",
+        "suggested_correction": "明确附加脉冲生成器与外部复位，并在设计命题中记录Vbp和Vbn的作用。",
+        "pdf_page": 4,
+        "resolved": true
+      },
+      {
+        "claim_id": "C2",
+        "issue": "图6像素缺失，无法核查2T偏置扫描范围或效应方向。",
+        "suggested_correction": "仅保留正文支持的偏置可改变脉冲计数，不补充方向或数值范围。",
+        "pdf_page": 5,
+        "resolved": true
+      },
+      {
+        "claim_id": "C3",
+        "issue": "正文描述为施加九个脉冲后读阶段电压逐渐下降，不支持更精确的下降起始时刻。",
+        "suggested_correction": "采用正文粒度，并把T6电流解释限定为同一模型内工作原理。",
+        "pdf_page": 4,
+        "resolved": true
+      },
+      {
+        "claim_id": "C4",
+        "issue": "结论中的suppressed不能解释为N1内部变化被消除；逻辑描述还包含所示核心不会出现的另一输出状态。",
+        "suggested_correction": "将命题限定为所示输入序列中的输出门控，记录逻辑适用条件。",
+        "pdf_page": 4,
+        "resolved": true
+      },
+      {
+        "claim_id": "C5",
+        "issue": "图7比较采用90 µs泄漏阶段，不能直接沿用图5的一般间隔时序。",
+        "suggested_correction": "完整保留图7内0 V与−0.7 V的同时间隔比较。",
+        "pdf_page": 5,
+        "resolved": true
+      },
+      {
+        "claim_id": "C5",
+        "issue": "2T泄漏推广、泄漏幅度调节及自发泄漏缺少本文直接验证。",
+        "suggested_correction": "将其列为未验证推广或未来方案，仅提取7T两条件比较。",
+        "pdf_page": 5,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "面积、功耗及集成密度优势缺少量化结果和匹配基线。",
+        "suggested_correction": "保留为设计动机，不提取为已证实性能。",
+        "pdf_page": 2,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "自动复位和全铁电网络是后续方案，非本文完成的演示。",
+        "suggested_correction": "在贡献清单中暂缓，不作为结果命题。",
+        "pdf_page": 5,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "FeFET校准数据、拟合误差及独立仿真重复未报告，无法在所供文本中验证模型准确性与统计可靠性。",
+        "suggested_correction": "保留为未解决证据限制，不猜测样本数、误差或重复次数。",
+        "pdf_page": 2,
+        "resolved": false
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T05:08:51.040363Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "signed_in_chatgpt_codex",
+    "authentication": "existing_ChatGPT_login",
+    "provider_api_key_used": false,
+    "model": "account_default_GPT",
+    "source_sha256": "c7cfd38d405f8ff6a22778fe6cfc33db1f3393a3c0c7af4028bc7837109968d7",
+    "requests": [
+      {
+        "phase": "extraction",
+        "seconds": 101.57,
+        "usage": {
+          "input_tokens": 19906,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 5179,
+          "reasoning_output_tokens": 0
+        },
+        "backend": "signed_in_chatgpt_codex",
+        "tools_used": false
+      },
+      {
+        "phase": "source_audit",
+        "seconds": 115.25,
+        "usage": {
+          "input_tokens": 24942,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 5995,
+          "reasoning_output_tokens": 55
+        },
+        "backend": "signed_in_chatgpt_codex",
+        "tools_used": false
+      }
+    ],
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

@@ -1,0 +1,1152 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "Adaptive and lightweight surrogate gradients: enhancing training efficiency of spiking neural networks",
+    "authors": [
+      "Kungjui Hou",
+      "Kang Wu",
+      "Yongcheng Zhou"
+    ],
+    "doi": "10.3389/fnins.2026.1795946",
+    "publication_year": 2026,
+    "venue": "Frontiers in Neuroscience",
+    "url": "https://doi.org/10.3389/fnins.2026.1795946"
+  },
+  "source": {
+    "filename": "paper-W7135215492--Adaptive-and-lightweight-surrogate-gradients-enhancing-training-efficiency-of-spiking-neural-ne.pdf",
+    "sha256": "9abea8769ad6ef78446e094505d7b6b0a6d224e8e662f6ceaeb570c3c2396ce0",
+    "source_url": "https://public-pages-files-2025.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2026.1795946/pdf",
+    "pdf_page_count": 15
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "results_sections_seen": [
+      "AdaLi method",
+      "Static benchmarks",
+      "Neuromorphic benchmarks",
+      "Hyperparameter scans",
+      "Boundary ablation",
+      "Firing rate",
+      "Compute density",
+      "Feature visualization"
+    ],
+    "missing_material": [
+      "图像像素未读取",
+      "训练重复n、数据分割及完整训练细节未提供"
+    ],
+    "text_pass_complete": true,
+    "notes": "15页、4表9图注与参考全部评估；软件模型学习，非生物/芯片实验。",
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "AdaLi以左右不同常量的代理梯度替代阶跃导数，并随epoch缩小更新边界，用α/β调梯度强度。",
+      "role": "interpretation",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "CIFAR-10表2报告ResNet18 LIF在1/2/4时间步分别94.65±0.05%、95.03±0.07%、95.33±0.03%，显示较少步数下可保持较高准确率。",
+      "role": "result",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "CIFAR-100表2续表给出AdaLi ResNet18两/四步75.32±0.09%及77.89±0.04%，VGG16四步74.27±0.06%。",
+      "role": "result",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "CIFAR10-DVS表3报告IF VGG11/VGG16在16步分别74.7±0.04%及73.7±0.06%。",
+      "role": "result",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "DVSGesture表3的IF DVSGestureNet16步准确率96.87±0.02%，VGG11同为16步94.79±0.07%。",
+      "role": "result",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "CIFAR-10/ResNet18的强度参数扫描中，约α=β=0.5表现较好，偏离时准确率降低；更新边界在部分范围内较不敏感。",
+      "role": "result",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "一时间步ResNet18的边界控制显示固定小边界中期不稳定，固定大边界准确率较低；渐缩线性及对数边界均可改善表现。",
+      "role": "result",
+      "source_pages": [
+        10
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "在500 epoch的CIFAR10/ResNet18对照中，表4报告AdaLi95.03±0.07%，高于sigmoid69.55±0.11%、SoftSign83.69±0.06%及triangle87.07±0.05%。",
+      "role": "result",
+      "source_pages": [
+        11
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "该对照中AdaLi相对SoftSign和triangle降低推断放电率，但sigmoid更稀疏同时准确率较差。",
+      "role": "result",
+      "source_pages": [
+        11
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "自适应边界把需计算梯度的神经元比例由初期约65%降至最终约20%或以下，作者报告百轮后对sigmoid/SoftSign约减少80%、对triangle约减少30%。",
+      "role": "result",
+      "source_pages": [
+        11
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "ResNet18与VGG16的特征示例呈深层空间/通道表征变化，作者以示意比较解释池化与架构差异。",
+      "role": "interpretation",
+      "source_pages": [
+        12
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "自动按膜电位分布选参属于设计动机；结论承认手动/经验选范围，未给可独立复现自动方案。",
+      "role": "hypothesis",
+      "source_pages": [
+        1,
+        13
+      ],
+      "decision": "unresolved",
+      "reason": "不称全自动已经验证"
+    },
+    {
+      "summary": "理论神经动力学、rate编码与步长关系为算法条件；背景芯片/生物文献非本文硬件测量。",
+      "role": "review_synthesis",
+      "source_pages": [
+        2,
+        3,
+        4,
+        5,
+        13,
+        14,
+        15
+      ],
+      "decision": "exclude",
+      "reason": "完整参考评估"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "AdaLi以左右不同常量的代理梯度替代阶跃导数，并随epoch缩小更新边界，用α/β调梯度强度。",
+      "claim_type": "snn_training",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "代理梯度及线性/对数调度设计",
+          "design": "rate编码；前向IF/LIF、后向BPTT",
+          "comparator": "固定sigmoid/SoftSign/triangle",
+          "measure": "算法形式",
+          "unit_of_analysis": "算法",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "3.3 AdaLi",
+            "figure": "Eq16–19",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "AdaLi以左右不同常量的代理梯度替代阶跃导数，并随epoch缩小更新边界，用α/β调梯度强度。",
+        "boundary": "方法设计而非精确阶跃梯度或生物局部学习。",
+        "negative_result": null,
+        "non_inference": "没有全局收敛或网络梯度不会消失/爆炸的证明。",
+        "unresolved": "Eq16未明确写边界外置零；正负边界跨零时Eq17的负底数分数幂可能非实数，算法定义需澄清。",
+        "unresolved_attribution": "来源局限及提取者来源复核"
+      },
+      "broad_directions": [
+        "machine-learning",
+        "learning-plasticity",
+        "computational-efficiency"
+      ],
+      "scientific_questions": [
+        "分段代理梯度与训练期边界变化如何权衡准确率及计算？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11"
+      ],
+      "review_notes": [
+        "15页正文、4表9图注及全部参考二次审计；表/正文数值冲突、n和±缺失、效率代理与实测分开，保留实际较差控制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "CIFAR-10表2报告ResNet18 LIF在1/2/4时间步分别94.65±0.05%、95.03±0.07%、95.33±0.03%，显示较少步数下可保持较高准确率。",
+      "claim_type": "snn_training",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "模型分类实验",
+          "design": "不同步数ResNet18；VGG16四步94.74±0.04%",
+          "comparator": "文献结果及本方法步数",
+          "measure": "Top1准确率",
+          "unit_of_analysis": "训练运行/模型",
+          "sample_size_as_reported": "独立训练种子及重复次数未报告",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "4.1 Static benchmark",
+            "figure": "Table2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "CIFAR-10表2报告ResNet18 LIF在1/2/4时间步分别94.65±0.05%、95.03±0.07%、95.33±0.03%，显示较少步数下可保持较高准确率。",
+        "boundary": "引用基线非统一重训；±含义及n未说明。",
+        "negative_result": "四步95.33低于同表RecDis95.53和RealSpike95.51；20步DSR95.40也更高。",
+        "non_inference": "不能概称所有SOTA均被超过；步数不是墙钟延迟或能耗。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "machine-learning",
+        "learning-plasticity",
+        "computational-efficiency"
+      ],
+      "scientific_questions": [
+        "分段代理梯度与训练期边界变化如何权衡准确率及计算？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11"
+      ],
+      "review_notes": [
+        "15页正文、4表9图注及全部参考二次审计；表/正文数值冲突、n和±缺失、效率代理与实测分开，保留实际较差控制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "CIFAR-100表2续表给出AdaLi ResNet18两/四步75.32±0.09%及77.89±0.04%，VGG16四步74.27±0.06%。",
+      "claim_type": "snn_training",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "图像分类",
+          "design": "LIF与所列架构",
+          "comparator": "表列文献基线",
+          "measure": "Top1",
+          "unit_of_analysis": "训练运行/模型",
+          "sample_size_as_reported": "独立训练种子及重复次数未报告",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "4.1 CIFAR100",
+            "figure": "Table2 continued",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "CIFAR-100表2续表给出AdaLi ResNet18两/四步75.32±0.09%及77.89±0.04%，VGG16四步74.27±0.06%。",
+        "boundary": "保持正文与表的冲突，不自行把架构/值补成一致。",
+        "negative_result": "VGG16四步74.27低于表中MPBN74.74。",
+        "non_inference": "不能把异构架构/步数比较当唯一控制变量实验。",
+        "unresolved": "正文说ResNet20四步76.22%，与表ResNet18四步77.89%不一致。",
+        "unresolved_attribution": "来源局限及提取者来源复核"
+      },
+      "broad_directions": [
+        "machine-learning",
+        "learning-plasticity",
+        "computational-efficiency"
+      ],
+      "scientific_questions": [
+        "分段代理梯度与训练期边界变化如何权衡准确率及计算？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11"
+      ],
+      "review_notes": [
+        "15页正文、4表9图注及全部参考二次审计；表/正文数值冲突、n和±缺失、效率代理与实测分开，保留实际较差控制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "CIFAR10-DVS表3报告IF VGG11/VGG16在16步分别74.7±0.04%及73.7±0.06%。",
+      "claim_type": "snn_training",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "事件分类",
+          "design": "事件数据而非生物神经信号",
+          "comparator": "文献方法",
+          "measure": "分类准确率",
+          "unit_of_analysis": "训练运行/模型",
+          "sample_size_as_reported": "独立训练种子及重复次数未报告",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "4.1 Neuromorphic benchmark",
+            "figure": "Table3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "CIFAR10-DVS表3报告IF VGG11/VGG16在16步分别74.7±0.04%及73.7±0.06%。",
+        "boundary": "限定所列网络及时间步，不是生物验证。",
+        "negative_result": "MPD-ATP20步74.93高于本方法，效率/准确率需联合比较。",
+        "non_inference": null,
+        "unresolved": "正文写ResNet18十步68.4%，在本表AdaLi行缺失，不能认定同一实验。",
+        "unresolved_attribution": "来源局限及提取者来源复核"
+      },
+      "broad_directions": [
+        "machine-learning",
+        "learning-plasticity",
+        "computational-efficiency"
+      ],
+      "scientific_questions": [
+        "分段代理梯度与训练期边界变化如何权衡准确率及计算？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11"
+      ],
+      "review_notes": [
+        "15页正文、4表9图注及全部参考二次审计；表/正文数值冲突、n和±缺失、效率代理与实测分开，保留实际较差控制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "DVSGesture表3的IF DVSGestureNet16步准确率96.87±0.02%，VGG11同为16步94.79±0.07%。",
+      "claim_type": "snn_training",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "事件动作分类",
+          "design": "给定网络及步数",
+          "comparator": "所列文献训练方法",
+          "measure": "准确率",
+          "unit_of_analysis": "训练运行/模型",
+          "sample_size_as_reported": "独立训练种子及重复次数未报告",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "4.1 DVSGesture",
+            "figure": "Table3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "DVSGesture表3的IF DVSGestureNet16步准确率96.87±0.02%，VGG11同为16步94.79±0.07%。",
+        "boundary": "不把16时间步直接换算实际反应毫秒。",
+        "negative_result": "MPD-ATP20步97.35%、HP-SNN400步97.01更高，但步数不同。",
+        "non_inference": null,
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "machine-learning",
+        "learning-plasticity",
+        "computational-efficiency"
+      ],
+      "scientific_questions": [
+        "分段代理梯度与训练期边界变化如何权衡准确率及计算？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11"
+      ],
+      "review_notes": [
+        "15页正文、4表9图注及全部参考二次审计；表/正文数值冲突、n和±缺失、效率代理与实测分开，保留实际较差控制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "CIFAR-10/ResNet18的强度参数扫描中，约α=β=0.5表现较好，偏离时准确率降低；更新边界在部分范围内较不敏感。",
+      "claim_type": "snn_training",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "参数扫描",
+          "design": "初始边界Vth=1时约[-0.5,2.5]；p=.2",
+          "comparator": "不同α/β与边界",
+          "measure": "准确率",
+          "unit_of_analysis": "训练运行/模型",
+          "sample_size_as_reported": "独立训练种子及重复次数未报告",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "4.2 Hyperparameters",
+            "figure": "Fig5",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "CIFAR-10/ResNet18的强度参数扫描中，约α=β=0.5表现较好，偏离时准确率降低；更新边界在部分范围内较不敏感。",
+        "boundary": "经验扫描不证明跨任务全域最优或自动选参已完成。",
+        "negative_result": "强度过高或过低导致实际性能退化。",
+        "non_inference": "非理论收敛保证。",
+        "unresolved": "训练/验证/测试分割及选参集未交代，潜在调参泄漏未能排除。",
+        "unresolved_attribution": "来源局限及提取者来源复核"
+      },
+      "broad_directions": [
+        "machine-learning",
+        "learning-plasticity",
+        "computational-efficiency"
+      ],
+      "scientific_questions": [
+        "分段代理梯度与训练期边界变化如何权衡准确率及计算？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11"
+      ],
+      "review_notes": [
+        "15页正文、4表9图注及全部参考二次审计；表/正文数值冲突、n和±缺失、效率代理与实测分开，保留实际较差控制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "一时间步ResNet18的边界控制显示固定小边界中期不稳定，固定大边界准确率较低；渐缩线性及对数边界均可改善表现。",
+      "claim_type": "snn_training",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "消融训练曲线",
+          "design": "大边界与初始值相同、小边界与p=.2终值相同",
+          "comparator": "固定小/大 vs自适应",
+          "measure": "训练波动和分类准确率",
+          "unit_of_analysis": "训练运行/模型",
+          "sample_size_as_reported": "独立训练种子及重复次数未报告",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "4.3 Boundary size",
+            "figure": "Fig6",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "一时间步ResNet18的边界控制显示固定小边界中期不稳定，固定大边界准确率较低；渐缩线性及对数边界均可改善表现。",
+        "boundary": "仅所示网络/数据和经验调度。",
+        "negative_result": "固定小边界中期波动，固定大边界包含异常膜电位导致较低表现。",
+        "non_inference": "不能证明恒定梯度从根本排除所有梯度不稳。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "machine-learning",
+        "learning-plasticity",
+        "computational-efficiency"
+      ],
+      "scientific_questions": [
+        "分段代理梯度与训练期边界变化如何权衡准确率及计算？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C8",
+        "C9",
+        "C10",
+        "C11"
+      ],
+      "review_notes": [
+        "15页正文、4表9图注及全部参考二次审计；表/正文数值冲突、n和±缺失、效率代理与实测分开，保留实际较差控制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "在500 epoch的CIFAR10/ResNet18对照中，表4报告AdaLi95.03±0.07%，高于sigmoid69.55±0.11%、SoftSign83.69±0.06%及triangle87.07±0.05%。",
+      "claim_type": "snn_training",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "同模型代理对照",
+          "design": "来源称参数为各方法最优，但详细搜索缺失",
+          "comparator": "三种代理",
+          "measure": "准确率",
+          "unit_of_analysis": "训练运行/模型",
+          "sample_size_as_reported": "独立训练种子及重复次数未报告",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "4.4 Matched surrogate comparison",
+            "figure": "Table4",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在500 epoch的CIFAR10/ResNet18对照中，表4报告AdaLi95.03±0.07%，高于sigmoid69.55±0.11%、SoftSign83.69±0.06%及triangle87.07±0.05%。",
+        "boundary": "所用强度/配方会影响结论；时间步与4.3/表2对应不清。",
+        "negative_result": null,
+        "non_inference": "不是所有代理方法在充分调参下的公平全局最优比较。",
+        "unresolved": "Table4的95.03对应表2两步，而关联方法初始条件4.3写一步，设置需核对。",
+        "unresolved_attribution": "来源局限及提取者来源复核"
+      },
+      "broad_directions": [
+        "machine-learning",
+        "learning-plasticity",
+        "computational-efficiency"
+      ],
+      "scientific_questions": [
+        "分段代理梯度与训练期边界变化如何权衡准确率及计算？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C9",
+        "C10",
+        "C11"
+      ],
+      "review_notes": [
+        "15页正文、4表9图注及全部参考二次审计；表/正文数值冲突、n和±缺失、效率代理与实测分开，保留实际较差控制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "该对照中AdaLi相对SoftSign和triangle降低推断放电率，但sigmoid更稀疏同时准确率较差。",
+      "claim_type": "snn_training",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "训练后脉冲记录",
+          "design": "500 epoch训练同架构",
+          "comparator": "四种代理",
+          "measure": "推断放电率及分类性能",
+          "unit_of_analysis": "训练运行/模型",
+          "sample_size_as_reported": "独立训练种子及重复次数未报告",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "4.4 Firing rate",
+            "figure": "Fig7",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "该对照中AdaLi相对SoftSign和triangle降低推断放电率，但sigmoid更稀疏同时准确率较差。",
+        "boundary": "放电率代理不能直接证明硬件能耗/功耗改善。",
+        "negative_result": "sigmoid更低放电但性能差，最低放电不等于最佳准确率。",
+        "non_inference": "没有生物神经稀疏性验证或整机能量测量。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "machine-learning",
+        "learning-plasticity",
+        "computational-efficiency"
+      ],
+      "scientific_questions": [
+        "分段代理梯度与训练期边界变化如何权衡准确率及计算？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C10",
+        "C11"
+      ],
+      "review_notes": [
+        "15页正文、4表9图注及全部参考二次审计；表/正文数值冲突、n和±缺失、效率代理与实测分开，保留实际较差控制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "自适应边界把需计算梯度的神经元比例由初期约65%降至最终约20%或以下，作者报告百轮后对sigmoid/SoftSign约减少80%、对triangle约减少30%。",
+      "claim_type": "snn_training",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "膜电位分布/边界统计",
+          "design": "500epoch代理对比",
+          "comparator": "sigmoid/SoftSign/triangle",
+          "measure": "需更新的比例",
+          "unit_of_analysis": "训练运行/模型",
+          "sample_size_as_reported": "独立训练种子及重复次数未报告",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "4.5 Compute density",
+            "figure": "Fig8",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "自适应边界把需计算梯度的神经元比例由初期约65%降至最终约20%或以下，作者报告百轮后对sigmoid/SoftSign约减少80%、对triangle约减少30%。",
+        "boundary": "计算密度不是总参数更新比例、实际稀疏实现速度或能耗；百分比/百分点口径未清。",
+        "negative_result": null,
+        "non_inference": "未给训练秒数、显存、硬件能量或算子实测，不称训练速度增加同等倍数。",
+        "unresolved": "文中两种bound计数及20%与80%减少需原统计澄清。",
+        "unresolved_attribution": "来源局限及提取者来源复核"
+      },
+      "broad_directions": [
+        "machine-learning",
+        "learning-plasticity",
+        "computational-efficiency"
+      ],
+      "scientific_questions": [
+        "分段代理梯度与训练期边界变化如何权衡准确率及计算？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C11"
+      ],
+      "review_notes": [
+        "15页正文、4表9图注及全部参考二次审计；表/正文数值冲突、n和±缺失、效率代理与实测分开，保留实际较差控制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "ResNet18与VGG16的特征示例呈深层空间/通道表征变化，作者以示意比较解释池化与架构差异。",
+      "claim_type": "snn_training",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "定性特征可视化",
+          "design": "编码层前后及各block",
+          "comparator": "两架构示例",
+          "measure": "特征图",
+          "unit_of_analysis": "训练运行/模型",
+          "sample_size_as_reported": "独立训练种子及重复次数未报告",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "4.6 Feature visualization",
+            "figure": "Fig9",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "ResNet18与VGG16的特征示例呈深层空间/通道表征变化，作者以示意比较解释池化与架构差异。",
+        "boundary": "定性图像说明不是独立表征质量或泛化量化实验。",
+        "negative_result": null,
+        "non_inference": "无神经生物学验证；图像像素未供读，不能新增视觉结论。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "machine-learning",
+        "learning-plasticity",
+        "computational-efficiency"
+      ],
+      "scientific_questions": [
+        "分段代理梯度与训练期边界变化如何权衡准确率及计算？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10"
+      ],
+      "review_notes": [
+        "15页正文、4表9图注及全部参考二次审计；表/正文数值冲突、n和±缺失、效率代理与实测分开，保留实际较差控制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "分段代理梯度和边界渐缩在所设图像任务有高准确率及更少活跃梯度计算。保留性能表与正文矛盾、其他方法更高的控制、数学边界不完整、n缺失与未测实际速度/能耗。",
+  "shared_evidence": [
+    {
+      "claim_id": "C1",
+      "with": [
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C2",
+      "with": [
+        "C1",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C1",
+        "C2",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C8",
+        "C9",
+        "C10",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C9",
+        "C10",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C10",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": "C1",
+        "issue": "Eq16未显式截断；Eq17负左边界[-.5]到正[.7]给负比值分数幂问题，方法不完整。",
+        "pdf_page": 6,
+        "suggested_correction": null,
+        "resolved": false
+      },
+      {
+        "claim_id": "C3",
+        "issue": "CIFAR100正文76.22/ResNet20 vs表77.89/ResNet18。",
+        "pdf_page": 9,
+        "suggested_correction": null,
+        "resolved": false
+      },
+      {
+        "claim_id": "C4",
+        "issue": "DVS正文68.4/ResNet18/10步 vs表VGG/16步。",
+        "pdf_page": 7,
+        "suggested_correction": null,
+        "resolved": false
+      },
+      {
+        "claim_id": "C8",
+        "issue": "代理对照时间步不一致，n/±/优化器和公平调参细节缺失。",
+        "pdf_page": 11,
+        "suggested_correction": null,
+        "resolved": false
+      },
+      {
+        "claim_id": "C10",
+        "issue": "计算密度不等同实测训练速度/能量；未提供硬件测量。",
+        "pdf_page": 12,
+        "suggested_correction": null,
+        "resolved": false
+      },
+      {
+        "claim_id": "C2",
+        "issue": "表中部分基线准确率更高，全面outperform语言过强。",
+        "pdf_page": 8,
+        "suggested_correction": "保留各实际边界",
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "正文GitHub parania与data availability paran-ia路径不同，仓库身份供给未能定。",
+        "pdf_page": 13,
+        "suggested_correction": null,
+        "resolved": false
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T11:53:45.925091Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "9abea8769ad6ef78446e094505d7b6b0a6d224e8e662f6ceaeb570c3c2396ce0",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

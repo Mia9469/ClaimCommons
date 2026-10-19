@@ -1,0 +1,750 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "preprint",
+  "paper": {
+    "title": "Fused-MemBrain: a spiking processor combining CMOS and self-assembled memristive networks",
+    "authors": [
+      "Davide Cipollini",
+      "Hugh Greatorex",
+      "Michele Mastella",
+      "Elisabetta Chicca",
+      "Lambert Schomaker"
+    ],
+    "doi": "10.1088/2634-4386/adc6b5",
+    "publication_year": 2025,
+    "venue": "Neuromorphic Computing and Engineering",
+    "url": "https://doi.org/10.1088/2634-4386/adc6b5"
+  },
+  "source": {
+    "filename": "paper-W4408932726.pdf",
+    "sha256": "f4c0074589f6758bab767e16460333d3a9166c9e36c7b37c94e0b716fcec66e5",
+    "source_url": "https://arxiv.org/pdf/2411.19353",
+    "pdf_page_count": 11
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "results_sections_seen": [
+      "3 Fused-MemBrain: Hardware",
+      "3.1 Configuration of the CMOS neurons",
+      "4 Fused-MemBrain: Simulator",
+      "4.1 Coarse-graining the plexus",
+      "4.2 Memristor model",
+      "4.3 Spiking neuron model",
+      "4.4 Simulator algorithm",
+      "4.5 Example dynamical regime",
+      "5 Discussion",
+      "5.1 Physical embedding and higher-order interactions",
+      "5.2 Pathways for system use",
+      "6 Conclusions",
+      "Figures 1–4",
+      "Tables 1–2"
+    ],
+    "missing_material": [
+      "图像像素未提供，仅评估正文、图注及提取的坐标文字。",
+      "GitHub代码内容未提供。",
+      "2025年期刊版本未提供。"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "实际文档为2024年11月28日的arXiv:2411.19353v1；标题与作者符合身份元数据，但不是元数据所列2025年期刊版本。",
+      "第9–11页参考文献已评估，不作为本文新结果。",
+      "全文提供硬件提案、模拟方法和一个动力学示例，没有实体处理器制造、硬件测试或任务性能实验。",
+      "没有提供附录或补充材料内容。",
+      "第二遍已逐项核对草稿的主张、分析单位、来源定位及证据共享关系。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "提出以自组装忆阻plexus连接双电极CMOS脉冲神经元的硬件架构。",
+      "role": "hypothesis",
+      "source_pages": [
+        2,
+        3,
+        4,
+        8
+      ],
+      "decision": "include",
+      "reason": "架构及接口可独立评估，但没有实体实现证据。"
+    },
+    {
+      "summary": "开发整合MVNA、粗粒化忆阻网络和LIF神经元更新的耦合模拟方法。",
+      "role": "result",
+      "source_pages": [
+        4,
+        5,
+        6
+      ],
+      "decision": "include",
+      "reason": "提供方程与更新流程，并明确将神经元与plexus接口模拟列为原创贡献。"
+    },
+    {
+      "summary": "局部脉冲触发空间传播，并由初期密集放电转为较稀疏的自持续活动。",
+      "role": "result",
+      "source_pages": [
+        5,
+        6,
+        7
+      ],
+      "decision": "include",
+      "reason": "正文及图3–4描述一个模拟轨迹中的放电现象。"
+    },
+    {
+      "summary": "同一模拟中平均电导升高，并在较高神经元密度区域形成高电导路径簇。",
+      "role": "result",
+      "source_pages": [
+        5,
+        6,
+        7
+      ],
+      "decision": "include",
+      "reason": "材料电导读出与放电读出可分别判断，但共享同一模拟。"
+    },
+    {
+      "summary": "提出时间尺度匹配且活动衰减时的reservoir computing用途。",
+      "role": "hypothesis",
+      "source_pages": [
+        7,
+        8
+      ],
+      "decision": "include",
+      "reason": "条件明确的计算用途假设，没有任务验证。"
+    },
+    {
+      "summary": "提出利用自持续活动进行模式存储或学习，并讨论挥发性与非挥发性材料的保持条件。",
+      "role": "hypothesis",
+      "source_pages": [
+        6,
+        8
+      ],
+      "decision": "include",
+      "reason": "可与衰减态用途分别判断，不能记录为已实现学习。"
+    },
+    {
+      "summary": "双相脉冲和共享导电路径可能产生类突触、异突触可塑性及高阶耦合。",
+      "role": "interpretation",
+      "source_pages": [
+        3,
+        4,
+        7
+      ],
+      "decision": "defer",
+      "reason": "提供模型解释与架构动机，没有独立时序对照、异突触读出或高阶统计检验。"
+    },
+    {
+      "summary": "模拟器允许设置Ohmic边，并通过模块化设计替换忆阻模型。",
+      "role": "method_feature",
+      "source_pages": [
+        5
+      ],
+      "decision": "include",
+      "reason": "作为耦合模拟方法的功能记录，不另立性能或材料泛化主张。"
+    },
+    {
+      "summary": "潜在降低面积、成本和功耗，并支持自愈、自组织及大规模并行计算。",
+      "role": "hypothesis",
+      "source_pages": [
+        1,
+        3,
+        6,
+        7,
+        8
+      ],
+      "decision": "defer",
+      "reason": "没有相应测量、消融或基线比较。"
+    },
+    {
+      "summary": "用MNIST零数字的20个高强度粗粒化像素说明输入电极布置。",
+      "role": "illustration",
+      "source_pages": [
+        3,
+        4
+      ],
+      "decision": "exclude",
+      "reason": "属于配置示意，没有数字识别或学习实验。"
+    },
+    {
+      "summary": "量子点光学输入扩展、合胞体生物学及既有材料和波计算研究。",
+      "role": "background_or_speculation",
+      "source_pages": [
+        1,
+        2,
+        3,
+        4,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "decision": "exclude",
+      "reason": "属于未测试扩展或引用背景，不构成本文新实证结果。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "Fused-MemBrain提出将带电流输入和电压输出电极的CMOS脉冲神经元接入硅后端上的自组装忆阻plexus，由共享材料中的导电路径承担神经元间信号路由，并将神经元输出反馈至plexus；本文尚未实现该实体硬件。",
+      "claim_type": "architecture_proposal",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "硬件架构与神经元接口描述",
+          "design": "神经元通过输入电极积分plexus电流，达到阈值后通过输出电极施加电压脉冲。",
+          "comparator": null,
+          "measure": "组件、双电极接口和反馈路由定义",
+          "unit_of_analysis": "拟议处理器架构",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "所选材料能沉积于CMOS硅后端并与电极耦合。",
+            "材料电气特性与神经元电流和电压要求相容。"
+          ],
+          "source_locator": {
+            "pdf_page": 2,
+            "section": "架构说明；第3页Section 3进一步展开",
+            "figure": "Figure 1",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "给出共享忆阻材料与CMOS神经元的接口及路由方案。",
+        "boundary": "仅为架构提案，没有制造或硬件测试。",
+        "negative_result": null,
+        "non_inference": "不能据此认定面积、能耗、成本或计算性能优于既有硬件。",
+        "unresolved": "材料沉积、接口兼容性及实体器件参数仍待验证。",
+        "unresolved_attribution": "作者将实体实现作为后续目标。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "自组装忆阻plexus能否在满足CMOS神经元电气要求时承担脉冲路由和反馈？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "Figure 1是拟议硬件及示例电路示意，不是器件测试。",
+        "硬件架构与模拟结果属于不同证据层级。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "本文实现Fused-MemBrain耦合模拟方法：以约25 µm方形区域构成带不交叉随机对角边的平面网格，用MVNA求解节点电压和电流，交替更新电压依赖忆阻电导与确定性LIF神经元状态，使神经元电压脉冲反馈至材料网络；模拟方案还允许设置Ohmic边及替换忆阻模型。",
+      "claim_type": "computational_method",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "MVNA电路求解、忆阻速率模型及离散LIF更新",
+          "design": "识别阈值事件并准备下一步脉冲；施加输入和神经元电压，求解plexus，再更新边电导及膜电位。",
+          "comparator": null,
+          "measure": "节点电压、源电流、边电导、膜电位和脉冲事件",
+          "unit_of_analysis": "模拟网络及其时间步",
+          "sample_size_as_reported": null,
+          "uncertainty": "未报告时间步收敛、求解误差或实体器件拟合误差。",
+          "assumptions": [
+            "每条忆阻边满足Ohm定律，归一化电导处于0到1之间。",
+            "增强与抑制速率分别按相邻区域电压差绝对值指数增加和减少。",
+            "神经元采用确定性LIF近似，报告的时间步为0.1 ms。",
+            "电导上下限被调整以适配CMOS电流要求，并非本文实体材料测量值。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "4及4.1–4.2；更新方程和算法续见第5–6页",
+            "figure": null,
+            "equation": "Equations 1–6",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "参数表与模拟器功能说明",
+          "design": "Table 1给出忆阻参数，Table 2区分典型CMOS值与模拟值；正文描述Ohmic边设置及模型替换功能。",
+          "comparator": null,
+          "measure": "模拟参数及支持的模型配置",
+          "unit_of_analysis": "参数配置和模拟器功能",
+          "sample_size_as_reported": null,
+          "uncertainty": "Table 1的kp0排版及Table 2的Cm/∆t数值需要核实；替换模型未提供比较实验。",
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "4.2–4.4；Tables 1–2位于第6页",
+            "figure": null,
+            "equation": "Equations 3–6",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "给出材料网络与脉冲神经元交互的方程、流程和配置方式。",
+        "boundary": "MVNA及忆阻模型继承既有方法，本文明确的原创贡献是耦合接口模拟；代码未在本次提供。",
+        "negative_result": null,
+        "non_inference": "不能认定该模型已获得实体材料定量验证、速度优势或跨材料预测能力。",
+        "unresolved": "数值收敛、表中参数疑点和实体器件校准尚待核实。",
+        "unresolved_attribution": "作者说明电导参数须按实际材料经验确定；数值验证缺口由本次审查识别。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "如何通过电路求解与状态更新耦合共享忆阻网络和脉冲神经元？"
+      ],
+      "shared_evidence_with": [
+        "C3",
+        "C4"
+      ],
+      "review_notes": [
+        "正文报告实现并提供代码地址，本次没有检查代码。",
+        "已有模型的短期可塑性性质不另记为本文独立发现。",
+        "不从表中含疑点的参数推算膜电容或额外数值结果。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "在所展示的1025 µm × 1025 µm Fused-MemBrain模拟网络中，左下角电极施加1.5 V局部脉冲后，放电由输入附近向其他区域传播，并从初期密集放电转为较稀疏的自持续活动；该结果限于展示的参数、空间布置及约400 ms观察窗。",
+      "claim_type": "simulation_dynamics",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "忆阻网络与LIF神经元耦合时间演化模拟",
+          "design": "局部脉冲触发网络，随后观察放电空间传播、栅格及平均放电率。",
+          "comparator": "同一展示轨迹的初期与后期活动",
+          "measure": "神经元脉冲事件、传播描述及平均放电率",
+          "unit_of_analysis": "展示的网络时间轨迹；神经元是网络内读出单位",
+          "sample_size_as_reported": null,
+          "uncertainty": "未明确报告神经元总数、独立模拟次数、随机种子数或误差区间；输入脉宽存在文本冲突。",
+          "assumptions": [
+            "采用Tables 1–2所列模型参数和展示的神经元空间布置。",
+            "自持续仅指展示观察窗中的活动。",
+            "图3报告输入脉宽1 ms，正文4.5报告1 µs，无法确定正确值。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "4.5 Example dynamical regime",
+            "figure": "Figure 3位于第5页；Figure 4a、4c、4d位于第7页",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "模拟示例展示局部激活后的传播、放电稀疏化和持续反馈活动。",
+        "boundary": "没有参数扫描、独立重复、无反馈对照或长期稳定性分析。",
+        "negative_result": null,
+        "non_inference": "不能由该轨迹证明严格吸引子、吸引域、多个可存储模式或持续活动的普遍性。",
+        "unresolved": "持续态的参数范围、初始化敏感性、长期稳定性及正确输入脉宽尚不明确。",
+        "unresolved_attribution": "作者称其为一种可能动力学状态；稳定性与泛化缺口由本次审查识别。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "局部脉冲在何种忆阻动力学、神经元参数和空间布置下产生持续传播活动？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C4"
+      ],
+      "review_notes": [
+        "不依据Neuron id坐标刻度推算神经元样本量。",
+        "Figure 4d说明靠近输入位置的neuron 0较早放电，属于同一传播示例。",
+        "Figure 4c是平均放电率面板。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "在同一局部脉冲触发的Fused-MemBrain模拟中，自持续放电伴随plexus平均边电导高于初始值，并形成在较高神经元密度区域聚集的高电导路径簇；正文描述这些路径经过暂态后趋于稳定。",
+      "claim_type": "simulation_material_adaptation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "模拟边电导的空间分布和时间轨迹读出",
+          "design": "跟踪局部输入触发后放电与电导的共同演化。",
+          "comparator": "同一网络的初始电导状态",
+          "measure": "平均边电导、高电导路径及其空间聚集描述",
+          "unit_of_analysis": "展示的模拟网络边集合及时间轨迹",
+          "sample_size_as_reported": null,
+          "uncertainty": "未报告边数、独立网络实现数、误差区间、聚集统计或反馈消融。",
+          "assumptions": [
+            "边电导按电压依赖增强与抑制速率更新。",
+            "使用与放电动力学示例相同的网络和参数配置。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "Figure 3图注；路径暂态描述见第6页4.5",
+            "figure": "Figure 3；Figure 4b位于第7页",
+            "equation": "Equations 1–4",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "示例中电导状态随活动共同演化，平均电导升高并出现空间路径组织。",
+        "boundary": "聚集和暂态稳定依赖正文及图注描述，没有定量检验。",
+        "negative_result": null,
+        "non_inference": "不能据此认定已实现任务学习、长期记忆、异突触可塑性或高阶相关，也不能量化神经元密度的因果效应。",
+        "unresolved": "停止神经元活动后的保持时间及路径聚集对密度的依赖未测试。",
+        "unresolved_attribution": "上述验证缺口由本次审查识别；作者另行讨论挥发性材料的保持限制。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "神经元反馈如何改变共享忆阻网络的平均电导与空间导电路径组织？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C3"
+      ],
+      "review_notes": [
+        "与C3来自同一模拟示例，不能视为独立重复。",
+        "Figure 4b的电导读出不能转述为实体材料电导率测量。",
+        "正文误将平均放电活动再次指向Figure 4b；按图注定位至Figure 4c。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "作者提出：若Fused-MemBrain在输入后表现为衰减活动，且系统时间尺度与输入数据相容，其动态状态可用于reservoir computing；本文没有验证这种工作状态的任务性能。",
+      "claim_type": "reservoir_use_hypothesis",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "条件性计算用途讨论",
+          "design": "提出通过调节神经元活动使系统在输入扰动后衰减，并匹配数据时间尺度。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "拟议计算用途及工作条件",
+          "sample_size_as_reported": null,
+          "uncertainty": "没有本系统的reservoir训练、分类准确率或基线数据。",
+          "assumptions": [
+            "整体活动在输入后衰减。",
+            "系统动态时间尺度与输入数据相容。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "5.2 Pathways for system use，讨论始于第7页",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "给出reservoir用途的动力学和时间尺度条件。",
+        "boundary": "展示的动力学示例主要是持续态，未提供衰减态任务验证。",
+        "negative_result": null,
+        "non_inference": "不能认定Fused-MemBrain已完成识别任务或达到reservoir性能指标。",
+        "unresolved": "如何配置衰减态、选取读出并取得可用任务性能仍待验证。",
+        "unresolved_attribution": "作者将有效使用系统列为开放问题；具体任务验证缺口由本次审查识别。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "如何使Fused-MemBrain的衰减动态匹配输入时间尺度并支持有效的reservoir读出？"
+      ],
+      "shared_evidence_with": [
+        "C6"
+      ],
+      "review_notes": [
+        "引用的membrain识别结果不是Fused-MemBrain的任务证据。",
+        "与C6共享Section 5.2用途讨论，没有建立支持或重复验证关系。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "作者提出利用Fused-MemBrain自持续活动中的模式相关放电或波形进行模式存储与学习：挥发性plexus可能需要神经元活动匹配材料时间尺度以维持导电结构，非挥发性plexus则可能通过外部写入导电非均匀性形成模式，并要求神经元活动不覆盖该结构；这些用途尚未验证。",
+      "claim_type": "pattern_storage_learning_hypothesis",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "基于持续态示例和材料保持性质的应用推论",
+          "design": "将模式相关活动作为候选存储或学习载体，区分挥发性活动维持与非挥发性外部写入方案。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "拟议模式存储和学习机制及材料条件",
+          "sample_size_as_reported": null,
+          "uncertainty": "没有训练实验、模式区分测试、存储容量或保持时间数据。",
+          "assumptions": [
+            "能形成可区分的模式相关放电或波形。",
+            "挥发性方案中神经元活动能在材料时间尺度上维持升高的导电状态。",
+            "非挥发性方案能够外部写入或擦除导电路径，且后续神经元活动不覆盖写入结构。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "5.2 Pathways for system use；模式存储动机见第6页4.5",
+            "figure": "Figure 4仅为持续态动机",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提出持续态模式用途及不同材料保持性质下的必要控制条件。",
+        "boundary": "没有本系统的模式存储、训练或闭环学习验证。",
+        "negative_result": null,
+        "non_inference": "不能把持续放电或电导路径形成等同于已实现学习、长期记忆或多模式吸引子存储。",
+        "unresolved": "如何形成、区分、训练及保持任务相关模式仍待解决。",
+        "unresolved_attribution": "作者明确讨论材料性质对系统使用的约束，并将有效使用列为开放问题。"
+      },
+      "broad_directions": [
+        "learning-memory",
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "材料挥发性与神经元时间尺度如何约束模式相关活动和导电结构的保持？"
+      ],
+      "shared_evidence_with": [
+        "C3",
+        "C4",
+        "C5"
+      ],
+      "review_notes": [
+        "C3和C4仅提供动力学动机，不提供任务学习证据。",
+        "引用的生物网络学习和波计算分类成果不属于本系统实验。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "第二遍评估了全部11页、四个图注、两个参数表及参考文献。实际来源是2024年arXiv v1预印本，提出CMOS神经元与自组装忆阻plexus架构，并提供耦合模拟方法。一个示例展示局部激活后的传播、自持续放电及电导路径组织；这些读出共享同一模拟，没有独立重复、实体硬件或任务验证。已分别记录衰减态reservoir和持续态模式学习假设。输入脉宽冲突及参数表疑点仍未解决；成本、能耗、高阶耦合和学习性能均未获本文验证。",
+  "shared_evidence": [
+    {
+      "claim_id": "C2",
+      "with": [
+        "C3",
+        "C4"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C2",
+        "C4"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C2",
+        "C3"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C3",
+        "C4",
+        "C5"
+      ]
+    }
+  ],
+  "audit": {
+    "initial_source_match_checks": [],
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": null,
+        "issue": "元数据主记录为2025年期刊文章，实际文本为2024年arXiv v1。",
+        "suggested_correction": "文档类型保留preprint，身份一致性限定为标题和作者匹配，提取范围限定于所供版本。",
+        "pdf_page": 1,
+        "resolved": true
+      },
+      {
+        "claim_id": "C3",
+        "issue": "Figure 3报告输入脉宽1 ms，Section 4.5报告1 µs。",
+        "suggested_correction": "主张只保留一致的幅度和位置，记录脉宽冲突；正确脉宽仍需外部核实。",
+        "pdf_page": 6,
+        "resolved": false
+      },
+      {
+        "claim_id": "C4",
+        "issue": "Section 4.5误将平均放电活动指向Figure 4b。",
+        "suggested_correction": "依据Figure 4图注，将平均电导定位至4b、平均放电率定位至4c。",
+        "pdf_page": 7,
+        "resolved": true
+      },
+      {
+        "claim_id": "C2",
+        "issue": "Table 1的kp0包含含混单位排版；Table 2给出的Cm/∆t是电容与时间步之比，其数值需要核实。",
+        "suggested_correction": "不转述为确定膜电容，不由疑点参数推算额外结果；复现前核实原始参数。",
+        "pdf_page": 6,
+        "resolved": false
+      },
+      {
+        "claim_id": "C3",
+        "issue": "正文使用吸引子描述，但没有稳定性或吸引域分析。",
+        "suggested_correction": "仅提取展示观察窗中的自持续活动，将吸引子性质保留为未经验证的推断。",
+        "pdf_page": 6,
+        "resolved": true
+      },
+      {
+        "claim_id": "C5",
+        "issue": "草稿将衰减态reservoir用途和持续态模式学习用途合并，二者条件及验证要求可分别判断。",
+        "suggested_correction": "拆分为C5和C6，保留各自必要条件及共享用途讨论。",
+        "pdf_page": 8,
+        "resolved": true
+      },
+      {
+        "claim_id": "C6",
+        "issue": "模式存储、学习及引用的分类成果不能作为本系统已实现性能。",
+        "suggested_correction": "保持hypothesis角色，并明确持续态模拟只提供用途动机。",
+        "pdf_page": 8,
+        "resolved": true
+      },
+      {
+        "claim_id": "C2",
+        "issue": "草稿未在主张中记录Ohmic边设置和忆阻模型替换功能。",
+        "suggested_correction": "纳入模拟方法功能，同时避免声称已有模型比较或跨材料验证。",
+        "pdf_page": 5,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "草稿含不属于请求schema的source_check和review字段，并声称进行文本匹配检查。",
+        "suggested_correction": "删除这些字段，仅报告基于所供文本的来源核对。",
+        "pdf_page": null,
+        "resolved": true
+      },
+      {
+        "claim_id": "C4",
+        "issue": "放电与电导主张共享一个模拟示例，网络内神经元及边不能当作独立实验重复。",
+        "suggested_correction": "明确网络轨迹为分析单位，不推算神经元数、边数或独立模拟次数。",
+        "pdf_page": 7,
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T06:40:33.301626Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "signed_in_chatgpt_codex",
+    "authentication": "existing_ChatGPT_login",
+    "provider_api_key_used": false,
+    "model": "account_default_GPT",
+    "source_sha256": "f4c0074589f6758bab767e16460333d3a9166c9e36c7b37c94e0b716fcec66e5",
+    "requests": [
+      {
+        "phase": "extraction",
+        "seconds": 140.96,
+        "usage": {
+          "input_tokens": 27883,
+          "cached_input_tokens": 12032,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 5198,
+          "reasoning_output_tokens": 31
+        },
+        "backend": "signed_in_chatgpt_codex",
+        "tools_used": false
+      },
+      {
+        "phase": "source_audit",
+        "seconds": 147.33,
+        "usage": {
+          "input_tokens": 32914,
+          "cached_input_tokens": 12032,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 6723,
+          "reasoning_output_tokens": 40
+        },
+        "backend": "signed_in_chatgpt_codex",
+        "tools_used": false
+      }
+    ],
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

@@ -1,0 +1,186 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>An Event-Based Neural Compressive Telemetry With &gt;11× Loss-Less Data Reduction for High-Bandwidth Intracortical Brain Computer Interfaces</title><style>body{max-width:940px;margin:40px auto;padding:0 24px;background:#fffdf7;color:#12372f;font:16px/1.8 Georgia,serif}h1{font-size:26px;line-height:1.4}h2{font-size:20px;line-height:1.5}h3{font-size:16px}article{padding:26px 0;border-top:1px solid #bec4b8}small{color:#68766e}dl{display:grid;grid-template-columns:120px 1fr;gap:8px 20px}dt{font-weight:bold}dd{margin:0}li{padding:8px 0}p,dd{overflow-wrap:anywhere}.note{background:#eef2e2;padding:14px;border-left:3px solid #738968}summary{cursor:pointer}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.7 monospace}@media(max-width:600px){body{margin:24px auto;padding:0 18px}dl{grid-template-columns:1fr;gap:3px}dd{margin-bottom:12px}}@media print{body{margin:0;background:white}details{display:block}}</style><link rel="stylesheet" href="../../commons-v02.css?v=20261020-1"><link rel="stylesheet" href="../../examples.css?v=20260928-2"><link rel="stylesheet" href="../../site.css?v=20261020-1"><script defer src="../../site.js?v=20261020-1"></script><script defer src="../../report-ui.js?v=20261020-1"></script></head><body class="portal-page report-page" data-cc-report-shell="1" data-page="library" data-site-prefix="../../" data-library-paper="paper-W4392904596" data-report-language="zh" data-claim-records="{&quot;C1&quot;:&quot;structured-paper-W4392904596-1&quot;,&quot;C2&quot;:&quot;structured-paper-W4392904596-2&quot;,&quot;C3&quot;:&quot;structured-paper-W4392904596-3&quot;,&quot;C4&quot;:&quot;structured-paper-W4392904596-4&quot;,&quot;C5&quot;:&quot;structured-paper-W4392904596-5&quot;,&quot;C6&quot;:&quot;structured-paper-W4392904596-6&quot;,&quot;C7&quot;:&quot;structured-paper-W4392904596-7&quot;,&quot;C8&quot;:&quot;structured-paper-W4392904596-8&quot;,&quot;C9&quot;:&quot;structured-paper-W4392904596-9&quot;,&quot;C10&quot;:&quot;structured-paper-W4392904596-10&quot;}"><header></header><main id="report-content"><div id="report-tools"></div><small>CLAIM COMMONS / 阅读报告</small><h1>An Event-Based Neural Compressive Telemetry With &gt;11× Loss-Less Data Reduction for High-Bandwidth Intracortical Brain Computer Interfaces</h1><p class="note">AI 文本提取候选，尚待人工核对。图像像素未读取；PDF 页码指文件中的页序。</p><p>已再次评估全部13页所供文字，身份与正式出版版本一致。保留量化模拟、128通道硬件方法、事件协议、正弦精度、低幅扫描、预录数据回放、压缩率、功耗、资源及文献能效比较；补录低幅扫描和安静期事件输出，并拆分压缩与功耗。所测证据支持11.4和13.7倍含开销压缩、约1 μW/通道遥测功耗及特定低幅波形保留，不能证明严格无损、硬件分选准确率或组织安全。物种描述、幅度换算及单ADC功耗单位仍存在未解决问题；未报告独立芯片数量和实验重复。</p><a href="https://pure.tue.nl/ws/files/354817206/An_Event-Based_Neural_Compressive_Telemetry_With_gt11_Loss-Less_Data_Reduction_for_High-Bandwidth_Intracortical_Brain_Computer_Interfaces.pdf" rel="noreferrer">查看所读原文版本 ↗</a><details><summary>贡献清单与处理决定</summary><ul><li><b>128通道NCT及支持16:1时间复用输入的通道轮转Δ-ADC。</b><br>include · 电路操作、制造工艺与多通道回放均有依据；AFE和输入复用器未集成。</li><li><b>7-bit、20 kSps Δ量化的压缩、分选匹配与波形误差模拟。</b><br>include · 属于本文分析；原始分选输出仅为参考，非神经元真值。</li><li><b>空间分组ternary AER、事件时钟和占空比控制eLVDS。</b><br>include · 包格式、启停、缓存和溢出处理明确；未独立消融各机制。</li><li><b>单ADC与完整NCT的正弦精度、幅度扫描及安静期事件输出。</b><br>include · 分别支持链路精度、低幅输入保真度和事件驱动行为。</li><li><b>两个预录数据集经DAC回放的波形保真度。</b><br>include · 不是新在体实验，也未直接测试硬件输出的分选准确率。</li><li><b>包含协议开销的压缩率和数据率。</b><br>include · 保留两个数据集的完整比较及平均放电率。</li><li><b>NCT每通道功耗与eLVDS功耗下降。</b><br>include · 与压缩率分别可评估；LVDS比较条件未详述。</li><li><b>每通道存储、压缩数字面积和ENOB归一化能效基准。</b><br>include · 容量与能效口径明确，跨文献比较不构成独立复现。</li><li><b>每次转换能耗降低5–10倍、协议开销最多降低2倍。</b><br>defer · 可保留为作者的设计解释，但缺少足以独立核对其定量幅度的测量与推导细节。</li><li><b>单ADC正弦条件下的功耗及Walden FoM。</b><br>defer · 正文报告282.19 fJ/conv，但0.11 mW/通道存在单位提取疑点；不能可靠恢复完整功耗比较。</li><li><b>严格无损、普遍保持分选准确率、降低组织损伤及长期植入适用性。</b><br>exclude · 存在非零重构误差；未测硬件分选、组织温升、损伤或长期植入效果。</li></ul></details><article><small>C1 / 直接结果 · simulation</small><h2>对一个原始为10-bit、30 kSps的预录神经数据集，以输入等效满量程1.1 mVPP、20 kSps运行的7-bit Δ-ADC模型得到超过10倍的模拟压缩率；作者将Kilo-sort分选相对原始数据的影响评为可忽略，所示分选簇波形的NRMSE均不超过8.2%，对应SNR超过21.7 dB。</h2><h3>Evidence</h3><p>Δ量化模拟、Kilo-sort分选匹配和波形比较</p><dl><dt>设计 / 对照</dt><dd>改变Δ-ADC分辨率，以原始记录的分选输出为参考；7-bit模型用于展示重构簇波形。；原始10-bit、30 kSps记录及其分选输出</dd><dt>独立单位与 n</dt><dd>一个数据集中的spike及所示分选簇波形；一个数据集；spike数、簇数及重复次数未报告</dd><dt>不确定性</dt><dd>未报告置信区间；7-bit条件的确切匹配百分比未出现在所供文字中。</dd><dt>原文位置</dt><dd>PDF 4 · Figures 3–4</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>支持在该数据和模型条件下选择7-bit Δ量化。</dd><dt>适用边界</dt><dd>限于所用数据集、采样率、满量程及分选流程。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能证明硬件输出的分选准确率或任意记录下的无损性。</dd><dt>未解决</dt><dd>其他数据、事件密度和分选算法下的表现未报告。</dd></dl><h3>相关问题</h3><ul><li>Δ量化分辨率与采样率如何影响spike分选匹配和波形误差？</li></ul></article><article><small>C2 / 直接结果 · hardware_method</small><h2>本文在65-nm CMOS中实现128通道NCT，其中8个7-bit通道轮转Δ-ADC各接收16:1时间复用输入，为每个通道保存前一帧码并以该码开始当前转换，输出变化方向与量化Δ；128通道预录信号回放验证了该共享ADC架构的工作。</h2><h3>Evidence</h3><p>电路实现与芯片制造</p><dl><dt>设计 / 对照</dt><dd>FIFO保存通道码；比较器、事件计数器和DAC控制模块完成逐通道Δ转换；StepMax设为31。；正文描述的从中心码启动转换的常规SAR-ADC</dd><dt>独立单位与 n</dt><dd>芯片架构、ADC模块和逻辑输入通道；8个ADC、128通道；芯片数和独立重复未报告</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 5 · Figures 5–6</dd></dl><p>芯片制造说明与128通道模拟回放</p><dl><dt>设计 / 对照</dt><dd>FPGA和8个外部12-bit DAC生成8路16:1时间复用输入。；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>NCT芯片及回放通道；128通道</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 8 · Figures 12、14</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>实现了保留各通道状态的共享Δ转换及128通道传输。</dd><dt>适用边界</dt><dd>芯片不含AFE或模拟输入复用器。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>128通道不是128次独立硬件重复；未证明更大规模性能。</dd><dt>未解决</dt><dd>跨芯片一致性及更大通道数下的时序裕量未报告。</dd></dl><h3>相关问题</h3><ul><li>共享ADC如何保存时间复用神经记录中各通道的Δ转换状态？</li></ul></article><article><small>C3 / 直接结果 · protocol_and_circuit_method</small><h2>本文的空间分组ternary AER将同一ADC的活跃通道事件放入同一包，每包对该ADC只发送一次ADC ID，再以含SIGN和通道地址的CH ID重复次数编码Δ；事件序列化ring oscillator和eLVDS按包启停，提供减少地址重复和空闲功耗的实现机制。</h2><h3>Evidence</h3><p>包格式、双事件缓存及FSM设计</p><dl><dt>设计 / 对照</dt><dd>分组发送ADC ID；每活跃通道使用10-bit事件存储及10-bit副本；FLAG表示包活跃期。；重复发送ADC ID的事件编码</dd><dt>独立单位与 n</dt><dd>事件包和逻辑模块；未报告 / 不适用</dd><dt>不确定性</dt><dd>最多2倍协议开销降低为设计分析，未提供独立实测比较。</dd><dt>原文位置</dt><dd>PDF 6 · Figures 7–8</dd></dl><p>事件时钟与eLVDS电路设计</p><dl><dt>设计 / 对照</dt><dd>启动计数器等待RO稳定；包结束关闭时钟；空闲时驱动输出置于VDD/2；采用Manchester编码。；持续运行的序列化时钟与静态LVDS驱动</dd><dt>独立单位与 n</dt><dd>时钟及驱动器模块；未报告 / 不适用</dd><dt>不确定性</dt><dd>84–574 MHz为设计覆盖范围，未作为所供文本可核对的实测频率范围。</dd><dt>原文位置</dt><dd>PDF 7 · Figures 9–11</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>提出并实现分组事件编码及按包启停的传输机制。</dd><dt>适用边界</dt><dd>效果依赖事件负载、通道分组和包长度。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>未独立消融机制，不能将全部节能定量归因于空间分组。</dd><dt>未解决</dt><dd>高事件负载下的溢出率和调频效果未报告。</dd></dl><h3>相关问题</h3><ul><li>空间分组和按事件包启停如何减少神经遥测的地址开销与空闲功耗？</li></ul></article><article><small>C4 / 直接结果 · hardware_measurement</small><h2>1-kHz正弦输入测试中，单个CR-Δ ADC达到6.98-bit ENOB；将该正弦施加到一个ADC的16通道并经完整NCT传输与重构后，SNDR为41.6 dB、系统ENOB为6.62 bit，SNDR较单ADC输出下降2.2 dB。</h2><h3>Evidence</h3><p>正弦输入、FFT及反序列化重构</p><dl><dt>设计 / 对照</dt><dd>比较单ADC输出与一个ADC的16通道完整链路输出。；单ADC输出</dd><dt>独立单位与 n</dt><dd>ADC和NCT输出信号；单ADC；完整链路输入为其16通道；芯片数和重复未报告</dd><dt>不确定性</dt><dd>未报告误差条或置信区间。</dd><dt>原文位置</dt><dd>PDF 8 · Figure 13(a–b)</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>该正弦测试下完整链路保留约6.6-bit有效分辨率。</dd><dt>适用边界</dt><dd>属于台架正弦输入测试。</dd><dt>实际负结果</dt><dd>完整链路SNDR较单ADC输出下降2.2 dB。</dd><dt>不能推出</dt><dd>不能据此证明无误差传输或神经分选准确率。</dd><dt>未解决</dt><dd>跨芯片、温度和负载变化未报告。</dd></dl><h3>相关问题</h3><ul><li>事件压缩与传输链路使采样信号的有效分辨率下降多少？</li></ul></article><article><small>C5 / 直接结果 · hardware_replay_validation</small><h2>Neuropixels和Utah array两个预录数据集经FPGA及8个外部12-bit DAC形成128通道时间复用模拟输入并送入NCT后，平均输入等效RMS重构误差分别为7.4和5.7 μVRMS；所示Neuropixels spike幅度降至31 μV时，重构NRMSE仍低于23%。</h2><h3>Evidence</h3><p>预录数据模拟回放与原始/重构波形比较</p><dl><dt>设计 / 对照</dt><dd>两个数据集分别形成8路16:1时间复用模拟输入。；回放的原始记录</dd><dt>独立单位与 n</dt><dd>记录通道及所示spike波形；两个数据集；128通道输入；动物数、spike数、芯片数及独立重复未报告</dd><dt>不确定性</dt><dd>有通道误差直方图，文字未给出离散度或置信区间。</dd><dt>原文位置</dt><dd>PDF 8 · Figures 14–15</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>所用回放记录支持较低波形重构误差及所示低幅spike的保留。</dd><dt>适用边界</dt><dd>属于台架回放，未包括集成AFE或新在体记录。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>低波形误差不直接证明分选准确率、行为解码或逐比特无损。</dd><dt>未解决</dt><dd>数据集物种冲突及低幅spike总体表现未解决。</dd></dl><h3>相关问题</h3><ul><li>事件式神经遥测能保留多小幅度的细胞外spike波形？</li></ul></article><article><small>C6 / 直接结果 · compression_performance</small><h2>128通道预录数据硬件回放中，NCT包含协议开销的压缩率分别为Neuropixels 11.4倍和Utah array 13.7倍，对应数据率39.1和29.3 kbps/通道，表列平均放电率分别为64和38次/秒/通道。</h2><h3>Evidence</h3><p>回放输出数据量测量与性能汇总</p><dl><dt>设计 / 对照</dt><dd>同一NCT架构处理两个不同记录数据集。；未压缩数据流</dd><dt>独立单位与 n</dt><dd>数据集条件下的系统输出流；两个数据集、128通道；独立重复未报告</dd><dt>不确定性</dt><dd>未报告统计不确定性；未详述未压缩基准的全部计算步骤。</dd><dt>原文位置</dt><dd>PDF 10 · Figure 16（第9页）</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>两个所测数据集均实现超过11倍的含开销数据减少。</dd><dt>适用边界</dt><dd>压缩率具有信号依赖性。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能将两数据集差异归因于单一放电率或空间密度因素。</dd><dt>未解决</dt><dd>更高负载及其他相关性条件下的压缩率未报告。</dd></dl><h3>相关问题</h3><ul><li>事件密度与空间相关性如何影响含协议开销的神经遥测压缩率？</li></ul></article><article><small>C7 / 直接结果 · hardware_resource</small><h2>NCT每通道使用27 bit状态与事件存储，包括7-bit通道轮转码和两份10-bit事件缓存；相对Table I中Epoch方案约1.5 kbit/通道，容量约减少55倍，本文表列压缩数字面积为70 μm²/通道。</h2><h3>Evidence</h3><p>架构位数计数及文献资源比较</p><dl><dt>设计 / 对照</dt><dd>汇总通道轮转FIFO和用于并行缓冲/处理的双事件缓存。；Epoch方案约1.5 kbit/通道</dd><dt>独立单位与 n</dt><dd>设计的每通道资源；本文128通道；Epoch比较设计64通道</dd><dt>不确定性</dt><dd>未报告资源计数或面积不确定性。</dd><dt>原文位置</dt><dd>PDF 10 · Table I</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>该架构每通道所需存储容量较小。</dd><dt>适用边界</dt><dd>55倍指容量比较；面积单位由芯片量纲解释。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能将容量差解释为访问次数或访问能耗降低55倍。</dd><dt>未解决</dt><dd>未进行同条件存储访问次数或能耗比较。</dd></dl><h3>相关问题</h3><ul><li>通道轮转与双事件缓存需要多少每通道存储资源？</li></ul></article><article><small>C8 / 直接结果 · metric_and_literature_benchmark</small><h2>以ADC、压缩、序列化和数据驱动器的总功耗除以采样率、通道数和系统ENOB的乘积，本文NCT的归一化遥测能耗为7.5 pJ/bit；相对Table I中两个有线LVDS系统的953和963 pJ/bit，按此指标改善至少127倍。</h2><h3>Evidence</h3><p>定义系统ENOB归一化指标并比较文献汇总值</p><dl><dt>设计 / 对照</dt><dd>功耗范围包含ADC至数据驱动器，排除AFE。；Table I中的Lopez与Wang有线LVDS系统</dd><dt>独立单位与 n</dt><dd>硬件设计的系统汇总性能；一个本文设计和两个文献设计</dd><dt>不确定性</dt><dd>无统一条件并列实验或置信区间。</dd><dt>原文位置</dt><dd>PDF 9 · IV-C</dd></dl><p>文献性能表</p><dl><dt>设计 / 对照</dt><dd>汇总有线系统的归一化能耗。；953和963 pJ/bit</dd><dt>独立单位与 n</dt><dd>硬件设计；两个文献比较设计</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 10 · Table I</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>在作者定义的指标下优于两个表列有线系统。</dd><dt>适用边界</dt><dd>跨文献比较；无线功耗依赖距离，作者指出该指标可能不适于无线比较。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不等于每个实际发送比特或完整植入系统节能127倍。</dd><dt>未解决</dt><dd>统一负载和测试条件下的优势幅度未确定。</dd></dl><h3>相关问题</h3><ul><li>如何考虑有效动态范围来比较压缩神经遥测能效？</li></ul></article><article><small>C9 / 直接结果 · hardware_amplitude_sweep</small><h2>NCT正弦输入幅度扫描显示，在约3%满量程的输入下仍达到作者采用的12 dB SNDR、NRMSE低于25%的保真度标准；这是低幅模拟信号的台架测量，未直接测定spike分选准确率。</h2><h3>Evidence</h3><p>输入幅度扫描与重构SNDR测量</p><dl><dt>设计 / 对照</dt><dd>改变正弦输入幅度，按1.1 mVPP满量程归一化。；作者援引的12 dB SNDR / 25% NRMSE标准</dd><dt>独立单位与 n</dt><dd>各输入幅度条件下的重构信号；幅度点数及独立重复未报告</dd><dt>不确定性</dt><dd>正文同时给出约3%满量程和约25.5 μV，但幅度口径及换算未说明，未强行统一。</dd><dt>原文位置</dt><dd>PDF 8 · Figure 13(c)</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>幅度扫描支持低幅输入下的波形保真度。</dd><dt>适用边界</dt><dd>限于所测模拟输入和作者采用的保真度标准。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>达到波形标准不能直接证明准确分选低幅spike。</dd><dt>未解决</dt><dd>百分比与电压值的幅度口径未明确。</dd></dl><h3>相关问题</h3><ul><li>NCT的重构SNDR随输入幅度如何变化？</li></ul></article><article><small>C10 / 直接结果 · hardware_power_and_event_activity</small><h2>两个预录数据集回放的NCT功耗汇总约为1 μW/通道，不包含AFE；正文另报告事件驱动eLVDS功耗从3.3 mW降至114.6 μW，约降低30倍。spike-like模拟输入测试还显示，安静期输出事件包数量减少。</h2><h3>Evidence</h3><p>回放功耗分解</p><dl><dt>设计 / 对照</dt><dd>报告NCT子模块功耗及eLVDS比较。；正文所列3.3 mW LVDS基准</dd><dt>独立单位与 n</dt><dd>NCT系统和LVDS模块；128通道；芯片数和独立重复未报告</dd><dt>不确定性</dt><dd>未报告统计不确定性或两个数据集各自的功耗；3.3 mW比较条件未详述。</dd><dt>原文位置</dt><dd>PDF 8 · Figure 15(b)</dd></dl><p>spike-like模拟输入与输出事件观察</p><dl><dt>设计 / 对照</dt><dd>观察活跃及安静时段的NCT事件输出。；同一输入中的活跃时段</dd><dt>独立单位与 n</dt><dd>所示输入与输出时间段；时间段长度、包数及重复次数未报告</dd><dt>不确定性</dt><dd>仅有定性文字描述。</dd><dt>原文位置</dt><dd>PDF 8 · Figure 13(d)</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>所测系统功耗较低，并呈现随输入活动变化的事件输出。</dd><dt>适用边界</dt><dd>功耗覆盖所定义遥测链路；没有逐数据集独立功耗结果。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>未证明组织安全，也不能分别量化各设计机制的节能贡献。</dd><dt>未解决</dt><dd>高负载、长时间运行及受控LVDS比较条件未报告。</dd></dl><h3>相关问题</h3><ul><li>事件驱动神经遥测在回放与安静时段下消耗多少功率？</li></ul></article><details><summary>核对记录与来源信息</summary><pre>{
+  &quot;coverage&quot;: {
+    &quot;pdf_pages_read&quot;: [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    &quot;results_sections_seen&quot;: [
+      &quot;II. The Proposed Serial Telemetry&quot;,
+      &quot;III-A. Channel-Rotating Δ-ADC&quot;,
+      &quot;III-B. Event Serializer With Spatial-Grouping Ternary AER&quot;,
+      &quot;III-C. Event-Based LVDS Driver&quot;,
+      &quot;IV-A. CR-Δ ADC and NCT Measurements&quot;,
+      &quot;IV-B. Validation With In-Vivo Data&quot;,
+      &quot;IV-C. Benchmark and Discussion&quot;,
+      &quot;V. Conclusion&quot;,
+      &quot;Figures 1–16 的所供文字与图注&quot;,
+      &quot;Table I&quot;
+    ],
+    &quot;missing_material&quot;: [
+      &quot;图像像素及仅存在于图内的数值、坐标和电路标注&quot;,
+      &quot;原始数据、代码和芯片测试记录&quot;,
+      &quot;未提供附录或补充材料正文&quot;
+    ],
+    &quot;text_pass_complete&quot;: true,
+    &quot;notes&quot;: [
+      &quot;第1页明确标注 Publisher’s PDF / Version of Record；第2–13页对应期刊页1100–1111。&quot;,
+      &quot;参考文献与作者简介均已评估，未作为本文新增结果。&quot;,
+      &quot;所供文本存在 Δ、×、μ及面积单位乱码；可由摘要和量纲交叉核对的单位已注明解释依据。&quot;,
+      &quot;正文与参考文献对两个验证数据集的物种描述冲突。&quot;,
+      &quot;Loss-Less 在本文语境中指波形特征保留，不能解释为原始数字流逐比特无损。&quot;,
+      &quot;芯片数量、独立实验重复和统计不确定性未报告。&quot;
+    ],
+    &quot;reading_mode&quot;: &quot;text_only&quot;,
+    &quot;figure_images_read&quot;: false,
+    &quot;scientific_verification&quot;: false
+  },
+  &quot;audit&quot;: {
+    &quot;initial_source_match_checks&quot;: [],
+    &quot;source_match_checks&quot;: [],
+    &quot;model_findings&quot;: [
+      {
+        &quot;claim_id&quot;: &quot;C5&quot;,
+        &quot;issue&quot;: &quot;正文称Neuropixels数据来自鼠、Utah数据来自灵长类；参考文献标题分别称primates和mice。&quot;,
+        &quot;suggested_correction&quot;: &quot;只保留探针和数据集名称，物种待原始数据核对。&quot;,
+        &quot;pdf_page&quot;: 11,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;Loss-Less容易被解释为逐比特无损，但本文报告量化及重构误差。&quot;,
+        &quot;suggested_correction&quot;: &quot;所有记录限定为所测波形保真度，不宣称严格无损。&quot;,
+        &quot;pdf_page&quot;: 8,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C1&quot;,
+        &quot;issue&quot;: &quot;模拟分选匹配可能与硬件波形验证混为准确率证据。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留模型分选和硬件重构为不同记录；原始分选输出不是神经元真值。&quot;,
+        &quot;pdf_page&quot;: 4,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C6&quot;,
+        &quot;issue&quot;: &quot;草稿把压缩率和功耗放在同一命题，且可能暗示逐数据集功耗已报告。&quot;,
+        &quot;suggested_correction&quot;: &quot;压缩率保留于C6，功耗移至C10并注明未提供逐数据集功耗。&quot;,
+        &quot;pdf_page&quot;: 8,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C9&quot;,
+        &quot;issue&quot;: &quot;草稿遗漏Figure 13(c)幅度扫描这一可独立评估结果。&quot;,
+        &quot;suggested_correction&quot;: &quot;新增低幅输入保真度记录，不把引用的波形标准写成本文实测分选准确率。&quot;,
+        &quot;pdf_page&quot;: 8,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C9&quot;,
+        &quot;issue&quot;: &quot;正文的约3%满量程与约25.5 μV未说明幅度换算口径。&quot;,
+        &quot;suggested_correction&quot;: &quot;采用约3%满量程，保留电压换算疑点，不补造口径。&quot;,
+        &quot;pdf_page&quot;: 8,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C10&quot;,
+        &quot;issue&quot;: &quot;草稿未记录Figure 13(d)安静期事件包减少的实测文字。&quot;,
+        &quot;suggested_correction&quot;: &quot;补录定性事件活动结果，不补造包数或节能幅度。&quot;,
+        &quot;pdf_page&quot;: 8,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;所供文本将多处μV、μW和μm²提取为mV、mW和mm²。&quot;,
+        &quot;suggested_correction&quot;: &quot;采用可由摘要和量纲交叉支持的单位，并明确提取限制。&quot;,
+        &quot;pdf_page&quot;: 10,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;单ADC正弦功耗0.11 mW/通道存在单位疑点；282.19 fJ/conv虽明确，完整功耗口径仍无法可靠核对。&quot;,
+        &quot;suggested_correction&quot;: &quot;在贡献清单保留为defer，不恢复未确定的功耗单位。&quot;,
+        &quot;pdf_page&quot;: 7,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C7&quot;,
+        &quot;issue&quot;: &quot;55倍容量下降被论文结论延伸为55倍memory access demand下降。&quot;,
+        &quot;suggested_correction&quot;: &quot;量化结论仅限27 bit与约1.5 kbit的存储容量比较。&quot;,
+        &quot;pdf_page&quot;: 10,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C8&quot;,
+        &quot;issue&quot;: &quot;讨论段将系统ENOB写为6.6 dB，且127倍指标易被误读为实际发送每bit的能耗比。&quot;,
+        &quot;suggested_correction&quot;: &quot;采用6.62 bit，并明确Equation (2)的ENOB归一化定义。&quot;,
+        &quot;pdf_page&quot;: 9,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;草稿包含requested schema之外的source_check和review字段，且文本匹配不能代表真实科学复核。&quot;,
+        &quot;suggested_correction&quot;: &quot;删除额外字段，保留实际来源定位和审计说明。&quot;,
+        &quot;pdf_page&quot;: null,
+        &quot;resolved&quot;: true
+      }
+    ],
+    &quot;needs_human_review&quot;: true
+  },
+  &quot;source&quot;: {
+    &quot;filename&quot;: &quot;paper-W4392904596.pdf&quot;,
+    &quot;sha256&quot;: &quot;7e601808b3da68865759efff98109ec659a6504139b15e7c708c693bf8522f6c&quot;,
+    &quot;source_url&quot;: &quot;https://pure.tue.nl/ws/files/354817206/An_Event-Based_Neural_Compressive_Telemetry_With_gt11_Loss-Less_Data_Reduction_for_High-Bandwidth_Intracortical_Brain_Computer_Interfaces.pdf&quot;,
+    &quot;pdf_page_count&quot;: 13
+  },
+  &quot;provenance&quot;: {
+    &quot;created_at&quot;: &quot;2026-10-07T06:44:34.820515Z&quot;,
+    &quot;workflow&quot;: &quot;claim-commons-pdf-v1&quot;,
+    &quot;prompt_version&quot;: &quot;claim-commons-chatgpt-pdf-2026-10-07.1&quot;,
+    &quot;backend&quot;: &quot;signed_in_chatgpt_codex&quot;,
+    &quot;authentication&quot;: &quot;existing_ChatGPT_login&quot;,
+    &quot;provider_api_key_used&quot;: false,
+    &quot;model&quot;: &quot;account_default_GPT&quot;,
+    &quot;source_sha256&quot;: &quot;7e601808b3da68865759efff98109ec659a6504139b15e7c708c693bf8522f6c&quot;,
+    &quot;requests&quot;: [
+      {
+        &quot;phase&quot;: &quot;extraction&quot;,
+        &quot;seconds&quot;: 269.42,
+        &quot;usage&quot;: {
+          &quot;input_tokens&quot;: 28740,
+          &quot;cached_input_tokens&quot;: 0,
+          &quot;cache_write_input_tokens&quot;: 0,
+          &quot;output_tokens&quot;: 7715,
+          &quot;reasoning_output_tokens&quot;: 22
+        },
+        &quot;backend&quot;: &quot;signed_in_chatgpt_codex&quot;,
+        &quot;tools_used&quot;: false
+      },
+      {
+        &quot;phase&quot;: &quot;source_audit&quot;,
+        &quot;seconds&quot;: 218.43,
+        &quot;usage&quot;: {
+          &quot;input_tokens&quot;: 36462,
+          &quot;cached_input_tokens&quot;: 0,
+          &quot;cache_write_input_tokens&quot;: 0,
+          &quot;output_tokens&quot;: 9132,
+          &quot;reasoning_output_tokens&quot;: 71
+        },
+        &quot;backend&quot;: &quot;signed_in_chatgpt_codex&quot;,
+        &quot;tools_used&quot;: false
+      }
+    ],
+    &quot;source_audit_complete&quot;: true,
+    &quot;review_status&quot;: &quot;candidate&quot;,
+    &quot;database_updated&quot;: false
+  }
+}</pre></details></main><footer></footer></body></html>

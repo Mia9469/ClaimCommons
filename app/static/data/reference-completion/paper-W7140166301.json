@@ -1,0 +1,1379 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "FRMD: fast robot motion diffusion via trajectory-level consistency distillation",
+    "authors": [
+      "Xirui Shi",
+      "Yi Hu",
+      "Jun Jin"
+    ],
+    "doi": "10.3389/frobt.2026.1751688",
+    "publication_year": 2026,
+    "venue": "Frontiers in Robotics and AI",
+    "url": "https://doi.org/10.3389/frobt.2026.1751688"
+  },
+  "source": {
+    "filename": "paper-W7140166301--FRMD-fast-robot-motion-diffusion-via-trajectory-level-consistency-distillation.pdf",
+    "sha256": "7b05bc72e75b327776208d1710ac44515f4bb476a32431e6e0e2ba81eae0229f",
+    "source_url": "https://public-pages-files-2025.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2026.1751688/pdf",
+    "pdf_page_count": 13
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "results_sections_seen": [
+      "4.1 Experimental setup（页7–8）",
+      "4.2.1 Overall performance comparison / 4.2.1.1 Analysis by task difficulty（页8–9；Table 3）",
+      "4.2.2 Computational efficiency（页9；Table 3）",
+      "4.2.3 Learning efficiency analysis（页9；Figure 2图注页10）",
+      "4.2.4 Motion Quality Analysis（页9；Figure 3图注页11）",
+      "4.3 Ablation study: Impact of network architecture（页10–11；Table 4）",
+      "4.4 Limitations and future work（页10–12）",
+      "5 Conclusion / 5.1 Broader impact and future directions（页12）",
+      "Figure 1训练框架图注（页6）；Table 1比较（页4）；Table 2符号（页5）；Algorithm 1（页7）"
+    ],
+    "missing_material": [
+      "未提供Figure 1–3图像像素；Figure 2逐任务曲线/图内标签不能从像素读取。",
+      "没有独立提供补充材料内容；Data availability中的article/supplementary material措辞不等于补充文件已读。",
+      "所供页未含原始逐任务/逐轨迹数据、代码或计时日志；不据此猜缺失数值。"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "限定来源为分配条目paper-W7140166301对应的13页pages.json，91751字符；未重新打开PDF，未使用网络、其他论文或未分配材料。",
+      "第一次展示因无交互stdin而串出所有块造成工具截断，属硬失败；随后恢复交互式7个≤17800字符块，全部13页完整展示并评估，没有把截断输出认作覆盖完成。",
+      "实际来源是Frontiers in Robotics and AI正式Original Research，发表于25 March 2026，DOI 10.3389/frobt.2026.1751688；作者Xirui Shi、Yi Hu、Jun Jin及题名与索引一致，非预印本。索引仅给年份2026，源给出具体日期；未改索引。",
+      "所有正文、公式、表格文字、图注、限制、声明和参考文献已评估；所供13页没有附录，不声称另有未供附录已读。",
+      "完成首次贡献梳理后，在保留的全来源上下文中第二次逐项审计独立命题、共同假设、图表数字、真实单位、对照、角色和推论边界。复核未调用额外模型或重开离线PDF。",
+      "全文跨候选原文quote字段均为null（总英文直接引语0词）；术语/来源身份保留原语言，定位为真实1-based PDF页号。",
+      "全部为AI candidate、human_checked:false；source audit不是独立复制或科学验证。源内未解决差异使用FRMD-A1至FRMD-A6标识。",
+      "没有跨论文支持、反驳或复制关系；多个命题/图注/表格共享证据不当作新增实验重复。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "FRMD教师、ProDMP编码解码和trajectory-level consistency student/EMA联合构造。",
+      "role": "result",
+      "source_pages": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "decision": "include",
+      "reason": "C1保留完整训练/推理联合条件，不把权重空间/维数歧义或skip项省略。"
+    },
+    {
+      "summary": "固定动作时域下相对DP/MPD生成延迟及近10倍/7倍加速。",
+      "role": "result",
+      "source_pages": [
+        8,
+        9,
+        11,
+        12
+      ],
+      "decision": "include",
+      "reason": "C2保留全部难度组计时与物理延迟边界；58 Hz不是额外实机实验。"
+    },
+    {
+      "summary": "Overall及难度分层操作成功率与困难任务绝对限制。",
+      "role": "result",
+      "source_pages": [
+        8,
+        9
+      ],
+      "decision": "include",
+      "reason": "C3保留真实基线、简单组未超过DP、困难组低成功率，不声明非劣效性检验。"
+    },
+    {
+      "summary": "学生早期适应损失与约10000步后的曲线改善。",
+      "role": "result",
+      "source_pages": [
+        9,
+        10
+      ],
+      "decision": "include",
+      "reason": "C4与C5分开，因为早期不利结果与峰值时间可独立评估。"
+    },
+    {
+      "summary": "困难示例的学生/教师约20000/25000步峰值时间。",
+      "role": "result",
+      "source_pages": [
+        9,
+        10
+      ],
+      "decision": "include",
+      "reason": "C5仅保留文本近似时刻；不包含教师预训练成本。"
+    },
+    {
+      "summary": "跨seed学习波动多数任务较小但类别汇总并非普遍。",
+      "role": "result",
+      "source_pages": [
+        9,
+        10
+      ],
+      "decision": "include",
+      "reason": "C6保留图注SD含义及Table 3困难组反例，不使用未供曲线像素。"
+    },
+    {
+      "summary": "结构化运动基元与EMA共同解释训练稳定性的作者归因。",
+      "role": "interpretation",
+      "source_pages": [
+        7,
+        9
+      ],
+      "decision": "include",
+      "reason": "C7独立标记interpretation，没有因素隔离实验，不能与观察趋势合并为机制证明。"
+    },
+    {
+      "summary": "PlugCharger-v1固定初始状态的曲率阈值事件82对21与约74%减少。",
+      "role": "result",
+      "source_pages": [
+        8,
+        9,
+        11
+      ],
+      "decision": "include",
+      "reason": "C8只对应一个任务示例；事件数不作实验n，图注和正文共享证据。"
+    },
+    {
+      "summary": "减少曲率突变可能提升执行噪声鲁棒性、可预测性与稳定性的意义解释。",
+      "role": "interpretation",
+      "source_pages": [
+        9,
+        11
+      ],
+      "decision": "include",
+      "reason": "C9单独校准；没有实机扰动、人类或生物验证。"
+    },
+    {
+      "summary": "Transformer-Lite的任务依赖速度/成功率权衡。",
+      "role": "result",
+      "source_pages": [
+        10,
+        11
+      ],
+      "decision": "include",
+      "reason": "C10包含简单组并非更快；保留表格而非笼统容量单调叙述。"
+    },
+    {
+      "summary": "MLP较快但各难度成功率下降，包括简单组。",
+      "role": "result",
+      "source_pages": [
+        10,
+        11
+      ],
+      "decision": "include",
+      "reason": "C11保留实际负结果，不能将正文的简单组相近措辞代替数值。"
+    },
+    {
+      "summary": "模块化FRMD作为大型VLA action expert的集成方向。",
+      "role": "hypothesis",
+      "source_pages": [
+        2,
+        12
+      ],
+      "decision": "include",
+      "reason": "C12不是已完成的大型VLA实验或无需重训的独立证明。"
+    },
+    {
+      "summary": "可预测/开环可预规划环境可能减弱在线生成优势。",
+      "role": "hypothesis",
+      "source_pages": [
+        10,
+        11
+      ],
+      "decision": "include",
+      "reason": "C13保留前瞻条件；未比较不填写负结果。"
+    },
+    {
+      "summary": "更长/变长/组合或重规划轨迹、基函数数量和放置敏感性、物理机器人验证。",
+      "role": "unresolved",
+      "source_pages": [
+        11,
+        12
+      ],
+      "decision": "exclude",
+      "reason": "这些明确留作未来工作；纳入相关候选的boundary/unresolved，不捏造新增结果或额外实验候选。"
+    },
+    {
+      "summary": "PF-ODE、Tweedie、ProDMP和consistency models的一般背景公式，Table 1相关范式、Table 2符号。",
+      "role": "background",
+      "source_pages": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "decision": "exclude",
+      "reason": "已有方法及比较背景不是本论文新定理；组合构造已包含C1。"
+    },
+    {
+      "summary": "结论中整体超越、全任务平滑性、human-like或可实时具身部署等宽泛措辞。",
+      "role": "interpretation",
+      "source_pages": [
+        1,
+        2,
+        11,
+        12
+      ],
+      "decision": "exclude",
+      "reason": "不另计重复贡献；以C2/C3/C8/C9/C12的具体证据和限制取代宽泛断言。"
+    },
+    {
+      "summary": "Data availability、作者/资金/致谢/利益冲突/GenAI声明、Publisher's note及References。",
+      "role": "nonresearch",
+      "source_pages": [
+        12,
+        13
+      ],
+      "decision": "exclude",
+      "reason": "已读但不是独立研究贡献；引文未当作本论文实验或跨论文支撑。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "FRMD以MPD为预训练教师，用预测ProDMP权重并按固定基函数解码的网络构造观测条件一致性学生：教师先从高噪声轨迹做K步ODE去噪，学生与EMA目标在两个噪声水平上的整段轨迹输出以L2损失对齐；测试时学生用一次前向计算生成固定时域的动作序列，其输出包含缩放噪声轨迹的skip项，而不是仅将预测权重经G解码。",
+      "claim_type": "method_construction",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "观测条件教师网络、确定性ProDMP解码与trajectory-level consistency distillation。",
+          "design": "教师F(τ,o,s)=G(E(τ,o,s);y0,ẏ0)；学生f=cskip(s)τ+cout(s)F；学生/目标由教师初始化，目标只按EMA更新；λ=1；推理仅保留学生。",
+          "comparator": "同一MPD教师的多步ODE采样；这是构造描述，不是独立单因素消融。",
+          "measure": "两噪声水平上的学生/目标整段轨迹L2一致性损失；单次学生前向调用。",
+          "unit_of_analysis": "一段条件轨迹及其基函数参数；滑动窗口相关，训练样本数不是独立重复数。",
+          "sample_size_as_reported": null,
+          "uncertainty": "没有提供精确蒸馏误差、收敛界、保持多模态分布的定理或轨迹光滑度保证。",
+          "assumptions": [
+            "教师已预训练；教师中间状态由数值ODE求解器产生。",
+            "初始位置与速度用于固定ProDMP解码；Gaussian加噪和给定noise schedule。",
+            "σ(0)=0时skip构造保持干净输入；这不等于有限训练下分布保真或数值稳定性证明。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "3.3.2 Student model: One-step consistency distillation; Algorithm 1",
+            "figure": null,
+            "equation": "11, 15–19",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "实现参数与固定运动基元。",
+          "design": "动作时域n=12，视觉历史m=3；每自由度20个Gaussian径向基函数；K=2，EMA μ=0.95；观察编码器与策略联合训练。",
+          "comparator": null,
+          "measure": "固定整段动作输出及基函数展开。",
+          "unit_of_analysis": "每个动作序列；d为每自由度基函数数，完整权重维数为kd。",
+          "sample_size_as_reported": "d=20；n=12；3个观察帧；不是实验n。",
+          "uncertainty": null,
+          "assumptions": [
+            "基函数数及时间位置离线固定，不按任务优化。",
+            "参数表示具有结构性，但所报20k参数并不小于12k动作坐标；不得自动称实际维数压缩。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "4.1.2 Dataset collection and preprocessing; 4.1.5 Implementation details",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "论文给出可执行的两阶段训练及单次学生轨迹生成构造。",
+        "boundary": "仅固定基函数、固定动作时域和给定教师；单步构造仍包括skip项。",
+        "negative_result": null,
+        "non_inference": "不推出完美教师等价、严格全输出位于ProDMP子空间、已证明光滑性或一般收敛性；也不把作者的权重空间说法当作明确的权重噪声过程。",
+        "unresolved": "正文所谓权重空间扩散与显式τ空间ODE/加噪，以及低维说法与d=20、n=12之间的关系未澄清。",
+        "unresolved_attribution": "FRMD-A1：作者在不同段落中的方法表示/维数口径不一致；本文仅保留明确公式及参数。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "如何将基于ProDMP解码的多步轨迹扩散蒸馏为观测条件单步动作序列生成器？"
+      ],
+      "shared_evidence_with": [
+        "C7"
+      ],
+      "review_notes": [
+        "Figure 1图注已读；EMA更新依据正文和Algorithm 1认定为目标网络更新。",
+        "方法为本论文组合构造；标准PF-ODE和一致性模型背景不另计新的定理。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "在12个模拟操作任务及固定12步动作序列设置下，表3报告FRMD的Overall生成延迟为17.2 ms，MPD为168.6 ms、DP为119.7 ms；正文报告相对MPD约9.8倍、相对DP约7倍加速，但这些数值不能直接作为物理机器人端到端控制周期。",
+      "claim_type": "computational_efficiency",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "部署时单段动作序列的wall-clock计时。",
+          "design": "共同RGB输入格式和ResNet18观察编码器架构；MPD/FRMD用6层Transformer，DP用卷积骨干。4.1.4说计时包含接收观察到输出动作但不含模拟，4.2.2又称差异只反映动作生成。",
+          "comparator": "MPD多步教师；DP原动作空间多步扩散。",
+          "measure": "简单/中等/困难组(ms)：FRMD 15.2±0.8 / 18.6±3.4 / 17.9±1.1；MPD 162.7±3.5 / 173.2±3.6 / 169.9±1.2；DP 119.8±1.4 / 121.3±2.3 / 118.2±3.6。Overall按作者表3为17.2 / 168.6 / 119.7。",
+          "unit_of_analysis": "同一已训练策略生成一段12步动作的计时；随机种子为模型重复，难度类别含4/5/3任务。",
+          "sample_size_as_reported": "通用方案：每任务100条专家示范；3个训练随机种子（0、1、2）；每5000训练步评估10个随机初始状态episode，训练30000步。未报告每任务实际累计评估数；相关窗口、检查点和同一策略的episode不等于独立训练重复。 单次计时调用数及独立计时会话数未报告。",
+          "uncertainty": "表3按难度报告均值±跨3随机种子的标准差；Overall无离散度、置信区间或显著性/等效性检验。 文中明确训练使用RTX 4090，但没有单独明确计时设备；不推定计时硬件。",
+          "assumptions": [
+            "使用固定动作时域和同格式观察；不外推到变长动作生成。",
+            "相同观察编码器架构不等于相同编码器权重；编码器各方法联合训练。",
+            "与DP的比较同时改变骨干/轨迹表示/采样方式，不能当作单步化的单因素因果效应。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "4.2.2 Computational efficiency",
+            "figure": "Table 3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "实机延迟边界及结论中的速率解释。",
+          "design": "全部评估在模拟中；没有物理机器人传感、通信、状态估计和执行闭环延迟。",
+          "comparator": null,
+          "measure": "结论把17.2 ms解释为约58 Hz的潜在计算吞吐，不是实测的物理闭环频率。",
+          "unit_of_analysis": "生成器调用与实际执行控制循环须区分。",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "物理部署延迟和噪声可能降低可实现控制频率。"
+          ],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "4.4 Limitations and future work: Evaluation in Simulation",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在所报模拟任务及计算设置下，一次动作序列生成显著更短；9.8倍和约10倍是同一比较的精确/圆整表述。",
+        "boundary": "计时范围在文内仍有编码器是否计入口径的歧义，且未含物理闭环。",
+        "negative_result": null,
+        "non_inference": "不声称58 Hz真实机器人控制、端到端VLA加速或统计显著；不把全部速度收益因果归给单一步骤改变。",
+        "unresolved": "编码器是否计入绝对延迟、计时硬件/重复次数、Overall的聚合权重未明确。",
+        "unresolved_attribution": "FRMD-A4与FRMD-A5；缺失细节由作者补充，非文本提取可解决。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "在固定12步动作时域的模拟操作任务中，FRMD相对DP和MPD的生成延迟能降低多少？"
+      ],
+      "shared_evidence_with": [
+        "C3",
+        "C10",
+        "C11"
+      ],
+      "review_notes": [
+        "保留原表数值及作者的Overall口径，不自行重算跨12任务平均。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "表3中FRMD在12个模拟任务的作者报告Overall成功率为64.8%，MPD为64.1%、DP为50.1%；按简单/中等/困难组，FRMD为99.2%/66.3%/29.0%，MPD为98.9%/64.8%/28.6%，DP为99.3%/41.0%/10.1%，显示FRMD数值上接近多步教师而非在全部组都优于所有基线，困难任务绝对成功率仍低。",
+      "claim_type": "task_performance",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "模拟episode的任务定义成功判据。",
+          "design": "MetaWorld与ManiSkill任务按4简单、5中等、3困难分组；各方法使用同一预处理示范设置；每5000步评估10个随机初始状态episode。4.1.4称汇总训练至收敛期间所有评估episode。",
+          "comparator": "MPD多步教师及DP多步动作空间扩散。",
+          "measure": "成功率(%)：简单FRMD 99.2±0.1、MPD 98.9±0.3、DP 99.3±0.1；中等66.3±1.2、64.8±2.6、41.0±3.2；困难29.0±2.3、28.6±2.9、10.1±1.4；Overall 64.8、64.1、50.1。",
+          "unit_of_analysis": "episode是成功/失败观察单位；训练种子为重复；同模型episode和训练检查点有依赖，任务/难度汇总不是独立复制。",
+          "sample_size_as_reported": "通用方案：每任务100条专家示范；3个训练随机种子（0、1、2）；每5000训练步评估10个随机初始状态episode，训练30000步。未报告每任务实际累计评估数；相关窗口、检查点和同一策略的episode不等于独立训练重复。",
+          "uncertainty": "表3按难度报告均值±跨3随机种子的标准差；Overall无离散度、置信区间或显著性/等效性检验。",
+          "assumptions": [
+            "只能解释本研究的模拟任务和训练协议。",
+            "表3没有给逐任务结果或明确Overall权重；不把Overall写成12任务按任务数加权的均值。",
+            "相近均值不构成经过检验的非劣效性/统计等效性。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "4.2.1 Overall performance comparison; 4.2.1.1 Analysis by task difficulty",
+            "figure": "Table 3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者报告FRMD以小得多的生成延迟维持与MPD接近的数值表现，中等/困难组均值明显高于DP。",
+        "boundary": "范围限于所选模拟任务与3训练种子；详细设置为每任务100条示范，序言每benchmark的说法另记差异。",
+        "negative_result": "简单组FRMD 99.2%没有超过DP 99.3%；困难组FRMD成功率仅29.0%，并未解决高难度操作。",
+        "non_inference": "不宣称统计显著优越、所有单任务均改善、正式非劣效性、未知任务泛化或实机可靠性。",
+        "unresolved": "Overall聚合与评估episode的精确汇总方式、逐任务表、任务难度标签内部差异待澄清。",
+        "unresolved_attribution": "FRMD-A2与FRMD-A5；不凭表中均值猜独立样本数或显著性。"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "单步一致性蒸馏能否在不同难度的模拟操作任务中保持多步教师的成功率？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C4",
+        "C5",
+        "C6",
+        "C10",
+        "C11"
+      ],
+      "review_notes": [
+        "使用表3而非抽象中的笼统超越表述；保留简单组未超DP以及困难组低成功率。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "作者对12任务Figure 2学习曲线的文字描述指出：FRMD在最初约5000训练步的成功率低于MPD教师，随后适应单步生成，并在约10000步后改善、超过两种基线；这是曲线总体描述，不是各任务均满足的定量收敛保证。",
+      "claim_type": "learning_dynamics",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "训练期间周期性模拟成功率学习曲线。",
+          "design": "学生从教师参数初始化，按固定训练检查点评估；观察初始适应阶段与后续阶段。",
+          "comparator": "同套任务的MPD教师和DP学习曲线。",
+          "measure": "作者描述的前5000步相对教师下降及约10000步后追赶/超过；逐任务差值未在所供文本列出。",
+          "unit_of_analysis": "各任务、训练种子及其相关检查点曲线。",
+          "sample_size_as_reported": "Figure 2：每5000训练步评估10个episode，曲线均值及标准差来自3随机种子；各任务峰值或适应期的独立统计检验未报告。",
+          "uncertainty": "图注规定阴影为跨3种子的标准差；未给阶段差异检验、拐点不确定度或逐任务数表。",
+          "assumptions": [
+            "结论仅依据正文对Figure 2的描述和提供的图注，未读取曲线像素。",
+            "学习检查点共享已训练策略，不当作独立模型重复。",
+            "学生从预训练教师初始化，学生训练步数不包含教师预训练成本。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "4.2.3 Learning efficiency analysis: Convergence Behavior",
+            "figure": "Figure 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "Figure 2图注核查。",
+          "design": "图注明确早期较低成功率与单步推理适应有关。",
+          "comparator": "MPD和DP。",
+          "measure": "10个episode/5000训练步；3种子的均值与标准差。",
+          "unit_of_analysis": "训练种子学习曲线。",
+          "sample_size_as_reported": "Figure 2：每5000训练步评估10个episode，曲线均值及标准差来自3随机种子；各任务峰值或适应期的独立统计检验未报告。",
+          "uncertainty": null,
+          "assumptions": [
+            "结论仅依据正文对Figure 2的描述和提供的图注，未读取曲线像素。",
+            "学习检查点共享已训练策略，不当作独立模型重复。",
+            "学生从预训练教师初始化，学生训练步数不包含教师预训练成本。"
+          ],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "Figure 2 caption",
+            "figure": "Figure 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "正文报告学生早期有适应损失，之后成功率上升。",
+        "boundary": "仅文字所述趋势；不据未提供像素确定每个任务的交叉时刻。",
+        "negative_result": "初始约5000步FRMD成功率低于MPD，是实际报告的早期不利结果。",
+        "non_inference": "不推导学习理论收敛率、全部任务优越或包括教师训练的总训练效率提升。",
+        "unresolved": "各任务曲线数值、交叉点误差及包含教师预训练的总体成本未报告。",
+        "unresolved_attribution": "源文本/图注的精度限制；曲线像素和原始数据未提供。"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "单步一致性蒸馏相对多步教师是否出现初期适应损失与后续追赶？"
+      ],
+      "shared_evidence_with": [
+        "C3",
+        "C5",
+        "C6"
+      ],
+      "review_notes": [
+        "角色为曲线观察；把适应原因当作作者解释而非因果实验。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "在正文列举的困难任务PegInsertion-v1、PlugCharger-v1学习曲线中，作者报告FRMD约20000训练步达到峰值，MPD约25000步；这一比较只涉及学生曲线的峰值出现时间，没有包含教师预训练成本，也未给峰值时间的统计不确定度。",
+      "claim_type": "learning_efficiency",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "困难任务训练成功率曲线峰值时间的文字总结。",
+          "design": "比较两种方法在同一训练步数尺度上的学习曲线；学生由预训练教师初始化。",
+          "comparator": "MPD的约25000步峰值。",
+          "measure": "作者报告FRMD约20000步、MPD约25000步达到峰值；不是达到某个预先定义成功率阈值的时间。",
+          "unit_of_analysis": "困难任务的训练种子曲线；相邻检查点不独立。",
+          "sample_size_as_reported": "Figure 2：每5000训练步评估10个episode，曲线均值及标准差来自3随机种子；各任务峰值或适应期的独立统计检验未报告。",
+          "uncertainty": "峰值时间没有置信区间、配对检验或逐任务数表；所供文本只能支持近似时间。",
+          "assumptions": [
+            "结论仅依据正文对Figure 2的描述和提供的图注，未读取曲线像素。",
+            "学习检查点共享已训练策略，不当作独立模型重复。",
+            "学生从预训练教师初始化，学生训练步数不包含教师预训练成本。",
+            "PlugCharger-v1在4.1.1作为困难示例，在4.2.4/4.4又被称中等；本记录保留4.2.3的原分类而标注歧义。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "4.2.3 Learning efficiency analysis: Convergence Behavior",
+            "figure": "Figure 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者报告某些困难示例中学生峰值出现更早。",
+        "boundary": "峰值时间而非普适收敛时间；训练步不能等同wall-clock总成本。",
+        "negative_result": null,
+        "non_inference": "不声称节省总教师加学生训练成本或已有统计显著的更快收敛。",
+        "unresolved": "困难任务逐任务峰值及PlugCharger-v1类别需澄清。",
+        "unresolved_attribution": "FRMD-A2；其余为未提供的曲线数值与训练成本。"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "在困难模拟操作任务中，FRMD学生学习曲线峰值是否比MPD更早出现？"
+      ],
+      "shared_evidence_with": [
+        "C3",
+        "C4",
+        "C6"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "作者以Figure 2描述FRMD在多数任务的跨训练种子成功率波动低于DP，但这一描述不等于所有难度组都下降：表3简单组两者标准差均为0.1个百分点，困难组FRMD为2.3而DP为1.4个百分点。",
+      "claim_type": "training_variability",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "3随机种子学习曲线阴影和难度汇总标准差。",
+          "design": "Figure 2图注把阴影定义为标准差；4.2.3正文用variance描述多数任务趋势。保留图注定义，不混写为方差数值。",
+          "comparator": "同一任务/类别的DP。",
+          "measure": "正文描述多数任务波动较小；表3中等组FRMD SD1.2、DP SD3.2；简单组均0.1；困难组2.3与1.4。",
+          "unit_of_analysis": "训练种子是模型重复；难度均值的标准差与单任务曲线不是同一层级指标。",
+          "sample_size_as_reported": "3个随机种子；不扩张为episode数量。",
+          "uncertainty": "跨3种子的标准差，不是SEM或95%置信区间；未给全任务逐点数值或差异检验。",
+          "assumptions": [
+            "‘多数任务’仅作为作者的曲线文字总结，未通过图像独立计数。",
+            "难度汇总表支持该趋势非普遍；不把单任务与类别聚合混同。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "4.2.3 Learning efficiency analysis: Training Stability",
+            "figure": "Table 3; Figure 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所供正文报告多数任务种子间波动较低，中等组表格亦呈较小标准差。",
+        "boundary": "只有3种子且多数任务的逐任务图数据未提供。",
+        "negative_result": "困难类别汇总标准差FRMD反而大于DP；简单类别没有更低。",
+        "non_inference": "不宣称各任务/各类别均更稳定、统计可靠性提升或执行稳定性被验证。",
+        "unresolved": "缺少逐任务曲线数表、标准差聚合方式以及稳定性显著性检验。",
+        "unresolved_attribution": "作者文字与不同聚合层级的范围差异；已限制陈述，不补统计量。"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "FRMD相对DP的跨训练种子成功率波动是否在所有难度组都减小？"
+      ],
+      "shared_evidence_with": [
+        "C3",
+        "C4",
+        "C5",
+        "C7"
+      ],
+      "review_notes": [
+        "采用Figure 2图注的standard deviation定义；不把variance一词当作另有方差测量。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "作者把FRMD在多数任务中较小的跨种子学习波动解释为结构化运动基元限制动作表示与EMA目标提供稳定训练目标的共同作用；本研究只做了骨干架构消融，没有独立消融运动基元或EMA，因此该解释不是因素贡献已被因果识别的结论。",
+      "claim_type": "training_dynamics_interpretation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "学习曲线趋势的作者解释，结合EMA一致性训练构造。",
+          "design": "观察波动后提出两因素联合解释；没有去除运动基元/关闭EMA的受控对照。",
+          "comparator": "DP作为现象比较基线，不是只变EMA或只变轨迹表示的因素实验。",
+          "measure": "与C6相同的跨随机种子成功率波动；没有新的机制测量。",
+          "unit_of_analysis": "沿用同一组训练种子曲线，不构成新的独立证据。",
+          "sample_size_as_reported": "3种子曲线；因素隔离实验n不适用，未开展。",
+          "uncertainty": "无中介分析、单因素/交互作用估计或因果机制检验。",
+          "assumptions": [
+            "观察层面差异与因素解释须区分。",
+            "DP/FRMD同时存在表示、骨干、蒸馏等差异。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "4.2.3 Learning efficiency analysis: Training Stability",
+            "figure": "Figure 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "EMA目标更新与ProDMP教师构造。",
+          "design": "目标网络以μθ−+(1−μ)θ更新；固定解码器表示轨迹。",
+          "comparator": null,
+          "measure": "提供解释所依赖的设计组成，不提供因素贡献实验。",
+          "unit_of_analysis": "训练算法组成。",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "设计存在不等于机制贡献已由实验分离。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "3.3.2 Student model: One-step consistency distillation; Algorithm 1",
+            "figure": null,
+            "equation": "18–19",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "这是作者提出的两因素训练稳定性解释。",
+        "boundary": "共享学习曲线和方法描述，而非独立机制实验。",
+        "negative_result": null,
+        "non_inference": "不归因给某一因素，更不声称已经识别两因素必要性、充分性或交互效应。",
+        "unresolved": "运动基元与EMA各自对波动的作用未分离；需要作者未开展的因素对照。",
+        "unresolved_attribution": "源文的likely解释；不可升级为机制结果。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "运动基元与EMA目标能否分别解释FRMD跨种子学习波动的变化？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C6"
+      ],
+      "review_notes": [
+        "interpretation，非新的训练实验或生物机制证据。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "在PlugCharger-v1的固定初始环境状态示例中，以末端轨迹离散曲率κi>1.0 rad/m定义非光滑转折，正文和Figure 3图注报告DP为82次、FRMD为21次，即作者报告约74%的事件数减少；该结果限于这一任务的报告示例，不能当作12任务的全面平滑性改善。",
+      "claim_type": "trajectory_quality",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "末端轨迹离散曲率阈值计数。",
+          "design": "同一PlugCharger-v1任务、固定初始环境状态，对DP与FRMD生成轨迹比较；只阅读正文和Figure 3图注。",
+          "comparator": "DP：82个曲率超阈值转折。",
+          "measure": "FRMD：21个超阈值转折；阈值κmax=1.0 rad/m；作者报告减少74%。",
+          "unit_of_analysis": "一条完整轨迹/试次才是比较单位；82/21是轨迹内事件数，不是独立轨迹、seed或episode数。",
+          "sample_size_as_reported": "这组82/21对应的独立轨迹数、试次数、点数和跨种子汇总方式未报告。4.4仅称多个种子结果一致，不把这些数当作3种子均值。",
+          "uncertainty": "无平滑度均值±SD、置信区间、统计检验或全任务曲率表。",
+          "assumptions": [
+            "固定初始状态与固定曲率阈值是联合条件。",
+            "未读取Figure 3像素，事件计数仅采纳作者文本。",
+            "事件数还可能依赖轨迹长度及采样密度，未见匹配细节。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "4.2.4 Motion Quality Analysis",
+            "figure": "Figure 3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "Figure 3图注与运动质量范围限制。",
+          "design": "图注重述DP 82与FRMD 21；4.4明确没有覆盖全任务的全面平滑度分析。",
+          "comparator": "DP。",
+          "measure": "κi>κmax=1.0 rad/m的转折数量。",
+          "unit_of_analysis": "同一示例轨迹的相关waypoint转折。",
+          "sample_size_as_reported": "同一82/21示例，不是第二份独立复制证据。",
+          "uncertainty": "多seed一致性只有定性说明；未给轨迹级重复数。",
+          "assumptions": [
+            "图注与正文是共享同一结果，不能当作两次实验。"
+          ],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "Figure 3 caption; 4.4 Scope of Motion Quality Analysis",
+            "figure": "Figure 3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者报告在该固定初始状态任务示例中，FRMD具有更少曲率超阈值转折。",
+        "boundary": "单一任务、所用几何阈值及所报轨迹示例；PlugCharger-v1难度标签文内不一致。",
+        "negative_result": null,
+        "non_inference": "不证明12任务整体光滑性改善、统计显著、真实机器人抗扰动能力、人类运动相似度、关节安全或更少损伤。",
+        "unresolved": "平滑度实验独立n、轨迹采样/长度匹配、MPD平滑度比较及全任务扩展均未提供。",
+        "unresolved_attribution": "FRMD-A2、FRMD-A6；4.4明确承认范围和显著性测试不足。"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "在固定初始状态PlugCharger-v1中，FRMD与DP的曲率超阈值事件数如何比较？"
+      ],
+      "shared_evidence_with": [
+        "C9"
+      ],
+      "review_notes": [
+        "保留82与21为事件数；不误读为实验样本数。",
+        "74%来自同一个图3例子，不扩展为跨12任务平均。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "作者由PlugCharger-v1示例中更少的曲率超阈值转折，解释FRMD运动更连贯，并提出它可能降低执行噪声敏感性、提高接触操作可预测性；没有物理机器人扰动、闭环稳定性或人类运动比较实验来验证这些延伸解释。",
+      "claim_type": "control_quality_interpretation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "曲率事件结果的控制意义解释。",
+          "design": "依据与C8相同的DP/FRMD示例轨迹；未实施扰动操纵或物理控制实验。",
+          "comparator": "DP示例轨迹；没有实机抗扰动或人类运动基准。",
+          "measure": "已有曲率超阈值转折82与21；没有噪声敏感性、真实控制稳定性或human-like程度的测量。",
+          "unit_of_analysis": "沿用同一完整轨迹比较，不是独立机制/行为实验。",
+          "sample_size_as_reported": "解释证据与C8相同；物理扰动及人类实验未开展。",
+          "uncertainty": "没有控制稳定性裕度、噪声剂量反应、实机重复或人的评分。",
+          "assumptions": [
+            "平滑度几何指标与执行动力学性能是不同读出。",
+            "全部实验仍在模拟中；真实感知、执行延迟和噪声影响未测。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "4.2.4 Motion Quality Analysis: Implications for Control Stability",
+            "figure": "Figure 3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "属于基于曲率现象的作者控制意义解释。",
+        "boundary": "只支持几何运动连贯性的局部读出。",
+        "negative_result": null,
+        "non_inference": "不转成稳定性证明、已测抗扰动效应、人体/生物验证或human-like定量结论。",
+        "unresolved": "实机执行噪声、接触稳定性及人与机器人运动相似度尚无证据。",
+        "unresolved_attribution": "作者使用may/潜在部署意义；4.4实机评估留待未来。"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "曲率事件减少是否足以预测真实机器人的抗噪声能力和接触控制稳定性？"
+      ],
+      "shared_evidence_with": [
+        "C8"
+      ],
+      "review_notes": [
+        "将Figure 3图注的稳定性与human-like措辞降为未独立验证的解释。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "保持观察编码器、ProDMP解码器与训练配置不变时，Transformer-Lite相对FRMD默认Transformer在中等任务报告68.5%对66.3%成功率、15.8对18.6 ms延迟，在困难任务报告26.2%对29.0%、15.9对17.9 ms；简单任务却为98.5%对99.2%且16.2对15.2 ms，故轻量化的速度/成功率权衡随任务类别变化，并非所有类别都更快。",
+      "claim_type": "architecture_ablation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "政策骨干架构消融。",
+          "design": "默认6层、4头、hidden 256、约8.4M参数；Lite 3层、2头、hidden 128、约2.1M；其他组件与训练配置固定。",
+          "comparator": "默认Transformer FRMD。",
+          "measure": "Table 4简单(Time ms, SR%)：Lite(16.2,98.5)，默认(15.2,99.2)；中等(15.8,68.5)/(18.6,66.3)；困难(15.9,26.2)/(17.9,29.0)。",
+          "unit_of_analysis": "架构条件下的训练策略和任务/难度汇总；不是参数个数的独立样本。",
+          "sample_size_as_reported": "4.1通用协议3随机种子、每任务100示范和每检查点10episode；Table 4未另给重复数或误差条。",
+          "uncertainty": "Table 4没有SD/置信区间/检验，不能判定2.2个百分点中等组差异显著。",
+          "assumptions": [
+            "观察编码器、固定基函数解码和训练配置不变；网络层数、头数和hidden维度联合改变。",
+            "共享默认基线数字与Table 3一致；不声称重新独立复制过主结果。",
+            "采用表格逐类别值，不照录正文的所有类别延迟随容量单调下降。"
+          ],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "4.3 Ablation study: Impact of network architecture",
+            "figure": "Table 4",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "Lite在中等/困难组数值上更快，中等成功率略高但困难略低。",
+        "boundary": "仅所列三类任务与骨干联合改动，未给统计检验。",
+        "negative_result": "简单组Lite延迟16.2 ms高于默认15.2 ms，成功率也略低。",
+        "non_inference": "不推出所有类别均加速或更小容量具有普适优势；不单独归因层数、头数或某一组件。",
+        "unresolved": "正文的延迟范围/单调性描述与Table 4不一致；需要逐架构误差及独立运行细节。",
+        "unresolved_attribution": "FRMD-A3；以直接表格值限定候选陈述。"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "压缩Transformer骨干如何改变FRMD在不同难度任务中的速度与成功率权衡？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C3",
+        "C11"
+      ],
+      "review_notes": [
+        "默认行与主实验共享报告数值；Table 4不构成额外独立重复。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "在同一FRMD骨干消融中，四隐藏层MLP虽把简单/中等/困难任务生成延迟报告为9.9/10.3/8.9 ms（默认Transformer为15.2/18.6/17.9 ms），成功率却降为74.9%/54.2%/9.2%（默认99.2%/66.3%/29.0%）；因此这一快骨干未保留默认策略的操作表现，包括简单组也出现明显数值下降。",
+      "claim_type": "architecture_ablation_tradeoff",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "无显式时间注意力MLP与默认Transformer的骨干比较。",
+          "design": "MLP隐藏层[512,512,256,256]，约3.2M参数；保持观察编码器、ProDMP解码与训练配置不变。",
+          "comparator": "默认Transformer FRMD；同表也列Lite，但本记录保留MLP/默认联合比较。",
+          "measure": "简单MLP(Time,SR)=(9.9,74.9)与默认(15.2,99.2)；中等(10.3,54.2)/(18.6,66.3)；困难(8.9,9.2)/(17.9,29.0)。",
+          "unit_of_analysis": "同架构训练策略的episode成功率与单序列延迟；按4/5/3任务类别汇总。",
+          "sample_size_as_reported": "通用3随机种子评估方案；Table 4没有架构特定独立重复数或误差。",
+          "uncertainty": "没有Table 4的离散度或显著性检验；只报告数值变化。",
+          "assumptions": [
+            "MLP同时改变结构和参数规模，不能把下降单独因果归于移除时间注意力。",
+            "MLP约3.2M参数多于Lite约2.1M却更快，延迟并不单由参数量决定。",
+            "MLP的74.9%简单组值与正文‘所有架构简单任务均高/相近’不相符，保留表格。"
+          ],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "4.3 Ablation study: Impact of network architecture",
+            "figure": "Table 4",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "MLP在所列类别中生成最快。",
+        "boundary": "速度优势伴随所列成功率下降；不能用简单组叙述抹掉下降。",
+        "negative_result": "MLP未维持默认Transformer的成功率：简单74.9%对99.2%，中等54.2%对66.3%，困难9.2%对29.0%。",
+        "non_inference": "不推导注意力是必要的唯一机制或所有MLP在所有任务都会失败。",
+        "unresolved": "正文与表格关于简单组相近及容量/延迟单调关系需澄清，缺架构效应不确定度。",
+        "unresolved_attribution": "FRMD-A3；保留实际表格负结果。"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "没有显式时间注意力的MLP能否同时保留FRMD推理速度与操作成功率？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C3",
+        "C10"
+      ],
+      "review_notes": [
+        "这是真实报告的性能下降，不是未测试泛化的负结果。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "作者提出FRMD的模块化动作生成器可以作为大型vision-language-action模型中的低延迟action expert，复用上游视觉/语言编码器；但本研究没有将FRMD接入大型VLA，也没有验证无需重训上游或端到端系统加速。",
+      "claim_type": "integration_hypothesis",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "模块化设计及未来VLA集成建议。",
+          "design": "论文只实验独立操作策略与ResNet18观察编码器，4.4明确大型VLA集成未评估；5.1提出潜在action expert。",
+          "comparator": "没有完整大型VLA替换动作模块的系统对照。",
+          "measure": "设计可分模块的论述；没有VLA成功率、语言泛化或端到端系统延迟测量。",
+          "unit_of_analysis": "拟议VLA系统；尚不存在独立系统实验单位。",
+          "sample_size_as_reported": null,
+          "uncertainty": "没有VLA实验重复或误差；不得沿用12个模拟任务作为VLA集成n。",
+          "assumptions": [
+            "需要预训练视觉/语言表示与新动作生成模块接口兼容。",
+            "现有实验观察编码器与策略联合训练，不是冻结预训练大型编码器的迁移验证。",
+            "动作模块较快不自动使整系统同倍加速。"
+          ],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "4.4 Integration with Vision-Language-Action Models; 5.1 Broader impact and future directions",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "论文提出模块化集成路径。",
+        "boundary": "明确的未来应用假设，不是完成的集成实验。",
+        "negative_result": null,
+        "non_inference": "不声称已证明encoder-agnostic无需重训、internet-scale能力保持、端到端VLA低延迟或真实具身部署。",
+        "unresolved": "预训练VLA兼容性、成功率保持、编码器成本占比及端到端收益未测。",
+        "unresolved_attribution": "作者4.4明确留待未来；假设仅来自本来源，未引入外部论文支持。"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "FRMD能否在预训练大型VLA中复用上游编码器并保持端到端效率收益？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "hypothesis；不将Introduction的即插即用表述提升为实验结果。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C13",
+      "statement": "作者提出在完全可预测、可预先计算开环轨迹的环境中，FRMD在线生成的相对优势可能减弱，确定性或预规划控制器可能达到相近表现；本文没有与这类开环轨迹优化/控制方法作比较，因此不是观察到FRMD失效或无优势的负结果。",
+      "claim_type": "applicability_hypothesis",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "适用情境限制的前瞻性论述。",
+          "design": "讨论不确定/接触丰富环境与可预规划确定环境的区别，没有相应对照实验。",
+          "comparator": "假定的确定性/预规划控制器或开环轨迹优化；未实验。",
+          "measure": "没有在可预测环境的相对成功率、规划成本或轨迹质量测量。",
+          "unit_of_analysis": "拟议环境与控制器比较，不是已测独立单位。",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "环境与任务可预先预测，且准确开环轨迹可计算。",
+            "确定性方案的成功率/成本条件未在本文定量定义或验证。"
+          ],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "4.4 Limitations and future work: Applicability to Predictable Environments",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提出在线生成器优势可能依赖任务不确定性的适用假设。",
+        "boundary": "没有与开环轨迹优化在可预测条件下进行直接比较。",
+        "negative_result": null,
+        "non_inference": "不填成‘FRMD在确定环境无效’的负结果，亦不宣称预规划控制器已经同等有效。",
+        "unresolved": "可预测条件下的实际相对收益未测。",
+        "unresolved_attribution": "作者明确说当前未比较，需要未来实验；不是所供页漏读。"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "可预规划的确定性环境中，FRMD是否仍有相对传统开环轨迹优化的优势？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "正式Original Research，源题名、Xirui Shi/Yi Hu/Jun Jin三作者、DOI与索引一致，源发表于25 March 2026。完整评估所供13页文本、公式、全部表格/图注和参考文献，并在保留来源上下文中完成第二次逐条审计；不读图像或未供supplement。FRMD把预训练MPD教师、固定ProDMP解码表示与整轨迹一致性蒸馏组合为单次学生前向生成器。12个模拟任务中，作者表3报告Overall延迟17.2 ms（MPD168.6、DP119.7），成功率64.8%（64.1%、50.1%）；3随机种子不等于所有滑动窗口、检查点或episode均独立，未报告统计等效/优越性。Figure 2文字报告早期适应损失、较早峰值及多数任务较小跨seed波动，但稳定性归因未隔离。PlugCharger-v1固定初始状态的图3文字报告82对21个曲率超阈值事件、约74%减少，不能外推全任务或物理稳定性。Table 4保留Lite按任务类别变化的权衡以及MLP更快但成功率下降的真实负结果。大型VLA集成、可预测环境适用性作为假设，真实机器人、长/变长轨迹、基函数敏感性等仍未测。总计13条候选，结果9条、解释2条、假设2条；共享证据明确、不建立跨论文关系。FRMD-A1至A6记录方法空间/维数、任务分组、消融正文与表格、延迟口径、统计聚合及平滑度独立n的未解决源内问题，不强制一致，不修改共享代码或原始索引。",
+  "shared_evidence": [
+    {
+      "claim_id": "C1",
+      "with": [
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C2",
+      "with": [
+        "C3",
+        "C10",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C2",
+        "C4",
+        "C5",
+        "C6",
+        "C10",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C3",
+        "C5",
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C3",
+        "C4",
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C3",
+        "C4",
+        "C5",
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C1",
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C9"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C8"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "with": [
+        "C2",
+        "C3",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "with": [
+        "C2",
+        "C3",
+        "C10"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": "C1",
+        "issue": "FRMD-A1：方法状态空间与维数：摘要/3.3.1称weight-space diffusion，Eq.11–18却在τ轨迹上加噪和积分；实施d=20/DoF而动作时域n=12，不能无条件称实际维数更低。源文不足以消除差异；C1保留公式，不修改来源。",
+        "suggested_correction": "保留本文中相互不同的源文口径和候选范围，待人工/作者核查；不得仅为通过检查而强制一致。",
+        "pdf_page": 8,
+        "resolved": false
+      },
+      {
+        "claim_id": "C8",
+        "issue": "FRMD-A2：PlugCharger-v1在4.1.1/4.2.3列为困难任务，4.2.4/4.4称中等；无法确定最终任务分组。C5/C8保留原定位和歧义。",
+        "suggested_correction": "保留本文中相互不同的源文口径和候选范围，待人工/作者核查；不得仅为通过检查而强制一致。",
+        "pdf_page": 7,
+        "resolved": false
+      },
+      {
+        "claim_id": "C11",
+        "issue": "FRMD-A3：Table 4与正文不一致：MLP简单组74.9%不支持所有架构表现相近；Lite简单组16.2 ms慢于默认15.2 ms；正文延迟范围与容量单调性也不覆盖表格。C10/C11使用表格，待作者澄清。",
+        "suggested_correction": "保留本文中相互不同的源文口径和候选范围，待人工/作者核查；不得仅为通过检查而强制一致。",
+        "pdf_page": 11,
+        "resolved": false
+      },
+      {
+        "claim_id": "C2",
+        "issue": "FRMD-A4：4.1.4称计时包括收到观察至输出动作，而4.2.2强调动作生成模块且不受感知预处理影响；编码器是否计入绝对时间、计时硬件及调用重复数未明确。C2不将其认定为物理端到端延迟。",
+        "suggested_correction": "保留本文中相互不同的源文口径和候选范围，待人工/作者核查；不得仅为通过检查而强制一致。",
+        "pdf_page": 8,
+        "resolved": false
+      },
+      {
+        "claim_id": "C3",
+        "issue": "FRMD-A5：序言100示范/benchmark与详细设置100示范/task不一致；Overall聚合权重未明（表值与三难度组简单平均相符，不视作12任务加权均值）；精确累计评估episode数未给。按详细设置记录实际报告单位，不补统计量。",
+        "suggested_correction": "保留本文中相互不同的源文口径和候选范围，待人工/作者核查；不得仅为通过检查而强制一致。",
+        "pdf_page": 9,
+        "resolved": false
+      },
+      {
+        "claim_id": "C8",
+        "issue": "FRMD-A6：82/21曲率事件对应的独立轨迹数、点数、采样匹配与跨seed聚合未报告；仅定性说明多个seed一致，且未做全任务平滑性或显著性分析。C8限定于所报示例，待原始数据/作者说明。",
+        "suggested_correction": "保留本文中相互不同的源文口径和候选范围，待人工/作者核查；不得仅为通过检查而强制一致。",
+        "pdf_page": 11,
+        "resolved": false
+      },
+      {
+        "claim_id": "C8",
+        "issue": "第二轮源内审计把74%事件下降限制到PlugCharger-v1单例，不采用序言/结论的全12任务外推。",
+        "suggested_correction": "C8以Figure 3文字与4.4范围限制共同校准。",
+        "pdf_page": 11,
+        "resolved": true
+      },
+      {
+        "claim_id": "C2",
+        "issue": "第二轮区分单段生成延迟、作者计算上的约58 Hz与未开展的物理闭环控制。",
+        "suggested_correction": "约58 Hz仅为作者潜在计算吞吐解释，不作观察到的实机效果。",
+        "pdf_page": 12,
+        "resolved": true
+      },
+      {
+        "claim_id": "C3",
+        "issue": "第二轮未把小幅均值差异升级为统计显著或正式非劣效性结论。",
+        "suggested_correction": "保留逐组均值±SD、3种子和缺乏推断统计；Overall沿用作者表值。",
+        "pdf_page": 9,
+        "resolved": true
+      },
+      {
+        "claim_id": "C6",
+        "issue": "正文variance与图注standard deviations的语言差异；多数任务趋势不支持所有类别均更稳定。",
+        "suggested_correction": "采用图注SD定义；保留困难组FRMD 2.3>DP 1.4的范围反例。",
+        "pdf_page": 10,
+        "resolved": true
+      },
+      {
+        "claim_id": "C7",
+        "issue": "作者关于运动基元与EMA的稳定性解释没有独立因素对照。",
+        "suggested_correction": "角色interpretation；与C6共享证据，机制贡献不建立。",
+        "pdf_page": 9,
+        "resolved": true
+      },
+      {
+        "claim_id": "C9",
+        "issue": "Figure 3稳定性/human-like措辞未伴随物理扰动、人的评分或生物学实验。",
+        "suggested_correction": "仅保留控制意义解释，不称人类运动验证或实际抗噪声效果。",
+        "pdf_page": 11,
+        "resolved": true
+      },
+      {
+        "claim_id": "C12",
+        "issue": "Introduction的即插即用承诺与4.4明确未评估大型VLA的事实需区分。",
+        "suggested_correction": "C12标为hypothesis；现有编码器联合训练不证明冻结预训练上游的兼容性。",
+        "pdf_page": 12,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "正式版本题名、三作者、DOI与索引相符；PDF提供具体刊载日，索引只含2026年。",
+        "suggested_correction": "保留索引元数据，源日期记入coverage；identity_consistent依据页1为true，不根据外部资料补充。",
+        "pdf_page": 1,
+        "resolved": true
+      },
+      {
+        "claim_id": "C1",
+        "issue": "skip构造在s=0保持输入不等于已证明整个学生输出严格在ProDMP流形、严格光滑或统计保真。",
+        "suggested_correction": "陈述完整skip表达式和共同假设，不抽出普适稳定性/收敛定理。",
+        "pdf_page": 6,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "第二轮核对了全部13页及3幅图注、4个表、Algorithm 1和未供补充材料边界；图像未读。",
+        "suggested_correction": null,
+        "pdf_page": null,
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T15:12:48.059843Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "7b05bc72e75b327776208d1710ac44515f4bb476a32431e6e0e2ba81eae0229f",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

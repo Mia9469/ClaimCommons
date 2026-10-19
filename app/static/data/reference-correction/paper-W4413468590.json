@@ -1,0 +1,1522 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "Modulo Sampling: Performance Guarantees in the Presence of Quantization",
+    "authors": [
+      "Neil Irwin Bernardo",
+      "Shaik Basheeruddin Shah",
+      "Yonina C. Eldar"
+    ],
+    "doi": "10.1109/tsp.2025.3598420",
+    "publication_year": 2025,
+    "venue": "IEEE Transactions on Signal Processing",
+    "url": "https://doi.org/10.1109/tsp.2025.3598420"
+  },
+  "source": {
+    "filename": "paper-W4413468590.pdf",
+    "sha256": "5b1d8b37a33fbfa50dc0e960755b3dc0f040fb8641be9ca7e6f2265195f63229",
+    "source_url": "https://www.weizmann.ac.il/math/yonina/sites/math.yonina/files/Modulo_Sampling_Performance_Guarantees_in_the_Presence_of_Quantization.pdf",
+    "pdf_page_count": 14
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "results_sections_seen": [
+      "II Modulo ADC models and recovery methods",
+      "III Lemma1; Theorems1/3; computational complexity",
+      "IV weak/strong components; Corollary1",
+      "V Simulations1–6; Figures1–11",
+      "Appendices A–D; references and biographies"
+    ],
+    "missing_material": [
+      "所有图像像素和公式版面未提供，部分数学符号在文本提取中不清晰。",
+      "实际矩阵RIP验证、原始数值数据、硬件非理想和功率测量未提供。"
+    ],
+    "text_pass_complete": true,
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "notes": [
+      "完整评估14页正式排版全文及所有附录/图注/引用。",
+      "标题、三作者及 DOI 与元数据相符；期刊卷73，2025。",
+      "第二遍逐项核查门限、位宽、抖动、截断、RIP、辅助位开销、低位宽负结果及证据来源。",
+      "理论命题按作者原文报告，不宣称证明已独立验证或数值复现。"
+    ]
+  },
+  "contribution_inventory": [
+    {
+      "summary": "带外恢复的秩充分条件和带辅助位MSE定理。",
+      "role": "source_reported_theoretical_result",
+      "source_pages": [
+        4,
+        5,
+        6,
+        12
+      ],
+      "decision": "include",
+      "reason": "完整保留门限、抖动、截断与理想滤波；注明部分已在ISIT2024版本发表。"
+    },
+    {
+      "summary": "最小门限下常规ADC比较及OF^-3/OF^-1缩放。",
+      "role": "理论比较",
+      "source_pages": [
+        6,
+        9
+      ],
+      "decision": "include",
+      "reason": "同幅度位宽非同总比特率；c边界不严格胜出。"
+    },
+    {
+      "summary": "未知支持OMP流程和RIP/位宽罚项恢复定理。",
+      "role": "新算法/条件理论",
+      "source_pages": [
+        5,
+        7,
+        12,
+        13
+      ],
+      "decision": "include",
+      "reason": "Theorem2来自[48]不算原创；V的RIP不已知自动满足。"
+    },
+    {
+      "summary": "恢复计算复杂度。",
+      "role": "算法分析",
+      "source_pages": [
+        7,
+        8
+      ],
+      "decision": "include",
+      "reason": "采用明确N/K/S式；随采样率平方的无条件外推暂缓。"
+    },
+    {
+      "summary": "异频带强弱分量NMSE界与数字通道化。",
+      "role": "理论扩展",
+      "source_pages": [
+        8,
+        9,
+        13
+      ],
+      "decision": "include",
+      "reason": "保留频带互斥、单位能量、最小门限和理想带通。"
+    },
+    {
+      "summary": "Simulation1–3的量化/OMP/强弱分量误差。",
+      "role": "仿真",
+      "source_pages": [
+        9,
+        10,
+        11
+      ],
+      "decision": "include",
+      "reason": "区分20000和5000噪声实现；图像无法读具体值。"
+    },
+    {
+      "summary": "Simulation4的4位优势与6位相近、Simulation5的2/3位负结果。",
+      "role": "比较仿真",
+      "source_pages": [
+        10,
+        11
+      ],
+      "decision": "include",
+      "reason": "重要低位宽失败不得隐藏，非恢复必要性证明。"
+    },
+    {
+      "summary": "Simulation6无抖动经验比较。",
+      "role": "仿真",
+      "source_pages": [
+        11,
+        12
+      ],
+      "decision": "include",
+      "reason": "不沿用精确抖动定理；随机实现来源仍不明。"
+    },
+    {
+      "summary": "一位幅度量化、真实硬件非理想/同步、谱泄漏/滑窗、快速稀疏恢复。",
+      "role": "未来/未验证范围",
+      "source_pages": [
+        4,
+        6,
+        7,
+        8
+      ],
+      "decision": "defer",
+      "reason": "正文列为后续问题或引用替代算法，无本文硬件验证。"
+    },
+    {
+      "summary": "额外OR门能耗微不足道、相较模拟滤波硬件省电。",
+      "role": "实现预期",
+      "source_pages": [
+        3,
+        4,
+        8,
+        9
+      ],
+      "decision": "defer",
+      "reason": "未进行硅/FPGA功率、面积、同步或滤波器匹配测量。"
+    },
+    {
+      "summary": "已有HoD、prediction、OMP支持定理、硬件原型、UNO等。",
+      "role": "背景",
+      "source_pages": [
+        1,
+        2,
+        6,
+        7,
+        13,
+        14
+      ],
+      "decision": "exclude",
+      "reason": "引用结果不是本文新证明/硬件实验。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "对于本文的带限输入、可忽略截断误差的有限观察窗口和额外一位折叠位置集合 S，Lemma 1 报告 OF>3 且模门限 λ′≥||f||∞/(OF−2) 是带外 Fourier 子矩阵 VS 满列秩的充分条件，从而可在已知支持时计算唯一的残差差分估计。",
+      "claim_type": "source_reported_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "折叠稀疏度与带外测量数的界",
+          "design": null,
+          "comparator": null,
+          "measure": "VS 满列秩",
+          "unit_of_analysis": "有限窗口的 Fourier 子矩阵",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "带限输入，窗口外信号/谱泄漏可忽略。",
+            "λ′在不平凡折叠区，OF>3。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "III.A / Lemma 1",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "折叠支持上界和维度推导",
+          "design": null,
+          "comparator": null,
+          "measure": "|S|≤K 的条件",
+          "unit_of_analysis": "支持集合和带外频率",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "Appendix A",
+            "figure": null,
+            "equation": "Equations (22)–(23)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "对于本文的带限输入、可忽略截断误差的有限观察窗口和额外一位折叠位置集合 S，Lemma 1 报告 OF>3 且模门限 λ′≥||f||∞/(OF−2) 是带外 Fourier 子矩阵 VS 满列秩的充分条件，从而可在已知支持时计算唯一的残差差分估计。",
+        "boundary": "充分而非必要；不提供每个矩阵的数值条件数或噪声放大界。",
+        "negative_result": null,
+        "non_inference": "不能只凭 OF>3 保证任意门限、窗口和实际电路下稳定展开。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "已知折叠位置时，何种采样率与模门限条件允许残差求解？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C3",
+        "C5"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "在非减性三角抖动量化、额外一位折叠信息、理想低通、可忽略截断误差和 OF>3、b>3 条件下，本文 Theorem 1 对 λ′=c||f||∞/(OF−2)、1≤c≤OF−2 报告可准确恢复模残差，并给出重建误差 MSEr=c²||f||∞²/[OF(2^b−2)²(OF−2)²]，剩余误差仅为过滤后的量化噪声。",
+      "claim_type": "source_reported_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "残差差分估计、整数舍入与噪声功率分析",
+          "design": null,
+          "comparator": null,
+          "measure": "准确展开及 MSEr 公式",
+          "unit_of_analysis": "模型信号样本与抖动随机总体",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "f为所设带限可积信号；已知精确折叠支持。",
+            "非减性 i.i.d. 三角抖动，ADC 不过载。",
+            "取 λ=2^b λ′/(2^b−2)，理想低通。",
+            "截断/谱泄漏忽略。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "III.A / Theorem 1",
+            "figure": null,
+            "equation": "Equation (11)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "差分噪声界和舍入条件推导",
+          "design": null,
+          "comparator": null,
+          "measure": "b>3 下的展开与误差",
+          "unit_of_analysis": "理论恢复流程",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "Appendix B",
+            "figure": null,
+            "equation": "Equations (24)–(25)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在非减性三角抖动量化、额外一位折叠信息、理想低通、可忽略截断误差和 OF>3、b>3 条件下，本文 Theorem 1 对 λ′=c||f||∞/(OF−2)、1≤c≤OF−2 报告可准确恢复模残差，并给出重建误差 MSEr=c²||f||∞²/[OF(2^b−2)²(OF−2)²]，剩余误差仅为过滤后的量化噪声。",
+        "boundary": "记录作者定理而非已独立验证；c=OF−2 对应不折叠边界，原先严格门限范围需单独理解。",
+        "negative_result": null,
+        "non_inference": "不能把准确展开等同原信号无误差，也不能外推非理想硬件和无抖动的精确 MSE。",
+        "unresolved": "附录B对支持之外差分噪声及伪逆放大作用的处理。",
+        "unresolved_attribution": "原文Eq.(6)包含支持外噪声，附录B简化未详细解释其消失；需人工数学审查。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "带一位折叠信息的量化模采样在什么条件下只剩量化噪声？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C3",
+        "C5"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "theorem_proof_requires_human_review"
+        ]
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "采用最小理论门限 c=1 且满足本文展开与抖动条件时，模 ADC 的 MSEr 为常规 ADC 的 1/(OF−2)²，因此 OF>3 时更低；在固定量化位宽且恢复条件持续满足的比较中，模 ADC 误差按 O(OF^-3) 缩放，常规 ADC 按 O(OF^-1) 缩放。",
+      "claim_type": "source_reported_theoretical_comparison",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "两个不过载抖动量化模型的公式比较",
+          "design": null,
+          "comparator": "同幅度量化位宽 b、同采样率的常规 ADC",
+          "measure": "MSE比与OF渐近阶",
+          "unit_of_analysis": "信号及量化模型",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "模门限 c=1。",
+            "常规ADC动态范围覆盖整个输入；两者均三角抖动及理想低通。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "III.A / comparison with conventional ADC",
+            "figure": null,
+            "equation": "Equations (11)–(12)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "采用最小理论门限 c=1 且满足本文展开与抖动条件时，模 ADC 的 MSEr 为常规 ADC 的 1/(OF−2)²，因此 OF>3 时更低；在固定量化位宽且恢复条件持续满足的比较中，模 ADC 误差按 O(OF^-3) 缩放，常规 ADC 按 O(OF^-1) 缩放。",
+        "boundary": "相同 b 是幅度量化位宽，不是相同总比特流率；辅助系统多用一位折叠信息。",
+        "negative_result": null,
+        "non_inference": "不能推断实测能耗更低、总数据率相同或所有 c 都严格改善；若 c=OF−2 比值为1。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "适当门限下，模采样为什么在理论上得到更快的过采样误差衰减？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C5"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "为不提供折叠位置位的模 ADC，本文提出先用带外 Fourier 数据和有界噪声停止准则进行 OMP 支持恢复，再在所估支持上作伪逆残差求解、量化格点舍入、累计求和和理想低通，得到不依赖额外折叠位的恢复流程。",
+      "claim_type": "proposed_recovery_algorithm",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "贪婪稀疏恢复与展开算法设计",
+          "design": null,
+          "comparator": null,
+          "measure": "支持估计和后续恢复流程",
+          "unit_of_analysis": "算法",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "残差一阶差分为稀疏信号，带外测量模型适用。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "II.C / Modulo ADC without 1-bit folding information",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "为不提供折叠位置位的模 ADC，本文提出先用带外 Fourier 数据和有界噪声停止准则进行 OMP 支持恢复，再在所估支持上作伪逆残差求解、量化格点舍入、累计求和和理想低通，得到不依赖额外折叠位的恢复流程。",
+        "boundary": "流程可提出不等于所有信号上正确；恢复条件由Theorem3限定。",
+        "negative_result": null,
+        "non_inference": "不是新硬件实现，也不保证 OMP 比所有稀疏算法快。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "缺少折叠辅助位时，怎样利用带外稀疏残差估计支持？"
+      ],
+      "shared_evidence_with": [
+        "C5",
+        "C6"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "对本文无辅助位的 OMP 模采样模型，Theorem 3 在可忽略截断、指定 λ′=c||f||∞/(OF−2)、OF>3，以及 V 满足所需 RIP、δ_(L0+1)<1/(√L0+1) 和 b>3+log2ζ（ζ为式16的η/RIP/稀疏度项）时报告精确支持恢复及与 Theorem 1 相同的 MSEr；量化位宽条件比已知支持情形更严格。",
+      "claim_type": "source_reported_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "应用引用OMP支持恢复界并推导量化位宽条件",
+          "design": null,
+          "comparator": null,
+          "measure": "正确支持、展开和MSE",
+          "unit_of_analysis": "满足 RIP 的测量矩阵及稀疏残差",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "L0 是 Eq.(15) 对支持大小的上界。",
+            "η=||VᴴV||∞，停止准则如II.C。",
+            "RIP常数和 δ_(L0+1) 条件必须成立。",
+            "继承三角抖动、门限、理想滤波和截断条件。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "III.B / Theorem 3",
+            "figure": null,
+            "equation": "Equations (15)–(17)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "最小差分幅度与有界噪声的条件应用",
+          "design": null,
+          "comparator": null,
+          "measure": "支持恢复后回到 Theorem 1",
+          "unit_of_analysis": "理论算法",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "Appendix C; continuation on PDF page 13",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "对本文无辅助位的 OMP 模采样模型，Theorem 3 在可忽略截断、指定 λ′=c||f||∞/(OF−2)、OF>3，以及 V 满足所需 RIP、δ_(L0+1)<1/(√L0+1) 和 b>3+log2ζ（ζ为式16的η/RIP/稀疏度项）时报告精确支持恢复及与 Theorem 1 相同的 MSEr；量化位宽条件比已知支持情形更严格。",
+        "boundary": "原文承认 RIP 常数难以实际计算，部分DFT类随机矩阵的既有高概率结果不是对本文每个确定矩阵的验证。",
+        "negative_result": null,
+        "non_inference": "不能只写 OF>3、b>3+log2ζ 而删除 RIP 条件，不能把引用 Theorem2 当作本文原创。",
+        "unresolved": "实际确定 V 的 RIP 值和附录C最小差分幅度表述与 2λ′格点定义的对应。",
+        "unresolved_attribution": "原文没有实算 RIP，相关符号有内部表述差异需人工复核。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "无折叠辅助位时，OMP的准确展开需要哪些额外矩阵和位宽条件？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C6"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "RIP_condition_not_verified",
+          "theorem_proof_requires_human_review"
+        ]
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "按本文有限窗口实现的主要计算步骤，有辅助位的 SVD 伪逆恢复复杂度为 O(K|S|²)，无辅助位的朴素 OMP 加展开为 O(NK+K|S|²)，其中N为窗口样本数、K为带外频率数、|S|为折叠支持大小且|S|≤K。",
+      "claim_type": "algorithm_complexity_analysis",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "SVD及朴素OMP的操作阶数推导",
+          "design": null,
+          "comparator": "已知支持与支持未知",
+          "measure": "计算复杂度",
+          "unit_of_analysis": "观察窗口算法",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "采用所述 SVD/朴素 OMP 实现及 |S|≤K。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "III.C / Computational complexity",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "窗口/采样率代入及实践限制讨论",
+          "design": null,
+          "comparator": null,
+          "measure": "高采样率大窗口的成本",
+          "unit_of_analysis": "算法输入规模",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "III.C continuation",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "按本文有限窗口实现的主要计算步骤，有辅助位的 SVD 伪逆恢复复杂度为 O(K|S|²)，无辅助位的朴素 OMP 加展开为 O(NK+K|S|²)，其中N为窗口样本数、K为带外频率数、|S|为折叠支持大小且|S|≤K。",
+        "boundary": "正文称随采样率平方增长，但式中还包含|S|增长；通用采样率阶数需进一步说明条件。",
+        "negative_result": null,
+        "non_inference": "没有实测运行时间、低功耗电路实现或同平台算法速度比较。",
+        "unresolved": "固定时窗下 |S| 随采样率/门限变化时的实际总复杂度阶数。",
+        "unresolved_attribution": "原文的平方概括没有完整交代稀疏度缩放。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "去除辅助位的代价如何随窗口、带外频率和折叠次数变化？"
+      ],
+      "shared_evidence_with": [
+        "C4",
+        "C5"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "对频带互不重叠、各自单位能量的两分量 f=α1f1+α2f2，在有折叠辅助位及 Theorem1 条件和最小门限选择下，本文 Corollary1 给出第i分量 NMSE≤[2(α1²+α2²)/αi²]·[ωi/π]·[1/{OF(2^b−2)²(OF−2)²}]；界随分量带宽增大、随该分量能量减小而变差。",
+      "claim_type": "source_reported_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "分离频带两分量模型及数字理想带通恢复",
+          "design": null,
+          "comparator": null,
+          "measure": "分量NMSE定义",
+          "unit_of_analysis": "各带限分量",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "f1/f2单位能量，频带互不重叠且在总体带限内。",
+            "理想 BPF，已正确展开模残差。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "IV Case study / signal model",
+            "figure": null,
+            "equation": "Equation (18)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "过滤量化噪声及幅度上界",
+          "design": null,
+          "comparator": "常规ADC对应分量误差上界",
+          "measure": "NMSE上界与OF缩放",
+          "unit_of_analysis": "分量",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "附录D按最小门限并代入峰值上界；继承 b>3、OF>3、抖动/截断条件。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "IV / Corollary 1",
+            "figure": null,
+            "equation": "Equations (19)–(20)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "Corollary1 推导",
+          "design": null,
+          "comparator": null,
+          "measure": "带通噪声能量",
+          "unit_of_analysis": "理论分量误差",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "Appendix D",
+            "figure": null,
+            "equation": "Equation (26)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "对频带互不重叠、各自单位能量的两分量 f=α1f1+α2f2，在有折叠辅助位及 Theorem1 条件和最小门限选择下，本文 Corollary1 给出第i分量 NMSE≤[2(α1²+α2²)/αi²]·[ωi/π]·[1/{OF(2^b−2)²(OF−2)²}]；界随分量带宽增大、随该分量能量减小而变差。",
+        "boundary": "是上界，较小上界不单独构成任意具体信号的实际误差排序；无辅助位还需Theorem3条件。",
+        "negative_result": null,
+        "non_inference": "不能声称消除弱分量量化误差，或推广到重叠频带、真实滤波器及所有雷达。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "分量能量与带宽怎样共同决定强弱信号模采样误差界？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "按原文PDF第9页式19补回提取时遗漏的整体系数2，保留全部假设与适用边界。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "在五个随机系数和时移 sinc² 脉冲组成、峰值归一化1、最高频率50 Hz的模拟信号上，b=4、OF=3–15的三角抖动仿真中，已知折叠位恢复的平均 MSE随 OF 衰减快于常规 ADC，作者报告与理论公式一致；OF=3时门限等于输入峰值，二者MSE相同。",
+      "claim_type": "simulation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "合成信号量化与恢复Monte Carlo",
+          "design": null,
+          "comparator": "同b的常规ADC",
+          "measure": "平均MSE随OF",
+          "unit_of_analysis": "i.i.d.抖动/噪声实现",
+          "sample_size_as_reported": "每OF 20,000 i.i.d. noise realizations；不是20,000独立硬件。",
+          "uncertainty": "报告均值，无数值区间；未读取图像。",
+          "assumptions": [
+            "1 s 时间窗，时移在 T/4 至3T/4，λ′=1/(OF−2)。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "V / Simulation-1",
+            "figure": "Figure 4",
+            "equation": "Equation (21)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在五个随机系数和时移 sinc² 脉冲组成、峰值归一化1、最高频率50 Hz的模拟信号上，b=4、OF=3–15的三角抖动仿真中，已知折叠位恢复的平均 MSE随 OF 衰减快于常规 ADC，作者报告与理论公式一致；OF=3时门限等于输入峰值，二者MSE相同。",
+        "boundary": "OF=3是无折叠边界，不满足严格 OF>3 定理的非平凡情况。",
+        "negative_result": "OF=3时没有MSE优势。",
+        "non_inference": "不能把仿真吻合当作定理证明或硬件复现。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "带辅助位模型的模拟量化误差是否呈现理论预测的OF依赖？"
+      ],
+      "shared_evidence_with": [
+        "C9",
+        "C11",
+        "C12",
+        "C13",
+        "C14"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "在与 Simulation1 相同的峰值归一化 sinc² 输入上，b=4、OF=4–15、OMP停止参数η=0.8、每OF 20,000噪声实现的仿真中，无辅助位的 OMP 恢复与带辅助位方案均比常规ADC有较低平均 MSE，作者报告两模方案的OF趋势接近理论。",
+      "claim_type": "simulation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "OMP与辅助位展开的Monte Carlo比较",
+          "design": null,
+          "comparator": "常规ADC及已知折叠位方案",
+          "measure": "平均MSE",
+          "unit_of_analysis": "同输入模型的噪声实现",
+          "sample_size_as_reported": "每OF 20,000 i.i.d. noise realizations",
+          "uncertainty": "无数值区间，未读曲线像素。",
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "V / Simulation-2",
+            "figure": "Figure 5",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在与 Simulation1 相同的峰值归一化 sinc² 输入上，b=4、OF=4–15、OMP停止参数η=0.8、每OF 20,000噪声实现的仿真中，无辅助位的 OMP 恢复与带辅助位方案均比常规ADC有较低平均 MSE，作者报告两模方案的OF趋势接近理论。",
+        "boundary": "仿真使用η=0.8，但没有报告每个矩阵RIP或核对该经验参数与定理η定义。",
+        "negative_result": null,
+        "non_inference": "不能证明对所有确定信号或 b=4 均满足Theorem3。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "无辅助位OMP在测试信号上能否保持已知支持的误差水平？"
+      ],
+      "shared_evidence_with": [
+        "C8",
+        "C11",
+        "C12",
+        "C13",
+        "C14"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "在两分量合成输入 α1=1、α2=0.25、强分量频带[-20,20] Hz和弱分量频带[-90,-50]∪[50,90] Hz上，b=4、OF=4–11、η=0.7、5,000噪声实现的仿真中，带辅助位及无辅助位模恢复在强、弱两个分量上均优于常规ADC，且作者报告满足所推NMSE上界。",
+      "claim_type": "simulation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "不重叠频带分量的量化恢复Monte Carlo",
+          "design": null,
+          "comparator": "常规ADC与两种模ADC恢复",
+          "measure": "分别恢复强/弱分量的NMSE",
+          "unit_of_analysis": "相同两分量输入的噪声实现",
+          "sample_size_as_reported": "5,000 i.i.d. noise realizations",
+          "uncertainty": "未报告区间，图像值不可读。",
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "V / Simulation-3",
+            "figure": "Figures 6–7",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在两分量合成输入 α1=1、α2=0.25、强分量频带[-20,20] Hz和弱分量频带[-90,-50]∪[50,90] Hz上，b=4、OF=4–11、η=0.7、5,000噪声实现的仿真中，带辅助位及无辅助位模恢复在强、弱两个分量上均优于常规ADC，且作者报告满足所推NMSE上界。",
+        "boundary": "两分量结果共享同一输入和噪声实验，不是两次独立复现；特定幅度比/带宽。",
+        "negative_result": null,
+        "non_inference": "不是雷达硬件测量，也不能据此证明任意幅度动态范围可恢复。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "模采样能否在所测异频带强弱混合信号中同时降低两个分量的量化误差？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "在本文同一 sinc² 输入的恢复算法比较仿真中，b=4时提出的 OMP和辅助位方法的NMSE优于所比 HoD、预测和 B²R² 方法；提高至b=6后，后三者达到与提出方法相近的表现，说明所示优势依赖量化位宽。",
+      "claim_type": "comparative_simulation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "五种恢复方案的Monte Carlo比较",
+          "design": null,
+          "comparator": "HoD、prediction、B²R²、OMP及已知支持",
+          "measure": "NMSE随OF及b",
+          "unit_of_analysis": "共同输入下噪声实现",
+          "sample_size_as_reported": "2,000 i.i.d. noise realizations，η=0.8。",
+          "uncertainty": "没有数值差和CI；仅保留正文相对关系。",
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "V / Simulation-4",
+            "figure": "Figures 8–9 captions on PDF page 10",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在本文同一 sinc² 输入的恢复算法比较仿真中，b=4时提出的 OMP和辅助位方法的NMSE优于所比 HoD、预测和 B²R² 方法；提高至b=6后，后三者达到与提出方法相近的表现，说明所示优势依赖量化位宽。",
+        "boundary": "算法实现/调参细节不足以完整恢复匹配条件；不是所有输入的排序。",
+        "negative_result": null,
+        "non_inference": "不能把HoD较差唯一归为噪声敏感性的已验证因果机制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "低位宽与较高位宽是否改变模展开算法的相对误差？"
+      ],
+      "shared_evidence_with": [
+        "C8",
+        "C9"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "在本文违反充分条件的低位宽测试中，b=2、所测试OF≥2时，常规ADC的NMSE优于带辅助位和无辅助位两种模ADC恢复；因此模采样并非在任意量化位宽都降低误差。",
+      "claim_type": "negative_simulation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "低位宽设置的Monte Carlo比较",
+          "design": null,
+          "comparator": "常规ADC与两个模方案",
+          "measure": "NMSE",
+          "unit_of_analysis": "信号/噪声实现",
+          "sample_size_as_reported": "2,000 i.i.d. noise realizations，η=0.8。",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "V / Simulation-5",
+            "figure": "Figure 10",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在本文违反充分条件的低位宽测试中，b=2、所测试OF≥2时，常规ADC的NMSE优于带辅助位和无辅助位两种模ADC恢复；因此模采样并非在任意量化位宽都降低误差。",
+        "boundary": "OF≥2只限图10测试网格，不是全部无限参数点。",
+        "negative_result": "b=2的所测条件下两个模方案都差于常规ADC。",
+        "non_inference": "不构成恢复充分条件的必要性证明。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "两位量化时模采样是否仍有误差优势？"
+      ],
+      "shared_evidence_with": [
+        "C8",
+        "C9",
+        "C13"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C13",
+      "statement": "在本文低位宽测试中，b=3、所测试OF≥2时，常规ADC优于无辅助位OMP模恢复，并与带辅助位方案相近；辅助位不能保证该低位宽下严格MSE优势。",
+      "claim_type": "negative_simulation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "三位量化的Monte Carlo比较",
+          "design": null,
+          "comparator": "常规ADC、OMP模恢复和辅助位模恢复",
+          "measure": "NMSE",
+          "unit_of_analysis": "共同输入的噪声实现",
+          "sample_size_as_reported": "2,000 i.i.d. noise realizations。",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "V / Simulation-5",
+            "figure": "Figure 10",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在本文低位宽测试中，b=3、所测试OF≥2时，常规ADC优于无辅助位OMP模恢复，并与带辅助位方案相近；辅助位不能保证该低位宽下严格MSE优势。",
+        "boundary": "同一Simulation5参数测试网格；不补造图中数值或普适阈值。",
+        "negative_result": "无辅助位方案较差；带辅助位方案无明显优势。",
+        "non_inference": "不能据此把 b>3 视为所有可能算法的必要条件。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "三位量化下，折叠辅助位是否改变模采样相对性能？"
+      ],
+      "shared_evidence_with": [
+        "C8",
+        "C9",
+        "C12"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C14",
+      "statement": "在本文无抖动量化的 sinc² 合成信号仿真中，b=4、OF=4–11、η=0.8和门限1/(OF−2)时，作者报告带辅助位和OMP两种模恢复均比常规ADC有较低MSE；这将经验表现扩展到无抖动设置，但不扩展三角抖动定理的精确误差公式。",
+      "claim_type": "simulation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "去掉抖动的数值比较",
+          "design": null,
+          "comparator": "无抖动常规ADC与两种模方案",
+          "measure": "MSE随OF",
+          "unit_of_analysis": "数值实现",
+          "sample_size_as_reported": "正文仍写5,000 i.i.d. noise realizations；移除抖动后随机来源未清楚说明。",
+          "uncertainty": "无CI或图像值。",
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "V / Simulation-6",
+            "figure": "Figure 11",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "正文结果结论",
+          "design": null,
+          "comparator": null,
+          "measure": "所测全部OF的相对误差",
+          "unit_of_analysis": "设置",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "Simulation-6 continuation",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在本文无抖动量化的 sinc² 合成信号仿真中，b=4、OF=4–11、η=0.8和门限1/(OF−2)时，作者报告带辅助位和OMP两种模恢复均比常规ADC有较低MSE；这将经验表现扩展到无抖动设置，但不扩展三角抖动定理的精确误差公式。",
+        "boundary": "无抖动时不再可直接沿用白噪声、独立二阶矩假设。",
+        "negative_result": null,
+        "non_inference": "不证明无抖动所有信号也按精确O(OF^-3)规律。",
+        "unresolved": "无抖动5000次实现中噪声/信号如何独立重采样。",
+        "unresolved_attribution": "原文未明确剩余随机来源。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "无抖动实际量化是否仍能在所测设置中看到模采样误差优势？"
+      ],
+      "shared_evidence_with": [
+        "C8",
+        "C9"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "本文分析两种模ADC：已知折叠支持时的展开及抖动MSE，和用OMP替代辅助位、带RIP和额外位宽条件的展开。最小门限下得到比常规幅度量化更快的过采样误差缩放，并扩展到不重叠强弱分量。六组数值研究包括低2/3位宽的失败/无优势和无抖动经验结果。来源二查保留附录噪声项、RIP/幅度记号、复杂度缩放和无抖动随机来源等具体人工数学核查事项；未运行仿真或进行硅验证。",
+  "shared_evidence": [
+    {
+      "claim_id": "C1",
+      "with": [
+        "C2",
+        "C3",
+        "C5"
+      ]
+    },
+    {
+      "claim_id": "C2",
+      "with": [
+        "C1",
+        "C3",
+        "C5"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C1",
+        "C2",
+        "C5"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C5",
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C4",
+        "C5"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C9",
+        "C11",
+        "C12",
+        "C13",
+        "C14"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C8",
+        "C11",
+        "C12",
+        "C13",
+        "C14"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "with": [
+        "C8",
+        "C9"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "with": [
+        "C8",
+        "C9",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C13",
+      "with": [
+        "C8",
+        "C9",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C14",
+      "with": [
+        "C8",
+        "C9"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [
+      {
+        "claim_id": "C1",
+        "evidence_index": 1,
+        "pdf_page": 6,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "semantic_source_check": "模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。"
+      },
+      {
+        "claim_id": "C1",
+        "evidence_index": 2,
+        "pdf_page": 12,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "semantic_source_check": "模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。"
+      },
+      {
+        "claim_id": "C2",
+        "evidence_index": 1,
+        "pdf_page": 6,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "semantic_source_check": "模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。"
+      },
+      {
+        "claim_id": "C2",
+        "evidence_index": 2,
+        "pdf_page": 12,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "semantic_source_check": "模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。"
+      },
+      {
+        "claim_id": "C3",
+        "evidence_index": 1,
+        "pdf_page": 6,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "semantic_source_check": "模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。"
+      },
+      {
+        "claim_id": "C4",
+        "evidence_index": 1,
+        "pdf_page": 5,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "semantic_source_check": "模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。"
+      },
+      {
+        "claim_id": "C5",
+        "evidence_index": 1,
+        "pdf_page": 7,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "semantic_source_check": "模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。"
+      },
+      {
+        "claim_id": "C5",
+        "evidence_index": 2,
+        "pdf_page": 12,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "semantic_source_check": "模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。"
+      },
+      {
+        "claim_id": "C6",
+        "evidence_index": 1,
+        "pdf_page": 7,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "semantic_source_check": "模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。"
+      },
+      {
+        "claim_id": "C6",
+        "evidence_index": 2,
+        "pdf_page": 8,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "semantic_source_check": "模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。"
+      },
+      {
+        "claim_id": "C7",
+        "evidence_index": 1,
+        "pdf_page": 8,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "semantic_source_check": "模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。"
+      },
+      {
+        "claim_id": "C7",
+        "evidence_index": 2,
+        "pdf_page": 9,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "semantic_source_check": "模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。"
+      },
+      {
+        "claim_id": "C7",
+        "evidence_index": 3,
+        "pdf_page": 13,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "semantic_source_check": "模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。"
+      },
+      {
+        "claim_id": "C8",
+        "evidence_index": 1,
+        "pdf_page": 9,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "semantic_source_check": "模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。"
+      },
+      {
+        "claim_id": "C9",
+        "evidence_index": 1,
+        "pdf_page": 10,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "semantic_source_check": "模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。"
+      },
+      {
+        "claim_id": "C10",
+        "evidence_index": 1,
+        "pdf_page": 10,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "semantic_source_check": "模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。"
+      },
+      {
+        "claim_id": "C11",
+        "evidence_index": 1,
+        "pdf_page": 11,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "semantic_source_check": "模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。"
+      },
+      {
+        "claim_id": "C12",
+        "evidence_index": 1,
+        "pdf_page": 11,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "semantic_source_check": "模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。"
+      },
+      {
+        "claim_id": "C13",
+        "evidence_index": 1,
+        "pdf_page": 11,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "semantic_source_check": "模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。"
+      },
+      {
+        "claim_id": "C14",
+        "evidence_index": 1,
+        "pdf_page": 11,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "semantic_source_check": "模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。"
+      },
+      {
+        "claim_id": "C14",
+        "evidence_index": 2,
+        "pdf_page": 12,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "semantic_source_check": "模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。"
+      }
+    ],
+    "model_findings": [
+      {
+        "claim_id": null,
+        "issue": "PDF为IEEE TSP正式排版，14页含全部附录A–D及作者简介；部分一位辅助结果沿用会议论文[40]。",
+        "suggested_correction": "保留期刊版本身份和贡献继承，不制造独立复现链接。",
+        "pdf_page": 2,
+        "resolved": true
+      },
+      {
+        "claim_id": "C3",
+        "issue": "同 b 比较不是同总比特率，且一般 c=OF−2 时与常规误差相等。",
+        "suggested_correction": "严格优势限定最小门限 c=1 和OF>3。",
+        "pdf_page": 6,
+        "resolved": true
+      },
+      {
+        "claim_id": "C2",
+        "issue": "Eq.(6)包含S之外的差分量化噪声，但附录B的伪逆误差展开直接写成VS(∆zS+∆εS)，未明确说明这些噪声项如何消失。",
+        "suggested_correction": "保留为作者报告的定理，人工审查其精确MSE和无需条件数的误差界。",
+        "pdf_page": 12,
+        "resolved": false
+      },
+      {
+        "claim_id": "C5",
+        "issue": "附录C写残差/最小差分为λ′，而Eq.(2)给残差在2λ′Z；V的RIP也没有实际算出。",
+        "suggested_correction": "引用式16定义ζ而不重构不清楚符号，人工核查幅度、矩阵归一化和RIP。",
+        "pdf_page": 12,
+        "resolved": false
+      },
+      {
+        "claim_id": "C6",
+        "issue": "复杂度式含K|S|²，但正文泛称固定时窗下随采样率平方；稀疏度是否固定未明确。",
+        "suggested_correction": "只使用明确的N/K/S阶数，无条件采样率阶数暂缓。",
+        "pdf_page": 8,
+        "resolved": false
+      },
+      {
+        "claim_id": "C14",
+        "issue": "无抖动实验仍写5000 i.i.d.噪声实现；剩余随机来源不明确。",
+        "suggested_correction": "不猜测是抖动、信号重采样或其它噪声。",
+        "pdf_page": 11,
+        "resolved": false
+      },
+      {
+        "claim_id": null,
+        "issue": "主文称可积输入、比较段又概称所有有限能量信号，且文本矩阵实/复记号与伪逆记号有排版疑点。",
+        "suggested_correction": "保留较窄带限可积/有限窗条件；正式数学审查应查看原公式像素。",
+        "pdf_page": 3,
+        "resolved": false
+      },
+      {
+        "claim_id": "C7",
+        "issue": "Extractor transcription omitted factor 2 in Equation19.",
+        "suggested_correction": "Restored factor2 from source PDF page9.",
+        "pdf_page": 9,
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T07:02:09.863Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "5b1d8b37a33fbfa50dc0e960755b3dc0f040fb8641be9ca7e6f2265195f63229",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false,
+    "transcription_correction": "User-authorized, source Equation19 checked, factor2 restored; original output retained."
+  }
+}

@@ -1,0 +1,190 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Tension shapes memory: computational insights into neural plasticity</title><style>body{max-width:940px;margin:40px auto;padding:0 24px;background:#fffdf7;color:#12372f;font:16px/1.8 Georgia,serif}h1{font-size:26px;line-height:1.4}h2{font-size:20px;line-height:1.5}h3{font-size:16px}article{padding:26px 0;border-top:1px solid #bec4b8}small{color:#68766e}dl{display:grid;grid-template-columns:120px 1fr;gap:8px 20px}dt{font-weight:bold}dd{margin:0}li{padding:8px 0}p,dd{overflow-wrap:anywhere}.note{background:#eef2e2;padding:14px;border-left:3px solid #738968}summary{cursor:pointer}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.7 monospace}@media(max-width:600px){body{margin:24px auto;padding:0 18px}dl{grid-template-columns:1fr;gap:3px}dd{margin-bottom:12px}}@media print{body{margin:0;background:white}details{display:block}}</style><link rel="stylesheet" href="../../commons-v02.css?v=20261020-1"><link rel="stylesheet" href="../../examples.css?v=20260928-2"><link rel="stylesheet" href="../../site.css?v=20261020-1"><script defer src="../../site.js?v=20261020-1"></script><script defer src="../../report-ui.js?v=20261020-1"></script></head><body class="portal-page report-page" data-cc-report-shell="1" data-page="library" data-site-prefix="../../" data-library-paper="paper-W7128523886" data-report-language="zh" data-claim-records="{&quot;C1&quot;:&quot;structured-paper-W7128523886-1&quot;,&quot;C2&quot;:&quot;structured-paper-W7128523886-2&quot;,&quot;C3&quot;:&quot;structured-paper-W7128523886-3&quot;,&quot;C4&quot;:&quot;structured-paper-W7128523886-4&quot;,&quot;C5&quot;:&quot;structured-paper-W7128523886-5&quot;,&quot;C6&quot;:&quot;structured-paper-W7128523886-6&quot;,&quot;C7&quot;:&quot;structured-paper-W7128523886-7&quot;,&quot;C8&quot;:&quot;structured-paper-W7128523886-8&quot;,&quot;C9&quot;:&quot;structured-paper-W7128523886-9&quot;,&quot;C10&quot;:&quot;structured-paper-W7128523886-10&quot;,&quot;C11&quot;:&quot;structured-paper-W7128523886-11&quot;,&quot;C12&quot;:&quot;structured-paper-W7128523886-12&quot;,&quot;C13&quot;:&quot;structured-paper-W7128523886-13&quot;,&quot;C14&quot;:&quot;structured-paper-W7128523886-14&quot;,&quot;C15&quot;:&quot;structured-paper-W7128523886-15&quot;,&quot;C16&quot;:&quot;structured-paper-W7128523886-16&quot;}"><header></header><main id="report-content"><div id="report-tools"></div><small>CLAIM COMMONS / 阅读报告</small><h1>Tension shapes memory: computational insights into neural plasticity</h1><p class="note">AI 文本提取候选，尚待人工核对。图像像素未读取；PDF 页码指文件中的页序。</p><p>本文是2026年正式发表的计算研究，而非综述或新生物实验。作者把网络统一张力、囊泡释放/恢复、LIF与STDP及遗忘整合为二维脉冲网络，研究部分线索模式补全、抑制比例、延迟训练后的A→B投射和共同训练后的关联回忆。正文和图注表明更长训练及较高张力改善所测回忆速度/同步；20%抑制在所测设置下取得最高回忆IoU；关联同步在降张力后下降，并在恢复张力时回升。已完整评估17页，包括图1–8、表1、讨论、视频文字说明和参考文献。保留16项候选：1项方法、12项模拟结果、2项解释及1项生物外推假说。所有结果均限定为模型，通常n=4模拟重复而非神经元数；图5规模比较及方法演示没有可辨认的独立重复n。张力-囊泡函数是预设关系，没有消融证明真实因果机制；图1外部实验和data not shown不构成本研究生物验证。20%抑制时21%的编码/回忆IoU差异及恢复后p=0.8863都不证明等效；0.7900-fold是两个IoU之比，不是79%原始图像被回忆。单神经元bursting未复现，长期巩固、临床疗效和计算能效未检验。摘要与正文百分比的比较基准、投射40%的定义、初始化/背景输入表述及未训练激活时间仍需作者或人类核查。</p><a href="https://public-pages-files-2025.frontiersin.org/journals/computational-neuroscience/articles/10.3389/fncom.2026.1737434/pdf" rel="noreferrer">查看所读原文版本 ↗</a><details><summary>贡献清单与处理决定</summary><ul><li><b>构建张力、囊泡动力学与STDP/遗忘耦合的LIF计算平台。</b><br>include · C1保留方法贡献及共同假设，预设张力定律不标为生物发现。</li><li><b>训练相对未训练网络的局部线索模式补全。</b><br>include · C2完整保留训练/未训练及训练区外对照。</li><li><b>训练时长改变峰值放电及70%活动激活时间。</b><br>include · C3保留0.5/1 s及未训练比较和来源内部未解歧义。</li><li><b>回忆阶段升降张力改变放电峰值和激活时间。</b><br>include · C4按正文基线比较提取，不将摘要67%混为同一个效应。</li><li><b>扩大到20,000神经元的定性细节再现改善。</b><br>include · C5保留非张力因素贡献，不推测图像量化/n。</li><li><b>抑制比例控制编码活动外溢与编码IoU。</b><br>include · C6与回忆效果分开；输入时空间匹配不证明可检索存储。</li><li><b>20%抑制的最佳所测回忆IoU与极端比例失败。</b><br>include · C7保留正向和实际失败，限定参数范围。</li><li><b>20%抑制时编码/回忆IoU差异未达显著。</b><br>include · C8保留真实非显著比较，纠正IoU比值到图像比例的误推。</li><li><b>时序偏置训练产生选择性A→B传播。</b><br>include · C9保留未训练/C区对照及40%协议歧义。</li><li><b>张力改变投射任务的跨区域同步。</b><br>include · C10保留基线对比的+7%/−8%，不混用摘要17%。</li><li><b>共同训练形成单侧线索诱发的关联同步。</b><br>include · C11保留共同训练与未训练对照。</li><li><b>训练时长及回忆时间影响关联同步和衰减。</b><br>include · C12保留重复测量因素与25 s观察范围。</li><li><b>低张力关联同步下降及恢复张力后回升。</b><br>include · C13保留31%、20 s和恢复非显著比较；不推断等效。</li><li><b>同步恢复被解释为访问受限而非记忆擦除。</b><br>include · C14与结果分开，不证明权重/内容完整。</li><li><b>张力驱动囊泡/增益变化解释任务读出。</b><br>include · C15区分预设机制与独立机制识别。</li><li><b>机械张力可能调节真实组织记忆访问的生物假说。</b><br>include · C16只作为待验证的生物/临床外推。</li><li><b>图1A改编的果蝇实验、引言背景和参考文献。</b><br>exclude · 不是本论文新实验；其n=8/8/10不能转移到模型结果。</li><li><b>培养神经元的早期网络活动观察。</b><br>exclude · data not shown无所供数据、样本量或足够方法，只作为建模动机。</li><li><b>单神经元bursting未复现及模型适用范围。</b><br>exclude · 作为C1及全篇读出边界保留，未另增一个独立模拟实验。</li><li><b>睡眠/离线巩固、synaptic-tagging-and-capture及长期稳定化。</b><br>defer · 本文未实现/检验；记录为范围与后续问题，不从背景论文导入结论。</li><li><b>生物兼容计算、biohybrid computing及节能平台应用。</b><br>defer · 仅提出应用动机，无器件演示、功耗或能效比较，不能生成已验证应用结果。</li></ul></details><article><small>C1 / 直接结果 · computational_model</small><h2>本文构建了张力调制的二维LIF脉冲网络：默认4,000个兴奋性与1,000个抑制性神经元，突触输入由基线Jji和历史项s·wji相加组成，s由囊泡释放概率u与可用量R决定，wji按STDP更新并衰减/截断；统一张力ε通过预设函数提高Jji并缩短恢复时间τR，从而提供可测试模式补全、投射和关联的计算平台，而不是实测确定张力效应的生物模型。</h2><h3>Evidence</h3><p>构建张力依赖的LIF突触模型</p><dl><dt>设计 / 对照</dt><dd>网络参数化建模，分离基线与活动历史相关输入；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>模型方程与计算实例；不存在独立生物实验单位。；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 4 · Materials and methods: Neural communication dynamics / Synaptic potential / History-independent component</dd></dl><p>张力依赖的恢复动力学与STDP示例</p><dl><dt>设计 / 对照</dt><dd>囊泡释放后耗竭并恢复，前后突触时间次序调节权重；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>方程及示例时间序列，不是独立重复。；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 5 · Figure 2</dd></dl><p>STDP、连续遗忘及刺激规则</p><dl><dt>设计 / 对照</dt><dd>wji初始为0，按连续遗忘衰减并截断；50 Hz训练/10 Hz回忆；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>参数化网络，不以神经元数量作为实验n。；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 6 · Table 1（第7页）</dd></dl><p>模型参数表</p><dl><dt>设计 / 对照</dt><dd>基线参数和遗忘/权重约束设置；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>参数值，非统计样本。；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 7 · Materials and methods: Table 1</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>实现了把机械状态参数与突触动力学和组装任务耦合的模拟框架。</dd><dt>适用边界</dt><dd>这里的张力值是模型ε；未给出与真实组织受力的定量标定。模型未复现单神经元bursting，未研究长期巩固。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能将预设的Jji/τR函数或图2时间序列当作独立发现的生物因果规律。</dd><dt>未解决</dt><dd>模型参数的生物标定、可识别性及机制消融尚未提供。</dd></dl><h3>相关问题</h3><ul><li>如何在LIF/STDP网络中把统一机械张力与囊泡可用量、突触输入和组装操作联系起来？</li></ul></article><article><small>C2 / 直接结果 · simulation_result</small><h2>在默认5,000神经元模型中，对面形区域训练后，仅刺激覆盖该区域20%的矩形线索即可在约10 ms内把活动传播到训练区域，其外仍以自发活动为主；未训练对照在正文和图4描述中仅在线索处活动，未出现相同的空间模式补全。</h2><h3>Evidence</h3><p>训练与未训练网络的部分线索诱发活动比较</p><dl><dt>设计 / 对照</dt><dd>面形区域50 Hz训练，覆盖20%区域的部分线索回忆；未训练网络和训练区域外的活动</dd><dt>独立单位与 n</dt><dd>以网络模拟重复为统计单位；神经元、脉冲、时间窗和组装事件是运行内观测，不是独立生物样本。；图4C激活时间统计报告n=4模拟重复；图4B传播展示未另列n，不能保证采用同样重复数。</dd><dt>不确定性</dt><dd>图4C群体统计为mean ± SEM；本空间展示没有单独效应区间。</dd><dt>原文位置</dt><dd>PDF 7 · Figure 4（图注第8页）</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>在所给训练和网络设置下出现局部线索驱动的模式补全。</dd><dt>适用边界</dt><dd>由正文与图注描述支持，没有读取活动地图像素或视频S1。</dd><dt>实际负结果</dt><dd>未训练对照未显示训练区域式传播；训练区域外未见同样诱发响应。</dd><dt>不能推出</dt><dd>不能据模拟模式补全断言真实动物记忆形成或读取了全部细节。</dd><dt>未解决</dt><dd>未训练网络还被报告有有限70%激活时间，和不传播的文字描述如何一致未明确。</dd></dl><h3>相关问题</h3><ul><li>对局部图形区域训练能否使部分线索激活完整区域，同时避免招募未训练区域？</li></ul></article><article><small>C3 / 直接结果 · simulation_result</small><h2>在面形部分线索回忆模拟中，训练从0.5 s延长到1 s使峰值群体放电率增加56%，使训练区域70%神经元变为活动所需时间缩短40%（p=0.0049）；论文还报告未训练对照的该激活时间比0.5 s训练条件长81%（p&lt;0.001）。</h2><h3>Evidence</h3><p>训练时长的模拟组间比较</p><dl><dt>设计 / 对照</dt><dd>0、0.5和1 s训练后用同一部分线索协议测试；1 s及未训练条件分别对比0.5 s训练</dd><dt>独立单位与 n</dt><dd>以网络模拟重复为统计单位；神经元、脉冲、时间窗和组装事件是运行内观测，不是独立生物样本。；图注报告n=4，本文结果为模拟重复；未报告随机种子、拓扑是否重采样或各条件重复是否配对。</dd><dt>不确定性</dt><dd>图注mean ± SEM；激活时间one-way ANOVA F(2,9)=129.86，p&lt;0.001；1 s vs 0.5 s p=0.0049；未训练vs 0.5 s p&lt;0.001；没有给出变化量的置信区间。</dd><dt>原文位置</dt><dd>PDF 9 · Figure 4C（图注第8页）</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>在所测时长范围内，更长训练提高该模型的线索后响应强度并缩短报告的激活时间。</dd><dt>适用边界</dt><dd>70%活动是作者定义的群体阈值，不是行为回忆正确率。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能把56%峰值增加和40%激活时间减少合并成统一的记忆准确度效应。</dd><dt>未解决</dt><dd>正文/图注称未训练时活动不超出20%线索区，却报告有限70%激活时间；该阈值在此条件如何实现未说明。</dd></dl><h3>相关问题</h3><ul><li>训练时长如何改变部分线索后的群体放电峰值和区域招募时间？</li></ul></article><article><small>C4 / 直接结果 · simulation_result</small><h2>在面形模式补全的回忆阶段，相对基线张力ε0，提高全网络张力50%使峰值放电率增加27%、70%活动阈值的激活时间缩短20%（p=0.0407）；降低张力50%使放电率下降19%、激活时间延长31%（p=0.0018）。</h2><h3>Evidence</h3><p>回忆阶段张力操纵</p><dl><dt>设计 / 对照</dt><dd>比较0.5ε0、ε0、1.5ε0，基线张力为0.1%；两端张力各自相对ε0，而不是直接紧张与放松互相比</dd><dt>独立单位与 n</dt><dd>以网络模拟重复为统计单位；神经元、脉冲、时间窗和组装事件是运行内观测，不是独立生物样本。；图注报告n=4，本文结果为模拟重复；未报告随机种子、拓扑是否重采样或各条件重复是否配对。</dd><dt>不确定性</dt><dd>mean ± SEM；激活时间one-way ANOVA F(2,9)=22.94，p&lt;0.001；高张力p=0.0407；低张力p=0.0018；未给出百分比变化的置信区间。</dd><dt>原文位置</dt><dd>PDF 9 · Figure 4C（图注第8页）</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>预设张力调制的网络在回忆时呈张力相关的放电与招募速度变化。</dd><dt>适用边界</dt><dd>仅涉及这组参数与短时回忆；本文未隔离Jji与τR两条模型路径。</dd><dt>实际负结果</dt><dd>低张力条件出现较低放电峰值和较慢激活，不是生物失忆实验。</dd><dt>不能推出</dt><dd>摘要相对relaxed states的67%“速度改善”不能替代正文相对ε0的20%激活时间下降；两者比较基准及读出不同。</dd><dt>未解决</dt><dd>摘要67%的精确计算基准与原始值未提供，无法从文字独立重建。</dd></dl><h3>相关问题</h3><ul><li>在训练后的部分线索回忆中，模型张力升降如何改变放电强度与激活时间？</li></ul></article><article><small>C5 / 直接结果 · simulation_result</small><h2>在采用同样训练和线索协议的模型比较中，将神经元总数从5,000增加到20,000后，正文及图5图注报告回忆活动更好呈现面形图案，鼻和嘴等细小边界更清楚；这是网络规模/密度比较，而非机械张力变化的效果。</h2><h3>Evidence</h3><p>增加网络规模并比较活动地图的文字报告</p><dl><dt>设计 / 对照</dt><dd>20,000神经元网络，报告密度5,000 cells/mm²，同样训练和线索协议；5,000神经元网络</dd><dt>独立单位与 n</dt><dd>网络规模条件及展示的模拟活动地图；不是20,000个独立重复。；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告该规模比较的重复数、定量图像相似度、显著性或误差区间。</dd><dt>原文位置</dt><dd>PDF 9 · Figure 5</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>作者报告增加所模拟网络的表示分辨率可改善图案细节再现。</dd><dt>适用边界</dt><dd>证据是定性地图描述，不是经过像素审计或独立n支持的精度效应量。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能把20,000当作样本量，不能断言匹配人类海马密度就具有其认知能力。</dd><dt>未解决</dt><dd>规模、密度及其他网络结构因素的独立贡献未分离。</dd></dl><h3>相关问题</h3><ul><li>在相同图形训练与线索协议下，提高网络规模/密度能否改善细小特征的再现？</li></ul></article><article><small>C6 / 直接结果 · simulation_result</small><h2>在1 s训练后的编码模拟中，0%抑制性神经元时活动范围超过训练区、编码IoU最低；随抑制比例提高，作者报告活动更受限且编码IoU提高，100%抑制条件的编码IoU最高，但该编码指标本身不能说明网络可被部分线索成功回忆。</h2><h3>Evidence</h3><p>抑制比例与记忆阶段的网络比较</p><dl><dt>设计 / 对照</dt><dd>不同抑制比例网络各训练1 s；5 ms窗内用DBSCAN识别活动簇；0%与较高比例，正文明确包括20%、100%</dd><dt>独立单位与 n</dt><dd>以网络模拟重复为统计单位；神经元、脉冲、时间窗和组装事件是运行内观测，不是独立生物样本。；图注报告n=4，本文结果为模拟重复；未报告随机种子、拓扑是否重采样或各条件重复是否配对。</dd><dt>不确定性</dt><dd>图6D n=4；比例主效应F(5,36)=20.29，p&lt;0.001；阶段F(1,36)=1194.73，p&lt;0.001；交互F(5,36)=37.45，p&lt;0.001；这些为两阶段总分析，非100%与其他编码组的专属检验。</dd><dt>原文位置</dt><dd>PDF 9 · Figure 6A/D（图注第10页）</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>在受刺激的编码阶段，较强抑制在所测设置下缩小空间外溢、提高区域重合。</dd><dt>适用边界</dt><dd>训练中直接刺激所得IoU是空间匹配指标，不是持久记忆或自发检索的证据。</dd><dt>实际负结果</dt><dd>0%抑制存在训练区外溢及较低编码IoU。</dd><dt>不能推出</dt><dd>不能由100%抑制的最高编码IoU推断其回忆最佳。</dd><dt>未解决</dt><dd>未充分说明两个阶段是否来自同一运行及模型比例/γ改变各自的贡献。</dd></dl><h3>相关问题</h3><ul><li>兴奋/抑制比例如何影响直接训练刺激下的空间活动外溢与编码IoU？</li></ul></article><article><small>C7 / 直接结果 · simulation_result</small><h2>在不同抑制比例网络训练1 s后的部分线索回忆中，20%抑制条件取得所测比例中最高的回忆IoU；0%条件活动无约束扩散、回忆IoU为0.1748，而100%条件活动几乎局限在线索处，其回忆IoU较编码下降93%（p&lt;0.001）。</h2><h3>Evidence</h3><p>抑制比例与阶段的空间回忆比较</p><dl><dt>设计 / 对照</dt><dd>1 s训练后部分线索；5 ms活动簇与训练区比较；0%、20%、100%及其他所测比例；同条件编码与回忆</dd><dt>独立单位与 n</dt><dd>以网络模拟重复为统计单位；神经元、脉冲、时间窗和组装事件是运行内观测，不是独立生物样本。；图注报告n=4，本文结果为模拟重复；未报告随机种子、拓扑是否重采样或各条件重复是否配对。</dd><dt>不确定性</dt><dd>总分析：比例F(5,36)=20.29；阶段F(1,36)=1194.73；交互F(5,36)=37.45，均p&lt;0.001；100%编码/回忆p&lt;0.001；未给出20%与每个比例的全部成对检验。</dd><dt>原文位置</dt><dd>PDF 11 · Figure 6B–D（图注第10页）</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>在本文测试设置中，中间抑制比例更兼顾抑制外溢与区域内传播。</dd><dt>适用边界</dt><dd>20%是这组参数、刺激和IoU读出中的最高值，不是生理普适最优。</dd><dt>实际负结果</dt><dd>无抑制时回忆不精确；全部抑制时不能从部分线索传播出完整训练区域。</dd><dt>不能推出</dt><dd>不能把输入期间高空间匹配当作100%网络具有成功可检索记忆，也不能推断疾病治疗比例。</dd><dt>未解决</dt><dd>比例与抑制强度/空间结构的独立作用仍不清楚。</dd></dl><h3>相关问题</h3><ul><li>部分线索回忆中，何种抑制比例能兼顾传播与训练区边界，极端抑制为何损害该读出？</li></ul></article><article><small>C8 / 直接结果 · simulation_result</small><h2>在20%抑制条件的图形任务中，回忆IoU比编码IoU低21%（回忆/编码为0.7900-fold），但作者报告这一阶段差异未达到统计显著性（p=0.0586）；因此它是带方向差异的非显著比较，既不是两阶段等效，也不表示回忆了原图79%的面积。</h2><h3>Evidence</h3><p>特定抑制比例的阶段比较</p><dl><dt>设计 / 对照</dt><dd>20%抑制、1 s训练，按同一IoU定义比较编码与回忆；20%网络的编码阶段</dd><dt>独立单位与 n</dt><dd>以网络模拟重复为统计单位；神经元、脉冲、时间窗和组装事件是运行内观测，不是独立生物样本。；图注报告n=4，本文结果为模拟重复；未报告随机种子、拓扑是否重采样或各条件重复是否配对。</dd><dt>不确定性</dt><dd>p=0.0586；未报告等效界、置信区间或等效检验。</dd><dt>原文位置</dt><dd>PDF 11 · Figure 6D（图注第10页）</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>在20%抑制设置下，两阶段有报告的点差异，但来源未检出达到p&lt;0.05的差异。</dd><dt>适用边界</dt><dd>小样本非显著结果仍允许有差异；不能视为零效应。</dd><dt>实际负结果</dt><dd>该阶段对比未达到作者采用的显著性阈值。</dd><dt>不能推出</dt><dd>不能将0.7900-fold解释为79%图像被回忆，不能宣称编码和回忆等效。</dd><dt>未解决</dt><dd>差异的置信区间和统计功效未提供。</dd></dl><h3>相关问题</h3><ul><li>20%抑制时，编码和回忆的IoU是否有统计支持的阶段差异，其比值代表什么？</li></ul></article><article><small>C9 / 直接结果 · simulation_result</small><h2>在投射任务中，训练时完全刺激A并在2 ms后对B施加较弱/部分刺激，之后只激活A便在训练网络的B中诱发约2 ms延迟的放电，而无关C区没有相应响应；同一协议的未训练网络未显示A诱发的B活动。</h2><h3>Evidence</h3><p>时序偏置训练后的定向组装传播</p><dl><dt>设计 / 对照</dt><dd>A完整刺激；B延后2 ms，正文称刺激40%神经元，图注称40%刺激强度；回忆只刺激A；未训练网络及无关C区</dd><dt>独立单位与 n</dt><dd>网络运行中的A/B/C区域及活动事件；图7C统计为模拟重复。；图7C张力同步统计n=4；图7B传播展示未单独报告重复数。</dd><dt>不确定性</dt><dd>约2 ms来自正文描述；此传播/区域对照未单独给出误差或p值。</dd><dt>原文位置</dt><dd>PDF 11 · Figure 7A/B（图注第12页）</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>延迟、非对称训练可在本文模型中产生选择性的A→B诱发传播。</dd><dt>适用边界</dt><dd>支持训练后的功能传播，不等于B具备独立概念表征或证明生物信息投射。</dd><dt>实际负结果</dt><dd>未训练网络B未显示诱发活动，C区未见相应变化。</dd><dt>不能推出</dt><dd>不能由不同区域无响应证明真实神经回路的完整方向性机制。</dd><dt>未解决</dt><dd>40%指神经元比例还是刺激强度，正文和图注未一致定义。</dd></dl><h3>相关问题</h3><ul><li>A先于弱刺激B的训练能否使只刺激A时特异性激活B而不激活无关区域？</li></ul></article><article><small>C10 / 直接结果 · simulation_result</small><h2>在已训练的A→B投射模拟中，张力从ε0升到1.5ε0使A/B活动向量的同步指数提高7%（p=0.0134），降到0.5ε0使其降低8%（p=0.0044）；这些数值各自相对基线，而不是摘要中高张力对放松状态17%的对比。</h2><h3>Evidence</h3><p>投射期间张力组间比较</p><dl><dt>设计 / 对照</dt><dd>正文明确给出0.5ε0、ε0、1.5ε0，完整ANOVA报告五组；0.5ε0和1.5ε0各对比ε0</dd><dt>独立单位与 n</dt><dd>以网络模拟重复为统计单位；神经元、脉冲、时间窗和组装事件是运行内观测，不是独立生物样本。；图注报告n=4，本文结果为模拟重复；未报告随机种子、拓扑是否重采样或各条件重复是否配对。</dd><dt>不确定性</dt><dd>mean ± SEM；one-way ANOVA F(4,15)=19.74，p&lt;0.001；高张力vs基线p=0.0134，低张力vs基线p=0.0044。</dd><dt>原文位置</dt><dd>PDF 11 · Figure 7C</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>模型张力水平改变了训练后两个区域之间的活动同步读出。</dd><dt>适用边界</dt><dd>同步指数及其比较基准限定此结果；不能把同步直接等同于信息传递质量。</dd><dt>实际负结果</dt><dd>低张力相对基线同步下降8%。</dd><dt>不能推出</dt><dd>摘要17%与正文7%不是同一比较；不以摘要效应量覆盖详细结果，也不宣称生物因果。</dd><dt>未解决</dt><dd>摘要17%的直接原始对比值及图中未文字列出的张力水平未提供。</dd></dl><h3>相关问题</h3><ul><li>训练形成的A→B传播中，全网络张力如何改变区域间活动同步？</li></ul></article><article><small>C11 / 直接结果 · simulation_result</small><h2>在两个分离矩形区域同时训练后的关联任务中，只刺激右区可在未直接受刺激的左区诱发同步放电；未训练对照左区只出现自发且不协调的活动，未显示同样的线索诱发关联同步。</h2><h3>Evidence</h3><p>共同训练与局部线索后的跨区域响应比较</p><dl><dt>设计 / 对照</dt><dd>两区同时训练；回忆只对右区给予线索，监测左区；未训练网络的同样单侧线索</dd><dt>独立单位与 n</dt><dd>网络模拟及运行内区域活动，栅格图中的索引不是独立电极实验。；图8B同步统计n=4模拟重复；图8C展示没有独立n说明。</dd><dt>不确定性</dt><dd>训练网络回忆同步高于未训练对照p&lt;0.001；图8C不另给独立统计。</dd><dt>原文位置</dt><dd>PDF 11 · Figure 8A/C（图注第13页）</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>所模拟网络显示共同训练形成的线索驱动区域关联。</dd><dt>适用边界</dt><dd>是训练区之间的诱发同步，不是行为关联记忆的生物验证。</dd><dt>实际负结果</dt><dd>未训练对照未显示同样的诱发协调放电。</dd><dt>不能推出</dt><dd>不能把图8C的electrode indices表述当作进行了真实电极实验。</dd><dt>未解决</dt><dd>组装同步是否唯一反映可检索关联内容未用其他记忆指标验证。</dd></dl><h3>相关问题</h3><ul><li>共同训练的两个空间区域能否使一侧线索诱发另一侧协调活动？</li></ul></article><article><small>C12 / 直接结果 · simulation_result</small><h2>在关联回忆模拟中，训练网络的区域间同步在25 s回忆期间逐渐下降；2 s训练比1 s训练维持更高、更持久的同步（p=0.0034），而训练后回忆同步仍高于未训练网络（p&lt;0.001）。</h2><h3>Evidence</h3><p>训练时长与回忆时间的重复测量比较</p><dl><dt>设计 / 对照</dt><dd>0、1、2 s训练；多个回忆时点追踪到25 s；2 s vs 1 s训练；训练组vs未训练组及同组随时间变化</dd><dt>独立单位与 n</dt><dd>模拟重复为训练时长组的统计单位，同一运行的时间点为重复测量。；图注报告n=4，本文结果为模拟重复；未报告随机种子、拓扑是否重采样或各条件重复是否配对。</dd><dt>不确定性</dt><dd>mean ± SEM；repeated-measures two-way ANOVA：回忆时间F(4,36)=5.84，训练时长F(2,9)=131.23，交互F(8,36)=4.87，来源均报告p&lt;0.001；2 s vs 1 s p=0.0034；训练vs未训练p&lt;0.001。</dd><dt>原文位置</dt><dd>PDF 11 · Figure 8B（图注第13页）</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>更长训练在本文短时模型中提高关联同步强度并减缓其观察到的衰减。</dd><dt>适用边界</dt><dd>记忆强度和持久性由χ操作化，未测行为或长期巩固。</dd><dt>实际负结果</dt><dd>训练后的χ仍随回忆时间降低。</dd><dt>不能推出</dt><dd>不能把多个回忆时间点作为独立样本，或把秒级模拟映射到天级生物记忆。</dd><dt>未解决</dt><dd>未报告完整逐时点效应值、置信区间及随机重复的独立性。</dd></dl><h3>相关问题</h3><ul><li>共同训练时长如何改变25 s内关联同步的强度和衰减？</li></ul></article><article><small>C13 / 直接结果 · simulation_result</small><h2>在1 s共同训练后的关联回忆模拟中，把张力降低20%使区域间同步指数下降31%（p=0.0423），在20 s时仍受抑制（p=0.0012）；把张力恢复到基线后同步回升，作者报告与原水平的比较不显著（p=0.8863），但这不构成等效检验。</h2><h3>Evidence</h3><p>降张力及恢复张力的关联回忆比较</p><dl><dt>设计 / 对照</dt><dd>1 s共同训练后，张力ε0→0.8ε0→ε0；监测20 s及恢复阶段；降张力与原基线/1 s训练读出，及恢复后的同步水平</dd><dt>独立单位与 n</dt><dd>以网络模拟重复为统计单位；神经元、脉冲、时间窗和组装事件是运行内观测，不是独立生物样本。；图注报告n=4，本文结果为模拟重复；未报告随机种子、拓扑是否重采样或各条件重复是否配对。</dd><dt>不确定性</dt><dd>mean ± SEM；降张力31%：p=0.0423；20 s抑制p=0.0012；恢复后比较p=0.8863；未给出恢复等效界或置信区间。</dd><dt>原文位置</dt><dd>PDF 12 · Figure 8B（图注第13页）</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>在模型内部，降张力后同步受抑制，并在恢复张力后重新出现。</dd><dt>适用边界</dt><dd>恢复的是χ读出，不能单独证明存储内容完全无损。</dd><dt>实际负结果</dt><dd>降张力引起同步性能下降；恢复后与原同步水平未检出显著差异。</dd><dt>不能推出</dt><dd>p=0.8863不证明精确完全恢复、零差异或生物治疗效果。</dd><dt>未解决</dt><dd>时间衰减与张力调制的独立贡献，以及恢复幅度的区间不明确。</dd></dl><h3>相关问题</h3><ul><li>降低并恢复模型张力会如何改变已训练关联的可诱发同步？</li></ul></article><article><small>C14 / 解释 · mechanistic_interpretation</small><h2>作者将关联同步在低张力下下降、在恢复张力后重新出现解释为：既有学习痕迹可能暂时难以访问而非被抹除；这是一种基于模型可逆同步现象的存储/访问解释，不是对记忆内容保持完整的直接证明。</h2><h3>Evidence</h3><p>对张力恢复后同步再出现的解释</p><dl><dt>设计 / 对照</dt><dd>1 s共同训练后的降张力/恢复协议；低张力阶段与恢复阶段</dd><dt>独立单位与 n</dt><dd>以网络模拟重复为统计单位；神经元、脉冲、时间窗和组装事件是运行内观测，不是独立生物样本。；图注报告n=4，本文结果为模拟重复；未报告随机种子、拓扑是否重采样或各条件重复是否配对。</dd><dt>不确定性</dt><dd>同C13：下降p=0.0423，20 s抑制p=0.0012，恢复比较p=0.8863；没有专门的痕迹保存检验。</dd><dt>原文位置</dt><dd>PDF 12 · Figure 8B</dd></dl><p>存储与访问的机制阐释</p><dl><dt>设计 / 对照</dt><dd>把恢复同步联系到学习形成的突触效能仍可支持再激活；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>讨论解释，非新样本。；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 15 · Discussion</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>可逆χ变化与“访问受限”解释相容。</dd><dt>适用边界</dt><dd>与解释相容不等于识别出唯一机制或证明痕迹未损失。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能由χ恢复推断所有权重和记忆内容原样保存，或推出失忆患者的机制。</dd><dt>未解决</dt><dd>需要独立的内容/权重保存读出及替代机制对照。</dd></dl><h3>相关问题</h3><ul><li>张力恢复后的同步回升是否支持访问受限而非记忆擦除的解释？</li></ul></article><article><small>C15 / 解释 · mechanistic_interpretation</small><h2>作者提出，在其模型内，高张力所设定的更大基线突触输入和更快囊泡恢复，可使相近的前突触脉冲更有效驱动后突触响应，从而解释训练组装中更快招募和更强区域同步；本文没有消融证明囊泡路径是这些效应的唯一原因，也没有在生物组织中识别这一因果链。</h2><h3>Evidence</h3><p>把预设囊泡动力学与任务结果联系的机制解释</p><dl><dt>设计 / 对照</dt><dd>τR及Jji随统一张力变化，结合STDP训练后的网络读出；较高、基线和较低张力的模拟条件</dd><dt>独立单位与 n</dt><dd>模型方程、示例轨迹及前述模拟重复；多个图不是独立生物验证。；相关图4/7/8统计各报告n=4模拟重复；图2示例未报告独立重复n。</dd><dt>不确定性</dt><dd>第13页不新增机制专属统计、介导分析、置信区间或独立样本。</dd><dt>原文位置</dt><dd>PDF 13 · Figures 2, 4, 7, 8（各自图注在第5、8、12、13页）</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>既定模型结构为观察到的任务读出提供一个可行机制解释。</dd><dt>适用边界</dt><dd>这是模型内部的解释与生物可检验假说，不是机制的独立实证识别。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能把预设的张力-囊泡关系和模拟输出当作因果闭环验证，不能宣称已排除兴奋性增益等替代路径。</dd><dt>未解决</dt><dd>各模型路径的必要性、充分性及真实组织中的适用性待消融和生物验证。</dd></dl><h3>相关问题</h3><ul><li>张力依赖的基线输入与囊泡恢复如何可能介导回忆速度和组装同步，两条路径能否被区分？</li></ul></article><article><small>C16 / 假说 / 预测 · biological_hypothesis</small><h2>基于这些模拟，作者提出待检验的生物外推：真实神经组织的机械张力可能作为neuromodulator调节组装间相互作用及既有记忆的可访问性，甚至为部分记忆障碍提供访问而非存储丧失的解释；本文未在动物、患者或疾病模型中检验该假说。</h2><h3>Evidence</h3><p>由计算结果提出生物外推假说</p><dl><dt>设计 / 对照</dt><dd>从张力调制的模式补全、投射、关联及可逆χ变化外推；没有本研究的动物/临床张力干预对照</dd><dt>独立单位与 n</dt><dd>讨论中的假说；无新增独立实验单位。；未报告 / 不适用</dd><dt>不确定性</dt><dd>未提供生物效应量、临床样本n、机制或治疗统计。</dd><dt>原文位置</dt><dd>PDF 14 · Discussion</dd></dl><p>生物记忆访问的可能解释</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>假说，非本论文实验结果。；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 15 · Discussion</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>给出了可由后续生物实验检验的记忆访问假说。</dd><dt>适用边界</dt><dd>明确是hypothesis，不是原始生物实验证据。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能声称张力已被证实控制人类记忆、导致阿尔茨海默病或具有治疗效果。</dd><dt>未解决</dt><dd>需直接张力操纵、囊泡/突触读出、记忆内容保持检验以及疾病相关验证。</dd></dl><h3>相关问题</h3><ul><li>真实神经组织中，改变机械张力能否在不擦除内容的前提下可逆调节已形成记忆的访问？</li></ul></article><details><summary>核对记录与来源信息</summary><pre>{
+  &quot;coverage&quot;: {
+    &quot;pdf_pages_read&quot;: [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17
+    ],
+    &quot;results_sections_seen&quot;: [
+      &quot;Training duration and tension enhance pattern completion（含5,000与20,000神经元网络比较）&quot;,
+      &quot;Inhibitory neurons are critical for memory encoding and recall&quot;,
+      &quot;Tension enhances projection between assemblies&quot;,
+      &quot;Tension and training duration modulate associative memory recall&quot;,
+      &quot;Materials and methods；Table 1；Figures 1–8图注&quot;,
+      &quot;Discussion；Supplementary Video S1/S2文字说明；References&quot;
+    ],
+    &quot;missing_material&quot;: [
+      &quot;未提供Figures 1–8的像素信息，仅评估正文和图注。&quot;,
+      &quot;Supplementary Video S1/S2只有第15页的文字说明，视频帧及另行提供的补充文件未读。&quot;,
+      &quot;未提供原始模拟轨迹、运行级数据、代码、随机种子或未展示的培养神经元数据。&quot;
+    ],
+    &quot;text_pass_complete&quot;: true,
+    &quot;notes&quot;: [
+      &quot;已按约18,000字符的7个无截断输出阅读全部17页；参考文献也已评估，没有从引用条目另行抽取本论文结果。&quot;,
+      &quot;来源为Frontiers in Computational Neuroscience正式发表的Original Research，发布日期2026-02-11，DOI 10.3389/fncom.2026.1737434；标题、作者Ki Yun Lee / M. Taher A. Saif、年份与索引一致，无版本替换。&quot;,
+      &quot;图1A是改编自Ahmed et al. (2012)的背景实验，n=8/8/10不是本研究的独立实验样本。&quot;,
+      &quot;第6页培养神经元观察明确为data not shown，仅作模型动机，不能用于生物验证。&quot;,
+      &quot;n=4按来源是模拟重复；未将5,000或20,000神经元、多个事件及多个图视作独立重复。&quot;,
+      &quot;第二轮审计使用本轮已保留的全部来源文本，逐条核对条件、比较基准、统计量、分析单位、图注及未研究的范围。&quot;,
+      &quot;未发现附录；第15页已提供的补充视频说明全文纳入文字覆盖，但不代表读取了视频。&quot;,
+      &quot;所有source_locator.quote为null，未复制英文句子；页码为PDF文件顺序1–17。&quot;,
+      &quot;IoU、normalized cross-correlation、百分比变化、真实记忆存储和生物机制分别处理，不建立跨论文关系。&quot;,
+      &quot;finalize来源匹配检查使用本轮保留的17页完整文本缓存（112,550字符），不重复读取原始源文件或打开PDF。&quot;
+    ],
+    &quot;reading_mode&quot;: &quot;text_only&quot;,
+    &quot;figure_images_read&quot;: false,
+    &quot;scientific_verification&quot;: false,
+    &quot;source_pdf_offline&quot;: false,
+    &quot;archived_page_text_used&quot;: false
+  },
+  &quot;audit&quot;: {
+    &quot;source_match_checks&quot;: [],
+    &quot;model_findings&quot;: [
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;来源身份核对：正式Original Research，标题、两位作者、2026年份及DOI一致；日期为2026-02-11。&quot;,
+        &quot;suggested_correction&quot;: &quot;已按实际发表版本提取，没有引用其他版本补写。&quot;,
+        &quot;pdf_page&quot;: 1,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;图1A的果蝇n=8/8/10及第6页data not shown的培养观察易被误记为本研究生物验证。&quot;,
+        &quot;suggested_correction&quot;: &quot;从新结果证据中排除；本研究证据标为模拟。&quot;,
+        &quot;pdf_page&quot;: 3,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;n=4为模拟重复；来源没有说明随机种子独立性、拓扑重采样或不同条件配对；多个神经元/事件不构成独立n。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留n=4及独立性未说明，需作者或人类检查运行级资料。&quot;,
+        &quot;pdf_page&quot;: 7,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C4&quot;,
+        &quot;issue&quot;: &quot;摘要称相对relaxed states记忆速度改善67%；正文报告相对ε0激活时间缩短20%和放松时延长31%，没有提供足以重建67%的原始数值。&quot;,
+        &quot;suggested_correction&quot;: &quot;正文结果使用明确基线；将摘要跨状态速度说法作为未澄清的比较口径，不强制等同。&quot;,
+        &quot;pdf_page&quot;: 1,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C10&quot;,
+        &quot;issue&quot;: &quot;摘要17%为高张力相对放松的同步说法，正文明确基线对比为+7%和−8%；不能混成+17%对基线。&quot;,
+        &quot;suggested_correction&quot;: &quot;已把正文基线比较用于C10，并保留摘要口径及未提供直接对比原值的限制。&quot;,
+        &quot;pdf_page&quot;: 12,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C8&quot;,
+        &quot;issue&quot;: &quot;正文从回忆/编码IoU=0.7900-fold推断约79%原图被回忆；IoU比值并非训练图覆盖率。&quot;,
+        &quot;suggested_correction&quot;: &quot;只保留IoU比值与21%差异，不输出79%原图面积结论。&quot;,
+        &quot;pdf_page&quot;: 11,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C8&quot;,
+        &quot;issue&quot;: &quot;p=0.0586未达显著性并不支持编码/回忆等效。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留点差异、非显著结果及缺少等效界/区间。&quot;,
+        &quot;pdf_page&quot;: 11,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C13&quot;,
+        &quot;issue&quot;: &quot;恢复后p=0.8863与“fully recovered”文字描述不能证明精确完全恢复或原存储痕迹不变。&quot;,
+        &quot;suggested_correction&quot;: &quot;结果层报告同步回升与非显著比较；存储/访问另标C14解释。&quot;,
+        &quot;pdf_page&quot;: 12,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C9&quot;,
+        &quot;issue&quot;: &quot;投射训练的40%在正文是B神经元比例，在图7A图注是相对刺激强度。&quot;,
+        &quot;suggested_correction&quot;: &quot;两种原始定义均保留，未擅自确定一种；需作者澄清协议。&quot;,
+        &quot;pdf_page&quot;: 11,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C1&quot;,
+        &quot;issue&quot;: &quot;第6页将wji初始0概括为没有有效突触传输，但第4页方程含独立非零J，Table 1的J=0.01 mV。&quot;,
+        &quot;suggested_correction&quot;: &quot;不声称总突触输入初始为零；初始化的实际实现需要代码/作者澄清。&quot;,
+        &quot;pdf_page&quot;: 6,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C3&quot;,
+        &quot;issue&quot;: &quot;未训练对照被描述为活动局限20%线索，却有训练区70%活动的有限激活时间，较0.5 s训练长81%。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留原报告而不编造阈值或传播解决方案，需原始轨迹和定义澄清。&quot;,
+        &quot;pdf_page&quot;: 9,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C1&quot;,
+        &quot;issue&quot;: &quot;rexternal正文称指数分布平均间隔，Table 1写13 Hz并称平均interval，量纲表述不一致。&quot;,
+        &quot;suggested_correction&quot;: &quot;没有从13 Hz自行替换为间隔秒数或修改模型参数；保留为方法歧义。&quot;,
+        &quot;pdf_page&quot;: 7,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C7&quot;,
+        &quot;issue&quot;: &quot;20%抑制是在固定任务/参数下的最佳所测回忆IoU；不同抑制比例还伴随γ相关驱动，不构成普适生理最优或独立张力×抑制因果识别。&quot;,
+        &quot;suggested_correction&quot;: &quot;收窄到所测模型条件和IoU读出，不把文中解剖背景当验证。&quot;,
+        &quot;pdf_page&quot;: 11,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C15&quot;,
+        &quot;issue&quot;: &quot;张力-囊泡/基线输入关系是预设函数，缺少分路径消融、拟合和生物验证。&quot;,
+        &quot;suggested_correction&quot;: &quot;机制记录降为interpretation，生物外推单独为hypothesis。&quot;,
+        &quot;pdf_page&quot;: 13,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;单神经元bursting未复现；长期巩固、视频像素、计算能效及临床干预未评估。&quot;,
+        &quot;suggested_correction&quot;: &quot;完整覆盖所供文本，但这些只作为边界/未检验方向，未编造负结果或补充材料结论。&quot;,
+        &quot;pdf_page&quot;: 14,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;第二轮审计已用保留来源逐项回查四个结果小节、全部图注、表1、讨论及17页覆盖；统一空引用、真实页码、分析单位与共享证据。&quot;,
+        &quot;suggested_correction&quot;: &quot;已修正统计比较范围、IoU语义及结果/解释/假说混淆；未解决的来源歧义留供人类。&quot;,
+        &quot;pdf_page&quot;: null,
+        &quot;resolved&quot;: true
+      }
+    ],
+    &quot;needs_human_review&quot;: true
+  },
+  &quot;source&quot;: {
+    &quot;filename&quot;: &quot;paper-W7128523886--Tension-shapes-memory-computational-insights-into-neural-plasticity.pdf&quot;,
+    &quot;sha256&quot;: &quot;04911b318dd1274cccc3d3aee20fd9cd6789f004fdcb9201c8da3b08c346d84b&quot;,
+    &quot;source_url&quot;: &quot;https://public-pages-files-2025.frontiersin.org/journals/computational-neuroscience/articles/10.3389/fncom.2026.1737434/pdf&quot;,
+    &quot;pdf_page_count&quot;: 17
+  },
+  &quot;provenance&quot;: {
+    &quot;created_at&quot;: &quot;2026-10-07T16:00:25.764589Z&quot;,
+    &quot;workflow&quot;: &quot;claim-commons-pdf-v1&quot;,
+    &quot;prompt_version&quot;: &quot;claim-commons-chatgpt-pdf-2026-10-07.1&quot;,
+    &quot;backend&quot;: &quot;authorized_parallel_GPT&quot;,
+    &quot;model&quot;: &quot;inherited_account_GPT&quot;,
+    &quot;provider_api_key_used&quot;: false,
+    &quot;source_sha256&quot;: &quot;04911b318dd1274cccc3d3aee20fd9cd6789f004fdcb9201c8da3b08c346d84b&quot;,
+    &quot;source_audit_complete&quot;: true,
+    &quot;review_status&quot;: &quot;candidate&quot;,
+    &quot;database_updated&quot;: false
+  }
+}</pre></details></main><footer></footer></body></html>

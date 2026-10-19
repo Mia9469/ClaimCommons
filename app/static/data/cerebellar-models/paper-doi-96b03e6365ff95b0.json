@@ -1,0 +1,462 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "Climbing fibers encode a temporal-difference prediction error during cerebellar learning in mice",
+    "authors": [
+      {
+        "name": "Shogo Ohmae",
+        "orcid": null
+      },
+      {
+        "name": "Javier F Medina",
+        "orcid": null
+      }
+    ],
+    "doi": "10.1038/nn.4167",
+    "publication_year": 2015,
+    "venue": "Nature Neuroscience",
+    "url": "https://doi.org/10.1038/nn.4167"
+  },
+  "source": {
+    "filename": "paper-doi-96b03e6365ff95b0.pdf",
+    "sha256": "886e59cbc5d4f686bd232be39c72047c64e8fd0955d73e7a46c71e4c858e8b0f",
+    "source_url": "https://hearingbrain.org/docs/Ohmae%26Medina_2015.pdf",
+    "pdf_page_count": 7
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "results_sections_seen": [
+      "Monitoring climbing fibers",
+      "US-related prediction errors",
+      "CS in trained mice",
+      "Novel stimuli"
+    ],
+    "missing_material": [
+      "Figure pixels",
+      "Supplementary figures 1 and 2, source data, checklist"
+    ],
+    "text_pass_complete": true,
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "在所研究的小鼠眼睑条件化微区，作者报告攀缘纤维相关复杂峰在意外气吹时升高，而在大条件性眼睑反应且预期气吹被省略时低于基线。",
+      "role": "result",
+      "source_pages": [
+        2
+      ],
+      "decision": "include",
+      "reason": "可独立判断的记录、控制结果或明确标记的模型解释。"
+    },
+    {
+      "summary": "对意外气吹具有相似响应的攀缘纤维，在训练后小鼠对预测性视觉/听觉线索的复杂峰响应比初始未训练小鼠更可靠；此比较没有追踪同一纤维跨天的学习过程。",
+      "role": "result",
+      "source_pages": [
+        3
+      ],
+      "decision": "include",
+      "reason": "可独立判断的记录、控制结果或明确标记的模型解释。"
+    },
+    {
+      "summary": "作者在所做的眼睑运动控制中未发现CS复杂峰潜伏期随220/370 ms刺激间隔或早/晚眼睑反应时序显著改变；CS复杂峰也出现在无条件眼睑反应的试次。",
+      "role": "result",
+      "source_pages": [
+        3
+      ],
+      "decision": "include",
+      "reason": "可独立判断的记录、控制结果或明确标记的模型解释。"
+    },
+    {
+      "summary": "在无气吹伴随的新奇线索暴露和差异条件化中，作者报告CS−相关复杂峰在初期会话较强，在重复暴露后的末期会话减弱。",
+      "role": "result",
+      "source_pages": [
+        4
+      ],
+      "decision": "include",
+      "reason": "可独立判断的记录、控制结果或明确标记的模型解释。"
+    },
+    {
+      "summary": "作者将US双向调制、训练后CS响应和新奇性响应共同解释为与扩展TD预测误差框架相容，但没有在本文直接证明这些CS/新奇信号驱动高阶学习。",
+      "role": "interpretation",
+      "source_pages": [
+        5
+      ],
+      "decision": "include",
+      "reason": "可独立判断的记录、控制结果或明确标记的模型解释。"
+    },
+    {
+      "summary": "基于既有解剖提出的橄榄核兴奋/抑制输入解释。",
+      "role": "interpretation",
+      "source_pages": [
+        3,
+        5
+      ],
+      "decision": "exclude",
+      "reason": "作为机制边界和背景保留，不写成本文已证实的新因果通路。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "在所研究的小鼠眼睑条件化微区，作者报告攀缘纤维相关复杂峰在意外气吹时升高，而在大条件性眼睑反应且预期气吹被省略时低于基线。",
+      "claim_type": "neural_recording",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "从单细胞复杂峰构建PSTH，比较US后120 ms窗口与基线。",
+          "design": "意外气吹、配对气吹和省略气吹；按有无条件反应分层。",
+          "comparator": null,
+          "measure": "作者报告的复杂峰概率或潜伏期",
+          "unit_of_analysis": "动物内的Purkinje细胞记录和重复试次；动物为上层独立单位。",
+          "sample_size_as_reported": "Fig. 2：34个有可靠意外US响应的细胞；方法共10只动物、151细胞，不能作为此子分析的独立n。",
+          "uncertainty": "保留作者报告的检验；未重算统计或独立验证数据。",
+          "assumptions": [
+            "复杂峰作为单根攀缘纤维输入的读出。"
+          ],
+          "source_locator": {
+            "pdf_page": 2,
+            "section": "Results",
+            "figure": "Fig. 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "GPT_source_text_assessment"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在特定反应条件下观察到双向US相关调制。",
+        "boundary": "头固定、可在跑步机上行走的雄性C57BL/6小鼠；指定眼睑微区。读的是文本和图注，不含图像像素或未提供补充文件。细胞/试次不是独立动物重复。 不是所有151细胞或所有气吹省略试次的结论；基线约1 Hz限制下降幅度。",
+        "negative_result": "大CR且气吹省略时，复杂峰概率下降而非增加。",
+        "non_inference": "不证明攀缘纤维在所有脑区编码奖励预测误差，也不证明完整强化学习算法。",
+        "unresolved": "分层动物水平效应与原始数据、补充材料尚未独立复核。",
+        "unresolved_attribution": "原文讨论与提取者的范围核对；不是新增实验。"
+      },
+      "broad_directions": [
+        "learning-memory",
+        "representation-coding",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "攀缘纤维的教学信号是否只报告运动误差？",
+        "预测误差样活动是否足以证明特定学习算法？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "本文US为厌恶性眼周气吹，不是食物或液体奖励。",
+        "组别和记录的n不同，不能相加当作动物数。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "对意外气吹具有相似响应的攀缘纤维，在训练后小鼠对预测性视觉/听觉线索的复杂峰响应比初始未训练小鼠更可靠；此比较没有追踪同一纤维跨天的学习过程。",
+      "claim_type": "neural_recording",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "比较CS后100 ms窗口的复杂峰响应和意外US响应，按基线归一化。",
+          "design": "已训练组与naive组的不同细胞记录；训练CS-US间隔主要为220 ms。",
+          "comparator": null,
+          "measure": "作者报告的复杂峰概率或潜伏期",
+          "unit_of_analysis": "动物内的Purkinje细胞记录和重复试次；动物为上层独立单位。",
+          "sample_size_as_reported": "Fig. 3a：51细胞、6只已训练小鼠；Fig. 3b：29细胞、2只naive小鼠；Fig. 3c使用34个训练组US响应细胞。",
+          "uncertainty": "保留作者报告的检验；未重算统计或独立验证数据。",
+          "assumptions": [
+            "复杂峰作为单根攀缘纤维输入的读出。"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "Results",
+            "figure": "Fig. 3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "GPT_source_text_assessment"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "跨组记录与学习后获得预测性CS响应相容。",
+        "boundary": "头固定、可在跑步机上行走的雄性C57BL/6小鼠；指定眼睑微区。读的是文本和图注，不含图像像素或未提供补充文件。细胞/试次不是独立动物重复。 是横向细胞比较；初期部分naive细胞也响应新奇CS。",
+        "negative_result": null,
+        "non_inference": "不能据此声称同一纤维的CS响应逐日单调增长。",
+        "unresolved": "作者明确称无法长期保持隔离来直接检验同一纤维的渐进变化。",
+        "unresolved_attribution": "原文讨论与提取者的范围核对；不是新增实验。"
+      },
+      "broad_directions": [
+        "learning-memory",
+        "representation-coding",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "攀缘纤维的教学信号是否只报告运动误差？",
+        "预测误差样活动是否足以证明特定学习算法？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "本文US为厌恶性眼周气吹，不是食物或液体奖励。",
+        "组别和记录的n不同，不能相加当作动物数。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "作者在所做的眼睑运动控制中未发现CS复杂峰潜伏期随220/370 ms刺激间隔或早/晚眼睑反应时序显著改变；CS复杂峰也出现在无条件眼睑反应的试次。",
+      "claim_type": "neural_recording",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "比较CS复杂峰及眼睑反应的潜伏期；分层有/无CR试次。",
+          "design": "主要220 ms间隔记录与一只370 ms间隔小鼠；早/晚CR比较。",
+          "comparator": null,
+          "measure": "作者报告的复杂峰概率或潜伏期",
+          "unit_of_analysis": "动物内的Purkinje细胞记录和重复试次；动物为上层独立单位。",
+          "sample_size_as_reported": "220 ms：31细胞；370 ms：8细胞来自一只小鼠。",
+          "uncertainty": "保留作者报告的检验；未重算统计或独立验证数据。",
+          "assumptions": [
+            "复杂峰作为单根攀缘纤维输入的读出。"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "Results",
+            "figure": "Fig. 4",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "GPT_source_text_assessment"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所测CS复杂峰不由眼睑闭合的时序简单解释。",
+        "boundary": "头固定、可在跑步机上行走的雄性C57BL/6小鼠；指定眼睑微区。读的是文本和图注，不含图像像素或未提供补充文件。细胞/试次不是独立动物重复。 潜伏期比较P=0.22和P=0.14是非显著检验，不是等效性证明；响应概率可随CR有小变化。",
+        "negative_result": "所述两项潜伏期检验未检出显著差异。",
+        "non_inference": "不等于所有运动来源被排除；原文保留非眼睑定向或惊跳运动的可能。",
+        "unresolved": "非眼睑运动贡献和跨动物稳健性仍需进一步检查。",
+        "unresolved_attribution": "原文讨论与提取者的范围核对；不是新增实验。"
+      },
+      "broad_directions": [
+        "learning-memory",
+        "representation-coding",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "攀缘纤维的教学信号是否只报告运动误差？",
+        "预测误差样活动是否足以证明特定学习算法？"
+      ],
+      "shared_evidence_with": [
+        "C2"
+      ],
+      "review_notes": [
+        "本文US为厌恶性眼周气吹，不是食物或液体奖励。",
+        "组别和记录的n不同，不能相加当作动物数。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "在无气吹伴随的新奇线索暴露和差异条件化中，作者报告CS−相关复杂峰在初期会话较强，在重复暴露后的末期会话减弱。",
+      "claim_type": "neural_recording",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "比较CS−与意外US响应比值及基线归一化复杂峰概率。",
+          "design": "习惯化与差异条件化，比较最初三次和最后三次会话。",
+          "comparator": null,
+          "measure": "作者报告的复杂峰概率或潜伏期",
+          "unit_of_analysis": "动物内的Purkinje细胞记录和重复试次；动物为上层独立单位。",
+          "sample_size_as_reported": "4只小鼠；两个会话阶段各18个细胞记录；每次会话是不同细胞。",
+          "uncertainty": "保留作者报告的检验；未重算统计或独立验证数据。",
+          "assumptions": [
+            "复杂峰作为单根攀缘纤维输入的读出。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "Results",
+            "figure": "Fig. 5",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "GPT_source_text_assessment"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "未配对线索的复杂峰响应与线索新奇性/熟悉化相关。",
+        "boundary": "头固定、可在跑步机上行走的雄性C57BL/6小鼠；指定眼睑微区。读的是文本和图注，不含图像像素或未提供补充文件。细胞/试次不是独立动物重复。 跨会话记录不能当作相同细胞纵向追踪；合并了视觉/听觉及两种协议。",
+        "negative_result": "最后三次会话相对基线的检验P=0.09，不能写成证明响应为零。",
+        "non_inference": "不证明新奇信号的因果教学作用或排除所有显著性解释。",
+        "unresolved": "原文引用的补图1、2未获得，无法独立核对额外控制。",
+        "unresolved_attribution": "原文讨论与提取者的范围核对；不是新增实验。"
+      },
+      "broad_directions": [
+        "learning-memory",
+        "representation-coding",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "攀缘纤维的教学信号是否只报告运动误差？",
+        "预测误差样活动是否足以证明特定学习算法？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "本文US为厌恶性眼周气吹，不是食物或液体奖励。",
+        "组别和记录的n不同，不能相加当作动物数。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "作者将US双向调制、训练后CS响应和新奇性响应共同解释为与扩展TD预测误差框架相容，但没有在本文直接证明这些CS/新奇信号驱动高阶学习。",
+      "claim_type": "model_consistency_interpretation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "将C1–C4记录特征与TD模型的定性预测对照。",
+          "design": "模型一致性解释；没有在这篇研究中实施对CS/新奇信号的因果操纵。",
+          "comparator": null,
+          "measure": "作者报告的复杂峰概率或潜伏期",
+          "unit_of_analysis": "动物内的Purkinje细胞记录和重复试次；动物为上层独立单位。",
+          "sample_size_as_reported": "与C1–C4共享记录；不新增独立证据。",
+          "uncertainty": "保留作者报告的检验；未重算统计或独立验证数据。",
+          "assumptions": [
+            "复杂峰作为单根攀缘纤维输入的读出。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "Discussion",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "GPT_source_text_assessment"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "给出比仅US比较器更广的教学信号候选解释。",
+        "boundary": "头固定、可在跑步机上行走的雄性C57BL/6小鼠；指定眼睑微区。读的是文本和图注，不含图像像素或未提供补充文件。细胞/试次不是独立动物重复。 扩展TD可容纳新奇性；不是逐参数拟合或算法识别。",
+        "negative_result": null,
+        "non_inference": "与TD相容不等于唯一确定TD算法，不等于与奖赏多巴胺信号全同。",
+        "unresolved": "刺激显著性替代解释、非眼睑运动来源及信号的因果教学功能未完全排除。",
+        "unresolved_attribution": "原文讨论与提取者的范围核对；不是新增实验。"
+      },
+      "broad_directions": [
+        "learning-memory",
+        "representation-coding",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "攀缘纤维的教学信号是否只报告运动误差？",
+        "预测误差样活动是否足以证明特定学习算法？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ],
+      "review_notes": [
+        "本文US为厌恶性眼周气吹，不是食物或液体奖励。",
+        "组别和记录的n不同，不能相加当作动物数。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "五条记录分别保留US预测误差、训练后CS响应、运动时序控制、新奇性响应和TD一致性解释。气吹是厌恶性US；跨细胞/组比较不是长期追踪同一纤维。没有把显著性、奖励学习、因果教学或完整RL算法当作已经确定的结论。",
+  "shared_evidence": [
+    {
+      "claim_id": "C3",
+      "with": [
+        "C2"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    }
+  ],
+  "relations": [],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": "C2",
+        "issue": "原文无法直接跨天追踪同一纤维；已收窄为跨组比较。",
+        "resolved": true,
+        "pdf_page": 4
+      },
+      {
+        "claim_id": "C5",
+        "issue": "模型相容性不能当作算法识别或因果教学证明。",
+        "resolved": true,
+        "pdf_page": 5
+      }
+    ],
+    "needs_human_review": true
+  },
+  "provenance": {
+    "created_at": "2026-10-07T08:00:33.323336+00:00",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "current_conversation_GPT",
+    "model": "current_Codex_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "886e59cbc5d4f686bd232be39c72047c64e8fd0955d73e7a46c71e4c858e8b0f",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

@@ -1,0 +1,117 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>NeoHebbian synapses to accelerate online training of neuromorphic hardware</title><style>body{max-width:940px;margin:40px auto;padding:0 24px;background:#fffdf7;color:#12372f;font:16px/1.8 Georgia,serif}h1{font-size:26px;line-height:1.4}h2{font-size:20px;line-height:1.5}h3{font-size:16px}article{padding:26px 0;border-top:1px solid #bec4b8}small{color:#68766e}dl{display:grid;grid-template-columns:120px 1fr;gap:8px 20px}dt{font-weight:bold}dd{margin:0}li{padding:8px 0}p,dd{overflow-wrap:anywhere}.note{background:#eef2e2;padding:14px;border-left:3px solid #738968}summary{cursor:pointer}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.7 monospace}@media(max-width:600px){body{margin:24px auto;padding:0 18px}dl{grid-template-columns:1fr;gap:3px}dd{margin-bottom:12px}}@media print{body{margin:0;background:white}details{display:block}}</style><link rel="stylesheet" href="../../commons-v02.css?v=20261020-1"><link rel="stylesheet" href="../../examples.css?v=20260928-2"><link rel="stylesheet" href="../../site.css?v=20261020-1"><script defer src="../../site.js?v=20261020-1"></script><script defer src="../../report-ui.js?v=20261020-1"></script></head><body class="portal-page report-page" data-cc-report-shell="1" data-page="library" data-site-prefix="../../" data-library-paper="paper-W7130315372" data-report-language="zh" data-claim-records="{&quot;C1&quot;:&quot;structured-paper-W7130315372-1&quot;,&quot;C2&quot;:&quot;structured-paper-W7130315372-2&quot;,&quot;C3&quot;:&quot;structured-paper-W7130315372-3&quot;,&quot;C4&quot;:&quot;structured-paper-W7130315372-4&quot;,&quot;C5&quot;:&quot;structured-paper-W7130315372-5&quot;,&quot;C6&quot;:&quot;structured-paper-W7130315372-6&quot;,&quot;C7&quot;:&quot;structured-paper-W7130315372-7&quot;,&quot;C8&quot;:&quot;structured-paper-W7130315372-8&quot;,&quot;C9&quot;:&quot;structured-paper-W7130315372-9&quot;,&quot;C10&quot;:&quot;structured-paper-W7130315372-10&quot;,&quot;C11&quot;:&quot;structured-paper-W7130315372-11&quot;,&quot;C12&quot;:&quot;structured-paper-W7130315372-12&quot;,&quot;C13&quot;:&quot;structured-paper-W7130315372-13&quot;}"><header></header><main id="report-content"><div id="report-tools"></div><small>CLAIM COMMONS / 阅读报告</small><h1>NeoHebbian synapses to accelerate online training of neuromorphic hardware</h1><p class="note">AI 文本提取候选，尚待人工核对。图像像素未读取；PDF 页码指文件中的页序。</p><p>热资格双状态设计有ReRAM温控电导实验支持，任务与集成热阵列性能来自模拟。记录20运行RL、循环非独立器件、200态/τ条件、实际负控制及单元能耗估计未含系统验证。</p><a href="https://www.nature.com/articles/s41598-026-35641-z.pdf?error=cookies_not_supported&amp;code=feba946b-917d-4d05-9f07-29f0ad442c7f" rel="noreferrer">查看所读原文版本 ↗</a><details><summary>贡献清单与处理决定</summary><ul><li><b>作者提出用非易失ReRAM电导编码权重、共址heater造成的局部温度编码资格迹的双状态突触。</b><br>include · 可独立判断的贡献及边界</li><li><b>实制250×250nm²氧化物ReRAM示例具有约2Vforming、约1Vswitching及0.1V读时约20的on/off比。</b><br>include · 可独立判断的贡献及边界</li><li><b>固定编程脉冲下，ReRAM相对电导变化依环境温度和初始G0变化：SET在低电导较大而RESET在高电导较大。</b><br>include · 可独立判断的贡献及边界</li><li><b>作者在triode近似及非线性电压缩放条件下，使heater功率近似正比于预突触状态和后突触代理信号的乘积；差分两单元处理正负更新。</b><br>include · 可独立判断的贡献及边界</li><li><b>30nm氧化层等假定几何的瞬态热模拟显示heater到ReRAM自热耦合；改缩间距和加厚电极可增加自耦合并减小邻居串热。</b><br>include · 可独立判断的贡献及边界</li><li><b>热自然衰减和邻居串热是资格实现的真实设计限制；当加热脉冲长于τTH，温度进入稳态而不能继续积累资格。</b><br>include · 可独立判断的贡献及边界</li><li><b>3/5/7/10边长gridworld中，适度温度衰减/资格折扣通常比γ=0或γ=1更快达到五次连续正奖励的学习基准。</b><br>include · 可独立判断的贡献及边界</li><li><b>固定50%器件变异的gridworld仿真中，导电热漂移系数与折扣影响成功比例；作者报告较大grid对该漂移系数的敏感度较小。</b><br>include · 可独立判断的贡献及边界</li><li><b>在TIMIT RSNN仿真中，热突触的浮点表现接近理想软件突触；有限精度需每ReRAM约200状态以使所报测试准确率下降小于3%。</b><br>include · 可独立判断的贡献及边界</li><li><b>TIMIT仿真随热时间常数增大而改善，并在τTH约1μs以上趋平台；更密的F/pitch串热带来约3%的性能损失。</b><br>include · 可独立判断的贡献及边界</li><li><b>所示TIMIT硬件感知训练对直到100%器件变异仅约1%准确率下降，增大网络也改善表现。</b><br>include · 可独立判断的贡献及边界</li><li><b>估算的单1T-1H-1M单元面积约450F²/1.9μm²，heater每10ns资格更新约4.5pJ，使所列单元总每步能量约5pJ。</b><br>include · 可独立判断的贡献及边界</li><li><b>作者提出用几何/材料调热时间常数并利用热变量加速本地资格学习，但温度不可直接读控、升温可靠性与长期集成仍是未解决问题。</b><br>include · 可独立判断的贡献及边界</li><li><b>e-prop预状态/伪梯度/全局学习信号与dataframe末批更新，不等于任意每步无缓冲准确梯度。</b><br>boundary · 具体资格公式及外围成本在缺失补充</li><li><b>背景芯片及热神经元文献不作为本文独立实现；已有IEDM48与本工作不能自动认定独立重复。</b><br>exclude · 71参考完整评估</li></ul></details><article><small>C1 / 解释 · thermal_eligibility</small><h2>作者提出用非易失ReRAM电导编码权重、共址heater造成的局部温度编码资格迹的双状态突触。</h2><h3>Evidence</h3><p>物理架构与三阶段学习设计</p><dl><dt>设计 / 对照</dt><dd>1T-1H-1M，推断/e-update时间复用，dataframe末更新；标准电域资格状态</dd><dt>独立单位与 n</dt><dd>器件设计；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 3 · Fig2</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>作者提出用非易失ReRAM电导编码权重、共址heater造成的局部温度编码资格迹的双状态突触。</dd><dt>适用边界</dt><dd>集成heater及阵列是设计/建模；实测仅环境升温模拟heater作用。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不是完整芯片或生物资格迹实验。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>物理热状态能在什么精度、时标与开销条件下实现资格学习？</li></ul></article><article><small>C2 / 直接结果 · thermal_eligibility</small><h2>实制250×250nm²氧化物ReRAM示例具有约2Vforming、约1Vswitching及0.1V读时约20的on/off比。</h2><h3>Evidence</h3><p>器件制造及I–V</p><dl><dt>设计 / 对照</dt><dd>ALD bilayer、1V/s扫描；高低电导态</dd><dt>独立单位与 n</dt><dd>器件测量/仿真；独立器件/批次数未报告</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 4 · Fig3a</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>实制250×250nm²氧化物ReRAM示例具有约2Vforming、约1Vswitching及0.1V读时约20的on/off比。</dd><dt>适用边界</dt><dd>代表性I–V不等于大阵列yield、200态精度或长期耐久。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>未测集成热资格阵列学习。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>物理热状态能在什么精度、时标与开销条件下实现资格学习？</li></ul></article><article><small>C3 / 直接结果 · thermal_eligibility</small><h2>固定编程脉冲下，ReRAM相对电导变化依环境温度和初始G0变化：SET在低电导较大而RESET在高电导较大。</h2><h3>Evidence</h3><p>重编到同G0后温控重复脉冲</p><dl><dt>设计 / 对照</dt><dd>SET .85V/280μs；RESET -1.05V/280μs；G0调准5%；不同温度与G0</dd><dt>独立单位与 n</dt><dd>器件测量/仿真；每温度×G0 SET10循环、RESET30循环；独立器件数不明</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 5 · Fig3b–f</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>固定编程脉冲下，ReRAM相对电导变化依环境温度和初始G0变化：SET在低电导较大而RESET在高电导较大。</dd><dt>适用边界</dt><dd>循环不是独立器件；温度增益和状态饱和不意味着全范围线性。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>外部温度实验不直接验证纳秒heater脉冲与瞬态资格积分。</dd><dt>未解决</dt><dd>缺少批间/器件间独立重复和完整不确定度。</dd></dl><h3>相关问题</h3><ul><li>物理热状态能在什么精度、时标与开销条件下实现资格学习？</li></ul></article><article><small>C4 / 解释 · thermal_eligibility</small><h2>作者在triode近似及非线性电压缩放条件下，使heater功率近似正比于预突触状态和后突触代理信号的乘积；差分两单元处理正负更新。</h2><h3>Evidence</h3><p>电路推导</p><dl><dt>设计 / 对照</dt><dd>VH1∝sqrtψ、VOV含sqrtf/(1−sqrtf)，差分G+−G−；所需资格乘积</dd><dt>独立单位与 n</dt><dd>电路模型；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 6 · Eq1–3/Fig4–5</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>作者在triode近似及非线性电压缩放条件下，使heater功率近似正比于预突触状态和后突触代理信号的乘积；差分两单元处理正负更新。</dd><dt>适用边界</dt><dd>需要正幅度和适当归一化，负ψ必须路由到另一heater；τ和脉冲长度影响积分。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>未实测全电路乘法精度或纯local系统误差信号成本。</dd><dt>未解决</dt><dd>f必须落可实缩放范围，global L信号/ψ符号、pre/post外围以及triode适用范围需完整实现。</dd></dl><h3>相关问题</h3><ul><li>物理热状态能在什么精度、时标与开销条件下实现资格学习？</li></ul></article><article><small>C5 / 直接结果 · thermal_eligibility</small><h2>30nm氧化层等假定几何的瞬态热模拟显示heater到ReRAM自热耦合；改缩间距和加厚电极可增加自耦合并减小邻居串热。</h2><h3>Evidence</h3><p>瞬态热方程数值</p><dl><dt>设计 / 对照</dt><dd>F60nm示例；3×3邻域，扫描pitch/feature size；原与修改堆叠</dd><dt>独立单位与 n</dt><dd>器件测量/仿真；模型几何扫描；独立物理样品n无</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 8 · Fig6</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>30nm氧化层等假定几何的瞬态热模拟显示heater到ReRAM自热耦合；改缩间距和加厚电极可增加自耦合并减小邻居串热。</dd><dt>适用边界</dt><dd>只基于热参数和几何假设，不是实制阵列热成像。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>模拟改良不构成制造可靠性验证。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>物理热状态能在什么精度、时标与开销条件下实现资格学习？</li></ul></article><article><small>C6 / 直接结果 · thermal_eligibility</small><h2>热自然衰减和邻居串热是资格实现的真实设计限制；当加热脉冲长于τTH，温度进入稳态而不能继续积累资格。</h2><h3>Evidence</h3><p>热模型机制分析</p><dl><dt>设计 / 对照</dt><dd>缺活动时衰减；脉宽与热时间常数关系；理想保持eΣ</dd><dt>独立单位与 n</dt><dd>模型约束；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 8 · Thermal limitations</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>热自然衰减和邻居串热是资格实现的真实设计限制；当加热脉冲长于τTH，温度进入稳态而不能继续积累资格。</dd><dt>适用边界</dt><dd>不同任务所需τ不同；传统eΣ保持与折扣迹不可混同。</dd><dt>实际负结果</dt><dd>热衰减破坏持续保持，串热产生错误e-update，长脉冲使积累饱和。</dd><dt>不能推出</dt><dd>不是无损精确资格储存。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>物理热状态能在什么精度、时标与开销条件下实现资格学习？</li></ul></article><article><small>C7 / 直接结果 · thermal_eligibility</small><h2>3/5/7/10边长gridworld中，适度温度衰减/资格折扣通常比γ=0或γ=1更快达到五次连续正奖励的学习基准。</h2><h3>Evidence</h3><p>硬件感知SNN仿真</p><dl><dt>设计 / 对照</dt><dd>4动作LIF、差分7bitReRAM；每episode重置；不同γ与器件变异</dd><dt>独立单位与 n</dt><dd>器件测量/仿真；每参数×grid20独立仿真运行</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 10 · Fig8</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>3/5/7/10边长gridworld中，适度温度衰减/资格折扣通常比γ=0或γ=1更快达到五次连续正奖励的学习基准。</dd><dt>适用边界</dt><dd>是虚拟鼠/奶酪任务，非动物导航；五次成功不等于最优路径或长期泛化。</dd><dt>实际负结果</dt><dd>快速衰减γ0与不衰减γ1均较慢，较大grid尤其不衰减不佳；器件变异增加所需轮数。</dd><dt>不能推出</dt><dd>未报告 / 不适用</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>物理热状态能在什么精度、时标与开销条件下实现资格学习？</li></ul></article><article><small>C8 / 直接结果 · thermal_eligibility</small><h2>固定50%器件变异的gridworld仿真中，导电热漂移系数与折扣影响成功比例；作者报告较大grid对该漂移系数的敏感度较小。</h2><h3>Evidence</h3><p>温度漂移扫描</p><dl><dt>设计 / 对照</dt><dd>W乘(1+α(T−Tamb))；7bit差分；不同α/γ</dd><dt>独立单位与 n</dt><dd>器件测量/仿真；每参数×grid20运行</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 10 · Fig9</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>固定50%器件变异的gridworld仿真中，导电热漂移系数与折扣影响成功比例；作者报告较大grid对该漂移系数的敏感度较小。</dd><dt>适用边界</dt><dd>success ratio被定义为成功次数除扫描最大成功次数，不是天然校准成功概率。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能说更大真实阵列温漂不重要。</dd><dt>未解决</dt><dd>冗余是作者解释而非独立消融机制。</dd></dl><h3>相关问题</h3><ul><li>物理热状态能在什么精度、时标与开销条件下实现资格学习？</li></ul></article><article><small>C9 / 直接结果 · thermal_eligibility</small><h2>在TIMIT RSNN仿真中，热突触的浮点表现接近理想软件突触；有限精度需每ReRAM约200状态以使所报测试准确率下降小于3%。</h2><h3>Evidence</h3><p>时序分类仿真</p><dl><dt>设计 / 对照</dt><dd>39输入、200隐藏LIF、61非脉冲readout；平均700步/sample；浮点理想突触及状态数</dd><dt>独立单位与 n</dt><dd>器件测量/仿真；TIMIT含630说话人；训练/测试拆分及独立种子n未明确</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 11 · Fig11b–c</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>在TIMIT RSNN仿真中，热突触的浮点表现接近理想软件突触；有限精度需每ReRAM约200状态以使所报测试准确率下降小于3%。</dd><dt>适用边界</dt><dd>630为语料总人数不是实验独立运行数；200状态是模拟要求，非本文实测器件200态。</dd><dt>实际负结果</dt><dd>较低状态精度有性能下降。</dd><dt>不能推出</dt><dd>语音计算不是生物/实体芯片验证。</dd><dt>未解决</dt><dd>正文training accuracy与图注test accuracy称谓不一；相对百分比/百分点下降口径未清。</dd></dl><h3>相关问题</h3><ul><li>物理热状态能在什么精度、时标与开销条件下实现资格学习？</li></ul></article><article><small>C10 / 直接结果 · thermal_eligibility</small><h2>TIMIT仿真随热时间常数增大而改善，并在τTH约1μs以上趋平台；更密的F/pitch串热带来约3%的性能损失。</h2><h3>Evidence</h3><p>衰减及串热扫描</p><dl><dt>设计 / 对照</dt><dd>热模型参数写入input/recurrent阵列；不同τ、F、K</dd><dt>独立单位与 n</dt><dd>器件测量/仿真；独立训练n未报告</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 12 · Fig11d–e</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>TIMIT仿真随热时间常数增大而改善，并在τTH约1μs以上趋平台；更密的F/pitch串热带来约3%的性能损失。</dd><dt>适用边界</dt><dd>实际10ms语音帧与加速硬件时钟不同；1μs是所设仿真资源条件。</dd><dt>实际负结果</dt><dd>短τTH损害任务，阵列加密的串热使准确率下降。</dd><dt>不能推出</dt><dd>不证明任意长期时序能被微秒热迹保存。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>物理热状态能在什么精度、时标与开销条件下实现资格学习？</li></ul></article><article><small>C11 / 直接结果 · thermal_eligibility</small><h2>所示TIMIT硬件感知训练对直到100%器件变异仅约1%准确率下降，增大网络也改善表现。</h2><h3>Evidence</h3><p>器件变异和网络规模仿真</p><dl><dt>设计 / 对照</dt><dd>变化模型见未提供SI5；不同变异及网络规模</dd><dt>独立单位与 n</dt><dd>器件测量/仿真；独立种子及变异分布在缺失SI</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 13 · Fig11f</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>所示TIMIT硬件感知训练对直到100%器件变异仅约1%准确率下降，增大网络也改善表现。</dd><dt>适用边界</dt><dd>特定变异分布与冗余架构的耐受，不能称所有device非理想都鲁棒。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>未证明真实制造yield、热疲劳或耐久性。</dd><dt>未解决</dt><dd>误差分布、重训和外围噪声范围未能审计。</dd></dl><h3>相关问题</h3><ul><li>物理热状态能在什么精度、时标与开销条件下实现资格学习？</li></ul></article><article><small>C12 / 直接结果 · thermal_eligibility</small><h2>估算的单1T-1H-1M单元面积约450F²/1.9μm²，heater每10ns资格更新约4.5pJ，使所列单元总每步能量约5pJ。</h2><h3>Evidence</h3><p>几何和电能解析估计</p><dl><dt>设计 / 对照</dt><dd>65nm晶体管、250nmReRAM、500Ωheater；10ns假设；异技术文献估值</dd><dt>独立单位与 n</dt><dd>估算物理单元；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 13 · Table1</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>估算的单1T-1H-1M单元面积约450F²/1.9μm²，heater每10ns资格更新约4.5pJ，使所列单元总每步能量约5pJ。</dd><dt>适用边界</dt><dd>估计不是实测整机；差分逻辑突触需两物理单元并有外围、ADC/信号缩放/时序成本。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不证明完整训练time-to-solution或energy-to-solution优于所有基线。</dd><dt>未解决</dt><dd>实验编程280μs与估算10ns/不同write假设的外推未实证；few fJ与Gw/电压/编程时长口径不完整。</dd></dl><h3>相关问题</h3><ul><li>物理热状态能在什么精度、时标与开销条件下实现资格学习？</li></ul></article><article><small>C13 / 假说 / 预测 · thermal_eligibility</small><h2>作者提出用几何/材料调热时间常数并利用热变量加速本地资格学习，但温度不可直接读控、升温可靠性与长期集成仍是未解决问题。</h2><h3>Evidence</h3><p>应用展望及限制</p><dl><dt>设计 / 对照</dt><dd>未来材料、热器件/大阵列；未做寿命/全面硬件benchmark</dd><dt>独立单位与 n</dt><dd>研究方向；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 14 · Discussion</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>作者提出的可检验假说。</dd><dt>适用边界</dt><dd>概念有器件温控支持，完整在线系统尚需集成与实测。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能称已达到人脑能效或生物精确资格学习。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>物理热状态能在什么精度、时标与开销条件下实现资格学习？</li></ul></article><details><summary>核对记录与来源信息</summary><pre>{
+  &quot;coverage&quot;: {
+    &quot;pdf_pages_read&quot;: [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16
+    ],
+    &quot;results_sections_seen&quot;: [
+      &quot;Eligibility learning&quot;,
+      &quot;Temperature-dependent ReRAM experiment&quot;,
+      &quot;1T1H1M/differential array&quot;,
+      &quot;Transient heat model&quot;,
+      &quot;RL grids&quot;,
+      &quot;TIMIT precision/thermal/variability&quot;,
+      &quot;Area-energy estimates&quot;,
+      &quot;Limitations&quot;
+    ],
+    &quot;missing_material&quot;: [
+      &quot;SupplementarySections1/4/5未供给&quot;,
+      &quot;图像像素未读取&quot;,
+      &quot;完整实制heater阵列/训练系统未展示&quot;
+    ],
+    &quot;text_pass_complete&quot;: true,
+    &quot;notes&quot;: &quot;全部16页、11图注、性能估值表与71参考评估；实测和模拟范围明确。&quot;,
+    &quot;reading_mode&quot;: &quot;text_only&quot;,
+    &quot;figure_images_read&quot;: false,
+    &quot;scientific_verification&quot;: false,
+    &quot;source_pdf_offline&quot;: false,
+    &quot;archived_page_text_used&quot;: false
+  },
+  &quot;audit&quot;: {
+    &quot;source_match_checks&quot;: [],
+    &quot;model_findings&quot;: [
+      {
+        &quot;claim_id&quot;: &quot;C1&quot;,
+        &quot;issue&quot;: &quot;摘要完整实验验证措辞需限定到外部温度ReRAM响应，未展示实制heater+阵列。&quot;,
+        &quot;pdf_page&quot;: 5,
+        &quot;suggested_correction&quot;: &quot;器件与模型分层&quot;,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C3&quot;,
+        &quot;issue&quot;: &quot;10/30为每状态温度循环，不是独立器件n。&quot;,
+        &quot;pdf_page&quot;: 5,
+        &quot;suggested_correction&quot;: &quot;不猜器件数&quot;,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C9&quot;,
+        &quot;issue&quot;: &quot;200可分态只是仿真要求，器件动态范围20不证明200态。&quot;,
+        &quot;pdf_page&quot;: 11,
+        &quot;suggested_correction&quot;: null,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C12&quot;,
+        &quot;issue&quot;: &quot;差分两单元、外围能耗及280μs到10ns加速外推未纳入验证。&quot;,
+        &quot;pdf_page&quot;: 13,
+        &quot;suggested_correction&quot;: null,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C9&quot;,
+        &quot;issue&quot;: &quot;训练/测试曲线称谓与SI条件未明。&quot;,
+        &quot;pdf_page&quot;: 12,
+        &quot;suggested_correction&quot;: null,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C4&quot;,
+        &quot;issue&quot;: &quot;原文ψ一处非负、一处含global L符号；幅度/符号分工必须保留。&quot;,
+        &quot;pdf_page&quot;: 7,
+        &quot;suggested_correction&quot;: null,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;Fig5b把weight-update写ϕW=0而正文ϕW=1，标注不一致。&quot;,
+        &quot;pdf_page&quot;: 7,
+        &quot;suggested_correction&quot;: null,
+        &quot;resolved&quot;: false
+      }
+    ],
+    &quot;needs_human_review&quot;: true
+  },
+  &quot;source&quot;: {
+    &quot;filename&quot;: &quot;paper-W7130315372--NeoHebbian-synapses-to-accelerate-online-training-of-neuromorphic-hardware.pdf&quot;,
+    &quot;sha256&quot;: &quot;172941cacbc18dc4ea8727dfc99c7ad8906ea75217a5c9028f408e712d84f063&quot;,
+    &quot;source_url&quot;: &quot;https://www.nature.com/articles/s41598-026-35641-z.pdf?error=cookies_not_supported&amp;code=feba946b-917d-4d05-9f07-29f0ad442c7f&quot;,
+    &quot;pdf_page_count&quot;: 16
+  },
+  &quot;provenance&quot;: {
+    &quot;created_at&quot;: &quot;2026-10-07T12:01:23.528186Z&quot;,
+    &quot;workflow&quot;: &quot;claim-commons-pdf-v1&quot;,
+    &quot;prompt_version&quot;: &quot;claim-commons-chatgpt-pdf-2026-10-07.1&quot;,
+    &quot;backend&quot;: &quot;authorized_parallel_GPT&quot;,
+    &quot;model&quot;: &quot;inherited_account_GPT&quot;,
+    &quot;provider_api_key_used&quot;: false,
+    &quot;source_sha256&quot;: &quot;172941cacbc18dc4ea8727dfc99c7ad8906ea75217a5c9028f408e712d84f063&quot;,
+    &quot;source_audit_complete&quot;: true,
+    &quot;review_status&quot;: &quot;candidate&quot;,
+    &quot;database_updated&quot;: false
+  }
+}</pre></details></main><footer></footer></body></html>

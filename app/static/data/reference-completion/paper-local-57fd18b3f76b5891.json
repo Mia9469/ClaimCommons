@@ -1,0 +1,1237 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "Artificial neural manifolds",
+    "authors": [
+      "Rui Wang",
+      "Guolei Liu",
+      "Saisai Wang",
+      "Tonglong Zeng",
+      "Xinru Yang",
+      "Jing Sun",
+      "Xiaohua Ma",
+      "Bowen Zhu",
+      "Min Qiu",
+      "Hong Wang",
+      "Yue Hao"
+    ],
+    "doi": "10.1038/s41467-026-75979-6",
+    "publication_year": 2026,
+    "venue": "Nature Communications",
+    "url": "https://doi.org/10.1038/s41467-026-75979-6"
+  },
+  "source": {
+    "filename": "s41467-026-75979-6.pdf",
+    "sha256": "4a45fafb00b0b1500f28cf7b8ef29828f86880a349bad6712eb2a838749d0e52",
+    "source_url": null,
+    "pdf_page_count": 10
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "results_sections_seen": [
+      "Spike firing characteristics of artificial neurons",
+      "Artificial neural manifold formation",
+      "Solving artificial neural manifolds",
+      "Predicting brain neural electrical signals",
+      "Discussion",
+      "Methods: Device fabrication and characterization; Epilepsy neural signal prediction; Firing rate error calculation; SSIM calculation; Compared with traditional methods",
+      "Figures 1–5 captions",
+      "References, author contributions, funding, additional information and license"
+    ],
+    "missing_material": [
+      "Supplementary Notes 1–12、Supplementary Figures 1–27及Supplementary Table 1未包含在所提供10页文本中",
+      "图像像素、外部代码/Zenodo数据和peer review file未提供"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "全部10页逐段读取，覆盖正文、图注、Methods、参考文献及最后许可页。",
+      "来源为Nature Communications (2026) 17:7776的Article，received 2025-09-17，accepted 2026-07-12；题名、DOI及11名作者与索引一致。",
+      "源文有ligature、上下标及数学符号转写损失，题名规范化为Artificial neural manifolds；负号乱码在公式描述中按明确上下文恢复，但不猜不明指数或统计。",
+      "硬件包括NbOx器件、spike conditioning、host computer和STM32 MCU；不能把软件求解与降维都描述为memristor上的纯模拟计算。",
+      "本篇有公开Bonn脑电来源信号的回放/映射预测演示；100硬件神经元及90输入维不等于100患者或90次独立实验。",
+      "第二次审计在保留的全部来源上下文中检查版本、所有数字的比较范围、负向观察、实际分析单位及缺失补充材料；所有引语均为null。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "NbOx器件threshold switching参数及振荡神经元bell-shaped调谐响应",
+      "role": "result",
+      "source_pages": [
+        2,
+        3,
+        7
+      ],
+      "decision": "include",
+      "reason": "将阈值表征和振荡/调谐条件分成可独立判断的记录；Mott机制归因不写成独立机制证明。"
+    },
+    {
+      "summary": "AC循环寿命、纳秒响应、环境稳定性、cycle/device/wafer均匀性",
+      "role": "result",
+      "source_pages": [
+        2,
+        3
+      ],
+      "decision": "defer",
+      "reason": "详细数据在未提供补充图1、4–8；循环指数转写为108，未强行猜为108或10^8，重复器件/晶圆n不明。"
+    },
+    {
+      "summary": "不同load调谐曲线的偏移与2D/3D表征几何",
+      "role": "result",
+      "source_pages": [
+        3,
+        4
+      ],
+      "decision": "include",
+      "reason": "保留2/8 kΩ及4/6/8 kΩ的实际比较；区分嵌入/显示维度与严格内在流形维度。"
+    },
+    {
+      "summary": "memory-modified STI共轭映射及软件/硬件预测流程",
+      "role": "result",
+      "source_pages": [
+        4,
+        5,
+        7,
+        8
+      ],
+      "decision": "include",
+      "reason": "完整保留A/B尺寸、AB=I、γ和历史窗口条件；不宣称新的Takens定理或自动满足全部嵌入前提。"
+    },
+    {
+      "summary": "10个硬件神经元经GPFA后用6个过去时点预测2个未来时点",
+      "role": "result",
+      "source_pages": [
+        5,
+        6
+      ],
+      "decision": "include",
+      "reason": "实际设备spike及轨迹预测演示；SSIM=0.737不与单维γ比较混用。"
+    },
+    {
+      "summary": "memory factor对实验spike、MNIST补全及带噪EEG预测的效果",
+      "role": "result",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "不同任务/评价范围分别成记录；同一结果的百分比摘要不算新实验。"
+    },
+    {
+      "summary": "MNIST数字1–4的缺失列预测和MCU部署结果",
+      "role": "result",
+      "source_pages": [
+        5,
+        6
+      ],
+      "decision": "include",
+      "reason": "四个SSIM、向左偏移及MCU γ=0.5结果均按正文保留，不推断分类准确率。"
+    },
+    {
+      "summary": "Bonn正常/interictal/ictal信号预测与normal→ictal过渡窗口",
+      "role": "result",
+      "source_pages": [
+        6,
+        7,
+        8
+      ],
+      "decision": "include",
+      "reason": "三状态连续读出与过渡示例分别记录；误差/SSIM不替代临床敏感性或预警提前量。"
+    },
+    {
+      "summary": "对器件偏差的稳健性及不同known/predicted长度的权衡",
+      "role": "result",
+      "source_pages": [
+        6
+      ],
+      "decision": "defer",
+      "reason": "只指向未提供Supplementary Figs. 24、25；缺偏差模型、长度、数值和重复。"
+    },
+    {
+      "summary": "几何流形作为计算载体的解释",
+      "role": "interpretation",
+      "source_pages": [
+        4,
+        6,
+        8
+      ],
+      "decision": "include",
+      "reason": "明确是作者对设备调谐及预测演示的解释，不是神经机制因果识别或证明完全不依赖器件动态。"
+    },
+    {
+      "summary": "相对LSTM/RC等方法的小样本和紧急事件普遍优势",
+      "role": "interpretation",
+      "source_pages": [
+        6,
+        7,
+        8
+      ],
+      "decision": "exclude",
+      "reason": "保留本篇4-frame实例，但没有同数据/预算下完整对照；不把引用文献比较当成本篇独立实验。"
+    },
+    {
+      "summary": "向地震、海啸、交通和台风预测扩展及扩大调谐形状/宽度/偏好的建议",
+      "role": "hypothesis",
+      "source_pages": [
+        6,
+        7
+      ],
+      "decision": "exclude",
+      "reason": "未提供这些场景或扩展调谐曲线的实验，是未来应用方向而非已完成的结果；与解释和原始实验明确分开。"
+    },
+    {
+      "summary": "硬件功耗分析和并行多流形预测",
+      "role": "result",
+      "source_pages": [
+        5,
+        8
+      ],
+      "decision": "defer",
+      "reason": "功耗分析在未提供Note 7，并行预测在未提供Fig. 27，没有数值或可完整评估的配置。"
+    },
+    {
+      "summary": "已有Takens/STI理论、SSIM公式、参考文献与数据代码信息",
+      "role": "other",
+      "source_pages": [
+        1,
+        2,
+        5,
+        8,
+        9,
+        10
+      ],
+      "decision": "exclude",
+      "reason": "按定义用于解释方法，但不重复作为本篇新定理或新独立科学发现；不访问引用资料。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "在1 µm×1 µm的NbOx threshold-switching器件中，所报告I–V曲线具有Vth=1.39 V、Vhold=1.12 V、HRS=33.2 kΩ和LRS=1.4 kΩ；这些volatile切换参数提供了构建重复充放电振荡神经元的器件基础。",
+      "claim_type": "threshold_switching_characterization",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "DC I–V电学表征，结合器件结构表征",
+          "design": "4-inch silicon wafer上制备NbOx薄膜器件，工作面积1×1 µm²；提供TEM/EDS描述及器件电学参数。",
+          "comparator": "同一器件I–V的HRS与LRS以及上/下切换阈值。",
+          "measure": "Vth、Vhold、HRS、LRS。",
+          "unit_of_analysis": "被表征的器件/I–V曲线，不是像素或重复时间点。",
+          "sample_size_as_reported": "独立器件数、晶圆数和重复曲线n未报告；4-inch是晶圆尺寸。",
+          "uncertainty": "所列值未给误差区间或器件分布。",
+          "assumptions": [
+            "Mott-transition是作者结合既有器件研究的归因，本文数值本身不是独立相变机制识别。"
+          ],
+          "source_locator": {
+            "pdf_page": 2,
+            "section": "Spike firing characteristics of artificial neurons; Methods PDF p.7",
+            "figure": "Fig. 2c; caption PDF p.3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "报告了适用于volatile振荡电路的threshold-switching器件响应。",
+        "boundary": "限于所报告器件曲线及条件；未给总体器件良率。",
+        "negative_result": null,
+        "non_inference": "不能将该I–V参数证明为生物神经机制或直接证明Mott相变过程。",
+        "unresolved": "器件分布、独立重复及相变的直接表征。",
+        "unresolved_attribution": "耐久、快速响应和批次变异仅引用未提供补充材料。"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "NbOx volatile阈值切换能否提供振荡神经元所需的器件状态？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C3"
+      ],
+      "review_notes": [
+        "没有将转写为108的循环寿命指数强行补成数字。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "在NbOx器件与串联Rload、寄生电容构成的振荡电路中，Vin=2.10 V时将Rload从2增至9 kΩ，spike数先增加后减少；Rload=2 kΩ时Vin约1.6–2.3 V的spike数呈近Gaussian bell-shaped调谐、峰位约1.9 V，过高Vin或超出保持区域的load条件会使spiking消失。",
+      "claim_type": "bell_shaped_spiking_response",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "电压脉冲刺激及振荡spike测量",
+          "design": "分别固定Vin改变Rload，以及固定Rload改变Vin；正文2e测量列1.65–2.25 V，2f统计范围列1.6–2.3 V。",
+          "comparator": "不同串联电阻或输入电压下的同类振荡电路。",
+          "measure": "spike emission/count及bell-shaped tuning curve。",
+          "unit_of_analysis": "电路在刺激/电阻条件下的spike响应。",
+          "sample_size_as_reported": "Rload范围2–9 kΩ、Vin范围及峰位均为扫描条件；独立器件/试次n未报告。",
+          "uncertainty": "没有响应分布的误差条数值或Gaussian拟合误差。",
+          "assumptions": [
+            "持续振荡需要LRS<Rload<HRS及能跨越Vth并回到Vhold的工作条件。",
+            "作者以load-line/充放电解释调谐形状，但未直接证明生物选择性机制。"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "Spike firing characteristics of artificial neurons",
+            "figure": "Fig. 2d–f",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "电路参数可产生具有选择性窗口的bell-shaped spike响应。",
+        "boundary": "仅限报告的电压、电阻与该电路；不是所有条件都振荡。",
+        "negative_result": "正文报告load超出保持区域时spiking消失；过高Vin使器件难以回HRS而减少/阻止spike。",
+        "non_inference": "近Gaussian响应不证明生物神经元、突触学习或认知选择性的机制被复制。",
+        "unresolved": "时间计数窗、响应统计与器件重复。",
+        "unresolved_attribution": "环境/批次稳定性细节在未提供Supplementary Notes 2、3。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "输入和load参数如何控制人工振荡神经元的bell-shaped选择性？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C3"
+      ],
+      "review_notes": [
+        "区分2e刺激范围与2f计数范围，不合并成单一未经说明的扫描。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "将共同Vin刺激下不同Rload的人工神经元调谐响应联合表示时，2与8 kΩ响应的较大偏移形成椭圆状2D响应轨迹，4、6与8 kΩ的联合响应形成3D表征几何；正文另报告8与9 kΩ偏移较小、联合响应更窄。",
+      "claim_type": "population_response_geometry",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "共同输入下调谐曲线及联合响应空间表征",
+          "design": "Vin从0至5 V扫描，不同Rload神经元表达不同响应窗口；展示两/三响应联合轨迹。",
+          "comparator": "2/8 kΩ、4/6/8 kΩ组合；8/9 kΩ较小偏移仅正文报告。",
+          "measure": "调谐曲线偏移与响应几何形状。",
+          "unit_of_analysis": "两个或三个通道的联合刺激响应轨迹；不是独立神经群体重复。",
+          "sample_size_as_reported": "2D用2个响应、3D用3个响应；独立设备/群体重复数未报告。",
+          "uncertainty": "几何形状定性；未给严格内在维数、拓扑检验或误差。",
+          "assumptions": [
+            "同一刺激驱动不同调谐曲线，使联合响应受限。",
+            "2D/3D描述显示/嵌入坐标数，不自动等于内在流形维数。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "Artificial neural manifold formation; preceding PDF p.3",
+            "figure": "Fig. 3c–f; Supplementary Fig. 9 referenced, not supplied",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "异质调谐响应提供可控的群体表征几何。",
+        "boundary": "人工电路共同刺激形成的轨迹；较窄8/9 kΩ结果仅见正文概述。",
+        "negative_result": null,
+        "non_inference": "不证明连接网络自发形成脑内流形、编码认知任务或满足全部Takens嵌入条件。",
+        "unresolved": "内在维度、非共同驱动条件及装置间几何变异。",
+        "unresolved_attribution": "其他维数、低变异和补充轨迹仅引用未提供Notes 3、4及Figs. 9–16。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "异质bell-shaped调谐曲线如何决定人工群体响应几何？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C5",
+        "C13"
+      ],
+      "review_notes": [
+        "调谐偏移不误写成跨神经元连接的因果相位同步机制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "作者在STI预测框架中将历史memory factor引入非线性特征F(Xt+γXt−τ)，用A映射到目标延迟向量Y、用B映回特征空间，并要求A为L×D̃、B为D̃×L及AB=I；在所述历史长度m≥2L或m≥2L−1等条件下，通过求解共轭映射做短历史预测，演示通常取γ=0.5。",
+      "claim_type": "memory_modified_sti_method",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "STI共轭映射构造及混合硬件/软件求解流程",
+          "design": "神经元调谐特征编码；host computer收集spike并与MCU交互执行manifold calculation；A/B由观察数据确定。",
+          "comparator": "γ=0的traditional STI为无memory版本。",
+          "measure": "由已知目标延迟项推算未来项；A/B映射关系及预测输出。",
+          "unit_of_analysis": "方法/模型映射，不是独立实验样本。",
+          "sample_size_as_reported": "源文给通用m与L条件及γ=0.5；延迟τ的具体取值未在提供正文明确。",
+          "uncertainty": "没有在所提供正文给新的定理证明、泛化界或所有解的唯一性保证。",
+          "assumptions": [
+            "A/B维数匹配且AB=I。",
+            "源文列m≥2L或m≥2L−1的条件，不能无条件互换。",
+            "所依赖delay embedding理论的系统、观测及嵌入适用前提需成立；正文未逐项实证这些前提。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "Solving artificial neural manifolds; Methods PDF p.8",
+            "figure": "Fig. 4a,f",
+            "equation": "(1), (2)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提出memory-modified STI并给出有限历史的预测计算方法。",
+        "boundary": "混合设备特征/数字处理实现；并非提出或证明新的无条件Takens定理。",
+        "negative_result": null,
+        "non_inference": "bell-shaped曲线或降维显示本身不保证任意系统满足嵌入条件、AB可精确满足或未来可预测。",
+        "unresolved": "τ、映射估计/正则化、秩条件和具体嵌入假设的满足程度。",
+        "unresolved_attribution": "详细理论、求解和算法在未提供Supplementary Notes 6、8、9及Figs. 17、18。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "加入历史memory factor的STI共轭映射如何用于短窗口预测？"
+      ],
+      "shared_evidence_with": [
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12",
+        "C13"
+      ],
+      "review_notes": [
+        "Xt−τ表示t−τ时刻向量的简写；源文公式下标/减号转写有损，未补造具体τ。",
+        "保留全部共同维数/长度限制，不拆成无条件预测保证。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "在包含10个人工神经元的NbOx硬件spike演示中，GPFA将活动表示为3个潜在维度的2000×3时间序列；用连续6个历史时点预测随后2个时点并滚动推进，所展示三维轨迹预测的SSIM为0.737。",
+      "claim_type": "hardware_population_trajectory_prediction",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "硬件spike采集、信号调理、GPFA及STI滚动预测",
+          "design": "10个神经元输出进入调理电路；host/STM32参与计算，3维轨迹用6→2窗口预测，随后窗口向前移。",
+          "comparator": "实际采集/原始轨迹与预测轨迹。",
+          "measure": "三维轨迹可视化及SSIM=0.737。",
+          "unit_of_analysis": "同一人工群体的时间序列及预测窗口；10设备和2000时点都不是独立实验重复。",
+          "sample_size_as_reported": "10硬件神经元，2000×3活动矩阵，6个历史时点预测2个未来时点；独立运行n未报告。",
+          "uncertainty": "SSIM为报告示例，无跨运行区间。",
+          "assumptions": [
+            "GPFA的3潜在维度为分析表示，不是独立证明自然网络内在维数。",
+            "未知未来项由STI求解，矩阵每行均值为最后预测值。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "Solving artificial neural manifolds",
+            "figure": "Fig. 4c–f; caption PDF p.5",
+            "equation": "(1)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "设备生成的群体活动可经混合流程完成所示短期轨迹预测。",
+        "boundary": "此人工群体/时间序列示例，预测窗口短且缺独立重复。",
+        "negative_result": null,
+        "non_inference": "不能由GPFA投影证明脑内动力学机制或把全部预测计算归为纯模拟NbOx计算。",
+        "unresolved": "输入构造、独立设备/运行复现和未见动态上的外推。",
+        "unresolved_attribution": "具体电路实现及功耗分析位于未提供Supplementary Notes 5、7。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "人工神经元群体轨迹能否凭6个历史时点预测接下来2个时点？"
+      ],
+      "shared_evidence_with": [
+        "C3",
+        "C4",
+        "C6",
+        "C13"
+      ],
+      "review_notes": [
+        "0.737是三维展示范围，不与下面单维γ比较的0.746混为同一统计。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "在实验NbOx spiking信号的单维预测比较中，γ=0、0.5、0.8的SSIM分别为0.746、0.824、0.770，表明所试设置中γ=0.5较无memory版本改善该读出，而memory并非越大越好。",
+      "claim_type": "memory_factor_spike_prediction",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "对同一实验spike数据改变STI memory factor",
+          "design": "三维实验信号仅展示一维以区分γ效果。",
+          "comparator": "γ=0 traditional STI及γ=0.8，与γ=0.5比较。",
+          "measure": "单维预测SSIM：0.746、0.824、0.770；正文将0.5相对0的改善概括为约10.5%。",
+          "unit_of_analysis": "一个被展示的信号维度/γ设置，不是三次独立采集。",
+          "sample_size_as_reported": "3个γ条件；独立信号记录/运行n未报告。",
+          "uncertainty": "无区间；约10.5%是同组结果的摘要而非独立重复。",
+          "assumptions": [
+            "不同γ比较采用所述实验信号；该SSIM不等同整体三维SSIM=0.737。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "Solving artificial neural manifolds",
+            "figure": "Supplementary Fig. 19 referenced, not supplied",
+            "equation": "(1)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "正文报告γ=0.5改善此单维spike预测。",
+        "boundary": "仅三个候选memory值及展示维度，不是全局最优搜索。",
+        "negative_result": null,
+        "non_inference": "不证明γ=0.5对任意系统最优，也不解释生物工作记忆机制。",
+        "unresolved": "其他维度、数据、γ网格及重复不确定性。",
+        "unresolved_attribution": "补充图19未提供，数值按正文明确报告保留。"
+      },
+      "broad_directions": [
+        "learning-memory",
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "历史memory权重如何改变人工spike信号的STI预测精度？"
+      ],
+      "shared_evidence_with": [
+        "C4",
+        "C5"
+      ],
+      "review_notes": [
+        "不同设置的大小顺序不等于显著性；避免重复计数约10.5%摘要。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "在所展示MNIST数字1、2、3、4的缺失列预测中，以前4列为起始信息并滚动使用后续列，预测图像的SSIM分别为0.868、0.740、0.681、0.901；正文同时报告预测输出向左偏移，因此这是图像补全演示而非无误重建或分类准确率验证。",
+      "claim_type": "incomplete_image_prediction",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "将图像列作为顺序数据的STI预测",
+          "design": "用1–4列起始，再移动到2–5列等窗口继续补全；正文对后续5/6列的英文表述有单列序号/列数歧义。",
+          "comparator": "原始MNIST图像与预测图像。",
+          "measure": "四个数字示例的SSIM及输出左移现象。",
+          "unit_of_analysis": "被展示的数字图像/列序列，不是大样本分类任务。",
+          "sample_size_as_reported": "展示数字1–4；总测试图像数、每类图像数及独立运行n未报告。",
+          "uncertainty": "只有示例SSIM，无全数据分布。",
+          "assumptions": [
+            "保留滚动窗口流程，不按有歧义的next 5 columns表述扩展成已证明一次预测5个新列。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "Solving artificial neural manifolds",
+            "figure": "Fig. 4g–i; caption PDF p.5",
+            "equation": "(1)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "少量起始列可用于所示图像的后续列补全。",
+        "boundary": "四个展示数字和未给完整测试分布；存在空间偏移。",
+        "negative_result": "正文明确报告预测图像向左偏移。",
+        "non_inference": "SSIM不是识别准确率，不证明分类、任意缺失位置或无偏完整重建。",
+        "unresolved": "全数据集误差、缺失模式、对照与空间偏移的消除。",
+        "unresolved_attribution": "详细映射/算法位于未提供Supplementary Notes 7、10。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "STI人工流形能否凭少量已知图像列补全后续图像内容？"
+      ],
+      "shared_evidence_with": [
+        "C4",
+        "C8",
+        "C9"
+      ],
+      "review_notes": [
+        "0.681是Fig. 4数字3示例，不与单独γ扫描的0.664/0.829强行视为同一运行。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "在MNIST数字3的memory factor比较中，γ=0、0.5、0.8对应SSIM=0.664、0.829、0.613；γ=0.5较无memory版本改善约24.9%，而γ=0.8的预测图像缺少边缘信息且SSIM低于无memory版本。",
+      "claim_type": "memory_factor_image_prediction",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "同类图像补全流程的γ参数比较",
+          "design": "数字3的γ=0、0.5、0.8预测演示。",
+          "comparator": "γ=0 traditional STI和γ=0.8，与γ=0.5。",
+          "measure": "SSIM及缺失边缘信息；约24.9%为同一数值比较的正文摘要。",
+          "unit_of_analysis": "数字3图像示例/参数条件。",
+          "sample_size_as_reported": "1种被展示数字和3个γ；图像总数及独立重复n未报告。",
+          "uncertainty": "无误差条或跨图像区间。",
+          "assumptions": [
+            "相对SSIM改善不是24.9个百分点的分类准确率提升。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "Solving artificial neural manifolds",
+            "figure": "Supplementary Fig. 20 referenced, not supplied",
+            "equation": "(1)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "适中的memory权重改善所示数字3补全。",
+        "boundary": "仅此γ比较；效果非单调。",
+        "negative_result": "γ=0.8图像缺少边缘且SSIM=0.613低于γ=0的0.664。",
+        "non_inference": "不推断所有图像、全局最优γ或生物记忆容量与该参数的对应。",
+        "unresolved": "图像间变异、偏移与边缘损失的来源。",
+        "unresolved_attribution": "图20未提供，边缘损失为正文实际描述，非像素观察。"
+      },
+      "broad_directions": [
+        "learning-memory",
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "memory factor过大是否会损害图像补全的结构保真度？"
+      ],
+      "shared_evidence_with": [
+        "C4",
+        "C7",
+        "C9"
+      ],
+      "review_notes": [
+        "保留真实负向条件，不把记忆因子一律写为有益。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "正文在MNIST图像预测段报告将γ=0.5的预测流程部署到MCU后获得SSIM=0.786，说明其数字处理部分已有MCU演示，但该数值不能直接与其他图像/γ例子的SSIM视为同一测试条件。",
+      "claim_type": "mcu_prediction_deployment",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "MCU执行预测流程的正文报告",
+          "design": "装置含NbOx array、spike conditioning及STM32 MCU；补充图21a描述MCU γ=0.5预测。",
+          "comparator": "原始/目标输入与MCU预测输出；未提供软件/MCU同条件成对比较。",
+          "measure": "SSIM=0.786。",
+          "unit_of_analysis": "所报告MCU预测示例/系统配置。",
+          "sample_size_as_reported": "独立MCU运行、图像数量和计时/功耗重复n未报告。",
+          "uncertainty": "未明确同其他图像结果的逐例配对，也没有误差区间。",
+          "assumptions": [
+            "按其所在MNIST段定位为图像预测流程，不进一步猜具体数字编号。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "Solving artificial neural manifolds; hardware architecture caption PDF p.5",
+            "figure": "Supplementary Fig. 21a referenced, not supplied; Fig. 4a",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "正文报告memory-modified预测流程的MCU运行例。",
+        "boundary": "只有报告的示例SSIM；不是纯NbOx模拟端到端求解。",
+        "negative_result": null,
+        "non_inference": "不能从0.786推断MCU造成精度下降、系统能效、实时吞吐量或与0.829的严格比较。",
+        "unresolved": "具体输入、部署精度、重复性和功耗/时延。",
+        "unresolved_attribution": "Supplementary Fig. 21a及实现/功耗细节未提供。"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "memory-modified STI预测是否已有MCU部署演示？"
+      ],
+      "shared_evidence_with": [
+        "C4",
+        "C7",
+        "C8"
+      ],
+      "review_notes": [
+        "硬件可部署与能效经验证明是不同命题。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "将Bonn epilepsy数据映射为人工神经元输入并以90维数据对应100个硬件neuron device、4个历史frame预测下一frame时，正常、interictal、ictal信号的SSIM分别为0.894、0.997、0.981；正文报告对应firing-rate预测误差为正常态小于1.5 kHz、interictal 167.6 Hz、ictal 522.7 Hz。",
+      "claim_type": "eeg_derived_signal_forecasting",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "公开脑电来源数据的硬件输入映射及STI预测",
+          "design": "Bonn数据的正常、interictal和ictal状态映射到电压/人工spike；Methods给90维及100设备，历史4帧预测1帧，γ=0.5。",
+          "comparator": "各状态的原始/真实firing-rate轨迹与预测轨迹。",
+          "measure": "SSIM及firing-rate预测误差；Methods定义Euclidean norm和相对误差。",
+          "unit_of_analysis": "脑电来源时间序列映射后的人工响应/预测窗；输入维数和硬件设备数不是患者n。",
+          "sample_size_as_reported": "90维、100设备、4→1 frame；患者数、独立记录/事件数、窗口独立性及运行重复n均未在提供文本报告。",
+          "uncertainty": "无置信区间，误差未被称为RMSE；不将总体范数误差改成逐点平均误差。",
+          "assumptions": [
+            "Hz统计来自人工神经元firing-rate预测，不是临床发作风险读出。",
+            "SSIM与连续信号误差不等于敏感性、特异性或预警准确率。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "Predicting brain neural electrical signals; Methods PDF pp.7–8",
+            "figure": "Fig. 5a–f,h; caption PDF p.7",
+            "equation": "(2), (3), (4)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所示三状态输入可获得较高连续轨迹相似度和报告误差。",
+        "boundary": "公开数据来源的映射演示，患者/记录/发作单位与数据划分未说明。",
+        "negative_result": "所报告三状态中正常态SSIM较低；未将其写成统计显著差异。",
+        "non_inference": "不证明患者前瞻性预警、跨受试者泛化、临床效益或脑内机制识别；100设备不等于100患者。",
+        "unresolved": "数据划分、事件独立性、预测尺度、泛化与临床统计。",
+        "unresolved_attribution": "完整流程和更多硬件曲线在未提供Supplementary Notes 10、11及Fig. 21b–d。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "短历史STI能否预测脑电来源输入在人工神经元中的连续响应？"
+      ],
+      "shared_evidence_with": [
+        "C4",
+        "C11",
+        "C12"
+      ],
+      "review_notes": [
+        "状态标签来自来源，不把interictal自动等同临床preictal。",
+        "正常态较低SSIM的细微波动归因是作者解释，未作机制结论。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "正文Fig. 5g展示normal→ictal过渡的预测轨迹并标示pre-seizure prediction window，作者据此解释为捕捉提前变化的示例；提供文本没有给出独立发作事件数、预警提前时间或假警报/漏报统计。",
+      "claim_type": "displayed_transition_prediction",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "脑电来源输入过渡轨迹的STI预测展示",
+          "design": "三状态任务之外展示正常到ictal的过渡；与4-history-frame流程关联。",
+          "comparator": "真实normal→ictal变化与预测轨迹。",
+          "measure": "图文描述的过渡一致性及标示的pre-seizure窗口。",
+          "unit_of_analysis": "被展示的过渡轨迹/窗口，不是患者级前瞻性事件预测试验。",
+          "sample_size_as_reported": "独立发作事件数、患者数及过渡次数均未报告。",
+          "uncertainty": "未报告预测lead time、sensitivity、specificity或false alarm rate。",
+          "assumptions": [
+            "只按正文/图注解释显示的窗口，不从未提供像素读时间轴。",
+            "不能从interictal轨迹SSIM推出临床preictal预警。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "Predicting brain neural electrical signals",
+            "figure": "Fig. 5g; caption PDF p.7",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提供normal→ictal过渡的预测展示及提前窗口描述。",
+        "boundary": "未定义或量化临床预警判据、提前量和事件抽样。",
+        "negative_result": null,
+        "non_inference": "不是临床癫痫发作预测准确率/普遍早期诊断证明，也不证明跨受试者泛化。",
+        "unresolved": "连续长记录、独立事件、提前量、误警及前瞻性评估。",
+        "unresolved_attribution": "标题/Discussion对seizure prediction的较强措辞超出可由提供统计单独支撑的临床范围。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "所示normal→ictal过渡中，短历史预测是否提供可量化的提前窗口？"
+      ],
+      "shared_evidence_with": [
+        "C4",
+        "C10"
+      ],
+      "review_notes": [
+        "主张是展示的轨迹结果；临床含义单独限制，不凭未知假设扩大。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "正文在EEG来源信号预测的memory-modified STI比较中报告：无噪声时相对traditional STI的prediction accuracy改善约29.1%，5% noise条件下改善约91.2%，并称noise robustness改善约78.6%；这些百分比的具体指标定义和噪声模型没有随正文完整提供。",
+      "claim_type": "reported_memory_noise_comparison",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "memory-modified与traditional STI的噪声条件比较，依据正文报告",
+          "design": "加入memory factor，对无噪声及5% noise条件比较；正文此前将normal epileptic nerve signals的改善概括为29.1%。",
+          "comparator": "γ=0的traditional STI。",
+          "measure": "作者所称prediction accuracy相对改善29.1%/91.2%及noise robustness改善78.6%。",
+          "unit_of_analysis": "相同预测流程的参数/噪声条件，非独立临床事件。",
+          "sample_size_as_reported": "5% noise为条件，不是噪声试次n；独立样本/噪声重复数未报告。",
+          "uncertainty": "百分比的分母、accuracy/robustness定义、噪声分布及误差条未明确提供。",
+          "assumptions": [
+            "按正文语境记录EEG来源比较，不将accuracy直接等同分类正确率或患者预警率。",
+            "29.1%正常信号摘要与无噪声比较可能共享结果，不另计为独立复制。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "Predicting brain neural electrical signals",
+            "figure": "Supplementary Figs. 22, 23 referenced, not supplied",
+            "equation": "(1), (2)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者报告memory因子在所试噪声条件改善预测及noise robustness。",
+        "boundary": "缺完整指标/噪声定义，数值只作为有条件的正文报告。",
+        "negative_result": null,
+        "non_inference": "不解释为91.2%的临床正确率、所有噪声普遍稳健或相同量级的独立生物验证。",
+        "unresolved": "指标计算、任务配对、噪声抽样和独立重复。",
+        "unresolved_attribution": "关键定义与结果细节在未提供Supplementary Notes 10、11及Figs. 22、23。"
+      },
+      "broad_directions": [
+        "learning-memory",
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "引入memory factor在明确噪声模型下如何改变STI预测误差？"
+      ],
+      "shared_evidence_with": [
+        "C4",
+        "C10"
+      ],
+      "review_notes": [
+        "不根据百分比反算未报告的绝对SSIM、误差或生物效应。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C13",
+      "statement": "作者将异质调谐曲线限制群体响应、并允许通过STI预测的结果解释为：人工neural manifold几何可成为计算载体，而不只是响应的描述；这些演示本身并未独立隔离几何、共同输入、器件瞬态和数字求解各自的因果贡献。",
+      "claim_type": "computational_manifold_interpretation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "基于调谐几何与轨迹预测演示的概念综合",
+          "design": "联合解读不同Rload响应几何、10-neuron GPFA表示及STI预测流程。",
+          "comparator": "概念上描述性流形与用作预测表示的流形；并无独立RC/瞬态消融实验在正文完整提供。",
+          "measure": "人工响应几何及已报告预测读出，而非新的独立数据。",
+          "unit_of_analysis": "共享原始器件/群体/预测证据的解释。",
+          "sample_size_as_reported": "复用C3–C5的证据；无新增独立n。",
+          "uncertainty": "未通过控制geometry而固定其他因素的实验识别机制。",
+          "assumptions": [
+            "几何约束和STI求解共同参与预测。",
+            "原文称计算独立于device transient dynamics，所提供演示没有相应因果消融。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Compared with traditional methods; conceptual discussion PDF pp.4,6",
+            "figure": "Figs. 3, 4; Supplementary Table 1 referenced, not supplied",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提出把人工群体表征几何视为可计算预测表示的解释。",
+        "boundary": "解释依据设备调谐与混合计算演示，不是独立机制测定。",
+        "negative_result": null,
+        "non_inference": "不证明几何独立承担全部计算、瞬态无关、避免所有过拟合或真实大脑以相同算法运作。",
+        "unresolved": "geometry/瞬态/共同输入/数字处理的可分离贡献及同条件RC比较。",
+        "unresolved_attribution": "与RC和并行流形的更多比较在未提供Note 12、Table 1及Figs. 26、27。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "人工群体几何在混合STI预测中承担什么可独立检验的计算贡献？"
+      ],
+      "shared_evidence_with": [
+        "C3",
+        "C4",
+        "C5"
+      ],
+      "review_notes": [
+        "明确role=interpretation，不增加独立实验计数或跨论文支持关系；未来紧急事件应用另列hypothesis而不伪装成实证。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "本10页定稿Article以NbOx volatile threshold switching与负载/输入可调振荡，构造异质bell-shaped响应和人工群体表征几何；其预测计算是器件spike、GPFA/非线性特征、STI共轭映射及host/STM32组成的混合流程。13条候选覆盖阈值参数、调谐窗口与spike消失、联合几何、memory-modified STI设计、10-neuron三维短历史预测、memory参数对spike/图像/带噪信号的不同效果、MNIST补全与MCU部署，以及Bonn脑电来源输入的三状态/过渡预测。图像左移、γ=0.8边缘损失及正常态较低SSIM是保留的实际限制；100硬件神经元、90维和frame数均不是患者/独立事件n，SSIM及firing-rate误差不是临床预测准确率。几何作为计算载体仅列解释，地震/海啸/交通/台风扩展仅为未验证未来方向。未提供补充资料中的耐久指数、环境/批次稳定性、功耗、器件偏差、预测长度权衡及RC对照不猜测。图像列数措辞和noise improvement指标定义仍待人工澄清。全部页与图注已文本评估并在保留上下文中二次审计，来源身份匹配，未看像素、未读外部补充，候选仍需human review。",
+  "shared_evidence": [
+    {
+      "claim_id": "C1",
+      "with": [
+        "C2",
+        "C3"
+      ]
+    },
+    {
+      "claim_id": "C2",
+      "with": [
+        "C1",
+        "C3"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C1",
+        "C2",
+        "C5",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C3",
+        "C4",
+        "C6",
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C4",
+        "C5"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C4",
+        "C8",
+        "C9"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C4",
+        "C7",
+        "C9"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C4",
+        "C7",
+        "C8"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "with": [
+        "C4",
+        "C11",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "with": [
+        "C4",
+        "C10"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "with": [
+        "C4",
+        "C10"
+      ]
+    },
+    {
+      "claim_id": "C13",
+      "with": [
+        "C3",
+        "C4",
+        "C5"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": null,
+        "issue": "题名包含ﬁ ligature，数学下标、负号和循环指数的文本转写有损。",
+        "suggested_correction": "题名按明确字符规范化；公式按上下文描述历史t−τ，不猜108的指数含义或未提供像素。",
+        "pdf_page": 2,
+        "resolved": true
+      },
+      {
+        "claim_id": "C4",
+        "issue": "正文把low-dimensional约束直接联系到delay embedding满足，但未在所提供正文逐项给出定理前提或新证明。",
+        "suggested_correction": "完整保留A/B尺寸、AB=I和历史长度限制；将嵌入前提的成立列为边界，不称无条件定理。",
+        "pdf_page": 5,
+        "resolved": true
+      },
+      {
+        "claim_id": "C5",
+        "issue": "2000×3、10人工神经元和3D显示容易被当作独立n或内在维数证明。",
+        "suggested_correction": "标明时间序列/设备/投影维数单位，独立运行n留未报告。",
+        "pdf_page": 6,
+        "resolved": true
+      },
+      {
+        "claim_id": "C6",
+        "issue": "整体三维SSIM=0.737与γ扫描单维0.746/0.824/0.770属于不同读出范围。",
+        "suggested_correction": "分记录并保留范围；不强行当作来源矛盾或合并重复统计。",
+        "pdf_page": 6,
+        "resolved": true
+      },
+      {
+        "claim_id": "C7",
+        "issue": "图像窗口正文写next 5 columns/next 6 columns，但随后以2–5列移窗，可能是列序号与列数措辞歧义。",
+        "suggested_correction": "保留4列起始及滚动流程，不声称一次预测5个新列；具体输出宽度待人工检查补充材料。",
+        "pdf_page": 6,
+        "resolved": false
+      },
+      {
+        "claim_id": "C8",
+        "issue": "γ=0.8的digit 3 SSIM低于γ=0且缺边缘；不能把memory作用概括为单调有益。",
+        "suggested_correction": "保留该实际负向观察，且不混用Fig. 4数字3的0.681与此γ扫描。",
+        "pdf_page": 6,
+        "resolved": true
+      },
+      {
+        "claim_id": "C9",
+        "issue": "MCU SSIM=0.786未明确说明与γ扫描0.829严格同输入配对。",
+        "suggested_correction": "只保留部署演示，不归因于硬件造成退化，不猜具体数字编号。",
+        "pdf_page": 6,
+        "resolved": true
+      },
+      {
+        "claim_id": "C10",
+        "issue": "90维输入、100硬件neuron device和4历史frame不是患者数或独立发作事件数；误差定义也不是RMSE。",
+        "suggested_correction": "按照Methods区分设备、维数、时间窗及Euclidean误差，临床n留未报告。",
+        "pdf_page": 7,
+        "resolved": true
+      },
+      {
+        "claim_id": "C11",
+        "issue": "seizure prediction、pre-seizure窗口和跨受试者能力的文字强于所提供事件级临床统计。",
+        "suggested_correction": "限定为展示的normal→ictal预测轨迹；不将interictal等同preictal，不填预警提前量或临床accuracy。",
+        "pdf_page": 6,
+        "resolved": true
+      },
+      {
+        "claim_id": "C12",
+        "issue": "29.1%、91.2%、78.6%的accuracy/robustness定义及5%噪声模型未在正文完整提供。",
+        "suggested_correction": "保留作者报告且标记定义未核对，待提供Supplementary Figs. 22、23后人工审查。",
+        "pdf_page": 6,
+        "resolved": false
+      },
+      {
+        "claim_id": "C13",
+        "issue": "几何计算独立于瞬态和避免过拟合的较强解释没有可读的独立因果消融。",
+        "suggested_correction": "解释与结果分开，不写成机制识别、临床泛化或跨论文复制。",
+        "pdf_page": 8,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "第二次保留上下文来源审计检查了全部数字、图注、独立单位、真实负向观察与未来假设，排除未提供补充数据及外部支持。",
+        "suggested_correction": "13条候选只用本篇真实PDF页、null引语和同源共享证据；全部human_checked:false。",
+        "pdf_page": null,
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T13:51:49.013556Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "4a45fafb00b0b1500f28cf7b8ef29828f86880a349bad6712eb2a838749d0e52",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

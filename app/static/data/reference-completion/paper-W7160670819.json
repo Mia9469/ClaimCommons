@@ -1,0 +1,1918 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "original_research",
+  "paper": {
+    "title": "Counterfactual Identifiability Beyond Global Monotonicity: Non-Monotone Triangular Structural Causal Models",
+    "authors": [
+      "Pengcheng Tan",
+      "Jiang Chen",
+      "Dehui Du"
+    ],
+    "doi": null,
+    "publication_year": 2026,
+    "venue": "arXiv (Cornell University)",
+    "url": "https://arxiv.org/pdf/2605.04413"
+  },
+  "source": {
+    "filename": "paper-W7160670819--Counterfactual-identifiability-beyond-global-monotonicity-non-monotone-triangular-structural-ca.pdf",
+    "sha256": "a62a52591abedf23c80fb9b0cd095fc7b1a30ff6f8c8f62c7c0e97bb7c8f3903",
+    "source_url": "https://arxiv.org/pdf/2605.04413",
+    "pdf_page_count": 27
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27
+    ],
+    "results_sections_seen": [
+      "Definitions 1–3 and Theorems 1–2",
+      "Synthetic experiments 1.1 and 1.2",
+      "MuJoCo Push and Door experiments",
+      "Appendix A: complete proofs",
+      "Balanced counterfactual pool and implementation details",
+      "Detailed statistical, replication and ablation tables",
+      "Figures 1–13 and accompanying interpretations",
+      "Reproducibility statement and limitations"
+    ],
+    "missing_material": [
+      "图像像素未阅读；文字图注和图后的解释均已评估。",
+      "供应文本以外的代码、原始实验产物、额外补充文件和真实机器人数据未读取，不能以复现声明替代核验。"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "全部 27 个供应 PDF 顺序页的文字按有界连续块读取一次，最后一块补完第 26 页及第 27 页；无摘要代替全文或采样页覆盖。",
+      "逐项第二轮审计使用首次完整阅读留存的定义、证明、方法、表格、图注和限制，不把同一论文重新叙述当作独立支持。",
+      "初次封装的空页码错误已修复：利用归档页中的明确定理、表标题及对应数值索引恢复实际一基 PDF 顺序页码；精确条目定位与空引文均保留，没有补猜页码。",
+      "来源明确标识 arXiv:2605.04413v1，2026-05-06；不推断已同行评审或已有期刊版本。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "共享次序、机制切片双射、跨模型逆传输与外生同构的定义和条件性证明。",
+      "role": "result",
+      "source_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        13,
+        14,
+        15,
+        16
+      ],
+      "decision": "include",
+      "reason": "保留联合假设；双射不单独等价于反事实可识别。"
+    },
+    {
+      "summary": "符号翻转反例和隐藏分支的例子，以及分支分段不自动识别外生相位的解释。",
+      "role": "result",
+      "source_pages": [
+        3,
+        4,
+        5,
+        13,
+        14,
+        15,
+        16
+      ],
+      "decision": "include",
+      "reason": "显式记录零点符号约定和条件化事件的未决问题。"
+    },
+    {
+      "summary": "CausalInverter 的可逆有向门架构、似然/循环/传输损失与状态型物理实现。",
+      "role": "interpretation",
+      "source_pages": [
+        5,
+        6,
+        17,
+        18,
+        19
+      ],
+      "decision": "include",
+      "reason": "理论启发的近似学习与实际结构回归不同于已经满足外生同构的证明对象。"
+    },
+    {
+      "summary": "108 个离散合成配置、160 个连续桥接运行、合成模块消融及报告统计。",
+      "role": "result",
+      "source_pages": [
+        6,
+        7,
+        20,
+        21,
+        22,
+        23,
+        26,
+        27
+      ],
+      "decision": "include",
+      "reason": "保留配置和种子层级；不将每条模拟样本当独立结构复现。"
+    },
+    {
+      "summary": "平衡反事实查询选择、Push 与 Door 的单次、三种子、噪声、配对统计、消融和解释代理结果。",
+      "role": "result",
+      "source_pages": [
+        7,
+        8,
+        9,
+        10,
+        16,
+        17,
+        18,
+        19,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26
+      ],
+      "decision": "include",
+      "reason": "纳入 Push 边界/实际负向发现、Door 取舍及事件准确率与成功率的区别。"
+    },
+    {
+      "summary": "参考文献、模型族对照、所有图注和图后的解释、复现声明与范围限制。",
+      "role": "interpretation",
+      "source_pages": [
+        10,
+        11,
+        12,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ],
+      "decision": "include",
+      "reason": "引用文献不产生本论文新增独立实验；图示来自已报告数据；未运行代码或检验复现。"
+    },
+    {
+      "summary": "NM-TM 的比较模型族范围、符号函数零点、连续零概率条件化及物理检验的检验尾数问题。",
+      "role": "interpretation",
+      "source_pages": [
+        3,
+        4,
+        13,
+        14,
+        15,
+        16,
+        22,
+        23,
+        24
+      ],
+      "decision": "defer",
+      "reason": "保留在审计中，不把缺失定义或统计设定补写成已证结论。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "在共享固定因果次序的递归三角 SCM 中，如果每个固定父上下文下的外生变量到该变量的机制切片都是双射，则由这些机制组成的整体生成映射也是双射，可按因果次序逐项反解。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "按变量次序的归纳证明。",
+          "design": "递归三角机制的代数构造。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "一个满足联合假设的 SCM。",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "固定共享因果次序。",
+            "每个父上下文下的机制切片均为双射。"
+          ],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "Lemma 1; Appendix A.1",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在共享固定因果次序的递归三角 SCM 中，如果每个固定父上下文下的外生变量到该变量的机制切片都是双射，则由这些机制组成的整体生成映射也是双射，可按因果次序逐项反解。",
+        "boundary": "这里只建立整体逆映射，不单凭此证明观测数据唯一确定反事实。",
+        "negative_result": null,
+        "non_inference": "不能外推到有强循环、不可逆压缩或多对一机制的系统。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "在怎样明确限定的可接受模型族中，观测等价能识别干预后所需的潜变量对齐？",
+        "如何检验近似学习的对齐条件，而不是只用几何误差或代理指标替代？",
+        "当模型不可逆、存在隐状态或因果次序未知时，哪些反事实仍可识别？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "对于共享因果次序、具有双射机制切片且观测分布相同的两个三角 SCM，作者证明跨模型的机制逆传输不依赖父上下文，当且仅当二者存在坐标逐项的外生同构。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "逆传输构造及分布推前证明。",
+          "design": "一对观测等价的递归三角模型。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "模型对，而非仅一个拟合模型。",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "两模型共享固定因果次序。",
+            "两模型在所有相关父上下文下的机制切片都是双射。",
+            "观测分布相同。",
+            "逆传输是跨模型比较，并须不依赖父上下文。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "Theorem 1; Definition 1; Definition 3; Appendix A.2",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "对于共享因果次序、具有双射机制切片且观测分布相同的两个三角 SCM，作者证明跨模型的机制逆传输不依赖父上下文，当且仅当二者存在坐标逐项的外生同构。",
+        "boundary": "这是条件性模型对结论；定义 3 中允许比较的观测等价模型族须明确。",
+        "negative_result": null,
+        "non_inference": "不能由单模型循环一致性或一次良好预测直接认定上述跨模型条件已经满足。",
+        "unresolved": "定义 3 对全部同次序观测等价模型的量词，与所称包含全局单调模型的类关系是否一致，来源未充分澄清。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "在怎样明确限定的可接受模型族中，观测等价能识别干预后所需的潜变量对齐？",
+        "如何检验近似学习的对齐条件，而不是只用几何误差或代理指标替代？",
+        "当模型不可逆、存在隐状态或因果次序未知时，哪些反事实仍可识别？"
+      ],
+      "shared_evidence_with": [
+        "C1"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "在外生同构及相应外生世界对应关系成立时，作者证明干预后的生成结果相应一致；在条件化有定义且后验按该同构变换的条件下，反事实分布也一致。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "逐变量干预递归及后验推前证明。",
+          "design": "同构模型在相同干预和相应事实条件下比较。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "对应的外生状态、干预和事实条件事件。",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "外生同构保持全部相关父上下文的机制关系及外生分布。",
+            "事实条件化有定义，后验可按同构变换。",
+            "干预与递归求解在模型中有定义。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "Theorem 2; Appendix A.3",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在外生同构及相应外生世界对应关系成立时，作者证明干预后的生成结果相应一致；在条件化有定义且后验按该同构变换的条件下，反事实分布也一致。",
+        "boundary": "保证依赖完整模型假设，不是任意世界模型都可由观测分布识别。",
+        "negative_result": null,
+        "non_inference": "不能宣称不可能事实事件或任何不可逆系统的反事实同样可识别。",
+        "unresolved": "证明将 E=e 写作集合条件化；对连续变量的零概率精确事件，正规条件分布、支持范围或几乎处处限定未明确。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "在怎样明确限定的可接受模型族中，观测等价能识别干预后所需的潜变量对齐？",
+        "如何检验近似学习的对齐条件，而不是只用几何误差或代理指标替代？",
+        "当模型不可逆、存在隐状态或因果次序未知时，哪些反事实仍可识别？"
+      ],
+      "shared_evidence_with": [
+        "C2"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "作者的高斯符号翻转构造显示，局部可逆和相同观测分布仍可给出不同反事实：在非零上下文，Y=sgn(X)U 与 Y=U 的观测联合分布一致，但从 X=1、Y=y 推断后执行 X=-1，两模型分别给出 -y 与 y。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "对称高斯分布的显式反例。",
+          "design": "独立标准高斯外生量的两个递归模型。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "模型对及同一个事实/干预条件。",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "高斯外生量独立且关于零对称。",
+            "反例比较的上下文 X=1 和 X=-1 均非零。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "Proposition 1; Appendix A.4",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者的高斯符号翻转构造显示，局部可逆和相同观测分布仍可给出不同反事实：在非零上下文，Y=sgn(X)U 与 Y=U 的观测联合分布一致，但从 X=1、Y=y 推断后执行 X=-1，两模型分别给出 -y 与 y。",
+        "boundary": "反例证明局部可逆本身不足；全上下文双射的表述存在零点约定问题。",
+        "negative_result": null,
+        "non_inference": "不擅自修改原文零点机制来使全部假设自动成立。",
+        "unresolved": "原文未定义 sgn(0)；若采用常见 sgn(0)=0，则 X=0 的机制切片不是双射，需要零点约定或几乎处处限定。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "在怎样明确限定的可接受模型族中，观测等价能识别干预后所需的潜变量对齐？",
+        "如何检验近似学习的对齐条件，而不是只用几何误差或代理指标替代？",
+        "当模型不可逆、存在隐状态或因果次序未知时，哪些反事实仍可识别？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "隐藏相位例子说明，按可见上下文划分分支不自动恢复干预时应保持的外生相位：分支由 U_s 与随 X 变化的阈值共同决定，改变 X 后同一个 U_s 可能落入不同分支。",
+      "claim_type": "interpretation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "作者给出的隐藏分支结构例子。",
+          "design": "S=1[U_s≤σ(X)]、Y=(2S−1)U_y 的机制。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "同一外生相位对应的事实和干预世界。",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "沿反事实世界保持外生 U_s，而不是固定观测到的分支标签。"
+          ],
+          "source_locator": {
+            "pdf_page": 16,
+            "section": "Hidden-phase example; Appendix A.5–A.6",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "隐藏相位例子说明，按可见上下文划分分支不自动恢复干预时应保持的外生相位：分支由 U_s 与随 X 变化的阈值共同决定，改变 X 后同一个 U_s 可能落入不同分支。",
+        "boundary": "例子揭示识别困难；不因此证明该观测系统属于全部满足 NM-TM 条件的模型。",
+        "negative_result": null,
+        "non_inference": "看到分支标签、拟合分段回归或单次事实输出不能据此认定隐藏相位已被唯一识别。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "在怎样明确限定的可接受模型族中，观测等价能识别干预后所需的潜变量对齐？",
+        "如何检验近似学习的对齐条件，而不是只用几何误差或代理指标替代？",
+        "当模型不可逆、存在隐状态或因果次序未知时，哪些反事实仍可识别？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "作者提出以可逆单调切片、上下文方向门及似然、循环和传输正则构造 CausalInverter，但明确将其视为理论启发的近似实现，而非对跨模型外生同构条件的已验证求解器。",
+      "claim_type": "interpretation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "模型架构和训练目标分析。",
+          "design": "门控制切片方向，训练时加入逆映射/循环和跨上下文传输代理损失。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "学习器及训练目标。",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "严格切片双射要求方向门不为零且切片本身可逆。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "CausalInverter architecture and objectives; Limitations",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者提出以可逆单调切片、上下文方向门及似然、循环和传输正则构造 CausalInverter，但明确将其视为理论启发的近似实现，而非对跨模型外生同构条件的已验证求解器。",
+        "boundary": "传输损失使用同一学习模型跨上下文的导数范数代理，理论条件比较的是不同观测等价模型的完整逆传输。",
+        "negative_result": null,
+        "non_inference": "不能由代理正则变小推出定理假设成立或潜变量含义被真实识别。",
+        "unresolved": "恒定导数范数是否能识别所需变换、门松弛是否保持严格可逆、训练误差怎样控制识别误差均未证明。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "在怎样明确限定的可接受模型族中，观测等价能识别干预后所需的潜变量对齐？",
+        "如何检验近似学习的对齐条件，而不是只用几何误差或代理指标替代？",
+        "当模型不可逆、存在隐状态或因果次序未知时，哪些反事实仍可识别？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C3"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "离散合成实验在 108 个配置中报告：阈值翻转和光滑翻转两族各 36 个配置的平均反事实 MSE，CausalInverter 分别为 0.1611 和 0.0961，低于 TM-SCM 的 0.7286 和 0.5929，也低于 BSCM 的 0.7297 和 0.5941。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "同配置模型比较；作者报告配对 Wilcoxon 统计。",
+          "design": "3 个机制族×4 个噪声族×3 个维度×3 个训练规模。",
+          "comparator": null,
+          "measure": "反事实均方误差；4 个翻转族比较的作者报告 p 均为 1.46×10^-11。",
+          "unit_of_analysis": "配对的合成机制配置。",
+          "sample_size_as_reported": "总计 108 配置；每机制族 36；维度 3/5/10；训练规模 2000/10000/50000。",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "Experiment 1.1; Tables 1 and 5",
+            "figure": "Table 1; Table 5",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "离散合成实验在 108 个配置中报告：阈值翻转和光滑翻转两族各 36 个配置的平均反事实 MSE，CausalInverter 分别为 0.1611 和 0.0961，低于 TM-SCM 的 0.7286 和 0.5929，也低于 BSCM 的 0.7297 和 0.5941。",
+        "boundary": "配置包含多个噪声、维度及样本规模；不是每个配置另有 5 个独立重复。",
+        "negative_result": "全局单调族的 TM-SCM 已为 0.0017，作者方法表中舍入为 0.0000，不能据舍入值宣称精确零误差。",
+        "non_inference": "合成数据优势不是生物、真实机器人或一般世界模型的因果验证。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "在怎样明确限定的可接受模型族中，观测等价能识别干预后所需的潜变量对齐？",
+        "如何检验近似学习的对齐条件，而不是只用几何误差或代理指标替代？",
+        "当模型不可逆、存在隐状态或因果次序未知时，哪些反事实仍可识别？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "连续合成桥接实验的 160 次运行中，作者报告相对 TM-SCM 的反事实误差收益随所校准非单调性评分增大而总体增加，拟合斜率 1.017、Spearman ρ=0.821、p=2.8×10^-40。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "八个非单调强度的控制扫描及跨运行相关分析。",
+          "design": "8 强度×4 噪声族×5 种子，固定维度 5。",
+          "comparator": null,
+          "measure": "合成非单调评分与相对误差收益。",
+          "unit_of_analysis": "合成配置/种子运行；同一运行的模型差值。",
+          "sample_size_as_reported": "160 次运行；训练/测试/反事实规模分别 10000/2000/1000。",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 26,
+            "section": "Experiment 1.2; Table 6; Figure 12",
+            "figure": "Table 6; Figure 12",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "连续合成桥接实验的 160 次运行中，作者报告相对 TM-SCM 的反事实误差收益随所校准非单调性评分增大而总体增加，拟合斜率 1.017、Spearman ρ=0.821、p=2.8×10^-40。",
+        "boundary": "评分从 0 到 0.978；收益从 0.0008 到 0.8409，所提模型的绝对误差并非随强度单调下降。",
+        "negative_result": null,
+        "non_inference": "该合成评分不等同于 MuJoCo 的接触评分；相关趋势不建立普遍收益阈值或必要机制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "在怎样明确限定的可接受模型族中，观测等价能识别干预后所需的潜变量对齐？",
+        "如何检验近似学习的对齐条件，而不是只用几何误差或代理指标替代？",
+        "当模型不可逆、存在隐状态或因果次序未知时，哪些反事实仍可识别？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "合成消融中，移除方向门或传输项均使两种翻转族的反事实 MSE 明显增加；移除上下文振幅项则未检出明确增益，其配对差值区间跨零，阈值族 p=0.3108、光滑族 p=0.1305。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "同一合成配置上的模块消融。",
+          "design": "完整模型与移除门、传输或上下文振幅的版本配对。",
+          "comparator": null,
+          "measure": "完整模型减消融版 MSE：阈值无门 -0.4043、无传输 -0.0541；光滑无门 -0.2589、无传输 -0.0381。",
+          "unit_of_analysis": "每翻转族的 36 个合成配置。",
+          "sample_size_as_reported": "每翻转族 36 配置。",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 21,
+            "section": "Synthetic ablations; Table 7; Figure 13",
+            "figure": "Table 7; Figure 13",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "合成消融中，移除方向门或传输项均使两种翻转族的反事实 MSE 明显增加；移除上下文振幅项则未检出明确增益，其配对差值区间跨零，阈值族 p=0.3108、光滑族 p=0.1305。",
+        "boundary": "图文对循环项只有非一致显著性的解释，不能补造其未给出的数值检验。",
+        "negative_result": "无上下文振幅差值：阈值 -0.0002、区间 [-0.0018,0.0016]；光滑 -0.0024、区间 [-0.0054,0.0005]，未达所报告显著性。",
+        "non_inference": "非显著不证明振幅或循环项永远无效；不能把每个模块都写为已证明必要。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "在怎样明确限定的可接受模型族中，观测等价能识别干预后所需的潜变量对齐？",
+        "如何检验近似学习的对齐条件，而不是只用几何误差或代理指标替代？",
+        "当模型不可逆、存在隐状态或因果次序未知时，哪些反事实仍可识别？"
+      ],
+      "shared_evidence_with": [
+        "C7"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "MuJoCo 物理任务中的作者方法实际使用带手工接触/局部坐标结构的岭回归与模式分支，而不是直接训练前述深度可逆三角流；这使物理实验检验的是结构性归纳偏置的近似实例。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "来源实现描述核对。",
+          "design": "Push 采用全局及接触门控的局部残差回归；Door 采用门/接触局部坐标和模式线性模型。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "模拟器状态输入的结构回归器。",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 18,
+            "section": "Physical implementation details; Table 8",
+            "figure": "Table 8",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "MuJoCo 物理任务中的作者方法实际使用带手工接触/局部坐标结构的岭回归与模式分支，而不是直接训练前述深度可逆三角流；这使物理实验检验的是结构性归纳偏置的近似实例。",
+        "boundary": "训练只使用来源描述的有限状态轨迹；接触和模式结构依赖可见状态及手工设计。",
+        "negative_result": null,
+        "non_inference": "不能把此回归器视为已满足切片双射、跨模型上下文独立或真实潜变量恢复的实验认证。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "在怎样明确限定的可接受模型族中，观测等价能识别干预后所需的潜变量对齐？",
+        "如何检验近似学习的对齐条件，而不是只用几何误差或代理指标替代？",
+        "当模型不可逆、存在隐状态或因果次序未知时，哪些反事实仍可识别？"
+      ],
+      "shared_evidence_with": [
+        "C6"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "物理测试采用带真值筛选的平衡反事实池：每条事实轨迹最多选一个查询，并将成功状态改变与不改变查询各占一半；因此结果针对被选中的有信息查询，而非自然部署的事件分布。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "候选干预池筛选、转移类型轮转与回填。",
+          "design": "以成功改变或端点变化超过非零变化第 35 百分位等规则选择查询。",
+          "comparator": null,
+          "measure": "主 Door 的真值反事实成功率为 10/32，事实成功率为 22/32；查询改变率为 1/2。",
+          "unit_of_analysis": "事实轨迹及其最多一个被选反事实查询。",
+          "sample_size_as_reported": "主报告每任务训练 128 条、测试 32 条轨迹，反事实查询 32；Push 训练转换 17289，Door 10936。",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 17,
+            "section": "Balanced counterfactual pool; Table 3",
+            "figure": "Table 3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "物理测试采用带真值筛选的平衡反事实池：每条事实轨迹最多选一个查询，并将成功状态改变与不改变查询各占一半；因此结果针对被选中的有信息查询，而非自然部署的事件分布。",
+        "boundary": "32 查询不是 32 个真实机器人，也不是 128 个训练转换；筛选使用模拟反事实真值。",
+        "negative_result": null,
+        "non_inference": "不能以 50% 平衡改变率推断成功率为 50%，或将选择后的准确率视为部署总体准确率。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "在怎样明确限定的可接受模型族中，观测等价能识别干预后所需的潜变量对齐？",
+        "如何检验近似学习的对齐条件，而不是只用几何误差或代理指标替代？",
+        "当模型不可逆、存在隐状态或因果次序未知时，哪些反事实仍可识别？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "主 Push 实验没有支持作者方法全面优胜：其反事实 box MSE 为 0.0027、事件准确率 0.5625，线性模型分别为 0.0017、0.7500，Transformer 几何误差也更低，为 0.0021。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "相同平衡模拟反事实查询的模型比较。",
+          "design": "有限轨迹、状态输入的 Push 任务。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "32 个选中模拟反事实查询。",
+          "sample_size_as_reported": "32 查询，来自至多 32 个不同事实轨迹。",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "MuJoCo Push; Table 2",
+            "figure": "Table 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "主 Push 实验没有支持作者方法全面优胜：其反事实 box MSE 为 0.0027、事件准确率 0.5625，线性模型分别为 0.0017、0.7500，Transformer 几何误差也更低，为 0.0021。",
+        "boundary": "正文将 Transformer 称为最低几何误差时，表中线性模型数值更低；本条以明确表值限定。",
+        "negative_result": "线性基线在这两个报告指标上均优于作者模型；与 MLP 几何相比的收益不是与所有基线相比的收益。",
+        "non_inference": "不能把低非单调任务写成没有检验，或用总体平均掩盖该实际负向结果。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "在怎样明确限定的可接受模型族中，观测等价能识别干预后所需的潜变量对齐？",
+        "如何检验近似学习的对齐条件，而不是只用几何误差或代理指标替代？",
+        "当模型不可逆、存在隐状态或因果次序未知时，哪些反事实仍可识别？"
+      ],
+      "shared_evidence_with": [
+        "C11"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C13",
+      "statement": "Push 的三个种子汇总仍呈现同样边界：作者模型平均反事实 MSE 为 0.0028±0.0002，线性模型为 0.0020±0.0003；作者模型事件准确率为 0.4688±0.1552，显示较大跨种子波动。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "种子 7、17、27 的重复模拟评估。",
+          "design": "主报告之外的三种子汇总，但比较基线只覆盖所列线性和上下文方法，不覆盖全部神经基线。",
+          "comparator": null,
+          "measure": "上下文比较器 MSE 为 0.0121±0.0011。",
+          "unit_of_analysis": "训练/评估种子；每种子选中的模拟查询。",
+          "sample_size_as_reported": "3 种子、共 96 反事实查询；非 96 个独立真实物理系统。",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "Formal MuJoCo Push three-seed replication",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "Push 的三个种子汇总仍呈现同样边界：作者模型平均反事实 MSE 为 0.0028±0.0002，线性模型为 0.0020±0.0003；作者模型事件准确率为 0.4688±0.1552，显示较大跨种子波动。",
+        "boundary": "保留作者原报 ± 量，不补猜其分布区间或独立物理重复数。",
+        "negative_result": "误差仍高于线性方法，事件结果不稳定。",
+        "non_inference": "不能据三个种子声称在全部架构上已稳定胜出。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "在怎样明确限定的可接受模型族中，观测等价能识别干预后所需的潜变量对齐？",
+        "如何检验近似学习的对齐条件，而不是只用几何误差或代理指标替代？",
+        "当模型不可逆、存在隐状态或因果次序未知时，哪些反事实仍可识别？"
+      ],
+      "shared_evidence_with": [
+        "C12"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C14",
+      "statement": "主 Door 的 32 个选中查询中，作者模型对反事实成功事件分类全对，几何 MSE 为 0.1082；其几何误差低于同样事件全对的 MLP 0.1369 和 Transformer 0.1918，但高于流模型 0.0596。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "同一查询上的几何及成功事件比较。",
+          "design": "低轨迹、状态输入的 Door 任务。",
+          "comparator": null,
+          "measure": "流模型事件准确率 0.8438；作者模型最小成功边界 0.0300。",
+          "unit_of_analysis": "32 个选中模拟反事实查询。",
+          "sample_size_as_reported": "32 查询，其中真值成功 10、失败 22。",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "MuJoCo Door; Table 2; Table 3",
+            "figure": "Table 2; Table 3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "主 Door 的 32 个选中查询中，作者模型对反事实成功事件分类全对，几何 MSE 为 0.1082；其几何误差低于同样事件全对的 MLP 0.1369 和 Transformer 0.1918，但高于流模型 0.0596。",
+        "boundary": "事件准确率 1.0 表示正确判断成功与失败，不是 32/32 实际开门；改变准确率在已知事实标签时不是额外独立终点。",
+        "negative_result": "流模型几何误差低于作者模型，存在事件预测与几何误差取舍。",
+        "non_inference": "不能把事件分类全对当成全面轨迹、模式或机制解释全对。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "在怎样明确限定的可接受模型族中，观测等价能识别干预后所需的潜变量对齐？",
+        "如何检验近似学习的对齐条件，而不是只用几何误差或代理指标替代？",
+        "当模型不可逆、存在隐状态或因果次序未知时，哪些反事实仍可识别？"
+      ],
+      "shared_evidence_with": [
+        "C11"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C15",
+      "statement": "Door 的配对统计表中，作者模型相对 Transformer 的几何差值为 -0.0836、区间 [-0.1532,-0.0186]，报告 p=0.0339；相对 MLP 为 -0.0287、区间 [-0.0926,0.0282]、p=0.175，后者未检出明确几何优势。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "作者报告的配对误差检验与事件检验。",
+          "design": "同一主报告模拟查询上的配对差值。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "主 Door 的配对反事实查询。",
+          "sample_size_as_reported": "32 配对查询。",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 22,
+            "section": "Paired physical statistics; Table 9",
+            "figure": "Table 9",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "Door 的配对统计表中，作者模型相对 Transformer 的几何差值为 -0.0836、区间 [-0.1532,-0.0186]，报告 p=0.0339；相对 MLP 为 -0.0287、区间 [-0.0926,0.0282]、p=0.175，后者未检出明确几何优势。",
+        "boundary": "检验单/双尾及多重比较调整未充分交代，表中数值应按原报保留而非擅自改成双尾结论。",
+        "negative_result": "相对流模型几何差值为 +0.0486、区间 [0.0130,0.0859]；并非作者方法几何更优。",
+        "non_inference": "p=0.175 不证明 MLP 等效；接近 1 的方向性检验不能证明作者方法不更差。",
+        "unresolved": "流模型与作者模型事件检验报告 McNemar p=0.0312，结合 5 个单向不一致查询提示尾数设定需说明；Push 的较差几何结果却有接近 1 的 Wilcoxon p，同样不能读成等效。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "在怎样明确限定的可接受模型族中，观测等价能识别干预后所需的潜变量对齐？",
+        "如何检验近似学习的对齐条件，而不是只用几何误差或代理指标替代？",
+        "当模型不可逆、存在隐状态或因果次序未知时，哪些反事实仍可识别？"
+      ],
+      "shared_evidence_with": [
+        "C12",
+        "C14"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C16",
+      "statement": "Door 三种子比较中，作者模型事件准确率为 0.9583±0.0295，高于 Transformer 的 0.5521±0.3231 与流模型的 0.7083±0.1031，但平均反事实几何误差 0.1087±0.0090 仍高于流模型 0.0500±0.0139。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "相同有限监督协议下三种子的模型比较。",
+          "design": "仅 Transformer、流模型与作者模型的强基线头对头汇总。",
+          "comparator": null,
+          "measure": "Transformer 几何 MSE 为 0.3740±0.1288。",
+          "unit_of_analysis": "种子及每个种子的选中查询；不是独立实际机器人。",
+          "sample_size_as_reported": "种子 7/17/27；每种子 32 反事实查询，共 96。",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 23,
+            "section": "Door three-seed head-to-head; Tables 10 and 11",
+            "figure": "Table 10; Table 11",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "Door 三种子比较中，作者模型事件准确率为 0.9583±0.0295，高于 Transformer 的 0.5521±0.3231 与流模型的 0.7083±0.1031，但平均反事实几何误差 0.1087±0.0090 仍高于流模型 0.0500±0.0139。",
+        "boundary": "主实验种子 7 已包含在此汇总；没有对所有单次基线，尤其 MLP，完成同样的三种子比较。",
+        "negative_result": "流模型平均几何误差持续更低。",
+        "non_inference": "较稳定事件准确率不自动意味着几何、前向预测和真实潜状态均更优。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "在怎样明确限定的可接受模型族中，观测等价能识别干预后所需的潜变量对齐？",
+        "如何检验近似学习的对齐条件，而不是只用几何误差或代理指标替代？",
+        "当模型不可逆、存在隐状态或因果次序未知时，哪些反事实仍可识别？"
+      ],
+      "shared_evidence_with": [
+        "C14"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C17",
+      "statement": "同一 Door 三种子比较中，作者模型的前向 MSE 为 0.1916±0.0235，高于 Transformer 的 0.0912±0.0580 和流模型的 0.0847±0.0342，反事实事件优势没有同时带来最佳前向预测。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "三种子汇总的前向预测误差比较。",
+          "design": "与反事实事件比较相同模型及有限监督协议。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "3 个训练/评估种子。",
+          "sample_size_as_reported": "3 种子。",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 23,
+            "section": "Door three-seed head-to-head; Table 10",
+            "figure": "Table 10",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "同一 Door 三种子比较中，作者模型的前向 MSE 为 0.1916±0.0235，高于 Transformer 的 0.0912±0.0580 和流模型的 0.0847±0.0342，反事实事件优势没有同时带来最佳前向预测。",
+        "boundary": null,
+        "negative_result": "作者方法前向几何误差在这三个方法中更大。",
+        "non_inference": "不能将反事实分类改进写成全用途世界模型预测改进。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "在怎样明确限定的可接受模型族中，观测等价能识别干预后所需的潜变量对齐？",
+        "如何检验近似学习的对齐条件，而不是只用几何误差或代理指标替代？",
+        "当模型不可逆、存在隐状态或因果次序未知时，哪些反事实仍可识别？"
+      ],
+      "shared_evidence_with": [
+        "C16"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C18",
+      "statement": "Door 的噪声稳健性汇总中，作者模型事件准确率从基础条件 0.9583±0.0295 降至观测噪声条件 0.9062±0.1112、动力学噪声条件 0.8021±0.0531，说明所测试噪声下仍保留部分性能但发生退化。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "作者所设观测和动力学噪声条件的重复模拟。",
+          "design": "观测噪声标准差 0.01；动力学设置包含动作噪声标准差 0.04、扭矩噪声标准差 0.08。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "模拟条件和种子汇总。",
+          "sample_size_as_reported": "来源采用三种子稳健性协议；不补猜每个噪声条件独立生成的查询总数。",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "Door robustness study",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "Door 的噪声稳健性汇总中，作者模型事件准确率从基础条件 0.9583±0.0295 降至观测噪声条件 0.9062±0.1112、动力学噪声条件 0.8021±0.0531，说明所测试噪声下仍保留部分性能但发生退化。",
+        "boundary": "只涵盖这些指定模拟扰动；并无形式化稳健误差界。",
+        "negative_result": "动力学噪声条件下事件准确率降低，不能称为性能不受噪声影响。",
+        "non_inference": "不外推到任意噪声、传感失效或真实机器人环境变化。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "在怎样明确限定的可接受模型族中，观测等价能识别干预后所需的潜变量对齐？",
+        "如何检验近似学习的对齐条件，而不是只用几何误差或代理指标替代？",
+        "当模型不可逆、存在隐状态或因果次序未知时，哪些反事实仍可识别？"
+      ],
+      "shared_evidence_with": [
+        "C16"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C19",
+      "statement": "主 Door 消融显示，完整模型几何 MSE 为 0.1082，移除方向门、传输或逆映射结构分别为 0.6260、0.2908、0.2667；在该设置下这些结构与较低几何误差相关。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "相同任务和查询协议下的模块消融。",
+          "design": "物理回归器的门、事实前缀保持传输及局部初始化开关。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "主 Door 模拟反事实查询。",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "Door physical ablations",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "主 Door 消融显示，完整模型几何 MSE 为 0.1082，移除方向门、传输或逆映射结构分别为 0.6260、0.2908、0.2667；在该设置下这些结构与较低几何误差相关。",
+        "boundary": "这些开关改变实际结构回归与滚动程序，不是单独检验数学外生同构的必要充分条件。",
+        "negative_result": null,
+        "non_inference": "不能由单任务消融推出全部任务、全部指标上每个模块都必要。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "在怎样明确限定的可接受模型族中，观测等价能识别干预后所需的潜变量对齐？",
+        "如何检验近似学习的对齐条件，而不是只用几何误差或代理指标替代？",
+        "当模型不可逆、存在隐状态或因果次序未知时，哪些反事实仍可识别？"
+      ],
+      "shared_evidence_with": [
+        "C10",
+        "C14"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C20",
+      "statement": "Push 消融呈现指标反向：完整模型几何 MSE 0.0027、事件准确率 0.5625；去掉传输或逆映射后几何误差升至 0.0055 或 0.0038，但事件准确率均升至 0.7500。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "同一 Push 模拟查询的模块消融。",
+          "design": "完整与去门/去传输/去逆映射版本比较。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "主 Push 模拟反事实查询。",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 24,
+            "section": "Push physical ablations; Table 12",
+            "figure": "Table 12",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "Push 消融呈现指标反向：完整模型几何 MSE 0.0027、事件准确率 0.5625；去掉传输或逆映射后几何误差升至 0.0055 或 0.0038，但事件准确率均升至 0.7500。",
+        "boundary": "几何误差与事件阈值不同，不能以一个指标的模块作用替代另一个。",
+        "negative_result": "去除某些结构虽损害几何却改善事件；去方向门几何 MSE 仍为 0.0027、事件准确率为 0.4688。",
+        "non_inference": "不支持作者所有组件在所有指标上统一有益的结论。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "在怎样明确限定的可接受模型族中，观测等价能识别干预后所需的潜变量对齐？",
+        "如何检验近似学习的对齐条件，而不是只用几何误差或代理指标替代？",
+        "当模型不可逆、存在隐状态或因果次序未知时，哪些反事实仍可识别？"
+      ],
+      "shared_evidence_with": [
+        "C10",
+        "C12"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C21",
+      "statement": "Door 的解释性代理指标没有显示作者模型全面恢复机制：其上下文符号一致率 0.2608、模式 L1 误差 1.4466 在该表所列方法中最差，端点误差 0.2990 也不是最低。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "同一模拟反事实上的接触、符号、阶段/模式及端点诊断。",
+          "design": "表列线性、上下文、MLP、自回归、GRU、Transformer、流和作者方法比较。",
+          "comparator": null,
+          "measure": "Transformer 端点误差 0.2220、流模型 0.1831；作者接触一致率 0.5933。",
+          "unit_of_analysis": "主 Door 的同一批反事实滚动与派生指标。",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 24,
+            "section": "Door explanatory diagnostics; Table 13",
+            "figure": "Table 13",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "Door 的解释性代理指标没有显示作者模型全面恢复机制：其上下文符号一致率 0.2608、模式 L1 误差 1.4466 在该表所列方法中最差，端点误差 0.2990 也不是最低。",
+        "boundary": "潜状态一致性等都是来源定义的代理；方向未明确的汇总项不补猜优劣。",
+        "negative_result": "作者解释性代理不是一致占优，部分反而最差。",
+        "non_inference": "事件判断正确不能据此证明真实外生变量、分支机制或所有接触模式已被识别。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "在怎样明确限定的可接受模型族中，观测等价能识别干预后所需的潜变量对齐？",
+        "如何检验近似学习的对齐条件，而不是只用几何误差或代理指标替代？",
+        "当模型不可逆、存在隐状态或因果次序未知时，哪些反事实仍可识别？"
+      ],
+      "shared_evidence_with": [
+        "C14",
+        "C16"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C22",
+      "statement": "参数表显示物理结构回归实例较紧凑：Push 作者模型 714 个拟合参数、Door 190 个，而所列神经比较器各有数万到十余万参数；该证据只支持所报告参数量的差别。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "来源模型参数计数。",
+          "design": "共享有限轨迹监督，但模型容量及归纳结构不匹配。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "模型的拟合参数。",
+          "sample_size_as_reported": "Push 714、Door 190；线性比较器分别 138 与 18。",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 22,
+            "section": "Model parameter counts; Table 8",
+            "figure": "Table 8",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "参数表显示物理结构回归实例较紧凑：Push 作者模型 714 个拟合参数、Door 190 个，而所列神经比较器各有数万到十余万参数；该证据只支持所报告参数量的差别。",
+        "boundary": "作者模型不是参数最少者，且比较不是严格匹配容量的消融。",
+        "negative_result": null,
+        "non_inference": "不能由参数量直接推出运行时间、能耗、硬件成本或因果正确性优势。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "在怎样明确限定的可接受模型族中，观测等价能识别干预后所需的潜变量对齐？",
+        "如何检验近似学习的对齐条件，而不是只用几何误差或代理指标替代？",
+        "当模型不可逆、存在隐状态或因果次序未知时，哪些反事实仍可识别？"
+      ],
+      "shared_evidence_with": [
+        "C10",
+        "C12",
+        "C14"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C23",
+      "statement": "作者按翻转比例与接触比例之积计算物理非单调评分，Push 约为 0.175、Door 约为 0.696，并将两任务性能差异解释为强分支敏感性下结构对齐更有价值的边界现象。",
+      "claim_type": "interpretation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "模拟轨迹派生评分及跨任务解释。",
+          "design": "两个任务的观测/接触评分与模型比较结果并列。",
+          "comparator": null,
+          "measure": "Push 0.4184×0.4184；Door 0.7853×0.8869。",
+          "unit_of_analysis": "任务级派生指标及既有模拟轨迹。",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Physical non-monotonicity score and Push-versus-Door interpretation",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者按翻转比例与接触比例之积计算物理非单调评分，Push 约为 0.175、Door 约为 0.696，并将两任务性能差异解释为强分支敏感性下结构对齐更有价值的边界现象。",
+        "boundary": "弱/中/强分箱阈值 0.25 和 0.5 是经验设定，不是定理的识别条件或跨任务验证阈值。",
+        "negative_result": null,
+        "non_inference": "两个任务的相关模式不证明非单调评分足以预测任意任务收益，也不是合成评分的同量纲复现。",
+        "unresolved": "偏差—方差或过正则化解释没有被独立干预实验隔离，不能唯一归因。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "在怎样明确限定的可接受模型族中，观测等价能识别干预后所需的潜变量对齐？",
+        "如何检验近似学习的对齐条件，而不是只用几何误差或代理指标替代？",
+        "当模型不可逆、存在隐状态或因果次序未知时，哪些反事实仍可识别？"
+      ],
+      "shared_evidence_with": [
+        "C12",
+        "C14"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C24",
+      "statement": "作者明确限定保证为共享次序、机制可逆的递归三角系统，并将实际评价限定为状态输入、低轨迹 MuJoCo；论文未直接覆盖强循环、严重耗散/多对一机制、图像条件世界模型或真实机器人泛化。",
+      "claim_type": "interpretation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "作者范围声明与全文实验证据对照。",
+          "design": "理论假设和实验覆盖边界审计。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "模型族及评价域。",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 27,
+            "section": "F. Limitations; E. Reproducibility statement",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者明确限定保证为共享次序、机制可逆的递归三角系统，并将实际评价限定为状态输入、低轨迹 MuJoCo；论文未直接覆盖强循环、严重耗散/多对一机制、图像条件世界模型或真实机器人泛化。",
+        "boundary": "本篇所谓物理证据来自模拟器；最强事件结果来自 Door，Push 是明确边界案例。",
+        "negative_result": null,
+        "non_inference": "复现声明列出脚本不等于本次已经运行、复现或人工科学核验。",
+        "unresolved": "未知因果次序、不可逆机制、隐藏状态、图像输入和真实部署能否保持反事实识别与事件性能仍未解决。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "在怎样明确限定的可接受模型族中，观测等价能识别干预后所需的潜变量对齐？",
+        "如何检验近似学习的对齐条件，而不是只用几何误差或代理指标替代？",
+        "当模型不可逆、存在隐状态或因果次序未知时，哪些反事实仍可识别？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C6",
+        "C12",
+        "C14"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "论文给出共享次序、切片双射且跨模型逆传输不随父上下文改变时的外生同构和反事实等价结论，随后以理论启发的近似学习器测试合成机制和低轨迹 MuJoCo。完整结果并不支持全面优胜：Push 中线性方法更准、事件预测不稳定；Door 有较强事件结果，但流模型几何误差更低，若干解释代理和前向误差也不占优。NM-TM 模型族量词、零点符号、连续条件化及配对检验尾数仍待澄清。24 条候选覆盖定理、方法、正向结果、实际负向/非显著结果和范围限制；未经人工科学审阅。",
+  "shared_evidence": [
+    {
+      "claim_id": "C2",
+      "with": [
+        "C1"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C2"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C2",
+        "C3"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "with": [
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "with": [
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C13",
+      "with": [
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C14",
+      "with": [
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C15",
+      "with": [
+        "C12",
+        "C14"
+      ]
+    },
+    {
+      "claim_id": "C16",
+      "with": [
+        "C14"
+      ]
+    },
+    {
+      "claim_id": "C17",
+      "with": [
+        "C16"
+      ]
+    },
+    {
+      "claim_id": "C18",
+      "with": [
+        "C16"
+      ]
+    },
+    {
+      "claim_id": "C19",
+      "with": [
+        "C10",
+        "C14"
+      ]
+    },
+    {
+      "claim_id": "C20",
+      "with": [
+        "C10",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C21",
+      "with": [
+        "C14",
+        "C16"
+      ]
+    },
+    {
+      "claim_id": "C22",
+      "with": [
+        "C10",
+        "C12",
+        "C14"
+      ]
+    },
+    {
+      "claim_id": "C23",
+      "with": [
+        "C12",
+        "C14"
+      ]
+    },
+    {
+      "claim_id": "C24",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C6",
+        "C12",
+        "C14"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": "C2",
+        "issue": "Definition 3 的比较模型族量词与严格包含全局单调类的叙述存在需要澄清的范围问题；观测等价的上下文符号翻转可挑战无约束的类归属。",
+        "suggested_correction": "明确允许的比较模型族；保留模型对的条件性定理，不宣称所有单调模型自动满足对任意等价模型的稳定对齐。",
+        "pdf_page": null,
+        "resolved": false
+      },
+      {
+        "claim_id": "C3",
+        "issue": "连续事实 E=e 可能为零概率事件，证明没有明确正规条件分布、几乎处处或支持限定；可测逆的常规条件也未展开。",
+        "suggested_correction": "候选已加条件化有定义的限制；定理原表述仍需作者说明。",
+        "pdf_page": null,
+        "resolved": false
+      },
+      {
+        "claim_id": "C4",
+        "issue": "sgn(0) 未定义；标准零点值会破坏声称的每上下文切片双射。",
+        "suggested_correction": "保留非零事实/干预的反例，不擅自设定零点符号；全上下文假设的修补待澄清。",
+        "pdf_page": null,
+        "resolved": false
+      },
+      {
+        "claim_id": "C6",
+        "issue": "学习损失的同模型跨上下文导数范数约束不等同于跨观测等价模型逆传输不依赖父上下文；常范数本身不识别变换。",
+        "suggested_correction": "只作为理论启发的正则和近似方法，不能写成已满足 EI 的证明。",
+        "pdf_page": 27,
+        "resolved": true
+      },
+      {
+        "claim_id": "C7",
+        "issue": "108 配置不能误写为每族 36 配置再各有 5 重复；五种子属于独立连续桥接实验。",
+        "suggested_correction": "分别记录离散配置与桥接的实验层级；表中 0.0000 是舍入值。",
+        "pdf_page": null,
+        "resolved": true
+      },
+      {
+        "claim_id": "C9",
+        "issue": "上下文振幅项的两族检验未显著；图注的循环项解释没有相应可补猜的数值。",
+        "suggested_correction": "保留非显著实际结果，不称振幅或循环结构已被证明必要或完全无效。",
+        "pdf_page": 27,
+        "resolved": true
+      },
+      {
+        "claim_id": "C10",
+        "issue": "物理实现为手工局部坐标/接触结构回归，不能替换为已验证严格三角流。",
+        "suggested_correction": "区分理论架构、合成实验学习器与 MuJoCo 结构实例。",
+        "pdf_page": null,
+        "resolved": true
+      },
+      {
+        "claim_id": "C11",
+        "issue": "平衡查询使用真值成功转移/端点筛选；转换数、轨迹数和查询数有不同层级。",
+        "suggested_correction": "把评价域限定为选中模拟查询；记录 128 轨迹不等于 128 转换，事件标签平衡不等于成功平衡。",
+        "pdf_page": null,
+        "resolved": true
+      },
+      {
+        "claim_id": "C12",
+        "issue": "正文最低几何误差的 Transformer 叙述与表中更小的线性误差不一致。",
+        "suggested_correction": "候选按明确表值报告；若正文只指神经基线，需作者明示比较范围。",
+        "pdf_page": null,
+        "resolved": true
+      },
+      {
+        "claim_id": "C14",
+        "issue": "Door 事件 100% 准确率易被误读成 100% 开门成功；改变准确率与事件准确率是同一标签信息派生。",
+        "suggested_correction": "明确真值成功只有 10/32，不能当两个独立终点或独立复制。",
+        "pdf_page": null,
+        "resolved": true
+      },
+      {
+        "claim_id": "C15",
+        "issue": "Wilcoxon/McNemar 的尾数和多重比较设置未交代清楚，p 接近 1 的较差误差结果不能说明等效；Door 流模型的 5 个单向不一致与 p=0.0312 提示需澄清单尾。",
+        "suggested_correction": "保留作者报告值和差值方向，暂不升级为确认的双尾显著性结论；要求原分析说明。",
+        "pdf_page": null,
+        "resolved": false
+      },
+      {
+        "claim_id": "C16",
+        "issue": "三种子 Door 强基线重复不包含 MLP，不能将单次 MLP 对比外推到三种子。",
+        "suggested_correction": "仅对重复的 Transformer、流模型和作者模型作跨种子结论。",
+        "pdf_page": null,
+        "resolved": true
+      },
+      {
+        "claim_id": "C20",
+        "issue": "Push 消融去传输/逆映射后事件准确率反而提高，不能只摘录几何退化。",
+        "suggested_correction": "同条保留几何与事件的反向取舍。",
+        "pdf_page": null,
+        "resolved": true
+      },
+      {
+        "claim_id": "C21",
+        "issue": "Table 13 的上下文符号和模式指标不支持作者机制全面更准；潜变量一致性仍为代理。",
+        "suggested_correction": "记录不占优/最差项，不把代理写成真实潜机制识别。",
+        "pdf_page": null,
+        "resolved": true
+      },
+      {
+        "claim_id": "C23",
+        "issue": "物理和合成非单调评分定义不同，两个任务的归因及经验分箱未形成识别定理或独立因果验证。",
+        "suggested_correction": "保留为作者解释和边界观察，不自动建立跨实验复制或唯一机制关系。",
+        "pdf_page": null,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "未读取图像像素、额外代码/原始产物，也未运行论文复现脚本；初次封装空页码错误已通过来源条目/数字的 PDF 顺序映射修复。",
+        "suggested_correction": "保留像素、额外材料和复现覆盖限制；全部供应页文字覆盖不等于这些内容已经核验。",
+        "pdf_page": 27,
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T13:15:09.993643Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "a62a52591abedf23c80fb9b0cd095fc7b1a30ff6f8c8f62c7c0e97bb7c8f3903",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

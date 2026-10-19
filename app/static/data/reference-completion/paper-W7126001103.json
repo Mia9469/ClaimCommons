@@ -1,0 +1,1315 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "preprint",
+  "paper": {
+    "title": "Cross-Domain Offshore Wind Power Forecasting: Transfer Learning Through Meteorological Clusters",
+    "authors": [
+      "Dominic Weisser",
+      "Chloé Hashimoto-Cullen",
+      "Benjamin Guedj"
+    ],
+    "doi": null,
+    "publication_year": 2026,
+    "venue": "arXiv (Cornell University)",
+    "url": "https://arxiv.org/pdf/2601.19674"
+  },
+  "source": {
+    "filename": "paper-W7126001103--Cross-Domain-Offshore-Wind-Power-Forecasting-Transfer-Learning-Through-Meteorological-Clusters.pdf",
+    "sha256": "ee167ba310ee02db67923660eda2657b66a25e73a990bc49406b0a1743b4de8b",
+    "source_url": "https://arxiv.org/pdf/2601.19674",
+    "pdf_page_count": 15
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "results_sections_seen": [
+      "2.1 Dataset",
+      "2.2 Selecting Source Wind Farms",
+      "2.3 Identifying and Clustering Weather Patterns",
+      "2.4 Optimal Configuration Selection",
+      "2.5 Gaussian Process Models",
+      "2.6 Transfer Learning",
+      "3 Results: Quantitative Results",
+      "3 Results: Farm-specific Analysis",
+      "4 Discussion",
+      "Appendix A Empirical Details",
+      "Appendix B Metrics Used",
+      "Appendix C Optimal Configuration Selection",
+      "Appendix D Baseline Results",
+      "Figure 1-5 captions",
+      "Table 1-9",
+      "References and Acknowledgements"
+    ],
+    "missing_material": [
+      "仅有文字和图表标题，无图像像素，不能核查地图、t-SNE几何和分布图细节。",
+      "未读取文中链接代码或外部原始数据；没有提供运行SCADA功率测量或生产部署资料。"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "全部15页及附录A-D均已评估，未跳过参考文献后的实验细节和基准表。",
+      "第一页明确为arXiv:2601.19674v2 [cs.LG]，日期24 Apr 2026；题名和三位作者与分配记录一致。",
+      "保留索引的2026/arXiv预印本身份；Environmental Data Science (2026), xx:xx页眉是待定格式，不能据此认定正式期刊卷期或出版状态。",
+      "数据集来自ERA5与turbine-specific power curves生成的合成功率；可用29个欧洲海上风场和40年小时数据，本文选择6个source farms和8个target farms，具体实验以两年数据为基础。",
+      "所有结果按Appendix A/D说明对seed 42、63、84的3次运行取平均；seed为计算重复，不是3组独立新风场。mean/std的跨seed与跨风场聚合层级未完全明确。",
+      "目标风场表列Horns Rev、Seagreen、Gemini、Hollandse Noord、Dieppe、Moray Firth、Kriegers、East Anglia One；未从未提供的地图像素猜测6个源风场名称。",
+      "源文未明确训练/测试是否严格连续按时间切分，也未明确6小时BiLSTM编码窗口对每小时预测仅使用过去信息；不能从回溯评价直接证明生产环境无前视。",
+      "第二次审计在本轮完整保留的源文本中核对所有命题、原始表值、附录重复数、比较指标和分母；不重新打开PDF，不构成代码或独立科学验证。",
+      "小数逗号仅在明确数字语境按小数点解释；不更改源文件、脚本或统计值。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "气象表示、weather clusters与cluster-specific GP组成跨风场迁移框架。",
+      "role": "method",
+      "source_pages": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "decision": "include",
+      "reason": "C1记录算法与数据条件，不把组件选择或创新性自述当作已经消融验证的性能机制。"
+    },
+    {
+      "summary": "联合质量分数选择6小时、8个簇，并由单指标敏感性显示结构/物理/时间目标的权衡。",
+      "role": "result",
+      "source_pages": [
+        5,
+        7,
+        12,
+        13
+      ],
+      "decision": "include",
+      "reason": "C2包含Appendix C，不称所有指标共同最优。"
+    },
+    {
+      "summary": "源GP模型在6个源风场两年数据上的基准性能。",
+      "role": "result",
+      "source_pages": [
+        7,
+        8
+      ],
+      "decision": "include",
+      "reason": "C3保留源/目标表题矛盾和测试计数不一致，不自行修复n。"
+    },
+    {
+      "summary": "8个目标风场不同数据比例下的迁移优势与小数据边界。",
+      "role": "result",
+      "source_pages": [
+        6,
+        7,
+        8,
+        14,
+        15
+      ],
+      "decision": "include",
+      "reason": "C4记录相对从零训练cluster GP的数据效率；C5单列10%时不及单风场GP的实际负结果。"
+    },
+    {
+      "summary": "MAE和R^2对方法排名不一致。",
+      "role": "result",
+      "source_pages": [
+        8,
+        14,
+        15
+      ],
+      "decision": "include",
+      "reason": "C6保留R^2并不随较低MAE而领先的事实，纠正全面优于NN的过宽解读。"
+    },
+    {
+      "summary": "不同气象簇的迁移效率明显不同。",
+      "role": "result",
+      "source_pages": [
+        7,
+        8,
+        14
+      ],
+      "decision": "include",
+      "reason": "C7记录Cluster 1和7等实际性能差异，C11单列地点依赖的作者解释。"
+    },
+    {
+      "summary": "CRPS与PICP95提供不同的概率预测评价。",
+      "role": "result",
+      "source_pages": [
+        8,
+        9,
+        12,
+        13,
+        14
+      ],
+      "decision": "include",
+      "reason": "C8和C9分别保存分布评分与区间覆盖结果；不是相互独立的数据复现。"
+    },
+    {
+      "summary": "Gemini的簇级结果揭示单风场内部迁移差异。",
+      "role": "result",
+      "source_pages": [
+        9,
+        14,
+        15
+      ],
+      "decision": "include",
+      "reason": "C10保留同一8目标风场证据的一个子集，不能作额外独立风场验证。"
+    },
+    {
+      "summary": "单风场GP早期平台及迁移方法40%-50%收益变小的解释。",
+      "role": "interpretation",
+      "source_pages": [
+        8,
+        14
+      ],
+      "decision": "include",
+      "reason": "C12为作者数据效率解释，不是独立机制消融。"
+    },
+    {
+      "summary": "长预测时距和更广气候区的未来扩展。",
+      "role": "hypothesis",
+      "source_pages": [
+        9,
+        10
+      ],
+      "decision": "include",
+      "reason": "C13明确尚未测试，不把欧洲一小时评价作为长时距或跨气候验证。"
+    },
+    {
+      "summary": "用迁移框架促进早期Wind Resource Assessment并降低项目时间、费用或风险。",
+      "role": "hypothesis",
+      "source_pages": [
+        1,
+        9,
+        10
+      ],
+      "decision": "include",
+      "reason": "C14只保留作者提出的应用方向，不声称经济成本或资源评估已实证。"
+    },
+    {
+      "summary": "CRPS低于MAE意味着每个预测区间都扩张并覆盖真实值，或高PICP必定代表信息较少。",
+      "role": "interpretation",
+      "source_pages": [
+        8,
+        9
+      ],
+      "decision": "exclude",
+      "reason": "两种评分的数值大小不能单独证明该逐例机制；PICP没有同时报告区间宽度，不能识别区间信息量。"
+    },
+    {
+      "summary": "实际运行SCADA、缺测、衰减、wake effects和生产权重校准的有效性。",
+      "role": "unresolved",
+      "source_pages": [
+        2,
+        9,
+        10
+      ],
+      "decision": "exclude",
+      "reason": "讨论列为未来挑战，没有本研究结果，保留在候选边界中而非虚构实验。"
+    },
+    {
+      "summary": "背景能源容量预测、既往方法与文献数据集成果。",
+      "role": "background",
+      "source_pages": [
+        1,
+        2,
+        10,
+        11
+      ],
+      "decision": "exclude",
+      "reason": "不提取为本文的新发现，不引入外部来源或跨论文关系。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "本文构建一小时提前海上风功率预测框架：将6个源风场的多变量气象时段编码成8维VAE表示，经L2归一化和Ward clustering形成weather clusters，再训练cluster-specific GP；目标风场固定使用源encoder、按源簇中心分配时段，以相应源GP超参数初始化并在本地数据上最大化marginal log-likelihood进行微调。",
+      "claim_type": "transfer_learning_method",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Conv1D-BiLSTM beta-VAE、层次聚类和cluster-specific Gaussian Process迁移设计。",
+          "design": "输入含wind speed、sea surface roughness、wind direction的sin/cos及u100、v100；推理用posterior mean。GP输入为8维latent加12个物理/滞后/周期特征，采用RBF加Matérn nu=1.5的ARD kernel。",
+          "comparator": "相对单一farm-level模型的结构设计；组件效果没有单独消融。",
+          "measure": "算法流程、latent表示、簇分配和GP微调目标。",
+          "unit_of_analysis": "方法流程和风场/气象时段；不是一个组件对应一组独立实验。",
+          "sample_size_as_reported": "29个可用风场中选择6个源风场，迁移评价8个目标风场；3个计算seed（42、63、84）。",
+          "uncertainty": "方法构建不包含组件独立效应或新机制置信区间。",
+          "assumptions": [
+            "功率标签由ERA5和turbine-specific curves合成。",
+            "来源选取使用29个风场2018-2019的38维气象/运行统计，经UMAP和6簇选代表。",
+            "固定源encoder和源簇定义，目标数据按源中心映射。",
+            "一小时预测的latent窗口内可用信息时序在文本中未完整说明。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "2.2-2.6; Appendix A",
+            "figure": "Figure 1-2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "该流程实现了气象簇级而非仅风场级的GP知识初始化和适配。",
+        "boundary": "方法贡献与合成数据评价，不等于每个组件都有独立性能因果证明。",
+        "negative_result": null,
+        "non_inference": "不能认定VAE、kernel组成或聚类单独导致收益，也不能认定已部署为无前视实时预测。",
+        "unresolved": "需明确6小时双向编码与每小时预测的信息时间边界，以及严格时序数据分割。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "如何通过共享气象簇而非单一风场模型，将GP预测结构迁移到本地数据稀缺的海上风场？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "不将8维latent、6个特征或GP专家数量视为独立验证n。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "在本文启发式加权质量分数Q下，作者选择p=6小时、K=8个weather clusters并报告Q=0.53；Appendix C显示该选择不是所有单指标同时最优，例如Silhouette在p=12、K=8时为0.190而所选配置为0.168，p=6、K=16时气象可分性和时间一致性为0.585、0.834，高于所选配置的0.536、0.782。",
+      "claim_type": "clustering_configuration_sensitivity",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "对时段长度和簇数作grid search，并逐项展示质量分数指标。",
+          "design": "Q对Silhouette、归一化Davies-Bouldin、Calinski-Harabasz和meteorological separability各赋0.2，对temporal coherence和distributional consistency各赋0.1。Table 4列p=6/12/24/36/48、K=8/10/12/14/16。",
+          "comparator": "25个配置网格中各单项指标的对照。",
+          "measure": "所报告Q=0.53与单项结构、气象、时间和分布一致性指标。",
+          "unit_of_analysis": "聚类配置/同一数据的重分析；不是25个独立风场实验。",
+          "sample_size_as_reported": "Table 4列5种p乘5种K的25个配置；Appendix A说明3个计算seed。",
+          "uncertainty": "未报告Q或配置排名的置信区间；权重为启发式校准。",
+          "assumptions": [
+            "使用源文定义的归一化指标和固定权重。",
+            "distributional consistency包含训练/测试簇比例差异。",
+            "质量分数最优不必然等于预测误差或生产收益最优。"
+          ],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "2.4; 3 Results; Appendix C",
+            "figure": "Figure 3-4; Table 4",
+            "equation": "Q weighting formula in 2.4",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所选配置表达结构分离、气象可分性和时间一致性的折中。",
+        "boundary": "Q=0.53为作者所报选择分数，单指标存在不同偏好。",
+        "negative_result": "所选6小时、8簇并未在Silhouette、气象可分性或时间一致性上同时取得最佳表值。",
+        "non_inference": "不能由此证明普适最佳簇数、严格无测试信息参与的选择或最优预测性能。",
+        "unresolved": "生产应用仍需交叉验证Q权重，源文未完整说明配置选择和测试集隔离。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "气象聚类的结构质量、物理可分性和时间一致性在时段长度与簇数选择中如何权衡？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "图3的t-SNE展示不是高维簇独立实验证据；未读取像素。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "按正文的源风场评价描述，cluster-specific GP在6个源风场的两年数据、4:1训练/测试划分下报告容量归一化MAE 3.68%（std 0.04%）、对应24.4 MW和R^2=0.981；Table 1给出各簇MAE约3.32%至3.97%，但其源/目标表题及测试样本总计存在未解决的不一致。",
+      "claim_type": "source_domain_forecast_performance",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "在选定8个weather clusters上评价源GP预测，按簇时段数量聚合。",
+          "design": "正文称6个源风场、两年数据、4:1划分；数据为ERA5驱动的合成功率序列。",
+          "comparator": "源域已知合成功率标签；不是运行SCADA实测基准。",
+          "measure": "总体MAE 3.68%（0.04）、24.4 MW、R^2 0.981及簇级MAE。",
+          "unit_of_analysis": "风场时间序列中的预测样本，另有3个计算seed；不能视为独立小时实验。",
+          "sample_size_as_reported": "正文为6个源风场；Table 1总体test samples为17,490，而8个簇所列计数加总为16,824；表题却称跨target farms。",
+          "uncertainty": "源文报告mean/std，不是置信区间；风场和seed聚合层级与表题冲突未解决。",
+          "assumptions": [
+            "按正文源域评价上下文解释，同时保留Table 1原始措辞与计数差别。",
+            "MAE百分比按总装机容量归一化。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "3 Results: Quantitative Results; Appendix A",
+            "figure": "Figure 5; Table 1 on PDF page 8",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者报告所述源域GP具有较低容量归一化误差。",
+        "boundary": "源域结果，不是8个新目标风场的零样本迁移结果；n存在来源矛盾。",
+        "negative_result": null,
+        "non_inference": "不能自行改写样本总数、将合成功率称作SCADA，或据此认定未见风场准确率。",
+        "unresolved": "Table 1总体样本数和簇计数的差别及源/目标表题需人工核查。",
+        "unresolved_attribution": "正文称source farms，表题称target farms，准确统计集合未获统一说明。"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "气象簇GP在其源风场数据上的一小时功率预测误差是多少，其统计单位是否清晰？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "仅核对源表计数，不补造样本独立性；17,490与16,824均保留为来源审计问题。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "在8个目标风场的合成功率评价中，使用两年本地数据的20%（约4.8个月）微调气象簇GP，本文迁移框架的平均MAE为装机容量的3.52%（std 0.21%），低于同数据量从零训练cluster-specific GP的4.13%（0.25%），也略低于该从零模型使用50%数据（约一年）时的3.55%（0.21%）；各10%-50%比例下迁移MAE均低于对应从零簇GP。",
+      "claim_type": "cross_domain_data_efficiency",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "固定源表示/簇、源GP初始化后目标微调，与无迁移cluster-specific GP比较。",
+          "design": "两年目标数据使用gamma=0.1/0.2/0.3/0.4/0.5训练，其余测试；8个目标风场，每种设置3个seed。",
+          "comparator": "从零训练cluster-specific GP：平均MAE依次5.26/4.13/3.74/3.59/3.55%。",
+          "measure": "迁移MAE依次4.34/3.52/3.30/3.23/3.22%，std依次0.31/0.21/0.20/0.18/0.21%；20%时R^2=0.956。",
+          "unit_of_analysis": "8个风场的相关时间序列预测，跨3个计算seed；不是所有小时均独立。",
+          "sample_size_as_reported": "8个目标风场、3个seed、5种数据比例；全目标测试样本总数未报告。",
+          "uncertainty": "表报mean/std，未给显著性检验；20%迁移与50%从零的MAE差仅0.03个百分点，且测试数据比例不同。",
+          "assumptions": [
+            "百分比相对于两年本地记录，20%约4.8个月。",
+            "按簇时段数量加权，MAE以装机容量归一化。",
+            "上游source farm选择曾使用29个风场两年运行/气象统计，严格端到端cold-start数据预算未完全澄清。",
+            "不同gamma保留不同测试比例，不能假定相同固定测试集。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "2.6; 3 Results; Appendix D",
+            "figure": "Table 2; Table 6",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "相对从零训练簇GP，本文设置下源模型初始化带来较低平均MAE，并减少达到相近误差的本地微调记录需求。",
+        "boundary": "约4.8个月只描述微调数据量；比较依赖数据集、比例、聚合规则和基准。",
+        "negative_result": null,
+        "non_inference": "不能声称3.52对3.55显著优越、所有风场都改善、所有指标领先或真实新风场只需5个月总数据。",
+        "unresolved": "时序切分、共同测试集、上游目标信息预算及SCADA外部验证仍未解决。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "源气象簇GP初始化能否减少新海上风场达到给定平均预测误差所需的本地微调记录？"
+      ],
+      "shared_evidence_with": [
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12"
+      ],
+      "review_notes": [
+        "五种数据比例共用来源和风场，不是5组独立场址验证；跨比例测试集不保证相同。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "在仅有两年本地数据10%（约2.4个月）的8目标风场设置中，迁移框架的平均MAE 4.34%（std 0.31%）高于无迁移单风场GP的3.84%（0.27%）；因此该迁移方法并非在最少本地数据条件下也优于所有无迁移模型，虽然20%-50%时其平均MAE低于单风场GP。",
+      "claim_type": "low_data_transfer_boundary",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "相同数据比例下比较weather-cluster迁移框架与farm-level GP。",
+          "design": "两年记录的10%-50%用作本地训练，8个目标风场、3个计算seed。",
+          "comparator": "farm-level GP无迁移基准。",
+          "measure": "10%时TL/GP的MAE为4.34/3.84%；20%-50%分别为3.52/3.87、3.30/3.78、3.23/3.63、3.22/3.56%。",
+          "unit_of_analysis": "目标风场的预测误差聚合，不是独立新风场分组。",
+          "sample_size_as_reported": "8个目标风场，3个seed；测试小时独立性和总体数量未报告。",
+          "uncertainty": "表给std，无差值置信区间或显著性检验。",
+          "assumptions": [
+            "使用文中相同数据比例及MAE聚合定义。",
+            "保留合成标签与时序设计边界。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "3 Results; Appendix D",
+            "figure": "Table 2; Table 7",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "20%-50%本地比例下迁移平均MAE较低。",
+        "boundary": "数据效率优势有基准和数据量条件。",
+        "negative_result": "10%时迁移框架的平均MAE比单风场GP更高。",
+        "non_inference": "不能写成所有数据量均领先，也不能将跨风场均值当作每个目标风场的统一排序。",
+        "unresolved": "最低数据量下劣势的原因没有通过组件或训练机制消融识别。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "在只有约2.4个月本地数据时，气象簇迁移是否一定优于直接训练单风场GP？"
+      ],
+      "shared_evidence_with": [
+        "C4",
+        "C6",
+        "C8",
+        "C10",
+        "C12"
+      ],
+      "review_notes": [
+        "实际较差结果单列，不混同未测试的泛化限制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "本文表中的迁移优势依赖评价指标：20%本地数据时迁移MAE为3.52%，优于farm-level GP的3.87%及NN的3.89%，但其平均R^2=0.956低于二者的0.975和0.971；在10%-50%各比例下，迁移的平均R^2也均低于这两类单风场基准，不能称为全部确定性指标领先。",
+      "claim_type": "metric_dependent_baseline_ranking",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "对照Table 2的MAE与R^2及Appendix D的两种单风场基准。",
+          "design": "8个目标风场，5种本地数据比例，每种3个计算seed。",
+          "comparator": "farm-level GP和farm-level NN/MLP。",
+          "measure": "TL的R^2为0.933/0.956/0.960/0.963/0.963；GP为0.974/0.975/0.974/0.976/0.977；NN为0.961/0.971/0.975/0.979/0.979。",
+          "unit_of_analysis": "源表中跨目标风场/簇的聚合指标，不是各模型的独立新数据集。",
+          "sample_size_as_reported": "8个风场、3个seed；Table 2的R^2未列std。",
+          "uncertainty": "聚合R^2与MAE的排名不同，未提供差值检验或每风场TL的全部分解值。",
+          "assumptions": [
+            "按源表报告的平均指标作比较，不重新计算或猜测同一全局R^2。",
+            "NN结构文本称8个隐藏层但只列7个宽度，不能从提供文字完整确认其层数。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "3 Results; Appendix A; Appendix D",
+            "figure": "Table 2, Table 7, Table 9",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "20%时较低MAE与较低R^2同时存在，说明指标排序不能互相替代。",
+        "boundary": "仅讨论源表的聚合指标；不自行补造分层R^2或显著性。",
+        "negative_result": "迁移平均R^2在所有列出的数据比例下未超过这两类单风场基准。",
+        "non_inference": "不能将本文优于NN的概括扩展为R^2领先、所有风场领先或统计显著领先。",
+        "unresolved": "不同聚合权重、簇内目标方差和R^2排名差异的来源没有独立分析。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "气象簇迁移在MAE和R^2下是否对无迁移GP及MLP呈现相同排名？"
+      ],
+      "shared_evidence_with": [
+        "C4",
+        "C5",
+        "C7",
+        "C10"
+      ],
+      "review_notes": [
+        "保留表中实际R^2；不让摘要的总体成功措辞覆盖附录的基准指标。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "同一跨风场迁移框架在不同weather clusters中呈现不同的数据需求：跨8个目标风场，10%本地数据时Cluster 1的平均MAE为3.7%（std 0.56%），Cluster 7为5.8%（4.07%）；Cluster 7在30%数据（约7.2个月）时降至3.4%（0.76%），显示较难迁移的簇并不随少量微调立即达到其他簇的误差水平。",
+      "claim_type": "weather_cluster_transfer_heterogeneity",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "按weather cluster和训练比例分解同一迁移评价。",
+          "design": "固定p=6小时、K=8；8个目标风场，10%-50%本地数据比例，3个seed。",
+          "comparator": "Cluster 1与Cluster 7以及Cluster 7自身不同数据量。",
+          "measure": "Cluster 1在10%时MAE 3.7（0.56）；Cluster 7在10/20/30%时为5.8（4.07）/3.8（1.21）/3.4（0.76）%。",
+          "unit_of_analysis": "同一目标风场时间序列中的簇级预测子集；簇不是独立场址重复。",
+          "sample_size_as_reported": "8个目标风场、8个簇、3个seed；Table 2未给每簇目标测试总样本数。",
+          "uncertainty": "std受跨风场/seed聚合影响，未给簇间差值检验；不能由数字认定差异显著。",
+          "assumptions": [
+            "簇编号只在本文模型配置中有意义。",
+            "不同gamma具有不同测试比例。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "3 Results: Quantitative Results",
+            "figure": "Table 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所报簇级误差表明迁移收益和本地数据需求具有异质性。",
+        "boundary": "气象簇身份和误差是该数据集/训练配置下的结果。",
+        "negative_result": "Cluster 7在10%数据时误差较高且std较大，未呈现普遍低数据即准确的表现。",
+        "non_inference": "不能将误差差异直接归因于确定的局地物理机制，或把簇标签外推到其他气候区域。",
+        "unresolved": "地点特异性、簇样本数和模型适配分别贡献多少尚未识别。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "哪些weather clusters能以较少本地数据迁移，哪些需要更长微调记录？"
+      ],
+      "shared_evidence_with": [
+        "C4",
+        "C6",
+        "C8",
+        "C9",
+        "C10",
+        "C11"
+      ],
+      "review_notes": [
+        "簇级均值不是8种独立机制或8次独立复现。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "本文迁移框架的容量归一化CRPS随10%-50%本地数据比例分别为3.41%、2.82%、2.67%、2.65%、2.55%；在10%时高于无迁移farm-level GP的3.29%，而在20%-50%时低于该基准的3.33%、3.45%、3.41%、3.39%，所以概率分布评分也具有最低数据量下的实际劣势。",
+      "claim_type": "probabilistic_forecast_score",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "用Continuous Ranked Probability Score评价GP预测分布，与farm-level GP比较。",
+          "design": "8个目标风场、5个训练比例；Appendix D按3个seed取平均，CRPS按farm capacity归一化。",
+          "comparator": "无迁移farm-level GP的Table 8聚合CRPS。",
+          "measure": "TL的CRPS mean/std依次3.41（0.27）、2.82（0.17）、2.67（0.15）、2.65（0.15）、2.55（0.17）%；基准聚合CRPS依次3.29、3.33、3.45、3.41、3.39%。",
+          "unit_of_analysis": "同一目标风场预测分布及测试时间样本；与MAE使用同源预测。",
+          "sample_size_as_reported": "8个风场、3个计算seed；没有总体独立测试n或基准聚合std。",
+          "uncertainty": "只报告部分mean/std，没有CRPS差值区间或显著性。",
+          "assumptions": [
+            "采用Appendix B的CRPS定义及相同容量单位。",
+            "整体CRPS聚合按源文规则解释。"
+          ],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "3 Results; Appendix B; Appendix D",
+            "figure": "Table 5; Table 8 on PDF page 14",
+            "equation": "CRPS definition in Appendix B",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "20%-50%设置下迁移框架平均CRPS较低。",
+        "boundary": "CRPS评价整个分布，不等同于PICP或逐例覆盖事件。",
+        "negative_result": "10%设置下TL的CRPS 3.41%高于farm-level GP的3.29%。",
+        "non_inference": "CRPS低于MAE不能证明每次预测方差都成功扩张或区间都含真实值，也不能替代校准验证。",
+        "unresolved": "区间宽度、分布失配和分层评分差异未完整报告。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "weather-cluster迁移对概率预测分布评分的改进是否也受到本地数据量限制？"
+      ],
+      "shared_evidence_with": [
+        "C4",
+        "C5",
+        "C7",
+        "C9"
+      ],
+      "review_notes": [
+        "概率评分与确定性误差来自同一预测任务，不视作独立复现。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "本文迁移GP在10%-50%本地数据比例下的PICP95依次为0.925、0.934、0.936、0.949、0.955，40%时最接近名义0.95；无迁移单风场GP对应为0.982、0.986、0.992、0.993、0.994，呈超额覆盖。该结果衡量经验覆盖频率，不单独证明区间宽度、信息量或全条件校准。",
+      "claim_type": "prediction_interval_coverage",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "按Appendix B计算测试标签落入95%预测区间的频率。",
+          "design": "Table 5迁移GP与Table 8 farm-level GP在8目标风场、5种训练比例下比较。",
+          "comparator": "名义覆盖0.95与无迁移GP覆盖。",
+          "measure": "TL PICP95=0.925/0.934/0.936/0.949/0.955；GP=0.982/0.986/0.992/0.993/0.994。",
+          "unit_of_analysis": "测试时间点上的区间覆盖事件，汇总为风场/簇预测结果；不是独立新测量对象。",
+          "sample_size_as_reported": "8个目标风场、3个seed；总体区间数、有效独立n和PICP误差条未报告。",
+          "uncertainty": "PICP没有给std、置信区间或统计校准检验。",
+          "assumptions": [
+            "按源表平均覆盖和名义95%区间定义比较。",
+            "仅涉及该合成数据任务的边际经验覆盖。"
+          ],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "3 Results; Appendix B; Appendix D",
+            "figure": "Table 5; Table 8 on PDF page 14",
+            "equation": "PICP95 definition in Appendix B",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "40%数据时报告的覆盖0.949接近0.95；50%为0.955。",
+        "boundary": "边际覆盖近似目标并不证明条件校准或预测区间足够窄。",
+        "negative_result": "10%-30%的迁移覆盖低于名义0.95，不能称所有数据量均达到95%覆盖。",
+        "non_inference": "高覆盖不能在未提供区间宽度时单独推出基准区间更宽或更少信息；不构成已验证的电网风险控制。",
+        "unresolved": "区间sharpness、逐风场/逐天气条件校准与覆盖统计不确定性仍需数据。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "不同本地数据量下，迁移GP的95%预测区间经验覆盖是否接近名义水平？"
+      ],
+      "shared_evidence_with": [
+        "C4",
+        "C7",
+        "C8"
+      ],
+      "review_notes": [
+        "与C8共享Table 5预测，CRPS和PICP是可分别评判的不同读出。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "在8目标风场之一Gemini的20%本地数据设置中，迁移框架总体MAE为3.31%（std 0.07%）；Clusters 0、1、2、3、7分别为3.3%、3.4%、2.2%、3.4%、2.7%，而Clusters 4、5、6为4.4%、3.9%、4.2%，显示同一场址内部不同天气簇的迁移误差不均匀。",
+      "claim_type": "within_farm_cluster_performance",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Gemini的目标预测按cluster分解，并给出无迁移基准。",
+          "design": "20%两年数据约4.8个月；Table 3给mean/std和该比例各簇test samples；Appendix A说明3个seed。",
+          "comparator": "Gemini不同天气簇；总体基准MAE为farm-level GP 3.62%、NN 3.63%、从零簇GP 3.90%。",
+          "measure": "TL总体3.31（0.07）%；8簇MAE按0-7为3.3（0.50）、3.4（0.43）、2.2（1.24）、3.4（0.61）、4.4（1.79）、3.9（0.47）、4.2（1.43）、2.7（1.08）%。",
+          "unit_of_analysis": "一个目标风场内相关预测子集，属于同一8风场评价而非新增外部验证。",
+          "sample_size_as_reported": "1个目标风场、3个seed；Table 3在20%时Clusters 0-7测试计数为1788、2095、1492、1448、1358、1223、1333、922。",
+          "uncertainty": "源表mean/std，无簇间显著性检验；测试计数称samples，正文亦称time periods，采样层级未完全明确。",
+          "assumptions": [
+            "按本文簇身份和容量归一化MAE解释。",
+            "小数逗号3,31和3,4等按明确小数语境读作3.31和3.4。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "3 Results: Farm-specific Analysis",
+            "figure": "Table 3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "Gemini的总体低误差并存簇级差异，部分簇在约4.8个月微调下仍误差较高。",
+        "boundary": "一个已有目标风场的分解证据，不是独立第9个风场。",
+        "negative_result": "Clusters 4、5、6未达到其余所列簇MAE<=3.4%的水平。",
+        "non_inference": "不能将总体MAE3.31%视为所有天气簇的误差，或据此因果识别地形/天气机制。",
+        "unresolved": "不同簇的独立性、准确时间单位和场址特异误差原因未解决。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "Gemini同一风场内的哪些weather clusters在约4.8个月微调后仍有较高预测误差？"
+      ],
+      "shared_evidence_with": [
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C11"
+      ],
+      "review_notes": [
+        "正文称较易迁移簇占约66.7%的时段；该比例与Table 3计数不能精确一致对齐，未补造或强行改写比例。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "作者依据Cluster 7较慢改善及Gemini部分簇误差较高，将这些天气模式的较低迁移性解释为较强地点依赖、需要更多本地数据微调；这是对簇级预测差异的解释，而非独立识别了地点特异气象机制。",
+      "claim_type": "transferability_interpretation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "综合全目标风场及Gemini的簇级数据量/误差曲线。",
+          "design": "使用同一迁移评价的Table 2和Table 3，未引入局地机制操纵或独立观测。",
+          "comparator": "易迁移和较难迁移簇的误差及微调数据量。",
+          "measure": "同C7/C10的簇级MAE和作者解释。",
+          "unit_of_analysis": "同一风场/簇预测证据的解释层，不是新增实验。",
+          "sample_size_as_reported": "同8个目标风场与3个seed，Gemini为其中一个；无额外机制样本。",
+          "uncertainty": "没有分离局地动力学、训练样本分布、簇划分和模型失配的贡献。",
+          "assumptions": [
+            "作者认为源GP已捕捉可迁移的广义天气动态，而难迁移簇含更强局地成分。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "3 Results: Quantitative Results and Farm-specific Analysis",
+            "figure": "Table 2-3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "地点依赖为解释异质迁移表现的一种与结果相容的作者解释。",
+        "boundary": "共用C7/C10的误差证据，不能视作第二项独立机制证明。",
+        "negative_result": null,
+        "non_inference": "不能将簇级误差直接等同于已识别的局地气象因果机制。",
+        "unresolved": "地点依赖和其他统计/模型因素的相对作用没有被独立检验。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "较慢适配的weather clusters是否反映更强地点依赖，还是其他数据和模型因素？"
+      ],
+      "shared_evidence_with": [
+        "C4",
+        "C7",
+        "C10"
+      ],
+      "review_notes": [
+        "角色为interpretation，不能升级为已证实机制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "作者将无迁移单风场GP的平均MAE从10%数据的3.84%到50%的3.56%仅有限改善，解释为GP能以较少数据快速概括目标关系；并认为这有助于理解迁移框架40%-50%时MAE从3.23%到3.22%的平台，但该解释没有通过独立样本复杂度或组件消融检验。",
+      "claim_type": "data_efficiency_plateau_interpretation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "比较Table 2中单风场GP和迁移框架的不同训练比例平均误差。",
+          "design": "同一8目标风场、3个seed、相关两年时间记录。",
+          "comparator": "farm-level GP 10%-50%的变化及TL 40%-50%的变化。",
+          "measure": "GP平均MAE3.84至3.56%；TL平均MAE3.23至3.22%；GP在20%为3.87%，并非严格单调。",
+          "unit_of_analysis": "既有预测误差曲线的解释，不是另一个理论或独立实验样本。",
+          "sample_size_as_reported": "同8个目标风场、3个seed，无额外机制重复。",
+          "uncertainty": "小差值没有置信区间，且不同训练比例可能对应不同测试集。",
+          "assumptions": [
+            "GP以有限数据适配的能力被作者用作平台现象的解释。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "3 Results: Quantitative Results",
+            "figure": "Table 2; Table 7",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者给出了与总体误差曲线相容的数据效率解释。",
+        "boundary": "描述有限边际收益不等于证明已达到不可改善的性能上限。",
+        "negative_result": null,
+        "non_inference": "不能推导一般GP样本复杂度定理、所有数据量单调改善或因果机制确定。",
+        "unresolved": "测试集变化、噪声、模型容量和优化是否造成平台尚未分离。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "GP和天气簇迁移的误差平台是否来自少样本适配能力，还是数据与优化限制？"
+      ],
+      "shared_evidence_with": [
+        "C4",
+        "C5"
+      ],
+      "review_notes": [
+        "平台解释与低数据量实际比较共享Table 2证据，不计独立复现。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C13",
+      "statement": "作者提出未来用时间序列因子化和更长上下文提取关键预测信息，以扩展当前一小时提前框架到更长预测时距和更广气候区域；本文尚未测试这些扩展，因此它们是后续研究假设而不是已实现的跨气候泛化结果。",
+      "claim_type": "forecasting_extension_hypothesis",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "Discussion中的未来研究方案。",
+          "design": "提出factorising time series与longer contexts，但无具体新增实验或结果。",
+          "comparator": "本文现有北欧/欧洲风场的一小时提前合成数据设置。",
+          "measure": null,
+          "unit_of_analysis": "研究方案，非实验单位。",
+          "sample_size_as_reported": null,
+          "uncertainty": "没有长时距或更广气候区域的预测误差数据。",
+          "assumptions": [
+            "关键时序信息可被因子化并促进更长时距和跨气候适配是待检验假设。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "4 Discussion",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提出可供检验的模型扩展路线。",
+        "boundary": "没有开展长时距或新气候带的结果评价。",
+        "negative_result": null,
+        "non_inference": "未评估不是扩展失败；不能声称已解决更复杂气候区或长时距预测。",
+        "unresolved": "需新增设计、时间可用性控制和外部气候区数据验证。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "时序因子化和更长上下文能否将气象簇迁移拓展至更长预测时距和新气候区域？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "仅记录源文研究假设，无额外n或效应值。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C14",
+      "statement": "作者提出气象簇迁移可能发展为快速、地点与配置相关的Wind Resource Assessment工具，减少早期项目的数据等待与风险；该应用仍需真实运行数据、turbine specifications、wake effects、缺失/不规则观测处理以及质量分数权重验证，本文没有报告资源评估、投资成本或电网风险的实测改善。",
+      "claim_type": "resource_assessment_application_hypothesis",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "Abstract、Impact Statement和Discussion中的应用展望及局限说明。",
+          "design": "以合成功率的一小时预测结果作为应用动机；没有开展WRA或经济评价。",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "未来应用方向，不是项目、投资或电网事件样本。",
+          "sample_size_as_reported": null,
+          "uncertainty": "无资源评估误差、项目成本、风险或部署时间的量化证据。",
+          "assumptions": [
+            "真实数据与工程异质性被后续方法处理。",
+            "Q的启发式权重经生产环境交叉验证。",
+            "预测数据效率能够转化为WRA应用效益仍是待验证假设。"
+          ],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "Abstract; Impact Statement; 4 Discussion",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "指出潜在应用目标及达成它所需的新验证条件。",
+        "boundary": "本文证据是合成数据预测，不是资源评估或经济结果。",
+        "negative_result": null,
+        "non_inference": "不能把Impact Statement的成本/风险降低措辞当作已证明的经济或系统收益。",
+        "unresolved": "真实SCADA适用性、wake与turbine异质性、缺测处理和WRA/经济效果均未验证。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "经真实运行数据与工程异质性验证后，气象簇迁移是否能减少早期Wind Resource Assessment的数据等待？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "与C13分别记录应用转化和模型时距/气候扩展假设；没有假造实验或因果经济效应。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "完整评估15页源文本、Figure 1-5标题、Table 1-9及Appendix A-D。来源为arXiv:2601.19674v2（2026-04-24），未将期刊模板页眉认作正式出版。研究基于ERA5和功率曲线生成的合成数据，使用6个源风场、8个目标风场及3个计算seed；通过8维VAE气象表示、6小时8簇划分和cluster-specific GP初始化/微调实现跨场址预测。20%两年本地记录约4.8个月时平均MAE3.52%，低于同量从零簇GP4.13%，与从零模型一年数据3.55%接近，但不能声称显著改善。10%时单风场GP的MAE及CRPS优于迁移方法；R^2在所有数据比例下也未领先单风场GP或NN。不同天气簇和Gemini簇内误差具有异质性。概率预测的CRPS与PICP95分别记录，40%时覆盖0.949接近名义0.95，但缺少区间宽度和条件校准证据。第二次源文审计保留了Table 1样本总数/簇计数和源/目标表题冲突、seed/std聚合歧义、NN层数描述差别、cold-start上游数据预算及窗口时序边界不清等问题。地点依赖与GP平台解释单列为interpretation，长时距/气候扩展和WRA应用单列为hypothesis；无实测SCADA、经济或电网因果效益。全部14条为human_checked:false的候选，无跨论文支持、反驳或复现链接。",
+  "shared_evidence": [
+    {
+      "claim_id": "C4",
+      "with": [
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C4",
+        "C6",
+        "C8",
+        "C10",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C4",
+        "C5",
+        "C7",
+        "C10"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C4",
+        "C6",
+        "C8",
+        "C9",
+        "C10",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C4",
+        "C5",
+        "C7",
+        "C9"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C4",
+        "C7",
+        "C8"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "with": [
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "with": [
+        "C4",
+        "C7",
+        "C10"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "with": [
+        "C4",
+        "C5"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": null,
+        "issue": "源文件明确arXiv v2、24 Apr 2026，页眉Environmental Data Science的卷期仍为xx:xx。",
+        "suggested_correction": "已保留实际v2日期及预印本身份；不推断正式期刊出版或替换为索引之外版本。",
+        "pdf_page": 1,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "数据是ERA5驱动的合成功率，而不是风场SCADA实测；正文偶有operational data措辞。",
+        "suggested_correction": "所有性能命题明确为合成标签评价；真实运行效果作为未决条件。",
+        "pdf_page": 2,
+        "resolved": true
+      },
+      {
+        "claim_id": "C1",
+        "issue": "六小时BiLSTM窗口与每小时一小时提前预测的可用信息边界没有完整说明，训练/测试连续时序切分也未明确。",
+        "suggested_correction": "保留前视/时序切分为未决设计问题；不指控已经确定发生泄漏，也不认定生产实时有效。",
+        "pdf_page": 4,
+        "resolved": false
+      },
+      {
+        "claim_id": "C2",
+        "issue": "Q权重为启发式且distributional consistency涉及训练/测试簇比例，源文未明确选择流程的数据隔离。",
+        "suggested_correction": "限定为文中加权质量分数的折中选择，生产权重验证和选择隔离仍需核查。",
+        "pdf_page": 5,
+        "resolved": false
+      },
+      {
+        "claim_id": "C3",
+        "issue": "Table 1列8簇test samples之和16,824，与overall 17,490不同。",
+        "suggested_correction": "保留源表两种计数，不替作者选择n或解释缺失666个样本。",
+        "pdf_page": 8,
+        "resolved": false
+      },
+      {
+        "claim_id": "C3",
+        "issue": "正文称6个source farms的评价，但Table 1标题称跨target farms。",
+        "suggested_correction": "按正文源域上下文提取并明确表题矛盾，统计集合交人工核查。",
+        "pdf_page": 8,
+        "resolved": false
+      },
+      {
+        "claim_id": "C4",
+        "issue": "20%微调数据约4.8个月的优势不等于端到端仅使用5个月目标信息；源场选择使用了29风场两年统计。",
+        "suggested_correction": "限定为本地微调数据量，保留上游cold-start预算不明确的问题。",
+        "pdf_page": 3,
+        "resolved": false
+      },
+      {
+        "claim_id": "C4",
+        "issue": "20%迁移3.52%对50%从零簇GP 3.55%的差小，且不同gamma保留不同测试比例。",
+        "suggested_correction": "仅记录报告均值，不声称显著优势或同一固定测试集。",
+        "pdf_page": 8,
+        "resolved": true
+      },
+      {
+        "claim_id": "C5",
+        "issue": "10%设置中farm-level GP的MAE低于迁移框架。",
+        "suggested_correction": "已单独提取实际负结果，不使用全数据量领先措辞。",
+        "pdf_page": 8,
+        "resolved": true
+      },
+      {
+        "claim_id": "C6",
+        "issue": "Table 2的TL R^2在所有列出的数据量下低于farm-level GP和NN，限制了正文全面优于NN的概括。",
+        "suggested_correction": "已保存指标依赖的排名差异，不把MAE优势扩大到R^2。",
+        "pdf_page": 8,
+        "resolved": true
+      },
+      {
+        "claim_id": "C6",
+        "issue": "Appendix A称NN有8个隐藏层，却只列7个隐藏宽度。",
+        "suggested_correction": "不猜测缺失层或修改共享代码；记录基准结构文字仍不完全可复现。",
+        "pdf_page": 11,
+        "resolved": false
+      },
+      {
+        "claim_id": "C8",
+        "issue": "CRPS低于MAE的数值关系不能证明逐例方差扩张并捕获真实值，且10%时CRPS不及farm-level GP。",
+        "suggested_correction": "已保留直接评分及低数据量负结果，不提取该未证实逐例机制为结果。",
+        "pdf_page": 9,
+        "resolved": true
+      },
+      {
+        "claim_id": "C9",
+        "issue": "接近95%的PICP为经验边际覆盖，无区间宽度、误差条或条件校准；高PICP单独不足以判定信息量。",
+        "suggested_correction": "将覆盖和CRPS拆开，限制为表报覆盖频率，排除未获支持的区间机制推断。",
+        "pdf_page": 13,
+        "resolved": true
+      },
+      {
+        "claim_id": "C10",
+        "issue": "正文的约66.7%较易迁移时段比例，与Table 3所列测试计数计算不能精确对齐；samples与time periods单位亦不完全明确。",
+        "suggested_correction": "不在命题中强制使用66.7%或重写计数，保留采样单位和比例疑点。",
+        "pdf_page": 9,
+        "resolved": false
+      },
+      {
+        "claim_id": null,
+        "issue": "Table标题称mean/std跨风场，而Appendix A/D说明3个seed运行平均；跨seed与跨风场std的结合层级未完全统一。",
+        "suggested_correction": "所有std只按作者报告保存，不改作置信区间或推断独立实验n。",
+        "pdf_page": 13,
+        "resolved": false
+      },
+      {
+        "claim_id": "C11",
+        "issue": "地点依赖解释与簇级误差结果共用证据，没有机制消融。",
+        "suggested_correction": "已标为interpretation，与C7/C10建立源内共享证据而非跨论文关系。",
+        "pdf_page": 9,
+        "resolved": true
+      },
+      {
+        "claim_id": "C12",
+        "issue": "GP误差并非随数据量严格单调，平台解释不是样本复杂度证明。",
+        "suggested_correction": "已保留20%时3.87%的非单调表值并限定作者解释。",
+        "pdf_page": 8,
+        "resolved": true
+      },
+      {
+        "claim_id": "C14",
+        "issue": "Impact Statement声称减少早期不确定性/成本，但没有经济、WRA或真实部署结果。",
+        "suggested_correction": "应用与收益改作hypothesis，和模型扩展C13分别记录，未评估不等于实际失败。",
+        "pdf_page": 1,
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T13:45:45.178666Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "ee167ba310ee02db67923660eda2657b66a25e73a990bc49406b0a1743b4de8b",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

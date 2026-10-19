@@ -1,0 +1,125 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>HERO-SNN: A Homeostatic Eligibility-based Reward- Optimised Spiking Neural Network for Spatiotemporal Brain Representation: An EEG Case Study</title><style>body{max-width:940px;margin:40px auto;padding:0 24px;background:#fffdf7;color:#12372f;font:16px/1.8 Georgia,serif}h1{font-size:26px;line-height:1.4}h2{font-size:20px;line-height:1.5}h3{font-size:16px}article{padding:26px 0;border-top:1px solid #bec4b8}small{color:#68766e}dl{display:grid;grid-template-columns:120px 1fr;gap:8px 20px}dt{font-weight:bold}dd{margin:0}li{padding:8px 0}p,dd{overflow-wrap:anywhere}.note{background:#eef2e2;padding:14px;border-left:3px solid #738968}summary{cursor:pointer}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.7 monospace}@media(max-width:600px){body{margin:24px auto;padding:0 18px}dl{grid-template-columns:1fr;gap:3px}dd{margin-bottom:12px}}@media print{body{margin:0;background:white}details{display:block}}</style><link rel="stylesheet" href="../../commons-v02.css?v=20261020-1"><link rel="stylesheet" href="../../examples.css?v=20260928-2"><link rel="stylesheet" href="../../site.css?v=20261020-1"><script defer src="../../site.js?v=20261020-1"></script><script defer src="../../report-ui.js?v=20261020-1"></script></head><body class="portal-page report-page" data-cc-report-shell="1" data-page="library" data-site-prefix="../../" data-library-paper="paper-W7166068485" data-report-language="zh" data-claim-records="{&quot;C1&quot;:&quot;structured-paper-W7166068485-1&quot;,&quot;C2&quot;:&quot;structured-paper-W7166068485-2&quot;,&quot;C3&quot;:&quot;structured-paper-W7166068485-3&quot;,&quot;C4&quot;:&quot;structured-paper-W7166068485-4&quot;,&quot;C5&quot;:&quot;structured-paper-W7166068485-5&quot;,&quot;C6&quot;:&quot;structured-paper-W7166068485-6&quot;,&quot;C7&quot;:&quot;structured-paper-W7166068485-7&quot;}"><header></header><main id="report-content"><div id="report-tools"></div><small>CLAIM COMMONS / 阅读报告</small><h1>HERO-SNN: A Homeostatic Eligibility-based Reward- Optimised Spiking Neural Network for Spatiotemporal Brain Representation: An EEG Case Study</h1><p class="note">AI 文本提取候选，尚待人工核对。图像像素未读取；PDF 页码指文件中的页序。</p><p>Research Square v1预印本（2026-06-26），全部14页文字与图表说明已评估。HERO-SNN在既有NeuCube/STDP+deSNN之后，用训练标签产生的类置信度差、局部资格迹与阈值负反馈细化内部网络。EEG来自23名Havening参与者，仅眼闭数据；每人12片段，训练12人144片段、测试11人132片段。登记7个候选，涵盖算法/阈值设计、局部权重与资格参与变化、两类性能比较及fMRI扩展假设。Table I报告91.30%对84.62%，并高于CNN/LSTM，但正文11%、指标聚合、LSTM分项数值、权重更新符号、最大脉冲参数与图号均有待澄清。没有置信区间、独立重复或组件消融，不能据此判定生物机制、治疗效果、数学收敛或跨模态通用性。审计限于已供文本，未读像素或原PDF，所有记录待人工核查。</p><a href="https://assets-eu.researchsquare.com/files/rs-10012975/v1_covered_03f749bc-7a31-4eec-83d6-b96bf359bd13.pdf?c=1782467866" rel="noreferrer">查看所读原文版本 ↗</a><details><summary>贡献清单与处理决定</summary><ul><li><b>NeuCube基础编码、LIF、STDP和deSNN背景。</b><br>exclude · 既有方法；不把引文或继承算法计为本篇新贡献。</li><li><b>训练标签置信度差与局部资格迹对储备池内部权重的重放更新。</b><br>include · C1；完整保留零/负反馈及资格迹条件。</li><li><b>逐神经元阈值负反馈、约3脉冲目标及适应输出。</b><br>include · C2；设定目标与实际稳定性效果分开。</li><li><b>细化后局部连接变化和正/负权重分布。</b><br>include · C3；文本定性结果与未见全局一致变化保留，不读像素。</li><li><b>144训练片段重放时资格突触数逐步减少。</b><br>include · C4；减少趋势不当作收敛证明。</li><li><b>HERO-SNN对STDP+deSNN及CNN/LSTM的分类比较。</b><br>include · C5-C6；共同样本和实验明确共享，表值和不一致均保留。</li><li><b>改进分类意味着更具判别力/可解释性或homeostasis导致稳定性。</b><br>exclude · 分类改善与连接示意只提供间接依据；作为相关记录的解释边界，不重复构造直接机制/可解释性验证。</li><li><b>向fMRI等其他时空数据扩展。</b><br>include · C7；明确尚未实施的外推。</li><li><b>EEG原始采集研究、已有治疗或神经科学研究的结果。</b><br>exclude · 引用背景和复用数据来源不是本篇新独立实验；声明与参考文献全读但不新增科学结论。</li></ul></details><article><small>C1 / 直接结果 · algorithm_design</small><h2>HERO-SNN在NeuCube的STDP储备池与deSNN原型分类之后，仅重放有标签训练样本，以真实类与预测类置信度之差O及带衰减的局部前/后突触共同脉冲资格迹e，按Delta w=eta O e更新内部储备池突触；预测正确时O=0，误分类时O为负。</h2><h3>Evidence</h3><p>三阶段算法与资格迹/置信度更新规则</p><dl><dt>设计 / 对照</dt><dd>训练样本重放；临时输出原型与已存deSNN原型的脉冲相似度形成类置信度。；传统STDP+deSNN在无监督训练后固定储备池内部权重。</dd><dt>独立单位与 n</dt><dd>模拟突触与训练样本；不是生物突触测量。；独立人员共23人，H+ 14人、H- 9人；训练12人（7+5）、测试11人（7+4）；每人12个相关片段，训练144片段、测试132片段，总276片段。1,471个模拟神经元及64通道不是独立人员或重复实验。</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 6 · 2.3.1-2.3.4</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>提出让任务反馈改变内部连接而非只改变读出层的训练算法。</dd><dt>适用边界</dt><dd>公式为算法定义而非收敛或生物实现证明。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>活动资格不等于因果信用分配；置信度差不是外部环境奖励；不据此认定实现完整reinforcement learning或正负双向更新。</dd><dt>未解决</dt><dd>在通常非负学习率与非负资格迹下，所给O只为零或负，与文字所称可加强或削弱权重的对应关系未解释。</dd></dl><h3>相关问题</h3><ul><li>如何把分类反馈传回脉冲储备池内部连接？</li></ul></article><article><small>C2 / 直接结果 · homeostatic_control_design</small><h2>HERO-SNN采用逐神经元发放阈值负反馈：观测发放率高于目标则提高阈值，低于目标则降低阈值；本EEG实例把每512时间点片段的目标设为约3个脉冲，并展示细化前后的神经元特异性阈值改变。</h2><h3>Evidence</h3><p>发放率误差驱动阈值适应及文字图注</p><dl><dt>设计 / 对照</dt><dd>阈值调整与突触可塑性分别实施；设置最低脉冲约束及最大发放分数。；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>模拟神经元；不是在体细胞或独立实验。；储备池1,471个模拟神经元；片段512时间点；目标0.006乘512约3脉冲。</dd><dt>不确定性</dt><dd>未报告发放稳定性的数值分布、置信区间或无homeostasis消融。</dd><dt>原文位置</dt><dd>PDF 7 · 2.3.5</dd></dl><p>阈值适应图注及参数表</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>同一模拟储备池内神经元。；独立人员共23人，H+ 14人、H- 9人；训练12人（7+5）、测试11人（7+4）；每人12个相关片段，训练144片段、测试132片段，总276片段。1,471个模拟神经元及64通道不是独立人员或重复实验。</dd><dt>不确定性</dt><dd>无图像像素；只依据图注，未给逐神经元阈值数值。</dd><dt>原文位置</dt><dd>PDF 11 · 正文称Fig.7(a)，实际所供图注标Fig.6(a)</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>给出控制兴奋性的局部负反馈设计，并报告该设计的阈值适应输出。</dd><dt>适用边界</dt><dd>约3脉冲是设定目标，不是所有神经元达标的实测结论。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>没有独立证明它防止失稳、避免静默或导致性能增益；不能称生物homeostasis验证。</dd><dt>未解决</dt><dd>Table II把最大6脉冲的计算同时写为0.012乘250，与512时间点长度和数值不相容；不能猜测实际运行上限。</dd></dl><h3>相关问题</h3><ul><li>分类反馈细化时如何以阈值负反馈约束脉冲活动？</li></ul></article><article><small>C3 / 直接结果 · reservoir_connectivity_observation</small><h2>在本眼闭H+/H- EEG的1,471神经元NeuCube储备池中，STDP+deSNN后应用HERO-SNN训练重放，作者报告连接变化集中于局部区域，影响正、负权重，而未观察到整个网络连接强度一致增加或一致减少。</h2><h3>Evidence</h3><p>细化前后连接示意及权重直方图的正文/图注比较</p><dl><dt>设计 / 对照</dt><dd>同一训练数据与储备池在STDP及任务细化两个阶段比较。；未做任务细化的STDP储备池。</dd><dt>独立单位与 n</dt><dd>同一模拟网络的突触；非独立神经生物学样本。；独立人员共23人，H+ 14人、H- 9人；训练12人（7+5）、测试11人（7+4）；每人12个相关片段，训练144片段、测试132片段，总276片段。1,471个模拟神经元及64通道不是独立人员或重复实验。</dd><dt>不确定性</dt><dd>未提供局部变化量、统计检验或独立网络重复次数。</dd><dt>原文位置</dt><dd>PDF 9 · Fig.5(a-c)；Fig.6权重直方图，PDF第10页</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>作者报告任务细化改变既有网络的局部连接，且涉及兴奋性与抑制性权重。</dd><dt>适用边界</dt><dd>图示/定性比较；储备池变化与EEG脑网络变化不同。</dd><dt>实际负结果</dt><dd>正文未观察到全网连接强度一致性增加或一致性减少；这不是零整体均值差的统计检验。</dd><dt>不能推出</dt><dd>不据局部变化认定突触具有因果任务相关性、特定脑区机制或真实脑连接重塑。</dd><dt>未解决</dt><dd>加强/削弱权重的定性说明与更新式符号问题尚未协调；没有直接表示质量指标。</dd></dl><h3>相关问题</h3><ul><li>任务反馈是否局部重组已学习的EEG脉冲储备池连接？</li></ul></article><article><small>C4 / 直接结果 · eligibility_dynamics</small><h2>本HERO-SNN EEG实验的144个训练片段在任务细化阶段重放时，所供图注报告被更新的资格突触数量逐步减少；作者将其解释为网络表示趋于稳定，但未给资格突触数值序列或独立稳定性检验。</h2><h3>Evidence</h3><p>训练重放期间资格突触计数图注</p><dl><dt>设计 / 对照</dt><dd>细化阶段按训练片段顺序记录更新突触数。；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>同一训练过程的重复时间/样本观测，不是144个独立网络重复。；144个训练片段，来自12名训练参与者；重复训练次数未报告。</dd><dt>不确定性</dt><dd>文本仅描述逐步减少，无数值轨迹、误差条或显著性检验。</dd><dt>原文位置</dt><dd>PDF 11 · 正文称Fig.7(b)，图注标Fig.6(b)</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>文本图注报告资格突触参与数在训练重放过程中减少。</dd><dt>适用边界</dt><dd>该趋势限于展示的重放过程。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>减少资格突触数不证明数学收敛、表示稳定性、泛化或homeostasis的独立因果作用。</dd><dt>未解决</dt><dd>缺乏资格计数原始数据、随机重复和组件消融。</dd></dl><h3>相关问题</h3><ul><li>任务细化重放过程中有资格的突触参与范围如何变化？</li></ul></article><article><small>C5 / 直接结果 · classification_comparison</small><h2>对来自不同于训练集的11名参与者的132个眼闭H+/H- EEG测试片段，Table I报告HERO-SNN总准确率91.30%、F1=0.91，STDP+deSNN基线总准确率84.62%、F1=0.85；这些表值高于基线，但不支持正文所写的11%提升数值。</h2><h3>Evidence</h3><p>人员分离的训练/测试分类及参数搜索</p><dl><dt>设计 / 对照</dt><dd>23人各选3秒EEG，切12个不重叠250ms片段；训练12人144片段，测试11人132片段；只训练样本用于细化。；STDP+deSNN，无任务感知细化。</dd><dt>独立单位与 n</dt><dd>指标按EEG片段报告；可独立人员测试单位11人，片段嵌套在人内。；独立人员共23人，H+ 14人、H- 9人；训练12人（7+5）、测试11人（7+4）；每人12个相关片段，训练144片段、测试132片段，总276片段。1,471个模拟神经元及64通道不是独立人员或重复实验。</dd><dt>不确定性</dt><dd>无置信区间、误差、显著性检验、独立随机重复次数；grid search交叉验证是否与最终测试严格嵌套未交代。</dd><dt>原文位置</dt><dd>PDF 11 · 3.2；Table I</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>所报表格准确率和F1在这一配置下均高于无细化基线。</dd><dt>适用边界</dt><dd>只保留表中估计，未确认统计显著或一般化优势。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不证明Havening的临床疗效、生物机制或三个新增组件各自贡献；没有单组件消融。</dd><dt>未解决</dt><dd>正文11%与表值不符；总/分类准确率与所列测试样本数的聚合方式不明确，不能反推混淆矩阵或成功片段数。</dd></dl><h3>相关问题</h3><ul><li>在人员分离的Havening EEG分类中内部任务细化是否优于固定STDP储备池？</li></ul></article><article><small>C6 / 直接结果 · architecture_comparison</small><h2>在文中所述144训练片段/132测试片段、人员分离的H+/H- EEG比较中，Table I报告HERO-SNN准确率91.30%、F1=0.91，高于经grid search调整的CNN（83.64%、0.83）和LSTM（69.05%、0.74）；LSTM表内的总体与分类准确率存在未澄清不一致。</h2><h3>Evidence</h3><p>CNN/LSTM与HERO-SNN在共同EEG划分上的表格比较</p><dl><dt>设计 / 对照</dt><dd>CNN Adam训练30 epochs、batch32；LSTM Adam训练80 epochs、batch12；作者称均grid search调参。；CNN与LSTM。</dd><dt>独立单位与 n</dt><dd>EEG片段分类、参与者分离；训练更新步数不是独立重复。；独立人员共23人，H+ 14人、H- 9人；训练12人（7+5）、测试11人（7+4）；每人12个相关片段，训练144片段、测试132片段，总276片段。1,471个模拟神经元及64通道不是独立人员或重复实验。</dd><dt>不确定性</dt><dd>无误差区间、显著性、独立训练种子数；调参预算、公平性与nested validation未充分说明。</dd><dt>原文位置</dt><dd>PDF 11 · 3.2；Table I</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>在所报单一比较表内HERO-SNN准确率及F1高于两种基线。</dd><dt>适用边界</dt><dd>文本数值比较，不是广泛state-of-the-art或跨数据集结论。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不推断普遍架构优势、能耗、样本效率或训练计算优势。</dd><dt>未解决</dt><dd>LSTM总准确率69.05%高于两个分类准确率65.48%和61.65%；若定义与聚合一致则无法形成加权总体，但源文未说明不同定义。</dd></dl><h3>相关问题</h3><ul><li>HERO-SNN在该人员分离EEG任务上与CNN和LSTM的分类表现如何比较？</li></ul></article><article><small>C7 / 假说 / 预测 · cross_modality_extension</small><h2>作者提出HERO-SNN的训练反馈、局部资格迹和阈值适应框架可扩展至fMRI等其他时空数据；本预印本只给Havening眼闭EEG实例，没有提供fMRI验证。</h2><h3>Evidence</h3><p>总结中的扩展建议</p><dl><dt>设计 / 对照</dt><dd>由EEG实例提出的应用方向，非新的fMRI实验。；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>不确定性</dt><dd>未提供fMRI数据、模型比较或验证样本。</dd><dt>原文位置</dt><dd>PDF 12 · 4 Summary</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>提出可检验的跨模态应用方向。</dd><dt>适用边界</dt><dd>尚未验证；本源仅EEG。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能登记为已经提升fMRI分类性能或已证实跨模态通用性。</dd><dt>未解决</dt><dd>fMRI时间尺度、空间映射与任务反馈的适配和效果。</dd></dl><h3>相关问题</h3><ul><li>该任务感知脉冲细化框架能否适用于fMRI等其他时空数据？</li></ul></article><details><summary>核对记录与来源信息</summary><pre>{
+  &quot;coverage&quot;: {
+    &quot;pdf_pages_read&quot;: [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    &quot;results_sections_seen&quot;: [
+      &quot;2.1-2.4方法与验证&quot;,
+      &quot;3.1 Dataset&quot;,
+      &quot;3.2 Experiment and Results：Fig.3-6/正文Fig.7，Table I&quot;,
+      &quot;3.3 Parameter Optimisation：Table II&quot;,
+      &quot;4 Summary；声明、数据/代码可用性与参考文献&quot;
+    ],
+    &quot;missing_material&quot;: [
+      &quot;图像像素未提供，未读图中数值或空间区域。&quot;,
+      &quot;未提供EEG原始数据或HERO-SNN运行代码。&quot;,
+      &quot;未提供独立补充材料；所供14页无附录。&quot;
+    ],
+    &quot;text_pass_complete&quot;: true,
+    &quot;notes&quot;: [
+      &quot;已以4段不超过17,500字符的输出评估全部14页，包括封面、全部方法、正文、图表文字、声明及参考文献。&quot;,
+      &quot;封面DOI、六位作者和题名与指定来源匹配；Research Square v1，posted 2026-06-26；封面Research Article标签不等同已同行评审。&quot;,
+      &quot;仅已存页文本；原PDF离线，未重新打开。&quot;,
+      &quot;第二次源内审计在保留的全文上下文中逐条核对算法符号、表值、单位、共享证据、贡献遗漏及外推；不是独立科学验证。&quot;,
+      &quot;英文证据引用全部为null；关系为空；保留候选及human_checked:false。&quot;
+    ],
+    &quot;reading_mode&quot;: &quot;text_only&quot;,
+    &quot;figure_images_read&quot;: false,
+    &quot;scientific_verification&quot;: false,
+    &quot;source_pdf_offline&quot;: true,
+    &quot;archived_page_text_used&quot;: true
+  },
+  &quot;audit&quot;: {
+    &quot;source_match_checks&quot;: [],
+    &quot;model_findings&quot;: [
+      {
+        &quot;claim_id&quot;: &quot;C5&quot;,
+        &quot;issue&quot;: &quot;源文反复称11%准确率提升，但Table I的91.30%与84.62%相减仅6.68个百分点。&quot;,
+        &quot;suggested_correction&quot;: &quot;候选保留表值并显式披露；6.68为表值算术而非新实验，待作者确认11%的定义。&quot;,
+        &quot;pdf_page&quot;: 11,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C1&quot;,
+        &quot;issue&quot;: &quot;O=p_true-p_pred在正确时0、错误时负，非负资格迹与正学习率下不保证文字所说的双向权重更新。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留原规则及符号，避免写成已证明增强/削弱机制；请核查代码或作者解释。&quot;,
+        &quot;pdf_page&quot;: 6,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C2&quot;,
+        &quot;issue&quot;: &quot;Table II把最大脉冲数列为6，计算却为0.012乘250；所报片段长度为512。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留源内冲突，不擅改实际参数；约3脉冲仅登记目标。&quot;,
+        &quot;pdf_page&quot;: 12,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C4&quot;,
+        &quot;issue&quot;: &quot;正文把阈值/资格图称Fig.7，PDF第11页图注却重复Fig.6编号。&quot;,
+        &quot;suggested_correction&quot;: &quot;定位保留实际PDF页及两种编号，避免混淆PDF第10页权重直方图。&quot;,
+        &quot;pdf_page&quot;: 11,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C6&quot;,
+        &quot;issue&quot;: &quot;LSTM总体准确率高于其两个分类准确率；多个表格百分比与所述测试样本数的聚合规则不透明。&quot;,
+        &quot;suggested_correction&quot;: &quot;按源表值报告且不反推混淆矩阵，需作者澄清指标定义。&quot;,
+        &quot;pdf_page&quot;: 11,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;276片段、144/132划分容易被误作独立人员样本或精确50:50。&quot;,
+        &quot;suggested_correction&quot;: &quot;已在相关证据标明23人，训练12、测试11；重复片段不是独立人员；50-50为作者标签非完全等分。&quot;,
+        &quot;pdf_page&quot;: 8,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;正文和公式中有变量字符丢失、公式交叉引用编号不一致（如阈值更新称Equation16）。&quot;,
+        &quot;suggested_correction&quot;: &quot;只用可辨识变量与清楚的方向说明；保留真实PDF页/公式标签，不重建损坏的编码公式。&quot;,
+        &quot;pdf_page&quot;: 8,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;方法、连接图、阈值/资格图与性能比较来自共同数据和训练过程，不是独立复现。&quot;,
+        &quot;suggested_correction&quot;: &quot;已把C1-C6关联为共享源内证据；不给跨文献支持或复现关系。&quot;,
+        &quot;pdf_page&quot;: 11,
+        &quot;resolved&quot;: true
+      }
+    ],
+    &quot;needs_human_review&quot;: true
+  },
+  &quot;source&quot;: {
+    &quot;filename&quot;: &quot;paper-W7166068485--HERO-SNN-A-Homeostatic-Eligibility-based-Reward-Optimised-Spiking-Neural-Network-for-Spatiotemp.pdf&quot;,
+    &quot;sha256&quot;: &quot;62f02893fdac9649b14291400f7a93c7c926b88a8842069f1a6c3e25ddc80994&quot;,
+    &quot;source_url&quot;: &quot;https://assets-eu.researchsquare.com/files/rs-10012975/v1_covered_03f749bc-7a31-4eec-83d6-b96bf359bd13.pdf?c=1782467866&quot;,
+    &quot;pdf_page_count&quot;: 14
+  },
+  &quot;provenance&quot;: {
+    &quot;created_at&quot;: &quot;2026-10-07T13:29:02.461647Z&quot;,
+    &quot;workflow&quot;: &quot;claim-commons-pdf-v1&quot;,
+    &quot;prompt_version&quot;: &quot;claim-commons-chatgpt-pdf-2026-10-07.1&quot;,
+    &quot;backend&quot;: &quot;authorized_parallel_GPT&quot;,
+    &quot;model&quot;: &quot;inherited_account_GPT&quot;,
+    &quot;provider_api_key_used&quot;: false,
+    &quot;source_sha256&quot;: &quot;62f02893fdac9649b14291400f7a93c7c926b88a8842069f1a6c3e25ddc80994&quot;,
+    &quot;source_audit_complete&quot;: true,
+    &quot;review_status&quot;: &quot;candidate&quot;,
+    &quot;database_updated&quot;: false
+  }
+}</pre></details></main><footer></footer></body></html>

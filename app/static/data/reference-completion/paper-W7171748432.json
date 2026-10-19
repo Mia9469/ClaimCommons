@@ -1,0 +1,1095 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "preprint",
+  "paper": {
+    "title": "A Cyclic Adaptation-Generalization Framework with Uncertainty-Guided Self-Paced Learning for Long-Term Brain-Machine Interfaces",
+    "authors": [
+      "Jiyu Wei",
+      "Di Hong",
+      "Zhanjie Zhang",
+      "Dazhong Rong",
+      "Qinming He",
+      "Yueming Wang"
+    ],
+    "doi": null,
+    "publication_year": 2026,
+    "venue": "arXiv (Cornell University)",
+    "url": "https://arxiv.org/pdf/2607.24031"
+  },
+  "source": {
+    "filename": "paper-W7171748432--A-Cyclic-Adaptation-Generalization-Framework-with-Uncertainty-Guided-Self-Paced-Learning-for-Lo.pdf",
+    "sha256": "88e27d7d754654659d44b48f7ca415716c1701afb3f963d5426a0b78cac2338d",
+    "source_url": "https://arxiv.org/pdf/2607.24031",
+    "pdf_page_count": 8
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "results_sections_seen": [
+      "RPD/sourceconsistency",
+      "UnSPL/uncertainty/rank",
+      "CycAG/DA-DG",
+      "NHP9targetsession",
+      "C1ablation",
+      "C1sensitivity",
+      "FALCONhumancomparison"
+    ],
+    "missing_material": [
+      "图像像素未读取",
+      "humanmetric/n、fullsplit/MC/cycles及statuncertainty未给"
+    ],
+    "text_pass_complete": true,
+    "notes": "arXiv2607.24031v1；8页全部3图4表37参考读完；离线缓存来源，未重开PDF。",
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": true,
+    "archived_page_text_used": true
+  },
+  "contribution_inventory": [
+    {
+      "summary": "UnSPC结合source监督RPD、target无标签uncertainty筛选和循环DA/DG以回归行为信号。",
+      "role": "interpretation",
+      "source_pages": [
+        3
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "RPD用随机channelmask、feature–label距离一致及teacher/student预测一致，提供source噪声稳健初始化。",
+      "role": "interpretation",
+      "source_pages": [
+        4
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "UnSPL按MCdropout与mask/teacher差异的标准化组合排序，渐增选择比例并以ranksoftweight训练。",
+      "role": "interpretation",
+      "source_pages": [
+        5
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "CycAG交替用MMD+weightedtargetclean和maskedtargetconsistency学习，循环内部共用source保留与pseudo-label。",
+      "role": "interpretation",
+      "source_pages": [
+        5
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "NHP多数targetsession的UnSPC CC/R²高于表列静态与DA/DG，C1R²由59.24（百分标度）到78.40，C2到78.77。",
+      "role": "result",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "最长Mihili target M3中UnSPC CC68.61、R²46.99低于SeSA71.57/54.24；多数但非全部结果超过该半监督基线。",
+      "role": "result",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "在C0→C1单对消融中，RPD提高R²59.24→73.04，完整UnSPC78.40；去RSS/RSW/Cyc步骤均比完整较低。",
+      "role": "result",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "非循环组合C1R²77.69与full78.40差较小，去CycDA或DG分别76.36/77.01，显示该特定配对内循环有数值增益。",
+      "role": "result",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "C1参数扫描中α影响较大，η/ϕ变化较小；default并非各参数每指标精确最优。",
+      "role": "result",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "FALCON人类虚拟arm数据的三targetdate中，UnSPC表列performance14.58/14.17/13.91，均高于static/UAN/WDGRL。",
+      "role": "result",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "作者提出该循环伪标签方案可支持longterm BMI与人机robotcontrol，但前瞻、实时预算及失败检测仍需新评估。",
+      "role": "hypothesis",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "Fig3 feature/trajectory接近ideal为定性单pair，不是所有targeterror或newbiologicalreplication。",
+      "role": "result",
+      "source_pages": [
+        6
+      ],
+      "decision": "boundary",
+      "reason": "没有pixels独立验证"
+    },
+    {
+      "summary": "preprocessing/数据randomsplit/zscore及全target使用说明不足，不假定streaming或无未来信息。",
+      "role": "interpretation",
+      "source_pages": [
+        5
+      ],
+      "decision": "unresolved",
+      "reason": "无运行期dataaccess评估"
+    },
+    {
+      "summary": "全部37references已读；offlinePDF未打开，按供给archivedpage-text处理。",
+      "role": "review_synthesis",
+      "source_pages": [
+        8
+      ],
+      "decision": "exclude",
+      "reason": "背景临床prosthesis文献非本篇独立人体控制"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "UnSPC结合source监督RPD、target无标签uncertainty筛选和循环DA/DG以回归行为信号。",
+      "claim_type": "longitudinal_neural_decoding",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "MLPteacher/student及伪标签学习",
+          "design": "labelday0+unlabeldayk；3layerMLPdropout.25",
+          "comparator": "static/sourceonly/DA/DG",
+          "measure": "解码流程",
+          "unit_of_analysis": "动物/人及会话/训练seed分层；时间bin非独立人",
+          "sample_size_as_reported": "3NHP Chewie/Mihili/Jango，各4session（source0、target1/2/3约1日/1月/3月）；5trainingseeds；trial/bin数量未给",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "Framework",
+            "figure": "Fig1–2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "UnSPC结合source监督RPD、target无标签uncertainty筛选和循环DA/DG以回归行为信号。",
+        "boundary": "属于target-awareUDA，CycDG内部也用targetpseudo-label，不是严格只source的DG。",
+        "negative_result": null,
+        "non_inference": "无真实电极drift机制或新在体闭环治效验证。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "brain-machine-interfaces",
+        "domain-adaptation",
+        "uncertainty-quantification"
+      ],
+      "scientific_questions": [
+        "伪标签适配与稳健表征能否维持长期神经解码且避免错误累积？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C11"
+      ],
+      "review_notes": [
+        "8页全text、3图4表37参考二次审计；3NHP/会话/seed分层，target-aware不是纯DG，M3/消融反例、不确定heuristic非保证及人类未命名指标保留。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "RPD用随机channelmask、feature–label距离一致及teacher/student预测一致，提供source噪声稳健初始化。",
+      "claim_type": "longitudinal_neural_decoding",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "监督+mask损失设计",
+          "design": "50msbin/100msGaussian/signalzscore",
+          "comparator": "plain source decoder",
+          "measure": "consistency/behaviorMSE",
+          "unit_of_analysis": "动物/人及会话/训练seed分层；时间bin非独立人",
+          "sample_size_as_reported": "3NHP Chewie/Mihili/Jango，各4session（source0、target1/2/3约1日/1月/3月）；5trainingseeds；trial/bin数量未给",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "Robust pre-training",
+            "figure": "Eq2–7",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "RPD用随机channelmask、feature–label距离一致及teacher/student预测一致，提供source噪声稳健初始化。",
+        "boundary": "模拟mask不是所有实际electrode新增/丢失；feature几何constraint不等neuralmanifold全保持。",
+        "negative_result": null,
+        "non_inference": null,
+        "unresolved": "Eq1所谓EMA实际系数为累积算术平均；maskc、MC数量和轮次未主文给。",
+        "unresolved_attribution": "来源局限及提取者来源复核"
+      },
+      "broad_directions": [
+        "brain-machine-interfaces",
+        "domain-adaptation",
+        "uncertainty-quantification"
+      ],
+      "scientific_questions": [
+        "伪标签适配与稳健表征能否维持长期神经解码且避免错误累积？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C11"
+      ],
+      "review_notes": [
+        "8页全text、3图4表37参考二次审计；3NHP/会话/seed分层，target-aware不是纯DG，M3/消融反例、不确定heuristic非保证及人类未命名指标保留。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "UnSPL按MCdropout与mask/teacher差异的标准化组合排序，渐增选择比例并以ranksoftweight训练。",
+      "claim_type": "longitudinal_neural_decoding",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "可靠样本heuristic",
+          "design": "qthresholdquantile/rankexp、目标pseudo-label由teacher给",
+          "comparator": "直接全target伪标签",
+          "measure": "selection/weight",
+          "unit_of_analysis": "动物/人及会话/训练seed分层；时间bin非独立人",
+          "sample_size_as_reported": "3NHP Chewie/Mihili/Jango，各4session（source0、target1/2/3约1日/1月/3月）；5trainingseeds；trial/bin数量未给",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "Self-paced uncertainty",
+            "figure": "Eq8–14",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "UnSPL按MCdropout与mask/teacher差异的标准化组合排序，渐增选择比例并以ranksoftweight训练。",
+        "boundary": "低uncertainty不保证伪标签正确，BN和rank是相对数值，非校准概率/预测区间。",
+        "negative_result": null,
+        "non_inference": "不证明防止所有confirmationbias或finegrain生物subdomain已识别。",
+        "unresolved": "γ0+w∆γ没有显式cap≤1/stop，总迭代不详；coefficientβ也用于loss，区分符号未充分。",
+        "unresolved_attribution": "来源局限及提取者来源复核"
+      },
+      "broad_directions": [
+        "brain-machine-interfaces",
+        "domain-adaptation",
+        "uncertainty-quantification"
+      ],
+      "scientific_questions": [
+        "伪标签适配与稳健表征能否维持长期神经解码且避免错误累积？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C11"
+      ],
+      "review_notes": [
+        "8页全text、3图4表37参考二次审计；3NHP/会话/seed分层，target-aware不是纯DG，M3/消融反例、不确定heuristic非保证及人类未命名指标保留。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "CycAG交替用MMD+weightedtargetclean和maskedtargetconsistency学习，循环内部共用source保留与pseudo-label。",
+      "claim_type": "longitudinal_neural_decoding",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "交替损失设计",
+          "design": "sourceα在Jango.1，另外1；beta.1 eta.2 phi.5",
+          "comparator": "非循环/单步骤",
+          "measure": "预期适应/鲁棒",
+          "unit_of_analysis": "动物/人及会话/训练seed分层；时间bin非独立人",
+          "sample_size_as_reported": "3NHP Chewie/Mihili/Jango，各4session（source0、target1/2/3约1日/1月/3月）；5trainingseeds；trial/bin数量未给",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "Cyclic optimization",
+            "figure": "Eq15–20",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "CycAG交替用MMD+weightedtargetclean和maskedtargetconsistency学习，循环内部共用source保留与pseudo-label。",
+        "boundary": "没有收敛/纯DG或整体calibration保证；可以过拟合完整目标会话。",
+        "negative_result": null,
+        "non_inference": "不等实时causalstreaming从future数据隔离。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "brain-machine-interfaces",
+        "domain-adaptation",
+        "uncertainty-quantification"
+      ],
+      "scientific_questions": [
+        "伪标签适配与稳健表征能否维持长期神经解码且避免错误累积？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C11"
+      ],
+      "review_notes": [
+        "8页全text、3图4表37参考二次审计；3NHP/会话/seed分层，target-aware不是纯DG，M3/消融反例、不确定heuristic非保证及人类未命名指标保留。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "NHP多数targetsession的UnSPC CC/R²高于表列静态与DA/DG，C1R²由59.24（百分标度）到78.40，C2到78.77。",
+      "claim_type": "longitudinal_neural_decoding",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "多sessionoffline回归对照",
+          "design": "source首session；各target无labels训练",
+          "comparator": "static/LFDA/UAN/WDGRL/DA-DCF/SeSA",
+          "measure": "CC/R²",
+          "unit_of_analysis": "动物/人及会话/训练seed分层；时间bin非独立人",
+          "sample_size_as_reported": "3NHP Chewie/Mihili/Jango，各4session（source0、target1/2/3约1日/1月/3月）；5trainingseeds；trial/bin数量未给",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "NHP recalibration",
+            "figure": "TableI",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "NHP多数targetsession的UnSPC CC/R²高于表列静态与DA/DG，C1R²由59.24（百分标度）到78.40，C2到78.77。",
+        "boundary": "报告5run均值无SD/CI及formalp；不能写统计显著或所有session最优。",
+        "negative_result": null,
+        "non_inference": "现有行为/神经数据重分析不是新动物学习/控制试验。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "brain-machine-interfaces",
+        "domain-adaptation",
+        "uncertainty-quantification"
+      ],
+      "scientific_questions": [
+        "伪标签适配与稳健表征能否维持长期神经解码且避免错误累积？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C11"
+      ],
+      "review_notes": [
+        "8页全text、3图4表37参考二次审计；3NHP/会话/seed分层，target-aware不是纯DG，M3/消融反例、不确定heuristic非保证及人类未命名指标保留。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "最长Mihili target M3中UnSPC CC68.61、R²46.99低于SeSA71.57/54.24；多数但非全部结果超过该半监督基线。",
+      "claim_type": "longitudinal_neural_decoding",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "long-span对比",
+          "design": "SeSA可用少量targetlabels，信息预算不同",
+          "comparator": "UnSPC vsSeSA",
+          "measure": "CC/R²",
+          "unit_of_analysis": "动物/人及会话/训练seed分层；时间bin非独立人",
+          "sample_size_as_reported": "3NHP Chewie/Mihili/Jango，各4session（source0、target1/2/3约1日/1月/3月）；5trainingseeds；trial/bin数量未给",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "M3 boundary",
+            "figure": "TableI",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "最长Mihili target M3中UnSPC CC68.61、R²46.99低于SeSA71.57/54.24；多数但非全部结果超过该半监督基线。",
+        "boundary": "半监督对照非同标签预算；此例也约束abstract全部SOTA胜出。",
+        "negative_result": "M3未达到最高结果，长期退化未完全避免。",
+        "non_inference": "不能称任何严重drift均可靠恢复。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "brain-machine-interfaces",
+        "domain-adaptation",
+        "uncertainty-quantification"
+      ],
+      "scientific_questions": [
+        "伪标签适配与稳健表征能否维持长期神经解码且避免错误累积？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C7",
+        "C8",
+        "C9",
+        "C11"
+      ],
+      "review_notes": [
+        "8页全text、3图4表37参考二次审计；3NHP/会话/seed分层，target-aware不是纯DG，M3/消融反例、不确定heuristic非保证及人类未命名指标保留。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "在C0→C1单对消融中，RPD提高R²59.24→73.04，完整UnSPC78.40；去RSS/RSW/Cyc步骤均比完整较低。",
+      "claim_type": "longitudinal_neural_decoding",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "组件损失消融",
+          "design": "单动物单sessionpair；same5seeds",
+          "comparator": "RPD、w/oRSS/RSW/CycDA/CycDG/noncyclic",
+          "measure": "R²/CC/MSE",
+          "unit_of_analysis": "动物/人及会话/训练seed分层；时间bin非独立人",
+          "sample_size_as_reported": "C0–C1一对；5训练runs",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "Component ablations",
+            "figure": "TableII",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在C0→C1单对消融中，RPD提高R²59.24→73.04，完整UnSPC78.40；去RSS/RSW/Cyc步骤均比完整较低。",
+        "boundary": "组件效果不是全部动物/跨度独立确认，未给pairedp。",
+        "negative_result": "无UnSPL R²73.30、MSE.02688，比完整差但R²仍略高于RPD73.04，正文称更低不符。",
+        "non_inference": null,
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "brain-machine-interfaces",
+        "domain-adaptation",
+        "uncertainty-quantification"
+      ],
+      "scientific_questions": [
+        "伪标签适配与稳健表征能否维持长期神经解码且避免错误累积？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C8",
+        "C9",
+        "C11"
+      ],
+      "review_notes": [
+        "8页全text、3图4表37参考二次审计；3NHP/会话/seed分层，target-aware不是纯DG，M3/消融反例、不确定heuristic非保证及人类未命名指标保留。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "非循环组合C1R²77.69与full78.40差较小，去CycDA或DG分别76.36/77.01，显示该特定配对内循环有数值增益。",
+      "claim_type": "longitudinal_neural_decoding",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "循环步骤对照",
+          "design": "w/oCyc表意为不cyclingjointstrategy",
+          "comparator": "full/wosteps",
+          "measure": "R²差",
+          "unit_of_analysis": "动物/人及会话/训练seed分层；时间bin非独立人",
+          "sample_size_as_reported": "单C0–C1，5seeds",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "Cyclic vsnoncyclic",
+            "figure": "TableII",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "非循环组合C1R²77.69与full78.40差较小，去CycDA或DG分别76.36/77.01，显示该特定配对内循环有数值增益。",
+        "boundary": "差不足1百分标度点未统计确认；不是理论最优或固定numbercycles普适。",
+        "negative_result": null,
+        "non_inference": "不能从该单pair认定DA/DG因果协同已唯一识别。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "brain-machine-interfaces",
+        "domain-adaptation",
+        "uncertainty-quantification"
+      ],
+      "scientific_questions": [
+        "伪标签适配与稳健表征能否维持长期神经解码且避免错误累积？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C9",
+        "C11"
+      ],
+      "review_notes": [
+        "8页全text、3图4表37参考二次审计；3NHP/会话/seed分层，target-aware不是纯DG，M3/消融反例、不确定heuristic非保证及人类未命名指标保留。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "C1参数扫描中α影响较大，η/ϕ变化较小；default并非各参数每指标精确最优。",
+      "claim_type": "longitudinal_neural_decoding",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "oneparameter扫描",
+          "design": "α.1/ .5/1/2，β.05/.1/.2/.5等",
+          "comparator": "defaultcontrols",
+          "measure": "R²",
+          "unit_of_analysis": "动物/人及会话/训练seed分层；时间bin非独立人",
+          "sample_size_as_reported": "同C1pair，其他datasets未完整扫描",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "Sensitivity",
+            "figure": "TableIII",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "C1参数扫描中α影响较大，η/ϕ变化较小；default并非各参数每指标精确最优。",
+        "boundary": "是局部范围鲁棒，不是无调参泛化；α还dataset-specific。",
+        "negative_result": "α.1R²73.0较default78.4低；ϕ1得78.5略高default.5。",
+        "non_inference": null,
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "brain-machine-interfaces",
+        "domain-adaptation",
+        "uncertainty-quantification"
+      ],
+      "scientific_questions": [
+        "伪标签适配与稳健表征能否维持长期神经解码且避免错误累积？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C11"
+      ],
+      "review_notes": [
+        "8页全text、3图4表37参考二次审计；3NHP/会话/seed分层，target-aware不是纯DG，M3/消融反例、不确定heuristic非保证及人类未命名指标保留。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "FALCON人类虚拟arm数据的三targetdate中，UnSPC表列performance14.58/14.17/13.91，均高于static/UAN/WDGRL。",
+      "claim_type": "longitudinal_neural_decoding",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "existinghumanoffline数据对比",
+          "design": "source01-01；target01-08/01-20/02-09",
+          "comparator": "静态与UDA",
+          "measure": "表列未命名performance",
+          "unit_of_analysis": "动物/人及会话/训练seed分层；时间bin非独立人",
+          "sample_size_as_reported": "参与者总n/样本/split/metric单位未主文标",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "Human robustness",
+            "figure": "TableIV",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "FALCON人类虚拟arm数据的三targetdate中，UnSPC表列performance14.58/14.17/13.91，均高于static/UAN/WDGRL。",
+        "boundary": "不能猜这些为准确率/CC/R²；数值较低且未知定义，应用限offlinevirtualtask。",
+        "negative_result": null,
+        "non_inference": "没有真实闭环机器人、临床连续使用或多年耐久。",
+        "unresolved": "TableIVmetriclabel、统计n/SD及具体录制日期信息缺。",
+        "unresolved_attribution": "来源局限及提取者来源复核"
+      },
+      "broad_directions": [
+        "brain-machine-interfaces",
+        "domain-adaptation",
+        "uncertainty-quantification"
+      ],
+      "scientific_questions": [
+        "伪标签适配与稳健表征能否维持长期神经解码且避免错误累积？"
+      ],
+      "shared_evidence_with": [
+        "C11"
+      ],
+      "review_notes": [
+        "8页全text、3图4表37参考二次审计；3NHP/会话/seed分层，target-aware不是纯DG，M3/消融反例、不确定heuristic非保证及人类未命名指标保留。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "作者提出该循环伪标签方案可支持longterm BMI与人机robotcontrol，但前瞻、实时预算及失败检测仍需新评估。",
+      "claim_type": "longitudinal_neural_decoding",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "转化假说",
+          "design": "未来newsubjects/streaming/cache/uncertaintycalibration",
+          "comparator": "当前offlinewholeTrefining",
+          "measure": "长期可用性",
+          "unit_of_analysis": "动物/人及会话/训练seed分层；时间bin非独立人",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "Conclusion/future",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者提出的可检验假说。",
+        "boundary": "暂未给适配秒数/内存成本、pseudo-labelcorrectness、calibratedrejection或prospective控制结果。",
+        "negative_result": null,
+        "non_inference": "不视为stablelong-termcontrol、安全或神经drift全机制解决。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "brain-machine-interfaces",
+        "domain-adaptation",
+        "uncertainty-quantification"
+      ],
+      "scientific_questions": [
+        "伪标签适配与稳健表征能否维持长期神经解码且避免错误累积？"
+      ],
+      "shared_evidence_with": [
+        "C10"
+      ],
+      "review_notes": [
+        "8页全text、3图4表37参考二次审计；3NHP/会话/seed分层，target-aware不是纯DG，M3/消融反例、不确定heuristic非保证及人类未命名指标保留。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "UnSPC多数NHP会话较好，但M3不胜半监督，C1消融不支持所有强断言。人类offline数据指标未标；保留target-aware/uncertainty启发式/无前瞻安全或闭环部署证据。",
+  "shared_evidence": [
+    {
+      "claim_id": "C1",
+      "with": [
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C2",
+      "with": [
+        "C1",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C1",
+        "C2",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C7",
+        "C8",
+        "C9",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C8",
+        "C9",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C9",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "with": [
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "with": [
+        "C10"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": "C6",
+        "issue": "M3低于SeSA，allSOTA/generalsetting优越需限定。",
+        "pdf_page": 6,
+        "suggested_correction": "保留negative",
+        "resolved": true
+      },
+      {
+        "claim_id": "C7",
+        "issue": "w/oUnSPL73.30高于RPD73.04，不符正文说lower/severe；无统计CI。",
+        "pdf_page": 7,
+        "suggested_correction": null,
+        "resolved": false
+      },
+      {
+        "claim_id": "C10",
+        "issue": "TableIV未给metriclabel、有效人n及sample，不能赋予准确率。",
+        "pdf_page": 7,
+        "suggested_correction": null,
+        "resolved": false
+      },
+      {
+        "claim_id": "C3",
+        "issue": "selection比例无cap/stop，MC/mask/iteration参数未给；rankunc不能保证pseudo-label正确。",
+        "pdf_page": 5,
+        "suggested_correction": null,
+        "resolved": false
+      },
+      {
+        "claim_id": "C2",
+        "issue": "Eq1为累积平均系数，不是固定decayEMA；数据method名与公式不一致。",
+        "pdf_page": 4,
+        "suggested_correction": null,
+        "resolved": false
+      },
+      {
+        "claim_id": "C4",
+        "issue": "CycDG用targetpseudo-label，实为target-aware策略而非严格源DG；wholeT离线不等在线。",
+        "pdf_page": 5,
+        "suggested_correction": null,
+        "resolved": false
+      },
+      {
+        "claim_id": null,
+        "issue": "正式比较5seed只报均值无formalp/CI，不能source承诺significantoutperformance作统计结果。",
+        "pdf_page": 6,
+        "suggested_correction": null,
+        "resolved": false
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T12:55:44.436624Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "88e27d7d754654659d44b48f7ca415716c1701afb3f963d5426a0b78cac2338d",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

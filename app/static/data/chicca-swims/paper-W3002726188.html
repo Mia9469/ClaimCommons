@@ -1,0 +1,165 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Simulation of integrate-and-fire neuron circuits using HfO2-based ferroelectric field effect transistors</title><style>body{max-width:940px;margin:40px auto;padding:0 24px;background:#fffdf7;color:#12372f;font:16px/1.8 Georgia,serif}h1{font-size:26px;line-height:1.4}h2{font-size:20px;line-height:1.5}h3{font-size:16px}article{padding:26px 0;border-top:1px solid #bec4b8}small{color:#68766e}dl{display:grid;grid-template-columns:120px 1fr;gap:8px 20px}dt{font-weight:bold}dd{margin:0}li{padding:8px 0}p,dd{overflow-wrap:anywhere}.note{background:#eef2e2;padding:14px;border-left:3px solid #738968}summary{cursor:pointer}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.7 monospace}@media(max-width:600px){body{margin:24px auto;padding:0 18px}dl{grid-template-columns:1fr;gap:3px}dd{margin-bottom:12px}}@media print{body{margin:0;background:white}details{display:block}}</style><link rel="stylesheet" href="../../commons-v02.css?v=20261020-1"><link rel="stylesheet" href="../../examples.css?v=20260928-2"><link rel="stylesheet" href="../../site.css?v=20261020-1"><script defer src="../../site.js?v=20261020-1"></script><script defer src="../../report-ui.js?v=20261020-1"></script></head><body class="portal-page report-page" data-cc-report-shell="1" data-page="library" data-site-prefix="../../" data-library-paper="paper-W3002726188" data-report-language="zh" data-claim-records="{&quot;C1&quot;:&quot;structured-paper-W3002726188-1&quot;,&quot;C2&quot;:&quot;structured-paper-W3002726188-2&quot;,&quot;C3&quot;:&quot;structured-paper-W3002726188-3&quot;,&quot;C4&quot;:&quot;structured-paper-W3002726188-4&quot;,&quot;C5&quot;:&quot;structured-paper-W3002726188-5&quot;}"><header></header><main id="report-content"><div id="report-tools"></div><small>CLAIM COMMONS / 阅读报告</small><h1>Simulation of integrate-and-fire neuron circuits using HfO2-based ferroelectric field effect transistors</h1><p class="note">AI 文本提取候选，尚待人工核对。图像像素未读取；PDF 页码指文件中的页序。</p><p>二次核查覆盖全部五页、图1–7说明、表I及参考文献。身份一致的会议接受稿支持两种FeFET积分核心设计、各自的偏置可调发放、所示输入下的读阶段输出门控，以及7T主动负偏置泄漏比较。已补充7T额外偏置作用，限定门控逻辑条件，并区分图7与一般输入时序。本文没有实物电路验证、统计重复或面积功耗对照；模型校准材料及图像像素未提供。自动复位、自发泄漏、2T泄漏推广和网络扩展仍未验证。</p><a href="https://tud.qucosa.de/api/qucosa%3A77196/attachment/ATT-0/" rel="noreferrer">查看所读原文版本 ↗</a><details><summary>贡献清单与处理决定</summary><ul><li><b>设计以FeFET累积极化状态替代膜积分电容的2T与7T神经元核心，并给出器件尺寸。</b><br>include · 结构、尺寸及工作原理有正文、图1–2说明和表I支持；晶体管计数仅指核心。</li><li><b>2T电路在Vbp=0.85 V时累积八个程序脉冲后发放，改变Vbp可改变发放所需脉冲数。</b><br>include · 正文、图4及图6a说明支持；未提供图6像素，不能补充扫描范围或效应方向。</li><li><b>7T电路在Vbn=0.25 V时累积十一个程序脉冲后发放，增加Vbn使发放需要更多程序脉冲。</b><br>include · 正文、图5及图6b说明支持，并给出同一电路模型内的电流竞争解释。</li><li><b>附加脉冲生成器在所示输入条件下将发放输出限定于读阶段。</b><br>include · 图3说明、逻辑描述及图4–5支持输出相位门控。</li><li><b>7T电路的90 µs间隔阶段从0 V改为−0.7 V后，原本在十一个程序脉冲后出现的输出消失。</b><br>include · 图7说明及正文明确给出完整比较。</li><li><b>7T结构增加一个偏置调节参数。</b><br>include · 结构描述支持Vbp与Vbn的不同作用；并入核心设计记录，不另立重复命题，也不推断调节性能优势。</li><li><b>泄漏可推广到2T电路，并可通过负偏置幅度调节。</b><br>defer · 本文未展示2T泄漏或泄漏电压扫描；可调泄漏的实验依据来自引用文献。</li><li><b>通过输出反馈自动复位、通过自发极化回退实现泄漏及构建全铁电神经网络。</b><br>defer · 属于拟议实现与后续研究，本文未验证。</li><li><b>相对传统电容神经元降低面积和功耗、提高网络集成密度。</b><br>exclude · 未提供完整电路面积、能耗或匹配基线比较。</li><li><b>Preisach方程、FeFET累积极化反转及既有单器件实验。</b><br>exclude · 是采用的模型及既有研究，不能提取为本文的新理论或新实验结果。</li></ul></details><article><small>C1 / 直接结果 · circuit_design</small><h2>本文设计的2T与7T神经元核心以HfO2-based FeFET的累积极化状态保存输入积分量，替代专用膜积分电容；2T通过pMOS偏置Vbp调节电流平衡，7T通过Vbp限制电流并通过Vbn设定竞争支路电流，发放实现均另接脉冲生成器并使用外部复位。</h2><h3>Evidence</h3><p>电路结构、工作原理和器件尺寸描述</p><dl><dt>设计 / 对照</dt><dd>2T核心为串联nFeFET与pMOS；7T核心基于迟滞Winner-take-all结构，其中一个输入晶体管替换为nFeFET。表I给出两种核心的晶体管尺寸。；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>电路拓扑；两种核心设计；非独立器件或实验样本数</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 3 · Figures 1–3; Table I</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>给出两种以FeFET状态实现积分的神经元核心设计。</dd><dt>适用边界</dt><dd>属于电路设计及模型仿真；7T的额外偏置作用由结构描述支持。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能将核心计数当作完整神经元晶体管数，不能由取消膜积分电容推断不存在任何电容或量化面积、功耗优势。</dd><dt>未解决</dt><dd>集成自动复位及完整电路的面积、能耗和器件变异表现。</dd></dl><h3>相关问题</h3><ul><li>FeFET累积极化状态能否替代膜积分电容实现积分发放电路？</li></ul></article><article><small>C2 / 直接结果 · simulation_result</small><h2>在采用28SLP-based FeFET技术模型、1 V供电的2T核心及附加脉冲生成器SPICE仿真中，FeFET从HVT初态接受2 V、0.1 µs程序脉冲；Vbp=0.85 V时，八个程序脉冲后的0.2 V读阶段产生1 V输出脉冲，改变Vbp可改变触发发放所需的程序脉冲数。</h2><h3>Evidence</h3><p>SPICE瞬态仿真及偏置变化分析</p><dl><dt>设计 / 对照</dt><dd>程序脉冲后接0.2 V、9.7 µs读阶段及0 V、9.9 µs间隔；发放后外加−4 V、10 µs复位脉冲，间隔1 ms后继续输入。；不同累积程序脉冲数及不同Vbp条件</dd><dt>独立单位与 n</dt><dd>2T电路在给定偏置和输入序列下的仿真轨迹；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 4 · Figure 4; Figure 6a caption on PDF page 5</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>给定条件下实现累积输入后发放，并通过Vbp调节发放脉冲计数。</dd><dt>适用边界</dt><dd>八脉冲阈值限于所述模型、偏置及输入时序。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能推断实物可靠性、生物时间尺度匹配或低功耗优势；仅凭图6说明不能确定Vbp效应方向。</dd><dt>未解决</dt><dd>偏置调节范围、器件变异及统计不确定性。</dd></dl><h3>相关问题</h3><ul><li>2T FeFET电路的pMOS偏置如何改变触发发放所需的输入脉冲数？</li></ul></article><article><small>C3 / 直接结果 · simulation_result</small><h2>在采用28SLP-based FeFET技术模型、1 V供电的7T核心及附加脉冲生成器SPICE仿真中，Vbn=0.25 V时，施加九个程序脉冲后读阶段N1电压逐渐下降，十一个2 V程序脉冲后产生1 V输出；提高Vbn增加T6支路电流，使FeFET需要降至更低阈值电压、累积更多程序脉冲才能发放。</h2><h3>Evidence</h3><p>SPICE瞬态仿真、偏置变化分析及电路工作原理解释</p><dl><dt>设计 / 对照</dt><dd>FeFET从HVT初态接受2 V、0.1 µs程序脉冲、0.2 V、9.7 µs读阶段及0 V、9.9 µs间隔；采用外部−4 V、10 µs复位。；不同累积程序脉冲数及更高Vbn条件</dd><dt>独立单位与 n</dt><dd>7T电路在各偏置和输入序列下的仿真轨迹；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 4 · Figure 5; Figure 6b caption on PDF page 5</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>7T核心实现积分发放，增加Vbn提高发放所需的输入脉冲计数。</dd><dt>适用边界</dt><dd>十一个脉冲的阈值限于Vbn=0.25 V及所述模型和时序；电流竞争解释属于同一模型。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能把2T的八脉冲与7T的十一个脉冲当作性能优劣的匹配比较，也不能认定机制已由独立实物实验验证。</dd><dt>未解决</dt><dd>调节范围、器件变异及完整电路能耗。</dd></dl><h3>相关问题</h3><ul><li>7T FeFET电路的竞争支路偏置如何控制积分发放阈值？</li></ul></article><article><small>C4 / 直接结果 · circuit_function</small><h2>本文附加脉冲生成器结合Vin与N1状态，在所示2T和7T SPICE输入序列中，当Vin处于0.2 V读阶段且N1低于检测阈值时产生1 V输出脉冲，避免2 V程序脉冲引起的N1变化触发发放输出。</h2><h3>Evidence</h3><p>逻辑电路分析及配套SPICE瞬态仿真</p><dl><dt>设计 / 对照</dt><dd>NOR结构和反相器结合输入阶段与N1阈值检测；连接2T或7T核心，使用程序与读阶段交替的输入。；所示序列中的程序阶段与读阶段</dd><dt>独立单位与 n</dt><dd>脉冲生成器连接各核心后的相位依赖输出轨迹；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 4 · Figure 3 caption on PDF page 3; Figures 4–5</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>所示电路和输入序列支持读阶段输出门控。</dd><dt>适用边界</dt><dd>该功能限于正文描述的输入状态和连接方式；逻辑本身还描述了所示电路不会出现的另一输出条件。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能认为N1内部电压变化被消除；没有移除脉冲生成器的匹配对照或噪声误触发率测试。</dd><dt>未解决</dt><dd>器件延迟、噪声及异常输入下的门控可靠性。</dd></dl><h3>相关问题</h3><ul><li>如何通过输入相位与节点阈值门控区分FeFET程序操作和有效发放输出？</li></ul></article><article><small>C5 / 直接结果 · comparative_simulation_result</small><h2>在7T FeFET电路SPICE比较中，每个2 V、0.1 µs程序脉冲和0.2 V、9.7 µs读阶段后设置90 µs泄漏阶段：该阶段为0 V时第十一个程序脉冲后发放，改为−0.7 V时十一个脉冲后无输出；文中模型解释为负偏置累积反转极化，使FeFET阈值电压返回HVT方向。</h2><h3>Evidence</h3><p>两种泄漏偏置条件的SPICE比较</p><dl><dt>设计 / 对照</dt><dd>保持程序与读阶段相同，比较每对程序—读操作后的90 µs阶段施加0 V或−0.7 V。；Vleak=0 V与Vleak=−0.7 V</dd><dt>独立单位与 n</dt><dd>各泄漏偏置条件下的7T输入—输出仿真轨迹；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 5 · Figure 7</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>主动负偏置在所示模型中削弱输入累积，并阻止对照条件下出现的发放。</dd><dt>适用边界</dt><dd>仅展示7T电路的两个泄漏偏置条件，泄漏依赖外加负电压。</dd><dt>实际负结果</dt><dd>−0.7 V、90 µs泄漏阶段条件下，所示十一个程序脉冲未产生输出。</dd><dt>不能推出</dt><dd>不能推断永不发放、已知泄漏时间常数、连续可调范围或无外部驱动的自发泄漏。</dd><dt>未解决</dt><dd>更长输入序列、泄漏电压扫描及2T泄漏实现。</dd></dl><h3>相关问题</h3><ul><li>程序—读操作之间的负栅偏置如何影响FeFET神经元的输入累积与发放？</li></ul></article><details><summary>核对记录与来源信息</summary><pre>{
+  &quot;coverage&quot;: {
+    &quot;pdf_pages_read&quot;: [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    &quot;results_sections_seen&quot;: [
+      &quot;III. Integrate-and-Fire Neuron Circuits：A–D&quot;,
+      &quot;IV.A. 2 transistor circuit&quot;,
+      &quot;IV.B. 7 transistor circuit&quot;,
+      &quot;IV.C. Leaky integration&quot;,
+      &quot;V. Conclusions&quot;,
+      &quot;Figures 1–7 captions&quot;,
+      &quot;Table I&quot;
+    ],
+    &quot;missing_material&quot;: [
+      &quot;图1–7的图像像素未提供。&quot;,
+      &quot;FeFET模型所依据的单器件校准数据、拟合误差及模型参数数值未提供。&quot;
+    ],
+    &quot;text_pass_complete&quot;: true,
+    &quot;notes&quot;: [
+      &quot;实际文档为会议论文的自存档接受稿；封面注明2019年会议及2020年IEEE数字图书馆出版信息，标题、作者及DOI与身份元数据一致。&quot;,
+      &quot;全部所供文本及参考文献均已评估；未提供附录或补充材料。&quot;,
+      &quot;本文电路结果来自SPICE仿真；正文中的experiments不构成实物电路实验的证据。&quot;,
+      &quot;图6仅提供文字说明，无法读取偏置扫描的数值范围、曲线或误差。&quot;
+    ],
+    &quot;reading_mode&quot;: &quot;text_only&quot;,
+    &quot;figure_images_read&quot;: false,
+    &quot;scientific_verification&quot;: false
+  },
+  &quot;audit&quot;: {
+    &quot;initial_source_match_checks&quot;: [],
+    &quot;source_match_checks&quot;: [],
+    &quot;model_findings&quot;: [
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;实际PDF为自存档接受稿，不能默认是最终出版排版版本。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留接受稿身份，并区分2019年会议与封面所载2020年数字图书馆出版信息。&quot;,
+        &quot;pdf_page&quot;: 1,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;草稿missing_material为空，但图像像素及模型校准材料未提供。&quot;,
+        &quot;suggested_correction&quot;: &quot;明确这些证据范围限制，同时保留全部所供文本已读完的标记。&quot;,
+        &quot;pdf_page&quot;: 2,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C1&quot;,
+        &quot;issue&quot;: &quot;2T和7T是核心计数；7T额外偏置参数的结构贡献应保留。&quot;,
+        &quot;suggested_correction&quot;: &quot;明确附加脉冲生成器与外部复位，并在设计命题中记录Vbp和Vbn的作用。&quot;,
+        &quot;pdf_page&quot;: 4,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C2&quot;,
+        &quot;issue&quot;: &quot;图6像素缺失，无法核查2T偏置扫描范围或效应方向。&quot;,
+        &quot;suggested_correction&quot;: &quot;仅保留正文支持的偏置可改变脉冲计数，不补充方向或数值范围。&quot;,
+        &quot;pdf_page&quot;: 5,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C3&quot;,
+        &quot;issue&quot;: &quot;正文描述为施加九个脉冲后读阶段电压逐渐下降，不支持更精确的下降起始时刻。&quot;,
+        &quot;suggested_correction&quot;: &quot;采用正文粒度，并把T6电流解释限定为同一模型内工作原理。&quot;,
+        &quot;pdf_page&quot;: 4,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C4&quot;,
+        &quot;issue&quot;: &quot;结论中的suppressed不能解释为N1内部变化被消除；逻辑描述还包含所示核心不会出现的另一输出状态。&quot;,
+        &quot;suggested_correction&quot;: &quot;将命题限定为所示输入序列中的输出门控，记录逻辑适用条件。&quot;,
+        &quot;pdf_page&quot;: 4,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C5&quot;,
+        &quot;issue&quot;: &quot;图7比较采用90 µs泄漏阶段，不能直接沿用图5的一般间隔时序。&quot;,
+        &quot;suggested_correction&quot;: &quot;完整保留图7内0 V与−0.7 V的同时间隔比较。&quot;,
+        &quot;pdf_page&quot;: 5,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C5&quot;,
+        &quot;issue&quot;: &quot;2T泄漏推广、泄漏幅度调节及自发泄漏缺少本文直接验证。&quot;,
+        &quot;suggested_correction&quot;: &quot;将其列为未验证推广或未来方案，仅提取7T两条件比较。&quot;,
+        &quot;pdf_page&quot;: 5,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;面积、功耗及集成密度优势缺少量化结果和匹配基线。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留为设计动机，不提取为已证实性能。&quot;,
+        &quot;pdf_page&quot;: 2,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;自动复位和全铁电网络是后续方案，非本文完成的演示。&quot;,
+        &quot;suggested_correction&quot;: &quot;在贡献清单中暂缓，不作为结果命题。&quot;,
+        &quot;pdf_page&quot;: 5,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;FeFET校准数据、拟合误差及独立仿真重复未报告，无法在所供文本中验证模型准确性与统计可靠性。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留为未解决证据限制，不猜测样本数、误差或重复次数。&quot;,
+        &quot;pdf_page&quot;: 2,
+        &quot;resolved&quot;: false
+      }
+    ],
+    &quot;needs_human_review&quot;: true
+  },
+  &quot;source&quot;: {
+    &quot;filename&quot;: &quot;paper-W3002726188.pdf&quot;,
+    &quot;sha256&quot;: &quot;c7cfd38d405f8ff6a22778fe6cfc33db1f3393a3c0c7af4028bc7837109968d7&quot;,
+    &quot;source_url&quot;: &quot;https://tud.qucosa.de/api/qucosa%3A77196/attachment/ATT-0/&quot;,
+    &quot;pdf_page_count&quot;: 5
+  },
+  &quot;provenance&quot;: {
+    &quot;created_at&quot;: &quot;2026-10-07T05:08:51.040363Z&quot;,
+    &quot;workflow&quot;: &quot;claim-commons-pdf-v1&quot;,
+    &quot;prompt_version&quot;: &quot;claim-commons-chatgpt-pdf-2026-10-07.1&quot;,
+    &quot;backend&quot;: &quot;signed_in_chatgpt_codex&quot;,
+    &quot;authentication&quot;: &quot;existing_ChatGPT_login&quot;,
+    &quot;provider_api_key_used&quot;: false,
+    &quot;model&quot;: &quot;account_default_GPT&quot;,
+    &quot;source_sha256&quot;: &quot;c7cfd38d405f8ff6a22778fe6cfc33db1f3393a3c0c7af4028bc7837109968d7&quot;,
+    &quot;requests&quot;: [
+      {
+        &quot;phase&quot;: &quot;extraction&quot;,
+        &quot;seconds&quot;: 101.57,
+        &quot;usage&quot;: {
+          &quot;input_tokens&quot;: 19906,
+          &quot;cached_input_tokens&quot;: 0,
+          &quot;cache_write_input_tokens&quot;: 0,
+          &quot;output_tokens&quot;: 5179,
+          &quot;reasoning_output_tokens&quot;: 0
+        },
+        &quot;backend&quot;: &quot;signed_in_chatgpt_codex&quot;,
+        &quot;tools_used&quot;: false
+      },
+      {
+        &quot;phase&quot;: &quot;source_audit&quot;,
+        &quot;seconds&quot;: 115.25,
+        &quot;usage&quot;: {
+          &quot;input_tokens&quot;: 24942,
+          &quot;cached_input_tokens&quot;: 0,
+          &quot;cache_write_input_tokens&quot;: 0,
+          &quot;output_tokens&quot;: 5995,
+          &quot;reasoning_output_tokens&quot;: 55
+        },
+        &quot;backend&quot;: &quot;signed_in_chatgpt_codex&quot;,
+        &quot;tools_used&quot;: false
+      }
+    ],
+    &quot;source_audit_complete&quot;: true,
+    &quot;review_status&quot;: &quot;candidate&quot;,
+    &quot;database_updated&quot;: false
+  }
+}</pre></details></main><footer></footer></body></html>

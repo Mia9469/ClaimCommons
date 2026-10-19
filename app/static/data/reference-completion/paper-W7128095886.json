@@ -1,0 +1,675 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "preprint",
+  "paper": {
+    "title": "Continual Learning through Control Minimization",
+    "authors": [
+      "Sander de Haan",
+      "Yassine Taoudi-Benchekroun",
+      "Pau Vilimelis Aceituno",
+      "Benjamin F. Grewe"
+    ],
+    "doi": null,
+    "publication_year": 2026,
+    "venue": "arXiv (Cornell University)",
+    "url": "https://arxiv.org/pdf/2602.04542"
+  },
+  "source": {
+    "filename": "paper-W7128095886--Continual-Learning-through-Control-Minimization.pdf",
+    "sha256": "e3e734be195e0f678f21f5e731a03f0406be50941e50c888251f5890d79db300",
+    "source_url": "https://arxiv.org/pdf/2602.04542",
+    "pdf_page_count": 31
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31
+    ],
+    "results_sections_seen": [
+      "EFC preservation / dynamics / objective",
+      "Theorems3.1–3.3",
+      "Controlled Fisher comparison",
+      "Benchmark protocols/Table1",
+      "Discussion",
+      "Appendices A–G including proofs and confusion",
+      "References"
+    ],
+    "missing_material": [
+      "图像像素；未供应的补充全文/原始数据未读取"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "所有供应页文字（含方法/附录/图表文字和参考文献）已完整评估，未采样代替全文。",
+      "逐条第二审计以已读源比较真实单位、条件、统计与推断范围；不等于实验复现。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "EFC把参数正则梯度投到当前presynaptic活动，生成保留信号与乘性学习控制竞争，再在平衡后更新；只避免显式full Fisher而仍存储对角Fisher和旧参数。",
+      "role": "result",
+      "source_pages": [
+        2
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "附录B的一阶small-control/small-preservation展开给出通过有效Jacobian求稳态的条件近似，不是任意增益/非线性下的稳定保证。",
+      "role": "result",
+      "source_pages": [
+        18
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "作者将平衡更新解释为依旧任务近似曲率的continual-natural gradient；所需full Fisher近似质量及从驻点到每步更新的证明尚有缺口。",
+      "role": "hypothesis",
+      "source_pages": [
+        21
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "在固定θ上若两个新任务输入产生不同干扰梯度，一个仅依θ的加性正则梯度不能同时逐样本精确抵消二者；这不等于所有正则方法都无法持续学习。",
+      "role": "result",
+      "source_pages": [
+        23
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "两任务Split-MNIST的64×64 MLP控制比较中，EFC旧任务损失变化接近full-Fisher正则FISH，class-IL轨迹更好；该比较未直接提供通用full-curvature重建证明。",
+      "role": "result",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "5种子Table1中EFC class-IL准确率为51.4±4.8、50.2±7.0、8.8±0.1%，高于所列EWC/oEWC/SI，但低于DER++的71.1±2.2、62.3±1.2、10.5±1.2%。",
+      "role": "result",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "EFC每步需多次前向/反馈求平衡，成本、调参和稳定性限制较大；static diagonal仍可漂移，当前未解决无任务边界或大规模网络条件。",
+      "role": "result",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "作者提出若皮层有类似保留信号，旧任务相关神经元应在后续学习更抗调制；这是纵向生物实验预测，不是已观察的机制。",
+      "role": "hypothesis",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "Theorem3.3/E.1遗忘上界、E.2方法差下界及E.4–E.5几何/方差优势",
+      "role": "theory",
+      "source_pages": [
+        26,
+        27,
+        28,
+        29
+      ],
+      "decision": "defer",
+      "reason": "S139用最大特征值倒数作一般上界；上界相减不能得真实差下界；对角二次约束是椭球非hypercube；S157无推导"
+    },
+    {
+      "summary": "A.3/A.5及D.3–D.6普遍收敛/不可完美学习",
+      "role": "theory",
+      "source_pages": [
+        16,
+        17,
+        24,
+        25
+      ],
+      "decision": "defer",
+      "reason": "缺Jacobian/稳定性/子空间不变与支持条件；非零Fisher可有nullspace"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "EFC把参数正则梯度投到当前presynaptic活动，生成保留信号与乘性学习控制竞争，再在平衡后更新；只避免显式full Fisher而仍存储对角Fisher和旧参数。",
+      "claim_type": "computational_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "模型构造",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "神经网络/参数",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "EWC实例、任务边界、额外动态及参数存储"
+          ],
+          "source_locator": {
+            "pdf_page": 2,
+            "section": "2.1–2.3 / A.1",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "EFC把参数正则梯度投到当前presynaptic活动，生成保留信号与乘性学习控制竞争，再在平衡后更新；只避免显式full Fisher而仍存储对角Fisher和旧参数。",
+        "boundary": "EWC实例、任务边界、额外动态及参数存储",
+        "negative_result": null,
+        "non_inference": "相关或模型吻合不唯一识别因果机制；共享观测不计独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，EFC把参数正则梯度投到当前presynaptic活动，生成保留信号与乘性学习控制竞争，再在平衡后更新；只避免显式full Fisher而仍存储对角Fisher和旧参数。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "附录B的一阶small-control/small-preservation展开给出通过有效Jacobian求稳态的条件近似，不是任意增益/非线性下的稳定保证。",
+      "claim_type": "conditional_theory",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "局部Taylor推导",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "数学局部模型",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "小u、γ；I−J和Jeff+αI可逆；固定输入/θ"
+          ],
+          "source_locator": {
+            "pdf_page": 18,
+            "section": "B.1 / S62–S88",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "附录B的一阶small-control/small-preservation展开给出通过有效Jacobian求稳态的条件近似，不是任意增益/非线性下的稳定保证。",
+        "boundary": "小u、γ；I−J和Jeff+αI可逆；固定输入/θ",
+        "negative_result": null,
+        "non_inference": "相关或模型吻合不唯一识别因果机制；共享观测不计独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，附录B的一阶small-control/small-preservation展开给出通过有效Jacobian求稳态的条件近似，不是任意增益/非线性下的稳定保证。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "作者将平衡更新解释为依旧任务近似曲率的continual-natural gradient；所需full Fisher近似质量及从驻点到每步更新的证明尚有缺口。",
+      "claim_type": "theoretical_hypothesis",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "源文理论解释",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "数学构造",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "小η/α、θA附近线性化、Q=Jacobian转置、逆算子适定"
+          ],
+          "source_locator": {
+            "pdf_page": 21,
+            "section": "C.1",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者将平衡更新解释为依旧任务近似曲率的continual-natural gradient；所需full Fisher近似质量及从驻点到每步更新的证明尚有缺口。",
+        "boundary": "小η/α、θA附近线性化、Q=Jacobian转置、逆算子适定",
+        "negative_result": null,
+        "non_inference": "相关或模型吻合不唯一识别因果机制；共享观测不计独立复制。",
+        "unresolved": "近似矩阵是否确实保留旧分布full Fisher几何尚未充分建立",
+        "unresolved_attribution": "源文或本次审计"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，作者将平衡更新解释为依旧任务近似曲率的continual-natural gradient；所需full Fisher近似质量及从驻点到每步更新的证明尚有缺口。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "在固定θ上若两个新任务输入产生不同干扰梯度，一个仅依θ的加性正则梯度不能同时逐样本精确抵消二者；这不等于所有正则方法都无法持续学习。",
+      "claim_type": "conditional_theory",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "固定参数向量引理",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "数学命题",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "R可微且仅依θ；存在同一θ上不同干扰的输入"
+          ],
+          "source_locator": {
+            "pdf_page": 23,
+            "section": "Lemma D.1",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在固定θ上若两个新任务输入产生不同干扰梯度，一个仅依θ的加性正则梯度不能同时逐样本精确抵消二者；这不等于所有正则方法都无法持续学习。",
+        "boundary": "R可微且仅依θ；存在同一θ上不同干扰的输入",
+        "negative_result": null,
+        "non_inference": "相关或模型吻合不唯一识别因果机制；共享观测不计独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，在固定θ上若两个新任务输入产生不同干扰梯度，一个仅依θ的加性正则梯度不能同时逐样本精确抵消二者；这不等于所有正则方法都无法持续学习。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "两任务Split-MNIST的64×64 MLP控制比较中，EFC旧任务损失变化接近full-Fisher正则FISH，class-IL轨迹更好；该比较未直接提供通用full-curvature重建证明。",
+      "claim_type": "computational_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "小网络仿真对照",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "模型运行",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "同θA初始化、调节到同训练步90%TaskB，Adam/small learning rate；不是所有优化预算"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "4.1 / Fig.1",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "两任务Split-MNIST的64×64 MLP控制比较中，EFC旧任务损失变化接近full-Fisher正则FISH，class-IL轨迹更好；该比较未直接提供通用full-curvature重建证明。",
+        "boundary": "同θA初始化、调节到同训练步90%TaskB，Adam/small learning rate；不是所有优化预算",
+        "negative_result": null,
+        "non_inference": "相关或模型吻合不唯一识别因果机制；共享观测不计独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，两任务Split-MNIST的64×64 MLP控制比较中，EFC旧任务损失变化接近full-Fisher正则FISH，class-IL轨迹更好；该比较未直接提供通用full-curvature重建证明。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "5种子Table1中EFC class-IL准确率为51.4±4.8、50.2±7.0、8.8±0.1%，高于所列EWC/oEWC/SI，但低于DER++的71.1±2.2、62.3±1.2、10.5±1.2%。",
+      "claim_type": "computational_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "持续分类基准",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "训练种子、共享benchmark图像",
+          "sample_size_as_reported": "5 seeds；20epoch/task",
+          "uncertainty": "mean±SD，未报告优越性检验",
+          "assumptions": [
+            "SplitMNIST/CIFAR10/TinyImageNet；后两者冻结预训练ResNet18；DER buffer200"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "Table1 / 4.2",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "5种子Table1中EFC class-IL准确率为51.4±4.8、50.2±7.0、8.8±0.1%，高于所列EWC/oEWC/SI，但低于DER++的71.1±2.2、62.3±1.2、10.5±1.2%。",
+        "boundary": "SplitMNIST/CIFAR10/TinyImageNet；后两者冻结预训练ResNet18；DER buffer200",
+        "negative_result": "EFC未超过DER++；Task-IL也并非均高于oEWC等基线",
+        "non_inference": "相关或模型吻合不唯一识别因果机制；共享观测不计独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，5种子Table1中EFC class-IL准确率为51.4±4.8、50.2±7.0、8.8±0.1%，高于所列EWC/oEWC/SI，但低于DER++的71.1±2.2、62.3±1.2、10.5±1.2%。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "EFC每步需多次前向/反馈求平衡，成本、调参和稳定性限制较大；static diagonal仍可漂移，当前未解决无任务边界或大规模网络条件。",
+      "claim_type": "computational_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "实现边界",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "算法实现",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "Q在实验中直接计算并应用Jacobian，不是自行学得的全部局部电路"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Discussion / A.4",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "EFC每步需多次前向/反馈求平衡，成本、调参和稳定性限制较大；static diagonal仍可漂移，当前未解决无任务边界或大规模网络条件。",
+        "boundary": "Q在实验中直接计算并应用Jacobian，不是自行学得的全部局部电路",
+        "negative_result": "静态对角信息失配未消除",
+        "non_inference": "相关或模型吻合不唯一识别因果机制；共享观测不计独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，EFC每步需多次前向/反馈求平衡，成本、调参和稳定性限制较大；static diagonal仍可漂移，当前未解决无任务边界或大规模网络条件。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "作者提出若皮层有类似保留信号，旧任务相关神经元应在后续学习更抗调制；这是纵向生物实验预测，不是已观察的机制。",
+      "claim_type": "computational_result",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "生物外推",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "候选皮层机制",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "生物存储/控制尚未验证"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Discussion future directions",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者提出若皮层有类似保留信号，旧任务相关神经元应在后续学习更抗调制；这是纵向生物实验预测，不是已观察的机制。",
+        "boundary": "生物存储/控制尚未验证",
+        "negative_result": null,
+        "non_inference": "相关或模型吻合不唯一识别因果机制；共享观测不计独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，作者提出若皮层有类似保留信号，旧任务相关神经元应在后续学习更抗调制；这是纵向生物实验预测，不是已观察的机制。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "31页完整评估。8候选保留算法、条件稳态、natural-gradient解释、有限固定参数引理和计算比较/限制。表1的class-IL改善不覆盖所有task-IL且未超过DER++。遗忘界和全局收敛主张含具体证明缺口，贡献暂缓；未将全文定理视为验证。",
+  "shared_evidence": [],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": "C3",
+        "issue": "C.1从极小控制驻点位移推出逐步梯度更新，隐含曲率对旧任务full Fisher的匹配主要是解释而非误差保证",
+        "suggested_correction": "标hypothesis，保留small η/α及linearization/反馈假设",
+        "pdf_page": 22,
+        "resolved": false
+      },
+      {
+        "claim_id": null,
+        "issue": "S139以λmax(Ftilde)^−1上界一般逆二次型",
+        "suggested_correction": "需λmin或特定梯度特征方向条件；该遗忘定理暂缓",
+        "pdf_page": 27,
+        "resolved": false
+      },
+      {
+        "claim_id": null,
+        "issue": "E.2用两个上界的差声称真值差下界；E.4称diag二次约束hypercube",
+        "suggested_correction": "暂缓普遍优越与几何倍数",
+        "pdf_page": 27,
+        "resolved": false
+      },
+      {
+        "claim_id": null,
+        "issue": "D.3跨新输入logit梯度落旧任务gradient span并非定义自动蕴含；受限inverse需子空间不变性",
+        "suggested_correction": "descent/convergence需补假设，暂缓",
+        "pdf_page": 24,
+        "resolved": false
+      },
+      {
+        "claim_id": null,
+        "issue": "A.5忽略非零Fisher的nullspace；A.3 Vdot还需γ(θ)导数/非正性说明",
+        "suggested_correction": "不输出不可能完美学习/无条件收敛",
+        "pdf_page": 17,
+        "resolved": false
+      },
+      {
+        "claim_id": "C7",
+        "issue": "源承认对角Fisher仍存储且static；反馈Q直接用Jacobian",
+        "suggested_correction": "保留存储和非局部实现限制",
+        "pdf_page": 14,
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T11:03:27.180317Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "e3e734be195e0f678f21f5e731a03f0406be50941e50c888251f5890d79db300",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

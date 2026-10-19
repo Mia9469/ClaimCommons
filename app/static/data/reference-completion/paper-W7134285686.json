@@ -1,0 +1,865 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "review",
+  "paper": {
+    "title": "From small brains to smart machines: translating Caenorhabditis elegans neural circuits into artificial intelligence",
+    "authors": [
+      "He Liu",
+      "Panpan Zheng",
+      "Xuebin Wang"
+    ],
+    "doi": "10.3389/fncir.2026.1731513",
+    "publication_year": 2026,
+    "venue": "Frontiers in Neural Circuits",
+    "url": "https://doi.org/10.3389/fncir.2026.1731513"
+  },
+  "source": {
+    "filename": "paper-W7134285686--From-small-brains-to-smart-machines-translating-Caenorhabditis-elegans-neural-circuits-into-art.pdf",
+    "sha256": "549756b5057c29ec368637c6be5f33f9568ec3d33b845215d10c0912d0547d81",
+    "source_url": "https://public-pages-files-2025.frontiersin.org/journals/neural-circuits/articles/10.3389/fncir.2026.1731513/pdf",
+    "pdf_page_count": 11
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "results_sections_seen": [
+      "C.elegans connectome/compression",
+      "Graph metrics Figures1–2",
+      "PA14 assay/RNA/CRI/candidate circuit Figure3",
+      "NCP/LTC control",
+      "Wang image classifier",
+      "Elegans-AI/medical benchmark",
+      "Brain–body–environment model",
+      "Discussion/limitations; all refs"
+    ],
+    "missing_material": [
+      "所有图像像素、SupplementaryTables1–3/原始统计未供应",
+      "所引机器模型的完整参数/独立测试/效果量未提供",
+      "本文无新增独立worm实验样本/操作统计"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "所有供应页文字（含方法/附录/图表文字和参考文献）已完整评估，未采样代替全文。",
+      "逐条第二审计以已读源比较真实单位、条件、统计与推断范围；不等于实验复现。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "综述以成体雌雄同体C.elegans约302神经元/7000连接的结构图谱作为紧凑系统案例，同时明确突触权重动力、调质和状态依赖塑性仍不足以仅靠解剖全图解释。",
+      "role": "review_synthesis",
+      "source_pages": [
+        2
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "作者转述将相似功能/表达的节点及连接合并，可得到122node/~2400edge的抽象网络，但权重保留不单独证明所有动力和生物功能等价。",
+      "role": "review_synthesis",
+      "source_pages": [
+        2
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "所示压缩图的strength/edge weight/centrality较异质且多数最短路径较短，为稀疏/模块设计提供描述性动机；这些图形本身不确证scale-free、rich-club、信息效率或hub必要性。",
+      "role": "interpretation",
+      "source_pages": [
+        4
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "文中把PA14训练相关338个整体差异基因映射到naïve单神经元表达图谱，并以CRI=Σ Wji|Mj|筛选11关联细胞；这是基于表达分配假设的候选定位。",
+      "role": "interpretation",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "从11候选细胞及强连接/感受—整合—运动路径规则扩展出22cell/21edge的PA14相关候选子图，可作人工网络启发，但不能认定已穷尽并因果确认学习回路。",
+      "role": "interpretation",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "综述将所引NCP/LTC的紧凑连续时间策略回路与前端卷积特征结合，作为驾驶控制中降低可训练状态／参数并利用回环的示例，不是完整线虫或所有RNN稳定性证明。",
+      "role": "review_synthesis",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "综述描述Elegans-AI以真实、重连和模拟connectome作机器网络对照，原图在所述比较更好；结构对照仅能支持该任务/实现的连接安排作用，不能单独识别进化/生物计算的关键原因。",
+      "role": "review_synthesis",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "所引FP-elegans等medical benchmark方案被转述在12任务中的8项较好，并给Path .938/Derma .912，但其50Mtrainable加多预训练backbone不等只有302或122unit的完整紧凑模型。",
+      "role": "review_synthesis",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "综述将Zhao2024脑—身体—环境一体数值模型作为连接神经结构、肌肉力学与感知闭环的路线，强调只复制connectome不够；本篇无此模型的新生物预测验证。",
+      "role": "review_synthesis",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "作者建议提取稀疏模块、回环、多时标、局部可塑性和调质原则而非逐细胞复制，但将这些机制移植到机器需继续做因果/性能与资源对照，不能仅由简洁性保证泛化。",
+      "role": "hypothesis",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "PA14 4h OP50/PA14两组行为/338DEgenes",
+      "role": "review_synthesis",
+      "source_pages": [
+        5,
+        6,
+        7
+      ],
+      "decision": "include",
+      "reason": "段落既称intended design又称既有结果并引Liu2022/Wang2025a，样本/方法未提供，不作为本文新增动物实验"
+    },
+    {
+      "summary": "99.99% CIFAR10/100、99.84%MNISTreconstruction与5K参数",
+      "role": "review_synthesis",
+      "source_pages": [
+        8,
+        9
+      ],
+      "decision": "defer",
+      "reason": "对应training/test、classification/reconstruction metric定义/特征成本未见完整，不能认证定量优势"
+    },
+    {
+      "summary": "“最简单已知神经系统”、全系统效率/scale-free/richclub保证",
+      "role": "interpretation",
+      "source_pages": [
+        1,
+        4
+      ],
+      "decision": "exclude",
+      "reason": "缺相应原始比较/统计/因果，不能由图概要推出普适超越"
+    },
+    {
+      "summary": "遗传/表达索引到生物学核心细胞和功能替代",
+      "role": "hypothesis",
+      "source_pages": [
+        5,
+        7
+      ],
+      "decision": "include",
+      "reason": "association/推测来源，不当necessary充分性"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "综述以成体雌雄同体C.elegans约302神经元/7000连接的结构图谱作为紧凑系统案例，同时明确突触权重动力、调质和状态依赖塑性仍不足以仅靠解剖全图解释。",
+      "claim_type": "empirical",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "既有connectome/生物文献综合",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "被引研究或计算节点/基因；非本篇新生物实验",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "302不是所有性别/发育阶段统一n，固定结构不是动态生理完整蓝图；不存在本文新增动物n/实验。"
+          ],
+          "source_locator": {
+            "pdf_page": 2,
+            "section": "Section2 overview; Discussion p9",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "综述以成体雌雄同体C.elegans约302神经元/7000连接的结构图谱作为紧凑系统案例，同时明确突触权重动力、调质和状态依赖塑性仍不足以仅靠解剖全图解释。",
+        "boundary": "302不是所有性别/发育阶段统一n，固定结构不是动态生理完整蓝图；不存在本文新增动物n/实验。",
+        "negative_result": null,
+        "non_inference": "综述转述不计新独立实验；生物结构/表达相似或机器benchmark不能证明相同算法、必要回路或进化最优，不能替代生物实验。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "线虫结构与机器网络类比",
+        "表达关联与功能回路因果",
+        "稀疏/动态设计的限定验证"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，综述以成体雌雄同体C.elegans约302神经元/7000连接的结构图谱作为紧凑系统案例，同时明确突触权重动力、调质和状态依赖塑性仍不足以仅靠解剖全图解释。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "作者转述将相似功能/表达的节点及连接合并，可得到122node/~2400edge的抽象网络，但权重保留不单独证明所有动力和生物功能等价。",
+      "claim_type": "empirical",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "被引Wang2025b/c的consolidation方法",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "计算节点/边",
+          "sample_size_as_reported": "122模型node、约2400edge非独立样本",
+          "uncertainty": null,
+          "assumptions": [
+            "将gap junction作两个反向chemical edges为结构计数约定，不是同一生理电流权重；精确等价准则/补表未供。"
+          ],
+          "source_locator": {
+            "pdf_page": 2,
+            "section": "Figure1b; Section2 compression",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者转述将相似功能/表达的节点及连接合并，可得到122node/~2400edge的抽象网络，但权重保留不单独证明所有动力和生物功能等价。",
+        "boundary": "将gap junction作两个反向chemical edges为结构计数约定，不是同一生理电流权重；精确等价准则/补表未供。",
+        "negative_result": null,
+        "non_inference": "综述转述不计新独立实验；生物结构/表达相似或机器benchmark不能证明相同算法、必要回路或进化最优，不能替代生物实验。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "线虫结构与机器网络类比",
+        "表达关联与功能回路因果",
+        "稀疏/动态设计的限定验证"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，作者转述将相似功能/表达的节点及连接合并，可得到122node/~2400edge的抽象网络，但权重保留不单独证明所有动力和生物功能等价。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "所示压缩图的strength/edge weight/centrality较异质且多数最短路径较短，为稀疏/模块设计提供描述性动机；这些图形本身不确证scale-free、rich-club、信息效率或hub必要性。",
+      "claim_type": "computational",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "结构图统计描述",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "共享122node图",
+          "sample_size_as_reported": null,
+          "uncertainty": "未给power-law拟合、richclub/小世界null比较或功能干预",
+          "assumptions": [
+            "图shortest path不是真实神经传播路径/电导功能；in/outstrength不能直接量可控性或必需角色。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "Figure2; network metrics discussion",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所示压缩图的strength/edge weight/centrality较异质且多数最短路径较短，为稀疏/模块设计提供描述性动机；这些图形本身不确证scale-free、rich-club、信息效率或hub必要性。",
+        "boundary": "图shortest path不是真实神经传播路径/电导功能；in/outstrength不能直接量可控性或必需角色。",
+        "negative_result": null,
+        "non_inference": "综述转述不计新独立实验；生物结构/表达相似或机器benchmark不能证明相同算法、必要回路或进化最优，不能替代生物实验。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "线虫结构与机器网络类比",
+        "表达关联与功能回路因果",
+        "稀疏/动态设计的限定验证"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，所示压缩图的strength/edge weight/centrality较异质且多数最短路径较短，为稀疏/模块设计提供描述性动机；这些图形本身不确证scale-free、rich-club、信息效率或hub必要性。是否成立？"
+      ],
+      "shared_evidence_with": [
+        "C2"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "文中把PA14训练相关338个整体差异基因映射到naïve单神经元表达图谱，并以CRI=Σ Wji|Mj|筛选11关联细胞；这是基于表达分配假设的候选定位。",
+      "claim_type": "computational",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "整体RNA foldchange×naive expression比例的加权映射",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "基因/参考表达/候选细胞，不是11独立训练动物",
+          "sample_size_as_reported": "338DEgenes、11候选neurons；生物RNA/behavior样本n未供",
+          "uncertainty": "screening声称显著却未供null/p/multiple correction",
+          "assumptions": [
+            "整体DE不证明每个表达该基因的神经元都同方向/比例改变；|fold|丢方向，基因表达≠activation或necessity；本文描述recipe混合转述。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "Section3; CRI Eq1; Figure3c–d",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "文中把PA14训练相关338个整体差异基因映射到naïve单神经元表达图谱，并以CRI=Σ Wji|Mj|筛选11关联细胞；这是基于表达分配假设的候选定位。",
+        "boundary": "整体DE不证明每个表达该基因的神经元都同方向/比例改变；|fold|丢方向，基因表达≠activation或necessity；本文描述recipe混合转述。",
+        "negative_result": null,
+        "non_inference": "综述转述不计新独立实验；生物结构/表达相似或机器benchmark不能证明相同算法、必要回路或进化最优，不能替代生物实验。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "线虫结构与机器网络类比",
+        "表达关联与功能回路因果",
+        "稀疏/动态设计的限定验证"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，文中把PA14训练相关338个整体差异基因映射到naïve单神经元表达图谱，并以CRI=Σ Wji|Mj|筛选11关联细胞；这是基于表达分配假设的候选定位。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "从11候选细胞及强连接/感受—整合—运动路径规则扩展出22cell/21edge的PA14相关候选子图，可作人工网络启发，但不能认定已穷尽并因果确认学习回路。",
+      "claim_type": "mechanistic",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "top3 strongest connections及拓扑启发抽取",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "计算子图",
+          "sample_size_as_reported": "22nodes（10sensory、5inter、7motor）、21edges，非实验n",
+          "uncertainty": null,
+          "assumptions": [
+            "缺细胞/通路必要性、充分性及与Naive/rand等直接控制；感觉检测、运动执行和记忆形成不等同功能。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "Figure3e; Section3; Wang2025a reference",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "从11候选细胞及强连接/感受—整合—运动路径规则扩展出22cell/21edge的PA14相关候选子图，可作人工网络启发，但不能认定已穷尽并因果确认学习回路。",
+        "boundary": "缺细胞/通路必要性、充分性及与Naive/rand等直接控制；感觉检测、运动执行和记忆形成不等同功能。",
+        "negative_result": null,
+        "non_inference": "综述转述不计新独立实验；生物结构/表达相似或机器benchmark不能证明相同算法、必要回路或进化最优，不能替代生物实验。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "线虫结构与机器网络类比",
+        "表达关联与功能回路因果",
+        "稀疏/动态设计的限定验证"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，从11候选细胞及强连接/感受—整合—运动路径规则扩展出22cell/21edge的PA14相关候选子图，可作人工网络启发，但不能认定已穷尽并因果确认学习回路。是否成立？"
+      ],
+      "shared_evidence_with": [
+        "C4"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "综述将所引NCP/LTC的紧凑连续时间策略回路与前端卷积特征结合，作为驾驶控制中降低可训练状态／参数并利用回环的示例，不是完整线虫或所有RNN稳定性证明。",
+      "claim_type": "empirical",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "所引神经启发ODE+conv控制模型",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "既有机器任务/人工units",
+          "sample_size_as_reported": "文中策略19units、253connections、32输入特征；独立测试n未给",
+          "uncertainty": null,
+          "assumptions": [
+            "970倍稀疏对比的基准未提供；“根本解决梯度消失/爆炸”未在本综述给定理/所有模型证明；性能为既有文献非新驾驶实验。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Section4 Lechner2020",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "综述将所引NCP/LTC的紧凑连续时间策略回路与前端卷积特征结合，作为驾驶控制中降低可训练状态／参数并利用回环的示例，不是完整线虫或所有RNN稳定性证明。",
+        "boundary": "970倍稀疏对比的基准未提供；“根本解决梯度消失/爆炸”未在本综述给定理/所有模型证明；性能为既有文献非新驾驶实验。",
+        "negative_result": null,
+        "non_inference": "综述转述不计新独立实验；生物结构/表达相似或机器benchmark不能证明相同算法、必要回路或进化最优，不能替代生物实验。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "线虫结构与机器网络类比",
+        "表达关联与功能回路因果",
+        "稀疏/动态设计的限定验证"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，综述将所引NCP/LTC的紧凑连续时间策略回路与前端卷积特征结合，作为驾驶控制中降低可训练状态／参数并利用回环的示例，不是完整线虫或所有RNN稳定性证明。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "综述描述Elegans-AI以真实、重连和模拟connectome作机器网络对照，原图在所述比较更好；结构对照仅能支持该任务/实现的连接安排作用，不能单独识别进化/生物计算的关键原因。",
+      "claim_type": "empirical",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "被引M1/M2的DNN/ESN connectome对照",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "机器模型/数据集",
+          "sample_size_as_reported": "具体独立seed/heldout test n未给",
+          "uncertainty": null,
+          "assumptions": [
+            "99.99%两CIFAR、99.84%reconstruction、5Ktrainable未供统一metric/split/全部特征成本，数值延期；不可当本文新复现实验。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "Section4 Bardozzo2024",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "综述描述Elegans-AI以真实、重连和模拟connectome作机器网络对照，原图在所述比较更好；结构对照仅能支持该任务/实现的连接安排作用，不能单独识别进化/生物计算的关键原因。",
+        "boundary": "99.99%两CIFAR、99.84%reconstruction、5Ktrainable未供统一metric/split/全部特征成本，数值延期；不可当本文新复现实验。",
+        "negative_result": null,
+        "non_inference": "综述转述不计新独立实验；生物结构/表达相似或机器benchmark不能证明相同算法、必要回路或进化最优，不能替代生物实验。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "线虫结构与机器网络类比",
+        "表达关联与功能回路因果",
+        "稀疏/动态设计的限定验证"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，综述描述Elegans-AI以真实、重连和模拟connectome作机器网络对照，原图在所述比较更好；结构对照仅能支持该任务/实现的连接安排作用，不能单独识别进化/生物计算的关键原因。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "所引FP-elegans等medical benchmark方案被转述在12任务中的8项较好，并给Path .938/Derma .912，但其50Mtrainable加多预训练backbone不等只有302或122unit的完整紧凑模型。",
+      "claim_type": "empirical",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "多backbonefeature+Transformer reservoir的既有结果",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "benchmark tasks非临床患者试验",
+          "sample_size_as_reported": "12tasks、约50Mtrainable/95Kfixed为转述；患者独立验证n未供",
+          "uncertainty": null,
+          "assumptions": [
+            "没有此处独立CI/seed/p/全面预算控制；Fiore2025题名livecell-cls不等MEDMNIST，不自动8/12SOTA或临床效能认证。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "Section4 medical images; Bardozzo2025/Fiore2025",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所引FP-elegans等medical benchmark方案被转述在12任务中的8项较好，并给Path .938/Derma .912，但其50Mtrainable加多预训练backbone不等只有302或122unit的完整紧凑模型。",
+        "boundary": "没有此处独立CI/seed/p/全面预算控制；Fiore2025题名livecell-cls不等MEDMNIST，不自动8/12SOTA或临床效能认证。",
+        "negative_result": null,
+        "non_inference": "综述转述不计新独立实验；生物结构/表达相似或机器benchmark不能证明相同算法、必要回路或进化最优，不能替代生物实验。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "线虫结构与机器网络类比",
+        "表达关联与功能回路因果",
+        "稀疏/动态设计的限定验证"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，所引FP-elegans等medical benchmark方案被转述在12任务中的8项较好，并给Path .938/Derma .912，但其50Mtrainable加多预训练backbone不等只有302或122unit的完整紧凑模型。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "综述将Zhao2024脑—身体—环境一体数值模型作为连接神经结构、肌肉力学与感知闭环的路线，强调只复制connectome不够；本篇无此模型的新生物预测验证。",
+      "claim_type": "empirical",
+      "role": "review_synthesis",
+      "evidence": [
+        {
+          "method": "被引整合仿真框架",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "机器模拟与既有生物数据",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "不能据仿真参数一致声称可普遍替代ablation/行为实验或所有真实worm学习，真实动态/调质仍未完全已知。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "Section4 integrated model",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "综述将Zhao2024脑—身体—环境一体数值模型作为连接神经结构、肌肉力学与感知闭环的路线，强调只复制connectome不够；本篇无此模型的新生物预测验证。",
+        "boundary": "不能据仿真参数一致声称可普遍替代ablation/行为实验或所有真实worm学习，真实动态/调质仍未完全已知。",
+        "negative_result": null,
+        "non_inference": "综述转述不计新独立实验；生物结构/表达相似或机器benchmark不能证明相同算法、必要回路或进化最优，不能替代生物实验。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "线虫结构与机器网络类比",
+        "表达关联与功能回路因果",
+        "稀疏/动态设计的限定验证"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，综述将Zhao2024脑—身体—环境一体数值模型作为连接神经结构、肌肉力学与感知闭环的路线，强调只复制connectome不够；本篇无此模型的新生物预测验证。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "作者建议提取稀疏模块、回环、多时标、局部可塑性和调质原则而非逐细胞复制，但将这些机制移植到机器需继续做因果/性能与资源对照，不能仅由简洁性保证泛化。",
+      "claim_type": "computational",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "生物启发设计原则及未来路线",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "被引研究或计算节点/基因；非本篇新生物实验",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "生物回路到图像/驾驶的功能匹配为抽象类比；训练常仍backprop、pretrainedweights成本与真实动力未知不能隐去。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "Discussion; Conclusion",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者建议提取稀疏模块、回环、多时标、局部可塑性和调质原则而非逐细胞复制，但将这些机制移植到机器需继续做因果/性能与资源对照，不能仅由简洁性保证泛化。",
+        "boundary": "生物回路到图像/驾驶的功能匹配为抽象类比；训练常仍backprop、pretrainedweights成本与真实动力未知不能隐去。",
+        "negative_result": null,
+        "non_inference": "综述转述不计新独立实验；生物结构/表达相似或机器benchmark不能证明相同算法、必要回路或进化最优，不能替代生物实验。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "线虫结构与机器网络类比",
+        "表达关联与功能回路因果",
+        "稀疏/动态设计的限定验证"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，作者建议提取稀疏模块、回环、多时标、局部可塑性和调质原则而非逐细胞复制，但将这些机制移植到机器需继续做因果/性能与资源对照，不能仅由简洁性保证泛化。是否成立？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "2026mini-review11页全文、3图注和References已完整评估。主要贡献为connectome压缩/图特征、bulkRNA-CRI候选子图及多类机器设计路线的综述。无新增worm独立实验，结构/表达关联不是核心功能必要性；极高性能、medical引文及参数/等价/梯度泛化范围不足，库存和审计保留未解。",
+  "shared_evidence": [
+    {
+      "claim_id": "C3",
+      "with": [
+        "C2"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C4"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": null,
+        "issue": "TypeReview，无本文新独立实验n；Figure3混合intended方案/转述结果",
+        "suggested_correction": "主体数据来源与新experiment区别",
+        "pdf_page": 5,
+        "resolved": true
+      },
+      {
+        "claim_id": "C4",
+        "issue": "整体RNA差异映到naive neuron表达假定所有细胞同改，无法定位真实cell-specific response",
+        "suggested_correction": "CRI仅候选关联，不以其定义core因果",
+        "pdf_page": 7,
+        "resolved": true
+      },
+      {
+        "claim_id": "C5",
+        "issue": "强边/层级抽取22/21子图不证明记忆回路必要充分",
+        "suggested_correction": "保留启发子图",
+        "pdf_page": 6,
+        "resolved": true
+      },
+      {
+        "claim_id": "C3",
+        "issue": "degree/shortest path图不能确证scale-free/richclub/生理传递效率",
+        "suggested_correction": "网络标签和hub功能收窄",
+        "pdf_page": 4,
+        "resolved": true
+      },
+      {
+        "claim_id": "C7",
+        "issue": "极高CIFAR与reconstruction准确率未给同义metric/test协议",
+        "suggested_correction": "定量性能延期，非生物验证",
+        "pdf_page": 9,
+        "resolved": false
+      },
+      {
+        "claim_id": "C8",
+        "issue": "MEDMNIST引文Fiore实为livecell-cls，50M参数不是微小worm实现",
+        "suggested_correction": "限定转述数据集/预算",
+        "pdf_page": 10,
+        "resolved": false
+      },
+      {
+        "claim_id": null,
+        "issue": "ablation背景Ahmed2011是percutaneous radiology、Huang2025mouse thalamus，非worm方法直接证据",
+        "suggested_correction": "不据其扩展线虫方法的效率/精确性保证",
+        "pdf_page": 10,
+        "resolved": false
+      },
+      {
+        "claim_id": "C6",
+        "issue": "LTC“fundamentally解决所有gradient问题”和970fold未有完整比较/证明",
+        "suggested_correction": "只保留已引架构路线",
+        "pdf_page": 8,
+        "resolved": false
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T12:23:13.419406Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "549756b5057c29ec368637c6be5f33f9568ec3d33b845215d10c0912d0547d81",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

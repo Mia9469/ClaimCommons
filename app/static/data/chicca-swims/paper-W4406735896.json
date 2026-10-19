@@ -1,0 +1,1769 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "preprint",
+  "paper": {
+    "title": "Event-based vision for egomotion estimation using precise event timing",
+    "authors": [
+      "Hugh Greatorex",
+      "Michele Mastella",
+      "Madison Cotteret",
+      "Ole Richter",
+      "Elisabetta Chicca"
+    ],
+    "doi": "10.48550/arxiv.2501.11554",
+    "publication_year": 2025,
+    "venue": "arXiv (Cornell University)",
+    "url": "https://doi.org/10.48550/arxiv.2501.11554"
+  },
+  "source": {
+    "filename": "paper-W4406735896.pdf",
+    "sha256": "971442010dba6fa2cc2d86eb5e0d2a2696c423c8056f79c0dc582b06307625c1",
+    "source_url": "https://arxiv.org/pdf/2501.11554",
+    "pdf_page_count": 14
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "results_sections_seen": [
+      "II. Results: Time Difference Encoder Circuit and circuit measurements; Figures 1–3",
+      "II. Results: On-chip egomotion network emulation and power; Figures 4–6",
+      "II. Results: Scaled-up simulations; Figure 7; Table I",
+      "III. Discussion; IV. Methods; Equations 1–6",
+      "S1. TDE Synapse Circuit Analysis; Equations 1–21",
+      "S2. ARRE; Equation 22",
+      "S3. Silicon Neuron; Figure S1",
+      "S4. Parameters; Figure S2; main/supplementary references"
+    ],
+    "missing_material": [
+      "全部主文/附录图像像素未提供。",
+      "原始芯片测量、MVSEC对齐/幅值标定与ARRE代码、并行大阵列及闭环系统数据未提供；未执行复现。"
+    ],
+    "text_pass_complete": true,
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "notes": [
+      "全部14页包括完整供给S1–S4、参数、图注与参考文献均已评估。",
+      "来源为arXiv:2501.11554v1（20 Jan 2025），标题和作者与导入条目一致。",
+      "第二遍核对了单电路串行200单元、片外读出、首90秒与四完整序列差异、τA 0.75s/10ms、ARRE定义及功率外推算术。",
+      "原文200单元1.8nW与914pW每单元不自洽；本次仅做来源数值核对，不称科学验证。",
+      "绘制的事件帧仅用于图示，方法处理不需要帧图像；不能因此忽略整段归一化及片外读出。"
+    ]
+  },
+  "contribution_inventory": [
+    {
+      "summary": "单TDE cognigr1电路、事件间隔硅测量和同输入模拟比较。",
+      "role": "measured_circuit",
+      "source_pages": [
+        2,
+        3,
+        7,
+        13
+      ],
+      "decision": "include",
+      "reason": "不误记为大并行网络，也不重记被引电路首创。"
+    },
+    {
+      "summary": "亚阈值近似分析得到时差—电流指数关系。",
+      "role": "theoretical_analysis",
+      "source_pages": [
+        3,
+        11,
+        12
+      ],
+      "decision": "include",
+      "reason": "保留电路假设、提取符号不清与未经独立推导验证的限制。"
+    },
+    {
+      "summary": "单电路顺序模拟200单元、首90秒MVSEC yaw误差0.00014rad。",
+      "role": "serial_hardware_emulation",
+      "source_pages": [
+        4,
+        5,
+        6,
+        8
+      ],
+      "decision": "include",
+      "reason": "读出片外；限定yaw和固定片段。"
+    },
+    {
+      "summary": "178880单元大网络四序列ARRE及三序列IMU漂移比较。",
+      "role": "simulation_result",
+      "source_pages": [
+        4,
+        6,
+        7,
+        8,
+        13
+      ],
+      "decision": "include",
+      "reason": "大网络仅模拟、参数/时长不同，未作纯规模效应比较。"
+    },
+    {
+      "summary": "与历史文献ARRE比较表。",
+      "role": "literature_benchmark",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "只保留表内较低数值及非统一协议/非重跑限制。"
+    },
+    {
+      "summary": "四十输入实例的单TDE平均914pW功率。",
+      "role": "measured_power",
+      "source_pages": [
+        4,
+        6,
+        8
+      ],
+      "decision": "include",
+      "reason": "随机逻辑实例不是独立硅片。"
+    },
+    {
+      "summary": "178880单元约200µW硬件功率目标。",
+      "role": "interpretation",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "按测量外推而非并行大网络实测。"
+    },
+    {
+      "summary": "200单元总功率1.8nW。",
+      "role": "inconsistent_projection",
+      "source_pages": [
+        4,
+        6
+      ],
+      "decision": "defer",
+      "reason": "与914pW×200=182.8nW算术不符，待作者/原数据澄清，不推广为已证实功率。"
+    },
+    {
+      "summary": "无事件帧与无学习的yaw网络，完整序列归一化。",
+      "role": "pipeline_design",
+      "source_pages": [
+        6,
+        8,
+        13
+      ],
+      "decision": "include",
+      "reason": "不把无训练误解为无固定参数/无离线读出。"
+    },
+    {
+      "summary": "至少一个数量级优于全部历史对照。",
+      "role": "overbroad_comparison",
+      "source_pages": [
+        4,
+        7
+      ],
+      "decision": "exclude",
+      "reason": "Table I最接近对照不支持全部至少十倍。"
+    },
+    {
+      "summary": "低延迟整管线、完整6-DoF视觉里程计、GPS拒止导航和IMU实时重标定。",
+      "role": "future_application",
+      "source_pages": [
+        1,
+        2,
+        6
+      ],
+      "decision": "defer",
+      "reason": "没有端到端延迟、完整系统功率、多自由度及闭环导航验收。"
+    },
+    {
+      "summary": "各种环境无优化泛化、动态物体稳健性。",
+      "role": "interpretation",
+      "source_pages": [
+        6
+      ],
+      "decision": "defer",
+      "reason": "无域迁移、运动物体或跨轴独立受控测试。"
+    },
+    {
+      "summary": "既有TDE、LIF电路、相关运动检测器和其它视觉任务。",
+      "role": "background",
+      "source_pages": [
+        1,
+        2,
+        7,
+        9,
+        10,
+        13,
+        14
+      ],
+      "decision": "exclude",
+      "reason": "引用背景不归本文新研究结果。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "本文在180 nm X-FAB cognigr1芯片上使用一个TDE突触及LIF神经元，TDE电路含FAC/TRG两个DPI积分块、面积19×56 µm（含护环），由片上12-bit DAC偏置且有隔离供电可测功耗；这不是已制造的178,880单元并行网络。",
+      "claim_type": "fabricated_circuit",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "制造芯片与TDE结构说明",
+          "design": null,
+          "comparator": null,
+          "measure": "单TDE结构、面积、工艺",
+          "unit_of_analysis": "已制造的单电路",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 2,
+            "section": "II. Results: Time Difference Encoder Circuit",
+            "figure": "Figure 1",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "芯片单元数量与偏置供电说明",
+          "design": null,
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": null,
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "IV. Methods: TDE circuit working principle",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "所采用神经元及固定偏置图注",
+          "design": null,
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": null,
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "S3. Silicon Neuron; S4. Parameters",
+            "figure": "Figures S1–S2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提供实际电路用于事件时间差任务检验。",
+        "boundary": "TDE和神经元结构关联既有/同期被引工作；本文新贡献主要在任务验证及扩展模拟。",
+        "negative_result": null,
+        "non_inference": "不能推断完整网络已并行集成、整片系统功率等同单元功率或电路优先权。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "单TDE混合信号电路怎样支持事件时差处理与可隔离功率测量？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C9"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "在本文的亚阈值TDE电路近似分析中，FAC先于TRG且给定偏置时，TRG触发的初始突触电流幅度正比于exp(−Δt/τFAC)，随后按τTRG衰减；该关系依赖所述增益区间、小脉冲近似、近零初始电流以及p/nMOS亚阈值斜率近似相同等假设。",
+      "claim_type": "approximate_circuit_analysis",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "电路电流—时差关系",
+          "design": null,
+          "comparator": null,
+          "measure": "初始电流幅度与衰减规律",
+          "unit_of_analysis": "固定偏置下的近似电路动力学",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "FAC先于TRG；不覆盖任意重叠脉冲或任意偏置。"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "II. Results: Time Difference Encoder Circuit",
+            "figure": null,
+            "equation": "(1), (2)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "亚阈值DPI近似推导",
+          "design": null,
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": null,
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "kn≈kp≈k；电容与漏电流决定τFAC。"
+          ],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "S1. TDE Synapse Circuit Analysis",
+            "figure": null,
+            "equation": "(1)–(12)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "触发到达后的近似解",
+          "design": null,
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": null,
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "使用所述增益简化与δt小于脉冲宽度；I_TDE初始近似零。"
+          ],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "S1. TDE Synapse Circuit Analysis",
+            "figure": null,
+            "equation": "(13)–(21)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提供时差到电流幅度的条件性指数映射。",
+        "boundary": "PDF提取中的部分符号/上下标不清，未独立完成推导有效性审查。",
+        "negative_result": null,
+        "non_inference": "不能把近似关系当所有器件、脉冲顺序和动态输入的精确普适定律。",
+        "unresolved": "完整推导的符号一致性及近似适用区间。",
+        "unresolved_attribution": "源文本存在提取符号不清，需原公式/原始电路模型。"
+      },
+      "broad_directions": [
+        "methods-causal",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "在什么电路近似下，FAC/TRG时差映射为指数突触电流？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C3",
+        "C4"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "在本文固定片上DAC偏置、FAC/TRG事件间隔从0到80 ms、每20 ms步进的单TDE硅测量中，神经元膜电压轨迹、burst脉冲数量和burst内时序随输入间隔变化，显示电路把输入时差编码为输出事件序列。",
+      "claim_type": "measured_silicon_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "受控FAC/TRG脉冲间隔硅测量",
+          "design": "Δt=0、20、40、60、80 ms；固定偏置",
+          "comparator": "不同输入时差",
+          "measure": "膜电压、首脉冲时间、burst脉冲数",
+          "unit_of_analysis": "同一个TDE电路的协议扫描",
+          "sample_size_as_reported": "一个电路；独立重复数和样片数未报告",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "II. Results: TDE circuit measurements",
+            "figure": "Figure 2a–c",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "固定偏置配置",
+          "design": null,
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": null,
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "S4. Parameters",
+            "figure": "Figure S2a",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "输出事件量与时序均携带输入间隔信息。",
+        "boundary": "参数为约50 ms时差内较高动态范围而选择，未针对具体任务优化；没有图像像素读取或误差范围。",
+        "negative_result": null,
+        "non_inference": "不能补出各间隔精确脉冲数、延迟值或长期器件可靠性。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "固定偏置TDE电路能否在硅片上以burst数量和时序编码输入时差？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C4"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "对同一受控FAC/TRG间隔输入，本文把TDE电路的首脉冲时间与burst脉冲数同数值TDE模型比较，并报告响应一致性；模拟模型用FAC指数迹调制TRG迹，再由LIF发放，但未提供拟合误差、等效检验或重复统计。",
+      "claim_type": "cross_implementation_validation",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "硅片与同输入模型对比",
+          "design": "与C3相同间隔，比较模拟响应",
+          "comparator": "软件TDE与单硅电路",
+          "measure": "首脉冲时间、burst脉冲数",
+          "unit_of_analysis": "同一输入协议下两实现",
+          "sample_size_as_reported": null,
+          "uncertainty": "无定量拟合误差、CI或正式等效检验",
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "II. Results: TDE circuit measurements",
+            "figure": "Figure 2b–c",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "模拟动力学与离散Euler求解",
+          "design": null,
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": null,
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "IV. Methods: TDE simulation model",
+            "figure": null,
+            "equation": "(3)–(5)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "软件参数说明",
+          "design": null,
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": null,
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "S4. Parameters",
+            "figure": "Figure S2b",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "模型在受测输入范围具有任务使用依据。",
+        "boundary": "定性和曲线级对照，不是全部参数或负载下验证。",
+        "negative_result": null,
+        "non_inference": "不能称模型已科学复现、严格逐点等价或神经元时序机制唯一。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "TDE模拟与实际电路在受控时间差输入下匹配到何种程度？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "在MVSEC outdoor_day1前90秒、两个20×20像素框各100个stride=2的左右双向TDE配置中，本文用一个硅TDE顺序重放200单元网络，片外汇总左右方向输出估计车辆yaw；报告ARRE为0.00014 rad，同输入/连接的Brian2模拟也报告0.00014 rad。",
+      "claim_type": "serial_hardware_emulation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "单硅电路串行网络仿真与软件对照",
+          "design": "两个区域同一随机位置，左右方向各半，首90 s输入；片外积分差分及整段最大绝对值归一化",
+          "comparator": "同输入与连接的Brian2模型",
+          "measure": "yaw估计与报告ARRE",
+          "unit_of_analysis": "一个驾驶片段及一次固定网络布置",
+          "sample_size_as_reported": "200个逻辑单元由一个电路串行重放；独立任务重复数未报告",
+          "uncertainty": null,
+          "assumptions": [
+            "网络纯前馈，所以作者用分离单元输出汇总代替并行实现。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "II. Results: On-chip egomotion network emulation",
+            "figure": "Figures 4–6",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "90秒窗口及输入区域图注",
+          "design": null,
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": null,
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "II. Results: On-chip egomotion network emulation",
+            "figure": "Figure 5",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "yaw与两实现ARRE图注",
+          "design": null,
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": null,
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "II. Results: On-chip egomotion network emulation",
+            "figure": "Figure 6a–b",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "源稿误差定义核对",
+          "design": null,
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": null,
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "S2. ARRE",
+            "figure": null,
+            "equation": "(22)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "固定片段的单元实测支持事件任务的概念验证。",
+        "boundary": "任务只估计yaw，不是完整6-DoF VO；串行实验与片外汇总非整网在线并行部署。",
+        "negative_result": null,
+        "non_inference": "不能据此证明完整系统实时延迟、盲测角速度标定或无累积位置误差。",
+        "unresolved": "ARRE实现、yaw幅值标定及在线因果归一化。",
+        "unresolved_attribution": "附录称P/G为Euler角向量却使用矩阵logm，且归一化依赖整段最大值，代码未供给。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "单TDE串行测量能否支持固定道路片段的yaw概念验证？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C9",
+        "C11"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "arre_definition_ambiguous",
+          "offline_normalization",
+          "serial_not_parallel"
+        ]
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "在JAX/GPU模拟的178,880个stride=2双向TDE、稠密采样全视野网络中，本文对MVSEC四个驾驶序列报告yaw相关ARRE分别为outdoor_day1 0.00065、outdoor_night1 0.00086、outdoor_night2 0.00053、outdoor_night3 0.00067 rad。",
+      "claim_type": "simulation_benchmark",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "JAX/GPU大网络仿真",
+          "design": "178880单元、左右方向各半、stride=2，全样本最大活动归一化",
+          "comparator": "数据集融合传感器ground truth",
+          "measure": "各驾驶序列的报告ARRE",
+          "unit_of_analysis": "驾驶序列，不是网络单元",
+          "sample_size_as_reported": "四条驾驶序列；随机重复或CI未报告",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "II. Results: Scaled-up simulations",
+            "figure": "Figure 7; Table I",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "大网络配置与模拟工具说明",
+          "design": null,
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": null,
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "IV. Methods: Egomotion network, 2) Simulation",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "大网络模型与积分参数",
+          "design": "τFAC、τTRG、τm均20 ms；τA=10 ms",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": null,
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "S4. Parameters",
+            "figure": "Figure S2c",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "给出四条道路序列的大规模模型评估值。",
+        "boundary": "只模拟；小网络Brian2 τA=0.75 s，大网络τA=10 ms，序列长度也不同。",
+        "negative_result": null,
+        "non_inference": "不能把小网络0.00014和大网络0.00065比较成纯规模效应，也不能称已测完整六自由度运动。",
+        "unresolved": "指标和ground-truth对齐、物理幅值标定、独立样本与更多运动自由度。",
+        "unresolved_attribution": "附录误差定义含向量/矩阵歧义，源代码未核查。"
+      },
+      "broad_directions": [
+        "methods-causal",
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "稠密全视野TDE模拟在四条MVSEC序列上达到哪些报告误差？"
+      ],
+      "shared_evidence_with": [
+        "C7",
+        "C8",
+        "C10",
+        "C11"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "arre_definition_ambiguous",
+          "offline_normalization"
+        ]
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "本文Table I中四序列TDE模拟ARRE均低于列出的文献值，但最接近的[44]对照为0.00267、0.00139、0.00202、0.00202 rad，对比本文0.00065、0.00086、0.00053、0.00067 rad并不支持所有对照都至少降低一个数量级。",
+      "claim_type": "literature_benchmark_comparison",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "源稿内历史基准表比较",
+          "design": "本文四序列模拟值与表列既有文献值",
+          "comparator": "[43]、[44]及[44]的SfMLearner、[45]有报告的项目",
+          "measure": "ARRE表列差异",
+          "unit_of_analysis": "同名序列的文献汇总，不是本文重跑对照",
+          "sample_size_as_reported": "四序列；部分对照缺值；独立重复数未给",
+          "uncertainty": "没有跨研究统计或统一误差定义核查",
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "II. Results: Scaled-up simulations",
+            "figure": "Table I",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在表内报告数值上本文较低。",
+        "boundary": "同数据集不等于同yaw/多轴任务、归一化、误差定义或时间窗口；无本次重跑。",
+        "negative_result": null,
+        "non_inference": "不能宣称跨当前全领域SOTA、所有任务等价比较或每项都有十倍改善。",
+        "unresolved": "跨研究协议与指标是否一致。",
+        "unresolved_attribution": "本文未提供足够信息确认历史结果严格可比；概述数量级措辞与表值不符。"
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "同数据集文献误差表是否支持至少十倍提升和严格同任务比较？"
+      ],
+      "shared_evidence_with": [
+        "C6"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "baseline_comparability_unverified"
+        ]
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "在四序列全视野TDE模拟的heading累积比较中，作者报告outdoor_day1、outdoor_night2和outdoor_night3的累计yaw方向相对ground truth比单独积分车载IMU信号漂移更小；没有给出逐序列漂移标量或正式统计。",
+      "claim_type": "simulation_comparison",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "积分yaw信号与IMU/ground truth比较",
+          "design": "同C6大网络和归一化",
+          "comparator": "车载IMU积分heading",
+          "measure": "累计yaw方向漂移的报告方向",
+          "unit_of_analysis": "驾驶序列",
+          "sample_size_as_reported": "四序列中明确报告三序列改善；没有独立重复",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "II. Results: Scaled-up simulations",
+            "figure": "Figure 7 on PDF page 7",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "累计heading比较图注",
+          "design": null,
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": null,
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "II. Results: Scaled-up simulations",
+            "figure": "Figure 7",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提供在部分序列上补充IMU的应用依据。",
+        "boundary": "未证明outdoor_night1也改善；只比较yaw且ground truth本身融合IMU等传感器。",
+        "negative_result": null,
+        "non_inference": "不能宣称所有条件无漂移、完成IMU重标定、绝对定位或GPS拒止导航验收。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "TDE视觉yaw估计在哪些受测序列上比IMU积分更少漂移？"
+      ],
+      "shared_evidence_with": [
+        "C6"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "在顺序重放道路事件时，本文对逻辑网络中随机四十个TDE输入实例，用SMU测量同一个隔离供电TDE/神经元电路的功率，报告每TDE平均914 pW；该数值不包含片外输出汇总和完整相机/路由系统的耗电。",
+      "claim_type": "measured_circuit_power",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "隔离供电SMU功率测量",
+          "design": "随机40个网络TDE实例输入在单硅电路顺序执行",
+          "comparator": null,
+          "measure": "平均功率914 pW/TDE",
+          "unit_of_analysis": "同一电路的不同输入负载",
+          "sample_size_as_reported": "四十个随机逻辑TDE实例/运行；不是四十张芯片",
+          "uncertainty": "给平均和直方图，未报告均值CI或样片间变异",
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "II. Results: On-chip network power consumption",
+            "figure": "Figure 6c",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "isolated TDE and neuron供电测量与40runs说明",
+          "design": null,
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": null,
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "IV. Methods: Egomotion network, 1) On-chip",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在所述低事件负载下单电路功率为亚nW数量级。",
+        "boundary": "仅隔离电路与特定片段；不是独立并行200单元或整系统测量。",
+        "negative_result": null,
+        "non_inference": "不能直接认作传感器到yaw输出完整功率、功率与速度最优点或所有输入负载平均。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "单TDE道路事件处理的914 pW功率测量包含哪些部分？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C5",
+        "C10"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "依据所测单TDE功率外推，作者把178,880单元全视野网络的潜在硬件功耗估为约200 µW；这是未制造大网络的规模估算，而非实测，并且未计入片外读出汇总、路由及完整视觉系统开销。",
+      "claim_type": "power_scaling_projection",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "按单元测量估算大网络硬件功率",
+          "design": "从小网络负载的每单元功率外推178880单元",
+          "comparator": null,
+          "measure": "原文约200 µW估算",
+          "unit_of_analysis": "假设并行大阵列",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "假定扩展后每单元负载、偏置和单位功率可沿用。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "III. Discussion",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "片外汇总开销说明",
+          "design": null,
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": null,
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "II. Results: On-chip network power consumption",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "串行小网络与模拟大网络范围",
+          "design": null,
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": null,
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "IV. Methods: Egomotion network",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提供电路级扩展的粗略功率目标。",
+        "boundary": "大网络输入分布和积分常数不同，线性功率外推未验证。",
+        "negative_result": null,
+        "non_inference": "不能当成完整大阵列/整系统实测，也不能引用原文200单元1.8 nW的明显算术不一致作为可信验证值。",
+        "unresolved": "实际并行阵列功耗、路由读出成本及小网络外推数值。",
+        "unresolved_attribution": "914 pW×200=182.8 nW而非原文1.8 nW；这是本次来源算术核对，需人工/作者确认。"
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "单TDE低功率能否线性扩展到全视野网络，哪些开销尚缺？"
+      ],
+      "shared_evidence_with": [
+        "C6",
+        "C9"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "unverified_scaling",
+          "small_network_power_arithmetic"
+        ]
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "本文yaw网络不先把事件流重建为帧图像：FAC/TRG映射到相隔两像素的左右方向输入，左右TDE输出经漏积分取差，按完整序列的最大绝对活动归一化。网络没有数据驱动训练，但读出仍用固定积分参数且归一化需要整段记录。",
+      "claim_type": "event_pipeline_design",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "事件网络与差分漏积分读出设计",
+          "design": "左右方向输出分别增减活动变量；双方相机事件极性均使用，取左摄像头",
+          "comparator": "事件转帧后ANN方案是背景对照，不是本文重跑",
+          "measure": "yaw代理信号的生成流程",
+          "unit_of_analysis": "网络读出算法",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "从整段最大活动取归一化常数；源稿未给不依赖整段数据的幅值标定。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "IV. Methods: Egomotion network",
+            "figure": null,
+            "equation": "(6)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "没有学习/参数训练的架构说明",
+          "design": null,
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": null,
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "III. Discussion",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        },
+        {
+          "method": "小大网络漏积分时间常数",
+          "design": null,
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": null,
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "S4. Parameters",
+            "figure": "Figure S2b–c",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "特征处理不需要中间帧图像或参数学习。",
+        "boundary": "模拟本身离散时间运行，串行硅实验片外汇总；不训练不等于无参数或完整在线归一化。",
+        "negative_result": null,
+        "non_inference": "不能称已验证严格因果实时整管线、端到端低延迟或跨任意环境零校准泛化。",
+        "unresolved": "在线角速度幅值定标及归一化，独立移动物体与不同运动轴表现。",
+        "unresolved_attribution": "原文提出低延迟应用潜力但未报告这些验收。"
+      },
+      "broad_directions": [
+        "methods-causal",
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "无需转帧的事件yaw读出怎样生成，哪些后处理仍不是严格在线？"
+      ],
+      "shared_evidence_with": [
+        "C5",
+        "C6"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "全文和完整附录支持十一项候选命题：单电路结构与时差测量、条件性电路近似、模型对照、200逻辑单元串行道路yaw验证、178880单元四序列模拟、表列历史对照与IMU漂移、单元功率、扩展估算及事件读出设计。来源核对明确所有硬件证据不等于整网并行部署，读出片外并依赖完整样本归一化。原文小网络1.8nW外推算术、ARRE角向量/矩阵对数定义、幅值标定、跨文献可比性仍需人工确认；没有科学复现。",
+  "shared_evidence": [
+    {
+      "claim_id": "C1",
+      "with": [
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C9"
+      ]
+    },
+    {
+      "claim_id": "C2",
+      "with": [
+        "C1",
+        "C3",
+        "C4"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C1",
+        "C2",
+        "C4"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C1",
+        "C2",
+        "C3"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C1",
+        "C9",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C7",
+        "C8",
+        "C10",
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C1",
+        "C5",
+        "C10"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "with": [
+        "C6",
+        "C9"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "with": [
+        "C5",
+        "C6"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [
+      {
+        "claim_id": "C1",
+        "evidence_index": 1,
+        "pdf_page": 2,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "section": "II. Results: Time Difference Encoder Circuit",
+        "figure": "Figure 1",
+        "equation": null,
+        "assessment": "二次核对所供页文本与定位标签；这不是科学复现或图像验证。"
+      },
+      {
+        "claim_id": "C1",
+        "evidence_index": 2,
+        "pdf_page": 7,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "section": "IV. Methods: TDE circuit working principle",
+        "figure": null,
+        "equation": null,
+        "assessment": "二次核对所供页文本与定位标签；这不是科学复现或图像验证。"
+      },
+      {
+        "claim_id": "C1",
+        "evidence_index": 3,
+        "pdf_page": 13,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "section": "S3. Silicon Neuron; S4. Parameters",
+        "figure": "Figures S1–S2",
+        "equation": null,
+        "assessment": "二次核对所供页文本与定位标签；这不是科学复现或图像验证。"
+      },
+      {
+        "claim_id": "C2",
+        "evidence_index": 1,
+        "pdf_page": 3,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "section": "II. Results: Time Difference Encoder Circuit",
+        "figure": null,
+        "equation": "(1), (2)",
+        "assessment": "二次核对所供页文本与定位标签；这不是科学复现或图像验证。"
+      },
+      {
+        "claim_id": "C2",
+        "evidence_index": 2,
+        "pdf_page": 11,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "section": "S1. TDE Synapse Circuit Analysis",
+        "figure": null,
+        "equation": "(1)–(12)",
+        "assessment": "二次核对所供页文本与定位标签；这不是科学复现或图像验证。"
+      },
+      {
+        "claim_id": "C2",
+        "evidence_index": 3,
+        "pdf_page": 12,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "section": "S1. TDE Synapse Circuit Analysis",
+        "figure": null,
+        "equation": "(13)–(21)",
+        "assessment": "二次核对所供页文本与定位标签；这不是科学复现或图像验证。"
+      },
+      {
+        "claim_id": "C3",
+        "evidence_index": 1,
+        "pdf_page": 3,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "section": "II. Results: TDE circuit measurements",
+        "figure": "Figure 2a–c",
+        "equation": null,
+        "assessment": "二次核对所供页文本与定位标签；这不是科学复现或图像验证。"
+      },
+      {
+        "claim_id": "C3",
+        "evidence_index": 2,
+        "pdf_page": 13,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "section": "S4. Parameters",
+        "figure": "Figure S2a",
+        "equation": null,
+        "assessment": "二次核对所供页文本与定位标签；这不是科学复现或图像验证。"
+      },
+      {
+        "claim_id": "C4",
+        "evidence_index": 1,
+        "pdf_page": 3,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "section": "II. Results: TDE circuit measurements",
+        "figure": "Figure 2b–c",
+        "equation": null,
+        "assessment": "二次核对所供页文本与定位标签；这不是科学复现或图像验证。"
+      },
+      {
+        "claim_id": "C4",
+        "evidence_index": 2,
+        "pdf_page": 8,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "section": "IV. Methods: TDE simulation model",
+        "figure": null,
+        "equation": "(3)–(5)",
+        "assessment": "二次核对所供页文本与定位标签；这不是科学复现或图像验证。"
+      },
+      {
+        "claim_id": "C4",
+        "evidence_index": 3,
+        "pdf_page": 13,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "section": "S4. Parameters",
+        "figure": "Figure S2b",
+        "equation": null,
+        "assessment": "二次核对所供页文本与定位标签；这不是科学复现或图像验证。"
+      },
+      {
+        "claim_id": "C5",
+        "evidence_index": 1,
+        "pdf_page": 4,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "section": "II. Results: On-chip egomotion network emulation",
+        "figure": "Figures 4–6",
+        "equation": null,
+        "assessment": "二次核对所供页文本与定位标签；这不是科学复现或图像验证。"
+      },
+      {
+        "claim_id": "C5",
+        "evidence_index": 2,
+        "pdf_page": 5,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "section": "II. Results: On-chip egomotion network emulation",
+        "figure": "Figure 5",
+        "equation": null,
+        "assessment": "二次核对所供页文本与定位标签；这不是科学复现或图像验证。"
+      },
+      {
+        "claim_id": "C5",
+        "evidence_index": 3,
+        "pdf_page": 6,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "section": "II. Results: On-chip egomotion network emulation",
+        "figure": "Figure 6a–b",
+        "equation": null,
+        "assessment": "二次核对所供页文本与定位标签；这不是科学复现或图像验证。"
+      },
+      {
+        "claim_id": "C5",
+        "evidence_index": 4,
+        "pdf_page": 12,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "section": "S2. ARRE",
+        "figure": null,
+        "equation": "(22)",
+        "assessment": "二次核对所供页文本与定位标签；这不是科学复现或图像验证。"
+      },
+      {
+        "claim_id": "C6",
+        "evidence_index": 1,
+        "pdf_page": 7,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "section": "II. Results: Scaled-up simulations",
+        "figure": "Figure 7; Table I",
+        "equation": null,
+        "assessment": "二次核对所供页文本与定位标签；这不是科学复现或图像验证。"
+      },
+      {
+        "claim_id": "C6",
+        "evidence_index": 2,
+        "pdf_page": 8,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "section": "IV. Methods: Egomotion network, 2) Simulation",
+        "figure": null,
+        "equation": null,
+        "assessment": "二次核对所供页文本与定位标签；这不是科学复现或图像验证。"
+      },
+      {
+        "claim_id": "C6",
+        "evidence_index": 3,
+        "pdf_page": 13,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "section": "S4. Parameters",
+        "figure": "Figure S2c",
+        "equation": null,
+        "assessment": "二次核对所供页文本与定位标签；这不是科学复现或图像验证。"
+      },
+      {
+        "claim_id": "C7",
+        "evidence_index": 1,
+        "pdf_page": 7,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "section": "II. Results: Scaled-up simulations",
+        "figure": "Table I",
+        "equation": null,
+        "assessment": "二次核对所供页文本与定位标签；这不是科学复现或图像验证。"
+      },
+      {
+        "claim_id": "C8",
+        "evidence_index": 1,
+        "pdf_page": 4,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "section": "II. Results: Scaled-up simulations",
+        "figure": "Figure 7 on PDF page 7",
+        "equation": null,
+        "assessment": "二次核对所供页文本与定位标签；这不是科学复现或图像验证。"
+      },
+      {
+        "claim_id": "C8",
+        "evidence_index": 2,
+        "pdf_page": 7,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "section": "II. Results: Scaled-up simulations",
+        "figure": "Figure 7",
+        "equation": null,
+        "assessment": "二次核对所供页文本与定位标签；这不是科学复现或图像验证。"
+      },
+      {
+        "claim_id": "C9",
+        "evidence_index": 1,
+        "pdf_page": 6,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "section": "II. Results: On-chip network power consumption",
+        "figure": "Figure 6c",
+        "equation": null,
+        "assessment": "二次核对所供页文本与定位标签；这不是科学复现或图像验证。"
+      },
+      {
+        "claim_id": "C9",
+        "evidence_index": 2,
+        "pdf_page": 8,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "section": "IV. Methods: Egomotion network, 1) On-chip",
+        "figure": null,
+        "equation": null,
+        "assessment": "二次核对所供页文本与定位标签；这不是科学复现或图像验证。"
+      },
+      {
+        "claim_id": "C10",
+        "evidence_index": 1,
+        "pdf_page": 6,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "section": "III. Discussion",
+        "figure": null,
+        "equation": null,
+        "assessment": "二次核对所供页文本与定位标签；这不是科学复现或图像验证。"
+      },
+      {
+        "claim_id": "C10",
+        "evidence_index": 2,
+        "pdf_page": 4,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "section": "II. Results: On-chip network power consumption",
+        "figure": null,
+        "equation": null,
+        "assessment": "二次核对所供页文本与定位标签；这不是科学复现或图像验证。"
+      },
+      {
+        "claim_id": "C10",
+        "evidence_index": 3,
+        "pdf_page": 8,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "section": "IV. Methods: Egomotion network",
+        "figure": null,
+        "equation": null,
+        "assessment": "二次核对所供页文本与定位标签；这不是科学复现或图像验证。"
+      },
+      {
+        "claim_id": "C11",
+        "evidence_index": 1,
+        "pdf_page": 8,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "section": "IV. Methods: Egomotion network",
+        "figure": null,
+        "equation": "(6)",
+        "assessment": "二次核对所供页文本与定位标签；这不是科学复现或图像验证。"
+      },
+      {
+        "claim_id": "C11",
+        "evidence_index": 2,
+        "pdf_page": 6,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "section": "III. Discussion",
+        "figure": null,
+        "equation": null,
+        "assessment": "二次核对所供页文本与定位标签；这不是科学复现或图像验证。"
+      },
+      {
+        "claim_id": "C11",
+        "evidence_index": 3,
+        "pdf_page": 13,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "section": "S4. Parameters",
+        "figure": "Figure S2b–c",
+        "equation": null,
+        "assessment": "二次核对所供页文本与定位标签；这不是科学复现或图像验证。"
+      }
+    ],
+    "model_findings": [
+      {
+        "claim_id": null,
+        "issue": "实际仅一个TDE电路，200逻辑单元由顺序重放组成，178880单元为模拟。",
+        "suggested_correction": "分别标串行硬件仿真与大网络软件仿真，不称全网并行芯片验证。",
+        "pdf_page": 8,
+        "resolved": true
+      },
+      {
+        "claim_id": "C2",
+        "issue": "附录电路推导的若干上下标/符号提取不清，不能独立证明推导无误。",
+        "suggested_correction": "需原公式、电路和模型核查；仅保留最终条件性指数关系。",
+        "pdf_page": 11,
+        "resolved": false
+      },
+      {
+        "claim_id": "C5",
+        "issue": "ARRE定义将P/G称Euler角向量，却使用Pi转置Gi的矩阵logm。",
+        "suggested_correction": "需作者公式说明和实际指标实现；不自行修补为标准旋转矩阵定义。",
+        "pdf_page": 12,
+        "resolved": false
+      },
+      {
+        "claim_id": "C5",
+        "issue": "差分输出按整段最大绝对活动归一化，没有明确物理yaw幅值标定。",
+        "suggested_correction": "不能认作无预知完整序列的严格在线角速度输出。",
+        "pdf_page": 8,
+        "resolved": false
+      },
+      {
+        "claim_id": "C6",
+        "issue": "小/大网络τA分别0.75s和10ms，序列时长不同。",
+        "suggested_correction": "不将误差差异归为纯网络规模变化。",
+        "pdf_page": 13,
+        "resolved": true
+      },
+      {
+        "claim_id": "C7",
+        "issue": "至少十倍改善的正文概述与最近历史对照表值不符。",
+        "suggested_correction": "只报告表内较低误差，并排除泛化的数量级优势。",
+        "pdf_page": 7,
+        "resolved": true
+      },
+      {
+        "claim_id": "C7",
+        "issue": "同名数据集不保证历史工作和本文yaw指标与归一化一致。",
+        "suggested_correction": "人工核对各原论文协议后才可建立严格比较。",
+        "pdf_page": 7,
+        "resolved": false
+      },
+      {
+        "claim_id": "C10",
+        "issue": "原文每TDE914pW、200单元却给1.8nW；直接相乘是182.8nW。",
+        "suggested_correction": "小网络总功率结果暂缓；保留原值和算术检查，不当科学复现。",
+        "pdf_page": 4,
+        "resolved": false
+      },
+      {
+        "claim_id": "C9",
+        "issue": "单元功率测量只计隔离TDE/神经元电路；片外读出等未计入。",
+        "suggested_correction": "不解释为全芯片/相机到输出整系统功率。",
+        "pdf_page": 8,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "没有原数据、代码执行、逐图像素检查、CI或独立任务重复统计。",
+        "suggested_correction": "保留候选与科学验证false，需要人工核查。",
+        "pdf_page": null,
+        "resolved": false
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T07:18:49.069Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "971442010dba6fa2cc2d86eb5e0d2a2696c423c8056f79c0dc582b06307625c1",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

@@ -1,0 +1,1064 @@
+{
+  "schema_version": "1.0",
+  "framework": {
+    "id": "helical-research-framework-v1",
+    "version": "1.0",
+    "title": "Helical Research Framework",
+    "title_zh": "生物与物理智能的螺旋式研究框架",
+    "subtitle": "One question, eight equal-weight areas: four pillars alternating with four connections",
+    "central_question": "How do physically constrained biological systems learn to allocate limited resources for adaptive intelligence, and which of these principles generalize across biological and artificial substrates?",
+    "central_question_zh": "受物理约束的生物系统如何学习分配有限资源以获得适应性智能，其中哪些原则能够跨越生物与人工基底？",
+    "provisional_hypothesis": "Learning under physical constraints may restructure which computational degrees of freedom are recruited, when they are active, and what information they carry, rather than merely suppressing activity uniformly.",
+    "unit_of_progress": "The research programme, not an individual paper, is the unit that can complete a turn of the helix.",
+    "classification_rule": "A node is assigned by the object of inference: biology, principle, executable rule, or closed-loop agent. The method used does not determine the column.",
+    "data_source": "app/static/data/mia-research-map.json",
+    "source_documents": [
+      "Helix/Helical_Research_Framework_v1.md",
+      "claim-commons-mvp/docs/CLAIM_RECORD_SPEC_v0.1.md",
+      "claim-commons-mvp/app/static/data/mia-research-map.json"
+    ],
+    "generated_at": "2026-08-22T00:00:00+08:00",
+    "notice": "Repository-derived nodes retain their source wording and readiness. Framework-derived future nodes are questions or gaps only and do not assert validated results. Column, cluster, and generation assignments are a revisable visualisation overlay, not changes to the underlying Claim Records."
+  },
+  "generation_model": {
+    "axis_meaning": "Generations encode revisions of a scientific question, not publication year or evidential strength.",
+    "advance_rule": "A new generation requires a stated change in the question, mechanism, constraint, boundary, or discriminating experiment. More evidence for the same bounded statement stays in the same generation.",
+    "levels": [
+      {
+        "id": 0,
+        "label": "Generation 0",
+        "name": "Foundation",
+        "description": "Seed questions and bounded results that define the current mechanism, abstraction, or diagnostic problem."
+      },
+      {
+        "id": 1,
+        "label": "Generation 1",
+        "name": "Translation",
+        "description": "Claims or open tests that carry a result across a column boundary or expose a constraint absent from the seed formulation."
+      },
+      {
+        "id": 2,
+        "label": "Generation 2",
+        "name": "Return frontier",
+        "description": "Explicit future questions and gaps needed to return downstream insight to a revised biological or behavioural test."
+      }
+    ]
+  },
+  "area_model": {
+    "area_count": 8,
+    "equal_weight": true,
+    "weight_per_area": 1,
+    "sequence_rule": "The framework alternates pillar and connection areas in one ordered cycle. Pillar and connection describe function only; neither kind is ranked above the other.",
+    "ordered_area_ids": [
+      "area-experiment",
+      "area-experiment-theory",
+      "area-theory",
+      "area-theory-algorithm",
+      "area-algorithm",
+      "area-algorithm-agent",
+      "area-agent",
+      "area-agent-experiment"
+    ],
+    "evidence_binding": {
+      "pillar": "nodes[].column -> columns[].id -> columns[].area_id",
+      "connection": "bridge_records[].bridge_id -> bridges[].id -> bridges[].area_id"
+    },
+    "interpretation": "A turn is not four completed pillars plus optional arrows. It is eight equally necessary scientific areas: four knowledge states and four tested translations."
+  },
+  "areas": [
+    {
+      "id": "area-experiment",
+      "order": 0,
+      "kind": "pillar",
+      "weight": 1,
+      "ref_collection": "columns",
+      "ref_id": "experiment",
+      "short_name_zh": "实验",
+      "name_en": "Biological Evidence",
+      "scientific_question": "Which measurable or manipulable biological result anchors this theme at this generation, under what system, scale, condition, and uncertainty?",
+      "completion_contract": {
+        "evidence_type": "confirmed_claim",
+        "minimum_count": 1,
+        "requirements": [
+          "The evidence is a node in the same cluster_id and generation with column=experiment.",
+          "The node is a confirmed Claim Record; kind=question or kind=gap never qualifies.",
+          "The record specifies scope, independent unit, evidence, boundaries, and a falsification condition.",
+          "The biological variable is measured or manipulated rather than inferred only from an artificial-system proxy."
+        ]
+      }
+    },
+    {
+      "id": "area-experiment-theory",
+      "order": 1,
+      "kind": "connection",
+      "weight": 1,
+      "ref_collection": "bridges",
+      "ref_id": "experiment-theory",
+      "short_name_zh": "机制抽象",
+      "name_en": "Experiment–Theory Abstraction",
+      "scientific_question": "Which operational mapping turns the measured biological variable into a formal quantity or competing hypothesis, and what observation discriminates the alternatives?",
+      "completion_contract": {
+        "evidence_type": "confirmed_bridge_evidence",
+        "minimum_count": 1,
+        "requirements": [
+          "A bridge_record for experiment-theory belongs to the same cluster_id and generation.",
+          "Its mapping_statement, assumptions, validation_evidence, and failure_conditions are populated.",
+          "Its discriminator has been tested by evidence that links confirmed source and target claims.",
+          "The bridge_record is explicitly confirmed and evidenced; status=partial, gap, or open does not qualify."
+        ]
+      }
+    },
+    {
+      "id": "area-theory",
+      "order": 2,
+      "kind": "pillar",
+      "weight": 1,
+      "ref_collection": "columns",
+      "ref_id": "theory",
+      "short_name_zh": "理论",
+      "name_en": "Normative & Mathematical Principle",
+      "scientific_question": "Under explicit assumptions, which principle, constraint, or identifiability statement explains the bounded phenomenon and yields a discriminating prediction?",
+      "completion_contract": {
+        "evidence_type": "confirmed_claim",
+        "minimum_count": 1,
+        "requirements": [
+          "The evidence is a node in the same cluster_id and generation with column=theory.",
+          "The node is a confirmed Claim Record; kind=question or kind=gap never qualifies.",
+          "Assumptions, variables, applicable regime, and failure regime are explicit.",
+          "The result narrows possible mechanisms or provides a checkable theorem, prediction, or counterexample."
+        ]
+      }
+    },
+    {
+      "id": "area-theory-algorithm",
+      "order": 3,
+      "kind": "connection",
+      "weight": 1,
+      "ref_collection": "bridges",
+      "ref_id": "theory-algorithm",
+      "short_name_zh": "可执行化",
+      "name_en": "Theory–Algorithm Realisation",
+      "scientific_question": "How is the principle realised by an executable rule using only the information allowed by its locality and temporal-credit contract?",
+      "completion_contract": {
+        "evidence_type": "confirmed_bridge_evidence",
+        "minimum_count": 1,
+        "requirements": [
+          "A bridge_record for theory-algorithm belongs to the same cluster_id and generation.",
+          "It maps a confirmed theoretical source claim to a confirmed algorithmic target claim.",
+          "The information-access contract, approximation, controls, and failure regime are tested.",
+          "The bridge_record is explicitly confirmed and evidenced; an intellectual analogy or status=partial does not qualify."
+        ]
+      }
+    },
+    {
+      "id": "area-algorithm",
+      "order": 4,
+      "kind": "pillar",
+      "weight": 1,
+      "ref_collection": "columns",
+      "ref_id": "algorithm",
+      "short_name_zh": "算法",
+      "name_en": "Executable Learning Rule",
+      "scientific_question": "Which executable learning or computation rule produces the target consequence, with what accessible signals, controls, resource needs, and failure boundaries?",
+      "completion_contract": {
+        "evidence_type": "confirmed_claim",
+        "minimum_count": 1,
+        "requirements": [
+          "The evidence is a node in the same cluster_id and generation with column=algorithm.",
+          "The node is a confirmed Claim Record; kind=question or kind=gap never qualifies.",
+          "The executable rule, independent unit, controls, and reproducible result are specified.",
+          "The claim is bounded to the tested architecture, data, protocol, and information access."
+        ]
+      }
+    },
+    {
+      "id": "area-algorithm-agent",
+      "order": 5,
+      "kind": "connection",
+      "weight": 1,
+      "ref_collection": "bridges",
+      "ref_id": "algorithm-agent",
+      "short_name_zh": "物理化",
+      "name_en": "Algorithm–Agent Embodiment",
+      "scientific_question": "Does the algorithmic consequence survive measured physical costs and changing perception–action conditions under matched performance?",
+      "completion_contract": {
+        "evidence_type": "confirmed_bridge_evidence",
+        "minimum_count": 1,
+        "requirements": [
+          "A bridge_record for algorithm-agent belongs to the same cluster_id and generation.",
+          "It links a confirmed algorithm claim to a confirmed agent claim under a matched baseline.",
+          "Energy, latency, communication, memory movement, noise, and adaptation are measured where relevant rather than replaced by spike-count proxies.",
+          "The bridge_record is explicitly confirmed and evidenced; a planned deployment, question, or gap does not qualify."
+        ]
+      }
+    },
+    {
+      "id": "area-agent",
+      "order": 6,
+      "kind": "pillar",
+      "weight": 1,
+      "ref_collection": "columns",
+      "ref_id": "agent",
+      "short_name_zh": "智能体",
+      "name_en": "Physical & Embodied Agent",
+      "scientific_question": "How does a closed-loop agent allocate sensing, computation, memory, and energy when action changes future data and resource availability?",
+      "completion_contract": {
+        "evidence_type": "confirmed_claim",
+        "minimum_count": 1,
+        "requirements": [
+          "The evidence is a node in the same cluster_id and generation with column=agent.",
+          "The node is a confirmed Claim Record; kind=question or kind=gap never qualifies.",
+          "The task contains a genuine closed-loop or physical constraint absent from the static benchmark.",
+          "The record reports a matched comparison, measured resource variables, uncertainty, and a failure boundary."
+        ]
+      }
+    },
+    {
+      "id": "area-agent-experiment",
+      "order": 7,
+      "kind": "connection",
+      "weight": 1,
+      "ref_collection": "bridges",
+      "ref_id": "agent-experiment",
+      "short_name_zh": "生物回返",
+      "name_en": "Agent–Experiment Return",
+      "scientific_question": "Which downstream agent result yields a new biological intervention that separates competing mechanisms and changes the next seed question?",
+      "completion_contract": {
+        "evidence_type": "confirmed_bridge_evidence",
+        "minimum_count": 1,
+        "requirements": [
+          "A bridge_record for agent-experiment belongs to the same cluster_id and generation.",
+          "It links a confirmed agent result to a confirmed biological prediction or experiment claim.",
+          "The biological variable, intervention, competing mechanisms, divergent observables, and falsifier are explicit.",
+          "The record is confirmed and evidenced and supplies a changed next-turn seed and delta; a proposed return question alone does not qualify."
+        ]
+      }
+    }
+  ],
+  "turn_completion_model": {
+    "turn_key": "cluster_id + generation",
+    "area_count": 8,
+    "equal_weight": true,
+    "completion_expression": "A turn is complete only when all eight ordered areas are complete for the same cluster_id and generation.",
+    "no_cross_turn_borrowing": "Evidence from another cluster or generation does not complete an area unless an explicit, confirmed mapping deposits it into the evaluated turn.",
+    "confirmation_contract": {
+      "explicit_confirmation_required": true,
+      "missing_confirmation_means": "not_complete",
+      "pillar_evidence": "At least one node with kind=claim, or a boundary node backed by a canonical Claim Record, plus explicit confirmation for the same cluster and generation.",
+      "connection_evidence": "At least one bridge_record with status=evidenced plus explicit confirmation and confirmed source/target claims for the same cluster and generation.",
+      "readiness_is_not_confirmation": "readiness=claim_ready identifies a candidate record; it does not by itself complete an area.",
+      "validated_result_is_not_confirmation": "validated_result=true distinguishes a result-like node from a future question in this visualisation; it does not by itself complete an area."
+    },
+    "excluded_from_completion": [
+      "Any node with kind=question",
+      "Any node with kind=gap",
+      "Any bridge_record with status=gap, open, partial, planned, or question_only",
+      "A paper, asset, or source citation without a bounded confirmed Claim Record",
+      "A bridge inferred only from thematic similarity"
+    ],
+    "strength_model": {
+      "area_strength_definition": "The count and evidential quality of confirmed supporting Claim Records or bridge evidence within one area.",
+      "effect_of_subclaims": "Additional confirmed subclaims increase the strength, density, or confidence display of that area.",
+      "topology_invariant": "Subclaim count never creates new areas, changes the denominator, or compensates for an incomplete area.",
+      "completion_is_boolean": true,
+      "fixed_denominator": 8
+    },
+    "lighting_rule": {
+      "off": "No qualifying confirmed evidence for this area in the evaluated turn.",
+      "on": "The area's completion_contract is satisfied by qualifying confirmed evidence.",
+      "intensity": "May scale with confirmed subclaim count and evidence quality after the area is on; intensity never substitutes for another area."
+    },
+    "next_turn_contract": {
+      "required_fields": ["seed_question", "delta_from_previous"],
+      "seed_rule": "The next generation must state a seed question that is materially revised or narrowed relative to the completed turn.",
+      "delta_rule": "delta_from_previous must name the changed mechanism, variable, constraint, boundary, discriminator, or experiment.",
+      "non_advancing_cases": [
+        "Only the publication date changes.",
+        "More subclaims support the same bounded statement without changing the question.",
+        "A return repeats the original biological inspiration without a new discriminator."
+      ]
+    },
+    "current_data_notice": "This file defines how completion would be evaluated but asserts no completed turn. Existing claim_ready nodes, partial bridges, questions, and gaps must not be rendered as eight-area completion."
+  },
+  "columns": [
+    {
+      "id": "experiment",
+      "order": 0,
+      "area_id": "area-experiment",
+      "area_order": 0,
+      "area_kind": "pillar",
+      "area_weight": 1,
+      "label": "实验",
+      "english_label": "Biological Evidence",
+      "prompt": "生物系统实际上做了什么？",
+      "definition": "Claims and questions about measurable or manipulable mechanisms in real biological systems, including both seed observations and return experiments.",
+      "includes": [
+        "Biological measurements and perturbations",
+        "Systems, scales, conditions, and time windows",
+        "Neural and behavioural observables",
+        "Competing mechanistic explanations"
+      ],
+      "required_output": [
+        "Operationalised biological variable",
+        "Design, independent unit, and uncertainty",
+        "Result or planned discriminator",
+        "Boundaries and falsification condition"
+      ],
+      "success_criterion": "The biological variable constrains the computational problem or a perturbation distinguishes serious alternatives.",
+      "failure_mode": "A correlation is relabelled as a mechanism without an intervention or discriminating prediction.",
+      "accent": "#42C7A5"
+    },
+    {
+      "id": "theory",
+      "order": 1,
+      "area_id": "area-theory",
+      "area_order": 2,
+      "area_kind": "pillar",
+      "area_weight": 1,
+      "label": "理论",
+      "english_label": "Normative & Mathematical Principles",
+      "prompt": "为什么、在什么假设下会这样？",
+      "definition": "Claims that compress biological complexity into explicit assumptions, variables, constraints, objectives, dynamics, or identifiability statements and produce discriminating predictions.",
+      "includes": [
+        "Constrained objectives and resource budgets",
+        "Dynamical laws and stochastic processes",
+        "Identifiability and scaling statements",
+        "Formal theorems and counterexamples"
+      ],
+      "required_output": [
+        "Explicit assumptions and variables",
+        "Applicable and failure regimes",
+        "Mechanism-specific versus degenerate signatures",
+        "A testable discriminator"
+      ],
+      "success_criterion": "The abstraction narrows what can be true and yields an observation that separates competing mechanisms.",
+      "failure_mode": "A flexible model explains any outcome after fitting but does not say what would falsify it.",
+      "accent": "#8C7CFF"
+    },
+    {
+      "id": "algorithm",
+      "order": 2,
+      "area_id": "area-algorithm",
+      "area_order": 4,
+      "area_kind": "pillar",
+      "area_weight": 1,
+      "label": "算法",
+      "english_label": "Executable Learning Rules",
+      "prompt": "这一原则怎样成为可执行的学习或计算规则？",
+      "definition": "Claims and questions about executable learning or computation, especially local, online, recurrent, spiking, or event-driven rules with explicit information access and failure boundaries.",
+      "includes": [
+        "Local and broadcast learning signals",
+        "Online and recurrent adaptation",
+        "Resource-aware optimisation",
+        "Simulation, ablation, and safety boundaries"
+      ],
+      "required_output": [
+        "Update rule or executable procedure",
+        "Accessible local, broadcast, and global signals",
+        "Relation to the theoretical target",
+        "Complexity, controls, and failure conditions"
+      ],
+      "success_criterion": "The rule learns or computes under stated constraints and produces a reproducible, interpretable consequence.",
+      "failure_mode": "A spiking or recurrent forward pass is called biologically plausible while training still relies on unavailable global information.",
+      "accent": "#FFB84D"
+    },
+    {
+      "id": "agent",
+      "order": 3,
+      "area_id": "area-agent",
+      "area_order": 6,
+      "area_kind": "pillar",
+      "area_weight": 1,
+      "label": "智能体应用",
+      "english_label": "Physical & Embodied Agents",
+      "prompt": "它在真实资源与闭环环境中能做什么，又暴露出什么新问题？",
+      "definition": "Claims and questions about adaptive systems in a perception-action loop under measured or explicitly modelled energy, latency, communication, memory, noise, and sensory constraints.",
+      "includes": [
+        "Hardware-native and edge deployment",
+        "Embodied and active sensing tasks",
+        "Changing budgets and sensory reliability",
+        "Performance-energy-latency-adaptation frontiers"
+      ],
+      "required_output": [
+        "Closed-loop task and matched control",
+        "Measured physical costs rather than proxies",
+        "Adaptive strategy under changing conditions",
+        "A failure boundary or new biological prediction"
+      ],
+      "success_criterion": "Physical deployment or closed-loop interaction adds a scientific variable absent from a static benchmark.",
+      "failure_mode": "Spike count is treated as measured energy, or a robot demo adds no new adaptive test.",
+      "accent": "#FF6F91"
+    }
+  ],
+  "bridges": [
+    {
+      "id": "experiment-theory",
+      "order": 0,
+      "area_id": "area-experiment-theory",
+      "area_order": 1,
+      "area_kind": "connection",
+      "area_weight": 1,
+      "from": "experiment",
+      "to": "theory",
+      "label": "操作化之桥",
+      "english_label": "Abstraction Bridge",
+      "input": [
+        "Measured or manipulated biological variables",
+        "System, scale, time window, and uncertainty",
+        "At least two plausible mechanistic interpretations"
+      ],
+      "transformation": [
+        "Map an observable to an explicit theoretical variable, constraint, or hypothesis",
+        "State which biological meaning is retained and which is discarded",
+        "Derive an observation that separates competing abstractions"
+      ],
+      "output": [
+        "Operational mapping between biological and mathematical variables",
+        "Bounded assumptions",
+        "A discriminating theoretical prediction"
+      ],
+      "discriminator": "Would a different biological mechanism produce a different predicted observable under the proposed perturbation?",
+      "lifts_generation": false
+    },
+    {
+      "id": "theory-algorithm",
+      "order": 1,
+      "area_id": "area-theory-algorithm",
+      "area_order": 3,
+      "area_kind": "connection",
+      "area_weight": 1,
+      "from": "theory",
+      "to": "algorithm",
+      "label": "实现之桥",
+      "english_label": "Realisation Bridge",
+      "input": [
+        "Normative optimum, dynamical principle, or formal constraint",
+        "Assumptions and applicable regime",
+        "Target behaviour or representation"
+      ],
+      "transformation": [
+        "Replace global quantities with explicitly available local or broadcast signals",
+        "Specify temporal credit, recurrence, and approximation",
+        "Test convergence, ablations, and failure regimes"
+      ],
+      "output": [
+        "Executable learning rule",
+        "Information-access contract",
+        "Approximation and failure boundary"
+      ],
+      "discriminator": "Does the executable rule approach the theoretical target without using information excluded by its locality contract?",
+      "lifts_generation": false
+    },
+    {
+      "id": "algorithm-agent",
+      "order": 2,
+      "area_id": "area-algorithm-agent",
+      "area_order": 5,
+      "area_kind": "connection",
+      "area_weight": 1,
+      "from": "algorithm",
+      "to": "agent",
+      "label": "物理化之桥",
+      "english_label": "Embodiment Bridge",
+      "input": [
+        "Executable rule and resource requirements",
+        "Reference implementation and matched baselines",
+        "Candidate physical substrate and environment"
+      ],
+      "transformation": [
+        "Co-design the rule with the substrate and perception-action loop",
+        "Measure energy, latency, communication, memory movement, noise, and adaptation",
+        "Vary budgets, sensory reliability, or task state"
+      ],
+      "output": [
+        "Deployed or closed-loop agent behaviour",
+        "Performance-energy-latency-adaptation frontier",
+        "Physical validity or revision of the algorithmic claim"
+      ],
+      "discriminator": "Does the claimed advantage survive measured physical costs and changing closed-loop conditions under matched task performance?",
+      "lifts_generation": false
+    },
+    {
+      "id": "agent-experiment",
+      "order": 3,
+      "area_id": "area-agent-experiment",
+      "area_order": 7,
+      "area_kind": "connection",
+      "area_weight": 1,
+      "from": "agent",
+      "to": "experiment",
+      "label": "返回之桥",
+      "english_label": "Return Bridge",
+      "input": [
+        "An agent strategy, anomaly, or failure not obvious from the seed observation",
+        "Its environmental and physical conditions",
+        "A candidate biological analogue"
+      ],
+      "transformation": [
+        "Translate the downstream result into a measurable or manipulable biological variable",
+        "Specify competing mechanisms and their divergent predictions",
+        "Define neural, behavioural, and falsification readouts"
+      ],
+      "output": [
+        "A discriminating biological experiment",
+        "A revised biological question",
+        "The seed for the next generation"
+      ],
+      "discriminator": "Would the proposed experiment distinguish mechanisms and change the next abstraction, rather than merely restating the original inspiration?",
+      "lifts_generation": true
+    }
+  ],
+  "clusters": [
+    {
+      "id": "energy-allocation",
+      "label": "Energy & adaptive allocation",
+      "label_zh": "能量约束与适应性资源分配",
+      "synthesis": "The current record links a conditional Gibbs frontier, a bounded V1 information-per-cost association, and active-set restructuring under PopCV regularisation. It does not yet establish direct metabolic causation, measured hardware energy savings, closed-loop utility, or a biological return experiment.",
+      "question": "When do explicit resource constraints favour selective restructuring of active computational degrees of freedom rather than uniform suppression, and does that principle survive physical deployment and return to biology?",
+      "coverage": {
+        "status": "partial_spine_with_open_return",
+        "columns": ["experiment", "theory", "algorithm", "agent"],
+        "generations": [0, 1, 2],
+        "node_ids": ["q-energy", "gm-frontier", "gm-v1", "ssnn-active", "q-energy-agent", "q-energy-return"],
+        "bridge_ids": ["experiment-theory", "theory-algorithm", "algorithm-agent", "agent-experiment"]
+      },
+      "gap": [
+        "Direct metabolic power and causal biological perturbation are not in the current record.",
+        "No current Claim Record establishes measured hardware energy or closed-loop adaptation benefits for PopCV regularisation.",
+        "The agent-to-experiment return remains a future question."
+      ],
+      "accent": "#39C6A3"
+    },
+    {
+      "id": "identifiability",
+      "label": "Dynamics & identifiability",
+      "label_zh": "动力学与可识别性",
+      "synthesis": "Analytic and constructed counterexamples show that selected covariance, spectrum, rotation, and memory observables do not uniquely identify symmetric critical dynamics within the analysed model classes; FlyWire graph controls extend the non-uniqueness test to known structural reciprocity without identifying the true biological mechanism.",
+      "question": "Which additional measurements or interventions make circuit mechanism identifiable when passive activity observables are shared by distinct recurrent operators?",
+      "coverage": {
+        "status": "theory_rich_translation_incomplete",
+        "columns": ["theory"],
+        "generations": [0, 1],
+        "node_ids": ["q-identify", "nonnormal-nu", "nonnormal-spectrum", "flywire-ground"],
+        "bridge_ids": []
+      },
+      "gap": [
+        "No current record specifies a biological perturbation whose outcomes separate the competing recurrent mechanisms.",
+        "The counterexamples have not been converted into a local learning-rule comparison.",
+        "There is no embodied or hardware-native identifiability test and no return experiment."
+      ],
+      "accent": "#8C7CFF"
+    },
+    {
+      "id": "learning-history",
+      "label": "Learning history & state",
+      "label_zh": "学习历史与状态依赖",
+      "synthesis": "In the tested SG-EAP protocols, matched current conditions can retain different recurrent-interaction readouts after different training histories, and the matched N=100 runs share one switching order. The mechanism is not unique, the large-N timing boundary remains unresolved, and biological or embodied relevance has not been established.",
+      "question": "When does learning history remain functionally visible after the current state is matched, and can that memory improve adaptive switching without becoming a hidden confound?",
+      "coverage": {
+        "status": "algorithmic_evidence_with_agent_gap",
+        "columns": ["algorithm", "agent"],
+        "generations": [0, 1, 2],
+        "node_ids": ["q-history", "sgeap-history", "sgeap-switch", "gap-history-agent"],
+        "bridge_ids": ["algorithm-agent"]
+      },
+      "gap": [
+        "A state-gated Oja-style comparator can reproduce the directional asymmetry, so SG-EAP is not uniquely identified.",
+        "No current Claim Record tests whether the history trace improves closed-loop recovery or adaptation.",
+        "A longitudinal matched-current biological perturbation and return bridge are still missing."
+      ],
+      "accent": "#FFB84D"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "q-energy",
+      "source_node_id": "q-energy",
+      "code": "Q1",
+      "kind": "question",
+      "title": "How do resource constraints shape neural codes?",
+      "statement": "Which response statistics and learning routes preserve useful representations under explicit activity or metabolic constraints?",
+      "cluster_id": "energy-allocation",
+      "column": "experiment",
+      "generation": 0,
+      "role": "seed_question",
+      "readiness": "needs_author_check",
+      "project": "Research programme",
+      "source": "Thesis/docs/abstract_blind.tex",
+      "validated_result": false,
+      "sort_order": 0
+    },
+    {
+      "id": "gm-frontier",
+      "source_node_id": "gm-frontier",
+      "code": "GM1",
+      "kind": "claim",
+      "title": "Expected-cost maximum entropy yields a Gibbs frontier",
+      "statement": "For the specified response space and expected-cost constraint, entropy-maximising response laws form a Gibbs family along the active Pareto frontier.",
+      "cluster_id": "energy-allocation",
+      "column": "theory",
+      "generation": 0,
+      "role": "node",
+      "readiness": "claim_ready",
+      "project": "GibbsManifold",
+      "source": "GibbsManifold/updated/sn-article.tex",
+      "claim_type": "mathematical",
+      "strength": "theorem",
+      "validated_result": true,
+      "sort_order": 1
+    },
+    {
+      "id": "gm-v1",
+      "source_node_id": "gm-v1",
+      "code": "GM2",
+      "kind": "claim",
+      "title": "Lifetime CV tracks calibrated information per cost in macaque V1",
+      "statement": "Across five macaque V1 sessions from three animals, firing-rate-controlled lifetime CV tracked measured stimulus information per calibrated cost.",
+      "cluster_id": "energy-allocation",
+      "column": "experiment",
+      "generation": 0,
+      "role": "bridge_evidence",
+      "readiness": "claim_ready",
+      "project": "GibbsManifold",
+      "source": "GibbsManifold/Fig2/ and GibbsManifold/updated/result2.tex",
+      "claim_type": "comparative",
+      "strength": "quantitative",
+      "validated_result": true,
+      "sort_order": 2
+    },
+    {
+      "id": "ssnn-active",
+      "source_node_id": "ssnn-active",
+      "code": "SNN1",
+      "kind": "claim",
+      "title": "PopCV regularisation restructures the active set in tested SDTs",
+      "statement": "In the tested static-image SDT settings, population-CV regularisation reduced evaluation CV, increased effectively silent coordinates, and preserved or improved task accuracy.",
+      "cluster_id": "energy-allocation",
+      "column": "algorithm",
+      "generation": 1,
+      "role": "bridge_evidence",
+      "readiness": "claim_ready",
+      "project": "SSNN",
+      "source": "SSNN/README.md and SSNN/validation_release/",
+      "claim_type": "comparative",
+      "strength": "quantitative",
+      "validated_result": true,
+      "sort_order": 3
+    },
+    {
+      "id": "q-energy-agent",
+      "source_node_id": null,
+      "code": "FQ1",
+      "kind": "question",
+      "title": "Does active-set restructuring survive physical deployment?",
+      "statement": "Under matched task performance, does PopCV-driven active-set restructuring improve measured energy–latency–adaptation trade-offs in a hardware-native closed-loop agent?",
+      "cluster_id": "energy-allocation",
+      "column": "agent",
+      "generation": 1,
+      "role": "translation_question",
+      "readiness": "question_only",
+      "project": "Future helix",
+      "source": "Helix/Helical_Research_Framework_v1.md + framework synthesis; no validated result",
+      "validated_result": false,
+      "non_claims": [
+        "No hardware energy advantage is currently claimed.",
+        "No closed-loop behavioural benefit is currently claimed."
+      ],
+      "sort_order": 4
+    },
+    {
+      "id": "q-energy-return",
+      "source_node_id": null,
+      "code": "FQ2",
+      "kind": "question",
+      "title": "Does biological resource pressure selectively reorganise task-relevant ensembles?",
+      "statement": "When sensory uncertainty and a biological resource variable are jointly manipulated, do task-relevant ensembles reorganise selectively rather than showing only uniform activity suppression?",
+      "cluster_id": "energy-allocation",
+      "column": "experiment",
+      "generation": 2,
+      "role": "return_prediction",
+      "readiness": "question_only",
+      "project": "Future helix",
+      "source": "Helix/Helical_Research_Framework_v1.md + framework synthesis; no validated result",
+      "validated_result": false,
+      "non_claims": [
+        "This is a proposed discriminator, not an observed biological effect.",
+        "The relevant metabolic variable and intervention remain to be operationalised."
+      ],
+      "sort_order": 5
+    },
+    {
+      "id": "q-identify",
+      "source_node_id": "q-identify",
+      "code": "Q3",
+      "kind": "question",
+      "title": "Which activity observables identify circuit dynamics?",
+      "statement": "Do covariance scaling and near-real fitted dynamics uniquely imply symmetric, critically normalised recurrent structure?",
+      "cluster_id": "identifiability",
+      "column": "theory",
+      "generation": 0,
+      "role": "seed_question",
+      "readiness": "needs_author_check",
+      "project": "Non-normality",
+      "source": "non-normality/README.md",
+      "validated_result": false,
+      "sort_order": 0
+    },
+    {
+      "id": "nonnormal-nu",
+      "source_node_id": "nonnormal-nu",
+      "code": "ID1",
+      "kind": "claim",
+      "title": "A covariance exponent maps to a parameter swath",
+      "statement": "In the analysed linear model, each fixed covariance power-law exponent in the reported cortical range occurs along an iso-exponent curve over reciprocity and spectral abscissa rather than at one symmetric-critical point.",
+      "cluster_id": "identifiability",
+      "column": "theory",
+      "generation": 0,
+      "role": "node",
+      "readiness": "claim_ready",
+      "project": "Non-normality",
+      "source": "non-normality/nature_matters_arising/ma_degeneracy_surface.py",
+      "claim_type": "mathematical",
+      "strength": "existence",
+      "validated_result": true,
+      "sort_order": 1
+    },
+    {
+      "id": "nonnormal-spectrum",
+      "source_node_id": "nonnormal-spectrum",
+      "code": "ID2",
+      "kind": "claim",
+      "title": "Near-real fitted eigenvalues do not imply symmetry",
+      "statement": "A non-symmetric non-normal similarity transform of a symmetric operator can preserve its real eigenvalues and zero DMD rotation while passing the analysed covariance and memory diagnostics.",
+      "cluster_id": "identifiability",
+      "column": "theory",
+      "generation": 0,
+      "role": "node",
+      "readiness": "claim_ready",
+      "project": "Non-normality",
+      "source": "non-normality/nature_matters_arising/ma_real_spectrum_counterexample.py",
+      "claim_type": "computational_existence",
+      "strength": "existence",
+      "validated_result": true,
+      "sort_order": 2
+    },
+    {
+      "id": "flywire-ground",
+      "source_node_id": "flywire-ground",
+      "code": "ID3",
+      "kind": "boundary",
+      "title": "FlyWire reciprocity does not determine the two fitted observables",
+      "statement": "Across the tested FlyWire graph controls and operating points, neither the DMD spectrum nor the covariance exponent was determined by known structural reciprocity alone.",
+      "cluster_id": "identifiability",
+      "column": "theory",
+      "generation": 1,
+      "role": "revision_boundary",
+      "readiness": "claim_ready",
+      "project": "Non-normality",
+      "source": "non-normality/flywire_spontaneous/README.md",
+      "claim_type": "comparative",
+      "strength": "existence",
+      "validated_result": true,
+      "sort_order": 3
+    },
+    {
+      "id": "q-history",
+      "source_node_id": "q-history",
+      "code": "Q2",
+      "kind": "question",
+      "title": "Does learning history remain visible at matched current state?",
+      "statement": "When gate and input are held fixed, can prior learning leave a measurable trace in effective recurrent interactions?",
+      "cluster_id": "learning-history",
+      "column": "algorithm",
+      "generation": 0,
+      "role": "seed_question",
+      "readiness": "needs_author_check",
+      "project": "State-Gated Learning",
+      "source": "Machens/Manuscript/neurips_2026.tex",
+      "validated_result": false,
+      "sort_order": 0
+    },
+    {
+      "id": "sgeap-history",
+      "source_node_id": "sgeap-history",
+      "code": "SG1",
+      "kind": "claim",
+      "title": "Matched-current recurrent interactions retain training history",
+      "statement": "In the tested SG-EAP matched-current protocol, different training histories left different recurrent-interaction readouts under the same final gate and input probe.",
+      "cluster_id": "learning-history",
+      "column": "algorithm",
+      "generation": 0,
+      "role": "node",
+      "readiness": "claim_ready",
+      "project": "State-Gated Learning",
+      "source": "Machens/results/formal_rebuttal_experiment_manifest.json",
+      "claim_type": "computational_existence",
+      "strength": "existence",
+      "validated_result": true,
+      "sort_order": 1
+    },
+    {
+      "id": "sgeap-switch",
+      "source_node_id": "sgeap-switch",
+      "code": "SG2",
+      "kind": "claim",
+      "title": "Matched N=100 runs share one switching order",
+      "statement": "Under the matched N=100 SG-EAP protocol, cooperation-to-competition crossed before competition-to-cooperation in all 27 tested runs.",
+      "cluster_id": "learning-history",
+      "column": "algorithm",
+      "generation": 1,
+      "role": "revision_boundary",
+      "readiness": "claim_ready",
+      "project": "State-Gated Learning",
+      "source": "Machens/results/formal_rebuttal_experiment_manifest.json",
+      "claim_type": "comparative",
+      "strength": "directional",
+      "validated_result": true,
+      "sort_order": 2
+    },
+    {
+      "id": "gap-history-agent",
+      "source_node_id": null,
+      "code": "FG1",
+      "kind": "gap",
+      "title": "Closed-loop value of matched-current learning history is untested",
+      "statement": "No current Claim Commons record tests whether a history-sensitive local rule improves recovery, switching, or resource allocation in a closed-loop agent after the present state is matched.",
+      "cluster_id": "learning-history",
+      "column": "agent",
+      "generation": 2,
+      "role": "translation_gap",
+      "readiness": "gap_only",
+      "project": "Future helix",
+      "source": "Framework synthesis of app/static/data/mia-research-map.json; no validated result",
+      "validated_result": false,
+      "non_claims": [
+        "No embodied advantage of SG-EAP is currently claimed.",
+        "No biological learning-history mechanism is currently claimed."
+      ],
+      "sort_order": 3
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel-q-energy-frontier",
+      "source": "q-energy",
+      "target": "gm-frontier",
+      "type": "supports",
+      "label": "formalises",
+      "bridge_id": "experiment-theory",
+      "status": "source_mapped",
+      "source_basis": "mia-research-map edge"
+    },
+    {
+      "id": "rel-frontier-v1",
+      "source": "gm-frontier",
+      "target": "gm-v1",
+      "type": "tests",
+      "label": "empirical test",
+      "bridge_id": "experiment-theory",
+      "status": "source_mapped",
+      "source_basis": "mia-research-map edge"
+    },
+    {
+      "id": "rel-frontier-ssnn",
+      "source": "gm-frontier",
+      "target": "ssnn-active",
+      "type": "extends",
+      "label": "algorithmic transfer",
+      "bridge_id": "theory-algorithm",
+      "status": "source_mapped",
+      "source_basis": "mia-research-map edge"
+    },
+    {
+      "id": "rel-ssnn-energy-agent",
+      "source": "ssnn-active",
+      "target": "q-energy-agent",
+      "type": "requires_test",
+      "label": "physical deployment question",
+      "bridge_id": "algorithm-agent",
+      "status": "open",
+      "source_basis": "framework gap"
+    },
+    {
+      "id": "rel-energy-agent-return",
+      "source": "q-energy-agent",
+      "target": "q-energy-return",
+      "type": "motivates",
+      "label": "candidate biological return",
+      "bridge_id": "agent-experiment",
+      "status": "open",
+      "source_basis": "framework question"
+    },
+    {
+      "id": "rel-q-identify-nu",
+      "source": "q-identify",
+      "target": "nonnormal-nu",
+      "type": "tests",
+      "label": "degeneracy test",
+      "bridge_id": null,
+      "status": "source_mapped",
+      "source_basis": "mia-research-map edge"
+    },
+    {
+      "id": "rel-q-identify-spectrum",
+      "source": "q-identify",
+      "target": "nonnormal-spectrum",
+      "type": "tests",
+      "label": "counterexample",
+      "bridge_id": null,
+      "status": "source_mapped",
+      "source_basis": "mia-research-map edge"
+    },
+    {
+      "id": "rel-nu-flywire",
+      "source": "nonnormal-nu",
+      "target": "flywire-ground",
+      "type": "extends",
+      "label": "ground-truth test",
+      "bridge_id": null,
+      "status": "source_mapped",
+      "source_basis": "mia-research-map edge"
+    },
+    {
+      "id": "rel-spectrum-flywire",
+      "source": "nonnormal-spectrum",
+      "target": "flywire-ground",
+      "type": "extends",
+      "label": "connectome test",
+      "bridge_id": null,
+      "status": "source_mapped",
+      "source_basis": "mia-research-map edge"
+    },
+    {
+      "id": "rel-q-history-sgeap",
+      "source": "q-history",
+      "target": "sgeap-history",
+      "type": "supports",
+      "label": "direct test",
+      "bridge_id": null,
+      "status": "source_mapped",
+      "source_basis": "mia-research-map edge"
+    },
+    {
+      "id": "rel-history-switch",
+      "source": "sgeap-history",
+      "target": "sgeap-switch",
+      "type": "extends",
+      "label": "transition order",
+      "bridge_id": null,
+      "status": "source_mapped",
+      "source_basis": "mia-research-map edge"
+    },
+    {
+      "id": "rel-switch-agent-gap",
+      "source": "sgeap-switch",
+      "target": "gap-history-agent",
+      "type": "requires_test",
+      "label": "embodied value remains open",
+      "bridge_id": "algorithm-agent",
+      "status": "open",
+      "source_basis": "framework gap"
+    }
+  ],
+  "bridge_records": [
+    {
+      "id": "bridge-record-energy-experiment-theory",
+      "bridge_id": "experiment-theory",
+      "cluster_id": "energy-allocation",
+      "source_node_ids": ["gm-v1"],
+      "target_node_ids": ["gm-frontier"],
+      "status": "partial",
+      "mapping_statement": "The V1 analysis tests a firing-rate-controlled association between lifetime CV and calibrated information per cost that is motivated by the frontier, but it does not identify direct metabolic power or uniquely validate the theoretical mechanism.",
+      "assumptions": [
+        "The calibrated cost proxy is relevant to the analysed information-cost operating point.",
+        "CV is treated as a branch-local correlate, not a universal efficiency coordinate."
+      ],
+      "validation_evidence": ["gm-v1"],
+      "failure_conditions": [
+        "The prespecified firing-rate-controlled association does not reproduce.",
+        "A competing tuning explanation fully accounts for the bounded association."
+      ]
+    },
+    {
+      "id": "bridge-record-energy-theory-algorithm",
+      "bridge_id": "theory-algorithm",
+      "cluster_id": "energy-allocation",
+      "source_node_ids": ["gm-frontier"],
+      "target_node_ids": ["ssnn-active"],
+      "status": "partial",
+      "mapping_statement": "The research map links the Gibbs-frontier programme to PopCV regularisation as an algorithmic transfer; the current records support the two bounded endpoint claims but do not establish a unique formal derivation from the theorem to the training rule.",
+      "assumptions": [
+        "Population-CV regularisation is a relevant executable probe of allocation geometry.",
+        "Static-image SDT results do not by themselves establish biological locality or universal transfer."
+      ],
+      "validation_evidence": ["gm-frontier", "ssnn-active"],
+      "failure_conditions": [
+        "The released seed-matched SSNN aggregation does not reproduce.",
+        "The proposed mapping requires information excluded by the algorithmic contract."
+      ]
+    },
+    {
+      "id": "bridge-record-energy-algorithm-agent",
+      "bridge_id": "algorithm-agent",
+      "cluster_id": "energy-allocation",
+      "source_node_ids": ["ssnn-active"],
+      "target_node_ids": ["q-energy-agent"],
+      "status": "gap",
+      "mapping_statement": "A hardware-native closed-loop test is required before active-set restructuring can be interpreted as an energy, latency, or adaptation advantage.",
+      "assumptions": [
+        "Task performance and training budget can be matched to relevant baselines.",
+        "Energy, memory movement, communication, and latency can be measured rather than inferred from spike count."
+      ],
+      "validation_evidence": [],
+      "failure_conditions": [
+        "The deployment adds no scientific variable beyond the static benchmark.",
+        "The claimed advantage disappears under measured physical costs."
+      ]
+    },
+    {
+      "id": "bridge-record-energy-agent-experiment",
+      "bridge_id": "agent-experiment",
+      "cluster_id": "energy-allocation",
+      "source_node_ids": ["q-energy-agent"],
+      "target_node_ids": ["q-energy-return"],
+      "status": "gap",
+      "mapping_statement": "A future agent result would need to yield a selective-allocation prediction that can be translated into a joint biological resource and sensory-uncertainty perturbation.",
+      "assumptions": [
+        "The agent discovers a strategy not already assumed in the seed model.",
+        "A biological resource variable and causal intervention can be operationalised."
+      ],
+      "validation_evidence": [],
+      "failure_conditions": [
+        "The proposed experiment cannot distinguish selective reorganisation from uniform suppression.",
+        "The return merely restates the original biological inspiration."
+      ]
+    }
+  ],
+  "render_hints": {
+    "node_key": "id",
+    "area_key": "id",
+    "area_order": [
+      "area-experiment",
+      "area-experiment-theory",
+      "area-theory",
+      "area-theory-algorithm",
+      "area-algorithm",
+      "area-algorithm-agent",
+      "area-agent",
+      "area-agent-experiment"
+    ],
+    "area_kind_field": "kind",
+    "area_weight_field": "weight",
+    "column_field": "column",
+    "generation_field": "generation",
+    "cluster_field": "cluster_id",
+    "column_order": ["experiment", "theory", "algorithm", "agent"],
+    "future_kinds": ["question", "gap"],
+    "future_node_style": "dashed",
+    "source_node_style": "solid",
+    "standard_relation_style": "solid",
+    "open_relation_style": "dashed",
+    "cluster_style": "translucent_band",
+    "layout_note": "Render the eight ordered areas as equal-width or equal-angle regions, alternating pillar and connection without visual hierarchy. Vertical rise encodes generation, cluster bands encode topic, and relation style encodes evidenced versus open translation. Do not persist computed x/y coordinates in this file."
+  }
+}

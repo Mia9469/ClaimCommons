@@ -1,0 +1,875 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "A Spiking Recurrent Neural Network With Phase-Change Memory Neurons and Synapses for the Accelerated Solution of Constraint Satisfaction Problems",
+    "authors": [
+      "Giacomo Pedretti",
+      "Piergiulio Mannocci",
+      "Shahin Hashemkhani",
+      "Valerio Milo",
+      "Octavian Melnic",
+      "Elisabetta Chicca",
+      "Daniele Ielmini"
+    ],
+    "doi": "10.1109/jxcdc.2020.2992691",
+    "publication_year": 2020,
+    "venue": "IEEE Journal on Exploratory Solid-State Computational Devices and Circuits",
+    "url": "https://doi.org/10.1109/jxcdc.2020.2992691"
+  },
+  "source": {
+    "filename": "paper-W3022582871.pdf",
+    "sha256": "6a71a8e91fa930ae2beeb082e781d82d46c0a24f339a4e7297ec7f2712e8bd5f",
+    "source_url": "https://ieeexplore.ieee.org/ielx7/6570653/9133209/09086758.pdf",
+    "pdf_page_count": 9
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "results_sections_seen": [
+      "II. STOCHASTIC NEURON",
+      "II.A. STOCHASTIC PCM CRYSTALLIZATION",
+      "II.B. STOCHASTIC NEURON CIRCUIT",
+      "III. HARDWARE RNN",
+      "IV. HARDWARE SOLUTION OF A SUDOKU PUZZLE",
+      "IV.A. EXPERIMENTAL SOLUTION OF A SUDOKU PUZZLE",
+      "V. TEMPERATURE OPTIMIZATION",
+      "VI. EFFICIENCY AND SCALING",
+      "VII. CONCLUSION",
+      "Figures 1–7 captions"
+    ],
+    "missing_material": [
+      "图像像素未提供。"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "所供文本为正式期刊版本，当前版本日期为2020年7月6日；标题、作者和DOI与元数据一致。",
+      "全部9页文本及图注已复核；参考文献从第7页开始，第8页继续，第9页为作者简介。",
+      "未提供附录或补充材料内容，也未将其视为已读。",
+      "2×2实验使用物理PCM突触、模型生成的随机输入和微控制器I&F；更大规模及双层网络结果来自模拟。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "初始电导G0影响PCM逐渐结晶的孵化阶段、更新斜率和饱和电导。",
+      "role": "result",
+      "source_pages": [
+        3
+      ],
+      "decision": "include",
+      "reason": "图2(b)及正文提供可与阈值统计分开评估的初始状态依赖结果。"
+    },
+    {
+      "summary": "set/reset电压调节PCM结晶阈值到达脉冲数的均值与标准差，阈值复位形成随机事件序列。",
+      "role": "result",
+      "source_pages": [
+        3,
+        4
+      ],
+      "decision": "include",
+      "reason": "有器件重复测量、阈值统计和事件序列描述。"
+    },
+    {
+      "summary": "提出两级随机神经元及差分PCM突触反馈的Hopfield RNN架构。",
+      "role": "result",
+      "source_pages": [
+        4,
+        5
+      ],
+      "decision": "include",
+      "reason": "电路方案和约束映射明确；须限定实际实现范围。"
+    },
+    {
+      "summary": "混合硬件RNN展示2×2数独求解及移除外部刺激后的吸引子维持。",
+      "role": "result",
+      "source_pages": [
+        5
+      ],
+      "decision": "include",
+      "reason": "有实验脉冲轨迹，但初始数字存在正文与图注冲突。"
+    },
+    {
+      "summary": "增加刺激电流和平均频率缩短2×2求解时间，MC模型呈现离散积分导致的阶梯。",
+      "role": "result",
+      "source_pages": [
+        5,
+        6
+      ],
+      "decision": "include",
+      "reason": "每个硬件数据点为五次实验平均，另有模型曲线。"
+    },
+    {
+      "summary": "固定预算模拟中，较大数独的最高成功率参数区域向较低输入概率、较高噪声概率移动。",
+      "role": "result",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "四种规模的参数扫描报告1000周期和100次重复。"
+    },
+    {
+      "summary": "单层网络固定预算错误概率随数独规模增加。",
+      "role": "result",
+      "source_pages": [
+        6,
+        7
+      ],
+      "decision": "include",
+      "reason": "规模与周期扫描支持扩展性限制。"
+    },
+    {
+      "summary": "加入抑制与给定条件冲突候选的前馈层改善模拟网络收敛。",
+      "role": "result",
+      "source_pages": [
+        6,
+        7
+      ],
+      "decision": "include",
+      "reason": "单层和双层网络按1%错误概率目标比较周期数。"
+    },
+    {
+      "summary": "本文模型与文献FPGA、软件和模拟神经形态求解器的周期数比较。",
+      "role": "result",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "保留报告的周期数差异，并明确跨平台比较限制。"
+    },
+    {
+      "summary": "局部极小值增多解释噪声需求，前馈抑制被解释为冷却效应。",
+      "role": "interpretation",
+      "source_pages": [
+        6,
+        7
+      ],
+      "decision": "defer",
+      "reason": "未独立测量局部极小值数量或有效温度，不另列已验证机制命题。"
+    },
+    {
+      "summary": "PCM优于其他存储技术、一般CSP加速、系统能耗优势及多阵列并行收益。",
+      "role": "interpretation",
+      "source_pages": [
+        1,
+        2,
+        4,
+        6,
+        7
+      ],
+      "decision": "exclude",
+      "reason": "缺少本文直接跨器件比较、其他CSP测试、完整能耗测量或多阵列实验。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "在被测1T1R PCM器件的逐渐结晶过程中，提高Vset使达到Gsat/2所需脉冲数NC的均值和标准差下降，提高Vreset则使二者上升；达到阈值后复位产生脉冲间隔变化的事件序列。",
+      "claim_type": "device_characterization",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "重复reset初始化、set脉冲编程及电导测量",
+          "design": "扫描Vset和预编程Vreset，统计阈值到达脉冲数；阈值复位序列使用Vset=1.6、1.7、1.8 V。",
+          "comparator": "不同set/reset电压条件",
+          "measure": "NC均值、标准差、累积分布及阈值事件间隔",
+          "unit_of_analysis": "一个PCM器件的重复初始化—结晶过程",
+          "sample_size_as_reported": "图2(a)为100次重复测量；图2(c–f)各条件重复数未单独报告。",
+          "uncertainty": "报告NC标准差；固定Vreset=2.4 V的累积分布被描述为Gaussian-like；无置信区间。",
+          "assumptions": [
+            "统计阈值为Gsat/2。"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "II.A",
+            "figure": "2(a,c–f)",
+            "equation": "Gth=Gsat/2",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "编程电压可调节器件结晶阈值事件的间隔统计。",
+        "boundary": "证据主要为单器件周期间变异，不能替代器件间统计。",
+        "negative_result": null,
+        "non_inference": "未证明随机事件相互独立、密码学质量或相对其他存储技术的优势。",
+        "unresolved": "跨器件、漂移及耐久性对事件统计的影响。",
+        "unresolved_attribution": "所供文本未报告这些测试。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "PCM结晶阈值到达脉冲数的分布如何随set/reset电压改变？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C9"
+      ],
+      "review_notes": [
+        "随机成核与生长为作者解释，本文未直接观测微观过程。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "本文提出两级随机神经元与Hopfield RNN方案：PCM结晶阈值事件产生随机输入，电容I&F级整合输入和反馈电流，成对兴奋/抑制1T1R PCM器件以电导差编码突触权重，并以列电流求和形成网络反馈。",
+      "claim_type": "architecture",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "电路设计、差分突触映射及MATLAB MC建模",
+          "design": "PCM电阻分压与比较器构成随机输入级；第二级积分并放电；突触行由神经元输出控制，列电流反馈至神经元。",
+          "comparator": null,
+          "measure": "差分权重Gij及列反馈电流Ij",
+          "unit_of_analysis": "神经元电路与反馈网络方案",
+          "sample_size_as_reported": "2×2映射为8个神经元、56个非自连接逻辑突触位置，使用两个8×8 PCM阵列；每个逻辑突触由两个PCM器件组成。",
+          "uncertainty": null,
+          "assumptions": [
+            "兴奋与抑制支路分别采用正、负读偏置。",
+            "对角突触省略以避免自激励或自抑制。",
+            "列电流按文中理想电导求和关系表述。"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "II.B; III",
+            "figure": "3–4",
+            "equation": "Gij=Gij+−Gij−; Ij=ΣiGijVi",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "给出随机PCM输入与差分存内反馈相结合的约束求解架构。",
+        "boundary": "电路示意不等于完整集成验证；2×2实验的随机输入和I&F由模型与微控制器实现。",
+        "negative_result": null,
+        "non_inference": "不能据此宣称全物理PCM随机神经元及模拟I&F系统已完成集成测试。",
+        "unresolved": "完整物理随机输入和模拟I&F集成后的表现。",
+        "unresolved_attribution": "超出本文硬件验证范围。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "如何将PCM随机输入和差分突触电流反馈组成约束求解网络？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C3"
+      ],
+      "review_notes": [
+        "56为逻辑连接数，不能当作物理PCM器件总数或实验重复数。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "在10 kHz时钟下，采用物理PCM突触阵列、微控制器I&F和MC生成随机输入的8神经元混合硬件RNN，在展示的2×2数独轨迹中约2 ms后形成N2、N3、N5、N8持续放电、其余神经元静默的解模式；移除外部刺激后该模式仍维持。",
+      "claim_type": "hardware_demonstration",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "混合硬件闭环数独求解",
+          "design": "MC随机序列上传微控制器，输出驱动PCM突触，突触电流经TIA和ADC返回微控制器。",
+          "comparator": "初始与求解后状态；外部刺激移除前后",
+          "measure": "Xi和Yi脉冲轨迹及解模式维持",
+          "unit_of_analysis": "一次展示的2×2数独求解轨迹",
+          "sample_size_as_reported": "8个神经元；展示轨迹的独立重复数未报告。",
+          "uncertainty": "约2 ms；维持时长及统计区间未报告。",
+          "assumptions": [
+            "放电配置按预设数独编码解读。",
+            "给定条件对应神经元受到较高平均频率输入，其余神经元接受较低频率输入。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "IV.A",
+            "figure": "5(c)",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "展示小规模数独解模式及移除刺激后的吸引子维持。",
+        "boundary": "作者明确2×2数独无需随机性也可求解；初始数字存在正文与图注冲突。",
+        "negative_result": null,
+        "non_inference": "未证明物理PCM随机源对求解的必要性，也未测定大规模硬件成功率。",
+        "unresolved": "该轨迹初始给定数字究竟为1还是2，以及更复杂问题的完整硬件表现。",
+        "unresolved_attribution": "正文写S(2,1)=1，图5(c)图注写该位置为2；更大规模仅模拟。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "PCM突触反馈网络能否形成并维持小规模数独解对应的吸引子？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C4"
+      ],
+      "review_notes": [
+        "命题不指定冲突的初始数字；解模式为作者按编码作出的判定。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "在2×2数独混合硬件RNN中，增加刺激电流Iinput或平均刺激频率finput缩短平均求解时间；含PCM神经元与突触变异的MC模型再现该趋势，并呈现与离散积分阈值有关的求解时间阶梯。",
+      "claim_type": "parameter_dependence",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "硬件参数扫描与MC模型比较",
+          "design": "扫描刺激电流，在不同平均刺激频率下比较实验平均值与模拟曲线。",
+          "comparator": "较低刺激电流或平均频率",
+          "measure": "数独求解时间",
+          "unit_of_analysis": "单次硬件求解实验及模拟运行",
+          "sample_size_as_reported": "每个实验数据点为五次实验平均；模拟重复数未单独报告。",
+          "uncertainty": "文本报告平均值，未明确误差条或置信区间。",
+          "assumptions": [
+            "模型包含PCM神经元与突触变异。",
+            "正文给出Vth=1 V、等效Cint=100 pF和fclk=10 kHz。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "IV.A续",
+            "figure": "5(d)",
+            "equation": "Ith=Vth·Cint·fclk",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "输入电流和平均频率调节所测小规模求解时间。",
+        "boundary": "阶梯主要由模拟结果说明，正文指出10 µA和5 µA处的阶跃。",
+        "negative_result": null,
+        "non_inference": "未测定这些调节对能耗、寿命或大规模成功率的影响。",
+        "unresolved": "速度、成功率和能耗的联合最优工作点。",
+        "unresolved_attribution": "本文未作联合测量。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "刺激电流和频率如何影响离散I&F网络的数独求解时间？"
+      ],
+      "shared_evidence_with": [
+        "C3"
+      ],
+      "review_notes": [
+        "模型对同一实验系统的符合不构成独立复制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "在每次1000周期、每条件100次重复的单层数独RNN MC扫描中，数独规模由6×6增至9×9、12×12和15×15时，最高求解成功率所在参数区域向更低Pinput和更高Pnoise移动。",
+      "claim_type": "simulation_parameter_optimization",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "MC输入与噪声概率扫描",
+          "design": "对四种规模扫描输入脉冲概率Pinput和噪声脉冲概率Pnoise。",
+          "comparator": "不同规模和概率组合",
+          "measure": "1000周期内正确求解概率Psol",
+          "unit_of_analysis": "单次模拟求解运行",
+          "sample_size_as_reported": "每次1000周期，每条件100次重复；独立谜题数和随机种子未报告。",
+          "uncertainty": "经验成功概率；无置信区间。",
+          "assumptions": [
+            "采用N³个神经元及N⁶−N³个逻辑突触位置编码约束。",
+            "模型结合随机脉冲时序和PCM电导变异。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "V",
+            "figure": "6(a–d)",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所测试规模的最佳输入与噪声配比随规模变化。",
+        "boundary": "仅针对固定1000周期预算及所模拟问题。",
+        "negative_result": null,
+        "non_inference": "未直接证明局部极小值数量增加是原因，也未证明任意增大噪声均有益。",
+        "unresolved": "最优配比对谜题难度、给定数字及运行预算的依赖。",
+        "unresolved_attribution": "所供文本未报告实例分层分析。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "数独规模如何改变固定预算下的最佳输入脉冲与噪声概率？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "过高温度导致解不稳定是作者解释，未另列定量负结果。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "在数独规模N=4至16的单层RNN MC模拟中，相同计算周期数下的错误概率Perr随N增加，达到较低错误概率所需周期数也随规模增加。",
+      "claim_type": "simulation_scaling",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "MC规模与计算周期扫描",
+          "design": "计算各规模单层网络错误概率随周期数的变化。",
+          "comparator": "较小规模网络及不同周期预算",
+          "measure": "Perr=1−Psol",
+          "unit_of_analysis": "模拟求解运行",
+          "sample_size_as_reported": "规模范围N=4至16；该扫描重复数及独立谜题数未单独报告。",
+          "uncertainty": "无置信区间或复杂度拟合不确定性。",
+          "assumptions": [
+            "使用本文PCM随机网络MC模型。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "VI",
+            "figure": "7(a)",
+            "equation": "Perr=1−Psol",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "单层求解器存在规模增加带来的可靠性与周期成本限制。",
+        "boundary": "未提供渐近复杂度证明或充分的多实例难度控制。",
+        "negative_result": "固定周期预算下，更大规模网络的错误概率更高。",
+        "non_inference": "不能外推为一般NP完全问题的时间复杂度或实测硬件扩展性能。",
+        "unresolved": "互连、阵列资源及物理误差对大规模收敛的影响。",
+        "unresolved_attribution": "缺少大规模硬件验证。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "单层随机数独网络的错误概率如何随规模和周期预算变化？"
+      ],
+      "shared_evidence_with": [
+        "C7",
+        "C8"
+      ],
+      "review_notes": [
+        "多阵列并行提高成功率为本文建议及引用背景，并非新增实验结果。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "在本文数独MC比较中，加入对给定数字提供兴奋、对与给定约束冲突的候选数字提供抑制的前馈层，并仅向递归层注入噪声的双层网络，相比单层RNN减少了达到Perr=1%所需周期数。",
+      "claim_type": "architecture_comparison",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "单层与双层网络MC比较",
+          "design": "前馈输入层编码给定条件及其排除关系，比较不同规模下的错误概率曲线与目标周期数。",
+          "comparator": "单层RNN",
+          "measure": "Perr随周期数变化及达到Perr=1%的周期数",
+          "unit_of_analysis": "模拟求解运行",
+          "sample_size_as_reported": "比较多种数独规模；重复运行数和独立谜题数未单独报告。",
+          "uncertainty": "未报告置信区间。",
+          "assumptions": [
+            "前馈权重正确编码给定数字的约束。",
+            "周期比较采用1%错误概率目标。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "VI",
+            "figure": "7(c–f)",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "条件相关前馈抑制改善所模拟网络的周期效率。",
+        "boundary": "双层网络未作硬件验证，比较涉及整套架构变化。",
+        "negative_result": null,
+        "non_inference": "未分离冲突抑制与其他架构变化的贡献，未独立验证有效冷却机制或普适CSP收益。",
+        "unresolved": "额外前馈资源及物理误差是否抵消周期收益。",
+        "unresolved_attribution": "缺少系统级硬件成本比较。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "编码给定约束的前馈抑制层能否减少随机数独网络达到目标错误概率的周期数？"
+      ],
+      "shared_evidence_with": [
+        "C6",
+        "C8"
+      ],
+      "review_notes": [
+        "冷却效应为作者解释，未直接测量有效温度。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "按本文以求解周期数为指标的文献比较，PCM RNN相对所列FPGA和软件求解器被报告减少约四和七个数量级的周期数；4×4数独双层模拟网络需14周期，而所引模拟神经形态处理器约需50周期。",
+      "claim_type": "literature_benchmark_comparison",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "本文模型与文献平台周期数比较",
+          "design": "汇总单层、双层网络及文献求解器随数独规模变化的周期数。",
+          "comparator": "文献[52]、[53]的FPGA、[52]的软件和[26]的模拟神经形态处理器",
+          "measure": "求解周期数；本文网络采用Perr=1%目标",
+          "unit_of_analysis": "平台与问题规模的汇总基准数据",
+          "sample_size_as_reported": null,
+          "uncertainty": "数量级为作者近似报告；无统计区间。",
+          "assumptions": [
+            "跨平台周期定义、实例难度及成功标准的可比性是比较成立的条件，本文未充分核实其一致性。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "VI",
+            "figure": "7(f)",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "本文报告的模型周期数低于所列文献基准。",
+        "boundary": "比较混合模型结果和不同平台文献数据；外部基准未独立复核。",
+        "negative_result": null,
+        "non_inference": "周期差异不能直接等同于实测墙钟加速、系统能耗或同条件硬件优势。",
+        "unresolved": "统一实例、成功率、时钟及外围开销后的系统优势。",
+        "unresolved_attribution": "本文未进行统一条件复测。"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "统一问题实例、求解可靠性和周期定义后，PCM数独网络是否仍具跨平台周期优势？"
+      ],
+      "shared_evidence_with": [
+        "C6",
+        "C7"
+      ],
+      "review_notes": [
+        "文中将周期比较称为加速；此处限定实际比较指标。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "在被测1T1R PCM器件的逐渐结晶测量中，降低初始高阻态电导G0延长电导尚未改变的孵化阶段；不同G0还改变平均电导更新曲线的上升斜率和饱和电导。",
+      "claim_type": "device_initial_state_dependence",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "不同初始电导条件下的脉冲编程与电导测量",
+          "design": "比较不同G0下平均G/G0随编程脉冲数变化的曲线。",
+          "comparator": "较高与较低初始电导G0",
+          "measure": "孵化脉冲数、电导上升斜率及饱和电导",
+          "unit_of_analysis": "PCM器件重复结晶过程的条件平均曲线",
+          "sample_size_as_reported": "图2(b)各G0条件重复数未单独报告；图2(a)报告100次重复。",
+          "uncertainty": "平均曲线；未报告这些曲线参数的置信区间。",
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "II.A",
+            "figure": "2(b)",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "初始电导影响PCM脉冲结晶的平均动态。",
+        "boundary": "正文未给出斜率和饱和值变化的定量效应或统一单调方向。",
+        "negative_result": null,
+        "non_inference": "未独立测量初始非晶体积，不能把电导依赖直接当作体积的因果测量。",
+        "unresolved": "不同器件及长期使用条件下该初始状态依赖是否保持。",
+        "unresolved_attribution": "所供文本未报告这些测试。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "初始PCM电导如何影响脉冲结晶的孵化阶段和平均更新曲线？"
+      ],
+      "shared_evidence_with": [
+        "C1"
+      ],
+      "review_notes": [
+        "与C1共享图2器件表征，属于不同读出而非独立复制。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "已再次评估全部九页文本及图1–7图注，正式期刊版本与身份元数据一致。保留器件阈值随机性、混合硬件2×2数独演示、输入参数依赖、大规模MC扫描、双层收敛及文献周期比较，并补入初始电导影响结晶动态的结果。硬件随机输入来自模型，I&F由微控制器实现；大规模和双层结果均为模拟。逻辑突触数、器件数及运行重复数已区分。跨平台周期优势不能直接推为延迟或能耗优势；初始数字的正文与图注冲突仍未解决。",
+  "shared_evidence": [
+    {
+      "claim_id": "C1",
+      "with": [
+        "C2",
+        "C9"
+      ]
+    },
+    {
+      "claim_id": "C2",
+      "with": [
+        "C1",
+        "C3"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C2",
+        "C4"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C3"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C7",
+        "C8"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C6",
+        "C8"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C6",
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C1"
+      ]
+    }
+  ],
+  "audit": {
+    "initial_source_match_checks": [],
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": "C9",
+        "issue": "草稿遗漏图2(b)中初始G0对孵化阶段、更新斜率和饱和电导的依赖。",
+        "suggested_correction": "新增独立初始状态依赖命题，避免推断未报告的斜率或饱和值变化方向。",
+        "pdf_page": 3,
+        "resolved": true
+      },
+      {
+        "claim_id": "C2",
+        "issue": "N⁶−N³连接数容易被误认为物理PCM器件数量。",
+        "suggested_correction": "明确为非自连接逻辑突触位置；每个逻辑突触由兴奋和抑制两个PCM器件组成。",
+        "pdf_page": 4,
+        "resolved": true
+      },
+      {
+        "claim_id": "C3",
+        "issue": "正文写S(2,1)=1，图5(c)图注写该位置数字为2。",
+        "suggested_correction": "保留源内冲突，命题避免指定初始数字，需原作者澄清。",
+        "pdf_page": 5,
+        "resolved": false
+      },
+      {
+        "claim_id": "C3",
+        "issue": "摘要和结论的概括可能被解读为物理PCM随机神经元实时驱动了数独实验。",
+        "suggested_correction": "明确模型随机输入、微控制器I&F及物理PCM突触组成的混合硬件实现。",
+        "pdf_page": 5,
+        "resolved": true
+      },
+      {
+        "claim_id": "C5",
+        "issue": "100次模拟重复不能当作100个独立数独实例或硬件重复。",
+        "suggested_correction": "分析单位限定为模拟运行，独立谜题数及种子记为未报告；不将该重复数推广到图7。",
+        "pdf_page": 6,
+        "resolved": true
+      },
+      {
+        "claim_id": "C7",
+        "issue": "双层架构收益不能单独确证有效冷却机制。",
+        "suggested_correction": "保留整套架构的周期比较，将冷却及贡献分离列为未验证解释。",
+        "pdf_page": 7,
+        "resolved": true
+      },
+      {
+        "claim_id": "C8",
+        "issue": "跨平台周期数减少被正文表述为数量级加速，缺少统一延迟和系统成本测量。",
+        "suggested_correction": "限定为作者报告的周期数比较，不推出同量级墙钟或能耗优势。",
+        "pdf_page": 7,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "草稿包含请求schema以外的source_check和review字段，且source_check暗示执行了文本匹配检查。",
+        "suggested_correction": "删除额外字段，以真实页码定位和audit_findings记录本次源文复核。",
+        "pdf_page": null,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "草稿将第8页概括为参考文献页，遗漏参考文献实际从第7页开始。",
+        "suggested_correction": "更正覆盖说明，保留全部九页阅读记录。",
+        "pdf_page": 7,
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T06:35:44.993684Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "signed_in_chatgpt_codex",
+    "authentication": "existing_ChatGPT_login",
+    "provider_api_key_used": false,
+    "model": "account_default_GPT",
+    "source_sha256": "6a71a8e91fa930ae2beeb082e781d82d46c0a24f339a4e7297ec7f2712e8bd5f",
+    "requests": [
+      {
+        "phase": "extraction",
+        "seconds": 145.97,
+        "usage": {
+          "input_tokens": 26987,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 6332,
+          "reasoning_output_tokens": 30
+        },
+        "backend": "signed_in_chatgpt_codex",
+        "tools_used": false
+      },
+      {
+        "phase": "source_audit",
+        "seconds": 162.66,
+        "usage": {
+          "input_tokens": 33222,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 7557,
+          "reasoning_output_tokens": 34
+        },
+        "backend": "signed_in_chatgpt_codex",
+        "tools_used": false
+      }
+    ],
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

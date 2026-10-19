@@ -1,0 +1,282 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ETLP: event-based three-factor local plasticity for online learning with neuromorphic hardware</title><style>body{max-width:940px;margin:40px auto;padding:0 24px;background:#fffdf7;color:#12372f;font:16px/1.8 Georgia,serif}h1{font-size:26px;line-height:1.4}h2{font-size:20px;line-height:1.5}h3{font-size:16px}article{padding:26px 0;border-top:1px solid #bec4b8}small{color:#68766e}dl{display:grid;grid-template-columns:120px 1fr;gap:8px 20px}dt{font-weight:bold}dd{margin:0}li{padding:8px 0}p,dd{overflow-wrap:anywhere}.note{background:#eef2e2;padding:14px;border-left:3px solid #738968}summary{cursor:pointer}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.7 monospace}@media(max-width:600px){body{margin:24px auto;padding:0 18px}dl{grid-template-columns:1fr;gap:3px}dd{margin-bottom:12px}}@media print{body{margin:0;background:white}details{display:block}}</style><link rel="stylesheet" href="../../commons-v02.css?v=20261020-1"><link rel="stylesheet" href="../../examples.css?v=20260928-2"><link rel="stylesheet" href="../../site.css?v=20261020-1"><script defer src="../../site.js?v=20261020-1"></script><script defer src="../../report-ui.js?v=20261020-1"></script></head><body class="portal-page report-page" data-cc-report-shell="1" data-page="library" data-site-prefix="../../" data-library-paper="paper-W4400933297" data-report-language="zh" data-claim-records="{&quot;C1&quot;:&quot;structured-paper-W4400933297-1&quot;,&quot;C2&quot;:&quot;structured-paper-W4400933297-2&quot;,&quot;C3&quot;:&quot;structured-paper-W4400933297-3&quot;,&quot;C4&quot;:&quot;structured-paper-W4400933297-4&quot;,&quot;C5&quot;:&quot;structured-paper-W4400933297-5&quot;,&quot;C6&quot;:&quot;structured-paper-W4400933297-6&quot;,&quot;C7&quot;:&quot;structured-paper-W4400933297-7&quot;,&quot;C8&quot;:&quot;structured-paper-W4400933297-8&quot;,&quot;C9&quot;:&quot;structured-paper-W4400933297-9&quot;,&quot;C10&quot;:&quot;structured-paper-W4400933297-10&quot;,&quot;C11&quot;:&quot;structured-paper-W4400933297-11&quot;,&quot;C12&quot;:&quot;structured-paper-W4400933297-12&quot;,&quot;C13&quot;:&quot;structured-paper-W4400933297-13&quot;,&quot;C14&quot;:&quot;structured-paper-W4400933297-14&quot;,&quot;C15&quot;:&quot;structured-paper-W4400933297-15&quot;}"><header></header><main id="report-content"><div id="report-tools"></div><small>CLAIM COMMONS / 阅读报告</small><h1>ETLP: event-based three-factor local plasticity for online learning with neuromorphic hardware</h1><p class="note">AI 文本提取候选，尚待人工核对。图像像素未读取；PDF 页码指文件中的页序。</p><p>归档2023v2提出ETLP本地事件教学规则，并在N-MNIST和SHD软件模型中与eProp/BPTT比较。已保留准确率损失、循环/适应联合配置收益、三规则完整θ扫描和ETLP高峰后退化。FPGA部分仅支持局部模块时序和综合资源、工具功率估算以及条件性每神经元预算，不是全网在线学习或整机节能实测。2024发表元数据与2023来源版本、输入数算术和O(1)迹存储范围需人工核查。</p><a href="https://arxiv.org/pdf/2301.08281" rel="noreferrer">查看所读原文版本 ↗</a><details><summary>贡献清单与处理决定</summary><ul><li><b>事件教学、目标随机投影及预/后突触局部迹的ETLP规则。</b><br>include · 保留输出局部式、ALIF迹及监督条件，不宣称BPTT精确等价。</li><li><b>N-MNIST前馈准确率及SHD前馈/循环准确率。</b><br>include · 三次随机初始化；局部规则确有准确率损失。</li><li><b>SHD三规则θ0/5/10扫描及ETLPθ5训练后下降。</b><br>include · 固定循环扫描与前馈/循环联合变化分开；选择稳定θ10而非最高峰。</li><li><b>FPGA模块三周期流程、综合资源、功率估算和每神经元时钟预算。</b><br>include · 分开证据等级，不表述为完整网络实测。</li><li><b>梯度计算复杂度表及阈值发放率解释。</b><br>include · 空间O(1)仅报告作者口径；机制未独立确定。</li><li><b>完整SHD ALIF回路、异步模块调度、实际板载学习和端到端功耗。</b><br>defer · 本稿仅局部模块，上层/time-multiplexing架构未提供。</li><li><b>新类别/few-shot、部署后适应、MAML初始参数和额外稳态可塑性。</b><br>defer · 分类从随机初始化训练，不是已完成持续或few-shot学习实验。</li><li><b>Loihi2兼容性和既有在线学习芯片。</b><br>exclude · 不是本稿Loihi2运行或新硅测量。</li><li><b>DECOLLE准确率对照和2024期刊版本新增结果。</b><br>defer · 当前完整源仅2023 arXiv v2；元数据不能代替后续全文。</li><li><b>eProp/DRTP/ALIF/替代导数和局部学习既有理论。</b><br>exclude · 被用于新规则，不重记为本文原创理论。</li></ul></details><article><small>C1 / 直接结果 · proposed_learning_rule</small><h2>本文ETLP在LIF/ALIF网络中将预突触脉冲迹、后突触电压的替代导数及教学脉冲提供的第三因子结合，教学事件触发本地权重更新；隐藏层使用固定随机目标投影而不计算并反传全局误差，输出层采用自身脉冲和教学输入的局部更新式。</h2><h3>Evidence</h3><p>事件触发的三因子局部规则设计</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>突触更新规则；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 4 · II.C Spatial dependency; II.D ETLP</dd></dl><p>隐藏层随机投影与输出层兴奋/抑制教学连接</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>网络设计；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 5 · Figure 3</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>本文ETLP在LIF/ALIF网络中将预突触脉冲迹、后突触电压的替代导数及教学脉冲提供的第三因子结合，教学事件触发本地权重更新；隐藏层使用固定随机目标投影而不计算并反传全局误差，输出层采用自身脉冲和教学输入的局部更新式。</dd><dt>适用边界</dt><dd>在特定many-to-one事件监督设置下设计，继承DRTP和既有资格/适应迹思想；不是BPTT的精确全网梯度等价式。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能说全部层完全不依赖输出状态、无监督学习或无需非局部标签输送。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>监督教学脉冲如何使局部突触更新避免全局误差反传？</li></ul></article><article><small>C2 / 直接结果 · simulation_benchmark_result</small><h2>在N-MNIST仅使用第一次约100 ms扫视、1 ms步长、200隐藏LIF和10输出神经元的前馈模型上，三次随机权重初始化平均测试准确率为ETLP94.30%、eProp97.90%、BPTT97.67%；ETLP相对eProp低3.60个百分点。</h2><h3>Evidence</h3><p>三个学习规则的事件图像分类</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；相同所报前馈拓扑的eProp和BPTT</dd><dt>独立单位与 n</dt><dd>随机初始化训练运行/测试图像；3 runs，不是3个样本；使用每样本100个时间步。</dd><dt>不确定性</dt><dd>正文不给该准确率SD/CI。</dd><dt>原文位置</dt><dd>PDF 5 · III.A N-MNIST</dd></dl><p>训练/测试轨迹图注</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>训练运行；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 6 · Figure 4</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>在N-MNIST仅使用第一次约100 ms扫视、1 ms步长、200隐藏LIF和10输出神经元的前馈模型上，三次随机权重初始化平均测试准确率为ETLP94.30%、eProp97.90%、BPTT97.67%；ETLP相对eProp低3.60个百分点。</dd><dt>适用边界</dt><dd>主要空间信息任务；原文输入2064和32×32=1032存在算术不一致，不据此重建确切输入数。</dd><dt>实际负结果</dt><dd>ETLP低于两个基线，非无损局部化。</dd><dt>不能推出</dt><dd>不是FPGA完成整网络分类的结果，也不是新类别在线适应或全部事件视觉任务的结论。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>完全局部ETLP在空间信息为主的N-MNIST任务中损失多少准确率？</li></ul></article><article><small>C3 / 直接结果 · simulation_benchmark_result</small><h2>在SHD限制样本一秒、10 ms分箱且每样本100步、700输入—450隐藏—20输出的前馈LIF网络中，三次初始化平均测试准确率为ETLP59.19%、eProp63.04%、BPTT66.33%，ETLP低于两个所比规则。</h2><h3>Evidence</h3><p>前馈语音脉冲分类的规则比较</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；eProp和BPTT</dd><dt>独立单位与 n</dt><dd>初始化运行/SHD测试样本；3 runs；SHD原数据约10000音频、20类，不是测试集n。</dd><dt>不确定性</dt><dd>未给前馈准确率区间。</dd><dt>原文位置</dt><dd>PDF 5 · III.B SHD</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>在SHD限制样本一秒、10 ms分箱且每样本100步、700输入—450隐藏—20输出的前馈LIF网络中，三次初始化平均测试准确率为ETLP59.19%、eProp63.04%、BPTT66.33%，ETLP低于两个所比规则。</dd><dt>适用边界</dt><dd>使用同文超参数及简化时间分箱，不能理解为最优SHD性能。</dd><dt>实际负结果</dt><dd>ETLP前馈表现低于两个基线。</dd><dt>不能推出</dt><dd>不证明局部学习对所有时序不可行。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>局部规则在富时间结构SHD的前馈网络中表现如何？</li></ul></article><article><small>C4 / 直接结果 · simulation_benchmark_result</small><h2>在本文700输入—450循环隐藏—20输出的SHD网络中，分别选用ETLP θ=10、eProp θ=5、BPTT θ=0时，三次初始化平均测试准确率为74.59±0.44%、80.79±0.39%、75.23±0.44%（表II的均值和标准差），ETLP接近该BPTT设置但比eProp低6.20个百分点。</h2><h3>Evidence</h3><p>每规则选定阈值参数的循环网络比较</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；eProp θ5与BPTT θ0</dd><dt>独立单位与 n</dt><dd>初始化运行；3 random-initialization runs</dd><dt>不确定性</dt><dd>表II为µ/σ，非CI。</dd><dt>原文位置</dt><dd>PDF 6 · Table II; Figure 6 caption on PDF page 7</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>在本文700输入—450循环隐藏—20输出的SHD网络中，分别选用ETLP θ=10、eProp θ=5、BPTT θ=0时，三次初始化平均测试准确率为74.59±0.44%、80.79±0.39%、75.23±0.44%（表II的均值和标准差），ETLP接近该BPTT设置但比eProp低6.20个百分点。</dd><dt>适用边界</dt><dd>非同θ单因素比较；本文BPTT超参数未专门调优、输出层发放，低于引用80.41%基线。</dd><dt>实际负结果</dt><dd>ETLP低于eProp，也略低于本文BPTT。</dd><dt>不能推出</dt><dd>不能宣称ETLP普遍等价于BPTT或达到SHD SOTA。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>在各规则所选循环/阈值条件下ETLP能否接近非局部训练的SHD准确率？</li></ul></article><article><small>C5 / 直接结果 · joint_configuration_comparison</small><h2>从本文SHD前馈LIF条件改为各规则所选阈值的循环条件后，ETLP、eProp和BPTT平均测试准确率分别提高15.40、17.75和8.90个百分点；ETLP/eProp的这项比较同时改变显式循环与阈值适应，不能把全部增益单独归给循环连接。</h2><h3>Evidence</h3><p>前馈与所选循环网络的性能比较</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；前馈LIF与循环网络的最优/选定θ</dd><dt>独立单位与 n</dt><dd>配置和初始化运行；各配置3 runs。</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 6 · III.B SHD</dd></dl><p>拓扑及神经元模型比较图注</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>模型条件；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 7 · Figure 6a</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>从本文SHD前馈LIF条件改为各规则所选阈值的循环条件后，ETLP、eProp和BPTT平均测试准确率分别提高15.40、17.75和8.90个百分点；ETLP/eProp的这项比较同时改变显式循环与阈值适应，不能把全部增益单独归给循环连接。</dd><dt>适用边界</dt><dd>对ETLP/eProp的增益不是只增加连接的完整配对消融；无正式显著性检验。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能由此证明循环拓扑对所有时间任务必要或排除其它记忆机制。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>循环连接与阈值适应联合改变SHD性能时，应如何避免混淆贡献？</li></ul></article><article><small>C6 / 直接结果 · parameter_sweep_simulation</small><h2>在本文固定循环SHD拓扑的ETLP阈值扫描中，θ=0、5、10的表II测试准确率分别为48.53±0.64%、78.71±1.49%、74.59±0.44%；所测适应设置明显优于θ=0，但不是θ越大性能越好。</h2><h3>Evidence</h3><p>固定循环拓扑下改变θ</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；ETLP θ0/5/10</dd><dt>独立单位与 n</dt><dd>初始化运行×参数配置；每配置3 runs</dd><dt>不确定性</dt><dd>报告标准差，不是95%CI。</dd><dt>原文位置</dt><dd>PDF 6 · Table II</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>在本文固定循环SHD拓扑的ETLP阈值扫描中，θ=0、5、10的表II测试准确率分别为48.53±0.64%、78.71±1.49%、74.59±0.44%；所测适应设置明显优于θ=0，但不是θ越大性能越好。</dd><dt>适用边界</dt><dd>78.71为表中θ5报告值；正文说明它之后训练下降，不能视为已确认终点最优。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不是阈值适应的生物因果证明或对未测试θ范围的普适规律。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>ETLP在循环SHD中的阈值适应幅度如何影响性能？</li></ul></article><article><small>C7 / 直接结果 · training_boundary_result</small><h2>本文ETLP循环SHD训练中，θ=5虽达到较高最大准确率，但继续训练后测试准确率下降并低于θ=10曲线；作者因此选择θ=10作为最终比较配置，以优先较稳定的训练收敛而非较高瞬时峰值。</h2><h3>Evidence</h3><p>两个适应参数下的测试训练轨迹比较</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；θ5与θ10</dd><dt>独立单位与 n</dt><dd>训练轨迹；3 runs平均；未给下降发生轮数和幅度。</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 6 · Figure 5</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>本文ETLP循环SHD训练中，θ=5虽达到较高最大准确率，但继续训练后测试准确率下降并低于θ=10曲线；作者因此选择θ=10作为最终比较配置，以优先较稳定的训练收敛而非较高瞬时峰值。</dd><dt>适用边界</dt><dd>图像未读，不能补造精确轮次/长期性能。</dd><dt>实际负结果</dt><dd>θ5测试准确率随进一步训练下降。</dd><dt>不能推出</dt><dd>不能把作者选θ10称为严格最优，也不能把下降唯一归因于某一机制。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>局部学习的最高峰准确率与稳定训练终点是否一致？</li></ul></article><article><small>C8 / 直接结果 · parameter_sweep_simulation</small><h2>在本文循环SHD的eProp扫描中，θ=0、5、10测试准确率为51.68±1.10%、80.79±0.39%、49.94±1.98%；适中阈值适应θ5改善表现，而θ10低于无适应θ0，显示适应收益有参数边界。</h2><h3>Evidence</h3><p>循环eProp改变适应幅度</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；θ0/5/10</dd><dt>独立单位与 n</dt><dd>初始化运行；每配置3 runs</dd><dt>不确定性</dt><dd>标准差。</dd><dt>原文位置</dt><dd>PDF 6 · Table II</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>在本文循环SHD的eProp扫描中，θ=0、5、10测试准确率为51.68±1.10%、80.79±0.39%、49.94±1.98%；适中阈值适应θ5改善表现，而θ10低于无适应θ0，显示适应收益有参数边界。</dd><dt>适用边界</dt><dd>仅表列三个θ及本文超参数。</dd><dt>实际负结果</dt><dd>θ10相对θ0降低准确率。</dd><dt>不能推出</dt><dd>不能断言所有阈值适应都必要或都会改善eProp。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>eProp的阈值适应收益是否存在有效幅度窗口？</li></ul></article><article><small>C9 / 直接结果 · negative_parameter_sweep_simulation</small><h2>在本文循环SHD的BPTT扫描中，θ=0、5、10测试准确率分别为75.23±0.44%、64.43±0.68%、23.96±0.67%；相同所报训练超参数下，增大阈值适应降低表现，方向与ETLP/eProp在适中θ下的改善不同。</h2><h3>Evidence</h3><p>循环BPTT的适应参数扫描</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；θ0/5/10</dd><dt>独立单位与 n</dt><dd>初始化运行；每配置3 runs</dd><dt>不确定性</dt><dd>标准差。</dd><dt>原文位置</dt><dd>PDF 6 · Table II</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>在本文循环SHD的BPTT扫描中，θ=0、5、10测试准确率分别为75.23±0.44%、64.43±0.68%、23.96±0.67%；相同所报训练超参数下，增大阈值适应降低表现，方向与ETLP/eProp在适中θ下的改善不同。</dd><dt>适用边界</dt><dd>未针对BPTT重新优化其它超参数；不能代表所有BPTT模型。</dd><dt>实际负结果</dt><dd>所测θ5和θ10低于θ0，θ10下降很大。</dd><dt>不能推出</dt><dd>不能由规则间差异认定是否显式反传误差是唯一原因。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>为何同一阈值适应在本文BPTT设置中反而降低SHD准确率？</li></ul></article><article><small>C10 / 直接结果 · FPGA_implementation_result</small><h2>本文将ETLP预突触迹更新、三角替代导数和教学因子乘积映射成FPGA模块，BRAM存迹、step信号触发读取—计算—写回，报告三个时钟周期产生可用梯度并通知上层更新权重；图示数值例得到梯度2.8125。</h2><h3>Evidence</h3><p>数字模块设计与时序示意</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>单个ETLP模块；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 7 · Figures 7–8</dd></dl><p>计算时序示例</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>一次示意模块更新；示例不是独立实物测量重复数。</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 8 · Figures 9–10</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>本文将ETLP预突触迹更新、三角替代导数和教学因子乘积映射成FPGA模块，BRAM存迹、step信号触发读取—计算—写回，报告三个时钟周期产生可用梯度并通知上层更新权重；图示数值例得到梯度2.8125。</dd><dt>适用边界</dt><dd>是局部梯度模块的综合/时序演示，非完整SNN的实物学习延迟；事件异步优化尚可进一步实现。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能称SHD整网已在FPGA实时训练，或将三周期当作端到端感知延迟。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>三因子局部更新可以怎样映射成简单数字硬件流水？</li></ul></article><article><small>C11 / 直接结果 · FPGA_synthesis_resource_result</small><h2>本文ETLP模块在Nexys4 DDR所用xc7a100tcsg324-1 FPGA上综合的资源表报告115个Slice LUT、22个触发器、2个DSP和1个BRAM tile，分别占所列器件资源约0.18%、0.02%、0.83%、0.37%。</h2><h3>Evidence</h3><p>针对所用FPGA的综合资源报告</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>一个综合模块；单模块配置；不代表独立芯片数。</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 8 · Table III</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>本文ETLP模块在Nexys4 DDR所用xc7a100tcsg324-1 FPGA上综合的资源表报告115个Slice LUT、22个触发器、2个DSP和1个BRAM tile，分别占所列器件资源约0.18%、0.02%、0.83%、0.37%。</dd><dt>适用边界</dt><dd>不包含完整神经元、网络路由、全部权重存储和调度架构，也不包含多个模块部署总开销。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能推断ASIC面积或全网络线性无开销复制。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>单个ETLP数字更新模块需要哪些FPGA资源？</li></ul></article><article><small>C12 / 直接结果 · hardware_power_estimation</small><h2>本文FPGA功率工具估算中，ETLP设计在100 MHz时静态约97 mW、动态53 mW（其中I/O约47 mW）；10 MHz时静态不变、动态约5 mW（I/O约4.5 mW）；1 MHz时动态低于工具1 mW分辨率，显示时钟下降可降低该估算的动态量但不消除静态开销。</h2><h3>Evidence</h3><p>综合设计的不同频率功率估算</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；100/10/1 MHz</dd><dt>独立单位与 n</dt><dd>FPGA器件/该设计配置；未报告 / 不适用</dd><dt>不确定性</dt><dd>约数；1 MHz动态量低于1 mW工具分辨率。</dd><dt>原文位置</dt><dd>PDF 8 · IV Hardware implementation</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>本文FPGA功率工具估算中，ETLP设计在100 MHz时静态约97 mW、动态53 mW（其中I/O约47 mW）；10 MHz时静态不变、动态约5 mW（I/O约4.5 mW）；1 MHz时动态低于工具1 mW分辨率，显示时钟下降可降低该估算的动态量但不消除静态开销。</dd><dt>适用边界</dt><dd>没有学习任务端到端能量、背景功耗扣除后的实测或同基线对照。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>低于分辨率不是零功耗；不能忽略97 mW静态或声称全网小于1 mW。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>降低ETLP模块时钟频率对估算的动态和静态功率有什么不同影响？</li></ul></article><article><small>C13 / 直接结果 · conditional_hardware_budget</small><h2>在假设每隐藏神经元独享一个ETLP模块、每秒更新100次、700输入加450循环来源都需计算的预算中，本文按1150条入射突触×100次/s×3周期得到每模块345,000周期/s，因此1 MHz可满足该单神经元更新预算。</h2><h3>Evidence</h3><p>每神经元模块的时钟周期预算</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>单神经元的独享模块；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 8 · IV Hardware implementation</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>在假设每隐藏神经元独享一个ETLP模块、每秒更新100次、700输入加450循环来源都需计算的预算中，本文按1150条入射突触×100次/s×3周期得到每模块345,000周期/s，因此1 MHz可满足该单神经元更新预算。</dd><dt>适用边界</dt><dd>不等于一个模块在1 MHz服务450个隐藏神经元，也不包含完整网络更新/读出延迟。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能由此确认全网FPGA适配、全网能耗或实际实时吞吐。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>一个ETLP模块的时钟预算如何随每神经元突触数和更新频率变化？</li></ul></article><article><small>C14 / 直接结果 · source_reported_complexity_analysis</small><h2>本文Table IV对梯度计算将ETLP的时间复杂度记为O(pNM)、空间O(1)，与eProp的O(pNM)/O(pNM)、BPTT的O(pNMT)/O(NT)及DECOLLE的O(MNr+pNM)/O(1)比较；这一分析强调ETLP无需保存整条反传时间序列和每突触额外eligibility滤波迹。</h2><h3>Evidence</h3><p>学习规则梯度计算复杂度比较</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；BPTT、eProp、DECOLLE</dd><dt>独立单位与 n</dt><dd>按文中梯度计算计数范围；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 9 · Table IV</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>本文Table IV对梯度计算将ETLP的时间复杂度记为O(pNM)、空间O(1)，与eProp的O(pNM)/O(pNM)、BPTT的O(pNMT)/O(NT)及DECOLLE的O(MNr+pNM)/O(1)比较；这一分析强调ETLP无需保存整条反传时间序列和每突触额外eligibility滤波迹。</dd><dt>适用边界</dt><dd>DECOLLE仅此复杂度表，未在归档v2中报告匹配准确率实验。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不推断ETLP全网内存与N/M无关、实际比所有规则更快或已有功率胜出测量。</dd><dt>未解决</dt><dd>O(1)空间计数如何处理ALIF额外迹、迹共享及每层/突触增长。</dd></dl><h3>相关问题</h3><ul><li>局部事件教学如何改变梯度计算中时间历史和eligibility存储需求？</li></ul></article><article><small>C15 / 解释 · mechanistic_interpretation</small><h2>作者解释本文ETLP/eProp在所测SHD中的阈值适应收益可能来自发放后的动态阈值抑制，给本地更新规则增加限制发放率的机制；同时提出BPTT可能因显式误差反馈而不需要同样的适应。</h2><h3>Evidence</h3><p>规则间阈值扫描结果的模型解释</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；ETLP/eProp与BPTT</dd><dt>独立单位与 n</dt><dd>同模型结果的解释；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 8 · V Discussion and conclusion</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>作者解释本文ETLP/eProp在所测SHD中的阈值适应收益可能来自发放后的动态阈值抑制，给本地更新规则增加限制发放率的机制；同时提出BPTT可能因显式误差反馈而不需要同样的适应。</dd><dt>适用边界</dt><dd>没有直接拆分发放限制、时间记忆、优化作用的独立消融，也没有生物实验。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能将此解释定为唯一因果机制或将发放减少自动转成实测节能。</dd><dt>未解决</dt><dd>规则/适应的交互原因和独立发放率控制消融。</dd></dl><h3>相关问题</h3><ul><li>阈值适应为何在不同局部与反传学习规则中产生不同效果？</li></ul></article><details><summary>核对记录与来源信息</summary><pre>{
+  &quot;coverage&quot;: {
+    &quot;pdf_pages_read&quot;: [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    &quot;results_sections_seen&quot;: [
+      &quot;II Methods: ALIF; temporal/spatial dependencies; ETLP&quot;,
+      &quot;III Results: N-MNIST; SHD feedforward/recurrent; threshold sweeps&quot;,
+      &quot;IV FPGA module; V complexity and discussion&quot;,
+      &quot;Figures1–10; TablesI–IV; references and author biographies&quot;
+    ],
+    &quot;missing_material&quot;: [
+      &quot;图像像素未提供；未运行源代码或FPGA。&quot;,
+      &quot;2024期刊正式版本全文未提供，不能由导入摘要扩展当前2023v2结果。&quot;,
+      &quot;完整硬件ALIF网络、调度以及端到端能耗实测未提供。&quot;
+    ],
+    &quot;text_pass_complete&quot;: true,
+    &quot;reading_mode&quot;: &quot;text_only&quot;,
+    &quot;figure_images_read&quot;: false,
+    &quot;scientific_verification&quot;: false,
+    &quot;notes&quot;: [
+      &quot;评估归档全部11页及全部图注、表格、方法、引用、作者简介。&quot;,
+      &quot;题名和作者对应ETLP，但实际arXiv v2为2023-01-24；导入元数据的年份/venue/DOI对应后续2024期刊容器。&quot;,
+      &quot;第二遍来源核查重点为输出更新式、joint topology/adaptation对照、θ5非稳定峰值、功率估算等级和局部/整网复杂度边界。&quot;
+    ]
+  },
+  &quot;audit&quot;: {
+    &quot;source_match_checks&quot;: [
+      {
+        &quot;claim_id&quot;: &quot;C1&quot;,
+        &quot;evidence_index&quot;: 1,
+        &quot;pdf_page&quot;: 4,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;semantic_source_check&quot;: &quot;模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C1&quot;,
+        &quot;evidence_index&quot;: 2,
+        &quot;pdf_page&quot;: 5,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;semantic_source_check&quot;: &quot;模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C2&quot;,
+        &quot;evidence_index&quot;: 1,
+        &quot;pdf_page&quot;: 5,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;semantic_source_check&quot;: &quot;模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C2&quot;,
+        &quot;evidence_index&quot;: 2,
+        &quot;pdf_page&quot;: 6,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;semantic_source_check&quot;: &quot;模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C3&quot;,
+        &quot;evidence_index&quot;: 1,
+        &quot;pdf_page&quot;: 5,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;semantic_source_check&quot;: &quot;模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C4&quot;,
+        &quot;evidence_index&quot;: 1,
+        &quot;pdf_page&quot;: 6,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;semantic_source_check&quot;: &quot;模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C5&quot;,
+        &quot;evidence_index&quot;: 1,
+        &quot;pdf_page&quot;: 6,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;semantic_source_check&quot;: &quot;模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C5&quot;,
+        &quot;evidence_index&quot;: 2,
+        &quot;pdf_page&quot;: 7,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;semantic_source_check&quot;: &quot;模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C6&quot;,
+        &quot;evidence_index&quot;: 1,
+        &quot;pdf_page&quot;: 6,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;semantic_source_check&quot;: &quot;模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C7&quot;,
+        &quot;evidence_index&quot;: 1,
+        &quot;pdf_page&quot;: 6,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;semantic_source_check&quot;: &quot;模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C8&quot;,
+        &quot;evidence_index&quot;: 1,
+        &quot;pdf_page&quot;: 6,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;semantic_source_check&quot;: &quot;模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C9&quot;,
+        &quot;evidence_index&quot;: 1,
+        &quot;pdf_page&quot;: 6,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;semantic_source_check&quot;: &quot;模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C10&quot;,
+        &quot;evidence_index&quot;: 1,
+        &quot;pdf_page&quot;: 7,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;semantic_source_check&quot;: &quot;模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C10&quot;,
+        &quot;evidence_index&quot;: 2,
+        &quot;pdf_page&quot;: 8,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;semantic_source_check&quot;: &quot;模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C11&quot;,
+        &quot;evidence_index&quot;: 1,
+        &quot;pdf_page&quot;: 8,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;semantic_source_check&quot;: &quot;模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C12&quot;,
+        &quot;evidence_index&quot;: 1,
+        &quot;pdf_page&quot;: 8,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;semantic_source_check&quot;: &quot;模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C13&quot;,
+        &quot;evidence_index&quot;: 1,
+        &quot;pdf_page&quot;: 8,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;semantic_source_check&quot;: &quot;模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C14&quot;,
+        &quot;evidence_index&quot;: 1,
+        &quot;pdf_page&quot;: 9,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;semantic_source_check&quot;: &quot;模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。&quot;
+      },
+      {
+        &quot;claim_id&quot;: &quot;C15&quot;,
+        &quot;evidence_index&quot;: 1,
+        &quot;pdf_page&quot;: 8,
+        &quot;page_exists&quot;: true,
+        &quot;quote_found&quot;: null,
+        &quot;method&quot;: &quot;normalized_text_match_only&quot;,
+        &quot;semantic_source_check&quot;: &quot;模型第二遍逐项核对条件、比较、指标、结果及证据归属；非独立科学验证。&quot;
+      }
+    ],
+    &quot;model_findings&quot;: [
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;归档源是arXiv:2301.08281v2，2023-01-24，而导入paper元数据为2024年NCE发表文章。&quot;,
+        &quot;suggested_correction&quot;: &quot;paper身份沿用导入元数据，document_type=preprint，并限定全部命题对应2023v2；后续期刊版需单独检查。&quot;,
+        &quot;pdf_page&quot;: 1,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C1&quot;,
+        &quot;issue&quot;: &quot;摘要说no error calculation，但输出局部式含自身输出状态；ALIF还需额外适应迹。&quot;,
+        &quot;suggested_correction&quot;: &quot;只写无全局误差反传，明确各层更新信息和监督标签。&quot;,
+        &quot;pdf_page&quot;: 5,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C2&quot;,
+        &quot;issue&quot;: &quot;输入2064、32×32=1032有算术不一致。&quot;,
+        &quot;suggested_correction&quot;: &quot;不重建精确输入通道数；正式核对原代码/版本。&quot;,
+        &quot;pdf_page&quot;: 5,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C5&quot;,
+        &quot;issue&quot;: &quot;前馈LIF到循环ALIF比较同时改变两项，不能把15.40/17.75个百分点全部归给循环。&quot;,
+        &quot;suggested_correction&quot;: &quot;称联合配置比较，另保留固定循环θ扫描。&quot;,
+        &quot;pdf_page&quot;: 7,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C7&quot;,
+        &quot;issue&quot;: &quot;ETLPθ5的较高最大准确率并非作者选定稳定终点。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留峰值与后续下降，最终配置写θ10。&quot;,
+        &quot;pdf_page&quot;: 6,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;FPGA为局部模块综合和工具功率估算；未明确完整ALIF迹映射、全网上层调度和实测。&quot;,
+        &quot;suggested_correction&quot;: &quot;不外推SHD硬件准确率、整机能耗或单模块服务全网。&quot;,
+        &quot;pdf_page&quot;: 8,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C14&quot;,
+        &quot;issue&quot;: &quot;O(1)空间的范围及ALIF每突触适应迹/共享预迹口径不完全明确。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留作者复杂度表，不解释为整网恒定内存。&quot;,
+        &quot;pdf_page&quot;: 9,
+        &quot;resolved&quot;: false
+      }
+    ],
+    &quot;needs_human_review&quot;: true
+  },
+  &quot;source&quot;: {
+    &quot;filename&quot;: &quot;paper-W4400933297.pdf&quot;,
+    &quot;sha256&quot;: &quot;6d18d1e6b66dcfcbae680ce8f059f2f8442d1f805e2e408acd572d712e827a01&quot;,
+    &quot;source_url&quot;: &quot;https://arxiv.org/pdf/2301.08281&quot;,
+    &quot;pdf_page_count&quot;: 11
+  },
+  &quot;provenance&quot;: {
+    &quot;created_at&quot;: &quot;2026-10-07T07:16:20.331Z&quot;,
+    &quot;workflow&quot;: &quot;claim-commons-pdf-v1&quot;,
+    &quot;prompt_version&quot;: &quot;claim-commons-chatgpt-pdf-2026-10-07.1&quot;,
+    &quot;backend&quot;: &quot;authorized_parallel_GPT&quot;,
+    &quot;model&quot;: &quot;inherited_GPT&quot;,
+    &quot;provider_api_key_used&quot;: false,
+    &quot;source_sha256&quot;: &quot;6d18d1e6b66dcfcbae680ce8f059f2f8442d1f805e2e408acd572d712e827a01&quot;,
+    &quot;source_audit_complete&quot;: true,
+    &quot;review_status&quot;: &quot;candidate&quot;,
+    &quot;database_updated&quot;: false
+  }
+}</pre></details></main><footer></footer></body></html>

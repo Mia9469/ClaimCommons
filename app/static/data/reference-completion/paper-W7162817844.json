@@ -1,0 +1,1114 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "CLANE: Continual Learning of Actions on Neuromorphic Hardware from Event Cameras",
+    "authors": [
+      "Elvin Hajizada",
+      "Michael Neumeier",
+      "Edward Paxon Frady",
+      "Yulia Sandamirskaya",
+      "Axel von Arnim",
+      "Bing Li",
+      "Eyke Hüllermeier"
+    ],
+    "doi": null,
+    "publication_year": 2026,
+    "venue": "arXiv (Cornell University)",
+    "url": "https://arxiv.org/pdf/2605.28387"
+  },
+  "source": {
+    "filename": "paper-W7162817844--CLANE-Continual-Learning-of-Actions-on-Neuromorphic-Hardware-from-Event-Cameras.pdf",
+    "sha256": "7e42af903a1ea749de3435fd4f106106e7773ee6d7236d23a57cfb6b18d0fdca",
+    "source_url": "https://arxiv.org/pdf/2605.28387",
+    "pdf_page_count": 13
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "results_sections_seen": [
+      "Methods 3.1–3.3; Figure 1",
+      "Experimental Setup 4; Table 1",
+      "Results 5: learning and cross-platform benchmark; Figures 2–3; Tables 2–3",
+      "Discussion and limitations 6"
+    ],
+    "missing_material": [
+      "图像像素；未供应的补充全文/原始数据未读取"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "供应 13 页完整文字、所有表格/图注及参考文献已阅读；arXiv:2605.28387v1，27 May 2026。",
+      "第二审计比较完整 pipeline、learning head 和 feature extractor 的不同测量层级；核对类别范围、冻结预训练、GPU 优势与未给测量协议。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "CLANE 在单个 Loihi 2 上部署冻结 spiking 2D CNN、时间聚合、固定点归一化与 CLP-Loihi 学习头，提取器占 76/128 neurocores。",
+      "role": "result",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "时间聚合单元在 clip 结束输出累计的 graded spike 特征，归一化模块汇总平方、查表估算倒平方根并广播相乘，在没有原生除法时近似 L2-normalization。",
+      "role": "result",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "特征提取器在 38 基类上监督预训练后被冻结，12 个每第四类留出的动作随后单遍增量学习，不提供 replay buffer。",
+      "role": "result",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "CLP-Loihi 用局部三因素规则创建获胜原型，遇错误或新动作建新原型，但已有原型之后不继续适应。",
+      "role": "result",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "在 12 留出类别的 10-shot class-incremental 任务中，Loihi 2 最终准确率报告为 70.4±2.0%。",
+      "role": "result",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "Fine Tune 随类别增加发生明显遗忘，CLP 类方法较能保持旧类；但 SLDA 的 10-shot 最终准确率 85.3±2.4% 高于 CLP-Loihi，Replay 在 full-data 条件的比较也存在例外。",
+      "role": "result",
+      "source_pages": [
+        10
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "整条 pipeline 处理一个 clip 的所报 Loihi 2 延迟/能量为 4.79 ms/3.78 mJ，对比 sequential CNN+GRU+相同学习头的 Orin 80 ms/427 mJ，约 16× 与 >100× 优势。",
+      "role": "result",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "3D CNN+CLP 的 Orin 基准为 9 ms/2.0 mJ，Loihi 虽约 2× 快但消耗约 1.9× 多能量，两者 EDP 同报 0.018 mJ·s。",
+      "role": "result",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "固定 spiking feature 的学习头比较中，CLP-Loihi GPU 为 2.4 ms/11.4 mJ，Loihi 为 0.24 ms/0.12 mJ，约 10× 速度与 95× 能量改善，同时准确率 73.0±3.1% 降至 70.4±2.0%。",
+      "role": "result",
+      "source_pages": [
+        10
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "25、100、500 Hz 的 Loihi feature extractor 延迟/能量为 1.87/1.5、7.5/5、37.3/25（ms/mJ），更细分箱明显增加计算成本。",
+      "role": "result",
+      "source_pages": [
+        10
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "Loihi 在 25/100/500 Hz 的最终准确率为 70.4/68.5/69.6%，更高采样率没有带来所报精度改善。",
+      "role": "result",
+      "source_pages": [
+        10
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "作者承认冻结提取器可能限制基类之外视觉统计的泛化，且持续新建而不修改原型会在长期运行中累积原型。",
+      "role": "interpretation",
+      "source_pages": [
+        11
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "三层基准支持本实现的效率比较，但相同层数、feature 维度和 head 不足以完全控制特征容量、时序算子、量化、策略及功率测量。",
+      "role": "interpretation",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "固定点模块与原型学习及硬件部署",
+      "role": "result",
+      "source_pages": [
+        6,
+        7,
+        8
+      ],
+      "decision": "include",
+      "reason": "这是系统贡献，不把每个模块重复计成独立验证"
+    },
+    {
+      "summary": "GPU batch 的能耗优势及 SLDA 精度优势",
+      "role": "result",
+      "source_pages": [
+        9,
+        10
+      ],
+      "decision": "include",
+      "reason": "完整保留与主效率/精度叙事不同的边界"
+    },
+    {
+      "summary": "850 MB replay buffer 与算法硬件不兼容论述",
+      "role": "interpretation",
+      "source_pages": [
+        10
+      ],
+      "decision": "context",
+      "reason": "属于本实现/架构说明，不证明所有重放/协方差/距离近似都不可能片上实现"
+    },
+    {
+      "summary": "长期新动作、实时传感器端到端时延与隐私保证",
+      "role": "hypothesis",
+      "source_pages": [
+        2,
+        11
+      ],
+      "decision": "defer",
+      "reason": "本篇没有足够测量或保证"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "CLANE 在单个 Loihi 2 上部署冻结 spiking 2D CNN、时间聚合、固定点归一化与 CLP-Loihi 学习头，提取器占 76/128 neurocores。",
+      "claim_type": "computational",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "THUE-ACT-50 数据上的 frozen feature class-incremental 任务及 Loihi 2/Jetson Orin Nano 基准",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "硬件映射 pipeline",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "离线预训练使用 GPU BPTT；仅随后的推断/学习 loop 不用 GPU，不能称全生命周期无需外部训练。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "Methods 3.2–3.3; Figure 1",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "CLANE 在单个 Loihi 2 上部署冻结 spiking 2D CNN、时间聚合、固定点归一化与 CLP-Loihi 学习头，提取器占 76/128 neurocores。",
+        "boundary": "离线预训练使用 GPU BPTT；仅随后的推断/学习 loop 不用 GPU，不能称全生命周期无需外部训练。",
+        "negative_result": null,
+        "non_inference": "数据集任务和硬件部署不验证自然神经学习；近似准确率不等于统计等效，平台加算法共设计不是单独硬件因果优势；同一 pipeline 分层基准不计独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "片上原型持续学习",
+        "异步数据与分箱计算的代价",
+        "跨平台基准的公平性和适用范围"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，CLANE 在单个 Loihi 2 上部署冻结 spiking 2D CNN、时间聚合、固定点归一化与 CLP-Loihi 学习头，提取器占 76/128 neurocores。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "时间聚合单元在 clip 结束输出累计的 graded spike 特征，归一化模块汇总平方、查表估算倒平方根并广播相乘，在没有原生除法时近似 L2-normalization。",
+      "claim_type": "computational",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "THUE-ACT-50 数据上的 frozen feature class-incremental 任务及 Loihi 2/Jetson Orin Nano 基准",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "新 Loihi 2 模块",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "需 clip 结束信号与全向量汇总/广播；不是每个阶段都纯突触局部运算，未给零向量/溢出或归一化误差界。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "Temporal Aggregation and Normalization Layer; continuation page 8",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "时间聚合单元在 clip 结束输出累计的 graded spike 特征，归一化模块汇总平方、查表估算倒平方根并广播相乘，在没有原生除法时近似 L2-normalization。",
+        "boundary": "需 clip 结束信号与全向量汇总/广播；不是每个阶段都纯突触局部运算，未给零向量/溢出或归一化误差界。",
+        "negative_result": null,
+        "non_inference": "数据集任务和硬件部署不验证自然神经学习；近似准确率不等于统计等效，平台加算法共设计不是单独硬件因果优势；同一 pipeline 分层基准不计独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "片上原型持续学习",
+        "异步数据与分箱计算的代价",
+        "跨平台基准的公平性和适用范围"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，时间聚合单元在 clip 结束输出累计的 graded spike 特征，归一化模块汇总平方、查表估算倒平方根并广播相乘，在没有原生除法时近似 L2-normalization。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "特征提取器在 38 基类上监督预训练后被冻结，12 个每第四类留出的动作随后单遍增量学习，不提供 replay buffer。",
+      "claim_type": "computational",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "THUE-ACT-50 数据上的 frozen feature class-incremental 任务及 Loihi 2/Jetson Orin Nano 基准",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "THUE-ACT-50 的类别/数据划分",
+          "sample_size_as_reported": "全数据集 10,500 videos；38 基类、12 留出类",
+          "uncertainty": null,
+          "assumptions": [
+            "基类预训练准确率 85–90% 与留出类别增量准确率是不同任务，不证明 50 类整体持续学习均达到 70.4%。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Experimental Setup: dataset and protocol",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "特征提取器在 38 基类上监督预训练后被冻结，12 个每第四类留出的动作随后单遍增量学习，不提供 replay buffer。",
+        "boundary": "基类预训练准确率 85–90% 与留出类别增量准确率是不同任务，不证明 50 类整体持续学习均达到 70.4%。",
+        "negative_result": null,
+        "non_inference": "数据集任务和硬件部署不验证自然神经学习；近似准确率不等于统计等效，平台加算法共设计不是单独硬件因果优势；同一 pipeline 分层基准不计独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "片上原型持续学习",
+        "异步数据与分箱计算的代价",
+        "跨平台基准的公平性和适用范围"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，特征提取器在 38 基类上监督预训练后被冻结，12 个每第四类留出的动作随后单遍增量学习，不提供 replay buffer。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "CLP-Loihi 用局部三因素规则创建获胜原型，遇错误或新动作建新原型，但已有原型之后不继续适应。",
+      "claim_type": "computational",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "THUE-ACT-50 数据上的 frozen feature class-incremental 任务及 Loihi 2/Jetson Orin Nano 基准",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "片上原型策略",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "不同于可更新旧原型的原 CLP；无 replay 不等于无限容量或长期零遗忘。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Continual Learning module",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "CLP-Loihi 用局部三因素规则创建获胜原型，遇错误或新动作建新原型，但已有原型之后不继续适应。",
+        "boundary": "不同于可更新旧原型的原 CLP；无 replay 不等于无限容量或长期零遗忘。",
+        "negative_result": null,
+        "non_inference": "数据集任务和硬件部署不验证自然神经学习；近似准确率不等于统计等效，平台加算法共设计不是单独硬件因果优势；同一 pipeline 分层基准不计独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "片上原型持续学习",
+        "异步数据与分箱计算的代价",
+        "跨平台基准的公平性和适用范围"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，CLP-Loihi 用局部三因素规则创建获胜原型，遇错误或新动作建新原型，但已有原型之后不继续适应。是否成立？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "在 12 留出类别的 10-shot class-incremental 任务中，Loihi 2 最终准确率报告为 70.4±2.0%。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "THUE-ACT-50 数据上的 frozen feature class-incremental 任务及 Loihi 2/Jetson Orin Nano 基准",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "硬件部署的增量分类任务",
+          "sample_size_as_reported": null,
+          "uncertainty": "± 的统计类型、重复 n 和区间定义未给。",
+          "assumptions": [
+            "10-shot 指每类呈现样本数量，不是十个独立实验；不是自然流式无限动作任务。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Table 1; Figure 2 caption on page 9",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在 12 留出类别的 10-shot class-incremental 任务中，Loihi 2 最终准确率报告为 70.4±2.0%。",
+        "boundary": "10-shot 指每类呈现样本数量，不是十个独立实验；不是自然流式无限动作任务。",
+        "negative_result": null,
+        "non_inference": "数据集任务和硬件部署不验证自然神经学习；近似准确率不等于统计等效，平台加算法共设计不是单独硬件因果优势；同一 pipeline 分层基准不计独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "片上原型持续学习",
+        "异步数据与分箱计算的代价",
+        "跨平台基准的公平性和适用范围"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，在 12 留出类别的 10-shot class-incremental 任务中，Loihi 2 最终准确率报告为 70.4±2.0%。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "Fine Tune 随类别增加发生明显遗忘，CLP 类方法较能保持旧类；但 SLDA 的 10-shot 最终准确率 85.3±2.4% 高于 CLP-Loihi，Replay 在 full-data 条件的比较也存在例外。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "THUE-ACT-50 数据上的 frozen feature class-incremental 任务及 Loihi 2/Jetson Orin Nano 基准",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "持续学习方法/feature 配置",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "无显著性或等效检验；方法具有不同存储/计算与更新策略，不能声称 CLANE 所有条件精度最优。"
+          ],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "Figure 2; Figure 3; Table 2",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "Fine Tune 随类别增加发生明显遗忘，CLP 类方法较能保持旧类；但 SLDA 的 10-shot 最终准确率 85.3±2.4% 高于 CLP-Loihi，Replay 在 full-data 条件的比较也存在例外。",
+        "boundary": "无显著性或等效检验；方法具有不同存储/计算与更新策略，不能声称 CLANE 所有条件精度最优。",
+        "negative_result": "CLP-Loihi 未达到所列 SLDA 的最高精度。",
+        "non_inference": "数据集任务和硬件部署不验证自然神经学习；近似准确率不等于统计等效，平台加算法共设计不是单独硬件因果优势；同一 pipeline 分层基准不计独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "片上原型持续学习",
+        "异步数据与分箱计算的代价",
+        "跨平台基准的公平性和适用范围"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，Fine Tune 随类别增加发生明显遗忘，CLP 类方法较能保持旧类；但 SLDA 的 10-shot 最终准确率 85.3±2.4% 高于 CLP-Loihi，Replay 在 full-data 条件的比较也存在例外。是否成立？"
+      ],
+      "shared_evidence_with": [
+        "C5"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "整条 pipeline 处理一个 clip 的所报 Loihi 2 延迟/能量为 4.79 ms/3.78 mJ，对比 sequential CNN+GRU+相同学习头的 Orin 80 ms/427 mJ，约 16× 与 >100× 优势。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "THUE-ACT-50 数据上的 frozen feature class-incremental 任务及 Loihi 2/Jetson Orin Nano 基准",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "两平台的整条架构 per-clip 基准",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "特征网络是 SNN 与 ANN+GRU 而非同一权重/动力学；测量次数、功率模式、idle/host/camera 计入及 acquisition 时间未明确。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Table 1; Iso-algorithm cross-platform comparison",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "整条 pipeline 处理一个 clip 的所报 Loihi 2 延迟/能量为 4.79 ms/3.78 mJ，对比 sequential CNN+GRU+相同学习头的 Orin 80 ms/427 mJ，约 16× 与 >100× 优势。",
+        "boundary": "特征网络是 SNN 与 ANN+GRU 而非同一权重/动力学；测量次数、功率模式、idle/host/camera 计入及 acquisition 时间未明确。",
+        "negative_result": null,
+        "non_inference": "数据集任务和硬件部署不验证自然神经学习；近似准确率不等于统计等效，平台加算法共设计不是单独硬件因果优势；同一 pipeline 分层基准不计独立复制。",
+        "unresolved": "无法从供文核定全系统功耗测量协议或全 clip 感知到决策时延。",
+        "unresolved_attribution": "源文或本次审计"
+      },
+      "broad_directions": [
+        "片上原型持续学习",
+        "异步数据与分箱计算的代价",
+        "跨平台基准的公平性和适用范围"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，整条 pipeline 处理一个 clip 的所报 Loihi 2 延迟/能量为 4.79 ms/3.78 mJ，对比 sequential CNN+GRU+相同学习头的 Orin 80 ms/427 mJ，约 16× 与 >100× 优势。是否成立？"
+      ],
+      "shared_evidence_with": [
+        "C5"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "3D CNN+CLP 的 Orin 基准为 9 ms/2.0 mJ，Loihi 虽约 2× 快但消耗约 1.9× 多能量，两者 EDP 同报 0.018 mJ·s。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "THUE-ACT-50 数据上的 frozen feature class-incremental 任务及 Loihi 2/Jetson Orin Nano 基准",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "整 pipeline 的 batch/sequential 不同基准",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "3D CNN 的增量 online 栏为否；在 batch clip 条件 GPU 更节能，流式滑窗额外代价未在此量化。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "Table 1; comparison with batched 3D CNN",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "3D CNN+CLP 的 Orin 基准为 9 ms/2.0 mJ，Loihi 虽约 2× 快但消耗约 1.9× 多能量，两者 EDP 同报 0.018 mJ·s。",
+        "boundary": "3D CNN 的增量 online 栏为否；在 batch clip 条件 GPU 更节能，流式滑窗额外代价未在此量化。",
+        "negative_result": "相对 3D CNN 的能量指标并无 Loihi 优势。",
+        "non_inference": "数据集任务和硬件部署不验证自然神经学习；近似准确率不等于统计等效，平台加算法共设计不是单独硬件因果优势；同一 pipeline 分层基准不计独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "片上原型持续学习",
+        "异步数据与分箱计算的代价",
+        "跨平台基准的公平性和适用范围"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，3D CNN+CLP 的 Orin 基准为 9 ms/2.0 mJ，Loihi 虽约 2× 快但消耗约 1.9× 多能量，两者 EDP 同报 0.018 mJ·s。是否成立？"
+      ],
+      "shared_evidence_with": [
+        "C5",
+        "C7"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "固定 spiking feature 的学习头比较中，CLP-Loihi GPU 为 2.4 ms/11.4 mJ，Loihi 为 0.24 ms/0.12 mJ，约 10× 速度与 95× 能量改善，同时准确率 73.0±3.1% 降至 70.4±2.0%。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "THUE-ACT-50 数据上的 frozen feature class-incremental 任务及 Loihi 2/Jetson Orin Nano 基准",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "固定 feature 学习模块的两平台基准",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "这是 head 层级，不应当整架构能耗；精度损失为 2.6 个百分点，文中归于 8-bit 与简化策略但未独立消融。"
+          ],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "Table 2: learning algorithm landscape",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "固定 spiking feature 的学习头比较中，CLP-Loihi GPU 为 2.4 ms/11.4 mJ，Loihi 为 0.24 ms/0.12 mJ，约 10× 速度与 95× 能量改善，同时准确率 73.0±3.1% 降至 70.4±2.0%。",
+        "boundary": "这是 head 层级，不应当整架构能耗；精度损失为 2.6 个百分点，文中归于 8-bit 与简化策略但未独立消融。",
+        "negative_result": null,
+        "non_inference": "数据集任务和硬件部署不验证自然神经学习；近似准确率不等于统计等效，平台加算法共设计不是单独硬件因果优势；同一 pipeline 分层基准不计独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "片上原型持续学习",
+        "异步数据与分箱计算的代价",
+        "跨平台基准的公平性和适用范围"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，固定 spiking feature 的学习头比较中，CLP-Loihi GPU 为 2.4 ms/11.4 mJ，Loihi 为 0.24 ms/0.12 mJ，约 10× 速度与 95× 能量改善，同时准确率 73.0±3.1% 降至 70.4±2.0%。是否成立？"
+      ],
+      "shared_evidence_with": [
+        "C4",
+        "C5",
+        "C6",
+        "C7"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "25、100、500 Hz 的 Loihi feature extractor 延迟/能量为 1.87/1.5、7.5/5、37.3/25（ms/mJ），更细分箱明显增加计算成本。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "THUE-ACT-50 数据上的 frozen feature class-incremental 任务及 Loihi 2/Jetson Orin Nano 基准",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "不同输入分箱频率的提取器基准",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "该表只量化 feature 层，不是端到端 live sensor 延迟；不同频率的模型也各自预训练。"
+          ],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "Table 3",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "25、100、500 Hz 的 Loihi feature extractor 延迟/能量为 1.87/1.5、7.5/5、37.3/25（ms/mJ），更细分箱明显增加计算成本。",
+        "boundary": "该表只量化 feature 层，不是端到端 live sensor 延迟；不同频率的模型也各自预训练。",
+        "negative_result": null,
+        "non_inference": "数据集任务和硬件部署不验证自然神经学习；近似准确率不等于统计等效，平台加算法共设计不是单独硬件因果优势；同一 pipeline 分层基准不计独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "片上原型持续学习",
+        "异步数据与分箱计算的代价",
+        "跨平台基准的公平性和适用范围"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，25、100、500 Hz 的 Loihi feature extractor 延迟/能量为 1.87/1.5、7.5/5、37.3/25（ms/mJ），更细分箱明显增加计算成本。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "Loihi 在 25/100/500 Hz 的最终准确率为 70.4/68.5/69.6%，更高采样率没有带来所报精度改善。",
+      "claim_type": "empirical",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "THUE-ACT-50 数据上的 frozen feature class-incremental 任务及 Loihi 2/Jetson Orin Nano 基准",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "不同频率下的增量任务",
+          "sample_size_as_reported": null,
+          "uncertainty": "± 为 2.0/1.4/1.8，统计类型和 n 未给。",
+          "assumptions": [
+            "无检验；只支持本任务/配置，不能证明所有动作和精细时序信息都无需高频。"
+          ],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "Table 3; Feature Extractor Analysis",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "Loihi 在 25/100/500 Hz 的最终准确率为 70.4/68.5/69.6%，更高采样率没有带来所报精度改善。",
+        "boundary": "无检验；只支持本任务/配置，不能证明所有动作和精细时序信息都无需高频。",
+        "negative_result": "高频条件未超过 25 Hz 的源报平均准确率。",
+        "non_inference": "数据集任务和硬件部署不验证自然神经学习；近似准确率不等于统计等效，平台加算法共设计不是单独硬件因果优势；同一 pipeline 分层基准不计独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "片上原型持续学习",
+        "异步数据与分箱计算的代价",
+        "跨平台基准的公平性和适用范围"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，Loihi 在 25/100/500 Hz 的最终准确率为 70.4/68.5/69.6%，更高采样率没有带来所报精度改善。是否成立？"
+      ],
+      "shared_evidence_with": [
+        "C10"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "作者承认冻结提取器可能限制基类之外视觉统计的泛化，且持续新建而不修改原型会在长期运行中累积原型。",
+      "claim_type": "computational",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "THUE-ACT-50 数据上的 frozen feature class-incremental 任务及 Loihi 2/Jetson Orin Nano 基准",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "部署扩展边界",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "未测试无限长序列、分布迁移或资源耗尽；这是未评估风险而非已经测得失败。"
+          ],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "Discussion: limitations",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者承认冻结提取器可能限制基类之外视觉统计的泛化，且持续新建而不修改原型会在长期运行中累积原型。",
+        "boundary": "未测试无限长序列、分布迁移或资源耗尽；这是未评估风险而非已经测得失败。",
+        "negative_result": null,
+        "non_inference": "数据集任务和硬件部署不验证自然神经学习；近似准确率不等于统计等效，平台加算法共设计不是单独硬件因果优势；同一 pipeline 分层基准不计独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "片上原型持续学习",
+        "异步数据与分箱计算的代价",
+        "跨平台基准的公平性和适用范围"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，作者承认冻结提取器可能限制基类之外视觉统计的泛化，且持续新建而不修改原型会在长期运行中累积原型。是否成立？"
+      ],
+      "shared_evidence_with": [
+        "C3",
+        "C4"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C13",
+      "statement": "三层基准支持本实现的效率比较，但相同层数、feature 维度和 head 不足以完全控制特征容量、时序算子、量化、策略及功率测量。",
+      "claim_type": "computational",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "THUE-ACT-50 数据上的 frozen feature class-incremental 任务及 Loihi 2/Jetson Orin Nano 基准",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "跨平台实验设计的范围",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "不把 iso-algorithm 当严格同模型实验或断言消除所有混杂；学习头与提取器的不同精度来源需分离。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "Iso-Algorithm methodology; Methods pages 6–8",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "三层基准支持本实现的效率比较，但相同层数、feature 维度和 head 不足以完全控制特征容量、时序算子、量化、策略及功率测量。",
+        "boundary": "不把 iso-algorithm 当严格同模型实验或断言消除所有混杂；学习头与提取器的不同精度来源需分离。",
+        "negative_result": null,
+        "non_inference": "数据集任务和硬件部署不验证自然神经学习；近似准确率不等于统计等效，平台加算法共设计不是单独硬件因果优势；同一 pipeline 分层基准不计独立复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "片上原型持续学习",
+        "异步数据与分箱计算的代价",
+        "跨平台基准的公平性和适用范围"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，三层基准支持本实现的效率比较，但相同层数、feature 维度和 head 不足以完全控制特征容量、时序算子、量化、策略及功率测量。是否成立？"
+      ],
+      "shared_evidence_with": [
+        "C7",
+        "C8",
+        "C9",
+        "C10"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "13 页全文及全部图表和参考文献已评估。CLANE 的系统贡献是 Loihi 2 上部署 frozen SNN feature、clip 聚合/归一化与原型增量学习，并报告三个层级基准。第二审计保留 12 留出类范围、离线 GPU 预训练、原型策略与量化差异、测量 n/能耗边界缺失、3D CNN 更节能和 SLDA 更高精度等真实限制，不把 >100× 泛化到所有 GPU 负载或纯硬件因果优势。",
+  "shared_evidence": [
+    {
+      "claim_id": "C4",
+      "with": [
+        "C1",
+        "C2",
+        "C3"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C5"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C5"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C5",
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C4",
+        "C5",
+        "C6",
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "with": [
+        "C10"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "with": [
+        "C3",
+        "C4"
+      ]
+    },
+    {
+      "claim_id": "C13",
+      "with": [
+        "C7",
+        "C8",
+        "C9",
+        "C10"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": null,
+        "issue": "索引漏 Eyke Hüllermeier。",
+        "suggested_correction": "只补充本 wrapper 的第 1 页实际第七位作者；不改共享元数据。",
+        "pdf_page": 1,
+        "resolved": true
+      },
+      {
+        "claim_id": "C3",
+        "issue": "数据集含 50 类但 Figure 2 的增量结果只为 12 留出类。",
+        "suggested_correction": "区别基类预训练与留出类增量，70.4% 不迁移为整个 50 类总体表现。",
+        "pdf_page": 9,
+        "resolved": true
+      },
+      {
+        "claim_id": "C2",
+        "issue": "直接 event stream 表述容易忽略 40/10/2 ms 分箱及 clip 聚合结束。",
+        "suggested_correction": "明确 sparse event-count frames 和已知 clip aggregation；4.79 ms 不自动含 clip acquisition 时长。",
+        "pdf_page": 5,
+        "resolved": true
+      },
+      {
+        "claim_id": "C7",
+        "issue": "energy/latency 数字缺测量协议、n 和功率/host 边界。",
+        "suggested_correction": "忠实报告表值但不补造测量仪器、统计精度或传感器总能耗。",
+        "pdf_page": 8,
+        "resolved": false
+      },
+      {
+        "claim_id": "C8",
+        "issue": "摘要 >100× 容易被当对所有 GPU 基线。",
+        "suggested_correction": "保留 3D CNN 能量更低及相同 EDP 的真正边界。",
+        "pdf_page": 9,
+        "resolved": true
+      },
+      {
+        "claim_id": "C6",
+        "issue": "similar/on par 缺统计等效，SLDA 精度明显高。",
+        "suggested_correction": "只陈述所报均值顺序；Replay full-set 例外不遗漏。",
+        "pdf_page": 10,
+        "resolved": true
+      },
+      {
+        "claim_id": "C9",
+        "issue": "attributable to quantization and prototype policy 未由分离消融建立。",
+        "suggested_correction": "作为作者解释保留未识别归因，不称纯硬件精度效应。",
+        "pdf_page": 10,
+        "resolved": true
+      },
+      {
+        "claim_id": "C13",
+        "issue": "相同层数/feature/head 仍使用 ANN+GRU、3D CNN 与 SNN，不严格同参数/时序。",
+        "suggested_correction": "将效率范围收缩到共设计实现，不接受完全排除 capacity/algorithm confounds。",
+        "pdf_page": 8,
+        "resolved": true
+      },
+      {
+        "claim_id": "C12",
+        "issue": "无 replay 的原型创建可能被概括为终身零遗忘/不限容量。",
+        "suggested_correction": "保留原型累积、冻结表示和只给 12 类阶段的范围。",
+        "pdf_page": 11,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "on-device privacy 仅为动机；未有攻击或正式隐私保证。",
+        "suggested_correction": "不增加隐私已获验证的候选命题。",
+        "pdf_page": 2,
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T12:45:29.805549Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "7e42af903a1ea749de3435fd4f106106e7773ee6d7236d23a57cfb6b18d0fdca",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

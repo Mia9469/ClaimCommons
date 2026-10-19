@@ -1,0 +1,1246 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "preprint",
+  "paper": {
+    "title": "A swap-adversarial framework for improving domain generalization in electrocorticography-based Parkinson's disease classification",
+    "authors": [
+      "Seongwon Jin",
+      "최한슬",
+      "Sunggu Yang",
+      "Sungho Park",
+      "Jibum Kim"
+    ],
+    "doi": null,
+    "publication_year": 2026,
+    "venue": "arXiv (Cornell University)",
+    "url": "https://arxiv.org/pdf/2602.10528"
+  },
+  "source": {
+    "filename": "paper-W7128745269--A-swap-adversarial-framework-for-improving-domain-generalization-in-electrocorticography-based-.pdf",
+    "sha256": "7895b252d130c2db0fdd75abe00b9f753de1ac1a6305ee9bd36068992c63ec32",
+    "source_url": "https://arxiv.org/pdf/2602.10528",
+    "pdf_page_count": 39
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39
+    ],
+    "results_sections_seen": [
+      "MOCOP construction",
+      "EEG datasets",
+      "ISBCS/DAL",
+      "PSD/tSNE/CV distributions",
+      "LOSO",
+      "Wired/wireless transfer",
+      "Ablations",
+      "EEG cross-dataset",
+      "Statistics/limitations"
+    ],
+    "missing_material": [
+      "图像像素未读取",
+      "跨session独立结果未报告",
+      "完整split/ASR/MI实现细节未提供"
+    ],
+    "text_pass_complete": true,
+    "notes": "arXiv2602.10528v2 2026-06-30；39页13图7表65参考全评估；既有动物/人数据二次建模。",
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "MOCOP将既有6-OHDA大鼠记录构造成刺激前后ECoG二分类，采用15共同通道与非重叠6秒窗口，提出公开benchmark。",
+      "role": "result",
+      "source_pages": [
+        14
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "SAF把预处理、同类别对应通道跨主体交换和DAL结合，ISBCS每通道内时间顺序保留但替换原样本、不增加数据数量。",
+      "role": "interpretation",
+      "source_pages": [
+        11
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "DAL使用domain classifier/GRL及预测熵代理，以降低主体可识别性而非直接严格估计真实MI。",
+      "role": "interpretation",
+      "source_pages": [
+        12
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "无线/有线ECoG和UI/UNM EEG的PSD及t-SNE显示录制域、主体及类别的分布差异。",
+      "role": "result",
+      "source_pages": [
+        16
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "同录制域LOSO中，SAF报告无线macroaccuracy69.20±9.23%、有线58.32±3.28%，高于表列基线。",
+      "role": "result",
+      "source_pages": [
+        25
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "无线→有线和有线→无线SAF macroaccuracy分别64.18±4.64%和69.90±6.67%，表中accuracy/recall/F1最高，但无线→有线precision不是最高。",
+      "role": "result",
+      "source_pages": [
+        25
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "ECoG比较中作者报告96个方案×指标×基线检验有78个p<.05，但检验统计的是重复训练而非独立动物队列。",
+      "role": "result",
+      "source_pages": [
+        26
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "ISBCS+DAL组合在四ECoG设置的表6指标最好，但单组件效果取决于域，单独DAL在无线LOSO与无线→有线会退步。",
+      "role": "result",
+      "source_pages": [
+        26
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "交换后的feature t-SNE更混合，作者报告主体间/内F统计由24.48降到0.99。",
+      "role": "result",
+      "source_pages": [
+        27
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "人类EEG跨数据集任务中，UI→UNM和UNM→UI SAF macroaccuracy为73.34±7.81%与82.19±4.92%，F1为72.36±9.17%与82.15±4.95%。",
+      "role": "result",
+      "source_pages": [
+        28
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "EEG比较48项中47项在作者Wilcoxon检验p<.05，迁移方向UNM→UI较好但可同时受样本规模与目标可分性影响。",
+      "role": "result",
+      "source_pages": [
+        28
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "作者提出把SAF扩到其他BCI任务和backbone，并自动学习λ参数；目前仅所设EEGNet和两类病相关任务评估。",
+      "role": "hypothesis",
+      "source_pages": [
+        29
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "预处理ASR整段录制后切窗；对heldout recording是否校准须声明，不能自动断言未访问target任何数据。",
+      "role": "interpretation",
+      "source_pages": [
+        8,
+        9,
+        15,
+        23
+      ],
+      "decision": "unresolved",
+      "reason": "无label访问不等于zero目标信息"
+    },
+    {
+      "summary": "λ由validation grid选择、p=.5，Fig4双方向参数扫描未报告独立validation/test区别。",
+      "role": "result",
+      "source_pages": [
+        11,
+        23
+      ],
+      "decision": "boundary",
+      "reason": "不造自动最优或独立generalization theorem"
+    },
+    {
+      "summary": "数据/code末页明确Zenodo/GitHub，但前文upon publication不一致，仅报告来源状态未访问外部。",
+      "role": "interpretation",
+      "source_pages": [
+        5,
+        30,
+        31
+      ],
+      "decision": "unresolved",
+      "reason": "不修改共享manifest"
+    },
+    {
+      "summary": "cross-session抽象声称未见独立split/results；参考/原动物study不是新实验。",
+      "role": "review_synthesis",
+      "source_pages": [
+        2,
+        29,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39
+      ],
+      "decision": "unresolved",
+      "reason": "未报告不当阴性"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "MOCOP将既有6-OHDA大鼠记录构造成刺激前后ECoG二分类，采用15共同通道与非重叠6秒窗口，提出公开benchmark。",
+      "claim_type": "electrophysiological_generalization",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "既有实验数据二次标准化",
+          "design": "11诱导、7记录、1噪声排除、6保留；3wireless7天/3wired12天",
+          "comparator": "刺激前 vs连续刺激一周后的神经状态",
+          "measure": "状态标签/窗口数据",
+          "unit_of_analysis": "动物/人类参与者与训练seed分层；窗口非独立个体",
+          "sample_size_as_reported": "6只大鼠；不是窗口数或10seed只动物",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 14,
+            "section": "Dataset construction",
+            "figure": "Table1",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "MOCOP将既有6-OHDA大鼠记录构造成刺激前后ECoG二分类，采用15共同通道与非重叠6秒窗口，提出公开benchmark。",
+        "boundary": "所有保留鼠为病变模型；刺激后“normal”不是健康对照或疾病治愈。",
+        "negative_result": null,
+        "non_inference": "不是人类ECoG早期PD诊断、治疗必要性或新动物实验独立复现。",
+        "unresolved": "一周无线记录与一周后标签时间划分不充分；Table1 Rat4 78/114与“约30%更多”口径不同。",
+        "unresolved_attribution": "来源局限及提取者来源复核"
+      },
+      "broad_directions": [
+        "brain-signal-decoding",
+        "machine-learning",
+        "clinical-translational"
+      ],
+      "scientific_questions": [
+        "跨主体/采集域增广是否改善有限电生理数据分类而非证明疾病机制？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C12"
+      ],
+      "review_notes": [
+        "全39页13图7表及65参考二次审计；动物/患者/窗口/seed分层，pre/post不称健康PD对照，表内负控制、MI符号及DG范围保留。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "SAF把预处理、同类别对应通道跨主体交换和DAL结合，ISBCS每通道内时间顺序保留但替换原样本、不增加数据数量。",
+      "claim_type": "electrophysiological_generalization",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "同类channel-wise增广",
+          "design": "Bernoulli p=.5；每通道独立主体置换，仅source训练",
+          "comparator": "原同主体样本",
+          "measure": "算法增广",
+          "unit_of_analysis": "动物/人类参与者与训练seed分层；窗口非独立个体",
+          "sample_size_as_reported": "训练source主体；不新增生物个体",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "ISBCS",
+            "figure": "Eq2/Fig3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "SAF把预处理、同类别对应通道跨主体交换和DAL结合，ISBCS每通道内时间顺序保留但替换原样本、不增加数据数量。",
+        "boundary": "对应index/脑区为假定功能对应；交换破坏原跨通道联合关系。",
+        "negative_result": null,
+        "non_inference": "“counterfactual”不是已识别因果反事实；同类标签不保证全部生物真实动态。",
+        "unresolved": "图谱24 rat corticopontine/25人类motor map不足直接确认每跨主体电极功能一致。",
+        "unresolved_attribution": "来源局限及提取者来源复核"
+      },
+      "broad_directions": [
+        "brain-signal-decoding",
+        "machine-learning",
+        "clinical-translational"
+      ],
+      "scientific_questions": [
+        "跨主体/采集域增广是否改善有限电生理数据分类而非证明疾病机制？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C12"
+      ],
+      "review_notes": [
+        "全39页13图7表及65参考二次审计；动物/患者/窗口/seed分层，pre/post不称健康PD对照，表内负控制、MI符号及DG范围保留。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "DAL使用domain classifier/GRL及预测熵代理，以降低主体可识别性而非直接严格估计真实MI。",
+      "claim_type": "electrophysiological_generalization",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "对抗训练和条件熵代理",
+          "design": "EEGNet；λMI/GRL由validation选择",
+          "comparator": "task-only feature学习",
+          "measure": "主体预测熵与任务loss",
+          "unit_of_analysis": "动物/人类参与者与训练seed分层；窗口非独立个体",
+          "sample_size_as_reported": "优化器运行，非新个体",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "Domain adversarial",
+            "figure": "Eq4–8",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "DAL使用domain classifier/GRL及预测熵代理，以降低主体可识别性而非直接严格估计真实MI。",
+        "boundary": "领域分类器近似posterior、不平衡主体先验使uniform未必真posterior；减少domain可识别不证明保留全部临床特征。",
+        "negative_result": null,
+        "non_inference": "没有严格MI/唯一域不变性或泛化保证。",
+        "unresolved": "Eq7是正H且文字要maximize，Eq8正λ加到最小化loss却会minimize H，优化符号与目标不一致。",
+        "unresolved_attribution": "来源局限及提取者来源复核"
+      },
+      "broad_directions": [
+        "brain-signal-decoding",
+        "machine-learning",
+        "clinical-translational"
+      ],
+      "scientific_questions": [
+        "跨主体/采集域增广是否改善有限电生理数据分类而非证明疾病机制？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C12"
+      ],
+      "review_notes": [
+        "全39页13图7表及65参考二次审计；动物/患者/窗口/seed分层，pre/post不称健康PD对照，表内负控制、MI符号及DG范围保留。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "无线/有线ECoG和UI/UNM EEG的PSD及t-SNE显示录制域、主体及类别的分布差异。",
+      "claim_type": "electrophysiological_generalization",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "PSD/t-SNE/silhouette/CV描述",
+          "design": "无线有线采样硬件及不同动物；EEG机构/药物等",
+          "comparator": "采集域/主体/类别",
+          "measure": "低高频谱及聚类",
+          "unit_of_analysis": "动物/人类参与者与训练seed分层；窗口非独立个体",
+          "sample_size_as_reported": "6鼠；UI28人/UNM52人",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 16,
+            "section": "Dataset distributions",
+            "figure": "Fig5–12",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "无线/有线ECoG和UI/UNM EEG的PSD及t-SNE显示录制域、主体及类别的分布差异。",
+        "boundary": "硬件与不同动物无法拆开，t-SNE空间和窗口非独立观测。",
+        "negative_result": null,
+        "non_inference": "不是疾病特异神经标志或治疗因果；视觉聚类不证明高维真实距离。",
+        "unresolved": "UNM极端PSD按IQR剔除，但是否仅描述或训练也排除及数量未明。",
+        "unresolved_attribution": "来源局限及提取者来源复核"
+      },
+      "broad_directions": [
+        "brain-signal-decoding",
+        "machine-learning",
+        "clinical-translational"
+      ],
+      "scientific_questions": [
+        "跨主体/采集域增广是否改善有限电生理数据分类而非证明疾病机制？"
+      ],
+      "shared_evidence_with": [
+        "C10",
+        "C11",
+        "C12"
+      ],
+      "review_notes": [
+        "全39页13图7表及65参考二次审计；动物/患者/窗口/seed分层，pre/post不称健康PD对照，表内负控制、MI符号及DG范围保留。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "同录制域LOSO中，SAF报告无线macroaccuracy69.20±9.23%、有线58.32±3.28%，高于表列基线。",
+      "claim_type": "electrophysiological_generalization",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "LOSO模型比较",
+          "design": "每域3鼠，1测试2训练/validation；同预处理",
+          "comparator": "EEGNet及五基线",
+          "measure": "macroaccuracy/F1",
+          "unit_of_analysis": "动物/人类参与者与训练seed分层；窗口非独立个体",
+          "sample_size_as_reported": "6鼠；10独立训练seeds",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 25,
+            "section": "Cross-subject ECoG",
+            "figure": "Table5",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "同录制域LOSO中，SAF报告无线macroaccuracy69.20±9.23%、有线58.32±3.28%，高于表列基线。",
+        "boundary": "无线F1 65.18±12.38、有线48.02±4.58，仍较有限性能/高变异；seed不是新外部动物。",
+        "negative_result": null,
+        "non_inference": "不能作成熟诊断或预测所有动物/人的PD状态。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "brain-signal-decoding",
+        "machine-learning",
+        "clinical-translational"
+      ],
+      "scientific_questions": [
+        "跨主体/采集域增广是否改善有限电生理数据分类而非证明疾病机制？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C12"
+      ],
+      "review_notes": [
+        "全39页13图7表及65参考二次审计；动物/患者/窗口/seed分层，pre/post不称健康PD对照，表内负控制、MI符号及DG范围保留。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "无线→有线和有线→无线SAF macroaccuracy分别64.18±4.64%和69.90±6.67%，表中accuracy/recall/F1最高，但无线→有线precision不是最高。",
+      "claim_type": "electrophysiological_generalization",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "两采集域迁移",
+          "design": "source3鼠→另3鼠；15共同通道/downsample512Hz",
+          "comparator": "多基线",
+          "measure": "报告四macro指标",
+          "unit_of_analysis": "动物/人类参与者与训练seed分层；窗口非独立个体",
+          "sample_size_as_reported": "6鼠及10训练seeds",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 25,
+            "section": "Acquisition-domain transfer",
+            "figure": "Table5",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "无线→有线和有线→无线SAF macroaccuracy分别64.18±4.64%和69.90±6.67%，表中accuracy/recall/F1最高，但无线→有线precision不是最高。",
+        "boundary": "方向不对称，测试域与动物同时变化；没有ECoG→EEG直接模型转移。",
+        "negative_result": "无线→有线EEG-DG precision66.19高于SAF59.83；“all metrics优于所有”不成立。",
+        "non_inference": null,
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "brain-signal-decoding",
+        "machine-learning",
+        "clinical-translational"
+      ],
+      "scientific_questions": [
+        "跨主体/采集域增广是否改善有限电生理数据分类而非证明疾病机制？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C7",
+        "C8",
+        "C9",
+        "C12"
+      ],
+      "review_notes": [
+        "全39页13图7表及65参考二次审计；动物/患者/窗口/seed分层，pre/post不称健康PD对照，表内负控制、MI符号及DG范围保留。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "ECoG比较中作者报告96个方案×指标×基线检验有78个p<.05，但检验统计的是重复训练而非独立动物队列。",
+      "claim_type": "electrophysiological_generalization",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Wilcoxon signed-rank",
+          "design": "4设置×4metrics×6baselines",
+          "comparator": "SAF与每基线",
+          "measure": "显著比较数",
+          "unit_of_analysis": "动物/人类参与者与训练seed分层；窗口非独立个体",
+          "sample_size_as_reported": "10训练seeds；生物仅6鼠",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 26,
+            "section": "Significance summary",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "ECoG比较中作者报告96个方案×指标×基线检验有78个p<.05，但检验统计的是重复训练而非独立动物队列。",
+        "boundary": "没有多重校正说明，指标共享预测，比较非独立。",
+        "negative_result": "18/96未显著，不能称所有比较稳定胜出。",
+        "non_inference": "不将78项当独立复现。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "brain-signal-decoding",
+        "machine-learning",
+        "clinical-translational"
+      ],
+      "scientific_questions": [
+        "跨主体/采集域增广是否改善有限电生理数据分类而非证明疾病机制？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C8",
+        "C9",
+        "C12"
+      ],
+      "review_notes": [
+        "全39页13图7表及65参考二次审计；动物/患者/窗口/seed分层，pre/post不称健康PD对照，表内负控制、MI符号及DG范围保留。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "ISBCS+DAL组合在四ECoG设置的表6指标最好，但单组件效果取决于域，单独DAL在无线LOSO与无线→有线会退步。",
+      "claim_type": "electrophysiological_generalization",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "组件增删",
+          "design": "同EEGNet及预处理",
+          "comparator": "DAL-only、ISBCS-only、baseline、组合",
+          "measure": "macroaccuracy/F1",
+          "unit_of_analysis": "动物/人类参与者与训练seed分层；窗口非独立个体",
+          "sample_size_as_reported": "6鼠；10seeds",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 26,
+            "section": "Component ablation",
+            "figure": "Table6",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "ISBCS+DAL组合在四ECoG设置的表6指标最好，但单组件效果取决于域，单独DAL在无线LOSO与无线→有线会退步。",
+        "boundary": "组合优势不唯一识别机制；联合调参条件未完全等同固定模块。",
+        "negative_result": "无线LOSO DAL53.72<baseline57.89；无线→有线DAL50.00<50.24；无线LOSO ISBCS F1 49.15<baseline50.94。",
+        "non_inference": "正文“either alone all settings improves”与表冲突。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "brain-signal-decoding",
+        "machine-learning",
+        "clinical-translational"
+      ],
+      "scientific_questions": [
+        "跨主体/采集域增广是否改善有限电生理数据分类而非证明疾病机制？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C9",
+        "C12"
+      ],
+      "review_notes": [
+        "全39页13图7表及65参考二次审计；动物/患者/窗口/seed分层，pre/post不称健康PD对照，表内负控制、MI符号及DG范围保留。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "交换后的feature t-SNE更混合，作者报告主体间/内F统计由24.48降到0.99。",
+      "claim_type": "electrophysiological_generalization",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "特征可视化及F描述",
+          "design": "原数据 vs增广",
+          "comparator": "subject separation",
+          "measure": "F-statistic",
+          "unit_of_analysis": "动物/人类参与者与训练seed分层；窗口非独立个体",
+          "sample_size_as_reported": "主体/窗口单位及分析重复未充分给出",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 27,
+            "section": "Feature separation",
+            "figure": "Fig13",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "交换后的feature t-SNE更混合，作者报告主体间/内F统计由24.48降到0.99。",
+        "boundary": "F接近1、无df/p和embedding细节不证明主体信息完全消除；混合样本本来含多主体。",
+        "negative_result": null,
+        "non_inference": "不是严格I(Z;S)=0或所有task信息保留证明。",
+        "unresolved": "是否F在t-SNE投影/原特征、如何配对混合主体标签未明确。",
+        "unresolved_attribution": "来源局限及提取者来源复核"
+      },
+      "broad_directions": [
+        "brain-signal-decoding",
+        "machine-learning",
+        "clinical-translational"
+      ],
+      "scientific_questions": [
+        "跨主体/采集域增广是否改善有限电生理数据分类而非证明疾病机制？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C12"
+      ],
+      "review_notes": [
+        "全39页13图7表及65参考二次审计；动物/患者/窗口/seed分层，pre/post不称健康PD对照，表内负控制、MI符号及DG范围保留。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "人类EEG跨数据集任务中，UI→UNM和UNM→UI SAF macroaccuracy为73.34±7.81%与82.19±4.92%，F1为72.36±9.17%与82.15±4.95%。",
+      "claim_type": "electrophysiological_generalization",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "两现有dataset训练/测试",
+          "design": "60共同电极；UI14PD14HC、UNM27PD25HC并含药物状态差异",
+          "comparator": "同表六基线",
+          "measure": "macroaccuracy/precision/recall/F1",
+          "unit_of_analysis": "动物/人类参与者与训练seed分层；窗口非独立个体",
+          "sample_size_as_reported": "UI28及UNM52参与者；10trainingseeds",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 28,
+            "section": "EEG external datasets",
+            "figure": "Table7",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "人类EEG跨数据集任务中，UI→UNM和UNM→UI SAF macroaccuracy为73.34±7.81%与82.19±4.92%，F1为72.36±9.17%与82.15±4.95%。",
+        "boundary": "任务是PD/HC与大鼠刺激前后不同；代表软件方法复用而非物种/模态直接转移或临床前瞻。",
+        "negative_result": null,
+        "non_inference": "不建立人类ECoG临床用途或早期无症状筛查。",
+        "unresolved": "重复药物记录及subject分割/窗口处理须明确；ASR在EEG的实际使用前后矛盾。",
+        "unresolved_attribution": "来源局限及提取者来源复核"
+      },
+      "broad_directions": [
+        "brain-signal-decoding",
+        "machine-learning",
+        "clinical-translational"
+      ],
+      "scientific_questions": [
+        "跨主体/采集域增广是否改善有限电生理数据分类而非证明疾病机制？"
+      ],
+      "shared_evidence_with": [
+        "C4",
+        "C11",
+        "C12"
+      ],
+      "review_notes": [
+        "全39页13图7表及65参考二次审计；动物/患者/窗口/seed分层，pre/post不称健康PD对照，表内负控制、MI符号及DG范围保留。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "EEG比较48项中47项在作者Wilcoxon检验p<.05，迁移方向UNM→UI较好但可同时受样本规模与目标可分性影响。",
+      "claim_type": "electrophysiological_generalization",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "paired seed test",
+          "design": "2方向×4metrics×6基线",
+          "comparator": "baseline各模型",
+          "measure": "显著计数/方向差",
+          "unit_of_analysis": "动物/人类参与者与训练seed分层；窗口非独立个体",
+          "sample_size_as_reported": "80原始participants合计；10seeds共享数据",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 28,
+            "section": "EEG significance",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "EEG比较48项中47项在作者Wilcoxon检验p<.05，迁移方向UNM→UI较好但可同时受样本规模与目标可分性影响。",
+        "boundary": "算法重复统计不能补充独立临床样本；无多重校正或前瞻external队列。",
+        "negative_result": "1/48不显著；方向原因并未通过样本数匹配消融独立识别。",
+        "non_inference": null,
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "brain-signal-decoding",
+        "machine-learning",
+        "clinical-translational"
+      ],
+      "scientific_questions": [
+        "跨主体/采集域增广是否改善有限电生理数据分类而非证明疾病机制？"
+      ],
+      "shared_evidence_with": [
+        "C4",
+        "C10",
+        "C12"
+      ],
+      "review_notes": [
+        "全39页13图7表及65参考二次审计；动物/患者/窗口/seed分层，pre/post不称健康PD对照，表内负控制、MI符号及DG范围保留。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "作者提出把SAF扩到其他BCI任务和backbone，并自动学习λ参数；目前仅所设EEGNet和两类病相关任务评估。",
+      "claim_type": "electrophysiological_generalization",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "未来扩展",
+          "design": "emotion/其他neurological tasks、deep Transformers",
+          "comparator": "未实际扩展模型",
+          "measure": "未来泛化目标",
+          "unit_of_analysis": "动物/人类参与者与训练seed分层；窗口非独立个体",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 29,
+            "section": "Limitations/future",
+            "figure": "None",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者提出的可检验假说。",
+        "boundary": "超参数敏感性及架构适用仍待试验，不能称通用统一所有神经信号框架。",
+        "negative_result": null,
+        "non_inference": "没有独立跨session结果或真实闭环临床设备评估。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "brain-signal-decoding",
+        "machine-learning",
+        "clinical-translational"
+      ],
+      "scientific_questions": [
+        "跨主体/采集域增广是否改善有限电生理数据分类而非证明疾病机制？"
+      ],
+      "shared_evidence_with": [
+        "C4",
+        "C10",
+        "C11"
+      ],
+      "review_notes": [
+        "全39页13图7表及65参考二次审计；动物/患者/窗口/seed分层，pre/post不称健康PD对照，表内负控制、MI符号及DG范围保留。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "SAF在有限鼠ECoG刺激前后分类和人类EEG PD/HC跨域任务改善部分指标。保留非健康鼠标签、不同任务非直接跨模态、单组件退化、precision例外、n层级与目标/熵符号及预处理矛盾。",
+  "shared_evidence": [
+    {
+      "claim_id": "C1",
+      "with": [
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C2",
+      "with": [
+        "C1",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C1",
+        "C2",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C10",
+        "C11",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C7",
+        "C8",
+        "C9",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C8",
+        "C9",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C9",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "with": [
+        "C4",
+        "C11",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "with": [
+        "C4",
+        "C10",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "with": [
+        "C4",
+        "C10",
+        "C11"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": "C1",
+        "issue": "刺激后仍为6-OHDA同鼠，称normal不等健康或PD治愈。",
+        "pdf_page": 14,
+        "suggested_correction": null,
+        "resolved": false
+      },
+      {
+        "claim_id": "C3",
+        "issue": "正entropy项与最小化loss方向矛盾，实际实现符号需澄清。",
+        "pdf_page": 13,
+        "suggested_correction": null,
+        "resolved": false
+      },
+      {
+        "claim_id": "C8",
+        "issue": "DAL-only两设置下降，ISBCS一F1也下降，正文全面改善不符。",
+        "pdf_page": 26,
+        "suggested_correction": "保留实际负对照",
+        "resolved": true
+      },
+      {
+        "claim_id": "C10",
+        "issue": "18页EEG未用ASR，23页称两数据默认ASR，source-data处理矛盾。",
+        "pdf_page": 23,
+        "suggested_correction": null,
+        "resolved": false
+      },
+      {
+        "claim_id": "C7",
+        "issue": "大量Wilcoxon comparisons未说multiple校正；seeds不是动物/人独立n。",
+        "pdf_page": 26,
+        "suggested_correction": null,
+        "resolved": false
+      },
+      {
+        "claim_id": "C6",
+        "issue": "precision例外否定all metrics best及摘要all settings概括。",
+        "pdf_page": 25,
+        "suggested_correction": "限定优势",
+        "resolved": true
+      },
+      {
+        "claim_id": "C9",
+        "issue": "F=.99不证明无主体信息，缺df/p及投影单位。",
+        "pdf_page": 27,
+        "suggested_correction": null,
+        "resolved": false
+      },
+      {
+        "claim_id": null,
+        "issue": "Table1 Rat4 114对78增长46.2%而文称30%；分割8:1:1与LOSO/source validation细节未完整。",
+        "pdf_page": 15,
+        "suggested_correction": null,
+        "resolved": false
+      },
+      {
+        "claim_id": null,
+        "issue": "GroupDRO错引10为另一rats论文；首次/跨session和数据公开版本叙述需保留未解决。",
+        "pdf_page": 22,
+        "suggested_correction": null,
+        "resolved": false
+      },
+      {
+        "claim_id": null,
+        "issue": "Source title differs in wording from indexed title: A swap-adversarial framework for improving domain generalization in electrocorticography-based Parkinson’s disease classification",
+        "suggested_correction": "Retain actual supplied-version identity; curator to reconcile metadata.",
+        "pdf_page": 1,
+        "resolved": false
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T12:16:38.315081Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "7895b252d130c2db0fdd75abe00b9f753de1ac1a6305ee9bd36068992c63ec32",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

@@ -1,0 +1,1291 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "Volatile self-selective memristive neuron for millisecond-latency neuromorphic object detection at the edge",
+    "authors": [
+      "Zhejia Zhang",
+      "Jiahua Xu",
+      "Xuemeng Fan",
+      "Guobin Zhang",
+      "Zijian Wang",
+      "Pengtao Li"
+    ],
+    "doi": "10.1038/s41467-026-73825-3",
+    "publication_year": 2026,
+    "venue": "Nature Communications",
+    "url": "https://doi.org/10.1038/s41467-026-73825-3"
+  },
+  "source": {
+    "filename": "paper-W7162642311--Volatile-self-selective-memristive-neuron-for-millisecond-latency-neuromorphic-object-detection.pdf",
+    "sha256": "1edf27fda51f3b49587c062e67159e7665afe52f554b3647108b8f7f4e788131",
+    "source_url": "https://www.nature.com/articles/s41467-026-73825-3_reference.pdf?error=cookies_not_supported&code=d3050325-9d8a-4477-a69b-504ebc202a32",
+    "pdf_page_count": 25
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25
+    ],
+    "results_sections_seen": [
+      "Device/readratios",
+      "Volatility/endurance/uniformity",
+      "Pulse/PPF",
+      "Singlelayercontrol/materials/transport",
+      "LIF-like/TTFS",
+      "1024array",
+      "HybridVisDroneYOLO",
+      "Encoderbenchmarks/OBPUprojection",
+      "Methods"
+    ],
+    "missing_material": [
+      "S1–S34/Table1–2/Notes1–4未供应",
+      "图像像素未读取",
+      "完整testn/metric/benchmark边界未给"
+    ],
+    "text_pass_complete": true,
+    "notes": "25页acceptedunedited全读，5图58参考；真阵列encoder与软件YOLO/理想scaling分层。",
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "Pt/GaOx/ZnO/ITO器件在所用1/6readscheme呈pA漏电、μA导通，selectionratio与nonlinearity约10^7。",
+      "role": "result",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "器件单向重复sweep可自回高阻；代表singledevice在10^6cycling保持所报窗口与高SR/NL，128随机cell的I–V较一致。",
+      "role": "result",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "输入pulse幅度/宽度增加会增峰和延长衰减，所测延迟仍在μs尺度；pairedpulse呈双时间尺度facilitation。",
+      "role": "result",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "单层Pt/ZnO/ITO和Pt/GaOx/ITO控制未有明显self-selection/nonlinearity，双层界面及不对称载流条件是此设计的关键。",
+      "role": "result",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "作者据温度I–V、不同bias拟合及band/defect表征提出Schottky到P-F、再经GaOxF-N的通路，浅trap逃逸解释volatility。",
+      "role": "interpretation",
+      "source_pages": [
+        10
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "持续3.5V/200μs/20μs间隔pulse使current逐步累积并在12μA判定threshold形成TTFS，停止后约1ms回baseline。",
+      "role": "result",
+      "source_pages": [
+        11
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "3–4V输入幅度越强，达threshold的时间越短，弱输入no-fire，为灰度到TTFS提供物理映射。",
+      "role": "result",
+      "source_pages": [
+        13
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "all1024cell呈电导调制，所报100轮50pulse/11state统计C2C1.82%、D2D3.58%支持有限阵列编码一致性。",
+      "role": "result",
+      "source_pages": [
+        11
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "PCB/FPGA/DAC阵列编码后PythonYOLOv8处理VisDrone五class，reportedrecognitionaccuracy62.9%，softwareencoded对照65.4%。",
+      "role": "result",
+      "source_pages": [
+        14
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "作者解析估算TTFS每neuron约42nJ、每32²arrayencoding约43μJ，平均编码2.012ms/约.02W。",
+      "role": "result",
+      "source_pages": [
+        15
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "OBPU理想读出模型在10%readmargin下外推最大约8.36×10^12nodes，并声称模型内interconnect/parasitics影响小。",
+      "role": "interpretation",
+      "source_pages": [
+        13
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "作者提出该自选择/快速复位encoder适合交通/监测edge，但当前只有限器件、编码台架和公开图像混合系统评估。",
+      "role": "hypothesis",
+      "source_pages": [
+        16
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "frameauto-reset/spatialsneakpath被作者称eliminate，但main只支持抑制/有限模型，不作绝对为零。",
+      "role": "interpretation",
+      "source_pages": [
+        15,
+        16
+      ],
+      "decision": "boundary",
+      "reason": "无全frame/大阵列故障率"
+    },
+    {
+      "summary": "S1–S34/Table1–2/Notes1–4未供应，codesrestricted，源页只入口和authorreports。",
+      "role": "interpretation",
+      "source_pages": [
+        20
+      ],
+      "decision": "unresolved",
+      "reason": "全文mainfig及methods已读"
+    },
+    {
+      "summary": "car50.3%label比来自S33正文报告，不能认定所有class/domainimbalance被独立证明稳健。",
+      "role": "result",
+      "source_pages": [
+        15
+      ],
+      "decision": "boundary",
+      "reason": "现有5classAP与场景例子非普遍robustness"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "Pt/GaOx/ZnO/ITO器件在所用1/6readscheme呈pA漏电、μA导通，selectionratio与nonlinearity约10^7。",
+      "claim_type": "volatile_memristive_encoder",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "DC I–V及ratio计算",
+          "design": "SR=I(V)/I(-2V/3)，NL=I(V)/I(V/6)",
+          "comparator": "selected/unselectedbias",
+          "measure": "电流/ratio",
+          "unit_of_analysis": "器件/同阵列cell/循环与图像benchmark分层",
+          "sample_size_as_reported": "n在具体sweep未给，samefabricatedarray",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "Electrical selectivity",
+            "figure": "Fig2a/Eq1–2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "Pt/GaOx/ZnO/ITO器件在所用1/6readscheme呈pA漏电、μA导通，selectionratio与nonlinearity约10^7。",
+        "boundary": "这两个ratio按特定bias定义，非readaccuracy或完全零sneakpath。",
+        "negative_result": null,
+        "non_inference": "不证明任意阵列size/operatingvoltage无串扰。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "neuromorphic-hardware",
+        "computer-vision",
+        "computational-efficiency"
+      ],
+      "scientific_questions": [
+        "自选择挥发器件能在何种系统边界下改善TTFS编码及检测？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12"
+      ],
+      "review_notes": [
+        "25页5图58参考完整二次审计；singlecell/同array/cycles/sourceimages/modelprojection分开，PPF定义、真正currentthreshold、GPUdetector与encoder系统边界保留。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "器件单向重复sweep可自回高阻；代表singledevice在10^6cycling保持所报窗口与高SR/NL，128随机cell的I–V较一致。",
+      "claim_type": "volatile_memristive_encoder",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "重复与crosscell测量",
+          "design": "10sweeps及1e6cycle；32²array中抽128，另16cyclecontrol",
+          "comparator": "cells/cycles",
+          "measure": "复位/耐久/分布",
+          "unit_of_analysis": "器件/同阵列cell/循环与图像benchmark分层",
+          "sample_size_as_reported": "endurance1cell；uniformity128同arraycells，另16subset；batch未给",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "Volatility/endurance/uniformity",
+            "figure": "Fig2b–d",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "器件单向重复sweep可自回高阻；代表singledevice在10^6cycling保持所报窗口与高SR/NL，128随机cell的I–V较一致。",
+        "boundary": "循环和同arraycell非独立manufacturing批次；单器件耐久不保证allarraylifetime。",
+        "negative_result": null,
+        "non_inference": "没有years环境可靠性或整机部署验证。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "neuromorphic-hardware",
+        "computer-vision",
+        "computational-efficiency"
+      ],
+      "scientific_questions": [
+        "自选择挥发器件能在何种系统边界下改善TTFS编码及检测？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12"
+      ],
+      "review_notes": [
+        "25页5图58参考完整二次审计；singlecell/同array/cycles/sourceimages/modelprojection分开，PPF定义、真正currentthreshold、GPUdetector与encoder系统边界保留。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "输入pulse幅度/宽度增加会增峰和延长衰减，所测延迟仍在μs尺度；pairedpulse呈双时间尺度facilitation。",
+      "claim_type": "volatile_memristive_encoder",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "transient及PPFfit",
+          "design": "identicalpulses不同interval",
+          "comparator": "第1/第2pulse",
+          "measure": "decay/PPF",
+          "unit_of_analysis": "器件/同阵列cell/循环与图像benchmark分层",
+          "sample_size_as_reported": "重复device和pulseconditionn在SI未标",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Pulse dynamics",
+            "figure": "Fig2e–i",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "输入pulse幅度/宽度增加会增峰和延长衰减，所测延迟仍在μs尺度；pairedpulse呈双时间尺度facilitation。",
+        "boundary": "τ1=25.97μs、τ2=281.52μs为所设拟合，非生物时间常数。",
+        "negative_result": null,
+        "non_inference": "快衰减不自动证明任何帧率完全无temporalcrosstalk。",
+        "unresolved": "正文PPF=(I2−I1)/I1而Methods为I2/I1，baseline定义不一致。",
+        "unresolved_attribution": "来源局限及提取者来源复核"
+      },
+      "broad_directions": [
+        "neuromorphic-hardware",
+        "computer-vision",
+        "computational-efficiency"
+      ],
+      "scientific_questions": [
+        "自选择挥发器件能在何种系统边界下改善TTFS编码及检测？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12"
+      ],
+      "review_notes": [
+        "25页5图58参考完整二次审计；singlecell/同array/cycles/sourceimages/modelprojection分开，PPF定义、真正currentthreshold、GPUdetector与encoder系统边界保留。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "单层Pt/ZnO/ITO和Pt/GaOx/ITO控制未有明显self-selection/nonlinearity，双层界面及不对称载流条件是此设计的关键。",
+      "claim_type": "volatile_memristive_encoder",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "单层/双层控制、XPS/AFM/TEM",
+          "design": "GaOx10nm、ZnO40nm",
+          "comparator": "singlelayer vsbilayer",
+          "measure": "selectivity及材料形态",
+          "unit_of_analysis": "器件/同阵列cell/循环与图像benchmark分层",
+          "sample_size_as_reported": "各层独立device/batchn未标",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "Bilayer controls/material",
+            "figure": "Fig3/S12",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "单层Pt/ZnO/ITO和Pt/GaOx/ITO控制未有明显self-selection/nonlinearity，双层界面及不对称载流条件是此设计的关键。",
+        "boundary": "只当前层厚/电极条件；XPS42.9/10.3%峰归属是间接缺陷proxy非精确vacancyatomcount。",
+        "negative_result": "两个单层控制未有关键selfselective特性。",
+        "non_inference": "不能说明所有singlelayermaterials都不能select。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "neuromorphic-hardware",
+        "computer-vision",
+        "computational-efficiency"
+      ],
+      "scientific_questions": [
+        "自选择挥发器件能在何种系统边界下改善TTFS编码及检测？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12"
+      ],
+      "review_notes": [
+        "25页5图58参考完整二次审计；singlecell/同array/cycles/sourceimages/modelprojection分开，PPF定义、真正currentthreshold、GPUdetector与encoder系统边界保留。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "作者据温度I–V、不同bias拟合及band/defect表征提出Schottky到P-F、再经GaOxF-N的通路，浅trap逃逸解释volatility。",
+      "claim_type": "volatile_memristive_encoder",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "传导模型与作者解释",
+          "design": "温度activated；postset结构distortion",
+          "comparator": "transport候选",
+          "measure": "曲线模型/结构关联",
+          "unit_of_analysis": "器件/同阵列cell/循环与图像benchmark分层",
+          "sample_size_as_reported": "单样品及各温度统计n未提供",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "Conduction mechanism",
+            "figure": "Fig3f–i",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者据温度I–V、不同bias拟合及band/defect表征提出Schottky到P-F、再经GaOxF-N的通路，浅trap逃逸解释volatility。",
+        "boundary": "拟合和poststatefootprint不唯一识别瞬态defectmotion；多过程可能共存。",
+        "negative_result": null,
+        "non_inference": "没有直接在体神经或实时逐缺陷迁移测量。",
+        "unresolved": "完整S17–22 band/trap参数不在源页。",
+        "unresolved_attribution": "来源局限及提取者来源复核"
+      },
+      "broad_directions": [
+        "neuromorphic-hardware",
+        "computer-vision",
+        "computational-efficiency"
+      ],
+      "scientific_questions": [
+        "自选择挥发器件能在何种系统边界下改善TTFS编码及检测？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12"
+      ],
+      "review_notes": [
+        "25页5图58参考完整二次审计；singlecell/同array/cycles/sourceimages/modelprojection分开，PPF定义、真正currentthreshold、GPUdetector与encoder系统边界保留。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "持续3.5V/200μs/20μs间隔pulse使current逐步累积并在12μA判定threshold形成TTFS，停止后约1ms回baseline。",
+      "claim_type": "volatile_memristive_encoder",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "pulseintegration/currentthreshold",
+          "design": "constantpulses用于效率；stepincreasing才展示abruptspike",
+          "comparator": "频率/幅度",
+          "measure": "积分与thresholdtime",
+          "unit_of_analysis": "器件/同阵列cell/循环与图像benchmark分层",
+          "sample_size_as_reported": "独立cell/sequence次数未完整给",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "LIF-like response",
+            "figure": "Fig4b–d",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "持续3.5V/200μs/20μs间隔pulse使current逐步累积并在12μA判定threshold形成TTFS，停止后约1ms回baseline。",
+        "boundary": "所测current为积分proxy，“spike”常为外部阈值检测；不是恒pulse下生物axonallornone全实现。",
+        "negative_result": null,
+        "non_inference": "不能把somatic电学模拟称真实neuroncompletefunctionalidentity。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "neuromorphic-hardware",
+        "computer-vision",
+        "computational-efficiency"
+      ],
+      "scientific_questions": [
+        "自选择挥发器件能在何种系统边界下改善TTFS编码及检测？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12"
+      ],
+      "review_notes": [
+        "25页5图58参考完整二次审计；singlecell/同array/cycles/sourceimages/modelprojection分开，PPF定义、真正currentthreshold、GPUdetector与encoder系统边界保留。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "3–4V输入幅度越强，达threshold的时间越短，弱输入no-fire，为灰度到TTFS提供物理映射。",
+      "claim_type": "volatile_memristive_encoder",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "幅度/number映射",
+          "design": "12μAthreshold",
+          "comparator": "不同inputamplitudes",
+          "measure": "firstthresholdlatency",
+          "unit_of_analysis": "器件/同阵列cell/循环与图像benchmark分层",
+          "sample_size_as_reported": "脉冲条件n在SI",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "TTFS mapping",
+            "figure": "Fig4g–i",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "3–4V输入幅度越强，达threshold的时间越短，弱输入no-fire，为灰度到TTFS提供物理映射。",
+        "boundary": "强像素不必是语义重要目标；没有独立motion/salience或背景抑制试验证明。",
+        "negative_result": null,
+        "non_inference": "froginspiration不是新frog生理实验或所有输入更优编码。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "neuromorphic-hardware",
+        "computer-vision",
+        "computational-efficiency"
+      ],
+      "scientific_questions": [
+        "自选择挥发器件能在何种系统边界下改善TTFS编码及检测？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12"
+      ],
+      "review_notes": [
+        "25页5图58参考完整二次审计；singlecell/同array/cycles/sourceimages/modelprojection分开，PPF定义、真正currentthreshold、GPUdetector与encoder系统边界保留。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "all1024cell呈电导调制，所报100轮50pulse/11state统计C2C1.82%、D2D3.58%支持有限阵列编码一致性。",
+      "claim_type": "volatile_memristive_encoder",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "wholearray及statevariation",
+          "design": "32×32同batch，4Vpulse",
+          "comparator": "cells/cycles",
+          "measure": "电导variation",
+          "unit_of_analysis": "器件/同阵列cell/循环与图像benchmark分层",
+          "sample_size_as_reported": "1024同arraycells；100cycles×50pulses，11states",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "Array modulation",
+            "figure": "Fig4e–f",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "all1024cell呈电导调制，所报100轮50pulse/11state统计C2C1.82%、D2D3.58%支持有限阵列编码一致性。",
+        "boundary": "百分比normalization及统计细节在S25–27，不能等同全温度/所有state/长期ensemble。",
+        "negative_result": null,
+        "non_inference": "1024不是1024独立arrays。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "neuromorphic-hardware",
+        "computer-vision",
+        "computational-efficiency"
+      ],
+      "scientific_questions": [
+        "自选择挥发器件能在何种系统边界下改善TTFS编码及检测？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C9",
+        "C10",
+        "C11",
+        "C12"
+      ],
+      "review_notes": [
+        "25页5图58参考完整二次审计；singlecell/同array/cycles/sourceimages/modelprojection分开，PPF定义、真正currentthreshold、GPUdetector与encoder系统边界保留。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "PCB/FPGA/DAC阵列编码后PythonYOLOv8处理VisDrone五class，reportedrecognitionaccuracy62.9%，softwareencoded对照65.4%。",
+      "claim_type": "volatile_memristive_encoder",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "hardwareencoding+softwaredetector",
+          "design": "100epochsRTX4090训练；pixelmultiplexmapping",
+          "comparator": "hardwareTTFS vssoftwareencoding",
+          "measure": "作者称accuracy、perclassAP",
+          "unit_of_analysis": "器件/同阵列cell/循环与图像benchmark分层",
+          "sample_size_as_reported": "testimages/independentruns/splitcounts在缺失S30",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 14,
+            "section": "Hybrid object detection",
+            "figure": "Fig5a,c–e",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "PCB/FPGA/DAC阵列编码后PythonYOLOv8处理VisDrone五class，reportedrecognitionaccuracy62.9%，softwareencoded对照65.4%。",
+        "boundary": "差2.5个百分点/retention96.2%，不是只有2.5%相对损失；detector仍GPU，非全neuromorphicinference。",
+        "negative_result": "hardware低于software；vansAP约54%、cars86%表现不一。",
+        "non_inference": "不证明真实飞行drone、极端场景或类别平衡鲁棒；metric“accuracy”定义未主文提供。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "neuromorphic-hardware",
+        "computer-vision",
+        "computational-efficiency"
+      ],
+      "scientific_questions": [
+        "自选择挥发器件能在何种系统边界下改善TTFS编码及检测？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C10",
+        "C11",
+        "C12"
+      ],
+      "review_notes": [
+        "25页5图58参考完整二次审计；singlecell/同array/cycles/sourceimages/modelprojection分开，PPF定义、真正currentthreshold、GPUdetector与encoder系统边界保留。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "作者解析估算TTFS每neuron约42nJ、每32²arrayencoding约43μJ，平均编码2.012ms/约.02W。",
+      "claim_type": "volatile_memristive_encoder",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "analyticaldevice-cost+profilingbaseline",
+          "design": "SSMNotes4模型；CPU/GPU NVML/HWiNFO相同preprocessing",
+          "comparator": "CPU/GPUcoding",
+          "measure": "encoderlatency/power",
+          "unit_of_analysis": "器件/同阵列cell/循环与图像benchmark分层",
+          "sample_size_as_reported": "device/modelinputs；独立benchmarkn未给",
+          "uncertainty": "来源称latency减少16.75×/2.81×，power减少1199×/463×；非全系统实测倍数",
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 15,
+            "section": "Encoding energy/latency",
+            "figure": "Fig5f",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者解析估算TTFS每neuron约42nJ、每32²arrayencoding约43μJ，平均编码2.012ms/约.02W。",
+        "boundary": "对象是imagepreprocessing/encoding，不含已证YOLO总体开销；driver/DAC/FPGA/数据通信是否全算未明。",
+        "negative_result": null,
+        "non_inference": "不宣称整机或end-to-endobjectdetection只2ms或功耗.02W。",
+        "unresolved": "CPU/GPU具体规格与边界及model完整参数SI未供。",
+        "unresolved_attribution": "来源局限及提取者来源复核"
+      },
+      "broad_directions": [
+        "neuromorphic-hardware",
+        "computer-vision",
+        "computational-efficiency"
+      ],
+      "scientific_questions": [
+        "自选择挥发器件能在何种系统边界下改善TTFS编码及检测？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C11",
+        "C12"
+      ],
+      "review_notes": [
+        "25页5图58参考完整二次审计；singlecell/同array/cycles/sourceimages/modelprojection分开，PPF定义、真正currentthreshold、GPUdetector与encoder系统边界保留。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "OBPU理想读出模型在10%readmargin下外推最大约8.36×10^12nodes，并声称模型内interconnect/parasitics影响小。",
+      "claim_type": "volatile_memristive_encoder",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "crossbar解析模型",
+          "design": "Notes1/2 assumedR/C与非线性IV",
+          "comparator": "readmargin/size模型",
+          "measure": "投影nodes",
+          "unit_of_analysis": "器件/同阵列cell/循环与图像benchmark分层",
+          "sample_size_as_reported": "实物1024cells；projection不是fabricatednodes",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "Projected scalability",
+            "figure": "Fig5b",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "OBPU理想读出模型在10%readmargin下外推最大约8.36×10^12nodes，并声称模型内interconnect/parasitics影响小。",
+        "boundary": "巨大数学projection不等wire面积、峰电流、IRdrop、capdelay或整机可行性；有限leak不为零。",
+        "negative_result": null,
+        "non_inference": "不能称已展示万亿并行节点或无上限/无sneakpath保证。",
+        "unresolved": "全尺寸R/C、driver与readmargin定义/scale模型SI缺失。",
+        "unresolved_attribution": "来源局限及提取者来源复核"
+      },
+      "broad_directions": [
+        "neuromorphic-hardware",
+        "computer-vision",
+        "computational-efficiency"
+      ],
+      "scientific_questions": [
+        "自选择挥发器件能在何种系统边界下改善TTFS编码及检测？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C12"
+      ],
+      "review_notes": [
+        "25页5图58参考完整二次审计；singlecell/同array/cycles/sourceimages/modelprojection分开，PPF定义、真正currentthreshold、GPUdetector与encoder系统边界保留。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "作者提出该自选择/快速复位encoder适合交通/监测edge，但当前只有限器件、编码台架和公开图像混合系统评估。",
+      "claim_type": "volatile_memristive_encoder",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "部署假说",
+          "design": "未来CMOSbackend、大规模array/场景",
+          "comparator": "没有新flight/end-to-endfieldtrial",
+          "measure": "应用泛化",
+          "unit_of_analysis": "器件/同阵列cell/循环与图像benchmark分层",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 16,
+            "section": "Discussion/future",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者提出的可检验假说。",
+        "boundary": "材料compatibility与productionintegration/yield不同；不把frog或实验图像称生物/现场验证。",
+        "negative_result": null,
+        "non_inference": "未证明广泛最优或所有CPU/GPUcoding都不适用。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "neuromorphic-hardware",
+        "computer-vision",
+        "computational-efficiency"
+      ],
+      "scientific_questions": [
+        "自选择挥发器件能在何种系统边界下改善TTFS编码及检测？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11"
+      ],
+      "review_notes": [
+        "25页5图58参考完整二次审计；singlecell/同array/cycles/sourceimages/modelprojection分开，PPF定义、真正currentthreshold、GPUdetector与encoder系统边界保留。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "GaOx/ZnO挥发自选择器件在1024array有编码数据，并以GPUYOLO做公开航拍图检测。保留单层失败、PPF定义冲突、2.5pp损失、编码非整机能耗及万亿nodes仅模型投影。",
+  "shared_evidence": [
+    {
+      "claim_id": "C1",
+      "with": [
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C2",
+      "with": [
+        "C1",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C1",
+        "C2",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C9",
+        "C10",
+        "C11",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C10",
+        "C11",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C11",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "with": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": "C3",
+        "issue": "PPF差值fraction与Methodsrawratio两公式baseline不同，τ虽按报告保留不改定义。",
+        "pdf_page": 18,
+        "suggested_correction": null,
+        "resolved": false
+      },
+      {
+        "claim_id": "C6",
+        "issue": "主pulse为连续currentintegration、threshold判定，allornone需额外step-pulse；完整biorealisticneuronalidentity过强。",
+        "pdf_page": 11,
+        "suggested_correction": null,
+        "resolved": false
+      },
+      {
+        "claim_id": "C9",
+        "issue": "YOLOPython/GPU下游不是全hardwareinference；62.9/65.4差2.5pp。",
+        "pdf_page": 20,
+        "suggested_correction": "正确范围和效应口径",
+        "resolved": true
+      },
+      {
+        "claim_id": "C10",
+        "issue": "2.012ms/.02W基于analyticalencoder模型，FPGA/DAC/transfer及YOLO成本边界不明。",
+        "pdf_page": 15,
+        "suggested_correction": null,
+        "resolved": false
+      },
+      {
+        "claim_id": "C11",
+        "issue": "8.36e12nodes为OBPUprojection、实物1024，不能当physicaldemonstration。",
+        "pdf_page": 14,
+        "suggested_correction": "分开实际n与模型",
+        "resolved": true
+      },
+      {
+        "claim_id": "C5",
+        "issue": "defect迁移只由postsetdistortions/fit推断，非直接dynamicmovement及唯一机制。",
+        "pdf_page": 10,
+        "suggested_correction": null,
+        "resolved": false
+      },
+      {
+        "claim_id": "C8",
+        "issue": "variation指标完整normalization/independentbatchSI缺，cell和cycles不等batch重复。",
+        "pdf_page": 11,
+        "suggested_correction": null,
+        "resolved": false
+      },
+      {
+        "claim_id": null,
+        "issue": "O1s缺陷峰百分比并非可直接测absolutevacancyconcentration；同温度传导fit不能唯一确认每途径。",
+        "pdf_page": 8,
+        "suggested_correction": null,
+        "resolved": false
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T12:48:39.249977Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "1edf27fda51f3b49587c062e67159e7665afe52f554b3647108b8f7f4e788131",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

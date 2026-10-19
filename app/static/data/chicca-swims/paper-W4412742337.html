@@ -1,0 +1,127 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Reliability Analyses of Ultra-Low Voltage Analog Spiking Neurons</title><style>body{max-width:940px;margin:40px auto;padding:0 24px;background:#fffdf7;color:#12372f;font:16px/1.8 Georgia,serif}h1{font-size:26px;line-height:1.4}h2{font-size:20px;line-height:1.5}h3{font-size:16px}article{padding:26px 0;border-top:1px solid #bec4b8}small{color:#68766e}dl{display:grid;grid-template-columns:120px 1fr;gap:8px 20px}dt{font-weight:bold}dd{margin:0}li{padding:8px 0}p,dd{overflow-wrap:anywhere}.note{background:#eef2e2;padding:14px;border-left:3px solid #738968}summary{cursor:pointer}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.7 monospace}@media(max-width:600px){body{margin:24px auto;padding:0 18px}dl{grid-template-columns:1fr;gap:3px}dd{margin-bottom:12px}}@media print{body{margin:0;background:white}details{display:block}}</style><link rel="stylesheet" href="../../commons-v02.css?v=20261020-1"><link rel="stylesheet" href="../../examples.css?v=20260928-2"><link rel="stylesheet" href="../../site.css?v=20261020-1"><script defer src="../../site.js?v=20261020-1"></script><script defer src="../../report-ui.js?v=20261020-1"></script></head><body class="portal-page report-page" data-cc-report-shell="1" data-page="library" data-site-prefix="../../" data-library-paper="paper-W4412742337" data-report-language="zh" data-claim-records="{&quot;C1&quot;:&quot;structured-paper-W4412742337-1&quot;,&quot;C2&quot;:&quot;structured-paper-W4412742337-2&quot;,&quot;C3&quot;:&quot;structured-paper-W4412742337-3&quot;,&quot;C4&quot;:&quot;structured-paper-W4412742337-4&quot;,&quot;C5&quot;:&quot;structured-paper-W4412742337-5&quot;,&quot;C6&quot;:&quot;structured-paper-W4412742337-6&quot;}"><header></header><main id="report-content"><div id="report-tools"></div><small>CLAIM COMMONS / 阅读报告</small><h1>Reliability Analyses of Ultra-Low Voltage Analog Spiking Neurons</h1><p class="note">AI 文本提取候选，尚待人工核对。图像像素未读取；PDF 页码指文件中的页序。</p><p>已重新评估全部五页正文、图注和参考文献。本文以65 nm CMOS简化Morris-Lecar电路的名义SPICE扫描及工艺变异Monte Carlo仿真，支持降压导致幅度下降、周期延长、形态退化和幅度阈值失效风险增加，并显示激励电流的可靠性排序随电压区间改变。机制解释未独立验证，失效阈值表述仍不一致；本文未提供新的芯片测量、网络任务验证或完整温度与噪声分析。</p><a href="https://research.dial.uclouvain.be/server/api/core/bitstreams/4981aac4-138b-467c-bec9-bec03329fcbd/content" rel="noreferrer">查看所读原文版本 ↗</a><details><summary>贡献清单与处理决定</summary><ul><li><b>定义归一化峰峰幅度、脉冲周期及极值间上升和下降时间作为脉冲评价指标。</b><br>include · 作为结果的测量定义保留；未独立验证这些指标预测网络功能的能力。</li><li><b>名义电路降压时脉冲幅度下降，并用两级反相器切换电压设定可用供电范围。</b><br>include · 正文及Fig. 3、4支持幅度趋势和作者设定的功能边界。</li><li><b>三个激励电流条件下，降压使脉冲周期增加；部分极低电压条件无脉冲。</b><br>include · 周期是可独立评价的读出，且正文明确报告无法提取周期的条件。</li><li><b>降压使线性—指数上升形态退化，上升和下降时间在低于VDD,min时趋同。</b><br>include · 正文及Fig. 3、6支持波形和时间不对称性的变化。</li><li><b>作者将波形退化和周期延长联系于深亚阈值反相器的增益、噪声裕量及传播延迟变化。</b><br>include · 作为机制解释保留；没有独立干预或机制贡献分解。</li><li><b>三种供电电压的工艺变异仿真显示归一化幅度偏离名义值，低电压条件有更多低幅度实现。</b><br>include · 明确报告固定激励电流、三种电压及每种条件10000次Monte Carlo试验。</li><li><b>幅度阈值失效概率随降压快速增加，激励电流的可靠性排序随电压区间改变。</b><br>include · 正文及Fig. 8支持联合比较；失效阈值表述存在不一致。</li><li><b>低供电电压的能耗动机及既有65 nm原型的低能耗、紧凑结构。</b><br>exclude · 不是本文的新能耗测量或设计验证；原型结果来自文献[8]。</li><li><b>失效神经元比例增加导致SNN分类准确率下降。</b><br>exclude · 来自文献[20]，本文没有网络任务实验。</li><li><b>本征噪声可能增加失效率，类似问题可能扩展至无电容神经元；需要完整工艺、电压和温度分析。</b><br>defer · 属于未测试扩展和未来研究方向，不能作为已验证的泛化结果。</li></ul></details><article><small>C1 / 直接结果 · simulation_result</small><h2>对采用文献[8]设计参数的65 nm CMOS简化Morris-Lecar模拟神经元，名义SPICE电压扫描显示超低供电电压下膜电压峰峰幅度快速下降；作者以两级反相器切换电压对应的更严格限制定义最低可用供电电压VDD,min。</h2><h3>Evidence</h3><p>SPICE瞬态仿真及反相器直流切换电压比较</p><dl><dt>设计 / 对照</dt><dd>扫描供电电压，比较三个激励电流条件；Fig. 3的波形示例为Iex = 150 pA。；同一名义电路各激励电流条件下较高供电电压的响应</dd><dt>独立单位与 n</dt><dd>给定供电电压和激励电流下的名义电路仿真响应；三个激励电流条件；电压点数未报告</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 3 · Fig. 4；波形示例见第2页Fig. 3</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>名义仿真支持降压伴随幅度退化，并给出作者定义的可用供电边界。</dd><dt>适用边界</dt><dd>限于该电路和所扫描的激励电流；精确幅度变化及最低供电电压数值未能由供给文本取得。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能据此认定已测得真实芯片的扇出能力或下游SNN功能失效。</dd><dt>未解决</dt><dd>该幅度边界能否预测带实际突触负载时的功能失效？</dd></dl><h3>相关问题</h3><ul><li>供电电压如何影响模拟脉冲神经元的幅度及可用电压边界？</li></ul></article><article><small>C2 / 直接结果 · simulation_result</small><h2>在该65 nm CMOS简化Morris-Lecar模拟神经元的三个激励电流条件下，名义电路仿真显示供电电压降低时脉冲周期增加；部分极低供电电压条件没有脉冲，因此无法提取周期。</h2><h3>Evidence</h3><p>SPICE瞬态仿真</p><dl><dt>设计 / 对照</dt><dd>在三个激励电流条件下扫描供电电压。；各激励电流条件下较高供电电压的脉冲周期</dd><dt>独立单位与 n</dt><dd>给定电压和激励电流下的名义电路脉冲轨迹；三个激励电流条件；电压点数及分析周期数未报告</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 3 · Fig. 5；示例见第2页Fig. 3</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>所考察条件下，降压使周期延长。</dd><dt>适用边界</dt><dd>无脉冲条件没有周期读出；具体变化量未报告。</dd><dt>实际负结果</dt><dd>正文报告部分极低供电电压条件没有脉冲。</dd><dt>不能推出</dt><dd>不能从周期变化直接推断总能耗收益或网络任务性能。</dd><dt>未解决</dt><dd>周期延长如何影响任务吞吐量和总能耗？</dd></dl><h3>相关问题</h3><ul><li>超低供电电压如何影响模拟神经元的发放周期和持续发放能力？</li></ul></article><article><small>C3 / 直接结果 · simulation_result</small><h2>该65 nm CMOS简化Morris-Lecar电路的名义仿真显示，降压使膜电压上升失去典型线性—指数形态并逐渐类似正弦曲线；在低于作者定义的VDD,min时，上升和下降时间趋同，脉冲时间不对称性减弱。</h2><h3>Evidence</h3><p>SPICE瞬态仿真和波形时间指标分析</p><dl><dt>设计 / 对照</dt><dd>扫描供电电压；Fig. 3为Iex = 150 pA示例，Fig. 6比较三个激励电流条件。；较高供电电压下的线性—指数上升形态及上升、下降时间差异</dd><dt>独立单位与 n</dt><dd>给定电压和激励电流下的名义电路波形；三个激励电流条件；电压点数及所分析波形数未报告</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 3 · 第2页Fig. 3；第4页Fig. 6</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>降压伴随典型脉冲形态和时间不对称性退化。</dd><dt>适用边界</dt><dd>限于该简化电路的波形指标，未与生物神经元记录直接比较。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能由形态退化直接推断网络计算失败或所有生物动力学特征丧失。</dd><dt>未解决</dt><dd>这些形态指标对具体神经形态任务是否必要？</dd></dl><h3>相关问题</h3><ul><li>深亚阈值供电如何影响模拟神经元的脉冲形态和时间不对称性？</li></ul></article><article><small>C4 / 解释 · mechanistic_interpretation</small><h2>作者将该模拟神经元在深亚阈值供电下的波形退化主要解释为反相器增益、噪声裕量降低及延迟增长的后果，并将传播延迟增长视为脉冲周期延长的可能主要原因。</h2><h3>Evidence</h3><p>对名义电压扫描结果的电路机制解释，结合既有反相器分析</p><dl><dt>设计 / 对照</dt><dd>将波形和周期变化与深亚阈值反相器特性联系。；较高供电电压下的电路响应</dd><dt>独立单位与 n</dt><dd>名义电路仿真趋势及作者解释；未报告 / 不适用</dd><dt>不确定性</dt><dd>周期延长的主要原因以推测性措辞表述；未定量分解机制贡献。</dd><dt>原文位置</dt><dd>PDF 3 · Fig. 5；第2页Fig. 3</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>提供了连接反相器特性与脉冲退化的机制解释。</dd><dt>适用边界</dt><dd>属于作者解释，未独立验证因果贡献。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能认定传播延迟是唯一原因或各因素的贡献已被测定。</dd><dt>未解决</dt><dd>增益、噪声裕量和传播延迟各自贡献多少？</dd></dl><h3>相关问题</h3><ul><li>哪些反相器特性变化主导超低电压模拟神经元的周期和形态退化？</li></ul></article><article><small>C5 / 直接结果 · simulation_result</small><h2>对该65 nm CMOS简化Morris-Lecar模拟神经元，在Iex = 85 pA、供电电压分别为130、160和200 mV时各进行10000次工艺变异Monte Carlo试验，归一化脉冲幅度分布均偏离名义值；较低供电电压下低归一化幅度实现的比例更高，超低电压条件的分布呈现较大分散性。</h2><h3>Evidence</h3><p>基于工业紧凑模型的工艺变异Monte Carlo仿真</p><dl><dt>设计 / 对照</dt><dd>固定Iex = 85 pA，在三种电压下抽取晶体管阈值电压、尺寸、氧化层厚度及其他模型参数。；130、160、200 mV条件彼此比较，并与各条件名义幅度比较</dd><dt>独立单位与 n</dt><dd>一次随机工艺参数抽样得到的模拟电路实现；每种供电电压10000次Monte Carlo试验</dd><dt>不确定性</dt><dd>正文报告直方图和定性趋势，未报告均值、方差或置信区间。</dd><dt>原文位置</dt><dd>PDF 4 · Fig. 7</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>较低电压下出现更多低归一化幅度实现，分布显示偏离名义值及较大变异。</dd><dt>适用边界</dt><dd>限于一个电路、一个激励电流和三种电压；未定量证明分布宽度随降压单调增加。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>10000次试验不是10000个实测芯片，也不能直接等同于制造良率或网络神经元数。</dd><dt>未解决</dt><dd>温度和本征噪声加入后，幅度分布如何变化？</dd></dl><h3>相关问题</h3><ul><li>供电电压如何影响工艺变异下模拟神经元的归一化幅度分布？</li></ul></article><article><small>C6 / 直接结果 · simulation_result</small><h2>对该简化Morris-Lecar模拟神经元进行每个供电电压1000次工艺变异Monte Carlo试验，正文明确将峰峰幅度低于Vswitch1的实现分类为失效；所得失效概率随降压快速增加，低激励电流在超低电压区间更稳健，但在较高电压区间可靠性较低。</h2><h3>Evidence</h3><p>工艺变异Monte Carlo仿真及幅度阈值分类</p><dl><dt>设计 / 对照</dt><dd>扫描供电电压，比较不同激励电流下被判为失效的电路实现比例。；较高与较低供电电压；较低与较高激励电流</dd><dt>独立单位与 n</dt><dd>一次工艺参数抽样所得模拟电路及其幅度阈值分类；每个供电电压1000次Monte Carlo试验；各激励电流的试验分配未另行明确</dd><dt>不确定性</dt><dd>未报告置信区间或可从供给文本取得的精确失效率。</dd><dt>原文位置</dt><dd>PDF 4 · 第5页Fig. 8</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>按报告的幅度分类，降压增加失效风险，激励电流的可靠性排序取决于电压区间。</dd><dt>适用边界</dt><dd>这是模拟阈值失效概率；正文判据不一致，不能确认实际代码使用的阈值。</dd><dt>实际负结果</dt><dd>Monte Carlo样本中存在未达到作者幅度阈值的电路实现。</dd><dt>不能推出</dt><dd>没有直接测得硬件失效率、SNN分类准确率或本征噪声造成的额外失效。</dd><dt>未解决</dt><dd>实际分类阈值是什么，其与VDD,min及两级反相器切换电压有何关系？</dd></dl><h3>相关问题</h3><ul><li>供电电压和激励电流如何共同影响工艺变异下模拟神经元的幅度阈值失效概率？</li></ul></article><details><summary>核对记录与来源信息</summary><pre>{
+  &quot;coverage&quot;: {
+    &quot;pdf_pages_read&quot;: [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    &quot;results_sections_seen&quot;: [
+      &quot;III. STABILITY UNDER ULTRA-LOW SUPPLY VOLTAGE&quot;,
+      &quot;IV. VARIABILITY ANALYSIS&quot;,
+      &quot;V. CONCLUSION AND PERSPECTIVES&quot;,
+      &quot;Fig. 1–8的全部供给图注&quot;
+    ],
+    &quot;missing_material&quot;: [
+      &quot;图像像素及可精确读取的曲线数值&quot;,
+      &quot;具体SPICE配置、工业紧凑模型文件及Monte Carlo原始数据&quot;
+    ],
+    &quot;text_pass_complete&quot;: true,
+    &quot;notes&quot;: [
+      &quot;供给文本为五页会议研究论文，标题和作者与身份元数据一致；无法由正文进一步确认具体出版版本。&quot;,
+      &quot;全部供给正文、图注、致谢和参考文献均已评估；未供给附录或补充材料。&quot;,
+      &quot;本文新证据是电路仿真；65 nm原型测量和每脉冲能耗属于文献[8]。&quot;,
+      &quot;只使用正文和图注描述，未读取图像或估算曲线数值。&quot;
+    ],
+    &quot;reading_mode&quot;: &quot;text_only&quot;,
+    &quot;figure_images_read&quot;: false,
+    &quot;scientific_verification&quot;: false
+  },
+  &quot;audit&quot;: {
+    &quot;initial_source_match_checks&quot;: [],
+    &quot;source_match_checks&quot;: [],
+    &quot;model_findings&quot;: [
+      {
+        &quot;claim_id&quot;: &quot;C6&quot;,
+        &quot;issue&quot;: &quot;第4页先用VDD,min作峰峰幅度失效阈值，随后明确使用Vswitch1；第3页VDD,min定义为最低供电电压。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留明确报告的Vswitch1操作性描述，并标明实际分类实现无法确认；需作者澄清阈值。&quot;,
+        &quot;pdf_page&quot;: 4,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C5&quot;,
+        &quot;issue&quot;: &quot;草稿把分布更分散表述为随降压的确定趋势，正文没有提供分布宽度的量化或单调性检验。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留低电压下低幅度实现比例增加，以及超低电压分布分散的定性观察。&quot;,
+        &quot;pdf_page&quot;: 4,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C4&quot;,
+        &quot;issue&quot;: &quot;Fig. 5的周期变化不能充当独立传播延迟测量，机制未经过干预验证。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留interpretation角色，明确周期原因是推测性解释。&quot;,
+        &quot;pdf_page&quot;: 3,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C5&quot;,
+        &quot;issue&quot;: &quot;Monte Carlo试验数可能被误读为实测器件数或网络规模。&quot;,
+        &quot;suggested_correction&quot;: &quot;分析单位明确为一次随机工艺参数抽样所得模拟电路实现。&quot;,
+        &quot;pdf_page&quot;: 4,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;既有原型能耗、分类准确率下降和无电容神经元推广不是本文新验证结果。&quot;,
+        &quot;suggested_correction&quot;: &quot;分别作为引用背景或未测试扩展处理。&quot;,
+        &quot;pdf_page&quot;: 4,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;草稿包含schema之外的source_check和review字段，且不能由本次纯文本推断声称执行了额外检查程序。&quot;,
+        &quot;suggested_correction&quot;: &quot;删除额外字段，仅保留基于供给文本的来源定位和审计说明。&quot;,
+        &quot;pdf_page&quot;: null,
+        &quot;resolved&quot;: true
+      }
+    ],
+    &quot;needs_human_review&quot;: true
+  },
+  &quot;source&quot;: {
+    &quot;filename&quot;: &quot;paper-W4412742337.pdf&quot;,
+    &quot;sha256&quot;: &quot;0f77ae668ebd75a77a99709717b9503fd77c84d735f7ba927de21a27f8886a62&quot;,
+    &quot;source_url&quot;: &quot;https://research.dial.uclouvain.be/server/api/core/bitstreams/4981aac4-138b-467c-bec9-bec03329fcbd/content&quot;,
+    &quot;pdf_page_count&quot;: 5
+  },
+  &quot;provenance&quot;: {
+    &quot;created_at&quot;: &quot;2026-10-07T05:14:45.390729Z&quot;,
+    &quot;workflow&quot;: &quot;claim-commons-pdf-v1&quot;,
+    &quot;prompt_version&quot;: &quot;claim-commons-chatgpt-pdf-2026-10-07.1&quot;,
+    &quot;backend&quot;: &quot;signed_in_chatgpt_codex&quot;,
+    &quot;authentication&quot;: &quot;existing_ChatGPT_login&quot;,
+    &quot;provider_api_key_used&quot;: false,
+    &quot;model&quot;: &quot;account_default_GPT&quot;,
+    &quot;source_sha256&quot;: &quot;0f77ae668ebd75a77a99709717b9503fd77c84d735f7ba927de21a27f8886a62&quot;,
+    &quot;requests&quot;: [
+      {
+        &quot;phase&quot;: &quot;extraction&quot;,
+        &quot;seconds&quot;: 122.62,
+        &quot;usage&quot;: {
+          &quot;input_tokens&quot;: 19063,
+          &quot;cached_input_tokens&quot;: 0,
+          &quot;cache_write_input_tokens&quot;: 0,
+          &quot;output_tokens&quot;: 5824,
+          &quot;reasoning_output_tokens&quot;: 41
+        },
+        &quot;backend&quot;: &quot;signed_in_chatgpt_codex&quot;,
+        &quot;tools_used&quot;: false
+      },
+      {
+        &quot;phase&quot;: &quot;source_audit&quot;,
+        &quot;seconds&quot;: 108.59,
+        &quot;usage&quot;: {
+          &quot;input_tokens&quot;: 24704,
+          &quot;cached_input_tokens&quot;: 0,
+          &quot;cache_write_input_tokens&quot;: 0,
+          &quot;output_tokens&quot;: 6086,
+          &quot;reasoning_output_tokens&quot;: 66
+        },
+        &quot;backend&quot;: &quot;signed_in_chatgpt_codex&quot;,
+        &quot;tools_used&quot;: false
+      }
+    ],
+    &quot;source_audit_complete&quot;: true,
+    &quot;review_status&quot;: &quot;candidate&quot;,
+    &quot;database_updated&quot;: false
+  }
+}</pre></details></main><footer></footer></body></html>

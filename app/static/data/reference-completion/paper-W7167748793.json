@@ -1,0 +1,2210 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "preprint",
+  "paper": {
+    "title": "Reliability and Identifiability in Persona-Trained Monte Carlo: Variance Decomposition, Stability Bounds, and the Identifiability of Heterogeneous News Reaction",
+    "authors": [
+      "Salavat Ishbulatov"
+    ],
+    "doi": null,
+    "publication_year": 2026,
+    "venue": "arXiv (Cornell University)",
+    "url": "https://arxiv.org/pdf/2607.04627"
+  },
+  "source": {
+    "filename": "paper-W7167748793--Reliability-and-Identifiability-in-Persona-Trained-Monte-Carlo-Variance-Decomposition-Stability.pdf",
+    "sha256": "f3d0c3ba5d089af76ae31fd59d22d055d752072aa7f7985bc20687ef530d694b",
+    "source_url": "https://arxiv.org/pdf/2607.04627",
+    "pdf_page_count": 29
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29
+    ],
+    "results_sections_seen": [
+      "3 Formal setup",
+      "4 Estimator theory: variance decomposition and budget allocation",
+      "5.1 Verifying assumption (A1) in practice",
+      "5.2 The finite-horizon stability bound",
+      "5.3 A uniform-in-horizon bound under a Doeblin condition",
+      "6.1 Standing assumptions on the response function",
+      "6.2 Detectability and identifiability",
+      "6.3 What survives when the curve is known only up to scale",
+      "6.4 The sharp boundary: unknown response functions",
+      "7 Estimation and testing of the sensitivity distribution",
+      "7.1 Testing homogeneity: a null on the boundary",
+      "8.1 A bias floor for homogeneous-population simulators",
+      "8.2 An impossibility theorem for reduced-form methods under intervention",
+      "9 Numerical illustration (deferred)",
+      "10 Discussion and open problems",
+      "11 Conclusion",
+      "A Verification of assumption (A1) for softmax policies",
+      "References"
+    ],
+    "missing_material": [],
+    "text_pass_complete": true,
+    "notes": [
+      "按分配文件指定text_path一次读取源JSON，整理为7个不超过17500字符的带1-based PDF页标记文本块；全部块按顺序读取，跨块的页和证明连续合并评估。",
+      "全部29页均评估，包括正文全证明、附录A及第27-29页参考文献；没有从摘要直接推断全文贡献。",
+      "首轮全文提取后，在保留的全文上下文中进行第二次source-based命题审计；未重开原PDF，也未重新调用任何模型/provider。",
+      "实际版本为arXiv:2607.04627v1 [cs.LG]，2026-07-06，作者Salavat Ishbulatov；标题与分配索引一致。索引仅有年份且versions为空，本输出在此保留更精确源版本，不假定后续期刊版本。",
+      "该文为纯理论预印本，第4、24页明确没有报告仿真结果。所有n、N、D、R、K、T均为定理/设计变量，非实测样本统计。",
+      "只处理提供的文字、公式和可能的文字说明；本源未出现可用于独立结果提取的编号图表caption，未读图像像素。",
+      "正文提到的companion framework、experiment-design和validation协议仅为未提供的外部材料，不把它们标为已读，也不调用其结果作支持。",
+      "没有构造跨论文support/contradiction/replication关系；shared_evidence只说明本源内重复使用的数学推导，不是独立实验重复。",
+      "正文局部公式分数、绝对值与排版符号丢失，以同一供应文本中的证明和定义恢复明确转录错误；没有修改共享提取代码或源文。",
+      "所有quote为null；英文原文引述总量为0。source-text审计不是独立证明复现、科学真实性认证、真实市场因果验证或人工审核。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "固定K、T下的Monte Carlo无偏性、强一致性和CLT。",
+      "role": "result",
+      "source_pages": [
+        6,
+        7
+      ],
+      "decision": "include",
+      "reason": "C1；经典结果在本模拟结构中的应用。"
+    },
+    {
+      "summary": "两阶段人口/运行方差分解及无偏ANOVA分量估计。",
+      "role": "result",
+      "source_pages": [
+        6,
+        7
+      ],
+      "decision": "include",
+      "reason": "C2；明确独立人口行和条件复跑。"
+    },
+    {
+      "summary": "强分布零假设置换检验与弱矩零假设的区别。",
+      "role": "result",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "C3；无实际检验结果。"
+    },
+    {
+      "summary": "固定成本和预算的连续最优inner/outer配置。",
+      "role": "result",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "C4；整数实施不冒充所证连续最优。"
+    },
+    {
+      "summary": "人口均值方差趋零的配置边界。",
+      "role": "result",
+      "source_pages": [
+        7,
+        8
+      ],
+      "decision": "include",
+      "reason": "C5；针对特定F，非证明所有persona无用。"
+    },
+    {
+      "summary": "softmax策略A1的显式充分条件。",
+      "role": "result",
+      "source_pages": [
+        26,
+        27
+      ],
+      "decision": "include",
+      "reason": "C6；没有检查实际训练权重。"
+    },
+    {
+      "summary": "复合动作与固定方差Gaussian连续mark的A1常数。",
+      "role": "result",
+      "source_pages": [
+        26,
+        27
+      ],
+      "decision": "include",
+      "reason": "C7；保留每种头的联合条件。"
+    },
+    {
+      "summary": "persona依赖Gaussian尺度及log-normal头的TV条件。",
+      "role": "result",
+      "source_pages": [
+        27
+      ],
+      "decision": "include",
+      "reason": "C8；保留方差比局部范围和尺度正下界。"
+    },
+    {
+      "summary": "persona分布W1误差的有限时域输出界。",
+      "role": "result",
+      "source_pages": [
+        8,
+        9
+      ],
+      "decision": "include",
+      "reason": "C9；最坏上界非实测敏感度。"
+    },
+    {
+      "summary": "策略统一TV误差的有限时域输出界。",
+      "role": "result",
+      "source_pages": [
+        8,
+        9
+      ],
+      "decision": "include",
+      "reason": "C10；不以平均留出误差代替sup。"
+    },
+    {
+      "summary": "Monte Carlo、策略及persona校准的三项可靠性预算。",
+      "role": "result",
+      "source_pages": [
+        9,
+        10
+      ],
+      "decision": "include",
+      "reason": "C11；只相对于正确输入的同一模拟器。"
+    },
+    {
+      "summary": "Doeblin混合下末状态及时间平均的时域一致界。",
+      "role": "result",
+      "source_pages": [
+        10,
+        11
+      ],
+      "decision": "include",
+      "reason": "C12；现实链A4未验证，路径上确界不纳入。"
+    },
+    {
+      "summary": "固定响应族下的严格Jensen可检测性。",
+      "role": "result",
+      "source_pages": [
+        12,
+        13
+      ],
+      "decision": "include",
+      "reason": "C13；不删除非负敏感度、严格凹及固定g。"
+    },
+    {
+      "summary": "奇次矩及紧区间矩确定性恢复完整标量Q。",
+      "role": "result",
+      "source_pages": [
+        12,
+        13
+      ],
+      "decision": "include",
+      "reason": "C14；是精确总体识别而非估计速率。"
+    },
+    {
+      "summary": "Muentz索引条件放宽非零系数要求。",
+      "role": "result",
+      "source_pages": [
+        13
+      ],
+      "decision": "include",
+      "reason": "C15；经典密度性应用的充分条件。"
+    },
+    {
+      "summary": "未知整体尺度下的活动人群部分识别。",
+      "role": "result",
+      "source_pages": [
+        13,
+        14
+      ],
+      "decision": "include",
+      "reason": "C16；零反应者总质量不可识别。"
+    },
+    {
+      "summary": "未知g的均质/异质观察等价构造。",
+      "role": "result",
+      "source_pages": [
+        14,
+        15
+      ],
+      "decision": "include",
+      "reason": "C17；实际理论不可识别结果，非统计不显著。"
+    },
+    {
+      "summary": "多维persona联合识别及正交冲击/部分识别设想。",
+      "role": "interpretation",
+      "source_pages": [
+        15
+      ],
+      "decision": "exclude",
+      "reason": "Remark 9明确未证明多维联合识别；作为C14边界与开放问题，不伪造新定理。"
+    },
+    {
+      "summary": "设计识别引理与非线性最小二乘参数渐近理论。",
+      "role": "result",
+      "source_pages": [
+        15,
+        16
+      ],
+      "decision": "include",
+      "reason": "C18；Lemma 1是证据步骤，不重复计为独立经验发现。"
+    },
+    {
+      "summary": "边界族一侧平滑展开及同质方差的卡方混合检验。",
+      "role": "result",
+      "source_pages": [
+        16,
+        17,
+        18,
+        19
+      ],
+      "decision": "include",
+      "reason": "C19；Lemma 2服务同一边界证明，保留整套联合条件。"
+    },
+    {
+      "summary": "异方差情况下的sandwich单侧边界推断。",
+      "role": "interpretation",
+      "source_pages": [
+        19
+      ],
+      "decision": "include",
+      "reason": "C20；仅正文备注中的方法扩展，不声称独立完整新证明。"
+    },
+    {
+      "summary": "naive bootstrap在边界的不一致性和实施警告。",
+      "role": "correction",
+      "source_pages": [
+        3,
+        19,
+        25
+      ],
+      "decision": "exclude",
+      "reason": "引用既有文献修正配套实施建议；保留C19审阅注，不计为本文独立实验或新证明。"
+    },
+    {
+      "summary": "均值匹配均质人口的定量Jensen偏差下界。",
+      "role": "result",
+      "source_pages": [
+        20
+      ],
+      "decision": "include",
+      "reason": "C21；按同页积分恢复3/8，仅限规定比较者。"
+    },
+    {
+      "summary": "对活动质量及敏感度均可拟合的受限均质族统一分离。",
+      "role": "result",
+      "source_pages": [
+        20,
+        21
+      ],
+      "decision": "include",
+      "reason": "C22；须活动人群异质及非零长度解析区间。"
+    },
+    {
+      "summary": "均质族误差地板与正确参数化PTMC曲线的一致性分离。",
+      "role": "result",
+      "source_pages": [
+        21
+      ],
+      "decision": "include",
+      "reason": "C23；按本页证明恢复delta/2，非通用预测优势。"
+    },
+    {
+      "summary": "敏感度平移干预的两结构minimax绝对误差下界。",
+      "role": "result",
+      "source_pages": [
+        21,
+        22
+      ],
+      "decision": "include",
+      "reason": "C24；观察方案O和共同噪声是不可删除条件。"
+    },
+    {
+      "summary": "额外正确结构知识下的干预plug-in L1一致性。",
+      "role": "result",
+      "source_pages": [
+        23
+      ],
+      "decision": "include",
+      "reason": "C25；不能由同一A验证正确g。"
+    },
+    {
+      "summary": "信息集而非模型品牌的比较，及两类优势的范围解释。",
+      "role": "interpretation",
+      "source_pages": [
+        19,
+        20,
+        23,
+        24,
+        26
+      ],
+      "decision": "include",
+      "reason": "融入C23-C25结论边界；没有增列重复优势记录。"
+    },
+    {
+      "summary": "数值区间覆盖、最优R、实测敏感度及Jensen/检验功效验证方案。",
+      "role": "hypothesis",
+      "source_pages": [
+        24
+      ],
+      "decision": "exclude",
+      "reason": "第9节明确deferred且无执行结果；不将建议的负对照当作实际负结果。"
+    },
+    {
+      "summary": "均场极限、真实订单簿混合、路径一致界及非参数反演速率。",
+      "role": "hypothesis",
+      "source_pages": [
+        24,
+        25
+      ],
+      "decision": "exclude",
+      "reason": "第10节明确开放；记录到摘要和各命题unresolved，不伪造已证结论。"
+    },
+    {
+      "summary": "引言、背景、结论复述、AI辅助写作说明及参考文献。",
+      "role": "background",
+      "source_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "decision": "exclude",
+      "reason": "已评估全文；背景引用不作为本文新实验证据，结论不重复计数。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "固定K、T且路径泛函F有界时，独立重抽persona和运行随机性的N次PTMC模拟均值对该模拟器的mu无偏并几乎必然收敛；总方差sigma_P^2+sigma_w^2>0时，sqrt(N)*(mu_hat-mu)渐近正态，方差为两分量之和。",
+      "claim_type": "Monte Carlo一致性与中心极限定理",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "独立同分布变量的强大数律、全方差公式和中心极限定理。",
+          "design": "每次运行独立抽取一整组K个persona并重新抽取运行随机性。",
+          "comparator": "有限N估计量相对于同一固定模拟器的期望mu。",
+          "measure": "无偏性、几乎必然收敛及sqrt(N)尺度的极限分布。",
+          "unit_of_analysis": "N个独立模拟运行；一运行内K个交互bot不是K个独立重复。",
+          "sample_size_as_reported": null,
+          "uncertainty": "仅给出渐近正态误差和渐近区间基础，无实测区间覆盖率。",
+          "assumptions": [
+            "固定有限人口数K、时间步T及相同确定初态；persona来自紧空间上的分布P，各bot条件独立行动。",
+            "匹配映射可测且确定；外生冲击独立同分布，与persona及行动随机性独立。",
+            "路径泛函F可测且|F|<=M。",
+            "N次运行独立同分布；非退化CLT要求Var(F)>0。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "4, Theorem 1(1)-(2)",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "Monte Carlo抽样误差随独立运行数增长消失。",
+        "boundary": "K、T固定，CLT具有正方差；N^-1/2描述随机误差尺度，并非证明了同速率的几乎必然收敛。",
+        "negative_result": null,
+        "non_inference": "不证明模拟器正确描述真实市场，也不证明K趋于无穷的均场极限。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "人口抽样包含交互代理时，PTMC均值能否继承经典Monte Carlo收敛保证？"
+      ],
+      "shared_evidence_with": [
+        "C2"
+      ],
+      "review_notes": [
+        "第2、4页明确将此部分定位为经典结果在PTMC中的应用，而非全新概率定理。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "在D组独立persona人口、每组R次条件独立复跑的两阶段PTMC中，Var(mu_hat_D,R)=sigma_P^2/D+sigma_w^2/(D*R)；D、R至少为2时，组内ANOVA估计sigma_w^2和组均值样本方差减去sigma_w_hat^2/R所得sigma_P_hat^2均无偏。",
+      "claim_type": "嵌套模拟方差分解与分量估计",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "条件方差分解与一元随机效应ANOVA的期望计算。",
+          "design": "D个人口独立抽样，每人口内共享persona而运行随机性独立。",
+          "comparator": "组间人口均值变异与人口内部路径变异。",
+          "measure": "两阶段均值方差及两个ANOVA分量估计量的期望。",
+          "unit_of_analysis": "D个独立人口行；R个条件复跑不等同于D*R个独立人口。",
+          "sample_size_as_reported": null,
+          "uncertainty": "sigma_P_hat^2有限样本可以为负；截断为0会失去原有无偏性。",
+          "assumptions": [
+            "固定有限人口数K、时间步T及相同确定初态；persona来自紧空间上的分布P，各bot条件独立行动。",
+            "匹配映射可测且确定；外生冲击独立同分布，与persona及行动随机性独立。",
+            "路径泛函F可测且|F|<=M。",
+            "D>=2、R>=2；行独立同分布，行内给定persona条件独立。"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "4, Theorem 1(3); proof continued on PDF page 7",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "把人口抽样和运行内随机性对均值精度的贡献分别量化。",
+        "boundary": "sigma_P^2是条件均值在persona人口间的方差，而非所有行为差异或所有输入校准误差。",
+        "negative_result": null,
+        "non_inference": "不能把组内复跑视为独立人口重复；分量估计本身不证明现实中的人格异质性。",
+        "unresolved": "分量的实测大小和相应置信区间未报告。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "怎样区分PTMC人口抽样变异与同一人口内的随机运行变异？"
+      ],
+      "shared_evidence_with": [
+        "C1"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "若F给定persona人口的整个条件分布均不变，则D*R个复跑结果可交换，以MS_between/MS_within作统计量并重分配组标签的置换检验在任意样本量下精确；仅sigma_P^2=0的弱矩零假设不保证该精确性，因为条件方差仍可能依人口变化。",
+      "claim_type": "置换检验的零假设边界",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "用强零假设下的交换性说明置换参考分布。",
+          "design": "对两阶段模拟结果重新随机分配persona组标签。",
+          "comparator": "整条件分布不受persona影响的强零假设，对比只有条件均值恒定的弱零假设。",
+          "measure": "组间/组内均方比的有限样本置换校准。",
+          "unit_of_analysis": "强零假设下D*R个可交换运行值；一般两阶段设计仍以D个人口行独立。",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "强零假设要求F|omega的分布不随omega变化；运行按两阶段设计生成。",
+            "经典F参考分布还要求条件正态及恒定条件方差，不能只靠sigma_P^2=0。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "4, Remark 1",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "强分布零假设下置换检验精确。",
+        "boundary": "弱矩零假设下可能存在人口依赖的异方差，精确交换性不成立。",
+        "negative_result": "sigma_P^2=0本身不足以保证精确置换检验。",
+        "non_inference": "没有报告任何实际拒绝率、p值或对persona重要性的实验检验。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "persona不改变条件均值，是否足以保证组标签置换检验有效？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "这是方法条件分析，不是已经获得的异质性显著或不显著结果。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "当人口建立成本c0、单次复跑成本c1及两方差分量都为正，且D、R按连续变量处理时，预算B=D*(c0+R*c1)下PTMC均值方差在R*=sqrt(c0*sigma_w^2/(c1*sigma_P^2))取得最小值V*=(sqrt(c0*sigma_P^2)+sqrt(c1*sigma_w^2))^2/B。",
+      "claim_type": "计算预算最优分配",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "代入预算约束后对凸目标优化，或用AM-GM不等式。",
+          "design": "固定总预算，比较人口重抽次数D与组内复跑次数R。",
+          "comparator": "其他连续可行(D,R)设计。",
+          "measure": "估计均值的理论方差及最优R。",
+          "unit_of_analysis": "独立人口抽样与条件复跑的理论设计，不是已运行的计算基准。",
+          "sample_size_as_reported": null,
+          "uncertainty": "实际整数及最低重复次数约束需要另行处理；pilot分量估计误差未量化。",
+          "assumptions": [
+            "c0,c1,B>0；sigma_P^2,sigma_w^2>0；D和R作为连续变量。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "4, Theorem 2",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "给出由成本与方差分量决定的平方根配置规则。",
+        "boundary": "所证最优性针对给定成本模型的连续设计；并非任意硬件、相关复跑或整数预算下的普遍最优。",
+        "negative_result": null,
+        "non_inference": "没有测得R*、算力节省或相对运行时优势。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "怎样在固定预算下配置PTMC人口重抽与人口内复跑？"
+      ],
+      "shared_evidence_with": [
+        "C5"
+      ],
+      "review_notes": [
+        "经典嵌套模拟配置结果的应用；没有独立计算实验。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "在同一两阶段成本模型中，sigma_w^2及c0、c1固定为正而sigma_P^2趋于0时，连续最优R*趋于无穷；在有限预算、至少抽取一个人口的实际边界上，sigma_P^2=0时最优策略是不再重抽人口而把余下预算用于该人口的复跑。",
+      "claim_type": "异质性不影响条件均值时的配置边界",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "对Theorem 2配置公式取sigma_P^2趋于0的极限。",
+          "design": "固定复跑方差和成本，降低人口条件均值方差。",
+          "comparator": "人口重抽与同人口复跑。",
+          "measure": "R*的发散及有限预算的D=1边界选择。",
+          "unit_of_analysis": "指定F的人口均值方差，不是整个人口分布的异质性度量。",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "sigma_w^2,c0,c1>0；沿用两阶段方差及成本模型；有限预算必须可行。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "4, Corollary 2.1; continued on PDF page 8",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "人口均值变异为0时，重抽人口不能改善该均值估计的方差配置。",
+        "boundary": "零分量是F特异的均值结论；R趋于无穷是极限表述，不能在固定有限预算下照字面执行。",
+        "negative_result": null,
+        "non_inference": "不证明所有persona无用，也不证明F的完整条件分布不随persona变化。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "人口异质性对某个结果均值不产生变异时，还应重抽人口吗？"
+      ],
+      "shared_evidence_with": [
+        "C4"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "对有限动作softmax策略，若logit映射在所有状态上对persona满足无穷范数L0-Lipschitz条件，则策略的TV-Lipschitz常数可取L=(1-1/d)*L0<=L0，其中d为动作类别数。",
+      "claim_type": "策略架构的连续性保证",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "softmax梯度的l1界、线段积分与概率向量平方和下界。",
+          "design": "比较同一状态下两个persona产生的动作分布。",
+          "comparator": "persona扰动前后的softmax策略。",
+          "measure": "动作分布TV距离相对于persona距离的上界。",
+          "unit_of_analysis": "两个理论persona输入及其动作概率向量。",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "动作类别有限；logit的L0界对所有状态及persona对统一有效。"
+          ],
+          "source_locator": {
+            "pdf_page": 26,
+            "section": "Appendix A, Lemma 3(1); proof continued on PDF page 27",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "把logit连续性转换为稳定性定理所需的A1。",
+        "boundary": "必须已有统一的logit Lipschitz常数，不是仅凭softmax输出就自动获得有效小常数。",
+        "negative_result": null,
+        "non_inference": "没有对某个已训练网络测量L0，也没有验证实际策略误差。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "softmax策略的persona连续性何时足以满足TV稳定性假设？"
+      ],
+      "shared_evidence_with": [
+        "C7"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "复合动作由离散softmax头和条件连续mark头组成时，若mark头在TV下具有统一L2-Lipschitz界，则联合策略的A1常数为(1-1/d)*L1+L2；对固定标准差sigma>0、均值具有Lm-Lipschitz界的Gaussian mark，可取L2=Lm/(sigma*sqrt(2*pi))。",
+      "claim_type": "复合及连续动作的稳定性扩展",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "分解联合概率差；固定方差Gaussian的精确TV距离为2*Phi(|delta_m|/(2*sigma))-1。",
+          "design": "动作类型头与给定类型的连续价格/大小mark头。",
+          "comparator": "同状态、同动作类型条件下两persona的联合动作分布。",
+          "measure": "联合TV界与Gaussian mark的L2常数。",
+          "unit_of_analysis": "理论上的条件动作核；无器件或训练重复。",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "离散头的logit L1界统一成立；mark条件TV界对状态和动作类型统一成立。",
+            "Gaussian推论要求固定sigma>0及统一均值Lipschitz界。"
+          ],
+          "source_locator": {
+            "pdf_page": 26,
+            "section": "Appendix A, Lemma 3(2)-(3); proof on PDF page 27",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "有受控连续mark头时，persona稳定性可扩展到复合动作。",
+        "boundary": "固定方差Gaussian的常数不能直接用于随persona变化且可能趋零的方差。",
+        "negative_result": null,
+        "non_inference": "不证明所有连续策略均满足A1；正文还要求标准Borel动作空间上的可测耦合。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "连续价格或大小动作头会怎样改变PTMC策略的TV-Lipschitz常数？"
+      ],
+      "shared_evidence_with": [
+        "C6"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "当Gaussian mark的方差也依persona变化时，令t=sigma1^2/sigma2^2-1；在|t|<=1/2时，Pinsker及Gaussian KL公式给出TV<=|t|/2+|m1-m2|/(2*sigma2)。本文据此指出，均值与方差关于persona为Lipschitz且方差有正下界时仍可获得A1；log-normal头通过共同指数双射继承TV性质。",
+      "claim_type": "persona依赖尺度下的条件策略界",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Gaussian KL、Pinsker不等式和t-log(1+t)<=t^2；共同双射下TV不变。",
+          "design": "允许persona同时影响Gaussian均值与尺度。",
+          "comparator": "两个persona下不同均值和方差的mark分布。",
+          "measure": "局部显式TV界及A1的充分条件。",
+          "unit_of_analysis": "两个理论条件概率分布。",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "显式不等式的方差比需满足|t|<=1/2。",
+            "推广为A1需要均值、方差的统一Lipschitz控制及严格正的方差下界。"
+          ],
+          "source_locator": {
+            "pdf_page": 27,
+            "section": "Appendix A, Remark 14",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "尺度变化并不必然破坏TV连续性，但需要附加约束。",
+        "boundary": "给出的显式界有局部方差比条件，不能无条件替代固定尺度公式。",
+        "negative_result": null,
+        "non_inference": "没有报告训练后尺度下界或全局常数的实测验证。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "persona改变连续策略的噪声尺度时，何种条件仍能控制输入误差传播？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "在A1-A3、相同初态和K个bot运行T步的条件下，仅将persona分布P换成P_hat导致的任意有界路径泛函期望差满足|E_P F-E_P_hat F|<=2*M*K*T*L*W1(P,P_hat)。",
+      "claim_type": "persona分布失配的有限时域稳定性",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "persona最优Wasserstein耦合、逐bot最大耦合与首次行动失配的并集界。",
+          "design": "同匹配引擎、策略及冲击，改变K个persona的抽样分布。",
+          "comparator": "正确persona分布与估计分布下的模拟器期望。",
+          "measure": "有界F期望差及W1输入误差。",
+          "unit_of_analysis": "一对耦合模拟路径；K和T是模型规模，不是独立实测重复数。",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "固定有限人口数K、时间步T及相同确定初态；persona来自紧空间上的分布P，各bot条件独立行动。",
+            "匹配映射可测且确定；外生冲击独立同分布，与persona及行动随机性独立。",
+            "路径泛函F可测且|F|<=M。",
+            "策略在所有状态上关于persona满足统一TV-Lipschitz条件，常数L有限。",
+            "比较两模拟时使用相同初态、匹配规则及同分布外生冲击，可耦合为共同冲击。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "5.2, Theorem 3(1); proof on PDF pages 8-9",
+            "figure": null,
+            "equation": "(2)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "人口分布误差以W1度量并得到显式最坏情形上界。",
+        "boundary": "界线性依赖K*T；若K*T*L*W1>=1，通常不优于平凡的2*M界。",
+        "negative_result": null,
+        "non_inference": "不证明W1已从真实数据可靠估计，也不证明模拟类别与现实市场匹配。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "persona分布校准失配会怎样传播到PTMC路径结果？"
+      ],
+      "shared_evidence_with": [
+        "C10",
+        "C11",
+        "C12"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "同persona分布、初态和冲击下，若训练策略pi_hat相对于参照策略pi的所有状态/persona动作TV误差不超过epsilon，则A1-A3下K个bot运行T步所得有界路径泛函的期望差不超过2*M*K*T*epsilon。",
+      "claim_type": "策略失配的有限时域稳定性",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "逐bot逐步最大耦合，累加首次动作失配概率。",
+          "design": "固定persona抽样分布，替换策略核。",
+          "comparator": "训练策略与参照策略。",
+          "measure": "F期望偏差与统一每步TV误差epsilon。",
+          "unit_of_analysis": "耦合路径；不是将bot或时间步当成独立误差样本。",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "固定有限人口数K、时间步T及相同确定初态；persona来自紧空间上的分布P，各bot条件独立行动。",
+            "匹配映射可测且确定；外生冲击独立同分布，与persona及行动随机性独立。",
+            "路径泛函F可测且|F|<=M。",
+            "策略在所有状态上关于persona满足统一TV-Lipschitz条件，常数L有限。",
+            "比较两模拟时使用相同初态、匹配规则及同分布外生冲击，可耦合为共同冲击。",
+            "sup_(s,p) TV(pi_hat,pi)<=epsilon。"
+          ],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "5.2, Theorem 3(2); policy proof on PDF page 9",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "把统一策略误差转换为有界输出泛函的最坏情形偏差界。",
+        "boundary": "依赖全状态/persona的统一界；K*T*epsilon<1时才比平凡界更有信息。",
+        "negative_result": null,
+        "non_inference": "平均留出损失或少数已观测状态上的准确率不能自动替代所需的sup-TV保证。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "行为克隆策略的统一误差会怎样累积成模拟结果偏差？"
+      ],
+      "shared_evidence_with": [
+        "C9",
+        "C11",
+        "C12"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "在有界F、A1-A3和统一策略误差epsilon_BC下，mu_hat_N相对于同一模拟引擎使用真实P与pi*所得mu_true的误差，渐近由z_(1-alpha/2)*sqrt((sigma_P^2+sigma_w^2)/N)、2*M*K*T*epsilon_BC及2*M*K*T*L*W1(P,P_hat)三项预算控制，超过三项之和的概率limsup不超过alpha。",
+      "claim_type": "三通道渐近可靠性预算",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "三角分解、Theorem 3两种偏差界及Theorem 1的CLT。",
+          "design": "估计输入下N次独立模拟，与同匹配引擎正确输入的模拟器比较。",
+          "comparator": "mu_sim、用真实P但训练pi_hat的中间期望及正确输入mu_true。",
+          "measure": "渐近概率误差预算，不是有限样本精确覆盖。",
+          "unit_of_analysis": "N个独立模拟；人口校准数据和行为克隆评估数据的实际数量未给出。",
+          "sample_size_as_reported": null,
+          "uncertainty": "Monte Carlo项为渐近正态量；两输入项是确定性最坏界，实际输入误差和常数未测量。",
+          "assumptions": [
+            "固定有限人口数K、时间步T及相同确定初态；persona来自紧空间上的分布P，各bot条件独立行动。",
+            "匹配映射可测且确定；外生冲击独立同分布，与persona及行动随机性独立。",
+            "路径泛函F可测且|F|<=M。",
+            "比较两模拟时使用相同初态、匹配规则及同分布外生冲击，可耦合为共同冲击。",
+            "A1对pi_hat成立；sup_(s,p) TV(pi_hat,pi*)<=epsilon_BC。",
+            "估计输入下总运行方差为正；alpha在(0,1)。"
+          ],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "5.2, Corollary 3.1 and Remark 3; discussion continued on PDF page 10",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "把可增加计算降低的抽样误差与必须改善输入才能降低的两种失配分开。",
+        "boundary": "mu_true仅为同一类模拟器正确输入时的期望；该预算没有现实模型结构误差项。",
+        "negative_result": null,
+        "non_inference": "不能把三项预算称作真实市场总预测误差已被穷尽，或把建议的bootstrap/log-loss评估当作已经得到统一误差上界。",
+        "unresolved": "现实市场的类外模型失配及实测输入误差仍需独立验证。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "PTMC的计算误差、策略误差与persona分布误差能否分开归因？"
+      ],
+      "shared_evidence_with": [
+        "C9",
+        "C10"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "若每个人口对应的市场核满足共同alpha>0的Doeblin minorization，且沿用A1、共同冲击与初态，则对有界末状态函数或有界时间平均，persona输入偏差界可将T替换为min(T,1/alpha)，成为2*M*K*L*min(T,1/alpha)*W1；策略偏差相应为2*M*K*epsilon*min(T,1/alpha)。",
+      "claim_type": "混合条件下的时域一致稳定性",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Doeblin收缩、核扰动的望远镜分解及几何级数。",
+          "design": "比较末状态边缘分布或逐时有界函数平均，非整条路径上确界。",
+          "comparator": "同市场核类别的persona或策略扰动。",
+          "measure": "对时域一致的期望差界。",
+          "unit_of_analysis": "人口条件Markov核及时间边缘分布；没有实际独立市场链数量。",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "固定有限人口数K、时间步T及相同确定初态；persona来自紧空间上的分布P，各bot条件独立行动。",
+            "匹配映射可测且确定；外生冲击独立同分布，与persona及行动随机性独立。",
+            "策略在所有状态上关于persona满足统一TV-Lipschitz条件，常数L有限。",
+            "比较两模拟时使用相同初态、匹配规则及同分布外生冲击，可耦合为共同冲击。",
+            "A4: 对所有人口omega和状态s，P_omega(s,.)>=alpha*nu_omega(.)，alpha统一，nu可依omega变化。",
+            "F=f(s_T)且|f|<=M，或F=(1/T)*sum_t f_t(s_t)且各f_t统一有界。",
+            "策略扰动具有统一epsilon-TV界。"
+          ],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "5.3, A4 and Theorem 4; proof and Remark 5 on PDF page 11",
+            "figure": null,
+            "equation": "(3)-(4)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "充分混合能使末状态及平均读出的偏差界不随T无限增长。",
+        "boundary": "不覆盖最大回撤、窗口内曾发生崩盘等路径上确界泛函；alpha可能极小而使改善在实际T下无效。",
+        "negative_result": null,
+        "non_inference": "没有验证真实或自然无界订单簿满足A4，不能称作无条件时域稳定性。",
+        "unresolved": "现实订单簿的非空泛混合常数及路径泛函的一致界均为第10节开放问题。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "何种市场链混合条件能消除PTMC输入偏差对模拟时域的线性依赖？"
+      ],
+      "shared_evidence_with": [
+        "C9",
+        "C10"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C13",
+      "statement": "固定响应g满足G1、非负紧支撑敏感度分布Q满足Q1且Var_Q(eta)>0时，对每个正新闻幅度z，A(z)=E_Q[g(eta*z)]严格小于g(z*E_Q[eta])；同一g下若要求均质人口匹配原点斜率，则其敏感度必为E_Q[eta]，因而不能重现这条异质响应曲线。",
+      "claim_type": "已知响应族下异质性的严格可检测性",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "严格凹函数的支撑线与Jensen不等式，以及原点斜率A'(0)=g'(0)*Eeta。",
+          "design": "固定相同g，比较异质Q与斜率匹配的delta_(Eeta)。",
+          "comparator": "同均值的均质敏感度人口。",
+          "measure": "每个z>0的严格曲线差。",
+          "unit_of_analysis": "理论敏感度分布及聚合响应函数，不是新闻事件数据。",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "固定且已知的g为奇函数、有界、全域C2、原点附近实解析，Taylor半径r>0；g'(0)>0，正半轴g''<0。",
+            "Q为[0,eta_bar]上的概率分布，eta_bar有限，E_Q[eta]>0。",
+            "Var_Q(eta)>0；检测部分不需要G2的所有非零系数。"
+          ],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "6.2, Theorem 5(i); proof on PDF page 13",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "已知同一响应函数时，非退化敏感度混合与斜率匹配均质人口可在响应曲线中区分。",
+        "boundary": "需要g固定、敏感度非负及严格凹；不是跨任意响应函数的模型无关检测。",
+        "negative_result": "在规定固定g及斜率匹配条件下，均质人口不能精确重现异质曲线。",
+        "non_inference": "未观察到实测Jensen gap，也未证明多维persona或其他行为机制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "聚合新闻响应曲线能否区分同均值的异质与均质新闻敏感度？"
+      ],
+      "shared_evidence_with": [
+        "C21"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C14",
+      "statement": "在已知固定g满足G1-G2、Q满足Q1且聚合曲线绝对尺度已知时，A在原点任意邻域的精确信息给出全部奇次矩E[eta^(2j+1)]；把eta*Q推送到eta^2后的紧区间矩问题唯一确定Q在eta>0上的分布，再由总概率1恢复Q({0})，因此完整标量敏感度分布可识别。",
+      "claim_type": "标量敏感度分布的总体可识别性",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "解析展开、Fubini、加权测度和紧区间Hausdorff矩确定性。",
+          "design": "从原点邻域完整A恢复奇次矩及分布。",
+          "comparator": "两个产生相同精确A且使用同一g的紧支撑概率分布。",
+          "measure": "Q唯一性，包括无新闻反应的零点原子。",
+          "unit_of_analysis": "整个总体响应函数；不存在已报告的有限样本n。",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "固定且已知的g为奇函数、有界、全域C2、原点附近实解析，Taylor半径r>0；g'(0)>0，正半轴g''<0。",
+            "g的所有奇次Taylor系数b_j均非零。",
+            "Q为[0,eta_bar]上的概率分布，eta_bar有限，E_Q[eta]>0。",
+            "原点邻域曲线精确可知，包含绝对响应尺度。"
+          ],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "6.2, Theorem 5(ii); full moment proof on PDF page 13",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在既定响应族内，精确总体曲线足以识别完整一维Q。",
+        "boundary": "是总体唯一性，不是有限噪声数据下稳定、快速的非参数估计保证。",
+        "negative_result": null,
+        "non_inference": "不自动识别新闻敏感度、损失厌恶、从众等联合多维persona分布。",
+        "unresolved": "非参数反演的最优速率及有限噪声稳定性在第10节保留开放。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "已知非线性下，聚合新闻响应能否唯一恢复含零反应者的敏感度分布？"
+      ],
+      "shared_evidence_with": [
+        "C15",
+        "C16",
+        "C22"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C15",
+      "statement": "完整非零奇次系数条件G2可以减弱：在G1、Q1下，若J={j>=0:b_j!=0}且sum_(j in J,j>0) 1/j发散，则原点曲线可恢复的那些奇次矩仍通过Muentz密度性确定加权测度，从而唯一确定Q。",
+      "claim_type": "矩识别条件的充分性放宽",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "把可恢复的奇次矩变为eta^2上的幂矩，并应用Muentz近似密度性。",
+          "design": "允许g的部分奇次Taylor系数为0。",
+          "comparator": "所有奇次系数非零的G2条件。",
+          "measure": "保留系数索引集的倒数和条件及Q唯一性。",
+          "unit_of_analysis": "紧区间上的理论测度及其矩序列。",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "固定且已知的g为奇函数、有界、全域C2、原点附近实解析，Taylor半径r>0；g'(0)>0，正半轴g''<0。",
+            "Q为[0,eta_bar]上的概率分布，eta_bar有限，E_Q[eta]>0。",
+            "J包含0；非零系数的正索引倒数和发散；精确原点邻域曲线已知。"
+          ],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "6.2, Remark 6",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "不必要求每个奇次系数均非零，只要剩余幂函数仍构成稠密族。",
+        "boundary": "给出充分识别条件，没有证明倒数和收敛时对本文所有响应族必然无法识别。",
+        "negative_result": null,
+        "non_inference": "没有给出该放宽下的有限样本恢复算法或收敛速率。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "响应函数的部分Taylor系数为0时，敏感度分布仍可识别吗？"
+      ],
+      "shared_evidence_with": [
+        "C14"
+      ],
+      "review_notes": [
+        "属于经典近似定理在本矩反演构造中的应用，未称为原创Muentz定理。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C16",
+      "statement": "若固定g满足G1-G2、Q满足Q1而A仅知到未知正乘数，则AQ_prime=kappa*AQ意味着两分布的eta>0条件分布相同、正敏感度总质量按kappa缩放；因此仍可识别实际响应人群的分布形状及其是否异质，但不能从形状识别新闻忽略者的比例。",
+      "claim_type": "未知幅度尺度下的部分识别",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "奇次矩同比例关系、加权测度同比例及正部分归一化。",
+          "design": "聚合曲线的整体尺度与人口规模/订单大小混杂。",
+          "comparator": "AQ_prime=kappa*AQ的两个敏感度分布；以及与g(c*z)成比例的曲线。",
+          "measure": "Q(.|eta>0)唯一性及正质量/零点原子的不可分辨性。",
+          "unit_of_analysis": "精确的曲线形状与概率测度，非实验受试或代理样本。",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "固定且已知的g为奇函数、有界、全域C2、原点附近实解析，Taylor半径r>0；g'(0)>0，正半轴g''<0。",
+            "g的所有奇次Taylor系数b_j均非零。",
+            "Q为[0,eta_bar]上的概率分布，eta_bar有限，E_Q[eta]>0。",
+            "曲线仅有未知kappa>0整体乘数；比较Q_prime亦为有效概率分布。"
+          ],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "6.3, Corollary 5.1; proof and Remark 7 on PDF page 14",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "活动人群异质性在未知曲线尺度下仍可识别。",
+        "boundary": "形状对应单一c不排除混有eta=0者，从而不等同于全体Var(eta)=0。",
+        "negative_result": "未知整体尺度下，曲线形状不能识别活动总质量及新闻忽略者比例。",
+        "non_inference": "不能把文中提到的配套设计20%零反应者当作本论文观测比例。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "响应曲线幅度被人口规模混杂时，敏感度异质性的哪些部分仍可识别？"
+      ],
+      "shared_evidence_with": [
+        "C14",
+        "C22"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C17",
+      "statement": "允许响应函数在G1所定义的类别G内未知时，对任意满足Q1的异质(Q,g)及任意m>0，构造g_tilde(x)=A(x/m)便得到仍属G的响应函数，使均质(delta_m,g_tilde)产生完全相同A；因此仅凭聚合曲线不能识别Q，甚至不能识别人群是否异质。",
+      "claim_type": "未知响应族的理论不可识别性",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "显式构造g_tilde并逐项验证其有界、奇、解析、严格凹及正原点斜率。",
+          "design": "同时允许敏感度分布与响应函数改变。",
+          "comparator": "异质原模型与重新定义响应函数的均质模型。",
+          "measure": "对所有z的观察曲线完全一致。",
+          "unit_of_analysis": "两种数学结构，不是两个被测市场。",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "固定且已知的g为奇函数、有界、全域C2、原点附近实解析，Taylor半径r>0；g'(0)>0，正半轴g''<0。",
+            "Q为[0,eta_bar]上的概率分布，eta_bar有限，E_Q[eta]>0。",
+            "观察信息限于聚合A；响应函数未知，允许在G内改变。"
+          ],
+          "source_locator": {
+            "pdf_page": 14,
+            "section": "6.4, Proposition 1; scope in Remark 8 on PDF page 15",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "给出固定响应假设的明确识别边界。",
+        "boundary": "不否定所有模型共用一个已知g时的识别定理；更丰富的个体数据不属于该观察方案。",
+        "negative_result": "未知g时，异质和均质模型存在精确观察等价，模型无关异质性识别失败。",
+        "non_inference": "不得将其写成样本量不足、检验不显著或已经观察到同质市场。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "不固定个体响应非线性时，聚合数据能否证明新闻敏感度异质？"
+      ],
+      "shared_evidence_with": [
+        "C24"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C18",
+      "statement": "在独立有界新闻事件数据及R1-R4下，对包含真实Q、单射且光滑的有限维Q_theta族拟合非线性最小二乘，theta_hat依概率一致且sqrt(n)*(theta_hat-theta0)渐近正态，协方差为J^-1*E[sigma^2(z)*grad A*grad A^T]*J^-1；若合规族以(Eeta,Var eta)参数化，该结论给出均值与方差的参数估计基础。",
+      "claim_type": "参数化敏感度估计的一致性与渐近分布",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "解析函数唯一性提供设计识别，紧参数族ULLN及M估计展开提供一致性和sandwich渐近方差。",
+          "design": "Y_i=A_theta0(z_i)+epsilon_i，使用全事件非线性最小二乘。",
+          "comparator": "候选参数与真实内部参数theta0。",
+          "measure": "参数误差sqrt(n)极限及sandwich协方差。",
+          "unit_of_analysis": "n个独立新闻事件；不是n个bot或模拟seed。",
+          "sample_size_as_reported": "n为理论事件样本量；无实际采集n。",
+          "uncertainty": "允许条件异方差，给出渐近sandwich方差；无数值标准误或置信区间。",
+          "assumptions": [
+            "新闻事件(z_i,Y_i)独立同分布，z紧支撑，Y有界，Y=A_theta0(z)+epsilon，E[epsilon|z]=0。",
+            "R1: 参数空间Theta紧，theta到Q_theta单射，所有Q_theta具有共同紧支撑并满足Q1；固定g满足G1-G2。",
+            "R2: A_theta对theta连续，真值附近二次连续可微，函数、梯度及Hessian对设计z有统一界。",
+            "R3: z的设计支撑在(0,r/eta_bar)内有聚点。",
+            "R4: theta0位于Theta内部，J=E[grad A grad A^T]非奇异。"
+          ],
+          "source_locator": {
+            "pdf_page": 16,
+            "section": "7, Lemma 1 and Theorem 6",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "正确参数族内可以进行常规sqrt(n)尺度估计。",
+        "boundary": "要求正确固定g、设计有解析域内聚点、非奇异J及真实参数内部；两个矩必须对应规定的完整分布族。",
+        "negative_result": null,
+        "non_inference": "不证明任意非参数Q可由有限样本两个矩恢复，也不证明真实新闻数据独立或误差模型正确。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "怎样用新闻事件数据在已知响应族内一致估计敏感度均值与方差？"
+      ],
+      "shared_evidence_with": [
+        "C23",
+        "C25"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C19",
+      "statement": "在eta=m+sqrt(v)*xi的紧支撑固定形状族、本文识别条件和B1的有界同方差事件误差及正定J下，检验H0:v=0的受限/非受限最小二乘统计量T_n=n*(Q_n(theta_tilde)-Q_n(theta_hat))/Q_n(theta_hat)趋于(1/2)*chi_0^2+(1/2)*chi_1^2；0<alpha<1/2时，以chi_1^2的1-2*alpha分位数为阈值具有渐近alpha水平。",
+      "claim_type": "同质性方差边界检验",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "边界族的一侧梯度、sqrt(n)局部二次展开及半平面锥投影。",
+          "design": "比较v=0的受限拟合与v>=0的非受限拟合；用非受限残差平方均值估计噪声方差。",
+          "comparator": "单一正敏感度m0的同质零假设。",
+          "measure": "零点质量1/2的卡方混合极限及渐近拒绝阈值。",
+          "unit_of_analysis": "n个独立新闻事件；v是敏感度分布方差，非Monte Carlo运行方差。",
+          "sample_size_as_reported": "理论事件数n；未提供实际n或拒绝比例。",
+          "uncertainty": "仅渐近水平；没有有限样本精确保证或功效曲线。",
+          "assumptions": [
+            "新闻事件(z_i,Y_i)独立同分布，z紧支撑，Y有界，Y=A_theta0(z)+epsilon，E[epsilon|z]=0。",
+            "使用eta=m+sqrt(v)*xi的固定标准化形状族；xi紧支撑、均值0、方差1、三阶绝对矩有限。",
+            "Theta为(m0,0)在R x [0,infinity)中的紧邻域，足够小以保证eta位于[0,eta_bar]；m0>0且在均值坐标内部。",
+            "g满足G1并为全域C3；为保留第18页一致性证明沿用的识别条件，本记录也保留第7节R1中的G2。",
+            "设计满足R3；z*g'(m0*z)与(z^2/2)*g''(m0*z)在L2(lambda)线性独立，J正定。",
+            "E[epsilon^2|z]=sigma^2>0恒定，epsilon有界。"
+          ],
+          "source_locator": {
+            "pdf_page": 18,
+            "section": "7.1, Theorem 7; setup and Lemma 2 on PDF pages 16-17; proof on PDF pages 18-19",
+            "figure": null,
+            "equation": "(6)-(7)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "针对方差为0的参数边界，正确参考分布是卡方混合而非普通chi_1^2。",
+        "boundary": "同方差、固定分布形状及设计识别条件不能删除；未知整体响应幅度或其他混合族需另行处理。",
+        "negative_result": null,
+        "non_inference": "不表示已经拒绝新闻同质性，也不声称任何常规bootstrap都自动有效。",
+        "unresolved": "B1未单独重述G2，但第18页一致性证明调用Theorem 5(ii)；本记录保留G2，条件衔接需人工确认。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "敏感度方差为0位于参数空间边界时，怎样正确校准同质性检验？"
+      ],
+      "shared_evidence_with": [
+        "C20"
+      ],
+      "review_notes": [
+        "规范tanh满足G2；没有把对任意G的宽泛口头表述当作已完整确认的定理。",
+        "Remark 10的naive bootstrap不一致性是引用已有边界推断工作后的实施警告，不是本文另做的bootstrap实验。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C20",
+      "statement": "在同一可识别边界族与设计下，事件误差异方差时，正文Remark 10提出用sandwich标准误构造单侧统计量v_hat/se_hat(v_hat)，并由相同锥投影论证给出零假设极限max(0,W)，W为标准正态；超过z_(1-alpha)时得到相应渐近单侧检验。",
+      "claim_type": "异方差边界推断的方法扩展",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "沿用Theorem 7的锥投影步骤，以sandwich方差替代同方差缩放。",
+          "design": "在事件条件方差依z变化时检验敏感度方差v=0。",
+          "comparator": "Theorem 7的同方差残差缩放统计量。",
+          "measure": "单侧标准化边界估计量的极限和阈值。",
+          "unit_of_analysis": "独立事件及其异方差误差，不是新的实测队列。",
+          "sample_size_as_reported": "仅理论n，无实际事件数量。",
+          "uncertainty": "正文备注中的渐近扩展；没有单独数值检验。",
+          "assumptions": [
+            "新闻事件(z_i,Y_i)独立同分布，z紧支撑，Y有界，Y=A_theta0(z)+epsilon，E[epsilon|z]=0。",
+            "使用eta=m+sqrt(v)*xi的固定标准化形状族；xi紧支撑、均值0、方差1、三阶绝对矩有限。",
+            "Theta为(m0,0)在R x [0,infinity)中的紧邻域，足够小以保证eta位于[0,eta_bar]；m0>0且在均值坐标内部。",
+            "g满足G1并为全域C3；为保留第18页一致性证明沿用的识别条件，本记录也保留第7节R1中的G2。",
+            "设计满足R3；z*g'(m0*z)与(z^2/2)*g''(m0*z)在L2(lambda)线性独立，J正定。",
+            "使用相应一致sandwich标准误；保留识别及非退化设计条件。"
+          ],
+          "source_locator": {
+            "pdf_page": 19,
+            "section": "7.1, Remark 10(i)",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "给出异方差时的边界单侧推断路径。",
+        "boundary": "正文只简述继承原证明的扩展，未提供有限样本校准或另一个完整独立定理。",
+        "negative_result": null,
+        "non_inference": "不应在异方差时仍直接使用同方差的残差缩放卡方统计量。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "新闻事件误差异方差时，敏感度方差的单侧边界检验如何调整？"
+      ],
+      "shared_evidence_with": [
+        "C19"
+      ],
+      "review_notes": [
+        "方法扩展按正文备注的证据强度标为interpretation，区别于完整Theorem 7。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C21",
+      "statement": "固定g满足G1且Q满足Q1、Var_Q(eta)>0时，均值匹配的均质响应在每个z>0高于异质响应至少(3/8)*z^2*beta(z)*Var_Q(eta)，其中beta(z)=min_(y in [m*z/2,eta_bar*z]) |g''(y)|>0、m=E_Q[eta]。",
+      "claim_type": "均值匹配均质人口的定量偏差下界",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "支撑线剩余项的Taylor积分，分x>=m和x<m两种情形保留曲率区间。",
+          "design": "比较固定g下Q与delta_m的聚合响应。",
+          "comparator": "原点斜率/敏感度均值匹配的均质人口。",
+          "measure": "正z处的单点响应偏差下界。",
+          "unit_of_analysis": "理论分布Q；Var_Q是人口敏感度方差而非实测误差条。",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "固定且已知的g为奇函数、有界、全域C2、原点附近实解析，Taylor半径r>0；g'(0)>0，正半轴g''<0。",
+            "Q为[0,eta_bar]上的概率分布，eta_bar有限，E_Q[eta]>0。",
+            "Var_Q(eta)>0，z>0，m=E_Q[eta]。"
+          ],
+          "source_locator": {
+            "pdf_page": 20,
+            "section": "8.1, Theorem 8",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "把严格Jensen gap量化为曲率与敏感度方差控制的正下界。",
+        "boundary": "这个3/8界只直接对应均值匹配的g(m*z)，不是任意重新拟合w、c后的统一下界。",
+        "negative_result": null,
+        "non_inference": "没有给出真实市场的数值beta、方差或实测偏差。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "均值匹配的代表性代理对异质新闻响应至少产生多大结构偏差？"
+      ],
+      "shared_evidence_with": [
+        "C13"
+      ],
+      "review_notes": [
+        "供应文本将3/8错排成83；按同页分情形积分与最终不等式恢复3/8，并保留审计记录。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C22",
+      "statement": "固定g满足G1-G2、Q满足Q1且Var_Q(eta|eta>0)>0时，对解析范围内的任意非零长度正区间[z1,z2]，A与全部w*g(c*z)、w在[0,1]且c在[0,eta_bar]的均质活动人口曲线之间存在严格正的sup范数距离delta。",
+      "claim_type": "全部受限均质人口曲线的统一分离",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "比较族参数紧致使最小距离达到；若距离0，解析延拓和Corollary 5.1强制活动人群退化。",
+          "design": "允许均质竞争者同时拟合敏感度c和新闻反应活动比例w。",
+          "comparator": "所有w in [0,1], c in [0,eta_bar]的同一g响应曲线。",
+          "measure": "delta=inf_(w,c) sup_(z in [z1,z2]) |w*g(c*z)-A(z)|>0。",
+          "unit_of_analysis": "理论响应曲线族；无独立仿真重复。",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "固定且已知的g为奇函数、有界、全域C2、原点附近实解析，Taylor半径r>0；g'(0)>0，正半轴g''<0。",
+            "g的所有奇次Taylor系数b_j均非零。",
+            "Q为[0,eta_bar]上的概率分布，eta_bar有限，E_Q[eta]>0。",
+            "Var_Q(eta|eta>0)>0；0<z1<z2<r/eta_bar。"
+          ],
+          "source_locator": {
+            "pdf_page": 20,
+            "section": "8.1, Theorem 9; proof on PDF page 21",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "活动人群确实异质时，重新校准均值和活动质量仍不能消除整区间结构误差。",
+        "boundary": "活动人群异质性比仅含零反应者导致的整体方差为正更强；竞争者必须共用固定g及规定参数范围。",
+        "negative_result": null,
+        "non_inference": "不保证任意响应函数或无限幅度尺度的竞争族均被分离，亦未给delta的实测数值。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "可重新拟合活动比例及敏感度的均质代理，仍能重现异质曲线吗？"
+      ],
+      "shared_evidence_with": [
+        "C14",
+        "C16",
+        "C23"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C23",
+      "statement": "在Theorem 9条件下，若估计曲线渐近落入该均质w*g(c*z)族，则其在[z1,z2]对真实A的最大误差至少delta/2的概率趋于1；相反，在正确包含Q且满足R1-R4的参数族中，非线性最小二乘PTMC plug-in曲线的同区间最大误差依概率趋于0。",
+      "claim_type": "限定模型族与目标下的渐近风险分离",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "uniform分离距离的三角不等式，以及Theorem 6一致性带来的plug-in一致性。",
+          "design": "按任意准则拟合但渐近靠近均质族的曲线，与正确参数化结构曲线比较。",
+          "comparator": "受限均质曲线族，对比包含真实Q且正确固定g的PTMC参数曲线。",
+          "measure": "sup范数结构误差及其概率极限。",
+          "unit_of_analysis": "假想事件数n下的拟合曲线，而非已执行的市场预测horse race。",
+          "sample_size_as_reported": "n为理论事件数，没有实际训练/测试样本。",
+          "uncertainty": null,
+          "assumptions": [
+            "固定且已知的g为奇函数、有界、全域C2、原点附近实解析，Taylor半径r>0；g'(0)>0，正半轴g''<0。",
+            "g的所有奇次Taylor系数b_j均非零。",
+            "Q为[0,eta_bar]上的概率分布，eta_bar有限，E_Q[eta]>0。",
+            "活动人群方差>0，0<z1<z2<r/eta_bar。",
+            "竞争输出距规定均质族的sup距离为o_p(1)。",
+            "新闻事件(z_i,Y_i)独立同分布，z紧支撑，Y有界，Y=A_theta0(z)+epsilon，E[epsilon|z]=0。",
+            "R1: 参数空间Theta紧，theta到Q_theta单射，所有Q_theta具有共同紧支撑并满足Q1；固定g满足G1-G2。",
+            "R2: A_theta对theta连续，真值附近二次连续可微，函数、梯度及Hessian对设计z有统一界。",
+            "R3: z的设计支撑在(0,r/eta_bar)内有聚点。",
+            "R4: theta0位于Theta内部，J=E[grad A grad A^T]非奇异。"
+          ],
+          "source_locator": {
+            "pdf_page": 21,
+            "section": "8.1, Corollary 9.1",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在给定响应函数、曲线目标和正确参数族下，均质输出的不可消除偏差与结构plug-in一致性可分离。",
+        "boundary": "一致性属于正确指定模型，并非PTMC名称本身带来的无条件优势。",
+        "negative_result": null,
+        "non_inference": "不证明收益预测、其他路径泛函或真实市场的通用优越性。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "即使样本无限增长，受限均质响应模型还能消除异质人口的曲线误差吗？"
+      ],
+      "shared_evidence_with": [
+        "C18",
+        "C22"
+      ],
+      "review_notes": [
+        "供应文本将delta/2排成2delta；按本页证明中的delta-o_p(1)恢复delta/2。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C24",
+      "statement": "在观察方案O中，数据只通过A影响共同噪声下的独立事件分布。取S1=(半数m-a、半数m+a的Q,g)和S2=(delta_m,g_tilde)，g_tilde(x)=A_S1(x/m)，则任意n下观察分布相同；对tau>0的全人口eta加性平移及z0>0，两结构的干预期望相差2*Delta>0，任何仅依观察数据的估计量在两结构上的最坏期望绝对误差至少Delta。",
+      "claim_type": "观察等价结构的干预估计minimax下界",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "构造两种观察等价结构，严格凹导数给出正目标差，再用两点三角不等式。",
+          "design": "S1的敏感度为m-a与m+a各1/2，S2均质但响应函数变形；统一将eta变为eta+tau。",
+          "comparator": "两结构之间的相同观察数据分布与不同干预目标。",
+          "measure": "max_S E_S[|T_hat-T(S)|]>=Delta；2*Delta=(1/2)*integral_0^kappa [g'(u1-kappa+s)-g'(u2+s)] ds>0，其中u1=(m-a+tau)*z0，u2=(m+a+tau)*z0，kappa=a*tau*z0/m。",
+          "unit_of_analysis": "两个构造的结构假说；Dn中n个独立事件，两结构不是两次实测重复。",
+          "sample_size_as_reported": "结论对任意n成立；无实际采集事件或市场样本。",
+          "uncertainty": null,
+          "assumptions": [
+            "固定且已知的g为奇函数、有界、全域C2、原点附近实解析，Taylor半径r>0；g'(0)>0，正半轴g''<0。",
+            "O: z_i~lambda独立，Y_i=A_S(z_i)+epsilon_i，给定z的噪声分布对两个结构相同。",
+            "m in (0,eta_bar)，0<a<m，m+a<=eta_bar；tau,z0>0。",
+            "估计量只依Dn及外生随机化，没有额外正确结构信息。"
+          ],
+          "source_locator": {
+            "pdf_page": 22,
+            "section": "8.2, Theorem 10; observation scheme O on PDF page 21",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在允许响应函数未知的观察等价类内，更多同种观察数据不能解决指定干预目标的识别。",
+        "boundary": "这是两个结构上的最坏期望绝对误差下界，不是每一个结构单独都无法猜对，也不覆盖更丰富的观察数据。",
+        "negative_result": "仅使用O的观察数据不能在两种结构间一致估计敏感度平移的干预期望。",
+        "non_inference": "不证明PTMC优于所有预测器或任何品牌模型；无关于纯预测目标的比较。",
+        "unresolved": null,
+        "unresolved_attribution": "不可识别源于相同观察规律对应不同结构/干预目标，不是模型容量不足。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "观察上完全相同的市场模型能否给出不同的新闻敏感度平移后果？"
+      ],
+      "shared_evidence_with": [
+        "C17",
+        "C25"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C25",
+      "statement": "若真实结构确为S1、响应g作为额外结构知识正确固定，敏感度属于xi为Rademacher的eta=m+sqrt(v)*xi族且theta0=(m,a^2)在内部，并满足O和R1-R4，则plug-in结构估计T_hat=E_Q_theta_hat[g((eta+tau)*z0)]对该干预目标依概率及L1一致，期望绝对误差趋于0。",
+      "claim_type": "正确结构知识下的干预plug-in一致性",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Theorem 6参数一致性、连续映射及有界g把概率收敛升级为L1收敛。",
+          "design": "在正确已知g下拟合两点Rademacher敏感度族，再计算eta加性平移后的响应。",
+          "comparator": "真实S1干预目标；Theorem 10下界所涵盖的未知结构观察信息集。",
+          "measure": "干预期望估计的概率一致性及期望绝对误差趋零。",
+          "unit_of_analysis": "n个假想独立事件，估计的是结构分布参数与其plug-in响应。",
+          "sample_size_as_reported": "只有理论事件数n；没有实测干预或模拟验证n。",
+          "uncertainty": null,
+          "assumptions": [
+            "新闻事件(z_i,Y_i)独立同分布，z紧支撑，Y有界，Y=A_theta0(z)+epsilon，E[epsilon|z]=0。",
+            "R1: 参数空间Theta紧，theta到Q_theta单射，所有Q_theta具有共同紧支撑并满足Q1；固定g满足G1-G2。",
+            "R2: A_theta对theta连续，真值附近二次连续可微，函数、梯度及Hessian对设计z有统一界。",
+            "R3: z的设计支撑在(0,r/eta_bar)内有聚点。",
+            "R4: theta0位于Theta内部，J=E[grad A grad A^T]非奇异。",
+            "真实结构为S1，xi为等概率正负1；v0=a^2>0且theta0为内部点。",
+            "g正确且固定，属于数据之外的结构知识；O成立，tau,z0固定。"
+          ],
+          "source_locator": {
+            "pdf_page": 23,
+            "section": "8.2, Corollary 10.1 and Remark 12",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "正确结构承诺可以解决单纯观察信息不能统一解决的干预估计。",
+        "boundary": "并不违反两点下界，因为增加了正确g这一额外信息。",
+        "negative_result": null,
+        "non_inference": "若真实世界为S2却强行使用g，观察拟合仍可能很好而干预答案错误；不能据此声称因果机制已从观察数据确证。",
+        "unresolved": "正确g本身不能由同一聚合A数据验证；更丰富观测及实际验证尚未提供。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "固定且正确的个体响应结构何时足以一致估计人群敏感度干预？"
+      ],
+      "shared_evidence_with": [
+        "C18",
+        "C24"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "本文为Salavat Ishbulatov于2026-07-06发布的arXiv:2607.04627v1纯理论预印本，29页供应文本均已评估，含全部正文证明、附录A及参考文献；无仿真、市场实证或生物实验结果。25个候选命题覆盖固定人口与时域的Monte Carlo收敛、人口/运行方差分解、强弱零假设的置换边界、预算配置、softmax及连续mark的TV条件、persona/策略失配界和三项模拟器输入误差预算。核心识别结果在固定已知响应g、非负紧支撑敏感度与相应解析条件内成立：完整尺度可恢复标量Q，未知幅度尺度只保留活动人群形状，未知g则出现均质/异质观察等价。参数NLS及边界方差检验属于假设iid新闻事件的渐近理论，没有实际n、p值、功效或区间覆盖。均质竞争者的偏差地板与观察型干预估计的两点下界是条件性结论；正确g是外部结构承诺，不能从同一A自证，更不等于PTMC无条件胜过收益预测器。第二次审计按保留全文核对联合条件、目标、比较者、独立单位与负结论，恢复明确转录错误3/8、delta/2，并保留Theorem 7对G2条件衔接的人工审阅项。第9节验证计划未执行；真实订单簿混合、K趋于无穷极限、路径泛函时域一致界及非参数反演速率仍开放。只检查供应文本，未看像素、未访问配套论文或补充材料、未做跨论文关系；全部记录仍为human_checked:false候选。",
+  "shared_evidence": [
+    {
+      "claim_id": "C1",
+      "with": [
+        "C2"
+      ]
+    },
+    {
+      "claim_id": "C2",
+      "with": [
+        "C1"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C5"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C4"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C10",
+        "C11",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "with": [
+        "C9",
+        "C11",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "with": [
+        "C9",
+        "C10"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "with": [
+        "C9",
+        "C10"
+      ]
+    },
+    {
+      "claim_id": "C13",
+      "with": [
+        "C21"
+      ]
+    },
+    {
+      "claim_id": "C14",
+      "with": [
+        "C15",
+        "C16",
+        "C22"
+      ]
+    },
+    {
+      "claim_id": "C15",
+      "with": [
+        "C14"
+      ]
+    },
+    {
+      "claim_id": "C16",
+      "with": [
+        "C14",
+        "C22"
+      ]
+    },
+    {
+      "claim_id": "C17",
+      "with": [
+        "C24"
+      ]
+    },
+    {
+      "claim_id": "C18",
+      "with": [
+        "C23",
+        "C25"
+      ]
+    },
+    {
+      "claim_id": "C19",
+      "with": [
+        "C20"
+      ]
+    },
+    {
+      "claim_id": "C20",
+      "with": [
+        "C19"
+      ]
+    },
+    {
+      "claim_id": "C21",
+      "with": [
+        "C13"
+      ]
+    },
+    {
+      "claim_id": "C22",
+      "with": [
+        "C14",
+        "C16",
+        "C23"
+      ]
+    },
+    {
+      "claim_id": "C23",
+      "with": [
+        "C18",
+        "C22"
+      ]
+    },
+    {
+      "claim_id": "C24",
+      "with": [
+        "C17",
+        "C25"
+      ]
+    },
+    {
+      "claim_id": "C25",
+      "with": [
+        "C18",
+        "C24"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": null,
+        "issue": "源标题、作者及arXiv v1身份与索引相容，索引未记录具体版本日。",
+        "suggested_correction": "保留2026-07-06及2607.04627v1的源版本说明；DOI仍为null，不以参考文献DOI冒充本文DOI。",
+        "pdf_page": 1,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "摘要与结论中的可靠性、优势措辞可能被误读为已完成实证验证。",
+        "suggested_correction": "全部证据标明理论推导；第9节未执行验证方案及负对照不生成实测结果。",
+        "pdf_page": 24,
+        "resolved": true
+      },
+      {
+        "claim_id": "C1",
+        "issue": "正文口头将几乎必然收敛和N^-1/2速率并列，可能混淆不同收敛概念。",
+        "suggested_correction": "依据Theorem 1正文分别记录强大数律和sqrt(N)分布极限，不声称几乎必然的同阶速率。",
+        "pdf_page": 6,
+        "resolved": true
+      },
+      {
+        "claim_id": "C2",
+        "issue": "把D*R复跑或K个bot都计为独立人口样本会夸大独立单位。",
+        "suggested_correction": "明确D个人口行独立、行内R个运行条件独立；K、时间步和seed不是已报告样本数。",
+        "pdf_page": 6,
+        "resolved": true
+      },
+      {
+        "claim_id": "C3",
+        "issue": "sigma_P^2=0弱矩零假设与整条件分布相同强零假设不同。",
+        "suggested_correction": "有限样本精确置换检验只归于强零假设，不把弱矩假设下的交换性视为自动成立。",
+        "pdf_page": 7,
+        "resolved": true
+      },
+      {
+        "claim_id": "C11",
+        "issue": "mu_true名称容易被理解为真实市场而非正确输入的同类模拟器。",
+        "suggested_correction": "按Remark 3保留同引擎、K、T及输入误差范围，单独注明类外模型误差没有受控。",
+        "pdf_page": 9,
+        "resolved": true
+      },
+      {
+        "claim_id": "C12",
+        "issue": "uniform-in-T可能被错误推广到最大回撤或窗口崩盘等路径上确界。",
+        "suggested_correction": "只保留末状态/有界时间平均，真实订单簿A4及路径界留作开放问题。",
+        "pdf_page": 11,
+        "resolved": true
+      },
+      {
+        "claim_id": "C14",
+        "issue": "完整Q识别依赖已知g、紧支撑、解析矩条件及绝对尺度，不能泛化为所有persona可识别。",
+        "suggested_correction": "保留G1-G2-Q1、标量对象、精确曲线；多维联合识别和非参数估计速率不生成结果。",
+        "pdf_page": 15,
+        "resolved": true
+      },
+      {
+        "claim_id": "C16",
+        "issue": "未知曲线尺度下，活動人群同质不等同于全人群方差为0。",
+        "suggested_correction": "明确仅识别eta>0条件分布；零反应者比例及全体方差不能从形状推出。",
+        "pdf_page": 14,
+        "resolved": true
+      },
+      {
+        "claim_id": "C19",
+        "issue": "B1未重述G2，但Theorem 7一致性证明调用Theorem 5(ii)；与第7节R1的联合条件衔接没有在B1内明确。",
+        "suggested_correction": "提取保守保留G2和B1联合条件，规范tanh满足它们；请人工确认作者意图，不认证B1单独足够。",
+        "pdf_page": 18,
+        "resolved": false
+      },
+      {
+        "claim_id": "C20",
+        "issue": "异方差variant只在Remark 10简述，不具有单独完整证明/实验。",
+        "suggested_correction": "标为interpretation并保留sandwich及边界族前提，避免冒充独立实证结果。",
+        "pdf_page": 19,
+        "resolved": true
+      },
+      {
+        "claim_id": "C21",
+        "issue": "供应文本将Theorem 8的分数3/8线性错排成83，并丢失部分绝对值。",
+        "suggested_correction": "用同页积分结果(1/2)*(1-1/4)=3/8及严格负曲率恢复下界和beta的绝对值。",
+        "pdf_page": 20,
+        "resolved": true
+      },
+      {
+        "claim_id": "C22",
+        "issue": "统一分离的解析延拓证明需要有聚点的区间，不可对单个z套用。",
+        "suggested_correction": "明确0<z1<z2<r/eta_bar及活动人群异质，不把零长度区间列入保证。",
+        "pdf_page": 21,
+        "resolved": true
+      },
+      {
+        "claim_id": "C23",
+        "issue": "供应文本把Corollary 9.1的delta/2错排成2delta。",
+        "suggested_correction": "依同页delta-o_p(1)证明恢复delta/2，而非声称误差至少2*delta。",
+        "pdf_page": 21,
+        "resolved": true
+      },
+      {
+        "claim_id": "C21",
+        "issue": "部分概述对所有均质竞争者沿用3/8均值匹配偏差界，范围易被混淆。",
+        "suggested_correction": "区分g(m*z)的单点显式3/8界与自由w,c族的非数值uniform距离delta。",
+        "pdf_page": 23,
+        "resolved": true
+      },
+      {
+        "claim_id": "C24",
+        "issue": "minimax比较分离的是观察信息集，结构知识和模型品牌不能混为一谈。",
+        "suggested_correction": "保留O、共同噪声、构造的两结构及期望绝对误差；不声称预测、真实市场或所有BNN/LLM架构受无条件支配。",
+        "pdf_page": 23,
+        "resolved": true
+      },
+      {
+        "claim_id": "C25",
+        "issue": "固定g的正确性不能由同一聚合曲线验证；S2可观察上拟合却干预错误。",
+        "suggested_correction": "一致性结论明确需要正确外部结构知识；不将该知识说成从Dn因果识别得到。",
+        "pdf_page": 23,
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T16:15:46.372230Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "f3d0c3ba5d089af76ae31fd59d22d055d752072aa7f7985bc20687ef530d694b",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

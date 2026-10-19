@@ -1,0 +1,1319 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "Distributed representations enable robust multi-timescale symbolic computation in neuromorphic hardware",
+    "authors": [
+      "Madison Cotteret",
+      "Hugh Greatorex",
+      "Alpha Renner",
+      "Junren Chen",
+      "Emre Neftci",
+      "Huaqiang Wu",
+      "Giacomo Indiveri",
+      "Martin Ziegler",
+      "Elisabetta Chicca"
+    ],
+    "doi": "10.1088/2634-4386/ada851",
+    "publication_year": 2025,
+    "venue": "Neuromorphic Computing and Engineering",
+    "url": "https://doi.org/10.1088/2634-4386/ada851"
+  },
+  "source": {
+    "filename": "paper-W4406203763.pdf",
+    "sha256": "6e0c026754f57737354edec3d8f9e1560779e724f23a0f81244a56be381d80ef",
+    "source_url": "https://arxiv.org/pdf/2405.01305",
+    "pdf_page_count": 32
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32
+    ],
+    "results_sections_seen": [
+      "2.1–2.4 Results",
+      "4.1–4.9 Methods",
+      "S1–S4.4；Figures S1–S8；参数表1"
+    ],
+    "missing_material": [
+      "所有图像像素未提供。",
+      "未提供本地可重现实验代码、原始数据及不同芯片重复。"
+    ],
+    "text_pass_complete": true,
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "notes": [
+      "arXiv:2405.01305v3，2025-01-13；与2025年期刊元数据对应。",
+      "完整32页，包含补充材料13页；已二次逐项核对平台、样本、条件和页码。",
+      "300状态示例仅在软件；RRAM神经元在PC；Loihi时间标注非墙钟性能。"
+    ]
+  },
+  "contribution_inventory": [
+    {
+      "summary": "本文为稀疏分块状态编码的脉冲网络构造固定递归权重，将自动联想项、桥状态项和输入绑定转换项相加；施加块级抑制输入时由源状态进入目标的桥状态，撤除输入后进入目标状态，整个转换无需运行时修改权重。",
+      "role": "result",
+      "source_pages": [
+        11
+      ],
+      "decision": "include",
+      "reason": "独立可评估的构造、理论或平台限定结果。"
+    },
+    {
+      "summary": "在本文2048个LIF神经元、块长8的23状态模23除法仿真中，将理想权重随机二值化、加入标准差0.5的独立高斯扰动后取绝对值，网络对所示二进制输入序列仍完成正确状态路径及余数计算。",
+      "role": "result",
+      "source_pages": [
+        4
+      ],
+      "decision": "include",
+      "reason": "独立可评估的构造、理论或平台限定结果。"
+    },
+    {
+      "summary": "在本文23状态脉冲网络仿真中，输入持续200–1000 ms的不规则时序仍产生所示正确转换；作者同时限定每段输入及无输入间隙至少长于由突触时间常数决定的吸引子切换时间。",
+      "role": "result",
+      "source_pages": [
+        5
+      ],
+      "decision": "include",
+      "reason": "独立可评估的构造、理论或平台限定结果。"
+    },
+    {
+      "summary": "在2048个神经元、块长16及理想权重的仿真中，本文构造300状态模300除法DFA，对图S3展示的二进制序列完成正确路径并停在对应余数状态。",
+      "role": "result",
+      "source_pages": [
+        27
+      ],
+      "decision": "include",
+      "reason": "独立可评估的构造、理论或平台限定结果。"
+    },
+    {
+      "summary": "在4096个1T1R HfOx RRAM器件提供突触读出、64个LIF神经元仍由电脑仿真的闭环系统中，本文将4状态计数器权重写入三种导电态；尽管文本与图注报告失配、故障行、异常大电流及逐次电流变化，系统完成所示计数路径。",
+      "role": "result",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "独立可评估的构造、理论或平台限定结果。"
+    },
+    {
+      "summary": "在同一RRAM—软件神经元闭环平台中，本文另写入按a、a、b、b连接的4状态DFA，并为两输入选择正交掩蔽向量；对图S4展示的不同输入序列，整体状态路径正确，尽管部分块出现由非理想导电态引起的错误放电。",
+      "role": "result",
+      "source_pages": [
+        28
+      ],
+      "decision": "include",
+      "reason": "独立可评估的构造、理论或平台限定结果。"
+    },
+    {
+      "summary": "在Loihi 2 Oheo Gulch平台上，本文以1024个神经元、128个长度8的块、95个neurocore及量化递归权重实现23状态模除法DFA，对图5所示输入序列完成正确状态路径与余数。",
+      "role": "result",
+      "source_pages": [
+        8
+      ],
+      "decision": "include",
+      "reason": "独立可评估的构造、理论或平台限定结果。"
+    },
+    {
+      "summary": "在本文Loihi 2块内分流抑制演示中，即使每个神经元均接收足以单独发放的兴奋输入，块内竞争仍只允许积分电流最大的神经元放电，从而约束活动为稀疏分块代码。",
+      "role": "result",
+      "source_pages": [
+        29
+      ],
+      "decision": "include",
+      "reason": "独立可评估的构造、理论或平台限定结果。"
+    },
+    {
+      "summary": "在非脉冲分块WTA网络对不同规模模除法DFA的容量测试中，每个(P,N)组合用5组超向量及五输入序列测试，且L随N/logN调整；理想权重和随机二值权重均呈近似N²/(logN)²容量尺度，但二值权重可容纳状态数约少4倍。",
+      "role": "result",
+      "source_pages": [
+        9
+      ],
+      "decision": "include",
+      "reason": "独立可评估的构造、理论或平台限定结果。"
+    },
+    {
+      "summary": "对独立随机生成、块长L且M=N/L的稀疏分块超向量，本文补充材料用Hoeffding与并合界给出任一成对相似度超过f+θ的概率上界，并据此得到可选择向量数K约按exp(Nθ²/L)增长；这只是表示向量的碰撞界，不是可存入网络的状态数。",
+      "role": "result",
+      "source_pages": [
+        20
+      ],
+      "decision": "include",
+      "reason": "独立可评估的构造、理论或平台限定结果。"
+    },
+    {
+      "summary": "在忽略桥态与转换矩阵影响、仅保留对称吸引子权重的简化动力学中，本文证明一次随机选块并让最大输入神经元获胜的更新不增加E=-zᵀWz，并将DFA状态表达为该能量中的井。",
+      "role": "result",
+      "source_pages": [
+        23
+      ],
+      "decision": "include",
+      "reason": "独立可评估的构造、理论或平台限定结果。"
+    },
+    {
+      "summary": "在本文S2的独立近似下，无输入时q状态的期望突触后和沿q-f，有效掩蔽时沿目标桥状态b'-f；作者还给出随状态、输入与边数增大的交叉项方差估计，但明确内积实际只成对独立。",
+      "role": "result",
+      "source_pages": [
+        21
+      ],
+      "decision": "include",
+      "reason": "独立可评估的构造、理论或平台限定结果。"
+    },
+    {
+      "summary": "本文将块内恒定的双极bMAP向量与二元SBC向量作Hadamard绑定，得到双极稀疏pSBC；在块恒定条件下，pSBC的局部循环卷积可分解为bMAP的Hadamard绑定与SBC的块卷积，而不恒定的MAP会破坏文中所需交换结构。",
+      "role": "result",
+      "source_pages": [
+        24
+      ],
+      "decision": "include",
+      "reason": "独立可评估的构造、理论或平台限定结果。"
+    },
+    {
+      "summary": "在N=1024、L=4、100次超向量试验的全pSBC示例中，本文用局部循环卷积绑定和逆绑定对USA属性解码及Mexico货币类比得到正确目标超向量的主要相似性，展示该混合生成表示可用于所选VSA任务。",
+      "role": "result",
+      "source_pages": [
+        26
+      ],
+      "decision": "include",
+      "reason": "独立可评估的构造、理论或平台限定结果。"
+    },
+    {
+      "summary": "在同一N=1024、L=4、100次解码测试及相应代数中，SBC角色配bMAP填充时目标货币仍最相似，但无关填充保留约1/L相似度；反向类型配置亦有约1/L基线及类比目标1+1/L重叠，显示混合表示绑定并不完全隐藏各原子信息。",
+      "role": "result",
+      "source_pages": [
+        25
+      ],
+      "decision": "include",
+      "reason": "独立可评估的构造、理论或平台限定结果。"
+    },
+    {
+      "summary": "跨任意表示的统一编程语言、在线学习、容错航天与连续吸引子推广",
+      "role": "hypothesis",
+      "source_pages": [
+        9,
+        10
+      ],
+      "decision": "defer",
+      "reason": "属于应用前景；未实测辐射、在线学习、任意表示或连续状态。"
+    },
+    {
+      "summary": "既有生物研究、Hopfield与稀疏网络理论",
+      "role": "review_synthesis",
+      "source_pages": [
+        1,
+        2,
+        5,
+        6,
+        16,
+        17,
+        18,
+        19,
+        32
+      ],
+      "decision": "exclude",
+      "reason": "背景和引用，不是本篇新结果。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "本文为稀疏分块状态编码的脉冲网络构造固定递归权重，将自动联想项、桥状态项和输入绑定转换项相加；施加块级抑制输入时由源状态进入目标的桥状态，撤除输入后进入目标状态，整个转换无需运行时修改权重。",
+      "claim_type": "proposed_architecture",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "超向量外积构造与期望动力学分析",
+          "design": "每个DFA状态有一个q和一个b；块内WTA；输入块内恒定。",
+          "comparator": null,
+          "measure": "指定状态转换和权重构造",
+          "unit_of_analysis": "所述模型或实验条件的一条轨迹或参数组合",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "4.2 State machine embedding",
+            "figure": null,
+            "equation": "3–5",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "本文为稀疏分块状态编码的脉冲网络构造固定递归权重，将自动联想项、桥状态项和输入绑定转换项相加；施加块级抑制输入时由源状态进入目标的桥状态，撤除输入后进入目标状态，整个转换无需运行时修改权重。",
+        "boundary": "大维近正交、有限交叉干扰；输入与间隙需长于转换时间。",
+        "negative_result": null,
+        "non_inference": "非所有有限尺寸或所有输入时序的精确保证。",
+        "unresolved": "相关状态或输入、近容量时的严格保证。",
+        "unresolved_attribution": "所供原文未解决或未报告。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "怎样以固定权重和输入撤除实现状态依赖的脉冲计算？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C3",
+        "C5",
+        "C6",
+        "C7"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "在本文2048个LIF神经元、块长8的23状态模23除法仿真中，将理想权重随机二值化、加入标准差0.5的独立高斯扰动后取绝对值，网络对所示二进制输入序列仍完成正确状态路径及余数计算。",
+      "claim_type": "simulation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Brian 2脉冲仿真，Euler步长0.05 ms",
+          "design": "随机二值化β=2；权重非理想分布非简单保留符号的加性噪声。",
+          "comparator": "预期模23余数与状态路径",
+          "measure": "状态放电读出与最终余数",
+          "unit_of_analysis": "所述模型或实验条件的一条轨迹或参数组合",
+          "sample_size_as_reported": "2048神经元，L=8；独立试验数未报告。",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "2.1；4.6",
+            "figure": "Figure 1；Figure S7（PDF第31页）",
+            "equation": "11–12（PDF第13页）",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在本文2048个LIF神经元、块长8的23状态模23除法仿真中，将理想权重随机二值化、加入标准差0.5的独立高斯扰动后取绝对值，网络对所示二进制输入序列仍完成正确状态路径及余数计算。",
+        "boundary": "成功仅针对展示的序列；非全部输入枚举。",
+        "negative_result": null,
+        "non_inference": "不能推断不受更大扰动影响或实物容限。",
+        "unresolved": "序列成功率和损伤扫描。",
+        "unresolved_attribution": "所供原文未解决或未报告。"
+      },
+      "broad_directions": [
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "低精度非理想权重能否实现脉冲状态机？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C3"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "在本文23状态脉冲网络仿真中，输入持续200–1000 ms的不规则时序仍产生所示正确转换；作者同时限定每段输入及无输入间隙至少长于由突触时间常数决定的吸引子切换时间。",
+      "claim_type": "simulation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "不规则时序输入仿真",
+          "design": "更换输入持续时间，保留状态机。",
+          "comparator": "固定时序示例",
+          "measure": "正确转换与持续状态",
+          "unit_of_analysis": "所述模型或实验条件的一条轨迹或参数组合",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "2.1",
+            "figure": "Figure 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在本文23状态脉冲网络仿真中，输入持续200–1000 ms的不规则时序仍产生所示正确转换；作者同时限定每段输入及无输入间隙至少长于由突触时间常数决定的吸引子切换时间。",
+        "boundary": "突触时间常数为20 ms；未给精确最小成功时长曲线。",
+        "negative_result": null,
+        "non_inference": "不能写成无最小输入时长、任意延迟或无限时间实测稳定。",
+        "unresolved": "最短输入和间隙、长期误转概率。",
+        "unresolved_attribution": "所供原文未解决或未报告。"
+      },
+      "broad_directions": [
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "短时神经元能否支持不同持续时间的符号状态？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "在2048个神经元、块长16及理想权重的仿真中，本文构造300状态模300除法DFA，对图S3展示的二进制序列完成正确路径并停在对应余数状态。",
+      "claim_type": "simulation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "大状态机脉冲仿真",
+          "design": "如599等所示序列输入，同一模运算构造。",
+          "comparator": null,
+          "measure": "状态放电与最终余数",
+          "unit_of_analysis": "所述模型或实验条件的一条轨迹或参数组合",
+          "sample_size_as_reported": "N=2048；L=16；300个DFA状态。",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 27,
+            "section": "Supplementary Figure S3",
+            "figure": "Figure S3；参数表1在PDF第26页",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在2048个神经元、块长16及理想权重的仿真中，本文构造300状态模300除法DFA，对图S3展示的二进制序列完成正确路径并停在对应余数状态。",
+        "boundary": "理想权重；300状态演示在软件，不是Loihi测量。",
+        "negative_result": null,
+        "non_inference": "不能将300状态误标为RRAM或Loihi实物结果。",
+        "unresolved": "大状态机在相同非理想权重及硬件下的可靠性。",
+        "unresolved_attribution": "所供原文未解决或未报告。"
+      },
+      "broad_directions": [
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "该脉冲构造能否扩展到数百状态？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "在4096个1T1R HfOx RRAM器件提供突触读出、64个LIF神经元仍由电脑仿真的闭环系统中，本文将4状态计数器权重写入三种导电态；尽管文本与图注报告失配、故障行、异常大电流及逐次电流变化，系统完成所示计数路径。",
+      "claim_type": "hybrid_hardware_measurement",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "RRAM电流实测与软件神经元闭环",
+          "design": "32×128芯片映射64×64矩阵；两次32输入读取结果在PC相加；状态向量因尺寸小选正交。",
+          "comparator": null,
+          "measure": "实测电流、状态放电与路径",
+          "unit_of_analysis": "所述模型或实验条件的一条轨迹或参数组合",
+          "sample_size_as_reported": "4096个器件；64个仿真神经元；L=8；4状态。",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "2.2；4.7",
+            "figure": "Figure 4；Figures 3、S8",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在4096个1T1R HfOx RRAM器件提供突触读出、64个LIF神经元仍由电脑仿真的闭环系统中，本文将4状态计数器权重写入三种导电态；尽管文本与图注报告失配、故障行、异常大电流及逐次电流变化，系统完成所示计数路径。",
+        "boundary": "正交非随机状态；三元导电态；末次相加在软件。",
+        "negative_result": null,
+        "non_inference": "不是完整片上网络或N=64随机分布式编码容量验证。",
+        "unresolved": "不同芯片、重复成功率、能耗和速度。",
+        "unresolved_attribution": "所供原文未解决或未报告。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "真实RRAM非理想导电态能否支持闭环状态转换？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C6"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "在同一RRAM—软件神经元闭环平台中，本文另写入按a、a、b、b连接的4状态DFA，并为两输入选择正交掩蔽向量；对图S4展示的不同输入序列，整体状态路径正确，尽管部分块出现由非理想导电态引起的错误放电。",
+      "claim_type": "hybrid_hardware_measurement",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "第二状态机的RRAM闭环演示",
+          "design": "两个输入，64仿真神经元；展示多条路径。",
+          "comparator": "目标状态路径",
+          "measure": "整体状态与错误神经元放电",
+          "unit_of_analysis": "所述模型或实验条件的一条轨迹或参数组合",
+          "sample_size_as_reported": "4状态；输入a、b；独立重复数未给。",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 28,
+            "section": "Supplementary Figure S4",
+            "figure": "Figure S4",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在同一RRAM—软件神经元闭环平台中，本文另写入按a、a、b、b连接的4状态DFA，并为两输入选择正交掩蔽向量；对图S4展示的不同输入序列，整体状态路径正确，尽管部分块出现由非理想导电态引起的错误放电。",
+        "boundary": "与计数器共享硬件，不是独立芯片复现。",
+        "negative_result": "部分块存在错误神经元放电。",
+        "non_inference": "整体任务正确不等于神经元逐项无误。",
+        "unresolved": "错误率、设备间变异和更大图。",
+        "unresolved_attribution": "所供原文未解决或未报告。"
+      },
+      "broad_directions": [
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "闭环RRAM能否用两种掩蔽输入完成条件转换？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C5"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "在Loihi 2 Oheo Gulch平台上，本文以1024个神经元、128个长度8的块、95个neurocore及量化递归权重实现23状态模除法DFA，对图5所示输入序列完成正确状态路径与余数。",
+      "claim_type": "digital_neuromorphic_hardware_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Loihi 2芯片运行和放电记录",
+          "design": "自定义微码实现分流抑制；4σ权重线性映射到[-254,254]偶整数；输入及间隙各200步。",
+          "comparator": null,
+          "measure": "状态放电与终止余数",
+          "unit_of_analysis": "所述模型或实验条件的一条轨迹或参数组合",
+          "sample_size_as_reported": "1024神经元；128块；95 neurocores；23状态。",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "2.3；4.8（PDF第15页）",
+            "figure": "Figure 5",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在Loihi 2 Oheo Gulch平台上，本文以1024个神经元、128个长度8的块、95个neurocore及量化递归权重实现23状态模除法DFA，对图5所示输入序列完成正确状态路径与余数。",
+        "boundary": "图把一步任意表示为1 ms，非实测墙钟速度；自定义微码是平台适配。",
+        "negative_result": null,
+        "non_inference": "不是无需任何平台适配；没有300状态芯片结果或能效对照。",
+        "unresolved": "芯片速度、能耗、长期错误率和更大状态机。",
+        "unresolved_attribution": "所供原文未解决或未报告。"
+      },
+      "broad_directions": [
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "符号权重构造能否部署到数字神经形态硬件？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C8"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "在本文Loihi 2块内分流抑制演示中，即使每个神经元均接收足以单独发放的兴奋输入，块内竞争仍只允许积分电流最大的神经元放电，从而约束活动为稀疏分块代码。",
+      "claim_type": "digital_neuromorphic_hardware_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "自定义微码块内WTA硬件放电记录",
+          "design": "常规积分突触与分流抑制突触并用。",
+          "comparator": "无竞争时各神经元足够发放的输入条件",
+          "measure": "每块放电神经元",
+          "unit_of_analysis": "所述模型或实验条件的一条轨迹或参数组合",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 29,
+            "section": "Supplementary Figure S5；4.8",
+            "figure": "Figure S5",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在本文Loihi 2块内分流抑制演示中，即使每个神经元均接收足以单独发放的兴奋输入，块内竞争仍只允许积分电流最大的神经元放电，从而约束活动为稀疏分块代码。",
+        "boundary": "图注支持所示输入；未给失误率或通用电路验证。",
+        "negative_result": null,
+        "non_inference": "不应把微码比较条件的文本矛盾扩写为精确实现保证。",
+        "unresolved": "微码阈值描述和复杂输入下WTA可靠性。",
+        "unresolved_attribution": "所供原文未解决或未报告。"
+      },
+      "broad_directions": [
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "Loihi分流抑制能否实现块内赢家竞争？"
+      ],
+      "shared_evidence_with": [
+        "C7"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "在非脉冲分块WTA网络对不同规模模除法DFA的容量测试中，每个(P,N)组合用5组超向量及五输入序列测试，且L随N/logN调整；理想权重和随机二值权重均呈近似N²/(logN)²容量尺度，但二值权重可容纳状态数约少4倍。",
+      "claim_type": "simulation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "非脉冲容量扫描与SVM边界拟合",
+          "design": "每DFA状态两出边；每输入和间隙10步；只要求最终正确状态重叠最大。",
+          "comparator": "理想实数与随机二值权重",
+          "measure": "可模拟DFA状态数P",
+          "unit_of_analysis": "所述模型或实验条件的一条轨迹或参数组合",
+          "sample_size_as_reported": "每(P,N)五次不同超向量实例。",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "2.4；4.9",
+            "figure": "Figure 6",
+            "equation": "14（PDF第15页）",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在非脉冲分块WTA网络对不同规模模除法DFA的容量测试中，每个(P,N)组合用5组超向量及五输入序列测试，且L随N/logN调整；理想权重和随机二值权重均呈近似N²/(logN)²容量尺度，但二值权重可容纳状态数约少4倍。",
+        "boundary": "非硬件或脉冲容量；P包含的桥态数另算；需随N调整活动稀疏度。",
+        "negative_result": null,
+        "non_inference": "不能把既有理论公式当成本文新严格证明。",
+        "unresolved": "尺度拟合CI、序列长度和其他图的容量。",
+        "unresolved_attribution": "所供原文未解决或未报告。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "随机二值化如何影响状态机容量尺度和常数？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "对独立随机生成、块长L且M=N/L的稀疏分块超向量，本文补充材料用Hoeffding与并合界给出任一成对相似度超过f+θ的概率上界，并据此得到可选择向量数K约按exp(Nθ²/L)增长；这只是表示向量的碰撞界，不是可存入网络的状态数。",
+      "claim_type": "theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "独立块伯努利重合、Hoeffding不等式与并合界",
+          "design": "θ=(1-f)/2；作者举N=1000、L=8、δ=0.0001的向量数例子。",
+          "comparator": null,
+          "measure": "至少一对超过阈值的概率界",
+          "unit_of_analysis": "所述模型或实验条件的一条轨迹或参数组合",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 20,
+            "section": "S1 Sparse block code overlaps",
+            "figure": null,
+            "equation": "S1.1–5",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "对独立随机生成、块长L且M=N/L的稀疏分块超向量，本文补充材料用Hoeffding与并合界给出任一成对相似度超过f+θ的概率上界，并据此得到可选择向量数K约按exp(Nθ²/L)增长；这只是表示向量的碰撞界，不是可存入网络的状态数。",
+        "boundary": "需独立生成及指定θ、δ、L；阈值作用于相对均值偏差。",
+        "negative_result": null,
+        "non_inference": "不能写成数十亿DFA状态已储存或实测。",
+        "unresolved": "相关编码的碰撞界。",
+        "unresolved_attribution": "所供原文未解决或未报告。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "分块随机向量的可区分集合大小与网络容量是否相同？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "在忽略桥态与转换矩阵影响、仅保留对称吸引子权重的简化动力学中，本文证明一次随机选块并让最大输入神经元获胜的更新不增加E=-zᵀWz，并将DFA状态表达为该能量中的井。",
+      "claim_type": "theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "异步单块WTA的能量变化代数",
+          "design": "对称权重，块内递归权重为零。",
+          "comparator": null,
+          "measure": "单步能量差≤0",
+          "unit_of_analysis": "所述模型或实验条件的一条轨迹或参数组合",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 23,
+            "section": "S3 Energy function",
+            "figure": null,
+            "equation": "S3.14–15",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在忽略桥态与转换矩阵影响、仅保留对称吸引子权重的简化动力学中，本文证明一次随机选块并让最大输入神经元获胜的更新不增加E=-zᵀWz，并将DFA状态表达为该能量中的井。",
+        "boundary": "只适用于忽略非对称项的近吸引子简化，不是全模型全局能量。",
+        "negative_result": null,
+        "non_inference": "不能保证完整脉冲网络或受输入转换过程全局收敛。",
+        "unresolved": "完整非对称网络的稳定性界。",
+        "unresolved_attribution": "所供原文未解决或未报告。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "何种简化条件下分块竞争更新有单调能量？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "在本文S2的独立近似下，无输入时q状态的期望突触后和沿q-f，有效掩蔽时沿目标桥状态b'-f；作者还给出随状态、输入与边数增大的交叉项方差估计，但明确内积实际只成对独立。",
+      "claim_type": "theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "外积项均值与方差相加",
+          "design": "Q远大于1、f远小于1；同源错误边按最坏输入数计。",
+          "comparator": null,
+          "measure": "期望投影及方差",
+          "unit_of_analysis": "所述模型或实验条件的一条轨迹或参数组合",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 21,
+            "section": "S2 Postsynaptic sum calculations；续页PDF第22页",
+            "figure": null,
+            "equation": "S2.6–13",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在本文S2的独立近似下，无输入时q状态的期望突触后和沿q-f，有效掩蔽时沿目标桥状态b'-f；作者还给出随状态、输入与边数增大的交叉项方差估计，但明确内积实际只成对独立。",
+        "boundary": "方差线性相加假设非完整联合独立。",
+        "negative_result": null,
+        "non_inference": "不等于严密有限N概率保证或新硬件机制证据。",
+        "unresolved": "依赖内积项导致的误差。",
+        "unresolved_attribution": "所供原文未解决或未报告。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "输入掩蔽如何改变混合联想项的期望投影？"
+      ],
+      "shared_evidence_with": [
+        "C1"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C13",
+      "statement": "本文将块内恒定的双极bMAP向量与二元SBC向量作Hadamard绑定，得到双极稀疏pSBC；在块恒定条件下，pSBC的局部循环卷积可分解为bMAP的Hadamard绑定与SBC的块卷积，而不恒定的MAP会破坏文中所需交换结构。",
+      "claim_type": "theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "混合表示绑定代数分析",
+          "design": null,
+          "comparator": null,
+          "measure": "绑定运算与输出类型",
+          "unit_of_analysis": "所述模型或实验条件的一条轨迹或参数组合",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 24,
+            "section": "S4 Mixing SBC and MAP VSA models",
+            "figure": "Figure S1（PDF第23页）",
+            "equation": "S4.16–17",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "本文将块内恒定的双极bMAP向量与二元SBC向量作Hadamard绑定，得到双极稀疏pSBC；在块恒定条件下，pSBC的局部循环卷积可分解为bMAP的Hadamard绑定与SBC的块卷积，而不恒定的MAP会破坏文中所需交换结构。",
+        "boundary": "必须块恒定；任意跨块混合未分析。",
+        "negative_result": null,
+        "non_inference": "不是所有VSA表示之间的无条件可互换。",
+        "unresolved": "其他混合表示的一般代数。",
+        "unresolved_attribution": "所供原文未解决或未报告。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "哪些表示约束允许混合VSA绑定？"
+      ],
+      "shared_evidence_with": [
+        "C14",
+        "C15"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C14",
+      "statement": "在N=1024、L=4、100次超向量试验的全pSBC示例中，本文用局部循环卷积绑定和逆绑定对USA属性解码及Mexico货币类比得到正确目标超向量的主要相似性，展示该混合生成表示可用于所选VSA任务。",
+      "claim_type": "simulation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "超向量解码实验",
+          "design": "经典currency/capital角色填充示例。",
+          "comparator": null,
+          "measure": "目标与其他原子向量内积",
+          "unit_of_analysis": "所述模型或实验条件的一条轨迹或参数组合",
+          "sample_size_as_reported": "N=1024；L=4；100 trials。",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 26,
+            "section": "S4.1 Case 1: All pSBC",
+            "figure": "Figure S2a,d",
+            "equation": "18（PDF第24页）",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在N=1024、L=4、100次超向量试验的全pSBC示例中，本文用局部循环卷积绑定和逆绑定对USA属性解码及Mexico货币类比得到正确目标超向量的主要相似性，展示该混合生成表示可用于所选VSA任务。",
+        "boundary": "图像未读；正确性依据正文，不补误差条或成功率。",
+        "negative_result": null,
+        "non_inference": "不是开放式语言类比能力或新问题的首创。",
+        "unresolved": "其他任务的容量和错误率。",
+        "unresolved_attribution": "所供原文未解决或未报告。"
+      },
+      "broad_directions": [
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "pSBC能否在所选属性和类比任务中正确解码？"
+      ],
+      "shared_evidence_with": [
+        "C13",
+        "C15"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C15",
+      "statement": "在同一N=1024、L=4、100次解码测试及相应代数中，SBC角色配bMAP填充时目标货币仍最相似，但无关填充保留约1/L相似度；反向类型配置亦有约1/L基线及类比目标1+1/L重叠，显示混合表示绑定并不完全隐藏各原子信息。",
+      "claim_type": "simulation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "混合类型解码分析与试验",
+          "design": "两种角色/填充类型；bMAP候选先绑定SBC单位向量。",
+          "comparator": "全pSBC及两种混合配置",
+          "measure": "解码目标和非目标相似性",
+          "unit_of_analysis": "所述模型或实验条件的一条轨迹或参数组合",
+          "sample_size_as_reported": "图S2报告100 trials，N=1024，L=4。",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 25,
+            "section": "S4.2–S4.4",
+            "figure": "Figure S2b,c,e,f（PDF第26页）",
+            "equation": "20–22",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在同一N=1024、L=4、100次解码测试及相应代数中，SBC角色配bMAP填充时目标货币仍最相似，但无关填充保留约1/L相似度；反向类型配置亦有约1/L基线及类比目标1+1/L重叠，显示混合表示绑定并不完全隐藏各原子信息。",
+        "boundary": "解析相似度不等于图中置信区间；量化假陽性率未给。",
+        "negative_result": "绑定后非目标信息不完全降至零。",
+        "non_inference": "不能据此认定实测假阳性或完全表示不变性。",
+        "unresolved": "残留相似性对其他任务的收益或错误风险。",
+        "unresolved_attribution": "所供原文未解决或未报告。"
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "混合角色和填充编码会暴露哪些残留相似性？"
+      ],
+      "shared_evidence_with": [
+        "C13",
+        "C14"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "保留15项候选：固定权重构造、噪声和不规则时序仿真、300状态软件演示、两种RRAM闭环DFA、Loihi 23状态与WTA、非脉冲容量、补充向量碰撞界和能量/干扰分析、混合VSA代数及两类解码证据。补充材料带来不能略去的表示限制：混合绑定有残留相似度。实物结果、软件结果和理论已分开，未扩写为全平台无需适配或科学复现。",
+  "shared_evidence": [
+    {
+      "claim_id": "C1",
+      "with": [
+        "C2",
+        "C3",
+        "C5",
+        "C6",
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C2",
+      "with": [
+        "C1",
+        "C3"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C1",
+        "C2"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C1",
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C1",
+        "C5"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C1",
+        "C8"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "with": [
+        "C1"
+      ]
+    },
+    {
+      "claim_id": "C13",
+      "with": [
+        "C14",
+        "C15"
+      ]
+    },
+    {
+      "claim_id": "C14",
+      "with": [
+        "C13",
+        "C15"
+      ]
+    },
+    {
+      "claim_id": "C15",
+      "with": [
+        "C13",
+        "C14"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [
+      {
+        "claim_id": "C1",
+        "pdf_page": 11,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "text_anchor_matched": true,
+        "semantic_scope_checked_by": "inherited_GPT"
+      },
+      {
+        "claim_id": "C2",
+        "pdf_page": 4,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "text_anchor_matched": true,
+        "semantic_scope_checked_by": "inherited_GPT"
+      },
+      {
+        "claim_id": "C3",
+        "pdf_page": 5,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "text_anchor_matched": true,
+        "semantic_scope_checked_by": "inherited_GPT"
+      },
+      {
+        "claim_id": "C4",
+        "pdf_page": 27,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "text_anchor_matched": true,
+        "semantic_scope_checked_by": "inherited_GPT"
+      },
+      {
+        "claim_id": "C5",
+        "pdf_page": 7,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "text_anchor_matched": true,
+        "semantic_scope_checked_by": "inherited_GPT"
+      },
+      {
+        "claim_id": "C6",
+        "pdf_page": 28,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "text_anchor_matched": true,
+        "semantic_scope_checked_by": "inherited_GPT"
+      },
+      {
+        "claim_id": "C7",
+        "pdf_page": 8,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "text_anchor_matched": true,
+        "semantic_scope_checked_by": "inherited_GPT"
+      },
+      {
+        "claim_id": "C8",
+        "pdf_page": 29,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "text_anchor_matched": true,
+        "semantic_scope_checked_by": "inherited_GPT"
+      },
+      {
+        "claim_id": "C9",
+        "pdf_page": 9,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "text_anchor_matched": true,
+        "semantic_scope_checked_by": "inherited_GPT"
+      },
+      {
+        "claim_id": "C10",
+        "pdf_page": 20,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "text_anchor_matched": true,
+        "semantic_scope_checked_by": "inherited_GPT"
+      },
+      {
+        "claim_id": "C11",
+        "pdf_page": 23,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "text_anchor_matched": true,
+        "semantic_scope_checked_by": "inherited_GPT"
+      },
+      {
+        "claim_id": "C12",
+        "pdf_page": 21,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "text_anchor_matched": true,
+        "semantic_scope_checked_by": "inherited_GPT"
+      },
+      {
+        "claim_id": "C13",
+        "pdf_page": 24,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "text_anchor_matched": true,
+        "semantic_scope_checked_by": "inherited_GPT"
+      },
+      {
+        "claim_id": "C14",
+        "pdf_page": 26,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "text_anchor_matched": true,
+        "semantic_scope_checked_by": "inherited_GPT"
+      },
+      {
+        "claim_id": "C15",
+        "pdf_page": 25,
+        "page_exists": true,
+        "quote_found": null,
+        "method": "normalized_text_match_only",
+        "text_anchor_matched": true,
+        "semantic_scope_checked_by": "inherited_GPT"
+      }
+    ],
+    "model_findings": [
+      {
+        "claim_id": "C7",
+        "issue": "300状态仿真不能误归为Loihi硬件大规模结果。",
+        "suggested_correction": "Loihi只提取所示23状态，300状态单列软件仿真。",
+        "pdf_page": 27,
+        "resolved": true
+      },
+      {
+        "claim_id": "C5",
+        "issue": "RRAM向量为正交，并有PC神经元和最终软件求和。",
+        "suggested_correction": "明确混合实验，不当作随机全片上网络。",
+        "pdf_page": 14,
+        "resolved": true
+      },
+      {
+        "claim_id": "C8",
+        "issue": "微码抑制阈值描述与常规神经元阈值关系需核查，本文未附可执行实现供本地验证。",
+        "suggested_correction": "避免推断精确微码边界，人工核查实现。",
+        "pdf_page": 15,
+        "resolved": false
+      },
+      {
+        "claim_id": "C15",
+        "issue": "混合绑定保留非目标相似性，不等于完全伪正交。",
+        "suggested_correction": "将相似性残留作为条件边界而非自动假阳性。",
+        "pdf_page": 25,
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T06:57:29.849Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "6e0c026754f57737354edec3d8f9e1560779e724f23a0f81244a56be381d80ef",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

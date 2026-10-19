@@ -1,0 +1,1038 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "Activity-dependent neuromodulation and calcium homeostasis cooperate to produce robust and modulable neuronal function",
+    "authors": [
+      "Arthur Fyon",
+      "Guillaume Drion"
+    ],
+    "doi": "10.1371/journal.pcbi.1014177",
+    "publication_year": 2026,
+    "venue": "PLoS Computational Biology",
+    "url": "https://doi.org/10.1371/journal.pcbi.1014177"
+  },
+  "source": {
+    "filename": "paper-W4405095177--Activity-dependent-neuromodulation-and-calcium-homeostasis-cooperate-to-produce-robust-and-modu.pdf",
+    "sha256": "95141216fde187ec1a9e5b207ad88a32fa0cd552d75af0505189bec3c43f1b56",
+    "source_url": "https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1014177&type=printable",
+    "pdf_page_count": 19
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "results_sections_seen": [
+      "Controller descriptions/DIC/PI",
+      "Sharp versus controlled tonic→burst",
+      "Washout",
+      "Conductance trajectories/isoclines",
+      "H/CaT/KCa/Na blockades",
+      "Five-neuron CPG",
+      "Discussion dopamine/intersection/degeneracy/drugs",
+      "Methods calcium/DIC controllers; Figures1–6; References"
+    ],
+    "missing_material": [
+      "图像像素未读取",
+      "完整S1Appendix（参数/单模型时间轨迹、H-modulation、dopaminergic模型）未供应",
+      "无primary生物数据；原始数值输出/代码未读取"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "所有供应页文字（含方法/附录/图表文字和参考文献）已完整评估，未采样代替全文。",
+      "逐条第二审计以已读源比较真实单位、条件、统计与推断范围；不等于实验复现。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "模型将Ca误差积分到mRNA/最大电导以调总活动，另以全电导状态及阈值DIC求目标子集电导并用PI跟踪，从而构造不同目标的两个反馈机制。",
+      "role": "result",
+      "source_pages": [
+        16
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "200个degenerate STG参数模型经sharp gCaS/gA调制后，Ca稳态虽可恢复目标，但burst行为常变异或丢失，甚至电导试图进入负值而在0饱和。",
+      "role": "result",
+      "source_pages": [
+        5
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "同一200模型群持续controlled gCaS/gA调制与Ca补偿联合时，所示tonic→burst目标及Ca setpoint可同时维持，较sharp比较稳定。",
+      "role": "result",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "作者报告washout后两种方案均可恢复tonic模式，但sharp补偿后的电导/发放分布可偏离初态，controlled方案在所示条件恢复更接近初态。",
+      "role": "result",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "模型解释是快neuromodulation将活动等值线追踪与慢Ca调节兼容；需要目标Ca/活动在可行电导空间有交点和可达连续路径，存在交点仍不足以保证收敛。",
+      "role": "interpretation",
+      "source_pages": [
+        14
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "STG群H-channel被设为0后，所测所有模型立即仍可burst，联合controller随后恢复Ca目标；该条件下没有需要恢复的burst丢失。",
+      "role": "result",
+      "source_pages": [
+        10
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "STG群CaT阻断使约一半模型丢失burst，联合controller补偿后图注报告全部恢复burst并重新调Ca。",
+      "role": "result",
+      "source_pages": [
+        11
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "KCa阻断使超过一半模型失去burst，改调目标后几乎全部恢复burst，但population burstiness仍改变，部分不规则/弱化，不能称完全功能恢复。",
+      "role": "result",
+      "source_pages": [
+        10
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "STG群fast Na阻断后全部模型丢失burst，联合controller不能恢复spiking或Ca目标，构成通道冗余不足时的实际模型失败。",
+      "role": "result",
+      "source_pages": [
+        11
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "五单元双half-center加中间神经元的CPG toy模型中，sharp+Ca的slow rhythm不能持续，而controlled+Ca可激活并维持slow rhythm，同时fast rhythm持续。",
+      "role": "result",
+      "source_pages": [
+        12
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "作者报告改用中脑dopaminergic单区室模型、调gCaN/gCaL也可兼容burst与Ca稳态，但完整额外模型及参数/群结果在未供应S1，外推只能限作者报告。",
+      "role": "result",
+      "source_pages": [
+        14
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "作者假定更大degeneracy增加兼容交点/可达路径，并提出保护细胞内调控loop或调second messengers的药理方向；未直接测degeneracy概率—效果关系或治疗安全性。",
+      "role": "hypothesis",
+      "source_pages": [
+        14
+      ],
+      "decision": "include",
+      "reason": "保留该命题的证据条件与边界"
+    },
+    {
+      "summary": "H作为neuromodulated target的类似sharp/controlled对照",
+      "role": "result",
+      "source_pages": [
+        10
+      ],
+      "decision": "defer",
+      "reason": "完整图/数据在未供应S1，仅主文概括，不能抽额外定量结果"
+    },
+    {
+      "summary": "Kd blockade的类似Na失败",
+      "role": "hypothesis",
+      "source_pages": [
+        12
+      ],
+      "decision": "include",
+      "reason": "作者预期而非本篇展示的实际negative"
+    },
+    {
+      "summary": "重复sharp/washout累计漂移风险",
+      "role": "hypothesis",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "条件性预测，不能冒充已测周期退化"
+    },
+    {
+      "summary": "多区室树突/HCN位置相反效应和hierarchical control",
+      "role": "hypothesis",
+      "source_pages": [
+        14,
+        15
+      ],
+      "decision": "include",
+      "reason": "未来扩展/被引文献，不是本研究多区室验证"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "模型将Ca误差积分到mRNA/最大电导以调总活动，另以全电导状态及阈值DIC求目标子集电导并用PI跟踪，从而构造不同目标的两个反馈机制。",
+      "claim_type": "computational",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "tau_i m_i′=Ca_target−Ca；DIC S(Vth)g和PI",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "模拟单区室模型/已知电导",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "controller需访问完整模型电导/敏感矩阵，PI直接跟踪电导不是本文实测特定细胞内cascade；任意初始条件均过原点比例不变需初值/τ匹配。"
+          ],
+          "source_locator": {
+            "pdf_page": 16,
+            "section": "Materials/Methods calcium and neuromodulation controllers",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "模型将Ca误差积分到mRNA/最大电导以调总活动，另以全电导状态及阈值DIC求目标子集电导并用PI跟踪，从而构造不同目标的两个反馈机制。",
+        "boundary": "controller需访问完整模型电导/敏感矩阵，PI直接跟踪电导不是本文实测特定细胞内cascade；任意初始条件均过原点比例不变需初值/τ匹配。",
+        "negative_result": null,
+        "non_inference": "计算电导模型不是新的生物/GPCR/临床验证；成功/失败限参数、目标、时标、饱和约束与通道集合，不证明普适或安全治疗。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "神经元稳态与调控的目标兼容",
+        "通道可补偿性与失败边界",
+        "控制器类比和生物/药理验证区别"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，模型将Ca误差积分到mRNA/最大电导以调总活动，另以全电导状态及阈值DIC求目标子集电导并用PI跟踪，从而构造不同目标的两个反馈机制。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "200个degenerate STG参数模型经sharp gCaS/gA调制后，Ca稳态虽可恢复目标，但burst行为常变异或丢失，甚至电导试图进入负值而在0饱和。",
+      "claim_type": "computational",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "同初始群sharp参数变化+慢Ca补偿",
+          "design": null,
+          "comparator": null,
+          "measure": "Ca、电导与burstiness",
+          "unit_of_analysis": "模拟神经元参数集合",
+          "sample_size_as_reported": "200模型，非200细胞/动物",
+          "uncertainty": "图population描述，无独立重复/显著p",
+          "assumptions": [
+            "burstiness0可为沉默、tonic或单spikeburst，非统一疾病/细胞死亡；illustration加速Ca时标，真实physiology时序未验证。"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "Figure2A–C; Figure3C",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "200个degenerate STG参数模型经sharp gCaS/gA调制后，Ca稳态虽可恢复目标，但burst行为常变异或丢失，甚至电导试图进入负值而在0饱和。",
+        "boundary": "burstiness0可为沉默、tonic或单spikeburst，非统一疾病/细胞死亡；illustration加速Ca时标，真实physiology时序未验证。",
+        "negative_result": "sharp+Ca不能普遍保持所设burst目标。",
+        "non_inference": "计算电导模型不是新的生物/GPCR/临床验证；成功/失败限参数、目标、时标、饱和约束与通道集合，不证明普适或安全治疗。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "神经元稳态与调控的目标兼容",
+        "通道可补偿性与失败边界",
+        "控制器类比和生物/药理验证区别"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，200个degenerate STG参数模型经sharp gCaS/gA调制后，Ca稳态虽可恢复目标，但burst行为常变异或丢失，甚至电导试图进入负值而在0饱和。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "同一200模型群持续controlled gCaS/gA调制与Ca补偿联合时，所示tonic→burst目标及Ca setpoint可同时维持，较sharp比较稳定。",
+      "claim_type": "computational",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "相同群的活动依赖参考与PI持续调节",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "同模型参数群",
+          "sample_size_as_reported": "200参数模型",
+          "uncertainty": "无独立生物重复/分布CI或显著检验",
+          "assumptions": [
+            "不同控制形式与持续工作权限是关键；不证明所有模型、靶点、setpoint或时标都能成功。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "Figure2D–F; Figure3D",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "同一200模型群持续controlled gCaS/gA调制与Ca补偿联合时，所示tonic→burst目标及Ca setpoint可同时维持，较sharp比较稳定。",
+        "boundary": "不同控制形式与持续工作权限是关键；不证明所有模型、靶点、setpoint或时标都能成功。",
+        "negative_result": null,
+        "non_inference": "计算电导模型不是新的生物/GPCR/临床验证；成功/失败限参数、目标、时标、饱和约束与通道集合，不证明普适或安全治疗。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "神经元稳态与调控的目标兼容",
+        "通道可补偿性与失败边界",
+        "控制器类比和生物/药理验证区别"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，同一200模型群持续controlled gCaS/gA调制与Ca补偿联合时，所示tonic→burst目标及Ca setpoint可同时维持，较sharp比较稳定。是否成立？"
+      ],
+      "shared_evidence_with": [
+        "C2"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "作者报告washout后两种方案均可恢复tonic模式，但sharp补偿后的电导/发放分布可偏离初态，controlled方案在所示条件恢复更接近初态。",
+      "claim_type": "computational",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "modulatory reference移除后的数值比较",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "共享degenerate参数群",
+          "sample_size_as_reported": "Fig2群200；washout专门重复数未给",
+          "uncertainty": "定性/分布描述，没有独立效应或p",
+          "assumptions": [
+            "反复多轮sharp导致累计侵蚀仅作者推测，未在本供文独立周期实验验证；不能称任意洗脱完全可逆。"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "Results washout paragraph",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者报告washout后两种方案均可恢复tonic模式，但sharp补偿后的电导/发放分布可偏离初态，controlled方案在所示条件恢复更接近初态。",
+        "boundary": "反复多轮sharp导致累计侵蚀仅作者推测，未在本供文独立周期实验验证；不能称任意洗脱完全可逆。",
+        "negative_result": null,
+        "non_inference": "计算电导模型不是新的生物/GPCR/临床验证；成功/失败限参数、目标、时标、饱和约束与通道集合，不证明普适或安全治疗。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "神经元稳态与调控的目标兼容",
+        "通道可补偿性与失败边界",
+        "控制器类比和生物/药理验证区别"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，作者报告washout后两种方案均可恢复tonic模式，但sharp补偿后的电导/发放分布可偏离初态，controlled方案在所示条件恢复更接近初态。是否成立？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C3"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "模型解释是快neuromodulation将活动等值线追踪与慢Ca调节兼容；需要目标Ca/活动在可行电导空间有交点和可达连续路径，存在交点仍不足以保证收敛。",
+      "claim_type": "mechanistic",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "电导轨迹及schematic isocline解释",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "共享数值模型和设定控制目标",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "须正电导、可达性、增益/参考与时标；没有全局稳定定理或扫描概率，不能把等值线示意为所有神经元实测几何。"
+          ],
+          "source_locator": {
+            "pdf_page": 14,
+            "section": "Figures3–4; Discussion intersection/caveat",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "模型解释是快neuromodulation将活动等值线追踪与慢Ca调节兼容；需要目标Ca/活动在可行电导空间有交点和可达连续路径，存在交点仍不足以保证收敛。",
+        "boundary": "须正电导、可达性、增益/参考与时标；没有全局稳定定理或扫描概率，不能把等值线示意为所有神经元实测几何。",
+        "negative_result": null,
+        "non_inference": "计算电导模型不是新的生物/GPCR/临床验证；成功/失败限参数、目标、时标、饱和约束与通道集合，不证明普适或安全治疗。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "神经元稳态与调控的目标兼容",
+        "通道可补偿性与失败边界",
+        "控制器类比和生物/药理验证区别"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，模型解释是快neuromodulation将活动等值线追踪与慢Ca调节兼容；需要目标Ca/活动在可行电导空间有交点和可达连续路径，存在交点仍不足以保证收敛。是否成立？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C3"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "STG群H-channel被设为0后，所测所有模型立即仍可burst，联合controller随后恢复Ca目标；该条件下没有需要恢复的burst丢失。",
+      "claim_type": "computational",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "模型H最大电导blockade",
+          "design": null,
+          "comparator": null,
+          "measure": "burst/Ca",
+          "unit_of_analysis": "模拟参数模型",
+          "sample_size_as_reported": "200",
+          "uncertainty": "Fig5caption：没有模型lose bursting，未供逐模型数据/独立重复",
+          "assumptions": [
+            "无须burst救援不等H通道无生物功能；只限其他channels、target及初态集合。"
+          ],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "Figure5A",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "STG群H-channel被设为0后，所测所有模型立即仍可burst，联合controller随后恢复Ca目标；该条件下没有需要恢复的burst丢失。",
+        "boundary": "无须burst救援不等H通道无生物功能；只限其他channels、target及初态集合。",
+        "negative_result": "H阻断在此群未造成burst丢失。",
+        "non_inference": "计算电导模型不是新的生物/GPCR/临床验证；成功/失败限参数、目标、时标、饱和约束与通道集合，不证明普适或安全治疗。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "神经元稳态与调控的目标兼容",
+        "通道可补偿性与失败边界",
+        "控制器类比和生物/药理验证区别"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，STG群H-channel被设为0后，所测所有模型立即仍可burst，联合controller随后恢复Ca目标；该条件下没有需要恢复的burst丢失。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "STG群CaT阻断使约一半模型丢失burst，联合controller补偿后图注报告全部恢复burst并重新调Ca。",
+      "claim_type": "computational",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "CaT最大电导为0及双控制补偿",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "参数模型",
+          "sample_size_as_reported": "200",
+          "uncertainty": "约half初期lost，全群恢复；无概率CI或生物统计",
+          "assumptions": [
+            "这是模拟条件的可补偿性，非CaT生物上不必要或所有群的定理。"
+          ],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "Figure5B",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "STG群CaT阻断使约一半模型丢失burst，联合controller补偿后图注报告全部恢复burst并重新调Ca。",
+        "boundary": "这是模拟条件的可补偿性，非CaT生物上不必要或所有群的定理。",
+        "negative_result": null,
+        "non_inference": "计算电导模型不是新的生物/GPCR/临床验证；成功/失败限参数、目标、时标、饱和约束与通道集合，不证明普适或安全治疗。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "神经元稳态与调控的目标兼容",
+        "通道可补偿性与失败边界",
+        "控制器类比和生物/药理验证区别"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，STG群CaT阻断使约一半模型丢失burst，联合controller补偿后图注报告全部恢复burst并重新调Ca。是否成立？"
+      ],
+      "shared_evidence_with": [
+        "C6"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "KCa阻断使超过一半模型失去burst，改调目标后几乎全部恢复burst，但population burstiness仍改变，部分不规则/弱化，不能称完全功能恢复。",
+      "claim_type": "computational",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "KCa=0，改变DIC反馈目标/neuromodulator reference",
+          "design": null,
+          "comparator": null,
+          "measure": "burstiness/Ca",
+          "unit_of_analysis": "参数模型",
+          "sample_size_as_reported": "200",
+          "uncertainty": "nearly all恢复，未给准确恢复比例/统计CI",
+          "assumptions": [
+            "需要特定target调节而非原controller无条件自动恢复；Ca和部分burst目标可兼容不保证原pattern全恢复。"
+          ],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "Figure5C; Discussion target adjustment",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "KCa阻断使超过一半模型失去burst，改调目标后几乎全部恢复burst，但population burstiness仍改变，部分不规则/弱化，不能称完全功能恢复。",
+        "boundary": "需要特定target调节而非原controller无条件自动恢复；Ca和部分burst目标可兼容不保证原pattern全恢复。",
+        "negative_result": "残余burstiness改变、部分irregular或弱化。",
+        "non_inference": "计算电导模型不是新的生物/GPCR/临床验证；成功/失败限参数、目标、时标、饱和约束与通道集合，不证明普适或安全治疗。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "神经元稳态与调控的目标兼容",
+        "通道可补偿性与失败边界",
+        "控制器类比和生物/药理验证区别"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，KCa阻断使超过一半模型失去burst，改调目标后几乎全部恢复burst，但population burstiness仍改变，部分不规则/弱化，不能称完全功能恢复。是否成立？"
+      ],
+      "shared_evidence_with": [
+        "C6",
+        "C7"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "STG群fast Na阻断后全部模型丢失burst，联合controller不能恢复spiking或Ca目标，构成通道冗余不足时的实际模型失败。",
+      "claim_type": "computational",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Na最大电导为0",
+          "design": null,
+          "comparator": null,
+          "measure": "spike/burst及Ca",
+          "unit_of_analysis": "参数模型",
+          "sample_size_as_reported": "200",
+          "uncertainty": "图注all lost、不恢复；无生物验证",
+          "assumptions": [
+            "Kd阻断“similar would occur”仅预测、未展示同等实际实验；不能泛化至所有细胞或药物剂量。"
+          ],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "Figure5D; Results blockade",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "STG群fast Na阻断后全部模型丢失burst，联合controller不能恢复spiking或Ca目标，构成通道冗余不足时的实际模型失败。",
+        "boundary": "Kd阻断“similar would occur”仅预测、未展示同等实际实验；不能泛化至所有细胞或药物剂量。",
+        "negative_result": "Na阻断无法补偿。",
+        "non_inference": "计算电导模型不是新的生物/GPCR/临床验证；成功/失败限参数、目标、时标、饱和约束与通道集合，不证明普适或安全治疗。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "神经元稳态与调控的目标兼容",
+        "通道可补偿性与失败边界",
+        "控制器类比和生物/药理验证区别"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，STG群fast Na阻断后全部模型丢失burst，联合controller不能恢复spiking或Ca目标，构成通道冗余不足时的实际模型失败。是否成立？"
+      ],
+      "shared_evidence_with": [
+        "C6",
+        "C7",
+        "C8"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "五单元双half-center加中间神经元的CPG toy模型中，sharp+Ca的slow rhythm不能持续，而controlled+Ca可激活并维持slow rhythm，同时fast rhythm持续。",
+      "claim_type": "computational",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "5单区室模型、抑制/电耦合的双节律网络",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "一个所示toy网络的5模拟神经元",
+          "sample_size_as_reported": "5节点非5独立网络；网络重复n未给",
+          "uncertainty": "无节律数值效应、CI或显著p；不同初始电导只是网络内异质",
+          "assumptions": [
+            "单toy网络不能称全体crab回路/CPG都鲁棒；fast phase slight changes未量化；网络dependent assumptions和S1参数缺失。"
+          ],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": "Figure6A–C",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "五单元双half-center加中间神经元的CPG toy模型中，sharp+Ca的slow rhythm不能持续，而controlled+Ca可激活并维持slow rhythm，同时fast rhythm持续。",
+        "boundary": "单toy网络不能称全体crab回路/CPG都鲁棒；fast phase slight changes未量化；网络dependent assumptions和S1参数缺失。",
+        "negative_result": null,
+        "non_inference": "计算电导模型不是新的生物/GPCR/临床验证；成功/失败限参数、目标、时标、饱和约束与通道集合，不证明普适或安全治疗。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "神经元稳态与调控的目标兼容",
+        "通道可补偿性与失败边界",
+        "控制器类比和生物/药理验证区别"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，五单元双half-center加中间神经元的CPG toy模型中，sharp+Ca的slow rhythm不能持续，而controlled+Ca可激活并维持slow rhythm，同时fast rhythm持续。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "作者报告改用中脑dopaminergic单区室模型、调gCaN/gCaL也可兼容burst与Ca稳态，但完整额外模型及参数/群结果在未供应S1，外推只能限作者报告。",
+      "claim_type": "computational",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "额外细胞类型的数值构造",
+          "design": null,
+          "comparator": null,
+          "measure": "reported model firing/Ca",
+          "unit_of_analysis": "另模型参数集合",
+          "sample_size_as_reported": "n本篇主文未给",
+          "uncertainty": null,
+          "assumptions": [
+            "未供应完整补图/参数，不计独立生物复现，也不把crab结果泛化到患者多巴胺病理。"
+          ],
+          "source_locator": {
+            "pdf_page": 14,
+            "section": "Discussion dopamine paragraph; S1Appendix reference",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者报告改用中脑dopaminergic单区室模型、调gCaN/gCaL也可兼容burst与Ca稳态，但完整额外模型及参数/群结果在未供应S1，外推只能限作者报告。",
+        "boundary": "未供应完整补图/参数，不计独立生物复现，也不把crab结果泛化到患者多巴胺病理。",
+        "negative_result": null,
+        "non_inference": "计算电导模型不是新的生物/GPCR/临床验证；成功/失败限参数、目标、时标、饱和约束与通道集合，不证明普适或安全治疗。",
+        "unresolved": "dopamine模型量化与完整配置仍缺材料。",
+        "unresolved_attribution": "源文或本次审计"
+      },
+      "broad_directions": [
+        "神经元稳态与调控的目标兼容",
+        "通道可补偿性与失败边界",
+        "控制器类比和生物/药理验证区别"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，作者报告改用中脑dopaminergic单区室模型、调gCaN/gCaL也可兼容burst与Ca稳态，但完整额外模型及参数/群结果在未供应S1，外推只能限作者报告。是否成立？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "作者假定更大degeneracy增加兼容交点/可达路径，并提出保护细胞内调控loop或调second messengers的药理方向；未直接测degeneracy概率—效果关系或治疗安全性。",
+      "claim_type": "mechanistic",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "模型启发的机制/临床假说",
+          "design": null,
+          "comparator": null,
+          "measure": "该比较的源文读出",
+          "unit_of_analysis": "共享模型结果与被引生物文献",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "并非neuromodulator替代疗法比较；无药物选择、临床试验、dendritic多区室或已知GPCR专属生化网络验证。"
+          ],
+          "source_locator": {
+            "pdf_page": 14,
+            "section": "Discussion degeneracy/channelopathy/Parkinson/drug strategies",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者假定更大degeneracy增加兼容交点/可达路径，并提出保护细胞内调控loop或调second messengers的药理方向；未直接测degeneracy概率—效果关系或治疗安全性。",
+        "boundary": "并非neuromodulator替代疗法比较；无药物选择、临床试验、dendritic多区室或已知GPCR专属生化网络验证。",
+        "negative_result": null,
+        "non_inference": "计算电导模型不是新的生物/GPCR/临床验证；成功/失败限参数、目标、时标、饱和约束与通道集合，不证明普适或安全治疗。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "神经元稳态与调控的目标兼容",
+        "通道可补偿性与失败边界",
+        "控制器类比和生物/药理验证区别"
+      ],
+      "scientific_questions": [
+        "在源文所述条件下，作者假定更大degeneracy增加兼容交点/可达路径，并提出保护细胞内调控loop或调second messengers的药理方向；未直接测degeneracy概率—效果关系或治疗安全性。是否成立？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C3",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "19页2026PLoS全文6图图注、Methods和全部引用完整评估。N200 STG参数群的sharp/controlled+Ca对照显示特定兼容性；H/CaT可维持/恢复、KCa部分恢复须改targets、Na失败明确。5节点CPG和主文reported dopamine模型的范围有限；交点/可达/时标及基于DIC完整state工程控制不等生物专属GPCR证据，degeneracy/药理建议保持假说。",
+  "shared_evidence": [
+    {
+      "claim_id": "C3",
+      "with": [
+        "C2"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C2",
+        "C3"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C2",
+        "C3"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C6",
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C6",
+        "C7",
+        "C8"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "with": [
+        "C2",
+        "C3",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": null,
+        "issue": "全部实验计算模型，200为参数draw、5为网络节点，无primary data",
+        "suggested_correction": "明确非生物n和无独立实验",
+        "pdf_page": 2,
+        "resolved": true
+      },
+      {
+        "claim_id": "C1",
+        "issue": "homeostatic任意initial都through origin/固定比例的泛化条件未明确",
+        "suggested_correction": "需初值与τ规则匹配、饱和与mRNA动态条件，不把简式作无条件定理",
+        "pdf_page": 15,
+        "resolved": false
+      },
+      {
+        "claim_id": "C5",
+        "issue": "交点存在并不保证可达/收敛，作者明确KCa需改targets",
+        "suggested_correction": "保留可行性及controller tuning限制",
+        "pdf_page": 14,
+        "resolved": true
+      },
+      {
+        "claim_id": "C8",
+        "issue": "KCa恢复并非恢复所有burstiness且存在irregular残差",
+        "suggested_correction": "保留实际边界",
+        "pdf_page": 10,
+        "resolved": true
+      },
+      {
+        "claim_id": "C9",
+        "issue": "Na是实际失败、Kd只是预期",
+        "suggested_correction": "区别result与hypothesis",
+        "pdf_page": 12,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "illustrative Ca时标缩短，完整S1参数及药理/GPCR特异未供",
+        "suggested_correction": "条件轨迹不作为生物实时机制/药理优效证明",
+        "pdf_page": 5,
+        "resolved": true
+      },
+      {
+        "claim_id": "C10",
+        "issue": "5nodes非5独立网络，异质初始参数不等广泛鲁棒扫描",
+        "suggested_correction": "网络结果限toy示例",
+        "pdf_page": 13,
+        "resolved": true
+      },
+      {
+        "claim_id": "C12",
+        "issue": "degeneracy提升交点概率是假设，药理风险未做疗效/安全比较",
+        "suggested_correction": "不提供已证更安全治疗",
+        "pdf_page": 14,
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T12:13:00.105322Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "95141216fde187ec1a9e5b207ad88a32fa0cd552d75af0505189bec3c43f1b56",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

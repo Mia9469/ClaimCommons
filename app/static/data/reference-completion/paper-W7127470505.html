@@ -1,0 +1,323 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Toward Generalist Neural Motion Planners for Robotic Manipulators: Challenges and Opportunities</title><style>body{max-width:940px;margin:40px auto;padding:0 24px;background:#fffdf7;color:#12372f;font:16px/1.8 Georgia,serif}h1{font-size:26px;line-height:1.4}h2{font-size:20px;line-height:1.5}h3{font-size:16px}article{padding:26px 0;border-top:1px solid #bec4b8}small{color:#68766e}dl{display:grid;grid-template-columns:120px 1fr;gap:8px 20px}dt{font-weight:bold}dd{margin:0}li{padding:8px 0}p,dd{overflow-wrap:anywhere}.note{background:#eef2e2;padding:14px;border-left:3px solid #738968}summary{cursor:pointer}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.7 monospace}@media(max-width:600px){body{margin:24px auto;padding:0 18px}dl{grid-template-columns:1fr;gap:3px}dd{margin-bottom:12px}}@media print{body{margin:0;background:white}details{display:block}}</style><link rel="stylesheet" href="../../commons-v02.css?v=20261020-1"><link rel="stylesheet" href="../../examples.css?v=20260928-2"><link rel="stylesheet" href="../../site.css?v=20261020-1"><script defer src="../../site.js?v=20261020-1"></script><script defer src="../../report-ui.js?v=20261020-1"></script></head><body class="portal-page report-page" data-cc-report-shell="1" data-page="library" data-site-prefix="../../" data-library-paper="paper-W7127470505" data-report-language="zh" data-claim-records="{&quot;C1&quot;:&quot;structured-paper-W7127470505-1&quot;,&quot;C2&quot;:&quot;structured-paper-W7127470505-2&quot;,&quot;C3&quot;:&quot;structured-paper-W7127470505-3&quot;,&quot;C4&quot;:&quot;structured-paper-W7127470505-4&quot;,&quot;C5&quot;:&quot;structured-paper-W7127470505-5&quot;,&quot;C6&quot;:&quot;structured-paper-W7127470505-6&quot;,&quot;C7&quot;:&quot;structured-paper-W7127470505-7&quot;,&quot;C8&quot;:&quot;structured-paper-W7127470505-8&quot;,&quot;C9&quot;:&quot;structured-paper-W7127470505-9&quot;,&quot;C10&quot;:&quot;structured-paper-W7127470505-10&quot;,&quot;C11&quot;:&quot;structured-paper-W7127470505-11&quot;,&quot;C12&quot;:&quot;structured-paper-W7127470505-12&quot;,&quot;C13&quot;:&quot;structured-paper-W7127470505-13&quot;,&quot;C14&quot;:&quot;structured-paper-W7127470505-14&quot;,&quot;C15&quot;:&quot;structured-paper-W7127470505-15&quot;,&quot;C16&quot;:&quot;structured-paper-W7127470505-16&quot;,&quot;C17&quot;:&quot;structured-paper-W7127470505-17&quot;,&quot;C18&quot;:&quot;structured-paper-W7127470505-18&quot;,&quot;C19&quot;:&quot;structured-paper-W7127470505-19&quot;,&quot;C20&quot;:&quot;structured-paper-W7127470505-20&quot;,&quot;C21&quot;:&quot;structured-paper-W7127470505-21&quot;,&quot;C22&quot;:&quot;structured-paper-W7127470505-22&quot;,&quot;C23&quot;:&quot;structured-paper-W7127470505-23&quot;,&quot;C24&quot;:&quot;structured-paper-W7127470505-24&quot;,&quot;C25&quot;:&quot;structured-paper-W7127470505-25&quot;,&quot;C26&quot;:&quot;structured-paper-W7127470505-26&quot;,&quot;C27&quot;:&quot;structured-paper-W7127470505-27&quot;}"><header></header><main id="report-content"><div id="report-tools"></div><small>CLAIM COMMONS / 阅读报告</small><h1>Toward Generalist Neural Motion Planners for Robotic Manipulators: Challenges and Opportunities</h1><p class="note">AI 文本提取候选，尚待人工核对。图像像素未读取；PDF 页码指文件中的页序。</p><p>全文提供机械臂神经运动规划的算法基元映射与部署边界综述。提取 27 条文献综合候选，保留速度/成功率/代价权衡、辅助优化与几何复核、分布外数据不足，以及医疗离体结果和现实部署限制。未把被引模型实验、模拟场景或综述表格当作作者新实验、临床验证或独立复现。已完整评估 45 页；版本、表格引用和原文约束措辞问题仍需人工处理。</p><a href="https://arxiv.org/pdf/2603.24318" rel="noreferrer">查看所读原文版本 ↗</a><details><summary>贡献清单与处理决定</summary><ul><li><b>综述将 2018 年以来的机械臂神经运动规划文献按端到端规划、无约束采样及局部转向、约束采样、轨迹优化和碰撞查询分类，并显示不同网络架构主要改进不同算法基元，而非同一种通用规划问题。</b><br>include · 可独立评估的方法、比较或适用边界；不冒充新实验。</li><li><b>所述 NTFields 系列利用学习的时间场与 Eikonal 方程引导配置空间运动；P-NTFields 增加平滑与渐进速度学习，C-NTFields 纳入任务约束，A-NTFields 改为基于传感数据在线学习以放宽环境预先已知的条件。</b><br>include · 可独立评估的方法、比较或适用边界；不冒充新实验。</li><li><b>所述点云端到端规划器将机器人、障碍和目标的几何输入编码为运动预测；Neural MP 使用 GMM 表达多模态动作并结合实时优化，DRP 加入几何微调和反应式策略，因此其有效性不能归结为单一纯神经网络输出。</b><br>include · 可独立评估的方法、比较或适用边界；不冒充新实验。</li><li><b>综述中的 LLM 可生成或修改机械臂工作空间路点，但 Roco 仍依赖 RRT 进行多臂规划，LATTE 需要有效性后处理；文本预训练模型缺少物理交互数据，低层规划可行性不能由语言生成能力直接保证。</b><br>include · 可独立评估的方法、比较或适用边界；不冒充新实验。</li><li><b>所述学习式 informed sampling 从历史规划数据、障碍表征或瓶颈区域预测中生成更有针对性的配置样本，用于加速下游采样规划；这些方法保留经典搜索框架，收益取决于采样分布是否覆盖新问题的关键可行区域。</b><br>include · 可独立评估的方法、比较或适用边界；不冒充新实验。</li><li><b>所述 GNN 规划方法利用机械臂运动链或随机几何图表达结构；动态规划工作从预先已知障碍轨迹的时序编码发展到 DynGMP 的局部碰撞重检与树复用，后者旨在降低未知动态障碍下的重规划开销。</b><br>include · 可独立评估的方法、比较或适用边界；不冒充新实验。</li><li><b>所述 CVAE、GraphWAE 与 VQ-MPT 在低维或离散潜空间学习可行区域或采样字典，并将环境及起终点条件纳入生成；VQ-MPT 再通过自回归 Transformer 捕捉长程关系，因此低维编码主要服务采样而非自动获得有效运动解。</b><br>include · 可独立评估的方法、比较或适用边界；不冒充新实验。</li><li><b>所述神经局部转向方法通过学习 CBF 或 swept volume 替代纯直线/欧氏度量转向，旨在减少无效扩展与碰撞查询；swept-volume 学习还存在反复推理及离线标签生成的成本。</b><br>include · 可独立评估的方法、比较或适用边界；不冒充新实验。</li><li><b>Table XII 转述的 CBF-INC 相比 RRT 成功率较高、探索顶点较少，但规划时间更长：成功率 76.1% 对 62.5%，顶点数 162.5 对 252.5，时间 345.8 s 对 287.6 s；该比较说明这些指标不必同时改善。</b><br>include · 可独立评估的方法、比较或适用边界；不冒充新实验。</li><li><b>所述 CoMPNet/CoMPNetX 将学习样本投影至任务约束流形，ECoMaNN 或生成模型学习流形附近分布；部分潜空间规划器仍需数值投影或有效性网络，学到约束表征不等于所有生成配置严格满足约束。</b><br>include · 可独立评估的方法、比较或适用边界；不冒充新实验。</li><li><b>所述轨迹优化 warm-start 方法用 MLP、VAE、GAN 或 EBM 学习初始轨迹或解流形，再由优化器细化；DJ-GOMP 预测多时域初值，CNP-B 预测 B-spline 控制点，MPSM 仍使用 CHOMP，因此学习先验与后续优化共同决定输出。</b><br>include · 可独立评估的方法、比较或适用边界；不冒充新实验。</li><li><b>所述扩散规划将专家轨迹作为先验，通过任务目标、碰撞和其他代价引导轨迹生成，或为 cuRobo/CSVTO 等优化器提供种子；多个工作采用环境条件、约束组合或代价集成改善适应性，但这些仍是有条件的规划方案。</b><br>include · 可独立评估的方法、比较或适用边界；不冒充新实验。</li><li><b>Table XIV 转述的 MPD 对 GPMP 在该被引设置中规划时间更短、成功率更高，但配置空间路径更长：1.1 s 对 194.4 s，100% 对 42%，PL-C 9.9 对 5.1；不能将其概括为所有规划指标均优于 GPMP。</b><br>include · 可独立评估的方法、比较或适用边界；不冒充新实验。</li><li><b>所述 FlowMP 用 conditional flow matching 学习运动场，并纳入加速度与 jerk 表征；SafeFlow 把控制屏障函数引入 flow matching 以约束生成，而其他 flow matching 方法仅用于 warm-start，下游优化和安全保证不能混为一谈。</b><br>include · 可独立评估的方法、比较或适用边界；不冒充新实验。</li><li><b>所述神经 proxy collision checker 学习配置或配置对的碰撞状态，以降低几何查询成本；相关混合方法在接近碰撞边界或最终路径验证时仍调用几何检查，模型分类准确率不能直接替代全路径安全性。</b><br>include · 可独立评估的方法、比较或适用边界；不冒充新实验。</li><li><b>所述 GraphDistNet/GDN-R 学习几何距离和梯度，PairwiseNet 将对象对距离的最小值作为全局碰撞距离；这种结构化建模有利于复用类似几何，但消息传递成本随图大小变化，对全新几何的泛化不能无条件外推。</b><br>include · 可独立评估的方法、比较或适用边界；不冒充新实验。</li><li><b>所述 neural SDF/JSDF 提供连续可微的碰撞距离场，便于轨迹优化；隐式学习整条运动链可能累积误差，逐链段 Composite SDF 则引入显式运动链计算成本，RNDF 以相互条件化的链段回归降低相关开销。</b><br>include · 可独立评估的方法、比较或适用边界；不冒充新实验。</li><li><b>所述神经 swept-volume 方法估计运动全过程的占据区域以做连续碰撞检查；体素表示存在空间分辨率与离散误差，隐式边界/SDF 表示可减轻这类限制，部分方法仍穿插几何检查以提高可靠性。</b><br>include · 可独立评估的方法、比较或适用边界；不冒充新实验。</li><li><b>综述把分布外泛化不足与规划专用数据有限、工作空间变化引起配置空间可行结构变化联系起来；程序化或生成式场景可扩大训练数据，但 MotionBenchMaker 的简单场景、随机场景真实性和生成式 articulated assets 多样性仍构成限制。</b><br>include · 可独立评估的方法、比较或适用边界；不冒充新实验。</li><li><b>作者建议用约束感知规划、精确几何复核、CBF 或 model predictive shielding 配合神经规划器；CBF 的有效函数设计与语义约束解析化、MPS 的动力学模型及后备策略条件仍是实现安全的前提。</b><br>include · 可独立评估的方法、比较或适用边界；不冒充新实验。</li><li><b>作者将数字孪生提出为部署前模拟、轨迹验证和失败情景测试的工具，但明确指出物理引擎中的 sim-to-real gap 仍限制其安全保证；高保真仿真不能独立证明真实环境安全。</b><br>include · 可独立评估的方法、比较或适用边界；不冒充新实验。</li><li><b>医疗应用综述转述 SRT-H 在八个未见 ex vivo 手术场景中达到 100% 成功，但同时强调向 in vivo 转移仍需风险缓解与认证；患者差异、变形组织、遮挡和有限视野限制数据获取及可靠规划。</b><br>include · 可独立评估的方法、比较或适用边界；不冒充新实验。</li><li><b>再制造综述认为人机协作拆解可结合人体动作预测、约束感知规划和安全过滤，但报废产品非标准设计、结构差异及不确定状态限制训练数据，现有智能拆解主要仍处实验室验证，任务和操作者差异使安全过滤设计困难。</b><br>include · 可独立评估的方法、比较或适用边界；不冒充新实验。</li><li><b>作者将柔性制造列为神经规划潜在应用，但大规模真实数据、人员协作安全认证和对未见制造任务的泛化仍是广泛采用的障碍。</b><br>include · 可独立评估的方法、比较或适用边界；不冒充新实验。</li><li><b>作者认为农业神经规划可用于杂乱环境下的采摘，但环境变化、有限连接、作物特异性与低结构化条件使鲁棒性难以保证。</b><br>include · 可独立评估的方法、比较或适用边界；不冒充新实验。</li><li><b>作者认为建筑作业需要动态重规划和重载/人员安全保障，神经规划的现场标注数据不足、持续环境变化下的适应及认证困难仍未解决。</b><br>include · 可独立评估的方法、比较或适用边界；不冒充新实验。</li><li><b>作者认为仓储机械臂需同时处理狭窄空间、机动性和人员协作；实时路径生成之外仍需显式考虑 kinodynamic 约束、平滑性、领域数据与运行安全，因此现有仿真/受控实验验证不足以证明广泛现实采用。</b><br>include · 可独立评估的方法、比较或适用边界；不冒充新实验。</li><li><b>II–IV 的规划定义、经典算法与深度学习基础；Figures 1–7、Tables I–VIII。</b><br>exclude · 基础术语及被引经典知识不是作者新增科学结果；表 VII–VIII 的示意图像未读。</li><li><b>Fig. 9 的跨复杂度比较与 Fig. 10 的输入/损失映射。</b><br>include · 已纳入方法与比较命题，不按图重复计为独立验证；未读取图像曲线数值。</li><li><b>将程序化与生成式场景结合，或把 LLM 用作通用低层规划器。</b><br>defer · 研究方向并未在本文实施验证，保留在泛化命题边界与问题中。</li><li><b>参考文献 [1]–[455]。</b><br>exclude · 全部已评估；文献条目不算本文新结果或已独立阅读的原始实验。</li></ul></details><article><small>C1 / 综述整理 · method_or_boundary_review</small><h2>综述将 2018 年以来的机械臂神经运动规划文献按端到端规划、无约束采样及局部转向、约束采样、轨迹优化和碰撞查询分类，并显示不同网络架构主要改进不同算法基元，而非同一种通用规划问题。</h2><h3>Evidence</h3><p>文献分类与算法基元映射</p><dl><dt>设计 / 对照</dt><dd>叙述性综述，整理被引方法/结果；未重新实施其原始实验；文中所列被引方法及其原始对照，非统一跨方法实验</dd><dt>独立单位与 n</dt><dd>被综述研究与方法类别；作者称分类超过 100 篇研究；非独立实验样本量</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 28 · Table XVI</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>综述将 2018 年以来的机械臂神经运动规划文献按端到端规划、无约束采样及局部转向、约束采样、轨迹优化和碰撞查询分类，并显示不同网络架构主要改进不同算法基元，而非同一种通用规划问题。</dd><dt>适用边界</dt><dd>限定机械臂全局/低层规划；不纳入主要针对任务规划或低层控制的论文。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能由分类表推断任一架构普遍最优。</dd><dt>未解决</dt><dd>原始研究条件、图像内容与现实部署证据需人工结合被引原文复核。</dd></dl><h3>相关问题</h3><ul><li>架构与基元如何匹配？</li></ul></article><article><small>C2 / 综述整理 · method_or_boundary_review</small><h2>所述 NTFields 系列利用学习的时间场与 Eikonal 方程引导配置空间运动；P-NTFields 增加平滑与渐进速度学习，C-NTFields 纳入任务约束，A-NTFields 改为基于传感数据在线学习以放宽环境预先已知的条件。</h2><h3>Evidence</h3><p>时间场规划文献综合</p><dl><dt>设计 / 对照</dt><dd>叙述性综述，整理被引方法/结果；未重新实施其原始实验；文中所列被引方法及其原始对照，非统一跨方法实验</dd><dt>独立单位与 n</dt><dd>被引规划算法与测试场景；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 14 · V-A; Table IX</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>所述 NTFields 系列利用学习的时间场与 Eikonal 方程引导配置空间运动；P-NTFields 增加平滑与渐进速度学习，C-NTFields 纳入任务约束，A-NTFields 改为基于传感数据在线学习以放宽环境预先已知的条件。</dd><dt>适用边界</dt><dd>系列各方法的训练和环境已知条件不同。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>综述未提供各项物理信息约束成立的完整定理或统一实验。</dd><dt>未解决</dt><dd>原始研究条件、图像内容与现实部署证据需人工结合被引原文复核。</dd></dl><h3>相关问题</h3><ul><li>未知环境中的时间场如何更新？</li></ul></article><article><small>C3 / 综述整理 · method_or_boundary_review</small><h2>所述点云端到端规划器将机器人、障碍和目标的几何输入编码为运动预测；Neural MP 使用 GMM 表达多模态动作并结合实时优化，DRP 加入几何微调和反应式策略，因此其有效性不能归结为单一纯神经网络输出。</h2><h3>Evidence</h3><p>点云规划方法与后处理模块综合</p><dl><dt>设计 / 对照</dt><dd>叙述性综述，整理被引方法/结果；未重新实施其原始实验；文中所列被引方法及其原始对照，非统一跨方法实验</dd><dt>独立单位与 n</dt><dd>被引系统与规划场景；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 16 · V-A; Table IX</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>所述点云端到端规划器将机器人、障碍和目标的几何输入编码为运动预测；Neural MP 使用 GMM 表达多模态动作并结合实时优化，DRP 加入几何微调和反应式策略，因此其有效性不能归结为单一纯神经网络输出。</dd><dt>适用边界</dt><dd>比较依赖训练场景、传感表征和辅助优化/控制模块。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>没有纯网络充分性或模块必要性的统一消融证据。</dd><dt>未解决</dt><dd>原始研究条件、图像内容与现实部署证据需人工结合被引原文复核。</dd></dl><h3>相关问题</h3><ul><li>多模态输出和反应式模块分别承担什么功能？</li></ul></article><article><small>C4 / 综述整理 · method_or_boundary_review</small><h2>综述中的 LLM 可生成或修改机械臂工作空间路点，但 Roco 仍依赖 RRT 进行多臂规划，LATTE 需要有效性后处理；文本预训练模型缺少物理交互数据，低层规划可行性不能由语言生成能力直接保证。</h2><h3>Evidence</h3><p>LLM 轨迹生成与有效性处理文献综合</p><dl><dt>设计 / 对照</dt><dd>叙述性综述，整理被引方法/结果；未重新实施其原始实验；文中所列被引方法及其原始对照，非统一跨方法实验</dd><dt>独立单位与 n</dt><dd>被引系统；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 17 · V-A</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>综述中的 LLM 可生成或修改机械臂工作空间路点，但 Roco 仍依赖 RRT 进行多臂规划，LATTE 需要有效性后处理；文本预训练模型缺少物理交互数据，低层规划可行性不能由语言生成能力直接保证。</dd><dt>适用边界</dt><dd>不同模型具有不同辅助模块；部分工作报告零样本生成但非通用保证。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不等于已有安全、稳定、全面泛化的机械臂基础规划器。</dd><dt>未解决</dt><dd>原始研究条件、图像内容与现实部署证据需人工结合被引原文复核。</dd></dl><h3>相关问题</h3><ul><li>语言生成如何转化为可执行轨迹？</li></ul></article><article><small>C5 / 综述整理 · method_or_boundary_review</small><h2>所述学习式 informed sampling 从历史规划数据、障碍表征或瓶颈区域预测中生成更有针对性的配置样本，用于加速下游采样规划；这些方法保留经典搜索框架，收益取决于采样分布是否覆盖新问题的关键可行区域。</h2><h3>Evidence</h3><p>informed sampling 文献综合</p><dl><dt>设计 / 对照</dt><dd>叙述性综述，整理被引方法/结果；未重新实施其原始实验；文中所列被引方法及其原始对照，非统一跨方法实验</dd><dt>独立单位与 n</dt><dd>被引采样器、规划任务和障碍场景；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 17 · V-B1; Tables X–XI</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>所述学习式 informed sampling 从历史规划数据、障碍表征或瓶颈区域预测中生成更有针对性的配置样本，用于加速下游采样规划；这些方法保留经典搜索框架，收益取决于采样分布是否覆盖新问题的关键可行区域。</dd><dt>适用边界</dt><dd>数据和比较任务并不统一；局部瓶颈预测不等于全空间覆盖。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>学习采样器本身不构成无条件概率完备性证明。</dd><dt>未解决</dt><dd>原始研究条件、图像内容与现实部署证据需人工结合被引原文复核。</dd></dl><h3>相关问题</h3><ul><li>学习分布如何改善窄通道搜索？</li></ul></article><article><small>C6 / 综述整理 · method_or_boundary_review</small><h2>所述 GNN 规划方法利用机械臂运动链或随机几何图表达结构；动态规划工作从预先已知障碍轨迹的时序编码发展到 DynGMP 的局部碰撞重检与树复用，后者旨在降低未知动态障碍下的重规划开销。</h2><h3>Evidence</h3><p>图结构动态规划文献综合</p><dl><dt>设计 / 对照</dt><dd>叙述性综述，整理被引方法/结果；未重新实施其原始实验；文中所列被引方法及其原始对照，非统一跨方法实验</dd><dt>独立单位与 n</dt><dd>被引动态图算法和规划查询；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 19 · V-B1</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>所述 GNN 规划方法利用机械臂运动链或随机几何图表达结构；动态规划工作从预先已知障碍轨迹的时序编码发展到 DynGMP 的局部碰撞重检与树复用，后者旨在降低未知动态障碍下的重规划开销。</dd><dt>适用边界</dt><dd>被引方法的障碍轨迹知识条件不同；并未统一比较。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能据此保证任意障碍运动预测准确或所有动态环境成功。</dd><dt>未解决</dt><dd>原始研究条件、图像内容与现实部署证据需人工结合被引原文复核。</dd></dl><h3>相关问题</h3><ul><li>图与树复用怎样降低重规划开销？</li></ul></article><article><small>C7 / 综述整理 · method_or_boundary_review</small><h2>所述 CVAE、GraphWAE 与 VQ-MPT 在低维或离散潜空间学习可行区域或采样字典，并将环境及起终点条件纳入生成；VQ-MPT 再通过自回归 Transformer 捕捉长程关系，因此低维编码主要服务采样而非自动获得有效运动解。</h2><h3>Evidence</h3><p>潜空间采样器文献综合</p><dl><dt>设计 / 对照</dt><dd>叙述性综述，整理被引方法/结果；未重新实施其原始实验；文中所列被引方法及其原始对照，非统一跨方法实验</dd><dt>独立单位与 n</dt><dd>被引潜空间模型、字典和任务；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 21 · V-B1; Table XI</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>所述 CVAE、GraphWAE 与 VQ-MPT 在低维或离散潜空间学习可行区域或采样字典，并将环境及起终点条件纳入生成；VQ-MPT 再通过自回归 Transformer 捕捉长程关系，因此低维编码主要服务采样而非自动获得有效运动解。</dd><dt>适用边界</dt><dd>潜空间、解码和碰撞处理各有条件；表格行不是同一数据集。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>未证明潜空间插值对任意机械臂约束都有效。</dd><dt>未解决</dt><dd>原始研究条件、图像内容与现实部署证据需人工结合被引原文复核。</dd></dl><h3>相关问题</h3><ul><li>潜空间如何保留规划多模态和约束？</li></ul></article><article><small>C8 / 综述整理 · method_or_boundary_review</small><h2>所述神经局部转向方法通过学习 CBF 或 swept volume 替代纯直线/欧氏度量转向，旨在减少无效扩展与碰撞查询；swept-volume 学习还存在反复推理及离线标签生成的成本。</h2><h3>Evidence</h3><p>局部转向方法综合</p><dl><dt>设计 / 对照</dt><dd>叙述性综述，整理被引方法/结果；未重新实施其原始实验；文中所列被引方法及其原始对照，非统一跨方法实验</dd><dt>独立单位与 n</dt><dd>被引局部控制器、机器人配置对和规划任务；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 21 · Table XII</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>所述神经局部转向方法通过学习 CBF 或 swept volume 替代纯直线/欧氏度量转向，旨在减少无效扩展与碰撞查询；swept-volume 学习还存在反复推理及离线标签生成的成本。</dd><dt>适用边界</dt><dd>学习控制器安全性依赖相应函数与约束条件；数据生成不是免费。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能由转向模块改进推出完整规划系统总耗时必然下降。</dd><dt>未解决</dt><dd>原始研究条件、图像内容与现实部署证据需人工结合被引原文复核。</dd></dl><h3>相关问题</h3><ul><li>局部转向的几何表征有何代价？</li></ul></article><article><small>C9 / 综述整理 · comparative_review</small><h2>Table XII 转述的 CBF-INC 相比 RRT 成功率较高、探索顶点较少，但规划时间更长：成功率 76.1% 对 62.5%，顶点数 162.5 对 252.5，时间 345.8 s 对 287.6 s；该比较说明这些指标不必同时改善。</h2><h3>Evidence</h3><p>同一被引基准中的指标比较</p><dl><dt>设计 / 对照</dt><dd>叙述性综述，整理被引方法/结果；未重新实施其原始实验；文中所列被引方法及其原始对照，非统一跨方法实验</dd><dt>独立单位与 n</dt><dd>被引规划任务；平均顶点数不是独立样本数；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 22 · Table XII</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>Table XII 转述的 CBF-INC 相比 RRT 成功率较高、探索顶点较少，但规划时间更长：成功率 76.1% 对 62.5%，顶点数 162.5 对 252.5，时间 345.8 s 对 287.6 s；该比较说明这些指标不必同时改善。</dd><dt>适用边界</dt><dd>综述未给出该表行的任务数、重复数或统计不确定性。</dd><dt>实际负结果</dt><dd>该被引比较中 CBF-INC 耗时高于 RRT。</dd><dt>不能推出</dt><dd>不作为作者新增实验，也不判断差异是否统计显著。</dd><dt>未解决</dt><dd>原始研究条件、图像内容与现实部署证据需人工结合被引原文复核。</dd></dl><h3>相关问题</h3><ul><li>成功率与耗时是否存在权衡？</li></ul></article><article><small>C10 / 综述整理 · method_or_boundary_review</small><h2>所述 CoMPNet/CoMPNetX 将学习样本投影至任务约束流形，ECoMaNN 或生成模型学习流形附近分布；部分潜空间规划器仍需数值投影或有效性网络，学到约束表征不等于所有生成配置严格满足约束。</h2><h3>Evidence</h3><p>约束采样及投影方法综合</p><dl><dt>设计 / 对照</dt><dd>叙述性综述，整理被引方法/结果；未重新实施其原始实验；文中所列被引方法及其原始对照，非统一跨方法实验</dd><dt>独立单位与 n</dt><dd>被引约束流形、配置与任务；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 22 · V-C; Table XIII</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>所述 CoMPNet/CoMPNetX 将学习样本投影至任务约束流形，ECoMaNN 或生成模型学习流形附近分布；部分潜空间规划器仍需数值投影或有效性网络，学到约束表征不等于所有生成配置严格满足约束。</dd><dt>适用边界</dt><dd>约束模型及投影器适用性、任务空间描述不同。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不会将源文第 7 页的 union 表述当成自由空间与约束同时满足的数学证明。</dd><dt>未解决</dt><dd>原始研究条件、图像内容与现实部署证据需人工结合被引原文复核。</dd></dl><h3>相关问题</h3><ul><li>学习与投影怎样共同保证约束满足？</li></ul></article><article><small>C11 / 综述整理 · method_or_boundary_review</small><h2>所述轨迹优化 warm-start 方法用 MLP、VAE、GAN 或 EBM 学习初始轨迹或解流形，再由优化器细化；DJ-GOMP 预测多时域初值，CNP-B 预测 B-spline 控制点，MPSM 仍使用 CHOMP，因此学习先验与后续优化共同决定输出。</h2><h3>Evidence</h3><p>优化初始化与轨迹参数化文献综合</p><dl><dt>设计 / 对照</dt><dd>叙述性综述，整理被引方法/结果；未重新实施其原始实验；文中所列被引方法及其原始对照，非统一跨方法实验</dd><dt>独立单位与 n</dt><dd>被引轨迹分布、优化查询和系统；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 23 · Table XIV</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>所述轨迹优化 warm-start 方法用 MLP、VAE、GAN 或 EBM 学习初始轨迹或解流形，再由优化器细化；DJ-GOMP 预测多时域初值，CNP-B 预测 B-spline 控制点，MPSM 仍使用 CHOMP，因此学习先验与后续优化共同决定输出。</dd><dt>适用边界</dt><dd>各方法的约束、初始化和训练数据不同。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>学习初始化不证明非凸问题的全局最优、完备性或唯一解。</dd><dt>未解决</dt><dd>原始研究条件、图像内容与现实部署证据需人工结合被引原文复核。</dd></dl><h3>相关问题</h3><ul><li>学习先验怎样帮助轨迹优化？</li></ul></article><article><small>C12 / 综述整理 · method_or_boundary_review</small><h2>所述扩散规划将专家轨迹作为先验，通过任务目标、碰撞和其他代价引导轨迹生成，或为 cuRobo/CSVTO 等优化器提供种子；多个工作采用环境条件、约束组合或代价集成改善适应性，但这些仍是有条件的规划方案。</h2><h3>Evidence</h3><p>扩散先验与条件引导文献综合</p><dl><dt>设计 / 对照</dt><dd>叙述性综述，整理被引方法/结果；未重新实施其原始实验；文中所列被引方法及其原始对照，非统一跨方法实验</dd><dt>独立单位与 n</dt><dd>被引轨迹模型、任务和引导代价；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 24 · Table XIV</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>所述扩散规划将专家轨迹作为先验，通过任务目标、碰撞和其他代价引导轨迹生成，或为 cuRobo/CSVTO 等优化器提供种子；多个工作采用环境条件、约束组合或代价集成改善适应性，但这些仍是有条件的规划方案。</dd><dt>适用边界</dt><dd>演示/合成训练来源和引导代价不同；并非所有方法都在任意新约束下成立。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>未提供统一的安全证明、真实场景泛化实验或生物学验证。</dd><dt>未解决</dt><dd>原始研究条件、图像内容与现实部署证据需人工结合被引原文复核。</dd></dl><h3>相关问题</h3><ul><li>扩散轨迹如何结合可组合约束？</li></ul></article><article><small>C13 / 综述整理 · comparative_review</small><h2>Table XIV 转述的 MPD 对 GPMP 在该被引设置中规划时间更短、成功率更高，但配置空间路径更长：1.1 s 对 194.4 s，100% 对 42%，PL-C 9.9 对 5.1；不能将其概括为所有规划指标均优于 GPMP。</h2><h3>Evidence</h3><p>同一被引基准的时间、成功率和路径代价比较</p><dl><dt>设计 / 对照</dt><dd>叙述性综述，整理被引方法/结果；未重新实施其原始实验；文中所列被引方法及其原始对照，非统一跨方法实验</dd><dt>独立单位与 n</dt><dd>被引规划任务；非多个独立复现实验；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 24 · Table XIV</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>Table XIV 转述的 MPD 对 GPMP 在该被引设置中规划时间更短、成功率更高，但配置空间路径更长：1.1 s 对 194.4 s，100% 对 42%，PL-C 9.9 对 5.1；不能将其概括为所有规划指标均优于 GPMP。</dd><dt>适用边界</dt><dd>表内未报告任务数、重复数或显著性检验；只能限定该比较。</dd><dt>实际负结果</dt><dd>该被引比较中 MPD 的 PL-C 高于 GPMP。</dd><dt>不能推出</dt><dd>没有统计显著性或跨问题普遍优越性推断。</dd><dt>未解决</dt><dd>原始研究条件、图像内容与现实部署证据需人工结合被引原文复核。</dd></dl><h3>相关问题</h3><ul><li>扩散加速是否牺牲路径代价？</li></ul></article><article><small>C14 / 综述整理 · method_or_boundary_review</small><h2>所述 FlowMP 用 conditional flow matching 学习运动场，并纳入加速度与 jerk 表征；SafeFlow 把控制屏障函数引入 flow matching 以约束生成，而其他 flow matching 方法仅用于 warm-start，下游优化和安全保证不能混为一谈。</h2><h3>Evidence</h3><p>flow matching 方法与约束机制综合</p><dl><dt>设计 / 对照</dt><dd>叙述性综述，整理被引方法/结果；未重新实施其原始实验；文中所列被引方法及其原始对照，非统一跨方法实验</dd><dt>独立单位与 n</dt><dd>被引运动场、轨迹及控制屏障函数；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 25 · V-D</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>所述 FlowMP 用 conditional flow matching 学习运动场，并纳入加速度与 jerk 表征；SafeFlow 把控制屏障函数引入 flow matching 以约束生成，而其他 flow matching 方法仅用于 warm-start，下游优化和安全保证不能混为一谈。</dd><dt>适用边界</dt><dd>安全声明依赖被引方法的屏障和动态控制条件，本文没有重证这些条件。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不将任意 flow matching 轨迹生成器都标成已获形式安全保证。</dd><dt>未解决</dt><dd>原始研究条件、图像内容与现实部署证据需人工结合被引原文复核。</dd></dl><h3>相关问题</h3><ul><li>运动场生成怎样纳入平滑性与安全约束？</li></ul></article><article><small>C15 / 综述整理 · method_or_boundary_review</small><h2>所述神经 proxy collision checker 学习配置或配置对的碰撞状态，以降低几何查询成本；相关混合方法在接近碰撞边界或最终路径验证时仍调用几何检查，模型分类准确率不能直接替代全路径安全性。</h2><h3>Evidence</h3><p>二元碰撞代理与几何复核文献综合</p><dl><dt>设计 / 对照</dt><dd>叙述性综述，整理被引方法/结果；未重新实施其原始实验；文中所列被引方法及其原始对照，非统一跨方法实验</dd><dt>独立单位与 n</dt><dd>配置、配置对及规划查询，而非独立机器人样本；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 26 · Table XV</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>所述神经 proxy collision checker 学习配置或配置对的碰撞状态，以降低几何查询成本；相关混合方法在接近碰撞边界或最终路径验证时仍调用几何检查，模型分类准确率不能直接替代全路径安全性。</dd><dt>适用边界</dt><dd>Table XV 混合了整体规划时间与单次碰撞查询时间；带星号行才是嵌入规划器比较。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不把查询时间、分类指标与完整系统可靠性等同。</dd><dt>未解决</dt><dd>原始研究条件、图像内容与现实部署证据需人工结合被引原文复核。</dd></dl><h3>相关问题</h3><ul><li>代理碰撞检查何时需要精确复核？</li></ul></article><article><small>C16 / 综述整理 · method_or_boundary_review</small><h2>所述 GraphDistNet/GDN-R 学习几何距离和梯度，PairwiseNet 将对象对距离的最小值作为全局碰撞距离；这种结构化建模有利于复用类似几何，但消息传递成本随图大小变化，对全新几何的泛化不能无条件外推。</h2><h3>Evidence</h3><p>图距离与成对距离模型综合</p><dl><dt>设计 / 对照</dt><dd>叙述性综述，整理被引方法/结果；未重新实施其原始实验；文中所列被引方法及其原始对照，非统一跨方法实验</dd><dt>独立单位与 n</dt><dd>对象对、图几何和碰撞查询；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 27 · Table XV</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>所述 GraphDistNet/GDN-R 学习几何距离和梯度，PairwiseNet 将对象对距离的最小值作为全局碰撞距离；这种结构化建模有利于复用类似几何，但消息传递成本随图大小变化，对全新几何的泛化不能无条件外推。</dd><dt>适用边界</dt><dd>新场景中类似形状的复用与任意新形状泛化不同。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>未得到统一实测复杂度定律或任意几何误差上界。</dd><dt>未解决</dt><dd>原始研究条件、图像内容与现实部署证据需人工结合被引原文复核。</dd></dl><h3>相关问题</h3><ul><li>成对几何分解如何改善距离估计？</li></ul></article><article><small>C17 / 综述整理 · method_or_boundary_review</small><h2>所述 neural SDF/JSDF 提供连续可微的碰撞距离场，便于轨迹优化；隐式学习整条运动链可能累积误差，逐链段 Composite SDF 则引入显式运动链计算成本，RNDF 以相互条件化的链段回归降低相关开销。</h2><h3>Evidence</h3><p>神经距离场与运动链表征综合</p><dl><dt>设计 / 对照</dt><dd>叙述性综述，整理被引方法/结果；未重新实施其原始实验；文中所列被引方法及其原始对照，非统一跨方法实验</dd><dt>独立单位与 n</dt><dd>机器人链段、查询点和配置；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 28 · V-E</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>所述 neural SDF/JSDF 提供连续可微的碰撞距离场，便于轨迹优化；隐式学习整条运动链可能累积误差，逐链段 Composite SDF 则引入显式运动链计算成本，RNDF 以相互条件化的链段回归降低相关开销。</dd><dt>适用边界</dt><dd>距离场、机器人形态和训练采样条件不同，部分方法需近边界主动学习。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能把可微性当作距离精确性或现实安全认证。</dd><dt>未解决</dt><dd>原始研究条件、图像内容与现实部署证据需人工结合被引原文复核。</dd></dl><h3>相关问题</h3><ul><li>运动链隐式与分解表示如何权衡误差与成本？</li></ul></article><article><small>C18 / 综述整理 · method_or_boundary_review</small><h2>所述神经 swept-volume 方法估计运动全过程的占据区域以做连续碰撞检查；体素表示存在空间分辨率与离散误差，隐式边界/SDF 表示可减轻这类限制，部分方法仍穿插几何检查以提高可靠性。</h2><h3>Evidence</h3><p>swept-volume 表示方法综合</p><dl><dt>设计 / 对照</dt><dd>叙述性综述，整理被引方法/结果；未重新实施其原始实验；文中所列被引方法及其原始对照，非统一跨方法实验</dd><dt>独立单位与 n</dt><dd>配置对、运动轨迹和空间查询点；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 29 · V-E</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>所述神经 swept-volume 方法估计运动全过程的占据区域以做连续碰撞检查；体素表示存在空间分辨率与离散误差，隐式边界/SDF 表示可减轻这类限制，部分方法仍穿插几何检查以提高可靠性。</dd><dt>适用边界</dt><dd>连续碰撞对象、轨迹参数化和占据近似不同。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>估计包络不等于已证真实机器人运动永不碰撞。</dd><dt>未解决</dt><dd>原始研究条件、图像内容与现实部署证据需人工结合被引原文复核。</dd></dl><h3>相关问题</h3><ul><li>连续运动占据如何可靠近似？</li></ul></article><article><small>C19 / 综述整理 · method_or_boundary_review</small><h2>综述把分布外泛化不足与规划专用数据有限、工作空间变化引起配置空间可行结构变化联系起来；程序化或生成式场景可扩大训练数据，但 MotionBenchMaker 的简单场景、随机场景真实性和生成式 articulated assets 多样性仍构成限制。</h2><h3>Evidence</h3><p>数据生成与泛化障碍综合</p><dl><dt>设计 / 对照</dt><dd>叙述性综述，整理被引方法/结果；未重新实施其原始实验；文中所列被引方法及其原始对照，非统一跨方法实验</dd><dt>独立单位与 n</dt><dd>被引数据生成系统、资产和训练/测试场景；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 30 · VI-A</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>综述把分布外泛化不足与规划专用数据有限、工作空间变化引起配置空间可行结构变化联系起来；程序化或生成式场景可扩大训练数据，但 MotionBenchMaker 的简单场景、随机场景真实性和生成式 articulated assets 多样性仍构成限制。</dd><dt>适用边界</dt><dd>作者提出结合程序化与生成式方法的方向，未在本综述实施统一验证。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能由合成数据规模直接推出开放现实环境泛化能力。</dd><dt>未解决</dt><dd>原始研究条件、图像内容与现实部署证据需人工结合被引原文复核。</dd></dl><h3>相关问题</h3><ul><li>大规模合成场景能否覆盖现实规划变化？</li></ul></article><article><small>C20 / 综述整理 · method_or_boundary_review</small><h2>作者建议用约束感知规划、精确几何复核、CBF 或 model predictive shielding 配合神经规划器；CBF 的有效函数设计与语义约束解析化、MPS 的动力学模型及后备策略条件仍是实现安全的前提。</h2><h3>Evidence</h3><p>混合规划与安全过滤文献综合</p><dl><dt>设计 / 对照</dt><dd>叙述性综述，整理被引方法/结果；未重新实施其原始实验；文中所列被引方法及其原始对照，非统一跨方法实验</dd><dt>独立单位与 n</dt><dd>被引算法、约束函数和模型；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 31 · VI-B2–B3; Table XVII</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>作者建议用约束感知规划、精确几何复核、CBF 或 model predictive shielding 配合神经规划器；CBF 的有效函数设计与语义约束解析化、MPS 的动力学模型及后备策略条件仍是实现安全的前提。</dd><dt>适用边界</dt><dd>经典算法保证不能在任意神经替代、软罚项或不完整模型下自动继承。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不宣称全部混合规划器已具有完备、最优或现实安全保证。</dd><dt>未解决</dt><dd>原始研究条件、图像内容与现实部署证据需人工结合被引原文复核。</dd></dl><h3>相关问题</h3><ul><li>神经规划的安全保证需要哪些模型条件？</li></ul></article><article><small>C21 / 综述整理 · method_or_boundary_review</small><h2>作者将数字孪生提出为部署前模拟、轨迹验证和失败情景测试的工具，但明确指出物理引擎中的 sim-to-real gap 仍限制其安全保证；高保真仿真不能独立证明真实环境安全。</h2><h3>Evidence</h3><p>数字孪生部署建议及限制综合</p><dl><dt>设计 / 对照</dt><dd>叙述性综述，整理被引方法/结果；未重新实施其原始实验；文中所列被引方法及其原始对照，非统一跨方法实验</dd><dt>独立单位与 n</dt><dd>被引数字孪生系统和仿真实例；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 31 · VI-B4; Figure 12</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>作者将数字孪生提出为部署前模拟、轨迹验证和失败情景测试的工具，但明确指出物理引擎中的 sim-to-real gap 仍限制其安全保证；高保真仿真不能独立证明真实环境安全。</dd><dt>适用边界</dt><dd>依赖孪生与物理系统同步和模型精度；不是本文新增真实部署试验。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不将仿真验证当作临床验证或独立现实复现。</dd><dt>未解决</dt><dd>原始研究条件、图像内容与现实部署证据需人工结合被引原文复核。</dd></dl><h3>相关问题</h3><ul><li>数字孪生能消除哪些部署风险？</li></ul></article><article><small>C22 / 综述整理 · method_or_boundary_review</small><h2>医疗应用综述转述 SRT-H 在八个未见 ex vivo 手术场景中达到 100% 成功，但同时强调向 in vivo 转移仍需风险缓解与认证；患者差异、变形组织、遮挡和有限视野限制数据获取及可靠规划。</h2><h3>Evidence</h3><p>手术机器人示例与适用边界综合</p><dl><dt>设计 / 对照</dt><dd>叙述性综述，整理被引方法/结果；未重新实施其原始实验；文中所列被引方法及其原始对照，非统一跨方法实验</dd><dt>独立单位与 n</dt><dd>被引 ex vivo 手术场景；不是本文新增患者/动物实验；八个未见手术场景；独立患者或动物数本文未提供</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 32 · Figure 13</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>医疗应用综述转述 SRT-H 在八个未见 ex vivo 手术场景中达到 100% 成功，但同时强调向 in vivo 转移仍需风险缓解与认证；患者差异、变形组织、遮挡和有限视野限制数据获取及可靠规划。</dd><dt>适用边界</dt><dd>示例特指 ex vivo cholecystectomy；其他医疗案例使用不同任务。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能据此认定在人类临床已可靠、安全或优于医生。</dd><dt>未解决</dt><dd>原始研究条件、图像内容与现实部署证据需人工结合被引原文复核。</dd></dl><h3>相关问题</h3><ul><li>离体自主手术怎样转化到活体临床？</li></ul></article><article><small>C23 / 综述整理 · method_or_boundary_review</small><h2>再制造综述认为人机协作拆解可结合人体动作预测、约束感知规划和安全过滤，但报废产品非标准设计、结构差异及不确定状态限制训练数据，现有智能拆解主要仍处实验室验证，任务和操作者差异使安全过滤设计困难。</h2><h3>Evidence</h3><p>HRC disassembly 文献综合</p><dl><dt>设计 / 对照</dt><dd>叙述性综述，整理被引方法/结果；未重新实施其原始实验；文中所列被引方法及其原始对照，非统一跨方法实验</dd><dt>独立单位与 n</dt><dd>被引产品、操作者运动和实验室系统；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 33 · Figure 14</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>再制造综述认为人机协作拆解可结合人体动作预测、约束感知规划和安全过滤，但报废产品非标准设计、结构差异及不确定状态限制训练数据，现有智能拆解主要仍处实验室验证，任务和操作者差异使安全过滤设计困难。</dd><dt>适用边界</dt><dd>具体预测器、产品和操作危险条件不同；主要是应用前景。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>本文未证明工业规模通用拆解或人员碰撞已彻底解决。</dd><dt>未解决</dt><dd>原始研究条件、图像内容与现实部署证据需人工结合被引原文复核。</dd></dl><h3>相关问题</h3><ul><li>报废产品异质性如何影响协作拆解？</li></ul></article><article><small>C24 / 综述整理 · method_or_boundary_review</small><h2>作者将柔性制造列为神经规划潜在应用，但大规模真实数据、人员协作安全认证和对未见制造任务的泛化仍是广泛采用的障碍。</h2><h3>Evidence</h3><p>领域部署限制综合</p><dl><dt>设计 / 对照</dt><dd>叙述性综述，整理被引方法/结果；未重新实施其原始实验；文中所列被引方法及其原始对照，非统一跨方法实验</dd><dt>独立单位与 n</dt><dd>制造任务和被引系统；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 34 · VII-C Manufacturing</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>作者将柔性制造列为神经规划潜在应用，但大规模真实数据、人员协作安全认证和对未见制造任务的泛化仍是广泛采用的障碍。</dd><dt>适用边界</dt><dd>适用于柔性制造部署讨论，无新增现场实验。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>未证实替代现有制造流程后的效率、安全或经济效益。</dd><dt>未解决</dt><dd>原始研究条件、图像内容与现实部署证据需人工结合被引原文复核。</dd></dl><h3>相关问题</h3><ul><li>柔性制造的规划泛化有什么部署边界？</li></ul></article><article><small>C25 / 综述整理 · method_or_boundary_review</small><h2>作者认为农业神经规划可用于杂乱环境下的采摘，但环境变化、有限连接、作物特异性与低结构化条件使鲁棒性难以保证。</h2><h3>Evidence</h3><p>农业应用前景与限制综合</p><dl><dt>设计 / 对照</dt><dd>叙述性综述，整理被引方法/结果；未重新实施其原始实验；文中所列被引方法及其原始对照，非统一跨方法实验</dd><dt>独立单位与 n</dt><dd>农业任务和环境；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 34 · VII-C Agriculture</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>作者认为农业神经规划可用于杂乱环境下的采摘，但环境变化、有限连接、作物特异性与低结构化条件使鲁棒性难以保证。</dd><dt>适用边界</dt><dd>为领域前景，不是本文采摘性能实验。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能推断任意作物或户外条件均能成功自动采摘。</dd><dt>未解决</dt><dd>原始研究条件、图像内容与现实部署证据需人工结合被引原文复核。</dd></dl><h3>相关问题</h3><ul><li>农业变化如何限制端到端规划？</li></ul></article><article><small>C26 / 综述整理 · method_or_boundary_review</small><h2>作者认为建筑作业需要动态重规划和重载/人员安全保障，神经规划的现场标注数据不足、持续环境变化下的适应及认证困难仍未解决。</h2><h3>Evidence</h3><p>建筑应用前景与限制综合</p><dl><dt>设计 / 对照</dt><dd>叙述性综述，整理被引方法/结果；未重新实施其原始实验；文中所列被引方法及其原始对照，非统一跨方法实验</dd><dt>独立单位与 n</dt><dd>建筑作业场景和任务；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 34 · VII-C Construction</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>作者认为建筑作业需要动态重规划和重载/人员安全保障，神经规划的现场标注数据不足、持续环境变化下的适应及认证困难仍未解决。</dd><dt>适用边界</dt><dd>没有新增建筑工地试验或安全认证结果。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不将潜在适应能力当作重载施工部署已经安全。</dd><dt>未解决</dt><dd>原始研究条件、图像内容与现实部署证据需人工结合被引原文复核。</dd></dl><h3>相关问题</h3><ul><li>建筑现场变化下如何重规划与认证？</li></ul></article><article><small>C27 / 综述整理 · method_or_boundary_review</small><h2>作者认为仓储机械臂需同时处理狭窄空间、机动性和人员协作；实时路径生成之外仍需显式考虑 kinodynamic 约束、平滑性、领域数据与运行安全，因此现有仿真/受控实验验证不足以证明广泛现实采用。</h2><h3>Evidence</h3><p>仓储部署条件与总体实证边界综合</p><dl><dt>设计 / 对照</dt><dd>叙述性综述，整理被引方法/结果；未重新实施其原始实验；文中所列被引方法及其原始对照，非统一跨方法实验</dd><dt>独立单位与 n</dt><dd>仓储任务与被引仿真/实验室系统；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 34 · VII-C Warehouse</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>作者认为仓储机械臂需同时处理狭窄空间、机动性和人员协作；实时路径生成之外仍需显式考虑 kinodynamic 约束、平滑性、领域数据与运行安全，因此现有仿真/受控实验验证不足以证明广泛现实采用。</dd><dt>适用边界</dt><dd>领域部署建议，未提供统一现实仓库实验。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能将模型规划基准当作仓储系统现场验证。</dd><dt>未解决</dt><dd>原始研究条件、图像内容与现实部署证据需人工结合被引原文复核。</dd></dl><h3>相关问题</h3><ul><li>仓储实时规划有哪些执行约束？</li></ul></article><details><summary>核对记录与来源信息</summary><pre>{
+  &quot;coverage&quot;: {
+    &quot;pdf_pages_read&quot;: [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45
+    ],
+    &quot;results_sections_seen&quot;: [
+      &quot;I Introduction and selection scope&quot;,
+      &quot;II Planning preliminaries&quot;,
+      &quot;III Classical planning&quot;,
+      &quot;IV Deep learning basics&quot;,
+      &quot;V-A End-to-end planning&quot;,
+      &quot;V-B Sampling and steering&quot;,
+      &quot;V-C Constrained sampling&quot;,
+      &quot;V-D Trajectory optimization&quot;,
+      &quot;V-E Collision and proximity&quot;,
+      &quot;VI Generalizability and safety&quot;,
+      &quot;VII Healthcare, re-manufacturing and other domains&quot;,
+      &quot;VIII Conclusions&quot;,
+      &quot;Figures 1–14 and Tables I–XVII supplied text&quot;,
+      &quot;References [1]–[455]&quot;
+    ],
+    &quot;missing_material&quot;: [
+      &quot;所有图像像素、示意图/曲线视觉内容&quot;,
+      &quot;被引研究原始全文与各自补充数据未提供&quot;
+    ],
+    &quot;text_pass_complete&quot;: true,
+    &quot;notes&quot;: [
+      &quot;逐段读完全部 45 页归档文字，含全部表格/图注及文献；无抽样或摘要代替全文。&quot;,
+      &quot;第二次审计依据本次完整阅读保留的来源内容，不重新读归档文件。&quot;,
+      &quot;文档实质为叙述性综述预印本；无作者新增实验或元分析。&quot;
+    ],
+    &quot;reading_mode&quot;: &quot;text_only&quot;,
+    &quot;figure_images_read&quot;: false,
+    &quot;scientific_verification&quot;: false,
+    &quot;source_pdf_offline&quot;: false,
+    &quot;archived_page_text_used&quot;: false
+  },
+  &quot;audit&quot;: {
+    &quot;source_match_checks&quot;: [],
+    &quot;model_findings&quot;: [
+      {
+        &quot;claim_id&quot;: &quot;C1&quot;,
+        &quot;issue&quot;: &quot;二次来源审计：核对对象、条件、分析单位、对照和统计措辞；本文为综述，未提供统一独立样本量或不确定性，不作机制必然性/统一泛化/显著性推断。&quot;,
+        &quot;suggested_correction&quot;: &quot;已在命题、证据和非推论边界中校准；保持 review_synthesis。&quot;,
+        &quot;pdf_page&quot;: 28,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C2&quot;,
+        &quot;issue&quot;: &quot;二次来源审计：核对对象、条件、分析单位、对照和统计措辞；本文为综述，未提供统一独立样本量或不确定性，不作机制必然性/统一泛化/显著性推断。&quot;,
+        &quot;suggested_correction&quot;: &quot;已在命题、证据和非推论边界中校准；保持 review_synthesis。&quot;,
+        &quot;pdf_page&quot;: 14,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C3&quot;,
+        &quot;issue&quot;: &quot;二次来源审计：核对对象、条件、分析单位、对照和统计措辞；本文为综述，未提供统一独立样本量或不确定性，不作机制必然性/统一泛化/显著性推断。&quot;,
+        &quot;suggested_correction&quot;: &quot;已在命题、证据和非推论边界中校准；保持 review_synthesis。&quot;,
+        &quot;pdf_page&quot;: 16,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C4&quot;,
+        &quot;issue&quot;: &quot;二次来源审计：核对对象、条件、分析单位、对照和统计措辞；本文为综述，未提供统一独立样本量或不确定性，不作机制必然性/统一泛化/显著性推断。&quot;,
+        &quot;suggested_correction&quot;: &quot;已在命题、证据和非推论边界中校准；保持 review_synthesis。&quot;,
+        &quot;pdf_page&quot;: 17,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C5&quot;,
+        &quot;issue&quot;: &quot;二次来源审计：核对对象、条件、分析单位、对照和统计措辞；本文为综述，未提供统一独立样本量或不确定性，不作机制必然性/统一泛化/显著性推断。&quot;,
+        &quot;suggested_correction&quot;: &quot;已在命题、证据和非推论边界中校准；保持 review_synthesis。&quot;,
+        &quot;pdf_page&quot;: 17,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C6&quot;,
+        &quot;issue&quot;: &quot;二次来源审计：核对对象、条件、分析单位、对照和统计措辞；本文为综述，未提供统一独立样本量或不确定性，不作机制必然性/统一泛化/显著性推断。&quot;,
+        &quot;suggested_correction&quot;: &quot;已在命题、证据和非推论边界中校准；保持 review_synthesis。&quot;,
+        &quot;pdf_page&quot;: 19,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C7&quot;,
+        &quot;issue&quot;: &quot;二次来源审计：核对对象、条件、分析单位、对照和统计措辞；本文为综述，未提供统一独立样本量或不确定性，不作机制必然性/统一泛化/显著性推断。&quot;,
+        &quot;suggested_correction&quot;: &quot;已在命题、证据和非推论边界中校准；保持 review_synthesis。&quot;,
+        &quot;pdf_page&quot;: 21,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C8&quot;,
+        &quot;issue&quot;: &quot;二次来源审计：核对对象、条件、分析单位、对照和统计措辞；本文为综述，未提供统一独立样本量或不确定性，不作机制必然性/统一泛化/显著性推断。&quot;,
+        &quot;suggested_correction&quot;: &quot;已在命题、证据和非推论边界中校准；保持 review_synthesis。&quot;,
+        &quot;pdf_page&quot;: 21,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C9&quot;,
+        &quot;issue&quot;: &quot;二次来源审计：核对对象、条件、分析单位、对照和统计措辞；本文为综述，未提供统一独立样本量或不确定性，不作机制必然性/统一泛化/显著性推断。&quot;,
+        &quot;suggested_correction&quot;: &quot;已在命题、证据和非推论边界中校准；保持 review_synthesis。&quot;,
+        &quot;pdf_page&quot;: 22,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C10&quot;,
+        &quot;issue&quot;: &quot;二次来源审计：核对对象、条件、分析单位、对照和统计措辞；本文为综述，未提供统一独立样本量或不确定性，不作机制必然性/统一泛化/显著性推断。&quot;,
+        &quot;suggested_correction&quot;: &quot;已在命题、证据和非推论边界中校准；保持 review_synthesis。&quot;,
+        &quot;pdf_page&quot;: 22,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C11&quot;,
+        &quot;issue&quot;: &quot;二次来源审计：核对对象、条件、分析单位、对照和统计措辞；本文为综述，未提供统一独立样本量或不确定性，不作机制必然性/统一泛化/显著性推断。&quot;,
+        &quot;suggested_correction&quot;: &quot;已在命题、证据和非推论边界中校准；保持 review_synthesis。&quot;,
+        &quot;pdf_page&quot;: 23,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C12&quot;,
+        &quot;issue&quot;: &quot;二次来源审计：核对对象、条件、分析单位、对照和统计措辞；本文为综述，未提供统一独立样本量或不确定性，不作机制必然性/统一泛化/显著性推断。&quot;,
+        &quot;suggested_correction&quot;: &quot;已在命题、证据和非推论边界中校准；保持 review_synthesis。&quot;,
+        &quot;pdf_page&quot;: 24,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C13&quot;,
+        &quot;issue&quot;: &quot;二次来源审计：核对对象、条件、分析单位、对照和统计措辞；本文为综述，未提供统一独立样本量或不确定性，不作机制必然性/统一泛化/显著性推断。&quot;,
+        &quot;suggested_correction&quot;: &quot;已在命题、证据和非推论边界中校准；保持 review_synthesis。&quot;,
+        &quot;pdf_page&quot;: 24,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C14&quot;,
+        &quot;issue&quot;: &quot;二次来源审计：核对对象、条件、分析单位、对照和统计措辞；本文为综述，未提供统一独立样本量或不确定性，不作机制必然性/统一泛化/显著性推断。&quot;,
+        &quot;suggested_correction&quot;: &quot;已在命题、证据和非推论边界中校准；保持 review_synthesis。&quot;,
+        &quot;pdf_page&quot;: 25,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C15&quot;,
+        &quot;issue&quot;: &quot;二次来源审计：核对对象、条件、分析单位、对照和统计措辞；本文为综述，未提供统一独立样本量或不确定性，不作机制必然性/统一泛化/显著性推断。&quot;,
+        &quot;suggested_correction&quot;: &quot;已在命题、证据和非推论边界中校准；保持 review_synthesis。&quot;,
+        &quot;pdf_page&quot;: 26,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C16&quot;,
+        &quot;issue&quot;: &quot;二次来源审计：核对对象、条件、分析单位、对照和统计措辞；本文为综述，未提供统一独立样本量或不确定性，不作机制必然性/统一泛化/显著性推断。&quot;,
+        &quot;suggested_correction&quot;: &quot;已在命题、证据和非推论边界中校准；保持 review_synthesis。&quot;,
+        &quot;pdf_page&quot;: 27,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C17&quot;,
+        &quot;issue&quot;: &quot;二次来源审计：核对对象、条件、分析单位、对照和统计措辞；本文为综述，未提供统一独立样本量或不确定性，不作机制必然性/统一泛化/显著性推断。&quot;,
+        &quot;suggested_correction&quot;: &quot;已在命题、证据和非推论边界中校准；保持 review_synthesis。&quot;,
+        &quot;pdf_page&quot;: 28,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C18&quot;,
+        &quot;issue&quot;: &quot;二次来源审计：核对对象、条件、分析单位、对照和统计措辞；本文为综述，未提供统一独立样本量或不确定性，不作机制必然性/统一泛化/显著性推断。&quot;,
+        &quot;suggested_correction&quot;: &quot;已在命题、证据和非推论边界中校准；保持 review_synthesis。&quot;,
+        &quot;pdf_page&quot;: 29,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C19&quot;,
+        &quot;issue&quot;: &quot;二次来源审计：核对对象、条件、分析单位、对照和统计措辞；本文为综述，未提供统一独立样本量或不确定性，不作机制必然性/统一泛化/显著性推断。&quot;,
+        &quot;suggested_correction&quot;: &quot;已在命题、证据和非推论边界中校准；保持 review_synthesis。&quot;,
+        &quot;pdf_page&quot;: 30,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C20&quot;,
+        &quot;issue&quot;: &quot;二次来源审计：核对对象、条件、分析单位、对照和统计措辞；本文为综述，未提供统一独立样本量或不确定性，不作机制必然性/统一泛化/显著性推断。&quot;,
+        &quot;suggested_correction&quot;: &quot;已在命题、证据和非推论边界中校准；保持 review_synthesis。&quot;,
+        &quot;pdf_page&quot;: 31,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C21&quot;,
+        &quot;issue&quot;: &quot;二次来源审计：核对对象、条件、分析单位、对照和统计措辞；本文为综述，未提供统一独立样本量或不确定性，不作机制必然性/统一泛化/显著性推断。&quot;,
+        &quot;suggested_correction&quot;: &quot;已在命题、证据和非推论边界中校准；保持 review_synthesis。&quot;,
+        &quot;pdf_page&quot;: 31,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C22&quot;,
+        &quot;issue&quot;: &quot;二次来源审计：核对对象、条件、分析单位、对照和统计措辞；本文为综述，未提供统一独立样本量或不确定性，不作机制必然性/统一泛化/显著性推断。&quot;,
+        &quot;suggested_correction&quot;: &quot;已在命题、证据和非推论边界中校准；保持 review_synthesis。&quot;,
+        &quot;pdf_page&quot;: 32,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C23&quot;,
+        &quot;issue&quot;: &quot;二次来源审计：核对对象、条件、分析单位、对照和统计措辞；本文为综述，未提供统一独立样本量或不确定性，不作机制必然性/统一泛化/显著性推断。&quot;,
+        &quot;suggested_correction&quot;: &quot;已在命题、证据和非推论边界中校准；保持 review_synthesis。&quot;,
+        &quot;pdf_page&quot;: 33,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C24&quot;,
+        &quot;issue&quot;: &quot;二次来源审计：核对对象、条件、分析单位、对照和统计措辞；本文为综述，未提供统一独立样本量或不确定性，不作机制必然性/统一泛化/显著性推断。&quot;,
+        &quot;suggested_correction&quot;: &quot;已在命题、证据和非推论边界中校准；保持 review_synthesis。&quot;,
+        &quot;pdf_page&quot;: 34,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C25&quot;,
+        &quot;issue&quot;: &quot;二次来源审计：核对对象、条件、分析单位、对照和统计措辞；本文为综述，未提供统一独立样本量或不确定性，不作机制必然性/统一泛化/显著性推断。&quot;,
+        &quot;suggested_correction&quot;: &quot;已在命题、证据和非推论边界中校准；保持 review_synthesis。&quot;,
+        &quot;pdf_page&quot;: 34,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C26&quot;,
+        &quot;issue&quot;: &quot;二次来源审计：核对对象、条件、分析单位、对照和统计措辞；本文为综述，未提供统一独立样本量或不确定性，不作机制必然性/统一泛化/显著性推断。&quot;,
+        &quot;suggested_correction&quot;: &quot;已在命题、证据和非推论边界中校准；保持 review_synthesis。&quot;,
+        &quot;pdf_page&quot;: 34,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C27&quot;,
+        &quot;issue&quot;: &quot;二次来源审计：核对对象、条件、分析单位、对照和统计措辞；本文为综述，未提供统一独立样本量或不确定性，不作机制必然性/统一泛化/显著性推断。&quot;,
+        &quot;suggested_correction&quot;: &quot;已在命题、证据和非推论边界中校准；保持 review_synthesis。&quot;,
+        &quot;pdf_page&quot;: 34,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;提供的是 arXiv:2603.24318v1，25 Mar 2026；索引指向 IEEE TASE DOI，归档正文未出现期刊 DOI。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留索引身份但不得视为已读期刊终版，版本关系待主工作者/人工核对。&quot;,
+        &quot;pdf_page&quot;: 1,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C10&quot;,
+        &quot;issue&quot;: &quot;III-A2 将同时满足自由空间与约束的路径描述为 union，数学措辞可疑。&quot;,
+        &quot;suggested_correction&quot;: &quot;候选只陈述同时满足的任务与投影流程，不沿用 union；原文问题保留。&quot;,
+        &quot;pdf_page&quot;: 7,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;Table XI 的 SIMPNet/TEMP 引用编号与正文对应不一致；Table XV 的时间列混合规划与查询口径，部分表行单位/尺度仍需原文核对。&quot;,
+        &quot;suggested_correction&quot;: &quot;避免从疑似错配行提取精确数字；Table XV 仅作有口径限制的方法综合。&quot;,
+        &quot;pdf_page&quot;: 20,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;综述中软约束、CBF、数字孪生被局部表述为保证安全，但没有提供所有应用通用的前提与证明。&quot;,
+        &quot;suggested_correction&quot;: &quot;第二次审计限制为作者建议和有条件机制，不转写成无条件安全定理。&quot;,
+        &quot;pdf_page&quot;: 31,
+        &quot;resolved&quot;: true
+      }
+    ],
+    &quot;needs_human_review&quot;: true
+  },
+  &quot;source&quot;: {
+    &quot;filename&quot;: &quot;paper-W7127470505--Toward-Generalist-Neural-Motion-Planners-for-Robotic-Manipulators-Challenges-and-Opportunities.pdf&quot;,
+    &quot;sha256&quot;: &quot;feafcd5e011d086257c78c94228b51771aa674ea9fed763c99d257cd6134fad2&quot;,
+    &quot;source_url&quot;: &quot;https://arxiv.org/pdf/2603.24318&quot;,
+    &quot;pdf_page_count&quot;: 45
+  },
+  &quot;provenance&quot;: {
+    &quot;created_at&quot;: &quot;2026-10-07T10:25:35.665141Z&quot;,
+    &quot;workflow&quot;: &quot;claim-commons-pdf-v1&quot;,
+    &quot;prompt_version&quot;: &quot;claim-commons-chatgpt-pdf-2026-10-07.1&quot;,
+    &quot;backend&quot;: &quot;authorized_parallel_GPT&quot;,
+    &quot;model&quot;: &quot;inherited_account_GPT&quot;,
+    &quot;provider_api_key_used&quot;: false,
+    &quot;source_sha256&quot;: &quot;feafcd5e011d086257c78c94228b51771aa674ea9fed763c99d257cd6134fad2&quot;,
+    &quot;source_audit_complete&quot;: true,
+    &quot;review_status&quot;: &quot;candidate&quot;,
+    &quot;database_updated&quot;: false
+  }
+}</pre></details></main><footer></footer></body></html>

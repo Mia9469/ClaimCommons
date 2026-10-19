@@ -1,0 +1,74 @@
+# Claim context v1 / 命题定义与判断条件
+
+## Purpose / 目的
+
+Claim Commons starts with neuroscience. It asks whether making a paper's objects, terms, measurements, conditions and evidence explicit can help people and AI inspect and compare its claims. This is a design hypothesis, not a demonstrated improvement in AI reasoning or a causal explanation of progress in mathematical AI. Neuroscience is not being reduced to formal proof.
+
+从神经科学开始，把论文中的对象、术语、操作定义、条件与证据写清楚，检验这种表示能否帮助人和 AI 阅读、比较与核查。它是一项设计假设，不是已经验证的 AI 性能提升，也不是对数学 AI 进展原因的定论。
+
+The unit is the smallest **complete, separately assessable proposition**, not the shortest sentence. Keep theorem assumptions, comparisons, shared controls and dependencies intact. Separate an observed effect, a proposed mechanism and a generalization only when they make independently assessable commitments.
+
+## Additive metadata / 兼容新增字段
+
+Existing `statement`, `source_statement`, `evidence`, `conclusion`, provenance and review states remain authoritative. New fields are optional for old records. The browser prompt version is `2026-10-20.1`; its additional semantic contract is `claim-context-v1`. The PDF protocol stays `claim-commons-pdf-v1`.
+
+```json
+{
+  "assessment_frame": {
+    "system": null,
+    "conditions": null,
+    "intervention_or_exposure": null,
+    "comparator": null,
+    "outcome": null,
+    "relation": null,
+    "quantifier": null,
+    "assumptions": []
+  },
+  "terms": [],
+  "ambiguities": []
+}
+```
+
+- `system`: the actual population, preparation, recorded cells or model, not a broader biological substitute.
+- `conditions`: species, state, task, time/spatial scale, parameter regime and other relevant restrictions as reported.
+- `intervention_or_exposure`: the manipulated factor, input or observed exposure; do not turn observation into intervention.
+- `comparator`: the reference condition; null if absent, unreported or inapplicable, with that distinction explained in review notes.
+- `outcome`: the measured quantity, statistic, readout or formally defined mathematical object.
+- `relation`: the relationship being assessed, retaining direction, uncertainty and attribution. Do not convert correlation into mechanism.
+- `quantifier`: the tested or demonstrated coverage, not an invented universal statement.
+- `assumptions`: joint conditions that cannot be dropped without changing the proposition.
+
+## Term entry / 术语条目
+
+```json
+{
+  "term": "source term",
+  "source_definition": null,
+  "operationalization": null,
+  "definition_status": "not_reported",
+  "source_locator": null
+}
+```
+
+`definition_status` is `explicit`, `operational_only`, `not_reported` or `ambiguous`. It is not a confidence or validity score. `source_definition` records the source's definition; `operationalization` records how it was measured or manipulated. These may differ. Do not substitute a textbook definition or guess a definition from a familiar label. Do not infer absence from missing supplements or a partial excerpt: say “not found in the supplied material.” No fixed number of terms is required.
+
+For `explicit` or `operational_only`, attach a locator containing the file-order `pdf_page`, optional section/figure/equation and a short exact `quote`. Mark `not_reported` with null values when appropriate; do not fabricate a quote to prove an absence. For `ambiguous`, retain the competing usages and explain the effect on interpretation. Local source matching checks text only; it does not verify that a definition is scientifically adequate.
+
+An ambiguity entry has `issue`, `affects_assessment`, and an optional `source_locator`. It records an identifiable interpretive gap, not a new negative scientific result.
+
+## Workflow / 流程
+
+1. Preserve source wording, version and locators.
+2. Identify the system and the relationship the paper actually claims.
+3. Resolve the source's terms and operational definitions; retain unknowns instead of repairing them.
+4. Record conditions, comparator, outcome, quantifier and joint assumptions.
+5. Split only independently assessable commitments. Merge redundant wording and attach all relevant evidence.
+6. Calibrate the supported conclusion and distinguish real negative findings, non-inferences and untested questions.
+7. Source-audit definitions as well as claims, including a definition on a different page from the result evidence. Explicitly flag definition drift, incompatible measures, missing controls and scope changes.
+8. Keep candidates unverified. Across papers, compare definitions, measurement, state, scale, controls and evidence independence before proposing any scientific relation.
+
+## Rollout boundaries / 更新边界
+
+The homepage, method guide, blank worksheet, new browser extraction metadata, on-screen output and downloadable reports use this contract. The library can display and search these fields **when a record contains them**. The explicit collection importer preserves them for a future authorized import; it has not been run for this change. Existing records, statuses, counts and scientific graph relations have not been backfilled or promoted. Existing collection reports retain their original content; optional context remains available through the record/metadata rather than an invented retrospective rewrite.
+
+本次不会重新提取全部文献，不会改写既有证据，不会自动更新数据库或发布。下一步如需补齐旧记录，应单独指定来源、覆盖范围和人工检查方式。

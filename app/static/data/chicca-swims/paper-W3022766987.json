@@ -1,0 +1,963 @@
+{
+  "document_type": "research_article",
+  "coverage": {
+    "results_sections_seen": [
+      "2.1–2.5 Methods",
+      "3.1 Moving rectangles",
+      "3.2 N-CARS",
+      "3.3 N-MNIST",
+      "3.4 CIFAR10-DVS",
+      "3.5 DvsGesture",
+      "4 Discussion; Tables 1–4; Figures 1–3; References"
+    ],
+    "missing_material": [
+      "全部图像像素未提供。",
+      "所引Appendix A/A.1和在线Supplementary Material不包含在13页来源中。",
+      "原始训练运行和可复现代码未在所供文本中。"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "13页期刊全文，标题作者DOI一致。",
+      "操作数是效率代理；ANN multiply-add与SNN突触操作定义不同，无本研究硬件焦耳实测。",
+      "延迟使用模拟步、rollout或输入帧时间；墙钟与硬件实现依赖未验证。",
+      "统计±为文中SEM，不当作CI或样本间SD。"
+    ],
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "延迟匹配转换与跨时间尺度处理",
+      "role": "method/result",
+      "source_pages": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "decision": "include",
+      "reason": "原streaming rollout来自Fischer等；本文贡献是结合转换与时序条件。"
+    },
+    {
+      "summary": "矩形时间整合、低操作与转换延迟",
+      "role": "result",
+      "source_pages": [
+        6,
+        7
+      ],
+      "decision": "include",
+      "reason": "三类可独立评估结果分开。"
+    },
+    {
+      "summary": "N-CARS权重、分帧及最终基准",
+      "role": "result",
+      "source_pages": [
+        8,
+        9
+      ],
+      "decision": "include",
+      "reason": "验证调参、时序解释和最终比较分开。"
+    },
+    {
+      "summary": "N-MNIST、CIFAR10-DVS和十/十一类DvsGesture",
+      "role": "result",
+      "source_pages": [
+        10,
+        11
+      ],
+      "decision": "include",
+      "reason": "任务、划分、参数规模和操作定义各自保留。"
+    },
+    {
+      "summary": "早期归一化局限",
+      "role": "interpretation",
+      "source_pages": [
+        11,
+        12
+      ],
+      "decision": "include",
+      "reason": "解释而非已验证唯一原因。"
+    },
+    {
+      "summary": "任意延迟、递归/时序卷积、量化、动态校准及精确时间码",
+      "role": "future_work",
+      "source_pages": [
+        11,
+        12
+      ],
+      "decision": "defer",
+      "reason": "实验限定DenseNet一帧延迟、速率编码；缺完整相关结果。"
+    },
+    {
+      "summary": "硬件实测能耗及端到端实时性",
+      "role": "未验证应用",
+      "source_pages": [
+        5,
+        6,
+        12
+      ],
+      "decision": "defer",
+      "reason": "只有操作数和硬件依赖延迟说明。"
+    },
+    {
+      "summary": "引用其他网络的准确率与能耗范围",
+      "role": "背景",
+      "source_pages": [
+        1,
+        2,
+        6,
+        9,
+        10,
+        11,
+        13
+      ],
+      "decision": "exclude",
+      "reason": "不构成本研究新测量。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "本文将streaming rollout的ANN训练与ANN→SNN转换结合，使所有连接具有一个rollout帧延迟，并设置SNN轴突延迟为每帧nsf个模拟步；时间skip连接令不同路径的历史信息在输出汇合，从而处理时间变化输入而不采用零延迟层间传播。",
+      "claim_type": "proposed_method",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "训练图和转换规则",
+          "design": "ReLU ANN、无漏IF、减阈值复位、同一层权重时间共享",
+          "comparator": "常规零延迟前馈转换",
+          "measure": "延迟匹配和时空整合",
+          "unit_of_analysis": "算法/网络图",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "2.2–2.4",
+            "figure": "Figure 1",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "提出延迟匹配转换流程。",
+        "boundary": "实验仅DenseNet、每边一个帧延迟。",
+        "negative_result": null,
+        "non_inference": "不能把任意递归/多延迟图的讨论当作已测试。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "训练展开如何匹配SNN的非零传播延迟？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "本文转换时按每层全rollout时间上的训练激活分位数缩放权重/偏置，并对平均池化层也缩放；正文报告池化缩放提高最高准确率，但未给隔离消融的效应量。",
+      "claim_type": "method_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "归一化方法及观察报告",
+          "design": "每层分位数、允许少量饱和",
+          "comparator": "原转换不缩放平均池化",
+          "measure": "准确率和速率近似",
+          "unit_of_analysis": "转换配置",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "2.4",
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "扩展时间变化激活的尺度处理。",
+        "boundary": "隔离效应量未报告；可能牺牲早期速率分辨。",
+        "negative_result": null,
+        "non_inference": "不能给出未报道改善百分比或视作统一最优校准。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "learning-memory",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "池化与跨时间归一化怎样影响转换？"
+      ],
+      "shared_evidence_with": [
+        "C13"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "本文两帧移动矩形方向任务中，streaming ANN在只收到第一帧信息的输出为机会水平，输出同时整合两帧后达到100%准确率；转换SNN达到相同峰值，支持该示例中的时间整合。",
+      "claim_type": "simulation_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "合成序列分类",
+          "design": "每帧单矩形，判断左右运动；图2十试验",
+          "comparator": "仅第一帧与两帧",
+          "measure": "方向分类准确率",
+          "unit_of_analysis": "训练运行及合成样本",
+          "sample_size_as_reported": "10 trials；具体测试样本数未报",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "3.1",
+            "figure": "Figure 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "两帧信息足以解决所设方向任务。",
+        "boundary": "合成最小任务；附录A.1未提供。",
+        "negative_result": null,
+        "non_inference": "不能推出通用动态视觉推理或因果生物机制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "转换SNN能否整合两个时刻的信息？"
+      ],
+      "shared_evidence_with": [
+        "C4",
+        "C5"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "本文移动矩形任务中，转换SNN达到100%峰值准确率需8.4±0.6 MOps，ANN为105 MOps，约减少13倍操作数；这里SNN计突触累加、ANN计multiply-add，不是直接测量能耗。",
+      "claim_type": "operation_count_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "操作数计数",
+          "design": "nsf=15作为调参折中；训练集1280样本扫描",
+          "comparator": "对应ANN",
+          "measure": "达到峰值的操作数",
+          "unit_of_analysis": "训练运行/推理样本",
+          "sample_size_as_reported": "10 trials；调参1280训练样本",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "3.1",
+            "figure": "Figure 2C–D",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "操作数约减少13倍。",
+        "boundary": "±为图注所述均值标准误；两类操作定义不同。",
+        "negative_result": null,
+        "non_inference": "不能称13倍实测焦耳节能或计入平台外围。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "达到相同峰值需多少操作？"
+      ],
+      "shared_evidence_with": [
+        "C3"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "operations_not_energy"
+        ]
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "本文移动矩形任务的转换SNN准确率曲线相对ANN至少落后一个rollout帧；增加nsf改善近似但增加操作数，扫描的准确率曲线面积比在nsf≈15开始饱和。",
+      "claim_type": "latency_accuracy_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "nsf扫描",
+          "design": "1280随机训练样本",
+          "comparator": "ANN及不同nsf",
+          "measure": "曲线延迟和面积比",
+          "unit_of_analysis": "训练样本与模型运行",
+          "sample_size_as_reported": "10 trials；1280调参样本",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "3.1",
+            "figure": "Figure 2B–C",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "建立模拟步、近似与操作数折中。",
+        "boundary": "延迟以rollout/模拟步表示，非墙钟。",
+        "negative_result": "转换SNN准确率至少滞后一帧。",
+        "non_inference": "不能称转换完全无延迟或实时硬件已测。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "减少模拟步带来何种准确率/延迟代价？"
+      ],
+      "shared_evidence_with": [
+        "C3",
+        "C4"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "simulated_latency"
+        ]
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "本文N-CARS验证中比较七种输出损失权重，强烈偏重早期的exp(−k)提高早期表现但可令后期准确率降低约13.5个百分点；作者选择均匀权重作为所测网络早期与后期准确率的折中。",
+      "claim_type": "training_comparison",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "七损失权重比较",
+          "design": "权重归一化；十试验",
+          "comparator": "均匀与早/晚偏重",
+          "measure": "早期和峰值验证准确率",
+          "unit_of_analysis": "训练运行",
+          "sample_size_as_reported": "10 trials",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": "3.2",
+            "figure": "Figure 3A",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "早期优先会牺牲后期表现。",
+        "boundary": "图3A为验证集、十次试验；原文早期增量按其报告保留为定性，不补算或猜测曲线。",
+        "negative_result": "强早期权重降低后期性能。",
+        "non_inference": "不是一般最优训练原则。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "learning-memory",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "损失权重如何交换早期与后期准确率？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "本文N-CARS把100 ms事件流分成不同N帧，N=16对应6.25 ms帧间隔；不同N的峰值准确率近似，而前25 ms输入已支持接近峰值的分类，说明该数据集短窗内空间信息较充分。",
+      "claim_type": "dataset_timing_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "输入分帧比较",
+          "design": "不同N；图时间轴假定输出计算瞬时",
+          "comparator": "N=1及其他N",
+          "measure": "准确率与输入时间",
+          "unit_of_analysis": "数据序列/训练配置",
+          "sample_size_as_reported": "10 trials",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "3.2",
+            "figure": "Figure 3B",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "高采样可更早获得近似输出。",
+        "boundary": "计算时间未计；数据物体在100 ms内移动较小。",
+        "negative_result": null,
+        "non_inference": "不能推出时间信息普遍不重要或6.25 ms硬件延迟。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "N-CARS的早期输入包含多少分类信息？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "not_wall_clock_latency"
+        ]
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "本文N-CARS在十次运行中，转换SNN准确率94.07±0.05%，对应ANN94.00±0.05%；SNN操作数212.9±2.5 MOps，ANN1420±47 MOps，网络有126378参数，结果支持所设序列任务下精度近似且操作数较低。",
+      "claim_type": "benchmark_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "分类基准与操作数计数",
+          "design": "N=16、nsf=15",
+          "comparator": "同架构ANN；他文仅背景",
+          "measure": "准确率、参数和操作数",
+          "unit_of_analysis": "训练运行",
+          "sample_size_as_reported": "10 trials",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": "3.2",
+            "figure": "Table 1",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "SNN精度与ANN接近并降低操作数。",
+        "boundary": "±为SEM；正文没有逐项显著性检验。",
+        "negative_result": null,
+        "non_inference": "不能把0.07个百分点视作确定优势或统一硬件能耗结论。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "N-CARS转换保留了多少精度和操作成本？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "operations_not_energy"
+        ]
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "本文N-MNIST的转换SNN准确率99.54±0.01%，ANN99.56±0.01%；操作数分别460±38与3500±360 MOps，网络319890参数，显示该配置在接近ANN精度下减少操作数。",
+      "claim_type": "benchmark_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "分类评估和操作计数",
+          "design": "32输入帧、growth factor15",
+          "comparator": "对应ANN",
+          "measure": "准确率和操作数",
+          "unit_of_analysis": "训练运行",
+          "sample_size_as_reported": "10 trials",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "3.3",
+            "figure": "Table 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "近似精度，较少操作。",
+        "boundary": "±为SEM；来自静态数字经传感器运动产生的事件。",
+        "negative_result": null,
+        "non_inference": "不能外推到需要复杂时间语义的自然动态任务。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "N-MNIST转换精度和操作数怎样变化？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "operations_not_energy"
+        ]
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "本文CIFAR10-DVS把前1.3 s分成48帧并降至32×32，转换SNN准确率65.61±0.20%，ANN66.75±0.22%；操作数1551±65对8800±1300 MOps，转换降低操作数但精度低于ANN。",
+      "claim_type": "benchmark_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "随机划分分类基准",
+          "design": "90/10训练/测试，训练再分20%验证；g18、nsf60",
+          "comparator": "同ANN",
+          "measure": "准确率和操作数",
+          "unit_of_analysis": "训练运行",
+          "sample_size_as_reported": "10 trials；数据集10000样本",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "3.4",
+            "figure": "Table 3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所设评估下操作数更低。",
+        "boundary": "±为SEM；随机分割协议、模型以验证选。",
+        "negative_result": "SNN准确率比对应ANN低1.14个百分点。",
+        "non_inference": "不能宣称转换无精度损失或当作统一固定公开划分比较。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "CIFAR10-DVS转换的精度代价是多少？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "operations_not_energy"
+        ]
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "本文DvsGesture十类任务使用前1.5 s、32×32分辨率、每10帧堆叠输入，转换SNN准确率与ANN接近，所报操作数约低12.5倍；网络476460参数，预测更新间隔62.5 ms。",
+      "claim_type": "benchmark_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "手势基准和操作计数",
+          "design": "原数据划分、训练10%另作验证、g9",
+          "comparator": "同ANN",
+          "measure": "准确率接近与操作数比",
+          "unit_of_analysis": "训练运行",
+          "sample_size_as_reported": "10 trials",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "3.5",
+            "figure": "Table 4, 10 classes",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "十类手势在较少操作下近似ANN精度。",
+        "boundary": "不含任意手势第11类；只取前1.5 s。",
+        "negative_result": null,
+        "non_inference": "不代表完整6.5 s平均手势或硬件每62.5 ms已实时输出。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "十类手势识别能否降低操作成本？"
+      ],
+      "shared_evidence_with": [
+        "C12"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "operations_not_energy"
+        ]
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "本文DvsGesture十一类任务的转换SNN准确率95.56±0.14%，ANN95.68±0.32%；操作数分别931±24和15000±1000 MOps，821820参数，使用相同前1.5 s与帧堆叠协议。",
+      "claim_type": "benchmark_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "十一类基准",
+          "design": "g12；包括任意手势类",
+          "comparator": "同ANN及十类结果",
+          "measure": "准确率与操作数",
+          "unit_of_analysis": "训练运行",
+          "sample_size_as_reported": "10 trials",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "3.5",
+            "figure": "Table 4, 11 classes",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "十一类条件下精度接近并降低操作。",
+        "boundary": "±SEM；十/十一类任务和网络规模不同。",
+        "negative_result": null,
+        "non_inference": "不能把十类结果直接当作十一类复制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "加入任意手势类别后转换表现如何？"
+      ],
+      "shared_evidence_with": [
+        "C11"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": [
+          "operations_not_energy"
+        ]
+      }
+    },
+    {
+      "id": "C13",
+      "statement": "本文解释跨全部rollout帧计算分位数可能高估早期帧激活尺度，降低转换SNN早期速率近似分辨；随深路径参与增多误差减小，动态重标权重或阈值仅被提出为后续方案。",
+      "claim_type": "interpretation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "近似误差解释",
+          "design": "时间活动递增的所用展开",
+          "comparator": "早/晚输出",
+          "measure": "早期准确率/近似误差",
+          "unit_of_analysis": "模型输出阶段",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "4 Discussion；续页12",
+            "figure": "Figure 3C",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "指出静态全时间归一化的早期限制。",
+        "boundary": "多个候选原因，未做隔离因果消融。",
+        "negative_result": null,
+        "non_inference": "不能称已实现动态homeostasis或精确证明唯一原因。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "representation-coding",
+        "methods-causal"
+      ],
+      "scientific_questions": [
+        "全时间归一化为何可能损害早期输出？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C5"
+      ],
+      "review_notes": [],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "本文把streaming ANN展开与SNN传播延迟匹配，在四个事件视觉基准和合成矩形任务获得接近ANN的精度及更低操作数，但转换有时序滞后且CIFAR10-DVS存在精度下降。效率是异类操作计数代理，不是硬件能耗复现；附录/补充未供。",
+  "shared_evidence": [
+    {
+      "id": "SE1",
+      "claim_ids": [
+        "C3",
+        "C4",
+        "C5"
+      ],
+      "source_pages": [
+        6,
+        7
+      ],
+      "description": "同一矩形任务和十次训练，调参1280训练样本不是独立测试集。",
+      "independence": "同任务数据"
+    },
+    {
+      "id": "SE2",
+      "claim_ids": [
+        "C6",
+        "C7",
+        "C8",
+        "C13"
+      ],
+      "source_pages": [
+        8,
+        9,
+        11,
+        12
+      ],
+      "description": "N-CARS调参与基准共享数据/模型；机制解释非独立消融。",
+      "independence": "同模型族"
+    },
+    {
+      "id": "SE3",
+      "claim_ids": [
+        "C11",
+        "C12"
+      ],
+      "source_pages": [
+        10,
+        11
+      ],
+      "description": "DvsGesture十/十一类为不同任务/规模，非独立同任务复现。",
+      "independence": "共享原始数据"
+    }
+  ],
+  "audit": {
+    "source_match_checks": [
+      {
+        "check": "identity/coverage",
+        "status": "completed",
+        "details": "13页全文、图表说明和参考文献全评估。"
+      },
+      {
+        "check": "second_source_check",
+        "status": "completed",
+        "details": "回对每任务数据窗口、十次试验/SEM、操作分母、验证调参与模拟延迟；未读取缺失补充或图像。"
+      }
+    ],
+    "model_findings": [
+      {
+        "claim_id": null,
+        "issue": "论文常以energy-efficient描述操作数减少，无本研究匹配硬件能耗测量。",
+        "pdf_page": 6,
+        "resolved": true,
+        "suggested_correction": "使用operation_count/operations_not_energy。"
+      },
+      {
+        "claim_id": "C7",
+        "issue": "输入时间轴假定输出计算瞬时，不能称硬件6.25 ms墙钟延迟。",
+        "pdf_page": 9,
+        "resolved": true,
+        "suggested_correction": null
+      },
+      {
+        "claim_id": "C10",
+        "issue": "转换精度比ANN低，不能笼统说所有任务无损。",
+        "pdf_page": 10,
+        "resolved": true,
+        "suggested_correction": null
+      },
+      {
+        "claim_id": null,
+        "issue": "Appendix A和补充超参数未随来源提供。",
+        "pdf_page": 12,
+        "resolved": false,
+        "suggested_correction": "补齐再做复现审查。"
+      }
+    ],
+    "needs_human_review": true
+  },
+  "format": "claim-commons-pdf-v1",
+  "paper": {
+    "title": "Efficient Processing of Spatio-Temporal Data Streams With Spiking Neural Networks",
+    "authors": [
+      "Alexander Kugele",
+      "Thomas Pfeil",
+      "Michael Pfeiffer",
+      "Elisabetta Chicca"
+    ],
+    "doi": "10.3389/fnins.2020.00439",
+    "publication_year": 2020,
+    "venue": "Frontiers in Neuroscience",
+    "url": "https://doi.org/10.3389/fnins.2020.00439"
+  },
+  "source": {
+    "filename": "paper-W3022766987.pdf",
+    "sha256": "335c484a3d040c6ac115606a17f23b888363efffe08cae3b05085523b440d67d",
+    "source_url": "https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2020.00439/pdf",
+    "pdf_page_count": 13
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T07:02:38.456Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "335c484a3d040c6ac115606a17f23b888363efffe08cae3b05085523b440d67d",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

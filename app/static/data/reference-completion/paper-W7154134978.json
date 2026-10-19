@@ -1,0 +1,1074 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "Trainable movement control using spikes and muscle-twitch dynamics",
+    "authors": [
+      "Jordi Timmermans",
+      "Lambert Schomaker"
+    ],
+    "doi": "10.3389/fnbot.2026.1761767",
+    "publication_year": 2026,
+    "venue": "Frontiers in Neurorobotics",
+    "url": "https://doi.org/10.3389/fnbot.2026.1761767"
+  },
+  "source": {
+    "filename": "paper-W7154134978--Trainable-movement-control-using-spikes-and-muscle-twitch-dynamics.pdf",
+    "sha256": "5c610fdccd35db2710caf766f05f5e8fddc57e80236a7369748dbf77fe04d6d7",
+    "source_url": "https://public-pages-files-2025.frontiersin.org/journals/neurorobotics/articles/10.3389/fnbot.2026.1761767/pdf",
+    "pdf_page_count": 14
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "results_sections_seen": [
+      "Architecture/sensing/IF/twitch",
+      "SIF-DFA/error",
+      "Pong/pilot",
+      "Baseline grid",
+      "Log variant",
+      "Leaky variants",
+      "Angle retraining",
+      "Threshold/noise",
+      "Strategy/hardware limits",
+      "Conclusion/References",
+      "AppendixA statistics/B threshold"
+    ],
+    "missing_material": [
+      "图像像素未阅，Fig1–10全部图注已阅。",
+      "Supplementary S1–S3/full sweeps、逐seed数据及硬件未供。"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "全部14页包括TablesA1/A2完整读取；DOI10.3389/fnbot.2026.1761767，2026-04-13。",
+      "网络/trace/滤波器均模拟；max配置、训练尾段、推理trial与独立初始化分别标注。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "传感/IF/对抗twitch输出、global-feedback学习",
+      "role": "result",
+      "source_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "decision": "include",
+      "reason": "作用/学习时序和arbitrary units明确，避免硬件/生物证明。"
+    },
+    {
+      "summary": "160 baseline、160log及800leaky超参",
+      "role": "result",
+      "source_pages": [
+        7,
+        8,
+        9,
+        14
+      ],
+      "decision": "include",
+      "reason": "最高hit不掩盖good比例下降与高τ非显著。"
+    },
+    {
+      "summary": "角度重训练、阈值5初始化和1000推理noise",
+      "role": "result",
+      "source_pages": [
+        9,
+        10,
+        14
+      ],
+      "decision": "include",
+      "reason": "泛化类型、真实样本/技术单位和失败范围区分。"
+    },
+    {
+      "summary": "co-contraction、目标/能量/precisions/hardware",
+      "role": "hypothesis",
+      "source_pages": [
+        10,
+        11,
+        12
+      ],
+      "decision": "include",
+      "reason": "实际观察与未来实现分开，非真实损耗/能效基准。"
+    },
+    {
+      "summary": "全部hypergrid补充及精确递推/方向",
+      "role": "result",
+      "source_pages": [
+        5,
+        6,
+        8,
+        9
+      ],
+      "decision": "defer",
+      "reason": "SI未供且公式page-text有符号歧义，不擅代代码。"
+    },
+    {
+      "summary": "历史/生物参考与声明",
+      "role": "review_synthesis",
+      "source_pages": [
+        12,
+        13
+      ],
+      "decision": "exclude",
+      "reason": "背景非本文新实验，完整文字仍已评估。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "TwNN把IF输出尖峰经固定二阶twitch样滤波映成连续速度，由agonist/antagonist两组相反方向驱动一自由度拦截。",
+      "claim_type": "method_description",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "IF与静态双时间常数/幅度滤波",
+          "design": "修改Pong、参数网格、trace、阈值、难度与noise对照，无硬件/动物",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "模拟神经元/滤波器",
+          "sample_size_as_reported": "50hidden、100output(50/50两组)，100或200input",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": null,
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "TwNN把IF输出尖峰经固定二阶twitch样滤波映成连续速度，由agonist/antagonist两组相反方向驱动一自由度拦截。",
+        "boundary": "twitch时间常数和幅度不训练，输出是速度不是肌肉力；没有真实肌肉/执行器。",
+        "negative_result": null,
+        "non_inference": "不等同复现动物神经肌肉动力学或硬件测量。",
+        "unresolved": "归档Eq5级联递推缺加号、Eq7方向符号简写，不能据文字补造精确实现。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "尖峰到twitch样速度能否以全局延迟误差学习受限ballistic拦截？",
+        "硬件友好代理在性能、参数范围和真实电路边界间有哪些代价？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "SIF-DFA以trial末的全局位置误差、各输出活动/幅度和固定随机反馈矩阵生成学习信号，允许层权重在获得反馈后并行更新。",
+      "claim_type": "method_description",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "spiking IF Direct Feedback Alignment",
+          "design": "修改Pong、参数网格、trace、阈值、难度与noise对照，无硬件/动物",
+          "comparator": null,
+          "measure": "E=yb−yp；初始e=E cn An；sigmoid surrogate",
+          "unit_of_analysis": "网络权重/全trial活动",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": null,
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "SIF-DFA以trial末的全局位置误差、各输出活动/幅度和固定随机反馈矩阵生成学习信号，允许层权重在获得反馈后并行更新。",
+        "boundary": "仍需完整前向动作与最终结果；不消除forward/end-error等待，也需每单元状态记忆。",
+        "negative_result": null,
+        "non_inference": "不是严格局部STDP、真实梯度或收敛证明；并行为设计能力不是硬件速度实测。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "尖峰到twitch样速度能否以全局延迟误差学习受限ballistic拦截？",
+        "硬件友好代理在性能、参数范围和真实电路边界间有哪些代价？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "评估任务是修改Pong的单次ballistic拦截：三虚拟ToF越线观测及初始paddle位置后启动网络，不在动作中持续观测纠正。",
+      "claim_type": "task_design",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "受限虚拟传感与单次开环动作",
+          "design": "修改Pong、参数网格、trace、阈值、难度与noise对照，无硬件/动物",
+          "comparator": null,
+          "measure": "2000×1600环境、ball1pixel/step、paddle15.6%高度、initial gradient±.5",
+          "unit_of_analysis": "模拟trial，Δt=1 arbitrary unit",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": null,
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "评估任务是修改Pong的单次ballistic拦截：三虚拟ToF越线观测及初始paddle位置后启动网络，不在动作中持续观测纠正。",
+        "boundary": "固定速度/传感布局，三线最少条件为可一次反弹的设定；不是通用闭环控制。",
+        "negative_result": null,
+        "non_inference": "没有验证真实运动、任意多反弹或复杂动态任务。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "尖峰到twitch样速度能否以全局延迟误差学习受限ballistic拦截？",
+        "硬件友好代理在性能、参数范围和真实电路边界间有哪些代价？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "baseline扫描160超参配置、每配置200000训练trial后，31/160达85%命中阈值，最佳配置约96%，而极端学习率没有合格配置。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "超参数网格和在线训练尾段性能",
+          "design": "修改Pong、参数网格、trace、阈值、难度与noise对照，无硬件/动物",
+          "comparator": null,
+          "measure": "31/160=19.4%；learning-rate χ²(4,N31)=53.032,P<.0001",
+          "unit_of_analysis": "配置和训练trial，不是固定配置160独立seed测试",
+          "sample_size_as_reported": "160config；每200k trials，命中率取最后10k训练trial平均",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": null,
+            "figure": "Fig. 5/Table1/A1",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "baseline扫描160超参配置、每配置200000训练trial后，31/160达85%命中阈值，最佳配置约96%，而极端学习率没有合格配置。",
+        "boundary": "85%由playability人为选择；尾段仍属训练，不是独立held-out frozen-policy测试。",
+        "negative_result": "α1e−5/.01/.1所测baseline无达85%配置。",
+        "non_inference": "最佳96%不等于默认超参或平均模型表现。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "尖峰到twitch样速度能否以全局延迟误差学习受限ballistic拦截？",
+        "硬件友好代理在性能、参数范围和真实电路边界间有哪些代价？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "将输出计数对数化的SIF-LFA使达85%的配置增至49/160，最佳约98%，相对baseline的成功配置差异报告χ²=5.4,P=.0201。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "cn→ln(cn+1)的learning-control",
+          "design": "修改Pong、参数网格、trace、阈值、难度与noise对照，无硬件/动物",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "网格配置，不是临床/生物重复",
+          "sample_size_as_reported": "160config各200k；49good=30.6%",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 8,
+            "section": null,
+            "figure": "Fig. 6/TableA1",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "将输出计数对数化的SIF-LFA使达85%的配置增至49/160，最佳约98%，相对baseline的成功配置差异报告χ²=5.4,P=.0201。",
+        "boundary": "最佳模型选择与合格配置比例是不同指标；A1 N160为报告口径，不直接当所有合并独立样本。",
+        "negative_result": null,
+        "non_inference": "不证明心理perceived error或神经对数编码为真实学习机制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "尖峰到twitch样速度能否以全局延迟误差学习受限ballistic拦截？",
+        "硬件友好代理在性能、参数范围和真实电路边界间有哪些代价？"
+      ],
+      "shared_evidence_with": [
+        "C4"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "SIF-EFA以leaky activity代理替代精确sum，但扩展五种τ的800配置中只有122合格(15.3%)，整体低于无leak对数版本。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "eligibility/leaky-trace消融",
+          "design": "修改Pong、参数网格、trace、阈值、难度与noise对照，无硬件/动物",
+          "comparator": null,
+          "measure": "χ²(1,N800)=21.530,P<.0001",
+          "unit_of_analysis": "不同超参数配置",
+          "sample_size_as_reported": "800config，τ .9/.95/.99/.995/.999；122good",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": null,
+            "figure": "Fig. 7/TableA1",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "SIF-EFA以leaky activity代理替代精确sum，但扩展五种τ的800配置中只有122合格(15.3%)，整体低于无leak对数版本。",
+        "boundary": "新增τ域与无leak域不同；不能孤立成任意固定参数算法性能下降。",
+        "negative_result": "可硬件化代理整体合格比例下降，不是普遍无损改善。",
+        "non_inference": "不能说电路能效已实测或全部EFA配置均优于baseline。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "尖峰到twitch样速度能否以全局延迟误差学习受限ballistic拦截？",
+        "硬件友好代理在性能、参数范围和真实电路边界间有哪些代价？"
+      ],
+      "shared_evidence_with": [
+        "C5"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "高保持率trace与无leak的合格数差异不显著：τ=.999为51对49(P=.8094)，τ=.995也未显著更差(P=.1670)；较快衰减更容易丢学习信息。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "各τvsτ1的配置比较/Bonferroni",
+          "design": "修改Pong、参数网格、trace、阈值、难度与noise对照，无硬件/动物",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "配置计数而非200k trial生物n",
+          "sample_size_as_reported": "每τ160configs；comparisons阈P=.01",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": null,
+            "figure": "TableA1",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "高保持率trace与无leak的合格数差异不显著：τ=.999为51对49(P=.8094)，τ=.995也未显著更差(P=.1670)；较快衰减更容易丢学习信息。",
+        "boundary": "原文报告.99及更低显著较差，缺完整逐τ计数。",
+        "negative_result": "51>49未达显著，不能作为优越性；未显著更差不等于等效。",
+        "non_inference": "不证明任何泄漏trace均等效无leak。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "尖峰到twitch样速度能否以全局延迟误差学习受限ballistic拦截？",
+        "硬件友好代理在性能、参数范围和真实电路边界间有哪些代价？"
+      ],
+      "shared_evidence_with": [
+        "C6"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "Table2的selected best配置命中率分别为τ=.995 .986、τ1 .982、τ=.999 .984，headline99%是所选高性能/舍入概括而非稳定平均优势。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "同网格best-run选取",
+          "design": "修改Pong、参数网格、trace、阈值、难度与noise对照，无硬件/动物",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "选中配置的训练尾段",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": null,
+            "figure": "Table 2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "Table2的selected best配置命中率分别为τ=.995 .986、τ1 .982、τ=.999 .984，headline99%是所选高性能/舍入概括而非稳定平均优势。",
+        "boundary": "没有为这些最高配置报告独立seed均值/CI，不能跨最大值比较确定改进。",
+        "negative_result": null,
+        "non_inference": "不证明EFA统计显著超过LFA或真实硬件99%。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "尖峰到twitch样速度能否以全局延迟误差学习受限ballistic拦截？",
+        "硬件友好代理在性能、参数范围和真实电路边界间有哪些代价？"
+      ],
+      "shared_evidence_with": [
+        "C4",
+        "C5",
+        "C6"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "复用三个selected配置的超参后，各最大球gradient0–1重新训练5次，角度增加使命中率降低但到45°仍有可用表现。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "难度扫描，复制超参重新训练",
+          "design": "修改Pong、参数网格、trace、阈值、难度与noise对照，无硬件/动物",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "重训练模型和模拟trial",
+          "sample_size_as_reported": "每gradient/配置5独立初始化；具体全部命中值在图/缺SI",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": null,
+            "figure": "Fig. 8",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "复用三个selected配置的超参后，各最大球gradient0–1重新训练5次，角度增加使命中率降低但到45°仍有可用表现。",
+        "boundary": "不是冻结已训练policy在新角度直接测试；其他速度/布局未扫描。",
+        "negative_result": "更大角度降低学习表现。",
+        "non_inference": "不能称零样本分布外泛化或通用球运动控制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "尖峰到twitch样速度能否以全局延迟误差学习受限ballistic拦截？",
+        "硬件友好代理在性能、参数范围和真实电路边界间有哪些代价？"
+      ],
+      "shared_evidence_with": [
+        "C3",
+        "C8"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "36对hidden/output阈值各5初始化训练表显示较广可行区，但低hidden/较高output组合较好，某些组合明显差。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "阈值独立初始化扫描",
+          "design": "修改Pong、参数网格、trace、阈值、难度与noise对照，无硬件/动物",
+          "comparator": null,
+          "measure": "hidden10/output75 mean .9915；hidden100/output100 .7195",
+          "unit_of_analysis": "模型初始化/配置",
+          "sample_size_as_reported": "6×6阈值组合×5训练；每200000trial",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 14,
+            "section": null,
+            "figure": "Fig. 9/Table A2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "36对hidden/output阈值各5初始化训练表显示较广可行区，但低hidden/较高output组合较好，某些组合明显差。",
+        "boundary": "仍使用selected EFA超参，表中无SD；初始化变化不代表硬件器件阈值随机漂移。",
+        "negative_result": "阈值鲁棒性不是所有组合都维持高率。",
+        "non_inference": "不能证明硬件全部阈值/温漂可容忍。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "尖峰到twitch样速度能否以全局延迟误差学习受限ballistic拦截？",
+        "硬件友好代理在性能、参数范围和真实电路边界间有哪些代价？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "冻结模型的逐步均匀膜噪声测试中，低相对噪声较稳健，超过约阈值1.25%每步后命中率下降。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "inference hidden/output uniform-noise注入",
+          "design": "修改Pong、参数网格、trace、阈值、难度与noise对照，无硬件/动物",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "同trained模型的试验",
+          "sample_size_as_reported": "每noiselevel1000测试trial；独立modelseed未给",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": null,
+            "figure": "Fig. 10",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "冻结模型的逐步均匀膜噪声测试中，低相对噪声较稳健，超过约阈值1.25%每步后命中率下降。",
+        "boundary": "arbitrary timestep、相对threshold均匀噪声；图注U(−1.25,+1.25)与百分数尺度表达不完全明确。",
+        "negative_result": "更高噪声并未保持同样命中性能。",
+        "non_inference": "不能推所有真实硬件噪声、任务时标或传感噪声的安全阈值。",
+        "unresolved": "百分数与绝对膜单位的映射待核对。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "尖峰到twitch样速度能否以全局延迟误差学习受限ballistic拦截？",
+        "硬件友好代理在性能、参数范围和真实电路边界间有哪些代价？"
+      ],
+      "shared_evidence_with": [
+        "C8"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "模型会同时激活agonist/antagonist，训练未惩罚co-contraction、能耗或击球后停止速度，所以命中高不等于最省能或最优重定位策略。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "模拟策略定性观察与目标范围",
+          "design": "修改Pong、参数网格、trace、阈值、难度与noise对照，无硬件/动物",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "同模型运动输出",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": null,
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "模型会同时激活agonist/antagonist，训练未惩罚co-contraction、能耗或击球后停止速度，所以命中高不等于最省能或最优重定位策略。",
+        "boundary": "未给能耗/重定位比较或真实材料损耗。",
+        "negative_result": "当前目标未优化能耗与post-interception停位。",
+        "non_inference": "生物co-contraction的功能解释不是本模型实证。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "尖峰到twitch样速度能否以全局延迟误差学习受限ballistic拦截？",
+        "硬件友好代理在性能、参数范围和真实电路边界间有哪些代价？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C8"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C13",
+      "statement": "memristor权重、capacitor traces、RC twitches和Gaussian bump等只是电子实现路线；当前训练用64bit模拟，量化/写入稳定性和实际能效未测试。",
+      "claim_type": "hypothesis",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "硬件映射与未验证量化设计",
+          "design": "修改Pong、参数网格、trace、阈值、难度与noise对照，无硬件/动物",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "未来器件/电路",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": null,
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "memristor权重、capacitor traces、RC twitches和Gaussian bump等只是电子实现路线；当前训练用64bit模拟，量化/写入稳定性和实际能效未测试。",
+        "boundary": "双极可变权重和小更新Δ仍有实现难题，比较SIF与BP无计算速度/能量测量。",
+        "negative_result": null,
+        "non_inference": "不等于已在memristive硬件训练成功或证明生物学习机制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "尖峰到twitch样速度能否以全局延迟误差学习受限ballistic拦截？",
+        "硬件友好代理在性能、参数范围和真实电路边界间有哪些代价？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C14",
+      "statement": "作者提出推广到单次ballistic且不需动作中反馈的任务，并要求输出时间常数与任务时标匹配；闭环、多动作和复杂神经非线性仍未验证。",
+      "claim_type": "hypothesis",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "任务推广条件",
+          "design": "修改Pong、参数网格、trace、阈值、难度与noise对照，无硬件/动物",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "未来控制情境",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": null,
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者提出推广到单次ballistic且不需动作中反馈的任务，并要求输出时间常数与任务时标匹配；闭环、多动作和复杂神经非线性仍未验证。",
+        "boundary": "运动硬件、磨损、其他IF/nonlinear模型和更多环境参数只有设想。",
+        "negative_result": null,
+        "non_inference": "不宣称任意机器人或真实神经肌肉通用控制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "theory-ai",
+        "learning-memory",
+        "behavior-cognition"
+      ],
+      "scientific_questions": [
+        "尖峰到twitch样速度能否以全局延迟误差学习受限ballistic拦截？",
+        "硬件友好代理在性能、参数范围和真实电路边界间有哪些代价？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "14页主文、全部供应统计/阈值附录完整阅读，14项候选。受限Pong的DFA/twitch学习存在可行配置，但baseline31/160、log49/160、leaky122/800与best96/98/98.6%是不同指标。保留较快decay损害、高τ非显著、角度重训练、阈值差异、推理noise边界以及未优化co-contraction/能耗。所有是模拟；递推/方向和noise标度歧义未修猜，不宣称memristive/生物机制或零样本泛化。",
+  "shared_evidence": [
+    {
+      "claim_id": "C5",
+      "with": [
+        "C4"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C5"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C4",
+        "C5",
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C3",
+        "C8"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "with": [
+        "C8"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "with": [
+        "C1",
+        "C8"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": "C1",
+        "issue": "Eq5归档递推乘法缺加号，若按字面零初态保持零，与正文级联RC/图3不符；Eq7未明确对抗方向符号。",
+        "suggested_correction": "只提功能定义，精确实现待原像素/代码授权，不修改共享脚本。",
+        "pdf_page": 5,
+        "resolved": false
+      },
+      {
+        "claim_id": "C4",
+        "issue": "last10k是训练尾段，最高配置经过hypergrid选择，不能当预先固定/独立test准确率。",
+        "suggested_correction": "明确在线训练性能和best-selection。",
+        "pdf_page": 8,
+        "resolved": true
+      },
+      {
+        "claim_id": "C6",
+        "issue": "EFA整体good比例下降，即使best较高；无leak/高τ的非显著不是等效。",
+        "suggested_correction": "记录实际代价/阴性，避免普遍无损措辞。",
+        "pdf_page": 9,
+        "resolved": true
+      },
+      {
+        "claim_id": "C9",
+        "issue": "angle sweep复制超参再训练，不是冻结policy零样本外推。",
+        "suggested_correction": "使用重训练范围适用结论。",
+        "pdf_page": 9,
+        "resolved": true
+      },
+      {
+        "claim_id": "C11",
+        "issue": "noise用百分阈值而图注U±1.25写法与绝对单位可能混淆。",
+        "suggested_correction": "以所报relative-scale表达，实际映射留未解。",
+        "pdf_page": 10,
+        "resolved": false
+      },
+      {
+        "claim_id": "C13",
+        "issue": "模拟64bit、权重量化和电子/能耗/寿命均未来，不能由neuromorphic plausibility自动推出硬件获益。",
+        "suggested_correction": "转化命题标hypothesis，保留写入/双极限制。",
+        "pdf_page": 11,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "TableA1 N按selected-good或每variant配置，非200k trial或统一独立重复n；网格设计的统计泛化有限。",
+        "suggested_correction": "原χ²/P保留且真实配置单位明确。",
+        "pdf_page": 14,
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T12:41:16.368935Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "5c610fdccd35db2710caf766f05f5e8fddc57e80236a7369748dbf77fe04d6d7",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

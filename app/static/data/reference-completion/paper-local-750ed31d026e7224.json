@@ -1,0 +1,922 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "Metabolically regulated spiking could serve neuronal energy homeostasis and protect from reactive oxygen species",
+    "authors": [
+      "Chaitanya Chintaluri",
+      "Tim P. Vogels"
+    ],
+    "doi": "10.1073/pnas.2306525120",
+    "publication_year": 2023,
+    "venue": "Proceedings of the National Academy of Sciences",
+    "url": "https://doi.org/10.1073/pnas.2306525120"
+  },
+  "source": {
+    "filename": "2023-PNAS-Metabolic-Spiking-Neuronal-Energy-Homeostasis.pdf",
+    "sha256": "4bca1080baf1ca6191170e0786bb315cf47e3e7ea5f0b2d529c713d6e235e65a",
+    "source_url": null,
+    "pdf_page_count": 11
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "results_sections_seen": [
+      "Theory假设",
+      "ResultsI–IV全部models",
+      "V Testable predictions",
+      "DiscussionI–V及Further Implications",
+      "Materials/Methods、data availability、78references",
+      "Figures1–6所有captions"
+    ],
+    "missing_material": [
+      "SI Appendix全部（正文只引用）",
+      "图像像素",
+      "原simulation seeds/raw records",
+      "直接neuronal RETROS/survival实验（未做）"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "11页完整一次读，含所有图注及文献。",
+      "actual2023 source不是2026download-date；完整DOI已明确。",
+      "纯model论文；新数学模型outputs不等于被引生物实验的独立重复。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "作者提出部分spontaneous spiking可能通过消耗过剩ATP、补回mitochondrial ADP来缓解RETROS；这依赖neuronal ATP生产限速位于complex V及ATP demand–ROS非单调关系的假设。",
+      "role": "hypothesis",
+      "source_pages": [
+        3
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "扩展mitochondrial模型中，spike的ATP transient消耗可把低demand/highATP-highΔΨ状态移离RETROS区域；高demand/ATP depletion状态追加spikes反而可提高FETROS。",
+      "role": "result",
+      "source_pages": [
+        3
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "threshold metabolic-signal模型以MS=ROS×ATP相对ROS最小点的偏差调excitation：RET区产生spikes，FET区抑制甚至阻断input-driven spiking；per-spike cost及baseline决定single/burst/continuous模式。",
+      "role": "result",
+      "source_pages": [
+        4
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "ATP savers/spenders被作者定义为代谢状态下对最终firing的综合影响，而非由通道通透离子确定；ATP/ADP、Ca、redox及其他signals是候选sensors。",
+      "role": "hypothesis",
+      "source_pages": [
+        5
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "ROS-modulated Shaker/Hyperkinetic A-type K模型中减慢inactivation可更快repolarize、削弱spike adaptation并缩短ISI，定性对应被引Drosophila dfb ROS-dependent firing现象。",
+      "role": "result",
+      "source_pages": [
+        5
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "miniSOG增加ROS和AOX降低ROS的既有dfb干预被模型用ROS–baseline关系上下平移定性模拟；相容性不是RETROS来源或睡眠switch唯一机制的证明。",
+      "role": "interpretation",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "10000-cell recurrent LIF模型加入metabolic current后，在外部Poisson input关闭导致短暂activity collapse后可自发重启cascades并维持asynchronous activity；高demand时该current抑制过强放电。",
+      "role": "result",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "代谢驱动network的avalanche duration在作者模拟呈power-law-like分布，rate、ISI及ISI-CV与external-driven条件描述性相近而metabolic status不同。",
+      "role": "result",
+      "source_pages": [
+        6
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "作者预测强制沉默本来持续spiking的Purkinje neurons会提高ATP及RETROS并降低survival，但该experiment是未来验证而非本篇结果。",
+      "role": "hypothesis",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "ATP-surplus条件下，作者预测限制电子进入ETC的LDH或GPDH/ETF/DHODH扰动降低代谢spiking，而阻断ANT、限制O2或MCU-mode2可增加ETC stalling、ΔΨ及兴奋性。",
+      "role": "hypothesis",
+      "source_pages": [
+        7
+      ],
+      "decision": "include",
+      "reason": "可独立判断的贡献及边界"
+    },
+    {
+      "summary": "neuron类型、graded potentials、local dendrite/axon、实验温度/solution及TTX例外",
+      "role": "boundary",
+      "source_pages": [
+        8,
+        9
+      ],
+      "decision": "include",
+      "reason": "泛化受代谢profile和实验环境约束"
+    },
+    {
+      "summary": "Parkinson dopamine、epilepsy、diet及AP evolutionary origin",
+      "role": "speculation",
+      "source_pages": [
+        9,
+        10
+      ],
+      "decision": "defer",
+      "reason": "未经本文direct机制/临床测试，不能当病因或疗法"
+    },
+    {
+      "summary": "SI tablesS1–S4/figuresS1–S6完整方法和pathways",
+      "role": "unresolved",
+      "source_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "decision": "defer",
+      "reason": "供给11页未含SI，不冒称读完SI"
+    },
+    {
+      "summary": "Existing literature与78references",
+      "role": "background",
+      "source_pages": [
+        10,
+        11
+      ],
+      "decision": "exclude",
+      "reason": "非本篇新增生物experimental replication"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "作者提出部分spontaneous spiking可能通过消耗过剩ATP、补回mitochondrial ADP来缓解RETROS；这依赖neuronal ATP生产限速位于complex V及ATP demand–ROS非单调关系的假设。",
+      "claim_type": "metabolic_spiking_hypothesis",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "代谢/电生理模型及来源解释",
+          "design": "source-defined mitochondrial、threshold、HH或network模型",
+          "comparator": "所述metabolic state/ionic control或existing experiment",
+          "measure": "候选energy homeostasis",
+          "unit_of_analysis": "模型配置/模拟network，非独立生物neuron样本",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "lean ATP生产cycle；ROS由模型ATP与ΔΨ关系定义"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "Theory / Results I",
+            "figure": "Figure1",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者提出的可检验假说。",
+        "boundary": "非所有spikes只能metabolic；neuron低demand RETROS本文未直接测到，graded-potential/local axon-dendrite机制可不同。",
+        "negative_result": null,
+        "non_inference": "模型可行性及既有文献相容不证明真实神经元保护、必要机制、疾病治疗或独立生物重复。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "cellular-metabolism",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "代谢状态是否可通过spiking调节ROS，哪些模型结果及干预可区分这一假说？"
+      ],
+      "shared_evidence_with": [
+        "C9",
+        "C10"
+      ],
+      "review_notes": [
+        "第二轮audit：new model results与被引dfb实验、schematic及未做预测分开；network cell/raster/avalanche counts不是独立n。ROS函数和homeostatic current为假设，不推断RETROS真实检测或survival已验证。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "扩展mitochondrial模型中，spike的ATP transient消耗可把低demand/highATP-highΔΨ状态移离RETROS区域；高demand/ATP depletion状态追加spikes反而可提高FETROS。",
+      "claim_type": "metabolic_model_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "代谢/电生理模型及来源解释",
+          "design": "source-defined mitochondrial、threshold、HH或network模型",
+          "comparator": "所述metabolic state/ionic control或existing experiment",
+          "measure": "ATP/ΔΨ/ROS trajectory",
+          "unit_of_analysis": "模型配置/模拟network，非独立生物neuron样本",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "lean ATP生产cycle；ROS由模型ATP与ΔΨ关系定义"
+          ],
+          "source_locator": {
+            "pdf_page": 3,
+            "section": "Results I",
+            "figure": "Figure1H–K",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "扩展mitochondrial模型中，spike的ATP transient消耗可把低demand/highATP-highΔΨ状态移离RETROS区域；高demand/ATP depletion状态追加spikes反而可提高FETROS。",
+        "boundary": "ROS∞与ATP/ΔΨ的cubic关系由模型设定；不是新增neuronal ROS实验。",
+        "negative_result": null,
+        "non_inference": "模型可行性及既有文献相容不证明真实神经元保护、必要机制、疾病治疗或独立生物重复。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "cellular-metabolism",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "代谢状态是否可通过spiking调节ROS，哪些模型结果及干预可区分这一假说？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C3"
+      ],
+      "review_notes": [
+        "第二轮audit：new model results与被引dfb实验、schematic及未做预测分开；network cell/raster/avalanche counts不是独立n。ROS函数和homeostatic current为假设，不推断RETROS真实检测或survival已验证。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "threshold metabolic-signal模型以MS=ROS×ATP相对ROS最小点的偏差调excitation：RET区产生spikes，FET区抑制甚至阻断input-driven spiking；per-spike cost及baseline决定single/burst/continuous模式。",
+      "claim_type": "metabolic_model_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "代谢/电生理模型及来源解释",
+          "design": "source-defined mitochondrial、threshold、HH或network模型",
+          "comparator": "所述metabolic state/ionic control或existing experiment",
+          "measure": "MS、ROS及spike patterns",
+          "unit_of_analysis": "模型配置/模拟network，非独立生物neuron样本",
+          "sample_size_as_reported": "参数配置，独立repeat n未报",
+          "uncertainty": null,
+          "assumptions": [
+            "lean ATP生产cycle；ROS由模型ATP与ΔΨ关系定义"
+          ],
+          "source_locator": {
+            "pdf_page": 4,
+            "section": "Results II",
+            "figure": "Figure2",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "threshold metabolic-signal模型以MS=ROS×ATP相对ROS最小点的偏差调excitation：RET区产生spikes，FET区抑制甚至阻断input-driven spiking；per-spike cost及baseline决定single/burst/continuous模式。",
+        "boundary": "Q和refractory参数决定结果；spike gating是规则的一部分，不证明细胞已直接实现该计算。",
+        "negative_result": "极度ATP耗竭的模型FET条件下spike initiation被阻止。",
+        "non_inference": "模型可行性及既有文献相容不证明真实神经元保护、必要机制、疾病治疗或独立生物重复。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "cellular-metabolism",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "代谢状态是否可通过spiking调节ROS，哪些模型结果及干预可区分这一假说？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2"
+      ],
+      "review_notes": [
+        "第二轮audit：new model results与被引dfb实验、schematic及未做预测分开；network cell/raster/avalanche counts不是独立n。ROS函数和homeostatic current为假设，不推断RETROS真实检测或survival已验证。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "ATP savers/spenders被作者定义为代谢状态下对最终firing的综合影响，而非由通道通透离子确定；ATP/ADP、Ca、redox及其他signals是候选sensors。",
+      "claim_type": "metabolic_spiking_hypothesis",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "代谢/电生理模型及来源解释",
+          "design": "source-defined mitochondrial、threshold、HH或network模型",
+          "comparator": "所述metabolic state/ionic control或existing experiment",
+          "measure": "candidate excitability regulation",
+          "unit_of_analysis": "模型配置/模拟network，非独立生物neuron样本",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "lean ATP生产cycle；ROS由模型ATP与ΔΨ关系定义"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "Results II / ion channels",
+            "figure": "Figure3",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者提出的可检验假说。",
+        "boundary": "多于15候选pathway表在未供应SI；既有通道调控不证明共同代谢功能。",
+        "negative_result": null,
+        "non_inference": "模型可行性及既有文献相容不证明真实神经元保护、必要机制、疾病治疗或独立生物重复。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "cellular-metabolism",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "代谢状态是否可通过spiking调节ROS，哪些模型结果及干预可区分这一假说？"
+      ],
+      "shared_evidence_with": [
+        "C5",
+        "C6"
+      ],
+      "review_notes": [
+        "第二轮audit：new model results与被引dfb实验、schematic及未做预测分开；network cell/raster/avalanche counts不是独立n。ROS函数和homeostatic current为假设，不推断RETROS真实检测或survival已验证。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "ROS-modulated Shaker/Hyperkinetic A-type K模型中减慢inactivation可更快repolarize、削弱spike adaptation并缩短ISI，定性对应被引Drosophila dfb ROS-dependent firing现象。",
+      "claim_type": "metabolic_model_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "代谢/电生理模型及来源解释",
+          "design": "source-defined mitochondrial、threshold、HH或network模型",
+          "comparator": "所述metabolic state/ionic control或existing experiment",
+          "measure": "ionic currents及ISI",
+          "unit_of_analysis": "模型配置/模拟network，非独立生物neuron样本",
+          "sample_size_as_reported": "Hodgkin–Huxley model；原动物study n未供给",
+          "uncertainty": null,
+          "assumptions": [
+            "lean ATP生产cycle；ROS由模型ATP与ΔΨ关系定义"
+          ],
+          "source_locator": {
+            "pdf_page": 5,
+            "section": "Results III",
+            "figure": "Figure4B,C,F",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "ROS-modulated Shaker/Hyperkinetic A-type K模型中减慢inactivation可更快repolarize、削弱spike adaptation并缩短ISI，定性对应被引Drosophila dfb ROS-dependent firing现象。",
+        "boundary": "本篇没有新fruitfly实验；ROS来源是否RET、baseline变化成因及完整multi-channel作用未识别。",
+        "negative_result": null,
+        "non_inference": "模型可行性及既有文献相容不证明真实神经元保护、必要机制、疾病治疗或独立生物重复。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "cellular-metabolism",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "代谢状态是否可通过spiking调节ROS，哪些模型结果及干预可区分这一假说？"
+      ],
+      "shared_evidence_with": [
+        "C4",
+        "C6"
+      ],
+      "review_notes": [
+        "第二轮audit：new model results与被引dfb实验、schematic及未做预测分开；network cell/raster/avalanche counts不是独立n。ROS函数和homeostatic current为假设，不推断RETROS真实检测或survival已验证。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "miniSOG增加ROS和AOX降低ROS的既有dfb干预被模型用ROS–baseline关系上下平移定性模拟；相容性不是RETROS来源或睡眠switch唯一机制的证明。",
+      "claim_type": "metabolic_spiking_hypothesis",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "代谢/电生理模型及来源解释",
+          "design": "source-defined mitochondrial、threshold、HH或network模型",
+          "comparator": "所述metabolic state/ionic control或existing experiment",
+          "measure": "ROS curve与firing changes",
+          "unit_of_analysis": "模型配置/模拟network，非独立生物neuron样本",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "lean ATP生产cycle；ROS由模型ATP与ΔΨ关系定义"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "Results III",
+            "figure": "Figure4D,E",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "miniSOG增加ROS和AOX降低ROS的既有dfb干预被模型用ROS–baseline关系上下平移定性模拟；相容性不是RETROS来源或睡眠switch唯一机制的证明。",
+        "boundary": "已有实验来自Kempf2019；sleep-deprivation状态超出作者拟定physiological范围，metabolic spiking可不足以缓冲。",
+        "negative_result": null,
+        "non_inference": "模型可行性及既有文献相容不证明真实神经元保护、必要机制、疾病治疗或独立生物重复。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "cellular-metabolism",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "代谢状态是否可通过spiking调节ROS，哪些模型结果及干预可区分这一假说？"
+      ],
+      "shared_evidence_with": [
+        "C4",
+        "C5"
+      ],
+      "review_notes": [
+        "第二轮audit：new model results与被引dfb实验、schematic及未做预测分开；network cell/raster/avalanche counts不是独立n。ROS函数和homeostatic current为假设，不推断RETROS真实检测或survival已验证。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "10000-cell recurrent LIF模型加入metabolic current后，在外部Poisson input关闭导致短暂activity collapse后可自发重启cascades并维持asynchronous activity；高demand时该current抑制过强放电。",
+      "claim_type": "metabolic_model_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "代谢/电生理模型及来源解释",
+          "design": "source-defined mitochondrial、threshold、HH或network模型",
+          "comparator": "所述metabolic state/ionic control或existing experiment",
+          "measure": "network activity、IM和MS",
+          "unit_of_analysis": "模型配置/模拟network，非独立生物neuron样本",
+          "sample_size_as_reported": "8000E/2000I model neurons、2%recurrent connectivity；seed n未报",
+          "uncertainty": null,
+          "assumptions": [
+            "lean ATP生产cycle；ROS由模型ATP与ΔΨ关系定义"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "Results IV",
+            "figure": "Figure5A–F",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "10000-cell recurrent LIF模型加入metabolic current后，在外部Poisson input关闭导致短暂activity collapse后可自发重启cascades并维持asynchronous activity；高demand时该current抑制过强放电。",
+        "boundary": "持续性限IM未饱和/被synaptic currents压倒的范围；有限simulation不证明真实cortex无限持续。",
+        "negative_result": "不带充分代谢补偿时recurrent activity在external input关闭后不能indefinitely self-sustain。",
+        "non_inference": "模型可行性及既有文献相容不证明真实神经元保护、必要机制、疾病治疗或独立生物重复。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "cellular-metabolism",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "代谢状态是否可通过spiking调节ROS，哪些模型结果及干预可区分这一假说？"
+      ],
+      "shared_evidence_with": [
+        "C8"
+      ],
+      "review_notes": [
+        "第二轮audit：new model results与被引dfb实验、schematic及未做预测分开；network cell/raster/avalanche counts不是独立n。ROS函数和homeostatic current为假设，不推断RETROS真实检测或survival已验证。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "代谢驱动network的avalanche duration在作者模拟呈power-law-like分布，rate、ISI及ISI-CV与external-driven条件描述性相近而metabolic status不同。",
+      "claim_type": "metabolic_model_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "代谢/电生理模型及来源解释",
+          "design": "source-defined mitochondrial、threshold、HH或network模型",
+          "comparator": "所述metabolic state/ionic control或existing experiment",
+          "measure": "avalanche duration/size及spiking statistics",
+          "unit_of_analysis": "模型配置/模拟network，非独立生物neuron样本",
+          "sample_size_as_reported": "raster为1000抽样cells，非1000独立experiments；run/avalanche n未报",
+          "uncertainty": null,
+          "assumptions": [
+            "lean ATP生产cycle；ROS由模型ATP与ΔΨ关系定义"
+          ],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": "Results IV",
+            "figure": "Figure5G–M",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "代谢驱动network的avalanche duration在作者模拟呈power-law-like分布，rate、ISI及ISI-CV与external-driven条件描述性相近而metabolic status不同。",
+        "boundary": "avalanche按≥1ms silence分割；无提供model comparison或criticality统计检验，不可证脑critical机制。",
+        "negative_result": null,
+        "non_inference": "模型可行性及既有文献相容不证明真实神经元保护、必要机制、疾病治疗或独立生物重复。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "cellular-metabolism",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "代谢状态是否可通过spiking调节ROS，哪些模型结果及干预可区分这一假说？"
+      ],
+      "shared_evidence_with": [
+        "C7"
+      ],
+      "review_notes": [
+        "第二轮audit：new model results与被引dfb实验、schematic及未做预测分开；network cell/raster/avalanche counts不是独立n。ROS函数和homeostatic current为假设，不推断RETROS真实检测或survival已验证。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "作者预测强制沉默本来持续spiking的Purkinje neurons会提高ATP及RETROS并降低survival，但该experiment是未来验证而非本篇结果。",
+      "claim_type": "metabolic_spiking_hypothesis",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "代谢/电生理模型及来源解释",
+          "design": "source-defined mitochondrial、threshold、HH或network模型",
+          "comparator": "所述metabolic state/ionic control或existing experiment",
+          "measure": "预测ATP/ROS/cell survival",
+          "unit_of_analysis": "模型配置/模拟network，非独立生物neuron样本",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "lean ATP生产cycle；ROS由模型ATP与ΔΨ关系定义"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "Testable predictions",
+            "figure": "Figure6A–C",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者提出的可检验假说。",
+        "boundary": "需直接ROS/survival测量与其他silent-cell适应控制；TTX本身化学/实验状态可能干扰。",
+        "negative_result": null,
+        "non_inference": "模型可行性及既有文献相容不证明真实神经元保护、必要机制、疾病治疗或独立生物重复。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "cellular-metabolism",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "代谢状态是否可通过spiking调节ROS，哪些模型结果及干预可区分这一假说？"
+      ],
+      "shared_evidence_with": [
+        "C10",
+        "C1"
+      ],
+      "review_notes": [
+        "第二轮audit：new model results与被引dfb实验、schematic及未做预测分开；network cell/raster/avalanche counts不是独立n。ROS函数和homeostatic current为假设，不推断RETROS真实检测或survival已验证。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "ATP-surplus条件下，作者预测限制电子进入ETC的LDH或GPDH/ETF/DHODH扰动降低代谢spiking，而阻断ANT、限制O2或MCU-mode2可增加ETC stalling、ΔΨ及兴奋性。",
+      "claim_type": "metabolic_spiking_hypothesis",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "代谢/电生理模型及来源解释",
+          "design": "source-defined mitochondrial、threshold、HH或network模型",
+          "comparator": "所述metabolic state/ionic control或existing experiment",
+          "measure": "预测excitation与ROS",
+          "unit_of_analysis": "模型配置/模拟network，非独立生物neuron样本",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [
+            "lean ATP生产cycle；ROS由模型ATP与ΔΨ关系定义"
+          ],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": "Testable predictions",
+            "figure": "Figure6D–F",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者提出的可检验假说。",
+        "boundary": "需ample ATP、保持所述ionic条件；conditional compartment/supply效应，本文没有这些完整干预实验。",
+        "negative_result": null,
+        "non_inference": "模型可行性及既有文献相容不证明真实神经元保护、必要机制、疾病治疗或独立生物重复。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "cellular-metabolism",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "代谢状态是否可通过spiking调节ROS，哪些模型结果及干预可区分这一假说？"
+      ],
+      "shared_evidence_with": [
+        "C9",
+        "C1"
+      ],
+      "review_notes": [
+        "第二轮audit：new model results与被引dfb实验、schematic及未做预测分开；network cell/raster/avalanche counts不是独立n。ROS函数和homeostatic current为假设，不推断RETROS真实检测或survival已验证。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "完整11页。metabolic-spiking保护ROS是conditional hypothesis；mitochondrial、threshold、HH及network模型提供可行性展示。低baseline下spikes可减RETROS，高demand可需抑spikes；dfb相容不定位ROS来源。Avalanche-like pattern不证criticality。Purkinje survival及metabolic解耦均是未做预测，疾病/进化解释保持speculative。source2023且identity与prepared assignment一致，输出未人审。",
+  "shared_evidence": [
+    {
+      "claim_id": "C1",
+      "with": [
+        "C9",
+        "C10"
+      ]
+    },
+    {
+      "claim_id": "C2",
+      "with": [
+        "C1",
+        "C3"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C1",
+        "C2"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C5",
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C4",
+        "C6"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C4",
+        "C5"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "with": [
+        "C8"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C10",
+        "C1"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "with": [
+        "C9",
+        "C1"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": null,
+        "issue": "source为PNAS2023 Vol120(48)e2306525120、2023-11-21；assignment完整DOI/year/title相符，local ID需主worker保持独立source映射。",
+        "pdf_page": 1,
+        "suggested_correction": "输出保留直接source metadata",
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "低demand RETROS在neurons尚未直接observed；心肌/其他cell的ROS关系不能自动作neuronal确认。",
+        "pdf_page": 3,
+        "suggested_correction": "模型/hypothesis范围明确",
+        "resolved": true
+      },
+      {
+        "claim_id": "C7",
+        "issue": "indefinitely active与near-critical是作者模型解释，没有生物或无穷时间证明；IM饱和可失败。",
+        "pdf_page": 6,
+        "suggested_correction": "保留parameter saturation boundary",
+        "resolved": true
+      },
+      {
+        "claim_id": "C8",
+        "issue": "power law-like图缺拟合比较/独立n，不能由此确证criticality。",
+        "pdf_page": 6,
+        "suggested_correction": "降为作者描述模型pattern",
+        "resolved": true
+      },
+      {
+        "claim_id": "C9",
+        "issue": "Purkinje silencing后ROS及survival为prediction，没有本篇新数据。",
+        "pdf_page": 8,
+        "suggested_correction": "hypothesis分类",
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "主文称五levels但Methods四models，第五level为predictions；无需创造第五实测实验。",
+        "pdf_page": 10,
+        "suggested_correction": "inventory区分models和预测",
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T11:07:17.141229Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "4bca1080baf1ca6191170e0786bb315cf47e3e7ea5f0b2d529c713d6e235e65a",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

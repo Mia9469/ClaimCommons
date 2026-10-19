@@ -1,0 +1,337 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "poster",
+  "paper": {
+    "title": "A Neuromorphic VLSI Implementation of a Simplified Electrosensory System in a Weakly Electric Fish",
+    "authors": [
+      "Syed Ahmed Aamir",
+      "Jacob Engelmann",
+      "Leonel Gómez‐Sena",
+      "Elisabetta Chicca"
+    ],
+    "doi": null,
+    "publication_year": 2013,
+    "venue": "Publikationen an der Universität Bielefeld (Universität Bielefeld)",
+    "url": "https://openalex.org/W134432509"
+  },
+  "source": {
+    "filename": "paper-W134432509.pdf",
+    "sha256": "b1b9f538f0c9653d0495c5f634079a5cc94f54c64edaaca366ef6e36ecaf269d",
+    "source_url": "http://www-labsticc.univ-ubs.fr/~coussy/neucomp2013/index_fichiers/material/posters/poster2.pdf",
+    "pdf_page_count": 1
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1
+    ],
+    "results_sections_seen": [
+      "Electrosensory Lateral Line Lobe Model",
+      "Spiking Response in ELL Layers",
+      "Lf Response as a Function of LEOD Input",
+      "Conclusions and Future Work"
+    ],
+    "missing_material": [
+      "未提供图像像素，不能读取曲线数值或具体脉冲时间。",
+      "未报告完整仿真参数、独立运行次数、统计不确定性或硬件实验数据。"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "已评估所供第1页全部文字，包括参考文献；没有提供附录或补充材料。",
+      "实际文档为单页海报，元数据类型为 conference-paper；标题及作者身份相符，正文作者 Leonel Gomez 与元数据姓名形式不同。",
+      "正文明确报告 modeling study，multichip AER 实现仍在研究中；不能由标题推断硬件已经实现。",
+      "生物学背景及引用文献中的发现不作为本文原创结果。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "构建包含电感受器传入、兴奋性与抑制性颗粒细胞、Mg、Lf 及 EOCD 调制的简化 ELL 脉冲网络。",
+      "role": "模型与方法",
+      "source_pages": [
+        1
+      ],
+      "decision": "include",
+      "reason": "作为两项结果的共同模型与方法条件保留；不单独宣称硬件实现或生物学验证。"
+    },
+    {
+      "summary": "比较低输入、无 Mg 抑制及恢复 Mg 抑制与 EOCD 反馈条件下的 Lf 放电。",
+      "role": "仿真结果",
+      "source_pages": [
+        1
+      ],
+      "decision": "include",
+      "reason": "保留完整条件比较；联合恢复操作不能支持分别归因。"
+    },
+    {
+      "summary": "Lf 在较强输入下开始放电，逆潜伏期增加对应更早放电。",
+      "role": "仿真结果",
+      "source_pages": [
+        1
+      ],
+      "decision": "include",
+      "reason": "输入强度与放电时序关系可独立评估。"
+    },
+    {
+      "summary": "作者将可见脉冲时间抖动归因于模拟的片上神经元失配。",
+      "role": "模型解释",
+      "source_pages": [
+        1
+      ],
+      "decision": "defer",
+      "reason": "保留失配为模型设置；没有失配消融或定量比较支持独立机制结论。"
+    },
+    {
+      "summary": "作者将强度—潜伏期关系解释为物体接近程度的时间编码，并称其重现生物学观察。",
+      "role": "解释",
+      "source_pages": [
+        1
+      ],
+      "decision": "include",
+      "reason": "附于输入—时序结果的解释与推断边界中；没有直接距离测试或生物数据比较，不另生成验证主张。"
+    },
+    {
+      "summary": "在 multichip AER 系统上实现近距离实时感知。",
+      "role": "未来工作",
+      "source_pages": [
+        1
+      ],
+      "decision": "exclude",
+      "reason": "正文明确该实现仍在研究中，没有完成实现或性能结果。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "在简化 ELL 脉冲网络的条件比较中，低 basal EOD（DC）与低 LEOD 幅度下 Lf 不放电；无 Mg 抑制时，Lf 在 basal EOD 下也产生脉冲；恢复 Mg 抑制与 EOCD 反馈的联合条件下，Lf 在较强 LEOD 区域放电。",
+      "claim_type": "计算模型条件比较",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "采用 leaky integrate-and-fire 神经元并模拟片上神经元失配的 ELL 网络建模",
+          "design": "以 CASE-I、CASE-II、CASE-III 展示改变 basal EOD（DC）、LEOD 幅度及抑制与反馈条件时的网络脉冲响应。",
+          "comparator": "低 DC 与低 LEOD 幅度；无 Mg 抑制；恢复 Mg 抑制与 EOCD 反馈。",
+          "measure": "Lf 是否放电及其放电所在的 LEOD 强度区域",
+          "unit_of_analysis": "模型网络在各输入与连接条件下的 Lf 脉冲响应",
+          "sample_size_as_reported": "模型含100个电感受器传入单元、100个兴奋性颗粒细胞及100个抑制性颗粒细胞；Mg、Lf 数量及独立仿真次数未报告。",
+          "uncertainty": null,
+          "assumptions": [
+            "采用简化 ELL 连接与 leaky integrate-and-fire 神经元。",
+            "颗粒层抑制经 Mg 传递，并由 EOCD 反馈调制。",
+            "网络细胞数量是模型规模，不是独立实验重复。",
+            "各条件的完整参数及是否严格匹配未报告。"
+          ],
+          "source_locator": {
+            "pdf_page": 1,
+            "section": "Spiking Response in ELL Layers",
+            "figure": "CASE-I、CASE-II、CASE-III 的文字说明",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所报告条件比较支持：无 Mg 抑制时可出现 basal EOD 响应，恢复抑制与反馈的联合条件下 Lf 响应位于较强 LEOD 区域。",
+        "boundary": "仅限海报描述的简化网络及条件；未报告完整参数、效应大小或不确定性。",
+        "negative_result": "低 DC 与低 LEOD 幅度条件下 Lf 未放电。",
+        "non_inference": "不能分别量化 Mg 抑制与 EOCD 的贡献，也不能据此确认真实鱼脑或已制成芯片中的同等效应。",
+        "unresolved": "分别改变 Mg 抑制与 EOCD 时，Lf 对 basal EOD 和较强 LEOD 的响应如何变化？",
+        "unresolved_attribution": "提取时识别的未检验问题，非作者明确提出的问题。"
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "Mg 抑制与 EOCD 反馈条件如何改变简化 ELL 网络中 Lf 对 basal EOD 与较强 LEOD 的响应？"
+      ],
+      "shared_evidence_with": [
+        "C2"
+      ],
+      "review_notes": [
+        "三个展示条件不构成三个独立重复。",
+        "Mg 抑制与 EOCD 同时恢复，只保留联合条件比较。",
+        "与 C2 共用网络设置及低输入无放电观察。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "在简化 ELL 网络中，以 LEOD 幅度和 basal EOD（DC）为强度参数展示的 Lf 响应表明：较低输入下无放电，超过未量化的强度水平后开始放电；较强输入对应增加的逆放电潜伏期，即更早放电。",
+      "claim_type": "计算模型输入—时序关系",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "网络模型响应及 Lf 逆潜伏期随输入强度参数变化的图示文字",
+          "design": "将 Lf 逆潜伏期作为 LEOD 幅度与 DC 的函数展示。",
+          "comparator": "较低与较强输入条件",
+          "measure": "Lf 放电有无及逆放电潜伏期",
+          "unit_of_analysis": "模型 Lf 在各输入参数条件下的响应",
+          "sample_size_as_reported": "Lf 数量、输入参数点数量及独立仿真次数未报告。",
+          "uncertainty": null,
+          "assumptions": [
+            "模型采用简化 ELL 结构，并模拟神经元失配。",
+            "逆潜伏期增加表示放电更早。",
+            "将较强 LEOD 解释为物体更近依赖电成像背景关系；本文没有直接距离测试。"
+          ],
+          "source_locator": {
+            "pdf_page": 1,
+            "section": "Lf Response as a Function of LEOD Input",
+            "figure": "Lf 逆潜伏期随 LEOD 幅度及 DC 变化的图示说明",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "图示文字支持较强电输入对应更早 Lf 放电；作者将这一时序关系解释为物体接近程度的时间编码。",
+        "boundary": "没有可读取的数值曲线、阈值、效应大小或不确定性；也未分别量化 DC 与 LEOD 幅度的贡献。",
+        "negative_result": "较低 DC 与 LEOD 幅度下 Lf 未放电，与 C1 的低输入观察重叠。",
+        "non_inference": "不能推断距离解码精度、对物体大小的泛化、与生物数据的定量一致性、实时感知性能或已完成的 VLSI 功能。",
+        "unresolved": "在物体大小及电场条件变化时，Lf 潜伏期能否可靠表征物体距离？",
+        "unresolved_attribution": "提取时识别的未检验问题；作者明确提出的未来工作是 multichip AER 实现。"
+      },
+      "broad_directions": [
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "简化 ELL 网络的 Lf 放电潜伏期如何随 LEOD 幅度与 basal EOD（DC）变化？",
+        "Lf 潜伏期能否在物体大小及电场条件变化时可靠表征距离？"
+      ],
+      "shared_evidence_with": [
+        "C1"
+      ],
+      "review_notes": [
+        "距离编码保留为作者解释，直接结果是输入强度与放电时序关系。",
+        "正文的重现生物学观察表述没有伴随直接生物数据比较。",
+        "与 C1 的共享模型及低输入观察不构成独立验证。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "已重新核对所供单页海报的全部文字，包括参考文献。保留两项模型结果：不同抑制与反馈条件下的 Lf 放电响应，以及较强输入对应更早放电的关系。两项结果共享模型与部分观察。物体接近程度编码属于作者解释；正文没有直接距离验证、生物数据比较或已完成的 VLSI 硬件结果。",
+  "shared_evidence": [
+    {
+      "claim_id": "C1",
+      "with": [
+        "C2"
+      ]
+    },
+    {
+      "claim_id": "C2",
+      "with": [
+        "C1"
+      ]
+    }
+  ],
+  "audit": {
+    "initial_source_match_checks": [],
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": null,
+        "issue": "元数据为 conference-paper，实际提供内容为单页海报。",
+        "suggested_correction": "按 poster 记录实际文档类型，保留一致的标题身份。",
+        "pdf_page": 1,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "标题包含 VLSI Implementation，但正文仅报告建模，并将 multichip AER 实现列为进行中的工作。",
+        "suggested_correction": "全部结果限定为模型结果，不生成已完成硬件实现或性能主张。",
+        "pdf_page": 1,
+        "resolved": true
+      },
+      {
+        "claim_id": "C1",
+        "issue": "恢复 Mg 抑制与 EOCD 是联合操作，不能分别归因；各条件完整匹配设置也未报告。",
+        "suggested_correction": "保留联合条件比较，删除过强的独立机制或量化因果表述。",
+        "pdf_page": 1,
+        "resolved": true
+      },
+      {
+        "claim_id": "C2",
+        "issue": "强度—潜伏期关系没有直接验证距离编码精度或生物学一致性。",
+        "suggested_correction": "直接主张限定为输入—时序关系，距离编码保留为作者解释。",
+        "pdf_page": 1,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "模型细胞数不能作为独立重复数；两项主张共享模型及低输入无放电观察。",
+        "suggested_correction": "明确分析单位与未报告的运行次数，并保留双向 shared_evidence_with。",
+        "pdf_page": 1,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "草稿包含请求模式之外的 source_check 与 review 字段，且 source_check 暗示工具式核验。",
+        "suggested_correction": "移除额外字段，仅记录基于所供文字的核对结果。",
+        "pdf_page": 1,
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T04:55:38.852781Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "signed_in_chatgpt_codex",
+    "authentication": "existing_ChatGPT_login",
+    "provider_api_key_used": false,
+    "model": "account_default_GPT",
+    "source_sha256": "b1b9f538f0c9653d0495c5f634079a5cc94f54c64edaaca366ef6e36ecaf269d",
+    "requests": [
+      {
+        "phase": "extraction",
+        "seconds": 63.55,
+        "usage": {
+          "input_tokens": 14691,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2758,
+          "reasoning_output_tokens": 46
+        },
+        "backend": "signed_in_chatgpt_codex",
+        "tools_used": false
+      },
+      {
+        "phase": "source_audit",
+        "seconds": 62.81,
+        "usage": {
+          "input_tokens": 17321,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 3116,
+          "reasoning_output_tokens": 49
+        },
+        "backend": "signed_in_chatgpt_codex",
+        "tools_used": false
+      }
+    ],
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

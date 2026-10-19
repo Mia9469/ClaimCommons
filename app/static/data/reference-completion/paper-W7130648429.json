@@ -1,0 +1,1248 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "Computing-in-memory architecture for Kolmogorov-Arnold networks based on tunable Gaussian-like memory cells",
+    "authors": [
+      "Zhixing Wen",
+      "Qirui Zhang",
+      "Jiangang Chen",
+      "Tianhua Yang",
+      "Fan Yang",
+      "Xuemei Wang",
+      "Qing Liu",
+      "Xiao Luo",
+      "Peng Lin",
+      "Liang-Jian Deng",
+      "Fucai Liu"
+    ],
+    "doi": "10.1038/s41467-026-69592-w",
+    "publication_year": 2026,
+    "venue": "Nature Communications",
+    "url": "https://doi.org/10.1038/s41467-026-69592-w"
+  },
+  "source": {
+    "filename": "paper-W7130648429--Computing-in-memory-architecture-for-Kolmogorov-Arnold-networks-based-on-tunable-Gaussian-like-.pdf",
+    "sha256": "165398c76e1fc41332d0ea41ff33f925475eefaf4695d692bb11a5931280a58e",
+    "source_url": "https://www.nature.com/articles/s41467-026-69592-w_reference.pdf?error=cookies_not_supported&code=060483cb-62cc-4daf-b18b-e8ffcf77c0e9",
+    "pdf_page_count": 32
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32
+    ],
+    "results_sections_seen": [
+      "Structure of tunable Gaussian-like memory cells",
+      "Circuit design for GMC-based hardware architecture",
+      "Further performance validation of G-KANs in various AI scenarios",
+      "Discussion",
+      "Methods",
+      "Figures 1–5 captions",
+      "References and editorial material"
+    ],
+    "missing_material": [
+      "正文引用的 Supplementary Notes 1–12、Supplementary Figures 1–21 和 Supplementary Table 1 均未随所提供32页文本出现",
+      "图像像素、外部代码、原始数据及 peer review file 未提供"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "逐段评估全部32页，包括末尾图注、参考文献、作者贡献和编辑说明；第31页主要为图5图注延续及水印。",
+      "实际版本为未编辑的 Nature Communications Article in Press，2024-12-22 received，2026-02-03 accepted；不替换成未来的定稿内容。",
+      "题名和 DOI 与索引一致；索引仅列前6名作者，原文第1–2页明确有11名，最终记录据此补全并在审计保留差异。",
+      "只有单器件/小阵列电学是实际测量；正文第18、20页说明网络任务采用 Python 和 Simscape Electrical 仿真。",
+      "第二次审计使用已保留的全部来源文本逐项对照命题、单位、比较条件和图注，未重开PDF；所有引语均为null。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "MoS2/MoTe2 Gaussian transistor 与 Gr/CIPS/Gr memristor 串联，实现可编程 Gaussian-like 电流响应",
+      "role": "result",
+      "source_pages": [
+        8,
+        9,
+        10,
+        26,
+        27,
+        28
+      ],
+      "decision": "include",
+      "reason": "有器件构造、电学描述、拟合式及图3图注；区分实测和机制解释。"
+    },
+    {
+      "summary": "写入后100 s保持和1000次循环耐久",
+      "role": "result",
+      "source_pages": [
+        10,
+        28
+      ],
+      "decision": "include",
+      "reason": "两个可分别判断的器件可靠性命题；时间点和循环数不是独立器件n。"
+    },
+    {
+      "summary": "器件间均匀性",
+      "role": "result",
+      "source_pages": [
+        10
+      ],
+      "decision": "defer",
+      "reason": "只有Supplementary Fig. 6的概括引用；缺器件数量、分布和条件，不能形成更完整的均匀性命题。"
+    },
+    {
+      "summary": "1×2 GMC阵列通过脉冲调节组合激活曲线",
+      "role": "result",
+      "source_pages": [
+        10,
+        11
+      ],
+      "decision": "include",
+      "reason": "正文明确报告阵列制备、2/4/6脉冲及输出形状调节；不假定读过Supplementary Fig. 7。"
+    },
+    {
+      "summary": "crossbar、差分对、TIA及减法器实现Gaussian基函数的并行求和与带符号系数",
+      "role": "result",
+      "source_pages": [
+        11,
+        12,
+        19,
+        29
+      ],
+      "decision": "include",
+      "reason": "完整的电路设计命题，非已制造大规模芯片的声明。"
+    },
+    {
+      "summary": "附加memristor阵列支持ReLU残差项",
+      "role": "result",
+      "source_pages": [
+        12,
+        20
+      ],
+      "decision": "include",
+      "reason": "只保留提出的电路/公式扩展，不将其当作梯度问题得到实验解决。"
+    },
+    {
+      "summary": "残差扩展解决梯度消失/爆炸及大规模half-biased读出可扩展性",
+      "role": "interpretation",
+      "source_pages": [
+        12
+      ],
+      "decision": "defer",
+      "reason": "正文给出设计解释和补充材料指引；缺相应对照训练曲线、规模和阵列读出数据。"
+    },
+    {
+      "summary": "五峰1D顺序回归及与M-MLP的遗忘对比",
+      "role": "result",
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        29
+      ],
+      "decision": "include",
+      "reason": "保留具体网络、每峰训练点、评估点、RMSE与实际对照失败，限定为仿真。"
+    },
+    {
+      "summary": "三个非重叠函数数据集的持续学习",
+      "role": "result",
+      "source_pages": [
+        13
+      ],
+      "decision": "defer",
+      "reason": "正文报告了附加测试，但函数、误差、重复次数均在未提供Supplementary Note 5/Fig. 14；不把它提升成跨任务普遍性。"
+    },
+    {
+      "summary": "相对CMOS B-spline实现的开销优势",
+      "role": "result",
+      "source_pages": [
+        13,
+        14
+      ],
+      "decision": "defer",
+      "reason": "具体电路计数与比较均在未提供Supplementary Note 6/Fig. 15。"
+    },
+    {
+      "summary": "相对两个NVIDIA GPU的约两个数量级能效优势",
+      "role": "result",
+      "source_pages": [
+        14,
+        18
+      ],
+      "decision": "include",
+      "reason": "保留作者正文报告的比较及未提供系统边界/型号/统计的限制，不编造TOPS/W或实测整机性能。"
+    },
+    {
+      "summary": "MNIST参数匹配性能及source-line需求降低",
+      "role": "result",
+      "source_pages": [
+        15,
+        16,
+        20,
+        21,
+        30
+      ],
+      "decision": "include",
+      "reason": "分别提取准确率比较和拓扑资源需求；参数匹配按作者给定网络说明，保留式(3)歧义。"
+    },
+    {
+      "summary": "更快的neural scaling law",
+      "role": "result",
+      "source_pages": [
+        16
+      ],
+      "decision": "defer",
+      "reason": "仅指向未提供Supplementary Fig. 18，没有指数、拟合范围或误差数据。"
+    },
+    {
+      "summary": "MNIST→FMNIST的持续学习准确率下降较小",
+      "role": "result",
+      "source_pages": [
+        16,
+        30
+      ],
+      "decision": "include",
+      "reason": "保留训练顺序、轮数、网络和下降比值，不推算绝对准确率。"
+    },
+    {
+      "summary": "零Dirichlet边界Poisson方程、Mackey-Glass预测及扰动稳健性",
+      "role": "result",
+      "source_pages": [
+        16,
+        17,
+        30,
+        31
+      ],
+      "decision": "include",
+      "reason": "三类读出分别建记录，保留缺失的规模、重复和统计信息。"
+    },
+    {
+      "summary": "Cu+迁移解释、神经可塑性类比及背景KAN理论",
+      "role": "interpretation",
+      "source_pages": [
+        4,
+        5,
+        6,
+        7,
+        9
+      ],
+      "decision": "exclude",
+      "reason": "载流子/离子解释与已有工作的背景不构成本篇独立的机制识别、生物实验或新定理。"
+    },
+    {
+      "summary": "数据代码可用性、参考文献、编辑摘要和同行评审说明",
+      "role": "other",
+      "source_pages": [
+        21,
+        22,
+        23,
+        24,
+        25,
+        32
+      ],
+      "decision": "exclude",
+      "reason": "已评估但不是新增科学结果，不访问外部资料。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "在干法转移制备的MoS2/MoTe2 Gaussian transistor与Gr/CIPS/Gr memristor串联GMC中，改变memristor写入脉冲数可调节Gaussian-like转移电流幅值；正文报告峰值电流近线性增大，而峰位置及两侧宽度参数只轻微变化。",
+      "claim_type": "device_characterization",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "半导体参数分析仪电学测量及分段Gaussian-like拟合",
+          "design": "独立MoS2和MoTe2通道、heterojunction及串联GMC表征；固定source-drain voltage下改变写入脉冲数。",
+          "comparator": "同一GMC不同写入状态；独立n/p通道作为器件性质参考。",
+          "measure": "ID–Vg、Ipeak、Vμ及Vg≤Vμ/＞Vμ两侧σ参数；图注报告写脉冲3 V、0.5 s。",
+          "unit_of_analysis": "器件的电学响应曲线/编程状态，非独立实验重复。",
+          "sample_size_as_reported": "正文未报告该比较的独立器件数或重复次数。",
+          "uncertainty": "只定性报告宽度和位置变化轻微；拟合相关性的详细值在未提供Supplementary Fig. 4。",
+          "assumptions": [
+            "Gaussian-like不是严格对称Gaussian；式(1)允许两侧使用不同σ。",
+            "控制幅值的电路解释不等于直接观察Cu+运动。"
+          ],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "Structure of tunable Gaussian-like memory cells; Eq. (1)",
+            "figure": "Fig. 3d; caption PDF p.28",
+            "equation": "(1)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所制备GMC可实现可编程Gaussian-like幅值，支持作为KAN基函数的器件原语。",
+        "boundary": "限于报告的单器件条件及所试写入状态；未给可推广的量产分布。",
+        "negative_result": null,
+        "non_inference": "不能据此证明离子迁移的独立因果机制、任意基函数形状可独立调整或生物神经验证。",
+        "unresolved": "峰值线性范围、拟合误差、独立器件n及外界条件依赖。",
+        "unresolved_attribution": "补充图4、6未提供；机制描述结合既有文献而非本篇直接成像。"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "可编程模拟器件能否直接生成KAN所需的Gaussian-like基函数？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C3",
+        "C4"
+      ],
+      "review_notes": [
+        "保留两侧宽度参数，避免误写为完全对称Gaussian。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "在所报告GMC接受两次3 V、0.5 s写入脉冲后，20、40、60、80及100 s时的转移特性与写入后立即测得的曲线基本不变，显示100 s观察窗内的状态保持。",
+      "claim_type": "device_retention",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "编程后定时重复转移曲线测量",
+          "design": "初始状态与两脉冲编程状态的100 s保持测试。",
+          "comparator": "编程后各时间点与立即测量曲线，另示初始状态。",
+          "measure": "Gaussian-like ID–Vg转移曲线随时间的变化。",
+          "unit_of_analysis": "同一器件状态的时间序列测量。",
+          "sample_size_as_reported": "5个延迟时间点20–100 s；独立器件/实验n未报告。",
+          "uncertainty": "正文描述几乎无变化，未提供可读置信区间或显著性检验。",
+          "assumptions": [
+            "时间点不是独立器件重复。"
+          ],
+          "source_locator": {
+            "pdf_page": 28,
+            "section": "Fig. 3 caption; retention results PDF p.10",
+            "figure": "Fig. 3e",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "写入后的器件状态在报告的100 s窗口内保持。",
+        "boundary": "不能延伸到小时、年尺度或温度加速寿命。",
+        "negative_result": null,
+        "non_inference": "曲线基本不变不是统计等效性证明，也不证明长期掉电保存。",
+        "unresolved": "更长时间、环境和独立器件间保持变异。",
+        "unresolved_attribution": "独立重复与测试环境未在提供文本明确给出。"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "GMC写入状态在给定时间窗内能否稳定保留？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C3"
+      ],
+      "review_notes": [
+        "100 s是观测窗，不是n。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "对所报告GMC进行1000次循环测试后，Gaussian-like拟合参数Ipeak与σm的分布被正文描述为具有较小变异系数，支持该测试范围内的重复编程稳定性。",
+      "claim_type": "device_endurance",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "循环电学表征与拟合参数分布统计",
+          "design": "1000-cycle endurance test。",
+          "comparator": "同一测试序列中的不同循环。",
+          "measure": "Ipeak及σm分布和CV。",
+          "unit_of_analysis": "器件的循环状态，不是1000个独立器件。",
+          "sample_size_as_reported": "1000次循环；独立器件数和独立序列n未报告。",
+          "uncertainty": "CV仅定性称小，文本无具体数值；Supplementary Fig. 5未提供。",
+          "assumptions": [
+            "不从未提供像素读取直方图数值。"
+          ],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "Structure of tunable Gaussian-like memory cells",
+            "figure": "Fig. 3f; caption PDF p.28",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所报告循环范围内的Gaussian-like参数分布较稳定。",
+        "boundary": "限于1000次测试，不是大规模器件良率或寿命证明。",
+        "negative_result": null,
+        "non_inference": "不得把循环数作为独立n、把小CV替换成未报告数字。",
+        "unresolved": "故障判据、器件间变异、更多循环及独立重复。",
+        "unresolved_attribution": "细节位于未提供Supplementary Fig. 5、6。"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "GMC在重复编程后是否保持基函数参数稳定？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2"
+      ],
+      "review_notes": [
+        "不将器件间均匀性作为本记录的已量化结果。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "正文报告已制备的1×2 GMC阵列可通过对各GMC施加2、4或6个脉冲调节权重状态，从而改变组合输出曲线的形状，演示小阵列可调激活函数。",
+      "claim_type": "small_array_demonstration",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "小阵列制备和脉冲编程输出表征",
+          "design": "基于GMC幅值可调特性制备1×2阵列。",
+          "comparator": "不同脉冲编程组合。",
+          "measure": "组合激活函数输出形状。",
+          "unit_of_analysis": "一个被报告的两单元阵列/配置；独立阵列重复数未报告。",
+          "sample_size_as_reported": "阵列规模1×2；每个GMC施加2、4、6脉冲；不是独立n。",
+          "uncertainty": "正文未给拟合误差或重复变异。",
+          "assumptions": [
+            "仅依据正文报告，未声称读取Supplementary Fig. 7。"
+          ],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": "Structure of tunable Gaussian-like memory cells; paragraph continues PDF p.11",
+            "figure": "Supplementary Fig. 7 referenced, not supplied",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "小阵列可通过编程幅值改变组合激活函数。",
+        "boundary": "两单元演示不等于完整深层KAN硬件运行。",
+        "negative_result": null,
+        "non_inference": "不推出大规模阵列精度、任意函数的精确表示或片上学习。",
+        "unresolved": "输出误差、阵列重复性及具体曲线。",
+        "unresolved_attribution": "支持图仅在未提供补充材料中；正文保留了阵列与脉冲条件。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "少量可编程Gaussian-like单元能否组合出可调激活曲线？"
+      ],
+      "shared_evidence_with": [
+        "C1"
+      ],
+      "review_notes": [
+        "证据范围为正文报告的小阵列，不增加补充图数值。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "提出的G-KAN crossbar电路将输入映射为多个GMC的gate voltage，以source-line电流求和、差分GMC对及TIA/减法器实现Gaussian-like基函数的带符号线性组合，使一层KAN的基函数计算与累加可并行执行。",
+      "claim_type": "circuit_architecture",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "电路设计、输入电压映射及差分系数表达",
+          "design": "固定VD供电、BL输入Vg、SL按KCL累加；每输入映射到多个平移基函数。",
+          "comparator": "KAN层所要求的基函数加权求和计算形式，不是已制造GPU对照。",
+          "measure": "电路输出与基函数线性组合的对应；c=(I+−I−)/(IM−Im)∈[−1,1]。",
+          "unit_of_analysis": "电路拓扑/一层计算映射。",
+          "sample_size_as_reported": null,
+          "uncertainty": "没有实测大规模阵列吞吐量、面积或端到端误差分布。",
+          "assumptions": [
+            "可控峰电流范围[Im,IM]、基函数平移输入映射和理想电流累加。",
+            "负权重依赖差分对及外围放大器，不能省略外围电路成本。"
+          ],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": "Circuit design for GMC-based hardware architecture; Methods PDF p.19",
+            "figure": "Fig. 4b–e; caption PDF p.29",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "给出适配KAN基函数组合的并行模拟CIM电路方案。",
+        "boundary": "完整网络验证是仿真，非实测全尺寸crossbar。",
+        "negative_result": null,
+        "non_inference": "不能将设计可兼容crossbar当作量产可扩展性或片上训练已验证。",
+        "unresolved": "线阻、读扰、外围开销及大阵列物理实现。",
+        "unresolved_attribution": "half-biased扩展分析在未提供Supplementary Note 3/Fig. 8。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "如何在存内电路中并行实现KAN的带符号非线性基函数求和？"
+      ],
+      "shared_evidence_with": [
+        "C6",
+        "C9",
+        "C14"
+      ],
+      "review_notes": [
+        "方法设计与器件实测及系统仿真分层标注。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "在提出的G-KAN扩展方案中，附加Gr/CIPS/Gr memristor差分阵列可承载wb·ReLU(x)残差项，并与GMC阵列的Gaussian-like基函数输出相加；这是用ReLU替代SiLU的残差电路设计，而非梯度稳定性已获独立验证。",
+      "claim_type": "residual_circuit_extension",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "扩展电路及MAC表达式推导",
+          "design": "GMC基函数阵列与另一个memristor阵列沿输出维度叠加。",
+          "comparator": "仅含GMC基函数的方案；原算法SiLU被ReLU替代。",
+          "measure": "yj=Σi wb ReLU(xi)+ΣiΣn cn Gn(xi)的计算形式。",
+          "unit_of_analysis": "电路/公式设计。",
+          "sample_size_as_reported": null,
+          "uncertainty": "未提供独立残差消融的梯度或任务误差统计。",
+          "assumptions": [
+            "两阵列输出可对应叠加。",
+            "残差是辅助组件，不替代GMC数组。"
+          ],
+          "source_locator": {
+            "pdf_page": 20,
+            "section": "Principle of MAC operations in G-KANs; extension PDF p.12",
+            "figure": "Supplementary Figs. 9, 12, 20, 21 referenced, not supplied",
+            "equation": "(2)",
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "描述了包含残差激活项的G-KAN硬件计算扩展。",
+        "boundary": "提供的是设计表达，补充消融材料不可读。",
+        "negative_result": null,
+        "non_inference": "不得据此断言已经解决梯度消失、爆炸或确定提升训练稳定性。",
+        "unresolved": "ReLU替代影响及残差组件的独立增益。",
+        "unresolved_attribution": "效果细节仅引用未提供Supplementary Notes 4、11。"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "Gaussian基函数CIM电路如何加入可训练残差激活项？"
+      ],
+      "shared_evidence_with": [
+        "C5"
+      ],
+      "review_notes": [
+        "将作者关于梯度的解释与可确认的设计命题分开。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "在五个Gaussian峰的顺序1D回归仿真中，G-KAN [1,1]、每边100个基函数、每峰1000训练点在学完最后一峰后仍保留之前峰的拟合，5000个评估输入上的总体RMSE为0.017；正文报告相同任务的M-MLP即使增大深度/规模，也主要拟合新峰而遗忘旧峰。",
+      "claim_type": "sequential_function_regression",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Python网络与Simscape Electrical完整电路仿真",
+          "design": "在[−1,1]范围顺序训练5个Gaussian峰，再用均匀5000点评估；分别比较G-KAN与M-MLP。",
+          "comparator": "正文报告的M-MLP及其加深/增大版本；具体尺寸在未提供补充材料。",
+          "measure": "各峰保留情况及五峰总体RMSE=0.017。",
+          "unit_of_analysis": "一个顺序学习任务/网络仿真过程；输入点是评估样本，不是独立训练运行。",
+          "sample_size_as_reported": "5峰、每峰1000训练点、5000评估点、每边100基函数；独立seed或仿真重复n未报告。",
+          "uncertainty": "无置信区间；M-MLP对比仅有正文定性结果。",
+          "assumptions": [
+            "网络尺寸、基函数数、训练顺序及该合成数据范围共同限定命题。"
+          ],
+          "source_locator": {
+            "pdf_page": 13,
+            "section": "Circuit design for GMC-based hardware architecture; comparison PDF pp.14–15",
+            "figure": "Fig. 4f; Supplementary Fig. 17 referenced, not supplied",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "此任务中G-KAN仿真保留先前峰的表示。",
+        "boundary": "单个合成顺序任务及未报告重复，不能概括为完全避免灾难性遗忘。",
+        "negative_result": "正文报告M-MLP在该顺序任务遗忘先前峰，包括增大架构的尝试。",
+        "non_inference": "不是完整实体网络在线学习，也不是生物记忆验证。",
+        "unresolved": "不同seed、任务顺序、重叠程度和配置匹配的稳健性。",
+        "unresolved_attribution": "M-MLP尺寸和三个非重叠任务的细节在未提供Supplementary Note 5。"
+      },
+      "broad_directions": [
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "GMC映射的KAN在顺序函数学习中能否保留旧任务？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "正文将五峰结果指向Fig. 4e，实际Fig. 4图注将该任务标为4f，已采用图注定位并记录源内不一致。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "在作者按训练参数数量匹配的MNIST仿真中，G-KAN [784,100,10]、nc=4与M-MLP [784,500,10]在约50轮训练后达到相近的识别准确率；该比较不表明G-KAN的绝对准确率或统计优越性。",
+      "claim_type": "image_classification_comparison",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "设备参数映射的网络训练仿真",
+          "design": "图像展开为784维输入，GMC峰电流代表训练权重；作者配置参数匹配网络。",
+          "comparator": "M-MLP [784,500,10]。",
+          "measure": "MNIST学习/收敛识别准确率及最终层峰电流变化。",
+          "unit_of_analysis": "模型训练过程及图像分类预测；权重/像素不是独立重复。",
+          "sample_size_as_reported": "每轮60000图像、约50轮；最后层热图4×1000；测试样本数与独立运行n未在提供文本报告。",
+          "uncertainty": "没有文本可读的准确率数字、误差条或显著性。",
+          "assumptions": [
+            "遵循作者给定参数匹配配置；式(3)中的P定义/比较对象存在歧义，不自行证明严格等参。"
+          ],
+          "source_locator": {
+            "pdf_page": 30,
+            "section": "Fig. 5 caption; Results PDF pp.15–16; Methods PDF pp.20–21",
+            "figure": "Fig. 5b,c",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所给仿真配置可获得与M-MLP相近的MNIST性能。",
+        "boundary": "比较限于给定配置和作者所称参数匹配；没有绝对准确率。",
+        "negative_result": null,
+        "non_inference": "相近不是统计等效性，也不是本篇显示KAN在所有图像任务优于MLP。",
+        "unresolved": "参数计数定义、测试集细节及训练重复。",
+        "unresolved_attribution": "式(3)文字与配对网络示例需要作者/人工澄清。"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "在作者参数匹配条件下G-KAN能否保持MNIST分类性能？"
+      ],
+      "shared_evidence_with": [
+        "C9",
+        "C10"
+      ],
+      "review_notes": [
+        "不从图像像素推测准确率；60000是每轮训练数据量，不是60000次独立实验。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "对于作者给定的G-KAN [784,100,10]、nc=4与M-MLP [784,500,10]匹配配置，G-KAN将基函数扩展放在每条边而减少中间层节点；在每输出节点需要两条source line的差分编码下，正文据此报告在相同神经形态器件计数条件下source-line配置需求降低数倍。",
+      "claim_type": "topological_resource_requirement",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "拓扑及差分编码资源计数分析",
+          "design": "比较基函数展开的较窄G-KAN与较宽M-MLP。",
+          "comparator": "正文所给相同器件计数/参数匹配的M-MLP拓扑。",
+          "measure": "配置SL数量；每输出节点使用双SL。",
+          "unit_of_analysis": "电路拓扑的资源需求，不是芯片面积实测。",
+          "sample_size_as_reported": "中间层100对500节点，nc=4；独立n不适用。",
+          "uncertainty": "仅报告数倍降低；无实际版图面积、走线长度及外围功耗。",
+          "assumptions": [
+            "作者的相同器件计数条件及差分编码约定。",
+            "不将节点比例直接换算为整机面积或总能耗比例。"
+          ],
+          "source_locator": {
+            "pdf_page": 16,
+            "section": "Further performance validation of G-KANs in various AI scenarios",
+            "figure": "Fig. 5c context",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "基函数展开改变了相同计数条件下的连线资源分配。",
+        "boundary": "资源计数设计分析，非芯片实测缩放。",
+        "negative_result": null,
+        "non_inference": "不能证明数倍总芯片面积、功耗或延迟下降。",
+        "unresolved": "外围电路和实际版图资源占用。",
+        "unresolved_attribution": "参数计数约定在式(3)存在歧义，本文只保留作者陈述的条件。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "representation-coding"
+      ],
+      "scientific_questions": [
+        "基函数沿边展开能否减少KAN crossbar的source-line需求？"
+      ],
+      "shared_evidence_with": [
+        "C5",
+        "C8"
+      ],
+      "review_notes": [
+        "与MNIST准确率共享配置，但不是独立性能重复。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "在先用MNIST训练10轮、再用FMNIST训练10轮的图像顺序学习仿真中，G-KAN [784,100,10]、nc=4的准确率下降被报告为小于M-MLP [784,500,10]下降幅度的0.1倍，支持此训练顺序下较少遗忘。",
+      "claim_type": "sequential_image_learning",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "两数据集顺序训练仿真",
+          "design": "任务1 MNIST的前10轮，任务2 FMNIST的后10轮；给定两种网络配置。",
+          "comparator": "同顺序训练的M-MLP [784,500,10]。",
+          "measure": "切换任务后的识别准确率下降幅度比，小于0.1。",
+          "unit_of_analysis": "一个顺序训练过程中的任务准确率，不是20个独立重复。",
+          "sample_size_as_reported": "各任务10轮；独立训练运行n及此测试的图像数未明确报告。",
+          "uncertainty": "未给绝对准确率下降、误差条或重复分布。",
+          "assumptions": [
+            "下降比值不是0.1个百分点，也不是零遗忘。",
+            "限于该训练顺序和作者所给配置。"
+          ],
+          "source_locator": {
+            "pdf_page": 16,
+            "section": "Further performance validation of G-KANs in various AI scenarios",
+            "figure": "Fig. 5d; caption PDF p.30",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在此顺序学习比较中G-KAN准确率下降较小。",
+        "boundary": "两任务顺序和给定模型，未报告独立重复或倒序测试。",
+        "negative_result": null,
+        "non_inference": "不能推断全面终身学习、零遗忘或因果识别局部可塑性的贡献。",
+        "unresolved": "不同任务序列与训练预算匹配后的表现。",
+        "unresolved_attribution": "下降统计的具体计算和绝对值不在提供文本中。"
+      },
+      "broad_directions": [
+        "learning-memory",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "G-KAN在MNIST转FMNIST训练后是否比M-MLP少遗忘？"
+      ],
+      "shared_evidence_with": [
+        "C8"
+      ],
+      "review_notes": [
+        "保留下降比例原意，不换算为未报告的准确率数字。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "在零Dirichlet边界条件的Poisson方程求解仿真中，正文报告G-KAN的L2-norm误差低于所比较的两个M-MLP架构，即使G-KAN使用相同或更小的网络规模。",
+      "claim_type": "pde_solver_comparison",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "设备映射网络的Poisson方程求解仿真",
+          "design": "零Dirichlet边界；比较G-KAN与两个M-MLP配置。",
+          "comparator": "两个M-MLP架构，具体尺寸在未提供Supplementary Note 9。",
+          "measure": "L2-norm解误差。",
+          "unit_of_analysis": "PDE求解实例/模型配置；非独立硬件实验。",
+          "sample_size_as_reported": "两个M-MLP比较架构；配置、网格/配点数、独立运行n未报告。",
+          "uncertainty": "未提供可读误差数值或区间。",
+          "assumptions": [
+            "只保留同一给定Poisson问题及零边界条件。",
+            "相同/更小网络尺寸不等于相同训练参数数目。"
+          ],
+          "source_locator": {
+            "pdf_page": 16,
+            "section": "Further performance validation; paragraph continues PDF p.17",
+            "figure": "Fig. 5e; caption PDF p.30",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "所给Poisson任务的报告误差更低。",
+        "boundary": "缺具体方程参数、采样与优化预算，不能外推一般PDE。",
+        "negative_result": null,
+        "non_inference": "不推断硬件实测解精度、收敛定理或普遍胜过MLP。",
+        "unresolved": "完整任务配置、误差值、重复及计算预算。",
+        "unresolved_attribution": "细节在未提供Supplementary Note 9。"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "给定零Dirichlet Poisson问题中G-KAN的解误差如何比较M-MLP？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "不把网络尺寸与参数数量混为一谈。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "在Mackey-Glass时间序列预测仿真中，正文报告G-KAN的训练和测试输出均贴近真值并给出RMSE=0.071，而M-MLP及更深版本在训练中拟合良好但测试泛化较差；提供文本未明确0.071对应哪一评估集合。",
+      "claim_type": "time_series_forecasting",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "G-KAN与M-MLP时间序列训练/测试仿真",
+          "design": "Mackey-Glass系统的预测任务，比较训练和测试表现。",
+          "comparator": "M-MLP及加深架构。",
+          "measure": "预测曲线与真值匹配及正文报告的RMSE=0.071；Fig. 5f图注说明展示测试集。",
+          "unit_of_analysis": "时间序列预测任务/模型；相邻时间点可能相关，不是独立运行。",
+          "sample_size_as_reported": "序列长度、训练测试比例、预测步长及独立seed n均未报告。",
+          "uncertainty": "RMSE无区间，正文未分别给训练/测试RMSE。",
+          "assumptions": [
+            "不将正文单一RMSE强行指定为测试集统计。"
+          ],
+          "source_locator": {
+            "pdf_page": 17,
+            "section": "Further performance validation of G-KANs in various AI scenarios",
+            "figure": "Fig. 5f; caption PDF p.30",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "此任务中G-KAN报告的训练与测试拟合较好。",
+        "boundary": "仅限具体Mackey-Glass设置；RMSE评估集合未明。",
+        "negative_result": "正文报告M-MLP在测试阶段泛化较差，尽管训练拟合良好，且加深未消除此现象。",
+        "non_inference": "不构成真实世界时间序列、任意预测步长或实体硬件的泛化保证。",
+        "unresolved": "RMSE计算集合、划分、时间窗及运行重复。",
+        "unresolved_attribution": "详细结果在未提供Supplementary Note 9/Fig. 19。"
+      },
+      "broad_directions": [
+        "theory-ai",
+        "dynamics-networks"
+      ],
+      "scientific_questions": [
+        "G-KAN在给定Mackey-Glass预测任务中能否保持测试泛化？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "二次审计保留RMSE=0.071来源，但撤除未经明确说明的测试集归属。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C13",
+      "statement": "在G-KAN [1,1]、nc=100的函数回归及[784,64,10]、nc=4的图像分类仿真中，按特性参数CV放大引入扰动、包括两倍固有扰动的条件后，正文仍报告较强任务稳健性；未提供文本可读的性能退化量。",
+      "claim_type": "device_variation_robustness",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "模拟器件特性扰动的任务评估",
+          "design": "q放大特性参数CV；q=1为固有扰动，q＞1代表更强扰动；正文强调幅度加倍测试。",
+          "comparator": "固有扰动/不同扰动强度下的同一G-KAN任务配置。",
+          "measure": "函数回归及图像分类的扰动下任务表现。",
+          "unit_of_analysis": "受扰动的网络仿真配置；不是多种独立物理噪声源的验证。",
+          "sample_size_as_reported": "两种任务配置；扰动抽样次数、seed n及具体性能数值未报告。",
+          "uncertainty": "图5g像素不可读，未给可提取的退化曲线数值。",
+          "assumptions": [
+            "扰动模型以设备特性参数CV放大表示，不等于覆盖所有外界干扰。"
+          ],
+          "source_locator": {
+            "pdf_page": 17,
+            "section": "Further performance validation of G-KANs in various AI scenarios",
+            "figure": "Fig. 5g; captions PDF pp.30–31",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者报告所试模拟参数扰动下任务稳健。",
+        "boundary": "限于CV扰动模型、两种网络配置和未完整呈现的测试范围。",
+        "negative_result": null,
+        "non_inference": "不证明所有噪声、温漂、读扰或实际大阵列集成都可靠。",
+        "unresolved": "扰动分布、参数相关性、运行重复及性能容限。",
+        "unresolved_attribution": "误差与真实GMC阵列的对应分析在未提供Supplementary Note 10。"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "G-KAN的任务性能对Gaussian-like器件参数变异有多敏感？"
+      ],
+      "shared_evidence_with": [
+        "C3"
+      ],
+      "review_notes": [
+        "不复用MNIST [784,100,10]配置；该稳健性测试明确为[784,64,10]。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C14",
+      "statement": "正文报告GMC-based系统相对两个NVIDIA GPU可达到约两个数量级的能效提升，并将其归因于低功耗器件及原位并行Gaussian kernel计算/累加；该量级比较的型号、统计和系统核算细节仅指向未提供的Supplementary Note 8。",
+      "claim_type": "reported_system_energy_benchmark",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "正文报告的GMC系统与GPU硬件能效benchmark",
+          "design": "比较所提CIM系统和两种NVIDIA GPU；具体实现/核算方法未随正文提供。",
+          "comparator": "两个NVIDIA GPU，型号未在所提供文本列出。",
+          "measure": "能量效率相对比值，约两个数量级。",
+          "unit_of_analysis": "体系结构benchmark配置；不是两个独立芯片制造重复。",
+          "sample_size_as_reported": "两个GPU比较产品；运行次数、设备重复及测量n未报告。",
+          "uncertainty": "无可核验能耗、时延、吞吐量、误差区间或外围成本账目。",
+          "assumptions": [
+            "量级仅作为作者所报告benchmark结论。",
+            "本来源网络评估是仿真，文本不足以认定完整GMC系统的能耗为实体实测。"
+          ],
+          "source_locator": {
+            "pdf_page": 14,
+            "section": "Circuit design; Discussion PDF p.18",
+            "figure": "Supplementary Note 8 referenced, not supplied",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者报告约100倍量级的系统能效优势。",
+        "boundary": "型号、任务、精度、训练/推理及外围核算边界无法从提供文本核对。",
+        "negative_result": null,
+        "non_inference": "不写成已独立验证的100倍整机实测加速、TOPS/W或相对所有CMOS的普遍优势；低功耗解释不是因果消融。",
+        "unresolved": "可比工作量、端到端能耗、外围电路及GPU配置。",
+        "unresolved_attribution": "Supplementary Note 8是未提供材料，定量条件有待人工补充审查。"
+      },
+      "broad_directions": [
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "GMC计算与累加的系统能效在明确核算边界下如何比较GPU？"
+      ],
+      "shared_evidence_with": [
+        "C5"
+      ],
+      "review_notes": [
+        "保留正文明确报告的量级，同时不伪造benchmark细节；Discussion的泛CMOS措辞未被扩大。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "该32页Article in Press报告Gaussian transistor与CIPS memristor组合的可编程GMC，单器件电学、100 s保持、1000循环测试及正文报告的1×2阵列演示构成物理层证据；crossbar/差分对与附加ReLU残差阵列是电路设计。五峰持续回归、MNIST分类及MNIST→FMNIST持续学习、Poisson求解、Mackey-Glass预测和参数扰动评估均是设备映射的网络/电路仿真，不是完整实体芯片训练。保留14条候选命题，其中M-MLP旧峰遗忘和测试泛化不佳是正文实际报告的负向结果；器件间均匀性、三种非重叠函数、neural scaling、具体CMOS开销和梯度/大阵列扩展因补充内容未提供而不提升为独立完整命题。约两个数量级能效优势只保留为缺完整benchmark条件的作者报告。题名/DOI匹配，11名作者据来源补全并保留索引差异，参数计数式歧义未强制修正。全部页、图注和后置材料已文本评估并完成保留上下文中的二次审计，未读像素或外部补充资料，仍为human_checked:false的AI候选。",
+  "shared_evidence": [
+    {
+      "claim_id": "C1",
+      "with": [
+        "C2",
+        "C3",
+        "C4"
+      ]
+    },
+    {
+      "claim_id": "C2",
+      "with": [
+        "C1",
+        "C3"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "with": [
+        "C1",
+        "C2"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "with": [
+        "C1"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C6",
+        "C9",
+        "C14"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C5"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C9",
+        "C10"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C5",
+        "C8"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "with": [
+        "C8"
+      ]
+    },
+    {
+      "claim_id": "C13",
+      "with": [
+        "C3"
+      ]
+    },
+    {
+      "claim_id": "C14",
+      "with": [
+        "C5"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": null,
+        "issue": "实际PDF为Article in Press未编辑版本，不是定稿；题名、DOI和2026年与索引一致。",
+        "suggested_correction": "在coverage保留版本与received/accepted日期；不代入后续版本内容。",
+        "pdf_page": 1,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "索引作者只列Zhixing Wen、Qirui Zhang、Jiangang Chen、Tianhua Yang、Fan Yang、Xuemei Wang；来源另外明确列Qing Liu、Xiao Luo、Peng Lin、Liang-Jian Deng、Fucai Liu。",
+        "suggested_correction": "仅在本篇输出补全11名作者，保留本条索引与来源差异，不改assignment。",
+        "pdf_page": 2,
+        "resolved": true
+      },
+      {
+        "claim_id": null,
+        "issue": "全文任务评估可能被摘要的hardware表述误当作完整实体网络实测。",
+        "suggested_correction": "据Discussion及Methods明确标注Python/Simscape Electrical仿真，器件电学和1×2阵列报告另列。",
+        "pdf_page": 18,
+        "resolved": true
+      },
+      {
+        "claim_id": "C7",
+        "issue": "正文五峰结果写Fig. 4e，而提供图注将1D任务定位为Fig. 4f。",
+        "suggested_correction": "使用PDF p.13和Fig. 4f图注定位，不更改原始来源。",
+        "pdf_page": 29,
+        "resolved": true
+      },
+      {
+        "claim_id": "C8",
+        "issue": "式(3)写PKAN=(1+nc)PMLP并将P称训练参数数目，随后又将不同宽度架构称同参；比较对象的定义有歧义。",
+        "suggested_correction": "仅记录作者给定的匹配架构，不自行宣称严格证明同参；人工需澄清公式P的含义。",
+        "pdf_page": 21,
+        "resolved": false
+      },
+      {
+        "claim_id": "C12",
+        "issue": "RMSE=0.071未在正文明确区分训练或测试集合，虽然Fig. 5f图注展示测试数据。",
+        "suggested_correction": "保留数值但不强制赋为独立测试RMSE。",
+        "pdf_page": 17,
+        "resolved": true
+      },
+      {
+        "claim_id": "C14",
+        "issue": "能效优势约两个数量级，但实际GPU型号、功耗核算和测量重复均在未提供补充材料。",
+        "suggested_correction": "限定为正文报告的benchmark结果，保留未核验条件，不填统计或实测身份。",
+        "pdf_page": 14,
+        "resolved": false
+      },
+      {
+        "claim_id": null,
+        "issue": "第二次来源审计逐项排除了未提供补充图数值、把1000循环当n、把图像/节点计数当独立重复、以及生物/机制/普遍性外推。",
+        "suggested_correction": "全部定位使用真实PDF页和null引语，保留同源共享证据关系；无跨论文链接。",
+        "pdf_page": null,
+        "resolved": true
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T13:43:48.034962Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "165398c76e1fc41332d0ea41ff33f925475eefaf4695d692bb11a5931280a58e",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

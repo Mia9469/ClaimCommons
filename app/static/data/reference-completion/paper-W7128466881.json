@@ -1,0 +1,1386 @@
+{
+  "format": "claim-commons-pdf-v1",
+  "document_type": "research_article",
+  "paper": {
+    "title": "Digital twin brain reveals state-specific stimulation targets for abnormal brain dynamics in tinnitus",
+    "authors": [
+      "J. Zhang",
+      "Shuting Han",
+      "Yongcong Shen",
+      "Xiaojuan Wu",
+      "Yunshu Zhao",
+      "Zijia Wu"
+    ],
+    "doi": "10.1186/s12916-026-04687-1",
+    "publication_year": 2026,
+    "venue": "BMC Medicine",
+    "url": "https://doi.org/10.1186/s12916-026-04687-1"
+  },
+  "source": {
+    "filename": "paper-W7128466881--Digital-twin-brain-reveals-state-specific-stimulation-targets-for-abnormal-brain-dynamics-in-ti.pdf",
+    "sha256": "a8509452b4ab1ed3d480a7e8faeb380765eba77f86cc0e65025f9d878ccaf2b4",
+    "source_url": "https://link.springer.com/content/pdf/10.1186/s12916-026-04687-1.pdf?error=cookies_not_supported&code=500f46d5-582f-4455-8d66-54d6283a1f2a",
+    "pdf_page_count": 18
+  },
+  "coverage": {
+    "pdf_pages_read": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "results_sections_seen": [
+      "Cohorts/TFI/rTMS",
+      "MRI/DTI preprocessing",
+      "LEiDA k selection",
+      "Hopf/KL fitting/virtual stimulation",
+      "Neurosynth/AHBA/spin",
+      "Group FO/severity",
+      "Response maps/genes",
+      "7-patient state prediction/TFI",
+      "k6 overview",
+      "Discussion/limitations",
+      "All110references"
+    ],
+    "missing_material": [
+      "图像像素未阅；图1–5全部可用图注已阅。",
+      "Additional file1 S1–S7/Tables S1–S2未供；MRI/逐患者数据未供。"
+    ],
+    "text_pass_complete": true,
+    "notes": [
+      "全部18页按PDF顺序归档文字完整阅读。",
+      "源title使用非ASCIIhyphen，规范为state-specific；文字题名一致，保留helper标题字形差异提示。",
+      "模型内causal、空间生物一致性、横断面病程与回顾性临床readout严格区分。"
+    ],
+    "reading_mode": "text_only",
+    "figure_images_read": false,
+    "scientific_verification": false,
+    "source_pdf_offline": false,
+    "archived_page_text_used": false
+  },
+  "contribution_inventory": [
+    {
+      "summary": "89人状态方法、SOM/DMN、注释和TFI关联",
+      "role": "result",
+      "source_pages": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        8,
+        9,
+        10
+      ],
+      "decision": "include",
+      "reason": "选择k、横断面和听力混杂不隐去，AT/HC阴性保留。"
+    },
+    {
+      "summary": "群体Hopf、最大改善maps与基因空间检验",
+      "role": "result",
+      "source_pages": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "decision": "include",
+      "reason": "模拟causal不是生物干预；表达供体/相依gene与选择影响明示。"
+    },
+    {
+      "summary": "独立7人两状态、错配、派生比与TFI阴性",
+      "role": "result",
+      "source_pages": [
+        10,
+        11,
+        13
+      ],
+      "decision": "include",
+      "reason": "固定TPJ不验证所有候选区域，1000排列非1000患者。"
+    },
+    {
+      "summary": "k6检查详细证据",
+      "role": "result",
+      "source_pages": [
+        11,
+        15
+      ],
+      "decision": "defer",
+      "reason": "供应主文仅概述，不能当完整复现。"
+    },
+    {
+      "summary": "病程先后、必要/唯一人体因果靶点或确定临床症状疗效",
+      "role": "interpretation",
+      "source_pages": [
+        1,
+        9,
+        12,
+        13,
+        14
+      ],
+      "decision": "exclude",
+      "reason": "横断面/模型/小n无sham不能支持这些強度。"
+    },
+    {
+      "summary": "前瞻状态/靶点、电场/分子/个体化路线",
+      "role": "hypothesis",
+      "source_pages": [
+        14,
+        15
+      ],
+      "decision": "include",
+      "reason": "明确未实施的扩展。"
+    },
+    {
+      "summary": "声明、版本与完整110书目",
+      "role": "interpretation",
+      "source_pages": [
+        15,
+        16,
+        17,
+        18
+      ],
+      "decision": "include",
+      "reason": "源版本与缺补充审计，不自动跨论文关系。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "LEiDA状态定义用27AT+30HC的13680个特征向量、排除32CT后再投影CT；k=5按能区分三组而非最高聚类质量选择。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "246ROI Hilbert相位/leading-eigenvector/k-means",
+          "design": "训练89横断面；测试7患者固定左TPJ干预前后，无sham",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "参与者与自相关BOLD时点，非13680独立受试者",
+          "sample_size_as_reported": "89参与者=32CT+27AT+30HC；57×240时点；每k20次聚类",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 6,
+            "section": null,
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "LEiDA状态定义用27AT+30HC的13680个特征向量、排除32CT后再投影CT；k=5按能区分三组而非最高聚类质量选择。",
+        "boundary": "k=2 Dunn最好却不分组，k=5使用分组可区分性选择，仍可能有选择影响。",
+        "negative_result": null,
+        "non_inference": "无监督算法不等于状态选择完全与诊断标签无关。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "现象学模型的局部扰动能否经真实多靶点比较识别状态特异作用？",
+        "脑状态改变、基因空间相关和临床症状改善怎样分开验证？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "State.SOM的FO在AT和CT均低于HC，报告AT .1239对HC .2031及CT .1137对HC .2031。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "组间FO独立t检验/FDR",
+          "design": "训练89横断面；测试7患者固定左TPJ干预前后，无sham",
+          "comparator": null,
+          "measure": "ATvsHC P_FDR=.0405,d=−.6028；CTvsHC .0197,d=−.7158",
+          "unit_of_analysis": "参与者",
+          "sample_size_as_reported": "AT27、CT32、HC30",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": null,
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "State.SOM的FO在AT和CT均低于HC，报告AT .1239对HC .2031及CT .1137对HC .2031。",
+        "boundary": "状态为算法定义、受选择k和BOLD预处理影响；听力组差异未在FO比较明确调整。",
+        "negative_result": null,
+        "non_inference": "不证明SOM神经机制造成耳鸣。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "现象学模型的局部扰动能否经真实多靶点比较识别状态特异作用？",
+        "脑状态改变、基因空间相关和临床症状改善怎样分开验证？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "State.DMN的FO在CT高于AT和HC，而AT与HC没有显著差异。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "组间FO检验",
+          "design": "训练89横断面；测试7患者固定左TPJ干预前后，无sham",
+          "comparator": null,
+          "measure": "CT .1918、HC .1081、AT .1170；P_FDR=.0020/.0022；d=.9127/.8731",
+          "unit_of_analysis": "参与者",
+          "sample_size_as_reported": "CT32、AT27、HC30",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": null,
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "State.DMN的FO在CT高于AT和HC，而AT与HC没有显著差异。",
+        "boundary": "不显著不是等效，不证明AT完全没有该异常。",
+        "negative_result": "AT与HC的该状态FO未见显著差异。",
+        "non_inference": "不证明随时间每位AT必出现DMN改变。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "现象学模型的局部扰动能否经真实多靶点比较识别状态特异作用？",
+        "脑状态改变、基因空间相关和临床症状改善怎样分开验证？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "作者将SOM和DMN组差异解释为从早期感知到后期认知的病程演变，但训练数据是不同AT/CT人群的横断面比较。",
+      "claim_type": "interpretation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "横断面病程组与网络解释",
+          "design": "训练89横断面；测试7患者固定左TPJ干预前后，无sham",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "不同参与者群体",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 12,
+            "section": null,
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者将SOM和DMN组差异解释为从早期感知到后期认知的病程演变，但训练数据是不同AT/CT人群的横断面比较。",
+        "boundary": "无AT个体长期追踪到CT，状态先后未被纵向验证。",
+        "negative_result": null,
+        "non_inference": "不能将顺序解释录为已观察到每位患者疾病进展。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "现象学模型的局部扰动能否经真实多靶点比较识别状态特异作用？",
+        "脑状态改变、基因空间相关和临床症状改善怎样分开验证？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C3"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C5",
+      "statement": "状态空间与Yeo网络和123项Neurosynth图的重叠支持SOM/感知运动及DMN/记忆等标签，但标签是meta-analytic反向注释而非该患者认知任务直接测量。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "空间网络/认知图关联",
+          "design": "训练89横断面；测试7患者固定左TPJ干预前后，无sham",
+          "comparator": null,
+          "measure": "SOM关联r=.2881，DMN r=.3375等",
+          "unit_of_analysis": "空间parcel/map，不是新认知实验",
+          "sample_size_as_reported": "246ROI、7网络、123术语图；患者仍89",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": null,
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "状态空间与Yeo网络和123项Neurosynth图的重叠支持SOM/感知运动及DMN/记忆等标签，但标签是meta-analytic反向注释而非该患者认知任务直接测量。",
+        "boundary": "多重空间相关和注释不唯一识别认知过程；source统计null完整未展开。",
+        "negative_result": null,
+        "non_inference": "不能由静息BOLD图证明正在发生某一记忆/感知过程。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "现象学模型的局部扰动能否经真实多靶点比较识别状态特异作用？",
+        "脑状态改变、基因空间相关和临床症状改善怎样分开验证？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "32名CT中的两状态FO比与TFI听觉相对认知/情绪的严重度差异有部分相关，报告r=.4253及.3892。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "控制年龄/性别/病程/侧别的partial correlation",
+          "design": "训练89横断面；测试7患者固定左TPJ干预前后，无sham",
+          "comparator": null,
+          "measure": "P_control<.05；r=.4253 cognition、.3892 emotional",
+          "unit_of_analysis": "参与者量表与FO",
+          "sample_size_as_reported": "CT32",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": null,
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "32名CT中的两状态FO比与TFI听觉相对认知/情绪的严重度差异有部分相关，报告r=.4253及.3892。",
+        "boundary": "不是独立留出预测；多量表/比值选择和听力混杂未全面交代。",
+        "negative_result": null,
+        "non_inference": "不证明FO改变介导症状或可作为临床个体预测器。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "现象学模型的局部扰动能否经真实多靶点比较识别状态特异作用？",
+        "脑状态改变、基因空间相关和临床症状改善怎样分开验证？"
+      ],
+      "shared_evidence_with": [
+        "C2",
+        "C3"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C7",
+      "statement": "DTB使用246节点Hopf动态、组平均结构连接和CT平均BOLD频率，以状态FO分布的对称KL调G，得到群体级现象学模型。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "Hopf/SDE参数拟合",
+          "design": "训练89横断面；测试7患者固定左TPJ干预前后，无sham",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "群体模型及技术随机运行，非个体患者twin",
+          "sample_size_as_reported": "G0–1步.001；各100运行；Cmax=.2、初始a=0",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 7,
+            "section": null,
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "DTB使用246节点Hopf动态、组平均结构连接和CT平均BOLD频率，以状态FO分布的对称KL调G，得到群体级现象学模型。",
+        "boundary": "匹配FO不是所有生理统计；不含直接细胞/突触、电场或完整TMS作用机制。",
+        "negative_result": null,
+        "non_inference": "不是由拟合验证真实人脑唯一生成机制。",
+        "unresolved": "区域频率f/ω关系和噪声说明存在参数单位解释歧义。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "现象学模型的局部扰动能否经真实多靶点比较识别状态特异作用？",
+        "脑状态改变、基因空间相关和临床症状改善怎样分开验证？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C8",
+      "statement": "在该群体Hopf模型中逐区域改变a后，最大状态改善图将SOM较优区域放在枕/顶叶、DMN较优区域放在前额特别DLPFC。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "bifurcation参数虚拟干预",
+          "design": "训练89横断面；测试7患者固定左TPJ干预前后，无sham",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "模拟参数/节点和随机运行，不是人类刺激次数",
+          "sample_size_as_reported": "246节点×a−.5至.5约.015步×100技术运行，作者称>1.64million虚拟刺激",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 9,
+            "section": null,
+            "figure": "Figs. 3–4",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "在该群体Hopf模型中逐区域改变a后，最大状态改善图将SOM较优区域放在枕/顶叶、DMN较优区域放在前额特别DLPFC。",
+        "boundary": "最大改善按参数扫描选取；改变a不等同真实rTMS剂量/波形。",
+        "negative_result": null,
+        "non_inference": "模型内干预因果不等于这些人体靶点必要/充分或已临床验证。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "现象学模型的局部扰动能否经真实多靶点比较识别状态特异作用？",
+        "脑状态改变、基因空间相关和临床症状改善怎样分开验证？"
+      ],
+      "shared_evidence_with": [
+        "C7"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C9",
+      "statement": "响应图与AHBA中44项耳鸣GWAS风险基因的空间表达相关，FDR后36项显著；两状态各26项、交集16项。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "6供体表达处理、空间spin/FDR",
+          "design": "训练89横断面；测试7患者固定左TPJ干预前后，无sham",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "空间区域/共表达genes；不是44独立患者或同患者基因测量",
+          "sample_size_as_reported": "6非本患者postmortem供体(1女)、246regions、15633背景genes、44risk；1000spin",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": null,
+            "figure": "Fig. 4B",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "响应图与AHBA中44项耳鸣GWAS风险基因的空间表达相关，FDR后36项显著；两状态各26项、交集16项。",
+        "boundary": "镜像与缺区域插值；spin的whole-brain/subcortex处理及所写p尾方向不明。",
+        "negative_result": null,
+        "non_inference": "空间相关不证明基因导致耳鸣动态或模型机制正确。",
+        "unresolved": "正文p定义为observed超过surrogates比例，与常用显著性尾方向不一致需原分析确认。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "现象学模型的局部扰动能否经真实多靶点比较识别状态特异作用？",
+        "脑状态改变、基因空间相关和临床症状改善怎样分开验证？"
+      ],
+      "shared_evidence_with": [
+        "C8"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C10",
+      "statement": "显著风险基因关联被报告为强于全15633背景关联，但先按显著性筛风险基因后比较会影响所谓生物学富集证据。",
+      "claim_type": "interpretation",
+      "role": "interpretation",
+      "evidence": [
+        {
+          "method": "已显著风险关联vs全部背景的独立t-test",
+          "design": "训练89横断面；测试7患者固定左TPJ干预前后，无sham",
+          "comparator": null,
+          "measure": "SOM P<.001,d=1.1226；DMN P<.001,d=.6906",
+          "unit_of_analysis": "相依基因空间关联值",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": null,
+            "figure": "Fig. 4C",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "显著风险基因关联被报告为强于全15633背景关联，但先按显著性筛风险基因后比较会影响所谓生物学富集证据。",
+        "boundary": "不是未筛风险集或表达/空间匹配随机基因null；共同空间图和coexpression不独立。",
+        "negative_result": null,
+        "non_inference": "不能将此当因果生物验证或独立replication。",
+        "unresolved": "需不依结果筛选的风险集富集控制。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "现象学模型的局部扰动能否经真实多靶点比较识别状态特异作用？",
+        "脑状态改变、基因空间相关和临床症状改善怎样分开验证？"
+      ],
+      "shared_evidence_with": [
+        "C9"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C11",
+      "statement": "独立7名CT统一左TPJ rTMS前后，SOM图与基线靶区FC profile构成的预测值和SOM FO变化rank相关r=.8571，1000排列P<.01。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "群体模型图+个体baseline FC的预后相关",
+          "design": "训练89横断面；测试7患者固定左TPJ干预前后，无sham",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "患者，不是脑节点/虚拟运行",
+          "sample_size_as_reported": "7患者；10次1Hz/110%RMT/1000pulses，2周；1000排列非患者",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": null,
+            "figure": "Fig. 5B",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "独立7名CT统一左TPJ rTMS前后，SOM图与基线靶区FC profile构成的预测值和SOM FO变化rank相关r=.8571，1000排列P<.01。",
+        "boundary": "回顾性脑状态变化预测，所有患者同一靶点；无sham、其他靶点或症状结局预测。",
+        "negative_result": null,
+        "non_inference": "不验证模型推荐枕顶靶点或全人群个体疗效。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "现象学模型的局部扰动能否经真实多靶点比较识别状态特异作用？",
+        "脑状态改变、基因空间相关和临床症状改善怎样分开验证？"
+      ],
+      "shared_evidence_with": [
+        "C8"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C12",
+      "statement": "同7患者DMN图构成的预测与DMN FO变化rank相关r=.7857，排列P<.05。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "相同患者的另一状态预测",
+          "design": "训练89横断面；测试7患者固定左TPJ干预前后，无sham",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "同一患者队列第二readout",
+          "sample_size_as_reported": "同7患者，1000排列",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": null,
+            "figure": "Fig. 5C",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "同7患者DMN图构成的预测与DMN FO变化rank相关r=.7857，排列P<.05。",
+        "boundary": "并非第二独立队列或DLPFC刺激试验。",
+        "negative_result": null,
+        "non_inference": "不能据此称DLPFC人体因果靶点已获验证。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "现象学模型的局部扰动能否经真实多靶点比较识别状态特异作用？",
+        "脑状态改变、基因空间相关和临床症状改善怎样分开验证？"
+      ],
+      "shared_evidence_with": [
+        "C11"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C13",
+      "statement": "跨状态使用响应图未获得显著预测：SOM图对DMN变化r=−.1429、DMN图对SOM变化r=−.0714，均排列P>.05。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "错配状态预测控制",
+          "design": "训练89横断面；测试7患者固定左TPJ干预前后，无sham",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "患者/相依状态",
+          "sample_size_as_reported": "同7患者",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": null,
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "跨状态使用响应图未获得显著预测：SOM图对DMN变化r=−.1429、DMN图对SOM变化r=−.0714，均排列P>.05。",
+        "boundary": "低功效，不能证明完全无跨状态关联或两个机制绝对独立。",
+        "negative_result": "所测错配预测未达显著。",
+        "non_inference": "不显著不等于等效或唯一状态特异机制。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "现象学模型的局部扰动能否经真实多靶点比较识别状态特异作用？",
+        "脑状态改变、基因空间相关和临床症状改善怎样分开验证？"
+      ],
+      "shared_evidence_with": [
+        "C11",
+        "C12"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C14",
+      "statement": "两个状态相对变化比值的预测与实际比值rank相关r=.8571、排列P<.01，但正文与Fig5图注的比值方向不一致。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "同预测/观察FO变化的派生ratio",
+          "design": "训练89横断面；测试7患者固定左TPJ干预前后，无sham",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "患者及原readout派生量",
+          "sample_size_as_reported": "同7患者",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": null,
+            "figure": "Fig. 5D",
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "两个状态相对变化比值的预测与实际比值rank相关r=.8571、排列P<.01，但正文与Fig5图注的比值方向不一致。",
+        "boundary": "比值分母接近零的稳定性未报告；同数据派生量非独立验证。",
+        "negative_result": null,
+        "non_inference": "不等于症状严重度比值或第三次临床复制。",
+        "unresolved": "正文SOM/DMN，图注明确ΔDMN/ΔSOM，需核对实际代码。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "现象学模型的局部扰动能否经真实多靶点比较识别状态特异作用？",
+        "脑状态改变、基因空间相关和临床症状改善怎样分开验证？"
+      ],
+      "shared_evidence_with": [
+        "C11",
+        "C12"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C15",
+      "statement": "7名测试患者的TFI均值从30.17降至24.80，但排列P=.44，未建立显著症状改善。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "治疗前后TFI非参数排列",
+          "design": "训练89横断面；测试7患者固定左TPJ干预前后，无sham",
+          "comparator": null,
+          "measure": "pre30.17±11.5、post24.80±15.0；reported d=.40,P=.44",
+          "unit_of_analysis": "患者配对量表",
+          "sample_size_as_reported": "7患者；无sham对照",
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 10,
+            "section": null,
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "7名测试患者的TFI均值从30.17降至24.80，但排列P=.44，未建立显著症状改善。",
+        "boundary": "小n并非证明无疗效，d计算配对标准化方法未详述。",
+        "negative_result": "TFI改变未达显著。",
+        "non_inference": "脑状态高预测相关不能作为耳鸣治疗疗效或模型选择靶点优势。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "现象学模型的局部扰动能否经真实多靶点比较识别状态特异作用？",
+        "脑状态改变、基因空间相关和临床症状改善怎样分开验证？"
+      ],
+      "shared_evidence_with": [
+        "C11",
+        "C12"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C16",
+      "statement": "作者报告以k=6重跑主要图和预测得到质性一致结果，属于同数据状态定义鲁棒性检查。",
+      "claim_type": "empirical_or_theoretical_result",
+      "role": "result",
+      "evidence": [
+        {
+          "method": "替代k敏感性概述",
+          "design": "训练89横断面；测试7患者固定左TPJ干预前后，无sham",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "同数据/模型；非新增样本",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 11,
+            "section": null,
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "作者报告以k=6重跑主要图和预测得到质性一致结果，属于同数据状态定义鲁棒性检查。",
+        "boundary": "详细S5–S7/Tables未供应，无法直接复核数值。",
+        "negative_result": null,
+        "non_inference": "不能按章节名Replication当独立研究复现。",
+        "unresolved": "缺补充完整敏感性结果。",
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "现象学模型的局部扰动能否经真实多靶点比较识别状态特异作用？",
+        "脑状态改变、基因空间相关和临床症状改善怎样分开验证？"
+      ],
+      "shared_evidence_with": [
+        "C1",
+        "C8",
+        "C11",
+        "C12"
+      ],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C17",
+      "statement": "按实时脑状态实施模型候选区域的chronometric TMS-fMRI，并比较不同靶点和症状结局，是作者提出的后续实证路径。",
+      "claim_type": "hypothesis",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "状态依赖靶点验证设计",
+          "design": "训练89横断面；测试7患者固定左TPJ干预前后，无sham",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "未来患者试验",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 14,
+            "section": null,
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "按实时脑状态实施模型候选区域的chronometric TMS-fMRI，并比较不同靶点和症状结局，是作者提出的后续实证路径。",
+        "boundary": "当前并未触发状态依赖刺激或随机比较候选靶点。",
+        "negative_result": null,
+        "non_inference": "未证明状态优化/靶点优化提高临床疗效。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "现象学模型的局部扰动能否经真实多靶点比较识别状态特异作用？",
+        "脑状态改变、基因空间相关和临床症状改善怎样分开验证？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    },
+    {
+      "id": "C18",
+      "statement": "将个体SC、分子影像、生物物理模型、电场模拟和导航整合到DTB被提出为临床扩展，当前群体Hopf与7人结果尚需多中心验证。",
+      "claim_type": "hypothesis",
+      "role": "hypothesis",
+      "evidence": [
+        {
+          "method": "个体化/多模态转化路线",
+          "design": "训练89横断面；测试7患者固定左TPJ干预前后，无sham",
+          "comparator": null,
+          "measure": null,
+          "unit_of_analysis": "未来模型/临床workflow",
+          "sample_size_as_reported": null,
+          "uncertainty": null,
+          "assumptions": [],
+          "source_locator": {
+            "pdf_page": 15,
+            "section": null,
+            "figure": null,
+            "equation": null,
+            "quote": null
+          },
+          "source_check": {
+            "page_exists": true,
+            "quote_found": null,
+            "method": "normalized_text_match_only"
+          }
+        }
+      ],
+      "conclusion": {
+        "positive": "将个体SC、分子影像、生物物理模型、电场模拟和导航整合到DTB被提出为临床扩展，当前群体Hopf与7人结果尚需多中心验证。",
+        "boundary": "本研究非完整个体生物物理twin，细胞/突触和不同刺激机制未建模。",
+        "negative_result": null,
+        "non_inference": "未证明泛化到其他疾病、tDCS/TI或已建立可用临床平台。",
+        "unresolved": null,
+        "unresolved_attribution": null
+      },
+      "broad_directions": [
+        "dynamics-networks",
+        "methods-causal",
+        "theory-ai"
+      ],
+      "scientific_questions": [
+        "现象学模型的局部扰动能否经真实多靶点比较识别状态特异作用？",
+        "脑状态改变、基因空间相关和临床症状改善怎样分开验证？"
+      ],
+      "shared_evidence_with": [],
+      "review_notes": [
+        "第二源核对基于本次完整阅读留存的正文、方法、图注与附录；未补猜样本量或效应。",
+        "共同数据、投影或重采样不构成独立复现；输出仍为待人工审阅候选。"
+      ],
+      "review": {
+        "status": "candidate",
+        "human_checked": false,
+        "flags": []
+      }
+    }
+  ],
+  "reading_summary": "18页完整源阅读，提取18项候选。训练89人的SOM/DMN横断面差异、群体Hopf虚拟maps与6正常供体风险基因空间分析各自限定。7名患者固定左TPJ的脑状态rank相关和错配阴性是有限独立readout验证，TFI P=.44没有确证症状改善。听阈排除不等号、spin尾、显著基因背景选择、派生比方向和缺k6补充待审；模型内因果不冒充人体候选靶点机制验证。",
+  "shared_evidence": [
+    {
+      "claim_id": "C4",
+      "with": [
+        "C2",
+        "C3"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "with": [
+        "C1",
+        "C2",
+        "C3"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "with": [
+        "C2",
+        "C3"
+      ]
+    },
+    {
+      "claim_id": "C8",
+      "with": [
+        "C7"
+      ]
+    },
+    {
+      "claim_id": "C9",
+      "with": [
+        "C8"
+      ]
+    },
+    {
+      "claim_id": "C10",
+      "with": [
+        "C9"
+      ]
+    },
+    {
+      "claim_id": "C11",
+      "with": [
+        "C8"
+      ]
+    },
+    {
+      "claim_id": "C12",
+      "with": [
+        "C11"
+      ]
+    },
+    {
+      "claim_id": "C13",
+      "with": [
+        "C11",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C14",
+      "with": [
+        "C11",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C15",
+      "with": [
+        "C11",
+        "C12"
+      ]
+    },
+    {
+      "claim_id": "C16",
+      "with": [
+        "C1",
+        "C8",
+        "C11",
+        "C12"
+      ]
+    }
+  ],
+  "audit": {
+    "source_match_checks": [],
+    "model_findings": [
+      {
+        "claim_id": null,
+        "issue": "患者排除条件写平均HT<30dB，但CT/AT均值17.7/22.6dB；与样本特征不能直接相容。",
+        "suggested_correction": "不擅改不等号，需原纳入记录确认。",
+        "pdf_page": 3,
+        "resolved": false
+      },
+      {
+        "claim_id": "C4",
+        "issue": "sequential progression主张来自横断面不同人群。",
+        "suggested_correction": "降为病程解释，不当纵向事实。",
+        "pdf_page": 9,
+        "resolved": true
+      },
+      {
+        "claim_id": "C8",
+        "issue": "1.64million是同群体模型参数扫描，非人体或个体独立实验。",
+        "suggested_correction": "限定模型内因果与数据/机制假设。",
+        "pdf_page": 7,
+        "resolved": true
+      },
+      {
+        "claim_id": "C9",
+        "issue": "spin p定义为observed超过randomized比例，统计尾方向与小P显著表述不清。",
+        "suggested_correction": "保留已报告结果但统计实现须人工核对。",
+        "pdf_page": 8,
+        "resolved": false
+      },
+      {
+        "claim_id": "C10",
+        "issue": "预选显著风险相关再比全背景，有选择影响和gene coexpression依赖。",
+        "suggested_correction": "不能当独立富集/生物机制验证。",
+        "pdf_page": 12,
+        "resolved": false
+      },
+      {
+        "claim_id": "C14",
+        "issue": "相对变化比正文SOM/DMN与图注DMN/SOM反向。",
+        "suggested_correction": "保留未解，不凭r自行选方向。",
+        "pdf_page": 13,
+        "resolved": false
+      },
+      {
+        "claim_id": "C15",
+        "issue": "TFI P=.44而高r是脑状态指标，临床症状和虚拟靶点未证。",
+        "suggested_correction": "显式录入阴性疗效边界。",
+        "pdf_page": 10,
+        "resolved": true
+      },
+      {
+        "claim_id": "C1",
+        "issue": "k=5以组可区分性选择，不能视完全label-independent；k6细节缺失。",
+        "suggested_correction": "保留选择和鲁棒性证据缺口。",
+        "pdf_page": 6,
+        "resolved": false
+      }
+    ],
+    "needs_human_review": true
+  },
+  "relations": [],
+  "provenance": {
+    "created_at": "2026-10-07T12:24:06.629925Z",
+    "workflow": "claim-commons-pdf-v1",
+    "prompt_version": "claim-commons-chatgpt-pdf-2026-10-07.1",
+    "backend": "authorized_parallel_GPT",
+    "model": "inherited_account_GPT",
+    "provider_api_key_used": false,
+    "source_sha256": "a8509452b4ab1ed3d480a7e8faeb380765eba77f86cc0e65025f9d878ccaf2b4",
+    "source_audit_complete": true,
+    "review_status": "candidate",
+    "database_updated": false
+  }
+}

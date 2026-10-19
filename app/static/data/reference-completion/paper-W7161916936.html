@@ -1,0 +1,141 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Von Economo neurons enable reliable social skill acquisition in recurrent spiking neural networks: a computational account with clinical predictions</title><style>body{max-width:940px;margin:40px auto;padding:0 24px;background:#fffdf7;color:#12372f;font:16px/1.8 Georgia,serif}h1{font-size:26px;line-height:1.4}h2{font-size:20px;line-height:1.5}h3{font-size:16px}article{padding:26px 0;border-top:1px solid #bec4b8}small{color:#68766e}dl{display:grid;grid-template-columns:120px 1fr;gap:8px 20px}dt{font-weight:bold}dd{margin:0}li{padding:8px 0}p,dd{overflow-wrap:anywhere}.note{background:#eef2e2;padding:14px;border-left:3px solid #738968}summary{cursor:pointer}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.7 monospace}@media(max-width:600px){body{margin:24px auto;padding:0 18px}dl{grid-template-columns:1fr;gap:3px}dd{margin-bottom:12px}}@media print{body{margin:0;background:white}details{display:block}}</style><link rel="stylesheet" href="../../commons-v02.css?v=20261020-1"><link rel="stylesheet" href="../../examples.css?v=20260928-2"><link rel="stylesheet" href="../../site.css?v=20261020-1"><script defer src="../../site.js?v=20261020-1"></script><script defer src="../../report-ui.js?v=20261020-1"></script></head><body class="portal-page report-page" data-cc-report-shell="1" data-page="library" data-site-prefix="../../" data-library-paper="paper-W7161916936" data-report-language="zh" data-claim-records="{&quot;C1&quot;:&quot;structured-paper-W7161916936-1&quot;,&quot;C2&quot;:&quot;structured-paper-W7161916936-2&quot;,&quot;C3&quot;:&quot;structured-paper-W7161916936-3&quot;,&quot;C4&quot;:&quot;structured-paper-W7161916936-4&quot;,&quot;C5&quot;:&quot;structured-paper-W7161916936-5&quot;,&quot;C6&quot;:&quot;structured-paper-W7161916936-6&quot;,&quot;C7&quot;:&quot;structured-paper-W7161916936-7&quot;,&quot;C8&quot;:&quot;structured-paper-W7161916936-8&quot;,&quot;C9&quot;:&quot;structured-paper-W7161916936-9&quot;,&quot;C10&quot;:&quot;structured-paper-W7161916936-10&quot;,&quot;C11&quot;:&quot;structured-paper-W7161916936-11&quot;,&quot;C12&quot;:&quot;structured-paper-W7161916936-12&quot;,&quot;C13&quot;:&quot;structured-paper-W7161916936-13&quot;,&quot;C14&quot;:&quot;structured-paper-W7161916936-14&quot;}"><header></header><main id="report-content"><div id="report-tools"></div><small>CLAIM COMMONS / 阅读报告</small><h1>Von Economo neurons enable reliable social skill acquisition in recurrent spiking neural networks: a computational account with clinical predictions</h1><p class="note">AI 文本提取候选，尚待人工核对。图像像素未读取；PDF 页码指文件中的页序。</p><p>全部 21 页与两个附录已评估。研究在合成高/低活动 Poisson 分类上发现新增直接 VEN-like 通路改变收敛率，推断消融大多影响小但个别明显。第二审计保留 phase 消融不同分母、谱与梯度未确认预测、STDP 实际失败、配对统计/odds 语言、理论近似及上界不保证学习等问题。既未测试匹配旁路控制，也未做社会认知或生物/临床验证，脚手架机制与临床映射保持假说。</p><a href="https://arxiv.org/pdf/2605.17399" rel="noreferrer">查看所读原文版本 ↗</a><details><summary>贡献清单与处理决定</summary><ul><li><b>VENCircuit 在 2,000 个循环 pyramidal LIF 模型旁加入 40 个接收相同输入、直接投射输出、时间常数更短的 VEN-like 单元，构成并行直接通路。</b><br>include · 保留该命题的证据条件与边界</li><li><b>50 对共享初始化中，VEN-intact 达到预设 peak validation≥0.80 的有 49/50，K=0 有 35/50，即 98% 与 70%。</b><br>include · 保留该命题的证据条件与边界</li><li><b>在仅选择成功运行后，最终准确率 intact 0.990±0.005、ablated 0.986±0.007，Mann–Whitney p&gt;0.05，未发现显著差异。</b><br>include · 保留该命题的证据条件与边界</li><li><b>前 20 种子重训中，intact 20/20 收敛，两次 ablated 失败的验证准确率在全部 50 epochs 保持约机会水平。</b><br>include · 保留该命题的证据条件与边界</li><li><b>另组 phase-ablation 的逐条件表显示，epoch 0 为 0/13 失败，epoch 5 为 2/13，epoch 10 和 25 各 1/12，末期 50 为 0/12。</b><br>include · 保留该命题的证据条件与边界</li><li><b>两个 phase-ablation 示例在从开始无 VEN 时可学，但在中期移除时失败、较晚移除恢复，作者解释为共适应依赖。</b><br>include · 保留该命题的证据条件与边界</li><li><b>25 种子初始 ∥Wpp∥₂ 在 0.077–0.079、均值约 0.078，失败与成功未被该指标区分。</b><br>include · 保留该命题的证据条件与边界</li><li><b>梯度范数诊断得到与预期相反的组平均方向：早期 Wpp 范数 ablated 371,871、intact 244,887，约 1.52 倍。</b><br>include · 保留该命题的证据条件与边界</li><li><b>训练后置零 VEN 权重的 20 模型中，16 个下降≤0.002、3 个轻微下降、1 个从 0.989 降至 0.620，表明推断依赖异质。</b><br>include · 保留该命题的证据条件与边界</li><li><b>在线性平均 readout 与有界 surrogate 的近似分析下，循环 Jacobian 的范数上界为 (βpyr+γ∥Wpp∥₂)^(k−t)。</b><br>include · 保留该命题的证据条件与边界</li><li><b>VEN 直接路径的近似梯度不包含 pyramidal 循环 Jacobian 产品；在 bounded 输入、readout/error 因子及 βVEN&lt;1 下，可得到不随时间窗 T 增长的上界。</b><br>include · 保留该命题的证据条件与边界</li><li><b>作者提出直接通路是学习脚手架，但旁路-only 匹配参数控制未运行，梯度方向一致性和 Wip 梯度也未测，机制仍未识别。</b><br>include · 保留该命题的证据条件与边界</li><li><b>Appendix B 的两阶段 reward-modulated STDP 输出训练，在 intact 与 ablated 各五种子中均未获得可靠分类，最终准确率 0.40±0.16 vs 0.48±0.03。</b><br>include · 保留该命题的证据条件与边界</li><li><b>作者把学习期与成年损失的模型差异提出为 ASC/bvFTD 的定性、可检验预测，而非患者发生率或已经证实的社会技能机制。</b><br>include · 保留该命题的证据条件与边界</li><li><b>成功子集、谱诊断、反向梯度、STDP 失败及 phase 消融</b><br>include · 完整保留实际负结果和与主叙事不一致的对照</li><li><b>ASC 与 bvFTD 的引用背景</b><br>context · 引文不新增本篇生物样本；不能把异质病理文献自动当本模型验证</li><li><b>旁路匹配、自然社会任务与临床测试</b><br>defer · 作者明确未运行；未做实验不是阴性实验</li></ul></details><article><small>C1 / 直接结果 · computational</small><h2>VENCircuit 在 2,000 个循环 pyramidal LIF 模型旁加入 40 个接收相同输入、直接投射输出、时间常数更短的 VEN-like 单元，构成并行直接通路。</h2><h3>Evidence</h3><p>VENCircuit 的 surrogate-gradient BPTT 训练、时间消融及梯度/谱诊断</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>提出的模型架构；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 3 · Methods 2.1–2.3; Appendix A</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>VENCircuit 在 2,000 个循环 pyramidal LIF 模型旁加入 40 个接收相同输入、直接投射输出、时间常数更短的 VEN-like 单元，构成并行直接通路。</dd><dt>适用边界</dt><dd>VEN fan-in 8、pyramidal fan-in 80，β 为 0.80/0.95；任务区分合成高/低活动 Poisson 脉冲，不代表完整 VEN 形态或社会推理。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>合成 Poisson 活动强度二分类不是社会认知任务或人类临床验证；增加旁路未排除参数/输入/时间常数因素；共享种子、子样本和梯度诊断不是独立复制。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>在源文所述条件下，VENCircuit 在 2,000 个循环 pyramidal LIF 模型旁加入 40 个接收相同输入、直接投射输出、时间常数更短的 VEN-like 单元，构成并行直接通路。是否成立？</li></ul></article><article><small>C2 / 直接结果 · computational</small><h2>50 对共享初始化中，VEN-intact 达到预设 peak validation≥0.80 的有 49/50，K=0 有 35/50，即 98% 与 70%。</h2><h3>Evidence</h3><p>VENCircuit 的 surrogate-gradient BPTT 训练、时间消融及梯度/谱诊断</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>配对初始化模型运行；50 对种子</dd><dt>不确定性</dt><dd>源报 OR=21.0、95% CI 2.7–167、单侧 Fisher p=8.7×10⁻⁵。</dd><dt>原文位置</dt><dd>PDF 6 · Results 3.1; Table 1</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>50 对共享初始化中，VEN-intact 达到预设 peak validation≥0.80 的有 49/50，K=0 有 35/50，即 98% 与 70%。</dd><dt>适用边界</dt><dd>OR 是收敛优势比而非 21 倍概率；Fisher 按组列联未利用配对，未供应完整配对结局表。训练固定数据集而非 50 个独立任务。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>合成 Poisson 活动强度二分类不是社会认知任务或人类临床验证；增加旁路未排除参数/输入/时间常数因素；共享种子、子样本和梯度诊断不是独立复制。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>在源文所述条件下，50 对共享初始化中，VEN-intact 达到预设 peak validation≥0.80 的有 49/50，K=0 有 35/50，即 98% 与 70%。是否成立？</li></ul></article><article><small>C3 / 直接结果 · computational</small><h2>在仅选择成功运行后，最终准确率 intact 0.990±0.005、ablated 0.986±0.007，Mann–Whitney p&gt;0.05，未发现显著差异。</h2><h3>Evidence</h3><p>VENCircuit 的 surrogate-gradient BPTT 训练、时间消融及梯度/谱诊断</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>按成功筛选的模型运行；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 6 · Results 3.1</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>在仅选择成功运行后，最终准确率 intact 0.990±0.005、ablated 0.986±0.007，Mann–Whitney p&gt;0.05，未发现显著差异。</dd><dt>适用边界</dt><dd>选择条件不同且非显著不证明等效；该统计没有解决所有模型推断时需要 VEN 的问题。</dd><dt>实际负结果</dt><dd>成功子集的终准确率差未达显著。</dd><dt>不能推出</dt><dd>合成 Poisson 活动强度二分类不是社会认知任务或人类临床验证；增加旁路未排除参数/输入/时间常数因素；共享种子、子样本和梯度诊断不是独立复制。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>在源文所述条件下，在仅选择成功运行后，最终准确率 intact 0.990±0.005、ablated 0.986±0.007，Mann–Whitney p&gt;0.05，未发现显著差异。是否成立？</li></ul></article><article><small>C4 / 直接结果 · computational</small><h2>前 20 种子重训中，intact 20/20 收敛，两次 ablated 失败的验证准确率在全部 50 epochs 保持约机会水平。</h2><h3>Evidence</h3><p>VENCircuit 的 surrogate-gradient BPTT 训练、时间消融及梯度/谱诊断</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>Experiment 1 前 20 种子的重复训练；20 对；其中 2 次 ablated 失败</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 6 · Results 3.2; Figure 1</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>前 20 种子重训中，intact 20/20 收敛，两次 ablated 失败的验证准确率在全部 50 epochs 保持约机会水平。</dd><dt>适用边界</dt><dd>只排除观测窗口内的慢上升轨迹，不证明更长训练永不学习或梯度机制已识别。</dd><dt>实际负结果</dt><dd>两失败轨迹在 50 epochs 未出现可见学习。</dd><dt>不能推出</dt><dd>合成 Poisson 活动强度二分类不是社会认知任务或人类临床验证；增加旁路未排除参数/输入/时间常数因素；共享种子、子样本和梯度诊断不是独立复制。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>在源文所述条件下，前 20 种子重训中，intact 20/20 收敛，两次 ablated 失败的验证准确率在全部 50 epochs 保持约机会水平。是否成立？</li></ul></article><article><small>C5 / 直接结果 · computational</small><h2>另组 phase-ablation 的逐条件表显示，epoch 0 为 0/13 失败，epoch 5 为 2/13，epoch 10 和 25 各 1/12，末期 50 为 0/12。</h2><h3>Evidence</h3><p>VENCircuit 的 surrogate-gradient BPTT 训练、时间消融及梯度/谱诊断</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>消融时间条件内种子及完整配对子集；逐条件 12–13；全五条件完整 12 种子</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 8 · Table 2; Results 3.3</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>另组 phase-ablation 的逐条件表显示，epoch 0 为 0/13 失败，epoch 5 为 2/13，epoch 10 和 25 各 1/12，末期 50 为 0/12。</dd><dt>适用边界</dt><dd>未有正式中期对其他阶段优势的组间检验；末期 50 等于不消融。0/13 不能估计一般失败率且与主实验种子不同。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>合成 Poisson 活动强度二分类不是社会认知任务或人类临床验证；增加旁路未排除参数/输入/时间常数因素；共享种子、子样本和梯度诊断不是独立复制。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>在源文所述条件下，另组 phase-ablation 的逐条件表显示，epoch 0 为 0/13 失败，epoch 5 为 2/13，epoch 10 和 25 各 1/12，末期 50 为 0/12。是否成立？</li></ul></article><article><small>C6 / 解释 · computational</small><h2>两个 phase-ablation 示例在从开始无 VEN 时可学，但在中期移除时失败、较晚移除恢复，作者解释为共适应依赖。</h2><h3>Evidence</h3><p>VENCircuit 的 surrogate-gradient BPTT 训练、时间消融及梯度/谱诊断</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>种子 400044 与 400055 的多条件比较；2 个案例，包含于 phase-ablation 集合</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 7 · Results 3.3; Figure 2</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>两个 phase-ablation 示例在从开始无 VEN 时可学，但在中期移除时失败、较晚移除恢复，作者解释为共适应依赖。</dd><dt>适用边界</dt><dd>能显示训练状态相关依赖，但不唯一确定梯度方向、损失几何或社会学习机制。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>合成 Poisson 活动强度二分类不是社会认知任务或人类临床验证；增加旁路未排除参数/输入/时间常数因素；共享种子、子样本和梯度诊断不是独立复制。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>在源文所述条件下，两个 phase-ablation 示例在从开始无 VEN 时可学，但在中期移除时失败、较晚移除恢复，作者解释为共适应依赖。是否成立？</li></ul></article><article><small>C7 / 直接结果 · computational</small><h2>25 种子初始 ∥Wpp∥₂ 在 0.077–0.079、均值约 0.078，失败与成功未被该指标区分。</h2><h3>Evidence</h3><p>VENCircuit 的 surrogate-gradient BPTT 训练、时间消融及梯度/谱诊断</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>前 25 种子的初始权重诊断；25 种子；K=0 成功 23、失败 2</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 8 · Results 3.4; Figure 3</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>25 种子初始 ∥Wpp∥₂ 在 0.077–0.079、均值约 0.078，失败与成功未被该指标区分。</dd><dt>适用边界</dt><dd>与前 20 种子重合；未观察到预期低谱范数—失败关系，不是完整关联效应为零证明或动力学临界性的直接测量。</dd><dt>实际负结果</dt><dd>初始谱范数未按预期预测失败。</dd><dt>不能推出</dt><dd>合成 Poisson 活动强度二分类不是社会认知任务或人类临床验证；增加旁路未排除参数/输入/时间常数因素；共享种子、子样本和梯度诊断不是独立复制。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>在源文所述条件下，25 种子初始 ∥Wpp∥₂ 在 0.077–0.079、均值约 0.078，失败与成功未被该指标区分。是否成立？</li></ul></article><article><small>C8 / 直接结果 · computational</small><h2>梯度范数诊断得到与预期相反的组平均方向：早期 Wpp 范数 ablated 371,871、intact 244,887，约 1.52 倍。</h2><h3>Evidence</h3><p>VENCircuit 的 surrogate-gradient BPTT 训练、时间消融及梯度/谱诊断</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>10 对种子早期 epochs 0–9 的梯度摘要；10 对种子</dd><dt>不确定性</dt><dd>预设 intact&gt;ablated 的单侧 Wilcoxon W=12、p=0.947，rank-biserial r=−0.564。</dd><dt>原文位置</dt><dd>PDF 9 · Results 3.5; Figure 4</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>梯度范数诊断得到与预期相反的组平均方向：早期 Wpp 范数 ablated 371,871、intact 244,887，约 1.52 倍。</dd><dt>适用边界</dt><dd>p=0.947 是未支持预设方向，不是反向差异已经该 p 值验证；是否在 clipping 前记录及 all 10 seeds 描述需确认。</dd><dt>实际负结果</dt><dd>较弱 ablated Wpp 梯度的预测没有得到支持。</dd><dt>不能推出</dt><dd>合成 Poisson 活动强度二分类不是社会认知任务或人类临床验证；增加旁路未排除参数/输入/时间常数因素；共享种子、子样本和梯度诊断不是独立复制。</dd><dt>未解决</dt><dd>文称所有种子方向一致，与 W=12 的带符号秩摘要存在疑点。</dd></dl><h3>相关问题</h3><ul><li>在源文所述条件下，梯度范数诊断得到与预期相反的组平均方向：早期 Wpp 范数 ablated 371,871、intact 244,887，约 1.52 倍。是否成立？</li></ul></article><article><small>C9 / 直接结果 · computational</small><h2>训练后置零 VEN 权重的 20 模型中，16 个下降≤0.002、3 个轻微下降、1 个从 0.989 降至 0.620，表明推断依赖异质。</h2><h3>Evidence</h3><p>VENCircuit 的 surrogate-gradient BPTT 训练、时间消融及梯度/谱诊断</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>训练成功的独立消融组模型；20 种子</dd><dt>不确定性</dt><dd>源报平均下降 0.021±0.080、单侧 Wilcoxon W=15、p=0.022。</dd><dt>原文位置</dt><dd>PDF 11 · Table 3; Figure 5; Results 3.6</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>训练后置零 VEN 权重的 20 模型中，16 个下降≤0.002、3 个轻微下降、1 个从 0.989 降至 0.620，表明推断依赖异质。</dd><dt>适用边界</dt><dd>Figure 5 指 validation accuracy，方法称 test-time；≤0.002 不是绝对零。多数近乎不变不证明 100% 转移或所有正常模型无需 VEN。</dd><dt>实际负结果</dt><dd>16/20 在所报阈值内几乎不受推断消融影响。</dd><dt>不能推出</dt><dd>合成 Poisson 活动强度二分类不是社会认知任务或人类临床验证；增加旁路未排除参数/输入/时间常数因素；共享种子、子样本和梯度诊断不是独立复制。</dd><dt>未解决</dt><dd>评估划分及 Wilcoxon ties/zero 处理未明确。</dd></dl><h3>相关问题</h3><ul><li>在源文所述条件下，训练后置零 VEN 权重的 20 模型中，16 个下降≤0.002、3 个轻微下降、1 个从 0.989 降至 0.620，表明推断依赖异质。是否成立？</li></ul></article><article><small>C10 / 直接结果 · theoretical</small><h2>在线性平均 readout 与有界 surrogate 的近似分析下，循环 Jacobian 的范数上界为 (βpyr+γ∥Wpp∥₂)^(k−t)。</h2><h3>Evidence</h3><p>VENCircuit 的 surrogate-gradient BPTT 训练、时间消融及梯度/谱诊断</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>理论近似的 Jacobian 产品；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 12 · Proposition 1; equations 6–9</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>在线性平均 readout 与有界 surrogate 的近似分析下，循环 Jacobian 的范数上界为 (βpyr+γ∥Wpp∥₂)^(k−t)。</dd><dt>适用边界</dt><dd>需 γ=1、有界参数及指定梯度动力学；α≈1.028 是保守上界大于 1，不证明实际谱半径临界、梯度爆炸或每种子都不稳定。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>合成 Poisson 活动强度二分类不是社会认知任务或人类临床验证；增加旁路未排除参数/输入/时间常数因素；共享种子、子样本和梯度诊断不是独立复制。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>在源文所述条件下，在线性平均 readout 与有界 surrogate 的近似分析下，循环 Jacobian 的范数上界为 (βpyr+γ∥Wpp∥₂)^(k−t)。是否成立？</li></ul></article><article><small>C11 / 直接结果 · theoretical</small><h2>VEN 直接路径的近似梯度不包含 pyramidal 循环 Jacobian 产品；在 bounded 输入、readout/error 因子及 βVEN&lt;1 下，可得到不随时间窗 T 增长的上界。</h2><h3>Evidence</h3><p>VENCircuit 的 surrogate-gradient BPTT 训练、时间消融及梯度/谱诊断</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>线性 readout/one-step 或有界 leak 累积推导；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 13 · Proposition 2; Remark 2</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>VEN 直接路径的近似梯度不包含 pyramidal 循环 Jacobian 产品；在 bounded 输入、readout/error 因子及 βVEN&lt;1 下，可得到不随时间窗 T 增长的上界。</dd><dt>适用边界</dt><dd>实际输出为 LIF/WTA spike count，理论改成线性平均；时间变化输入不能一般写成标量 ct×同一 x。上界非非零下界，误差信号仍依赖全网络。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>合成 Poisson 活动强度二分类不是社会认知任务或人类临床验证；增加旁路未排除参数/输入/时间常数因素；共享种子、子样本和梯度诊断不是独立复制。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>在源文所述条件下，VEN 直接路径的近似梯度不包含 pyramidal 循环 Jacobian 产品；在 bounded 输入、readout/error 因子及 βVEN&lt;1 下，可得到不随时间窗 T 增长的上界。是否成立？</li></ul></article><article><small>C12 / 假说 / 预测 · computational</small><h2>作者提出直接通路是学习脚手架，但旁路-only 匹配参数控制未运行，梯度方向一致性和 Wip 梯度也未测，机制仍未识别。</h2><h3>Evidence</h3><p>VENCircuit 的 surrogate-gradient BPTT 训练、时间消融及梯度/谱诊断</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>消融现象的机制解释；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 16 · Mechanistic Validation; Limitations 6.5</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>作者提出直接通路是学习脚手架，但旁路-only 匹配参数控制未运行，梯度方向一致性和 Wip 梯度也未测，机制仍未识别。</dd><dt>适用边界</dt><dd>不能排除新增直接路径、参数、fan-in、初始化和时间常数；理论上界不能推出保证收敛或 VEN 生物特异性。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>合成 Poisson 活动强度二分类不是社会认知任务或人类临床验证；增加旁路未排除参数/输入/时间常数因素；共享种子、子样本和梯度诊断不是独立复制。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>在源文所述条件下，作者提出直接通路是学习脚手架，但旁路-only 匹配参数控制未运行，梯度方向一致性和 Wip 梯度也未测，机制仍未识别。是否成立？</li></ul></article><article><small>C13 / 直接结果 · computational</small><h2>Appendix B 的两阶段 reward-modulated STDP 输出训练，在 intact 与 ablated 各五种子中均未获得可靠分类，最终准确率 0.40±0.16 vs 0.48±0.03。</h2><h3>Evidence</h3><p>VENCircuit 的 surrogate-gradient BPTT 训练、时间消融及梯度/谱诊断</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>先 20 epochs BPTT、再重置输出并冻结其余权重的 STDP 运行；每条件 5 种子</dd><dt>不确定性</dt><dd>两样本 t 检验 p=0.38；未报告配对结构或更细统计。</dd><dt>原文位置</dt><dd>PDF 19 · Appendix B: Preliminary Negative Result</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>Appendix B 的两阶段 reward-modulated STDP 输出训练，在 intact 与 ablated 各五种子中均未获得可靠分类，最终准确率 0.40±0.16 vs 0.48±0.03。</dd><dt>适用边界</dt><dd>未显著与学习速度无差异不是等效；该失败限于特定 STDP 配置，不否定全部生物信用分配。</dd><dt>实际负结果</dt><dd>STDP 方案没有确认 VEN 提升输出信用分配的预测。</dd><dt>不能推出</dt><dd>合成 Poisson 活动强度二分类不是社会认知任务或人类临床验证；增加旁路未排除参数/输入/时间常数因素；共享种子、子样本和梯度诊断不是独立复制。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>在源文所述条件下，Appendix B 的两阶段 reward-modulated STDP 输出训练，在 intact 与 ablated 各五种子中均未获得可靠分类，最终准确率 0.40±0.16 vs 0.48±0.03。是否成立？</li></ul></article><article><small>C14 / 假说 / 预测 · computational</small><h2>作者把学习期与成年损失的模型差异提出为 ASC/bvFTD 的定性、可检验预测，而非患者发生率或已经证实的社会技能机制。</h2><h3>Evidence</h3><p>VENCircuit 的 surrogate-gradient BPTT 训练、时间消融及梯度/谱诊断</p><dl><dt>设计 / 对照</dt><dd>未报告 / 不适用；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>模型—临床的假说映射；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 14 · Clinical Predictions; Discussion scope on page 15</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>作者把学习期与成年损失的模型差异提出为 ASC/bvFTD 的定性、可检验预测，而非患者发生率或已经证实的社会技能机制。</dd><dt>适用边界</dt><dd>30% 学习失败和 20% 推断敏感仅属于模型；没有患者、organoid 或电生理验证。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>合成 Poisson 活动强度二分类不是社会认知任务或人类临床验证；增加旁路未排除参数/输入/时间常数因素；共享种子、子样本和梯度诊断不是独立复制。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>在源文所述条件下，作者把学习期与成年损失的模型差异提出为 ASC/bvFTD 的定性、可检验预测，而非患者发生率或已经证实的社会技能机制。是否成立？</li></ul></article><details><summary>核对记录与来源信息</summary><pre>{
+  &quot;coverage&quot;: {
+    &quot;pdf_pages_read&quot;: [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21
+    ],
+    &quot;results_sections_seen&quot;: [
+      &quot;Methods 2.1–2.5&quot;,
+      &quot;Results 3.1–3.6; Figures 1–5; Tables 1–3&quot;,
+      &quot;Theoretical Analysis 4.1–4.6&quot;,
+      &quot;Clinical Predictions 5; Discussion 6&quot;,
+      &quot;Appendix A hyperparameters; Appendix B preliminary STDP negative result&quot;
+    ],
+    &quot;missing_material&quot;: [
+      &quot;图像像素；未供应的补充全文/原始数据未读取&quot;
+    ],
+    &quot;text_pass_complete&quot;: true,
+    &quot;notes&quot;: [
+      &quot;全部 21 页供应文字、图表、两个附录及参考文献已完整评估；arXiv:2605.17399v1，17 May 2026。&quot;,
+      &quot;第二审计比较真实训练种子与重复子样本、统计检验、近似 readout/梯度假设和临床语言；不把同一数据多次训练诊断当独立生物复制。&quot;
+    ],
+    &quot;reading_mode&quot;: &quot;text_only&quot;,
+    &quot;figure_images_read&quot;: false,
+    &quot;scientific_verification&quot;: false,
+    &quot;source_pdf_offline&quot;: false,
+    &quot;archived_page_text_used&quot;: false
+  },
+  &quot;audit&quot;: {
+    &quot;source_match_checks&quot;: [],
+    &quot;model_findings&quot;: [
+      {
+        &quot;claim_id&quot;: &quot;C2&quot;,
+        &quot;issue&quot;: &quot;50 matched seeds 却使用未利用配对的 Fisher 和 OR；结论说 21 times more likely。&quot;,
+        &quot;suggested_correction&quot;: &quot;报告原检验为来源统计、不补造 McNemar；OR 21 不等于概率比 21（98% 与70%）。&quot;,
+        &quot;pdf_page&quot;: 17,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C5&quot;,
+        &quot;issue&quot;: &quot;主方法说 12 完整条件，结果含 13 的两个条件。&quot;,
+        &quot;suggested_correction&quot;: &quot;明确逐条件分母与完整配对分母不同；未完成三种子因 compute session 结束，非生物排除。&quot;,
+        &quot;pdf_page&quot;: 5,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C5&quot;,
+        &quot;issue&quot;: &quot;0/13 失败被称与 30% 基率一致，却同时报 exact binomial p≈0.01。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留相反基率线索及小样本，不替来源称统计一致。&quot;,
+        &quot;pdf_page&quot;: 7,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C8&quot;,
+        &quot;issue&quot;: &quot;所有 10 种子方向一致与 Wilcoxon W=12、r=−0.564 不自然相符。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留组平均反向、原统计与逐种子未决，不猜测纠正 p。&quot;,
+        &quot;pdf_page&quot;: 9,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C9&quot;,
+        &quot;issue&quot;: &quot;test-time 消融图使用 validation 标签；16 个无变化实际定义 drop≤0.002。&quot;,
+        &quot;suggested_correction&quot;: &quot;不宣称已知 2000 test 样本结果，保留评估划分和 ties 处理未决。&quot;,
+        &quot;pdf_page&quot;: 10,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C10&quot;,
+        &quot;issue&quot;: &quot;理论 J 的 Wpp 与 D 顺序/转置和省略 reset 与实际 LIF 不完全相同。&quot;,
+        &quot;suggested_correction&quot;: &quot;范数上界可在指定近似/有界 reset 下成立，但不是实际神经动力学临界性证明。&quot;,
+        &quot;pdf_page&quot;: 12,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C11&quot;,
+        &quot;issue&quot;: &quot;absence of Wpp from gradient 被夸成梯度完全独立及避免所有不稳定。&quot;,
+        &quot;suggested_correction&quot;: &quot;仅无循环 Jacobian 产品；loss 因子与输出还依赖 Wpp，零梯度与取消并未排除。&quot;,
+        &quot;pdf_page&quot;: 13,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C11&quot;,
+        &quot;issue&quot;: &quot;Remark 2 的 scalar ct 对实际时间变化 Poisson 输入不一般成立。&quot;,
+        &quot;suggested_correction&quot;: &quot;可以在输入有界时得到 1/(1−β)=5 的累积上界；不认同逐项等式作为实际完整 BPTT。&quot;,
+        &quot;pdf_page&quot;: 13,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C12&quot;,
+        &quot;issue&quot;: &quot;corollary 从 O(1) 上界推出保护和可靠学习，且 all parameters 都经过长循环路径。&quot;,
+        &quot;suggested_correction&quot;: &quot;上界不提供非零下界/优化成功；Wpo 与即时 Wip 仍有短梯度路径。&quot;,
+        &quot;pdf_page&quot;: 13,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C14&quot;,
+        &quot;issue&quot;: &quot;标题、significance 和结论称学习社会技能，但方法与讨论明确只做合成分类。&quot;,
+        &quot;suggested_correction&quot;: &quot;以具体任务为结果范围，临床机制保持假说。&quot;,
+        &quot;pdf_page&quot;: 15,
+        &quot;resolved&quot;: true
+      }
+    ],
+    &quot;needs_human_review&quot;: true
+  },
+  &quot;source&quot;: {
+    &quot;filename&quot;: &quot;paper-W7161916936--Von-Economo-neurons-enable-reliable-social-skill-acquisition-in-recurrent-spiking-neural-networ.pdf&quot;,
+    &quot;sha256&quot;: &quot;ec34e94682a3fe4b6e66b856768d2dd678b34adfa07fb5bc3ffacff7db82476e&quot;,
+    &quot;source_url&quot;: &quot;https://arxiv.org/pdf/2605.17399&quot;,
+    &quot;pdf_page_count&quot;: 21
+  },
+  &quot;provenance&quot;: {
+    &quot;created_at&quot;: &quot;2026-10-07T12:40:31.573177Z&quot;,
+    &quot;workflow&quot;: &quot;claim-commons-pdf-v1&quot;,
+    &quot;prompt_version&quot;: &quot;claim-commons-chatgpt-pdf-2026-10-07.1&quot;,
+    &quot;backend&quot;: &quot;authorized_parallel_GPT&quot;,
+    &quot;model&quot;: &quot;inherited_account_GPT&quot;,
+    &quot;provider_api_key_used&quot;: false,
+    &quot;source_sha256&quot;: &quot;ec34e94682a3fe4b6e66b856768d2dd678b34adfa07fb5bc3ffacff7db82476e&quot;,
+    &quot;source_audit_complete&quot;: true,
+    &quot;review_status&quot;: &quot;candidate&quot;,
+    &quot;database_updated&quot;: false
+  }
+}</pre></details></main><footer></footer></body></html>

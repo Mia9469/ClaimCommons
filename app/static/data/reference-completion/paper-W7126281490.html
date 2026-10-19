@@ -1,0 +1,137 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MapPFN: Learning Causal Perturbation Maps in Context</title><style>body{max-width:940px;margin:40px auto;padding:0 24px;background:#fffdf7;color:#12372f;font:16px/1.8 Georgia,serif}h1{font-size:26px;line-height:1.4}h2{font-size:20px;line-height:1.5}h3{font-size:16px}article{padding:26px 0;border-top:1px solid #bec4b8}small{color:#68766e}dl{display:grid;grid-template-columns:120px 1fr;gap:8px 20px}dt{font-weight:bold}dd{margin:0}li{padding:8px 0}p,dd{overflow-wrap:anywhere}.note{background:#eef2e2;padding:14px;border-left:3px solid #738968}summary{cursor:pointer}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.7 monospace}@media(max-width:600px){body{margin:24px auto;padding:0 18px}dl{grid-template-columns:1fr;gap:3px}dd{margin-bottom:12px}}@media print{body{margin:0;background:white}details{display:block}}</style><link rel="stylesheet" href="../../commons-v02.css?v=20261020-1"><link rel="stylesheet" href="../../examples.css?v=20260928-2"><link rel="stylesheet" href="../../site.css?v=20261020-1"><script defer src="../../site.js?v=20261020-1"></script><script defer src="../../report-ui.js?v=20261020-1"></script></head><body class="portal-page report-page" data-cc-report-shell="1" data-page="library" data-site-prefix="../../" data-library-paper="paper-W7126281490" data-report-language="zh" data-claim-records="{&quot;C1&quot;:&quot;structured-paper-W7126281490-1&quot;,&quot;C2&quot;:&quot;structured-paper-W7126281490-2&quot;,&quot;C3&quot;:&quot;structured-paper-W7126281490-3&quot;,&quot;C4&quot;:&quot;structured-paper-W7126281490-4&quot;,&quot;C5&quot;:&quot;structured-paper-W7126281490-5&quot;,&quot;C6&quot;:&quot;structured-paper-W7126281490-6&quot;,&quot;C7&quot;:&quot;structured-paper-W7126281490-7&quot;,&quot;C8&quot;:&quot;structured-paper-W7126281490-8&quot;,&quot;C9&quot;:&quot;structured-paper-W7126281490-9&quot;,&quot;C10&quot;:&quot;structured-paper-W7126281490-10&quot;,&quot;C11&quot;:&quot;structured-paper-W7126281490-11&quot;,&quot;C12&quot;:&quot;structured-paper-W7126281490-12&quot;,&quot;C13&quot;:&quot;structured-paper-W7126281490-13&quot;,&quot;C14&quot;:&quot;structured-paper-W7126281490-14&quot;,&quot;C15&quot;:&quot;structured-paper-W7126281490-15&quot;,&quot;C16&quot;:&quot;structured-paper-W7126281490-16&quot;,&quot;C17&quot;:&quot;structured-paper-W7126281490-17&quot;}"><header></header><main id="report-content"><div id="report-tools"></div><small>CLAIM COMMONS / 阅读报告</small><h1>MapPFN: Learning Causal Perturbation Maps in Context</h1><p class="note">AI 文本提取候选，尚待人工核对。图像像素未读取；PDF 页码指文件中的页序。</p><p>23页arXiv v3主文/全部附录完整审阅，17候选。已知SCM与hard-KO acyclic SERGIO、真实两个screens condition适配、context/paired控制和TTA分别归属。保留leukemia零样本MR2.56失配、微调非全指标最佳、random-init W2例外及identity DEG边界。零样本是权重层面仍有真实context，MR不判方向，TTA仅边际100gene；missing marker选择/背景口径与metric实现待人工复核。</p><a href="https://arxiv.org/pdf/2601.21092" rel="noreferrer">查看所读原文版本 ↗</a><details><summary>贡献清单与处理决定</summary><ul><li><b>conditional model、all-observed/prior、GRN去环/硬KO与生成ODE</b><br>include · 可识别假设不拆成普遍保证，amortized与single-forward分开。</li><li><b>linearSCM三seed、两screen十重采样和重要失败/指标反例</b><br>include · 保留leukemia过冲/identity、fine不全最佳与random-W2反例。</li><li><b>context/paired controls、K/cell扩展和100geneTTA</b><br>include · 新增数据/模拟counterfactual、边际/联合与seed独立性区分。</li><li><b>DEG指标、marker selection及knockout-only参照</b><br>defer · marker是否仅train选择和target-only baseline结果未充分给出；不补造优势。</li><li><b>prior coverage和更广干预/维度</b><br>include · 边际图非机制支持，soft/drug等未验证。</li><li><b>完整书目和基线/预算</b><br>include · 不同tuning/时间预算，source-grounded但非全公平独立机制复现。</li></ul></details><article><small>C1 / 直接结果 · conditional_method_formulation</small><h2>MapPFN以观测细胞分布和同背景多个已测干预分布为context，近似未见query干预的后验预测；解释依潜在因果族、全变量可观测和真实机制在先验支持等假设。</h2><h3>Evidence</h3><p>latent SCM posterior-predictive framing</p><dl><dt>设计 / 对照</dt><dd>线性SCM/GRN预训练、condition留出、消融和真实screens适配；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>因果模型/分布；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 4 · (1)–(2)</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>MapPFN以观测细胞分布和同背景多个已测干预分布为context，近似未见query干预的后验预测；解释依潜在因果族、全变量可观测和真实机制在先验支持等假设。</dd><dt>适用边界</dt><dd>足够干预才可能缩小等价类，K4/8不保证全图可识别；真实50基因并非全部分子变量。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>预测不是已识别真实GRN、反事实个体效应或唯一生物机制。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>干预context和先验怎样改善未见query的分布预测而不等同机制鉴定？</li><li>先验错配、边际指标、细胞相关和子集TTA怎样限制真实生物泛化？</li></ul></article><article><small>C2 / 直接结果 · method_description</small><h2>模型使用约25M参数、无细胞位置编码的MMDiT和conditional flow matching；推理通过Dopri5积分ODE，不是literal单次网络forward完成全部生成。</h2><h3>Evidence</h3><p>set conditioning、flow matching、CFG</p><dl><dt>设计 / 对照</dt><dd>线性SCM/GRN预训练、condition留出、消融和真实screens适配；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>模型tokens/优化步/ODE调用；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 17 · 未报告 / 不适用</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>模型使用约25M参数、无细胞位置编码的MMDiT和conditional flow matching；推理通过Dopri5积分ODE，不是literal单次网络forward完成全部生成。</dd><dt>适用边界</dt><dd>cell集合置换与gene身份/特征维数不是同种不变性；amortized不等于无需积分。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>未证明全尺度一次forward、精确Bayes后验或不依先验。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>干预context和先验怎样改善未见query的分布预测而不等同机制鉴定？</li><li>先验错配、边际指标、细胞相关和子集TTA怎样限制真实生物泛化？</li></ul></article><article><small>C3 / 直接结果 · empirical_or_theoretical_result</small><h2>生物先验在6000个50基因GRN上用SERGIO稳态/10x技术噪声模拟硬KO；原图采样后去环并强制master regulators，故实际先验不含完整循环调控。</h2><h3>Evidence</h3><p>GRN生成、Hill CLE与technical noise</p><dl><dt>设计 / 对照</dt><dd>线性SCM/GRN预训练、condition留出、消融和真实screens适配；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>合成网络和模拟细胞，非6000生物实验；6000synthetic GRNs、50genes、每condition200cells、contextK8</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 18 · 未报告 / 不适用</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>生物先验在6000个50基因GRN上用SERGIO稳态/10x技术噪声模拟硬KO；原图采样后去环并强制master regulators，故实际先验不含完整循环调控。</dd><dt>适用边界</dt><dd>拓扑/生化参数范围限定，RNA技术噪声逼真不代表真实机制被验证。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能按“真实GRN有cycles”说明已建模循环或soft/drug/multigene干预。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>干预context和先验怎样改善未见query的分布预测而不等同机制鉴定？</li><li>先验错配、边际指标、细胞相关和子集TTA怎样限制真实生物泛化？</li></ul></article><article><small>C4 / 直接结果 · metric_scope</small><h2>MR量化预测相对观测分布移动的距离与真实效应距离之比，MR1仅表示幅度匹配，不能说明方向或预测分布正确。</h2><h3>Evidence</h3><p>distance-based magnitude ratio</p><dl><dt>设计 / 对照</dt><dd>线性SCM/GRN预训练、condition留出、消融和真实screens适配；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>分布距离；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 6 · (4)</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>MR量化预测相对观测分布移动的距离与真实效应距离之比，MR1仅表示幅度匹配，不能说明方向或预测分布正确。</dd><dt>适用边界</dt><dd>W2实用度量为entropy正则/Sinkhorn(ϵ=.1)，距离尺度/零效应分母需限定。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>MR近1不是因果机制或生物效应方向的验证。</dd><dt>未解决</dt><dd>附录root-first W2及debias定义/实际实现需确认，不假设全部metric axioms。</dd></dl><h3>相关问题</h3><ul><li>干预context和先验怎样改善未见query的分布预测而不等同机制鉴定？</li><li>先验错配、边际指标、细胞相关和子集TTA怎样限制真实生物泛化？</li></ul></article><article><small>C5 / 直接结果 · empirical_or_theoretical_result</small><h2>已知线性SCM benchmark中MapPFN报告MR .99、PDS .01及较好MMD/均值误差，CondOT/MFM的MR .09/.12提示接近identity预测。</h2><h3>Evidence</h3><p>共同线性DAG prior下的模型比较</p><dl><dt>设计 / 对照</dt><dd>线性SCM/GRN预训练、condition留出、消融和真实screens适配；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>合成机制/模型seed，非生物重复；20nodes、ER p.5；1000DAG、20000condition、每500vectors；3random seeds</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 7 · Table 2</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>已知线性SCM benchmark中MapPFN报告MR .99、PDS .01及较好MMD/均值误差，CondOT/MFM的MR .09/.12提示接近identity预测。</dd><dt>适用边界</dt><dd>同先验受控任务；condition-level split不同于全部mechanism/DAG独立外部验证。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不是细胞生物GRN或drug作用验证。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>干预context和先验怎样改善未见query的分布预测而不等同机制鉴定？</li><li>先验错配、边际指标、细胞相关和子集TTA怎样限制真实生物泛化？</li></ul></article><article><small>C6 / 直接结果 · evaluation_design</small><h2>真实benchmark按context-treatment条件分割，目标IFNγ melanoma背景一半干预留测、一半作为训练/context；THP-1 leukemia只有一个生物背景。</h2><h3>Evidence</h3><p>condition级留出及目标context适配</p><dl><dt>设计 / 对照</dt><dd>线性SCM/GRN预训练、condition留出、消融和真实screens适配；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>细胞/条件/背景；ten resampling非十独立生物屏幕；melanoma约218k cells/248targets/3所称contexts；leukemia约20k cells/26targets；各选50genes、每condition200cells</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 19 · 未报告 / 不适用</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>真实benchmark按context-treatment条件分割，目标IFNγ melanoma背景一半干预留测、一半作为训练/context；THP-1 leukemia只有一个生物背景。</dd><dt>适用边界</dt><dd>“zero-shot”是模型权重不学真实数据，但推理读取真实干预context；finetune/baselines见目标背景其他条件。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能称完全无目标背景证据或未知cell-type零数据外推。</dd><dt>未解决</dt><dd>melanoma三cell lines与三处理contexts表述口径不清；marker selection未明确train-only。</dd></dl><h3>相关问题</h3><ul><li>干预context和先验怎样改善未见query的分布预测而不等同机制鉴定？</li><li>先验错配、边际指标、细胞相关和子集TTA怎样限制真实生物泛化？</li></ul></article><article><small>C7 / 直接结果 · empirical_or_theoretical_result</small><h2>melanoma零权重微调MapPFN的DEG AUPRC .34与CondOT .34/STATE .33相近、MR1，但W2/MMD/RMSE并非全部基线最好。</h2><h3>Evidence</h3><p>真实数据与synthetic-pretrained模型比较</p><dl><dt>设计 / 对照</dt><dd>线性SCM/GRN预训练、condition留出、消融和真实screens适配；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>同真实screen的重采样；10 resampling seeds，每condition200cells</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 8 · Table 3</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>melanoma零权重微调MapPFN的DEG AUPRC .34与CondOT .34/STATE .33相近、MR1，但W2/MMD/RMSE并非全部基线最好。</dd><dt>适用边界</dt><dd>AUPRC为所选50基因的阈值DEG，未评价机制图或效应方向全准确。</dd><dt>实际负结果</dt><dd>W2高于CPA15.57，MMD高于CondOT7.11e−3等。</dd><dt>不能推出</dt><dd>不能把“on-par DEG”扩大为所有指标均最佳。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>干预context和先验怎样改善未见query的分布预测而不等同机制鉴定？</li><li>先验错配、边际指标、细胞相关和子集TTA怎样限制真实生物泛化？</li></ul></article><article><small>C8 / 直接结果 · empirical_or_theoretical_result</small><h2>leukemia零微调MapPFN出现明显效应过冲：MR2.56、W2 44.42、RMSE.78，AUPRC .16也低于identity .18。</h2><h3>Evidence</h3><p>跨真实数据分布的预训练模型比较</p><dl><dt>设计 / 对照</dt><dd>线性SCM/GRN预训练、condition留出、消融和真实screens适配；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>query conditions/细胞重采样；同leukemia单screen；10resampling</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 8 · Table 3</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>leukemia零微调MapPFN出现明显效应过冲：MR2.56、W2 44.42、RMSE.78，AUPRC .16也低于identity .18。</dd><dt>适用边界</dt><dd>作者归因26targets+24marker的不同prior形状，尚非单独因果实验解释。</dd><dt>实际负结果</dt><dd>该场景零微调分布预测明显较差，DEG未超过identity。</dd><dt>不能推出</dt><dd>不能宣称synthetic prior普遍覆盖真实干预或所有零样本均有效。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>干预context和先验怎样改善未见query的分布预测而不等同机制鉴定？</li><li>先验错配、边际指标、细胞相关和子集TTA怎样限制真实生物泛化？</li></ul></article><article><small>C9 / 直接结果 · empirical_or_theoretical_result</small><h2>微调显著改善预训练leukemia的分布/DEG均值，并在两数据集获得较低PDS和较高AUPRC，但并非表中全部预测指标最佳。</h2><h3>Evidence</h3><p>3000步真实数据微调与pretrained比较</p><dl><dt>设计 / 对照</dt><dd>线性SCM/GRN预训练、condition留出、消融和真实screens适配；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>同条件分割；两screens，10resampling；不是10训练重复</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 8 · Table 3</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>微调显著改善预训练leukemia的分布/DEG均值，并在两数据集获得较低PDS和较高AUPRC，但并非表中全部预测指标最佳。</dd><dt>适用边界</dt><dd>leukemia AUPRC与identity.18相同均值；melanoma MMD7.84高于CondOT7.11、RMSE.10高于STATE.08。</dd><dt>实际负结果</dt><dd>论文“all metrics except leukemia W2最佳”不受全部表格支持。</dd><dt>不能推出</dt><dd>均值改善不证明差异显著或机制恢复。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>干预context和先验怎样改善未见query的分布预测而不等同机制鉴定？</li><li>先验错配、边际指标、细胞相关和子集TTA怎样限制真实生物泛化？</li></ul></article><article><small>C10 / 直接结果 · empirical_or_theoretical_result</small><h2>随机初始化MapPFN在多数指标劣于预训练后微调，但两数据集W2均值反而更低，说明预训练收益依评价指标。</h2><h3>Evidence</h3><p>相同架构random-init/pretrain控制</p><dl><dt>设计 / 对照</dt><dd>线性SCM/GRN预训练、condition留出、消融和真实screens适配；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>模型版本与同screen条件；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 8 · Table 3</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>随机初始化MapPFN在多数指标劣于预训练后微调，但两数据集W2均值反而更低，说明预训练收益依评价指标。</dd><dt>适用边界</dt><dd>生物先验/训练预算改变，表仅重采样SD，未独立统计效应检验。</dd><dt>实际负结果</dt><dd>W2不是普遍预训练获益指标。</dd><dt>不能推出</dt><dd>不能称预训练无例外增强所有指标。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>干预context和先验怎样改善未见query的分布预测而不等同机制鉴定？</li><li>先验错配、边际指标、细胞相关和子集TTA怎样限制真实生物泛化？</li></ul></article><article><small>C11 / 直接结果 · empirical_or_theoretical_result</small><h2>在melanoma预训练模型中去掉interventional context使W2/MMD/RMSE/PDS与DEG恢复变差，支持这些已测干预输入在当前任务的预测价值。</h2><h3>Evidence</h3><p>同架构context→∅消融</p><dl><dt>设计 / 对照</dt><dd>线性SCM/GRN预训练、condition留出、消融和真实screens适配；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>同screen与模型配置，10resampling；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 8 · Table 4</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>在melanoma预训练模型中去掉interventional context使W2/MMD/RMSE/PDS与DEG恢复变差，支持这些已测干预输入在当前任务的预测价值。</dd><dt>适用边界</dt><dd>context提供额外真实interventional数据而非仅架构差异。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不证明模型显式恢复真实图或K8足以唯一识别机制。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>干预context和先验怎样改善未见query的分布预测而不等同机制鉴定？</li><li>先验错配、边际指标、细胞相关和子集TTA怎样限制真实生物泛化？</li></ul></article><article><small>C12 / 直接结果 · empirical_or_theoretical_result</small><h2>以SERGIO跨处理保持随机seed的paired prior相较unpaired，验证方差相关约.8对.6且真实melanoma多指标较好。</h2><h3>Evidence</h3><p>synthetic paired/noise-seed prior对照</p><dl><dt>设计 / 对照</dt><dd>线性SCM/GRN预训练、condition留出、消融和真实screens适配；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>合成随机模拟和同screen预测；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 8 · Fig. 2/Table4</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>以SERGIO跨处理保持随机seed的paired prior相较unpaired，验证方差相关约.8对.6且真实melanoma多指标较好。</dd><dt>适用边界</dt><dd>保持随机seed的模拟耦合不等于测得同一个真实细胞的反事实；原始noise alignment/causal机制另需验证。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不是counterfactual individual truth或新生物实验。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>干预context和先验怎样改善未见query的分布预测而不等同机制鉴定？</li><li>先验错配、边际指标、细胞相关和子集TTA怎样限制真实生物泛化？</li></ul></article><article><small>C13 / 直接结果 · empirical_or_theoretical_result</small><h2>测试时增加context干预数在所测K0–9范围改善melanoma距离，约K4后边际收益减弱。</h2><h3>Evidence</h3><p>context-size扫描</p><dl><dt>设计 / 对照</dt><dd>线性SCM/GRN预训练、condition留出、消融和真实screens适配；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>干预context子集/技术seed；Fig5a三seeds；50genes模型</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 23 · Fig. 5a</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>测试时增加context干预数在所测K0–9范围改善melanoma距离，约K4后边际收益减弱。</dd><dt>适用边界</dt><dd>每新增干预也增加信息量；无无限K或所有背景保证。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>曲线改善不能单独证明因果图完全identifiable。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>干预context和先验怎样改善未见query的分布预测而不等同机制鉴定？</li><li>先验错配、边际指标、细胞相关和子集TTA怎样限制真实生物泛化？</li></ul></article><article><small>C14 / 直接结果 · empirical_or_theoretical_result</small><h2>增加每context条件细胞数到训练200以上、所测100–400范围，改善距离且没有在200处平台。</h2><h3>Evidence</h3><p>cell-set size扫描</p><dl><dt>设计 / 对照</dt><dd>线性SCM/GRN预训练、condition留出、消融和真实screens适配；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>同screen的相关细胞样本和技术重采样；10resampling seeds；训练200 cells/condition</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 23 · Fig. 5b</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>增加每context条件细胞数到训练200以上、所测100–400范围，改善距离且没有在200处平台。</dd><dt>适用边界</dt><dd>细胞不是独立供体或培养批次，结果限于该任务和范围。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不证明无需新增生物背景即可无限泛化。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>干预context和先验怎样改善未见query的分布预测而不等同机制鉴定？</li><li>先验错配、边际指标、细胞相关和子集TTA怎样限制真实生物泛化？</li></ul></article><article><small>C15 / 直接结果 · empirical_or_theoretical_result</small><h2>100基因TTA通过最多10个随机重叠50基因子集的逐基因样本汇总改善DEG AUPRC/稳定性，但只检验边际基因排名而非100基因完整联合分布。</h2><h3>Evidence</h3><p>feature-subset TTA</p><dl><dt>设计 / 对照</dt><dd>线性SCM/GRN预训练、condition留出、消融和真实screens适配；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>相依子集及逐基因预测；100genes、50genes/subset、最多10subsets；10resampling</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 8 · Fig. 3</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>100基因TTA通过最多10个随机重叠50基因子集的逐基因样本汇总改善DEG AUPRC/稳定性，但只检验边际基因排名而非100基因完整联合分布。</dd><dt>适用边界</dt><dd>不同子集生成的细胞不可自动配为统一全基因细胞；未报告联合协方差或全GRN。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不证明任意维度gene sets无损或真实机制全覆盖。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>干预context和先验怎样改善未见query的分布预测而不等同机制鉴定？</li><li>先验错配、边际指标、细胞相关和子集TTA怎样限制真实生物泛化？</li></ul></article><article><small>C16 / 解释 · interpretation</small><h2>表达和fold-change的边际先验覆盖图被作者用来解释melanoma较吻合和leukemia双峰差异，但边际相似不确保真实GRN在先验支持。</h2><h3>Evidence</h3><p>prior/data边际分布可视化</p><dl><dt>设计 / 对照</dt><dd>线性SCM/GRN预训练、condition留出、消融和真实screens适配；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>gene values/分布，不是独立regulatory机制；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 23 · Fig. 6</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>表达和fold-change的边际先验覆盖图被作者用来解释melanoma较吻合和leukemia双峰差异，但边际相似不确保真实GRN在先验支持。</dd><dt>适用边界</dt><dd>logFC按1–99percentile裁剪可视化；没有全因果结构/隐藏状态验证。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能把图覆盖当真实机制/全生物适用性验证。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>干预context和先验怎样改善未见query的分布预测而不等同机制鉴定？</li><li>先验错配、边际指标、细胞相关和子集TTA怎样限制真实生物泛化？</li></ul></article><article><small>C17 / 假说 / 预测 · hypothesis</small><h2>soft CRISPRi、组合/药物/化学扰动及更高维系统是未完成扩展；当前hard-KO先验和两screens不能证明这些用途。</h2><h3>Evidence</h3><p>prior/任务范围与未来路线</p><dl><dt>设计 / 对照</dt><dd>线性SCM/GRN预训练、condition留出、消融和真实screens适配；未报告 / 不适用</dd><dt>独立单位与 n</dt><dd>未来干预/模型；未报告 / 不适用</dd><dt>不确定性</dt><dd>未报告 / 不适用</dd><dt>原文位置</dt><dd>PDF 9 · 未报告 / 不适用</dd></dl><h3>Conclusion</h3><dl><dt>实际支持</dt><dd>soft CRISPRi、组合/药物/化学扰动及更高维系统是未完成扩展；当前hard-KO先验和两screens不能证明这些用途。</dd><dt>适用边界</dt><dd>CRISPR knockout与部分抑制的干预机制不同；临床安全、真实新实验和图识别未测。</dd><dt>实际负结果</dt><dd>未报告 / 不适用</dd><dt>不能推出</dt><dd>不能自动把预测分布用作经验证的治疗选择。</dd><dt>未解决</dt><dd>未报告 / 不适用</dd></dl><h3>相关问题</h3><ul><li>干预context和先验怎样改善未见query的分布预测而不等同机制鉴定？</li><li>先验错配、边际指标、细胞相关和子集TTA怎样限制真实生物泛化？</li></ul></article><details><summary>核对记录与来源信息</summary><pre>{
+  &quot;coverage&quot;: {
+    &quot;pdf_pages_read&quot;: [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+    ],
+    &quot;results_sections_seen&quot;: [
+      &quot;Problem/PPD&quot;,
+      &quot;SCM/GRN assumptions&quot;,
+      &quot;MMDiT/CFM&quot;,
+      &quot;Main Tables1–4&quot;,
+      &quot;Counterfactual/context&quot;,
+      &quot;TTA&quot;,
+      &quot;Limitations/References&quot;,
+      &quot;AppendixA architecture/ODE&quot;,
+      &quot;B graphs/noise&quot;,
+      &quot;C screens/preprocessing&quot;,
+      &quot;D splits/metrics/tuning&quot;,
+      &quot;E context/cell/prior coverage&quot;
+    ],
+    &quot;missing_material&quot;: [
+      &quot;图像像素未阅；Figs1–6及Tables1–7可用文字全阅。&quot;,
+      &quot;原细胞数据/标记gene train-only选择与培养/供体元数据未供。&quot;
+    ],
+    &quot;text_pass_complete&quot;: true,
+    &quot;notes&quot;: [
+      &quot;arXiv:2601.21092v3，2026-05-07；23页全读含完整A–E。&quot;,
+      &quot;无需provider inference；生物benchmark是归档模型评价非新wet-lab机制验证。&quot;
+    ],
+    &quot;reading_mode&quot;: &quot;text_only&quot;,
+    &quot;figure_images_read&quot;: false,
+    &quot;scientific_verification&quot;: false,
+    &quot;source_pdf_offline&quot;: false,
+    &quot;archived_page_text_used&quot;: false
+  },
+  &quot;audit&quot;: {
+    &quot;source_match_checks&quot;: [],
+    &quot;model_findings&quot;: [
+      {
+        &quot;claim_id&quot;: &quot;C9&quot;,
+        &quot;issue&quot;: &quot;fine-tuned all metrics best措辞与melanoma MMD/RMSE/W2其他baseline更低及leukemiaAUPRC=identity不符。&quot;,
+        &quot;suggested_correction&quot;: &quot;分指标限定优势，实际负结果完整保留。&quot;,
+        &quot;pdf_page&quot;: 8,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C6&quot;,
+        &quot;issue&quot;: &quot;zero-shot读取真实interventions；train含目标context半数perturbations，不是目标背景完全未见。&quot;,
+        &quot;suggested_correction&quot;: &quot;权重训练与ICL adaptation/condition留出分开。&quot;,
+        &quot;pdf_page&quot;: 20,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C3&quot;,
+        &quot;issue&quot;: &quot;先验生成讨论cycles但SERGIO去环并强制MR，50真实基因也非全部变量。&quot;,
+        &quot;suggested_correction&quot;: &quot;明确acyclic/hard-KO与hidden机制边界。&quot;,
+        &quot;pdf_page&quot;: 18,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C2&quot;,
+        &quot;issue&quot;: &quot;正文single step/forward与A.4 Dopri5 ODE生成不同。&quot;,
+        &quot;suggested_correction&quot;: &quot;只称amortized模型，无需每任务训练但仍积分。&quot;,
+        &quot;pdf_page&quot;: 17,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C15&quot;,
+        &quot;issue&quot;: &quot;TTA逐gene pool不生成已验证的统一100gene联合细胞分布。&quot;,
+        &quot;suggested_correction&quot;: &quot;扩展结论仅DEG边际恢复。&quot;,
+        &quot;pdf_page&quot;: 8,
+        &quot;resolved&quot;: true
+      },
+      {
+        &quot;claim_id&quot;: &quot;C6&quot;,
+        &quot;issue&quot;: &quot;gene marker selection用各perturbation vscontrol DE，未说明train-only；三melanoma cell line/处理背景口径不明。&quot;,
+        &quot;suggested_correction&quot;: &quot;不直接判定泄漏，但保留可复现及背景独立性缺口。&quot;,
+        &quot;pdf_page&quot;: 19,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: &quot;C4&quot;,
+        &quot;issue&quot;: &quot;root-first entropy W2和debias式与valid distance claim的条件/实际实现不明；MR只径向幅度。&quot;,
+        &quot;suggested_correction&quot;: &quot;保留实际指标定义，不把MR1作正确方向或metric保证。&quot;,
+        &quot;pdf_page&quot;: 20,
+        &quot;resolved&quot;: false
+      },
+      {
+        &quot;claim_id&quot;: null,
+        &quot;issue&quot;: &quot;DEG AUPRC使用Wilcoxon/BH与|log2FC|&gt;.2、−log10p&gt;2；known-target-only baseline提及但未报告。十重采样非十生物/训练重复。&quot;,
+        &quot;suggested_correction&quot;: &quot;明确技术单位，不声称证明下游因果机制恢复。&quot;,
+        &quot;pdf_page&quot;: 21,
+        &quot;resolved&quot;: true
+      }
+    ],
+    &quot;needs_human_review&quot;: true
+  },
+  &quot;source&quot;: {
+    &quot;filename&quot;: &quot;paper-W7126281490--MapPFN-Learning-Causal-Perturbation-Maps-in-Context.pdf&quot;,
+    &quot;sha256&quot;: &quot;c71daabc5f20c4f7004190c13a264ab2cc5e120e0b7012ff65ade5fab1f3df49&quot;,
+    &quot;source_url&quot;: &quot;https://arxiv.org/pdf/2601.21092&quot;,
+    &quot;pdf_page_count&quot;: 23
+  },
+  &quot;provenance&quot;: {
+    &quot;created_at&quot;: &quot;2026-10-07T12:46:41.115530Z&quot;,
+    &quot;workflow&quot;: &quot;claim-commons-pdf-v1&quot;,
+    &quot;prompt_version&quot;: &quot;claim-commons-chatgpt-pdf-2026-10-07.1&quot;,
+    &quot;backend&quot;: &quot;authorized_parallel_GPT&quot;,
+    &quot;model&quot;: &quot;inherited_account_GPT&quot;,
+    &quot;provider_api_key_used&quot;: false,
+    &quot;source_sha256&quot;: &quot;c71daabc5f20c4f7004190c13a264ab2cc5e120e0b7012ff65ade5fab1f3df49&quot;,
+    &quot;source_audit_complete&quot;: true,
+    &quot;review_status&quot;: &quot;candidate&quot;,
+    &quot;database_updated&quot;: false
+  }
+}</pre></details></main><footer></footer></body></html>

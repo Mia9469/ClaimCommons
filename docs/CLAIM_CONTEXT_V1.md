@@ -10,7 +10,7 @@ The unit is the smallest **complete, separately assessable proposition**, not th
 
 ## Additive metadata / 兼容新增字段
 
-Existing `statement`, `source_statement`, `evidence`, `conclusion`, provenance and review states remain authoritative. New fields are optional for old records. The browser prompt version is `2026-10-20.1`; its additional semantic contract is `claim-context-v1`. The PDF protocol stays `claim-commons-pdf-v1`.
+Existing `statement`, `source_statement`, `evidence`, `conclusion`, provenance and review states remain authoritative. New fields are optional for old records. The browser prompt version is `2026-10-26.1`; its additional semantic contract is `claim-context-v1`. The PDF protocol stays `claim-commons-pdf-v1`.
 
 ```json
 {
@@ -72,3 +72,11 @@ An ambiguity entry has `issue`, `affects_assessment`, and an optional `source_lo
 The homepage, method guide, blank worksheet, new browser extraction metadata, on-screen output and downloadable reports use this contract. The library can display and search these fields **when a record contains them**. The explicit collection importer preserves them for a future authorized import; it has not been run for this change. Existing records, statuses, counts and scientific graph relations have not been backfilled or promoted. Existing collection reports retain their original content; optional context remains available through the record/metadata rather than an invented retrospective rewrite.
 
 本次不会重新提取全部文献，不会改写既有证据，不会自动更新数据库或发布。下一步如需补齐旧记录，应单独指定来源、覆盖范围和人工检查方式。
+
+## Reader-facing report / 读者界面
+
+The default report is not the audit worksheet. It presents the primary scientific question, a short abstract-like overview, a broad argument outline, and complete claims in logical order. Each claim shows a concise result and essential scope. Evidence and methods expand on demand; definitions, full limits and review logs remain behind secondary disclosures or in metadata. Do not remove source information to shorten the default view.
+
+Optional presentation fields: top-level `reading_overview` with `primary_question`, `summary`, `logical_outline` (`label`, `claim_ids`) and `claim_order`; each claim may include `short_title` and `reading_summary` (`result`, `boundary`). Scientific `statement` and evidence remain unchanged. Unsupported summaries must be flagged, not treated as new evidence.
+
+Outputs appear in the current extraction UI. A separate blob-backed reading tab and downloadable self-contained HTML/Markdown are available; the JSON retains the full record. A browser print action can save PDF, but there is no automatic PDF file generation or public hosted URL. Publication remains an explicit later action.

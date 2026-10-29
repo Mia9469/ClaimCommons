@@ -1746,7 +1746,7 @@
   },
   "relations": [],
   "provenance": {
-    "created_at": "2026-10-26T14:12:58.767Z",
+    "created_at": "2026-10-26T18:37:58.533Z",
     "workflow": "claim-commons-pdf-v1",
     "prompt_version": "2026-10-20.1",
     "semantic_contract": "claim-context-v1",
@@ -1761,9 +1761,8 @@
     "human_checked": false,
     "independently_reproduced": false,
     "database_updated": false,
-    "published": true,
-    "scope_note": "Real user-provided paper, not synthetic results. This is a source-reviewed exemplar using the product contract, not a claim that the browser BYOK endpoint was invoked or returns identical text.",
-    "publication_kind": "user_requested_reading_example"
+    "published": false,
+    "scope_note": "Real user-provided paper, not synthetic results. This is a source-reviewed exemplar using the product contract, not a claim that the browser BYOK endpoint was invoked or returns identical text."
   },
   "user_delivery": {
     "reading_report": "london-2010-reading-report.html",
@@ -1772,6 +1771,99 @@
     "source_check_manifest": "london-2010-source-checks.json",
     "next_step": "Inspect source locators and open checks. Only an explicit user request can trigger library inclusion or publication."
   },
+  "author_view": {
+    "basis_scope": "仅针对本次提供的 London et al. (2010) 原文和读者报告。原补充材料未提供；未查后续文献。以下下一步均为提取者建议，不代表原作者认可。",
+    "literature_checked": false,
+    "summary": "当前较直接的证据是：小扰动会改变单细胞输出，并影响局部网络活动。需要进一步检视的是，从传播增益到噪声估计、再到编码解释之间的桥梁，而不是把所有实验重新做一遍。",
+    "closure_points": [
+      {
+        "id": "A1",
+        "title": "传播增益到噪声估计：先核查参数与补充推导",
+        "claim_ids": [
+          "C3",
+          "C5"
+        ],
+        "why_open": "约 28 个额外 spike 和 2.2–4.5 mV 噪声不是直接计数或直接测得的同一条结果；两者依赖文献参数、模型近似及补充推导。当前输入不足以独立复算完整数值链。",
+        "basis_type": "missing_supplied_material",
+        "basis_note": "C3 汇合实测响应斜率与引用参数；C5 使用自洽模型估计。本次未提供相关补充推导，不能据此指控原论文没有给出。",
+        "minimum_next_step": "先取得补充推导与可用实现，复算关键数值；再单独改变连接数、突触电荷及相关性假设，标出估计对哪些参数最敏感。暂不增加新动物实验。",
+        "if_supported": "增加对所用条件下数量级估计的信心，不会自动升级为普适噪声定律。",
+        "if_not_supported": "缩小或修正数量估计与模型解释；并不自动推翻 C1、C4 的直接扰动观察。",
+        "necessity": "verify_materials_first",
+        "scope_note": "先区分材料可获得性与科学缺口，不因当前报告缺少附件而要求作者重做研究。"
+      },
+      {
+        "id": "A2",
+        "title": "快速胞体事件稀少，能约束多少精确时序编码？",
+        "claim_ids": [
+          "C6",
+          "C9"
+        ],
+        "why_open": "C6 测的是短时间窗内超过电位阈值的胞体事件，不是 spike 时序精度或编码信息量。若加强到更广的时序编码结论，需要校准这个代理指标。",
+        "basis_type": "extractor_inference",
+        "basis_note": "读者报告已将 C6 标为事件代理指标，将 C9 标为有条件的作者解释；此处检查两者之间的推断，不把解释误写成直接实验证明。",
+        "minimum_next_step": "先在可重复输入的细胞模型中，同时计算论文的事件指标和实际 spike 时序精度；固定条件，寻找两者一致或失配的情形，再判断是否需要新记录。",
+        "if_supported": "明确该指标在哪类输入与细胞条件下能够约束时序精度。",
+        "if_not_supported": "保留快速胞体事件的观察，但收窄它对时序编码的约束；并不由此证明另一种编码必然成立。",
+        "necessity": "only_for_stronger_claim",
+        "scope_note": "对目前保留边界的观察性结论，这不是新增的发表前必做项。模型校准也不能替代体内编码检验。"
+      },
+      {
+        "id": "A3",
+        "title": "“未检出 whisker 刺激差异”不等于“没有影响”",
+        "claim_ids": [
+          "C7",
+          "C8"
+        ],
+        "why_open": "两个小样本子分析未检出显著差异，但没有给出足以支持等效性的精度信息；也不是两组独立复现。",
+        "basis_type": "extractor_inference",
+        "basis_note": "C7 为 6 个实验的子集，C8 为 9 个细胞中的 3 个；相关“不显著”只能按原样保留，不能换成普遍无效应。",
+        "minimum_next_step": "若能获得原始重复记录，先按真正的独立单位估计效应量与区间；若要主张等效，先明确有科学意义的差异界限。不先要求扩大样本。",
+        "if_supported": "在区间足够窄且事先定义的界限合理时，才可加强为该协议内的近似等效判断。",
+        "if_not_supported": "保持“本样本未检出差异”，将刺激是否改变效应列为未决，而不是负结果定论。",
+        "necessity": "only_for_stronger_claim",
+        "scope_note": "不影响“存在扰动传播”这一核心观察，也不支持推广到所有感觉刺激或状态。"
+      }
+    ],
+    "follow_up_questions": [
+      {
+        "id": "D1",
+        "title": "什么表征真正能抵抗这种扰动？",
+        "claim_ids": [
+          "C4",
+          "C6",
+          "C9"
+        ],
+        "question": "传播敏感性本身并不能识别 rate code。可进一步问：在一个明确的输入或任务中，哪一种读出在扰动后仍保留信息？",
+        "basis_type": "extractor_inference",
+        "basis_note": "这是由 C9 的编码解释引出的研究建议，不是原论文已经完成的解码比较。",
+        "minimum_next_step": "只选一个明确的待解码变量，在相同细胞、观察窗和训练/测试划分下比较 rate 与 timing 读出，并比较有无匹配扰动时的泛化表现和不确定性。",
+        "if_supported": "可说明某种读出在所选条件下更稳健，但不是所有皮层计算的通用编码。",
+        "if_not_supported": "区分“网络会放大扰动”与“信息必然被破坏”；两者可以并存而不等价。",
+        "necessity": "separate_study",
+        "scope_note": "这是独立的编码问题，不应倒过来成为记录当前扰动结果的门槛。"
+      },
+      {
+        "id": "D2",
+        "title": "先沿一条轴检查边界：脑状态，或刺激时间尺度",
+        "claim_ids": [
+          "C4",
+          "C6",
+          "C9"
+        ],
+        "question": "原作者讨论了麻醉状态、快速感觉过程与非线性树突整合等边界。传播敏感性和快速事件指标是否会在某一条边界上分离？",
+        "basis_type": "source_reported_limit",
+        "basis_note": "边界来自作者讨论；把它组织为单轴比较是本报告的后续研究建议。",
+        "minimum_next_step": "先选脑状态或刺激时间尺度中的一项，明确匹配条件与两个读出。若已有合适记录，先做可行性分析；不要同时扩成清醒行为、多个任务和多脑区项目。",
+        "if_supported": "建立具体的适用边界，并检验传播效应与编码相关读出是否需要分开描述。",
+        "if_not_supported": "只能扩大到实际测试的那一条轴；仍不能排除其他状态、时间尺度或树突过程。",
+        "necessity": "optional_follow_up",
+        "scope_note": "需要新数据时应单独立项。尚未查阅 2010 年之后的研究，不能将其宣传为新的未解问题。"
+      }
+    ],
+    "suggested_first_step": "先补齐 C3→C5 的补充材料和参数敏感性核查。成本较低，也能决定后续应优先检验模型估计，还是转向编码读出；不急于添加清醒动物或新任务。"
+  },
+  "report_template_version": "2026-10-27.author-view.1",
   "reading_overview": {
     "primary_question": "皮层会放大一个微小扰动吗？这对神经编码意味着什么？",
     "summary": "作者在麻醉大鼠皮层测量小电流与单细胞放电的影响，发现微小扰动可以改变净 spike 输出和局部网络活动。结合模型与文献参数，作者估计单个额外 spike 可产生约 28 个额外 spike，并据此推断较大的内禀电位噪声。快速胞体电位事件的稀少进一步支持了对精确时序编码的约束，但 rate coding 仍是有条件的解释，不是直接鉴定结果。",
@@ -1817,12 +1909,5 @@
       "C8",
       "C9"
     ]
-  },
-  "publication": {
-    "kind": "reading_example",
-    "published_on": "2026-10-27",
-    "library_imported": false,
-    "claims_remain_candidates": true,
-    "public_url": "https://mia9469.github.io/ClaimCommons/reports/london-2010-user-example/london-2010-reading-report.html"
   }
 }

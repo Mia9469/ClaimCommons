@@ -68,3 +68,140 @@
   }
   window.CCReadingReport={renderBody,renderHTML,renderMarkdown,css};
 })();
+
+/* Optional author-facing appendix. Proposals are separate from source claims. */
+(function (global) {
+  'use strict';
+  const reader = global.CCReadingReport;
+  if (!reader) return;
+  const esc = value => String(value == null ? '' : value).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const array = value => Array.isArray(value) ? value : [];
+  const text = value => value == null ? '' : Array.isArray(value) ? value.join('; ') : typeof value === 'object' ? '' : String(value);
+  const t = (lang, zh, en) => String(lang || 'zh').startsWith('en') ? en : zh;
+  const has = value => Boolean(text(value).trim());
+  const css = `
+.cc-report .ccr-author-view { margin: 28px 0 20px; padding: 16px 18px; border: 1px solid #c3cbbf; background: #f6f5ee; }
+.cc-report .ccr-author-view > summary { font-size: 16px; font-weight: 650; line-height: 1.6; cursor: pointer; }
+.cc-report .ccr-author-view .ccr-author-notice { font-size: 13px; line-height: 1.7; color: #58635a; margin: 10px 0; }
+.cc-report .ccr-author-view h3 { font-size: 17px; line-height: 1.6; margin: 22px 0 10px; }
+.cc-report .ccr-author-view h4 { font-size: 16px; line-height: 1.6; margin: 0 0 6px; }
+.cc-report .ccr-author-item { margin: 10px 0; padding: 14px 0; border-top: 1px solid #d4d9cf; }
+.cc-report .ccr-author-item p { margin: 7px 0; font-size: 14px; line-height: 1.8; }
+.cc-report .ccr-author-item .ccr-author-tags { font-size: 12px; color: #58635a; }
+.cc-report .ccr-author-item a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+.cc-report .ccr-author-item details { margin: 8px 0 0; }
+.cc-report .ccr-author-item summary { font-size: 13px; cursor: pointer; }
+.cc-report .ccr-author-item dl { margin: 10px 0 0; }
+.cc-report .ccr-author-item dt { font-size: 12px; font-weight: 650; margin-top: 10px; }
+.cc-report .ccr-author-item dd { font-size: 14px; line-height: 1.75; margin: 3px 0 0; }
+.cc-report .ccr-author-first { padding-top: 12px; border-top: 1px solid #c3cbbf; font-size: 14px; line-height: 1.8; }
+@media (max-width: 600px) { .cc-report .ccr-author-view { padding: 12px; } }
+@media print { .cc-report .ccr-author-item h4 { break-after: avoid; } }
+`;
+  function claimOrder(data) {
+    const claims = array(data.claims);
+    const byId = new Map(claims.map(c => [c.id, c]));
+    const overview = data.reading_overview || {};
+    const ids = [...array(overview.claim_order), ...array(overview.logical_outline).flatMap(step => array(step.claim_ids)), ...claims.map(c => c.id)];
+    const seen = new Set();
+    return ids.filter(id => byId.has(id) && !seen.has(id) && seen.add(id));
+  }
+  function necessity(value, lang) {
+    const labels = {
+      verify_materials_first: t(lang, '先核查已有材料', 'Check existing materials first'),
+      only_for_stronger_claim: t(lang, '仅在加强结论时需要', 'Needed only for a stronger claim'),
+      core_claim_check: t(lang, '可能影响当前主张，需核查', 'Potentially affects the current claim'),
+      optional_follow_up: t(lang, '可选后续问题', 'Optional follow-up'),
+      separate_study: t(lang, '适合独立研究', 'A separate study')
+    };
+    return labels[value] || t(lang, '必要性尚需判断', 'Necessity not yet established');
+  }
+  function basis(value, lang) {
+    const labels = {
+      source_reported_limit: t(lang, '原文已说明的边界；下一步为提取者建议', 'Source-reported limit; next step proposed by the extractor'),
+      missing_supplied_material: t(lang, '当前输入缺少材料，不等于原研究缺失', 'Material absent from this input, not necessarily from the study'),
+      extractor_inference: t(lang, '提取者提出的推理检查，不是作者原话', 'Extractor-proposed inference check, not an author statement')
+    };
+    return labels[value] || t(lang, '提取者建议，未经作者确认', 'Extractor proposal, not author-endorsed');
+  }
+  function field(label, value) {
+    return has(value) ? `<dt>${esc(label)}</dt><dd>${esc(text(value))}</dd>` : '';
+  }
+  function itemHTML(item, data, lang) {
+    const order = claimOrder(data);
+    const ids = array(item.claim_ids);
+    const links = ids.map(id => {
+      const index = order.indexOf(id);
+      return index < 0 ? esc(id) : `<a href="#claim-${index + 1}">${esc(id)}</a>`;
+    }).join(' / ');
+    const detail = field(t(lang, '依据与归属', 'Basis and attribution'), basis(item.basis_type, lang)) +
+      field(t(lang, '具体依据', 'Specific basis'), item.basis_note) +
+      field(t(lang, '若支持', 'If supported'), item.if_supported) +
+      field(t(lang, '若不支持', 'If not supported'), item.if_not_supported) +
+      field(t(lang, '范围提醒', 'Scope reminder'), item.scope_note);
+    return `<article class="ccr-author-item"><h4>${esc(text(item.title))}</h4><p class="ccr-author-tags">${links}${links ? ' · ' : ''}${esc(necessity(item.necessity, lang))}</p>` +
+      (has(item.why_open || item.question) ? `<p><strong>${esc(t(lang, '待厘清', 'Open point'))}</strong> ${esc(text(item.why_open || item.question))}</p>` : '') +
+      (has(item.minimum_next_step) ? `<p><strong>${esc(t(lang, '最小下一步', 'Smallest next step'))}</strong> ${esc(text(item.minimum_next_step))}</p>` : '') +
+      (detail ? `<details><summary>${esc(t(lang, '依据、可能结果与范围', 'Basis, possible outcomes and scope'))}</summary><dl>${detail}</dl></details>` : '') + '</article>';
+  }
+  function appendixHTML(data, lang) {
+    const view = data && data.author_view;
+    if (!view || typeof view !== 'object') return '';
+    const closure = array(view.closure_points);
+    const follow = array(view.follow_up_questions);
+    if (!closure.length && !follow.length) return '';
+    const notice = t(lang,
+      '附加分析，不属于论文已建立的结论，也不是作者待办清单。建议仅依据当前输入；未核查后续文献，不能据此认定问题至今未解决。',
+      'Additional analysis, not an established result or an author to-do list. Suggestions use the supplied material only. Later literature has not been checked, so these are not claims of currently open problems.');
+    return `<style>${css}</style><details class="ccr-author-view"><summary>${esc(t(lang, '作者视角：尚未闭合的环节与可深挖的问题', 'Author view: open links and questions to explore'))}</summary><p class="ccr-author-notice">${esc(notice)}</p>` +
+      (has(view.basis_scope) ? `<p class="ccr-author-notice">${esc(text(view.basis_scope))}</p>` : '') +
+      (has(view.summary) ? `<p>${esc(text(view.summary))}</p>` : '') +
+      (closure.length ? `<h3>${esc(t(lang, '尚未闭合的环节', 'Links that need closer examination'))}</h3>${closure.map(item => itemHTML(item, data, lang)).join('')}` : '') +
+      (follow.length ? `<h3>${esc(t(lang, '可继续深挖，不是当前结论的必做项', 'Optional deeper questions, not requirements for the current claim'))}</h3>${follow.map(item => itemHTML(item, data, lang)).join('')}` : '') +
+      (has(view.suggested_first_step) ? `<p class="ccr-author-first"><strong>${esc(t(lang, '如果只先做一件事', 'If you start with just one thing'))}</strong><br>${esc(text(view.suggested_first_step))}</p>` : '') + '</details>';
+  }
+  function insertHTML(html, appendix) {
+    if (!appendix) return html;
+    const marker = /<details\b[^>]*\bclass=["'][^"']*\bccr-audit\b/.exec(html);
+    let index = marker ? marker.index : html.lastIndexOf('</main>');
+    if (index < 0) index = html.lastIndexOf('</div>');
+    return index < 0 ? html + appendix : html.slice(0, index) + appendix + html.slice(index);
+  }
+  function itemMarkdown(item, lang) {
+    const lines = [`#### ${text(item.title)}`, '', `${array(item.claim_ids).join(' / ')} · ${necessity(item.necessity, lang)}`, ''];
+    const add = (label, value) => { if (has(value)) lines.push(`**${label}** ${text(value)}`, ''); };
+    add(t(lang, '待厘清', 'Open point'), item.why_open || item.question);
+    add(t(lang, '最小下一步', 'Smallest next step'), item.minimum_next_step);
+    lines.push(`<details><summary>${t(lang, '依据、可能结果与范围', 'Basis, possible outcomes and scope')}</summary>`, '');
+    add(t(lang, '依据与归属', 'Basis and attribution'), basis(item.basis_type, lang));
+    add(t(lang, '具体依据', 'Specific basis'), item.basis_note);
+    add(t(lang, '若支持', 'If supported'), item.if_supported);
+    add(t(lang, '若不支持', 'If not supported'), item.if_not_supported);
+    add(t(lang, '范围提醒', 'Scope reminder'), item.scope_note);
+    lines.push('</details>', '');
+    return lines.join('\n');
+  }
+  function appendixMarkdown(data, lang) {
+    const view = data && data.author_view;
+    if (!view || !array(view.closure_points).length && !array(view.follow_up_questions).length) return '';
+    const lines = ['', `<details><summary>${t(lang, '作者视角：尚未闭合的环节与可深挖的问题', 'Author view: open links and questions to explore')}</summary>`, '',
+      t(lang, '附加分析，不属于论文结论，也不是作者待办清单。未核查后续文献，不代表这些问题至今未解决。', 'Additional analysis, not a paper result or an author to-do list. Later literature has not been checked; current novelty is not established.'), '', text(view.basis_scope), '', text(view.summary), ''];
+    if (array(view.closure_points).length) lines.push(`### ${t(lang, '尚未闭合的环节', 'Links that need closer examination')}`, '', ...view.closure_points.map(item => itemMarkdown(item, lang)));
+    if (array(view.follow_up_questions).length) lines.push(`### ${t(lang, '可继续深挖，不是当前结论的必做项', 'Optional deeper questions, not requirements for the current claim')}`, '', ...view.follow_up_questions.map(item => itemMarkdown(item, lang)));
+    if (has(view.suggested_first_step)) lines.push(`**${t(lang, '如果只先做一件事', 'If you start with just one thing')}** ${text(view.suggested_first_step)}`, '');
+    lines.push('</details>', '');
+    return lines.join('\n');
+  }
+  global.CCReadingReport = Object.assign({}, reader, {
+    css: reader.css + css,
+    renderBody(data, lang) { return insertHTML(reader.renderBody(data, lang), appendixHTML(data, lang)); },
+    renderHTML(data, lang, options) { return insertHTML(reader.renderHTML(data, lang, options), appendixHTML(data, lang)); },
+    renderMarkdown(data, lang) {
+      const base = reader.renderMarkdown(data, lang);
+      const extra = appendixMarkdown(data, lang);
+      if (!extra) return base;
+      const marker = /<details(?:\s[^>]*)?>\s*<summary>[^<]*(?:来源|核查|source|audit)/i.exec(base);
+      return marker ? base.slice(0, marker.index) + extra + '\n' + base.slice(marker.index) : base + extra;
+    }
+  });
+})(window);

@@ -80,3 +80,16 @@ The default report is not the audit worksheet. It presents the primary scientifi
 Optional presentation fields: top-level `reading_overview` with `primary_question`, `summary`, `logical_outline` (`label`, `claim_ids`) and `claim_order`; each claim may include `short_title` and `reading_summary` (`result`, `boundary`). Scientific `statement` and evidence remain unchanged. Unsupported summaries must be flagged, not treated as new evidence.
 
 Outputs appear in the current extraction UI. A separate blob-backed reading tab and downloadable self-contained HTML/Markdown are available; the JSON retains the full record. A browser print action can save PDF, but there is no automatic PDF file generation or public hosted URL. Publication remains an explicit later action.
+
+
+## Optional author-view appendix
+
+The reader-first report may add a collapsed `author_view` after its claims and before the source audit. It is an analysis layer, not a new paper claim, a verified research gap, or an author-endorsed action list. It must not change the original claim IDs, evidence, or review status.
+
+- `basis_scope`, `literature_checked` (false unless a documented literature check was actually performed), `summary`, `closure_points`, `follow_up_questions`, and `suggested_first_step` describe the appendix.
+- Each point links existing `claim_ids`, gives a `why_open` or `question`, a `minimum_next_step`, `if_supported` / `if_not_supported`, and a `scope_note`.
+- `basis_type` separates `source_reported_limit`, `missing_supplied_material`, and `extractor_inference`; `basis_note` explains the attribution. A missing attachment is not proof that the original study omitted it.
+- `necessity` distinguishes `verify_materials_first`, `only_for_stronger_claim`, `core_claim_check`, `optional_follow_up`, and `separate_study`. Do not label an unanswered broader question a defect in a bounded claim.
+- Prefer at most three closure points and two follow-ups. Empty arrays are valid; do not manufacture issues to fill slots. Suggest the smallest discriminating check rather than unconditional new experiments or wider scope.
+
+The appendix is included in the HTML and Markdown report and JSON metadata. Existing metadata without it remains readable. This addition does not publish a report or modify the public claim library.

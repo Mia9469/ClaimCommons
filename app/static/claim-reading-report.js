@@ -195,7 +195,15 @@
   global.CCReadingReport = Object.assign({}, reader, {
     css: reader.css + css,
     renderBody(data, lang) { return insertHTML(reader.renderBody(data, lang), appendixHTML(data, lang)); },
-    renderHTML(data, lang, options) { return insertHTML(reader.renderHTML(data, lang, options), appendixHTML(data, lang)); },
+    renderHTML(data, lang, options) {
+      const language = String(lang || 'zh').startsWith('en') ? 'en' : 'zh';
+      const home = 'https://mia9469.github.io/ClaimCommons/';
+      const links = '<nav class="ccr-return" aria-label="' + esc(t(lang, '返回 Claim Commons', 'Return to Claim Commons')) + '"><a href="' + home + 'examples.html?lang=' + language + '">' + esc(t(lang, '返回示例页', 'Back to examples')) + '</a><a href="' + home + 'index.html?lang=' + language + '">' + esc(t(lang, '返回主站', 'Back to Claim Commons')) + '</a></nav>';
+      const styles = '<style>.ccr-return{display:flex;flex-wrap:wrap;gap:10px 22px;margin:0 0 18px;font-size:14px;line-height:1.6}.ccr-return a{color:inherit;text-decoration:underline;text-underline-offset:3px}@media print{.ccr-return{display:none!important}}</style>';
+      let html = insertHTML(reader.renderHTML(data, lang, options), appendixHTML(data, lang));
+      html = html.replace('</head>', styles + '</head>');
+      return html.replace(/<header\b[^>]*>/, opening => opening + links);
+    },
     renderMarkdown(data, lang) {
       const base = reader.renderMarkdown(data, lang);
       const extra = appendixMarkdown(data, lang);
